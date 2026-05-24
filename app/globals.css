@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+/* ── Design tokens ─────────────────────────────────────────── */
+:root {
+  --fire:   #ff6b1a;
+  --flame2: #ffb347;
+  --wind:   #7ec8e3;
+  --deep:   #0d1f3c;
+  --gold:   #f0c040;
+  --cream:  #fdf8f0;
+  --text:   #1a1a2e;
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Lora', Georgia, serif;
+}
+
+/* ── Alternating section backgrounds ──────────────────────── */
+.alt-bg  { background: linear-gradient(180deg,#fdf3e8,#fdf8f0); }
+.alt-bg2 { background: linear-gradient(180deg,#e8f4ff,#f0f9ff); }
+.alt-bg3 { background: linear-gradient(180deg,#fdf3d8,#fdf8ee); }
+.alt-bg4 { background: linear-gradient(180deg,#e8fdf0,#f0fdf4); }
+.alt-bg5 { background: linear-gradient(180deg,#fde8e8,#fff5f5); }
+.alt-bg6 { background: linear-gradient(180deg,#e8eeff,#f0f5ff); }
+
+/* ── Puzzle box ───────────────────────────────────────────── */
+.puzzle-box {
+  background: #fff;
+  border-radius: 24px;
+  padding: 26px 20px;
+  box-shadow: 0 6px 32px rgba(0,0,0,.1);
+  margin-bottom: 24px;
+  border-top: 5px solid var(--pz-color, var(--fire));
+}
+
+.puzzle-label {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 0.70rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--pz-color, var(--fire));
+  margin-bottom: 6px;
+}
+
+.puzzle-q {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.pz-btn {
+  display: block;
+  width: 100%;
+  background: var(--pz-color, var(--fire));
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 20px;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: filter 0.15s;
+}
+.pz-btn:hover { filter: brightness(1.1); }
+
+.pz-error {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  color: #c00;
+  font-size: 0.88rem;
+  margin-top: 8px;
+  min-height: 1.2em;
+}
+
+.pz-hint {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+/* ── Truth banner ─────────────────────────────────────────── */
+.truth-banner {
+  display: none;
+  margin-top: 14px;
+  color: #fff;
+  border-radius: 14px;
+  padding: 16px 18px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  line-height: 1.6;
+  background: var(--pz-color, var(--fire));
+}
+.truth-banner.show {
+  display: block;
+  animation: pop-in 0.5s cubic-bezier(.34,1.56,.64,1) both;
+}
+.truth-verse {
+  font-size: 0.82rem;
+  font-style: italic;
+  opacity: 0.92;
+  display: block;
+  margin-top: 4px;
+}
+
+/* ── Pull quote ───────────────────────────────────────────── */
+.pull-quote {
+  border-radius: 20px;
+  padding: 26px 22px;
+  margin: 24px 0;
+  text-align: center;
+  background: var(--deep);
+  color: #fff;
+  border-top: 4px solid var(--gold);
+}
+.pq-text {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,.93);
+}
+.pq-ref {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 0.76rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--flame2);
+  margin-top: 8px;
+  display: block;
+}
+
+/* ── Kid note callout ─────────────────────────────────────── */
+.kid-note {
+  background: #fff9e8;
+  border-left: 4px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+  padding: 10px 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #7a5000;
+  margin: 16px 0;
+}
+
+/* ── Eyebrow / section header ─────────────────────────────── */
+.eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 0.76rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--fire);
+  margin-bottom: 4px;
+}
+.sec-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  color: var(--deep);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.sec-intro {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+  font-weight: 700;
+  max-width: 640px;
+}
+
+/* ── Section banner ───────────────────────────────────────── */
+.sec-banner {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: #fff;
+  padding: 18px 24px;
+  letter-spacing: 1px;
+}
+.sb-1 { background: linear-gradient(135deg,#7a3800,#c05010); }
+.sb-2 { background: linear-gradient(135deg,#0a3a60,#0a7090); }
+.sb-3 { background: linear-gradient(135deg,#3a0060,#7030a0); }
+.sb-4 { background: linear-gradient(135deg,#1a3a00,#2a6a10); }
+.sb-5 { background: linear-gradient(135deg,#003a60,#104f8a); }
+.sb-6 { background: linear-gradient(135deg,#001a60,#2030a0); }
+.sb-7 { background: linear-gradient(135deg,#1a0040,#400090); }
+
+/* ── Section divider ──────────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 16px;
+  padding: 8px 0;
+}
+.div-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg,transparent,rgba(0,0,0,.1),transparent);
+}
+.div-icon { font-size: 1.3rem; }
+
+/* ── Word search cells ────────────────────────────────────── */
+.word-cell {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  user-select: none;
+  transition: background 0.15s;
+}
+.word-cell:hover  { background: #e8f4ff; }
+.word-cell.selected { background: #fff0aa; }
+.word-cell.found  { background: var(--pz-color, #40b870); color: #fff; }
+
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes pop-in {
+  from { transform: scale(0.75); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%,60% { transform: translateX(-7px); }
+  40%,80% { transform: translateX( 7px); }
+}
+
+@keyframes tw {
+  0%,100% { opacity:.2; transform: scale(.6); }
+  50%      { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spark-rise {
+  0%   { opacity: 0;   transform: translateY(0)   scale(1); }
+  20%  { opacity: .9; }
+  100% { opacity: 0;   transform: translateY(-80px) scale(.3); }
+}
+
+@keyframes dove-float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+@keyframes confetti-fall {
+  to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes wind-blow {
+  from { transform: translateX(-100%); opacity: 0; }
+  30%  { opacity: .4; }
+  to   { transform: translateX(110%);  opacity: 0; }
+}
+
+.shake { animation: shake 0.4s ease-in-out; }
