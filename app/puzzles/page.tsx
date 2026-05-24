@@ -1,44 +1,56 @@
 import Link from "next/link";
 import { wordPuzzles } from "@/data/word-puzzles";
 
+const PZ_COLORS = ["#7030a0","#0a7090","#c05010"];
+
 export default function PuzzlesListPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10">
-      <div className="text-center mb-10">
-        <div className="text-5xl mb-3">🔤</div>
-        <h1 className="text-4xl font-extrabold text-blue-900 mb-2">Word Puzzles</h1>
-        <p className="text-lg text-gray-600">
-          Find the hidden Bible words in each grid!
-        </p>
-      </div>
+    <>
+      <div className="sec-banner sb-3">🔤 Word Puzzles</div>
+      <section className="alt-bg6">
+        <div style={{ maxWidth: 900, margin: "0 auto", padding: "44px 18px 52px" }}>
+          <p className="eyebrow">Hidden Words</p>
+          <h2 className="sec-title">Bible Word Searches</h2>
+          <p className="sec-intro" style={{ marginBottom: 32 }}>
+            Find the hidden Bible words in each grid. Click the first letter, then the last — and see if it&apos;s a match!
+          </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        {wordPuzzles.map((puzzle) => (
-          <Link
-            key={puzzle.id}
-            href={`/puzzles/${puzzle.id}`}
-            className="bg-white rounded-2xl border-2 border-purple-200 p-6 hover:border-purple-400 hover:shadow-md transition-all flex flex-col items-center text-center"
-          >
-            <div className="text-5xl mb-3">{puzzle.emoji}</div>
-            <h2 className="text-xl font-extrabold text-gray-800 mb-2">{puzzle.title}</h2>
-            <p className="text-sm text-gray-600 mb-3">{puzzle.description}</p>
-            <p className="text-xs bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-semibold">
-              Find {puzzle.words.length} words
-            </p>
-            <div className="mt-4">
-              <span className="inline-block bg-purple-500 text-white text-sm font-bold px-4 py-2 rounded-full">
-                Play →
-              </span>
-            </div>
-          </Link>
-        ))}
-      </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {wordPuzzles.map((puzzle, i) => {
+              const color = PZ_COLORS[i % PZ_COLORS.length];
+              return (
+                <Link
+                  key={puzzle.id}
+                  href={`/puzzles/${puzzle.id}`}
+                  className="puzzle-box block"
+                  style={{ ["--pz-color" as string]: color, textDecoration: "none" }}
+                >
+                  <p className="puzzle-label">{puzzle.theme}</p>
+                  <div style={{ fontSize: "3rem", marginBottom: 8 }}>{puzzle.emoji}</div>
+                  <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.1rem", color: "var(--text)", marginBottom: 6 }}>
+                    {puzzle.title}
+                  </h3>
+                  <p style={{ fontFamily: "var(--font-lora)", fontSize: "0.88rem", color: "#555", lineHeight: 1.6, marginBottom: 10 }}>
+                    {puzzle.description}
+                  </p>
+                  <span style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.8rem", color: color }}>
+                    Find {puzzle.words.length} words
+                  </span>
+                  <div className="pz-btn" style={{ textAlign: "center", marginTop: 14 }}>
+                    Play →
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
 
-      <div className="mt-8 text-center">
-        <Link href="/" className="text-blue-600 hover:underline font-semibold">
-          ← Back to Home
-        </Link>
-      </div>
-    </div>
+          <div style={{ marginTop: 32, textAlign: "center" }}>
+            <Link href="/" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "var(--fire)", textDecoration: "none" }}>
+              ← Back to Home
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

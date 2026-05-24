@@ -1,31 +1,56 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import type { MemoryVerse } from "@/data/memory-verses";
 import Link from "next/link";
 
-type Stage = "read" | "practice" | "complete";
+const PZ_COLOR = "#2a6a10";
+
+function launchConfetti() {
+  const colors = ["#ff6b1a","#ffb347","#f0c040","#40b870","#7ec8e3","#c084fc","#f472b6","#fff"];
+  for (let i = 0; i < 60; i++) {
+    const el = document.createElement("div");
+    const size = 6 + Math.random() * 8;
+    Object.assign(el.style, {
+      position: "fixed", top: "15%",
+      left: Math.random() * 100 + "vw",
+      width: size + "px", height: size + "px",
+      borderRadius: Math.random() > 0.5 ? "50%" : "2px",
+      background: colors[Math.floor(Math.random() * colors.length)],
+      animation: `confetti-fall ${1.5 + Math.random() * 1.5}s ease-in both`,
+      animationDelay: Math.random() * 0.6 + "s",
+      zIndex: 9999, pointerEvents: "none",
+    });
+    document.body.appendChild(el);
+    el.addEventListener("animationend", () => el.remove());
+  }
+}
 
 export default function MemoryChallenge({ verse }: { verse: MemoryVerse }) {
-  const [stage, setStage] = useState<Stage>("read");
-
+  const [stage, setStage] = useState<"read" | "practice" | "complete">("read");
   const words = verse.text.replace(/[.,;!?]/g, "").split(" ");
-  // For practice, blank out every other word starting at index 1
   const blankedIndexes = words.map((_, i) => i % 2 !== 0);
-
   const [inputs, setInputs] = useState<string[]>(words.map(() => ""));
   const [checked, setChecked] = useState<boolean[]>(words.map(() => false));
-  const [allCorrect, setAllCorrect] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
   function handleCheck() {
-    const newChecked = words.map((word, i) => {
-      if (!blankedIndexes[i]) return true;
-      return inputs[i].trim().toLowerCase() === word.toLowerCase();
-    });
-    setChecked(newChecked);
-    if (newChecked.every(Boolean)) {
-      setTimeout(() => setStage("complete"), 800);
-      setAllCorrect(true);
+    const results = words.map((word, i) =>
+      !blankedIndexes[i] ? true : inputs[i].trim().toLowerCase() === word.toLowerCase()
+    );
+    setChecked(results);
+    if (results.every(Boolean)) {
+      setTimeout(() => {
+        setStage("complete");
+        launchConfetti();
+        requestAnimationFrame(() => {
+          if (bannerRef.current) {
+            bannerRef.current.classList.remove("show");
+            void bannerRef.current.offsetWidth;
+            bannerRef.current.classList.add("show");
+          }
+        });
+      }, 500);
     }
   }
 
@@ -33,27 +58,29 @@ export default function MemoryChallenge({ verse }: { verse: MemoryVerse }) {
     setStage("read");
     setInputs(words.map(() => ""));
     setChecked(words.map(() => false));
-    setAllCorrect(false);
   }
+
+  const allCorrect = checked.length > 0 && checked.every(Boolean);
 
   if (stage === "read") {
     return (
-      <div className="bg-white rounded-2xl border-2 border-green-200 p-8 shadow text-center">
-        <p className="text-xs uppercase tracking-widest font-bold text-green-500 mb-3">
-          Step 1 — Read the verse
-        </p>
-        <blockquote className="text-2xl font-bold text-gray-800 leading-snug mb-4">
+      <div className="puzzle-box" style={{ ["--pz-color" as string]: PZ_COLOR, textAlign: "center" }}>
+        <p className="puzzle-label">Step 1 — Read the Verse</p>
+        <blockquote style={{
+          fontFamily: "var(--font-lora)", fontStyle: "italic",
+          fontSize: "1.25rem", lineHeight: 1.75, color: "#222",
+          margin: "12px 0", borderLeft: "4px solid var(--pz-color)",
+          paddingLeft: 16, textAlign: "left",
+        }}>
           &ldquo;{verse.text}&rdquo;
         </blockquote>
-        <p className="text-gray-500 font-semibold mb-8">— {verse.reference}</p>
-
-        <p className="text-sm text-gray-600 mb-4">
-          Read it a few times until you feel ready, then click below!
+        <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "0.8rem", letterSpacing: "2px", textTransform: "uppercase", color: "#999", margin: "8px 0 20px" }}>
+          — {verse.reference}
         </p>
-        <button
-          onClick={() => setStage("practice")}
-          className="bg-green-500 hover:bg-green-600 text-white font-extrabold px-8 py-3 rounded-full transition-colors text-lg"
-        >
+        <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 700, color: "#666", fontSize: "0.9rem", marginBottom: 18 }}>
+          Read it a few times until it feels familiar, then press the button!
+        </p>
+        <button onClick={() => setStage("practice")} className="pz-btn" style={{ maxWidth: 320, margin: "0 auto" }}>
           I&apos;m Ready to Practice! →
         </button>
       </div>
@@ -62,27 +89,27 @@ export default function MemoryChallenge({ verse }: { verse: MemoryVerse }) {
 
   if (stage === "complete") {
     return (
-      <div className="bg-white rounded-2xl border-2 border-green-300 p-8 shadow text-center">
-        <div className="text-7xl mb-4">🎉</div>
-        <h2 className="text-3xl font-extrabold text-green-700 mb-2">You did it!</h2>
-        <p className="text-gray-600 mb-6">You hid this verse in your heart! Keep practicing it every day.</p>
-
-        <blockquote className="text-lg font-semibold text-gray-800 italic bg-green-50 rounded-xl p-4 mb-6">
-          &ldquo;{verse.text}&rdquo;
-          <footer className="text-sm text-gray-500 mt-1 not-italic">— {verse.reference}</footer>
-        </blockquote>
-
-        <div className="flex gap-3 justify-center flex-wrap">
-          <button
-            onClick={handleRestart}
-            className="bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full transition-colors"
-          >
+      <div className="puzzle-box" style={{ ["--pz-color" as string]: PZ_COLOR, textAlign: "center" }}>
+        <div style={{ fontSize: "4rem", marginBottom: 12 }}>🎉</div>
+        <h2 style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.6rem", color: "var(--deep)", marginBottom: 8 }}>
+          You did it!
+        </h2>
+        <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#444", marginBottom: 16 }}>
+          You hid this verse in your heart! Keep saying it every day.
+        </p>
+        <div className="pull-quote" style={{ margin: "0 0 20px", textAlign: "left" }}>
+          <p className="pq-text">&ldquo;{verse.text}&rdquo;</p>
+          <span className="pq-ref">— {verse.reference}</span>
+        </div>
+        <div ref={bannerRef} className="truth-banner" style={{ background: "#40b870" }}>
+          🌟 Well done! &ldquo;I have stored up your word in my heart.&rdquo;
+          <span className="truth-verse">— Psalm 119:11</span>
+        </div>
+        <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 16, flexWrap: "wrap" }}>
+          <button onClick={handleRestart} className="pz-btn" style={{ width: "auto", padding: "10px 28px" }}>
             Practice Again
           </button>
-          <Link
-            href="/memory"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-full transition-colors"
-          >
+          <Link href="/memory" className="pz-btn" style={{ background: "var(--deep)", width: "auto", padding: "10px 28px", textDecoration: "none", display: "inline-block" }}>
             More Verses
           </Link>
         </div>
@@ -90,73 +117,64 @@ export default function MemoryChallenge({ verse }: { verse: MemoryVerse }) {
     );
   }
 
-  // Practice stage
   return (
-    <div className="bg-white rounded-2xl border-2 border-green-200 p-6 shadow">
-      <p className="text-xs uppercase tracking-widest font-bold text-green-500 mb-3 text-center">
-        Step 2 — Fill in the missing words
-      </p>
-      <p className="text-sm text-gray-500 text-center mb-5">
-        Type the missing words (shown as blanks below), then tap &ldquo;Check!&rdquo;
+    <div className="puzzle-box" style={{ ["--pz-color" as string]: PZ_COLOR }}>
+      <p className="puzzle-label">Step 2 — Fill in the Missing Words</p>
+      <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 700, color: "#888", fontSize: "0.85rem", marginBottom: 16 }}>
+        Every other word is hidden. Type the missing ones, then tap Check!
       </p>
 
-      <div className="flex flex-wrap gap-2 justify-center mb-6">
+      {/* Inline sentence with blanks */}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "8px 6px", alignItems: "flex-end", marginBottom: 20 }}>
         {words.map((word, i) => {
           if (!blankedIndexes[i]) {
             return (
-              <span key={i} className="text-lg font-bold text-gray-800 self-end pb-1">
+              <span key={i} style={{ fontFamily: "var(--font-lora)", fontWeight: 700, fontSize: "1.1rem", color: "#333", paddingBottom: 2 }}>
                 {word}
               </span>
             );
           }
-
-          const isCheckedCorrect = checked[i] && inputs[i].trim().toLowerCase() === word.toLowerCase();
-          const isCheckedWrong = checked[i] && inputs[i].trim().toLowerCase() !== word.toLowerCase();
-
+          const isRight  = checked[i] && inputs[i].trim().toLowerCase() === word.toLowerCase();
+          const isWrong  = checked[i] && inputs[i].trim().toLowerCase() !== word.toLowerCase();
           return (
             <input
               key={i}
               type="text"
               value={inputs[i]}
               onChange={(e) => {
-                const newInputs = [...inputs];
-                newInputs[i] = e.target.value;
-                setInputs(newInputs);
+                const n = [...inputs]; n[i] = e.target.value; setInputs(n);
               }}
-              className={`border-b-2 text-center text-lg font-bold w-24 focus:outline-none pb-0.5 ${
-                isCheckedCorrect
-                  ? "border-green-500 text-green-700 bg-green-50"
-                  : isCheckedWrong
-                  ? "border-red-400 text-red-600 bg-red-50"
-                  : "border-gray-400 text-blue-700"
-              }`}
               placeholder="___"
+              style={{
+                width: Math.max(60, word.length * 12) + "px",
+                fontFamily: "var(--font-nunito)", fontWeight: 900,
+                fontSize: "1rem", textAlign: "center",
+                border: "none",
+                borderBottom: `3px solid ${isRight ? "#40b870" : isWrong ? "#e53e3e" : PZ_COLOR}`,
+                background: isRight ? "#edfaf2" : isWrong ? "#fff5f5" : "transparent",
+                color: isRight ? "#1a5c30" : isWrong ? "#c00" : "var(--text)",
+                outline: "none", padding: "2px 4px",
+              }}
             />
           );
         })}
       </div>
 
       {!allCorrect && (
-        <div className="text-center">
-          <button
-            onClick={handleCheck}
-            className="bg-green-500 hover:bg-green-600 text-white font-extrabold px-8 py-3 rounded-full transition-colors"
-          >
+        <>
+          <button onClick={handleCheck} className="pz-btn" style={{ maxWidth: 280, margin: "0 auto", display: "block" }}>
             Check! ✓
           </button>
           {checked.some(Boolean) && !allCorrect && (
-            <p className="mt-3 text-red-600 text-sm font-semibold">
-              Some words aren&apos;t right yet — check the red ones and try again!
+            <p className="pz-error" style={{ textAlign: "center" }}>
+              Some words aren&apos;t right yet — fix the red ones and try again!
             </p>
           )}
-        </div>
+        </>
       )}
 
-      <div className="mt-4 text-center">
-        <button
-          onClick={handleRestart}
-          className="text-sm text-gray-400 hover:text-gray-600 underline"
-        >
+      <div style={{ textAlign: "center", marginTop: 12 }}>
+        <button onClick={handleRestart} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-nunito)", fontWeight: 700, fontSize: "0.8rem", color: "#bbb", textDecoration: "underline" }}>
           Start over
         </button>
       </div>

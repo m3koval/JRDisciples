@@ -4,30 +4,38 @@ import { useState, useCallback } from "react";
 import type { WordPuzzle } from "@/data/word-puzzles";
 import Link from "next/link";
 
-interface Cell {
-  row: number;
-  col: number;
-}
+const PZ_COLOR = "#7030a0";
 
-function cellKey(c: Cell) {
-  return `${c.row}-${c.col}`;
-}
+interface Cell { row: number; col: number; }
+const key = (c: Cell) => `${c.row}-${c.col}`;
 
-function getCellsBetween(start: Cell, end: Cell): Cell[] | null {
-  const dr = end.row - start.row;
-  const dc = end.col - start.col;
+function getCellsBetween(a: Cell, b: Cell): Cell[] | null {
+  const dr = b.row - a.row, dc = b.col - a.col;
   const len = Math.max(Math.abs(dr), Math.abs(dc));
   if (len === 0) return null;
-  if (dr !== 0 && dc !== 0 && Math.abs(dr) !== Math.abs(dc)) return null; // not a straight line
+  if (dr !== 0 && dc !== 0 && Math.abs(dr) !== Math.abs(dc)) return null;
+  const sr = dr === 0 ? 0 : dr / Math.abs(dr);
+  const sc = dc === 0 ? 0 : dc / Math.abs(dc);
+  return Array.from({ length: len + 1 }, (_, i) => ({ row: a.row + sr * i, col: a.col + sc * i }));
+}
 
-  const stepR = dr === 0 ? 0 : dr / Math.abs(dr);
-  const stepC = dc === 0 ? 0 : dc / Math.abs(dc);
-
-  const cells: Cell[] = [];
-  for (let i = 0; i <= len; i++) {
-    cells.push({ row: start.row + stepR * i, col: start.col + stepC * i });
+function launchConfetti() {
+  const colors = ["#ff6b1a","#ffb347","#f0c040","#40b870","#7ec8e3","#c084fc","#fff"];
+  for (let i = 0; i < 60; i++) {
+    const el = document.createElement("div");
+    const size = 6 + Math.random() * 8;
+    Object.assign(el.style, {
+      position: "fixed", top: "10%", left: Math.random() * 100 + "vw",
+      width: size + "px", height: size + "px",
+      borderRadius: Math.random() > 0.5 ? "50%" : "2px",
+      background: colors[Math.floor(Math.random() * colors.length)],
+      animation: `confetti-fall ${1.5 + Math.random() * 1.5}s ease-in both`,
+      animationDelay: Math.random() * 0.6 + "s",
+      zIndex: 9999, pointerEvents: "none",
+    });
+    document.body.appendChild(el);
+    el.addEventListener("animationend", () => el.remove());
   }
-  return cells;
 }
 
 export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
@@ -37,134 +45,91 @@ export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
   const [foundCells, setFoundCells] = useState<Set<string>>(new Set());
   const [won, setWon] = useState(false);
 
-  const previewCells: Set<string> = new Set();
+  const previewKeys = new Set<string>();
   if (startCell && hoverCell) {
-    const cells = getCellsBetween(startCell, hoverCell);
-    if (cells) {
-      cells.forEach((c) => previewCells.add(cellKey(c)));
-    }
+    getCellsBetween(startCell, hoverCell)?.forEach((c) => previewKeys.add(key(c)));
   }
 
-  const handleCellClick = useCallback(
-    (cell: Cell) => {
-      if (!startCell) {
-        setStartCell(cell);
-        return;
-      }
+  const handleClick = useCallback((cell: Cell) => {
+    if (!startCell) { setStartCell(cell); return; }
+    if (key(cell) === key(startCell)) { setStartCell(null); return; }
 
-      // If clicking the same cell, deselect
-      if (cellKey(cell) === cellKey(startCell)) {
-        setStartCell(null);
-        return;
-      }
+    const cells = getCellsBetween(startCell, cell);
+    if (!cells) { setStartCell(cell); return; }
 
-      const cells = getCellsBetween(startCell, cell);
-      if (!cells) {
-        setStartCell(cell);
-        return;
-      }
+    const word = cells.map((c) => puzzle.grid[c.row][c.col]).join("");
+    const rev  = word.split("").reverse().join("");
+    const match = puzzle.words.find((w) => w === word || w === rev);
 
-      const word = cells.map((c) => puzzle.grid[c.row][c.col]).join("");
-      const reversed = word.split("").reverse().join("");
-
-      const matched = puzzle.words.find(
-        (w) => w === word || w === reversed
-      );
-
-      if (matched && !foundWords.has(matched)) {
-        const newFound = new Set(foundWords);
-        newFound.add(matched);
-        setFoundWords(newFound);
-
-        const newFoundCells = new Set(foundCells);
-        cells.forEach((c) => newFoundCells.add(cellKey(c)));
-        setFoundCells(newFoundCells);
-
-        if (newFound.size === puzzle.words.length) {
-          setWon(true);
-        }
-      }
-
-      setStartCell(null);
-      setHoverCell(null);
-    },
-    [startCell, foundWords, foundCells, puzzle]
-  );
+    if (match && !foundWords.has(match)) {
+      const nw = new Set(foundWords); nw.add(match);
+      const nc = new Set(foundCells); cells.forEach((c) => nc.add(key(c)));
+      setFoundWords(nw); setFoundCells(nc);
+      if (nw.size === puzzle.words.length) { setWon(true); setTimeout(launchConfetti, 100); }
+    }
+    setStartCell(null); setHoverCell(null);
+  }, [startCell, foundWords, foundCells, puzzle]);
 
   if (won) {
     return (
-      <div className="bg-white rounded-2xl border-2 border-purple-300 p-8 shadow text-center">
-        <div className="text-7xl mb-4">🏆</div>
-        <h2 className="text-3xl font-extrabold text-purple-700 mb-2">You found them all!</h2>
-        <p className="text-gray-600 mb-6">
-          Amazing work! You found all {puzzle.words.length} words!
+      <div className="puzzle-box" style={{ ["--pz-color" as string]: PZ_COLOR, textAlign: "center" }}>
+        <div style={{ fontSize: "4rem", marginBottom: 12 }}>🏆</div>
+        <h2 style={{ fontFamily: "var(--font-cinzel)", fontSize: "1.6rem", color: "var(--deep)", marginBottom: 8 }}>
+          You found them all!
+        </h2>
+        <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#444", marginBottom: 20 }}>
+          Amazing! Every single word found!
         </p>
-        <div className="flex gap-3 justify-center flex-wrap">
-          <Link
-            href="/puzzles"
-            className="bg-purple-500 hover:bg-purple-600 text-white font-bold px-6 py-3 rounded-full transition-colors"
-          >
-            More Puzzles
-          </Link>
-        </div>
+        <Link href="/puzzles" className="pz-btn" style={{ display: "inline-block", width: "auto", padding: "10px 28px", textDecoration: "none" }}>
+          More Puzzles →
+        </Link>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col items-center gap-6">
-      {/* Word list */}
-      <div className="bg-white rounded-2xl border-2 border-purple-100 p-4 w-full">
-        <p className="text-sm font-bold text-purple-600 mb-3 uppercase tracking-wide">
-          Find these words ({foundWords.size}/{puzzle.words.length} found):
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {puzzle.words.map((word) => (
-            <span
-              key={word}
-              className={`px-3 py-1 rounded-full text-sm font-bold border-2 transition-all ${
-                foundWords.has(word)
-                  ? "bg-green-100 border-green-400 text-green-700 line-through"
-                  : "bg-gray-50 border-gray-200 text-gray-700"
-              }`}
-            >
-              {word}
-            </span>
-          ))}
-        </div>
+    <div className="puzzle-box" style={{ ["--pz-color" as string]: PZ_COLOR }}>
+      <p className="puzzle-label">🔍 Word Search</p>
+      <p className="puzzle-q">
+        {startCell ? "Now click the last letter of the word!" : "Click the first letter of a word to start!"}
+      </p>
+
+      {/* Word chips */}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 18 }}>
+        {puzzle.words.map((w) => (
+          <span key={w} style={{
+            fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "0.82rem",
+            padding: "4px 12px", borderRadius: 20, border: `2px solid ${foundWords.has(w) ? "#40b870" : "#ddd"}`,
+            background: foundWords.has(w) ? "#edfaf2" : "#fafafa",
+            color: foundWords.has(w) ? "#1a5c30" : "#555",
+            textDecoration: foundWords.has(w) ? "line-through" : "none",
+            transition: "all 0.2s",
+          }}>{w}</span>
+        ))}
       </div>
 
-      {/* Instructions */}
-      <p className="text-sm text-gray-500 text-center">
-        {startCell
-          ? "Now click the last letter of the word!"
-          : "Click the first letter of a word to start!"}
+      <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 700, fontSize: "0.78rem", color: "#aaa", marginBottom: 10 }}>
+        Found {foundWords.size} / {puzzle.words.length}
       </p>
 
       {/* Grid */}
-      <div className="overflow-x-auto w-full flex justify-center">
-        <table className="border-collapse select-none">
+      <div style={{ overflowX: "auto" }}>
+        <table style={{ borderCollapse: "collapse", margin: "0 auto" }}>
           <tbody>
-            {puzzle.grid.map((row, rIdx) => (
-              <tr key={rIdx}>
-                {row.map((letter, cIdx) => {
-                  const key = `${rIdx}-${cIdx}`;
-                  const isFound = foundCells.has(key);
-                  const isStart = startCell && cellKey(startCell) === key;
-                  const isPreview = previewCells.has(key);
-
+            {puzzle.grid.map((row, r) => (
+              <tr key={r}>
+                {row.map((letter, c) => {
+                  const k = `${r}-${c}`;
+                  const isFound    = foundCells.has(k);
+                  const isStart    = startCell && key(startCell) === k;
+                  const isPreview  = previewKeys.has(k);
                   return (
-                    <td key={cIdx} className="p-0">
+                    <td key={c} style={{ padding: 1 }}>
                       <div
-                        className={`word-cell ${
-                          isFound
-                            ? "found"
-                            : isStart || isPreview
-                            ? "selected"
-                            : ""
-                        }`}
-                        onClick={() => handleCellClick({ row: rIdx, col: cIdx })}
-                        onMouseEnter={() => startCell && setHoverCell({ row: rIdx, col: cIdx })}
+                        className={`word-cell${isFound ? " found" : isStart || isPreview ? " selected" : ""}`}
+                        style={{ ["--pz-color" as string]: PZ_COLOR }}
+                        onClick={() => handleClick({ row: r, col: c })}
+                        onMouseEnter={() => startCell && setHoverCell({ row: r, col: c })}
                       >
                         {letter}
                       </div>

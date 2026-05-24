@@ -13,20 +13,27 @@ export default async function MemoryPage({ params }: { params: Promise<{ id: str
   if (!verse) notFound();
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-10">
-      <Link href="/memory" className="text-blue-600 hover:underline font-semibold text-sm">
-        ← Back to Verses
-      </Link>
+    <>
+      <div className="sec-banner sb-4">💡 Verse Memory</div>
+      <section className="alt-bg4">
+        <div style={{ maxWidth: 680, margin: "0 auto", padding: "44px 18px 52px" }}>
+          <Link href="/memory" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#2a6a10", textDecoration: "none", fontSize: "0.88rem" }}>
+            ← All Verses
+          </Link>
 
-      <div className="mt-6 text-center mb-8">
-        <div className="text-6xl mb-2">{verse.emoji}</div>
-        <h1 className="text-3xl font-extrabold text-blue-900">{verse.reference}</h1>
-        <span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold mt-2">
-          {verse.theme}
-        </span>
-      </div>
+          <div style={{ margin: "20px 0 28px" }}>
+            <div style={{ fontSize: "3rem", marginBottom: 8 }}>{verse.emoji}</div>
+            <p className="eyebrow">{verse.theme}</p>
+            <h1 className="sec-title">{verse.reference}</h1>
+          </div>
 
-      <MemoryChallenge verse={verse} />
-    </div>
+          <MemoryChallenge verse={verse} />
+
+          <div className="kid-note" style={{ marginTop: 24 }}>
+            💬 Ask a grown-up: How does this verse apply to your life this week?
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

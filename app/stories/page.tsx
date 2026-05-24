@@ -1,44 +1,50 @@
 import Link from "next/link";
 import { stories } from "@/data/stories";
 
+const PZ_COLORS = ["#ff6b1a","#0a7090","#7030a0","#2a6a10","#c05010","#104f8a"];
+
 export default function StoriesPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10">
-      <div className="text-center mb-10">
-        <div className="text-5xl mb-3">📖</div>
-        <h1 className="text-4xl font-extrabold text-blue-900 mb-2">Bible Stories</h1>
-        <p className="text-lg text-gray-600">
-          Discover amazing true stories from God&apos;s Word!
-        </p>
-      </div>
+    <>
+      <div className="sec-banner sb-1">📖 Bible Stories</div>
+      <section className="alt-bg">
+        <div style={{ maxWidth: 900, margin: "0 auto", padding: "44px 18px 52px" }}>
+          <p className="eyebrow">God&apos;s True Stories</p>
+          <h2 className="sec-title">Amazing Stories from God&apos;s Word</h2>
+          <p className="sec-intro" style={{ marginBottom: 32 }}>
+            Every story in the Bible is true — and every one points to Jesus, the greatest story of all!
+          </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {stories.map((story) => (
-          <Link
-            key={story.id}
-            href={`/stories/${story.id}`}
-            className="bg-white rounded-2xl border-2 border-blue-200 p-6 hover:border-blue-400 hover:shadow-md transition-all flex flex-col"
-          >
-            <div className="text-5xl mb-3 text-center">{story.emoji}</div>
-            <h2 className="text-xl font-extrabold text-blue-900 mb-1 text-center">{story.title}</h2>
-            <p className="text-xs text-gray-500 text-center mb-3">{story.reference}</p>
-            <p className="text-sm text-gray-700 flex-1 italic border-l-4 border-blue-200 pl-3">
-              &ldquo;{story.bigTruth}&rdquo;
-            </p>
-            <div className="mt-4 text-center">
-              <span className="inline-block bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-full">
-                Read Story →
-              </span>
-            </div>
-          </Link>
-        ))}
-      </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {stories.map((story, i) => (
+              <Link
+                key={story.id}
+                href={`/stories/${story.id}`}
+                className="puzzle-box block"
+                style={{ ["--pz-color" as string]: PZ_COLORS[i % PZ_COLORS.length], textDecoration: "none" }}
+              >
+                <p className="puzzle-label">{story.reference}</p>
+                <div style={{ fontSize: "3rem", marginBottom: 8 }}>{story.emoji}</div>
+                <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.15rem", color: "var(--text)", marginBottom: 6 }}>
+                  {story.title}
+                </h3>
+                <p style={{ fontFamily: "var(--font-lora)", fontStyle: "italic", fontSize: "0.88rem", color: "#555", lineHeight: 1.6, borderLeft: "3px solid var(--pz-color)", paddingLeft: 10 }}>
+                  &ldquo;{story.bigTruth}&rdquo;
+                </p>
+                <div className="pz-btn" style={{ textAlign: "center", marginTop: 14 }}>
+                  Read Story 📖
+                </div>
+              </Link>
+            ))}
+          </div>
 
-      <div className="mt-8 text-center">
-        <Link href="/" className="text-blue-600 hover:underline font-semibold">
-          ← Back to Home
-        </Link>
-      </div>
-    </div>
+          <div style={{ marginTop: 32, textAlign: "center" }}>
+            <Link href="/" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "var(--fire)", textDecoration: "none" }}>
+              ← Back to Home
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

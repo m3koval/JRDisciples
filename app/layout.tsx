@@ -1,23 +1,48 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Cinzel_Decorative, Lora, Nunito } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 
-const geist = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const cinzel = Cinzel_Decorative({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-cinzel",
+  display: "swap",
+});
+
+const lora = Lora({
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-lora",
+  display: "swap",
+});
+
+const nunito = Nunito({
+  weight: ["400", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-nunito",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "JR Disciples — Bible Learning for Kids",
-  description: "Fun Bible stories, quizzes, puzzles, and verse memory for kids ages 6-10.",
+  description: "Fun Bible stories, quizzes, puzzles, and verse memory for kids ages 6–10.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geist.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-amber-50">
+    <html lang="en" className={`${cinzel.variable} ${lora.variable} ${nunito.variable}`}>
+      <body>
         <NavBar />
-        <main className="flex-1">{children}</main>
-        <footer className="bg-blue-900 text-white text-center py-4 text-sm">
-          <p>✝️ JR Disciples — Growing young hearts in God&apos;s Word</p>
+        <main>{children}</main>
+        <footer style={{ background: "var(--deep)", color: "#fff" }} className="text-center py-5 text-sm">
+          <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800 }}>
+            ✝️ JR Disciples — Growing young hearts in God&apos;s Word
+          </p>
+          <p style={{ color: "var(--flame2)", fontSize: "0.75rem", marginTop: 4, fontFamily: "var(--font-nunito)" }}>
+            &ldquo;Your word is a lamp to my feet and a light to my path.&rdquo; — Psalm 119:105
+          </p>
         </footer>
       </body>
     </html>

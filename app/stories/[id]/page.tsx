@@ -7,76 +7,100 @@ export function generateStaticParams() {
   return stories.map((s) => ({ id: s.id }));
 }
 
+const BANNER_CLASSES = ["sb-1","sb-2","sb-3","sb-4","sb-5","sb-6"];
+const PZ_COLORS = ["#ff6b1a","#0a7090","#7030a0","#2a6a10","#c05010","#104f8a"];
+const ALT_BGS = ["alt-bg","alt-bg2","alt-bg3","alt-bg4","alt-bg5","alt-bg6"];
+
 export default async function StoryPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const story = stories.find((s) => s.id === id);
-  if (!story) notFound();
-
+  const idx = stories.findIndex((s) => s.id === id);
+  if (idx === -1) notFound();
+  const story = stories[idx];
   const quiz = quizzes.find((q) => q.storyId === id);
+  const pzColor = PZ_COLORS[idx % PZ_COLORS.length];
+  const bannerCls = BANNER_CLASSES[idx % BANNER_CLASSES.length];
+  const bgCls = ALT_BGS[idx % ALT_BGS.length];
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-10">
-      <Link href="/stories" className="text-blue-600 hover:underline font-semibold text-sm">
-        ← Back to Stories
-      </Link>
-
-      <div className="mt-6 text-center">
-        <div className="text-7xl mb-3">{story.emoji}</div>
-        <h1 className="text-4xl font-extrabold text-blue-900 mb-1">{story.title}</h1>
-        <p className="text-sm text-gray-500 mb-2">{story.reference}</p>
-        <p className="text-xs bg-blue-100 text-blue-700 inline-block px-3 py-1 rounded-full">
-          {story.ageNote}
-        </p>
+    <>
+      <div className={`sec-banner ${bannerCls}`}>
+        {story.emoji} {story.title}
       </div>
 
-      {/* Story Content */}
-      <div className="mt-8 bg-white rounded-2xl border-2 border-blue-100 p-6 space-y-4">
-        {story.summary.map((para, i) => (
-          <p key={i} className="text-gray-700 text-base leading-relaxed">
-            {para}
-          </p>
-        ))}
-      </div>
-
-      {/* Big Truth */}
-      <div className="mt-6 bg-blue-900 text-white rounded-2xl p-5 text-center">
-        <p className="text-xs font-bold uppercase tracking-widest mb-2 text-blue-300">Big Truth</p>
-        <p className="text-lg font-semibold italic">&ldquo;{story.bigTruth}&rdquo;</p>
-      </div>
-
-      {/* Discussion Questions */}
-      <div className="mt-6 bg-yellow-50 border-2 border-yellow-200 rounded-2xl p-5">
-        <h2 className="text-lg font-extrabold text-yellow-800 mb-3">
-          💬 Talk About It
-        </h2>
-        <ol className="space-y-2">
-          {story.discussionQuestions.map((q, i) => (
-            <li key={i} className="flex gap-2">
-              <span className="font-bold text-yellow-700 min-w-5">{i + 1}.</span>
-              <span className="text-gray-700">{q}</span>
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      {/* Quiz CTA */}
-      {quiz && (
-        <div className="mt-6 text-center">
-          <p className="text-gray-600 mb-3">Ready to test what you learned?</p>
-          <Link
-            href={`/quiz/${quiz.id}`}
-            className="inline-block bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-extrabold text-lg px-8 py-3 rounded-full transition-colors shadow"
-          >
-            Take the Quiz! ❓
+      <section className={bgCls}>
+        <div style={{ maxWidth: 760, margin: "0 auto", padding: "44px 18px 52px" }}>
+          <Link href="/stories" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: pzColor, textDecoration: "none", fontSize: "0.88rem" }}>
+            ← All Stories
           </Link>
-        </div>
-      )}
 
-      <div className="mt-8 text-center">
-        <Link href="/stories" className="text-blue-600 hover:underline font-semibold">
-          ← Read Another Story
-        </Link>
-      </div>
-    </div>
+          <div style={{ marginTop: 20, marginBottom: 28 }}>
+            <p className="eyebrow">{story.reference}</p>
+            <h1 className="sec-title">{story.title}</h1>
+            <span style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.78rem", background: "#fff", border: "2px solid var(--pz-color)", color: "var(--pz-color)", borderRadius: 20, padding: "2px 12px", ["--pz-color" as string]: pzColor }}>
+              {story.ageNote}
+            </span>
+          </div>
+
+          {/* Story content */}
+          <div className="puzzle-box" style={{ ["--pz-color" as string]: pzColor }}>
+            <p className="puzzle-label">The Story</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              {story.summary.map((para, i) => (
+                <p key={i} style={{ fontFamily: "var(--font-lora)", fontSize: "1rem", lineHeight: 1.85, color: "#333", margin: 0 }}>
+                  {para}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          {/* Big Truth pull-quote */}
+          <div className="pull-quote">
+            <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "0.72rem", letterSpacing: "3px", textTransform: "uppercase", color: "var(--flame2)", marginBottom: 8 }}>
+              Big Truth
+            </p>
+            <p className="pq-text">&ldquo;{story.bigTruth}&rdquo;</p>
+          </div>
+
+          {/* Discussion questions */}
+          <div className="puzzle-box" style={{ ["--pz-color" as string]: "#f0c040" }}>
+            <p className="puzzle-label">💬 Talk About It</p>
+            <ol style={{ display: "flex", flexDirection: "column", gap: 12, paddingLeft: 0, listStyle: "none" }}>
+              {story.discussionQuestions.map((q, i) => (
+                <li key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                  <span style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, color: "#f0c040", minWidth: 22, fontSize: "1rem" }}>{i + 1}.</span>
+                  <span style={{ fontFamily: "var(--font-lora)", fontSize: "0.95rem", lineHeight: 1.7, color: "#333" }}>{q}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <div className="kid-note">
+            💡 Ask a grown-up or teacher to share what this story means to them!
+          </div>
+
+          {/* Quiz CTA */}
+          {quiz && (
+            <div style={{ textAlign: "center", marginTop: 28 }}>
+              <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#555", marginBottom: 12 }}>
+                Ready to test what you learned?
+              </p>
+              <Link
+                href={`/quiz/${quiz.id}`}
+                className="pz-btn"
+                style={{ display: "inline-block", background: pzColor, color: "#fff", textDecoration: "none", padding: "14px 32px", width: "auto", borderRadius: 14 }}
+              >
+                Take the Quiz! ❓
+              </Link>
+            </div>
+          )}
+
+          <div style={{ marginTop: 32, textAlign: "center" }}>
+            <Link href="/stories" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: pzColor, textDecoration: "none" }}>
+              ← Read Another Story
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

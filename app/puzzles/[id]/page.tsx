@@ -7,24 +7,36 @@ export function generateStaticParams() {
   return wordPuzzles.map((p) => ({ id: p.id }));
 }
 
+const BANNERS = ["sb-3","sb-5","sb-6"];
+const BGS = ["alt-bg6","alt-bg2","alt-bg"];
+
 export default async function PuzzlePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const puzzle = wordPuzzles.find((p) => p.id === id);
-  if (!puzzle) notFound();
+  const idx = wordPuzzles.findIndex((p) => p.id === id);
+  if (idx === -1) notFound();
+  const puzzle = wordPuzzles[idx];
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-10">
-      <Link href="/puzzles" className="text-blue-600 hover:underline font-semibold text-sm">
-        ← Back to Puzzles
-      </Link>
+    <>
+      <div className={`sec-banner ${BANNERS[idx % BANNERS.length]}`}>{puzzle.emoji} {puzzle.title}</div>
+      <section className={BGS[idx % BGS.length]}>
+        <div style={{ maxWidth: 680, margin: "0 auto", padding: "44px 18px 52px" }}>
+          <Link href="/puzzles" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#7030a0", textDecoration: "none", fontSize: "0.88rem" }}>
+            ← All Puzzles
+          </Link>
 
-      <div className="mt-6 text-center mb-8">
-        <div className="text-6xl mb-2">{puzzle.emoji}</div>
-        <h1 className="text-3xl font-extrabold text-blue-900">{puzzle.title}</h1>
-        <p className="text-gray-500 mt-1">{puzzle.description}</p>
-      </div>
+          <div style={{ margin: "20px 0 28px" }}>
+            <div style={{ fontSize: "3rem", marginBottom: 8 }}>{puzzle.emoji}</div>
+            <p className="eyebrow">{puzzle.theme}</p>
+            <h1 className="sec-title">{puzzle.title}</h1>
+            <p style={{ fontFamily: "var(--font-lora)", fontSize: "0.95rem", color: "#555", lineHeight: 1.6 }}>
+              {puzzle.description}
+            </p>
+          </div>
 
-      <WordSearchGame puzzle={puzzle} />
-    </div>
+          <WordSearchGame puzzle={puzzle} />
+        </div>
+      </section>
+    </>
   );
 }
