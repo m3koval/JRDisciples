@@ -3,6 +3,7 @@
 import { stories } from "@/data/stories";
 import { storiesRu } from "@/data/stories-ru";
 import { quizzes } from "@/data/quizzes";
+import { quizzesRu } from "@/data/quizzes-ru";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
@@ -28,7 +29,8 @@ export default function StoryPage() {
   if (idx === -1) return null;
 
   const story = currentStories[idx];
-  const quiz = quizzes.find((q) => q.storyId === id);
+  const currentQuizzes = language === 'ru' ? quizzesRu : quizzes;
+  const quiz = currentQuizzes.find((q) => q.storyId === id);
   const pzColor = PZ_COLORS[idx % PZ_COLORS.length];
   const bannerCls = BANNER_CLASSES[idx % BANNER_CLASSES.length];
   const bgCls = ALT_BGS[idx % ALT_BGS.length];
