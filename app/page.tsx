@@ -37,30 +37,9 @@ export default function HomePage() {
     <>
       {/* ── Hero ──────────────────────────────────────────── */}
       <section
-        style={{ background: "var(--deep)", minHeight: "92vh", position: "relative", overflow: "hidden" }}
-        className="flex flex-col items-center justify-center px-4 py-20 text-center"
+        style={{ background: "var(--deep)", position: "relative", overflow: "hidden" }}
+        className="flex flex-col items-center text-center"
       >
-        {/* Hero video background */}
-        {!videoEnded && (
-          <video
-            ref={videoRef}
-            src="/videos/hero-main.mp4"
-            autoPlay
-            muted
-            playsInline
-            onEnded={() => setVideoEnded(true)}
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              zIndex: 1,
-            }}
-          />
-        )}
-
         {/* Stars */}
         {STARS.map((s, i) => (
           <div
@@ -71,14 +50,33 @@ export default function HomePage() {
               background: "#fff",
               animation: `tw ${s.dur} ${s.delay} ease-in-out infinite`,
               opacity: 0.4,
-              zIndex: 5,
+              zIndex: 2,
             }}
           />
         ))}
 
-        {/* Hero image - only show after video ends */}
+        {/* Video — inline block, full width, natural aspect ratio, no cropping */}
+        {!videoEnded && (
+          <video
+            ref={videoRef}
+            src="/videos/hero-main.mp4"
+            autoPlay
+            muted
+            playsInline
+            onEnded={() => setVideoEnded(true)}
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              position: "relative",
+              zIndex: 10,
+            }}
+          />
+        )}
+
+        {/* Hero image — shown after video ends */}
         {videoEnded && (
-          <div style={{ position: "relative", marginBottom: 32, animation: "dove-float 3s ease-in-out infinite", zIndex: 10 }}>
+          <div style={{ padding: "40px 16px 8px", animation: "dove-float 3s ease-in-out infinite", position: "relative", zIndex: 10 }}>
             <img
               src="/images/jr/home-hero.png"
               alt="JR Disciples"
@@ -93,40 +91,43 @@ export default function HomePage() {
           </div>
         )}
 
-        <h1 style={{
-          fontFamily: "var(--font-cinzel)",
-          fontSize: "clamp(2rem,7vw,3.5rem)",
-          color: "#fff",
-          textShadow: "0 0 24px rgba(126,200,227,.5)",
-          marginBottom: 12,
-          lineHeight: 1.15,
-        }}>
-          JR Disciples
-        </h1>
+        {/* Title, subtitle, quote — flow below video/image */}
+        <div style={{ position: "relative", zIndex: 10, padding: "20px 24px 16px", maxWidth: 560 }}>
+          <h1 style={{
+            fontFamily: "var(--font-cinzel)",
+            fontSize: "clamp(2rem,7vw,3.5rem)",
+            color: "#fff",
+            textShadow: "0 0 24px rgba(126,200,227,.5)",
+            marginBottom: 12,
+            lineHeight: 1.15,
+          }}>
+            JR Disciples
+          </h1>
 
-        <p style={{
-          fontFamily: "var(--font-nunito)", fontWeight: 800,
-          fontSize: "clamp(0.9rem,3vw,1.1rem)",
-          letterSpacing: "2px", textTransform: "uppercase",
-          color: "var(--flame2)", marginBottom: 20,
-        }}>
-          {t.home.subtitle}
-        </p>
+          <p style={{
+            fontFamily: "var(--font-nunito)", fontWeight: 800,
+            fontSize: "clamp(0.9rem,3vw,1.1rem)",
+            letterSpacing: "2px", textTransform: "uppercase",
+            color: "var(--flame2)", marginBottom: 20,
+          }}>
+            {t.home.subtitle}
+          </p>
 
-        <blockquote style={{
-          fontFamily: "var(--font-lora)", fontStyle: "italic",
-          color: "rgba(255,255,255,.85)", fontSize: "1rem",
-          borderLeft: "3px solid rgba(126,200,227,.7)",
-          paddingLeft: 16, textAlign: "left",
-          maxWidth: 420, lineHeight: 1.7,
-        }}>
-          &ldquo;{t.home.quote}&rdquo;
-          <span style={{ display: "block", fontStyle: "normal", fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "0.72rem", letterSpacing: "2px", textTransform: "uppercase", color: "var(--flame2)", marginTop: 6 }}>
-            — {t.home.psalmRef}
-          </span>
-        </blockquote>
+          <blockquote style={{
+            fontFamily: "var(--font-lora)", fontStyle: "italic",
+            color: "rgba(255,255,255,.85)", fontSize: "1rem",
+            borderLeft: "3px solid rgba(126,200,227,.7)",
+            paddingLeft: 16, textAlign: "left",
+            lineHeight: 1.7,
+          }}>
+            &ldquo;{t.home.quote}&rdquo;
+            <span style={{ display: "block", fontStyle: "normal", fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "0.72rem", letterSpacing: "2px", textTransform: "uppercase", color: "var(--flame2)", marginTop: 6 }}>
+              — {t.home.psalmRef}
+            </span>
+          </blockquote>
+        </div>
 
-        <div style={{ position: "absolute", bottom: 20, animation: "dove-float 2s ease-in-out infinite" }}>
+        <div style={{ paddingBottom: 28, animation: "dove-float 2s ease-in-out infinite", position: "relative", zIndex: 10 }}>
           <span style={{ color: "rgba(255,255,255,.4)", fontSize: "1.5rem" }}>↓</span>
         </div>
       </section>
