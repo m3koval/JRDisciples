@@ -65,7 +65,8 @@ body {
   font-size: 1rem;
   border: none;
   border-radius: 14px;
-  padding: 12px 20px;
+  padding: 14px 20px;
+  min-height: 48px;
   cursor: pointer;
   margin-top: 14px;
   transition: filter 0.15s;
@@ -128,7 +129,7 @@ body {
   font-family: 'Lora', Georgia, serif;
   font-style: italic;
   font-size: 1rem;
-  line-height: 1.9;
+  line-height: 1.65;
   color: rgba(255,255,255,.93);
 }
 .pq-ref {
@@ -167,7 +168,7 @@ body {
 }
 .sec-title {
   font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-size: clamp(1.2rem, 5vw, 2rem);
   color: var(--deep);
   margin-bottom: 10px;
   line-height: 1.2;
@@ -214,14 +215,14 @@ body {
 
 /* ── Word search cells ────────────────────────────────────── */
 .word-cell {
-  width: 42px;
-  height: 42px;
+  width: clamp(32px, 7vw, 42px);
+  height: clamp(32px, 7vw, 42px);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Nunito', sans-serif;
   font-weight: 900;
-  font-size: 1rem;
+  font-size: clamp(0.75rem, 2vw, 1rem);
   cursor: pointer;
   border: 1px solid #e5e7eb;
   border-radius: 8px;

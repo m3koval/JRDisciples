@@ -146,7 +146,7 @@ export default function MemoryChallenge({ verse }: { verse: MemoryVerse }) {
               }}
               placeholder="___"
               style={{
-                width: Math.max(60, word.length * 12) + "px",
+                width: Math.max(52, Math.min(word.length * 11, 130)) + "px",
                 fontFamily: "var(--font-nunito)", fontWeight: 900,
                 fontSize: "1rem", textAlign: "center",
                 border: "none",

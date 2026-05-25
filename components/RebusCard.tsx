@@ -85,7 +85,7 @@ export default function RebusCard({ puzzle }: { puzzle: RebusPuzzle }) {
 
       {!solved && (
         <>
-          <div className={`flex gap-2 ${shaking ? "shake" : ""}`} style={{ marginBottom: 8 }}>
+          <div className={`flex flex-wrap gap-2 ${shaking ? "shake" : ""}`} style={{ marginBottom: 8 }}>
             <input
               type="text"
               value={input}
@@ -93,14 +93,14 @@ export default function RebusCard({ puzzle }: { puzzle: RebusPuzzle }) {
               onKeyDown={(e) => e.key === "Enter" && handleCheck()}
               placeholder="Type your answer..."
               style={{
-                flex: 1, border: `2px solid ${shaking ? "#c00" : "#ddd"}`,
-                borderRadius: 12, padding: "12px 16px",
+                flex: "1 1 160px", border: `2px solid ${shaking ? "#c00" : "#ddd"}`,
+                borderRadius: 12, padding: "12px 16px", minHeight: 48,
                 fontFamily: "var(--font-nunito)", fontWeight: 900,
                 fontSize: "1rem", textTransform: "uppercase",
                 outline: "none", color: "var(--text)",
               }}
             />
-            <button onClick={handleCheck} className="pz-btn" style={{ width: "auto", margin: 0, borderRadius: 12, padding: "0 20px" }}>
+            <button onClick={handleCheck} className="pz-btn" style={{ flex: "1 1 auto", margin: 0, borderRadius: 12, padding: "0 20px", minHeight: 48 }}>
               Check!
             </button>
           </div>

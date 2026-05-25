@@ -113,7 +113,7 @@ export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
       </p>
 
       {/* Grid */}
-      <div style={{ overflowX: "auto" }}>
+      <div style={{ overflowX: "auto", touchAction: "pan-x" }}>
         <table style={{ borderCollapse: "collapse", margin: "0 auto" }}>
           <tbody>
             {puzzle.grid.map((row, r) => (

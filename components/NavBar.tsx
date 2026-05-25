@@ -177,8 +177,8 @@ export default function NavBar() {
               gap: 5,
               borderRadius: 8,
               transition: "all 0.2s",
-              width: 40,
-              height: 40,
+              width: 44,
+              height: 44,
               justifyContent: "center",
               alignItems: "center",
             }}

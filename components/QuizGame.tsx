@@ -106,7 +106,7 @@ export default function QuizGame({ quiz, pzColor }: Props) {
         <div style={{ display: "flex", gap: 5 }}>
           {quiz.questions.map((_, i) => (
             <div key={i} style={{
-              width: 10, height: 10, borderRadius: "50%",
+              width: 12, height: 12, borderRadius: "50%",
               background: i < current ? "#40b870" : i === current ? pzColor : "#ddd",
             }} />
           ))}
@@ -127,7 +127,7 @@ export default function QuizGame({ quiz, pzColor }: Props) {
           }
           return (
             <button key={idx} onClick={() => handleSelect(idx)} style={{
-              textAlign: "left", padding: "12px 16px",
+              textAlign: "left", padding: "14px 16px", minHeight: 48,
               border: `2px solid ${borderColor}`, borderRadius: 14,
               background: bg, cursor: selected !== null ? "default" : "pointer",
               fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.95rem",
