@@ -1,10 +1,14 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import type { WordPuzzle } from "@/data/word-puzzles";
+import { generateWordSearch } from "@/lib/wordSearch";
 import Link from "next/link";
 
 const PZ_COLOR = "#7030a0";
+const GRID_SIZE = 10;
+const FILL_EN = "ABCDEFGHIKLMNOPRSTUW";
+const FILL_RU = "АБВГДЕЖЗИКЛМНОПРСТУХ";
 
 interface Cell { row: number; col: number; }
 const key = (c: Cell) => `${c.row}-${c.col}`;
@@ -38,12 +42,36 @@ function launchConfetti() {
   }
 }
 
+function buildGrid(words: string[]): string[][] {
+  const isCyrillic = words.some(w => /[А-Яа-яЁё]/.test(w));
+  return generateWordSearch(words, GRID_SIZE, GRID_SIZE, isCyrillic ? FILL_RU : FILL_EN);
+}
+
 export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
+  const [grid, setGrid] = useState<string[][] | null>(null);
   const [startCell, setStartCell] = useState<Cell | null>(null);
   const [hoverCell, setHoverCell] = useState<Cell | null>(null);
   const [foundWords, setFoundWords] = useState<Set<string>>(new Set());
   const [foundCells, setFoundCells] = useState<Set<string>>(new Set());
   const [won, setWon] = useState(false);
+
+  useEffect(() => {
+    setGrid(buildGrid(puzzle.words));
+    setStartCell(null);
+    setHoverCell(null);
+    setFoundWords(new Set());
+    setFoundCells(new Set());
+    setWon(false);
+  }, [puzzle.id]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function handleShuffle() {
+    setGrid(buildGrid(puzzle.words));
+    setStartCell(null);
+    setHoverCell(null);
+    setFoundWords(new Set());
+    setFoundCells(new Set());
+    setWon(false);
+  }
 
   const previewKeys = new Set<string>();
   if (startCell && hoverCell) {
@@ -51,13 +79,14 @@ export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
   }
 
   const handleClick = useCallback((cell: Cell) => {
+    if (!grid) return;
     if (!startCell) { setStartCell(cell); return; }
     if (key(cell) === key(startCell)) { setStartCell(null); return; }
 
     const cells = getCellsBetween(startCell, cell);
     if (!cells) { setStartCell(cell); return; }
 
-    const word = cells.map((c) => puzzle.grid[c.row][c.col]).join("");
+    const word = cells.map((c) => grid[c.row][c.col]).join("");
     const rev  = word.split("").reverse().join("");
     const match = puzzle.words.find((w) => w === word || w === rev);
 
@@ -68,7 +97,15 @@ export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
       if (nw.size === puzzle.words.length) { setWon(true); setTimeout(launchConfetti, 100); }
     }
     setStartCell(null); setHoverCell(null);
-  }, [startCell, foundWords, foundCells, puzzle]);
+  }, [startCell, foundWords, foundCells, puzzle.words, grid]);
+
+  if (!grid) {
+    return (
+      <div className="puzzle-box" style={{ ["--pz-color" as string]: PZ_COLOR, textAlign: "center", padding: "40px 20px" }}>
+        <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#888" }}>Building puzzle...</p>
+      </div>
+    );
+  }
 
   if (won) {
     return (
@@ -80,9 +117,14 @@ export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
         <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#444", marginBottom: 20 }}>
           Amazing! Every single word found!
         </p>
-        <Link href="/puzzles" className="pz-btn" style={{ display: "inline-block", width: "auto", padding: "10px 28px", textDecoration: "none" }}>
-          More Puzzles →
-        </Link>
+        <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+          <button onClick={handleShuffle} className="pz-btn" style={{ width: "auto", padding: "10px 28px" }}>
+            Play Again ↺
+          </button>
+          <Link href="/puzzles" className="pz-btn" style={{ background: "var(--deep)", width: "auto", padding: "10px 28px", textDecoration: "none", display: "inline-block" }}>
+            More Puzzles →
+          </Link>
+        </div>
       </div>
     );
   }
@@ -91,7 +133,7 @@ export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
     <div className="puzzle-box" style={{ ["--pz-color" as string]: PZ_COLOR }}>
       <p className="puzzle-label">🔍 Word Search</p>
       <p className="puzzle-q">
-        {startCell ? "Now click the last letter of the word!" : "Click the first letter of a word to start!"}
+        {startCell ? "Now click the last letter of the word!" : "Click the first letter of a word to start — words hide in all 8 directions!"}
       </p>
 
       {/* Word chips */}
@@ -113,16 +155,16 @@ export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
       </p>
 
       {/* Grid */}
-      <div style={{ overflowX: "auto", touchAction: "pan-x" }}>
+      <div style={{ overflowX: "auto" }}>
         <table style={{ borderCollapse: "collapse", margin: "0 auto" }}>
           <tbody>
-            {puzzle.grid.map((row, r) => (
+            {grid.map((row, r) => (
               <tr key={r}>
                 {row.map((letter, c) => {
                   const k = `${r}-${c}`;
-                  const isFound    = foundCells.has(k);
-                  const isStart    = startCell && key(startCell) === k;
-                  const isPreview  = previewKeys.has(k);
+                  const isFound   = foundCells.has(k);
+                  const isStart   = startCell && key(startCell) === k;
+                  const isPreview = previewKeys.has(k);
                   return (
                     <td key={c} style={{ padding: 1 }}>
                       <div
@@ -140,6 +182,20 @@ export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Shuffle button */}
+      <div style={{ textAlign: "center", marginTop: 16 }}>
+        <button
+          onClick={handleShuffle}
+          style={{
+            background: "none", border: "none", cursor: "pointer",
+            fontFamily: "var(--font-nunito)", fontWeight: 800,
+            fontSize: "0.82rem", color: "#aaa", textDecoration: "underline",
+          }}
+        >
+          ↺ New layout
+        </button>
       </div>
     </div>
   );
