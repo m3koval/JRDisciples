@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
-import { lessons, lessonsRu } from '@/data/lessons'
+import { lessons } from '@/data/lessons'
+import { lessonsRu } from '@/data/lessons-ru'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 type Tile = { uid: string; word: string }
