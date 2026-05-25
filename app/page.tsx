@@ -70,8 +70,8 @@ export default function HomePage() {
             src="/images/jr/home-hero.png"
             alt="JR Disciples"
             style={{
-              width: 240,
-              height: 240,
+              width: "clamp(180px, 55vw, 280px)",
+              height: "clamp(180px, 55vw, 280px)",
               objectFit: "contain",
               filter: "drop-shadow(0 12px 40px rgba(126,200,227,.6))",
               borderRadius: 24,
