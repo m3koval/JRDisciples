@@ -4,6 +4,7 @@ export interface MemoryVerse {
   text: string;
   theme: string;
   emoji: string;
+  hint: string;
 }
 
 export const memoryVersesRu: MemoryVerse[] = [
@@ -13,6 +14,7 @@ export const memoryVersesRu: MemoryVerse[] = [
     text: "Ибо так возлюбил Бог мир, что отдал Сына Своего единородного, дабы всякий верующий в Него, не погиб, но имел жизнь вечную.",
     theme: "Любовь Бога",
     emoji: "❤️",
+    hint: "Ибо",
   },
   {
     id: "psalm-23-1-ru",
@@ -20,6 +22,7 @@ export const memoryVersesRu: MemoryVerse[] = [
     text: "Господь пастырь мой; я ни в чём не буду нуждаться.",
     theme: "Забота Бога",
     emoji: "🐑",
+    hint: "Господь",
   },
   {
     id: "proverbs-3-5-6-ru",
@@ -27,6 +30,7 @@ export const memoryVersesRu: MemoryVerse[] = [
     text: "Надейся на Господа всем сердцем твоим, и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.",
     theme: "Доверие Богу",
     emoji: "🛤️",
+    hint: "Надейся",
   },
   {
     id: "philippians-4-13-ru",
@@ -34,6 +38,7 @@ export const memoryVersesRu: MemoryVerse[] = [
     text: "Всё могу в укрепляющем меня Иисусе Христе.",
     theme: "Сила во Христе",
     emoji: "💪",
+    hint: "Всё",
   },
   {
     id: "joshua-1-9-ru",
@@ -41,6 +46,7 @@ export const memoryVersesRu: MemoryVerse[] = [
     text: "Не повелел ли я тебе? Будь тверд и мужествен; не страшись и не ужасайся; ибо с тобою Господь Бог твой, куда бы ты ни пошёл.",
     theme: "Мужество",
     emoji: "🦁",
+    hint: "Не",
   },
   {
     id: "proverbs-22-6-ru",
@@ -48,6 +54,7 @@ export const memoryVersesRu: MemoryVerse[] = [
     text: "Наставь юношу при начале пути его: он не уклонится от него, когда и состарится.",
     theme: "Учение",
     emoji: "📚",
+    hint: "Наставь",
   },
   {
     id: "psalm-119-105-ru",
@@ -55,6 +62,7 @@ export const memoryVersesRu: MemoryVerse[] = [
     text: "Слово Твоё — светильник ноге моей и свет стезе моей.",
     theme: "Божие Слово",
     emoji: "💡",
+    hint: "Слово",
   },
   {
     id: "romans-8-28-ru",
@@ -62,5 +70,6 @@ export const memoryVersesRu: MemoryVerse[] = [
     text: "Притом же знаем, что любящим Бога, призванным по Его изволению, всё содействует ко благу.",
     theme: "План Бога",
     emoji: "✨",
+    hint: "Притом",
   },
 ];

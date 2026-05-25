@@ -1,6 +1,7 @@
 export interface RebusPuzzle {
   id: string;
   title: string;
+  emoji: string;
   clues: Array<{
     type: "emoji" | "text" | "plus" | "minus" | "equals";
     value: string;
@@ -22,6 +23,7 @@ export const rebusPuzzles: RebusPuzzle[] = [
   {
     id: "rebus-believe",
     title: "Puzzle 1: What we do with Jesus",
+    emoji: "✝️",
     clues: [
       { type: "emoji", value: "🐝" },
       { type: "text", value: "(BE)" },
@@ -34,6 +36,7 @@ export const rebusPuzzles: RebusPuzzle[] = [
   {
     id: "rebus-pray",
     title: "Puzzle 2: Talking to God",
+    emoji: "🙏",
     clues: [
       { type: "text", value: "PR" },
       { type: "plus", value: "+" },
@@ -47,6 +50,7 @@ export const rebusPuzzles: RebusPuzzle[] = [
   {
     id: "rebus-grace",
     title: "Puzzle 3: God's free gift",
+    emoji: "🎁",
     clues: [
       { type: "emoji", value: "🍇" },
       { type: "text", value: "(GRAPE)" },
@@ -61,6 +65,7 @@ export const rebusPuzzles: RebusPuzzle[] = [
   {
     id: "rebus-disciple",
     title: "Puzzle 4: A follower of Jesus",
+    emoji: "🙎",
     clues: [
       { type: "emoji", value: "💿" },
       { type: "text", value: "(DISC)" },
@@ -75,6 +80,7 @@ export const rebusPuzzles: RebusPuzzle[] = [
   {
     id: "rebus-forgive",
     title: "Puzzle 5: Letting go of anger",
+    emoji: "💚",
     clues: [
       { type: "text", value: "4" },
       { type: "text", value: "(FOR)" },
@@ -88,6 +94,7 @@ export const rebusPuzzles: RebusPuzzle[] = [
   {
     id: "rebus-savior",
     title: "Puzzle 6: The one who rescues us",
+    emoji: "💪",
     clues: [
       { type: "emoji", value: "🛟" },
       { type: "text", value: "(SAVE)" },
