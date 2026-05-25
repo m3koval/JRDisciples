@@ -1,6 +1,7 @@
 'use client'
 
 import Link from "next/link";
+import { useState, useRef } from "react";
 import { useTranslation } from "@/lib/useTranslation";
 
 type Activity = {
@@ -47,6 +48,8 @@ const STARS = [
 
 export default function HomePage() {
   const t = useTranslation();
+  const [videoEnded, setVideoEnded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <>
@@ -55,6 +58,26 @@ export default function HomePage() {
         style={{ background: "var(--deep)", minHeight: "92vh", position: "relative", overflow: "hidden" }}
         className="flex flex-col items-center justify-center px-4 py-20 text-center"
       >
+        {/* Hero video background */}
+        {!videoEnded && (
+          <video
+            ref={videoRef}
+            src="/videos/hero-main.mp4"
+            autoPlay
+            muted
+            onEnded={() => setVideoEnded(true)}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              zIndex: 1,
+            }}
+          />
+        )}
+
         {/* Stars */}
         {STARS.map((s, i) => (
           <div
@@ -65,6 +88,7 @@ export default function HomePage() {
               background: "#fff",
               animation: `tw ${s.dur} ${s.delay} ease-in-out infinite`,
               opacity: 0.4,
+              zIndex: 5,
             }}
           />
         ))}

@@ -36,20 +36,21 @@ export default function NavBar() {
   const t = useTranslation();
 
   return (
-    <nav style={{ background: "var(--deep)", position: "sticky", top: 0, zIndex: 100, borderBottom: "2px solid rgba(126,200,227,.15)" }}>
-      <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 16px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 52, minWidth: 0 }}>
+    <nav style={{ background: "var(--deep)", position: "sticky", top: 0, zIndex: 100, borderBottom: "3px solid var(--flame2)" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 18px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60, gap: 16 }}>
         {/* Logo */}
         <Link href="/" style={{
           fontFamily: "var(--font-cinzel)", fontWeight: 700,
-          fontSize: "clamp(0.85rem, 4vw, 1.05rem)", color: "#fff",
-          textDecoration: "none", display: "flex", alignItems: "center", gap: 8,
-          whiteSpace: "nowrap", flexShrink: 0,
+          fontSize: "clamp(0.95rem, 3vw, 1.2rem)", color: "#fff",
+          textDecoration: "none", display: "flex", alignItems: "center", gap: 10,
+          whiteSpace: "nowrap", flexShrink: 0, transition: "opacity 0.2s",
         }}>
-          <span>✝️</span> <span className="hidden sm:inline">JR Disciples</span>
+          <span style={{ fontSize: "1.4rem" }}>✝️</span>
+          <span className="hidden sm:inline" style={{ letterSpacing: "-0.5px" }}>JR Disciples</span>
         </Link>
 
-        {/* Desktop links */}
-        <ul style={{ display: "flex", gap: 0, listStyle: "none", margin: 0, padding: 0, overflow: "auto", scrollBehavior: "smooth" }} className="hidden lg:flex">
+        {/* Desktop links - center */}
+        <ul style={{ display: "none", gap: 0, listStyle: "none", margin: 0, padding: 0, flex: 1, justifyContent: "center" }} className="lg:flex">
           {NavLinksContent({ t }).map((link) => {
             const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
@@ -58,14 +59,16 @@ export default function NavBar() {
                   href={link.href}
                   style={{
                     fontFamily: "var(--font-nunito)", fontWeight: 900,
-                    fontSize: "0.7rem", letterSpacing: "0.8px", textTransform: "uppercase",
-                    color: active ? "#fff" : "rgba(255,255,255,.65)",
-                    textDecoration: "none", padding: "6px 10px", borderRadius: 0,
-                    display: "flex", alignItems: "center", gap: 3,
+                    fontSize: "0.75rem", letterSpacing: "0.9px", textTransform: "uppercase",
+                    color: active ? "var(--flame2)" : "rgba(255,255,255,.75)",
+                    textDecoration: "none", padding: "8px 14px", borderRadius: 6,
+                    display: "flex", alignItems: "center", gap: 6,
                     borderBottom: active ? "3px solid var(--flame2)" : "3px solid transparent",
-                    transition: "color 0.15s",
+                    transition: "all 0.2s",
                     whiteSpace: "nowrap",
                   }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = "var(--flame2)"}
+                  onMouseLeave={(e) => e.currentTarget.style.color = active ? "var(--flame2)" : "rgba(255,255,255,.75)"}
                 >
                   <span>{link.emoji}</span>
                   <span className="hidden xl:inline">{link.label}</span>
@@ -75,97 +78,138 @@ export default function NavBar() {
           })}
         </ul>
 
-        {/* Language selector */}
-        <div style={{ position: "relative", marginLeft: "auto" }}>
+        {/* Spacer for flex alignment */}
+        <div style={{ flex: 1, display: "none" }} className="lg:block" />
+
+        {/* Right side: Language + Hamburger */}
+        <div style={{ display: "flex", alignItems: "center", gap: 12, justifyContent: "flex-end" }}>
+          {/* Language selector */}
+          <div style={{ position: "relative" }}>
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              style={{
+                background: language === "en" ? "rgba(126,200,227,.15)" : "rgba(255,107,26,.15)",
+                border: language === "en" ? "2px solid rgba(126,200,227,.3)" : "2px solid rgba(255,107,26,.3)",
+                color: "#fff",
+                padding: "8px 14px",
+                borderRadius: 16,
+                cursor: "pointer",
+                fontFamily: "var(--font-nunito)",
+                fontWeight: 800,
+                fontSize: "0.8rem",
+                display: "flex", alignItems: "center", gap: 6,
+                transition: "all 0.2s",
+                whiteSpace: "nowrap",
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.opacity = "0.9"}
+              onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}
+            >
+              <span>{language === "en" ? "🇬🇧" : "🇷🇺"}</span>
+              <span className="hidden sm:inline">{language === "en" ? "EN" : "РУ"}</span>
+            </button>
+            {langOpen && (
+              <div style={{
+                position: "absolute",
+                top: 44,
+                right: 0,
+                background: "#0a1a30",
+                border: "2px solid rgba(255,255,255,.15)",
+                borderRadius: 12,
+                overflow: "hidden",
+                zIndex: 50,
+                boxShadow: "0 8px 32px rgba(0,0,0,.3)",
+              }}>
+                <button
+                  onClick={() => {
+                    setLanguage("en");
+                    setLangOpen(false);
+                  }}
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    padding: "12px 18px",
+                    background: language === "en" ? "rgba(126,200,227,.15)" : "none",
+                    border: "none",
+                    color: "#fff",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    fontFamily: "var(--font-nunito)",
+                    fontWeight: 800,
+                    fontSize: "0.85rem",
+                    transition: "background 0.15s",
+                  }}
+                  onMouseEnter={(e) => language !== "en" && (e.currentTarget.style.background = "rgba(126,200,227,.1)")}
+                  onMouseLeave={(e) => language !== "en" && (e.currentTarget.style.background = "none")}
+                >
+                  🇬🇧 English
+                </button>
+                <div style={{ borderTop: "1px solid rgba(255,255,255,.1)" }} />
+                <button
+                  onClick={() => {
+                    setLanguage("ru");
+                    setLangOpen(false);
+                  }}
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    padding: "12px 18px",
+                    background: language === "ru" ? "rgba(255,107,26,.15)" : "none",
+                    border: "none",
+                    color: "#fff",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    fontFamily: "var(--font-nunito)",
+                    fontWeight: 800,
+                    fontSize: "0.85rem",
+                    transition: "background 0.15s",
+                  }}
+                  onMouseEnter={(e) => language !== "ru" && (e.currentTarget.style.background = "rgba(255,107,26,.1)")}
+                  onMouseLeave={(e) => language !== "ru" && (e.currentTarget.style.background = "none")}
+                >
+                  🇷🇺 Русский
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Mobile/tablet hamburger */}
           <button
-            onClick={() => setLangOpen(!langOpen)}
+            className="lg:hidden"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
             style={{
-              background: "rgba(255,255,255,.1)",
-              border: "1px solid rgba(255,255,255,.3)",
-              color: "#fff",
-              padding: "6px 12px",
-              borderRadius: 20,
+              background: open ? "rgba(255,107,26,.15)" : "none",
+              border: "2px solid rgba(255,255,255,.2)",
               cursor: "pointer",
-              fontFamily: "var(--font-nunito)",
-              fontWeight: 800,
-              fontSize: "0.75rem",
-              marginRight: 8,
+              padding: 8,
+              display: "flex",
+              flexDirection: "column",
+              gap: 5,
+              borderRadius: 8,
+              transition: "all 0.2s",
+              width: 40,
+              height: 40,
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
-            {language === "en" ? "🇬🇧 EN" : "🇷🇺 РУ"}
+            <div style={{ width: 20, height: 2.5, background: "#fff", borderRadius: 2, transition: "all 0.3s", transform: open ? "rotate(45deg) translateY(8px)" : "rotate(0)" }} />
+            <div style={{ width: 20, height: 2.5, background: "#fff", borderRadius: 2, transition: "opacity 0.3s", opacity: open ? 0 : 1 }} />
+            <div style={{ width: 20, height: 2.5, background: "#fff", borderRadius: 2, transition: "all 0.3s", transform: open ? "rotate(-45deg) translateY(-8px)" : "rotate(0)" }} />
           </button>
-          {langOpen && (
-            <div style={{
-              position: "absolute",
-              top: 40,
-              right: 0,
-              background: "#0a1a30",
-              border: "1px solid rgba(255,255,255,.2)",
-              borderRadius: 12,
-              overflow: "hidden",
-              zIndex: 50,
-            }}>
-              <button
-                onClick={() => {
-                  setLanguage("en");
-                  setLangOpen(false);
-                }}
-                style={{
-                  display: "block",
-                  width: "100%",
-                  padding: "10px 16px",
-                  background: language === "en" ? "rgba(255,255,255,.1)" : "none",
-                  border: "none",
-                  color: "#fff",
-                  cursor: "pointer",
-                  textAlign: "left",
-                  fontFamily: "var(--font-nunito)",
-                  fontWeight: 800,
-                }}
-              >
-                🇬🇧 English
-              </button>
-              <button
-                onClick={() => {
-                  setLanguage("ru");
-                  setLangOpen(false);
-                }}
-                style={{
-                  display: "block",
-                  width: "100%",
-                  padding: "10px 16px",
-                  background: language === "ru" ? "rgba(255,255,255,.1)" : "none",
-                  border: "none",
-                  borderTop: "1px solid rgba(255,255,255,.1)",
-                  color: "#fff",
-                  cursor: "pointer",
-                  textAlign: "left",
-                  fontFamily: "var(--font-nunito)",
-                  fontWeight: 800,
-                }}
-              >
-                🇷🇺 Русский
-              </button>
-            </div>
-          )}
         </div>
-
-        {/* Mobile/tablet hamburger */}
-        <button
-          className="lg:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-          style={{ background: "none", border: "none", cursor: "pointer", padding: 8, display: "flex", flexDirection: "column", gap: 4, marginLeft: "auto" }}
-        >
-          <div style={{ width: 22, height: 2, background: "#fff", borderRadius: 2 }} />
-          <div style={{ width: 22, height: 2, background: "#fff", borderRadius: 2 }} />
-          <div style={{ width: 22, height: 2, background: "#fff", borderRadius: 2 }} />
-        </button>
       </div>
 
       {/* Mobile/tablet dropdown */}
       {open && (
-        <div style={{ background: "#0a1a30", borderTop: "1px solid rgba(255,255,255,.08)", padding: "8px 16px 16px", maxHeight: "calc(100vh - 52px)", overflowY: "auto" }}>
+        <div style={{
+          background: "linear-gradient(135deg, #0a1a30 0%, #0d2a45 100%)",
+          borderTop: "2px solid var(--flame2)",
+          padding: "12px 18px 18px",
+          maxHeight: "calc(100vh - 60px)",
+          overflowY: "auto",
+          animation: "slideDown 0.3s ease-out",
+        }}>
           {NavLinksContent({ t }).map((link) => {
             const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
@@ -174,71 +218,40 @@ export default function NavBar() {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 style={{
-                  display: "flex", alignItems: "center", gap: 8,
+                  display: "flex", alignItems: "center", gap: 12,
                   fontFamily: "var(--font-nunito)", fontWeight: 800,
-                  fontSize: "clamp(0.85rem, 2vw, 0.95rem)", color: active ? "#fff" : "rgba(255,255,255,.65)",
-                  textDecoration: "none", padding: "12px 8px",
-                  borderLeft: active ? "3px solid var(--flame2)" : "3px solid transparent",
-                  background: active ? "rgba(255,179,71,.12)" : "none",
-                  borderRadius: 4,
+                  fontSize: "clamp(0.9rem, 2vw, 1rem)",
+                  color: active ? "var(--flame2)" : "rgba(255,255,255,.8)",
+                  textDecoration: "none", padding: "14px 12px",
+                  borderLeft: active ? "4px solid var(--flame2)" : "4px solid transparent",
+                  background: active ? "rgba(255,107,26,.1)" : "none",
+                  borderRadius: 6,
+                  marginBottom: 4,
+                  transition: "all 0.15s",
                 }}
+                onMouseEnter={(e) => !active && (e.currentTarget.style.background = "rgba(255,255,255,.05)")}
+                onMouseLeave={(e) => !active && (e.currentTarget.style.background = "none")}
               >
-                <span>{link.emoji}</span>
+                <span style={{ fontSize: "1.2rem" }}>{link.emoji}</span>
                 <span>{link.label}</span>
               </Link>
             );
           })}
-          <div style={{ borderTop: "1px solid rgba(255,255,255,.1)", marginTop: 8, paddingTop: 8 }}>
-            <button
-              onClick={() => {
-                setLanguage("en");
-                setOpen(false);
-              }}
-              style={{
-                display: "block",
-                width: "100%",
-                padding: "10px 8px",
-                background: language === "en" ? "rgba(255,179,71,.12)" : "none",
-                border: "none",
-                color: "#fff",
-                cursor: "pointer",
-                textAlign: "left",
-                fontFamily: "var(--font-nunito)",
-                fontWeight: 800,
-                fontSize: "0.9rem",
-                borderLeft: language === "en" ? "3px solid var(--flame2)" : "3px solid transparent",
-                borderRadius: 4,
-              }}
-            >
-              🇬🇧 English
-            </button>
-            <button
-              onClick={() => {
-                setLanguage("ru");
-                setOpen(false);
-              }}
-              style={{
-                display: "block",
-                width: "100%",
-                padding: "10px 8px",
-                background: language === "ru" ? "rgba(255,179,71,.12)" : "none",
-                border: "none",
-                color: "#fff",
-                cursor: "pointer",
-                textAlign: "left",
-                fontFamily: "var(--font-nunito)",
-                fontWeight: 800,
-                fontSize: "0.9rem",
-                borderLeft: language === "ru" ? "3px solid var(--flame2)" : "3px solid transparent",
-                borderRadius: 4,
-                marginTop: 4,
-              }}
-            >
-              🇷🇺 Русский
-            </button>
-          </div>
         </div>
       )}
+
+      <style>{`
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-8px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </nav>
   );
 }
