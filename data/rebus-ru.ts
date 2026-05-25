@@ -7,16 +7,6 @@ export interface RebusPuzzle {
   hint: string;
 }
 
-// Как читать эти ребусы:
-// emoji = картинка (используется русское название картинки или его часть)
-// text  = буквы или слог
-// minus = убрать эти буквы из предыдущего слова
-// plus  = добавить следующий элемент
-//
-// Примеры:
-// 🐪(ВЕРБЛЮД) − БЛЮД + А = ВЕРА
-// 🐘(СЛОН) − Н + ВО = СЛОВО
-
 export const rebusRu: RebusPuzzle[] = [
   {
     id: "rebus-vera-ru",
@@ -24,24 +14,20 @@ export const rebusRu: RebusPuzzle[] = [
     emoji: "✝️",
     clues: [
       { type: "emoji", value: "🐪" },
-      { type: "text", value: "ВЕРБЛЮД" },
       { type: "minus", value: "−" },
       { type: "text", value: "БЛЮД" },
       { type: "plus", value: "+" },
       { type: "text", value: "А" },
     ],
     answer: "ВЕРА",
-    hint: "Доверие Богу и Его слову — Евреям 11:1"
+    hint: "Доверие Богу и Его слову — Евреям 11:1 (🐪 = ВЕРБЛЮД)"
   },
   {
     id: "rebus-mir-ru",
     title: "Ребус 2: Дар Бога нашему сердцу",
     emoji: "🕊️",
     clues: [
-      { type: "emoji", value: "🎵" },
-      { type: "text", value: "МИ (нота)" },
-      { type: "plus", value: "+" },
-      { type: "text", value: "Р" },
+      { type: "emoji", value: "🌍" },
     ],
     answer: "МИР",
     hint: "Мир Бога превышает всякое понимание — Филиппийцам 4:7"
@@ -52,14 +38,13 @@ export const rebusRu: RebusPuzzle[] = [
     emoji: "✝️",
     clues: [
       { type: "emoji", value: "🛋️" },
-      { type: "text", value: "КРЕСЛО" },
       { type: "minus", value: "−" },
       { type: "text", value: "ЛО" },
       { type: "plus", value: "+" },
       { type: "text", value: "Т" },
     ],
     answer: "КРЕСТ",
-    hint: "Иисус умер на кресте ради нас — Иоанна 3:16"
+    hint: "Иисус умер на кресте ради нас — Иоанна 3:16 (🛋️ = КРЕСЛО)"
   },
   {
     id: "rebus-nadezhda-ru",
@@ -69,12 +54,11 @@ export const rebusRu: RebusPuzzle[] = [
       { type: "text", value: "НАД" },
       { type: "plus", value: "+" },
       { type: "emoji", value: "🦔" },
-      { type: "text", value: "ЕЖ" },
       { type: "plus", value: "+" },
       { type: "text", value: "ДА" },
     ],
     answer: "НАДЕЖДА",
-    hint: "Надежда на Бога никогда не подведёт — Римлянам 5:5"
+    hint: "Надежда на Бога никогда не подведёт — Римлянам 5:5 (🦔 = ЕЖ)"
   },
   {
     id: "rebus-molitva-ru",
@@ -82,14 +66,13 @@ export const rebusRu: RebusPuzzle[] = [
     emoji: "🙏",
     clues: [
       { type: "emoji", value: "⚡" },
-      { type: "text", value: "МОЛНИЯ" },
       { type: "minus", value: "−" },
       { type: "text", value: "НИЯ" },
       { type: "plus", value: "+" },
       { type: "text", value: "ИТВА" },
     ],
     answer: "МОЛИТВА",
-    hint: "Молитесь непрестанно — 1 Фессалоникийцам 5:17"
+    hint: "Молитесь непрестанно — 1 Фессалоникийцам 5:17 (⚡ = МОЛНИЯ)"
   },
   {
     id: "rebus-slovo-ru",
@@ -97,13 +80,12 @@ export const rebusRu: RebusPuzzle[] = [
     emoji: "📖",
     clues: [
       { type: "emoji", value: "🐘" },
-      { type: "text", value: "СЛОН" },
       { type: "minus", value: "−" },
       { type: "text", value: "Н" },
       { type: "plus", value: "+" },
       { type: "text", value: "ВО" },
     ],
     answer: "СЛОВО",
-    hint: "Слово Бога — светильник ноге моей — Псалом 118:105"
+    hint: "Слово Бога — светильник ноге моей — Псалом 118:105 (🐘 = СЛОН)"
   },
 ];

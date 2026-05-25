@@ -10,14 +10,6 @@ export interface RebusPuzzle {
   hint: string;
 }
 
-// How to read these puzzles:
-// emoji = picture clue (its English word/sound)
-// text  = literal letters shown in a box
-// plus  = combine what's before and after
-// minus = remove those letters from the previous picture's word
-//
-// Example: 🐝(BEE) + LIEVE = BELIEVE
-
 export const rebusPuzzles: RebusPuzzle[] = [
   {
     id: "rebus-believe",
@@ -25,7 +17,6 @@ export const rebusPuzzles: RebusPuzzle[] = [
     emoji: "✝️",
     clues: [
       { type: "emoji", value: "🐝" },
-      { type: "text", value: "BEE" },
       { type: "plus", value: "+" },
       { type: "text", value: "LIEVE" },
     ],
@@ -38,12 +29,10 @@ export const rebusPuzzles: RebusPuzzle[] = [
     emoji: "🙌",
     clues: [
       { type: "emoji", value: "🪱" },
-      { type: "text", value: "WORM" },
       { type: "minus", value: "−" },
       { type: "text", value: "M" },
       { type: "plus", value: "+" },
       { type: "emoji", value: "🚢" },
-      { type: "text", value: "SHIP" },
     ],
     answer: "WORSHIP",
     hint: "Praising and honoring God with your whole heart — Psalm 95:6"
@@ -58,25 +47,23 @@ export const rebusPuzzles: RebusPuzzle[] = [
       { type: "text", value: "E" },
       { type: "plus", value: "+" },
       { type: "emoji", value: "🐜" },
-      { type: "text", value: "ANT" },
     ],
     answer: "SERVANT",
     hint: "Jesus came not to be served, but to serve — Mark 10:45"
   },
   {
-    id: "rebus-creation",
-    title: "Puzzle 4: What God made in 6 days",
-    emoji: "🌍",
+    id: "rebus-offering",
+    title: "Puzzle 4: Giving to God",
+    emoji: "🎁",
     clues: [
-      { type: "text", value: "CRE" },
+      { type: "text", value: "OFF" },
       { type: "plus", value: "+" },
-      { type: "emoji", value: "🍎" },
-      { type: "text", value: "ATE" },
+      { type: "text", value: "ER" },
       { type: "plus", value: "+" },
-      { type: "text", value: "ION" },
+      { type: "emoji", value: "🔔" },
     ],
-    answer: "CREATION",
-    hint: "In the beginning God made everything — Genesis 1:1 (🍎 = ATE, past tense of eat)"
+    answer: "OFFERING",
+    hint: "Giving back to God from what He gave us — 2 Corinthians 9:7"
   },
   {
     id: "rebus-covenant",
@@ -84,7 +71,6 @@ export const rebusPuzzles: RebusPuzzle[] = [
     emoji: "🌈",
     clues: [
       { type: "emoji", value: "🐄" },
-      { type: "text", value: "COW" },
       { type: "minus", value: "−" },
       { type: "text", value: "W" },
       { type: "plus", value: "+" },
@@ -93,7 +79,7 @@ export const rebusPuzzles: RebusPuzzle[] = [
       { type: "text", value: "NANT" },
     ],
     answer: "COVENANT",
-    hint: "God's binding promise to His people — the rainbow is a sign of it! Genesis 9:13"
+    hint: "God's binding promise to His people — the rainbow is the sign! Genesis 9:13"
   },
   {
     id: "rebus-kingdom",
@@ -101,10 +87,8 @@ export const rebusPuzzles: RebusPuzzle[] = [
     emoji: "👑",
     clues: [
       { type: "emoji", value: "👑" },
-      { type: "text", value: "KING" },
       { type: "plus", value: "+" },
       { type: "emoji", value: "🏛️" },
-      { type: "text", value: "DOME" },
       { type: "minus", value: "−" },
       { type: "text", value: "E" },
     ],
