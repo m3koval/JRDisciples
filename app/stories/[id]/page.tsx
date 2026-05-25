@@ -27,6 +27,17 @@ export default async function StoryPage({ params }: { params: Promise<{ id: stri
         {story.emoji} {story.title}
       </div>
 
+      {/* Story hero image — full-width at top, before title */}
+      {story.image && (
+        <div style={{ background: "var(--deep)", textAlign: "center", padding: "24px 18px 0" }}>
+          <img
+            src={story.image}
+            alt={story.title}
+            style={{ maxWidth: 500, width: "100%", borderRadius: 16, boxShadow: "0 8px 32px rgba(0,0,0,.35)", display: "block", margin: "0 auto" }}
+          />
+        </div>
+      )}
+
       <section className={bgCls}>
         <div style={{ maxWidth: 760, margin: "0 auto", padding: "44px 18px 52px" }}>
           <Link href="/stories" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: pzColor, textDecoration: "none", fontSize: "0.88rem" }}>
@@ -40,13 +51,6 @@ export default async function StoryPage({ params }: { params: Promise<{ id: stri
               {story.ageNote}
             </span>
           </div>
-
-          {/* Story image */}
-          {story.image && (
-            <div style={{ marginBottom: 28, textAlign: "center" }}>
-              <img src={story.image} alt={story.title} style={{ maxWidth: 700, width: "100%", borderRadius: 16, boxShadow: "0 8px 24px rgba(0,0,0,.15)" }} />
-            </div>
-          )}
 
           {/* Story content */}
           <div className="puzzle-box" style={{ ["--pz-color" as string]: pzColor }}>
