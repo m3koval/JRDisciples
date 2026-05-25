@@ -11,6 +11,7 @@ const links = [
   { href: "/memory",  label: "Memory",  emoji: "💡" },
   { href: "/puzzles", label: "Puzzles", emoji: "🔤" },
   { href: "/rebus",   label: "Rebus",   emoji: "🧩" },
+  { href: "/lessons", label: "Lessons", emoji: "🕊️" },
 ];
 
 export default function NavBar() {

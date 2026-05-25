@@ -1,11 +1,21 @@
 import Link from "next/link";
 
-const activities = [
-  { href: "/stories",  emoji: "📖", title: "Bible Stories",  desc: "Read amazing true stories from God's Word!", color: "#ff6b1a", bg: "alt-bg"  },
-  { href: "/quiz",     emoji: "❓", title: "Bible Quizzes",  desc: "Test what you know — earn stars!",          color: "#0a7090", bg: "alt-bg2" },
-  { href: "/memory",   emoji: "💡", title: "Verse Memory",   desc: "Hide God's Word in your heart!",            color: "#2a6a10", bg: "alt-bg4" },
-  { href: "/puzzles",  emoji: "🔤", title: "Word Puzzles",   desc: "Find hidden Bible words in the grid!",      color: "#7030a0", bg: "alt-bg6" },
-  { href: "/rebus",    emoji: "🧩", title: "Rebus Puzzles",  desc: "Solve picture clues to find Bible words!",  color: "#c05010", bg: "alt-bg5" },
+type Activity = {
+  href: string;
+  title: string;
+  desc: string;
+  color: string;
+  image?: string;
+  emoji?: string;
+};
+
+const activities: Activity[] = [
+  { href: "/stories",  image: "/images/jr/icon-stories.png",       title: "Bible Stories",  desc: "Read amazing true stories from God's Word!",            color: "#ff6b1a" },
+  { href: "/quiz",     image: "/images/jr/icon-quizzes.png",        title: "Bible Quizzes",  desc: "Test what you know — earn stars!",                      color: "#0a7090" },
+  { href: "/memory",   image: "/images/jr/icon-verse-memory.png",   title: "Verse Memory",   desc: "Hide God's Word in your heart!",                        color: "#2a6a10" },
+  { href: "/puzzles",  image: "/images/jr/icon-word-puzzles.png",   title: "Word Puzzles",   desc: "Find hidden Bible words in the grid!",                  color: "#7030a0" },
+  { href: "/rebus",    image: "/images/jr/icon-rebus-puzzles.png",  title: "Rebus Puzzles",  desc: "Solve picture clues to find Bible words!",              color: "#c05010" },
+  { href: "/lessons",  emoji: "🕊️",                                title: "Lessons",        desc: "Explore Bible topics step by step — with challenges!",  color: "#0d3a6a" },
 ];
 
 // Static star positions so they're consistent between server and client
@@ -125,7 +135,13 @@ export default function HomePage() {
                 style={{ ["--pz-color" as string]: act.color, textDecoration: "none" }}
               >
                 <p className="puzzle-label">Activity</p>
-                <div style={{ fontSize: "3rem", marginBottom: 8 }}>{act.emoji}</div>
+                <div style={{ height: 60, display: "flex", alignItems: "center", marginBottom: 8 }}>
+                  {act.image ? (
+                    <img src={act.image} alt={act.title} style={{ width: 56, height: 56, objectFit: "contain" }} />
+                  ) : (
+                    <span style={{ fontSize: "3rem" }}>{act.emoji}</span>
+                  )}
+                </div>
                 <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.2rem", color: "var(--text)", marginBottom: 6 }}>
                   {act.title}
                 </h3>
