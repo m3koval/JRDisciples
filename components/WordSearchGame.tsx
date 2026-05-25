@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 import type { WordPuzzle } from "@/data/word-puzzles";
 import { generateWordSearch } from "@/lib/wordSearch";
 import Link from "next/link";
@@ -48,21 +48,12 @@ function buildGrid(words: string[]): string[][] {
 }
 
 export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
-  const [grid, setGrid] = useState<string[][] | null>(null);
+  const [grid, setGrid] = useState<string[][]>(() => buildGrid(puzzle.words));
   const [startCell, setStartCell] = useState<Cell | null>(null);
   const [hoverCell, setHoverCell] = useState<Cell | null>(null);
   const [foundWords, setFoundWords] = useState<Set<string>>(new Set());
   const [foundCells, setFoundCells] = useState<Set<string>>(new Set());
   const [won, setWon] = useState(false);
-
-  useEffect(() => {
-    setGrid(buildGrid(puzzle.words));
-    setStartCell(null);
-    setHoverCell(null);
-    setFoundWords(new Set());
-    setFoundCells(new Set());
-    setWon(false);
-  }, [puzzle.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleShuffle() {
     setGrid(buildGrid(puzzle.words));
@@ -79,7 +70,6 @@ export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
   }
 
   const handleClick = useCallback((cell: Cell) => {
-    if (!grid) return;
     if (!startCell) { setStartCell(cell); return; }
     if (key(cell) === key(startCell)) { setStartCell(null); return; }
 
@@ -98,14 +88,6 @@ export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
     }
     setStartCell(null); setHoverCell(null);
   }, [startCell, foundWords, foundCells, puzzle.words, grid]);
-
-  if (!grid) {
-    return (
-      <div className="puzzle-box" style={{ ["--pz-color" as string]: PZ_COLOR, textAlign: "center", padding: "40px 20px" }}>
-        <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#888" }}>Building puzzle...</p>
-      </div>
-    );
-  }
 
   if (won) {
     return (

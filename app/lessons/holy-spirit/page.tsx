@@ -529,6 +529,8 @@ export default function HolySpiritLesson() {
   // dynamic word-search grid — generated in useEffect below
   const [wsGrid,   setWsGrid]   = useState<string[][]>([])
   const [wsCoords, setWsCoords] = useState<Record<string, [number, number][]>>({})
+  const [wsSel,   setWsSel]   = useState<Set<string>>(new Set())
+  const [wsFound, setWsFound] = useState<Set<string>>(new Set())
 
   // active scramble data
   const SC1_TILES_ACTIVE = isRu ? SC1_TILES_RU : SC1_TILES
@@ -571,10 +573,12 @@ export default function HolySpiritLesson() {
       : ['DOVE', 'FIRE', 'WIND', 'OIL', 'WATER', 'SEAL']
     const alpha = isRu ? 'АБВГДЕЖЗИКЛМНОПРСТУХ' : 'ABCDEFGHIKLMNOPRSTUW'
     const { grid, coords } = generateWordSearchWithCoords(wordList, 10, 10, alpha)
+    /* eslint-disable react-hooks/set-state-in-effect */
     setWsGrid(grid)
     setWsCoords(coords)
     setWsSel(new Set())
     setWsFound(new Set())
+    /* eslint-enable react-hooks/set-state-in-effect */
   }, [isRu]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function solve(id: string, sec: number) {
@@ -629,8 +633,6 @@ export default function HolySpiritLesson() {
   }
 
   // ─── Section 2: Word search ──────────────────────────────────────────────────
-  const [wsSel,   setWsSel]   = useState<Set<string>>(new Set())
-  const [wsFound, setWsFound] = useState<Set<string>>(new Set())
 
   function wsClick(r: number, c: number) {
     for (const [word, coords] of Object.entries(wsCoords)) {
