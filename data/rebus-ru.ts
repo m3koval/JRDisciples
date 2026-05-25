@@ -7,100 +7,103 @@ export interface RebusPuzzle {
   hint: string;
 }
 
+// Как читать эти ребусы:
+// emoji = картинка (используется русское название картинки или его часть)
+// text  = буквы или слог
+// minus = убрать эти буквы из предыдущего слова
+// plus  = добавить следующий элемент
+//
+// Примеры:
+// 🐪(ВЕРБЛЮД) − БЛЮД + А = ВЕРА
+// 🐘(СЛОН) − Н + ВО = СЛОВО
+
 export const rebusRu: RebusPuzzle[] = [
   {
-    id: "rebus-believe-ru",
-    title: "Религиозный ребус #1",
+    id: "rebus-vera-ru",
+    title: "Ребус 1: Доверие Богу",
     emoji: "✝️",
     clues: [
-      { type: "emoji", value: "💫" },
-      { type: "text", value: "РА" },
-      { type: "minus", value: "" },
-      { type: "emoji", value: "🦁" },
-      { type: "plus", value: "" },
-      { type: "emoji", value: "⚡" },
+      { type: "emoji", value: "🐪" },
+      { type: "text", value: "ВЕРБЛЮД" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "БЛЮД" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "А" },
     ],
     answer: "ВЕРА",
-    hint: "Это то, что нам нужно, чтобы доверять Богу и преодолевать препятствия.",
+    hint: "Доверие Богу и Его слову — Евреям 11:1"
   },
   {
-    id: "rebus-pray-ru",
-    title: "Религиозный ребус #2",
-    emoji: "🙏",
+    id: "rebus-mir-ru",
+    title: "Ребус 2: Дар Бога нашему сердцу",
+    emoji: "🕊️",
     clues: [
-      { type: "emoji", value: "👨" },
-      { type: "text", value: "МО" },
-      { type: "emoji", value: "📖" },
-      { type: "text", value: "ВА" },
+      { type: "emoji", value: "🎵" },
+      { type: "text", value: "МИ (нота)" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "Р" },
     ],
-    answer: "МОЛИТВА",
-    hint: "То, что мы делаем, когда разговариваем с Богом, выражая наши желания и благодарность.",
+    answer: "МИР",
+    hint: "Мир Бога превышает всякое понимание — Филиппийцам 4:7"
   },
   {
-    id: "rebus-grace-ru",
-    title: "Религиозный ребус #3",
-    emoji: "🌟",
+    id: "rebus-krest-ru",
+    title: "Ребус 3: Символ спасения",
+    emoji: "✝️",
     clues: [
-      { type: "emoji", value: "🎁" },
-      { type: "text", value: "РА" },
-      { type: "emoji", value: "🕊️" },
-      { type: "text", value: "ЕТ" },
+      { type: "emoji", value: "🛋️" },
+      { type: "text", value: "КРЕСЛО" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "ЛО" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "Т" },
     ],
-    answer: "БЛАГОДАТЬ",
-    hint: "Божественный дар, который мы не можем заработать, но можем получить через веру в Иисуса.",
+    answer: "КРЕСТ",
+    hint: "Иисус умер на кресте ради нас — Иоанна 3:16"
   },
   {
-    id: "rebus-hope-ru",
-    title: "Религиозный ребус #4",
+    id: "rebus-nadezhda-ru",
+    title: "Ребус 4: Уверенность в Боге",
     emoji: "✨",
     clues: [
-      { type: "emoji", value: "👁️" },
-      { type: "text", value: "БО" },
-      { type: "emoji", value: "⭐" },
-      { type: "text", value: "ВА" },
+      { type: "text", value: "НАД" },
+      { type: "plus", value: "+" },
+      { type: "emoji", value: "🦔" },
+      { type: "text", value: "ЕЖ" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "ДА" },
     ],
     answer: "НАДЕЖДА",
-    hint: "Уверенность в хороших вещах, которые придут в будущем благодаря Богу.",
+    hint: "Надежда на Бога никогда не подведёт — Римлянам 5:5"
   },
   {
-    id: "rebus-love-ru",
-    title: "Религиозный ребус #5",
-    emoji: "❤️",
+    id: "rebus-molitva-ru",
+    title: "Ребус 5: Разговор с Богом",
+    emoji: "🙏",
     clues: [
-      { type: "emoji", value: "❤️" },
-      { type: "text", value: "ЛЮ" },
-      { type: "emoji", value: "👨" },
-      { type: "minus", value: "" },
-      { type: "emoji", value: "😈" },
+      { type: "emoji", value: "⚡" },
+      { type: "text", value: "МОЛНИЯ" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "НИЯ" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "ИТВА" },
     ],
-    answer: "ЛЮБОВЬ",
-    hint: "Самая сильная эмоция, которая проявляет заботу и принятие. Бог покрыл нас этим.",
+    answer: "МОЛИТВА",
+    hint: "Молитесь непрестанно — 1 Фессалоникийцам 5:17"
   },
   {
-    id: "rebus-salvation-ru",
-    title: "Религиозный ребус #6",
-    emoji: "🛟",
+    id: "rebus-slovo-ru",
+    title: "Ребус 6: Библия — Слово Бога",
+    emoji: "📖",
     clues: [
-      { type: "emoji", value: "💔" },
-      { type: "minus", value: "" },
-      { type: "emoji", value: "😈" },
-      { type: "plus", value: "" },
-      { type: "emoji", value: "✝️" },
+      { type: "emoji", value: "🐘" },
+      { type: "text", value: "СЛОН" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "Н" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "ВО" },
     ],
-    answer: "СПАСЕНИЕ",
-    hint: "То, что Иисус дал нам, спасая нас от наших грехов через крест.",
-  },
-  {
-    id: "rebus-truth-ru",
-    title: "Религиозный ребус #7",
-    emoji: "🔍",
-    clues: [
-      { type: "emoji", value: "📖" },
-      { type: "text", value: "ИС" },
-      { type: "emoji", value: "🗣️" },
-      { type: "text", value: "НА" },
-    ],
-    answer: "ИСТИНА",
-    hint: "То, что говорит нам Слово Бога и Иисус. Бог — источник этого.",
+    answer: "СЛОВО",
+    hint: "Слово Бога — светильник ноге моей — Псалом 118:105"
   },
 ];

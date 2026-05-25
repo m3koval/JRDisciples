@@ -4,10 +4,9 @@ import { stories } from "@/data/stories";
 import { storiesRu } from "@/data/stories-ru";
 import { quizzes } from "@/data/quizzes";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
-import { useTranslation } from "@/lib/useTranslation";
-import { notFound } from "next/navigation";
+import { useEffect } from "react";
 
 const BANNER_CLASSES = ["sb-1","sb-2","sb-3","sb-4","sb-5","sb-6"];
 const PZ_COLORS = ["#ff6b1a","#0a7090","#7030a0","#2a6a10","#c05010","#104f8a"];
@@ -17,15 +16,16 @@ export default function StoryPage() {
   const params = useParams();
   const id = params.id as string;
   const { language } = useLanguage();
-  const t = useTranslation();
+  const router = useRouter();
 
-  // Select the correct stories array based on language
   const currentStories = language === 'ru' ? storiesRu : stories;
-
   const idx = currentStories.findIndex((s) => s.id === id);
-  if (idx === -1) {
-    notFound();
-  }
+
+  useEffect(() => {
+    if (idx === -1) router.replace('/stories');
+  }, [idx, router]);
+
+  if (idx === -1) return null;
 
   const story = currentStories[idx];
   const quiz = quizzes.find((q) => q.storyId === id);

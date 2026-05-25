@@ -11,13 +11,12 @@ export interface RebusPuzzle {
 }
 
 // How to read these puzzles:
-// emoji = picture clue (its word/sound)
-// text  = literal letters or word
-// plus  = add together
-// minus = remove those letters
-// equals = the answer follows
+// emoji = picture clue (its English word/sound)
+// text  = literal letters shown in a box
+// plus  = combine what's before and after
+// minus = remove those letters from the previous picture's word
 //
-// Example: 🐝 + LIEVE = BELIEVE  (BEE sounds like "BE", + LIEVE = BELIEVE)
+// Example: 🐝(BEE) + LIEVE = BELIEVE
 
 export const rebusPuzzles: RebusPuzzle[] = [
   {
@@ -26,7 +25,7 @@ export const rebusPuzzles: RebusPuzzle[] = [
     emoji: "✝️",
     clues: [
       { type: "emoji", value: "🐝" },
-      { type: "text", value: "(BE)" },
+      { type: "text", value: "BEE" },
       { type: "plus", value: "+" },
       { type: "text", value: "LIEVE" },
     ],
@@ -34,76 +33,82 @@ export const rebusPuzzles: RebusPuzzle[] = [
     hint: "What we do with our hearts when we trust Jesus — John 3:16"
   },
   {
-    id: "rebus-pray",
-    title: "Puzzle 2: Talking to God",
-    emoji: "🙏",
+    id: "rebus-worship",
+    title: "Puzzle 2: Praising God",
+    emoji: "🙌",
     clues: [
-      { type: "text", value: "PR" },
-      { type: "plus", value: "+" },
-      { type: "emoji", value: "🅰️" },
-      { type: "plus", value: "+" },
-      { type: "text", value: "Y" },
-    ],
-    answer: "PRAY",
-    hint: "How we talk to God — 1 Thessalonians 5:17"
-  },
-  {
-    id: "rebus-grace",
-    title: "Puzzle 3: God's free gift",
-    emoji: "🎁",
-    clues: [
-      { type: "emoji", value: "🍇" },
-      { type: "text", value: "(GRAPE)" },
+      { type: "emoji", value: "🪱" },
+      { type: "text", value: "WORM" },
       { type: "minus", value: "−" },
-      { type: "text", value: "PE" },
+      { type: "text", value: "M" },
       { type: "plus", value: "+" },
-      { type: "text", value: "CE" },
+      { type: "emoji", value: "🚢" },
+      { type: "text", value: "SHIP" },
     ],
-    answer: "GRACE",
-    hint: "God's gift you did not earn — Ephesians 2:8"
+    answer: "WORSHIP",
+    hint: "Praising and honoring God with your whole heart — Psalm 95:6"
   },
   {
-    id: "rebus-disciple",
-    title: "Puzzle 4: A follower of Jesus",
-    emoji: "🙎",
+    id: "rebus-servant",
+    title: "Puzzle 3: How Jesus calls us to live",
+    emoji: "🤲",
     clues: [
-      { type: "emoji", value: "💿" },
-      { type: "text", value: "(DISC)" },
-      { type: "plus", value: "+" },
-      { type: "text", value: "I" },
-      { type: "plus", value: "+" },
-      { type: "text", value: "PLE" },
-    ],
-    answer: "DISCIPLE",
-    hint: "A learner and follower of Jesus"
-  },
-  {
-    id: "rebus-forgive",
-    title: "Puzzle 5: Letting go of anger",
-    emoji: "💚",
-    clues: [
-      { type: "text", value: "4" },
-      { type: "text", value: "(FOR)" },
-      { type: "plus", value: "+" },
-      { type: "emoji", value: "🎁" },
-      { type: "text", value: "(GIVE)" },
-    ],
-    answer: "FORGIVE",
-    hint: "Letting go of being angry at someone — Colossians 3:13"
-  },
-  {
-    id: "rebus-savior",
-    title: "Puzzle 6: The one who rescues us",
-    emoji: "💪",
-    clues: [
-      { type: "emoji", value: "🛟" },
-      { type: "text", value: "(SAVE)" },
+      { type: "text", value: "SERVE" },
       { type: "minus", value: "−" },
+      { type: "text", value: "E" },
+      { type: "plus", value: "+" },
+      { type: "emoji", value: "🐜" },
+      { type: "text", value: "ANT" },
+    ],
+    answer: "SERVANT",
+    hint: "Jesus came not to be served, but to serve — Mark 10:45"
+  },
+  {
+    id: "rebus-creation",
+    title: "Puzzle 4: What God made in 6 days",
+    emoji: "🌍",
+    clues: [
+      { type: "text", value: "CRE" },
+      { type: "plus", value: "+" },
+      { type: "emoji", value: "🍎" },
+      { type: "text", value: "ATE" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "ION" },
+    ],
+    answer: "CREATION",
+    hint: "In the beginning God made everything — Genesis 1:1 (🍎 = ATE, past tense of eat)"
+  },
+  {
+    id: "rebus-covenant",
+    title: "Puzzle 5: God's solemn promise",
+    emoji: "🌈",
+    clues: [
+      { type: "emoji", value: "🐄" },
+      { type: "text", value: "COW" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "W" },
+      { type: "plus", value: "+" },
       { type: "text", value: "VE" },
       { type: "plus", value: "+" },
-      { type: "text", value: "VIOR" },
+      { type: "text", value: "NANT" },
     ],
-    answer: "SAVIOR",
-    hint: "The one who rescues us — that's Jesus! Luke 2:11"
+    answer: "COVENANT",
+    hint: "God's binding promise to His people — the rainbow is a sign of it! Genesis 9:13"
+  },
+  {
+    id: "rebus-kingdom",
+    title: "Puzzle 6: Where God rules forever",
+    emoji: "👑",
+    clues: [
+      { type: "emoji", value: "👑" },
+      { type: "text", value: "KING" },
+      { type: "plus", value: "+" },
+      { type: "emoji", value: "🏛️" },
+      { type: "text", value: "DOME" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "E" },
+    ],
+    answer: "KINGDOM",
+    hint: "God's Kingdom will last forever — Daniel 7:27"
   }
 ];

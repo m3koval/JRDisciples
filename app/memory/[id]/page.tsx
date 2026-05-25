@@ -4,19 +4,24 @@ import { memoryVerses } from "@/data/memory-verses";
 import { memoryVersesRu } from "@/data/memory-verses-ru";
 import MemoryChallenge from "@/components/MemoryChallenge";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
-import { notFound } from "next/navigation";
+import { useEffect } from "react";
 
 export default function MemoryPage() {
   const params = useParams();
   const id = params.id as string;
   const { language } = useLanguage();
+  const router = useRouter();
 
   const currentVerses = language === 'ru' ? memoryVersesRu : memoryVerses;
   const verse = currentVerses.find((v) => v.id === id);
 
-  if (!verse) notFound();
+  useEffect(() => {
+    if (!verse) router.replace('/memory');
+  }, [verse, router]);
+
+  if (!verse) return null;
 
   return (
     <>
