@@ -39,6 +39,57 @@ function doPlace(
   }
 }
 
+export function generateWordSearchWithCoords(
+  words: string[],
+  rows: number,
+  cols: number,
+  fillAlpha: string,
+): { grid: string[][], coords: Record<string, [number, number][]> } {
+  const grid: (string | null)[][] = Array.from({ length: rows }, () => Array(cols).fill(null));
+  const coords: Record<string, [number, number][]> = {};
+  const sorted = [...words].sort((a, b) => b.length - a.length);
+
+  for (const word of sorted) {
+    let placedAt: [number, number][] | null = null;
+
+    for (let attempt = 0; attempt < 400 && !placedAt; attempt++) {
+      const [dr, dc] = DIRS[Math.floor(Math.random() * DIRS.length)];
+      const r = Math.floor(Math.random() * rows);
+      const c = Math.floor(Math.random() * cols);
+      if (canPlace(grid, word, r, c, dr, dc, rows, cols)) {
+        doPlace(grid, word, r, c, dr, dc);
+        placedAt = Array.from({ length: word.length }, (_, i) => [r + dr * i, c + dc * i] as [number, number]);
+      }
+    }
+
+    if (!placedAt) {
+      outer2: for (const [dr, dc] of DIRS) {
+        for (let r = 0; r < rows; r++) {
+          for (let c = 0; c < cols; c++) {
+            if (canPlace(grid, word, r, c, dr, dc, rows, cols)) {
+              doPlace(grid, word, r, c, dr, dc);
+              placedAt = Array.from({ length: word.length }, (_, i) => [r + dr * i, c + dc * i] as [number, number]);
+              break outer2;
+            }
+          }
+        }
+      }
+    }
+
+    if (placedAt) coords[word] = placedAt;
+  }
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      if (grid[r][c] === null) {
+        grid[r][c] = fillAlpha[Math.floor(Math.random() * fillAlpha.length)];
+      }
+    }
+  }
+
+  return { grid: grid as string[][], coords };
+}
+
 export function generateWordSearch(
   words: string[],
   rows: number,

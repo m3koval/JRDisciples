@@ -4,27 +4,12 @@ import { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { lessons } from '@/data/lessons'
 import { lessonsRu } from '@/data/lessons-ru'
+import { generateWordSearchWithCoords } from '@/lib/wordSearch'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 type Tile = { uid: string; word: string }
 
-// ─── Russian Word Search (8×6) ───────────────────────────────────────────────
-const WS_LAYOUT_RU = [
-  ['Г','О','Л','У','Б','Ь','Я','К'],
-  ['О','Г','О','Н','Ь','П','В','Ж'],
-  ['В','Е','Т','Е','Р','Д','М','Х'],
-  ['В','О','Д','А','Т','Н','Ж','И'],
-  ['М','А','С','Л','О','Б','Щ','Р'],
-  ['П','Е','Ч','А','Т','Ь','Ф','Е'],
-]
-const WS_WORDS_RU: Record<string, [number, number][]> = {
-  'ГОЛУБЬ': [[0,0],[0,1],[0,2],[0,3],[0,4],[0,5]],
-  'ОГОНЬ':  [[1,0],[1,1],[1,2],[1,3],[1,4]],
-  'ВЕТЕР':  [[2,0],[2,1],[2,2],[2,3],[2,4]],
-  'ВОДА':   [[3,0],[3,1],[3,2],[3,3]],
-  'МАСЛО':  [[4,0],[4,1],[4,2],[4,3],[4,4]],
-  'ПЕЧАТЬ': [[5,0],[5,1],[5,2],[5,3],[5,4],[5,5]],
-}
+// Word search grids are generated dynamically — see useEffect in component
 
 // ─── Russian Scrambles ───────────────────────────────────────────────────────
 const SC1_TILES_RU: Tile[] = [
@@ -81,22 +66,7 @@ const SECTION_REQS: Record<number, string[]> = {
 }
 
 // ─── Word search grid (8×6) ──────────────────────────────────────────────────
-const WS_LAYOUT = [
-  ['D','O','V','E','F','I','R','E'],
-  ['X','A','L','W','I','N','D','P'],
-  ['Q','O','I','L','B','M','Z','J'],
-  ['W','A','T','E','R','G','V','N'],
-  ['F','T','H','U','S','E','A','L'],
-  ['K','M','J','X','Q','W','Z','Y'],
-]
-const WS_WORDS: Record<string, [number, number][]> = {
-  DOVE:  [[0,0],[0,1],[0,2],[0,3]],
-  FIRE:  [[0,4],[0,5],[0,6],[0,7]],
-  WIND:  [[1,3],[1,4],[1,5],[1,6]],
-  OIL:   [[2,1],[2,2],[2,3]],
-  WATER: [[3,0],[3,1],[3,2],[3,3],[3,4]],
-  SEAL:  [[4,4],[4,5],[4,6],[4,7]],
-}
+// (grids generated dynamically)
 
 // ─── Scramble data ───────────────────────────────────────────────────────────
 const SC1_TILES: Tile[] = [
@@ -193,8 +163,8 @@ const EN = {
     ],
     pq:'"The wind blows where it wishes, and you hear its sound, but you do not know where it comes from or where it goes. So it is with everyone who is born of the Spirit."',
     pqRef:'John 3:8 · ESV — Jesus explaining the Spirit to Nicodemus',
-    wsLabel:'🔍 Word Search Challenge', wsQ:'Find all 6 symbols hidden in the grid! Tap letters to select, then they lock in blue when you find a word.',
-    wsClear:'↩ Clear Selection', wsHint:'💡 Words go left-to-right and top-to-bottom. Tap all letters of a word to lock it!',
+    wsLabel:'🔍 Word Search Challenge', wsQ:'Find all 6 symbols in the 10×10 grid! Words hide in every direction — even diagonally and backwards. Tap each letter to select.',
+    wsClear:'↩ Clear Selection', wsHint:'💡 Words can go in any of 8 directions. Tap every letter of a word to lock it in blue!',
     wsTruth:'🎉 Amazing — you found all 6 symbols!',
     wsTruthVerse:'Gentle like a Dove · Powerful like Fire · Invisible like Wind · Filling like Living Water · Anointing like Oil · Protecting like a Seal!',
     unlock:'🎉 Section 2 complete! Section 3 is now unlocked — scroll down!',
@@ -366,8 +336,8 @@ const RU = {
     ],
     pq:'"Дух дышит, где хочет, и голос его слышишь, а не знаешь, откуда приходит и куда уходит: так бывает со всяким, рождённым от Духа."',
     pqRef:'Иоанна 3:8 · Синод. — Иисус объясняет Духа Никодиму',
-    wsLabel:'🔍 Задание — Поиск слов', wsQ:'Найди все 6 символов в сетке! Нажимай буквы, чтобы выбрать — слово выделится синим, когда найдёшь.',
-    wsClear:'↩ Очистить выбор', wsHint:'💡 Слова идут слева направо и сверху вниз. Нажимай все буквы слова, чтобы зафиксировать!',
+    wsLabel:'🔍 Задание — Поиск слов', wsQ:'Найди все 6 символов в сетке 10×10! Слова спрятаны во всех направлениях — даже по диагонали и задом наперёд. Нажимай каждую букву.',
+    wsClear:'↩ Очистить выбор', wsHint:'💡 Слова идут в любом из 8 направлений. Нажми все буквы слова, чтобы оно зафиксировалось синим!',
     wsTruth:'🎉 Потрясающе — ты нашёл все 6 символов!',
     wsTruthVerse:'Нежный как Голубь · Мощный как Огонь · Невидимый как Ветер · Наполняющий как Живая Вода · Помазывающий как Масло · Защищающий как Печать!',
     unlock:'🎉 Раздел 2 завершён! Раздел 3 теперь открыт — прокрути вниз!',
@@ -556,9 +526,10 @@ export default function HolySpiritLesson() {
   const L = language === 'ru' ? RU : EN
   const isRu = language === 'ru'
 
-  // active word-search data
-  const WS_LAYOUT_ACTIVE = isRu ? WS_LAYOUT_RU : WS_LAYOUT
-  const WS_WORDS_ACTIVE  = isRu ? WS_WORDS_RU  : WS_WORDS
+  // dynamic word-search grid — generated in useEffect below
+  const [wsGrid,   setWsGrid]   = useState<string[][]>([])
+  const [wsCoords, setWsCoords] = useState<Record<string, [number, number][]>>({})
+
   // active scramble data
   const SC1_TILES_ACTIVE = isRu ? SC1_TILES_RU : SC1_TILES
   const SC1_ANS_ACTIVE   = isRu ? SC1_ANS_RU   : SC1_ANS
@@ -593,6 +564,18 @@ export default function HolySpiritLesson() {
     localStorage.setItem('hs_unlocked', JSON.stringify([...unlocked]))
     localStorage.setItem('hs_done',     JSON.stringify([...done]))
   }, [unlocked, done])
+
+  useEffect(() => {
+    const wordList = isRu
+      ? ['ГОЛУБЬ', 'ОГОНЬ', 'ВЕТЕР', 'ВОДА', 'МАСЛО', 'ПЕЧАТЬ']
+      : ['DOVE', 'FIRE', 'WIND', 'OIL', 'WATER', 'SEAL']
+    const alpha = isRu ? 'АБВГДЕЖЗИКЛМНОПРСТУХ' : 'ABCDEFGHIKLMNOPRSTUW'
+    const { grid, coords } = generateWordSearchWithCoords(wordList, 10, 10, alpha)
+    setWsGrid(grid)
+    setWsCoords(coords)
+    setWsSel(new Set())
+    setWsFound(new Set())
+  }, [isRu]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function solve(id: string, sec: number) {
     if (done.has(id)) return
@@ -650,7 +633,7 @@ export default function HolySpiritLesson() {
   const [wsFound, setWsFound] = useState<Set<string>>(new Set())
 
   function wsClick(r: number, c: number) {
-    for (const [word, coords] of Object.entries(WS_WORDS_ACTIVE)) {
+    for (const [word, coords] of Object.entries(wsCoords)) {
       if (wsFound.has(word) && coords.some(([rr,cc]) => rr === r && cc === c)) return
     }
     const key = `${r},${c}`
@@ -658,14 +641,14 @@ export default function HolySpiritLesson() {
     if (newSel.has(key)) newSel.delete(key)
     else newSel.add(key)
 
-    for (const [word, coords] of Object.entries(WS_WORDS_ACTIVE)) {
+    for (const [word, coords] of Object.entries(wsCoords)) {
       if (wsFound.has(word)) continue
       const keys = coords.map(([rr,cc]) => `${rr},${cc}`)
       if (newSel.size === keys.length && keys.every(k => newSel.has(k))) {
         const newFound = new Set([...wsFound, word])
         setWsFound(newFound)
         setWsSel(new Set())
-        if (newFound.size === 6) solve('ws', 2)
+        if (newFound.size === Object.keys(wsCoords).length) solve('ws', 2)
         return
       }
     }
@@ -673,7 +656,7 @@ export default function HolySpiritLesson() {
   }
 
   function wsCellState(r: number, c: number): 'found' | 'selected' | 'normal' {
-    for (const [word, coords] of Object.entries(WS_WORDS_ACTIVE)) {
+    for (const [word, coords] of Object.entries(wsCoords)) {
       if (wsFound.has(word) && coords.some(([rr,cc]) => rr === r && cc === c)) return 'found'
     }
     return wsSel.has(`${r},${c}`) ? 'selected' : 'normal'
@@ -1091,7 +1074,7 @@ export default function HolySpiritLesson() {
 
                   {/* Word list */}
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center', marginBottom: 12 }}>
-                    {Object.keys(WS_WORDS_ACTIVE).map(w => (
+                    {Object.keys(wsCoords).map(w => (
                       <span key={w} style={{
                         fontFamily: 'var(--font-nunito)', fontSize: '.88rem', fontWeight: 900,
                         padding: '5px 12px', borderRadius: 20,
@@ -1107,28 +1090,35 @@ export default function HolySpiritLesson() {
                     ))}
                   </div>
 
-                  {/* Grid */}
+                  {/* Grid — 10×10, all 8 directions */}
                   <div style={{ overflowX: 'auto', textAlign: 'center', paddingBottom: 6 }}>
-                    <div style={{ display: 'inline-grid', gridTemplateColumns: 'repeat(8,42px)', gap: 3, background: '#e8e8e8', borderRadius: 14, padding: 8 }}>
-                      {WS_LAYOUT_ACTIVE.map((row, r) => row.map((letter, c) => {
-                        const state = wsCellState(r, c)
-                        return (
-                          <div
-                            key={`${r}-${c}`}
-                            onClick={() => !done.has('ws') && wsClick(r, c)}
-                            className="word-cell"
-                            style={{
-                              background: state === 'found' ? '#0a6090' : state === 'selected' ? '#fff0aa' : '#fff',
-                              color: state === 'found' ? '#fff' : 'var(--text)',
-                              cursor: done.has('ws') ? 'default' : 'pointer',
-                              transform: state === 'selected' ? 'scale(1.08)' : 'none',
-                            }}
-                          >
-                            {letter}
-                          </div>
-                        )
-                      }))}
-                    </div>
+                    {wsGrid.length === 0 ? (
+                      <p style={{ fontFamily: 'var(--font-nunito)', color: '#aaa', padding: 20 }}>Building puzzle…</p>
+                    ) : (
+                      <div style={{ display: 'inline-grid', gridTemplateColumns: 'repeat(10, clamp(28px, 7.5vw, 38px))', gap: 3, background: '#e8e8e8', borderRadius: 14, padding: 8 }}>
+                        {wsGrid.map((row, r) => row.map((letter, c) => {
+                          const state = wsCellState(r, c)
+                          return (
+                            <div
+                              key={`${r}-${c}`}
+                              onClick={() => !done.has('ws') && wsClick(r, c)}
+                              className="word-cell"
+                              style={{
+                                width: 'clamp(28px, 7.5vw, 38px)',
+                                height: 'clamp(28px, 7.5vw, 38px)',
+                                fontSize: 'clamp(0.68rem, 2vw, 0.85rem)',
+                                background: state === 'found' ? '#0a6090' : state === 'selected' ? '#fff0aa' : '#fff',
+                                color: state === 'found' ? '#fff' : 'var(--text)',
+                                cursor: done.has('ws') ? 'default' : 'pointer',
+                                transform: state === 'selected' ? 'scale(1.08)' : 'none',
+                              }}
+                            >
+                              {letter}
+                            </div>
+                          )
+                        }))}
+                      </div>
+                    )}
                   </div>
 
                   <p className="pz-hint">{L.s2.wsHint}</p>
