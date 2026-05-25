@@ -5,6 +5,7 @@ import { stories } from "@/data/stories";
 import { storiesRu } from "@/data/stories-ru";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/lib/useTranslation";
+import { useState, useRef } from "react";
 
 const PZ_COLORS = ["#ff6b1a","#0a7090","#7030a0","#2a6a10","#c05010","#104f8a"];
 
@@ -12,6 +13,8 @@ export default function StoriesPage() {
   const { language } = useLanguage();
   const t = useTranslation();
   const currentStories = language === 'ru' ? storiesRu : stories;
+  const [videoEnded, setVideoEnded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <>
@@ -19,7 +22,19 @@ export default function StoriesPage() {
       <section style={{ background: "linear-gradient(135deg,#c05010,#ff6b1a)", padding: "48px 18px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           <div style={{ marginBottom: 20, width: "100%", maxWidth: 800 }}>
-            <img src="/images/jr/bible-stories-hero.png" alt="Bible Stories" style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))" }} />
+            {!videoEnded ? (
+              <video
+                ref={videoRef}
+                src="/videos/hero-story-main.mp4"
+                autoPlay
+                muted
+                onEnded={() => setVideoEnded(true)}
+                poster="/images/jr/bible-stories-hero.png"
+                style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))", display: "block" }}
+              />
+            ) : (
+              <img src="/images/jr/bible-stories-hero.png" alt="Bible Stories" style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))" }} />
+            )}
           </div>
           <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>
             {(t as any).stories.title}
