@@ -1,21 +1,24 @@
+'use client'
+
 import Link from "next/link";
+import { useTranslation } from "@/lib/useTranslation";
 
 type Activity = {
   href: string;
-  title: string;
-  desc: string;
+  titleKey: string;
+  descKey: string;
   color: string;
   image?: string;
   emoji?: string;
 };
 
 const activities: Activity[] = [
-  { href: "/stories",  image: "/images/jr/icon-stories.png",       title: "Bible Stories",  desc: "Read amazing true stories from God's Word!",            color: "#ff6b1a" },
-  { href: "/quiz",     image: "/images/jr/icon-quizzes.png",        title: "Bible Quizzes",  desc: "Test what you know — earn stars!",                      color: "#0a7090" },
-  { href: "/memory",   image: "/images/jr/icon-verse-memory.png",   title: "Verse Memory",   desc: "Hide God's Word in your heart!",                        color: "#2a6a10" },
-  { href: "/puzzles",  image: "/images/jr/icon-word-puzzles.png",   title: "Word Puzzles",   desc: "Find hidden Bible words in the grid!",                  color: "#7030a0" },
-  { href: "/rebus",    image: "/images/jr/icon-rebus-puzzles.png",  title: "Rebus Puzzles",  desc: "Solve picture clues to find Bible words!",              color: "#c05010" },
-  { href: "/lessons",  image: "/images/jr/icon-lessons.png",       title: "Lessons",        desc: "Explore Bible topics step by step — with challenges!",  color: "#0d3a6a" },
+  { href: "/stories",  image: "/images/jr/icon-stories.png",       titleKey: "home.activities.stories.title",   descKey: "home.activities.stories.desc",   color: "#ff6b1a" },
+  { href: "/quiz",     image: "/images/jr/icon-quizzes.png",        titleKey: "home.activities.quizzes.title",   descKey: "home.activities.quizzes.desc",   color: "#0a7090" },
+  { href: "/memory",   image: "/images/jr/icon-verse-memory.png",   titleKey: "home.activities.memory.title",    descKey: "home.activities.memory.desc",    color: "#2a6a10" },
+  { href: "/puzzles",  image: "/images/jr/icon-word-puzzles.png",   titleKey: "home.activities.puzzles.title",   descKey: "home.activities.puzzles.desc",   color: "#7030a0" },
+  { href: "/rebus",    image: "/images/jr/icon-rebus-puzzles.png",  titleKey: "home.activities.rebus.title",     descKey: "home.activities.rebus.desc",     color: "#c05010" },
+  { href: "/lessons",  image: "/images/jr/icon-lessons.png",       titleKey: "home.activities.lessons.title",   descKey: "home.activities.lessons.desc",   color: "#0d3a6a" },
 ];
 
 // Static star positions so they're consistent between server and client
@@ -43,6 +46,8 @@ const STARS = [
 ];
 
 export default function HomePage() {
+  const t = useTranslation();
+
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────── */}
@@ -96,7 +101,7 @@ export default function HomePage() {
           letterSpacing: "2px", textTransform: "uppercase",
           color: "var(--flame2)", marginBottom: 20,
         }}>
-          Bible Learning for Kids
+          {t.home.subtitle}
         </p>
 
         <blockquote style={{
@@ -106,9 +111,9 @@ export default function HomePage() {
           paddingLeft: 16, textAlign: "left",
           maxWidth: 420, lineHeight: 1.7,
         }}>
-          &ldquo;Your word is a lamp to my feet and a light to my path.&rdquo;
+          &ldquo;{t.home.quote}&rdquo;
           <span style={{ display: "block", fontStyle: "normal", fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "0.72rem", letterSpacing: "2px", textTransform: "uppercase", color: "var(--flame2)", marginTop: 6 }}>
-            — Psalm 119:105
+            — {t.home.psalmRef}
           </span>
         </blockquote>
 
@@ -118,31 +123,38 @@ export default function HomePage() {
       </section>
 
       {/* ── Section banner ────────────────────────────────── */}
-      <div className="sec-banner sb-1">⚡ Pick an Activity</div>
+      <div className="sec-banner sb-1">⚡ {t.home.pickActivity}</div>
 
       {/* ── Activity cards ────────────────────────────────── */}
       <section className="alt-bg">
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "44px 18px 52px" }}>
-          <p className="eyebrow">Start Exploring</p>
-          <h2 className="sec-title">What do you want to do today?</h2>
+          <p className="eyebrow">{t.home.startExploring}</p>
+          <h2 className="sec-title">{t.home.whatToDo}</h2>
           <p className="sec-intro" style={{ marginBottom: 32 }}>
-            Choose any activity below. Each one helps you learn more about God and His amazing Word!
+            {t.home.chooseActivity}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {activities.map((act) => (
+            {[
+              { href: "/stories", image: "/images/jr/icon-stories.png", title: (t as any).activities.stories, desc: (t as any).activities.storiesDesc, color: "#ff6b1a" },
+              { href: "/quiz", image: "/images/jr/icon-quizzes.png", title: (t as any).activities.quizzes, desc: (t as any).activities.quizzesDesc, color: "#0a7090" },
+              { href: "/memory", image: "/images/jr/icon-verse-memory.png", title: (t as any).activities.memory, desc: (t as any).activities.memoryDesc, color: "#2a6a10" },
+              { href: "/puzzles", image: "/images/jr/icon-word-puzzles.png", title: (t as any).activities.puzzles, desc: (t as any).activities.puzzlesDesc, color: "#7030a0" },
+              { href: "/rebus", image: "/images/jr/icon-rebus-puzzles.png", title: (t as any).activities.rebus, desc: (t as any).activities.rebusDesc, color: "#c05010" },
+              { href: "/lessons", image: "/images/jr/icon-lessons.png", title: (t as any).activities.lessons, desc: (t as any).activities.lessonsDesc, color: "#0d3a6a" },
+            ].map((act) => (
               <Link
                 key={act.href}
                 href={act.href}
                 className="puzzle-box block no-underline hover:no-underline"
                 style={{ ["--pz-color" as string]: act.color, textDecoration: "none" }}
               >
-                <p className="puzzle-label">Activity</p>
+                <p className="puzzle-label">{t.common.section}</p>
                 <div style={{ height: 60, display: "flex", alignItems: "center", marginBottom: 8 }}>
                   {act.image ? (
                     <img src={act.image} alt={act.title} style={{ width: 56, height: 56, objectFit: "contain" }} />
                   ) : (
-                    <span style={{ fontSize: "3rem" }}>{act.emoji}</span>
+                    <span style={{ fontSize: "3rem" }}>📚</span>
                   )}
                 </div>
                 <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.2rem", color: "var(--text)", marginBottom: 6 }}>
@@ -168,13 +180,13 @@ export default function HomePage() {
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "24px 18px" }}>
           <div className="pull-quote">
             <p className="pq-text">
-              &ldquo;All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness.&rdquo;
+              &ldquo;{(t as any).home.pullQuote}&rdquo;
             </p>
-            <span className="pq-ref">— 2 Timothy 3:16 (ESV)</span>
+            <span className="pq-ref">— {(t as any).home.pullQuoteRef}</span>
           </div>
 
           <div className="kid-note">
-            💬 Ask a grown-up: What is your favorite Bible story? Why does it matter to you?
+            💬 {(t as any).home.kidNote}
           </div>
         </div>
       </section>

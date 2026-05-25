@@ -1,9 +1,18 @@
+'use client'
+
 import Link from "next/link";
 import { rebusPuzzles } from "@/data/rebus";
+import { rebusRu } from "@/data/rebus-ru";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTranslation } from "@/lib/useTranslation";
 
 const PZ_COLORS = ["#c05010","#0a7090","#2a6a10","#7030a0","#ff6b1a","#104f8a"];
 
 export default function RebusListPage() {
+  const { language } = useLanguage();
+  const t = useTranslation();
+  const currentPuzzles = language === 'ru' ? rebusRu : rebusPuzzles;
+
   return (
     <>
       {/* Hero Section */}
@@ -13,10 +22,10 @@ export default function RebusListPage() {
             <img src="/images/jr/rebus-puzzles-hero.png" alt="Rebus Puzzles" style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))" }} />
           </div>
           <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>
-            Rebus Puzzles
+            {(t as any).rebus.title}
           </h1>
           <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.95rem", color: "rgba(255,255,255,.95)", letterSpacing: 1, textTransform: "uppercase", margin: 0 }}>
-            Picture Clues · Crack the Code
+            {(t as any).rebus.subtitle}
           </p>
         </div>
       </section>
@@ -24,14 +33,14 @@ export default function RebusListPage() {
       {/* Content Section */}
       <section className="alt-bg5">
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "44px 18px 52px" }}>
-          <p className="eyebrow">Rebus Challenges</p>
-          <h2 className="sec-title">Crack the Rebus Code!</h2>
+          <p className="eyebrow">{language === 'ru' ? 'Ребус-вызовы' : 'Rebus Challenges'}</p>
+          <h2 className="sec-title">{language === 'ru' ? 'Разгадай ребус!' : 'Crack the Rebus Code!'}</h2>
           <p className="sec-intro" style={{ marginBottom: 32 }}>
-            Each puzzle uses emojis and letters as clues. Add them together (or take some away!) to find the hidden Bible word!
+            {(t as any).rebus.intro}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {rebusPuzzles.map((puzzle, i) => {
+            {currentPuzzles.map((puzzle, i) => {
               const color = PZ_COLORS[i % PZ_COLORS.length];
               return (
                 <Link
@@ -40,7 +49,7 @@ export default function RebusListPage() {
                   className="puzzle-box block"
                   style={{ ["--pz-color" as string]: color, textDecoration: "none" }}
                 >
-                  <p className="puzzle-label">🧩 Rebus Puzzle</p>
+                  <p className="puzzle-label">🧩 {(t as any).rebus.puzzle}</p>
                   <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1rem", color: "var(--text)", marginBottom: 10 }}>
                     {puzzle.title}
                   </h3>
@@ -53,10 +62,10 @@ export default function RebusListPage() {
                     <span style={{ fontSize: "1.1rem", color: "#ccc", fontWeight: 900 }}>= ?</span>
                   </div>
                   <p style={{ fontFamily: "var(--font-lora)", fontStyle: "italic", fontSize: "0.82rem", color: "#888" }}>
-                    Hint: {puzzle.hint}
+                    {language === 'ru' ? 'Подсказка' : 'Hint'}: {puzzle.hint}
                   </p>
                   <div className="pz-btn" style={{ textAlign: "center", marginTop: 14 }}>
-                    Solve It! →
+                    {language === 'ru' ? 'Разгадай!' : 'Solve It!'} →
                   </div>
                 </Link>
               );
@@ -65,7 +74,7 @@ export default function RebusListPage() {
 
           <div style={{ marginTop: 32, textAlign: "center" }}>
             <Link href="/" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "var(--fire)", textDecoration: "none" }}>
-              ← Back to Home
+              ← {t.common.backHome}
             </Link>
           </div>
         </div>

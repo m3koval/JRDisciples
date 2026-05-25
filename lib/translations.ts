@@ -18,6 +18,9 @@ export const translations = {
       startExploring: "Start Exploring",
       whatToDo: "What do you want to do today?",
       chooseActivity: "Choose any activity below. Each one helps you learn more about God and His amazing Word!",
+      pullQuote: "All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness.",
+      pullQuoteRef: "2 Timothy 3:16 (ESV)",
+      kidNote: "Ask a grown-up: What is your favorite Bible story? Why does it matter to you?",
     },
     activities: {
       stories: "Bible Stories",
@@ -155,6 +158,9 @@ export const translations = {
       startExploring: "Начните изучение",
       whatToDo: "Что ты хочешь делать?",
       chooseActivity: "Выбери одно из занятий ниже. Каждое поможет тебе узнать больше о Боге и Его чудесном Слове!",
+      pullQuote: "Всякое писание (сказанное) Духом Божиим полезно для учения, для обличения, для исправления, для наставления в праведности.",
+      pullQuoteRef: "2 Тимофею 3:16 (Синодальный перевод)",
+      kidNote: "Спроси взрослого: Какая твоя любимая библейская история? Почему она тебе нравится?",
     },
     activities: {
       stories: "Библейские истории",

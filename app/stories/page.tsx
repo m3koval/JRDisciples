@@ -1,9 +1,18 @@
+'use client'
+
 import Link from "next/link";
 import { stories } from "@/data/stories";
+import { storiesRu } from "@/data/stories-ru";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTranslation } from "@/lib/useTranslation";
 
 const PZ_COLORS = ["#ff6b1a","#0a7090","#7030a0","#2a6a10","#c05010","#104f8a"];
 
 export default function StoriesPage() {
+  const { language } = useLanguage();
+  const t = useTranslation();
+  const currentStories = language === 'ru' ? storiesRu : stories;
+
   return (
     <>
       {/* Hero Section */}
@@ -13,10 +22,10 @@ export default function StoriesPage() {
             <img src="/images/jr/bible-stories-hero.png" alt="Bible Stories" style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))" }} />
           </div>
           <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>
-            Bible Stories
+            {(t as any).stories.title}
           </h1>
           <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.95rem", color: "rgba(255,255,255,.95)", letterSpacing: 1, textTransform: "uppercase", margin: 0 }}>
-            God&apos;s True Stories · Every One Points to Jesus
+            {(t as any).stories.subtitle}
           </p>
         </div>
       </section>
@@ -24,14 +33,14 @@ export default function StoriesPage() {
       {/* Content Section */}
       <section className="alt-bg">
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "44px 18px 52px" }}>
-          <p className="eyebrow">Stories from Scripture</p>
-          <h2 className="sec-title">Amazing Stories from God&apos;s Word</h2>
+          <p className="eyebrow">{language === 'ru' ? 'Истории из Писания' : 'Stories from Scripture'}</p>
+          <h2 className="sec-title">{(t as any).stories.heading}</h2>
           <p className="sec-intro" style={{ marginBottom: 32 }}>
-            Every story in the Bible is true — and every one points to Jesus, the greatest story of all!
+            {(t as any).stories.intro}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {stories.map((story, i) => (
+            {currentStories.map((story, i) => (
               <Link
                 key={story.id}
                 href={`/stories/${story.id}`}
@@ -53,7 +62,7 @@ export default function StoriesPage() {
                   &ldquo;{story.bigTruth}&rdquo;
                 </p>
                 <div className="pz-btn" style={{ textAlign: "center", marginTop: 14 }}>
-                  Read Story 📖
+                  {(t as any).stories.readStory} 📖
                 </div>
               </Link>
             ))}
@@ -61,7 +70,7 @@ export default function StoriesPage() {
 
           <div style={{ marginTop: 32, textAlign: "center" }}>
             <Link href="/" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "var(--fire)", textDecoration: "none" }}>
-              ← Back to Home
+              ← {t.common.backHome}
             </Link>
           </div>
         </div>
