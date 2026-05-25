@@ -88,4 +88,86 @@ export const rebusRu: RebusPuzzle[] = [
     answer: "СЛОВО",
     hint: "Слово Бога — светильник ноге моей — Псалом 118:105 (🐘 = СЛОН)"
   },
+  {
+    id: "rebus-radost-ru",
+    title: "Ребус 7: Радость в Господе",
+    emoji: "😊",
+    clues: [
+      { type: "emoji", value: "📻" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "ИО" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "ОСТЬ" },
+    ],
+    answer: "РАДОСТЬ",
+    hint: "Радуйтесь всегда в Господе — Филиппийцам 4:4 (📻 = РАДИО)"
+  },
+  {
+    id: "rebus-terpenie-ru",
+    title: "Ребус 8: Терпение и стойкость",
+    emoji: "⏳",
+    clues: [
+      { type: "text", value: "ТЕР" },
+      { type: "plus", value: "+" },
+      { type: "emoji", value: "🎵" },
+    ],
+    answer: "ТЕРПЕНИЕ",
+    hint: "В терпении вашем спасайте души ваши — Лука 21:19 (🎵 = ПЕНИЕ)"
+  },
+  {
+    id: "rebus-svyatoy-ru",
+    title: "Ребус 9: Чистота перед Богом",
+    emoji: "✨",
+    clues: [
+      { type: "emoji", value: "💡" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "ЕТ" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "ЯТОЙ" },
+    ],
+    answer: "СВЯТОЙ",
+    hint: "Будьте святы, ибо Я свят — 1 Петра 1:16 (💡 = СВЕТ)"
+  },
+  {
+    id: "rebus-pokayanie-ru",
+    title: "Ребус 10: Возвращение к Богу",
+    emoji: "↩️",
+    clues: [
+      { type: "emoji", value: "🌾" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "ЛЕ" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "КАЯНИЕ" },
+    ],
+    answer: "ПОКАЯНИЕ",
+    hint: "Покайтесь и обратитесь к Богу — Деяния 3:19 (🌾 = ПОЛЕ)"
+  },
+  {
+    id: "rebus-pastyr-ru",
+    title: "Ребус 11: Иисус — Добрый...",
+    emoji: "🐑",
+    clues: [
+      { type: "emoji", value: "🍝" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "А" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "ЫРЬ" },
+    ],
+    answer: "ПАСТЫРЬ",
+    hint: "Я есмь пастырь добрый — Иоанна 10:11 (🍝 = ПАСТА)"
+  },
+  {
+    id: "rebus-mudrost-ru",
+    title: "Ребус 12: Дар от Бога",
+    emoji: "🦉",
+    clues: [
+      { type: "emoji", value: "🗑️" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "СОР" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "ДРОСТЬ" },
+    ],
+    answer: "МУДРОСТЬ",
+    hint: "Начало мудрости — страх Господень — Притчи 9:10 (🗑️ = МУСОР)"
+  },
 ];

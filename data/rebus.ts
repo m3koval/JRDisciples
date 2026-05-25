@@ -94,5 +94,89 @@ export const rebusPuzzles: RebusPuzzle[] = [
     ],
     answer: "KINGDOM",
     hint: "God's Kingdom will last forever — Daniel 7:27"
-  }
+  },
+  {
+    id: "rebus-grace",
+    title: "Puzzle 7: God's free gift",
+    emoji: "🎀",
+    clues: [
+      { type: "text", value: "G" },
+      { type: "plus", value: "+" },
+      { type: "emoji", value: "🏁" },
+    ],
+    answer: "GRACE",
+    hint: "God's love and forgiveness we don't deserve but freely receive — Ephesians 2:8 (🏁 = RACE)"
+  },
+  {
+    id: "rebus-holy",
+    title: "Puzzle 8: Set apart for God",
+    emoji: "✨",
+    clues: [
+      { type: "emoji", value: "🕳️" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "E" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "Y" },
+    ],
+    answer: "HOLY",
+    hint: "Pure and set apart for God — Isaiah 6:3 (🕳️ = HOLE)"
+  },
+  {
+    id: "rebus-repent",
+    title: "Puzzle 9: Turning back to God",
+    emoji: "↩️",
+    clues: [
+      { type: "text", value: "RE" },
+      { type: "plus", value: "+" },
+      { type: "emoji", value: "🖊️" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "T" },
+    ],
+    answer: "REPENT",
+    hint: "Turning away from sin and toward God — Acts 3:19 (🖊️ = PEN)"
+  },
+  {
+    id: "rebus-promise",
+    title: "Puzzle 10: God never breaks this",
+    emoji: "🌈",
+    clues: [
+      { type: "text", value: "PRO" },
+      { type: "plus", value: "+" },
+      { type: "emoji", value: "🌫️" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "T" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "E" },
+    ],
+    answer: "PROMISE",
+    hint: "God always keeps His word — Numbers 23:19 (🌫️ = MIST)"
+  },
+  {
+    id: "rebus-eternal",
+    title: "Puzzle 11: Living forever with God",
+    emoji: "♾️",
+    clues: [
+      { type: "text", value: "E" },
+      { type: "plus", value: "+" },
+      { type: "emoji", value: "🔄" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "NAL" },
+    ],
+    answer: "ETERNAL",
+    hint: "God's love and life go on forever — John 3:16 (🔄 = TURN)"
+  },
+  {
+    id: "rebus-forgive",
+    title: "Puzzle 12: What God does with our sins",
+    emoji: "💛",
+    clues: [
+      { type: "emoji", value: "🍴" },
+      { type: "minus", value: "−" },
+      { type: "text", value: "K" },
+      { type: "plus", value: "+" },
+      { type: "text", value: "GIVE" },
+    ],
+    answer: "FORGIVE",
+    hint: "Just as God forgave us, we forgive others — Ephesians 4:32 (🍴 = FORK)"
+  },
 ];
