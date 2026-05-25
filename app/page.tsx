@@ -64,16 +64,19 @@ export default function HomePage() {
           />
         ))}
 
-        {/* Orb */}
-        <div style={{ position: "relative", width: 160, height: 160, marginBottom: 28 }}>
-          <div style={{
-            width: "100%", height: "100%", borderRadius: "50%",
-            background: "radial-gradient(circle at 35% 35%, #7ec8e3, #0d3a6a)",
-            boxShadow: "0 0 40px 12px rgba(126,200,227,.35), 0 0 80px 24px rgba(126,200,227,.15)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-          }}>
-            <span style={{ fontSize: "4.5rem", animation: "dove-float 3s ease-in-out infinite" }}>✝️</span>
-          </div>
+        {/* Hero image */}
+        <div style={{ position: "relative", marginBottom: 32, animation: "dove-float 3s ease-in-out infinite", zIndex: 10 }}>
+          <img
+            src="/images/jr/home-hero.png"
+            alt="JR Disciples"
+            style={{
+              width: 240,
+              height: 240,
+              objectFit: "contain",
+              filter: "drop-shadow(0 12px 40px rgba(126,200,227,.6))",
+              borderRadius: 24,
+            }}
+          />
         </div>
 
         <h1 style={{

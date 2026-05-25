@@ -2,6 +2,7 @@ export interface Story {
   id: string;
   title: string;
   emoji: string;
+  image?: string;
   reference: string;
   ageNote: string;
   summary: string[];
@@ -14,6 +15,7 @@ export const stories: Story[] = [
     id: "creation",
     title: "God Makes Everything",
     emoji: "🌍",
+    image: "/images/jr/story-creation.png",
     reference: "Genesis 1-2",
     ageNote: "Great for ages 6-10",
     summary: [
@@ -34,6 +36,7 @@ export const stories: Story[] = [
     id: "noah",
     title: "Noah and the Great Flood",
     emoji: "🌈",
+    image: "/images/jr/story-noah.png",
     reference: "Genesis 6-9",
     ageNote: "Great for ages 6-10",
     summary: [
@@ -54,6 +57,7 @@ export const stories: Story[] = [
     id: "joseph",
     title: "Joseph and His Brothers",
     emoji: "👑",
+    image: "/images/jr/story-joseph.png",
     reference: "Genesis 37-50",
     ageNote: "Great for ages 7-10",
     summary: [
@@ -74,6 +78,7 @@ export const stories: Story[] = [
     id: "david-goliath",
     title: "David and Goliath",
     emoji: "⚔️",
+    image: "/images/jr/story-david.png",
     reference: "1 Samuel 17",
     ageNote: "Great for ages 6-10",
     summary: [
@@ -94,6 +99,7 @@ export const stories: Story[] = [
     id: "jonah",
     title: "Jonah and the Big Fish",
     emoji: "🐋",
+    image: "/images/jr/story-jonah.png",
     reference: "Jonah 1-4",
     ageNote: "Great for ages 6-10",
     summary: [
@@ -114,6 +120,7 @@ export const stories: Story[] = [
     id: "birth-of-jesus",
     title: "The Birth of Jesus",
     emoji: "⭐",
+    image: "/images/jr/story-birth-of-jesus.png",
     reference: "Luke 2",
     ageNote: "Great for ages 6-10",
     summary: [

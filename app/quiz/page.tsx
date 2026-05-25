@@ -7,10 +7,25 @@ const PZ_COLORS = ["#ff6b1a","#0a7090","#7030a0","#2a6a10","#c05010","#104f8a"];
 export default function QuizListPage() {
   return (
     <>
-      <div className="sec-banner sb-2">❓ Bible Quizzes</div>
+      {/* Hero Section */}
+      <section style={{ background: "linear-gradient(135deg,#0a5090,#0a7090)", padding: "48px 18px" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+          <div style={{ marginBottom: 20, width: "100%", maxWidth: 800 }}>
+            <img src="/images/jr/bible-quizzes-hero.png" alt="Bible Quizzes" style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))" }} />
+          </div>
+          <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>
+            Bible Quizzes
+          </h1>
+          <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.95rem", color: "rgba(255,255,255,.95)", letterSpacing: 1, textTransform: "uppercase", margin: 0 }}>
+            Test Your Knowledge · 5 Questions Each
+          </p>
+        </div>
+      </section>
+
+      {/* Content Section */}
       <section className="alt-bg2">
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "44px 18px 52px" }}>
-          <p className="eyebrow">Test Your Knowledge</p>
+          <p className="eyebrow">Challenge Yourself</p>
           <h2 className="sec-title">How Well Do You Know God&apos;s Word?</h2>
           <p className="sec-intro" style={{ marginBottom: 32 }}>
             Each quiz has 5 questions about a Bible story. See how many you get right!

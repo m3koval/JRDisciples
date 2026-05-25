@@ -6,10 +6,25 @@ const PZ_COLORS = ["#2a6a10","#0a7090","#ff6b1a","#7030a0","#c05010","#104f8a","
 export default function MemoryListPage() {
   return (
     <>
-      <div className="sec-banner sb-4">💡 Verse Memory</div>
+      {/* Hero Section */}
+      <section style={{ background: "linear-gradient(135deg,#1a6a30,#2a8a40)", padding: "48px 18px" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+          <div style={{ marginBottom: 20, width: "100%", maxWidth: 800 }}>
+            <img src="/images/jr/verse-memory-hero.png" alt="Verse Memory" style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))" }} />
+          </div>
+          <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>
+            Verse Memory
+          </h1>
+          <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.95rem", color: "rgba(255,255,255,.95)", letterSpacing: 1, textTransform: "uppercase", margin: 0 }}>
+            Hide It in Your Heart · Learn Scripture
+          </p>
+        </div>
+      </section>
+
+      {/* Content Section */}
       <section className="alt-bg4">
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "44px 18px 52px" }}>
-          <p className="eyebrow">Hide It in Your Heart</p>
+          <p className="eyebrow">God&apos;s Word Treasured</p>
           <h2 className="sec-title">Memorize God&apos;s Word</h2>
           <p className="sec-intro" style={{ marginBottom: 8 }}>
             &ldquo;I have stored up your word in my heart, that I might not sin against you.&rdquo;

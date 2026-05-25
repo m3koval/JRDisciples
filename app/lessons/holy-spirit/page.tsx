@@ -449,15 +449,23 @@ export default function HolySpiritLesson() {
 
       {/* ── Hero ───────────────────────────────────────────────── */}
       <section style={{
-        position: 'relative', minHeight: '60vh',
-        background: 'radial-gradient(ellipse at 50% 60%,#1a0040 0%,#0d1f3c 45%,#060e20 100%)',
+        position: 'relative', minHeight: '70vh',
+        background: 'radial-gradient(ellipse at 50% 50%,#2a1050 0%,#1a0f40 35%,#0d1f3c 60%,#060e20 100%)',
         display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-        textAlign: 'center', padding: '60px 24px 72px', overflow: 'hidden',
+        textAlign: 'center', padding: '80px 24px 100px', overflow: 'hidden',
       }}>
-        {/* Orb */}
-        <div style={{ position: 'relative', width: 160, height: 160, marginBottom: 28 }}>
-          <div style={{ position: 'absolute', inset: 0, borderRadius: '50%', background: 'radial-gradient(circle at 40% 35%,#fff 0%,#c4e8ff 20%,#7ec8e3 45%,#3b82f6 70%,#1e3a8a 100%)', boxShadow: '0 0 40px 20px rgba(126,200,227,.5),0 0 80px 40px rgba(59,130,246,.3)', animation: 'dove-float 4s ease-in-out infinite' }} />
-          <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '4.5rem' }}>🕊️</div>
+        {/* Hero Image */}
+        <div style={{ position: 'relative', width: '100%', maxWidth: 800, marginBottom: 40, zIndex: 10 }}>
+          <img
+            src="/images/jr/holy-spirit-hero.png"
+            alt="The Holy Spirit"
+            style={{
+              width: '100%',
+              height: 'auto',
+              borderRadius: 24,
+              filter: 'drop-shadow(0 20px 50px rgba(0,0,0,.3))',
+            }}
+          />
         </div>
         <h1 style={{ fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,6vw,3.2rem)', color: '#fff', textShadow: '0 0 30px rgba(126,200,227,.8)', marginBottom: 10, lineHeight: 1.2 }}>
           The Holy Spirit
@@ -617,6 +625,11 @@ export default function HolySpiritLesson() {
                 <p className="eyebrow">Picture-Language from God</p>
                 <h2 className="sec-title">Symbols of the Holy Spirit</h2>
                 <p className="sec-intro">God uses vivid picture-language throughout Scripture to help us understand the Holy Spirit. Each symbol reveals a different truth about who He is and what He does.</p>
+
+                {/* Symbols illustration */}
+                <div style={{ textAlign: 'center', marginBottom: 28 }}>
+                  <img src="/images/jr/holy-spirit-symbols.png" alt="Holy Spirit Symbols" style={{ maxWidth: 700, width: '100%', height: 'auto', borderRadius: 16, boxShadow: '0 8px 24px rgba(0,0,0,.12)' }} />
+                </div>
 
                 {/* Symbol cards */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(185px,1fr))', gap: 18, marginBottom: 28 }}>
@@ -922,6 +935,11 @@ export default function HolySpiritLesson() {
                 <h2 className="sec-title">The Fruit of the Spirit</h2>
                 <p className="sec-intro">When the Holy Spirit lives in us, He transforms our character from the inside out. These 9 qualities grow naturally as we stay connected to God — like a branch drawing life from the vine (John 15:4–5). We don&apos;t produce them by trying harder; He produces them in us.</p>
 
+                {/* Fruit garden illustration */}
+                <div style={{ textAlign: 'center', marginBottom: 28 }}>
+                  <img src="/images/jr/holy-spirit-fruit-garden.png" alt="Fruit of the Spirit" style={{ maxWidth: 700, width: '100%', height: 'auto', borderRadius: 16, boxShadow: '0 8px 24px rgba(0,0,0,.12)' }} />
+                </div>
+
                 <div className="puzzle-box" style={{ ['--pz-color' as string]: '#40b870' }}>
                   <p className="puzzle-label">👆 Tap-to-Reveal Challenge</p>
                   <p className="puzzle-q">Tap each fruit to discover what it means! Reveal all 9 to complete this section.</p>
@@ -985,6 +1003,11 @@ export default function HolySpiritLesson() {
                 <p className="eyebrow">1 Corinthians 12 · Romans 12 · Ephesians 4</p>
                 <h2 className="sec-title">Gifts of the Holy Spirit</h2>
                 <p className="sec-intro">Beyond transforming our character, the Spirit equips each believer with supernatural gifts — not for personal glory, but to build up the church and advance God&apos;s Kingdom. &ldquo;To each is given the manifestation of the Spirit for the common good.&rdquo; (1 Cor 12:7)</p>
+
+                {/* Gifts constellation illustration */}
+                <div style={{ textAlign: 'center', marginBottom: 28 }}>
+                  <img src="/images/jr/holy-spirit-gifts.png" alt="Gifts of the Holy Spirit" style={{ maxWidth: 700, width: '100%', height: 'auto', borderRadius: 16, boxShadow: '0 8px 24px rgba(0,0,0,.12)' }} />
+                </div>
 
                 {/* Gift reference cards */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 14, marginBottom: 28 }}>

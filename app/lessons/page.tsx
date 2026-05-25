@@ -14,10 +14,30 @@ const topics = [
 export default function LessonsPage() {
   return (
     <>
-      <div className="sec-banner sb-5">🕊️ &nbsp; Topics &nbsp; · &nbsp; One Section at a Time</div>
+      {/* Hero Section */}
+      <section style={{ padding: "0" }}>
+        <div style={{ width: "100%", maxWidth: "100%" }}>
+          <img src="/images/jr/lessons-hero.png" alt="Bible Lessons" style={{ width: "100%", height: "auto", display: "block" }} />
+        </div>
+      </section>
+
+      {/* Text Section */}
+      <section style={{ background: "linear-gradient(135deg,#0d3a6a,#1a5a9a)", padding: "48px 18px" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+          <div style={{ marginBottom: 20, fontSize: "4rem" }}>🕊️</div>
+          <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>
+            Bible Lessons
+          </h1>
+          <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.95rem", color: "rgba(255,255,255,.95)", letterSpacing: 1, textTransform: "uppercase", margin: 0 }}>
+            Deep Learning · One Section at a Time · Complete Challenges
+          </p>
+        </div>
+      </section>
+
+      {/* Content Section */}
       <section className="alt-bg">
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "44px 18px 52px" }}>
-          <p className="eyebrow">Pick a Topic</p>
+          <p className="eyebrow">Choose a Topic</p>
           <h2 className="sec-title">What do you want to learn?</h2>
           <p className="sec-intro" style={{ marginBottom: 8 }}>
             Each lesson is broken into sections. Complete the challenge in each section to unlock the next one!
