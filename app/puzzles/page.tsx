@@ -22,10 +22,10 @@ export default function PuzzlesListPage() {
             <img src="/images/jr/word-puzzles-hero.png" alt="Word Puzzles" style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))" }} />
           </div>
           <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>
-            {(t as any).puzzles.title}
+            {t.puzzles.title}
           </h1>
           <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.95rem", color: "rgba(255,255,255,.95)", letterSpacing: 1, textTransform: "uppercase", margin: 0 }}>
-            {(t as any).puzzles.subtitle}
+            {t.puzzles.subtitle}
           </p>
         </div>
       </section>
@@ -33,10 +33,10 @@ export default function PuzzlesListPage() {
       {/* Content Section */}
       <section className="alt-bg6">
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "44px 18px 52px" }}>
-          <p className="eyebrow">{(t as any).puzzles.wordSearch}</p>
-          <h2 className="sec-title">{(t as any).puzzles.heading}</h2>
+          <p className="eyebrow">{t.puzzles.wordSearch}</p>
+          <h2 className="sec-title">{t.puzzles.heading}</h2>
           <p className="sec-intro" style={{ marginBottom: 32 }}>
-            {(t as any).puzzles.intro}
+            {t.puzzles.intro}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -58,10 +58,10 @@ export default function PuzzlesListPage() {
                     {puzzle.description}
                   </p>
                   <span style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.8rem", color: color }}>
-                    {(t as any).puzzles.findWords} {puzzle.words.length} {(t as any).puzzles.words}
+                    {t.puzzles.findWords} {puzzle.words.length} {t.puzzles.words}
                   </span>
                   <div className="pz-btn" style={{ textAlign: "center", marginTop: 14 }}>
-                    {(t as any).puzzles.play} →
+                    {t.puzzles.play} →
                   </div>
                 </Link>
               );

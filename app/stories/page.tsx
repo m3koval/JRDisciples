@@ -37,10 +37,10 @@ export default function StoriesPage() {
             )}
           </div>
           <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>
-            {(t as any).stories.title}
+            {t.stories.title}
           </h1>
           <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.95rem", color: "rgba(255,255,255,.95)", letterSpacing: 1, textTransform: "uppercase", margin: 0 }}>
-            {(t as any).stories.subtitle}
+            {t.stories.subtitle}
           </p>
         </div>
       </section>
@@ -49,9 +49,9 @@ export default function StoriesPage() {
       <section className="alt-bg">
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "44px 18px 52px" }}>
           <p className="eyebrow">{language === 'ru' ? 'Истории из Писания' : 'Stories from Scripture'}</p>
-          <h2 className="sec-title">{(t as any).stories.heading}</h2>
+          <h2 className="sec-title">{t.stories.heading}</h2>
           <p className="sec-intro" style={{ marginBottom: 32 }}>
-            {(t as any).stories.intro}
+            {t.stories.intro}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -77,7 +77,7 @@ export default function StoriesPage() {
                   &ldquo;{story.bigTruth}&rdquo;
                 </p>
                 <div className="pz-btn" style={{ textAlign: "center", marginTop: 14 }}>
-                  {(t as any).stories.readStory} 📖
+                  {t.stories.readStory} 📖
                 </div>
               </Link>
             ))}

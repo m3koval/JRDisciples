@@ -19,10 +19,10 @@ export default function LessonsPage() {
             <img src="/images/jr/lessons-hero.png" alt="Bible Lessons" style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))" }} />
           </div>
           <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>
-            {(t as any).lessons.title}
+            {t.lessons.title}
           </h1>
           <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.95rem", color: "rgba(255,255,255,.95)", letterSpacing: 1, textTransform: "uppercase", margin: 0 }}>
-            {(t as any).lessons.subtitle}
+            {t.lessons.subtitle}
           </p>
         </div>
       </section>
@@ -30,13 +30,13 @@ export default function LessonsPage() {
       {/* Content Section */}
       <section className="alt-bg">
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "44px 18px 52px" }}>
-          <p className="eyebrow">{(t as any).lessons.chooseTopics}</p>
-          <h2 className="sec-title">{(t as any).lessons.whatLearn}</h2>
+          <p className="eyebrow">{t.lessons.chooseTopics}</p>
+          <h2 className="sec-title">{t.lessons.whatLearn}</h2>
           <p className="sec-intro" style={{ marginBottom: 8 }}>
-            {(t as any).lessons.intro}
+            {t.lessons.intro}
           </p>
           <div className="kid-note" style={{ marginBottom: 32 }}>
-            💡 {(t as any).lessons.progressSaved}
+            💡 {t.lessons.progressSaved}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -47,7 +47,7 @@ export default function LessonsPage() {
                 className="puzzle-box block no-underline hover:no-underline"
                 style={{ ["--pz-color" as string]: topic.color, textDecoration: "none" }}
               >
-                <p className="puzzle-label">{t.common.section} · {topic.sections} {(t as any).lessons.sections}</p>
+                <p className="puzzle-label">{t.common.section} · {topic.sections} {t.lessons.sections}</p>
                 <div style={{ height: 80, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 10 }}>
                   {topic.image ? (
                     <img src={topic.image} alt={topic.title} style={{ width: 80, height: 80, objectFit: "contain" }} />
@@ -62,7 +62,7 @@ export default function LessonsPage() {
                   {topic.desc}
                 </p>
                 <div className="pz-btn" style={{ marginTop: 14, textAlign: "center" }}>
-                  {(t as any).lessons.start} →
+                  {t.lessons.start} →
                 </div>
               </Link>
             ))}

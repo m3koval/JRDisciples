@@ -4,9 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { useTranslation } from "@/lib/useTranslation";
+import { useTranslation, type Translations } from "@/lib/useTranslation";
 
-function NavLinksContent({ t }: { t: any }) {
+function navLinks(t: Translations) {
   return [
     { href: "/",        label: t.nav.home,    emoji: "🏠" },
     { href: "/stories", label: t.nav.stories, emoji: "📖" },
@@ -17,16 +17,6 @@ function NavLinksContent({ t }: { t: any }) {
     { href: "/lessons", label: t.nav.lessons, emoji: "🕊️" },
   ];
 }
-
-const links = [
-  { href: "/",        emoji: "🏠" },
-  { href: "/stories", emoji: "📖" },
-  { href: "/quiz",    emoji: "❓" },
-  { href: "/memory",  emoji: "💡" },
-  { href: "/puzzles", emoji: "🔤" },
-  { href: "/rebus",   emoji: "🧩" },
-  { href: "/lessons", emoji: "🕊️" },
-];
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -49,9 +39,9 @@ export default function NavBar() {
           <span className="hidden sm:inline" style={{ letterSpacing: "-0.5px" }}>JR Disciples</span>
         </Link>
 
-        {/* Desktop links - center */}
-        <ul style={{ display: "none", gap: 0, listStyle: "none", margin: 0, padding: 0, flex: 1, justifyContent: "center" }} className="lg:flex">
-          {NavLinksContent({ t }).map((link) => {
+        {/* Desktop links */}
+        <ul style={{ display: "flex", gap: 0, listStyle: "none", margin: 0, padding: 0, overflow: "auto", scrollBehavior: "smooth" }} className="hidden lg:flex">
+          {navLinks(t).map((link) => {
             const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
               <li key={link.href}>
@@ -202,15 +192,8 @@ export default function NavBar() {
 
       {/* Mobile/tablet dropdown */}
       {open && (
-        <div style={{
-          background: "linear-gradient(135deg, #0a1a30 0%, #0d2a45 100%)",
-          borderTop: "2px solid var(--flame2)",
-          padding: "12px 18px 18px",
-          maxHeight: "calc(100vh - 60px)",
-          overflowY: "auto",
-          animation: "slideDown 0.3s ease-out",
-        }}>
-          {NavLinksContent({ t }).map((link) => {
+        <div style={{ background: "#0a1a30", borderTop: "1px solid rgba(255,255,255,.08)", padding: "8px 16px 16px", maxHeight: "calc(100vh - 52px)", overflowY: "auto" }}>
+          {navLinks(t).map((link) => {
             const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
               <Link

@@ -146,18 +146,21 @@ export default function HolySpiritLesson() {
   const currentLesson = language === 'ru' ? lessonsRu[0] : lessons[0]
 
   // ─── Progress state ──────────────────────────────────────────────────────────
-  const [unlocked, setUnlocked] = useState<Set<number>>(new Set([1]))
-  const [done, setDone]         = useState<Set<string>>(new Set())
-  const [won, setWon]           = useState(false)
-
-  useEffect(() => {
+  const [unlocked, setUnlocked] = useState<Set<number>>(() => {
     try {
-      const u = localStorage.getItem('hs_unlocked')
-      const d = localStorage.getItem('hs_done')
-      if (u) setUnlocked(new Set(JSON.parse(u) as number[]))
-      if (d) setDone(new Set(JSON.parse(d) as string[]))
+      const u = typeof window !== 'undefined' && localStorage.getItem('hs_unlocked')
+      if (u) return new Set(JSON.parse(u) as number[])
     } catch {}
-  }, [])
+    return new Set([1])
+  })
+  const [done, setDone] = useState<Set<string>>(() => {
+    try {
+      const d = typeof window !== 'undefined' && localStorage.getItem('hs_done')
+      if (d) return new Set(JSON.parse(d) as string[])
+    } catch {}
+    return new Set()
+  })
+  const [won, setWon]           = useState(false)
 
   useEffect(() => {
     localStorage.setItem('hs_unlocked', JSON.stringify([...unlocked]))

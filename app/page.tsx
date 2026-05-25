@@ -4,24 +4,6 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import { useTranslation } from "@/lib/useTranslation";
 
-type Activity = {
-  href: string;
-  titleKey: string;
-  descKey: string;
-  color: string;
-  image?: string;
-  emoji?: string;
-};
-
-const activities: Activity[] = [
-  { href: "/stories",  image: "/images/jr/icon-stories.png",       titleKey: "home.activities.stories.title",   descKey: "home.activities.stories.desc",   color: "#ff6b1a" },
-  { href: "/quiz",     image: "/images/jr/icon-quizzes.png",        titleKey: "home.activities.quizzes.title",   descKey: "home.activities.quizzes.desc",   color: "#0a7090" },
-  { href: "/memory",   image: "/images/jr/icon-verse-memory.png",   titleKey: "home.activities.memory.title",    descKey: "home.activities.memory.desc",    color: "#2a6a10" },
-  { href: "/puzzles",  image: "/images/jr/icon-word-puzzles.png",   titleKey: "home.activities.puzzles.title",   descKey: "home.activities.puzzles.desc",   color: "#7030a0" },
-  { href: "/rebus",    image: "/images/jr/icon-rebus-puzzles.png",  titleKey: "home.activities.rebus.title",     descKey: "home.activities.rebus.desc",     color: "#c05010" },
-  { href: "/lessons",  image: "/images/jr/icon-lessons.png",       titleKey: "home.activities.lessons.title",   descKey: "home.activities.lessons.desc",   color: "#0d3a6a" },
-];
-
 // Static star positions so they're consistent between server and client
 const STARS = [
   { left: "5%",  top: "12%", delay: "0s",    dur: "2.1s" },
@@ -162,12 +144,12 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { href: "/stories", image: "/images/jr/icon-stories.png", title: (t as any).activities.stories, desc: (t as any).activities.storiesDesc, color: "#ff6b1a" },
-              { href: "/quiz", image: "/images/jr/icon-quizzes.png", title: (t as any).activities.quizzes, desc: (t as any).activities.quizzesDesc, color: "#0a7090" },
-              { href: "/memory", image: "/images/jr/icon-verse-memory.png", title: (t as any).activities.memory, desc: (t as any).activities.memoryDesc, color: "#2a6a10" },
-              { href: "/puzzles", image: "/images/jr/icon-word-puzzles.png", title: (t as any).activities.puzzles, desc: (t as any).activities.puzzlesDesc, color: "#7030a0" },
-              { href: "/rebus", image: "/images/jr/icon-rebus-puzzles.png", title: (t as any).activities.rebus, desc: (t as any).activities.rebusDesc, color: "#c05010" },
-              { href: "/lessons", image: "/images/jr/icon-lessons.png", title: (t as any).activities.lessons, desc: (t as any).activities.lessonsDesc, color: "#0d3a6a" },
+              { href: "/stories", image: "/images/jr/icon-stories.png", title: t.activities.stories, desc: t.activities.storiesDesc, color: "#ff6b1a" },
+              { href: "/quiz", image: "/images/jr/icon-quizzes.png", title: t.activities.quizzes, desc: t.activities.quizzesDesc, color: "#0a7090" },
+              { href: "/memory", image: "/images/jr/icon-verse-memory.png", title: t.activities.memory, desc: t.activities.memoryDesc, color: "#2a6a10" },
+              { href: "/puzzles", image: "/images/jr/icon-word-puzzles.png", title: t.activities.puzzles, desc: t.activities.puzzlesDesc, color: "#7030a0" },
+              { href: "/rebus", image: "/images/jr/icon-rebus-puzzles.png", title: t.activities.rebus, desc: t.activities.rebusDesc, color: "#c05010" },
+              { href: "/lessons", image: "/images/jr/icon-lessons.png", title: t.activities.lessons, desc: t.activities.lessonsDesc, color: "#0d3a6a" },
             ].map((act) => (
               <Link
                 key={act.href}
@@ -206,13 +188,13 @@ export default function HomePage() {
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "24px 18px" }}>
           <div className="pull-quote">
             <p className="pq-text">
-              &ldquo;{(t as any).home.pullQuote}&rdquo;
+              &ldquo;{t.home.pullQuote}&rdquo;
             </p>
-            <span className="pq-ref">— {(t as any).home.pullQuoteRef}</span>
+            <span className="pq-ref">— {t.home.pullQuoteRef}</span>
           </div>
 
           <div className="kid-note">
-            💬 {(t as any).home.kidNote}
+            💬 {t.home.kidNote}
           </div>
         </div>
       </section>

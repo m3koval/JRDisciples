@@ -22,10 +22,10 @@ export default function RebusListPage() {
             <img src="/images/jr/rebus-puzzles-hero.png" alt="Rebus Puzzles" style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))" }} />
           </div>
           <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>
-            {(t as any).rebus.title}
+            {t.rebus.title}
           </h1>
           <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.95rem", color: "rgba(255,255,255,.95)", letterSpacing: 1, textTransform: "uppercase", margin: 0 }}>
-            {(t as any).rebus.subtitle}
+            {t.rebus.subtitle}
           </p>
         </div>
       </section>
@@ -36,7 +36,7 @@ export default function RebusListPage() {
           <p className="eyebrow">{language === 'ru' ? 'Ребус-вызовы' : 'Rebus Challenges'}</p>
           <h2 className="sec-title">{language === 'ru' ? 'Разгадай ребус!' : 'Crack the Rebus Code!'}</h2>
           <p className="sec-intro" style={{ marginBottom: 32 }}>
-            {(t as any).rebus.intro}
+            {t.rebus.intro}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -49,7 +49,7 @@ export default function RebusListPage() {
                   className="puzzle-box block"
                   style={{ ["--pz-color" as string]: color, textDecoration: "none" }}
                 >
-                  <p className="puzzle-label">🧩 {(t as any).rebus.puzzle}</p>
+                  <p className="puzzle-label">🧩 {t.rebus.puzzle}</p>
                   <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1rem", color: "var(--text)", marginBottom: 10 }}>
                     {puzzle.title}
                   </h3>

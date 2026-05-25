@@ -25,10 +25,10 @@ export default function QuizListPage() {
             <img src="/images/jr/bible-quizzes-hero.png" alt="Bible Quizzes" style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))" }} />
           </div>
           <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>
-            {(t as any).quiz.title}
+            {t.quiz.title}
           </h1>
           <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.95rem", color: "rgba(255,255,255,.95)", letterSpacing: 1, textTransform: "uppercase", margin: 0 }}>
-            {(t as any).quiz.subtitle}
+            {t.quiz.subtitle}
           </p>
         </div>
       </section>
@@ -37,9 +37,9 @@ export default function QuizListPage() {
       <section className="alt-bg2">
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "44px 18px 52px" }}>
           <p className="eyebrow">{language === 'ru' ? 'Проверьте себя' : 'Challenge Yourself'}</p>
-          <h2 className="sec-title">{(t as any).quiz.heading}</h2>
+          <h2 className="sec-title">{t.quiz.heading}</h2>
           <p className="sec-intro" style={{ marginBottom: 32 }}>
-            {(t as any).quiz.intro}
+            {t.quiz.intro}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
