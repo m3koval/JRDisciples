@@ -93,20 +93,22 @@ export default function HomePage() {
           />
         ))}
 
-        {/* Hero image */}
-        <div style={{ position: "relative", marginBottom: 32, animation: "dove-float 3s ease-in-out infinite", zIndex: 10 }}>
-          <img
-            src="/images/jr/home-hero.png"
-            alt="JR Disciples"
-            style={{
-              width: "clamp(180px, 55vw, 280px)",
-              height: "clamp(180px, 55vw, 280px)",
-              objectFit: "contain",
-              filter: "drop-shadow(0 12px 40px rgba(126,200,227,.6))",
-              borderRadius: 24,
-            }}
-          />
-        </div>
+        {/* Hero image - only show after video ends */}
+        {videoEnded && (
+          <div style={{ position: "relative", marginBottom: 32, animation: "dove-float 3s ease-in-out infinite", zIndex: 10 }}>
+            <img
+              src="/images/jr/home-hero.png"
+              alt="JR Disciples"
+              style={{
+                width: "clamp(180px, 55vw, 280px)",
+                height: "clamp(180px, 55vw, 280px)",
+                objectFit: "contain",
+                filter: "drop-shadow(0 12px 40px rgba(126,200,227,.6))",
+                borderRadius: 24,
+              }}
+            />
+          </div>
+        )}
 
         <h1 style={{
           fontFamily: "var(--font-cinzel)",
