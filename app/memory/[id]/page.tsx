@@ -1,24 +1,30 @@
+'use client'
+
 import { memoryVerses } from "@/data/memory-verses";
+import { memoryVersesRu } from "@/data/memory-verses-ru";
 import MemoryChallenge from "@/components/MemoryChallenge";
 import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
 import { notFound } from "next/navigation";
 
-export function generateStaticParams() {
-  return memoryVerses.map((v) => ({ id: v.id }));
-}
+export default function MemoryPage() {
+  const params = useParams();
+  const id = params.id as string;
+  const { language } = useLanguage();
 
-export default async function MemoryPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-  const verse = memoryVerses.find((v) => v.id === id);
+  const currentVerses = language === 'ru' ? memoryVersesRu : memoryVerses;
+  const verse = currentVerses.find((v) => v.id === id);
+
   if (!verse) notFound();
 
   return (
     <>
-      <div className="sec-banner sb-4">💡 Verse Memory</div>
+      <div className="sec-banner sb-4">💡 {language === 'ru' ? 'Запоминание стихов' : 'Verse Memory'}</div>
       <section className="alt-bg4">
         <div style={{ maxWidth: 680, margin: "0 auto", padding: "44px 18px 52px" }}>
           <Link href="/memory" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#2a6a10", textDecoration: "none", fontSize: "0.88rem" }}>
-            ← All Verses
+            ← {language === 'ru' ? 'Все стихи' : 'All Verses'}
           </Link>
 
           <div style={{ margin: "20px 0 28px" }}>
@@ -29,8 +35,10 @@ export default async function MemoryPage({ params }: { params: Promise<{ id: str
 
           <MemoryChallenge verse={verse} />
 
-          <div className="kid-note" style={{ marginTop: 24 }}>
-            💬 Ask a grown-up: How does this verse apply to your life this week?
+          <div style={{ marginTop: 32, textAlign: "center" }}>
+            <Link href="/memory" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#2a6a10", textDecoration: "none" }}>
+              ← {language === 'ru' ? 'Попробуй другой стих' : 'Try Another Verse'}
+            </Link>
           </div>
         </div>
       </section>

@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useLanguage } from '@/context/LanguageContext'
+import { lessons, lessonsRu } from '@/data/lessons'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 type Tile = { uid: string; word: string }
@@ -139,6 +141,8 @@ function UnlockBanner({ sec }: { sec: number }) {
 
 // ════════════════════════════════════════════════════════════════════════════════
 export default function HolySpiritLesson() {
+  const { language } = useLanguage()
+  const currentLesson = language === 'ru' ? lessonsRu[0] : lessons[0]
 
   // ─── Progress state ──────────────────────────────────────────────────────────
   const [unlocked, setUnlocked] = useState<Set<number>>(new Set([1]))

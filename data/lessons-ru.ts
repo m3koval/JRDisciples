@@ -10,7 +10,7 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
-    href: "/lessons/holy-spirit-ru",
+    href: "/lessons/holy-spirit",
     image: "/images/jr/topic-holy-spirit.png",
     title: "Святой Дух",
     desc: "Кто Он? Его символы, роли, плоды, дары и как жить с Ним — 7 разделов с интерактивными заданиями!",
