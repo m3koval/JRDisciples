@@ -61,9 +61,6 @@ export default function RebusListPage() {
                     ))}
                     <span style={{ fontSize: "1.1rem", color: "#ccc", fontWeight: 900 }}>= ?</span>
                   </div>
-                  <p style={{ fontFamily: "var(--font-lora)", fontStyle: "italic", fontSize: "0.82rem", color: "#888" }}>
-                    {language === 'ru' ? 'Подсказка' : 'Hint'}: {puzzle.hint}
-                  </p>
                   <div className="pz-btn" style={{ textAlign: "center", marginTop: 14 }}>
                     {language === 'ru' ? 'Разгадай!' : 'Solve It!'} →
                   </div>
