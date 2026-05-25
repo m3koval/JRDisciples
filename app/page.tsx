@@ -47,6 +47,7 @@ export default function HomePage() {
             src="/videos/hero-main.mp4"
             autoPlay
             muted
+            playsInline
             onEnded={() => setVideoEnded(true)}
             style={{
               position: "absolute",
@@ -82,8 +83,8 @@ export default function HomePage() {
               src="/images/jr/home-hero.png"
               alt="JR Disciples"
               style={{
-                width: "clamp(180px, 55vw, 280px)",
-                height: "clamp(180px, 55vw, 280px)",
+                width: "clamp(300px, 80vw, 520px)",
+                height: "clamp(300px, 80vw, 520px)",
                 objectFit: "contain",
                 filter: "drop-shadow(0 12px 40px rgba(126,200,227,.6))",
                 borderRadius: 24,
