@@ -15,7 +15,7 @@ const activities: Activity[] = [
   { href: "/memory",   image: "/images/jr/icon-verse-memory.png",   title: "Verse Memory",   desc: "Hide God's Word in your heart!",                        color: "#2a6a10" },
   { href: "/puzzles",  image: "/images/jr/icon-word-puzzles.png",   title: "Word Puzzles",   desc: "Find hidden Bible words in the grid!",                  color: "#7030a0" },
   { href: "/rebus",    image: "/images/jr/icon-rebus-puzzles.png",  title: "Rebus Puzzles",  desc: "Solve picture clues to find Bible words!",              color: "#c05010" },
-  { href: "/lessons",  emoji: "🕊️",                                title: "Lessons",        desc: "Explore Bible topics step by step — with challenges!",  color: "#0d3a6a" },
+  { href: "/lessons",  image: "/images/jr/icon-lessons.png",       title: "Lessons",        desc: "Explore Bible topics step by step — with challenges!",  color: "#0d3a6a" },
 ];
 
 // Static star positions so they're consistent between server and client

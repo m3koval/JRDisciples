@@ -41,6 +41,13 @@ export default async function StoryPage({ params }: { params: Promise<{ id: stri
             </span>
           </div>
 
+          {/* Story image */}
+          {story.image && (
+            <div style={{ marginBottom: 28, textAlign: "center" }}>
+              <img src={story.image} alt={story.title} style={{ maxWidth: 700, width: "100%", borderRadius: 16, boxShadow: "0 8px 24px rgba(0,0,0,.15)" }} />
+            </div>
+          )}
+
           {/* Story content */}
           <div className="puzzle-box" style={{ ["--pz-color" as string]: pzColor }}>
             <p className="puzzle-label">The Story</p>

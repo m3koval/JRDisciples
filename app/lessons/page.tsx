@@ -3,7 +3,7 @@ import Link from "next/link";
 const topics = [
   {
     href: "/lessons/holy-spirit",
-    emoji: "🕊️",
+    image: "/images/jr/topic-holy-spirit.png",
     title: "The Holy Spirit",
     desc: "Who is He? His symbols, roles, fruit, gifts, and how to live with Him — 7 sections with interactive challenges!",
     color: "#0d3a6a",
@@ -15,16 +15,11 @@ export default function LessonsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section style={{ padding: "0" }}>
-        <div style={{ width: "100%", maxWidth: "100%" }}>
-          <img src="/images/jr/lessons-hero.png" alt="Bible Lessons" style={{ width: "100%", height: "auto", display: "block" }} />
-        </div>
-      </section>
-
-      {/* Text Section */}
       <section style={{ background: "linear-gradient(135deg,#0d3a6a,#1a5a9a)", padding: "48px 18px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
-          <div style={{ marginBottom: 20, fontSize: "4rem" }}>🕊️</div>
+          <div style={{ marginBottom: 20, width: "100%", maxWidth: 800 }}>
+            <img src="/images/jr/lessons-hero.png" alt="Bible Lessons" style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))" }} />
+          </div>
           <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>
             Bible Lessons
           </h1>
@@ -55,7 +50,13 @@ export default function LessonsPage() {
                 style={{ ["--pz-color" as string]: topic.color, textDecoration: "none" }}
               >
                 <p className="puzzle-label">Topic · {topic.sections} sections</p>
-                <div style={{ fontSize: "3.2rem", marginBottom: 10 }}>{topic.emoji}</div>
+                <div style={{ height: 80, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 10 }}>
+                  {topic.image ? (
+                    <img src={topic.image} alt={topic.title} style={{ width: 80, height: 80, objectFit: "contain" }} />
+                  ) : (
+                    <span style={{ fontSize: "3.2rem" }}>{topic.emoji}</span>
+                  )}
+                </div>
                 <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.2rem", color: "var(--text)", marginBottom: 6 }}>
                   {topic.title}
                 </h3>
