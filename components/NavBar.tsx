@@ -39,38 +39,6 @@ export default function NavBar() {
           <span className="hidden sm:inline" style={{ letterSpacing: "-0.5px" }}>JR Disciples</span>
         </Link>
 
-        {/* Desktop links */}
-        <ul style={{ display: "flex", gap: 0, listStyle: "none", margin: 0, padding: 0, overflow: "auto", scrollBehavior: "smooth" }} className="hidden lg:flex">
-          {navLinks(t).map((link) => {
-            const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
-            return (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  style={{
-                    fontFamily: "var(--font-nunito)", fontWeight: 900,
-                    fontSize: "0.75rem", letterSpacing: "0.9px", textTransform: "uppercase",
-                    color: active ? "var(--flame2)" : "rgba(255,255,255,.75)",
-                    textDecoration: "none", padding: "8px 14px", borderRadius: 6,
-                    display: "flex", alignItems: "center", gap: 6,
-                    borderBottom: active ? "3px solid var(--flame2)" : "3px solid transparent",
-                    transition: "all 0.2s",
-                    whiteSpace: "nowrap",
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = "var(--flame2)"}
-                  onMouseLeave={(e) => e.currentTarget.style.color = active ? "var(--flame2)" : "rgba(255,255,255,.75)"}
-                >
-                  <span>{link.emoji}</span>
-                  <span className="hidden xl:inline">{link.label}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-
-        {/* Spacer for flex alignment */}
-        <div style={{ flex: 1, display: "none" }} className="lg:block" />
-
         {/* Right side: Language + Hamburger */}
         <div style={{ display: "flex", alignItems: "center", gap: 12, justifyContent: "flex-end" }}>
           {/* Language selector */}
@@ -162,9 +130,8 @@ export default function NavBar() {
             )}
           </div>
 
-          {/* Mobile/tablet hamburger */}
+          {/* Hamburger */}
           <button
-            className="lg:hidden"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
             style={{
