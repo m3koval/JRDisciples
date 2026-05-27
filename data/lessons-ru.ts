@@ -18,6 +18,15 @@ export const lessonTopicsRu: LessonTopic[] = [
     sections: 7,
     emoji: "🕊️",
   },
+  {
+    href: "/lessons/who-is-jesus",
+    image: "/images/jr/topic-who-is-jesus.png",
+    title: "Кто такой Иисус?",
+    desc: "Изучи доказательства — Его заявления, пророчества, чудеса и воскресение. 5 разделов с интерактивными заданиями в стиле детектива!",
+    color: "#8a1a30",
+    sections: 5,
+    emoji: "✝️",
+  },
 ];
 
 export interface LessonSection {

@@ -32,6 +32,15 @@ export const lessonTopics: LessonTopic[] = [
     sections: 7,
     emoji: "🕊️",
   },
+  {
+    href: "/lessons/who-is-jesus",
+    image: "/images/jr/topic-who-is-jesus.png",
+    title: "Who Is Jesus?",
+    desc: "Examine the evidence — His claims, fulfilled prophecies, miracles, and resurrection. 5 sections with detective-style interactive challenges!",
+    color: "#8a1a30",
+    sections: 5,
+    emoji: "✝️",
+  },
 ];
 
 export const lessons: Lesson[] = [
