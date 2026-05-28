@@ -8,13 +8,14 @@ import { useTranslation, type Translations } from "@/lib/useTranslation";
 
 function navLinks(t: Translations) {
   return [
-    { href: "/",        label: t.nav.home,    emoji: "🏠" },
-    { href: "/stories", label: t.nav.stories, emoji: "📖" },
-    { href: "/quiz",    label: t.nav.quizzes, emoji: "❓" },
-    { href: "/memory",  label: t.nav.memory,  emoji: "💡" },
-    { href: "/puzzles", label: t.nav.puzzles, emoji: "🔤" },
-    { href: "/rebus",   label: t.nav.rebus,   emoji: "🧩" },
-    { href: "/lessons", label: t.nav.lessons, emoji: "🕊️" },
+    { href: "/",        label: t.nav.home },
+    { href: "/stories", label: t.nav.stories },
+    { href: "/quiz",    label: t.nav.quizzes },
+    { href: "/memory",  label: t.nav.memory },
+    { href: "/puzzles", label: t.nav.puzzles },
+    { href: "/rebus",   label: t.nav.rebus },
+    { href: "/quests",  label: t.nav.quests },
+    { href: "/lessons", label: t.nav.lessons },
   ];
 }
 
@@ -35,7 +36,12 @@ export default function NavBar() {
           textDecoration: "none", display: "flex", alignItems: "center", gap: 10,
           whiteSpace: "nowrap", flexShrink: 0, transition: "opacity 0.2s",
         }}>
-          <span style={{ fontSize: "1.4rem" }}>✝️</span>
+          <span aria-hidden="true" style={{
+            display: "inline-grid", placeItems: "center", width: 34, height: 34,
+            borderRadius: 12, background: "linear-gradient(135deg,var(--flame2),#ffd866)",
+            color: "var(--deep)", fontFamily: "var(--font-nunito)", fontWeight: 1000,
+            fontSize: "0.78rem", letterSpacing: "-0.5px", boxShadow: "0 6px 18px rgba(255,216,102,.22)",
+          }}>JD</span>
           <span className="hidden sm:inline" style={{ letterSpacing: "-0.5px" }}>JR Disciples</span>
         </Link>
 
@@ -62,8 +68,7 @@ export default function NavBar() {
               onMouseEnter={(e) => e.currentTarget.style.opacity = "0.9"}
               onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}
             >
-              <span>{language === "en" ? "🇬🇧" : "🇷🇺"}</span>
-              <span className="hidden sm:inline">{language === "en" ? "EN" : "РУ"}</span>
+              <span>{language === "en" ? "EN" : "РУ"}</span>
             </button>
             {langOpen && (
               <div style={{
@@ -99,7 +104,7 @@ export default function NavBar() {
                   onMouseEnter={(e) => language !== "en" && (e.currentTarget.style.background = "rgba(126,200,227,.1)")}
                   onMouseLeave={(e) => language !== "en" && (e.currentTarget.style.background = "none")}
                 >
-                  🇬🇧 English
+                  English
                 </button>
                 <div style={{ borderTop: "1px solid rgba(255,255,255,.1)" }} />
                 <button
@@ -124,7 +129,7 @@ export default function NavBar() {
                   onMouseEnter={(e) => language !== "ru" && (e.currentTarget.style.background = "rgba(255,107,26,.1)")}
                   onMouseLeave={(e) => language !== "ru" && (e.currentTarget.style.background = "none")}
                 >
-                  🇷🇺 Русский
+                  Русский
                 </button>
               </div>
             )}
@@ -182,7 +187,12 @@ export default function NavBar() {
                 onMouseEnter={(e) => !active && (e.currentTarget.style.background = "rgba(255,255,255,.05)")}
                 onMouseLeave={(e) => !active && (e.currentTarget.style.background = "none")}
               >
-                <span style={{ fontSize: "1.2rem" }}>{link.emoji}</span>
+                <span aria-hidden="true" style={{
+                  width: 10, height: 10, borderRadius: 999,
+                  background: active ? "var(--flame2)" : "rgba(126,200,227,.55)",
+                  boxShadow: active ? "0 0 16px rgba(255,216,102,.55)" : "none",
+                  flexShrink: 0,
+                }} />
                 <span>{link.label}</span>
               </Link>
             );

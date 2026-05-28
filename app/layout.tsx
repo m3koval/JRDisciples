@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
           <footer style={{ background: "var(--deep)", color: "#fff" }} className="text-center py-5 text-sm">
             <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800 }}>
-              ✝️ JR Disciples — Growing young hearts in God&apos;s Word
+              JR Disciples — Growing young hearts in God&apos;s Word
             </p>
             <p style={{ color: "var(--flame2)", fontSize: "0.75rem", marginTop: 4, fontFamily: "var(--font-nunito)" }}>
               &ldquo;Your word is a lamp to my feet and a light to my path.&rdquo; — Psalm 119:105

@@ -133,7 +133,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Section banner ────────────────────────────────── */}
-      <div className="sec-banner sb-1">⚡ {t.home.pickActivity}</div>
+      <div className="sec-banner sb-1">{t.home.pickActivity}</div>
 
       {/* ── Activity cards ────────────────────────────────── */}
       <section className="alt-bg">
@@ -164,7 +164,7 @@ export default function HomePage() {
                   {act.image ? (
                     <img src={act.image} alt={act.title} style={{ width: 56, height: 56, objectFit: "contain" }} />
                   ) : (
-                    <span style={{ fontSize: "3rem" }}>📚</span>
+                    <span aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 18, background: "linear-gradient(135deg,var(--wind),var(--flame2))", display: "inline-block" }} />
                   )}
                 </div>
                 <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.2rem", color: "var(--text)", marginBottom: 6 }}>
@@ -179,11 +179,112 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
+
+          <Link
+            href="/quests"
+            className="block no-underline hover:no-underline"
+            style={{
+              position: "relative",
+              marginTop: 6,
+              borderRadius: 30,
+              overflow: "hidden",
+              minHeight: 300,
+              display: "grid",
+              alignItems: "stretch",
+              border: "4px solid rgba(255,216,102,.82)",
+              boxShadow: "0 24px 70px rgba(13,31,60,.22)",
+              background: "#0d1f3c",
+              textDecoration: "none",
+              color: "inherit",
+            }}
+          >
+            <img
+              src="/images/jr/quests/quest-hub-map.png"
+              alt="Bible Quests adventure map"
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                transform: "scale(1.03)",
+              }}
+            />
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: "radial-gradient(circle at 72% 36%,rgba(255,216,102,.25),transparent 30%), linear-gradient(90deg,rgba(8,20,40,.92),rgba(8,20,40,.62) 48%,rgba(8,20,40,.2))",
+              }}
+            />
+            <div style={{ position: "relative", zIndex: 1, padding: "clamp(24px,5vw,44px)", maxWidth: 580 }}>
+              <p className="puzzle-label" style={{ color: "#ffd866", marginBottom: 10 }}>Featured Adventure</p>
+              <h3 style={{
+                fontFamily: "var(--font-cinzel)",
+                fontWeight: 700,
+                fontSize: "clamp(2rem,7vw,4rem)",
+                color: "#fff",
+                lineHeight: 1,
+                marginBottom: 14,
+                textShadow: "0 10px 34px rgba(0,0,0,.35)",
+              }}>
+                {t.activities.quests}
+              </h3>
+              <p style={{
+                fontFamily: "var(--font-lora)",
+                color: "rgba(255,255,255,.92)",
+                fontWeight: 700,
+                fontSize: "1.03rem",
+                lineHeight: 1.75,
+                maxWidth: 520,
+              }}>
+                {t.activities.questsDesc}
+              </p>
+              <div style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 10,
+                alignItems: "center",
+                marginTop: 20,
+              }}>
+                <span style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minHeight: 52,
+                  borderRadius: 999,
+                  padding: "0 24px",
+                  background: "linear-gradient(180deg,#6366f1,#4338ca)",
+                  color: "#fff",
+                  fontFamily: "var(--font-nunito)",
+                  fontWeight: 1000,
+                  boxShadow: "0 14px 30px rgba(79,70,229,.34)",
+                }}>
+                  Start Bible Quests →
+                </span>
+                <span style={{
+                  display: "inline-flex",
+                  minHeight: 40,
+                  alignItems: "center",
+                  borderRadius: 999,
+                  padding: "0 14px",
+                  background: "rgba(255,255,255,.92)",
+                  color: "#7c2d12",
+                  fontFamily: "var(--font-nunito)",
+                  fontWeight: 1000,
+                  fontSize: ".82rem",
+                }}>
+                  Playable now: Courage Quest
+                </span>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 
       {/* ── Divider ───────────────────────────────────────── */}
-      <div className="divider"><div className="div-line"/><span className="div-icon">✝️</span><div className="div-line"/></div>
+      <div className="divider"><div className="div-line"/><span className="div-icon" aria-hidden="true"/><div className="div-line"/></div>
 
       {/* ── Pull quote ────────────────────────────────────── */}
       <section className="alt-bg3">
@@ -196,7 +297,7 @@ export default function HomePage() {
           </div>
 
           <div className="kid-note">
-            💬 {t.home.kidNote}
+            {t.home.kidNote}
           </div>
         </div>
       </section>

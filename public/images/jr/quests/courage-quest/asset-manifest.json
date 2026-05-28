@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Cover / quest invitation",
+    "file": "/home/helper/work/JRDisciples/public/images/jr/quests/courage-quest/00-cover-courage-quest.png",
+    "publicPath": "/images/jr/quests/courage-quest/00-cover-courage-quest.png",
+    "url": "https://v3b.fal.media/files/b/0a9bec0c/RuaMbXD0rvYc50vb__bOV_DPeVzL44.png"
+  },
+  {
+    "title": "Scene 1 \u2014 The Cave Entrance",
+    "file": "/home/helper/work/JRDisciples/public/images/jr/quests/courage-quest/01-scene-cave-entrance.png",
+    "publicPath": "/images/jr/quests/courage-quest/01-scene-cave-entrance.png",
+    "url": "https://v3b.fal.media/files/b/0a9bec13/wTLsiO97HGsFO5NhKuJci_n8J3wHD3.png"
+  },
+  {
+    "title": "Scene 2 \u2014 The Whispering Tunnel",
+    "file": "/home/helper/work/JRDisciples/public/images/jr/quests/courage-quest/02-scene-whispering-tunnel.png",
+    "publicPath": "/images/jr/quests/courage-quest/02-scene-whispering-tunnel.png",
+    "url": "https://v3b.fal.media/files/b/0a9bec19/vN5dOJG8rd00q11KS3jJh_X3JlFM4o.png"
+  },
+  {
+    "title": "Scene 3 \u2014 The Cracked Stone Path",
+    "file": "/home/helper/work/JRDisciples/public/images/jr/quests/courage-quest/03-scene-cracked-stone-path.png",
+    "publicPath": "/images/jr/quests/courage-quest/03-scene-cracked-stone-path.png",
+    "url": "https://v3b.fal.media/files/b/0a9bec21/NZ9IsQv-RFiR4gi2tfV64_d9nLfSj5.png"
+  },
+  {
+    "title": "Scene 4 \u2014 The Deep Chamber Rescue",
+    "file": "/home/helper/work/JRDisciples/public/images/jr/quests/courage-quest/04-scene-deep-chamber-rescue.png",
+    "publicPath": "/images/jr/quests/courage-quest/04-scene-deep-chamber-rescue.png",
+    "url": "https://v3b.fal.media/files/b/0a9bec26/4psRxcf_aViacw8oufsSd_clrQjbbi.png"
+  },
+  {
+    "title": "Quest Complete Badge",
+    "file": "/home/helper/work/JRDisciples/public/images/jr/quests/courage-quest/05-badge-quest-complete.png",
+    "publicPath": "/images/jr/quests/courage-quest/05-badge-quest-complete.png",
+    "url": "https://v3b.fal.media/files/b/0a9bec2d/RWY_Ma4gf5WMeUn8CL97G_pA31HFuE.png"
+  }
+]

@@ -211,7 +211,14 @@ body {
   height: 1px;
   background: linear-gradient(90deg,transparent,rgba(0,0,0,.1),transparent);
 }
-.div-icon { font-size: 1.3rem; }
+.div-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--gold);
+  box-shadow: 0 0 18px rgba(240,192,64,.55);
+  flex-shrink: 0;
+}
 
 /* ── Word search cells ────────────────────────────────────── */
 .word-cell {
