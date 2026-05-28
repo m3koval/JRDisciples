@@ -376,6 +376,7 @@ export default function WhoIsJesusLesson() {
   const [wsCoords, setWsCoords] = useState<Record<string, [number, number][]>>({})
   const [wsSel,    setWsSel]    = useState<Set<string>>(new Set())
   const [wsFound,  setWsFound]  = useState<Set<string>>(new Set())
+  const [wsStart,  setWsStart]  = useState<[number,number]|null>(null)
 
   // ─── Progress state ───────────────────────────────────────────────────────────
   const [unlocked, setUnlocked] = useState<Set<number>>(() => {
@@ -528,27 +529,53 @@ export default function WhoIsJesusLesson() {
   }
 
   // ─── Section 3: Word search ───────────────────────────────────────────────────
+  function wsLine(r1: number, c1: number, r2: number, c2: number): [number,number][] | null {
+    const dr = r2 - r1, dc = c2 - c1
+    const len = Math.max(Math.abs(dr), Math.abs(dc))
+    if (len === 0) return [[r1, c1]]
+    if (Math.abs(dr) !== 0 && Math.abs(dc) !== 0 && Math.abs(dr) !== Math.abs(dc)) return null
+    const sr = dr === 0 ? 0 : dr / Math.abs(dr)
+    const sc = dc === 0 ? 0 : dc / Math.abs(dc)
+    return Array.from({ length: len + 1 }, (_, i) => [r1 + i * sr, c1 + i * sc] as [number,number])
+  }
+
   function wsClick(r: number, c: number) {
     for (const [word, coords] of Object.entries(wsCoords)) {
       if (wsFound.has(word) && coords.some(([rr, cc]) => rr === r && cc === c)) return
     }
-    const key = `${r},${c}`
-    const newSel = new Set(wsSel)
-    if (newSel.has(key)) newSel.delete(key)
-    else newSel.add(key)
-
+    if (!wsStart) {
+      setWsStart([r, c])
+      setWsSel(new Set([`${r},${c}`]))
+      return
+    }
+    const [sr, sc] = wsStart
+    if (sr === r && sc === c) {
+      setWsStart(null)
+      setWsSel(new Set())
+      return
+    }
+    const line = wsLine(sr, sc, r, c)
+    if (!line) {
+      setWsStart([r, c])
+      setWsSel(new Set([`${r},${c}`]))
+      return
+    }
+    const selSet = new Set(line.map(([rr, cc]) => `${rr},${cc}`))
     for (const [word, coords] of Object.entries(wsCoords)) {
       if (wsFound.has(word)) continue
-      const keys = coords.map(([rr, cc]) => `${rr},${cc}`)
-      if (newSel.size === keys.length && keys.every(k => newSel.has(k))) {
+      const wordKeys = coords.map(([rr, cc]) => `${rr},${cc}`)
+      if (selSet.size === wordKeys.length && wordKeys.every(k => selSet.has(k))) {
         const newFound = new Set([...wsFound, word])
         setWsFound(newFound)
         setWsSel(new Set())
+        setWsStart(null)
         if (newFound.size === Object.keys(wsCoords).length) solve('ws', 3)
         return
       }
     }
-    setWsSel(newSel)
+    setWsSel(selSet)
+    setWsStart(null)
+    setTimeout(() => setWsSel(new Set()), 600)
   }
 
   function wsCellState(r: number, c: number): 'found' | 'selected' | 'normal' {
