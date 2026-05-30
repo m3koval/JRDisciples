@@ -69,24 +69,35 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
   const [selected, setSelected] = useState<number | null>(null)
   const [solved, setSolved] = useState<boolean[]>(() => scenes.map(() => false))
   const [finished, setFinished] = useState(false)
-  const [phase, setPhase] = useState<'story' | 'choice'>('story')
+  const [phase, setPhase] = useState<'story' | 'choice' | 'result'>('story')
   const feedbackRef = useRef<HTMLDivElement | null>(null)
 
   const scene = scenes[index]
   const lights = solved.filter(Boolean).length
   const progress = useMemo(() => Math.round((lights / scenes.length) * 100), [lights, scenes.length])
   const chosen = selected !== null ? scene.choices[selected] : null
+  const isGameplay = started && !finished
+
+  useEffect(() => {
+    if (!isGameplay) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [isGameplay])
 
   useEffect(() => {
     if (selected !== null) {
       window.requestAnimationFrame(() => {
-        feedbackRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        feedbackRef.current?.focus({ preventScroll: true })
       })
     }
   }, [selected])
 
   function choose(choiceIndex: number) {
     setSelected(choiceIndex)
+    setPhase('result')
     if (scene.choices[choiceIndex].good) {
       setSolved(prev => prev.map((v, i) => i === index ? true : v))
     }
@@ -113,12 +124,16 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
   }
 
   return (
-    <main className="courage-page">
+    <main className={`courage-page ${isGameplay ? 'playing' : ''}`}>
       <style>{`
         .courage-page { min-height: 100vh; background: radial-gradient(circle at top,#152a5c,#081428 56%,#050914); color: #fff; overflow: hidden; }
+        .courage-page.playing { position: fixed; inset: 0; z-index: 1000; width: 100vw; height: 100dvh; min-height: 0; overflow: hidden; }
         .courage-shell { max-width: 1160px; margin: 0 auto; padding: 24px 18px 60px; }
+        .playing .courage-shell { max-width: none; height: 100%; padding: 10px; display: flex; flex-direction: column; }
         .quest-back { display: inline-flex; align-items: center; color: #ffd866; font-family: var(--font-nunito); font-weight: 1000; text-decoration: none; margin-bottom: 18px; }
+        .playing .quest-back { position: absolute; left: 18px; top: 14px; z-index: 5; min-height: 36px; margin: 0; padding: 0 12px; border-radius: 999px; background: rgba(5,9,20,.7); border: 1px solid rgba(255,216,102,.45); backdrop-filter: blur(8px); }
         .adventure-frame { position: relative; border-radius: 36px; overflow: hidden; min-height: 680px; box-shadow: 0 32px 100px rgba(0,0,0,.42); border: 4px solid rgba(255,216,102,.72); isolation: isolate; background: #0d1f3c; }
+        .playing .adventure-frame { flex: 1; min-height: 0; height: 100%; border-radius: 28px; }
         .adventure-frame::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(180deg,rgba(8,20,40,.24),rgba(8,20,40,.88)), var(--frame-image); background-size: cover; background-position: center; transform: scale(1.03); animation: cinematicDrift 16s ease-in-out infinite alternate; z-index: -3; }
         .adventure-frame::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 48% 42%,rgba(255,216,102,.24),transparent 28%), linear-gradient(90deg,rgba(8,20,40,.84),rgba(8,20,40,.16) 50%,rgba(8,20,40,.78)); z-index: -2; }
         .truth-particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: -1; }
@@ -138,7 +153,10 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
         .quest-button:hover { transform: translateY(-1px); filter: brightness(1.08); }
         .quest-button.green { background: linear-gradient(180deg,#22c55e,#15803d); }
         .quest-stage { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(360px,.95fr); gap: 24px; align-items: stretch; padding: clamp(16px,3vw,28px); }
+        .playing .quest-stage { height: 100%; min-height: 0; padding: 46px 16px 16px; gap: 16px; grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+        .quest-visual { min-height: 0; display: flex; flex-direction: column; }
         .scene-media { position: relative; border-radius: 30px; overflow: hidden; min-height: 610px; border: 3px solid rgba(255,255,255,.22); background: #0d1f3c; box-shadow: 0 24px 70px rgba(0,0,0,.32); }
+        .playing .scene-media { flex: 1; min-height: 0; height: auto; }
         .scene-media img { position: relative; z-index: 0; width: 100%; height: 100%; object-fit: cover; display: block; animation: imageBreathe 10s ease-in-out infinite alternate; }
         .scene-media::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg,rgba(8,20,40,.08),rgba(8,20,40,.18)); pointer-events: none; }
         .comic-bubbles { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
@@ -160,28 +178,41 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
         .game-caption { position: absolute; left: 18px; right: 18px; bottom: 18px; z-index: 3; border-radius: 20px; padding: 14px 16px; background: linear-gradient(180deg,rgba(5,9,20,.88),rgba(8,20,40,.96)); border: 2px solid rgba(255,216,102,.9); color: #fff7d6; font-family: var(--font-lora); font-weight: 800; line-height: 1.5; box-shadow: 0 16px 42px rgba(0,0,0,.38); }
         .game-caption strong { display: block; color: #ffd866; font-family: var(--font-nunito); font-size: .72rem; letter-spacing: 1.6px; text-transform: uppercase; margin-bottom: 4px; }
         .scene-card { background: rgba(255,255,255,.96); color: var(--text); border-radius: 30px; padding: clamp(20px,3vw,32px); border: 3px solid rgba(255,216,102,.82); box-shadow: 0 24px 70px rgba(0,0,0,.28); align-self: start; }
+        .playing .scene-card { align-self: stretch; min-height: 0; height: 100%; display: flex; flex-direction: column; overflow: hidden; padding: clamp(14px,2vw,22px); }
         .game-caption-card { border-radius: 22px; padding: 14px 16px; margin-bottom: 14px; background: linear-gradient(180deg,#111827,#0d1f3c); border: 3px solid #ffd866; color: #fff7d6; font-family: var(--font-lora); font-weight: 800; line-height: 1.5; box-shadow: inset 0 0 0 2px rgba(255,255,255,.08),0 12px 26px rgba(13,31,60,.16); }
+        .playing .game-caption-card { padding: 10px 12px; margin-bottom: 10px; border-width: 2px; line-height: 1.35; font-size: .9rem; }
         .game-caption-card strong { display: block; color: #ffd866; font-family: var(--font-nunito); font-size: .72rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; }
         .game-caption-card p { margin: 0; }
         .choice-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 10px; }
         .choice-letter { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-right: 10px; border-radius: 999px; background: #4338ca; color: #fff; font-size: .85rem; box-shadow: inset 0 -2px 0 rgba(0,0,0,.18); }
         .progress-label { display: flex; justify-content: space-between; gap: 16px; color: #fff7d6; font-family: var(--font-nunito); font-weight: 1000; text-transform: uppercase; letter-spacing: 1.4px; font-size: .78rem; margin-bottom: 10px; }
+        .playing .progress-label { margin: 0 0 6px; padding-left: 108px; font-size: .72rem; }
         .progress-track { height: 14px; border-radius: 999px; background: rgba(255,255,255,.2); overflow: hidden; margin-bottom: 12px; }
+        .playing .progress-track { height: 10px; margin-bottom: 8px; }
         .progress-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg,#fbbf24,#fef08a); transition: width .35s ease; }
         .truth-map { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 18px; }
+        .playing .truth-map { gap: 6px; margin-bottom: 8px; }
         .truth-node { min-height: 34px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; gap: 4px; background: rgba(255,255,255,.15); color: rgba(255,247,214,.72); border: 2px solid rgba(255,255,255,.18); font-family: var(--font-nunito); font-weight: 1000; font-size: .78rem; box-shadow: inset 0 0 18px rgba(255,255,255,.05); }
         .truth-node.current { background: rgba(126,200,227,.22); color: #fff; border-color: rgba(126,200,227,.78); }
         .truth-node.lit { background: linear-gradient(180deg,#fff7ad,#fbbf24); color: #3b2307; border-color: #f59e0b; box-shadow: 0 0 22px rgba(251,191,36,.5); }
         .truth-node span { font-size: 1rem; line-height: 1; }
         .scene-title { font-family: var(--font-cinzel); color: var(--deep); font-size: clamp(1.75rem,5vw,3rem); line-height: 1.05; margin: 0 0 12px; }
+        .playing .scene-title { font-size: clamp(1.45rem,3.6vw,2.45rem); margin-bottom: 8px; }
         .scene-body { font-family: var(--font-lora); color: #374151; font-weight: 700; font-size: 1.03rem; line-height: 1.75; }
+        .playing .scene-body { font-size: clamp(.86rem,1.25vw,.98rem); line-height: 1.48; margin: 0 0 10px; }
         .echo-box { margin: 18px 0; border-radius: 18px; padding: 15px 16px; color: #fff7d6; background: linear-gradient(135deg,#111827,#1f2937); border-left: 6px solid #fbbf24; font-family: var(--font-nunito); font-weight: 1000; line-height: 1.55; }
+        .playing .echo-box { margin: 8px 0 10px; padding: 10px 12px; font-size: .9rem; line-height: 1.35; }
         .prompt { font-family: var(--font-nunito); color: var(--deep); font-size: 1.12rem; font-weight: 1000; margin: 16px 0 10px; }
+        .playing .prompt { margin: 8px 0; font-size: 1rem; }
         .choice { width: 100%; min-height: 56px; text-align: left; border: 2px solid #e5e7eb; background: #fff; color: var(--text); border-radius: 18px; padding: 15px 16px; margin: 0; font-family: var(--font-nunito); font-weight: 1000; cursor: pointer; line-height: 1.35; transition: transform .15s, border-color .15s, background .15s, box-shadow .15s; display: flex; align-items: center; }
+        .playing .choice { min-height: 46px; padding: 10px 12px; font-size: .9rem; line-height: 1.24; border-radius: 15px; }
         .choice:hover { transform: translateY(-1px); border-color: #7ec8e3; background: #f0f9ff; box-shadow: 0 10px 22px rgba(13,31,60,.08); }
         .choice.good { border-color: #16a34a; background: #ecfdf5; }
         .choice.bad { border-color: #dc2626; background: #fff1f2; }
         .truth-panel { border-radius: 22px; padding: 16px; margin-top: 16px; background: linear-gradient(135deg,#fff7ed,#fffbeb); border: 2px solid #fed7aa; color: #7c2d12; font-family: var(--font-nunito); font-weight: 900; line-height: 1.55; }
+        .playing .truth-panel { margin-top: 10px; padding: 12px; font-size: .88rem; line-height: 1.35; outline: none; }
+        .playing .truth-panel p { margin-bottom: 0; }
+        .playing .truth-panel .quest-button { min-height: 44px; margin-top: 8px; }
         .badge-card { max-width: 860px; margin: clamp(18px,4vw,44px) auto; background: rgba(255,255,255,.96); color: var(--text); border-radius: 34px; padding: clamp(22px,5vw,44px); text-align: center; border: 4px solid #f0c040; box-shadow: 0 30px 90px rgba(0,0,0,.36); }
         .badge-image { width: min(430px,100%); border-radius: 30px; border: 4px solid #f0c040; box-shadow: 0 22px 54px rgba(79,70,229,.22); margin: 0 auto 22px; display: block; }
         .parent-box { text-align: left; max-width: 720px; margin: 22px auto; background: #fff; border-radius: 24px; padding: 22px; border: 2px solid #e5e7eb; }
@@ -200,26 +231,49 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
           .hero-content { min-height: auto; width: 100%; padding: 18px; align-items: center; }
           .story-card { width: min(100%,560px); }
           .quest-stage { grid-template-columns: 1fr; gap: 14px; padding: 14px; }
+          .playing .quest-stage { grid-template-columns: 1fr; grid-template-rows: minmax(0,1fr) minmax(0,1fr); height: 100%; gap: 10px; padding: 46px 10px 10px; }
           .scene-media { min-height: 240px; max-height: 38vh; aspect-ratio: 16 / 10; }
+          .playing .scene-media { min-height: 0; max-height: none; aspect-ratio: auto; }
           .scene-card { padding: 22px; }
+          .playing .scene-card { padding: 14px; border-radius: 22px; }
+          .playing .quest-kicker { font-size: .62rem; letter-spacing: 1.5px; margin-bottom: 4px; }
+          .playing .scene-title { font-size: clamp(1.35rem,5vw,1.9rem); margin-bottom: 6px; }
+          .playing .game-caption-card { margin-bottom: 7px; padding: 8px 10px; font-size: .82rem; }
+          .playing .scene-body { font-size: .82rem; line-height: 1.34; margin-bottom: 7px; }
+          .playing .echo-box { margin: 6px 0 7px; padding: 8px 10px; font-size: .8rem; }
+          .playing .quest-button { min-height: 44px; }
+          .playing .choice-grid { gap: 6px; margin-top: 6px; }
+          .playing .choice { min-height: 42px; padding: 8px 10px; font-size: .8rem; }
+          .playing .truth-panel { margin-top: 7px; padding: 9px 10px; font-size: .78rem; }
           .progress-label { margin-top: 2px; }
         }
         @media (max-width: 560px) {
           .courage-shell { padding: 12px 8px 36px; }
+          .playing .courage-shell { padding: 6px; }
+          .playing .quest-back { left: 10px; top: 8px; min-height: 30px; padding: 0 9px; font-size: .78rem; }
           .adventure-frame { border-radius: 22px; border-width: 3px; }
+          .playing .adventure-frame { border-radius: 18px; border-width: 2px; }
           .hero-content { padding: 12px; }
           .story-card,.scene-card,.badge-card { border-radius: 22px; padding: 18px; }
+          .playing .scene-card { padding: 9px; border-width: 2px; }
           .quest-title { font-size: clamp(1.95rem,12vw,3rem); }
           .quest-subtitle { font-size: .96rem; line-height: 1.48; }
           .verse-strip { font-size: .9rem; padding: 10px 12px; }
           .quest-button { width: 100%; min-height: 56px; padding: 0 18px; }
           .quest-stage { padding: 10px; gap: 12px; }
+          .playing .quest-stage { grid-template-rows: minmax(0,1fr) minmax(0,1fr); padding: 38px 6px 6px; gap: 6px; }
           .progress-label { font-size: .72rem; gap: 8px; letter-spacing: .8px; }
+          .playing .progress-label { padding-left: 76px; font-size: .58rem; margin-bottom: 4px; }
           .progress-track { height: 12px; margin-bottom: 8px; }
+          .playing .progress-track { height: 7px; margin-bottom: 4px; }
           .truth-map { gap: 5px; margin-bottom: 10px; }
+          .playing .truth-map { gap: 4px; margin-bottom: 5px; }
           .truth-node { min-height: 28px; font-size: .68rem; border-width: 1px; }
+          .playing .truth-node { min-height: 21px; font-size: .58rem; }
           .truth-node span { font-size: .86rem; }
+          .playing .truth-node span { font-size: .7rem; }
           .scene-media { min-height: 190px; max-height: 30vh; border-radius: 22px; }
+          .playing .scene-media { min-height: 0; max-height: none; border-radius: 16px; }
           .comic-bubble { max-width: 47%; padding: 9px 10px; font-size: .78rem; border-width: 2px !important; }
           .comic-bubble span { font-size: .56rem; letter-spacing: .8px; margin-bottom: 2px; }
           .comic-bubble.top-left,.comic-bubble.bottom-left { left: 9px; }
@@ -232,13 +286,24 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
           .comic-bubble.thought::after { width: 7px; height: 7px; right: 10px; bottom: -24px; border-width: 2px; }
           .game-caption { left: 10px; right: 10px; bottom: 10px; border-radius: 16px; padding: 10px 12px; font-size: .84rem; line-height: 1.4; }
           .game-caption strong { font-size: .6rem; letter-spacing: 1px; }
+          .playing .game-caption-card { padding: 6px 8px; margin-bottom: 5px; font-size: .7rem; line-height: 1.22; border-width: 2px; border-radius: 14px; }
+          .playing .game-caption-card strong { font-size: .52rem; margin-bottom: 2px; }
           .scene-title { font-size: clamp(1.65rem,9vw,2.35rem); }
+          .playing .scene-title { font-size: clamp(1.15rem,6vw,1.55rem); margin-bottom: 4px; }
           .scene-body { font-size: .98rem; line-height: 1.62; }
+          .playing .scene-body { font-size: .72rem; line-height: 1.25; margin-bottom: 5px; }
           .echo-box { margin: 14px 0; padding: 13px 14px; }
+          .playing .echo-box { margin: 4px 0 5px; padding: 6px 8px; font-size: .7rem; line-height: 1.22; border-left-width: 4px; }
           .prompt { font-size: 1.05rem; margin-top: 14px; }
+          .playing .prompt { font-size: .82rem; margin: 5px 0; }
           .choice { min-height: 58px; padding: 14px; margin: 0; border-radius: 16px; }
+          .playing .choice { min-height: 34px; padding: 6px 8px; font-size: .68rem; border-radius: 11px; }
           .choice-letter { width: 28px; height: 28px; margin-right: 8px; }
+          .playing .choice-letter { width: 22px; height: 22px; margin-right: 6px; font-size: .7rem; }
           .truth-panel { border-radius: 18px; padding: 14px; }
+          .playing .truth-panel { padding: 7px 8px; font-size: .68rem; line-height: 1.2; }
+          .playing .truth-panel hr { margin: 6px 0 !important; }
+          .playing .truth-panel .quest-button { min-height: 34px; margin-top: 5px; }
           .badge-image { width: min(320px,100%); border-radius: 22px; }
           .parent-box { padding: 16px; }
         }
@@ -283,7 +348,7 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
           <section className="adventure-frame" style={{ ['--frame-image' as string]: `url(${images[scene.id]})` }}>
             <div className="truth-particles" aria-hidden="true"><span /><span /><span /><span /><span /></div>
             <div className="quest-stage">
-              <div>
+              <div className="quest-visual">
                 <div className="progress-label">
                   <span>{t.path}</span>
                   <span>{t.truthLight}: {lights}/{scenes.length}</span>
@@ -323,27 +388,34 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
                 </div>
               </div>
 
-              <div className="scene-card">
-                <p className="quest-kicker">{t.scene} {index + 1} {t.of} {scenes.length} · {scene.place}</p>
-                <h1 className="scene-title">{scene.title}</h1>
-                <div className="game-caption-card">
-                  <strong>{scene.place}</strong>
-                  <p>{scene.caption}</p>
-                </div>
-                <p className="scene-body">{scene.body}</p>
-                <div className="echo-box">{scene.danger}</div>
-
-                {phase === 'story' ? (
-                  <button type="button" className="quest-button" onClick={() => setPhase('choice')}>{t.chooseStep}</button>
-                ) : (
+              <div className={`scene-card phase-${phase}`}>
+                {phase === 'story' && (
                   <>
-                    <h2 className="prompt">{scene.prompt}</h2>
+                    <p className="quest-kicker">{t.scene} {index + 1} {t.of} {scenes.length} · {scene.place}</p>
+                    <h1 className="scene-title">{scene.title}</h1>
+                    <div className="game-caption-card">
+                      <strong>{scene.place}</strong>
+                      <p>{scene.caption}</p>
+                    </div>
+                    <p className="scene-body">{scene.body}</p>
+                    <div className="echo-box">{scene.danger}</div>
+                    <button type="button" className="quest-button" onClick={() => setPhase('choice')}>{t.chooseStep}</button>
+                  </>
+                )}
+
+                {phase === 'choice' && (
+                  <>
+                    <p className="quest-kicker">{t.chooseStep}</p>
+                    <h1 className="scene-title">{scene.prompt}</h1>
+                    <div className="game-caption-card">
+                      <strong>{scene.place}</strong>
+                      <p>{scene.caption}</p>
+                    </div>
                     <div className="choice-grid">
                       {scene.choices.map((choice, i) => {
-                        const picked = selected === i
                         const letter = String.fromCharCode(65 + i)
                         return (
-                          <button key={choice.label} onClick={() => choose(i)} className={`choice ${picked ? choice.good ? 'good' : 'bad' : ''}`}>
+                          <button key={choice.label} onClick={() => choose(i)} className="choice">
                             <span className="choice-letter" aria-hidden="true">{letter}</span>
                             <span>{choice.label}</span>
                           </button>
@@ -353,19 +425,21 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
                   </>
                 )}
 
-                {chosen && (
-                  <div className="truth-panel" ref={feedbackRef} aria-live="polite">
-                    <strong>{chosen.good ? t.correct : t.almost}</strong>
+                {phase === 'result' && chosen && (
+                  <div className="truth-panel result-screen" ref={feedbackRef} tabIndex={-1} aria-live="polite">
+                    <p className="quest-kicker">{chosen.good ? t.correct : t.almost}</p>
+                    <h1 className="scene-title">{chosen.good ? t.truthLight : t.tryAgain}</h1>
                     <p style={{ marginTop: 6 }}>{chosen.response}</p>
-                    {chosen.good && (
+                    {chosen.good ? (
                       <>
                         <hr style={{ border: 0, borderTop: '1px solid rgba(124,45,18,.2)', margin: '12px 0' }} />
                         <p>{t.bigTruth}: {scene.truth}</p>
                         <p style={{ fontStyle: 'italic', marginTop: 4 }}>{scene.verse}</p>
                         <button className="quest-button green" onClick={next}>{index === scenes.length - 1 ? t.finish : t.continue}</button>
                       </>
+                    ) : (
+                      <button className="quest-button" onClick={() => { setSelected(null); setPhase('choice') }}>{t.tryAgain}</button>
                     )}
-                    {!chosen.good && <p style={{ marginTop: 8 }}>{t.tryAgain}</p>}
                   </div>
                 )}
               </div>
