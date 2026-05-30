@@ -65,30 +65,36 @@ export default function HomePage() {
             playsInline
             onEnded={() => setVideoEnded(true)}
             style={{
-              width: "100%",
+              width: "min(100%, 1280px)",
               height: "auto",
               display: "block",
+              margin: "24px auto 0",
+              borderRadius: "0 0 28px 28px",
+              boxShadow: "0 24px 80px rgba(0,0,0,.28)",
               position: "relative",
               zIndex: 10,
             }}
           />
         )}
 
-        {/* Hero image — shown after video ends */}
+        {/* Hero image — shown after video ends; match video size to avoid layout shrink */}
         {videoEnded && (
-          <div style={{ padding: "40px 16px 8px", animation: "dove-float 3s ease-in-out infinite", position: "relative", zIndex: 10 }}>
-            <img
-              src="/images/jr/home-hero.png"
-              alt="JR Disciples"
-              style={{
-                width: "clamp(300px, 80vw, 520px)",
-                height: "clamp(300px, 80vw, 520px)",
-                objectFit: "contain",
-                filter: "drop-shadow(0 12px 40px rgba(126,200,227,.6))",
-                borderRadius: 24,
-              }}
-            />
-          </div>
+          <img
+            src="/images/jr/home-hero.png"
+            alt="JR Disciples"
+            style={{
+              width: "min(100%, 1280px)",
+              aspectRatio: "16 / 9",
+              height: "auto",
+              display: "block",
+              margin: "24px auto 0",
+              objectFit: "cover",
+              borderRadius: "0 0 28px 28px",
+              boxShadow: "0 24px 80px rgba(0,0,0,.28)",
+              position: "relative",
+              zIndex: 10,
+            }}
+          />
         )}
 
         {/* Title, subtitle, quote — flow below video/image */}
