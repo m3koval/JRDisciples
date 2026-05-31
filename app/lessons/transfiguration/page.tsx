@@ -329,7 +329,7 @@ export default function TransfigurationPage() {
           <p className="sec-intro" style={{ marginTop: 14 }}>
             {isRu
               ? 'Когда Пётр ещё говорил, светлое облако накрыло их. Голос из облака произнёс: «Сей есть Сын Мой Возлюбленный — Его слушайте!» Ученики в страхе пали на лица свои. Иисус подошёл, прикоснулся к ним и сказал: «Встаньте, не бойтесь». Когда они подняли глаза — увидели только Иисуса.'
-              : 'While Peter was still speaking, a bright cloud covered them. A voice from the cloud said: "This is my Son, whom I love — listen to Him!" The disciples fell facedown in fear. Jesus came and touched them: "Get up. Don\'t be afraid." When they looked up, they saw no one except Jesus alone.'}
+              : 'While Peter was still speaking, a bright cloud covered them. A voice from the cloud said: "This is my beloved Son, with whom I am well pleased — listen to him!" The disciples fell facedown in fear. Jesus came and touched them: "Get up. Don\'t be afraid." When they looked up, they saw no one except Jesus alone.'}
           </p>
 
           <div className="kid-note" style={{ marginTop: 20 }}>
