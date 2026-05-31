@@ -1,0 +1,36 @@
+{
+  "quest": "The Storm Rescue",
+  "slug": "storm-rescue",
+  "assets": [
+    {
+      "name": "00-cover-storm-rescue",
+      "promptFile": "public/images/jr/quests/storm-rescue/prompts/00-cover-storm-rescue.md",
+      "publicPath": "/images/jr/quests/storm-rescue/00-cover-storm-rescue.png"
+    },
+    {
+      "name": "01-scene-dark-clouds",
+      "promptFile": "public/images/jr/quests/storm-rescue/prompts/01-scene-dark-clouds.md",
+      "publicPath": "/images/jr/quests/storm-rescue/01-scene-dark-clouds.png"
+    },
+    {
+      "name": "02-scene-rough-water",
+      "promptFile": "public/images/jr/quests/storm-rescue/prompts/02-scene-rough-water.md",
+      "publicPath": "/images/jr/quests/storm-rescue/02-scene-rough-water.png"
+    },
+    {
+      "name": "03-scene-broken-oar",
+      "promptFile": "public/images/jr/quests/storm-rescue/prompts/03-scene-broken-oar.md",
+      "publicPath": "/images/jr/quests/storm-rescue/03-scene-broken-oar.png"
+    },
+    {
+      "name": "04-scene-safe-harbor",
+      "promptFile": "public/images/jr/quests/storm-rescue/prompts/04-scene-safe-harbor.md",
+      "publicPath": "/images/jr/quests/storm-rescue/04-scene-safe-harbor.png"
+    },
+    {
+      "name": "05-badge-quest-complete",
+      "promptFile": "public/images/jr/quests/storm-rescue/prompts/05-badge-quest-complete.md",
+      "publicPath": "/images/jr/quests/storm-rescue/05-badge-quest-complete.png"
+    }
+  ]
+}

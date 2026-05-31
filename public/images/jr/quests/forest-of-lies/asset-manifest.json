@@ -1,0 +1,36 @@
+{
+  "quest": "The Forest of Lies",
+  "slug": "forest-of-lies",
+  "assets": [
+    {
+      "name": "00-cover-forest-of-lies",
+      "promptFile": "public/images/jr/quests/forest-of-lies/prompts/00-cover-forest-of-lies.md",
+      "publicPath": "/images/jr/quests/forest-of-lies/00-cover-forest-of-lies.png"
+    },
+    {
+      "name": "01-scene-forked-path",
+      "promptFile": "public/images/jr/quests/forest-of-lies/prompts/01-scene-forked-path.md",
+      "publicPath": "/images/jr/quests/forest-of-lies/01-scene-forked-path.png"
+    },
+    {
+      "name": "02-scene-mirror-lake",
+      "promptFile": "public/images/jr/quests/forest-of-lies/prompts/02-scene-mirror-lake.md",
+      "publicPath": "/images/jr/quests/forest-of-lies/02-scene-mirror-lake.png"
+    },
+    {
+      "name": "03-scene-vine-maze",
+      "promptFile": "public/images/jr/quests/forest-of-lies/prompts/03-scene-vine-maze.md",
+      "publicPath": "/images/jr/quests/forest-of-lies/03-scene-vine-maze.png"
+    },
+    {
+      "name": "04-scene-truth-tree",
+      "promptFile": "public/images/jr/quests/forest-of-lies/prompts/04-scene-truth-tree.md",
+      "publicPath": "/images/jr/quests/forest-of-lies/04-scene-truth-tree.png"
+    },
+    {
+      "name": "05-badge-quest-complete",
+      "promptFile": "public/images/jr/quests/forest-of-lies/prompts/05-badge-quest-complete.md",
+      "publicPath": "/images/jr/quests/forest-of-lies/05-badge-quest-complete.png"
+    }
+  ]
+}

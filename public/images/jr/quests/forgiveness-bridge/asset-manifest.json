@@ -1,0 +1,36 @@
+{
+  "quest": "Forgiveness Bridge",
+  "slug": "forgiveness-bridge",
+  "assets": [
+    {
+      "name": "00-cover-forgiveness-bridge",
+      "promptFile": "public/images/jr/quests/forgiveness-bridge/prompts/00-cover-forgiveness-bridge.md",
+      "publicPath": "/images/jr/quests/forgiveness-bridge/00-cover-forgiveness-bridge.png"
+    },
+    {
+      "name": "01-scene-broken-bridge",
+      "promptFile": "public/images/jr/quests/forgiveness-bridge/prompts/01-scene-broken-bridge.md",
+      "publicPath": "/images/jr/quests/forgiveness-bridge/01-scene-broken-bridge.png"
+    },
+    {
+      "name": "02-scene-angry-stones",
+      "promptFile": "public/images/jr/quests/forgiveness-bridge/prompts/02-scene-angry-stones.md",
+      "publicPath": "/images/jr/quests/forgiveness-bridge/02-scene-angry-stones.png"
+    },
+    {
+      "name": "03-scene-mercy-plank",
+      "promptFile": "public/images/jr/quests/forgiveness-bridge/prompts/03-scene-mercy-plank.md",
+      "publicPath": "/images/jr/quests/forgiveness-bridge/03-scene-mercy-plank.png"
+    },
+    {
+      "name": "04-scene-bridge-restored",
+      "promptFile": "public/images/jr/quests/forgiveness-bridge/prompts/04-scene-bridge-restored.md",
+      "publicPath": "/images/jr/quests/forgiveness-bridge/04-scene-bridge-restored.png"
+    },
+    {
+      "name": "05-badge-quest-complete",
+      "promptFile": "public/images/jr/quests/forgiveness-bridge/prompts/05-badge-quest-complete.md",
+      "publicPath": "/images/jr/quests/forgiveness-bridge/05-badge-quest-complete.png"
+    }
+  ]
+}

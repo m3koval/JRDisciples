@@ -6,9 +6,9 @@ import { useLanguage } from '@/context/LanguageContext'
 const questArt = {
   hub: '/images/jr/quests/quest-hub-map.png',
   courage: '/images/jr/quests/courage-quest/00-cover-courage-quest.png',
-  forgiveness: '/images/jr/quests/forgiveness-bridge-teaser.png',
-  forest: '/images/jr/quests/forest-of-lies-teaser.png',
-  storm: '/images/jr/quests/storm-rescue-teaser.png',
+  forgiveness: '/images/jr/quests/forgiveness-bridge/00-cover-forgiveness-bridge.png',
+  forest: '/images/jr/quests/forest-of-lies/00-cover-forest-of-lies.png',
+  storm: '/images/jr/quests/storm-rescue/00-cover-storm-rescue.png',
 }
 
 const copy = {
@@ -17,60 +17,99 @@ const copy = {
     subtitle: 'Interactive Adventures · Choose Truth · Follow Jesus',
     eyebrow: 'Choose Your Quest',
     heading: 'Step into the story',
-    intro: 'Bible Quests are interactive adventures where kids face danger, make choices, collect truth, and learn to trust God one brave step at a time.',
+    intro: 'Bible Quests are interactive adventures where kids face pressure, make choices, collect truth lights, and learn to follow Jesus one faithful step at a time.',
     activeBadge: 'Playable now',
-    firstQuest: 'First Quest',
-    courageTitle: 'Courage Quest: The Cave of Echoes',
-    courageDesc: 'Enter a mysterious cave, answer fear with Scripture, rescue the lost lamb, and learn that courage means trusting God when you are afraid.',
-    courageTruth: 'Big truth: God helps me take the next right step.',
-    verse: 'Psalm 56:3',
-    start: 'Start Courage Quest',
-    next: 'Coming next',
-    comingIntro: 'More adventures are being prepared for Junior Disciples.',
-    forgiveness: 'Forgiveness Bridge',
-    forgivenessDesc: 'Choose mercy, cross the bridge, and learn how forgiveness heals what anger breaks.',
-    forest: 'The Forest of Lies',
-    forestDesc: 'Follow truth lights through the trees and learn how God’s Word helps us reject lies.',
-    storm: 'The Storm Rescue',
-    stormDesc: 'Trust Jesus in the wind and waves while helping a friend reach safe harbor.',
-    locked: 'Coming soon',
+    featured: 'Featured Quest',
+    all: 'More playable quests',
     back: 'Back to Home',
+    start: 'Start Quest',
+    quests: [
+      {
+        href: '/quests/courage-quest',
+        image: questArt.courage,
+        title: 'Courage Quest: The Cave of Echoes',
+        desc: 'Enter a mysterious cave, answer fear with Scripture, rescue the lost lamb, and learn that courage means trusting God when you are afraid.',
+        truth: 'Big truth: God helps me take the next right step.',
+        verse: 'Psalm 56:3',
+      },
+      {
+        href: '/quests/forgiveness-bridge',
+        image: questArt.forgiveness,
+        title: 'Forgiveness Bridge',
+        desc: 'Choose mercy, repair the broken bridge, and learn how forgiveness heals what anger tries to break.',
+        truth: 'Big truth: Because Jesus forgives me, I can forgive others.',
+        verse: 'Ephesians 4:32',
+      },
+      {
+        href: '/quests/forest-of-lies',
+        image: questArt.forest,
+        title: 'The Forest of Lies',
+        desc: 'Follow truth lights through the forest, test every whisper, and learn how God’s Word helps us reject lies.',
+        truth: 'Big truth: God’s truth helps me recognize and reject lies.',
+        verse: 'John 8:32',
+      },
+      {
+        href: '/quests/storm-rescue',
+        image: questArt.storm,
+        title: 'The Storm Rescue',
+        desc: 'Trust Jesus in the wind and waves while helping a friend reach safe harbor.',
+        truth: 'Big truth: Jesus is with me in the storm.',
+        verse: 'Mark 4:39',
+      },
+    ],
   },
   ru: {
     title: 'Библейские квесты',
     subtitle: 'Интерактивные приключения · Выбирай истину · Следуй за Иисусом',
     eyebrow: 'Выбери квест',
     heading: 'Войди в историю',
-    intro: 'Библейские квесты — это интерактивные приключения, где дети встречают опасность, делают выбор, собирают истины и учатся доверять Богу шаг за шагом.',
+    intro: 'Библейские квесты — это интерактивные приключения, где дети делают выбор, собирают огни истины и учатся следовать за Иисусом шаг за шагом.',
     activeBadge: 'Можно играть',
-    firstQuest: 'Первый квест',
-    courageTitle: 'Квест мужества: Пещера эха',
-    courageDesc: 'Войди в таинственную пещеру, ответь страху словами Писания, спаси потерянного ягнёнка и узнай: мужество — это доверять Богу, когда страшно.',
-    courageTruth: 'Главная истина: Бог помогает мне сделать следующий правильный шаг.',
-    verse: 'Псалом 55:4',
-    start: 'Начать квест мужества',
-    next: 'Скоро',
-    comingIntro: 'Новые приключения готовятся для Junior Disciples.',
-    forgiveness: 'Мост прощения',
-    forgivenessDesc: 'Выбери милость, перейди мост и узнай, как прощение исцеляет то, что ломает гнев.',
-    forest: 'Лес лжи',
-    forestDesc: 'Иди за огнями истины через деревья и узнай, как Божье Слово помогает отвергать ложь.',
-    storm: 'Спасение в буре',
-    stormDesc: 'Доверься Иисусу среди ветра и волн и помоги другу добраться до безопасной гавани.',
-    locked: 'Скоро',
+    featured: 'Главный квест',
+    all: 'Другие квесты',
     back: 'Назад на главную',
+    start: 'Начать квест',
+    quests: [
+      {
+        href: '/quests/courage-quest',
+        image: questArt.courage,
+        title: 'Квест мужества: Пещера эха',
+        desc: 'Войди в пещеру, ответь страху словами Писания, спаси потерянного ягнёнка и учись доверять Богу.',
+        truth: 'Главная истина: Бог помогает мне сделать следующий правильный шаг.',
+        verse: 'Псалом 55:4',
+      },
+      {
+        href: '/quests/forgiveness-bridge',
+        image: questArt.forgiveness,
+        title: 'Мост прощения',
+        desc: 'Выбери милость, почини мост и узнай, как прощение исцеляет то, что ломает гнев.',
+        truth: 'Главная истина: Иисус прощает меня, и я могу прощать других.',
+        verse: 'Ефесянам 4:32',
+      },
+      {
+        href: '/quests/forest-of-lies',
+        image: questArt.forest,
+        title: 'Лес лжи',
+        desc: 'Иди за огнями истины и узнай, как Божье Слово помогает отвергать ложь.',
+        truth: 'Главная истина: Божья истина помогает мне распознавать ложь.',
+        verse: 'Иоанна 8:32',
+      },
+      {
+        href: '/quests/storm-rescue',
+        image: questArt.storm,
+        title: 'Спасение в буре',
+        desc: 'Доверься Иисусу среди ветра и волн и помоги другу добраться до безопасной гавани.',
+        truth: 'Главная истина: Иисус со мной в буре.',
+        verse: 'Марка 4:39',
+      },
+    ],
   },
 }
 
 export default function QuestsPage() {
   const { language } = useLanguage()
   const c = copy[language]
-
-  const coming = [
-    { title: c.forgiveness, desc: c.forgivenessDesc, image: questArt.forgiveness },
-    { title: c.forest, desc: c.forestDesc, image: questArt.forest },
-    { title: c.storm, desc: c.stormDesc, image: questArt.storm },
-  ]
+  const [featured, ...more] = c.quests
 
   return (
     <main className="quest-index-page">
@@ -93,31 +132,30 @@ export default function QuestsPage() {
         .truth-orbs span:nth-child(4) { left: 86%; top: 28%; animation-delay: -4s; width: 9px; height: 9px; }
         .quest-index-body { background: linear-gradient(180deg,#fff7ed,#fdf8f0 38%,#e8f4ff); padding: 48px 18px 64px; color: var(--text); }
         .featured-quest { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(320px,.95fr); gap: 26px; align-items: stretch; background: #fff; border-radius: 34px; border: 4px solid rgba(255,216,102,.78); overflow: hidden; box-shadow: 0 24px 70px rgba(13,31,60,.18); text-decoration: none; color: inherit; }
-        .featured-quest:hover .featured-img { transform: scale(1.045); }
+        .featured-quest:hover .featured-img,.quest-card:hover img { transform: scale(1.045); }
         .featured-media { min-height: 360px; position: relative; overflow: hidden; background: #0d1f3c; }
-        .featured-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s ease; animation: imageBreathe 9s ease-in-out infinite alternate; }
+        .featured-img,.quest-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s ease; animation: imageBreathe 9s ease-in-out infinite alternate; }
         .featured-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg,transparent 35%,rgba(8,20,40,.42)); }
         .featured-copy { padding: clamp(24px,4vw,40px); display: flex; flex-direction: column; justify-content: center; }
         .status-pill { display: inline-flex; width: fit-content; border-radius: 999px; padding: 8px 12px; background: #eef2ff; color: #4338ca; font-family: var(--font-nunito); font-weight: 1000; font-size: .78rem; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 12px; }
         .featured-title { font-family: var(--font-cinzel); color: var(--deep); font-size: clamp(1.9rem,5vw,3rem); line-height: 1.08; margin-bottom: 14px; }
-        .featured-desc { font-family: var(--font-lora); color: #374151; font-weight: 700; line-height: 1.75; margin-bottom: 14px; }
-        .featured-truth { border-radius: 18px; background: #fff7ed; border: 2px solid #fed7aa; padding: 14px 16px; color: #7c2d12; font-family: var(--font-nunito); font-weight: 900; }
+        .featured-desc,.quest-card p { font-family: var(--font-lora); color: #374151; font-weight: 700; line-height: 1.7; margin-bottom: 14px; }
+        .featured-truth,.quest-truth { border-radius: 18px; background: #fff7ed; border: 2px solid #fed7aa; padding: 14px 16px; color: #7c2d12; font-family: var(--font-nunito); font-weight: 900; }
         .quest-start-cta { margin-top: 20px; display: inline-flex; justify-content: center; align-items: center; min-height: 52px; width: fit-content; border-radius: 999px; padding: 0 24px; background: linear-gradient(180deg,#6366f1,#4338ca); color: #fff; font-family: var(--font-nunito); font-weight: 1000; box-shadow: 0 12px 26px rgba(79,70,229,.26); }
         .coming-header { margin: 46px 0 20px; text-align: center; }
         .coming-title { font-family: var(--font-cinzel); color: var(--deep); font-size: clamp(1.8rem,5vw,2.6rem); margin-bottom: 8px; }
-        .coming-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
-        .coming-card { background: rgba(255,255,255,.92); border-radius: 26px; overflow: hidden; border: 2px solid rgba(13,31,60,.08); box-shadow: 0 18px 42px rgba(13,31,60,.12); }
-        .coming-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
-        .coming-copy { padding: 18px; }
-        .coming-copy h3 { font-family: var(--font-nunito); font-weight: 1000; color: var(--deep); font-size: 1.2rem; margin-bottom: 8px; }
-        .coming-copy p { font-family: var(--font-lora); color: #4b5563; font-weight: 700; line-height: 1.6; font-size: .96rem; }
-        .locked-pill { display: inline-flex; margin-top: 12px; border-radius: 999px; padding: 7px 11px; background: #fef3c7; color: #92400e; font-family: var(--font-nunito); font-weight: 1000; font-size: .75rem; text-transform: uppercase; letter-spacing: 1.2px; }
+        .quest-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+        .quest-card { background: rgba(255,255,255,.94); border-radius: 26px; overflow: hidden; border: 2px solid rgba(13,31,60,.08); box-shadow: 0 18px 42px rgba(13,31,60,.12); text-decoration: none; color: inherit; }
+        .quest-card-media { aspect-ratio: 4 / 3; overflow: hidden; background: #0d1f3c; }
+        .quest-card-copy { padding: 18px; }
+        .quest-card h3 { font-family: var(--font-nunito); font-weight: 1000; color: var(--deep); font-size: 1.22rem; margin-bottom: 8px; }
+        .quest-card .status-pill { margin-top: 14px; margin-bottom: 0; }
         .back-link { display: block; margin-top: 28px; text-align: center; color: var(--fire); font-family: var(--font-nunito); font-weight: 900; text-decoration: none; }
         @keyframes questMapDrift { from { transform: scale(1.04) translate3d(-10px,-6px,0); } to { transform: scale(1.1) translate3d(12px,8px,0); } }
         @keyframes orbFloat { 0%,100% { transform: translate3d(0,0,0) scale(.8); opacity: .35; } 50% { transform: translate3d(18px,-44px,0) scale(1.2); opacity: 1; } }
         @keyframes imageBreathe { from { transform: scale(1); } to { transform: scale(1.035); } }
-        @media (max-width: 860px) { .featured-quest { grid-template-columns: 1fr; } .featured-media { min-height: 280px; } .coming-grid { grid-template-columns: 1fr; } }
-        @media (prefers-reduced-motion: reduce) { .quest-index-hero::before,.truth-orbs span,.featured-img { animation: none !important; } .featured-quest:hover .featured-img { transform: none; } }
+        @media (max-width: 860px) { .featured-quest { grid-template-columns: 1fr; } .featured-media { min-height: 280px; } .quest-grid { grid-template-columns: 1fr; } }
+        @media (prefers-reduced-motion: reduce) { .quest-index-hero::before,.truth-orbs span,.featured-img,.quest-card img { animation: none !important; } .featured-quest:hover .featured-img,.quest-card:hover img { transform: none; } }
       `}</style>
 
       <section className="quest-index-hero">
@@ -134,35 +172,37 @@ export default function QuestsPage() {
 
       <section className="quest-index-body">
         <div className="quest-index-wrap">
-          <Link href="/quests/courage-quest" className="featured-quest">
+          <Link href={featured.href} className="featured-quest">
             <div className="featured-media">
-              <img className="featured-img" src={questArt.courage} alt={c.courageTitle} />
+              <img className="featured-img" src={featured.image} alt={featured.title} />
             </div>
             <div className="featured-copy">
-              <span className="status-pill">{c.activeBadge} · {c.verse}</span>
-              <p className="quest-kicker">{c.firstQuest}</p>
-              <h2 className="featured-title">{c.courageTitle}</h2>
-              <p className="featured-desc">{c.courageDesc}</p>
-              <div className="featured-truth">{c.courageTruth}</div>
+              <span className="status-pill">{c.activeBadge} · {featured.verse}</span>
+              <p className="quest-kicker">{c.featured}</p>
+              <h2 className="featured-title">{featured.title}</h2>
+              <p className="featured-desc">{featured.desc}</p>
+              <div className="featured-truth">{featured.truth}</div>
               <span className="quest-start-cta">{c.start}</span>
             </div>
           </Link>
 
           <div className="coming-header">
-            <p className="quest-kicker">{c.next}</p>
-            <h2 className="coming-title">{c.comingIntro}</h2>
+            <p className="quest-kicker">{c.activeBadge}</p>
+            <h2 className="coming-title">{c.all}</h2>
           </div>
 
-          <div className="coming-grid">
-            {coming.map(item => (
-              <article className="coming-card" key={item.title}>
-                <img src={item.image} alt={item.title} />
-                <div className="coming-copy">
+          <div className="quest-grid">
+            {more.map(item => (
+              <Link className="quest-card" href={item.href} key={item.href}>
+                <div className="quest-card-media"><img src={item.image} alt={item.title} /></div>
+                <div className="quest-card-copy">
+                  <span className="status-pill">{item.verse}</span>
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
-                  <span className="locked-pill">{c.locked}</span>
+                  <div className="quest-truth">{item.truth}</div>
+                  <span className="quest-start-cta">{c.start}</span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
 
