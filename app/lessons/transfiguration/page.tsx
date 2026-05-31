@@ -538,10 +538,48 @@ export default function TransfigurationPage() {
                 : 'Together they represent the entire Old Testament — from Genesis to Malachi. And both were pointing forward to Someone greater. Their meeting on the mountain declared loudly: Jesus is the fulfillment of everything! He came to perfectly keep the Law no one else could keep, and to fulfill every prophecy about the coming Messiah.'}
             </p>
 
-            <div className="kid-note" style={{ marginTop: 18 }}>
-              {isRu
-                ? '💡 Бог сказал: «Его слушайте!» — не Моисея, не Илию. Это означает, что Иисус больше Закона и больше всех пророков. Он — сам Бог!'
-                : '💡 God said "Listen to Him!" — not Moses, not Elijah. This means Jesus is greater than the Law and greater than all the Prophets. He is God Himself!'}
+            {/* ── "Listen to Him" callout ── */}
+            <div style={{
+              margin: '24px 0 0', borderRadius: 18,
+              overflow: 'hidden', boxShadow: '0 4px 20px rgba(138,101,0,.18)',
+            }}>
+              {/* header */}
+              <div style={{ background: `linear-gradient(135deg,${ACCENT},${ACCENT_DARK})`, padding: '12px 20px', textAlign: 'center' }}>
+                <span style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.8rem', color: 'rgba(255,255,255,.85)', letterSpacing: 2, textTransform: 'uppercase' }}>
+                  {isRu ? '🔑 Бог сказал это дважды' : '🔑 God said it twice'}
+                </span>
+              </div>
+              {/* body */}
+              <div style={{ background: ACCENT_GLOW, padding: '20px 22px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+                {/* Baptism */}
+                <div style={{ background: '#fff', borderRadius: 12, padding: '14px 16px', borderLeft: `4px solid #aaa` }}>
+                  <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 700, fontSize: '0.72rem', color: '#888', letterSpacing: 1, textTransform: 'uppercase', marginBottom: 6 }}>
+                    {isRu ? 'Крещение — Матф. 3:17' : 'Baptism — Matthew 3:17'}
+                  </p>
+                  <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', fontSize: '0.95rem', color: '#555', lineHeight: 1.6, margin: 0 }}>
+                    {isRu
+                      ? '"Сей есть Сын Мой Возлюбленный, в Котором Моё благоволение."'
+                      : '"This is my beloved Son, with whom I am well pleased."'}
+                  </p>
+                </div>
+                {/* Transfiguration */}
+                <div style={{ background: '#fff', borderRadius: 12, padding: '14px 16px', borderLeft: `4px solid ${ACCENT}` }}>
+                  <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 700, fontSize: '0.72rem', color: ACCENT, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 6 }}>
+                    {isRu ? 'Преображение — Матф. 17:5' : 'Transfiguration — Matthew 17:5'}
+                  </p>
+                  <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', fontSize: '0.95rem', color: '#555', lineHeight: 1.6, margin: 0 }}>
+                    {isRu
+                      ? <>"Сей есть Сын Мой Возлюбленный, в Котором Моё благоволение —{' '}<span style={{ fontFamily: 'var(--font-nunito)', fontStyle: 'normal', fontWeight: 900, color: ACCENT_DARK, fontSize: '1.05rem' }}>Его слушайте!</span>"</>
+                      : <>"This is my beloved Son, with whom I am well pleased —{' '}<span style={{ fontFamily: 'var(--font-nunito)', fontStyle: 'normal', fontWeight: 900, color: ACCENT_DARK, fontSize: '1.05rem' }}>listen to him!</span>"</>
+                    }
+                  </p>
+                </div>
+                <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 800, fontSize: '0.88rem', color: ACCENT_DARK, textAlign: 'center', margin: 0, lineHeight: 1.5 }}>
+                  {isRu
+                    ? 'Три новых слова. Бог не просто говорит, кто такой Иисус — Он говорит нам, что делать: слушать Его!'
+                    : 'Three new words. God doesn\'t just tell us who Jesus is — He tells us what to do: listen to Him!'}
+                </p>
+              </div>
             </div>
 
             {/* ── Activity 3: True/False ─────────────────────────────── */}
