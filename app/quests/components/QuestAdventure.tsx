@@ -75,6 +75,19 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
   const scene = scenes[index]
   const lights = solved.filter(Boolean).length
   const progress = useMemo(() => Math.round((lights / scenes.length) * 100), [lights, scenes.length])
+  const choiceOrder = useMemo(() => {
+    const ordered = scene.choices.map((choice, originalIndex) => ({ choice, originalIndex }))
+    let seed = `${lang}-${scene.id}`.split('').reduce((total, char) => total + char.charCodeAt(0), 0)
+    for (let i = ordered.length - 1; i > 0; i--) {
+      seed = (seed * 9301 + 49297) % 233280
+      const j = seed % (i + 1)
+      ;[ordered[i], ordered[j]] = [ordered[j], ordered[i]]
+    }
+    if (ordered[0]?.choice.good && ordered.length > 1) {
+      ordered.push(ordered.shift()!)
+    }
+    return ordered
+  }, [lang, scene.id, scene.choices])
   const chosen = selected !== null ? scene.choices[selected] : null
   const isGameplay = started && !finished
 
@@ -222,7 +235,7 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
         @keyframes cinematicDrift { from { transform: scale(1.03) translate3d(-8px,-4px,0); } to { transform: scale(1.1) translate3d(12px,8px,0); } }
         @keyframes particleRise { 0%,100% { transform: translate3d(0,0,0) scale(.8); opacity: .32; } 50% { transform: translate3d(20px,-48px,0) scale(1.2); opacity: 1; } }
         @keyframes imageBreathe { from { transform: scale(1); } to { transform: scale(1.045); } }
-        @media (min-width: 1100px) { .choice-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .choice:first-child { grid-column: 1 / -1; } }
+        @media (min-width: 1100px) { .choice-grid { grid-template-columns: 1fr; } }
         @media (max-width: 900px) {
           .courage-shell { padding: 18px 12px 48px; }
           .quest-back { min-height: 44px; align-items: center; margin-bottom: 10px; }
@@ -412,10 +425,10 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
                       <p>{scene.caption}</p>
                     </div>
                     <div className="choice-grid">
-                      {scene.choices.map((choice, i) => {
+                      {choiceOrder.map(({ choice, originalIndex }, i) => {
                         const letter = String.fromCharCode(65 + i)
                         return (
-                          <button key={choice.label} onClick={() => choose(i)} className="choice">
+                          <button key={choice.label} onClick={() => choose(originalIndex)} className="choice">
                             <span className="choice-letter" aria-hidden="true">{letter}</span>
                             <span>{choice.label}</span>
                           </button>
