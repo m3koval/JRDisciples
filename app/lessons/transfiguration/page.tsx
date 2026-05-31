@@ -559,7 +559,7 @@ export default function TransfigurationPage() {
                   <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', fontSize: '0.95rem', color: '#555', lineHeight: 1.6, margin: 0 }}>
                     {isRu
                       ? '"Сей есть Сын Мой Возлюбленный, в Котором Моё благоволение."'
-                      : '"This is my Son, whom I love; with him I am well pleased."'}
+                      : '"This is my beloved Son, with whom I am well pleased."'}
                   </p>
                 </div>
                 {/* Transfiguration */}
@@ -570,7 +570,7 @@ export default function TransfigurationPage() {
                   <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', fontSize: '0.95rem', color: '#555', lineHeight: 1.6, margin: 0 }}>
                     {isRu
                       ? <>"Сей есть Сын Мой Возлюбленный —{' '}<span style={{ fontFamily: 'var(--font-nunito)', fontStyle: 'normal', fontWeight: 900, color: ACCENT_DARK, fontSize: '1.05rem' }}>Его слушайте!</span>"</>
-                      : <>"This is my Son, whom I love —{' '}<span style={{ fontFamily: 'var(--font-nunito)', fontStyle: 'normal', fontWeight: 900, color: ACCENT_DARK, fontSize: '1.05rem' }}>listen to Him!</span>"</>
+                      : <>"This is my beloved Son, with whom I am well pleased —{' '}<span style={{ fontFamily: 'var(--font-nunito)', fontStyle: 'normal', fontWeight: 900, color: ACCENT_DARK, fontSize: '1.05rem' }}>listen to him!</span>"</>
                     }
                   </p>
                 </div>
