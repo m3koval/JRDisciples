@@ -33,6 +33,15 @@ export const lessonTopics: LessonTopic[] = [
     emoji: "🕊️",
   },
   {
+    href: "/lessons/transfiguration",
+    image: "/images/jr/topic-transfiguration.png",
+    title: "The Transfiguration",
+    desc: "Jesus revealed His glory on a mountain — and what that means for you. 4 sections with story sequencing, witness cards, T/F quiz, and a memory verse!",
+    color: "#8a6500",
+    sections: 4,
+    emoji: "⛰️",
+  },
+  {
     href: "/lessons/who-is-jesus",
     image: "/images/jr/topic-who-is-jesus.png",
     title: "Who Is Jesus?",

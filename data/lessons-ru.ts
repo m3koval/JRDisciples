@@ -19,6 +19,15 @@ export const lessonTopicsRu: LessonTopic[] = [
     emoji: "🕊️",
   },
   {
+    href: "/lessons/transfiguration",
+    image: "/images/jr/topic-transfiguration.png",
+    title: "Преображение",
+    desc: "Иисус явил Свою славу на горе — и что это значит для тебя. 4 раздела: последовательность истории, карточки свидетелей, правда/ложь и стих на память!",
+    color: "#8a6500",
+    sections: 4,
+    emoji: "⛰️",
+  },
+  {
     href: "/lessons/who-is-jesus",
     image: "/images/jr/topic-who-is-jesus.png",
     title: "Кто такой Иисус?",
