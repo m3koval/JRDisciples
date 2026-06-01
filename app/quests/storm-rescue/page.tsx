@@ -5,17 +5,17 @@ const EN = [
     "id": "dark-clouds",
     "place": "The Little Harbor",
     "title": "Clouds over the harbor",
-    "body": "Mica, Liora, and Ezra are loading a small toy-brick boat when dark blue clouds roll over the water. A younger friend, Nia, is stranded on a tiny dock across the cove.",
+    "body": "Michael, Rosie, and Joseph are loading a small toy-brick boat when dark blue clouds roll over the water. A younger friend, Nia, is stranded on a tiny dock across the cove.",
     "caption": "The harbor grows windy, and Nia needs help across the water.",
     "danger": "The wind whispers: “Panic first. Pray later.”",
     "echo": "Panic first...",
     "thought": "Pray now.",
-    "prompt": "What should Mica do first?",
+    "prompt": "What should Michael do first?",
     "choices": [
       {
         "label": "Pray, listen, and prepare the boat carefully",
         "good": true,
-        "response": "Good. Trusting Jesus helps Mica act wisely instead of panicking."
+        "response": "Good. Trusting Jesus helps Michael act wisely instead of panicking."
       },
       {
         "label": "Scream at everyone until they hurry",
@@ -30,13 +30,13 @@ const EN = [
     ],
     "truth": "I can pray before I panic.",
     "verse": "Philippians 4:6 — “Do not be anxious about anything...”",
-    "alt": "Mica Liora and Ezra at a small harbor preparing a toy-brick boat under gentle storm clouds while Nia waits across the cove"
+    "alt": "Michael Rosie and Joseph at a small harbor preparing a toy-brick boat under gentle storm clouds while Nia waits across the cove"
   },
   {
     "id": "rough-water",
     "place": "The Rough Water",
     "title": "Waves against the boat",
-    "body": "The boat rocks as waves slap the sides. Liora grips the rope while Ezra watches the lantern. The storm is loud, but the golden light still points toward Nia.",
+    "body": "The boat rocks as waves slap the sides. Rosie grips the rope while Joseph watches the lantern. The storm is loud, but the golden light still points toward Nia.",
     "caption": "The waves are loud, but the rescue light still points the way.",
     "danger": "The storm whispers: “You are alone out here.”",
     "echo": "Alone out here...",
@@ -67,7 +67,7 @@ const EN = [
     "id": "broken-oar",
     "place": "The Broken Oar",
     "title": "A tool breaks",
-    "body": "Halfway across, an oar cracks. Ezra wants to quit, but Liora notices a spare paddle tucked under the seat. The rescue is harder now, not impossible.",
+    "body": "Halfway across, an oar cracks. Joseph wants to quit, but Rosie notices a spare paddle tucked under the seat. The rescue is harder now, not impossible.",
     "caption": "The broken oar feels like a setback, but God provides another way to keep serving.",
     "danger": "The wind whispers: “If it is hard, stop helping.”",
     "echo": "Stop helping...",
@@ -92,7 +92,7 @@ const EN = [
     ],
     "truth": "God helps me keep serving when it gets hard.",
     "verse": "Galatians 6:9 — “Let us not grow weary of doing good...”",
-    "alt": "Ezra discovering a spare paddle in a small boat while Liora holds a cracked oar and Mica points toward Nia"
+    "alt": "Joseph discovering a spare paddle in a small boat while Rosie holds a cracked oar and Michael points toward Nia"
   },
   {
     "id": "safe-harbor",
@@ -123,7 +123,7 @@ const EN = [
     ],
     "truth": "Jesus is faithful from fear to peace.",
     "verse": "Psalm 46:1 — “God is our refuge and strength...”",
-    "alt": "Mica Liora Ezra and Nia arriving safely at a glowing harbor as clouds part and golden Scripture light shines"
+    "alt": "Michael Rosie Joseph and Nia arriving safely at a glowing harbor as clouds part and golden Scripture light shines"
   }
 ] satisfies QuestScene[]
 
@@ -132,17 +132,17 @@ const RU = [
     "id": "dark-clouds",
     "place": "The Little Harbor",
     "title": "Clouds over the harbor",
-    "body": "Mica, Liora, and Ezra are loading a small toy-brick boat when dark blue clouds roll over the water. A younger friend, Nia, is stranded on a tiny dock across the cove.",
+    "body": "Michael, Rosie, and Joseph are loading a small toy-brick boat when dark blue clouds roll over the water. A younger friend, Nia, is stranded on a tiny dock across the cove.",
     "caption": "The harbor grows windy, and Nia needs help across the water.",
     "danger": "The wind whispers: “Panic first. Pray later.”",
     "echo": "Panic first...",
     "thought": "Pray now.",
-    "prompt": "What should Mica do first?",
+    "prompt": "What should Michael do first?",
     "choices": [
       {
         "label": "Pray, listen, and prepare the boat carefully",
         "good": true,
-        "response": "Good. Trusting Jesus helps Mica act wisely instead of panicking."
+        "response": "Good. Trusting Jesus helps Michael act wisely instead of panicking."
       },
       {
         "label": "Scream at everyone until they hurry",
@@ -157,13 +157,13 @@ const RU = [
     ],
     "truth": "I can pray before I panic.",
     "verse": "Philippians 4:6 — “Do not be anxious about anything...”",
-    "alt": "Mica Liora and Ezra at a small harbor preparing a toy-brick boat under gentle storm clouds while Nia waits across the cove"
+    "alt": "Michael Rosie and Joseph at a small harbor preparing a toy-brick boat under gentle storm clouds while Nia waits across the cove"
   },
   {
     "id": "rough-water",
     "place": "The Rough Water",
     "title": "Waves against the boat",
-    "body": "The boat rocks as waves slap the sides. Liora grips the rope while Ezra watches the lantern. The storm is loud, but the golden light still points toward Nia.",
+    "body": "The boat rocks as waves slap the sides. Rosie grips the rope while Joseph watches the lantern. The storm is loud, but the golden light still points toward Nia.",
     "caption": "The waves are loud, but the rescue light still points the way.",
     "danger": "The storm whispers: “You are alone out here.”",
     "echo": "Alone out here...",
@@ -194,7 +194,7 @@ const RU = [
     "id": "broken-oar",
     "place": "The Broken Oar",
     "title": "A tool breaks",
-    "body": "Halfway across, an oar cracks. Ezra wants to quit, but Liora notices a spare paddle tucked under the seat. The rescue is harder now, not impossible.",
+    "body": "Halfway across, an oar cracks. Joseph wants to quit, but Rosie notices a spare paddle tucked under the seat. The rescue is harder now, not impossible.",
     "caption": "The broken oar feels like a setback, but God provides another way to keep serving.",
     "danger": "The wind whispers: “If it is hard, stop helping.”",
     "echo": "Stop helping...",
@@ -219,7 +219,7 @@ const RU = [
     ],
     "truth": "God helps me keep serving when it gets hard.",
     "verse": "Galatians 6:9 — “Let us not grow weary of doing good...”",
-    "alt": "Ezra discovering a spare paddle in a small boat while Liora holds a cracked oar and Mica points toward Nia"
+    "alt": "Joseph discovering a spare paddle in a small boat while Rosie holds a cracked oar and Michael points toward Nia"
   },
   {
     "id": "safe-harbor",
@@ -250,7 +250,7 @@ const RU = [
     ],
     "truth": "Jesus is faithful from fear to peace.",
     "verse": "Psalm 46:1 — “God is our refuge and strength...”",
-    "alt": "Mica Liora Ezra and Nia arriving safely at a glowing harbor as clouds part and golden Scripture light shines"
+    "alt": "Michael Rosie Joseph and Nia arriving safely at a glowing harbor as clouds part and golden Scripture light shines"
   }
 ] satisfies QuestScene[]
 

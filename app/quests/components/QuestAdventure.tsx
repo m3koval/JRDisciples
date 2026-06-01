@@ -342,7 +342,7 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
           </section>
         ) : finished ? (
           <section className="badge-card">
-            <img className="badge-image" src={images.badge} alt="Mica and Liora celebrating with the Courage Quest badge" />
+            <img className="badge-image" src={images.badge} alt="Michael and Rosie celebrating with the Courage Quest badge" />
             <p className="quest-kicker">{t.completed}</p>
             <h1 className="quest-title">{t.badge}</h1>
             <p className="quest-subtitle" style={{ color: '#4f46e5', fontFamily: 'var(--font-nunito)', fontWeight: 1000 }}>{t.badgeLine}</p>

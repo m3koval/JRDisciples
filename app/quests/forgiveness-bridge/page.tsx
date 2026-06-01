@@ -5,12 +5,12 @@ const EN = [
     "id": "broken-bridge",
     "place": "The Broken Bridge",
     "title": "The bridge is broken",
-    "body": "Mica and Liora reach a bright river. The kindness bridge is cracked because Ezra accidentally knocked loose the final golden plank while hurrying ahead. Liora feels angry and hurt.",
+    "body": "Michael and Rosie reach a bright river. The kindness bridge is cracked because Joseph accidentally knocked loose the final golden plank while hurrying ahead. Rosie feels angry and hurt.",
     "caption": "The river sparkles, but the broken plank blocks the way.",
     "danger": "Anger whispers: “Make him feel bad first.”",
     "echo": "Stay angry...",
     "thought": "Mercy first?",
-    "prompt": "What should Liora do first?",
+    "prompt": "What should Rosie do first?",
     "choices": [
       {
         "label": "Tell the truth kindly and ask God for help",
@@ -18,7 +18,7 @@ const EN = [
         "response": "Wise choice. Forgiveness starts by bringing hurt into the light without being cruel."
       },
       {
-        "label": "Shout until Ezra feels small",
+        "label": "Shout until Joseph feels small",
         "good": false,
         "response": "That makes the break bigger. God calls His children to speak truth with love."
       },
@@ -30,23 +30,23 @@ const EN = [
     ],
     "truth": "God helps me speak truth with love.",
     "verse": "Ephesians 4:15 — “Speaking the truth in love...”",
-    "alt": "Liora and Mica standing by a glowing broken bridge while Ezra looks sorry beside the missing golden plank"
+    "alt": "Rosie and Michael standing by a glowing broken bridge while Joseph looks sorry beside the missing golden plank"
   },
   {
     "id": "angry-stones",
     "place": "The Angry Stones",
     "title": "Heavy stones of anger",
-    "body": "To repair the bridge, each child must move a heavy stone from the path. The stones are named blame, payback, and pride. The more Liora thinks about getting even, the heavier her stone feels.",
+    "body": "To repair the bridge, each child must move a heavy stone from the path. The stones are named blame, payback, and pride. The more Rosie thinks about getting even, the heavier her stone feels.",
     "caption": "The anger stones grow heavier when payback feels tempting.",
     "danger": "Anger whispers: “Hold on to it. He owes you.”",
     "echo": "He owes you...",
     "thought": "Let it go?",
-    "prompt": "Which stone should Liora put down?",
+    "prompt": "Which stone should Rosie put down?",
     "choices": [
       {
         "label": "Payback — because vengeance belongs to God, not me",
         "good": true,
-        "response": "Yes. Liora lets go of payback, and the stone becomes light enough to move."
+        "response": "Yes. Rosie lets go of payback, and the stone becomes light enough to move."
       },
       {
         "label": "Mercy — because mercy makes people weak",
@@ -56,23 +56,23 @@ const EN = [
       {
         "label": "Prayer — because angry people should not pray",
         "good": false,
-        "response": "Not true. Prayer is exactly where Liora should bring her anger."
+        "response": "Not true. Prayer is exactly where Rosie should bring her anger."
       }
     ],
     "truth": "I do not need payback to be safe with God.",
     "verse": "Romans 12:19 — “Vengeance is mine, I will repay, says the Lord.”",
-    "alt": "Liora kneeling beside glowing stones marked by simple symbols of blame and pride while Mica points toward warm bridge light"
+    "alt": "Rosie kneeling beside glowing stones marked by simple symbols of blame and pride while Michael points toward warm bridge light"
   },
   {
     "id": "mercy-plank",
     "place": "The Mercy Plank",
     "title": "The missing plank",
-    "body": "Ezra finds the missing golden plank in the reeds. He says he is sorry. Liora can see he really wants to make it right, but her heart still feels tight.",
-    "caption": "The plank is found. Now Liora must choose what kind of heart to carry.",
+    "body": "Joseph finds the missing golden plank in the reeds. He says he is sorry. Rosie can see he really wants to make it right, but her heart still feels tight.",
+    "caption": "The plank is found. Now Rosie must choose what kind of heart to carry.",
     "danger": "Anger whispers: “Do not forgive until he earns it.”",
     "echo": "Make him earn it...",
     "thought": "Remember Jesus.",
-    "prompt": "What truth should Liora remember?",
+    "prompt": "What truth should Rosie remember?",
     "choices": [
       {
         "label": "Jesus forgave me first, so I can forgive others",
@@ -92,13 +92,13 @@ const EN = [
     ],
     "truth": "Jesus forgave me first.",
     "verse": "Ephesians 4:32 — “Forgiving one another, as God in Christ forgave you.”",
-    "alt": "Ezra holding a golden bridge plank with a sorry face while Liora watches with soft golden light around her hands"
+    "alt": "Joseph holding a golden bridge plank with a sorry face while Rosie watches with soft golden light around her hands"
   },
   {
     "id": "bridge-restored",
     "place": "The Restored Bridge",
     "title": "Crossing together",
-    "body": "Liora forgives Ezra. Ezra helps repair the bridge, and Mica tightens the final glowing rope. The bridge shines across the river, strong enough for everyone to cross together.",
+    "body": "Rosie forgives Joseph. Joseph helps repair the bridge, and Michael tightens the final glowing rope. The bridge shines across the river, strong enough for everyone to cross together.",
     "caption": "The bridge glows again because mercy rebuilt what anger tried to break.",
     "danger": "The last whisper says: “Keep a little bitterness for later.”",
     "echo": "Keep bitterness...",
@@ -111,19 +111,19 @@ const EN = [
         "response": "Yes. Forgiveness does not end the friendship; it opens the way forward."
       },
       {
-        "label": "Cross, but remind Ezra every few steps",
+        "label": "Cross, but remind Joseph every few steps",
         "good": false,
         "response": "That keeps the old hurt in charge. Love does not keep a bitter score."
       },
       {
-        "label": "Refuse to cross unless everyone praises Liora",
+        "label": "Refuse to cross unless everyone praises Rosie",
         "good": false,
         "response": "That turns mercy into pride. God helps us forgive humbly."
       }
     ],
     "truth": "Forgiveness opens the way forward.",
     "verse": "Colossians 3:13 — “Forgive each other; as the Lord has forgiven you...”",
-    "alt": "Mica Liora and Ezra crossing a restored glowing bridge over a sparkling river with warm Scripture light"
+    "alt": "Michael Rosie and Joseph crossing a restored glowing bridge over a sparkling river with warm Scripture light"
   }
 ] satisfies QuestScene[]
 
@@ -132,12 +132,12 @@ const RU = [
     "id": "broken-bridge",
     "place": "The Broken Bridge",
     "title": "The bridge is broken",
-    "body": "Mica and Liora reach a bright river. The kindness bridge is cracked because Ezra accidentally knocked loose the final golden plank while hurrying ahead. Liora feels angry and hurt.",
+    "body": "Michael and Rosie reach a bright river. The kindness bridge is cracked because Joseph accidentally knocked loose the final golden plank while hurrying ahead. Rosie feels angry and hurt.",
     "caption": "The river sparkles, but the broken plank blocks the way.",
     "danger": "Anger whispers: “Make him feel bad first.”",
     "echo": "Stay angry...",
     "thought": "Mercy first?",
-    "prompt": "What should Liora do first?",
+    "prompt": "What should Rosie do first?",
     "choices": [
       {
         "label": "Tell the truth kindly and ask God for help",
@@ -145,7 +145,7 @@ const RU = [
         "response": "Wise choice. Forgiveness starts by bringing hurt into the light without being cruel."
       },
       {
-        "label": "Shout until Ezra feels small",
+        "label": "Shout until Joseph feels small",
         "good": false,
         "response": "That makes the break bigger. God calls His children to speak truth with love."
       },
@@ -157,23 +157,23 @@ const RU = [
     ],
     "truth": "God helps me speak truth with love.",
     "verse": "Ephesians 4:15 — “Speaking the truth in love...”",
-    "alt": "Liora and Mica standing by a glowing broken bridge while Ezra looks sorry beside the missing golden plank"
+    "alt": "Rosie and Michael standing by a glowing broken bridge while Joseph looks sorry beside the missing golden plank"
   },
   {
     "id": "angry-stones",
     "place": "The Angry Stones",
     "title": "Heavy stones of anger",
-    "body": "To repair the bridge, each child must move a heavy stone from the path. The stones are named blame, payback, and pride. The more Liora thinks about getting even, the heavier her stone feels.",
+    "body": "To repair the bridge, each child must move a heavy stone from the path. The stones are named blame, payback, and pride. The more Rosie thinks about getting even, the heavier her stone feels.",
     "caption": "The anger stones grow heavier when payback feels tempting.",
     "danger": "Anger whispers: “Hold on to it. He owes you.”",
     "echo": "He owes you...",
     "thought": "Let it go?",
-    "prompt": "Which stone should Liora put down?",
+    "prompt": "Which stone should Rosie put down?",
     "choices": [
       {
         "label": "Payback — because vengeance belongs to God, not me",
         "good": true,
-        "response": "Yes. Liora lets go of payback, and the stone becomes light enough to move."
+        "response": "Yes. Rosie lets go of payback, and the stone becomes light enough to move."
       },
       {
         "label": "Mercy — because mercy makes people weak",
@@ -183,23 +183,23 @@ const RU = [
       {
         "label": "Prayer — because angry people should not pray",
         "good": false,
-        "response": "Not true. Prayer is exactly where Liora should bring her anger."
+        "response": "Not true. Prayer is exactly where Rosie should bring her anger."
       }
     ],
     "truth": "I do not need payback to be safe with God.",
     "verse": "Romans 12:19 — “Vengeance is mine, I will repay, says the Lord.”",
-    "alt": "Liora kneeling beside glowing stones marked by simple symbols of blame and pride while Mica points toward warm bridge light"
+    "alt": "Rosie kneeling beside glowing stones marked by simple symbols of blame and pride while Michael points toward warm bridge light"
   },
   {
     "id": "mercy-plank",
     "place": "The Mercy Plank",
     "title": "The missing plank",
-    "body": "Ezra finds the missing golden plank in the reeds. He says he is sorry. Liora can see he really wants to make it right, but her heart still feels tight.",
-    "caption": "The plank is found. Now Liora must choose what kind of heart to carry.",
+    "body": "Joseph finds the missing golden plank in the reeds. He says he is sorry. Rosie can see he really wants to make it right, but her heart still feels tight.",
+    "caption": "The plank is found. Now Rosie must choose what kind of heart to carry.",
     "danger": "Anger whispers: “Do not forgive until he earns it.”",
     "echo": "Make him earn it...",
     "thought": "Remember Jesus.",
-    "prompt": "What truth should Liora remember?",
+    "prompt": "What truth should Rosie remember?",
     "choices": [
       {
         "label": "Jesus forgave me first, so I can forgive others",
@@ -219,13 +219,13 @@ const RU = [
     ],
     "truth": "Jesus forgave me first.",
     "verse": "Ephesians 4:32 — “Forgiving one another, as God in Christ forgave you.”",
-    "alt": "Ezra holding a golden bridge plank with a sorry face while Liora watches with soft golden light around her hands"
+    "alt": "Joseph holding a golden bridge plank with a sorry face while Rosie watches with soft golden light around her hands"
   },
   {
     "id": "bridge-restored",
     "place": "The Restored Bridge",
     "title": "Crossing together",
-    "body": "Liora forgives Ezra. Ezra helps repair the bridge, and Mica tightens the final glowing rope. The bridge shines across the river, strong enough for everyone to cross together.",
+    "body": "Rosie forgives Joseph. Joseph helps repair the bridge, and Michael tightens the final glowing rope. The bridge shines across the river, strong enough for everyone to cross together.",
     "caption": "The bridge glows again because mercy rebuilt what anger tried to break.",
     "danger": "The last whisper says: “Keep a little bitterness for later.”",
     "echo": "Keep bitterness...",
@@ -238,19 +238,19 @@ const RU = [
         "response": "Yes. Forgiveness does not end the friendship; it opens the way forward."
       },
       {
-        "label": "Cross, but remind Ezra every few steps",
+        "label": "Cross, but remind Joseph every few steps",
         "good": false,
         "response": "That keeps the old hurt in charge. Love does not keep a bitter score."
       },
       {
-        "label": "Refuse to cross unless everyone praises Liora",
+        "label": "Refuse to cross unless everyone praises Rosie",
         "good": false,
         "response": "That turns mercy into pride. God helps us forgive humbly."
       }
     ],
     "truth": "Forgiveness opens the way forward.",
     "verse": "Colossians 3:13 — “Forgive each other; as the Lord has forgiven you...”",
-    "alt": "Mica Liora and Ezra crossing a restored glowing bridge over a sparkling river with warm Scripture light"
+    "alt": "Michael Rosie and Joseph crossing a restored glowing bridge over a sparkling river with warm Scripture light"
   }
 ] satisfies QuestScene[]
 
