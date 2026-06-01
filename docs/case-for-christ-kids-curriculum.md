@@ -2,7 +2,9 @@
 
 Purpose: build a kid-language apologetics track that teaches children not only what Christians believe, but why belief in Jesus is historically, logically, biblically, and theologically grounded.
 
-Tone: child-friendly, warm, clear, deep without being academic, truthful without being combative. Avoid fear-based pressure. Show evidence as reasons to trust Jesus, not as a replacement for faith.
+Tone: child-safe and child-clear. Do not merely make the wording cute or soft. Explain difficult theological, historical, and logical ideas in simple concrete language a child can actually understand. Keep the depth, but translate it into examples, pictures, comparisons, and short reasoning steps. Be warm, truthful, non-combative, and never fear-based. Show evidence as reasons to trust Jesus, not as a replacement for faith.
+
+Clarity standard: after each major point, a child should be able to say, “Oh, that means...” in one simple sentence. If the lesson uses a hard word such as manuscript, eyewitness, resurrection, prophecy, sin, justice, evidence, faith, or miracle, define it immediately in kid language.
 
 Recurring lesson structure:
 1. Big Question
