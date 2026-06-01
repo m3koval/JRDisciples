@@ -1,8 +1,8 @@
 # Publish Gate: case-for-christ-bible
 
-Gate: BLOCKED
+Gate: PASS
 
-Checked: 2026-06-01T23:57:38.555530+00:00
+Checked: 2026-06-01T23:58:36.225925+00:00
 
 ## Evidence
 - Draft: `docs/content-drafts/case-for-christ/case-for-christ-bible.md`
@@ -13,4 +13,4 @@ Checked: 2026-06-01T23:57:38.555530+00:00
 - Commands: `npm run lint`, `npm run build`
 
 ## Details
-- Disallowed dirty path: data/lessons.ts
+- All gates passed. Auto-publish is enabled by Mike. Pushing to origin/main without force.
