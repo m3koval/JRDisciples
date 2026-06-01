@@ -10,12 +10,12 @@ Every lesson should help a child understand biblical truth clearly, trust God mo
 
 1. Bible truth first.
 2. Quote real Scripture when using Scripture.
-3. ESV is the default English translation unless a different translation is intentionally selected.
+3. ESV is the preferred English translation for references and short quotes when licensing permits; for full published Scripture blocks, a public-domain translation such as WEB may be intentionally selected and clearly labeled.
 4. Do not invent simplified “kid translation” Bible text.
 5. Explain hard words immediately in child-clear language.
 6. Do not overstate evidence, mock doubters, or use fear pressure.
 7. Keep the tone warm, truthful, parent-safe, and age-appropriate.
-8. Do not publish a lesson while `[VERIFY ESV QUOTE BEFORE PUBLISHING]` markers remain.
+8. Do not publish a lesson while Scripture verification markers such as `[VERIFY ESV QUOTE BEFORE PUBLISHING]` remain.
 9. Do not publish if content QA or app QA has blocker findings.
 10. Preserve repeated QA findings into templates/checklists so the next lesson gets better.
 
@@ -92,7 +92,7 @@ A draft fails content QA when:
 
 A draft is blocked from promotion when:
 
-- `[VERIFY ESV QUOTE BEFORE PUBLISHING]` appears anywhere
+- Scripture verification markers such as `[VERIFY ESV QUOTE BEFORE PUBLISHING]` appear anywhere
 - content QA has not passed
 - required sections are missing
 - the latest QA report says `Gate: FAIL` or `Gate: HUMAN REVIEW`

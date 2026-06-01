@@ -1,0 +1,21 @@
+{
+  "lesson": "Can We Trust the Bible?",
+  "slug": "case-for-christ-bible",
+  "assets": [
+    {
+      "type": "hero",
+      "source_url": "https://v3b.fal.media/files/b/0a9c9c4c/7k5WJSl9tXYOudiQMysWV_bnrrCIkW.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-bible/hero.png",
+      "public_path": "/images/jr/lessons/case-for-christ-bible/hero.png",
+      "size": "1024x768"
+    },
+    {
+      "type": "topic-thumbnail",
+      "source_url": "https://v3b.fal.media/files/b/0a9c9c55/ZlpqCWAvoof9IZ1gnlcnP_Dloen9zj.png",
+      "file_path": "public/images/jr/topic-case-for-christ-bible.png",
+      "public_path": "/images/jr/topic-case-for-christ-bible.png",
+      "size": "1024x1024"
+    }
+  ],
+  "visual_qa": "PASS: bright, parent-safe, polished 3D, no visible logos/watermarks, no problematic readable text, suitable for kids Bible lesson about trusting the Bible."
+}

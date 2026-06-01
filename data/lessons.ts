@@ -24,6 +24,15 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/case-for-christ-bible",
+    image: "/images/jr/topic-case-for-christ-bible.png",
+    title: "Can We Trust the Bible?",
+    desc: "Follow the evidence trail: real history, eyewitness testimony, careful copying, and God’s faithful Word. 5 clue cards with detective checks!",
+    color: "#1f5f8f",
+    sections: 5,
+    emoji: "📜",
+  },
+  {
     href: "/lessons/holy-spirit",
     image: "/images/jr/topic-holy-spirit.png",
     title: "The Holy Spirit",
