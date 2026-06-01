@@ -4,41 +4,45 @@ This is the source-of-truth character bible for Junior Disciples children used i
 
 ## Canonical main child cast
 
-### Michael
+### Michael / Мишутка
 
 - Display name: Michael
+- Russian display name: Мишутка
 - Role: lead adventurer / steady older brother figure
 - Age: 9–10
 - Visual anchor: polished 3D animated human boy, child proportions, curly brown hair, warm tan skin, green adventure tunic/outfit, small explorer satchel or lantern, rounded expressive face
 - Personality anchor: brave but not boastful; honest about fear; learns to trust God and take the next wise step; often helps the younger kids keep traction
 - Prompt lock: Michael must look like the same 9–10-year-old child in every scene. Do not make him a teen, toddler, adult, or different child.
 
-### Rosie
+### Rosie / Рози
 
 - Display name: Rosie
+- Russian display name: Рози
 - Role: Scripture-hearted encourager / thoughtful helper
 - Age: 8–9
 - Visual anchor: polished 3D animated human girl, child proportions, wavy brown hair, purple adventure dress/tunic, small Bible book or Scripture-light object, rounded expressive face
 - Personality anchor: gentle, thoughtful, truth-centered; helps friends remember what God says; brings warmth and courage without being preachy
 - Prompt lock: Rosie must look like the same 8–9-year-old child in every scene. Do not make her older, younger, taller, or recast her face/clothing.
 
-### Joseph
+### Joseph / Йосик
 
 - Display name: Joseph
+- Russian display name: Йосик
 - Role: curious problem-solver / energetic friend
 - Age: 8–9
 - Visual anchor: polished 3D animated human boy, child proportions, dark curly hair, blue adventure outfit, small notebook or tool pouch, rounded expressive face
 - Personality anchor: curious, energetic, kind; sometimes impulsive but teachable; learns humility, truth, forgiveness, and service
 - Prompt lock: Joseph must look like the same 8–9-year-old child in every scene. Do not make him older, younger, taller, or recast his hair/outfit.
 
-### Nia
+### Gracie / Грейси
 
-- Display name: Nia
+- Display name: Gracie
+- Russian display name: Грейси
 - Role: younger friend / younger child in the Junior Disciples world
 - Age: 6–7
 - Visual anchor: polished 3D animated human girl, younger child proportions, warm brown skin, black curly hair in two puff ponytails or short curls, yellow rain hood/rain cloak when in storm scenes, rounded expressive face
 - Personality anchor: trusting, bright, and brave in a younger-child way; may need help but should not be portrayed as helpless or terrified
-- Prompt lock: Nia must look like the same 6–7-year-old child in every scene. Keep her younger than Michael/Rosie/Joseph without making her toddler-like.
+- Prompt lock: Gracie must look like the same 6–7-year-old child in every scene. Keep her younger than Michael/Rosie/Joseph without making her toddler-like.
 
 ## Reserved names / future-use map
 
@@ -47,13 +51,21 @@ These names are reserved and should not be used for the current main cast unless
 - Mica: reserved for a potential future child character or side-story character. Formerly used as Michael’s working name in early quest drafts.
 - Ezra: reserved for a potential future child character or side-story character. Formerly used as Joseph’s working name in early quest drafts.
 - Liora: retired/previous working name for Rosie; avoid using it in new visible content unless intentionally referencing old draft material.
+- Nia: retired/previous working name for Gracie; avoid using it in new visible content unless intentionally referencing old draft material.
 
 ## Current name migration map
 
 - Mica → Michael
 - Liora → Rosie
 - Ezra → Joseph
-- Nia → Nia
+- Nia → Gracie
+
+## Russian display name map
+
+- Michael → Мишутка
+- Joseph → Йосик
+- Rosie → Рози
+- Gracie → Грейси
 
 ## Quest/story participation map
 
@@ -81,13 +93,13 @@ These names are reserved and should not be used for the current main cast unless
 - Michael: steady leader at the harbor and boat.
 - Rosie: Scripture-hearted helper who keeps the group grounded.
 - Joseph: problem-solver who finds the spare paddle.
-- Nia: younger friend waiting across the cove and helped to safety.
+- Gracie: younger friend waiting across the cove and helped to safety.
 
 ## Required prompt block for future image generation
 
 Use this recurring cast block verbatim unless intentionally changing the story canon:
 
-Michael is a 9–10-year-old polished 3D animated human boy with child proportions, curly brown hair, warm tan skin, a green adventure tunic/outfit, and a small explorer satchel or lantern; he is the steady leader, brave but humble. Rosie is an 8–9-year-old polished 3D animated human girl with child proportions, wavy brown hair, a purple adventure dress/tunic, and a small Bible book or Scripture-light object; she is gentle, thoughtful, and truth-centered. Joseph is an 8–9-year-old polished 3D animated human boy with child proportions, dark curly hair, a blue adventure outfit, and a small notebook or tool pouch; he is curious, energetic, kind, and teachable. Nia is a 6–7-year-old polished 3D animated human girl with younger child proportions, warm brown skin, black curly hair in two puff ponytails or short curls, and a yellow rain hood/rain cloak in storm scenes; she is bright, trusting, and brave in a younger-child way.
+Michael is a 9–10-year-old polished 3D animated human boy with child proportions, curly brown hair, warm tan skin, a green adventure tunic/outfit, and a small explorer satchel or lantern; he is the steady leader, brave but humble. Rosie is an 8–9-year-old polished 3D animated human girl with child proportions, wavy brown hair, a purple adventure dress/tunic, and a small Bible book or Scripture-light object; she is gentle, thoughtful, and truth-centered. Joseph is an 8–9-year-old polished 3D animated human boy with child proportions, dark curly hair, a blue adventure outfit, and a small notebook or tool pouch; he is curious, energetic, kind, and teachable. Gracie is a 6–7-year-old polished 3D animated human girl with younger child proportions, warm brown skin, black curly hair in two puff ponytails or short curls, and a yellow rain hood/rain cloak in storm scenes; she is bright, trusting, and brave in a younger-child way.
 
 Consistency rule: keep each child the same age, height relationship, face shape, hair, skin tone, and clothing colors across every image in the quest pack. Do not recast them, age them up/down, make them adult-like, or turn them into Lego/minifig characters. Toy-brick elements belong mainly in environments and props. Only include the children specifically named in the scene composition; do not add absent cast members just because they are listed in the library.
 

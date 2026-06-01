@@ -569,8 +569,8 @@ export default function TransfigurationPage() {
                   </p>
                   <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', fontSize: '0.95rem', color: '#555', lineHeight: 1.6, margin: 0 }}>
                     {isRu
-                      ? <>"Сей есть Сын Мой Возлюбленный —{' '}<span style={{ fontFamily: 'var(--font-nunito)', fontStyle: 'normal', fontWeight: 900, color: ACCENT_DARK, fontSize: '1.05rem' }}>Его слушайте!</span>"</>
-                      : <>"This is my beloved Son, with whom I am well pleased —{' '}<span style={{ fontFamily: 'var(--font-nunito)', fontStyle: 'normal', fontWeight: 900, color: ACCENT_DARK, fontSize: '1.05rem' }}>listen to him!</span>"</>
+                      ? <>“Сей есть Сын Мой Возлюбленный —{' '}<span style={{ fontFamily: 'var(--font-nunito)', fontStyle: 'normal', fontWeight: 900, color: ACCENT_DARK, fontSize: '1.05rem' }}>Его слушайте!</span>”</>
+                      : <>“This is my beloved Son, with whom I am well pleased —{' '}<span style={{ fontFamily: 'var(--font-nunito)', fontStyle: 'normal', fontWeight: 900, color: ACCENT_DARK, fontSize: '1.05rem' }}>listen to him!</span>”</>
                     }
                   </p>
                 </div>

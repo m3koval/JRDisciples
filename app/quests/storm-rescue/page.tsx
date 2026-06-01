@@ -5,8 +5,8 @@ const EN = [
     "id": "dark-clouds",
     "place": "The Little Harbor",
     "title": "Clouds over the harbor",
-    "body": "Michael, Rosie, and Joseph are loading a small toy-brick boat when dark blue clouds roll over the water. A younger friend, Nia, is stranded on a tiny dock across the cove.",
-    "caption": "The harbor grows windy, and Nia needs help across the water.",
+    "body": "Michael, Rosie, and Joseph are loading a small toy-brick boat when dark blue clouds roll over the water. A younger friend, Gracie, is stranded on a tiny dock across the cove.",
+    "caption": "The harbor grows windy, and Gracie needs help across the water.",
     "danger": "The wind whispers: “Panic first. Pray later.”",
     "echo": "Panic first...",
     "thought": "Pray now.",
@@ -23,20 +23,20 @@ const EN = [
         "response": "Fear spreads fast when we shout. Jesus gives peace and wisdom."
       },
       {
-        "label": "Ignore Nia because storms are inconvenient",
+        "label": "Ignore Gracie because storms are inconvenient",
         "good": false,
         "response": "Love does not walk away from a friend in need."
       }
     ],
     "truth": "I can pray before I panic.",
     "verse": "Philippians 4:6 — “Do not be anxious about anything...”",
-    "alt": "Michael Rosie and Joseph at a small harbor preparing a toy-brick boat under gentle storm clouds while Nia waits across the cove"
+    "alt": "Michael Rosie and Joseph at a small harbor preparing a toy-brick boat under gentle storm clouds while Gracie waits across the cove"
   },
   {
     "id": "rough-water",
     "place": "The Rough Water",
     "title": "Waves against the boat",
-    "body": "The boat rocks as waves slap the sides. Rosie grips the rope while Joseph watches the lantern. The storm is loud, but the golden light still points toward Nia.",
+    "body": "The boat rocks as waves slap the sides. Rosie grips the rope while Joseph watches the lantern. The storm is loud, but the golden light still points toward Gracie.",
     "caption": "The waves are loud, but the rescue light still points the way.",
     "danger": "The storm whispers: “You are alone out here.”",
     "echo": "Alone out here...",
@@ -82,24 +82,24 @@ const EN = [
       {
         "label": "Throw the broken oar at the waves",
         "good": false,
-        "response": "That wastes energy and does not help Nia. Anger is not a rescue plan."
+        "response": "That wastes energy and does not help Gracie. Anger is not a rescue plan."
       },
       {
-        "label": "Turn around without telling Nia",
+        "label": "Turn around without telling Gracie",
         "good": false,
         "response": "That leaves a friend alone. Wisdom adjusts the plan instead of quitting."
       }
     ],
     "truth": "God helps me keep serving when it gets hard.",
     "verse": "Galatians 6:9 — “Let us not grow weary of doing good...”",
-    "alt": "Joseph discovering a spare paddle in a small boat while Rosie holds a cracked oar and Michael points toward Nia"
+    "alt": "Joseph discovering a spare paddle in a small boat while Rosie holds a cracked oar and Michael points toward Gracie"
   },
   {
     "id": "safe-harbor",
     "place": "Safe Harbor",
     "title": "Peace after the storm",
-    "body": "The children reach Nia and help her into the boat. As they turn back, the clouds open and warm light shines on the harbor. The storm did not win.",
-    "caption": "Nia is safe, and the harbor glows with peace after the rescue.",
+    "body": "The children reach Gracie and help her into the boat. As they turn back, the clouds open and warm light shines on the harbor. The storm did not win.",
+    "caption": "Gracie is safe, and the harbor glows with peace after the rescue.",
     "danger": "One last rumble says: “Remember the fear more than the rescue.”",
     "echo": "Remember fear...",
     "thought": "Remember Jesus.",
@@ -123,7 +123,7 @@ const EN = [
     ],
     "truth": "Jesus is faithful from fear to peace.",
     "verse": "Psalm 46:1 — “God is our refuge and strength...”",
-    "alt": "Michael Rosie Joseph and Nia arriving safely at a glowing harbor as clouds part and golden Scripture light shines"
+    "alt": "Michael Rosie Joseph and Gracie arriving safely at a glowing harbor as clouds part and golden Scripture light shines"
   }
 ] satisfies QuestScene[]
 
@@ -132,17 +132,17 @@ const RU = [
     "id": "dark-clouds",
     "place": "The Little Harbor",
     "title": "Clouds over the harbor",
-    "body": "Michael, Rosie, and Joseph are loading a small toy-brick boat when dark blue clouds roll over the water. A younger friend, Nia, is stranded on a tiny dock across the cove.",
-    "caption": "The harbor grows windy, and Nia needs help across the water.",
+    "body": "Мишутка, Рози, and Йосик are loading a small toy-brick boat when dark blue clouds roll over the water. A younger friend, Грейси, is stranded on a tiny dock across the cove.",
+    "caption": "The harbor grows windy, and Грейси needs help across the water.",
     "danger": "The wind whispers: “Panic first. Pray later.”",
     "echo": "Panic first...",
     "thought": "Pray now.",
-    "prompt": "What should Michael do first?",
+    "prompt": "What should Мишутка do first?",
     "choices": [
       {
         "label": "Pray, listen, and prepare the boat carefully",
         "good": true,
-        "response": "Good. Trusting Jesus helps Michael act wisely instead of panicking."
+        "response": "Good. Trusting Jesus helps Мишутка act wisely instead of panicking."
       },
       {
         "label": "Scream at everyone until they hurry",
@@ -150,20 +150,20 @@ const RU = [
         "response": "Fear spreads fast when we shout. Jesus gives peace and wisdom."
       },
       {
-        "label": "Ignore Nia because storms are inconvenient",
+        "label": "Ignore Грейси because storms are inconvenient",
         "good": false,
         "response": "Love does not walk away from a friend in need."
       }
     ],
     "truth": "I can pray before I panic.",
     "verse": "Philippians 4:6 — “Do not be anxious about anything...”",
-    "alt": "Michael Rosie and Joseph at a small harbor preparing a toy-brick boat under gentle storm clouds while Nia waits across the cove"
+    "alt": "Мишутка Рози and Йосик at a small harbor preparing a toy-brick boat under gentle storm clouds while Грейси waits across the cove"
   },
   {
     "id": "rough-water",
     "place": "The Rough Water",
     "title": "Waves against the boat",
-    "body": "The boat rocks as waves slap the sides. Rosie grips the rope while Joseph watches the lantern. The storm is loud, but the golden light still points toward Nia.",
+    "body": "The boat rocks as waves slap the sides. Рози grips the rope while Йосик watches the lantern. The storm is loud, but the golden light still points toward Грейси.",
     "caption": "The waves are loud, but the rescue light still points the way.",
     "danger": "The storm whispers: “You are alone out here.”",
     "echo": "Alone out here...",
@@ -194,7 +194,7 @@ const RU = [
     "id": "broken-oar",
     "place": "The Broken Oar",
     "title": "A tool breaks",
-    "body": "Halfway across, an oar cracks. Joseph wants to quit, but Rosie notices a spare paddle tucked under the seat. The rescue is harder now, not impossible.",
+    "body": "Halfway across, an oar cracks. Йосик wants to quit, but Рози notices a spare paddle tucked under the seat. The rescue is harder now, not impossible.",
     "caption": "The broken oar feels like a setback, but God provides another way to keep serving.",
     "danger": "The wind whispers: “If it is hard, stop helping.”",
     "echo": "Stop helping...",
@@ -209,24 +209,24 @@ const RU = [
       {
         "label": "Throw the broken oar at the waves",
         "good": false,
-        "response": "That wastes energy and does not help Nia. Anger is not a rescue plan."
+        "response": "That wastes energy and does not help Грейси. Anger is not a rescue plan."
       },
       {
-        "label": "Turn around without telling Nia",
+        "label": "Turn around without telling Грейси",
         "good": false,
         "response": "That leaves a friend alone. Wisdom adjusts the plan instead of quitting."
       }
     ],
     "truth": "God helps me keep serving when it gets hard.",
     "verse": "Galatians 6:9 — “Let us not grow weary of doing good...”",
-    "alt": "Joseph discovering a spare paddle in a small boat while Rosie holds a cracked oar and Michael points toward Nia"
+    "alt": "Йосик discovering a spare paddle in a small boat while Рози holds a cracked oar and Мишутка points toward Грейси"
   },
   {
     "id": "safe-harbor",
     "place": "Safe Harbor",
     "title": "Peace after the storm",
-    "body": "The children reach Nia and help her into the boat. As they turn back, the clouds open and warm light shines on the harbor. The storm did not win.",
-    "caption": "Nia is safe, and the harbor glows with peace after the rescue.",
+    "body": "The children reach Грейси and help her into the boat. As they turn back, the clouds open and warm light shines on the harbor. The storm did not win.",
+    "caption": "Грейси is safe, and the harbor glows with peace after the rescue.",
     "danger": "One last rumble says: “Remember the fear more than the rescue.”",
     "echo": "Remember fear...",
     "thought": "Remember Jesus.",
@@ -250,7 +250,7 @@ const RU = [
     ],
     "truth": "Jesus is faithful from fear to peace.",
     "verse": "Psalm 46:1 — “God is our refuge and strength...”",
-    "alt": "Michael Rosie Joseph and Nia arriving safely at a glowing harbor as clouds part and golden Scripture light shines"
+    "alt": "Мишутка Рози Йосик and Грейси arriving safely at a glowing harbor as clouds part and golden Scripture light shines"
   }
 ] satisfies QuestScene[]
 
