@@ -6,6 +6,8 @@ Tone: child-safe and child-clear. Do not merely make the wording cute or soft. E
 
 Clarity standard: after each major point, a child should be able to say, “Oh, that means...” in one simple sentence. If the lesson uses a hard word such as manuscript, eyewitness, resurrection, prophecy, sin, justice, evidence, faith, or miracle, define it immediately in kid language.
 
+Scripture standard: always quote real Bible text when using Scripture. Use ESV as the default translation. Use NIV only when necessary for clarity or fit. Do not create new paraphrase “translations” or replace Scripture with simplified wording. The pattern should be: quote the Bible, name the translation, then explain what the quoted words mean in child-clear language.
+
 Recurring lesson structure:
 1. Big Question
 2. Big Truth
