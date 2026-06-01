@@ -9,6 +9,7 @@ const questArt = {
   forgiveness: '/images/jr/quests/forgiveness-bridge/00-cover-forgiveness-bridge.png',
   forest: '/images/jr/quests/forest-of-lies/00-cover-forest-of-lies.png',
   storm: '/images/jr/quests/storm-rescue/00-cover-storm-rescue.png',
+  wiseBuilder: '/images/jr/quests/wise-builder/00-cover-wise-builder.png',
 }
 
 const copy = {
@@ -56,6 +57,14 @@ const copy = {
         truth: 'Big truth: Jesus is with me in the storm.',
         verse: 'Mark 4:39',
       },
+      {
+        href: '/quests/wise-builder',
+        image: questArt.wiseBuilder,
+        title: 'Wise Builder Quest: The House on the Rock',
+        desc: 'Choose the right foundation, test the house in the storm, and learn why hearing Jesus must become faithful obedience.',
+        truth: 'Big truth: I build my life on Jesus by doing what He says.',
+        verse: 'Matthew 7:24',
+      },
     ],
   },
   ru: {
@@ -101,6 +110,14 @@ const copy = {
         desc: 'Доверься Иисусу среди ветра и волн и помоги другу добраться до безопасной гавани.',
         truth: 'Главная истина: Иисус со мной в буре.',
         verse: 'Марка 4:39',
+      },
+      {
+        href: '/quests/wise-builder',
+        image: questArt.wiseBuilder,
+        title: 'Квест мудрого строителя: Дом на камне',
+        desc: 'Выбери правильное основание, пройди испытание бурей и узнай, почему слова Иисуса нужно не только слушать, но и исполнять.',
+        truth: 'Главная истина: я строю жизнь на Иисусе, когда исполняю Его слова.',
+        verse: 'Матфея 7:24',
       },
     ],
   },

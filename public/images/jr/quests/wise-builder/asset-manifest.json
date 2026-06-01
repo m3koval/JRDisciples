@@ -1,0 +1,48 @@
+{
+  "quest": "Wise Builder Quest",
+  "slug": "wise-builder",
+  "assets": [
+    {
+      "name": "00-cover-wise-builder",
+      "promptFile": "public/images/jr/quests/wise-builder/prompts/00-cover-wise-builder.md",
+      "publicPath": "/images/jr/quests/wise-builder/00-cover-wise-builder.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9c9358/OfBh16JL5BIRKJ585kQvi_sGxuQUkU.png",
+      "filePath": "/home/helper/work/JRDisciples/public/images/jr/quests/wise-builder/00-cover-wise-builder.png"
+    },
+    {
+      "name": "01-scene-sandy-yard",
+      "promptFile": "public/images/jr/quests/wise-builder/prompts/01-scene-sandy-yard.md",
+      "publicPath": "/images/jr/quests/wise-builder/01-scene-sandy-yard.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9c935e/ulcqNjkuY75_Nmn4Od8Ub_WSbUxQz6.png",
+      "filePath": "/home/helper/work/JRDisciples/public/images/jr/quests/wise-builder/01-scene-sandy-yard.png"
+    },
+    {
+      "name": "02-scene-rock-foundation",
+      "promptFile": "public/images/jr/quests/wise-builder/prompts/02-scene-rock-foundation.md",
+      "publicPath": "/images/jr/quests/wise-builder/02-scene-rock-foundation.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9c9363/cL-vKpfGG5G8teGFNL42b_DwFHQBUz.png",
+      "filePath": "/home/helper/work/JRDisciples/public/images/jr/quests/wise-builder/02-scene-rock-foundation.png"
+    },
+    {
+      "name": "03-scene-storm-test",
+      "promptFile": "public/images/jr/quests/wise-builder/prompts/03-scene-storm-test.md",
+      "publicPath": "/images/jr/quests/wise-builder/03-scene-storm-test.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9c936a/aXPNdDBe9Zualc92E0xHU_ckipTmMU.png",
+      "filePath": "/home/helper/work/JRDisciples/public/images/jr/quests/wise-builder/03-scene-storm-test.png"
+    },
+    {
+      "name": "04-scene-house-stands",
+      "promptFile": "public/images/jr/quests/wise-builder/prompts/04-scene-house-stands.md",
+      "publicPath": "/images/jr/quests/wise-builder/04-scene-house-stands.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9c9380/ECm3RNT5biRCxTW8bpS_T_KpxxDKaw.png",
+      "filePath": "/home/helper/work/JRDisciples/public/images/jr/quests/wise-builder/04-scene-house-stands.png"
+    },
+    {
+      "name": "05-badge-quest-complete",
+      "promptFile": "public/images/jr/quests/wise-builder/prompts/05-badge-quest-complete.md",
+      "publicPath": "/images/jr/quests/wise-builder/05-badge-quest-complete.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9c9375/H8YOCIliTgI8oAdokL7aV_JOzDYM4e.png",
+      "filePath": "/home/helper/work/JRDisciples/public/images/jr/quests/wise-builder/05-badge-quest-complete.png"
+    }
+  ]
+}
