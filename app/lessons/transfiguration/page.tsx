@@ -125,7 +125,7 @@ export default function TransfigurationPage() {
         setUnlocked(prev => new Set([...prev, sec + 1]))
         setTimeout(() => {
           document.getElementById(`sec-${sec + 1}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }, 700)
+        }, 2000)
       } else {
         setTimeout(() => setWon(true), 700)
       }
@@ -593,52 +593,51 @@ export default function TransfigurationPage() {
                   : 'Tap TRUE or FALSE for each statement!'}
               </p>
 
-              {done.has('tf') ? (
-                <div style={{ textAlign: 'center', padding: '16px 0' }}>
-                  <div style={{ fontSize: '2rem', marginBottom: 8 }}>✅</div>
+              {done.has('tf') && (
+                <div style={{ textAlign: 'center', padding: '12px 0 4px' }}>
+                  <div style={{ fontSize: '2rem', marginBottom: 6 }}>✅</div>
                   <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#2a7a2a' }}>
-                    {isRu ? 'Отлично! Ты понял всё правильно!' : 'Excellent! You got them all!'}
+                    {isRu ? 'Ты разобрал все вопросы! Посмотри результаты ниже.' : 'You examined every question! Review your answers below.'}
                   </p>
                 </div>
-              ) : (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 14 }}>
-                  {TF_ACTIVE.map(q => {
-                    const ans = tfAnswers[q.id]
-                    const answered = ans !== undefined && ans !== null
-                    const correct = answered && ans === q.correct
-                    return (
-                      <div key={q.id} style={{
-                        background: answered ? (correct ? '#f0faf4' : '#fff0f0') : '#f8f6f2',
-                        border: `2px solid ${answered ? (correct ? '#40b870' : '#e04040') : '#ddd'}`,
-                        borderRadius: 14, padding: '14px 16px',
-                      }}>
-                        <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 700, fontSize: '0.93rem', color: 'var(--text)', marginBottom: answered ? 8 : 10 }}>
-                          {q.text}
-                        </p>
-                        {!answered ? (
-                          <div style={{ display: 'flex', gap: 10 }}>
-                            {[true, false].map(val => (
-                              <button key={String(val)} onClick={() => answerTf(q.id, val)} style={{
-                                flex: 1, padding: '8px 0', borderRadius: 10,
-                                background: val ? '#e8f8ee' : '#fde8e8',
-                                border: `2px solid ${val ? '#40b870' : '#e04040'}`,
-                                color: val ? '#2a7a2a' : '#a02020',
-                                fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.9rem', cursor: 'pointer',
-                              }}>
-                                {val ? (isRu ? '✅ Правда' : '✅ True') : (isRu ? '❌ Ложь' : '❌ False')}
-                              </button>
-                            ))}
-                          </div>
-                        ) : (
-                          <div style={{ fontFamily: 'var(--font-nunito)', fontSize: '0.82rem', fontWeight: 700, color: correct ? '#2a7a2a' : '#a02020', lineHeight: 1.5 }}>
-                            {correct ? '✅ ' : '❌ '}{q.explain}
-                          </div>
-                        )}
-                      </div>
-                    )
-                  })}
-                </div>
               )}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 14 }}>
+                {TF_ACTIVE.map(q => {
+                  const ans = tfAnswers[q.id]
+                  const answered = ans !== undefined && ans !== null
+                  const correct = answered && ans === q.correct
+                  return (
+                    <div key={q.id} style={{
+                      background: answered ? (correct ? '#f0faf4' : '#fff0f0') : '#f8f6f2',
+                      border: `2px solid ${answered ? (correct ? '#40b870' : '#e04040') : '#ddd'}`,
+                      borderRadius: 14, padding: '14px 16px',
+                    }}>
+                      <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 700, fontSize: '0.93rem', color: 'var(--text)', marginBottom: answered ? 8 : 10 }}>
+                        {q.text}
+                      </p>
+                      {!answered ? (
+                        <div style={{ display: 'flex', gap: 10 }}>
+                          {[true, false].map(val => (
+                            <button key={String(val)} onClick={() => answerTf(q.id, val)} style={{
+                              flex: 1, padding: '8px 0', borderRadius: 10,
+                              background: val ? '#e8f8ee' : '#fde8e8',
+                              border: `2px solid ${val ? '#40b870' : '#e04040'}`,
+                              color: val ? '#2a7a2a' : '#a02020',
+                              fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.9rem', cursor: 'pointer',
+                            }}>
+                              {val ? (isRu ? '✅ Правда' : '✅ True') : (isRu ? '❌ Ложь' : '❌ False')}
+                            </button>
+                          ))}
+                        </div>
+                      ) : (
+                        <div style={{ fontFamily: 'var(--font-nunito)', fontSize: '0.82rem', fontWeight: 700, color: correct ? '#2a7a2a' : '#a02020', lineHeight: 1.5 }}>
+                          {correct ? '✅ ' : '❌ '}{q.explain}
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </div>
         )}
