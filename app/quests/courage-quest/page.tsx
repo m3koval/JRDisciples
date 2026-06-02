@@ -134,5 +134,5 @@ const questImages: Record<string, string> & { cover: string; badge: string } = {
 }
 
 export default function CourageQuestPage() {
-  return <QuestAdventure scenesByLanguage={{ en: EN, ru: RU }} uiByLanguage={ui} images={questImages} />
+  return <QuestAdventure scenesByLanguage={{ en: EN, ru: RU }} uiByLanguage={ui} images={questImages} nextQuest={{ href: '/quests/forgiveness-bridge', label: { en: 'Play Next Quest: Forgiveness Bridge', ru: 'Следующий квест: Мост прощения' } }} />
 }

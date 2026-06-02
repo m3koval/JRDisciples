@@ -133,5 +133,5 @@ const questImages: Record<string, string> & { cover: string; badge: string } = {
 }
 
 export default function WiseBuilderPage() {
-  return <QuestAdventure scenesByLanguage={{ en: EN, ru: RU }} uiByLanguage={ui} images={questImages} />
+  return <QuestAdventure scenesByLanguage={{ en: EN, ru: RU }} uiByLanguage={ui} images={questImages} nextQuest={{ href: '/quests/courage-quest', label: { en: 'Play Next Quest: Courage Quest', ru: 'Следующий квест: Квест мужества' } }} />
 }

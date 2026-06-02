@@ -57,9 +57,10 @@ type QuestAdventureProps = {
   scenesByLanguage: Record<'en' | 'ru', QuestScene[]>
   uiByLanguage: Record<'en' | 'ru', QuestUi>
   images: Record<string, string> & { cover: string; badge: string }
+  nextQuest: { href: string; label: Record<'en' | 'ru', string> }
 }
 
-export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: QuestAdventureProps) {
+export function QuestAdventure({ scenesByLanguage, uiByLanguage, images, nextQuest }: QuestAdventureProps) {
   const { language } = useLanguage()
   const lang = language === 'ru' ? 'ru' : 'en'
   const scenes = scenesByLanguage[lang]
@@ -232,6 +233,9 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
         .parent-box h2 { font-family: var(--font-nunito); font-weight: 1000; color: var(--deep); margin-bottom: 8px; }
         .parent-box ol { font-family: var(--font-lora); color: #374151; line-height: 1.8; padding-left: 22px; font-weight: 700; }
         .prayer-box { margin-top: 16px; border-radius: 18px; background: #fff7ed; border: 2px solid #fed7aa; padding: 14px 16px; color: #7c2d12; font-family: var(--font-nunito); font-weight: 900; line-height: 1.6; }
+        .quest-finish-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 18px; }
+        .quest-finish-actions .quest-button { text-decoration: none; }
+        .quest-button.secondary { background: linear-gradient(180deg,#f8fafc,#e2e8f0); color: var(--deep); border: 2px solid rgba(13,31,60,.12); }
         @keyframes cinematicDrift { from { transform: scale(1.03) translate3d(-8px,-4px,0); } to { transform: scale(1.1) translate3d(12px,8px,0); } }
         @keyframes particleRise { 0%,100% { transform: translate3d(0,0,0) scale(.8); opacity: .32; } 50% { transform: translate3d(20px,-48px,0) scale(1.2); opacity: 1; } }
         @keyframes imageBreathe { from { transform: scale(1); } to { transform: scale(1.045); } }
@@ -355,7 +359,10 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images }: Quest
               <ol>{t.questions.map(q => <li key={q}>{q}</li>)}</ol>
               <div className="prayer-box">{t.prayer}</div>
             </div>
-            <button className="quest-button" onClick={replay}>{t.replay}</button>
+            <div className="quest-finish-actions">
+              <Link href={nextQuest.href} className="quest-button green">{nextQuest.label[lang]}</Link>
+              <button className="quest-button secondary" onClick={replay}>{t.replay}</button>
+            </div>
           </section>
         ) : (
           <section className="adventure-frame" style={{ ['--frame-image' as string]: `url(${images[scene.id]})` }}>

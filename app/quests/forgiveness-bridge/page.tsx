@@ -333,5 +333,5 @@ const questImages: Record<string, string> & { cover: string; badge: string } = {
 }
 
 export default function ForgivenessBridgePage() {
-  return <QuestAdventure scenesByLanguage={{ en: EN, ru: RU }} uiByLanguage={ui} images={questImages} />
+  return <QuestAdventure scenesByLanguage={{ en: EN, ru: RU }} uiByLanguage={ui} images={questImages} nextQuest={{ href: '/quests/forest-of-lies', label: { en: 'Play Next Quest: The Forest of Lies', ru: 'Следующий квест: Лес лжи' } }} />
 }

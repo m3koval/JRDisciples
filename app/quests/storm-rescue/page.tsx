@@ -333,5 +333,5 @@ const questImages: Record<string, string> & { cover: string; badge: string } = {
 }
 
 export default function StormRescuePage() {
-  return <QuestAdventure scenesByLanguage={{ en: EN, ru: RU }} uiByLanguage={ui} images={questImages} />
+  return <QuestAdventure scenesByLanguage={{ en: EN, ru: RU }} uiByLanguage={ui} images={questImages} nextQuest={{ href: '/quests/wise-builder', label: { en: 'Play Next Quest: Wise Builder Quest', ru: 'Следующий квест: Квест мудрого строителя' } }} />
 }

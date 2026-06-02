@@ -333,5 +333,5 @@ const questImages: Record<string, string> & { cover: string; badge: string } = {
 }
 
 export default function ForestOfLiesPage() {
-  return <QuestAdventure scenesByLanguage={{ en: EN, ru: RU }} uiByLanguage={ui} images={questImages} />
+  return <QuestAdventure scenesByLanguage={{ en: EN, ru: RU }} uiByLanguage={ui} images={questImages} nextQuest={{ href: '/quests/storm-rescue', label: { en: 'Play Next Quest: The Storm Rescue', ru: 'Следующий квест: Спасение в буре' } }} />
 }
