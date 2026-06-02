@@ -150,6 +150,40 @@ export default function HomePage() {
             {t.home.chooseActivity}
           </p>
 
+          <div className="puzzle-box" style={{ ["--pz-color" as string]: "#0a7090", marginBottom: 28 }}>
+            <p className="puzzle-label">{t.home.learningPathsEyebrow}</p>
+            <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.35rem", color: "var(--text)", marginBottom: 8 }}>
+              {t.home.learningPathsTitle}
+            </h3>
+            <p style={{ fontFamily: "var(--font-lora)", color: "#555", lineHeight: 1.65, marginBottom: 18 }}>
+              {t.home.learningPathsIntro}
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { href: "/stories", title: t.home.kidsPathTitle, desc: t.home.kidsPathDesc, color: "#ff6b1a" },
+                { href: "/memory", title: t.home.familyPathTitle, desc: t.home.familyPathDesc, color: "#2a6a10" },
+                { href: "/lessons", title: t.home.classPathTitle, desc: t.home.classPathDesc, color: "#0d3a6a" },
+              ].map((path) => (
+                <Link
+                  key={path.href}
+                  href={path.href}
+                  className="block no-underline hover:no-underline"
+                  style={{ border: `2px solid ${path.color}`, borderRadius: 18, padding: 16, background: "#fff", textDecoration: "none" }}
+                >
+                  <h4 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, color: path.color, marginBottom: 6 }}>
+                    {path.title}
+                  </h4>
+                  <p style={{ fontFamily: "var(--font-lora)", fontSize: "0.88rem", color: "#555", lineHeight: 1.55, marginBottom: 12 }}>
+                    {path.desc}
+                  </p>
+                  <span style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, color: path.color }}>
+                    {t.home.startPath} →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               { href: "/stories", image: "/images/jr/icon-stories.png", title: t.activities.stories, desc: t.activities.storiesDesc, color: "#ff6b1a" },
