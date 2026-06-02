@@ -45,29 +45,43 @@ Mike has authorized autonomous publish for this pipeline. The publish gate may p
    - Writes fix notes.
    - Max two fix loops.
 
-4. Promotion builder
+4. Visual brief builder
+   - Selector: `/home/helper/.hermes/scripts/jr_autonomous_content_next.py visual_brief`
+   - Runs after content QA PASS.
+   - Uses bounded sub-agent review when helpful: one Bible/history visual researcher and one prompt/storyboard reviewer.
+   - Writes a visual learning pack brief with `Gate: PASS`, including hero, Bible truth, artifact/history, challenge/activity, thumbnail, and optional video ideas.
+   - Historical visuals must be either verified open-license/public-domain assets or clearly labeled original reconstructions.
+
+5. Visual asset + QA worker
+   - Selector: `/home/helper/.hermes/scripts/jr_autonomous_content_next.py visual_qa`
+   - Creates/records prompt files and generated assets when needed.
+   - Reviews assets for child safety, doctrinal clarity, historical honesty, character consistency, no logos/watermarks, no fake readable Bible text, and no distracting AI artifacts.
+   - Writes `Gate: PASS` only when the visual pack is ready or a deliberate visual waiver is documented.
+
+6. Promotion builder
    - Selector: `/home/helper/.hermes/scripts/jr_autonomous_content_next.py promotion`
    - Converts a passed draft into app/data files.
    - For stories, update data only; the route already exists.
    - For quests, use `QuestAdventure` and model after existing quest pages.
+   - Wires passed visuals into the page instead of silently reusing weak defaults.
    - Writes a promotion report.
 
-5. App QA
+7. App QA
    - Selector: `/home/helper/.hermes/scripts/jr_autonomous_content_next.py app_qa`
    - Runs `npm run lint` and `npm run build`.
    - Checks route/listing/data behavior appropriate to lane.
    - Writes `Gate: PASS` only when the item is ready for publish.
 
-6. App fixer
+8. App fixer
    - Selector: `/home/helper/.hermes/scripts/jr_autonomous_content_next.py app_fix`
    - Fixes only app QA/build/listing issues.
    - Writes app fix notes.
    - Max two fix loops.
 
-7. Publish gate
+9. Publish gate
    - Script: `/home/helper/.hermes/scripts/jr_autonomous_content_publish_gate.py`
    - Deterministic no-agent gate.
-   - Requires PASS content QA and PASS app QA.
+   - Requires PASS content QA, PASS visual QA, and PASS app QA.
    - Requires no verification markers.
    - Requires lint/build pass immediately before push.
    - Allows only selected item files.

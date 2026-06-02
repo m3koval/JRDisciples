@@ -22,7 +22,9 @@ Is Jesus really God’s Son, and what does that mean?
 
 Jesus is the Son of God: He is truly God, truly became human, and perfectly shows us the Father. “Son of God” does not mean Jesus was created by God or became God later. It means Jesus has a one-of-a-kind relationship with the Father and shares God’s own glory, life, and authority.
 
-Christians believe this because Jesus revealed it, His disciples confessed it, and John wrote his Gospel so people would believe that Jesus is the Christ, the Son of God, and have life in His name.
+Christians believe this because Jesus revealed it, His disciples confessed it, and John wrote his Gospel as testimony about what Jesus did and said so people would believe that Jesus is the Christ, the Son of God, and have life in His name.
+
+**Child recap:** Jesus is God the Son. He was never created. He became human to save us.
 
 ## Bible Anchor
 
@@ -140,6 +142,8 @@ So when we say Jesus is God’s Son, we are not saying He is a smaller god or a 
 
 **Teaching point:** The Bible gives us true names and titles for Jesus so we do not have to guess who He is.
 
+**Recap question:** What mistake should we never make when we hear “Son of God”? Answer: We should never think Jesus was created or became God later. Jesus is the eternal Son.
+
 **Optional older-kid challenge:** Sort the cards into two groups: “What people guessed” and “What God reveals.” Talk about why Peter needed God to reveal the truth.
 
 ## Parent/Teacher Talk
@@ -161,6 +165,10 @@ This lesson teaches a high doctrine in child-clear language. Do not flatten it i
 
 - **Mistake 2: Explaining the Trinity with broken object lessons.**  
   Avoid saying God is like water changing forms or one person wearing different hats. Those pictures can teach the wrong idea. Better: “There is one God in three persons. This is deep, but God has truly told us who He is.”
+
+### If a child asks, “Is Jesus the same person as the Father?”
+
+Answer gently: No. The Son is God, and the Father is God, but the Son is not the Father. The Father sent the Son, the Son became human to save us, and the Holy Spirit helps us trust and follow Jesus. There is one God in three persons.
 
 ### If a child asks, “Can I understand everything about the Trinity?”
 

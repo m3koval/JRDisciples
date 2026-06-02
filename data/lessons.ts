@@ -24,6 +24,15 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/case-for-christ-gods-son",
+    image: "/images/jr/topic-case-for-christ-gods-son.png",
+    title: "Is Jesus Really God’s Son?",
+    desc: "Follow the identity trail: Peter’s confession, John’s testimony, and why Son of God does not mean Jesus was created. 5 identity cards with detective checks!",
+    color: "#4b2a7b",
+    sections: 5,
+    emoji: "👑",
+  },
+  {
     href: "/lessons/case-for-christ-resurrection",
     image: "/images/jr/topic-case-for-christ-bible.png",
     title: "Did Jesus Really Rise from the Dead?",

@@ -1,0 +1,37 @@
+{
+  "lesson": "Is Jesus Really God’s Son?",
+  "slug": "case-for-christ-gods-son",
+  "assets": [
+    {
+      "type": "hero",
+      "source_url": "https://v3b.fal.media/files/b/0a9cb40c/82V5pJXDCNAoGG_6-WN5__3GtEgYSg.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-gods-son/hero.png",
+      "public_path": "/images/jr/lessons/case-for-christ-gods-son/hero.png"
+    },
+    {
+      "type": "bible-truth",
+      "source_url": "https://v3b.fal.media/files/b/0a9cb40f/0acE2ItaXHqWUnPji7B-R_s0FjMIBO.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-gods-son/bible-truth.png",
+      "public_path": "/images/jr/lessons/case-for-christ-gods-son/bible-truth.png"
+    },
+    {
+      "type": "artifact-reconstruction",
+      "source_url": "https://v3b.fal.media/files/b/0a9cb415/LPsKxoxe3ghDIW8z6h_j8_RfM4qTU6.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-gods-son/artifact-reconstruction.png",
+      "public_path": "/images/jr/lessons/case-for-christ-gods-son/artifact-reconstruction.png"
+    },
+    {
+      "type": "identity-challenge",
+      "source_url": "https://v3b.fal.media/files/b/0a9cb41f/lkjPYHZbFR1FVBbzT504V_HYlrDmrj.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-gods-son/identity-challenge.png",
+      "public_path": "/images/jr/lessons/case-for-christ-gods-son/identity-challenge.png"
+    },
+    {
+      "type": "topic-thumbnail",
+      "source_url": "https://v3b.fal.media/files/b/0a9cb426/Rbd2T2FtkVx9ZIU2Jl3M3_UsGFN8Bv.png",
+      "file_path": "public/images/jr/topic-case-for-christ-gods-son.png",
+      "public_path": "/images/jr/topic-case-for-christ-gods-son.png"
+    }
+  ],
+  "visual_qa": "PASS: visuals are child-safe, polished 3D, no logos/watermarks, no problematic readable text; artifact panel is used as original reconstruction, not a real artifact photo."
+}
