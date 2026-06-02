@@ -122,6 +122,42 @@ A promoted lesson passes app QA only when:
 - basic route smoke test passes or a browser/manual limitation is clearly documented
 - report explicitly says `Gate: PASS`
 
+## Repeatable QA Checklist for New Lessons, Quizzes, and Tracks
+
+Use this checklist before promoting any new lesson, quiz, or learning track into the app.
+
+### Scripture and Doctrine
+
+- Scripture references are real, correctly cited, and fit the teaching point.
+- Direct Scripture quotes are exact, verified, and labeled with the translation used.
+- No invented Bible wording is presented as a quotation.
+- Doctrinal claims are clear, orthodox, and not overstated beyond the passage.
+- Salvation, Trinity, Holy Spirit, resurrection, prophecy, and spiritual-gifts wording receives human review when needed.
+
+### Child Fit and Family Use
+
+- The big truth can be understood by a child without flattening the biblical meaning.
+- Hard words are defined near where they appear.
+- Activities reinforce the lesson instead of becoming disconnected entertainment.
+- Parent / teacher prompts help adults ask one concrete follow-up question.
+- The tone is warm, truthful, and free from mockery, fear pressure, or manipulation.
+
+### Translation and Route Readiness
+
+- English and Russian user-facing labels are both present when the feature supports both languages.
+- Any missing translation parity is clearly noted before release.
+- Links point to existing routes and do not create dead ends.
+- The lesson, quiz, or track is discoverable from an appropriate index or next-step link.
+- Page structure uses accessible headings, readable button/link text, and mobile-safe layout.
+
+### Technical Gate
+
+- Content QA report exists and has no blocker findings.
+- App QA or route smoke check is documented.
+- `npm run lint` passes.
+- `npm run build` passes.
+- The final diff is limited to the intended content, route, data, or documentation files.
+
 ## Improvement Loop
 
 Every QA or retrospective should include:
