@@ -6,28 +6,57 @@ import { useMemo, useState } from 'react'
 type EvidenceCard = {
   title: string
   body: string
+  proof: string
 }
 
 const evidenceCards: EvidenceCard[] = [
   {
     title: 'Real history',
-    body: 'The Bible talks about real places, rulers, families, journeys, cities, and events. Luke says he carefully investigated what happened.',
+    body: 'The Bible talks about real places, rulers, families, journeys, cities, and events. Luke names leaders and locations because he is writing about things that happened in history, not a pretend land.',
+    proof: 'Luke 1:1–4; Luke 2:1–2',
   },
   {
     title: 'Eyewitness testimony',
-    body: 'An eyewitness is someone who saw something happen. The first Christians spoke publicly about Jesus while many people could still ask questions.',
+    body: 'An eyewitness is someone who saw something happen. The apostles said they saw Jesus, heard Him, touched Him, and then told others what they had seen.',
+    proof: '1 John 1:1–3; 2 Peter 1:16',
   },
   {
     title: 'Careful copying',
-    body: 'A manuscript is an old handwritten copy. Many manuscripts can be compared and checked, even when tiny copying differences appear.',
+    body: 'A manuscript is an old handwritten copy. Many manuscripts can be compared like puzzle pieces. Tiny copying differences are usually easy to spot because there are so many copies to check.',
+    proof: 'Luke 1:3–4; Colossians 4:16',
   },
   {
     title: 'Honest about people',
-    body: 'The Bible tells the truth about sin, fear, doubt, pride, repentance, and mercy. It does not hide the failures of its heroes.',
+    body: 'The Bible tells the truth about sin, fear, doubt, pride, repentance, and mercy. It does not hide the failures of its heroes, even when those failures are embarrassing.',
+    proof: 'Mark 14:66–72; Psalm 51',
   },
   {
     title: 'One rescue story',
-    body: 'Across many books and human authors, Scripture tells one great story: God made the world, people sinned, Jesus came to rescue, and God will make all things new.',
+    body: 'Across many books and human authors, Scripture tells one great rescue story: God made the world, people sinned, Jesus came to rescue, and God will make all things new.',
+    proof: 'Luke 24:44–47; Revelation 21:5',
+  },
+]
+
+const caseFiles = [
+  {
+    label: '1',
+    title: 'Not “telephone game” guessing',
+    body: 'The New Testament was not passed down only by whispers. It was preached publicly, written down, copied, read in churches, and checked by people who cared deeply about the truth.',
+  },
+  {
+    label: '2',
+    title: 'Witnesses could be questioned',
+    body: 'Paul said more than five hundred people saw the risen Jesus, and many were still alive when he wrote. That is a bold claim if people could check it.',
+  },
+  {
+    label: '3',
+    title: 'Copies help us check copies',
+    body: 'Before printing presses, Christians copied Scripture by hand. When many old copies agree, and small differences can be compared, scholars can see what was written with strong confidence.',
+  },
+  {
+    label: '4',
+    title: 'Faith is not pretending',
+    body: 'Christians trust the Bible because God is truthful and because He gave real reasons in history. Faith is trust with reasons, not closing our eyes to hard questions.',
   },
 ]
 
@@ -46,6 +75,11 @@ const quiz = [
     question: 'Why do many manuscripts help scholars?',
     answers: ['They can compare and check copies', 'They can ignore hard questions', 'They can invent new verses'],
     correct: 0,
+  },
+  {
+    question: 'What should we do when we have honest questions about the Bible?',
+    answers: ['Hide them forever', 'Ask, study, pray, and look for truth carefully', 'Decide truth does not matter'],
+    correct: 1,
   },
 ]
 
@@ -95,9 +129,31 @@ export default function CaseForChristBiblePage() {
           <p style={bodyStyle}>
             That does not mean every question is easy. It means Christians do not believe the Bible because we are pretending. We have good reasons to listen to it, study it, and build our lives on what God says.
           </p>
+          <p style={bodyStyle}>
+            This lesson does not ask kids to believe a thin answer like, “Just trust it.” It opens a case file: What kind of book is the Bible? Who wrote about Jesus? Were there witnesses? Were the words preserved carefully? What does Scripture say about itself?
+          </p>
           <p style={{ ...bodyStyle, fontWeight: 800 }}>
             Evidence means clues and facts that help us know whether something is true.
           </p>
+        </div>
+
+        <div style={{ ...panelStyle('#eef7ff'), marginTop: 30 }}>
+          <p className="eyebrow">Case File</p>
+          <h2 style={headingStyle}>What would count as good evidence?</h2>
+          <p style={bodyStyle}>
+            Some things can be proved with a measuring tape. History is different. For history, we ask: Did real people see it? Was it written close enough to the events? Did people preserve the message? Does it fit with what we know about the world? The Bible stands in that kind of historical light.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(210px,1fr))', gap: 14, marginTop: 18 }}>
+            {caseFiles.map((file) => (
+              <div key={file.title} style={{ background: '#fff', border: '1px solid rgba(13,58,106,.14)', borderRadius: 18, padding: 18 }}>
+                <div style={{ width: 36, height: 36, borderRadius: 999, display: 'grid', placeItems: 'center', background: '#ffdc73', color: '#0d3a6a', fontFamily: 'var(--font-nunito)', fontWeight: 950, marginBottom: 10 }}>
+                  {file.label}
+                </div>
+                <h3 style={{ margin: '0 0 8px', color: '#0d3a6a', fontFamily: 'var(--font-nunito)', fontSize: '1.05rem' }}>{file.title}</h3>
+                <p style={{ ...bodyStyle, margin: 0, fontSize: '.96rem' }}>{file.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div style={{ marginTop: 26 }}>
@@ -117,6 +173,11 @@ export default function CaseForChristBiblePage() {
                 <span style={{ display: 'block', fontFamily: 'var(--font-lora)', color: '#46556f', lineHeight: 1.6 }}>
                   {flipped[index] ? card.body : 'Tap to investigate this clue.'}
                 </span>
+                {flipped[index] && (
+                  <span style={{ display: 'block', marginTop: 12, color: '#1a4a8a', fontFamily: 'var(--font-nunito)', fontWeight: 900 }}>
+                    Check: {card.proof}
+                  </span>
+                )}
               </button>
             ))}
           </div>
@@ -139,6 +200,20 @@ export default function CaseForChristBiblePage() {
           <p style={bodyStyle}>
             Scripture is not only a human book. God worked through human writers so His people would have His true Word.
           </p>
+          <blockquote style={quoteStyle}>
+            For we did not follow cunningly devised fables, when we made known to you the power and coming of our Lord Jesus Christ, but we were eyewitnesses of his majesty.
+            <footer style={quoteRefStyle}>2 Peter 1:16, WEB</footer>
+          </blockquote>
+          <p style={bodyStyle}>
+            Peter says the apostles were not spreading clever myths. They were telling what they saw.
+          </p>
+          <blockquote style={quoteStyle}>
+            Then he appeared to over five hundred brothers at once, most of whom remain until now, but some have also fallen asleep.
+            <footer style={quoteRefStyle}>1 Corinthians 15:6, WEB</footer>
+          </blockquote>
+          <p style={bodyStyle}>
+            Paul pointed to living witnesses. In other words: “You can check this.” That is not how people usually talk when they are inventing a secret story.
+          </p>
         </div>
 
         <div style={{ ...panelStyle('#eef7ff'), marginTop: 30 }}>
@@ -150,6 +225,23 @@ export default function CaseForChristBiblePage() {
           <p style={bodyStyle}>
             Try this activity: whisper a sentence around the room, then compare it with written copies of the same sentence. Suggested sentence: “Luke carefully checked what eyewitnesses said about Jesus.” Written copies are easier to compare and check.
           </p>
+          <p style={bodyStyle}>
+            Important difference: the Bible is not like one whisper traveling through a long line. It is more like many careful written copies spread through many places. If one copy has a small mistake, the other copies help us notice and correct it.
+          </p>
+        </div>
+
+        <div style={{ ...panelStyle('#ffffff'), marginTop: 30 }}>
+          <p className="eyebrow">Honest Answers</p>
+          <h2 style={headingStyle}>What about hard questions?</h2>
+          <p style={bodyStyle}>
+            Trusting the Bible does not mean every question disappears in five seconds. It means we bring questions into the light instead of hiding them. Christians can study ancient languages, manuscripts, history, archaeology, and theology because all truth belongs to God.
+          </p>
+          <ul style={{ ...bodyStyle, paddingLeft: 22 }}>
+            <li><strong>Translations:</strong> The Bible was written mostly in Hebrew, Aramaic, and Greek. Good translations help us read those words in our language.</li>
+            <li><strong>Copying differences:</strong> Handwritten copies sometimes have small differences, but comparing many copies helps scholars see what was originally written.</li>
+            <li><strong>Miracles:</strong> If God made the world, then miracles are not impossible. The question is whether God gave good witnesses.</li>
+            <li><strong>Faith:</strong> Biblical faith is not make-believe. It is trusting the God who tells the truth.</li>
+          </ul>
         </div>
 
         <div style={{ marginTop: 30 }}>
