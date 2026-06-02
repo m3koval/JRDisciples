@@ -46,6 +46,7 @@ export default function QuizListPage() {
             {currentQuizzes.map((quiz, i) => {
               const story = currentStories.find((s) => s.id === quiz.storyId);
               const color = PZ_COLORS[i % PZ_COLORS.length];
+              const storyQuizLabel = language === 'ru' ? 'Тест по истории' : 'Story Quiz';
               return (
                 <Link
                   key={quiz.id}
@@ -53,7 +54,7 @@ export default function QuizListPage() {
                   className="puzzle-box block"
                   style={{ ["--pz-color" as string]: color, textDecoration: "none" }}
                 >
-                  <p className="puzzle-label">{story?.reference ?? "Bible Quiz"}</p>
+                  <p className="puzzle-label">{storyQuizLabel} · {story?.reference ?? (language === 'ru' ? 'Библейский тест' : 'Bible Quiz')}</p>
                   <div style={{ fontSize: "3rem", marginBottom: 8 }}>{quiz.emoji}</div>
                   <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.1rem", color: "var(--text)", marginBottom: 6 }}>
                     {quiz.title}
