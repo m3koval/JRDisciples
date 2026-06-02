@@ -24,6 +24,15 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/case-for-christ-resurrection",
+    image: "/images/jr/topic-case-for-christ-bible.png",
+    title: "Did Jesus Really Rise from the Dead?",
+    desc: "Examine the witness trail: Jesus died, was buried, rose again, and appeared to real people. 5 witness cards with detective checks!",
+    color: "#5b1530",
+    sections: 5,
+    emoji: "🌅",
+  },
+  {
     href: "/lessons/case-for-christ-bible",
     image: "/images/jr/topic-case-for-christ-bible.png",
     title: "Can We Trust the Bible?",
