@@ -1,10 +1,12 @@
 # Junior Disciples Autonomous Content Factory
 
+> **Status: DEPRECATED / DO NOT RESTART AS-IS.** This document remains as an autopsy/reference for the over-engineered Hermes cron pipeline. Mike judged the broad automation harmful because it created too much unattended surface area and mixed-quality output. The active operating mode is manual Apex-supervised batches, deterministic local checks, and narrowly scoped Codex-native workers only when explicitly useful.
+
 Goal: let Apex create, review, correct, promote, verify, and publish Junior Disciples lessons, Bible stories, and quests without waiting for live steering, while still preserving clean gates so Mike can correct afterward if needed.
 
 ## Authority
 
-Mike has authorized autonomous publish for this pipeline. The publish gate may push to `origin/main` when all deterministic gates pass. No force push. No publish if Scripture verification markers remain. No publish if lint/build fail. No publish if dirty files fall outside the selected item scope.
+Historical authorization is superseded. Do not use this document as current authorization to publish autonomously. Any future automation needs a fresh Mike-approved scope and should be encoded as a narrow, deterministic gate or a bounded Codex-native worker, not a revived factory.
 
 ## Content lanes
 

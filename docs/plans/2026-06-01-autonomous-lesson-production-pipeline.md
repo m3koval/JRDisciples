@@ -1,5 +1,7 @@
 # Autonomous Lesson Production Pipeline Implementation Plan
 
+> **Status: DEPRECATED / historical plan only.** This plan describes the over-engineered Hermes automation lane that is now shut down. Do not implement or restart it as-is. Current Junior Disciples work should proceed in manual Apex-supervised batches with deterministic checks and small commits; use Codex-native workers only for bounded, reviewable coding tasks.
+
 > **For Hermes:** Use subagent-driven-development skill to implement this plan task-by-task.
 
 **Goal:** Build a reliable staged Junior Disciples lesson-production workflow that auto-starts, creates better-than-current lesson drafts, QA reviews them, fixes issues, re-QAs, promotes approved lessons into the site, verifies the build/browser behavior, and publishes only when ready.
