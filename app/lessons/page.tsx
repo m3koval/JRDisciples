@@ -45,20 +45,20 @@ export default function LessonsPage() {
                 key={topic.href}
                 href={topic.href}
                 className="puzzle-box block no-underline hover:no-underline"
-                style={{ ["--pz-color" as string]: topic.color, textDecoration: "none" }}
+                style={{ ["--pz-color" as string]: topic.color, textDecoration: "none", height: "100%", display: "flex", flexDirection: "column", textAlign: "left" }}
               >
                 <p className="puzzle-label">{t.common.section} · {topic.sections} {t.lessons.sections}</p>
-                <div style={{ height: 80, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 10 }}>
+                <div style={{ height: 86, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12 }}>
                   {topic.image ? (
                     <img src={topic.image} alt={topic.title} style={{ width: 80, height: 80, objectFit: "contain" }} />
                   ) : (
                     <span style={{ fontSize: "3.2rem" }}>{topic.emoji}</span>
                   )}
                 </div>
-                <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.2rem", color: "var(--text)", marginBottom: 6 }}>
+                <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 950, fontSize: "1.08rem", color: "var(--text)", marginBottom: 8, lineHeight: 1.22, minHeight: 52, display: "flex", alignItems: "center" }}>
                   {topic.title}
                 </h3>
-                <p style={{ fontFamily: "var(--font-lora)", fontSize: "0.9rem", color: "#555", lineHeight: 1.6 }}>
+                <p style={{ fontFamily: language === "ru" ? "var(--font-nunito)" : "var(--font-lora)", fontSize: "0.92rem", color: "#555", lineHeight: 1.58, flex: 1, marginBottom: 0 }}>
                   {topic.desc}
                 </p>
                 <div className="pz-btn" style={{ marginTop: 14, textAlign: "center" }}>

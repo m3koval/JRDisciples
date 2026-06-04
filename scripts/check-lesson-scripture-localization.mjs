@@ -22,8 +22,8 @@ for (const slug of caseLessonSlugs) {
     failures.push(`${slug}: contains WEB wording or label in published page`)
   }
 
-  if (!/\bESV\b/.test(text)) {
-    failures.push(`${slug}: missing ESV label in published page`)
+  if (/scriptureEn/.test(text) && !/\bESV\b/.test(text)) {
+    failures.push(`${slug}: defines English Scripture but is missing an ESV label in published page`)
   }
 
   if (!/\buseLanguage\b/.test(text) || !/language === 'ru'|language === "ru"/.test(text)) {

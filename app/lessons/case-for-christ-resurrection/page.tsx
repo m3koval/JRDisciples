@@ -113,11 +113,11 @@ export default function CaseForChristResurrectionPage() {
       <section style={{ background: 'linear-gradient(135deg,#5b1530,#0d3a6a)', padding: '46px 18px' }}>
         <div style={{ maxWidth: 1040, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 26, alignItems: 'center' }}>
           <div>
-            <p style={eyebrowLight}>{isRu ? 'Дело о Христе для детей · Урок 2' : 'Case for Christ Kids · Lesson 2'}</p>
-            <h1 style={{ margin: '0 0 14px', color: 'white', fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,5vw,3.4rem)', lineHeight: 1.05 }}>
+            <p style={{ ...eyebrowLight, letterSpacing: isRu ? 0.5 : 1.4, textTransform: isRu ? 'none' : 'uppercase' }}>{isRu ? 'Дело о Христе для детей · Урок 2' : 'Case for Christ Kids · Lesson 2'}</p>
+            <h1 style={{ margin: '0 0 14px', color: 'white', fontFamily: isRu ? 'var(--font-nunito)' : 'var(--font-cinzel)', fontSize: isRu ? 'clamp(2rem,7vw,3rem)' : 'clamp(2rem,5vw,3.4rem)', lineHeight: isRu ? 1.12 : 1.05, letterSpacing: isRu ? '-0.03em' : 0 }}>
               {isRu ? 'Иисус действительно воскрес из мёртвых?' : 'Did Jesus Really Rise from the Dead?'}
             </h1>
-            <p style={{ margin: 0, color: 'rgba(255,255,255,.94)', fontFamily: 'var(--font-lora)', fontSize: '1.12rem', lineHeight: 1.75 }}>
+            <p style={{ margin: 0, color: 'rgba(255,255,255,.94)', fontFamily: isRu ? 'var(--font-nunito)' : 'var(--font-lora)', fontSize: isRu ? 'clamp(1rem,3vw,1.08rem)' : '1.12rem', lineHeight: isRu ? 1.55 : 1.75 }}>
               {isRu
                 ? 'Изучи библейский след свидетелей с честными вопросами, смиренной верой и уверенностью в воскресшем Господе.'
                 : 'Examine the Bible\'s witness trail with honest questions, humble faith, and confidence in the risen Lord.'}

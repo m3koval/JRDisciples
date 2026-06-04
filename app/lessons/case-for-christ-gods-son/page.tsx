@@ -184,11 +184,11 @@ export default function CaseForChristGodsSonPage() {
       <section style={{ background: 'linear-gradient(135deg,#4b2a7b,#0d3a6a)', padding: '46px 18px' }}>
         <div style={{ maxWidth: 1120, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 28, alignItems: 'center' }}>
           <div>
-            <p style={eyebrowLight}>{isRu ? 'Дело о Христе для детей · Урок 3' : 'Case for Christ Kids · Lesson 3'}</p>
-            <h1 style={{ margin: '0 0 14px', color: 'white', fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,5vw,3.5rem)', lineHeight: 1.05 }}>
+            <p style={{ ...eyebrowLight, letterSpacing: isRu ? 0.5 : 1.4, textTransform: isRu ? 'none' : 'uppercase' }}>{isRu ? 'Дело о Христе для детей · Урок 3' : 'Case for Christ Kids · Lesson 3'}</p>
+            <h1 style={{ margin: '0 0 14px', color: 'white', fontFamily: isRu ? 'var(--font-nunito)' : 'var(--font-cinzel)', fontSize: isRu ? 'clamp(2rem,7vw,3rem)' : 'clamp(2rem,5vw,3.5rem)', lineHeight: isRu ? 1.12 : 1.05, letterSpacing: isRu ? '-0.03em' : 0 }}>
               {isRu ? 'Иисус действительно Божий Сын?' : 'Is Jesus Really God\'s Son?'}
             </h1>
-            <p style={{ margin: 0, color: 'rgba(255,255,255,.94)', fontFamily: 'var(--font-lora)', fontSize: '1.12rem', lineHeight: 1.75 }}>
+            <p style={{ margin: 0, color: 'rgba(255,255,255,.94)', fontFamily: isRu ? 'var(--font-nunito)' : 'var(--font-lora)', fontSize: isRu ? 'clamp(1rem,3vw,1.08rem)' : '1.12rem', lineHeight: isRu ? 1.55 : 1.75 }}>
               {isRu
                 ? 'Иди по следу личности Иисуса: исповедание Петра, свидетельство Иоанна и почему Иисус — Христос, вечный Сын Божий, истинный Бог и истинный человек.'
                 : 'Follow the identity trail from Peter\'s confession to John\'s testimony: Jesus is the Christ, the eternal Son of God, truly God and truly human.'}
@@ -312,7 +312,7 @@ export default function CaseForChristGodsSonPage() {
                     )
                   })}
                 </div>
-                {answers[index] !== undefined && <p style={{ ...bodyStyle, marginTop: 12, fontWeight: 800, color: answers[index] === item.correct ? '#1f7a35' : '#a33a10' }}>{answers[index] === item.correct ? item.feedback : 'Not quite. Follow the identity trail and try again.'}</p>}
+                {answers[index] !== undefined && <p style={{ ...bodyStyle, marginTop: 12, fontWeight: 800, color: answers[index] === item.correct ? '#1f7a35' : '#a33a10' }}>{answers[index] === item.correct ? item.feedback : (isRu ? 'Не совсем. Пройди по следу личности Иисуса и попробуй снова.' : 'Not quite. Follow the identity trail and try again.')}</p>}
               </div>
             ))}
           </div>

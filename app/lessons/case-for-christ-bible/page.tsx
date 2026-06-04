@@ -169,13 +169,13 @@ export default function CaseForChristBiblePage() {
       <section style={{ background: 'linear-gradient(135deg,#0d3a6a,#1d5fa7)', padding: '44px 18px' }}>
         <div style={{ maxWidth: 1040, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 28, alignItems: 'center' }}>
           <div>
-            <p style={{ margin: '0 0 10px', color: '#ffdc73', fontFamily: 'var(--font-nunito)', fontWeight: 900, letterSpacing: 1.4, textTransform: 'uppercase' }}>
+            <p style={{ margin: '0 0 10px', color: '#ffdc73', fontFamily: 'var(--font-nunito)', fontWeight: 900, letterSpacing: isRu ? 0.5 : 1.4, textTransform: isRu ? 'none' : 'uppercase' }}>
               {isRu ? 'Дело о Христе для детей · Урок 1' : 'Case for Christ Kids · Lesson 1'}
             </p>
-            <h1 style={{ margin: '0 0 14px', color: 'white', fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,5vw,3.4rem)', lineHeight: 1.05, textShadow: '0 3px 12px rgba(0,0,0,.28)' }}>
+            <h1 style={{ margin: '0 0 14px', color: 'white', fontFamily: isRu ? 'var(--font-nunito)' : 'var(--font-cinzel)', fontSize: isRu ? 'clamp(2rem,7vw,3rem)' : 'clamp(2rem,5vw,3.4rem)', lineHeight: isRu ? 1.12 : 1.05, letterSpacing: isRu ? '-0.03em' : 0, textShadow: '0 3px 12px rgba(0,0,0,.28)' }}>
               {isRu ? 'Можно ли доверять Библии?' : 'Can We Trust the Bible?'}
             </h1>
-            <p style={{ margin: 0, color: 'rgba(255,255,255,.94)', fontFamily: 'var(--font-lora)', fontSize: '1.12rem', lineHeight: 1.75 }}>
+            <p style={{ margin: 0, color: 'rgba(255,255,255,.94)', fontFamily: isRu ? 'var(--font-nunito)' : 'var(--font-lora)', fontSize: isRu ? 'clamp(1rem,3vw,1.08rem)' : '1.12rem', lineHeight: isRu ? 1.55 : 1.75 }}>
               {isRu
                 ? 'Иди по следу доказательств: настоящая история, свидетельства очевидцев, внимательное переписывание и верное Божье Слово.'
                 : 'Follow the evidence trail: real history, eyewitness testimony, careful copying, and God’s faithful Word.'}

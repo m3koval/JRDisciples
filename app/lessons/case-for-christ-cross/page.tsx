@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 
 const anchors = ['Romans 5:6-11', '1 Peter 3:18', 'Isaiah 53:5-6']
+const anchorsRu = ['Римлянам 5:6–11', '1-е Петра 3:18', 'Исаия 53:5–6']
 
 const teachingTrail = [
   {
@@ -149,20 +150,21 @@ export default function CaseForChristCrossPage() {
   const trailList = isRu ? teachingTrailRu : teachingTrail
   const hardWordList = isRu ? hardWordsRu : hardWords
   const questionList = isRu ? questionsRu : questions
+  const heroAnchors = isRu ? anchorsRu : anchors
 
   return (
     <main style={{ background: '#fff8e8', color: '#203047' }}>
       <section style={{ background: 'linear-gradient(135deg,#4a1230,#0d3a6a)', padding: '46px 18px' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 28, alignItems: 'center' }}>
           <div>
-            <p style={eyebrowLight}>{isRu ? 'Дело о Христе для детей · Урок 5' : 'Case for Christ Kids · Lesson 5'}</p>
-            <h1 style={{ margin: '0 0 14px', color: 'white', fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,5vw,3.4rem)', lineHeight: 1.05 }}>
+            <p style={{ ...eyebrowLight, letterSpacing: isRu ? 0.5 : 1.4, textTransform: isRu ? 'none' : 'uppercase' }}>{isRu ? 'Дело о Христе для детей · Урок 5' : 'Case for Christ Kids · Lesson 5'}</p>
+            <h1 style={{ margin: '0 0 14px', color: 'white', fontFamily: isRu ? 'var(--font-nunito)' : 'var(--font-cinzel)', fontSize: isRu ? 'clamp(2rem,7vw,3rem)' : 'clamp(2rem,5vw,3.4rem)', lineHeight: isRu ? 1.12 : 1.05, letterSpacing: isRu ? '-0.03em' : 0 }}>
               {text.title}
             </h1>
-            <p style={{ margin: 0, color: 'rgba(255,255,255,.94)', fontFamily: 'var(--font-lora)', fontSize: '1.12rem', lineHeight: 1.75 }}>
+            <p style={{ margin: 0, color: 'rgba(255,255,255,.94)', fontFamily: isRu ? 'var(--font-nunito)' : 'var(--font-lora)', fontSize: isRu ? 'clamp(1rem,3vw,1.08rem)' : '1.12rem', lineHeight: isRu ? 1.55 : 1.75 }}>
               {text.intro}
             </p>
-            <div style={anchorWrapStyle}>{anchors.map((anchor) => <span key={anchor} style={anchorPillStyle}>{anchor}</span>)}<span style={anchorPillStyle}>{isRu ? 'Кратко по ESV' : 'ESV summaries'}</span></div>
+            <div style={anchorWrapStyle}>{heroAnchors.map((anchor) => <span key={anchor} style={anchorPillStyle}>{anchor}</span>)}</div>
           </div>
           <figure style={heroFigureStyle}>
             <img src="/images/jr/lessons/case-for-christ-cross/hero.png" alt="Children seeing a hopeful symbolic cross where justice and mercy meet" style={imageStyle} />
@@ -207,7 +209,7 @@ export default function CaseForChristCrossPage() {
 
         <figure style={{ ...figurePanelStyle, marginTop: 30 }}>
           <img src="/images/jr/lessons/case-for-christ-cross/bible-truth.png" alt="Children learning from an open Bible about the righteous One for the unrighteous" style={imageStyle} />
-          <figcaption style={captionStyle}>The Bible teaches the saving message in words; lesson labels are shown in the page text, not in the image.</figcaption>
+          <figcaption style={captionStyle}>{isRu ? 'Библия учит спасительной вести словами; подписи урока показаны в тексте страницы, а не внутри изображения.' : 'The Bible teaches the saving message in words; lesson labels are shown in the page text, not in the image.'}</figcaption>
         </figure>
 
         <div style={{ marginTop: 30 }}>
@@ -239,7 +241,7 @@ export default function CaseForChristCrossPage() {
 
         <figure style={{ ...figurePanelStyle, marginTop: 30 }}>
           <img src="/images/jr/lessons/case-for-christ-cross/artifact-reconstruction.png" alt="Child-safe reconstruction of first-century Roman crucifixion context with distant symbolic crosses" style={imageStyle} />
-          <figcaption style={captionStyle}>Original child-safe reconstruction of first-century Roman crucifixion context; not a photograph and not a graphic depiction. Historical context only; Scripture supplies the saving message.</figcaption>
+          <figcaption style={captionStyle}>{isRu ? 'Оригинальная безопасная для детей реконструкция исторического контекста римского распятия первого века; это не фотография и не подробное изображение страдания. Исторический контекст только помогает; спасительную весть даёт Писание.' : 'Original child-safe reconstruction of first-century Roman crucifixion context; not a photograph and not a graphic depiction. Historical context only; Scripture supplies the saving message.'}</figcaption>
         </figure>
 
         <div style={{ ...panelStyle('#ffffff'), marginTop: 30 }}>
