@@ -65,7 +65,7 @@ export default function RebusCard({ puzzle }: { puzzle: RebusPuzzle }) {
       }}>
         {puzzle.clues.map((clue, i) => {
           if (clue.type === "emoji") return (
-            <span key={i} style={{ fontSize: "3rem", lineHeight: 1 }}>{clue.value}</span>
+            <span key={i} style={{ fontSize: "3rem", lineHeight: 1, fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>{clue.value}</span>
           );
           if (clue.type === "plus")  return <span key={i} style={{ fontSize: "1.8rem", fontWeight: 900, color: "#888" }}>+</span>;
           if (clue.type === "minus") return <span key={i} style={{ fontSize: "1.8rem", fontWeight: 900, color: "#c00" }}>−</span>;

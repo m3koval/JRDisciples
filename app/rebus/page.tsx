@@ -55,7 +55,7 @@ export default function RebusListPage() {
                   </h3>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", marginBottom: 12 }}>
                     {puzzle.clues.slice(0, 5).map((clue, j) => (
-                      <span key={j} style={{ fontSize: clue.type === "emoji" ? "2rem" : "1.1rem", fontFamily: "var(--font-nunito)", fontWeight: 900, color: clue.type === "minus" ? "#c00" : "#555" }}>
+                      <span key={j} style={{ fontSize: clue.type === "emoji" ? "2rem" : "1.1rem", fontFamily: clue.type === "emoji" ? "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" : "var(--font-nunito)", fontWeight: 900, color: clue.type === "minus" ? "#c00" : "#555" }}>
                         {clue.type === "plus" ? "+" : clue.type === "minus" ? "−" : clue.type === "equals" ? "=" : clue.value}
                       </span>
                     ))}
