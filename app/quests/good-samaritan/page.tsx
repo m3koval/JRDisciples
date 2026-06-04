@@ -324,12 +324,12 @@ const ui: Record<'en' | 'ru', QuestUi> = {
 }
 
 const questImages: Record<string, string> & { cover: string; badge: string } = {
-  "cover": "/images/jr/quests/good-samaritan/00-cover-good-samaritan.svg",
-  "road-question": "/images/jr/quests/good-samaritan/01-scene-road-question.svg",
-  "hurting-traveler": "/images/jr/quests/good-samaritan/02-scene-hurting-traveler.svg",
-  "oil-bandage": "/images/jr/quests/good-samaritan/03-scene-oil-bandage.svg",
-  "inn-care": "/images/jr/quests/good-samaritan/04-scene-inn-care.svg",
-  "badge": "/images/jr/quests/good-samaritan/05-badge-good-samaritan.svg"
+  "cover": "/images/jr/quests/good-samaritan/00-cover-good-samaritan.png",
+  "road-question": "/images/jr/quests/good-samaritan/01-scene-road-question.png",
+  "hurting-traveler": "/images/jr/quests/good-samaritan/02-scene-hurting-traveler.png",
+  "oil-bandage": "/images/jr/quests/good-samaritan/03-scene-oil-bandage.png",
+  "inn-care": "/images/jr/quests/good-samaritan/04-scene-inn-care.png",
+  "badge": "/images/jr/quests/good-samaritan/05-badge-good-samaritan.png"
 }
 
 export default function GoodSamaritanPage() {

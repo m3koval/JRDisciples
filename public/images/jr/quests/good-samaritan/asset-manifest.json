@@ -1,13 +1,23 @@
 {
   "slug": "good-samaritan",
+  "provider": "FAL via Hermes image_generate",
+  "generatedAt": "2026-06-04T22:33:10.575Z",
   "assets": [
-    "00-cover-good-samaritan.svg",
-    "01-scene-road-question.svg",
-    "02-scene-hurting-traveler.svg",
-    "03-scene-oil-bandage.svg",
-    "04-scene-inn-care.svg",
-    "05-badge-good-samaritan.svg"
+    "00-cover-good-samaritan.png",
+    "01-scene-road-question.png",
+    "02-scene-hurting-traveler.png",
+    "03-scene-oil-bandage.png",
+    "04-scene-inn-care.png",
+    "05-badge-good-samaritan.png"
   ],
+  "sourceUrls": {
+    "00-cover-good-samaritan.png": "https://v3b.fal.media/files/b/0a9cff2a/3ark3j3-7-uMFjjB6Glcg_oIZ0eOIK.png",
+    "01-scene-road-question.png": "https://v3b.fal.media/files/b/0a9cff63/JVNfjZBGndYzGnuau81rM_U5m3lMK0.png",
+    "02-scene-hurting-traveler.png": "https://v3b.fal.media/files/b/0a9cff68/4CCkKtl6R3B9Y-9PILSNs_x205UNU4.png",
+    "03-scene-oil-bandage.png": "https://v3b.fal.media/files/b/0a9cff6d/V7pZD23fieL52W8ZYL1ym_J64TNsY2.png",
+    "04-scene-inn-care.png": "https://v3b.fal.media/files/b/0a9cff79/o2uEbQCbm24XGNQ5ue3Dp_wczvwfIl.png",
+    "05-badge-good-samaritan.png": "https://v3b.fal.media/files/b/0a9cffa6/cWx1zT_Ig0Y4jAPwlBf7n_wlwwVtaM.png"
+  },
   "promptFiles": [
     "00-cover.md",
     "01-road-question.md",

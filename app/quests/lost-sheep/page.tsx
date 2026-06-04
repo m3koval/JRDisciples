@@ -324,12 +324,12 @@ const ui: Record<'en' | 'ru', QuestUi> = {
 }
 
 const questImages: Record<string, string> & { cover: string; badge: string } = {
-  "cover": "/images/jr/quests/lost-sheep/00-cover-lost-sheep.svg",
-  "counting-sheep": "/images/jr/quests/lost-sheep/01-scene-counting-sheep.svg",
-  "hill-trail": "/images/jr/quests/lost-sheep/02-scene-hill-trail.svg",
-  "lamb-found": "/images/jr/quests/lost-sheep/03-scene-lamb-found.svg",
-  "joy-home": "/images/jr/quests/lost-sheep/04-scene-joy-home.svg",
-  "badge": "/images/jr/quests/lost-sheep/05-badge-lost-sheep.svg"
+  "cover": "/images/jr/quests/lost-sheep/00-cover-lost-sheep.png",
+  "counting-sheep": "/images/jr/quests/lost-sheep/01-scene-counting-sheep.png",
+  "hill-trail": "/images/jr/quests/lost-sheep/02-scene-hill-trail.png",
+  "lamb-found": "/images/jr/quests/lost-sheep/03-scene-lamb-found.png",
+  "joy-home": "/images/jr/quests/lost-sheep/04-scene-joy-home.png",
+  "badge": "/images/jr/quests/lost-sheep/05-badge-lost-sheep.png"
 }
 
 export default function LostSheepPage() {

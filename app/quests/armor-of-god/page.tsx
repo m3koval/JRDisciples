@@ -324,12 +324,12 @@ const ui: Record<'en' | 'ru', QuestUi> = {
 }
 
 const questImages: Record<string, string> & { cover: string; badge: string } = {
-  "cover": "/images/jr/quests/armor-of-god/00-cover-armor-of-god.svg",
-  "truth-belt": "/images/jr/quests/armor-of-god/01-scene-truth-belt.svg",
-  "faith-shield": "/images/jr/quests/armor-of-god/02-scene-faith-shield.svg",
-  "salvation-helmet": "/images/jr/quests/armor-of-god/03-scene-salvation-helmet.svg",
-  "word-sword": "/images/jr/quests/armor-of-god/04-scene-word-sword.svg",
-  "badge": "/images/jr/quests/armor-of-god/05-badge-armor-of-god.svg"
+  "cover": "/images/jr/quests/armor-of-god/00-cover-armor-of-god.png",
+  "truth-belt": "/images/jr/quests/armor-of-god/01-scene-truth-belt.png",
+  "faith-shield": "/images/jr/quests/armor-of-god/02-scene-faith-shield.png",
+  "salvation-helmet": "/images/jr/quests/armor-of-god/03-scene-salvation-helmet.png",
+  "word-sword": "/images/jr/quests/armor-of-god/04-scene-word-sword.png",
+  "badge": "/images/jr/quests/armor-of-god/05-badge-armor-of-god.png"
 }
 
 export default function ArmorOfGodPage() {

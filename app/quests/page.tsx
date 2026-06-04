@@ -5,10 +5,10 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const questArt = {
   hub: '/images/jr/quests/quest-hub-map.png',
-  fruit: '/images/jr/quests/fruit-of-spirit/00-cover-fruit-of-spirit.svg',
-  armor: '/images/jr/quests/armor-of-god/00-cover-armor-of-god.svg',
-  samaritan: '/images/jr/quests/good-samaritan/00-cover-good-samaritan.svg',
-  lostSheep: '/images/jr/quests/lost-sheep/00-cover-lost-sheep.svg',
+  fruit: '/images/jr/quests/fruit-of-spirit/00-cover-fruit-of-spirit.png',
+  armor: '/images/jr/quests/armor-of-god/00-cover-armor-of-god.png',
+  samaritan: '/images/jr/quests/good-samaritan/00-cover-good-samaritan.png',
+  lostSheep: '/images/jr/quests/lost-sheep/00-cover-lost-sheep.png',
   courage: '/images/jr/quests/courage-quest/00-cover-courage-quest.png',
   forgiveness: '/images/jr/quests/forgiveness-bridge/00-cover-forgiveness-bridge.png',
   forest: '/images/jr/quests/forest-of-lies/00-cover-forest-of-lies.png',

@@ -324,12 +324,12 @@ const ui: Record<'en' | 'ru', QuestUi> = {
 }
 
 const questImages: Record<string, string> & { cover: string; badge: string } = {
-  "cover": "/images/jr/quests/fruit-of-spirit/00-cover-fruit-of-spirit.svg",
-  "love-gate": "/images/jr/quests/fruit-of-spirit/01-scene-love-gate.svg",
-  "peace-path": "/images/jr/quests/fruit-of-spirit/02-scene-peace-path.svg",
-  "kindness-orchard": "/images/jr/quests/fruit-of-spirit/03-scene-kindness-orchard.svg",
-  "self-control-hill": "/images/jr/quests/fruit-of-spirit/04-scene-self-control-hill.svg",
-  "badge": "/images/jr/quests/fruit-of-spirit/05-badge-fruit-of-spirit.svg"
+  "cover": "/images/jr/quests/fruit-of-spirit/00-cover-fruit-of-spirit.png",
+  "love-gate": "/images/jr/quests/fruit-of-spirit/01-scene-love-gate.png",
+  "peace-path": "/images/jr/quests/fruit-of-spirit/02-scene-peace-path.png",
+  "kindness-orchard": "/images/jr/quests/fruit-of-spirit/03-scene-kindness-orchard.png",
+  "self-control-hill": "/images/jr/quests/fruit-of-spirit/04-scene-self-control-hill.png",
+  "badge": "/images/jr/quests/fruit-of-spirit/05-badge-fruit-of-spirit.png"
 }
 
 export default function FruitOfSpiritPage() {
