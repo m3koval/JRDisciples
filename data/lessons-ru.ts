@@ -10,6 +10,42 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
+    href: "/lessons/case-for-christ-bible",
+    image: "/images/jr/topic-case-for-christ-bible.png",
+    title: "Можно ли доверять Библии?",
+    desc: "Иди по следу доказательств: настоящая история, свидетельства очевидцев, внимательное переписывание и верное Божье Слово. Детективный урок с 5 подсказками!",
+    color: "#1f5f8f",
+    sections: 5,
+    emoji: "📜",
+  },
+  {
+    href: "/lessons/case-for-christ-resurrection",
+    image: "/images/jr/topic-case-for-christ-bible.png",
+    title: "Иисус действительно воскрес?",
+    desc: "Проверь свидетельства: Иисус умер, был погребён, воскрес и явился реальным людям. Детективный урок с 5 карточками свидетелей!",
+    color: "#5b1530",
+    sections: 5,
+    emoji: "🌅",
+  },
+  {
+    href: "/lessons/case-for-christ-cross",
+    image: "/images/jr/topic-case-for-christ-cross.png",
+    title: "Почему Иисусу нужно было умереть?",
+    desc: "Иди по следу справедливости и милости: грех серьёзен, Иисус — добровольный Заместитель, а крест показывает Божью святую справедливость и глубокую милость. 6 шагов и задание с карточками!",
+    color: "#4a1230",
+    sections: 6,
+    emoji: "✝️",
+  },
+  {
+    href: "/lessons/case-for-christ-gods-son",
+    image: "/images/jr/topic-case-for-christ-gods-son.png",
+    title: "Иисус действительно Божий Сын?",
+    desc: "Иди по следу личности Иисуса: исповедание Петра, свидетельство Иоанна и почему “Сын Божий” не значит, что Иисус был создан. 5 карточек личности!",
+    color: "#4b2a7b",
+    sections: 5,
+    emoji: "👑",
+  },
+  {
     href: "/lessons/holy-spirit",
     image: "/images/jr/topic-holy-spirit.png",
     title: "Святой Дух",

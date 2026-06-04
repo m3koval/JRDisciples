@@ -1,0 +1,52 @@
+{
+  "lesson": "Why Did Jesus Have to Die?",
+  "slug": "case-for-christ-cross",
+  "assets": [
+    {
+      "type": "hero",
+      "slot": "The Crossroads of Justice and Mercy",
+      "source_url": "https://v3b.fal.media/files/b/0a9cbf8f/WmrFutZDYAZbKIJ3rZQdi_fT1ONC4D.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-cross/hero.png",
+      "public_path": "/images/jr/lessons/case-for-christ-cross/hero.png",
+      "prompt_path": "public/images/jr/lessons/case-for-christ-cross/prompts/hero.txt",
+      "caption_note": "Original AI illustration; UI caption may say: At the cross, God showed perfect justice and deep mercy so sinners can have peace with God. Do not bake labels into the image."
+    },
+    {
+      "type": "bible-truth",
+      "slot": "The Righteous One for the Unrighteous",
+      "source_url": "https://v3b.fal.media/files/b/0a9cbf95/0hHJXS8nW6mQFO8rEol99_eXJnVcaF.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-cross/bible-truth.png",
+      "public_path": "/images/jr/lessons/case-for-christ-cross/bible-truth.png",
+      "prompt_path": "public/images/jr/lessons/case-for-christ-cross/prompts/bible-truth.txt",
+      "caption_note": "Original AI illustration; Scripture and words such as sin, substitute, justice, mercy, and peace with God must be rendered in UI/HTML, not inside the image."
+    },
+    {
+      "type": "artifact-reconstruction",
+      "slot": "First-Century Crucifixion Context, Child-Safe Reconstruction",
+      "source_url": "https://v3b.fal.media/files/b/0a9cbf9b/BrApvOYAljS-C7_7pcdB5_Wfu9dsV5.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-cross/artifact-reconstruction.png",
+      "public_path": "/images/jr/lessons/case-for-christ-cross/artifact-reconstruction.png",
+      "prompt_path": "public/images/jr/lessons/case-for-christ-cross/prompts/artifact-reconstruction.txt",
+      "caption_note": "Original child-safe reconstruction of first-century Roman crucifixion context; not a photograph and not a graphic depiction. Historical context only; Scripture supplies the atonement message."
+    },
+    {
+      "type": "activity-challenge",
+      "slot": "Justice and Mercy Cards",
+      "source_url": "https://v3b.fal.media/files/b/0a9cbfa1/VMR2A9giotEBNlCRQ_M2L_Nr9O01Bq.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-cross/justice-mercy-cards.png",
+      "public_path": "/images/jr/lessons/case-for-christ-cross/justice-mercy-cards.png",
+      "prompt_path": "public/images/jr/lessons/case-for-christ-cross/prompts/justice-mercy-cards.txt",
+      "caption_note": "Original AI illustration; activity cards are intentionally blank. Add Justice, Mercy, Sin, Substitute, and Peace with God in UI/HTML only."
+    },
+    {
+      "type": "topic-thumbnail",
+      "slot": "Why Did Jesus Have to Die?",
+      "source_url": "https://v3b.fal.media/files/b/0a9cbfa8/HY8qJc46nU1cb1-8PLtVA_ao8JaTaK.png",
+      "file_path": "public/images/jr/topic-case-for-christ-cross.png",
+      "public_path": "/images/jr/topic-case-for-christ-cross.png",
+      "prompt_path": "public/images/jr/lessons/case-for-christ-cross/prompts/topic-thumbnail.txt",
+      "caption_note": "Original AI thumbnail image; lesson title and labels should be overlaid by site UI, not generated in the image."
+    }
+  ],
+  "visual_qa": "PASS: visuals are child-safe, polished 3D for main children, no logos/watermarks, no readable generated labels observed, no gore/weapons/occult/scary imagery, no direct depiction of Jesus, no graphic Passion imagery, cross imagery is symbolic/distant/hopeful, and artifact/history image is documented as an original reconstruction rather than a real photo."
+}

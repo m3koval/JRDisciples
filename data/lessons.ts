@@ -42,6 +42,15 @@ export const lessonTopics: LessonTopic[] = [
     emoji: "🌅",
   },
   {
+    href: "/lessons/case-for-christ-cross",
+    image: "/images/jr/topic-case-for-christ-cross.png",
+    title: "Why Did Jesus Have to Die?",
+    desc: "Follow the justice-and-mercy trail: sin is serious, Jesus is the willing Substitute, and the cross shows God’s holy justice and deep mercy. 6 teaching steps with a hands-on card activity!",
+    color: "#4a1230",
+    sections: 6,
+    emoji: "✝️",
+  },
+  {
     href: "/lessons/case-for-christ-bible",
     image: "/images/jr/topic-case-for-christ-bible.png",
     title: "Can We Trust the Bible?",
