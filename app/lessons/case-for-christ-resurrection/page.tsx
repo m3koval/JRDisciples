@@ -57,6 +57,27 @@ const questions = [
   },
 ]
 
+const witnessesRu = [
+  { name: 'Пётр / Кифа', detail: 'Павел говорит, что Иисус явился Кифе. Позже Пётр смело проповедовал воскресение.', source: '1-е Коринфянам 15:5' },
+  { name: 'Двенадцать', detail: 'Иисус явился ученикам, и они понесли благую весть в мир.', source: '1-е Коринфянам 15:5' },
+  { name: 'Больше пятисот', detail: 'Павел указывает на большую группу свидетелей, многие из которых были ещё живы, когда он писал.', source: '1-е Коринфянам 15:6' },
+  { name: 'Иаков и апостолы', detail: 'Воскресший Иисус явился руководителям, которые стали Его смелыми свидетелями.', source: '1-е Коринфянам 15:7' },
+  { name: 'Фома', detail: 'Иисус встретил Фому в его честном вопросе и призвал его верить.', source: 'От Иоанна 20:24–31' },
+]
+
+const trailRu = [
+  'Иисус умер за наши грехи по Писанию.',
+  'Иисус был погребён, значит гробница была не просто слухом или грустным воспоминанием.',
+  'Иисус воскрес в третий день по Писанию.',
+  'Иисус явился настоящим свидетелям, которые говорили, что видели Его живым.',
+]
+
+const questionsRu = [
+  { question: 'Что значит воскресение?', answers: ['Приятное воспоминание', 'Возвращение от смерти к телесной жизни', 'Тайный сон'], correct: 1 },
+  { question: 'Как Иисус отнёсся к Фоме?', answers: ['Он насмехался над ним', 'Он навсегда его проигнорировал', 'Он ответил ему и призвал верить'], correct: 2 },
+  { question: 'Какой верный ответ воскресшему Иисусу?', answers: ['Поклонение, доверие, покаяние и свидетельство', 'Гордо побеждать в спорах', 'Делать вид, что вопросов не существует'], correct: 0 },
+]
+
 const scriptureEn = {
   corinthians: 'For I delivered to you as of first importance what I also received: that Christ died for our sins in accordance with the Scriptures, that he was buried, that he was raised on the third day in accordance with the Scriptures, and that he appeared to Cephas, then to the twelve. Then he appeared to more than five hundred brothers at one time, most of whom are still alive, though some have fallen asleep. Then he appeared to James, then to all the apostles. Last of all, as to one untimely born, he appeared also to me.',
   corinthiansRef: '1 Corinthians 15:3–8 (ESV)',
@@ -77,12 +98,15 @@ export default function CaseForChristResurrectionPage() {
   const [answers, setAnswers] = useState<Record<number, number>>({})
   const scripture = language === 'ru' ? scriptureRu : scriptureEn
   const isRu = language === 'ru'
+  const witnessList = isRu ? witnessesRu : witnesses
+  const trailList = isRu ? trailRu : trail
+  const questionList = isRu ? questionsRu : questions
 
   const progress = useMemo(() => {
     const witnessCount = Object.values(opened).filter(Boolean).length
-    const correctCount = questions.filter((item, index) => answers[index] === item.correct).length
+    const correctCount = questionList.filter((item, index) => answers[index] === item.correct).length
     return witnessCount + correctCount
-  }, [answers, opened])
+  }, [answers, opened, questionList])
 
   return (
     <main style={{ background: '#fff8e8', color: '#203047' }}>
@@ -98,12 +122,12 @@ export default function CaseForChristResurrectionPage() {
                 ? 'Изучи библейский след свидетелей с честными вопросами, смиренной верой и уверенностью в воскресшем Господе.'
                 : 'Examine the Bible\'s witness trail with honest questions, humble faith, and confidence in the risen Lord.'}
             </p>
-            <div style={progressStyle}>{isRu ? 'Прогресс' : 'Progress'}: {progress}/{witnesses.length + questions.length}</div>
+            <div style={progressStyle}>{isRu ? 'Прогресс' : 'Progress'}: {progress}/{witnessList.length + questionList.length}</div>
           </div>
           <div style={{ background: 'rgba(255,255,255,.12)', border: '1px solid rgba(255,255,255,.28)', borderRadius: 26, padding: 24 }}>
             <p style={{ margin: '0 0 10px', color: '#ffdc73', fontFamily: 'var(--font-nunito)', fontWeight: 950 }}>{isRu ? 'Главная истина' : 'Big Truth'}</p>
             <p style={{ margin: 0, color: 'white', fontFamily: 'var(--font-lora)', fontSize: '1.08rem', lineHeight: 1.75 }}>
-              Christians believe Jesus rose bodily from the dead because God&apos;s Word says it happened, His followers saw Him alive, and the earliest Christian message was built on His death, burial, resurrection, and appearances.
+              {isRu ? 'Христиане верят, что Иисус телесно воскрес из мёртвых, потому что Божье Слово говорит, что это произошло, Его последователи видели Его живым, и самая ранняя христианская весть строилась на Его смерти, погребении, воскресении и явлениях.' : 'Christians believe Jesus rose bodily from the dead because God&apos;s Word says it happened, His followers saw Him alive, and the earliest Christian message was built on His death, burial, resurrection, and appearances.'}
             </p>
           </div>
         </div>
@@ -139,13 +163,13 @@ export default function CaseForChristResurrectionPage() {
           <p className="eyebrow">{isRu ? 'Сеть свидетелей' : 'Witness Web'}</p>
           <h2 style={headingStyle}>{isRu ? 'Нажми на каждую карточку свидетеля' : 'Tap each witness card'}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: 16 }}>
-            {witnesses.map((witness, index) => (
+            {witnessList.map((witness, index) => (
               <button key={witness.name} type="button" onClick={() => setOpened((current) => ({ ...current, [index]: !current[index] }))} style={{ ...cardStyle, borderColor: opened[index] ? '#f0b429' : '#d7e3f5' }}>
                 <span style={cardTitle}>{witness.name}</span>
                 <span style={{ display: 'block', fontFamily: 'var(--font-lora)', color: '#46556f', lineHeight: 1.6 }}>
-                  {opened[index] ? witness.detail : 'Tap to add this witness to the web.'}
+                  {opened[index] ? witness.detail : (isRu ? 'Нажми, чтобы добавить этого свидетеля в сеть.' : 'Tap to add this witness to the web.')}
                 </span>
-                {opened[index] && <span style={cardSource}>Check: {witness.source}</span>}
+                {opened[index] && <span style={cardSource}>{isRu ? 'Проверь' : 'Check'}: {witness.source}</span>}
               </button>
             ))}
           </div>
@@ -155,10 +179,10 @@ export default function CaseForChristResurrectionPage() {
           <p className="eyebrow">{isRu ? 'След доказательств' : 'Evidence Trail'}</p>
           <h2 style={headingStyle}>{isRu ? 'Четыре части первого христианского свидетельства' : 'Four parts of the first Christian message'}</h2>
           <ol style={{ ...bodyStyle, paddingLeft: 24 }}>
-            {trail.map((item) => <li key={item}>{item}</li>)}
+            {trailList.map((item) => <li key={item}>{item}</li>)}
           </ol>
           <p style={bodyStyle}>
-            Evidence helps us think carefully, but evidence does not force every heart to trust God. Faith is trusting the true God, not pretending there are no questions.
+            {isRu ? 'Доказательства помогают нам думать внимательно, но они не заставляют каждое сердце доверять Богу. Вера — это доверять истинному Богу, а не делать вид, что вопросов нет.' : 'Evidence helps us think carefully, but evidence does not force every heart to trust God. Faith is trusting the true God, not pretending there are no questions.'}
           </p>
         </div>
 
@@ -176,7 +200,7 @@ export default function CaseForChristResurrectionPage() {
           <p className="eyebrow">{isRu ? 'Проверка детектива' : 'Detective Check'}</p>
           <h2 style={headingStyle}>{isRu ? 'Выбери самый сильный ответ' : 'Choose the strongest answer'}</h2>
           <div style={{ display: 'grid', gap: 16 }}>
-            {questions.map((item, index) => (
+            {questionList.map((item, index) => (
               <div key={item.question} style={panelStyle('#fff')}>
                 <h3 style={{ margin: '0 0 12px', fontFamily: 'var(--font-nunito)', color: '#0d3a6a', fontSize: '1.15rem' }}>{item.question}</h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>

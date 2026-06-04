@@ -80,6 +80,45 @@ const questions = [
   'How do the cross and resurrection belong together?',
 ]
 
+const teachingTrailRu = [
+  { title: '1. Грех серьёзен, а не мал', body: 'Грех — это не только ошибка. Грех — это выбор против Бога в мыслях, словах, делах или желаниях. Бог свят, поэтому Он не делает вид, что зло безвредно.', picture: 'Понятный пример: если кто-то разбил окно, извиниться важно, но разбитое окно всё равно нужно исправить. Грех разрушает общение с Богом и вредит людям, созданным по Его образу.' },
+  { title: '2. Божья справедливость и милость встречаются на кресте', body: 'Справедливость означает, что Бог поступает правильно. Милость означает, что Бог проявляет доброту к тем, кто заслуживает суда. На кресте Бог не сделал вид, что грех мал, и не оставил грешников без надежды.', picture: 'Крест говорит: «Грех хуже, чем мы думали, а Божья любовь глубже, чем мы могли представить».' },
+  { title: '3. Иисус — совершенный Заместитель', body: 'Заместитель становится на место другого. Мы не могли оплатить свой грех тем, что потом будем очень хорошими. Иисус никогда не грешил, совершенно повиновался Отцу и добровольно занял место грешников, чтобы привести их к Богу.', picture: 'Отец послал Сына, и Сын послушался Отца. Крест показывает единый Божий план спасения.' },
+  { title: '4. Крест показывает любовь, а не давление страхом', body: 'Детям не нужны подробности насилия, чтобы понять спасение. Библия говорит, что Иисус страдал и умер, и этого достаточно серьёзно. Главная мысль не «испугайся сильнее», а «посмотри, как Бог любит грешников; доверься Иисусу».', picture: 'Христиане любят Иисуса, потому что Он прежде возлюбил нас.' },
+  { title: '5. Иисус умер, чтобы привести нас к Богу', body: 'Прощение — это не только избежать наказания. Прощение возвращает нас в отношения с Богом. Бог принимает кающихся грешников через Христа.', picture: 'Покаяние означает отвернуться от греха и повернуться к Богу. Вера означает доверять Иисусу, а не пытаться спасти себя.' },
+  { title: '6. Воскресение доказывает, что крест не был поражением', body: 'Иисус не остался мёртвым. Воскресение показывает, что Иисус действительно победил. Бог принял жертву Иисуса, смерть побеждена, и Иисус жив как Господь.', picture: 'Христианская весть не такая: «Старайся сильнее, и, может быть, Бог тебя примет». Она такая: «Иисус сделал то, чего грешники никогда не могли сделать. Приди к Нему с доверием».' },
+]
+
+const bibleAnchorsRu = [
+  { ref: 'Римлянам 5:6–11', summary: 'Павел учит, что Христос умер за нас, когда мы ещё были немощными и грешными. Бог показал Свою любовь, послав Иисуса умереть за грешников, и верующие оправданы и примирены с Богом через Него.', helps: 'Крест — это любовь в действии. Бог возлюбил грешников достаточно сильно, чтобы спасти их не потому, что они заслужили это, а потому что Он благ.' },
+  { ref: '1-е Петра 3:18', summary: 'Пётр учит, что Христос однажды пострадал за грехи: Праведник за неправедных, чтобы привести нас к Богу.', helps: 'Иисус занял наше место, чтобы привести нас домой к Богу. Крест — это замещение: один становится на место другого.' },
+  { ref: 'Исаия 53:5–6', summary: 'Исаия заранее смотрел на страдающего Раба. Христиане понимают этот отрывок как указание на Иисуса и Его спасительный труд на кресте.', helps: 'Крест не был неожиданной концовкой. Бог обещал, что Его Раб будет страдать, чтобы спасти Свой народ.' },
+]
+
+const hardWordsRu = [
+  ['Грех', 'Выбор против Бога в мыслях, словах, делах или желаниях.'],
+  ['Святой', 'Совершенно добрый, чистый и отделённый от греха. Бог свят.'],
+  ['Справедливость', 'Поступать правильно и правильно разбираться со злом.'],
+  ['Милость', 'Доброта Бога к людям, которые заслуживают суда.'],
+  ['Благодать', 'Добрая милость Бога, которую мы не зарабатываем.'],
+  ['Заместитель', 'Тот, кто становится на место другого.'],
+  ['Праведный', 'Совершенно правый перед Богом. Иисус праведен; грешники сами по себе не праведны.'],
+  ['Оправданный', 'Объявленный правым перед Богом благодаря тому, что сделал Иисус, а не потому, что мы это заслужили.'],
+  ['Жертва', 'Дорогой дар Богу. Иисус отдал Себя, чтобы спасти грешников; это не значит, что кто-то заплатил деньги.'],
+  ['Мир с Богом', 'Переход от вины и разделения к восстановленным отношениям с Богом через Иисуса.'],
+  ['Покаяние', 'Отвернуться от греха и повернуться к Богу.'],
+  ['Вера', 'Доверие Богу, потому что Он истинен и достоин доверия.'],
+]
+
+const questionsRu = [
+  'Чем ошибка отличается от греха?',
+  'Почему было бы неправильно, если бы Бог сделал вид, что грех не важен?',
+  'Что значит, что Иисус — наш Заместитель?',
+  'Как крест показывает Божью любовь?',
+  'Что 1-е Петра 3:18 говорит о том, ради чего Иисус пришёл к грешникам?',
+  'Как крест и воскресение связаны друг с другом?',
+]
+
 const copy = {
   en: {
     title: 'Why Did Jesus Have to Die?',
@@ -106,6 +145,10 @@ export default function CaseForChristCrossPage() {
   const { language } = useLanguage()
   const isRu = language === 'ru'
   const text = language === 'ru' ? copy.ru : copy.en
+  const anchorList = isRu ? bibleAnchorsRu : bibleAnchors
+  const trailList = isRu ? teachingTrailRu : teachingTrail
+  const hardWordList = isRu ? hardWordsRu : hardWords
+  const questionList = isRu ? questionsRu : questions
 
   return (
     <main style={{ background: '#fff8e8', color: '#203047' }}>
@@ -152,7 +195,7 @@ export default function CaseForChristCrossPage() {
           <p className="eyebrow">{isRu ? 'Библейская опора' : 'Bible Anchor'}</p>
           <h2 style={headingStyle}>{isRu ? 'Любовь, замещение и спасение' : 'Love, substitution, and rescue'}</h2>
           <div style={{ display: 'grid', gap: 16 }}>
-            {bibleAnchors.map((anchor) => (
+            {anchorList.map((anchor) => (
               <article key={anchor.ref} style={miniCardStyle}>
                 <h3 style={miniTitleStyle}>{anchor.ref}</h3>
                 <p style={bodyStyle}>{anchor.summary}</p>
@@ -171,7 +214,7 @@ export default function CaseForChristCrossPage() {
           <p className="eyebrow">{isRu ? 'След доказательств / урока' : 'Evidence / Teaching Trail'}</p>
           <h2 style={headingStyle}>{isRu ? 'Шесть шагов через крест и воскресение' : 'Six steps through the cross and resurrection'}</h2>
           <div style={{ display: 'grid', gap: 16 }}>
-            {teachingTrail.map((step) => (
+            {trailList.map((step) => (
               <article key={step.title} style={panelStyle('#ffffff')}>
                 <h3 style={miniTitleStyle}>{step.title}</h3>
                 <p style={bodyStyle}>{step.body}</p>
@@ -185,7 +228,7 @@ export default function CaseForChristCrossPage() {
           <p className="eyebrow">{isRu ? 'Объяснение трудных слов' : 'Hard Words Defined'}</p>
           <h2 style={headingStyle}>{isRu ? 'Важные евангельские слова' : 'Important gospel words'}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: 12 }}>
-            {hardWords.map(([word, meaning]) => (
+            {hardWordList.map(([word, meaning]) => (
               <div key={word} style={wordCardStyle}>
                 <strong style={{ color: '#0d3a6a' }}>{word}</strong>
                 <p style={{ margin: '6px 0 0', lineHeight: 1.55 }}>{meaning}</p>
@@ -203,13 +246,13 @@ export default function CaseForChristCrossPage() {
           <p className="eyebrow">{isRu ? 'Честный вопрос' : 'Honest Question'}</p>
           <h2 style={headingStyle}>{isRu ? 'Если Бог любит людей, почему Он не мог просто простить грех без смерти Иисуса?' : 'If God loves people, why could He not just forgive sin without Jesus dying?'}</h2>
           <p style={bodyStyle}>
-            God’s love is not pretend love, and God’s justice is not pretend justice. If God ignored sin, He would not be treating evil as evil. But if God only gave sinners the judgment they deserved, we would have no hope.
+            {isRu ? 'Божья любовь не притворная, и Божья справедливость не притворная. Если бы Бог игнорировал грех, Он не относился бы ко злу как ко злу. Но если бы Бог дал грешникам только тот суд, которого они заслуживают, у нас не было бы надежды.' : 'God’s love is not pretend love, and God’s justice is not pretend justice. If God ignored sin, He would not be treating evil as evil. But if God only gave sinners the judgment they deserved, we would have no hope.'}
           </p>
           <p style={bodyStyle}>
-            At the cross, God made a way to forgive sinners without pretending sin is small. Jesus, who never sinned, took the place of sinners. He carried the punishment we deserved so we could receive mercy we did not deserve.
+            {isRu ? 'На кресте Бог открыл путь прощения для грешников, не притворяясь, что грех мал. Иисус, Который никогда не грешил, занял место грешников. Он понёс наказание, которое заслужили мы, чтобы мы получили милость, которую не заслужили.' : 'At the cross, God made a way to forgive sinners without pretending sin is small. Jesus, who never sinned, took the place of sinners. He carried the punishment we deserved so we could receive mercy we did not deserve.'}
           </p>
           <p style={{ ...bodyStyle, marginBottom: 0, fontWeight: 800 }}>
-            So the cross shows both truths at once: God is more holy than we often realize, and God is more loving than we could ever earn.
+            {isRu ? 'Поэтому крест показывает две истины сразу: Бог святее, чем мы часто понимаем, и Бог любит глубже, чем мы могли бы заслужить.' : 'So the cross shows both truths at once: God is more holy than we often realize, and God is more loving than we could ever earn.'}
           </p>
         </div>
 
@@ -218,19 +261,31 @@ export default function CaseForChristCrossPage() {
           <h2 style={headingStyle}>{isRu ? 'Две карточки: справедливость и милость' : 'The Two Cards: Justice and Mercy'}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, alignItems: 'center' }}>
             <div>
-              <p style={bodyStyle}><strong>Supplies:</strong> two index cards, a marker, a small toy figure or paper person, and a small paper heart.</p>
+              <p style={bodyStyle}><strong>{isRu ? 'Нужно:' : 'Supplies:'}</strong> {isRu ? 'две карточки, маркер, маленькая фигурка или бумажный человечек и маленькое бумажное сердце.' : 'two index cards, a marker, a small toy figure or paper person, and a small paper heart.'}</p>
               <ol style={{ ...bodyStyle, paddingLeft: 22 }}>
-                <li>Write <strong>Justice</strong> on one card and <strong>Mercy</strong> on the other.</li>
-                <li>Ask whether wrong should be ignored. Place the Justice card beside the person.</li>
-                <li>Ask what hope sinners would have without mercy. Place the Mercy card beside the person.</li>
-                <li>Explain: at the cross, God did not ignore sin, and He did not leave sinners without hope.</li>
-                <li>Place the paper heart near both cards and say, “The cross shows God’s justice and mercy together.”</li>
+                {isRu ? (
+                  <>
+                    <li>Напишите <strong>Справедливость</strong> на одной карточке и <strong>Милость</strong> на другой.</li>
+                    <li>Спросите, можно ли просто игнорировать зло. Положите карточку «Справедливость» рядом с фигуркой человека.</li>
+                    <li>Спросите, какая надежда была бы у грешников без милости. Положите карточку «Милость» рядом с фигуркой человека.</li>
+                    <li>Объясните: на кресте Бог не проигнорировал грех и не оставил грешников без надежды.</li>
+                    <li>Положите бумажное сердце рядом с обеими карточками и скажите: «Крест показывает Божью справедливость и милость вместе».</li>
+                  </>
+                ) : (
+                  <>
+                    <li>Write <strong>Justice</strong> on one card and <strong>Mercy</strong> on the other.</li>
+                    <li>Ask whether wrong should be ignored. Place the Justice card beside the person.</li>
+                    <li>Ask what hope sinners would have without mercy. Place the Mercy card beside the person.</li>
+                    <li>Explain: at the cross, God did not ignore sin, and He did not leave sinners without hope.</li>
+                    <li>Place the paper heart near both cards and say, “The cross shows God’s justice and mercy together.”</li>
+                  </>
+                )}
               </ol>
-              <p style={{ ...bodyStyle, marginBottom: 0 }}><strong>Challenge:</strong> Explain Sin, Substitute, Justice, Mercy, and Peace with God in one sentence each.</p>
+              <p style={{ ...bodyStyle, marginBottom: 0 }}><strong>{isRu ? 'Задание:' : 'Challenge:'}</strong> {isRu ? 'Объясни слова «грех», «Заместитель», «справедливость», «милость» и «мир с Богом» одним предложением каждое.' : 'Explain Sin, Substitute, Justice, Mercy, and Peace with God in one sentence each.'}</p>
             </div>
             <figure style={{ margin: 0 }}>
-              <img src="/images/jr/lessons/case-for-christ-cross/justice-mercy-cards.png" alt="Blank activity cards for a justice and mercy lesson" style={imageStyle} />
-              <figcaption style={captionStyle}>Activity words should be written or rendered by the teacher and page text.</figcaption>
+              <img src="/images/jr/lessons/case-for-christ-cross/justice-mercy-cards.png" alt={isRu ? 'Пустые карточки для урока о справедливости и милости' : 'Blank activity cards for a justice and mercy lesson'} style={imageStyle} />
+              <figcaption style={captionStyle}>{isRu ? 'Слова для задания учитель пишет на карточках сам; страница даёт текст отдельно.' : 'Activity words should be written or rendered by the teacher and page text.'}</figcaption>
             </figure>
           </div>
         </div>
@@ -249,7 +304,7 @@ export default function CaseForChristCrossPage() {
           </ul>
           <h3 style={miniTitleStyle}>{isRu ? 'Вопросы для разговора' : 'Conversation Questions'}</h3>
           <ol style={{ ...bodyStyle, paddingLeft: 22 }}>
-            {questions.map((question) => <li key={question}>{question}</li>)}
+            {questionList.map((question) => <li key={question}>{question}</li>)}
           </ol>
         </div>
 

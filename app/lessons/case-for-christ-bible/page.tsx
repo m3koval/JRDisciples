@@ -84,6 +84,48 @@ const quiz = [
   },
 ]
 
+const evidenceCardsRu: EvidenceCard[] = [
+  {
+    title: 'Настоящая история',
+    body: 'Библия говорит о реальных местах, правителях, семьях, путешествиях, городах и событиях. Лука называет людей и места, потому что пишет об истории, а не о выдуманной стране.',
+    proof: 'От Луки 1:1–4; От Луки 2:1–2',
+  },
+  {
+    title: 'Свидетельства очевидцев',
+    body: 'Очевидец — это человек, который сам видел, что произошло. Апостолы говорили, что видели Иисуса, слышали Его, прикасались к Нему и затем рассказали другим, что видели.',
+    proof: '1-е Иоанна 1:1–3; 2-е Петра 1:16',
+  },
+  {
+    title: 'Внимательное переписывание',
+    body: 'Рукопись — это старая копия, написанная от руки. Многие рукописи можно сравнивать как части пазла. Маленькие различия обычно легко заметить, потому что есть много копий для проверки.',
+    proof: 'От Луки 1:3–4; Колоссянам 4:16',
+  },
+  {
+    title: 'Честность о людях',
+    body: 'Библия говорит правду о грехе, страхе, сомнениях, гордости, покаянии и милости. Она не скрывает ошибки своих героев, даже когда эти ошибки выглядят стыдно.',
+    proof: 'От Марка 14:66–72; Псалом 50',
+  },
+  {
+    title: 'Одна история спасения',
+    body: 'Через многие книги и человеческих авторов Писание рассказывает одну большую историю спасения: Бог сотворил мир, люди согрешили, Иисус пришёл спасти, и Бог всё обновит.',
+    proof: 'От Луки 24:44–47; Откровение 21:5',
+  },
+]
+
+const caseFilesRu = [
+  { label: '1', title: 'Не игра «испорченный телефон»', body: 'Новый Завет не передавался только шёпотом. Его проповедовали открыто, записывали, переписывали, читали в церквах и проверяли люди, которым была дорога истина.' },
+  { label: '2', title: 'Свидетелей можно было спросить', body: 'Павел сказал, что воскресшего Иисуса видели больше пятисот человек, и многие ещё были живы, когда он писал. Это смелое заявление, если люди могли его проверить.' },
+  { label: '3', title: 'Копии помогают проверять копии', body: 'До печатных станков христиане переписывали Писание от руки. Когда многие старые копии совпадают, а маленькие различия можно сравнить, учёные с большой уверенностью видят, что было написано.' },
+  { label: '4', title: 'Вера — не притворство', body: 'Христиане доверяют Библии, потому что Бог истинен и потому что Он дал реальные причины в истории. Вера — это доверие с основаниями, а не закрытые глаза перед трудными вопросами.' },
+]
+
+const quizRu = [
+  { question: 'Кто такой очевидец?', answers: ['Тот, кто сам видел, что произошло', 'Тот, кто только догадался', 'Тот, кто рассказывает сказку'], correct: 0 },
+  { question: 'Что такое рукопись?', answers: ['Тайный шёпот', 'Старая копия, написанная от руки', 'Выдуманная карта'], correct: 1 },
+  { question: 'Почему многие рукописи помогают учёным?', answers: ['Их можно сравнивать и проверять', 'Они позволяют игнорировать трудные вопросы', 'Они помогают придумывать новые стихи'], correct: 0 },
+  { question: 'Что делать, когда у нас есть честные вопросы о Библии?', answers: ['Навсегда прятать их', 'Спрашивать, изучать, молиться и внимательно искать истину', 'Решить, что истина не важна'], correct: 1 },
+]
+
 const scriptureEn = {
   luke: 'Inasmuch as many have undertaken to compile a narrative of the things that have been accomplished among us, just as those who from the beginning were eyewitnesses and ministers of the word have delivered them to us, it seemed good to me also, having followed all things closely for some time past, to write an orderly account for you, most excellent Theophilus, that you may have certainty concerning the things you have been taught.',
   lukeRef: 'Luke 1:1–4 (ESV)',
@@ -112,12 +154,15 @@ export default function CaseForChristBiblePage() {
   const [answers, setAnswers] = useState<Record<number, number>>({})
   const scripture = language === 'ru' ? scriptureRu : scriptureEn
   const isRu = language === 'ru'
+  const evidenceList = isRu ? evidenceCardsRu : evidenceCards
+  const caseFileList = isRu ? caseFilesRu : caseFiles
+  const quizItems = isRu ? quizRu : quiz
 
   const completeCount = useMemo(() => {
     const cards = Object.values(flipped).filter(Boolean).length
-    const correct = quiz.filter((item, index) => answers[index] === item.correct).length
+    const correct = quizItems.filter((item, index) => answers[index] === item.correct).length
     return cards + correct
-  }, [answers, flipped])
+  }, [answers, flipped, quizItems])
 
   return (
     <main style={{ background: '#fff8e8', color: '#203047' }}>
@@ -136,7 +181,7 @@ export default function CaseForChristBiblePage() {
                 : 'Follow the evidence trail: real history, eyewitness testimony, careful copying, and God’s faithful Word.'}
             </p>
             <div style={{ marginTop: 20, display: 'inline-flex', gap: 10, alignItems: 'center', padding: '10px 14px', borderRadius: 999, background: 'rgba(255,255,255,.14)', color: 'white', fontFamily: 'var(--font-nunito)', fontWeight: 900 }}>
-              {isRu ? 'Прогресс' : 'Progress'}: {completeCount}/{evidenceCards.length + quiz.length}
+              {isRu ? 'Прогресс' : 'Progress'}: {completeCount}/{evidenceList.length + quizItems.length}
             </div>
           </div>
           <img
@@ -164,10 +209,14 @@ export default function CaseForChristBiblePage() {
               : 'That does not mean every question is easy. It means Christians do not believe the Bible because we are pretending. We have good reasons to listen to it, study it, and build our lives on what God says.'}
           </p>
           <p style={bodyStyle}>
-            This lesson does not ask kids to believe a thin answer like, “Just trust it.” It opens a case file: What kind of book is the Bible? Who wrote about Jesus? Were there witnesses? Were the words preserved carefully? What does Scripture say about itself?
+            {isRu
+              ? 'Этот урок не просит детей верить слабому ответу вроде: «Просто поверь». Он открывает дело: что это за книга — Библия? Кто писал об Иисусе? Были ли свидетели? Были ли слова бережно сохранены? Что само Писание говорит о себе?'
+              : 'This lesson does not ask kids to believe a thin answer like, “Just trust it.” It opens a case file: What kind of book is the Bible? Who wrote about Jesus? Were there witnesses? Were the words preserved carefully? What does Scripture say about itself?'}
           </p>
           <p style={{ ...bodyStyle, fontWeight: 800 }}>
-            Evidence means clues and facts that help us know whether something is true.
+            {isRu
+              ? 'Доказательства — это подсказки и факты, которые помогают понять, правда ли что-то.'
+              : 'Evidence means clues and facts that help us know whether something is true.'}
           </p>
         </div>
 
@@ -175,10 +224,12 @@ export default function CaseForChristBiblePage() {
           <p className="eyebrow">{isRu ? 'Материалы дела' : 'Case File'}</p>
           <h2 style={headingStyle}>{isRu ? 'Что считается хорошим доказательством?' : 'What would count as good evidence?'}</h2>
           <p style={bodyStyle}>
-            Some things can be proved with a measuring tape. History is different. For history, we ask: Did real people see it? Was it written close enough to the events? Did people preserve the message? Does it fit with what we know about the world? The Bible stands in that kind of historical light.
+            {isRu
+              ? 'Некоторые вещи можно проверить рулеткой. История устроена иначе. В истории мы спрашиваем: видели ли это реальные люди? Было ли это записано достаточно близко к событиям? Сохранили ли люди это сообщение? Согласуется ли оно с тем, что мы знаем о мире? Библия стоит именно в таком историческом свете.'
+              : 'Some things can be proved with a measuring tape. History is different. For history, we ask: Did real people see it? Was it written close enough to the events? Did people preserve the message? Does it fit with what we know about the world? The Bible stands in that kind of historical light.'}
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(210px,1fr))', gap: 14, marginTop: 18 }}>
-            {caseFiles.map((file) => (
+            {caseFileList.map((file) => (
               <div key={file.title} style={{ background: '#fff', border: '1px solid rgba(13,58,106,.14)', borderRadius: 18, padding: 18 }}>
                 <div style={{ width: 36, height: 36, borderRadius: 999, display: 'grid', placeItems: 'center', background: '#ffdc73', color: '#0d3a6a', fontFamily: 'var(--font-nunito)', fontWeight: 950, marginBottom: 10 }}>
                   {file.label}
@@ -194,7 +245,7 @@ export default function CaseForChristBiblePage() {
           <p className="eyebrow">{isRu ? 'След доказательств' : 'Evidence Trail'}</p>
           <h2 style={headingStyle}>{isRu ? 'Нажми на каждую карточку-подсказку' : 'Tap each clue card'}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: 16 }}>
-            {evidenceCards.map((card, index) => (
+            {evidenceList.map((card, index) => (
               <button
                 key={card.title}
                 type="button"
@@ -225,28 +276,28 @@ export default function CaseForChristBiblePage() {
             <footer style={quoteRefStyle}>{scripture.lukeRef}</footer>
           </blockquote>
           <p style={bodyStyle}>
-            Luke was not saying, “Believe this because I said so.” He was saying, “This has been carefully checked.”
+            {isRu ? 'Лука не говорил: «Верьте этому просто потому, что я так сказал». Он говорил: «Это было тщательно проверено».' : 'Luke was not saying, “Believe this because I said so.” He was saying, “This has been carefully checked.”'}
           </p>
           <blockquote style={quoteStyle}>
             {scripture.timothy}
             <footer style={quoteRefStyle}>{scripture.timothyRef}</footer>
           </blockquote>
           <p style={bodyStyle}>
-            Scripture is not only a human book. God worked through human writers so His people would have His true Word.
+            {isRu ? 'Писание — не только человеческая книга. Бог действовал через человеческих авторов, чтобы Его народ имел Его истинное Слово.' : 'Scripture is not only a human book. God worked through human writers so His people would have His true Word.'}
           </p>
           <blockquote style={quoteStyle}>
             {scripture.peter}
             <footer style={quoteRefStyle}>{scripture.peterRef}</footer>
           </blockquote>
           <p style={bodyStyle}>
-            Peter says the apostles were not spreading clever myths. They were telling what they saw.
+            {isRu ? 'Пётр говорит, что апостолы не распространяли хитро придуманные мифы. Они рассказывали то, что видели.' : 'Peter says the apostles were not spreading clever myths. They were telling what they saw.'}
           </p>
           <blockquote style={quoteStyle}>
             {scripture.corinthians}
             <footer style={quoteRefStyle}>{scripture.corinthiansRef}</footer>
           </blockquote>
           <p style={bodyStyle}>
-            Paul pointed to living witnesses. In other words: “You can check this.” That is not how people usually talk when they are inventing a secret story.
+            {isRu ? 'Павел указывал на живых свидетелей. Другими словами: «Это можно проверить». Обычно так не говорят, когда придумывают тайную историю.' : 'Paul pointed to living witnesses. In other words: “You can check this.” That is not how people usually talk when they are inventing a secret story.'}
           </p>
         </div>
 
@@ -254,13 +305,13 @@ export default function CaseForChristBiblePage() {
           <p className="eyebrow">{isRu ? 'Подумай' : 'Think It Through'}</p>
           <h2 style={headingStyle}>{isRu ? 'Игра в телефон или внимательное переписывание?' : 'Telephone vs. careful copy'}</h2>
           <p style={bodyStyle}>
-            Imagine your class wants to know what happened at recess. One student says, “I heard a wild story from someone who heard it from someone else.” Another says, “I was there. I saw it. I wrote it down the same day. Other people who were there can tell you too.” Which report should you take more seriously?
+            {isRu ? 'Представь, что твой класс хочет узнать, что произошло на перемене. Один ученик говорит: «Я услышал невероятную историю от того, кто услышал её от кого-то ещё». Другой говорит: «Я был там. Я видел это. Я записал это в тот же день. Другие, кто был там, тоже могут рассказать». Какому сообщению стоит доверять больше?' : 'Imagine your class wants to know what happened at recess. One student says, “I heard a wild story from someone who heard it from someone else.” Another says, “I was there. I saw it. I wrote it down the same day. Other people who were there can tell you too.” Which report should you take more seriously?'}
           </p>
           <p style={bodyStyle}>
-            Try this activity: whisper a sentence around the room, then compare it with written copies of the same sentence. Suggested sentence: “Luke carefully checked what eyewitnesses said about Jesus.” Written copies are easier to compare and check.
+            {isRu ? 'Попробуйте задание: передайте предложение шёпотом по кругу, а потом сравните его с письменными копиями того же предложения. Пример: «Лука тщательно проверил, что очевидцы сказали об Иисусе». Письменные копии легче сравнивать и проверять.' : 'Try this activity: whisper a sentence around the room, then compare it with written copies of the same sentence. Suggested sentence: “Luke carefully checked what eyewitnesses said about Jesus.” Written copies are easier to compare and check.'}
           </p>
           <p style={bodyStyle}>
-            Important difference: the Bible is not like one whisper traveling through a long line. It is more like many careful written copies spread through many places. If one copy has a small mistake, the other copies help us notice and correct it.
+            {isRu ? 'Важное отличие: Библия не похожа на один шёпот, который проходит через длинную цепочку. Она больше похожа на множество внимательных письменных копий, распространившихся по разным местам. Если в одной копии есть маленькая ошибка, другие копии помогают её заметить и исправить.' : 'Important difference: the Bible is not like one whisper traveling through a long line. It is more like many careful written copies spread through many places. If one copy has a small mistake, the other copies help us notice and correct it.'}
           </p>
         </div>
 
@@ -268,7 +319,7 @@ export default function CaseForChristBiblePage() {
           <p className="eyebrow">{isRu ? 'Честные ответы' : 'Honest Answers'}</p>
           <h2 style={headingStyle}>{isRu ? 'А как быть с трудными вопросами?' : 'What about hard questions?'}</h2>
           <p style={bodyStyle}>
-            Trusting the Bible does not mean every question disappears in five seconds. It means we bring questions into the light instead of hiding them. Christians can study ancient languages, manuscripts, history, archaeology, and theology because all truth belongs to God.
+            {isRu ? 'Доверять Библии не значит, что все вопросы исчезают за пять секунд. Это значит, что мы выносим вопросы на свет, а не прячем их. Христиане могут изучать древние языки, рукописи, историю, археологию и богословие, потому что вся истина принадлежит Богу.' : 'Trusting the Bible does not mean every question disappears in five seconds. It means we bring questions into the light instead of hiding them. Christians can study ancient languages, manuscripts, history, archaeology, and theology because all truth belongs to God.'}
           </p>
           <ul style={{ ...bodyStyle, paddingLeft: 22 }}>
             <li><strong>{isRu ? 'Переводы' : 'Translations'}:</strong> {isRu ? 'Библия была написана в основном на еврейском, арамейском и греческом языках. Хорошие переводы помогают нам читать эти слова на нашем языке.' : 'The Bible was written mostly in Hebrew, Aramaic, and Greek. Good translations help us read those words in our language.'}</li>
@@ -282,7 +333,7 @@ export default function CaseForChristBiblePage() {
           <p className="eyebrow">{isRu ? 'Проверка детектива' : 'Detective Check'}</p>
           <h2 style={headingStyle}>{isRu ? 'Выбери самый сильный ответ' : 'Choose the strongest answer'}</h2>
           <div style={{ display: 'grid', gap: 16 }}>
-            {quiz.map((item, index) => (
+            {quizItems.map((item, index) => (
               <div key={item.question} style={panelStyle('#fff')}>
                 <h3 style={{ margin: '0 0 12px', fontFamily: 'var(--font-nunito)', color: '#0d3a6a', fontSize: '1.15rem' }}>{item.question}</h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
@@ -315,9 +366,19 @@ export default function CaseForChristBiblePage() {
           <p className="eyebrow">{isRu ? 'Для родителей и учителя' : 'Parent / Teacher Guide'}</p>
           <h2 style={headingStyle}>{isRu ? 'Помогите честным вопросам выйти на свет' : 'Guide honest questions into the light'}</h2>
           <ul style={{ ...bodyStyle, paddingLeft: 22 }}>
-            <li>Faith does not mean believing with no reasons. Faith means trusting God, and God has given us good reasons.</li>
-            <li>Questions are not something to hide. Honest questions can help children learn truth with humility.</li>
-            <li>If children ask about translations, explain that the Bible was first written mostly in Hebrew and Greek. Good translations may use slightly different English words while teaching the same truth from the original manuscripts.</li>
+            {isRu ? (
+              <>
+                <li>Вера не означает верить без причин. Вера означает доверять Богу, а Бог дал нам хорошие основания.</li>
+                <li>Вопросы не нужно прятать. Честные вопросы помогают детям учиться истине со смирением.</li>
+                <li>Если дети спрашивают о переводах, объясните, что Библия сначала была написана в основном на еврейском и греческом языках. Хорошие переводы могут использовать немного разные слова, сохраняя истину оригинальных рукописей.</li>
+              </>
+            ) : (
+              <>
+                <li>Faith does not mean believing with no reasons. Faith means trusting God, and God has given us good reasons.</li>
+                <li>Questions are not something to hide. Honest questions can help children learn truth with humility.</li>
+                <li>If children ask about translations, explain that the Bible was first written mostly in Hebrew and Greek. Good translations may use slightly different English words while teaching the same truth from the original manuscripts.</li>
+              </>
+            )}
           </ul>
         </div>
 

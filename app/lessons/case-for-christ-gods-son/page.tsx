@@ -32,12 +32,28 @@ const identityCards = [
   },
 ]
 
+const identityCardsRu = [
+  { title: 'Пророк', group: 'Что некоторые люди предполагали', detail: 'Некоторые думали, что Иисус был только одним из пророков. Пророк передаёт Божью весть, но Иисус больше любого пророка.' },
+  { title: 'Христос', group: 'Что открыл Бог', detail: 'Христос означает обещанного Царя и Спасителя, посланного Богом. Пётр исповедал, что Иисус — Христос.' },
+  { title: 'Сын Бога живого', group: 'Что открыл Бог', detail: 'Иисус — вечный Сын. Он не был создан и не стал Богом позднее.' },
+  { title: 'Слово', group: 'Чему учит Иоанн', detail: 'Иоанн говорит, что Слово было у Бога и Слово было Бог. Слово стало плотью и обитало с нами.' },
+  { title: 'Спаситель', group: 'Кому мы доверяем', detail: 'Иисус стал настоящим человеком, чтобы спасти грешников и дать жизнь тем, кто верит во имя Его.' },
+]
+
 const teachingTrail = [
   'Jesus asked the most important question: “Who do you say that I am?”',
   'Peter confessed Jesus as the Christ, the Son of the living God.',
   'John says Jesus, the Word, was already with God and was God in the beginning.',
   'The Word became flesh: Jesus truly became human and lived among people.',
   'Believing means trusting Jesus, not only knowing facts about Him.',
+]
+
+const teachingTrailRu = [
+  'Иисус задал самый важный вопрос: «А вы за кого почитаете Меня?»',
+  'Пётр исповедал Иисуса Христом, Сыном Бога живого.',
+  'Иоанн говорит, что Иисус, Слово, уже был у Бога и был Богом в начале.',
+  'Слово стало плотью: Иисус по-настоящему стал человеком и жил среди людей.',
+  'Верить — значит доверять Иисусу, а не только знать факты о Нём.',
 ]
 
 const hardWords = [
@@ -47,6 +63,15 @@ const hardWords = [
   ['The Word', 'John’s name for Jesus in John 1. It shows that Jesus reveals God and was with God and was God from the beginning.'],
   ['Flesh', 'Real human life. Jesus became truly human, not pretend human.'],
   ['Trinity', 'One God in three persons: Father, Son, and Holy Spirit.'],
+]
+
+const hardWordsRu = [
+  ['Христос', 'Обещанный Царь и Спаситель, посланный Богом.'],
+  ['Сын Божий', 'Особый титул Иисуса, показывающий Его единственные отношения с Отцом, Его Божественную личность и власть. Это не значит, что Иисус был создан.'],
+  ['Вечный', 'Не имеющий начала и конца.'],
+  ['Слово', 'Имя Иисуса у Иоанна в 1-й главе. Оно показывает, что Иисус открывает Бога и был у Бога и был Богом от начала.'],
+  ['Плоть', 'Настоящая человеческая жизнь. Иисус стал настоящим человеком, а не притворился человеком.'],
+  ['Троица', 'Один Бог в трёх Личностях: Отец, Сын и Святой Дух.'],
 ]
 
 const questions = [
@@ -70,6 +95,12 @@ const questions = [
   },
 ]
 
+const questionsRu = [
+  { question: 'Когда Библия называет Иисуса «Сыном Божьим», какой ошибки нужно избегать?', answers: ['Думать, что Иисус был создан', 'Помнить, что Иисус — вечный Сын', 'Доверять тому, что говорит Писание'], correct: 0, feedback: 'Верно. Нельзя думать, что Иисус был создан или стал Богом позднее. Иисус — вечный Сын.' },
+  { question: 'Чему Иоанна 1 учит о Слове?', answers: ['Слово было только ангелом', 'Слово было у Бога и было Богом', 'Слово началось в Вифлееме'], correct: 1, feedback: 'Да. Иоанн говорит, что Слово было у Бога и Слово было Богом, а затем Слово стало плотью.' },
+  { question: 'Что значит верить в Иисуса?', answers: ['Только запоминать факты', 'Насмехаться над людьми с вопросами', 'Доверять Иисусу и иметь жизнь во имя Его'], correct: 2, feedback: 'Хорошая работа. Иоанн написал это, чтобы мы верили, что Иисус есть Христос, Сын Божий, и имели жизнь во имя Его.' },
+]
+
 const visuals = [
   {
     title: 'Bible Truth: The Word Became Flesh',
@@ -88,6 +119,27 @@ const visuals = [
     image: '/images/jr/lessons/case-for-christ-gods-son/identity-challenge.png',
     alt: 'Junior Disciples children sort blank identity cards and glowing evidence tokens on an open Bible activity table.',
     caption: 'Use the card sort below to separate guesses from what God reveals in Scripture.',
+  },
+]
+
+const visualsRu = [
+  {
+    title: 'Библейская истина: Слово стало плотью',
+    image: '/images/jr/lessons/case-for-christ-gods-son/bible-truth.png',
+    alt: 'Открытая Библия сияет светом творения и показывает скромное селение, напоминая, что вечное Слово стало человеком.',
+    caption: 'Картинка помогает помнить Иоанна 1: Иисус не начался в Вифлееме. Вечное Слово стало плотью и приблизилось к нам, чтобы спасти.',
+  },
+  {
+    title: 'Настоящее место: Кесария Филиппова',
+    image: '/images/jr/lessons/case-for-christ-gods-son/artifact-reconstruction.png',
+    alt: 'Реконструкция скал, источников, руин и рукописных материалов, вдохновлённая Кесарией Филипповой.',
+    caption: 'Реконструкция: Иисус задал ученикам вопрос о Своей личности рядом с Кесарией Филипповой, реальным местом. Это иллюстрация, а не подтверждённая фотография.',
+  },
+  {
+    title: 'Задание: карточки личности',
+    image: '/images/jr/lessons/case-for-christ-gods-son/identity-challenge.png',
+    alt: 'Дети Junior Disciples раскладывают пустые карточки личности и светящиеся жетоны доказательств на столе с открытой Библией.',
+    caption: 'Используй сортировку карточек ниже, чтобы отделить догадки от того, что Бог открывает в Писании.',
   },
 ]
 
@@ -115,12 +167,17 @@ export default function CaseForChristGodsSonPage() {
   const [answers, setAnswers] = useState<Record<number, number>>({})
   const scripture = language === 'ru' ? scriptureRu : scriptureEn
   const isRu = language === 'ru'
+  const identityList = isRu ? identityCardsRu : identityCards
+  const teachingList = isRu ? teachingTrailRu : teachingTrail
+  const hardWordList = isRu ? hardWordsRu : hardWords
+  const questionList = isRu ? questionsRu : questions
+  const visualList = isRu ? visualsRu : visuals
 
   const progress = useMemo(() => {
     const openedCards = Object.values(opened).filter(Boolean).length
-    const correctAnswers = questions.filter((item, index) => answers[index] === item.correct).length
+    const correctAnswers = questionList.filter((item, index) => answers[index] === item.correct).length
     return openedCards + correctAnswers
-  }, [answers, opened])
+  }, [answers, opened, questionList])
 
   return (
     <main style={{ background: '#fff8e8', color: '#203047' }}>
@@ -136,7 +193,7 @@ export default function CaseForChristGodsSonPage() {
                 ? 'Иди по следу личности Иисуса: исповедание Петра, свидетельство Иоанна и почему Иисус — Христос, вечный Сын Божий, истинный Бог и истинный человек.'
                 : 'Follow the identity trail from Peter\'s confession to John\'s testimony: Jesus is the Christ, the eternal Son of God, truly God and truly human.'}
             </p>
-            <div style={progressStyle}>{isRu ? 'Прогресс' : 'Progress'}: {progress}/{identityCards.length + questions.length}</div>
+            <div style={progressStyle}>{isRu ? 'Прогресс' : 'Progress'}: {progress}/{identityList.length + questionList.length}</div>
           </div>
           <figure style={{ margin: 0 }}>
             <img
@@ -187,7 +244,7 @@ export default function CaseForChristGodsSonPage() {
           <p className="eyebrow">{isRu ? 'Визуальный набор урока' : 'Visual Learning Pack'}</p>
           <h2 style={headingStyle}>{isRu ? 'Посмотри истину, место и задание' : 'See the truth, the place, and the challenge'}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 18 }}>
-            {visuals.map((visual) => (
+            {visualList.map((visual) => (
               <figure key={visual.title} style={{ margin: 0, ...panelStyle('#ffffff'), padding: 14 }}>
                 <img src={visual.image} alt={visual.alt} style={{ width: '100%', height: 'auto', borderRadius: 18, display: 'block' }} />
                 <figcaption style={{ ...bodyStyle, marginTop: 12, fontSize: '.95rem' }}>
@@ -202,10 +259,10 @@ export default function CaseForChristGodsSonPage() {
           <p className="eyebrow">{isRu ? 'Учебный путь' : 'Teaching Trail'}</p>
           <h2 style={headingStyle}>{isRu ? 'Пять остановок на пути к пониманию, Кто такой Иисус' : 'Five stops on the identity trail'}</h2>
           <ol style={{ ...bodyStyle, paddingLeft: 24 }}>
-            {teachingTrail.map((item) => <li key={item}>{item}</li>)}
+            {teachingList.map((item) => <li key={item}>{item}</li>)}
           </ol>
           <p style={bodyStyle}>
-            John wrote as testimony about what Jesus did and said, not just an idea someone made up. The Bible gives us true names and titles for Jesus so we do not have to guess who He is.
+            {isRu ? 'Иоанн писал свидетельство о том, что Иисус делал и говорил, а не просто идею, которую кто-то придумал. Библия даёт нам истинные имена и титулы Иисуса, поэтому нам не нужно гадать, Кто Он.' : 'John wrote as testimony about what Jesus did and said, not just an idea someone made up. The Bible gives us true names and titles for Jesus so we do not have to guess who He is.'}
           </p>
         </div>
 
@@ -213,12 +270,12 @@ export default function CaseForChristGodsSonPage() {
           <p className="eyebrow">{isRu ? 'Карточки личности' : 'Identity Cards'}</p>
           <h2 style={headingStyle}>{isRu ? 'Нажми на каждую карточку и разложи подсказки' : 'Tap each card and sort the clues'}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: 16 }}>
-            {identityCards.map((card, index) => (
+            {identityList.map((card, index) => (
               <button key={card.title} type="button" onClick={() => setOpened((current) => ({ ...current, [index]: !current[index] }))} style={{ ...cardStyle, borderColor: opened[index] ? '#f0b429' : '#d7e3f5' }}>
                 <span style={cardTitle}>{card.title}</span>
                 <span style={cardGroup}>{card.group}</span>
                 <span style={{ display: 'block', fontFamily: 'var(--font-lora)', color: '#46556f', lineHeight: 1.6 }}>
-                  {opened[index] ? card.detail : 'Tap to reveal this identity clue.'}
+                  {opened[index] ? card.detail : (isRu ? 'Нажми, чтобы открыть эту подсказку о личности.' : 'Tap to reveal this identity clue.')}
                 </span>
               </button>
             ))}
@@ -228,7 +285,7 @@ export default function CaseForChristGodsSonPage() {
         <div style={{ ...panelStyle('#fff7d6'), marginTop: 30 }}>
           <p className="eyebrow">{isRu ? 'Трудные слова' : 'Hard Words'}</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(250px,1fr))', gap: 14 }}>
-            {hardWords.map(([word, definition]) => (
+            {hardWordList.map(([word, definition]) => (
               <div key={word} style={{ background: 'white', borderRadius: 18, padding: 16, border: '1px solid #f1d99a' }}>
                 <h3 style={{ margin: '0 0 8px', color: '#8a5a00', fontFamily: 'var(--font-nunito)', fontWeight: 950 }}>{word}</h3>
                 <p style={{ ...bodyStyle, margin: 0 }}>{definition}</p>
@@ -241,7 +298,7 @@ export default function CaseForChristGodsSonPage() {
           <p className="eyebrow">{isRu ? 'Проверка детектива' : 'Detective Check'}</p>
           <h2 style={headingStyle}>{isRu ? 'Выбери самый сильный ответ' : 'Choose the strongest answer'}</h2>
           <div style={{ display: 'grid', gap: 16 }}>
-            {questions.map((item, index) => (
+            {questionList.map((item, index) => (
               <div key={item.question} style={panelStyle('#fff')}>
                 <h3 style={{ margin: '0 0 12px', fontFamily: 'var(--font-nunito)', color: '#0d3a6a', fontSize: '1.15rem' }}>{item.question}</h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
