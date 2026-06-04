@@ -111,6 +111,7 @@ export default function CaseForChristBiblePage() {
   const [flipped, setFlipped] = useState<Record<number, boolean>>({})
   const [answers, setAnswers] = useState<Record<number, number>>({})
   const scripture = language === 'ru' ? scriptureRu : scriptureEn
+  const isRu = language === 'ru'
 
   const completeCount = useMemo(() => {
     const cards = Object.values(flipped).filter(Boolean).length
@@ -124,16 +125,18 @@ export default function CaseForChristBiblePage() {
         <div style={{ maxWidth: 1040, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 28, alignItems: 'center' }}>
           <div>
             <p style={{ margin: '0 0 10px', color: '#ffdc73', fontFamily: 'var(--font-nunito)', fontWeight: 900, letterSpacing: 1.4, textTransform: 'uppercase' }}>
-              Case for Christ Kids · Lesson 1
+              {isRu ? 'Дело о Христе для детей · Урок 1' : 'Case for Christ Kids · Lesson 1'}
             </p>
             <h1 style={{ margin: '0 0 14px', color: 'white', fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,5vw,3.4rem)', lineHeight: 1.05, textShadow: '0 3px 12px rgba(0,0,0,.28)' }}>
-              Can We Trust the Bible?
+              {isRu ? 'Можно ли доверять Библии?' : 'Can We Trust the Bible?'}
             </h1>
             <p style={{ margin: 0, color: 'rgba(255,255,255,.94)', fontFamily: 'var(--font-lora)', fontSize: '1.12rem', lineHeight: 1.75 }}>
-              Follow the evidence trail: real history, eyewitness testimony, careful copying, and God’s faithful Word.
+              {isRu
+                ? 'Иди по следу доказательств: настоящая история, свидетельства очевидцев, внимательное переписывание и верное Божье Слово.'
+                : 'Follow the evidence trail: real history, eyewitness testimony, careful copying, and God’s faithful Word.'}
             </p>
             <div style={{ marginTop: 20, display: 'inline-flex', gap: 10, alignItems: 'center', padding: '10px 14px', borderRadius: 999, background: 'rgba(255,255,255,.14)', color: 'white', fontFamily: 'var(--font-nunito)', fontWeight: 900 }}>
-              Progress: {completeCount}/{evidenceCards.length + quiz.length}
+              {isRu ? 'Прогресс' : 'Progress'}: {completeCount}/{evidenceCards.length + quiz.length}
             </div>
           </div>
           <img

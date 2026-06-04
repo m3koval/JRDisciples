@@ -20,7 +20,7 @@ export const lessonTopicsRu: LessonTopic[] = [
   },
   {
     href: "/lessons/case-for-christ-resurrection",
-    image: "/images/jr/topic-case-for-christ-bible.png",
+    image: "/images/jr/topic-case-for-christ-resurrection.png",
     title: "Иисус действительно воскрес?",
     desc: "Проверь свидетельства: Иисус умер, был погребён, воскрес и явился реальным людям. Детективный урок с 5 карточками свидетелей!",
     color: "#5b1530",

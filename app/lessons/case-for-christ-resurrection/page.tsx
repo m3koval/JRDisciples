@@ -76,6 +76,7 @@ export default function CaseForChristResurrectionPage() {
   const [opened, setOpened] = useState<Record<number, boolean>>({})
   const [answers, setAnswers] = useState<Record<number, number>>({})
   const scripture = language === 'ru' ? scriptureRu : scriptureEn
+  const isRu = language === 'ru'
 
   const progress = useMemo(() => {
     const witnessCount = Object.values(opened).filter(Boolean).length
@@ -88,14 +89,16 @@ export default function CaseForChristResurrectionPage() {
       <section style={{ background: 'linear-gradient(135deg,#5b1530,#0d3a6a)', padding: '46px 18px' }}>
         <div style={{ maxWidth: 1040, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 26, alignItems: 'center' }}>
           <div>
-            <p style={eyebrowLight}>Case for Christ Kids · Lesson 2</p>
+            <p style={eyebrowLight}>{isRu ? 'Дело о Христе для детей · Урок 2' : 'Case for Christ Kids · Lesson 2'}</p>
             <h1 style={{ margin: '0 0 14px', color: 'white', fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,5vw,3.4rem)', lineHeight: 1.05 }}>
-              Did Jesus Really Rise from the Dead?
+              {isRu ? 'Иисус действительно воскрес из мёртвых?' : 'Did Jesus Really Rise from the Dead?'}
             </h1>
             <p style={{ margin: 0, color: 'rgba(255,255,255,.94)', fontFamily: 'var(--font-lora)', fontSize: '1.12rem', lineHeight: 1.75 }}>
-              Examine the Bible&apos;s witness trail with honest questions, humble faith, and confidence in the risen Lord.
+              {isRu
+                ? 'Изучи библейский след свидетелей с честными вопросами, смиренной верой и уверенностью в воскресшем Господе.'
+                : 'Examine the Bible\'s witness trail with honest questions, humble faith, and confidence in the risen Lord.'}
             </p>
-            <div style={progressStyle}>Progress: {progress}/{witnesses.length + questions.length}</div>
+            <div style={progressStyle}>{isRu ? 'Прогресс' : 'Progress'}: {progress}/{witnesses.length + questions.length}</div>
           </div>
           <div style={{ background: 'rgba(255,255,255,.12)', border: '1px solid rgba(255,255,255,.28)', borderRadius: 26, padding: 24 }}>
             <p style={{ margin: '0 0 10px', color: '#ffdc73', fontFamily: 'var(--font-nunito)', fontWeight: 950 }}>Big Truth</p>

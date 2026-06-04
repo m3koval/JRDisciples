@@ -114,6 +114,7 @@ export default function CaseForChristGodsSonPage() {
   const [opened, setOpened] = useState<Record<number, boolean>>({})
   const [answers, setAnswers] = useState<Record<number, number>>({})
   const scripture = language === 'ru' ? scriptureRu : scriptureEn
+  const isRu = language === 'ru'
 
   const progress = useMemo(() => {
     const openedCards = Object.values(opened).filter(Boolean).length
@@ -126,14 +127,16 @@ export default function CaseForChristGodsSonPage() {
       <section style={{ background: 'linear-gradient(135deg,#4b2a7b,#0d3a6a)', padding: '46px 18px' }}>
         <div style={{ maxWidth: 1120, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 28, alignItems: 'center' }}>
           <div>
-            <p style={eyebrowLight}>Case for Christ Kids · Lesson 3</p>
+            <p style={eyebrowLight}>{isRu ? 'Дело о Христе для детей · Урок 3' : 'Case for Christ Kids · Lesson 3'}</p>
             <h1 style={{ margin: '0 0 14px', color: 'white', fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,5vw,3.5rem)', lineHeight: 1.05 }}>
-              Is Jesus Really God&apos;s Son?
+              {isRu ? 'Иисус действительно Божий Сын?' : 'Is Jesus Really God\'s Son?'}
             </h1>
             <p style={{ margin: 0, color: 'rgba(255,255,255,.94)', fontFamily: 'var(--font-lora)', fontSize: '1.12rem', lineHeight: 1.75 }}>
-              Follow the identity trail from Peter&apos;s confession to John&apos;s testimony: Jesus is the Christ, the eternal Son of God, truly God and truly human.
+              {isRu
+                ? 'Иди по следу личности Иисуса: исповедание Петра, свидетельство Иоанна и почему Иисус — Христос, вечный Сын Божий, истинный Бог и истинный человек.'
+                : 'Follow the identity trail from Peter\'s confession to John\'s testimony: Jesus is the Christ, the eternal Son of God, truly God and truly human.'}
             </p>
-            <div style={progressStyle}>Progress: {progress}/{identityCards.length + questions.length}</div>
+            <div style={progressStyle}>{isRu ? 'Прогресс' : 'Progress'}: {progress}/{identityCards.length + questions.length}</div>
           </div>
           <figure style={{ margin: 0 }}>
             <img
