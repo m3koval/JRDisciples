@@ -141,7 +141,7 @@ export default function CaseForChristBiblePage() {
           </div>
           <img
             src="/images/jr/lessons/case-for-christ-bible/hero.png"
-            alt="Children investigating Bible manuscripts around an open glowing Bible"
+            alt={isRu ? 'Дети исследуют библейские рукописи вокруг открытой светящейся Библии' : 'Children investigating Bible manuscripts around an open glowing Bible'}
             style={{ width: '100%', height: 'auto', borderRadius: 24, boxShadow: '0 18px 44px rgba(0,0,0,.28)' }}
           />
         </div>
@@ -323,7 +323,9 @@ export default function CaseForChristBiblePage() {
 
         <div style={{ ...panelStyle('#ffffff'), marginTop: 30, textAlign: 'center' }}>
           <p style={bodyStyle}>
-            Father, thank You for giving us Your Word. Help us listen carefully, ask honest questions, and trust what is true. Thank You for sending Jesus and for preserving the good news about Him. Teach us to love Your Word and obey You with glad hearts. In Jesus’ name, amen.
+            {isRu
+              ? 'Отец, спасибо, что Ты дал нам Своё Слово. Помоги нам внимательно слушать, задавать честные вопросы и доверять истине. Спасибо, что Ты послал Иисуса и сохранил благую весть о Нём. Научи нас любить Твоё Слово и с радостью повиноваться Тебе. Во имя Иисуса, аминь.'
+              : 'Father, thank You for giving us Your Word. Help us listen carefully, ask honest questions, and trust what is true. Thank You for sending Jesus and for preserving the good news about Him. Teach us to love Your Word and obey You with glad hearts. In Jesus’ name, amen.'}
           </p>
           <Link href="/lessons" style={{ display: 'inline-block', marginTop: 16, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#0d3a6a', textDecoration: 'none' }}>
             ← {isRu ? 'Назад к урокам' : 'Back to Lessons'}

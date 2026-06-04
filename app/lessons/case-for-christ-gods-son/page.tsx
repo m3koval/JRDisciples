@@ -265,10 +265,14 @@ export default function CaseForChristGodsSonPage() {
           <p className="eyebrow">{isRu ? 'Честный вопрос' : 'Honest Question'}</p>
           <h2 style={headingStyle}>{isRu ? 'Верят ли христиане больше чем в одного Бога?' : 'Do Christians believe in more than one God?'}</h2>
           <p style={bodyStyle}>
-            No. Christians believe there is one God. The Bible teaches that the Father is God, the Son is God, and the Holy Spirit is God. They are not three separate gods, and they are not one person wearing three masks. God is one God in three persons.
+            {isRu
+              ? 'Нет. Христиане верят в одного Бога. Библия учит, что Отец — Бог, Сын — Бог, и Святой Дух — Бог. Это не три разных бога и не один человек в трёх масках. Бог — один Бог в трёх Лицах.'
+              : 'No. Christians believe there is one God. The Bible teaches that the Father is God, the Son is God, and the Holy Spirit is God. They are not three separate gods, and they are not one person wearing three masks. God is one God in three persons.'}
           </p>
           <p style={bodyStyle}>
-            The Son is God, and the Father is God, but the Son is not the Father. The Father sent the Son, the Son became human to save us, and the Holy Spirit helps us trust and follow Jesus.
+            {isRu
+              ? 'Сын — Бог, и Отец — Бог, но Сын не является Отцом. Отец послал Сына, Сын стал человеком, чтобы спасти нас, а Святой Дух помогает нам доверять Иисусу и следовать за Ним.'
+              : 'The Son is God, and the Father is God, but the Son is not the Father. The Father sent the Son, the Son became human to save us, and the Holy Spirit helps us trust and follow Jesus.'}
           </p>
         </div>
 
@@ -276,18 +280,20 @@ export default function CaseForChristGodsSonPage() {
           <p className="eyebrow">{isRu ? 'Разговор с родителем / учителем' : 'Parent / Teacher Talk'}</p>
           <h2 style={headingStyle}>{isRu ? 'Объясняйте эту высокую истину бережно' : 'Teach a high truth carefully'}</h2>
           <ul style={{ ...bodyStyle, paddingLeft: 22 }}>
-            <li>Do not make “Son of God” sound like Jesus was created. Better: “Jesus is the eternal Son.”</li>
-            <li>Do not explain the Trinity with broken object lessons like water changing forms or one person wearing hats.</li>
-            <li>Help children see that some true things are bigger than us. We cannot hold everything about God, but we can trust what God has told us.</li>
+            <li>{isRu ? 'Не объясняйте выражение «Сын Божий» так, будто Иисус был создан. Лучше: «Иисус — вечный Сын.»' : 'Do not make “Son of God” sound like Jesus was created. Better: “Jesus is the eternal Son.”'}</li>
+            <li>{isRu ? 'Не объясняйте Троицу сломанными примерами вроде воды в разных формах или одного человека в разных шляпах.' : 'Do not explain the Trinity with broken object lessons like water changing forms or one person wearing hats.'}</li>
+            <li>{isRu ? 'Помогите детям увидеть: некоторые истинные вещи больше нас. Мы не можем полностью вместить всё о Боге, но можем доверять тому, что Бог сказал о Себе.' : 'Help children see that some true things are bigger than us. We cannot hold everything about God, but we can trust what God has told us.'}</li>
           </ul>
         </div>
 
         <div style={{ ...panelStyle('#ffffff'), marginTop: 30, textAlign: 'center' }}>
           <p style={bodyStyle}>
-            Father, thank You for revealing Jesus as the Christ, the Son of the living God. Lord Jesus, thank You for becoming truly human to save sinners and for showing us grace and truth. Holy Spirit, help us understand God&apos;s Word, trust Jesus with humble hearts, and follow Him with courage and love. In Jesus&apos; name, amen.
+            {isRu
+              ? 'Отец, спасибо, что Ты открыл Иисуса как Христа, Сына Бога Живого. Господь Иисус, спасибо, что Ты стал настоящим человеком, чтобы спасти грешников и показать нам благодать и истину. Святой Дух, помоги нам понимать Божье Слово, доверять Иисусу со смиренным сердцем и следовать за Ним с мужеством и любовью. Во имя Иисуса, аминь.'
+              : 'Father, thank You for revealing Jesus as the Christ, the Son of the living God. Lord Jesus, thank You for becoming truly human to save sinners and for showing us grace and truth. Holy Spirit, help us understand God&apos;s Word, trust Jesus with humble hearts, and follow Him with courage and love. In Jesus&apos; name, amen.'}
           </p>
           <Link href="/lessons" style={{ display: 'inline-block', marginTop: 16, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#0d3a6a', textDecoration: 'none' }}>
-            ← Back to Lessons
+            {isRu ? '← Назад к урокам' : '← Back to Lessons'}
           </Link>
         </div>
       </section>

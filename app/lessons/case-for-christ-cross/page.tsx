@@ -239,11 +239,13 @@ export default function CaseForChristCrossPage() {
           <p className="eyebrow">{isRu ? 'Разговор с родителем / учителем' : 'Parent / Teacher Talk'}</p>
           <h2 style={headingStyle}>{isRu ? 'Учите о кресте тепло и бережно' : 'Teach the cross with warmth and care'}</h2>
           <p style={bodyStyle}>
-            This lesson handles one of the deepest truths in Christianity. Keep the tone warm, steady, and careful. Children do not need graphic descriptions of crucifixion to understand the gospel. They need clear categories: sin is real, God is holy, Jesus is righteous, Jesus willingly took the place of sinners, and forgiveness comes through trusting Him.
+            {isRu
+              ? 'Этот урок касается одной из самых глубоких истин христианской веры. Держите тон тёплым, спокойным и бережным. Детям не нужны подробные описания распятия, чтобы понять Евангелие. Им нужны ясные категории: грех реален, Бог свят, Иисус праведен, Иисус добровольно занял место грешников, и прощение приходит через доверие Ему.'
+              : 'This lesson handles one of the deepest truths in Christianity. Keep the tone warm, steady, and careful. Children do not need graphic descriptions of crucifixion to understand the gospel. They need clear categories: sin is real, God is holy, Jesus is righteous, Jesus willingly took the place of sinners, and forgiveness comes through trusting Him.'}
           </p>
           <ul style={{ ...bodyStyle, paddingLeft: 22 }}>
-            <li><strong>Avoid this:</strong> making the cross sound like the Father was angry at Jesus as an unwilling victim. <strong>Better:</strong> the Father sent the Son, and Jesus willingly gave Himself in love.</li>
-            <li><strong>Avoid this:</strong> using fear pressure with children. <strong>Better:</strong> the cross is serious because sin is serious, but the main invitation is to trust Jesus.</li>
+            <li><strong>{isRu ? 'Избегайте этого:' : 'Avoid this:'}</strong> {isRu ? 'не говорите о кресте так, будто Отец разгневался на Иисуса как на жертву против Его воли.' : 'making the cross sound like the Father was angry at Jesus as an unwilling victim.'} <strong>{isRu ? 'Лучше:' : 'Better:'}</strong> {isRu ? 'Отец послал Сына, и Иисус добровольно отдал Себя в любви.' : 'the Father sent the Son, and Jesus willingly gave Himself in love.'}</li>
+            <li><strong>{isRu ? 'Избегайте этого:' : 'Avoid this:'}</strong> {isRu ? 'не давите на детей страхом.' : 'using fear pressure with children.'} <strong>{isRu ? 'Лучше:' : 'Better:'}</strong> {isRu ? 'крест серьёзен, потому что грех серьёзен, но главный призыв — довериться Иисусу.' : 'the cross is serious because sin is serious, but the main invitation is to trust Jesus.'}</li>
           </ul>
           <h3 style={miniTitleStyle}>{isRu ? 'Вопросы для разговора' : 'Conversation Questions'}</h3>
           <ol style={{ ...bodyStyle, paddingLeft: 22 }}>
@@ -253,7 +255,9 @@ export default function CaseForChristCrossPage() {
 
         <div style={{ ...panelStyle('#ffffff'), marginTop: 30, textAlign: 'center' }}>
           <p style={bodyStyle}>
-            Father, thank You for loving sinners and sending Jesus to rescue us. Lord Jesus, thank You for willingly dying in the place of sinners and rising again. Help us understand that sin is serious, Your mercy is deep, and Your love is true. Give us humble hearts to repent, trust You, and follow You. In Jesus’ name, amen.
+            {isRu
+              ? 'Отец, спасибо, что Ты любишь грешников и послал Иисуса спасти нас. Господь Иисус, спасибо, что Ты добровольно умер вместо грешников и воскрес. Помоги нам понять, что грех серьёзен, Твоя милость глубока, и Твоя любовь истинна. Дай нам смиренные сердца, чтобы каяться, доверять Тебе и следовать за Тобой. Во имя Иисуса, аминь.'
+              : 'Father, thank You for loving sinners and sending Jesus to rescue us. Lord Jesus, thank You for willingly dying in the place of sinners and rising again. Help us understand that sin is serious, Your mercy is deep, and Your love is true. Give us humble hearts to repent, trust You, and follow You. In Jesus’ name, amen.'}
           </p>
           <Link href="/lessons" style={{ display: 'inline-block', marginTop: 16, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#0d3a6a', textDecoration: 'none' }}>
             {text.back}

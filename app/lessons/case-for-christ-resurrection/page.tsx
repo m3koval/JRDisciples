@@ -190,7 +190,7 @@ export default function CaseForChristResurrectionPage() {
                     )
                   })}
                 </div>
-                {answers[index] !== undefined && <p style={{ ...bodyStyle, marginTop: 12, fontWeight: 800, color: answers[index] === item.correct ? '#1f7a35' : '#a33a10' }}>{answers[index] === item.correct ? 'Good detective work.' : 'Not quite. Follow the witness trail and try again.'}</p>}
+                {answers[index] !== undefined && <p style={{ ...bodyStyle, marginTop: 12, fontWeight: 800, color: answers[index] === item.correct ? '#1f7a35' : '#a33a10' }}>{answers[index] === item.correct ? (isRu ? 'Хорошая работа детектива.' : 'Good detective work.') : (isRu ? 'Не совсем. Пройди по следу свидетелей и попробуй снова.' : 'Not quite. Follow the witness trail and try again.')}</p>}
               </div>
             ))}
           </div>
@@ -200,21 +200,25 @@ export default function CaseForChristResurrectionPage() {
           <p className="eyebrow">{isRu ? 'Разговор с родителем / учителем' : 'Parent / Teacher Talk'}</p>
           <h2 style={headingStyle}>{isRu ? 'Укрепляйте уверенность без гордости' : 'Build confidence without pride'}</h2>
           <p style={bodyStyle}>
-            Children should not leave thinking, “People who doubt are dumb.” They should leave thinking, “Jesus is alive, truth matters, and I can bring honest questions into the light.”
+            {isRu
+              ? 'Дети не должны уйти с мыслью: «Те, кто сомневается, глупые.» Лучше, чтобы они поняли: «Иисус жив, истина важна, и я могу приносить честные вопросы на свет.»'
+              : 'Children should not leave thinking, “People who doubt are dumb.” They should leave thinking, “Jesus is alive, truth matters, and I can bring honest questions into the light.”'}
           </p>
           <ul style={{ ...bodyStyle, paddingLeft: 22 }}>
-            <li>Do not overstate the evidence. God gives strong reasons to believe, and we ask Him for humble hearts.</li>
-            <li>Do not shame questions. Honest questions can become a path toward deeper trust when brought to God&apos;s Word.</li>
-            <li>The right response to the risen Jesus is worship, trust, repentance, and faithful witness.</li>
+            <li>{isRu ? 'Не преувеличивайте доказательства. Бог даёт сильные причины верить, и мы просим Его о смиренных сердцах.' : 'Do not overstate the evidence. God gives strong reasons to believe, and we ask Him for humble hearts.'}</li>
+            <li>{isRu ? 'Не стыдите вопросы. Честные вопросы могут стать путём к более глубокому доверию, если принести их к Божьему Слову.' : 'Do not shame questions. Honest questions can become a path toward deeper trust when brought to God&apos;s Word.'}</li>
+            <li>{isRu ? 'Правильный ответ воскресшему Иисусу — поклонение, доверие, покаяние и верное свидетельство.' : 'The right response to the risen Jesus is worship, trust, repentance, and faithful witness.'}</li>
           </ul>
         </div>
 
         <div style={{ ...panelStyle('#ffffff'), marginTop: 30, textAlign: 'center' }}>
           <p style={bodyStyle}>
-            Father, thank You for raising Jesus from the dead. Help us ask honest questions with humble hearts, trust Your Word, follow the risen Lord, and speak about Him with courage and kindness. In Jesus&apos; name, amen.
+            {isRu
+              ? 'Отец, спасибо, что Ты воскресил Иисуса из мёртвых. Помоги нам задавать честные вопросы со смиренным сердцем, доверять Твоему Слову, следовать за воскресшим Господом и говорить о Нём с мужеством и добротой. Во имя Иисуса, аминь.'
+              : 'Father, thank You for raising Jesus from the dead. Help us ask honest questions with humble hearts, trust Your Word, follow the risen Lord, and speak about Him with courage and kindness. In Jesus&apos; name, amen.'}
           </p>
           <Link href="/lessons" style={{ display: 'inline-block', marginTop: 16, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#0d3a6a', textDecoration: 'none' }}>
-            ← Back to Lessons
+            {isRu ? '← Назад к урокам' : '← Back to Lessons'}
           </Link>
         </div>
       </section>
