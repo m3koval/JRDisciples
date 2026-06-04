@@ -1,0 +1,7 @@
+Global Junior Disciples style: high-readability children’s Bible adventure thumbnail, polished 3D animated human children or child silhouettes/faces, open glowing Bible, warm dawn light, strong silhouette, clean composition, bright saturated colors, child-safe apologetics adventure. Toy-brick/block-city/voxel design belongs to environments and props; main children must remain human children, not minifigs. No readable text in the generated image.
+
+Recurring visual anchors: Michael has curly brown hair, warm tan skin, green adventure outfit; Rosie has wavy brown hair and purple adventure outfit; Joseph has dark curly hair and blue adventure outfit. Keep them childlike and consistent if visible.
+
+Negative prompt: no readable text, no fake Bible words, no captions, no logos, no watermarks, no gore, no horror, no graphic crucifixion, no wounds, no minifig children, no adult-looking children, no weapons, no occult symbols, no direct depiction of Jesus.
+
+Scene prompt: Wide topic thumbnail visual for “Did Jesus Really Rise?” with a dawn-lit empty rock-cut tomb, open glowing Bible, a magnifying glass or evidence badge, and hopeful Junior Disciples child silhouettes or partial faces looking toward warm sunrise. Strong simple shapes, high contrast, plenty of clear space for UI title overlay, no small generated text, do not show Jesus’ face/body or wounds. Aspect 16:9.

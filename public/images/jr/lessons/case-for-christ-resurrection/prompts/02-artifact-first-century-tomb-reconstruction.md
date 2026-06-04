@@ -1,0 +1,5 @@
+Global Junior Disciples style: historically informed original reconstruction, polished 3D educational diorama, blocky toy-brick / voxel environment and props, warm neutral light, child-safe, museum-learning feel. No readable text in the image.
+
+Negative prompt: no readable text, no fake inscriptions, no captions, no logos, no watermarks, no gore, no horror, no body, no wounds, no weapons, no occult symbols, no claim this is Jesus’ exact tomb, no modern tourism photo look.
+
+Scene prompt: Wide artifact/history visual: original historically informed reconstruction of a first-century Jewish rock-cut tomb in a Jerusalem-area stone landscape. Show a modest rock-cut entrance with a round or plug-like stone nearby, interior burial bench and kokhim/loculi-style niches visible, simple folded burial cloth and small spice jars as props. Educational, respectful, not spooky. Make it clearly an original reconstruction/diorama, not a photograph of Jesus’ tomb. UI/HTML caption outside the image must say: “Original reconstruction based on first-century Jewish burial practices; not a photograph of Jesus’ tomb.” Aspect 16:9.

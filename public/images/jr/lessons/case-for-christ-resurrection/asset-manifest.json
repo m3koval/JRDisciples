@@ -1,0 +1,47 @@
+{
+  "lesson": "Did Jesus Really Rise from the Dead?",
+  "slug": "case-for-christ-resurrection",
+  "assets": [
+    {
+      "type": "hero",
+      "slot": "The Witness Trail",
+      "source_url": "https://v3b.fal.media/files/b/0a9cb729/vhlyT_gMK754k9jrwtwSn_Nhi9u8SI.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-resurrection/hero.png",
+      "public_path": "/images/jr/lessons/case-for-christ-resurrection/hero.png",
+      "caption_note": "Original AI illustration; UI caption may summarize 1 Corinthians 15:3-8."
+    },
+    {
+      "type": "bible-truth",
+      "slot": "Died, Buried, Raised, Appeared",
+      "source_url": "https://v3b.fal.media/files/b/0a9cb72f/FyLMZtSV1qi5YlQrKDEYW_5jWUeml5.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-resurrection/bible-truth.png",
+      "public_path": "/images/jr/lessons/case-for-christ-resurrection/bible-truth.png",
+      "caption_note": "Original AI illustration; Scripture and witness labels must be rendered in UI, not inside the image."
+    },
+    {
+      "type": "artifact-reconstruction",
+      "slot": "First-Century Tomb Reconstruction",
+      "source_url": "https://v3b.fal.media/files/b/0a9cb735/Sj6IZ3x6hnbFkYOJOYD8u_MRLckHAI.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-resurrection/artifact-reconstruction.png",
+      "public_path": "/images/jr/lessons/case-for-christ-resurrection/artifact-reconstruction.png",
+      "caption_note": "Original reconstruction based on first-century Jewish burial practices; not a photograph of Jesus’ tomb."
+    },
+    {
+      "type": "activity-challenge",
+      "slot": "Witness Web",
+      "source_url": "https://v3b.fal.media/files/b/0a9cb74c/f2zV4Pc6_gk8WfTo43JcN_72tAYwVz.png",
+      "file_path": "public/images/jr/lessons/case-for-christ-resurrection/witness-web.png",
+      "public_path": "/images/jr/lessons/case-for-christ-resurrection/witness-web.png",
+      "caption_note": "Original AI illustration; all witness labels should be added in UI/HTML."
+    },
+    {
+      "type": "topic-thumbnail",
+      "slot": "Did Jesus Really Rise?",
+      "source_url": "https://v3b.fal.media/files/b/0a9cb752/c2gyqYVnyW6EXBGfjHqC6_mZj7yoCr.png",
+      "file_path": "public/images/jr/topic-case-for-christ-resurrection.png",
+      "public_path": "/images/jr/topic-case-for-christ-resurrection.png",
+      "caption_note": "Original AI thumbnail image; UI should overlay the lesson title separately."
+    }
+  ],
+  "visual_qa": "PASS: visuals are child-safe, polished 3D for main children, no logos/watermarks, no problematic readable generated text, no gore/weapons/occult/scary imagery, no direct depiction of Jesus, and artifact/history image is documented as an original reconstruction rather than a real photo."
+}
