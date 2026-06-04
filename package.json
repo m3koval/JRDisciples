@@ -9,7 +9,8 @@
     "lint": "eslint",
     "test:quests": "node scripts/check-quest-next-links.mjs",
     "check:bilingual": "node scripts/check-bilingual-content-parity.mjs",
-    "check:scripture": "node scripts/check-lesson-scripture-localization.mjs"
+    "check:scripture": "node scripts/check-lesson-scripture-localization.mjs",
+    "check:assets": "node scripts/check-image-assets.mjs"
   },
   "dependencies": {
     "next": "16.2.6",
