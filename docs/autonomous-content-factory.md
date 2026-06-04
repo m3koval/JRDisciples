@@ -110,8 +110,9 @@ Queue source of truth is currently embedded in `/home/helper/.hermes/scripts/jr_
 Use `docs/lesson-quality-standard.md` as the baseline for all lanes. Additional rules:
 
 - Do not invent Bible verses or present paraphrase as a quote.
-- Prefer WEB for direct public-domain quotes unless the draft explicitly marks another verified translation.
-- If exact quote wording is uncertain, use a verification marker and block publish.
+- Use normal ESV quotes for English Junior Disciples Scripture. Do not swap to WEB/public-domain wording as a shortcut.
+- If exact ESV quote wording is uncertain, use a verification marker and block publish.
+- Build Russian parity for bilingual surfaces: lesson cards and user-facing lesson content should be present in Russian unless Mike explicitly approves an exception.
 - Child-clear means simple, not shallow.
 - Keep warm Christian conviction without scare tactics, hype, or combative apologetics.
 - Quests must teach through choices, consequences, truth reminders, and a parent/teacher talk section.

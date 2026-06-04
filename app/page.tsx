@@ -160,9 +160,9 @@ export default function HomePage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { href: "/stories", title: t.home.kidsPathTitle, desc: t.home.kidsPathDesc, color: "#ff6b1a" },
-                { href: "/memory", title: t.home.familyPathTitle, desc: t.home.familyPathDesc, color: "#2a6a10" },
-                { href: "/lessons", title: t.home.classPathTitle, desc: t.home.classPathDesc, color: "#0d3a6a" },
+                { href: "/stories", title: t.home.kidsPathTitle, desc: t.home.kidsPathDesc, color: "#ff6b1a", step: "1" },
+                { href: "/quests", title: t.home.familyPathTitle, desc: t.home.familyPathDesc, color: "#2a6a10", step: "2" },
+                { href: "/lessons", title: t.home.classPathTitle, desc: t.home.classPathDesc, color: "#0d3a6a", step: "3" },
               ].map((path) => (
                 <Link
                   key={path.href}
@@ -170,9 +170,14 @@ export default function HomePage() {
                   className="block no-underline hover:no-underline"
                   style={{ border: `2px solid ${path.color}`, borderRadius: 18, padding: 16, background: "#fff", textDecoration: "none" }}
                 >
-                  <h4 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, color: path.color, marginBottom: 6 }}>
-                    {path.title}
-                  </h4>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                    <span aria-hidden="true" style={{ width: 32, height: 32, borderRadius: 999, background: path.color, color: "#fff", display: "grid", placeItems: "center", fontFamily: "var(--font-nunito)", fontWeight: 950 }}>
+                      {path.step}
+                    </span>
+                    <h4 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, color: path.color, margin: 0 }}>
+                      {path.title}
+                    </h4>
+                  </div>
                   <p style={{ fontFamily: "var(--font-lora)", fontSize: "0.88rem", color: "#555", lineHeight: 1.55, marginBottom: 12 }}>
                     {path.desc}
                   </p>
@@ -186,35 +191,46 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { href: "/stories", image: "/images/jr/icon-stories.png", title: t.activities.stories, desc: t.activities.storiesDesc, color: "#ff6b1a" },
-              { href: "/quiz", image: "/images/jr/icon-quizzes.png", title: t.activities.quizzes, desc: t.activities.quizzesDesc, color: "#0a7090" },
-              { href: "/memory", image: "/images/jr/icon-verse-memory.png", title: t.activities.memory, desc: t.activities.memoryDesc, color: "#2a6a10" },
-              { href: "/puzzles", image: "/images/jr/icon-word-puzzles.png", title: t.activities.puzzles, desc: t.activities.puzzlesDesc, color: "#7030a0" },
-              { href: "/rebus", image: "/images/jr/icon-rebus-puzzles.png", title: t.activities.rebus, desc: t.activities.rebusDesc, color: "#c05010" },
-              { href: "/lessons", image: "/images/jr/icon-lessons.png", title: t.activities.lessons, desc: t.activities.lessonsDesc, color: "#0d3a6a" },
+              { href: "/stories", image: "/images/jr/bible-stories.png", title: t.activities.stories, desc: t.activities.storiesDesc, color: "#ff6b1a" },
+              { href: "/quiz", image: "/images/jr/bible-quizzes.png", title: t.activities.quizzes, desc: t.activities.quizzesDesc, color: "#0a7090" },
+              { href: "/memory", image: "/images/jr/verse-memory.png", title: t.activities.memory, desc: t.activities.memoryDesc, color: "#2a6a10" },
+              { href: "/puzzles", image: "/images/jr/word-puzzles.png", title: t.activities.puzzles, desc: t.activities.puzzlesDesc, color: "#7030a0" },
+              { href: "/rebus", image: "/images/jr/rebus-puzzles.png", title: t.activities.rebus, desc: t.activities.rebusDesc, color: "#c05010" },
+              { href: "/lessons", image: "/images/jr/lessons-hero.png", title: t.activities.lessons, desc: t.activities.lessonsDesc, color: "#0d3a6a" },
             ].map((act) => (
               <Link
                 key={act.href}
                 href={act.href}
-                className="puzzle-box block no-underline hover:no-underline"
-                style={{ ["--pz-color" as string]: act.color, textDecoration: "none" }}
+                className="block no-underline hover:no-underline"
+                style={{
+                  position: "relative",
+                  minHeight: 245,
+                  borderRadius: 26,
+                  overflow: "hidden",
+                  border: `3px solid ${act.color}`,
+                  boxShadow: "0 18px 46px rgba(13,31,60,.18)",
+                  background: "#0d1f3c",
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
               >
-                <p className="puzzle-label">{t.common.section}</p>
-                <div style={{ height: 60, display: "flex", alignItems: "center", marginBottom: 8 }}>
-                  {act.image ? (
-                    <img src={act.image} alt={act.title} style={{ width: 56, height: 56, objectFit: "contain" }} />
-                  ) : (
-                    <span aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 18, background: "linear-gradient(135deg,var(--wind),var(--flame2))", display: "inline-block" }} />
-                  )}
-                </div>
-                <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.2rem", color: "var(--text)", marginBottom: 6 }}>
-                  {act.title}
-                </h3>
-                <p style={{ fontFamily: "var(--font-lora)", fontSize: "0.9rem", color: "#555", lineHeight: 1.6 }}>
-                  {act.desc}
-                </p>
-                <div className="pz-btn" style={{ marginTop: 14, textAlign: "center" }}>
-                  Go! →
+                <img
+                  src={act.image}
+                  alt={act.title}
+                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transform: "scale(1.03)" }}
+                />
+                <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(7,18,36,.1),rgba(7,18,36,.3) 38%,rgba(7,18,36,.9))" }} />
+                <div style={{ position: "relative", zIndex: 1, minHeight: 245, padding: 18, display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
+                  <p className="puzzle-label" style={{ color: "#ffd866", marginBottom: 8 }}>{t.common.section}</p>
+                  <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 950, fontSize: "1.35rem", color: "#fff", lineHeight: 1.1, marginBottom: 8, textShadow: "0 8px 24px rgba(0,0,0,.38)" }}>
+                    {act.title}
+                  </h3>
+                  <p style={{ fontFamily: "var(--font-lora)", fontSize: "0.92rem", fontWeight: 700, color: "rgba(255,255,255,.94)", lineHeight: 1.55, marginBottom: 14 }}>
+                    {act.desc}
+                  </p>
+                  <span style={{ alignSelf: "flex-start", borderRadius: 999, padding: "9px 15px", background: act.color, color: "#fff", fontFamily: "var(--font-nunito)", fontWeight: 1000, boxShadow: "0 10px 24px rgba(0,0,0,.2)" }}>
+                    Go! →
+                  </span>
                 </div>
               </Link>
             ))}

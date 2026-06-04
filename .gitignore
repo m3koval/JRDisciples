@@ -33,6 +33,11 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# private/local Scripture source caches for drafting verification (do not publish copyrighted full Bibles)
+/data/scripture/esv*.json
+/data/scripture/esv*.txt
+/data/scripture/esv*.tsv
+
 # vercel
 .vercel
 

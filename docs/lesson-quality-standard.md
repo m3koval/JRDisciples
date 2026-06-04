@@ -10,14 +10,15 @@ Every lesson should help a child understand biblical truth clearly, trust God mo
 
 1. Bible truth first.
 2. Quote real Scripture when using Scripture.
-3. ESV is the preferred English translation for references and short quotes when licensing permits; for full published Scripture blocks, a public-domain translation such as WEB may be intentionally selected and clearly labeled.
-4. Do not invent simplified “kid translation” Bible text.
-5. Explain hard words immediately in child-clear language.
-6. Do not overstate evidence, mock doubters, or use fear pressure.
-7. Keep the tone warm, truthful, parent-safe, and age-appropriate.
-8. Do not publish a lesson while Scripture verification markers such as `[VERIFY ESV QUOTE BEFORE PUBLISHING]` remain.
-9. Do not publish if content QA or app QA has blocker findings.
-10. Preserve repeated QA findings into templates/checklists so the next lesson gets better.
+3. For English Junior Disciples lessons, quote/cite ESV as the normal Bible text. Do not swap to WEB/public-domain wording just to avoid verification work.
+4. Do not invent simplified “kid translation” Bible text; quote Scripture, then explain it in child-clear language.
+5. Russian-capable lesson features need Russian user-facing cards/content parity before publish, or an explicit human-approved exception.
+6. Explain hard words immediately in child-clear language.
+7. Do not overstate evidence, mock doubters, or use fear pressure.
+8. Keep the tone warm, truthful, parent-safe, and age-appropriate.
+9. Do not publish a lesson while Scripture verification markers such as `[VERIFY ESV QUOTE BEFORE PUBLISHING]` remain.
+10. Do not publish if content QA, visual QA, app QA, Scripture/version QA, or localization parity has blocker findings.
+11. Preserve repeated QA findings into templates/checklists so the next lesson gets better.
 
 ## Content Quality Rubric
 
@@ -87,12 +88,15 @@ A draft fails content QA when:
 - any blocker exists
 - average score is below 4.0
 - any category is below 3
-- Scripture wording is invented or presented as a quote without verification
+- Scripture wording is invented, mislabeled, WEB-swapped, or presented as a quote without verification
+- Russian parity is missing for a lesson feature that supports Russian
 - tone becomes combative, fear-based, or shallow
 
 A draft is blocked from promotion when:
 
 - Scripture verification markers such as `[VERIFY ESV QUOTE BEFORE PUBLISHING]` appear anywhere
+- WEB/public-domain substitution appears in published English lesson text unless Mike explicitly approves that exception
+- Russian card/content parity is missing for bilingual lesson surfaces
 - content QA has not passed
 - required sections are missing
 - the latest QA report says `Gate: FAIL` or `Gate: HUMAN REVIEW`
@@ -129,8 +133,9 @@ Use this checklist before promoting any new lesson, quiz, or learning track into
 ### Scripture and Doctrine
 
 - Scripture references are real, correctly cited, and fit the teaching point.
-- Direct Scripture quotes are exact, verified, and labeled with the translation used.
+- Direct Scripture quotes are exact ESV in English lessons unless Mike explicitly approves another translation.
 - No invented Bible wording is presented as a quotation.
+- Do not use WEB/public-domain wording as a workaround for ESV verification.
 - Doctrinal claims are clear, orthodox, and not overstated beyond the passage.
 - Salvation, Trinity, Holy Spirit, resurrection, prophecy, and spiritual-gifts wording receives human review when needed.
 
