@@ -101,7 +101,7 @@ export default function CaseForChristResurrectionPage() {
             <div style={progressStyle}>{isRu ? 'Прогресс' : 'Progress'}: {progress}/{witnesses.length + questions.length}</div>
           </div>
           <div style={{ background: 'rgba(255,255,255,.12)', border: '1px solid rgba(255,255,255,.28)', borderRadius: 26, padding: 24 }}>
-            <p style={{ margin: '0 0 10px', color: '#ffdc73', fontFamily: 'var(--font-nunito)', fontWeight: 950 }}>Big Truth</p>
+            <p style={{ margin: '0 0 10px', color: '#ffdc73', fontFamily: 'var(--font-nunito)', fontWeight: 950 }}>{isRu ? 'Главная истина' : 'Big Truth'}</p>
             <p style={{ margin: 0, color: 'white', fontFamily: 'var(--font-lora)', fontSize: '1.08rem', lineHeight: 1.75 }}>
               Christians believe Jesus rose bodily from the dead because God&apos;s Word says it happened, His followers saw Him alive, and the earliest Christian message was built on His death, burial, resurrection, and appearances.
             </p>
@@ -111,7 +111,7 @@ export default function CaseForChristResurrectionPage() {
 
       <section style={{ maxWidth: 980, margin: '0 auto', padding: '42px 18px' }}>
         <div style={panelStyle('#ffffff')}>
-          <p className="eyebrow">Big Question</p>
+          <p className="eyebrow">{isRu ? 'Главный вопрос' : 'Big Question'}</p>
           <h2 style={headingStyle}>
             {language === 'ru' ? 'Воскрес ли Иисус на самом деле или Его друзья просто желали этого?' : 'Did Jesus rise, or did His friends only wish it was true?'}
           </h2>
@@ -123,8 +123,8 @@ export default function CaseForChristResurrectionPage() {
         </div>
 
         <div style={{ ...panelStyle('#eef7ff'), marginTop: 30 }}>
-          <p className="eyebrow">Bible Anchor</p>
-          <h2 style={headingStyle}>Death, burial, resurrection, appearances</h2>
+          <p className="eyebrow">{isRu ? 'Библейская опора' : 'Bible Anchor'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Смерть, погребение, воскресение и явления' : 'Death, burial, resurrection, appearances'}</h2>
           <blockquote style={quoteStyle}>
             {scripture.corinthians}
             <footer style={quoteRefStyle}>{scripture.corinthiansRef}</footer>
@@ -136,8 +136,8 @@ export default function CaseForChristResurrectionPage() {
         </div>
 
         <div style={{ marginTop: 30 }}>
-          <p className="eyebrow">Witness Web</p>
-          <h2 style={headingStyle}>Tap each witness card</h2>
+          <p className="eyebrow">{isRu ? 'Сеть свидетелей' : 'Witness Web'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Нажми на каждую карточку свидетеля' : 'Tap each witness card'}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: 16 }}>
             {witnesses.map((witness, index) => (
               <button key={witness.name} type="button" onClick={() => setOpened((current) => ({ ...current, [index]: !current[index] }))} style={{ ...cardStyle, borderColor: opened[index] ? '#f0b429' : '#d7e3f5' }}>
@@ -152,8 +152,8 @@ export default function CaseForChristResurrectionPage() {
         </div>
 
         <div style={{ ...panelStyle('#fff'), marginTop: 30 }}>
-          <p className="eyebrow">Evidence Trail</p>
-          <h2 style={headingStyle}>Four parts of the first Christian message</h2>
+          <p className="eyebrow">{isRu ? 'След доказательств' : 'Evidence Trail'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Четыре части первого христианского свидетельства' : 'Four parts of the first Christian message'}</h2>
           <ol style={{ ...bodyStyle, paddingLeft: 24 }}>
             {trail.map((item) => <li key={item}>{item}</li>)}
           </ol>
@@ -163,18 +163,18 @@ export default function CaseForChristResurrectionPage() {
         </div>
 
         <div style={{ ...panelStyle('#fff7d6'), marginTop: 30 }}>
-          <p className="eyebrow">Hard Words</p>
+          <p className="eyebrow">{isRu ? 'Трудные слова' : 'Hard Words'}</p>
           <ul style={{ ...bodyStyle, paddingLeft: 22 }}>
-            <li><strong>Resurrection:</strong> Jesus rose bodily from the dead and will never die again.</li>
-            <li><strong>Witness:</strong> A person who saw something happen and can tell others about it.</li>
-            <li><strong>Gospel:</strong> The good news that Jesus died for our sins, rose again, and gives forgiveness and life to those who trust Him.</li>
-            <li><strong>Faith:</strong> Trusting God because He is true and trustworthy.</li>
+            <li><strong>{isRu ? 'Воскресение' : 'Resurrection'}:</strong> {isRu ? 'Иисус воскрес телесно из мёртвых и больше никогда не умрёт.' : 'Jesus rose bodily from the dead and will never die again.'}</li>
+            <li><strong>{isRu ? 'Свидетель' : 'Witness'}:</strong> {isRu ? 'Человек, который видел, как что-то произошло, и может рассказать об этом другим.' : 'A person who saw something happen and can tell others about it.'}</li>
+            <li><strong>{isRu ? 'Евангелие' : 'Gospel'}:</strong> {isRu ? 'Благая весть о том, что Иисус умер за наши грехи, воскрес и даёт прощение и жизнь тем, кто доверяет Ему.' : 'The good news that Jesus died for our sins, rose again, and gives forgiveness and life to those who trust Him.'}</li>
+            <li><strong>{isRu ? 'Вера' : 'Faith'}:</strong> {isRu ? 'Доверие Богу, потому что Он истинен и достоин доверия.' : 'Trusting God because He is true and trustworthy.'}</li>
           </ul>
         </div>
 
         <div style={{ marginTop: 30 }}>
-          <p className="eyebrow">Detective Check</p>
-          <h2 style={headingStyle}>Choose the strongest answer</h2>
+          <p className="eyebrow">{isRu ? 'Проверка детектива' : 'Detective Check'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Выбери самый сильный ответ' : 'Choose the strongest answer'}</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             {questions.map((item, index) => (
               <div key={item.question} style={panelStyle('#fff')}>
@@ -197,8 +197,8 @@ export default function CaseForChristResurrectionPage() {
         </div>
 
         <div style={{ ...panelStyle('#ffffff'), marginTop: 30 }}>
-          <p className="eyebrow">Parent / Teacher Talk</p>
-          <h2 style={headingStyle}>Build confidence without pride</h2>
+          <p className="eyebrow">{isRu ? 'Разговор с родителем / учителем' : 'Parent / Teacher Talk'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Укрепляйте уверенность без гордости' : 'Build confidence without pride'}</h2>
           <p style={bodyStyle}>
             Children should not leave thinking, “People who doubt are dumb.” They should leave thinking, “Jesus is alive, truth matters, and I can bring honest questions into the light.”
           </p>

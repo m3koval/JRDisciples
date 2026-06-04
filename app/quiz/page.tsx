@@ -60,7 +60,7 @@ export default function QuizListPage() {
                     {quiz.title}
                   </h3>
                   <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.8rem", color: color, background: "#f8f8f8", borderRadius: 20, padding: "3px 10px", display: "inline-block" }}>
-                    5 Questions · Earn a ⭐
+                    {language === 'ru' ? '5 вопросов · Получи ⭐' : '5 Questions · Earn a ⭐'}
                   </p>
                   <div className="pz-btn" style={{ textAlign: "center", marginTop: 14 }}>
                     {language === 'ru' ? 'Начать тест' : 'Start Quiz'} →

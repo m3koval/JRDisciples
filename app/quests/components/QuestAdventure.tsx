@@ -50,7 +50,13 @@ export type QuestUi = {
   of: string
   path: string
   finalVerse: string
+  finalVerseRef?: string
   finish: string
+  echoLabel?: string
+  truthLightLabel?: string
+  guideLabel?: string
+  thinkLabel?: string
+  badgeAlt?: string
 }
 
 type QuestAdventureProps = {
@@ -65,6 +71,12 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images, nextQue
   const lang = language === 'ru' ? 'ru' : 'en'
   const scenes = scenesByLanguage[lang]
   const t = uiByLanguage[lang]
+  const bubbleLabels = {
+    echo: t.echoLabel ?? (lang === 'ru' ? 'Эхо' : 'Echo'),
+    truthLight: t.truthLightLabel ?? t.truthLight,
+    guide: t.guideLabel ?? (lang === 'ru' ? 'Помощь' : 'Guide'),
+    think: t.thinkLabel ?? (lang === 'ru' ? 'Подумай' : 'Think'),
+  }
   const [started, setStarted] = useState(false)
   const [index, setIndex] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
@@ -346,13 +358,13 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images, nextQue
           </section>
         ) : finished ? (
           <section className="badge-card">
-            <img className="badge-image" src={images.badge} alt="Michael and Rosie celebrating with the Courage Quest badge" />
+            <img className="badge-image" src={images.badge} alt={t.badgeAlt ?? (lang === 'ru' ? 'Дети празднуют завершение библейского квеста' : 'Children celebrating the completed Bible quest badge')} />
             <p className="quest-kicker">{t.completed}</p>
             <h1 className="quest-title">{t.badge}</h1>
             <p className="quest-subtitle" style={{ color: '#4f46e5', fontFamily: 'var(--font-nunito)', fontWeight: 1000 }}>{t.badgeLine}</p>
             <div className="pull-quote" style={{ maxWidth: 720, margin: '20px auto' }}>
               <p className="pq-text">{t.finalVerse}</p>
-              <span className="pq-ref">Psalm 56:3</span>
+              <span className="pq-ref">{t.finalVerseRef ?? (lang === 'ru' ? 'Библейская истина' : 'Bible truth')}</span>
             </div>
             <div className="parent-box">
               <h2>{t.parent}</h2>
@@ -385,22 +397,22 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images, nextQue
                   <img src={images[scene.id]} alt={scene.alt} />
                   <div className="comic-bubbles" aria-hidden="true">
                     <div className={`comic-bubble whisper ${scene.echoSlot ?? 'top-left'}`}>
-                      <span>Echo</span>
+                      <span>{bubbleLabels.echo}</span>
                       {scene.echo}
                     </div>
                     {chosen?.good ? (
                       <div className={`comic-bubble truth ${scene.thoughtSlot ?? 'top-right'}`}>
-                        <span>Truth Light</span>
+                        <span>{bubbleLabels.truthLight}</span>
                         {scene.truth}
                       </div>
                     ) : chosen ? (
                       <div className={`comic-bubble speech ${scene.thoughtSlot ?? 'top-right'}`}>
-                        <span>Guide</span>
+                        <span>{bubbleLabels.guide}</span>
                         {t.tryAgain}
                       </div>
                     ) : (
                       <div className={`comic-bubble thought ${scene.thoughtSlot ?? 'top-right'}`}>
-                        <span>Think</span>
+                        <span>{bubbleLabels.think}</span>
                         {scene.thought}
                       </div>
                     )}

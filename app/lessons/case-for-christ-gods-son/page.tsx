@@ -150,7 +150,7 @@ export default function CaseForChristGodsSonPage() {
 
       <section style={{ maxWidth: 1040, margin: '0 auto', padding: '42px 18px' }}>
         <div style={panelStyle('#ffffff')}>
-          <p className="eyebrow">Big Question</p>
+          <p className="eyebrow">{isRu ? 'Главный вопрос' : 'Big Question'}</p>
           <h2 style={headingStyle}>
             {language === 'ru' ? 'Действительно ли Иисус — Сын Божий, и что это значит?' : 'Is Jesus really God\'s Son, and what does that mean?'}
           </h2>
@@ -167,8 +167,8 @@ export default function CaseForChristGodsSonPage() {
         </div>
 
         <div style={{ ...panelStyle('#eef7ff'), marginTop: 30 }}>
-          <p className="eyebrow">Bible Anchor</p>
-          <h2 style={headingStyle}>Peter&apos;s confession and John&apos;s testimony</h2>
+          <p className="eyebrow">{isRu ? 'Библейская опора' : 'Bible Anchor'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Исповедание Петра и свидетельство Иоанна' : "Peter's confession and John's testimony"}</h2>
           <blockquote style={quoteStyle}>
             {scripture.matthew}
             <footer style={quoteRefStyle}>{scripture.matthewRef}</footer>
@@ -184,8 +184,8 @@ export default function CaseForChristGodsSonPage() {
         </div>
 
         <div style={{ marginTop: 30 }}>
-          <p className="eyebrow">Visual Learning Pack</p>
-          <h2 style={headingStyle}>See the truth, the place, and the challenge</h2>
+          <p className="eyebrow">{isRu ? 'Визуальный набор урока' : 'Visual Learning Pack'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Посмотри истину, место и задание' : 'See the truth, the place, and the challenge'}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 18 }}>
             {visuals.map((visual) => (
               <figure key={visual.title} style={{ margin: 0, ...panelStyle('#ffffff'), padding: 14 }}>
@@ -199,8 +199,8 @@ export default function CaseForChristGodsSonPage() {
         </div>
 
         <div style={{ ...panelStyle('#ffffff'), marginTop: 30 }}>
-          <p className="eyebrow">Teaching Trail</p>
-          <h2 style={headingStyle}>Five stops on the identity trail</h2>
+          <p className="eyebrow">{isRu ? 'Учебный путь' : 'Teaching Trail'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Пять остановок на пути к пониманию, Кто такой Иисус' : 'Five stops on the identity trail'}</h2>
           <ol style={{ ...bodyStyle, paddingLeft: 24 }}>
             {teachingTrail.map((item) => <li key={item}>{item}</li>)}
           </ol>
@@ -210,8 +210,8 @@ export default function CaseForChristGodsSonPage() {
         </div>
 
         <div style={{ marginTop: 30 }}>
-          <p className="eyebrow">Identity Cards</p>
-          <h2 style={headingStyle}>Tap each card and sort the clues</h2>
+          <p className="eyebrow">{isRu ? 'Карточки личности' : 'Identity Cards'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Нажми на каждую карточку и разложи подсказки' : 'Tap each card and sort the clues'}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: 16 }}>
             {identityCards.map((card, index) => (
               <button key={card.title} type="button" onClick={() => setOpened((current) => ({ ...current, [index]: !current[index] }))} style={{ ...cardStyle, borderColor: opened[index] ? '#f0b429' : '#d7e3f5' }}>
@@ -226,7 +226,7 @@ export default function CaseForChristGodsSonPage() {
         </div>
 
         <div style={{ ...panelStyle('#fff7d6'), marginTop: 30 }}>
-          <p className="eyebrow">Hard Words</p>
+          <p className="eyebrow">{isRu ? 'Трудные слова' : 'Hard Words'}</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(250px,1fr))', gap: 14 }}>
             {hardWords.map(([word, definition]) => (
               <div key={word} style={{ background: 'white', borderRadius: 18, padding: 16, border: '1px solid #f1d99a' }}>
@@ -238,8 +238,8 @@ export default function CaseForChristGodsSonPage() {
         </div>
 
         <div style={{ marginTop: 30 }}>
-          <p className="eyebrow">Detective Check</p>
-          <h2 style={headingStyle}>Choose the strongest answer</h2>
+          <p className="eyebrow">{isRu ? 'Проверка детектива' : 'Detective Check'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Выбери самый сильный ответ' : 'Choose the strongest answer'}</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             {questions.map((item, index) => (
               <div key={item.question} style={panelStyle('#fff')}>
@@ -262,8 +262,8 @@ export default function CaseForChristGodsSonPage() {
         </div>
 
         <div style={{ ...panelStyle('#ffffff'), marginTop: 30 }}>
-          <p className="eyebrow">Honest Question</p>
-          <h2 style={headingStyle}>Do Christians believe in more than one God?</h2>
+          <p className="eyebrow">{isRu ? 'Честный вопрос' : 'Honest Question'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Верят ли христиане больше чем в одного Бога?' : 'Do Christians believe in more than one God?'}</h2>
           <p style={bodyStyle}>
             No. Christians believe there is one God. The Bible teaches that the Father is God, the Son is God, and the Holy Spirit is God. They are not three separate gods, and they are not one person wearing three masks. God is one God in three persons.
           </p>
@@ -273,8 +273,8 @@ export default function CaseForChristGodsSonPage() {
         </div>
 
         <div style={{ ...panelStyle('#ffffff'), marginTop: 30 }}>
-          <p className="eyebrow">Parent / Teacher Talk</p>
-          <h2 style={headingStyle}>Teach a high truth carefully</h2>
+          <p className="eyebrow">{isRu ? 'Разговор с родителем / учителем' : 'Parent / Teacher Talk'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Объясняйте эту высокую истину бережно' : 'Teach a high truth carefully'}</h2>
           <ul style={{ ...bodyStyle, paddingLeft: 22 }}>
             <li>Do not make “Son of God” sound like Jesus was created. Better: “Jesus is the eternal Son.”</li>
             <li>Do not explain the Trinity with broken object lessons like water changing forms or one person wearing hats.</li>

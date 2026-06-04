@@ -104,6 +104,7 @@ const copy = {
 
 export default function CaseForChristCrossPage() {
   const { language } = useLanguage()
+  const isRu = language === 'ru'
   const text = language === 'ru' ? copy.ru : copy.en
 
   return (
@@ -111,14 +112,14 @@ export default function CaseForChristCrossPage() {
       <section style={{ background: 'linear-gradient(135deg,#4a1230,#0d3a6a)', padding: '46px 18px' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 28, alignItems: 'center' }}>
           <div>
-            <p style={eyebrowLight}>Case for Christ Kids · Lesson 5</p>
+            <p style={eyebrowLight}>{isRu ? 'Дело о Христе для детей · Урок 5' : 'Case for Christ Kids · Lesson 5'}</p>
             <h1 style={{ margin: '0 0 14px', color: 'white', fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,5vw,3.4rem)', lineHeight: 1.05 }}>
               {text.title}
             </h1>
             <p style={{ margin: 0, color: 'rgba(255,255,255,.94)', fontFamily: 'var(--font-lora)', fontSize: '1.12rem', lineHeight: 1.75 }}>
               {text.intro}
             </p>
-            <div style={anchorWrapStyle}>{anchors.map((anchor) => <span key={anchor} style={anchorPillStyle}>{anchor}</span>)}<span style={anchorPillStyle}>ESV summaries</span></div>
+            <div style={anchorWrapStyle}>{anchors.map((anchor) => <span key={anchor} style={anchorPillStyle}>{anchor}</span>)}<span style={anchorPillStyle}>{isRu ? 'Кратко по ESV' : 'ESV summaries'}</span></div>
           </div>
           <figure style={heroFigureStyle}>
             <img src="/images/jr/lessons/case-for-christ-cross/hero.png" alt="Children seeing a hopeful symbolic cross where justice and mercy meet" style={imageStyle} />
@@ -129,7 +130,7 @@ export default function CaseForChristCrossPage() {
 
       <section style={{ maxWidth: 1020, margin: '0 auto', padding: '42px 18px' }}>
         <div style={panelStyle('#ffffff')}>
-          <p className="eyebrow">Big Question</p>
+          <p className="eyebrow">{isRu ? 'Главный вопрос' : 'Big Question'}</p>
           <h2 style={headingStyle}>{text.bigQuestion}</h2>
           <p style={bodyStyle}>
             {text.bigTruth}
@@ -148,14 +149,14 @@ export default function CaseForChristCrossPage() {
         )}
 
         <div style={{ ...panelStyle('#eef7ff'), marginTop: 30 }}>
-          <p className="eyebrow">Bible Anchor</p>
-          <h2 style={headingStyle}>Love, substitution, and rescue</h2>
+          <p className="eyebrow">{isRu ? 'Библейская опора' : 'Bible Anchor'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Любовь, замещение и спасение' : 'Love, substitution, and rescue'}</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             {bibleAnchors.map((anchor) => (
               <article key={anchor.ref} style={miniCardStyle}>
                 <h3 style={miniTitleStyle}>{anchor.ref}</h3>
                 <p style={bodyStyle}>{anchor.summary}</p>
-                <p style={{ ...bodyStyle, marginBottom: 0 }}><strong>What this helps us see:</strong> {anchor.helps}</p>
+                <p style={{ ...bodyStyle, marginBottom: 0 }}><strong>{isRu ? 'Что это помогает увидеть' : 'What this helps us see'}:</strong> {anchor.helps}</p>
               </article>
             ))}
           </div>
@@ -167,8 +168,8 @@ export default function CaseForChristCrossPage() {
         </figure>
 
         <div style={{ marginTop: 30 }}>
-          <p className="eyebrow">Evidence / Teaching Trail</p>
-          <h2 style={headingStyle}>Six steps through the cross and resurrection</h2>
+          <p className="eyebrow">{isRu ? 'След доказательств / урока' : 'Evidence / Teaching Trail'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Шесть шагов через крест и воскресение' : 'Six steps through the cross and resurrection'}</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             {teachingTrail.map((step) => (
               <article key={step.title} style={panelStyle('#ffffff')}>
@@ -181,8 +182,8 @@ export default function CaseForChristCrossPage() {
         </div>
 
         <div style={{ ...panelStyle('#fff7d6'), marginTop: 30 }}>
-          <p className="eyebrow">Hard Words Defined</p>
-          <h2 style={headingStyle}>Important gospel words</h2>
+          <p className="eyebrow">{isRu ? 'Объяснение трудных слов' : 'Hard Words Defined'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Важные евангельские слова' : 'Important gospel words'}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: 12 }}>
             {hardWords.map(([word, meaning]) => (
               <div key={word} style={wordCardStyle}>
@@ -199,8 +200,8 @@ export default function CaseForChristCrossPage() {
         </figure>
 
         <div style={{ ...panelStyle('#ffffff'), marginTop: 30 }}>
-          <p className="eyebrow">Honest Question</p>
-          <h2 style={headingStyle}>If God loves people, why could He not just forgive sin without Jesus dying?</h2>
+          <p className="eyebrow">{isRu ? 'Честный вопрос' : 'Honest Question'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Если Бог любит людей, почему Он не мог просто простить грех без смерти Иисуса?' : 'If God loves people, why could He not just forgive sin without Jesus dying?'}</h2>
           <p style={bodyStyle}>
             God’s love is not pretend love, and God’s justice is not pretend justice. If God ignored sin, He would not be treating evil as evil. But if God only gave sinners the judgment they deserved, we would have no hope.
           </p>
@@ -213,8 +214,8 @@ export default function CaseForChristCrossPage() {
         </div>
 
         <div style={{ ...panelStyle('#eef7ff'), marginTop: 30 }}>
-          <p className="eyebrow">Interactive Activity</p>
-          <h2 style={headingStyle}>The Two Cards: Justice and Mercy</h2>
+          <p className="eyebrow">{isRu ? 'Интерактивное задание' : 'Interactive Activity'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Две карточки: справедливость и милость' : 'The Two Cards: Justice and Mercy'}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, alignItems: 'center' }}>
             <div>
               <p style={bodyStyle}><strong>Supplies:</strong> two index cards, a marker, a small toy figure or paper person, and a small paper heart.</p>
@@ -235,8 +236,8 @@ export default function CaseForChristCrossPage() {
         </div>
 
         <div style={{ ...panelStyle('#ffffff'), marginTop: 30 }}>
-          <p className="eyebrow">Parent / Teacher Talk</p>
-          <h2 style={headingStyle}>Teach the cross with warmth and care</h2>
+          <p className="eyebrow">{isRu ? 'Разговор с родителем / учителем' : 'Parent / Teacher Talk'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Учите о кресте тепло и бережно' : 'Teach the cross with warmth and care'}</h2>
           <p style={bodyStyle}>
             This lesson handles one of the deepest truths in Christianity. Keep the tone warm, steady, and careful. Children do not need graphic descriptions of crucifixion to understand the gospel. They need clear categories: sin is real, God is holy, Jesus is righteous, Jesus willingly took the place of sinners, and forgiveness comes through trusting Him.
           </p>
@@ -244,7 +245,7 @@ export default function CaseForChristCrossPage() {
             <li><strong>Avoid this:</strong> making the cross sound like the Father was angry at Jesus as an unwilling victim. <strong>Better:</strong> the Father sent the Son, and Jesus willingly gave Himself in love.</li>
             <li><strong>Avoid this:</strong> using fear pressure with children. <strong>Better:</strong> the cross is serious because sin is serious, but the main invitation is to trust Jesus.</li>
           </ul>
-          <h3 style={miniTitleStyle}>Conversation Questions</h3>
+          <h3 style={miniTitleStyle}>{isRu ? 'Вопросы для разговора' : 'Conversation Questions'}</h3>
           <ol style={{ ...bodyStyle, paddingLeft: 22 }}>
             {questions.map((question) => <li key={question}>{question}</li>)}
           </ol>

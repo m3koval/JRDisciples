@@ -32,6 +32,11 @@ export const translations = {
       pullQuote: "All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness.",
       pullQuoteRef: "2 Timothy 3:16 (ESV)",
       kidNote: "Ask a grown-up: What is your favorite Bible story? Why does it matter to you?",
+      activityCta: "Go!",
+      featuredAdventure: "Featured Adventure",
+      startBibleQuests: "Start Bible Quests",
+      playableNow: "Playable now: Courage Quest",
+      questsMapAlt: "Bible Quests adventure map",
     },
     activities: {
       stories: "Bible Stories",
@@ -185,6 +190,11 @@ export const translations = {
       pullQuote: "Всякое писание (сказанное) Духом Божиим полезно для учения, для обличения, для исправления, для наставления в праведности.",
       pullQuoteRef: "2 Тимофею 3:16 (Синодальный перевод)",
       kidNote: "Спроси взрослого: Какая твоя любимая библейская история? Почему она тебе нравится?",
+      activityCta: "Вперёд!",
+      featuredAdventure: "Избранное приключение",
+      startBibleQuests: "Начать библейские квесты",
+      playableNow: "Уже доступно: Квест мужества",
+      questsMapAlt: "Карта библейских квестов",
     },
     activities: {
       stories: "Библейские истории",

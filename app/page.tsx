@@ -229,7 +229,7 @@ export default function HomePage() {
                     {act.desc}
                   </p>
                   <span style={{ alignSelf: "flex-start", borderRadius: 999, padding: "9px 15px", background: act.color, color: "#fff", fontFamily: "var(--font-nunito)", fontWeight: 1000, boxShadow: "0 10px 24px rgba(0,0,0,.2)" }}>
-                    Go! →
+                    {t.home.activityCta} →
                   </span>
                 </div>
               </Link>
@@ -256,7 +256,7 @@ export default function HomePage() {
           >
             <img
               src="/images/jr/quests/quest-hub-map.png"
-              alt="Bible Quests adventure map"
+              alt={t.home.questsMapAlt}
               style={{
                 position: "absolute",
                 inset: 0,
@@ -275,7 +275,7 @@ export default function HomePage() {
               }}
             />
             <div style={{ position: "relative", zIndex: 1, padding: "clamp(24px,5vw,44px)", maxWidth: 580 }}>
-              <p className="puzzle-label" style={{ color: "#ffd866", marginBottom: 10 }}>Featured Adventure</p>
+              <p className="puzzle-label" style={{ color: "#ffd866", marginBottom: 10 }}>{t.home.featuredAdventure}</p>
               <h3 style={{
                 fontFamily: "var(--font-cinzel)",
                 fontWeight: 700,
@@ -317,7 +317,7 @@ export default function HomePage() {
                   fontWeight: 1000,
                   boxShadow: "0 14px 30px rgba(79,70,229,.34)",
                 }}>
-                  Start Bible Quests →
+                  {t.home.startBibleQuests} →
                 </span>
                 <span style={{
                   display: "inline-flex",
@@ -331,7 +331,7 @@ export default function HomePage() {
                   fontWeight: 1000,
                   fontSize: ".82rem",
                 }}>
-                  Playable now: Courage Quest
+                  {t.home.playableNow}
                 </span>
               </div>
             </div>

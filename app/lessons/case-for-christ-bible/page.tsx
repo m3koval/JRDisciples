@@ -149,7 +149,7 @@ export default function CaseForChristBiblePage() {
 
       <section style={{ maxWidth: 980, margin: '0 auto', padding: '42px 18px' }}>
         <div style={panelStyle('#ffffff')}>
-          <p className="eyebrow">Big Question</p>
+          <p className="eyebrow">{isRu ? 'Главный вопрос' : 'Big Question'}</p>
           <h2 style={headingStyle}>
             {language === 'ru' ? 'Можно ли доверять Библии или это просто выдумка?' : 'Can we trust the Bible, or is it just a made-up story?'}
           </h2>
@@ -172,8 +172,8 @@ export default function CaseForChristBiblePage() {
         </div>
 
         <div style={{ ...panelStyle('#eef7ff'), marginTop: 30 }}>
-          <p className="eyebrow">Case File</p>
-          <h2 style={headingStyle}>What would count as good evidence?</h2>
+          <p className="eyebrow">{isRu ? 'Материалы дела' : 'Case File'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Что считается хорошим доказательством?' : 'What would count as good evidence?'}</h2>
           <p style={bodyStyle}>
             Some things can be proved with a measuring tape. History is different. For history, we ask: Did real people see it? Was it written close enough to the events? Did people preserve the message? Does it fit with what we know about the world? The Bible stands in that kind of historical light.
           </p>
@@ -191,8 +191,8 @@ export default function CaseForChristBiblePage() {
         </div>
 
         <div style={{ marginTop: 26 }}>
-          <p className="eyebrow">Evidence Trail</p>
-          <h2 style={headingStyle}>Tap each clue card</h2>
+          <p className="eyebrow">{isRu ? 'След доказательств' : 'Evidence Trail'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Нажми на каждую карточку-подсказку' : 'Tap each clue card'}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: 16 }}>
             {evidenceCards.map((card, index) => (
               <button
@@ -205,11 +205,11 @@ export default function CaseForChristBiblePage() {
                   {index + 1}. {card.title}
                 </span>
                 <span style={{ display: 'block', fontFamily: 'var(--font-lora)', color: '#46556f', lineHeight: 1.6 }}>
-                  {flipped[index] ? card.body : 'Tap to investigate this clue.'}
+                  {flipped[index] ? card.body : (isRu ? 'Нажми, чтобы исследовать эту подсказку.' : 'Tap to investigate this clue.')}
                 </span>
                 {flipped[index] && (
                   <span style={{ display: 'block', marginTop: 12, color: '#1a4a8a', fontFamily: 'var(--font-nunito)', fontWeight: 900 }}>
-                    Check: {card.proof}
+                    {isRu ? 'Проверь' : 'Check'}: {card.proof}
                   </span>
                 )}
               </button>
@@ -218,8 +218,8 @@ export default function CaseForChristBiblePage() {
         </div>
 
         <div style={{ ...panelStyle('#fff'), marginTop: 30 }}>
-          <p className="eyebrow">Bible Anchor</p>
-          <h2 style={headingStyle}>Luke carefully checked the story</h2>
+          <p className="eyebrow">{isRu ? 'Библейская опора' : 'Bible Anchor'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Лука тщательно проверил историю' : 'Luke carefully checked the story'}</h2>
           <blockquote style={quoteStyle}>
             {scripture.luke}
             <footer style={quoteRefStyle}>{scripture.lukeRef}</footer>
@@ -251,8 +251,8 @@ export default function CaseForChristBiblePage() {
         </div>
 
         <div style={{ ...panelStyle('#eef7ff'), marginTop: 30 }}>
-          <p className="eyebrow">Think It Through</p>
-          <h2 style={headingStyle}>Telephone vs. careful copy</h2>
+          <p className="eyebrow">{isRu ? 'Подумай' : 'Think It Through'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Игра в телефон или внимательное переписывание?' : 'Telephone vs. careful copy'}</h2>
           <p style={bodyStyle}>
             Imagine your class wants to know what happened at recess. One student says, “I heard a wild story from someone who heard it from someone else.” Another says, “I was there. I saw it. I wrote it down the same day. Other people who were there can tell you too.” Which report should you take more seriously?
           </p>
@@ -265,22 +265,22 @@ export default function CaseForChristBiblePage() {
         </div>
 
         <div style={{ ...panelStyle('#ffffff'), marginTop: 30 }}>
-          <p className="eyebrow">Honest Answers</p>
-          <h2 style={headingStyle}>What about hard questions?</h2>
+          <p className="eyebrow">{isRu ? 'Честные ответы' : 'Honest Answers'}</p>
+          <h2 style={headingStyle}>{isRu ? 'А как быть с трудными вопросами?' : 'What about hard questions?'}</h2>
           <p style={bodyStyle}>
             Trusting the Bible does not mean every question disappears in five seconds. It means we bring questions into the light instead of hiding them. Christians can study ancient languages, manuscripts, history, archaeology, and theology because all truth belongs to God.
           </p>
           <ul style={{ ...bodyStyle, paddingLeft: 22 }}>
-            <li><strong>Translations:</strong> The Bible was written mostly in Hebrew, Aramaic, and Greek. Good translations help us read those words in our language.</li>
-            <li><strong>Copying differences:</strong> Handwritten copies sometimes have small differences, but comparing many copies helps scholars see what was originally written.</li>
-            <li><strong>Miracles:</strong> If God made the world, then miracles are not impossible. The question is whether God gave good witnesses.</li>
-            <li><strong>Faith:</strong> Biblical faith is not make-believe. It is trusting the God who tells the truth.</li>
+            <li><strong>{isRu ? 'Переводы' : 'Translations'}:</strong> {isRu ? 'Библия была написана в основном на еврейском, арамейском и греческом языках. Хорошие переводы помогают нам читать эти слова на нашем языке.' : 'The Bible was written mostly in Hebrew, Aramaic, and Greek. Good translations help us read those words in our language.'}</li>
+            <li><strong>{isRu ? 'Различия в копиях' : 'Copying differences'}:</strong> {isRu ? 'В рукописных копиях иногда есть маленькие различия, но сравнение многих копий помогает учёным увидеть, что было написано изначально.' : 'Handwritten copies sometimes have small differences, but comparing many copies helps scholars see what was originally written.'}</li>
+            <li><strong>{isRu ? 'Чудеса' : 'Miracles'}:</strong> {isRu ? 'Если Бог сотворил мир, чудеса не невозможны. Вопрос в том, дал ли Бог надёжных свидетелей.' : 'If God made the world, then miracles are not impossible. The question is whether God gave good witnesses.'}</li>
+            <li><strong>{isRu ? 'Вера' : 'Faith'}:</strong> {isRu ? 'Библейская вера — не выдумка. Это доверие Богу, Который говорит истину.' : 'Biblical faith is not make-believe. It is trusting the God who tells the truth.'}</li>
           </ul>
         </div>
 
         <div style={{ marginTop: 30 }}>
-          <p className="eyebrow">Detective Check</p>
-          <h2 style={headingStyle}>Choose the strongest answer</h2>
+          <p className="eyebrow">{isRu ? 'Проверка детектива' : 'Detective Check'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Выбери самый сильный ответ' : 'Choose the strongest answer'}</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             {quiz.map((item, index) => (
               <div key={item.question} style={panelStyle('#fff')}>
@@ -303,7 +303,7 @@ export default function CaseForChristBiblePage() {
                 </div>
                 {answers[index] !== undefined && (
                   <p style={{ ...bodyStyle, marginTop: 12, fontWeight: 800, color: answers[index] === item.correct ? '#1f7a35' : '#a33a10' }}>
-                    {answers[index] === item.correct ? 'Good detective work.' : 'Not quite. Look back at the evidence trail and try again.'}
+                    {answers[index] === item.correct ? (isRu ? 'Хорошая работа, детектив.' : 'Good detective work.') : (isRu ? 'Не совсем. Посмотри ещё раз на след доказательств и попробуй снова.' : 'Not quite. Look back at the evidence trail and try again.')}
                   </p>
                 )}
               </div>
@@ -312,8 +312,8 @@ export default function CaseForChristBiblePage() {
         </div>
 
         <div style={{ ...panelStyle('#fff7d6'), marginTop: 30 }}>
-          <p className="eyebrow">Parent / Teacher Guide</p>
-          <h2 style={headingStyle}>Guide honest questions into the light</h2>
+          <p className="eyebrow">{isRu ? 'Для родителей и учителя' : 'Parent / Teacher Guide'}</p>
+          <h2 style={headingStyle}>{isRu ? 'Помогите честным вопросам выйти на свет' : 'Guide honest questions into the light'}</h2>
           <ul style={{ ...bodyStyle, paddingLeft: 22 }}>
             <li>Faith does not mean believing with no reasons. Faith means trusting God, and God has given us good reasons.</li>
             <li>Questions are not something to hide. Honest questions can help children learn truth with humility.</li>
@@ -326,7 +326,7 @@ export default function CaseForChristBiblePage() {
             Father, thank You for giving us Your Word. Help us listen carefully, ask honest questions, and trust what is true. Thank You for sending Jesus and for preserving the good news about Him. Teach us to love Your Word and obey You with glad hearts. In Jesus’ name, amen.
           </p>
           <Link href="/lessons" style={{ display: 'inline-block', marginTop: 16, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#0d3a6a', textDecoration: 'none' }}>
-            ← Back to Lessons
+            ← {isRu ? 'Назад к урокам' : 'Back to Lessons'}
           </Link>
         </div>
       </section>
