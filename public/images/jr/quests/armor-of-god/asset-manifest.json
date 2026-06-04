@@ -1,0 +1,18 @@
+{
+  "slug": "armor-of-god",
+  "assets": [
+    "00-cover-armor-of-god.svg",
+    "01-scene-truth-belt.svg",
+    "02-scene-faith-shield.svg",
+    "03-scene-salvation-helmet.svg",
+    "04-scene-word-sword.svg",
+    "05-badge-armor-of-god.svg"
+  ],
+  "promptFiles": [
+    "00-cover.md",
+    "01-truth-belt.md",
+    "02-faith-shield.md",
+    "03-salvation-helmet.md",
+    "04-word-sword.md"
+  ]
+}

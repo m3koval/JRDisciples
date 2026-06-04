@@ -1,0 +1,18 @@
+{
+  "slug": "lost-sheep",
+  "assets": [
+    "00-cover-lost-sheep.svg",
+    "01-scene-counting-sheep.svg",
+    "02-scene-hill-trail.svg",
+    "03-scene-lamb-found.svg",
+    "04-scene-joy-home.svg",
+    "05-badge-lost-sheep.svg"
+  ],
+  "promptFiles": [
+    "00-cover.md",
+    "01-counting-sheep.md",
+    "02-hill-trail.md",
+    "03-lamb-found.md",
+    "04-joy-home.md"
+  ]
+}

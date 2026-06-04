@@ -5,6 +5,10 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const questArt = {
   hub: '/images/jr/quests/quest-hub-map.png',
+  fruit: '/images/jr/quests/fruit-of-spirit/00-cover-fruit-of-spirit.svg',
+  armor: '/images/jr/quests/armor-of-god/00-cover-armor-of-god.svg',
+  samaritan: '/images/jr/quests/good-samaritan/00-cover-good-samaritan.svg',
+  lostSheep: '/images/jr/quests/lost-sheep/00-cover-lost-sheep.svg',
   courage: '/images/jr/quests/courage-quest/00-cover-courage-quest.png',
   forgiveness: '/images/jr/quests/forgiveness-bridge/00-cover-forgiveness-bridge.png',
   forest: '/images/jr/quests/forest-of-lies/00-cover-forest-of-lies.png',
@@ -25,6 +29,38 @@ const copy = {
     back: 'Back to Home',
     start: 'Start Quest',
     quests: [
+      {
+        href: '/quests/fruit-of-spirit',
+        image: questArt.fruit,
+        title: "Fruit of the Spirit Quest",
+        desc: "Enter the garden, choose Spirit-grown responses, and learn how God grows love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control.",
+        truth: "Big truth: The Holy Spirit grows Jesus-like character in me.",
+        verse: "Galatians 5:22–23",
+      },
+      {
+        href: '/quests/armor-of-god',
+        image: questArt.armor,
+        title: "Armor of God Quest",
+        desc: "Stand firm in the canyon, lift the shield of faith, take up God’s Word, and learn that God gives His people what they need for spiritual battles.",
+        truth: "Big truth: God helps me stand firm in His strength.",
+        verse: "Ephesians 6:10–18",
+      },
+      {
+        href: '/quests/good-samaritan',
+        image: questArt.samaritan,
+        title: "Good Samaritan Quest",
+        desc: "Walk Mercy Road, stop for a hurting neighbor, and learn that love is not only a feeling — it becomes costly kindness.",
+        truth: "Big truth: Jesus teaches me to love my neighbor with mercy.",
+        verse: "Luke 10:25–37",
+      },
+      {
+        href: '/quests/lost-sheep',
+        image: questArt.lostSheep,
+        title: "Lost Sheep Quest",
+        desc: "Follow the shepherd’s light through hills and thorns, find the wandering lamb, and learn that Jesus seeks and saves the lost.",
+        truth: "Big truth: Jesus seeks lost sinners and rejoices to bring them home.",
+        verse: "Luke 15:3–7",
+      },
       {
         href: '/quests/courage-quest',
         image: questArt.courage,
@@ -79,6 +115,38 @@ const copy = {
     back: 'Назад на главную',
     start: 'Начать квест',
     quests: [
+      {
+        href: '/quests/fruit-of-spirit',
+        image: questArt.fruit,
+        title: "Квест плода Духа",
+        desc: "Войди в сад, выбирай поступки, которые растит Дух, и узнай о любви, радости, мире, долготерпении, благости, милосердии, вере, кротости и воздержании.",
+        truth: "Главная истина: Святой Дух растит во мне характер, похожий на Иисуса.",
+        verse: "Галатам 5:22–23",
+      },
+      {
+        href: '/quests/armor-of-god',
+        image: questArt.armor,
+        title: "Квест всеоружия Божьего",
+        desc: "Стой крепко в ущелье, подними щит веры, возьми Божье Слово и узнай, что Бог даёт Своему народу всё нужное для духовной борьбы.",
+        truth: "Главная истина: Бог помогает мне стоять крепко Его силой.",
+        verse: "Ефесянам 6:10–18",
+      },
+      {
+        href: '/quests/good-samaritan',
+        image: questArt.samaritan,
+        title: "Квест доброго самарянина",
+        desc: "Иди по Дороге милости, остановись ради нуждающегося ближнего и узнай, что любовь — это не только чувство, а добрая помощь.",
+        truth: "Главная истина: Иисус учит меня любить ближнего с милостью.",
+        verse: "Луки 10:25–37",
+      },
+      {
+        href: '/quests/lost-sheep',
+        image: questArt.lostSheep,
+        title: "Квест потерянной овечки",
+        desc: "Иди за светом пастыря через холмы и колючки, найди заблудившегося ягнёнка и узнай, что Иисус ищет и спасает погибшее.",
+        truth: "Главная истина: Иисус ищет погибших грешников и радуется, возвращая их домой.",
+        verse: "Луки 15:3–7",
+      },
       {
         href: '/quests/courage-quest',
         image: questArt.courage,

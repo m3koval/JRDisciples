@@ -1,0 +1,18 @@
+{
+  "slug": "good-samaritan",
+  "assets": [
+    "00-cover-good-samaritan.svg",
+    "01-scene-road-question.svg",
+    "02-scene-hurting-traveler.svg",
+    "03-scene-oil-bandage.svg",
+    "04-scene-inn-care.svg",
+    "05-badge-good-samaritan.svg"
+  ],
+  "promptFiles": [
+    "00-cover.md",
+    "01-road-question.md",
+    "02-hurting-traveler.md",
+    "03-oil-bandage.md",
+    "04-inn-care.md"
+  ]
+}
