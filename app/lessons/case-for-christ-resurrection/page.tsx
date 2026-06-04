@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
+import { useLanguage } from '@/context/LanguageContext'
 
 const witnesses = [
   {
@@ -56,9 +57,25 @@ const questions = [
   },
 ]
 
+const scriptureEn = {
+  corinthians: 'For I delivered to you as of first importance what I also received: that Christ died for our sins in accordance with the Scriptures, that he was buried, that he was raised on the third day in accordance with the Scriptures, and that he appeared to Cephas, then to the twelve. Then he appeared to more than five hundred brothers at one time, most of whom are still alive, though some have fallen asleep. Then he appeared to James, then to all the apostles. Last of all, as to one untimely born, he appeared also to me.',
+  corinthiansRef: '1 Corinthians 15:3–8 (ESV)',
+  thomas: 'Then he said to Thomas, "Put your finger here, and see my hands; and put out your hand, and place it in my side. Do not disbelieve, but believe." Thomas answered him, "My Lord and my God!" Jesus said to him, "Have you believed because you have seen me? Blessed are those who have not seen and yet have believed."',
+  thomasRef: 'John 20:27–29 (ESV)',
+}
+
+const scriptureRu = {
+  corinthians: 'Ибо я первоначально преподал вам, что и сам принял, то есть, что Христос умер за грехи наши, по Писанию, и что Он погребен был, и что воскрес в третий день, по Писанию, и что явился Кифе, потом двенадцати; потом явился более нежели пятистам братий в одно время, из которых бо́льшая часть доныне в живых, а некоторые и почили; потом явился Иакову, также всем Апостолам; а после всех явился и мне, как некоему извергу.',
+  corinthiansRef: '1-е Коринфянам 15:3–8 (Синодальный перевод)',
+  thomas: 'Потом говорит Фоме: подай перст твой сюда и посмотри руки Мои; подай руку твою и вложи в ребра Мои; и не будь неверующим, но верующим. Фома сказал Ему в ответ: Господь мой и Бог мой! Иисус говорит ему: ты поверил, потому что увидел Меня; блаженны невидевшие и уверовавшие.',
+  thomasRef: 'От Иоанна 20:27–29 (Синодальный перевод)',
+}
+
 export default function CaseForChristResurrectionPage() {
+  const { language } = useLanguage()
   const [opened, setOpened] = useState<Record<number, boolean>>({})
   const [answers, setAnswers] = useState<Record<number, number>>({})
+  const scripture = language === 'ru' ? scriptureRu : scriptureEn
 
   const progress = useMemo(() => {
     const witnessCount = Object.values(opened).filter(Boolean).length
@@ -92,9 +109,13 @@ export default function CaseForChristResurrectionPage() {
       <section style={{ maxWidth: 980, margin: '0 auto', padding: '42px 18px' }}>
         <div style={panelStyle('#ffffff')}>
           <p className="eyebrow">Big Question</p>
-          <h2 style={headingStyle}>Did Jesus rise, or did His friends only wish it was true?</h2>
+          <h2 style={headingStyle}>
+            {language === 'ru' ? 'Воскрес ли Иисус на самом деле или Его друзья просто желали этого?' : 'Did Jesus rise, or did His friends only wish it was true?'}
+          </h2>
           <p style={bodyStyle}>
-            The Bible does not tell kids to pretend questions are silly. Thomas had a serious question. Paul named real witnesses. God invites us to look carefully, listen humbly, and trust the risen Jesus.
+            {language === 'ru'
+              ? 'Библия не говорит детям делать вид, что вопросы глупы. Фома задавал серьёзные вопросы. Павел называл реальных свидетелей. Бог призывает нас внимательно смотреть, смиренно слушать и доверять воскресшему Иисусу.'
+              : 'The Bible does not tell kids to pretend questions are silly. Thomas had a serious question. Paul named real witnesses. God invites us to look carefully, listen humbly, and trust the risen Jesus.'}
           </p>
         </div>
 
@@ -102,12 +123,12 @@ export default function CaseForChristResurrectionPage() {
           <p className="eyebrow">Bible Anchor</p>
           <h2 style={headingStyle}>Death, burial, resurrection, appearances</h2>
           <blockquote style={quoteStyle}>
-            For I delivered to you first of all that which I also received: that Christ died for our sins according to the Scriptures, that he was buried, that he was raised on the third day according to the Scriptures, and that he appeared to Cephas, then to the twelve.
-            <footer style={quoteRefStyle}>1 Corinthians 15:3-5, WEB</footer>
+            {scripture.corinthians}
+            <footer style={quoteRefStyle}>{scripture.corinthiansRef}</footer>
           </blockquote>
           <blockquote style={quoteStyle}>
-            Thomas answered him, “My Lord and my God!” Jesus said to him, “Because you have seen me, you have believed. Blessed are those who have not seen, and have believed.”
-            <footer style={quoteRefStyle}>John 20:28-29, WEB</footer>
+            {scripture.thomas}
+            <footer style={quoteRefStyle}>{scripture.thomasRef}</footer>
           </blockquote>
         </div>
 

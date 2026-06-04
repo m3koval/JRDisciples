@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
+import { useLanguage } from '@/context/LanguageContext'
 
 const identityCards = [
   {
@@ -90,9 +91,29 @@ const visuals = [
   },
 ]
 
+const scriptureEn = {
+  matthew: 'He said to them, "But who do you say that I am?" Simon Peter replied, "You are the Christ, the Son of the living God."',
+  matthewRef: 'Matthew 16:15–16 (ESV)',
+  johnOne: 'In the beginning was the Word, and the Word was with God, and the Word was God. And the Word became flesh and dwelt among us, and we have seen his glory, glory as of the only Son from the Father, full of grace and truth.',
+  johnOneRef: 'John 1:1, 14 (ESV)',
+  johnTwenty: 'but these are written so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in his name.',
+  johnTwentyRef: 'John 20:31 (ESV)',
+}
+
+const scriptureRu = {
+  matthew: 'Он говорит им: а вы за кого почитаете Меня? Симон же Петр, отвечая, сказал: Ты — Христос, Сын Бога Живаго.',
+  matthewRef: 'От Матфея 16:15–16 (Синодальный перевод)',
+  johnOne: 'В начале было Слово, и Слово было у Бога, и Слово было Бог. И Слово стало плотию, и обитало с нами, полное благодати и истины; и мы видели славу Его, славу, как Единородного от Отца.',
+  johnOneRef: 'От Иоанна 1:1, 14 (Синодальный перевод)',
+  johnTwenty: 'Сие же написано, дабы вы уверовали, что Иисус есть Христос, Сын Божий, и, веруя, имели жизнь во имя Его.',
+  johnTwentyRef: 'От Иоанна 20:31 (Синодальный перевод)',
+}
+
 export default function CaseForChristGodsSonPage() {
+  const { language } = useLanguage()
   const [opened, setOpened] = useState<Record<number, boolean>>({})
   const [answers, setAnswers] = useState<Record<number, number>>({})
+  const scripture = language === 'ru' ? scriptureRu : scriptureEn
 
   const progress = useMemo(() => {
     const openedCards = Object.values(opened).filter(Boolean).length
@@ -127,12 +148,18 @@ export default function CaseForChristGodsSonPage() {
       <section style={{ maxWidth: 1040, margin: '0 auto', padding: '42px 18px' }}>
         <div style={panelStyle('#ffffff')}>
           <p className="eyebrow">Big Question</p>
-          <h2 style={headingStyle}>Is Jesus really God&apos;s Son, and what does that mean?</h2>
+          <h2 style={headingStyle}>
+            {language === 'ru' ? 'Действительно ли Иисус — Сын Божий, и что это значит?' : 'Is Jesus really God\'s Son, and what does that mean?'}
+          </h2>
           <p style={bodyStyle}>
-            Jesus is the Son of God: He is truly God, truly became human, and perfectly shows us the Father. “Son of God” does not mean Jesus was created by God or became God later.
+            {language === 'ru'
+              ? 'Иисус — Сын Божий: Он истинно Бог, стал истинно человеком и совершенно показывает нам Отца. «Сын Божий» не означает, что Иисус был создан Богом или стал Богом позднее.'
+              : 'Jesus is the Son of God: He is truly God, truly became human, and perfectly shows us the Father. "Son of God" does not mean Jesus was created by God or became God later.'}
           </p>
           <p style={{ ...bodyStyle, fontWeight: 900, color: '#4b2a7b' }}>
-            Child recap: Jesus is God the Son. He was never created. He became human to save us.
+            {language === 'ru'
+              ? 'Для детей: Иисус — Бог Сын. Он никогда не был создан. Он стал человеком, чтобы спасти нас.'
+              : 'Child recap: Jesus is God the Son. He was never created. He became human to save us.'}
           </p>
         </div>
 
@@ -140,16 +167,16 @@ export default function CaseForChristGodsSonPage() {
           <p className="eyebrow">Bible Anchor</p>
           <h2 style={headingStyle}>Peter&apos;s confession and John&apos;s testimony</h2>
           <blockquote style={quoteStyle}>
-            Simon Peter answered, “You are the Christ, the Son of the living God.” Jesus answered him, “Blessed are you, Simon Bar Jonah, for flesh and blood has not revealed this to you, but my Father who is in heaven.”
-            <footer style={quoteRefStyle}>Matthew 16:16-17, WEB</footer>
+            {scripture.matthew}
+            <footer style={quoteRefStyle}>{scripture.matthewRef}</footer>
           </blockquote>
           <blockquote style={quoteStyle}>
-            In the beginning was the Word, and the Word was with God, and the Word was God. The Word became flesh, and lived among us.
-            <footer style={quoteRefStyle}>John 1:1, 14, WEB</footer>
+            {scripture.johnOne}
+            <footer style={quoteRefStyle}>{scripture.johnOneRef}</footer>
           </blockquote>
           <blockquote style={quoteStyle}>
-            but these are written, that you may believe that Jesus is the Christ, the Son of God, and that believing you may have life in his name.
-            <footer style={quoteRefStyle}>John 20:31, WEB</footer>
+            {scripture.johnTwenty}
+            <footer style={quoteRefStyle}>{scripture.johnTwentyRef}</footer>
           </blockquote>
         </div>
 

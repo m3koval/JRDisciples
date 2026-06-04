@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
+import { useLanguage } from '@/context/LanguageContext'
 
 type EvidenceCard = {
   title: string
@@ -83,9 +84,33 @@ const quiz = [
   },
 ]
 
+const scriptureEn = {
+  luke: 'Inasmuch as many have undertaken to compile a narrative of the things that have been accomplished among us, just as those who from the beginning were eyewitnesses and ministers of the word have delivered them to us, it seemed good to me also, having followed all things closely for some time past, to write an orderly account for you, most excellent Theophilus, that you may have certainty concerning the things you have been taught.',
+  lukeRef: 'Luke 1:1–4 (ESV)',
+  timothy: 'All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness',
+  timothyRef: '2 Timothy 3:16 (ESV)',
+  peter: 'For we did not follow cleverly devised myths when we made known to you the power and coming of our Lord Jesus Christ, but we were eyewitnesses of his majesty.',
+  peterRef: '2 Peter 1:16 (ESV)',
+  corinthians: 'Then he appeared to more than five hundred brothers at one time, most of whom are still alive, though some have fallen asleep.',
+  corinthiansRef: '1 Corinthians 15:6 (ESV)',
+}
+
+const scriptureRu = {
+  luke: 'Как уже многие начали составлять повествования о совершенно известных между нами событиях, как передали нам то́ бывшие с самого начала очевидцами и служителями Слова, то рассудилось и мне, по тщательном исследовании всего сначала, по порядку описать тебе, достопочтенный Феофил, чтобы ты узнал твердое основание того учения, в котором был наставлен.',
+  lukeRef: 'От Луки 1:1–4 (Синодальный перевод)',
+  timothy: 'Все Писание богодухновенно и полезно для научения, для обличения, для исправления, для наставления в праведности',
+  timothyRef: '2-е Тимофею 3:16 (Синодальный перевод)',
+  peter: 'Ибо мы возвестили вам силу и пришествие Господа нашего Иисуса Христа, не хитросплетенным басням последуя, но быв очевидцами Его величия.',
+  peterRef: '2-е Петра 1:16 (Синодальный перевод)',
+  corinthians: 'потом явился более нежели пятистам братий в одно время, из которых бо́льшая часть доныне в живых, а некоторые и почили',
+  corinthiansRef: '1-е Коринфянам 15:6 (Синодальный перевод)',
+}
+
 export default function CaseForChristBiblePage() {
+  const { language } = useLanguage()
   const [flipped, setFlipped] = useState<Record<number, boolean>>({})
   const [answers, setAnswers] = useState<Record<number, number>>({})
+  const scripture = language === 'ru' ? scriptureRu : scriptureEn
 
   const completeCount = useMemo(() => {
     const cards = Object.values(flipped).filter(Boolean).length
@@ -122,12 +147,18 @@ export default function CaseForChristBiblePage() {
       <section style={{ maxWidth: 980, margin: '0 auto', padding: '42px 18px' }}>
         <div style={panelStyle('#ffffff')}>
           <p className="eyebrow">Big Question</p>
-          <h2 style={headingStyle}>Can we trust the Bible, or is it just a made-up story?</h2>
+          <h2 style={headingStyle}>
+            {language === 'ru' ? 'Можно ли доверять Библии или это просто выдумка?' : 'Can we trust the Bible, or is it just a made-up story?'}
+          </h2>
           <p style={bodyStyle}>
-            We can trust the Bible because God gave His Word, and He used real people, real history, eyewitness testimony, and careful copying to preserve it for us.
+            {language === 'ru'
+              ? 'Мы можем доверять Библии, потому что Бог дал нам Своё Слово, используя реальных людей, реальную историю, свидетельства очевидцев и тщательное переписывание, чтобы сохранить его для нас.'
+              : 'We can trust the Bible because God gave His Word, and He used real people, real history, eyewitness testimony, and careful copying to preserve it for us.'}
           </p>
           <p style={bodyStyle}>
-            That does not mean every question is easy. It means Christians do not believe the Bible because we are pretending. We have good reasons to listen to it, study it, and build our lives on what God says.
+            {language === 'ru'
+              ? 'Это не значит, что каждый вопрос решается легко. Это значит, что христиане верят Библии не потому, что притворяются. У нас есть веские причины слушать её, изучать её и строить свою жизнь на том, что говорит Бог.'
+              : 'That does not mean every question is easy. It means Christians do not believe the Bible because we are pretending. We have good reasons to listen to it, study it, and build our lives on what God says.'}
           </p>
           <p style={bodyStyle}>
             This lesson does not ask kids to believe a thin answer like, “Just trust it.” It opens a case file: What kind of book is the Bible? Who wrote about Jesus? Were there witnesses? Were the words preserved carefully? What does Scripture say about itself?
@@ -187,29 +218,29 @@ export default function CaseForChristBiblePage() {
           <p className="eyebrow">Bible Anchor</p>
           <h2 style={headingStyle}>Luke carefully checked the story</h2>
           <blockquote style={quoteStyle}>
-            Since many have undertaken to set in order a narrative concerning those matters which have been fulfilled among us, even as those who from the beginning were eyewitnesses and servants of the word delivered them to us, it seemed good to me also, having traced the course of all things accurately from the first, to write to you in order, most excellent Theophilus; that you might know the certainty concerning the things in which you were instructed.
-            <footer style={quoteRefStyle}>Luke 1:1–4, WEB</footer>
+            {scripture.luke}
+            <footer style={quoteRefStyle}>{scripture.lukeRef}</footer>
           </blockquote>
           <p style={bodyStyle}>
             Luke was not saying, “Believe this because I said so.” He was saying, “This has been carefully checked.”
           </p>
           <blockquote style={quoteStyle}>
-            Every Scripture is God-breathed and profitable for teaching, for reproof, for correction, and for instruction in righteousness,
-            <footer style={quoteRefStyle}>2 Timothy 3:16, WEB</footer>
+            {scripture.timothy}
+            <footer style={quoteRefStyle}>{scripture.timothyRef}</footer>
           </blockquote>
           <p style={bodyStyle}>
             Scripture is not only a human book. God worked through human writers so His people would have His true Word.
           </p>
           <blockquote style={quoteStyle}>
-            For we did not follow cunningly devised fables, when we made known to you the power and coming of our Lord Jesus Christ, but we were eyewitnesses of his majesty.
-            <footer style={quoteRefStyle}>2 Peter 1:16, WEB</footer>
+            {scripture.peter}
+            <footer style={quoteRefStyle}>{scripture.peterRef}</footer>
           </blockquote>
           <p style={bodyStyle}>
             Peter says the apostles were not spreading clever myths. They were telling what they saw.
           </p>
           <blockquote style={quoteStyle}>
-            Then he appeared to over five hundred brothers at once, most of whom remain until now, but some have also fallen asleep.
-            <footer style={quoteRefStyle}>1 Corinthians 15:6, WEB</footer>
+            {scripture.corinthians}
+            <footer style={quoteRefStyle}>{scripture.corinthiansRef}</footer>
           </blockquote>
           <p style={bodyStyle}>
             Paul pointed to living witnesses. In other words: “You can check this.” That is not how people usually talk when they are inventing a secret story.
