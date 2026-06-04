@@ -36,6 +36,21 @@ const lessonsRu = read('data/lessons-ru.ts')
 const storiesEn = read('data/stories.ts')
 const storiesRu = read('data/stories-ru.ts')
 
+const parityFiles = [
+  ['quiz data', 'data/quizzes.ts', 'data/quizzes-ru.ts'],
+  ['memory verse data', 'data/memory-verses.ts', 'data/memory-verses-ru.ts'],
+  ['word puzzle data', 'data/word-puzzles.ts', 'data/word-puzzles-ru.ts'],
+  ['rebus data', 'data/rebus.ts', 'data/rebus-ru.ts'],
+]
+
+function topLevelIds(text) {
+  return matchAll(text, /^    id:\s*["']([^"']+)["'],/gm)
+}
+
+function imagePaths(text) {
+  return matchAll(text, /image:\s*["']([^"']+)["']/g)
+}
+
 const lessonHrefsEn = matchAll(lessonsEn, /href:\s*["'](\/lessons\/[A-Za-z0-9/_-]+)["']/g)
 const lessonHrefsRu = matchAll(lessonsRu, /href:\s*["'](\/lessons\/[A-Za-z0-9/_-]+)["']/g)
 assertSameSet('lesson topic cards', lessonHrefsEn, lessonHrefsRu)
@@ -43,6 +58,23 @@ assertSameSet('lesson topic cards', lessonHrefsEn, lessonHrefsRu)
 const storyIdsEn = matchAll(storiesEn, /\bid:\s*["']([^"']+)["']/g)
 const storyIdsRu = matchAll(storiesRu, /\bid:\s*["']([^"']+)["']/g)
 assertSameSet('story data', storyIdsEn, storyIdsRu)
+
+for (const [label, enPath, ruPath] of parityFiles) {
+  assertSameSet(label, topLevelIds(read(enPath)), topLevelIds(read(ruPath)))
+}
+
+for (const [label, text] of [
+  ['lesson cards EN', lessonsEn],
+  ['lesson cards RU', lessonsRu],
+  ['story data EN', storiesEn],
+  ['story data RU', storiesRu],
+]) {
+  for (const image of imagePaths(text)) {
+    if (image.startsWith('/') && !fs.existsSync(path.join(root, 'public', image.slice(1)))) {
+      failures.push(`${label}: missing image asset ${image}`)
+    }
+  }
+}
 
 if (cyrillicCount(storiesRu) < 500) {
   failures.push('story data: Russian story file does not contain enough Cyrillic content to satisfy bilingual parity')
@@ -84,7 +116,6 @@ for (const href of unique(lessonHrefsEn)) {
 
 for (const href of unique(lessonHrefsRu)) {
   if (!lessonHrefsEn.includes(href)) continue
-  const slug = href.replace('/lessons/', '')
   const cardStart = lessonsRu.indexOf(`href: "${href}"`)
   const cardBlock = cardStart >= 0 ? lessonsRu.slice(Math.max(0, cardStart - 300), cardStart + 900) : ''
   if (cyrillicCount(cardBlock) < 50) {
@@ -98,4 +129,4 @@ if (failures.length) {
   process.exit(1)
 }
 
-console.log(`Bilingual content parity checks passed for ${unique(lessonHrefsEn).length} lessons and ${unique(storyIdsEn).length} stories.`)
+console.log(`Bilingual content parity checks passed for ${unique(lessonHrefsEn).length} lessons, ${unique(storyIdsEn).length} stories, and core activity data.`)

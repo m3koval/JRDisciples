@@ -16,7 +16,7 @@ export interface Quiz {
 
 export const quizzesRu: Quiz[] = [
   {
-    id: "quiz-creation-ru",
+    id: "quiz-creation",
     storyId: "creation",
     title: "Тест: Бог творит всё",
     emoji: "🌍",
@@ -74,7 +74,7 @@ export const quizzesRu: Quiz[] = [
     ],
   },
   {
-    id: "quiz-noah-ru",
+    id: "quiz-noah",
     storyId: "noah",
     title: "Тест: Ной и Великий Потоп",
     emoji: "🌈",
@@ -122,7 +122,7 @@ export const quizzesRu: Quiz[] = [
     ],
   },
   {
-    id: "quiz-joseph-ru",
+    id: "quiz-joseph",
     storyId: "joseph",
     title: "Тест: Иосиф и его братья",
     emoji: "👑",
@@ -180,7 +180,7 @@ export const quizzesRu: Quiz[] = [
     ],
   },
   {
-    id: "quiz-david-goliath-ru",
+    id: "quiz-david-goliath",
     storyId: "david-goliath",
     title: "Тест: Давид и Голиаф",
     emoji: "⚔️",
@@ -248,7 +248,7 @@ export const quizzesRu: Quiz[] = [
     ],
   },
   {
-    id: "quiz-jonah-ru",
+    id: "quiz-jonah",
     storyId: "jonah",
     title: "Тест: Иона и кит",
     emoji: "🐋",
@@ -316,7 +316,7 @@ export const quizzesRu: Quiz[] = [
     ],
   },
   {
-    id: "quiz-jesus-birth-ru",
+    id: "quiz-birth-of-jesus",
     storyId: "birth-of-jesus",
     title: "Тест: Рождение Иисуса",
     emoji: "👶",

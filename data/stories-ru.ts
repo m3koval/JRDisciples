@@ -68,7 +68,7 @@ export const storiesRu: Story[] = [
     id: "david-goliath",
     title: "Давид и Голиаф",
     emoji: "⚔️",
-    image: "/images/jr/story-david-goliath.png",
+    image: "/images/jr/story-david.png",
     reference: "1 Царств 17",
     ageNote: "Для детей 7-10 лет",
     summary: [

@@ -9,7 +9,7 @@ export interface RebusPuzzle {
 
 export const rebusRu: RebusPuzzle[] = [
   {
-    id: "rebus-vera-ru",
+    id: "rebus-believe",
     title: "Ребус 1: Доверие Богу",
     emoji: "✝️",
     clues: [
@@ -23,7 +23,7 @@ export const rebusRu: RebusPuzzle[] = [
     hint: "Доверие Богу и Его слову — Евреям 11:1 (🐪 = ВЕРБЛЮД)"
   },
   {
-    id: "rebus-mir-ru",
+    id: "rebus-worship",
     title: "Ребус 2: Дар Бога нашему сердцу",
     emoji: "🕊️",
     clues: [
@@ -33,7 +33,7 @@ export const rebusRu: RebusPuzzle[] = [
     hint: "Мир Бога превышает всякое понимание — Филиппийцам 4:7"
   },
   {
-    id: "rebus-krest-ru",
+    id: "rebus-servant",
     title: "Ребус 3: Символ спасения",
     emoji: "✝️",
     clues: [
@@ -47,7 +47,7 @@ export const rebusRu: RebusPuzzle[] = [
     hint: "Иисус умер на кресте ради нас — Иоанна 3:16 (🛋️ = КРЕСЛО)"
   },
   {
-    id: "rebus-nadezhda-ru",
+    id: "rebus-offering",
     title: "Ребус 4: Уверенность в Боге",
     emoji: "✨",
     clues: [
@@ -61,7 +61,7 @@ export const rebusRu: RebusPuzzle[] = [
     hint: "Надежда на Бога никогда не подведёт — Римлянам 5:5 (🦔 = ЕЖ)"
   },
   {
-    id: "rebus-molitva-ru",
+    id: "rebus-covenant",
     title: "Ребус 5: Разговор с Богом",
     emoji: "🙏",
     clues: [
@@ -75,7 +75,7 @@ export const rebusRu: RebusPuzzle[] = [
     hint: "Молитесь непрестанно — 1 Фессалоникийцам 5:17 (⚡ = МОЛНИЯ)"
   },
   {
-    id: "rebus-slovo-ru",
+    id: "rebus-kingdom",
     title: "Ребус 6: Библия — Слово Бога",
     emoji: "📖",
     clues: [
@@ -89,7 +89,7 @@ export const rebusRu: RebusPuzzle[] = [
     hint: "Слово Бога — светильник ноге моей — Псалом 118:105 (🐘 = СЛОН)"
   },
   {
-    id: "rebus-radost-ru",
+    id: "rebus-grace",
     title: "Ребус 7: Радость в Господе",
     emoji: "😊",
     clues: [
@@ -103,7 +103,7 @@ export const rebusRu: RebusPuzzle[] = [
     hint: "Радуйтесь всегда в Господе — Филиппийцам 4:4 (📻 = РАДИО)"
   },
   {
-    id: "rebus-terpenie-ru",
+    id: "rebus-holy",
     title: "Ребус 8: Терпение и стойкость",
     emoji: "⏳",
     clues: [
@@ -115,7 +115,7 @@ export const rebusRu: RebusPuzzle[] = [
     hint: "В терпении вашем спасайте души ваши — Лука 21:19 (🎵 = ПЕНИЕ)"
   },
   {
-    id: "rebus-svyatoy-ru",
+    id: "rebus-repent",
     title: "Ребус 9: Чистота перед Богом",
     emoji: "✨",
     clues: [
@@ -129,7 +129,7 @@ export const rebusRu: RebusPuzzle[] = [
     hint: "Будьте святы, ибо Я свят — 1 Петра 1:16 (💡 = СВЕТ)"
   },
   {
-    id: "rebus-pokayanie-ru",
+    id: "rebus-promise",
     title: "Ребус 10: Возвращение к Богу",
     emoji: "↩️",
     clues: [
@@ -143,7 +143,7 @@ export const rebusRu: RebusPuzzle[] = [
     hint: "Покайтесь и обратитесь к Богу — Деяния 3:19 (🌾 = ПОЛЕ)"
   },
   {
-    id: "rebus-pastyr-ru",
+    id: "rebus-eternal",
     title: "Ребус 11: Иисус — Добрый...",
     emoji: "🐑",
     clues: [
@@ -157,7 +157,7 @@ export const rebusRu: RebusPuzzle[] = [
     hint: "Я есмь пастырь добрый — Иоанна 10:11 (🍝 = ПАСТА)"
   },
   {
-    id: "rebus-mudrost-ru",
+    id: "rebus-forgive",
     title: "Ребус 12: Дар от Бога",
     emoji: "🦉",
     clues: [
