@@ -1,0 +1,22 @@
+{
+  "game": "david-sling-challenge-v2",
+  "status": "source-still-for-approval",
+  "assets": [
+    {
+      "id": "00-source-still",
+      "type": "visual-target-still",
+      "path": "/images/jr/games/david-sling-v2/generated/00-source-still.png",
+      "promptPath": "/images/jr/games/david-sling-v2/prompts/00-source-still.md",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9d1e01/GZlRm8HD_BBfFXA_uPh_D_EWG9kbuw.png",
+      "qa": {
+        "polished3dAnimatedStyle": true,
+        "brightChildSafeValley": true,
+        "davidLeftGiantRight": true,
+        "dottedTrajectoryVisible": true,
+        "noReadableTextOrLogosObserved": true,
+        "noGoreOrHorrorObserved": true,
+        "notes": "Strong source-still candidate for approval. Treat as art-direction anchor only; not wired into the live game yet."
+      }
+    }
+  ]
+}
