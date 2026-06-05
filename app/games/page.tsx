@@ -27,6 +27,16 @@ export default function GamesPage() {
 
   const games = isRu ? [
     {
+      href: '/games/faithful-archer',
+      emoji: '🏹✨',
+      label: 'Новая аркада',
+      title: 'Верный лучник',
+      desc: 'Тяни, целься и отпускай стрелу. Попадай в щиты, колокольчики и фонари, чтобы открывать Божью мудрость.',
+      details: ['тач-экран', 'меткость', 'рекорд', 'мудрость'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(255,226,122,.56),transparent 25%),linear-gradient(135deg,#2563eb,#166534)',
+      border: 'rgba(255,226,122,.92)'
+    },
+    {
       href: '/games/faith-over-giants',
       emoji: '🛡️🍇',
       label: 'Новая стратегия',
@@ -57,6 +67,16 @@ export default function GamesPage() {
       border: 'rgba(126,200,227,.82)'
     },
   ] : [
+    {
+      href: '/games/faithful-archer',
+      emoji: '🏹✨',
+      label: 'New Arcade',
+      title: 'Faithful Archer',
+      desc: 'Pull, aim, and release. Hit shields, bells, and lanterns to unlock Bible wisdom through the game loop.',
+      details: ['touch-screen', 'aim', 'best score', 'wisdom'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(255,226,122,.56),transparent 25%),linear-gradient(135deg,#2563eb,#166534)',
+      border: 'rgba(255,226,122,.92)'
+    },
     {
       href: '/games/faith-over-giants',
       emoji: '🛡️🍇',
