@@ -57,7 +57,7 @@ export default function DavidSlingChallengePage() {
   const [showWisdom, setShowWisdom] = useState(false)
   const releaseLock = useRef(false)
 
-  const level = LEVELS[levelIndex]
+  const level = LEVELS[Math.min(levelIndex, LEVELS.length - 1)]
   const isDone = started && (throwsLeft <= 0 || levelIndex >= LEVELS.length)
 
   const copy = isRu ? {
