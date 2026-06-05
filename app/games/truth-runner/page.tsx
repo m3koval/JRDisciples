@@ -8,7 +8,6 @@ import { useLanguage } from '@/context/LanguageContext'
 
 type Item = { id: number; x: number; y: number; kind: 'truth' | 'lie' }
 type Wisdom = { en: string; ru: string; refEn: string; refRu: string }
-type Direction = 'up' | 'down' | 'left' | 'right'
 
 const WISDOM: Wisdom[] = [
   {
@@ -42,9 +41,7 @@ function clamp(value: number, min: number, max: number) {
 }
 
 function hit(a: { x: number; y: number }, b: { x: number; y: number }) {
-  const dx = a.x - b.x
-  const dy = a.y - b.y
-  return Math.sqrt(dx * dx + dy * dy) < 9
+  return Math.hypot(a.x - b.x, a.y - b.y) < 9
 }
 
 export default function TruthRunnerPage() {
@@ -55,14 +52,14 @@ export default function TruthRunnerPage() {
   const [score, setScore] = useState(0)
   const [lives, setLives] = useState(3)
   const [seconds, setSeconds] = useState(75)
-  const [player, setPlayer] = useState({ x: 50, y: 82 })
+  const [player, setPlayer] = useState({ x: 50, y: 80 })
   const [items, setItems] = useState<Item[]>([])
   const [best, setBest] = useState(0)
   const [message, setMessage] = useState('')
   const [wisdomIndex, setWisdomIndex] = useState(0)
   const keys = useRef<Record<string, boolean>>({})
-  const holds = useRef<Record<Direction, boolean>>({ up: false, down: false, left: false, right: false })
-  const holdStartedAt = useRef<Record<Direction, number>>({ up: 0, down: 0, left: 0, right: 0 })
+  const pointerTarget = useRef<{ x: number; y: number; active: boolean }>({ x: 50, y: 80, active: false })
+  const arenaRef = useRef<HTMLDivElement | null>(null)
   const nextId = useRef(1)
 
   const copy = isRu ? {
@@ -79,14 +76,14 @@ export default function TruthRunnerPage() {
     time: 'Время',
     truth: 'Истина',
     lie: 'Ложь',
-    wisdom: 'Мудрость открыта',
     how: 'Как играть',
-    howText: 'Двигайся стрелками/WASD или кнопками. На телефоне удерживай кнопку, чтобы бежать быстрее. Собирай золотые огни и избегай тёмных шёпотов.',
+    howText: 'Коснись экрана в любом месте — персонаж следует за пальцем. На компьютере используй стрелки или WASD.',
     reward: 'Награда — Божья мудрость',
     gameOver: 'Игра окончена',
     leaderboard: 'Лидерборд позже: семейные рекорды, значки и недельные вызовы.',
-    good: 'Свет истины собран!',
+    good: 'Свет истины собран! +10',
     bad: 'Это был шёпот лжи — держись Божьего Слова.',
+    quit: 'Выйти',
   } : {
     back: 'All Games',
     eyebrow: 'Truth Arcade',
@@ -101,14 +98,14 @@ export default function TruthRunnerPage() {
     time: 'Time',
     truth: 'Truth',
     lie: 'Lie',
-    wisdom: 'Wisdom Unlocked',
     how: 'How to play',
-    howText: 'Move with arrow keys/WASD or the buttons. On mobile, hold a direction button to run faster. Collect golden lights and avoid dark whispers.',
-    reward: 'Reward — God’s wisdom',
+    howText: 'Touch anywhere on the arena — your character follows your finger. On desktop use arrow keys or WASD.',
+    reward: 'Reward — God\'s wisdom',
     gameOver: 'Game Over',
     leaderboard: 'Leaderboard later: family scores, badges, and weekly challenges.',
-    good: 'Truth light collected!',
-    bad: 'That was a whispering lie — stay close to God’s Word.',
+    good: 'Truth light collected! +10',
+    bad: 'That was a whispering lie — stay close to God\'s Word.',
+    quit: 'Exit',
   }
 
   const currentWisdom = useMemo(() => WISDOM[wisdomIndex % WISDOM.length], [wisdomIndex])
@@ -120,14 +117,11 @@ export default function TruthRunnerPage() {
   }, [])
 
   useEffect(() => {
-    const down = (event: KeyboardEvent) => { keys.current[event.key.toLowerCase()] = true }
-    const up = (event: KeyboardEvent) => { keys.current[event.key.toLowerCase()] = false }
+    const down = (e: KeyboardEvent) => { keys.current[e.key.toLowerCase()] = true }
+    const up = (e: KeyboardEvent) => { keys.current[e.key.toLowerCase()] = false }
     window.addEventListener('keydown', down)
     window.addEventListener('keyup', up)
-    return () => {
-      window.removeEventListener('keydown', down)
-      window.removeEventListener('keyup', up)
-    }
+    return () => { window.removeEventListener('keydown', down); window.removeEventListener('keyup', up) }
   }, [])
 
   useEffect(() => {
@@ -149,18 +143,28 @@ export default function TruthRunnerPage() {
     if (!running) return
     let frame = 0
     const tick = () => {
-      const now = performance.now()
-      const left = keys.current.arrowleft || keys.current.a || holds.current.left
-      const right = keys.current.arrowright || keys.current.d || holds.current.right
-      const up = keys.current.arrowup || keys.current.w || holds.current.up
-      const down = keys.current.arrowdown || keys.current.s || holds.current.down
-      const heldLongEnough = (directionName: Direction) => holds.current[directionName] && now - holdStartedAt.current[directionName] > 260
-      const xSpeed = heldLongEnough('left') || heldLongEnough('right') ? 4.6 : 3.2
-      const ySpeed = heldLongEnough('up') || heldLongEnough('down') ? 4.2 : 3
-      setPlayer((p) => ({
-        x: clamp(p.x + (left ? -xSpeed : 0) + (right ? xSpeed : 0), 5, 95),
-        y: clamp(p.y + (up ? -ySpeed : 0) + (down ? ySpeed : 0), 12, 88),
-      }))
+      const left = keys.current.arrowleft || keys.current.a
+      const right = keys.current.arrowright || keys.current.d
+      const up = keys.current.arrowup || keys.current.w
+      const down = keys.current.arrowdown || keys.current.s
+      const pt = pointerTarget.current
+      setPlayer((p) => {
+        if (pt.active) {
+          const dx = pt.x - p.x
+          const dy = pt.y - p.y
+          const dist = Math.hypot(dx, dy)
+          if (dist < 1.4) return p
+          const speed = Math.min(dist * 0.22, 5.4)
+          return { x: clamp(p.x + (dx / dist) * speed, 5, 95), y: clamp(p.y + (dy / dist) * speed, 8, 92) }
+        }
+        if (left || right || up || down) {
+          return {
+            x: clamp(p.x + (left ? -3.8 : 0) + (right ? 3.8 : 0), 5, 95),
+            y: clamp(p.y + (up ? -3.4 : 0) + (down ? 3.4 : 0), 8, 92),
+          }
+        }
+        return p
+      })
       setItems((prev) => prev.map((item) => ({ ...item, y: item.y + (item.kind === 'truth' ? 1.15 : 1.45) })).filter((item) => item.y < 104))
       frame = window.requestAnimationFrame(tick)
     }
@@ -206,64 +210,126 @@ export default function TruthRunnerPage() {
     setScore(0)
     setLives(3)
     setSeconds(75)
-    setPlayer({ x: 50, y: 82 })
+    setPlayer({ x: 50, y: 80 })
     setItems([])
     setMessage('')
     setWisdomIndex(0)
-    holds.current = { up: false, down: false, left: false, right: false }
-    holdStartedAt.current = { up: 0, down: 0, left: 0, right: 0 }
+    pointerTarget.current = { x: 50, y: 80, active: false }
   }
 
-  function startHold(directionName: Direction, dx: number, dy: number, startedAt: number) {
-    if (!started) startGame()
-    holdStartedAt.current[directionName] = startedAt
-    holds.current[directionName] = true
-    nudge(dx, dy)
+  function exitGame() {
+    setStarted(false)
+    setRunning(false)
+    pointerTarget.current.active = false
   }
 
-  function stopHold(directionName: Direction) {
-    holds.current[directionName] = false
-    holdStartedAt.current[directionName] = 0
+  function syncPointer(event: React.PointerEvent<HTMLDivElement>) {
+    const rect = arenaRef.current?.getBoundingClientRect()
+    if (!rect) return
+    pointerTarget.current = {
+      x: clamp(((event.clientX - rect.left) / rect.width) * 100, 5, 95),
+      y: clamp(((event.clientY - rect.top) / rect.height) * 100, 8, 92),
+      active: true,
+    }
   }
 
-  function nudge(dx: number, dy: number) {
-    setPlayer((p) => ({ x: clamp(p.x + dx, 5, 95), y: clamp(p.y + dy, 12, 88) }))
+  function handlePointerDown(event: React.PointerEvent<HTMLDivElement>) {
+    if (isDone) return
+    event.currentTarget.setPointerCapture(event.pointerId)
+    syncPointer(event)
+  }
+
+  function handlePointerMove(event: React.PointerEvent<HTMLDivElement>) {
+    if (!running || event.buttons === 0) return
+    syncPointer(event)
+  }
+
+  function handlePointerUp() {
+    pointerTarget.current.active = false
   }
 
   return (
     <main style={{ minHeight: '100vh', background: 'linear-gradient(180deg,#050914,#081428 55%,#0d1f3c)', color: '#fff' }}>
       <style>{`
-        .runner-shell { max-width: 1120px; margin: 0 auto; padding: 24px 14px 50px; }
-        .arena { position: relative; overflow: hidden; height: min(66vh,620px); min-height: 430px; border-radius: 32px; border: 4px solid rgba(255,216,102,.8); background: radial-gradient(circle at 50% 12%,rgba(126,200,227,.28),transparent 24%),linear-gradient(180deg,#173a72,#0d1f3c 62%,#071225); box-shadow: 0 28px 90px rgba(0,0,0,.38); touch-action: none; }
-        .arena::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px); background-size: 46px 46px; animation: road 8s linear infinite; }
-        .player,.item { position: absolute; transform: translate(-50%,-50%); display: grid; place-items: center; }
-        .player { width: 54px; height: 54px; border-radius: 20px; background: linear-gradient(180deg,#fff7ad,#fbbf24); border: 3px solid #fff; color: #3b2307; font-size: 1.8rem; box-shadow: 0 0 30px rgba(251,191,36,.72); z-index: 3; }
-        .item { width: 42px; height: 42px; border-radius: 999px; font-family: var(--font-nunito); font-weight: 1000; z-index: 2; }
-        .item.truth { background: radial-gradient(circle,#fff 0 18%,#fef08a 35%,#f59e0b 72%); color: #3b2307; box-shadow: 0 0 24px rgba(251,191,36,.8); }
-        .item.lie { background: linear-gradient(180deg,#111827,#020617); color: #cbd5e1; border: 2px dashed #64748b; box-shadow: 0 0 20px rgba(15,23,42,.9); }
+        .tr-shell { max-width: 1120px; margin: 0 auto; padding: 24px 14px 50px; }
+        .tr-fullscreen { position: fixed; inset: 0; z-index: 9999; display: flex; flex-direction: column; gap: 8px; padding: max(10px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left)); background: linear-gradient(180deg,#050914,#081428 55%,#0d1f3c); }
+        .tr-hud { display: grid; grid-template-columns: repeat(4,1fr) auto; gap: 6px; align-items: center; flex-shrink: 0; }
+        .tr-chip { border-radius: 14px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); padding: 8px 10px; text-align: center; font-family: var(--font-nunito); font-weight: 1000; font-size: .82rem; line-height: 1.35; }
+        .tr-exit { border: 0; border-radius: 14px; padding: 8px 14px; font-family: var(--font-nunito); font-weight: 1000; font-size: .9rem; background: linear-gradient(180deg,#fee2e2,#fb7185); color: #450a0a; box-shadow: 0 5px 0 #9f1239; cursor: pointer; touch-action: manipulation; white-space: nowrap; }
+        .arena { position: relative; overflow: hidden; flex: 1; min-height: 0; border-radius: 24px; border: 4px solid rgba(255,216,102,.8); background: radial-gradient(circle at 50% 12%,rgba(126,200,227,.28),transparent 24%),linear-gradient(180deg,#173a72,#0d1f3c 62%,#071225); box-shadow: 0 28px 90px rgba(0,0,0,.38); touch-action: none; cursor: crosshair; user-select: none; -webkit-user-select: none; }
+        .arena-preview { position: relative; overflow: hidden; height: min(62vh,580px); min-height: 380px; border-radius: 32px; border: 4px solid rgba(255,216,102,.8); background: radial-gradient(circle at 50% 12%,rgba(126,200,227,.28),transparent 24%),linear-gradient(180deg,#173a72,#0d1f3c 62%,#071225); box-shadow: 0 28px 90px rgba(0,0,0,.38); }
+        .arena::before, .arena-preview::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px); background-size: 46px 46px; animation: tr-road 8s linear infinite; }
+        .tr-player { position: absolute; transform: translate(-50%,-50%); width: 54px; height: 54px; border-radius: 20px; background: linear-gradient(180deg,#fff7ad,#fbbf24); border: 3px solid #fff; color: #3b2307; font-size: 1.8rem; display: grid; place-items: center; box-shadow: 0 0 30px rgba(251,191,36,.72); z-index: 3; pointer-events: none; transition: left .05s linear, top .05s linear; }
+        .tr-item { position: absolute; transform: translate(-50%,-50%); width: 42px; height: 42px; border-radius: 999px; font-family: var(--font-nunito); font-weight: 1000; display: grid; place-items: center; z-index: 2; pointer-events: none; }
+        .tr-item.truth { background: radial-gradient(circle,#fff 0 18%,#fef08a 35%,#f59e0b 72%); color: #3b2307; box-shadow: 0 0 24px rgba(251,191,36,.8); }
+        .tr-item.lie { background: linear-gradient(180deg,#111827,#020617); color: #cbd5e1; border: 2px dashed #64748b; box-shadow: 0 0 20px rgba(15,23,42,.9); }
+        .tr-msg { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); z-index: 4; background: rgba(15,23,42,.88); border: 1px solid rgba(255,255,255,.2); border-radius: 18px; padding: 9px 18px; font-family: var(--font-nunito); font-weight: 1000; color: #fde68a; white-space: nowrap; max-width: calc(100% - 28px); text-align: center; pointer-events: none; font-size: .9rem; }
         .hud { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin: 14px 0; }
         .hud-card { border-radius: 18px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); padding: 10px; text-align: center; font-family: var(--font-nunito); font-weight: 1000; }
-        .mobile-controls { display: grid; grid-template-columns: repeat(3,56px); gap: 8px; justify-content: center; margin-top: 14px; }
-        .mobile-controls button { min-height: 56px; border: 0; border-radius: 16px; font-family: var(--font-nunito); font-weight: 1000; background: #fff; color: #0d1f3c; touch-action: none; user-select: none; -webkit-user-select: none; box-shadow: 0 10px 24px rgba(0,0,0,.24); }
-        .mobile-controls button:active { transform: translateY(2px); background: #ffd866; }
-        @keyframes road { from { background-position: 0 0; } to { background-position: 0 92px; } }
-        @media (max-width: 720px) { .hud { grid-template-columns: repeat(2,1fr); } .arena { min-height: 390px; } }
+        @keyframes tr-road { from { background-position: 0 0; } to { background-position: 0 92px; } }
+        @media (max-width: 680px) { .hud { grid-template-columns: repeat(2,1fr); } .tr-hud { grid-template-columns: repeat(2,1fr) auto; } .tr-chip:nth-child(3),.tr-chip:nth-child(4) { display: none; } }
       `}</style>
-      <div className="runner-shell">
-        <Link href="/games" style={{ color: '#ffd866', fontFamily: 'var(--font-nunito)', fontWeight: 1000, textDecoration: 'none' }}>← {copy.back}</Link>
-        <p className="eyebrow" style={{ color: '#7ec8e3', marginTop: 20 }}>{copy.eyebrow}</p>
-        <h1 style={{ fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,7vw,4.2rem)', lineHeight: 1, marginBottom: 10 }}>{copy.title}</h1>
-        <p style={{ maxWidth: 720, fontFamily: 'var(--font-lora)', color: 'rgba(255,255,255,.88)', fontWeight: 700, lineHeight: 1.7 }}>{copy.subtitle}</p>
 
-        <div className="hud">
-          <div className="hud-card">{copy.score}<br /><span>{score}</span></div>
-          <div className="hud-card">{copy.best}<br /><span>{best}</span></div>
-          <div className="hud-card">{copy.lives}<br /><span>{'❤️'.repeat(lives) || '—'}</span></div>
-          <div className="hud-card">{copy.time}<br /><span>{seconds}s</span></div>
+      {started ? (
+        <div className="tr-fullscreen">
+          <div className="tr-hud">
+            <div className="tr-chip">{copy.score}<br />{score}</div>
+            <div className="tr-chip">{copy.best}<br />{best}</div>
+            <div className="tr-chip">{copy.lives}<br />{'❤️'.repeat(Math.max(0, lives)) || '—'}</div>
+            <div className="tr-chip">{copy.time}<br />{seconds}s</div>
+            <button className="tr-exit" type="button" onClick={exitGame}>✕ {copy.quit}</button>
+          </div>
+
+          <div
+            className="arena"
+            ref={arenaRef}
+            aria-label={copy.title}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
+          >
+            {isDone && (
+              <div style={{ position: 'absolute', inset: 0, zIndex: 6, display: 'grid', placeItems: 'center', padding: 18, background: 'rgba(5,9,20,.72)' }}>
+                <div style={{ maxWidth: 560, width: '100%', textAlign: 'center', borderRadius: 28, padding: 26, background: 'rgba(255,255,255,.96)', color: '#0d1f3c', border: '3px solid #ffd866' }}>
+                  <p className="puzzle-label">{copy.gameOver}</p>
+                  <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '2rem', margin: '4px 0 10px' }}>{copy.score}: {score}</h2>
+                  <div className="pull-quote" style={{ margin: '14px 0', textAlign: 'left' }}>
+                    <p className="pq-text">&ldquo;{isRu ? currentWisdom.ru : currentWisdom.en}&rdquo;</p>
+                    <span className="pq-ref">— {isRu ? currentWisdom.refRu : currentWisdom.refEn}</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <button className="pz-btn" style={{ width: 'auto', padding: '12px 24px' }} onClick={startGame}>{copy.restart}</button>
+                    <Link className="pz-btn" style={{ width: 'auto', padding: '12px 24px', background: '#e2e8f0', color: '#0d1f3c', textDecoration: 'none' }} href="/games">{copy.choose}</Link>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <div className="tr-player" style={{ left: `${player.x}%`, top: `${player.y}%` }} aria-hidden="true">✦</div>
+            {items.map((item) => (
+              <div key={item.id} className={`tr-item ${item.kind}`} style={{ left: `${item.x}%`, top: `${item.y}%` }} aria-label={item.kind === 'truth' ? copy.truth : copy.lie}>
+                {item.kind === 'truth' ? '✦' : '!'}
+              </div>
+            ))}
+            {message && !isDone && <div className="tr-msg">{message}</div>}
+          </div>
         </div>
+      ) : (
+        <div className="tr-shell">
+          <Link href="/games" style={{ color: '#ffd866', fontFamily: 'var(--font-nunito)', fontWeight: 1000, textDecoration: 'none' }}>← {copy.back}</Link>
+          <p className="eyebrow" style={{ color: '#7ec8e3', marginTop: 20 }}>{copy.eyebrow}</p>
+          <h1 style={{ fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,7vw,4.2rem)', lineHeight: 1, marginBottom: 10 }}>{copy.title}</h1>
+          <p style={{ maxWidth: 720, fontFamily: 'var(--font-lora)', color: 'rgba(255,255,255,.88)', fontWeight: 700, lineHeight: 1.7 }}>{copy.subtitle}</p>
 
-        <section className="arena" aria-label={copy.title}>
-          {!started && (
+          <div className="hud">
+            <div className="hud-card">{copy.score}<br /><span>0</span></div>
+            <div className="hud-card">{copy.best}<br /><span>{best}</span></div>
+            <div className="hud-card">{copy.lives}<br /><span>❤️❤️❤️</span></div>
+            <div className="hud-card">{copy.time}<br /><span>75s</span></div>
+          </div>
+
+          <div className="arena-preview">
             <div style={{ position: 'absolute', inset: 0, zIndex: 5, display: 'grid', placeItems: 'center', padding: 18, background: 'rgba(5,9,20,.58)' }}>
               <div style={{ maxWidth: 560, textAlign: 'center', borderRadius: 28, padding: 26, background: 'rgba(255,255,255,.95)', color: '#0d1f3c', border: '3px solid #ffd866' }}>
                 <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '1.8rem', marginBottom: 10 }}>{copy.how}</h2>
@@ -271,54 +337,21 @@ export default function TruthRunnerPage() {
                 <button className="pz-btn" style={{ width: 'auto', marginTop: 16, padding: '12px 28px' }} onClick={startGame}>{copy.start}</button>
               </div>
             </div>
-          )}
+          </div>
 
-          {isDone && (
-            <div style={{ position: 'absolute', inset: 0, zIndex: 6, display: 'grid', placeItems: 'center', padding: 18, background: 'rgba(5,9,20,.68)' }}>
-              <div style={{ maxWidth: 620, textAlign: 'center', borderRadius: 28, padding: 26, background: 'rgba(255,255,255,.96)', color: '#0d1f3c', border: '3px solid #ffd866' }}>
-                <p className="puzzle-label">{copy.gameOver}</p>
-                <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '2rem', margin: '4px 0 10px' }}>{copy.score}: {score}</h2>
-                <div className="pull-quote" style={{ margin: '14px 0', textAlign: 'left' }}>
-                  <p className="pq-text">&ldquo;{isRu ? currentWisdom.ru : currentWisdom.en}&rdquo;</p>
-                  <span className="pq-ref">— {isRu ? currentWisdom.refRu : currentWisdom.refEn}</span>
-                </div>
-                <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
-                  <button className="pz-btn" style={{ width: 'auto', padding: '12px 24px' }} onClick={startGame}>{copy.restart}</button>
-                  <Link className="pz-btn" style={{ width: 'auto', padding: '12px 24px', background: '#e2e8f0', color: '#0d1f3c', textDecoration: 'none' }} href="/games">{copy.choose}</Link>
-                </div>
-              </div>
+          <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 14, marginTop: 18 }}>
+            <div style={{ borderRadius: 22, padding: 18, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.18)' }}>
+              <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#ffd866', marginBottom: 8 }}>{copy.reward}</h2>
+              <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', lineHeight: 1.65 }}>&ldquo;{isRu ? currentWisdom.ru : currentWisdom.en}&rdquo;</p>
+              <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#7ec8e3' }}>— {isRu ? currentWisdom.refRu : currentWisdom.refEn}</p>
             </div>
-          )}
-
-          <div className="player" style={{ left: `${player.x}%`, top: `${player.y}%` }} aria-hidden="true">✦</div>
-          {items.map((item) => (
-            <div key={item.id} className={`item ${item.kind}`} style={{ left: `${item.x}%`, top: `${item.y}%` }} aria-label={item.kind === 'truth' ? copy.truth : copy.lie}>
-              {item.kind === 'truth' ? '✦' : '!' }
+            <div style={{ borderRadius: 22, padding: 18, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.18)' }}>
+              <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#ffd866', marginBottom: 8 }}>{isRu ? 'Сообщение' : 'Message'}</h2>
+              <p style={{ fontFamily: 'var(--font-lora)', lineHeight: 1.65 }}>{copy.leaderboard}</p>
             </div>
-          ))}
-        </section>
-
-        <div className="mobile-controls" aria-label="Controls">
-          <span />
-          <button onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); startHold('up', 0, -9, event.timeStamp) }} onPointerUp={() => stopHold('up')} onPointerCancel={() => stopHold('up')} onPointerLeave={() => stopHold('up')}>↑</button>
-          <span />
-          <button onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); startHold('left', -9, 0, event.timeStamp) }} onPointerUp={() => stopHold('left')} onPointerCancel={() => stopHold('left')} onPointerLeave={() => stopHold('left')}>←</button>
-          <button onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); startHold('down', 0, 9, event.timeStamp) }} onPointerUp={() => stopHold('down')} onPointerCancel={() => stopHold('down')} onPointerLeave={() => stopHold('down')}>↓</button>
-          <button onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); startHold('right', 9, 0, event.timeStamp) }} onPointerUp={() => stopHold('right')} onPointerCancel={() => stopHold('right')} onPointerLeave={() => stopHold('right')}>→</button>
+          </section>
         </div>
-
-        <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 14, marginTop: 18 }}>
-          <div style={{ borderRadius: 22, padding: 18, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.18)' }}>
-            <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#ffd866', marginBottom: 8 }}>{copy.reward}</h2>
-            <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', lineHeight: 1.65 }}>&ldquo;{isRu ? currentWisdom.ru : currentWisdom.en}&rdquo;</p>
-            <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#7ec8e3' }}>— {isRu ? currentWisdom.refRu : currentWisdom.refEn}</p>
-          </div>
-          <div style={{ borderRadius: 22, padding: 18, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.18)' }}>
-            <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#ffd866', marginBottom: 8 }}>{isRu ? 'Сообщение' : 'Message'}</h2>
-            <p style={{ fontFamily: 'var(--font-lora)', lineHeight: 1.65 }}>{message || copy.leaderboard}</p>
-          </div>
-        </section>
-      </div>
+      )}
     </main>
   )
 }
