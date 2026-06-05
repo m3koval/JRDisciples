@@ -68,6 +68,11 @@ const requiredArcherSnippets = [
   'ARROW_GRAVITY',
   'MOBILE_BREAKPOINT',
   'shoot(point.x, point.y)',
+  'faithful stickman',
+  'trail: Point[]',
+  'target.squash',
+  'target.spin',
+  'FAITH_POPUPS',
 ];
 
 for (const snippet of requiredArcherSnippets) {

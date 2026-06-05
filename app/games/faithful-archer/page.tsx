@@ -19,9 +19,11 @@ type Target = {
   wobble: number
   wisdom: boolean
   flop: { torso: number; head: number; leftArm: number; rightArm: number; leftLeg: number; rightLeg: number }
+  squash: number
+  spin: number
 }
 
-type Arrow = { x: number; y: number; vx: number; vy: number; age: number; stuck: boolean; countedMiss?: boolean; glow: boolean }
+type Arrow = { x: number; y: number; vx: number; vy: number; age: number; stuck: boolean; countedMiss?: boolean; glow: boolean; trail: Point[] }
 type FloatText = { x: number; y: number; txt: string; life: number; color: string }
 type Spark = { x: number; y: number; vx: number; vy: number; life: number; color: string }
 type GameModel = {
@@ -55,6 +57,11 @@ const SCRIPTURE = {
 const COURSES = {
   en: ['Practice Yard', 'Forest Path', 'Hilltop Lights', 'Festival Course'],
   ru: ['Двор тренировки', 'Лесная тропа', 'Огни холма', 'Праздничный курс'],
+}
+
+const FAITH_POPUPS = {
+  en: ['Light the path!', 'Be courageous!', 'Practice faithfully!'],
+  ru: ['Свет пути!', 'Будь мужествен!', 'Тренируйся верно!'],
 }
 
 const STORAGE_KEY = 'faithful-archer-best'
@@ -217,6 +224,8 @@ export default function FaithfulArcherPage() {
         wobble: 0,
         wisdom: kind === 'bell' || kind === 'lantern' || kind === 'scroll',
         flop: { torso: 0, head: 0, leftArm: 0, rightArm: 0, leftLeg: 0, rightLeg: 0 },
+        squash: 0,
+        spin: 0,
       }
     })
   }
@@ -263,7 +272,7 @@ export default function FaithfulArcherPage() {
       const bowY = a.y - 58
       const launch = launchArrowVelocity({ x: bowX, y: bowY }, { x: tx, y: ty }, calmRef.current)
       if (!launch) return
-      arrowsRef.current.push({ x: bowX, y: bowY, vx: launch.vx, vy: launch.vy, age: 0, stuck: false, glow: launch.power > 1.12 })
+      arrowsRef.current.push({ x: bowX, y: bowY, vx: launch.vx, vy: launch.vy, age: 0, stuck: false, glow: launch.power > 1.12, trail: [] })
       m.arrowsLeft -= 1
       m.recoil = 7
       floatRef.current.push({ x: bowX, y: bowY - 32, txt: isRu ? 'ровно!' : 'steady!', life: 0.75, color: '#31552d' })
@@ -280,6 +289,8 @@ export default function FaithfulArcherPage() {
       const difficulty = calmRef.current ? 0.58 : 1
 
       for (const t of targetsRef.current) {
+        t.squash *= Math.pow(0.08, dt)
+        t.spin *= Math.pow(0.12, dt)
         if (t.hit) {
           t.wobble *= 0.92
           t.flop.torso *= Math.pow(0.18, dt)
@@ -304,6 +315,8 @@ export default function FaithfulArcherPage() {
         arrow.vx *= Math.pow(0.997, dt * 60)
         arrow.x += arrow.vx * dt
         arrow.y += arrow.vy * dt
+        arrow.trail.unshift({ x: arrow.x, y: arrow.y })
+        arrow.trail = arrow.trail.slice(0, 8)
         if (arrow.y > height * 0.83 || arrow.x > width + 120 || arrow.x < -120 || arrow.age > 5) {
           if (!arrow.countedMiss) {
             arrow.countedMiss = true
@@ -347,9 +360,11 @@ export default function FaithfulArcherPage() {
       const m = modelRef.current
       arrow.stuck = true
       target.hit = true
-      target.wobble = 1
-      const impact = clamp(arrow.vx / 16, -1, 1)
-      const lift = clamp(arrow.vy / 16, -1, 1)
+      target.wobble = 1.35
+      target.squash = 1
+      target.spin = clamp(arrow.vx / 1600, -0.45, 0.45)
+      const impact = clamp(arrow.vx / 900, -1, 1)
+      const lift = clamp(arrow.vy / 900, -1, 1)
       target.flop = {
         torso: impact * 0.55,
         head: -impact * 0.75 + lift * 0.18,
@@ -370,7 +385,11 @@ export default function FaithfulArcherPage() {
       m.best = Math.max(m.best, m.score)
       localStorage.setItem(STORAGE_KEY, String(m.best))
       m.wisdomMeter += target.wisdom ? 34 : 12
-      for (let i = 0; i < 16; i++) sparksRef.current.push({ x: target.x, y: target.y, vx: (Math.random() - 0.5) * 130, vy: (Math.random() - 0.9) * 150, life: 0.55 + Math.random() * 0.55, color: target.kind === 'lantern' ? '#ffd166' : '#8ee36a' })
+      if (target.wisdom) {
+        const msg = (isRu ? FAITH_POPUPS.ru : FAITH_POPUPS.en)[m.verseIndex % FAITH_POPUPS.en.length]
+        floatRef.current.push({ x: target.x, y: target.y - 92, txt: msg, life: 1.35, color: '#d97706' })
+      }
+      for (let i = 0; i < 20; i++) sparksRef.current.push({ x: target.x, y: target.y, vx: (Math.random() - 0.5) * 130, vy: (Math.random() - 0.9) * 150, life: 0.55 + Math.random() * 0.55, color: target.kind === 'lantern' ? '#ffd166' : '#8ee36a' })
       floatRef.current.push({ x: target.x, y: target.y - 38, txt: (bullseye ? (isRu ? 'В центр +' : 'Bullseye +') : '+') + points, life: 1.1, color: bullseye ? '#d97706' : '#31552d' })
       if (m.combo === 3) floatRef.current.push({ x: target.x, y: target.y - 72, txt: isRu ? 'Сосредоточено!' : 'Focused!', life: 1.1, color: '#31552d' })
       if (m.wisdomMeter >= 100) {
@@ -384,7 +403,7 @@ export default function FaithfulArcherPage() {
     function draw() {
       const { width, height } = sizeRef.current
       ctx!.clearRect(0, 0, width, height)
-      drawBackground(ctx!, width, height)
+      drawBackground(ctx!, width, height, modelRef.current.time)
       for (const target of targetsRef.current) drawTarget(ctx!, target, modelRef.current.time)
       drawArcher(ctx!, archer(), modelRef.current.time, pointerRef.current)
       drawAim(ctx!, archer())
@@ -402,6 +421,18 @@ export default function FaithfulArcherPage() {
       if (!launch) return
       const { draw: dist, angle, power } = launch
       drawCtx.save()
+      drawCtx.strokeStyle = 'rgba(49,85,45,.28)'
+      drawCtx.lineWidth = 5
+      drawCtx.beginPath()
+      drawCtx.arc(bx, by, MAX_DRAW, 0, Math.PI * 2)
+      drawCtx.stroke()
+      drawCtx.fillStyle = 'rgba(255,226,122,.22)'
+      drawCtx.beginPath()
+      drawCtx.arc(pointer.x, pointer.y, 24 + Math.sin(modelRef.current.time * 8) * 3, 0, Math.PI * 2)
+      drawCtx.fill()
+      drawCtx.strokeStyle = 'rgba(255,255,255,.65)'
+      drawCtx.lineWidth = 3
+      drawCtx.stroke()
       drawCtx.strokeStyle = 'rgba(255,255,255,.9)'
       drawCtx.lineWidth = 3
       drawCtx.setLineDash([9, 9])
@@ -431,6 +462,16 @@ export default function FaithfulArcherPage() {
 
     function drawArrows(drawCtx: CanvasRenderingContext2D) {
       for (const arrow of arrowsRef.current) {
+        if (arrow.trail.length > 1) {
+          drawCtx.save()
+          drawCtx.lineCap = 'round'
+          drawCtx.strokeStyle = arrow.glow ? 'rgba(255,226,122,.62)' : 'rgba(255,255,255,.42)'
+          drawCtx.lineWidth = arrow.glow ? 5 : 3
+          drawCtx.beginPath()
+          arrow.trail.forEach((p, i) => { if (i === 0) drawCtx.moveTo(p.x, p.y); else drawCtx.lineTo(p.x, p.y) })
+          drawCtx.stroke()
+          drawCtx.restore()
+        }
         const angle = Math.atan2(arrow.vy, arrow.vx)
         drawCtx.save()
         drawCtx.translate(arrow.x, arrow.y)
@@ -588,7 +629,7 @@ export default function FaithfulArcherPage() {
   )
 }
 
-function drawBackground(ctx: CanvasRenderingContext2D, width: number, height: number) {
+function drawBackground(ctx: CanvasRenderingContext2D, width: number, height: number, time: number) {
   const g = ctx.createLinearGradient(0, 0, 0, height)
   g.addColorStop(0, '#86d3ff')
   g.addColorStop(0.5, '#e2f8ff')
@@ -597,59 +638,81 @@ function drawBackground(ctx: CanvasRenderingContext2D, width: number, height: nu
   ctx.fillStyle = g
   ctx.fillRect(0, 0, width, height)
   ctx.fillStyle = 'rgba(255,255,255,.82)'
-  cloud(ctx, width * 0.2, height * 0.15, 56)
-  cloud(ctx, width * 0.72, height * 0.13, 72)
-  cloud(ctx, width * 0.48, height * 0.22, 44)
+  cloud(ctx, ((width * 0.2 + time * 9) % (width + 160)) - 80, height * 0.15, 56)
+  cloud(ctx, ((width * 0.72 + time * 6) % (width + 190)) - 95, height * 0.13, 72)
+  cloud(ctx, ((width * 0.48 + time * 11) % (width + 140)) - 70, height * 0.22, 44)
   ctx.fillStyle = '#68b767'; ellipse(ctx, width * 0.74, height * 0.6, width * 0.72, height * 0.28)
   ctx.fillStyle = '#5daa59'; ellipse(ctx, width * 0.24, height * 0.62, width * 0.68, height * 0.24)
   ctx.fillStyle = '#d99f53'; roundRect(ctx, 0, height * 0.8, width, height * 0.2, 0, true)
   ctx.fillStyle = 'rgba(255,246,220,.28)'; roundRect(ctx, width * 0.1, height * 0.84, width * 0.8, 16, 12, true)
+  ctx.strokeStyle = 'rgba(49,85,45,.32)'; ctx.lineWidth = 2
+  for (let i = 0; i < 28; i++) {
+    const x = (i / 27) * width
+    const y = height * 0.83 + seeded(i + 2) * height * 0.11
+    const sway = Math.sin(time * 3 + i) * 4
+    ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + sway, y - 10, x + sway * 1.3, y - 22); ctx.stroke()
+  }
 }
 
 function drawTarget(ctx: CanvasRenderingContext2D, target: Target, time: number) {
   ctx.save()
   ctx.translate(target.x, target.y)
-  ctx.rotate(Math.sin(time * 8 + target.id) * target.wobble * 0.25)
+  ctx.rotate(target.spin + Math.sin(time * 8 + target.id) * target.wobble * 0.25)
+  const squash = target.squash
+  ctx.scale(1 + squash * 0.18, 1 - squash * 0.12)
   ctx.fillStyle = 'rgba(32,48,71,.16)'; ellipse(ctx, 0, target.r + 18, target.r * 2, 10)
   if (target.kind === 'dummy') drawRagdollDummy(ctx, target, time)
-  else if (target.kind === 'bell') drawBell(ctx, target)
-  else if (target.kind === 'lantern') drawLantern(ctx)
-  else if (target.kind === 'scroll') drawScroll(ctx)
-  else drawShield(ctx, target)
+  else if (target.kind === 'bell') drawBell(ctx, target, time)
+  else if (target.kind === 'lantern') drawLantern(ctx, time)
+  else if (target.kind === 'scroll') drawScroll(ctx, time)
+  else drawShield(ctx, target, time)
   if (target.hit) { ctx.globalAlpha = 0.55; ctx.fillStyle = '#fff6dc'; ctx.font = '900 18px system-ui'; ctx.textAlign = 'center'; ctx.fillText('✓', 0, 6) }
   ctx.restore()
 }
 
-function drawShield(ctx: CanvasRenderingContext2D, target: Target) {
+function drawShield(ctx: CanvasRenderingContext2D, target: Target, time: number) {
+  const breathe = 1 + Math.sin(time * 3 + target.id) * 0.035
+  ctx.save(); ctx.scale(breathe, breathe)
   ctx.fillStyle = '#8a5a30'; ctx.beginPath(); ctx.arc(0, 0, target.r, 0, Math.PI * 2); ctx.fill()
   ctx.fillStyle = '#fff6dc'; ctx.beginPath(); ctx.arc(0, 0, target.r * 0.74, 0, Math.PI * 2); ctx.fill()
   ctx.fillStyle = '#3f8f5a'; ctx.beginPath(); ctx.arc(0, 0, target.r * 0.46, 0, Math.PI * 2); ctx.fill()
   ctx.fillStyle = '#ffe27a'; star(ctx, 0, 0, 5, target.r * 0.2, target.r * 0.09)
+  ctx.restore()
 }
 
-function drawBell(ctx: CanvasRenderingContext2D, target: Target) {
+function drawBell(ctx: CanvasRenderingContext2D, target: Target, time: number) {
+  ctx.save(); ctx.rotate(Math.sin(time * 4 + target.id) * 0.08)
   ctx.fillStyle = '#b57920'; roundRect(ctx, -5, -54, 10, 30, 5, true)
   ctx.fillStyle = '#f7c948'; ctx.strokeStyle = '#7a4e20'; ctx.lineWidth = 3
   ctx.beginPath(); ctx.arc(0, 0, target.r, Math.PI * 0.08, Math.PI * 0.92, true); ctx.lineTo(-target.r * 0.75, 16); ctx.lineTo(target.r * 0.75, 16); ctx.closePath(); ctx.fill(); ctx.stroke()
   ctx.fillStyle = '#fff6dc'; ctx.beginPath(); ctx.arc(0, 2, 8, 0, Math.PI * 2); ctx.fill()
+  ctx.restore()
 }
 
-function drawLantern(ctx: CanvasRenderingContext2D) {
+function drawLantern(ctx: CanvasRenderingContext2D, time: number) {
+  const pulse = 1 + Math.sin(time * 5) * 0.06
+  ctx.save(); ctx.scale(pulse, pulse)
   ctx.shadowColor = '#ffd166'; ctx.shadowBlur = 22; ctx.fillStyle = '#ffd166'; roundRect(ctx, -19, -27, 38, 54, 12, true)
   ctx.shadowBlur = 0; ctx.strokeStyle = '#7a4e20'; ctx.lineWidth = 4; roundRect(ctx, -23, -31, 46, 62, 12, false, true)
   ctx.fillStyle = '#fff6dc'; ellipse(ctx, 0, 0, 15, 28)
+  ctx.restore()
 }
 
-function drawScroll(ctx: CanvasRenderingContext2D) {
+function drawScroll(ctx: CanvasRenderingContext2D, time: number) {
+  ctx.save(); ctx.rotate(Math.sin(time * 3.5) * 0.045)
   ctx.fillStyle = '#fff6dc'; ctx.strokeStyle = '#7a4e20'; ctx.lineWidth = 3; roundRect(ctx, -26, -18, 52, 36, 10, true, true)
   ctx.fillStyle = '#f7c948'; ctx.beginPath(); ctx.arc(-25, -18, 7, 0, Math.PI * 2); ctx.arc(25, 18, 7, 0, Math.PI * 2); ctx.fill()
   ctx.strokeStyle = '#3f8f5a'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(-13, -2); ctx.lineTo(-2, 9); ctx.lineTo(16, -10); ctx.stroke()
+  ctx.restore()
 }
 
 function drawRagdollDummy(ctx: CanvasRenderingContext2D, target: Target, time: number) {
   const f = target.flop
   const sway = Math.sin(time * 11 + target.id) * target.wobble * 0.16
   ctx.save(); ctx.rotate(f.torso + sway)
+  ctx.fillStyle = '#fff6dc'; ctx.strokeStyle = '#7a4e20'; ctx.lineWidth = 3; roundRect(ctx, -17, -18, 34, 34, 10, true, true)
+  ctx.fillStyle = '#f7c948'; ctx.beginPath(); ctx.arc(0, -1, 10, 0, Math.PI * 2); ctx.fill()
+  ctx.strokeStyle = '#31552d'; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(0, -1, 6, 0, Math.PI * 2); ctx.stroke()
   ragLimb(ctx, 0, -22, 0, 32, 7, '#7a4e20', 0)
   ragLimb(ctx, 0, -2, -23, -2, 7, '#7a4e20', f.leftArm)
   ragLimb(ctx, 0, -2, 23, -2, 7, '#7a4e20', f.rightArm)
@@ -658,44 +721,57 @@ function drawRagdollDummy(ctx: CanvasRenderingContext2D, target: Target, time: n
   ctx.save(); ctx.translate(0, -39); ctx.rotate(f.head + sway * 1.5)
   ctx.fillStyle = '#d99f53'; ctx.strokeStyle = '#7a4e20'; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(0, 0, 18, 0, Math.PI * 2); ctx.fill(); ctx.stroke()
   ctx.fillStyle = '#31552d'; ctx.fillRect(-8, -4, 4, 4); ctx.fillRect(7, -4, 4, 4)
+  ctx.strokeStyle = '#31552d'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(0, 4, 7, 0.15 * Math.PI, 0.85 * Math.PI); ctx.stroke()
   ctx.restore(); ctx.restore()
 }
 
 function drawArcher(ctx: CanvasRenderingContext2D, a: { x: number; y: number }, time: number, pointer: { down: boolean; x: number; y: number }) {
-  // How far the player has pulled back (0–1), drives string + lean animations
+  // Original “faithful stickman” pose: snappy silhouette, no copied characters/assets.
   const pullPower = pointer.down
     ? Math.min(1, Math.hypot((a.x + 34) - pointer.x, (a.y - 56) - pointer.y) / MAX_DRAW)
     : 0
-  const pullBack = pullPower * 22   // px the string midpoint moves back
-  const lean     = pullPower * 0.12 // body leans back when at full draw
+  const pullBack = pullPower * 28
+  const lean = pullPower * 0.16
+  const idle = Math.sin(time * 5) * 2
+  const brace = pullPower * 12
+  const headTilt = pointer.down ? -0.12 * pullPower : Math.sin(time * 2) * 0.03
 
   ctx.save(); ctx.translate(a.x, a.y); ctx.lineCap = 'round'; ctx.lineJoin = 'round'
-  ctx.fillStyle = 'rgba(32,48,71,.18)'; ellipse(ctx, 10, 18, 92, 18)
-  limb(ctx, -10, -8, -34, 35, 12, '#31552d'); limb(ctx, 8, -8, 30, 35, 12, '#31552d')
-  limb(ctx, -34, 35, -50, 38, 10, '#4b3218'); limb(ctx, 30, 35, 48, 38, 10, '#4b3218')
-  ctx.rotate(Math.sin(time * 5) * 0.02 - lean)
-  ctx.fillStyle = '#4aa96c'; ctx.strokeStyle = '#203047'; ctx.lineWidth = 3; roundRect(ctx, -22, -74, 44, 68, 18, true, true)
-  ctx.fillStyle = '#ffe27a'; roundRect(ctx, -15, -62, 30, 14, 8, true)
-  ctx.fillStyle = '#f5c99b'; ctx.strokeStyle = '#203047'; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(0, -101, 19, 0, Math.PI * 2); ctx.fill(); ctx.stroke()
-  ctx.fillStyle = '#6b3f22'; ctx.beginPath(); ctx.arc(-5, -111, 18, Math.PI, Math.PI * 2); ctx.fill()
-  ctx.fillStyle = '#203047'; ctx.beginPath(); ctx.arc(6, -102, 2.2, 0, Math.PI * 2); ctx.fill()
-  limb(ctx, -17, -54, 18, -54, 11, '#f5c99b'); limb(ctx, 18, -54, 34, -56, 10, '#f5c99b')
+  ctx.fillStyle = 'rgba(32,48,71,.18)'; ellipse(ctx, 10, 18, 96, 18)
+  ctx.rotate(-lean)
 
-  // Bow + animated string
-  ctx.save(); ctx.translate(34, -56); ctx.rotate(-0.35)
-  if (pullPower > 0.75) { ctx.shadowColor = '#ffe27a'; ctx.shadowBlur = 16 }
-  ctx.strokeStyle = pullPower > 0.75 ? '#f7c948' : '#7a4e20'; ctx.lineWidth = 5
-  ctx.beginPath(); ctx.arc(0, 0, 33, -1.25, 1.25); ctx.stroke()
+  // Stickman legs and torso: readable viral-stick silhouette with Junior Disciples colors.
+  limb(ctx, -5, -10, -38 - brace, 36 + idle, 10, '#31552d')
+  limb(ctx, 5, -10, 36 + brace, 36 - idle, 10, '#31552d')
+  limb(ctx, -38 - brace, 36 + idle, -56 - brace, 39, 8, '#4b3218')
+  limb(ctx, 36 + brace, 36 - idle, 56 + brace, 39, 8, '#4b3218')
+  limb(ctx, 0, -82, 0, -14, 13, '#4aa96c')
+  ctx.fillStyle = '#ffe27a'; roundRect(ctx, -18, -63, 36, 12, 8, true)
+
+  ctx.save(); ctx.translate(0, -104); ctx.rotate(headTilt)
+  ctx.fillStyle = '#f5c99b'; ctx.strokeStyle = '#203047'; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(0, 0, 20, 0, Math.PI * 2); ctx.fill(); ctx.stroke()
+  ctx.fillStyle = '#6b3f22'; ctx.beginPath(); ctx.arc(-4, -10, 18, Math.PI, Math.PI * 2); ctx.fill()
+  ctx.fillStyle = '#203047'; ctx.beginPath(); ctx.arc(7, -2, 2.4, 0, Math.PI * 2); ctx.fill()
+  ctx.restore()
+
+  const bowHand = { x: 39, y: -58 }
+  const stringHand = { x: -7 - pullBack, y: -57 + pullPower * 3 }
+  limb(ctx, -1, -60, stringHand.x, stringHand.y, 10, '#f5c99b')
+  limb(ctx, 2, -59, bowHand.x, bowHand.y, 10, '#f5c99b')
+
+  // Oversized elastic bow + nocked arrow are the visual centerpiece.
+  ctx.save(); ctx.translate(bowHand.x, bowHand.y); ctx.rotate(-0.35)
+  if (pullPower > 0.75) { ctx.shadowColor = '#ffe27a'; ctx.shadowBlur = 18 }
+  ctx.strokeStyle = pullPower > 0.75 ? '#f7c948' : '#7a4e20'; ctx.lineWidth = 6
+  ctx.beginPath(); ctx.arc(0, 0, 38 + pullPower * 4, -1.25, 1.25); ctx.stroke()
   ctx.shadowBlur = 0
-  // String — pulls back proportional to draw power
-  ctx.strokeStyle = pullPower > 0.75 ? '#ffe27a' : 'rgba(255,255,255,.85)'; ctx.lineWidth = 1.5
-  ctx.beginPath(); ctx.moveTo(10, -31); ctx.lineTo(-10 - pullBack, 0); ctx.lineTo(10, 31); ctx.stroke()
-  // Nocked arrow visible while drawing
+  ctx.strokeStyle = pullPower > 0.75 ? '#ffe27a' : 'rgba(255,255,255,.9)'; ctx.lineWidth = 2
+  ctx.beginPath(); ctx.moveTo(12, -36); ctx.lineTo(-12 - pullBack, 0); ctx.lineTo(12, 36); ctx.stroke()
   if (pointer.down && pullBack > 2) {
     ctx.strokeStyle = '#5b371f'; ctx.lineWidth = 4
-    ctx.beginPath(); ctx.moveTo(-10 - pullBack, 0); ctx.lineTo(16, 0); ctx.stroke()
-    ctx.fillStyle = '#203047'; ctx.beginPath(); ctx.moveTo(21, 0); ctx.lineTo(13, -5); ctx.lineTo(13, 5); ctx.closePath(); ctx.fill()
-    ctx.fillStyle = '#79c96b'; ctx.beginPath(); ctx.moveTo(-10 - pullBack, 0); ctx.lineTo(-21 - pullBack, -7); ctx.lineTo(-17 - pullBack, 0); ctx.lineTo(-21 - pullBack, 7); ctx.closePath(); ctx.fill()
+    ctx.beginPath(); ctx.moveTo(-12 - pullBack, 0); ctx.lineTo(22, 0); ctx.stroke()
+    ctx.fillStyle = '#203047'; ctx.beginPath(); ctx.moveTo(27, 0); ctx.lineTo(16, -6); ctx.lineTo(16, 6); ctx.closePath(); ctx.fill()
+    ctx.fillStyle = '#79c96b'; ctx.beginPath(); ctx.moveTo(-12 - pullBack, 0); ctx.lineTo(-25 - pullBack, -8); ctx.lineTo(-20 - pullBack, 0); ctx.lineTo(-25 - pullBack, 8); ctx.closePath(); ctx.fill()
   }
   ctx.restore()
   ctx.restore()
