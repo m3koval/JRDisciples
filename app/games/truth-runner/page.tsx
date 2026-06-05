@@ -60,6 +60,7 @@ export default function TruthRunnerPage() {
   const keys = useRef<Record<string, boolean>>({})
   const pointerTarget = useRef<{ x: number; y: number; active: boolean }>({ x: 50, y: 80, active: false })
   const arenaRef = useRef<HTMLDivElement | null>(null)
+  const playerElRef = useRef<HTMLDivElement | null>(null)
   const nextId = useRef(1)
 
   const copy = isRu ? {
@@ -150,12 +151,7 @@ export default function TruthRunnerPage() {
       const pt = pointerTarget.current
       setPlayer((p) => {
         if (pt.active) {
-          const dx = pt.x - p.x
-          const dy = pt.y - p.y
-          const dist = Math.hypot(dx, dy)
-          if (dist < 1.4) return p
-          const speed = Math.min(dist * 0.22, 5.4)
-          return { x: clamp(p.x + (dx / dist) * speed, 5, 95), y: clamp(p.y + (dy / dist) * speed, 8, 92) }
+          return { x: pt.x, y: pt.y }
         }
         if (left || right || up || down) {
           return {
@@ -226,10 +222,13 @@ export default function TruthRunnerPage() {
   function syncPointer(event: React.PointerEvent<HTMLDivElement>) {
     const rect = arenaRef.current?.getBoundingClientRect()
     if (!rect) return
-    pointerTarget.current = {
-      x: clamp(((event.clientX - rect.left) / rect.width) * 100, 5, 95),
-      y: clamp(((event.clientY - rect.top) / rect.height) * 100, 8, 92),
-      active: true,
+    const x = clamp(((event.clientX - rect.left) / rect.width) * 100, 5, 95)
+    const y = clamp(((event.clientY - rect.top) / rect.height) * 100, 8, 92)
+    pointerTarget.current = { x, y, active: true }
+    // Bypass React render cycle — move player instantly, glued to finger
+    if (playerElRef.current) {
+      playerElRef.current.style.left = `${x}%`
+      playerElRef.current.style.top = `${y}%`
     }
   }
 
@@ -259,7 +258,7 @@ export default function TruthRunnerPage() {
         .arena { position: relative; overflow: hidden; flex: 1; min-height: 0; border-radius: 24px; border: 4px solid rgba(255,216,102,.8); background: radial-gradient(circle at 50% 12%,rgba(126,200,227,.28),transparent 24%),linear-gradient(180deg,#173a72,#0d1f3c 62%,#071225); box-shadow: 0 28px 90px rgba(0,0,0,.38); touch-action: none; cursor: crosshair; user-select: none; -webkit-user-select: none; }
         .arena-preview { position: relative; overflow: hidden; height: min(62vh,580px); min-height: 380px; border-radius: 32px; border: 4px solid rgba(255,216,102,.8); background: radial-gradient(circle at 50% 12%,rgba(126,200,227,.28),transparent 24%),linear-gradient(180deg,#173a72,#0d1f3c 62%,#071225); box-shadow: 0 28px 90px rgba(0,0,0,.38); }
         .arena::before, .arena-preview::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px); background-size: 46px 46px; animation: tr-road 8s linear infinite; }
-        .tr-player { position: absolute; transform: translate(-50%,-50%); width: 54px; height: 54px; border-radius: 20px; background: linear-gradient(180deg,#fff7ad,#fbbf24); border: 3px solid #fff; color: #3b2307; font-size: 1.8rem; display: grid; place-items: center; box-shadow: 0 0 30px rgba(251,191,36,.72); z-index: 3; pointer-events: none; transition: left .05s linear, top .05s linear; }
+        .tr-player { position: absolute; transform: translate(-50%,-50%); width: 54px; height: 54px; border-radius: 20px; background: linear-gradient(180deg,#fff7ad,#fbbf24); border: 3px solid #fff; color: #3b2307; font-size: 1.8rem; display: grid; place-items: center; box-shadow: 0 0 30px rgba(251,191,36,.72); z-index: 3; pointer-events: none; }
         .tr-item { position: absolute; transform: translate(-50%,-50%); width: 42px; height: 42px; border-radius: 999px; font-family: var(--font-nunito); font-weight: 1000; display: grid; place-items: center; z-index: 2; pointer-events: none; }
         .tr-item.truth { background: radial-gradient(circle,#fff 0 18%,#fef08a 35%,#f59e0b 72%); color: #3b2307; box-shadow: 0 0 24px rgba(251,191,36,.8); }
         .tr-item.lie { background: linear-gradient(180deg,#111827,#020617); color: #cbd5e1; border: 2px dashed #64748b; box-shadow: 0 0 20px rgba(15,23,42,.9); }
@@ -306,7 +305,7 @@ export default function TruthRunnerPage() {
               </div>
             )}
 
-            <div className="tr-player" style={{ left: `${player.x}%`, top: `${player.y}%` }} aria-hidden="true">✦</div>
+            <div ref={playerElRef} className="tr-player" style={{ left: `${player.x}%`, top: `${player.y}%` }} aria-hidden="true">✦</div>
             {items.map((item) => (
               <div key={item.id} className={`tr-item ${item.kind}`} style={{ left: `${item.x}%`, top: `${item.y}%` }} aria-label={item.kind === 'truth' ? copy.truth : copy.lie}>
                 {item.kind === 'truth' ? '✦' : '!'}
