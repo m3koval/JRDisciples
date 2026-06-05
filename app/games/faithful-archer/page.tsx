@@ -16,6 +16,7 @@ type Target = {
   phase: number
   speed: number
   hit: boolean
+  hitCooldown: number
   wobble: number
   wisdom: boolean
   flop: { torso: number; head: number; leftArm: number; rightArm: number; leftLeg: number; rightLeg: number }
@@ -69,7 +70,7 @@ const ARROW_SPEED = { calm: 720, fast: 860 }
 const ARROW_GRAVITY = { calm: 720, fast: 880 }
 const MAX_DRAW = 190
 const MOBILE_BREAKPOINT = 720
-const HIT_ASSIST = { desktop: 30, mobile: 44, snap: 0.68 }
+const HIT_ASSIST = { desktop: 10, mobile: 18, snap: 0.92, cooldown: 0.42 }
 
 type Point = { x: number; y: number }
 
@@ -180,7 +181,7 @@ export default function FaithfulArcherPage() {
     combo: 'Серия',
     course: 'Курс',
     wisdom: 'Мудрость',
-    mobileRelease: 'Мобильное управление: держи палец на поле, тяни назад от лучника, смотри на светлую траекторию и отпусти. Попадания теперь мягче: близкие стрелы засчитываются и красиво прилипают к цели.',
+    mobileRelease: 'Мобильное управление: держи палец на поле, тяни назад от лучника, смотри на светлую траекторию и отпусти. Попадания требуют точности, но цель можно поражать снова после короткой паузы.',
     truth: 'Главная мысль: Божье Слово освещает путь. Тренируйся спокойно, целься честно и не сдавайся.',
     keep: 'Продолжить',
   } : {
@@ -198,7 +199,7 @@ export default function FaithfulArcherPage() {
     combo: 'Combo',
     course: 'Course',
     wisdom: 'Wisdom',
-    mobileRelease: 'Mobile controls: hold your finger on the field, pull back from the archer, follow the bright aim trail, then release. Hits are softer now: near arrows count and snap cleanly into the target.',
+    mobileRelease: 'Mobile controls: hold your finger on the field, pull back from the archer, follow the bright aim trail, then release. Hits need real aim now, but the same target can be hit again after a short pause.',
     truth: 'Big truth: God’s Word lights the path. Practice calmly, aim honestly, and keep going.',
     keep: 'Keep Practicing',
   }
@@ -246,6 +247,7 @@ export default function FaithfulArcherPage() {
         phase: i * 1.7,
         speed: 0.24 + i * 0.05 + model.levelIndex * 0.08,
         hit: false,
+        hitCooldown: 0,
         wobble: 0,
         wisdom: kind === 'bell' || kind === 'lantern' || kind === 'scroll',
         flop: { torso: 0, head: 0, leftArm: 0, rightArm: 0, leftLeg: 0, rightLeg: 0 },
@@ -316,20 +318,17 @@ export default function FaithfulArcherPage() {
       for (const t of targetsRef.current) {
         t.squash *= Math.pow(0.08, dt)
         t.spin *= Math.pow(0.12, dt)
-        if (t.hit) {
-          t.wobble *= 0.92
-          t.flop.torso *= Math.pow(0.18, dt)
-          t.flop.head *= Math.pow(0.18, dt)
-          t.flop.leftArm *= Math.pow(0.18, dt)
-          t.flop.rightArm *= Math.pow(0.18, dt)
-          t.flop.leftLeg *= Math.pow(0.18, dt)
-          t.flop.rightLeg *= Math.pow(0.18, dt)
-          continue
-        }
+        t.hitCooldown = Math.max(0, t.hitCooldown - dt)
+        t.wobble *= Math.pow(0.12, dt)
+        t.flop.torso *= Math.pow(0.18, dt)
+        t.flop.head *= Math.pow(0.18, dt)
+        t.flop.leftArm *= Math.pow(0.18, dt)
+        t.flop.rightArm *= Math.pow(0.18, dt)
+        t.flop.leftLeg *= Math.pow(0.18, dt)
+        t.flop.rightLeg *= Math.pow(0.18, dt)
         const move = m.levelIndex === 0 ? 0 : Math.sin(m.time * t.speed * difficulty + t.phase) * (20 + m.levelIndex * 10)
         t.x = t.baseX + move
         t.y = t.baseY + (t.kind === 'lantern' ? Math.sin(m.time * 1.3 + t.phase) * 16 : 0)
-        t.wobble *= 0.92
       }
 
       for (const arrow of arrowsRef.current) {
@@ -353,7 +352,7 @@ export default function FaithfulArcherPage() {
           arrow.stuck = true
         }
         for (const target of targetsRef.current) {
-          if (target.hit) continue
+          if (target.hitCooldown > 0) continue
           const hitRadius = getHitAssistRadius(target, width)
           const centerDistance = Math.hypot(arrow.x - target.x, arrow.y - target.y)
           const pathDistance = distancePointToSegment({ x: target.x, y: target.y }, prev, { x: arrow.x, y: arrow.y })
@@ -390,6 +389,7 @@ export default function FaithfulArcherPage() {
       snapArrowToTarget(arrow, target)
       arrow.stuck = true
       target.hit = true
+      target.hitCooldown = HIT_ASSIST.cooldown
       target.wobble = 1.35
       target.squash = 1
       target.spin = clamp(arrow.vx / 1600, -0.45, 0.45)
@@ -696,7 +696,7 @@ function drawTarget(ctx: CanvasRenderingContext2D, target: Target, time: number)
   else if (target.kind === 'lantern') drawLantern(ctx, time)
   else if (target.kind === 'scroll') drawScroll(ctx, time)
   else drawShield(ctx, target, time)
-  if (target.hit) { ctx.globalAlpha = 0.55; ctx.fillStyle = '#fff6dc'; ctx.font = '900 18px system-ui'; ctx.textAlign = 'center'; ctx.fillText('✓', 0, 6) }
+  if (target.hitCooldown > 0) { ctx.globalAlpha = 0.55; ctx.fillStyle = '#fff6dc'; ctx.font = '900 18px system-ui'; ctx.textAlign = 'center'; ctx.fillText('✓', 0, 6) }
   ctx.restore()
 }
 
