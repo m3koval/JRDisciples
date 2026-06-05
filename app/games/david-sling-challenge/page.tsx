@@ -83,7 +83,7 @@ export default function DavidSlingChallengePage() {
     done: 'Раунд окончен. Открой мудрость и попробуй улучшить рекорд.',
     wisdomTitle: 'Библейская мудрость',
     how: 'Как играть',
-    howText: 'На телефоне нажми большую кнопку “Отпустить”. На компьютере можно нажать кнопку или пробел. Чем ближе метка к зелёной зоне, тем лучше бросок.',
+    howText: 'Следи за вращением пращи. Нажми “Отпустить”, когда метка и дуга показывают лучший момент. На компьютере можно нажать кнопку или пробел.',
     childTruth: 'Главная истина: Бог сильнее страха. Давид не хвалился собой — он доверял Господу.',
   } : {
     back: 'All Games',
@@ -108,12 +108,13 @@ export default function DavidSlingChallengePage() {
     done: 'Round complete. Unlock the wisdom and try to beat your best.',
     wisdomTitle: 'Bible Wisdom',
     how: 'How to play',
-    howText: 'On mobile, tap the big Release button. On desktop, click it or press Space. The closer the marker lands in the green zone, the better the throw.',
+    howText: 'Watch the sling rotation. Press Release when the marker and arc show the best moment. On desktop, click the button or press Space.',
     childTruth: 'Big truth: God is stronger than fear. David was not bragging in himself — he trusted the Lord.',
   }
 
   const message = copy[messageKey]
   const slingRotation = useMemo(() => -75 + aim * 1.5, [aim])
+  const resultClass = messageKey === 'perfect' || messageKey === 'hit' ? 'is-hit' : messageKey === 'near' ? 'is-near' : messageKey === 'miss' ? 'is-miss' : ''
 
   useEffect(() => {
     const stored = Number(localStorage.getItem('david-sling-best') || '0')
@@ -201,21 +202,38 @@ export default function DavidSlingChallengePage() {
       <style>{`
         .sling-wrap { max-width: 1120px; margin: 0 auto; padding: 24px 14px 54px; }
         .sling-grid { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(280px,.75fr); gap: 18px; align-items: stretch; }
-        .sling-arena { position: relative; min-height: 560px; overflow: hidden; border-radius: 34px; border: 4px solid rgba(255,216,102,.82); background: linear-gradient(180deg,#7ec8e3 0%,#dbeafe 35%,#a7d477 36%,#3b7a2a 100%); box-shadow: 0 28px 90px rgba(0,0,0,.35); touch-action: manipulation; }
-        .sling-arena::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 18% 18%,rgba(255,255,255,.65),transparent 13%),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px); background-size: auto,48px 48px; pointer-events: none; }
-        .david { position: absolute; left: 12%; bottom: 11%; width: 98px; height: 138px; border-radius: 48px 48px 30px 30px; background: linear-gradient(180deg,#f6c37a 0 28%,#f97316 29% 72%,#7c2d12 73%); border: 4px solid rgba(255,255,255,.8); box-shadow: 0 16px 36px rgba(0,0,0,.28); display: grid; place-items: start center; font-size: 2rem; padding-top: 12px; z-index: 3; }
-        .giant-target { position: absolute; right: 8%; bottom: 15%; width: 138px; height: 214px; border-radius: 70px 70px 28px 28px; background: linear-gradient(180deg,#475569,#1e293b); border: 5px solid #cbd5e1; box-shadow: 0 24px 60px rgba(0,0,0,.34); display: grid; place-items: center; font-family: var(--font-nunito); font-weight: 1000; text-align: center; color: #fff; z-index: 2; }
-        .giant-target::before { content: ''; width: 86px; height: 86px; border-radius: 999px; background: radial-gradient(circle,#fef2f2 0 18%,#ef4444 19% 35%,#fff 36% 53%,#ef4444 54% 100%); box-shadow: inset 0 0 0 4px rgba(0,0,0,.08); }
-        .sling { position: absolute; left: calc(12% + 48px); bottom: calc(11% + 92px); width: 130px; height: 6px; transform-origin: left center; border-radius: 999px; background: #713f12; box-shadow: 0 0 0 2px rgba(255,255,255,.35); z-index: 4; transition: transform .04s linear; }
-        .sling::after { content: '●'; position: absolute; right: -10px; top: -18px; color: #57534e; font-size: 34px; text-shadow: 0 2px 0 #fff; }
-        .stone { position: absolute; left: 18%; bottom: 38%; width: 24px; height: 24px; border-radius: 999px; background: #57534e; border: 3px solid #e7e5e4; box-shadow: 0 8px 20px rgba(0,0,0,.34); transform: translateX(calc(var(--flight) * 1%)) translateY(calc(var(--arc) * -1px)); opacity: var(--visible); transition: transform .72s cubic-bezier(.2,.7,.2,1), opacity .18s; z-index: 5; }
+        .sling-arena { position: relative; min-height: 560px; overflow: hidden; border-radius: 34px; border: 4px solid rgba(255,216,102,.82); background: linear-gradient(180deg,#65b8df 0%,#dbeafe 35%,#c7e77b 36%,#3b7a2a 100%); box-shadow: 0 28px 90px rgba(0,0,0,.35); touch-action: manipulation; isolation: isolate; }
+        .sling-arena::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 18% 16%,rgba(255,255,255,.76),transparent 12%),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px); background-size: auto,48px 48px; pointer-events: none; z-index: 0; }
+        .sling-arena::after { content: ''; position: absolute; left: -6%; right: -6%; bottom: 0; height: 38%; background: radial-gradient(ellipse at 22% 100%,#2f6f25 0 25%,transparent 26%),radial-gradient(ellipse at 62% 100%,#2c621f 0 30%,transparent 31%),linear-gradient(180deg,transparent,#24551d 44%,#173b16); z-index: 0; }
+        .mountains { position: absolute; inset: auto 0 34% 0; height: 32%; background: linear-gradient(135deg,transparent 0 24%,rgba(72,114,80,.7) 25% 43%,transparent 44%),linear-gradient(225deg,transparent 0 18%,rgba(48,92,72,.72) 19% 38%,transparent 39%); opacity: .8; z-index: 0; }
+        .cloud { position: absolute; top: 12%; width: 112px; height: 36px; border-radius: 999px; background: rgba(255,255,255,.78); filter: blur(.2px); box-shadow: 28px -12px 0 4px rgba(255,255,255,.65),58px 2px 0 0 rgba(255,255,255,.56); z-index: 1; }
+        .cloud.one { left: 12%; } .cloud.two { right: 18%; top: 19%; transform: scale(.82); opacity: .7; }
+        .david { position: absolute; left: 11%; bottom: 10%; width: 108px; height: 150px; border-radius: 48px 48px 30px 30px; background: linear-gradient(180deg,#f6c37a 0 24%,#fef3c7 25% 31%,#f97316 32% 70%,#7c2d12 71%); border: 4px solid rgba(255,255,255,.82); box-shadow: 0 16px 36px rgba(0,0,0,.28); display: grid; place-items: start center; font-size: 2.05rem; padding-top: 12px; z-index: 5; }
+        .david::before { content: ''; position: absolute; top: 42px; left: 28px; width: 52px; height: 18px; border-radius: 999px; background: rgba(120,53,15,.55); transform: rotate(-12deg); }
+        .david::after { content: ''; position: absolute; left: 20px; right: 20px; bottom: -12px; height: 18px; border-radius: 999px; background: rgba(15,23,42,.22); filter: blur(3px); }
+        .trajectory { position: absolute; left: 20%; bottom: 31%; width: 56%; height: 46%; overflow: visible; pointer-events: none; z-index: 3; opacity: .74; }
+        .trajectory path { fill: none; stroke: rgba(255,255,255,.82); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 10 13; filter: drop-shadow(0 0 9px rgba(255,216,102,.72)); }
+        .trajectory .arc-glow { stroke: rgba(251,191,36,.35); stroke-width: 12; stroke-dasharray: none; }
+        .sling-orbit { position: absolute; left: calc(11% + 34px); bottom: calc(10% + 78px); width: 96px; height: 96px; border-radius: 999px; border: 3px dashed rgba(255,255,255,.75); box-shadow: 0 0 0 8px rgba(255,216,102,.1),0 0 28px rgba(255,216,102,.42); z-index: 6; }
+        .sling { position: absolute; left: calc(11% + 82px); bottom: calc(10% + 126px); width: 118px; height: 6px; transform-origin: left center; border-radius: 999px; background: linear-gradient(90deg,#78350f,#facc15 76%,#78350f); box-shadow: 0 0 0 2px rgba(255,255,255,.35),0 0 22px rgba(250,204,21,.48); z-index: 7; transition: transform .04s linear; }
+        .sling::after { content: '●'; position: absolute; right: -10px; top: -18px; color: #57534e; font-size: 34px; text-shadow: 0 2px 0 #fff,0 0 16px rgba(255,255,255,.7); }
+        .stone { position: absolute; left: 20%; bottom: 39%; width: 25px; height: 25px; border-radius: 999px; background: radial-gradient(circle at 35% 28%,#a8a29e,#57534e 68%); border: 3px solid #e7e5e4; box-shadow: 0 8px 20px rgba(0,0,0,.34),0 0 18px rgba(255,255,255,.52); transform: translateX(calc(var(--flight) * 1%)) translateY(calc(var(--arc) * -1px)); opacity: var(--visible); transition: transform .72s cubic-bezier(.2,.7,.2,1), opacity .18s; z-index: 8; }
+        .impact { position: absolute; right: 12%; bottom: 45%; width: 108px; height: 108px; border-radius: 999px; background: radial-gradient(circle,rgba(254,240,138,.95) 0 12%,rgba(251,191,36,.65) 13% 34%,transparent 35%); opacity: 0; transform: scale(.7); z-index: 6; pointer-events: none; }
+        .sling-arena.is-hit .impact { animation: impact-pop .8s ease-out; }
+        .sling-arena.is-near .impact { animation: near-pop .7s ease-out; }
+        .sling-arena.is-miss .trajectory { opacity: .38; }
+        .giant-target { position: absolute; right: 7%; bottom: 14%; width: 154px; height: 224px; border-radius: 72px 72px 30px 30px; background: linear-gradient(180deg,#64748b,#1e293b); border: 5px solid #cbd5e1; box-shadow: 0 24px 60px rgba(0,0,0,.34); display: grid; place-items: center; font-family: var(--font-nunito); font-weight: 1000; text-align: center; color: #fff; z-index: 4; }
+        .giant-target::before { content: ''; width: 94px; height: 94px; border-radius: 999px; background: radial-gradient(circle,#fef2f2 0 18%,#ef4444 19% 35%,#fff 36% 53%,#ef4444 54% 100%); box-shadow: inset 0 0 0 4px rgba(0,0,0,.08),0 0 24px rgba(239,68,68,.28); }
+        .giant-target::after { content: ''; position: absolute; left: 18px; right: 18px; bottom: -12px; height: 20px; border-radius: 999px; background: rgba(15,23,42,.22); filter: blur(4px); }
         .meter { position: relative; overflow: hidden; height: 34px; border-radius: 999px; background: rgba(15,23,42,.9); border: 2px solid rgba(255,255,255,.5); margin-top: 12px; }
-        .zone { position: absolute; top: 0; bottom: 0; background: linear-gradient(180deg,#86efac,#22c55e); box-shadow: 0 0 24px rgba(34,197,94,.8); }
+        .zone { position: absolute; top: 0; bottom: 0; background: linear-gradient(180deg,#bbf7d0,#22c55e); box-shadow: 0 0 24px rgba(34,197,94,.8); }
         .marker { position: absolute; top: -8px; width: 8px; height: 50px; border-radius: 999px; background: #f97316; box-shadow: 0 0 18px rgba(249,115,22,.9); transform: translateX(-50%); }
         .sling-card { border-radius: 26px; padding: 18px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); box-shadow: 0 20px 60px rgba(0,0,0,.2); }
         .sling-stat { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin: 14px 0; }
         .sling-stat div { border-radius: 16px; padding: 9px; background: rgba(15,23,42,.78); border: 1px solid rgba(255,255,255,.18); text-align: center; font-family: var(--font-nunito); font-weight: 1000; }
-        @media (max-width: 860px) { .sling-grid { grid-template-columns: 1fr; } .sling-arena { min-height: 460px; } .giant-target { width: 102px; height: 164px; right: 5%; } .david { width: 78px; height: 116px; } .sling { width: 94px; } .sling-stat { grid-template-columns: repeat(2,1fr); } }
+        @keyframes impact-pop { 0% { opacity: 0; transform: scale(.55); } 18% { opacity: 1; transform: scale(1.08); } 100% { opacity: 0; transform: scale(1.45); } }
+        @keyframes near-pop { 0% { opacity: 0; transform: scale(.45); } 22% { opacity: .72; transform: scale(.88); } 100% { opacity: 0; transform: scale(1.18); } }
+        @media (max-width: 860px) { .sling-grid { grid-template-columns: 1fr; } .sling-arena { min-height: 470px; } .giant-target { width: 108px; height: 168px; right: 5%; } .giant-target::before { width: 70px; height: 70px; } .david { width: 80px; height: 118px; left: 7%; } .sling-orbit { left: calc(7% + 25px); bottom: calc(10% + 62px); width: 76px; height: 76px; } .sling { left: calc(7% + 63px); bottom: calc(10% + 100px); width: 92px; } .trajectory { left: 18%; width: 58%; bottom: 34%; } .sling-stat { grid-template-columns: repeat(2,1fr); } }
       `}</style>
 
       <div className="sling-wrap">
@@ -232,10 +250,19 @@ export default function DavidSlingChallengePage() {
         </div>
 
         <section className="sling-grid">
-          <div className="sling-arena" aria-label={copy.title}>
+          <div className={`sling-arena ${resultClass}`} aria-label={copy.title}>
+            <div className="mountains" aria-hidden="true" />
+            <div className="cloud one" aria-hidden="true" />
+            <div className="cloud two" aria-hidden="true" />
+            <svg className="trajectory" viewBox="0 0 520 260" aria-hidden="true">
+              <path className="arc-glow" d="M12 218 C 158 42, 336 34, 506 170" />
+              <path d="M12 218 C 158 42, 336 34, 506 170" />
+            </svg>
             <div className="david" aria-hidden="true">👦</div>
+            <div className="sling-orbit" aria-hidden="true" />
             <div className="sling" style={{ transform: `rotate(${slingRotation}deg)` }} aria-hidden="true" />
-            <div className="stone" style={{ ['--flight' as string]: stoneFlight, ['--arc' as string]: stoneFlight > 0 ? 110 : 0, ['--visible' as string]: stoneFlight > 0 ? 1 : 0 }} aria-hidden="true" />
+            <div className="stone" style={{ ['--flight' as string]: stoneFlight, ['--arc' as string]: stoneFlight > 0 ? 116 : 0, ['--visible' as string]: stoneFlight > 0 ? 1 : 0 }} aria-hidden="true" />
+            <div className="impact" aria-hidden="true" />
             <div className="giant-target" aria-hidden="true" />
           </div>
 
