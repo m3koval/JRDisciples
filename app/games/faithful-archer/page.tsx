@@ -69,6 +69,7 @@ const ARROW_SPEED = { calm: 720, fast: 860 }
 const ARROW_GRAVITY = { calm: 720, fast: 880 }
 const MAX_DRAW = 190
 const MOBILE_BREAKPOINT = 720
+const HIT_ASSIST = { desktop: 30, mobile: 44, snap: 0.68 }
 
 type Point = { x: number; y: number }
 
@@ -99,6 +100,30 @@ function getCanvasPoint(canvas: HTMLCanvasElement, event: PointerEvent): Point {
 
 function clamp(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value))
+}
+
+function getHitAssistRadius(target: Target, width: number) {
+  return target.r + (width < MOBILE_BREAKPOINT ? HIT_ASSIST.mobile : HIT_ASSIST.desktop)
+}
+
+function distancePointToSegment(point: Point, start: Point, end: Point) {
+  const dx = end.x - start.x
+  const dy = end.y - start.y
+  const lenSq = dx * dx + dy * dy
+  if (!lenSq) return Math.hypot(point.x - end.x, point.y - end.y)
+  const t = clamp(((point.x - start.x) * dx + (point.y - start.y) * dy) / lenSq, 0, 1)
+  const x = start.x + dx * t
+  const y = start.y + dy * t
+  return Math.hypot(point.x - x, point.y - y)
+}
+
+function snapArrowToTarget(arrow: Arrow, target: Target) {
+  const angle = Math.atan2(arrow.vy, arrow.vx)
+  const visualStickRadius = target.r * HIT_ASSIST.snap
+  arrow.x = target.x - Math.cos(angle) * visualStickRadius
+  arrow.y = target.y - Math.sin(angle) * visualStickRadius
+  arrow.trail.unshift({ x: arrow.x, y: arrow.y })
+  arrow.trail = arrow.trail.slice(0, 8)
 }
 
 function makeModel(): GameModel {
@@ -155,7 +180,7 @@ export default function FaithfulArcherPage() {
     combo: 'Серия',
     course: 'Курс',
     wisdom: 'Мудрость',
-    mobileRelease: 'Мобильное управление: держи палец на поле, тяни назад от лучника, смотри на светлую траекторию и отпусти. На телефоне цели увеличены и попадания прощают чуть больше.',
+    mobileRelease: 'Мобильное управление: держи палец на поле, тяни назад от лучника, смотри на светлую траекторию и отпусти. Попадания теперь мягче: близкие стрелы засчитываются и красиво прилипают к цели.',
     truth: 'Главная мысль: Божье Слово освещает путь. Тренируйся спокойно, целься честно и не сдавайся.',
     keep: 'Продолжить',
   } : {
@@ -173,7 +198,7 @@ export default function FaithfulArcherPage() {
     combo: 'Combo',
     course: 'Course',
     wisdom: 'Wisdom',
-    mobileRelease: 'Mobile controls: hold your finger on the field, pull back from the archer, follow the bright aim trail, then release. Phone targets are larger and a little more forgiving.',
+    mobileRelease: 'Mobile controls: hold your finger on the field, pull back from the archer, follow the bright aim trail, then release. Hits are softer now: near arrows count and snap cleanly into the target.',
     truth: 'Big truth: God’s Word lights the path. Practice calmly, aim honestly, and keep going.',
     keep: 'Keep Practicing',
   }
@@ -313,6 +338,7 @@ export default function FaithfulArcherPage() {
         arrow.vx += m.wind * 220 * dt
         arrow.vy += (calmRef.current ? ARROW_GRAVITY.calm : ARROW_GRAVITY.fast) * dt
         arrow.vx *= Math.pow(0.997, dt * 60)
+        const prev = { x: arrow.x, y: arrow.y }
         arrow.x += arrow.vx * dt
         arrow.y += arrow.vy * dt
         arrow.trail.unshift({ x: arrow.x, y: arrow.y })
@@ -328,10 +354,13 @@ export default function FaithfulArcherPage() {
         }
         for (const target of targetsRef.current) {
           if (target.hit) continue
-          const dx = arrow.x - target.x
-          const dy = arrow.y - target.y
-          const mobileForgiveness = width < MOBILE_BREAKPOINT ? 24 : 13
-          if (dx * dx + dy * dy < (target.r + mobileForgiveness) * (target.r + mobileForgiveness)) hitTarget(arrow, target)
+          const hitRadius = getHitAssistRadius(target, width)
+          const centerDistance = Math.hypot(arrow.x - target.x, arrow.y - target.y)
+          const pathDistance = distancePointToSegment({ x: target.x, y: target.y }, prev, { x: arrow.x, y: arrow.y })
+          if (Math.min(centerDistance, pathDistance) < hitRadius) {
+            hitTarget(arrow, target)
+            break
+          }
         }
       }
 
@@ -358,6 +387,7 @@ export default function FaithfulArcherPage() {
 
     function hitTarget(arrow: Arrow, target: Target) {
       const m = modelRef.current
+      snapArrowToTarget(arrow, target)
       arrow.stuck = true
       target.hit = true
       target.wobble = 1.35

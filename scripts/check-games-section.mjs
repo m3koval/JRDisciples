@@ -73,6 +73,11 @@ const requiredArcherSnippets = [
   'target.squash',
   'target.spin',
   'FAITH_POPUPS',
+  'HIT_ASSIST',
+  'getHitAssistRadius',
+  'distancePointToSegment',
+  'snapArrowToTarget',
+  'near arrows count',
 ];
 
 for (const snippet of requiredArcherSnippets) {
