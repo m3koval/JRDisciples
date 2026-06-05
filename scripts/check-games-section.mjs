@@ -27,6 +27,10 @@ const requiredFaithSnippets = [
   'powerups',
   'Promise Boss',
   'Страх-великан',
+  'GUIDES',
+  'badgeEn',
+  'pressure-meter',
+  'reward-medal',
 ];
 
 for (const snippet of requiredFaithSnippets) {

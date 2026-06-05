@@ -31,7 +31,11 @@ type Level = {
   fear: number
   speed: number
   scriptureIndex: number
+  badgeEn: string
+  badgeRu: string
 }
+
+type Guide = { nameEn: string; nameRu: string; roleEn: string; roleRu: string; lineEn: string; lineRu: string; tone: 'joshua' | 'caleb' | 'rosie' }
 
 const SCRIPTURE: Scripture[] = [
   {
@@ -82,21 +86,27 @@ const SCRIPTURE: Scripture[] = [
 ]
 
 const LEVELS: Level[] = [
-  { nameEn: 'Scout the Land', nameRu: 'Осмотреть землю', giants: 1, fear: 40, speed: 1.1, scriptureIndex: 0 },
-  { nameEn: 'Grapes of Promise', nameRu: 'Виноград обетования', giants: 2, fear: 50, speed: 1.2, scriptureIndex: 1 },
-  { nameEn: 'The Fear Report', nameRu: 'Испуганный ответ', giants: 3, fear: 62, speed: 1.35, scriptureIndex: 1 },
-  { nameEn: 'Caleb Speaks Up', nameRu: 'Халев говорит верно', giants: 4, fear: 74, speed: 1.5, scriptureIndex: 1 },
-  { nameEn: 'Courage Camp', nameRu: 'Стан мужества', giants: 5, fear: 88, speed: 1.65, scriptureIndex: 2 },
-  { nameEn: 'Jordan Crossing', nameRu: 'Переход Иордана', giants: 6, fear: 102, speed: 1.82, scriptureIndex: 0 },
-  { nameEn: 'Jericho March', nameRu: 'Марш у Иерихона', giants: 7, fear: 118, speed: 2, scriptureIndex: 2 },
-  { nameEn: 'Hill Country Challenge', nameRu: 'Испытание горной земли', giants: 8, fear: 136, speed: 2.2, scriptureIndex: 0 },
-  { nameEn: 'Stand Together', nameRu: 'Стоять вместе', giants: 9, fear: 154, speed: 2.42, scriptureIndex: 2 },
-  { nameEn: 'Level 10: Promise Boss', nameRu: 'Уровень 10: Страх-великан', giants: 1, fear: 190, speed: 2.7, scriptureIndex: 0 },
+  { nameEn: 'Scout the Land', nameRu: 'Осмотреть землю', giants: 1, fear: 42, speed: 0.95, scriptureIndex: 0, badgeEn: 'Scout Badge', badgeRu: 'Значок разведчика' },
+  { nameEn: 'Grapes of Promise', nameRu: 'Виноград обетования', giants: 2, fear: 54, speed: 1.05, scriptureIndex: 1, badgeEn: 'Promise Grapes', badgeRu: 'Виноград обетования' },
+  { nameEn: 'The Fear Report', nameRu: 'Испуганный ответ', giants: 3, fear: 68, speed: 1.18, scriptureIndex: 1, badgeEn: 'Truth Listener', badgeRu: 'Слушатель истины' },
+  { nameEn: 'Caleb Speaks Up', nameRu: 'Халев говорит верно', giants: 4, fear: 84, speed: 1.32, scriptureIndex: 1, badgeEn: 'Faithful Report', badgeRu: 'Верный ответ' },
+  { nameEn: 'Courage Camp', nameRu: 'Стан мужества', giants: 5, fear: 104, speed: 1.48, scriptureIndex: 2, badgeEn: 'Courage Camp', badgeRu: 'Стан мужества' },
+  { nameEn: 'Jordan Crossing', nameRu: 'Переход Иордана', giants: 6, fear: 126, speed: 1.65, scriptureIndex: 0, badgeEn: 'River Step', badgeRu: 'Шаг через реку' },
+  { nameEn: 'Jericho March', nameRu: 'Марш у Иерихона', giants: 7, fear: 150, speed: 1.84, scriptureIndex: 2, badgeEn: 'Obedient March', badgeRu: 'Послушный марш' },
+  { nameEn: 'Hill Country Challenge', nameRu: 'Испытание горной земли', giants: 8, fear: 176, speed: 2.05, scriptureIndex: 0, badgeEn: 'Hill Courage', badgeRu: 'Мужество в горах' },
+  { nameEn: 'Stand Together', nameRu: 'Стоять вместе', giants: 9, fear: 204, speed: 2.28, scriptureIndex: 2, badgeEn: 'Together Shield', badgeRu: 'Щит единства' },
+  { nameEn: 'Level 10: Promise Boss', nameRu: 'Уровень 10: Страх-великан', giants: 1, fear: 238, speed: 2.55, scriptureIndex: 0, badgeEn: 'Promise Victor', badgeRu: 'Победитель обещания' },
+]
+
+const GUIDES: Guide[] = [
+  { nameEn: 'Joshua', nameRu: 'Иисус Навин', roleEn: 'Leader', roleRu: 'Вождь', tone: 'joshua', lineEn: 'We move because the LORD is with His people.', lineRu: 'Мы идем, потому что Господь со Своим народом.' },
+  { nameEn: 'Caleb', nameRu: 'Халев', roleEn: 'Faithful report', roleRu: 'Верный ответ', tone: 'caleb', lineEn: 'Do not measure the promise by the giants. Trust God.', lineRu: 'Не меряй обещание великанами. Доверяй Богу.' },
+  { nameEn: 'Rosie', nameRu: 'Рози', roleEn: 'Scripture helper', roleRu: 'Помощница со стихом', tone: 'rosie', lineEn: 'Read the verse, then choose the truth.', lineRu: 'Прочитай стих, потом выбери истину.' },
 ]
 
 const powerups: Record<Powerup, { cost: number; labelEn: string; labelRu: string; descEn: string; descRu: string }> = {
   people: {
-    cost: 3,
+    cost: 2,
     labelEn: 'Stand Together',
     labelRu: 'Стоять вместе',
     descEn: '+1 helper for stronger courage steps',
@@ -110,7 +120,7 @@ const powerups: Record<Powerup, { cost: number; labelEn: string; labelRu: string
     descRu: 'Вернуть 2 сердца',
   },
   strength: {
-    cost: 4,
+    cost: 3,
     labelEn: 'Be Strong',
     labelRu: 'Будь тверд',
     descEn: 'Temporary strong push against fear',
@@ -134,6 +144,8 @@ export default function FaithOverGiantsPage() {
   const [wisdomFuel, setWisdomFuel] = useState(0)
   const [strengthTurns, setStrengthTurns] = useState(0)
   const [message, setMessage] = useState('')
+  const [lastAction, setLastAction] = useState<'none' | 'step' | 'hit' | 'power' | 'badge'>('none')
+  const [badges, setBadges] = useState<string[]>([])
   const [bestLevel, setBestLevel] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
 
@@ -141,7 +153,8 @@ export default function FaithOverGiantsPage() {
   const scripture = SCRIPTURE[level.scriptureIndex]
   const progressPercent = clamp((progress / level.fear) * 100, 0, 100)
   const isBoss = levelIndex === LEVELS.length - 1
-  const couragePower = useMemo(() => helpers * 7 + (strengthTurns > 0 ? 16 : 0), [helpers, strengthTurns])
+  const couragePower = useMemo(() => helpers * 8 + (strengthTurns > 0 ? 18 : 0), [helpers, strengthTurns])
+  const guide = GUIDES[phase === 'question' ? 2 : levelIndex % 2]
 
   const copy = isRu ? {
     back: 'Все игры',
@@ -171,6 +184,9 @@ export default function FaithOverGiantsPage() {
     powerupsTitle: 'Усиления',
     scriptureTitle: 'Стих внутри игры',
     bigTruth: 'Главная истина: Божьи обещания больше великанов, которых мы боимся.',
+    badgeEarned: 'Новая награда',
+    reward: 'Награда',
+    pressure: 'Давление страха',
   } : {
     back: 'All Games',
     eyebrow: 'Bible Strategy Game',
@@ -199,6 +215,9 @@ export default function FaithOverGiantsPage() {
     powerupsTitle: 'Power-ups',
     scriptureTitle: 'Scripture inside the game',
     bigTruth: 'Big truth: God’s promises are bigger than the giants we fear.',
+    badgeEarned: 'New Reward',
+    reward: 'Reward',
+    pressure: 'Fear Pressure',
   }
 
   useEffect(() => {
@@ -213,6 +232,7 @@ export default function FaithOverGiantsPage() {
         const next = value + level.speed
         if (next >= 100) {
           setHealth((h) => Math.max(0, h - 1))
+          setLastAction('hit')
           setMessage(isRu ? 'Страх подошел близко — держись Божьего обещания.' : 'Fear pressed close — hold to God’s promise.')
           return 26
         }
@@ -230,17 +250,21 @@ export default function FaithOverGiantsPage() {
     }
     if (progress >= level.fear) {
       if (levelIndex >= LEVELS.length - 1) {
+        setBadges((earned) => earned.includes(level.badgeEn) ? earned : [...earned, level.badgeEn])
+        setLastAction('badge')
         setPhase('victory')
         setBestLevel(10)
         localStorage.setItem('faith-over-giants-best-level', '10')
       } else {
+        setBadges((earned) => earned.includes(level.badgeEn) ? earned : [...earned, level.badgeEn])
+        setLastAction('badge')
         setPhase('levelComplete')
         const nextBest = Math.max(bestLevel, levelIndex + 1)
         setBestLevel(nextBest)
         localStorage.setItem('faith-over-giants-best-level', String(nextBest))
       }
     }
-  }, [phase, health, progress, level.fear, levelIndex, bestLevel])
+  }, [phase, health, progress, level.fear, level.badgeEn, levelIndex, bestLevel])
 
   function startGame() {
     setPhase('question')
@@ -252,6 +276,8 @@ export default function FaithOverGiantsPage() {
     setWisdomFuel(0)
     setStrengthTurns(0)
     setSelectedAnswer(null)
+    setLastAction('none')
+    setBadges([])
     setMessage('')
   }
 
@@ -259,6 +285,7 @@ export default function FaithOverGiantsPage() {
     setSelectedAnswer(index)
     if (index === scripture.question.answer) {
       setWisdomFuel((fuel) => fuel + 2)
+      setLastAction('power')
       setMessage(copy.correct)
       window.setTimeout(() => {
         setSelectedAnswer(null)
@@ -276,6 +303,7 @@ export default function FaithOverGiantsPage() {
     setHealth((h) => Math.min(6, h + 1))
     setStrengthTurns(0)
     setSelectedAnswer(null)
+    setLastAction('none')
     setMessage('')
     setPhase('question')
   }
@@ -283,8 +311,9 @@ export default function FaithOverGiantsPage() {
   function courageStep() {
     if (phase !== 'play') return
     setProgress((value) => value + couragePower)
-    setFearLine((value) => clamp(value - 7, 10, 100))
-    setMessage(isRu ? 'Верный ответ отталкивает страх.' : 'A faithful report pushes fear back.')
+    setFearLine((value) => clamp(value - 9, 10, 100))
+    setLastAction('step')
+    setMessage(isRu ? 'Верный ответ отталкивает страх — команда продвигается!' : 'A faithful report pushes fear back — the team advances!')
     if (strengthTurns > 0) setStrengthTurns((turns) => Math.max(0, turns - 1))
   }
 
@@ -294,14 +323,17 @@ export default function FaithOverGiantsPage() {
     setWisdomFuel((fuel) => fuel - power.cost)
     if (kind === 'people') {
       setHelpers((count) => Math.min(8, count + 1))
+      setLastAction('power')
       setMessage(isRu ? 'Еще один помощник стал рядом.' : 'Another helper stood with the team.')
     }
     if (kind === 'health') {
       setHealth((value) => Math.min(6, value + 2))
+      setLastAction('power')
       setMessage(isRu ? 'Отдых восстановил сердца.' : 'Courage Rest restored hearts.')
     }
     if (kind === 'strength') {
       setStrengthTurns(3)
+      setLastAction('power')
       setMessage(isRu ? 'Следующие шаги сильнее: будь тверд и мужествен.' : 'The next steps are stronger: be strong and courageous.')
     }
   }
@@ -312,18 +344,37 @@ export default function FaithOverGiantsPage() {
         .giants-wrap { max-width: 1140px; margin: 0 auto; padding: 24px 14px 56px; }
         .giants-grid { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(292px,.75fr); gap: 18px; align-items: stretch; }
         .promise-arena { position: relative; min-height: 570px; overflow: hidden; border-radius: 34px; border: 4px solid rgba(255,216,102,.86); background: linear-gradient(180deg,#80c7e8 0%,#dbeafe 31%,#d8b46f 32%,#73612e 100%); box-shadow: 0 30px 90px rgba(0,0,0,.34); isolation: isolate; touch-action: manipulation; }
+        .promise-arena.is-step { animation: courage-pulse .42s ease-out; }
+        .promise-arena.is-hit { animation: fear-shake .36s ease-out; }
+        .promise-arena.is-power { box-shadow: 0 30px 90px rgba(0,0,0,.34),0 0 42px rgba(255,216,102,.46); }
         .promise-arena::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 18% 14%,rgba(255,255,255,.78),transparent 12%),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size: auto,52px 52px; pointer-events: none; }
         .promise-arena::after { content: ''; position: absolute; left: -10%; right: -10%; bottom: 0; height: 28%; background: radial-gradient(ellipse at 24% 100%,#426b25 0 26%,transparent 27%),radial-gradient(ellipse at 64% 100%,#31591e 0 28%,transparent 29%),linear-gradient(180deg,transparent,#244819 54%,#173214); z-index: 0; }
         .hills { position: absolute; inset: auto 0 28% 0; height: 34%; background: linear-gradient(135deg,transparent 0 20%,rgba(103,86,46,.65) 21% 42%,transparent 43%),linear-gradient(225deg,transparent 0 19%,rgba(76,100,60,.7) 20% 44%,transparent 45%); opacity: .9; z-index: 0; }
-        .team { position: absolute; left: 7%; bottom: 11%; z-index: 4; display: flex; align-items: end; gap: 7px; }
-        .helper { width: 42px; height: 76px; border-radius: 24px 24px 14px 14px; background: linear-gradient(180deg,#f8d29a 0 25%,#fef3c7 26% 33%,#2563eb 34% 72%,#78350f 73%); border: 3px solid rgba(255,255,255,.78); box-shadow: 0 10px 26px rgba(0,0,0,.24); display: grid; place-items: start center; padding-top: 5px; font-size: 1.15rem; }
-        .helper.leader { width: 54px; height: 92px; background: linear-gradient(180deg,#f8d29a 0 24%,#fef3c7 25% 32%,#16a34a 33% 72%,#78350f 73%); font-size: 1.45rem; }
+        .team { position: absolute; left: 7%; bottom: 11%; z-index: 4; display: flex; align-items: end; gap: 7px; transition: transform .3s ease; }
+        .promise-arena.is-step .team { transform: translateX(22px); }
+        .helper { position: relative; width: 42px; height: 76px; border-radius: 24px 24px 14px 14px; background: linear-gradient(180deg,#8b5a2b 0 12%,#f8d29a 13% 26%,#fef3c7 27% 33%,#2563eb 34% 72%,#78350f 73%); border: 3px solid rgba(255,255,255,.78); box-shadow: 0 10px 26px rgba(0,0,0,.24); display: grid; place-items: start center; padding-top: 5px; }
+        .helper::before { content: ''; position: absolute; top: 17px; left: 12px; width: 18px; height: 8px; border-radius: 999px; background: rgba(120,53,15,.42); }
+        .helper::after { content: ''; position: absolute; bottom: -9px; left: 6px; right: 6px; height: 12px; border-radius: 999px; background: rgba(15,23,42,.24); filter: blur(3px); }
+        .helper.leader { width: 54px; height: 92px; background: linear-gradient(180deg,#5b3418 0 12%,#f8d29a 13% 24%,#fef3c7 25% 32%,#16a34a 33% 72%,#78350f 73%); }
+        .helper.leader .shield { position: absolute; left: -10px; top: 34px; width: 24px; height: 32px; border-radius: 12px 12px 16px 16px; background: linear-gradient(180deg,#fde68a,#d97706); border: 2px solid #fff7ed; box-shadow: 0 0 14px rgba(253,230,138,.65); }
         .giant-line { position: absolute; right: 8%; bottom: 11%; z-index: 3; display: flex; align-items: end; gap: 8px; transform: translateX(calc((100 - var(--fear-line)) * .62%)); transition: transform .45s ease; }
-        .giant { width: 54px; height: 118px; border-radius: 34px 34px 18px 18px; background: linear-gradient(180deg,#64748b,#1e293b); border: 4px solid #cbd5e1; box-shadow: 0 16px 38px rgba(0,0,0,.32); display: grid; place-items: center; font-family: var(--font-nunito); font-weight: 1000; color: #fff; }
-        .giant.boss { width: 106px; height: 196px; border-radius: 64px 64px 28px 28px; background: linear-gradient(180deg,#78350f,#1e293b 58%,#020617); border-color: #fed7aa; font-size: 1.45rem; box-shadow: 0 26px 70px rgba(0,0,0,.42),0 0 46px rgba(249,115,22,.28); }
+        .giant { position: relative; width: 54px; height: 118px; border-radius: 34px 34px 18px 18px; background: linear-gradient(180deg,#64748b,#1e293b); border: 4px solid #cbd5e1; box-shadow: 0 16px 38px rgba(0,0,0,.32); display: grid; place-items: center; font-family: var(--font-nunito); font-weight: 1000; color: #fff; }
+        .giant::before { content: ''; position: absolute; top: 20px; width: 24px; height: 12px; border-radius: 999px; background: rgba(15,23,42,.65); box-shadow: 0 18px 0 rgba(148,163,184,.38); }
+        .giant::after { content: ''; position: absolute; bottom: -10px; left: 7px; right: 7px; height: 14px; border-radius: 999px; background: rgba(15,23,42,.28); filter: blur(4px); }
+        .giant.boss { width: 106px; height: 196px; border-radius: 64px 64px 28px 28px; background: linear-gradient(180deg,#78350f,#1e293b 58%,#020617); border-color: #fed7aa; font-size: 1.05rem; text-align: center; box-shadow: 0 26px 70px rgba(0,0,0,.42),0 0 46px rgba(249,115,22,.28); }
+        .pressure-meter { position: absolute; right: 7%; top: 7%; z-index: 5; width: 170px; border-radius: 18px; padding: 10px; background: rgba(15,23,42,.72); border: 1px solid rgba(255,255,255,.32); font-family: var(--font-nunito); font-weight: 1000; }
+        .pressure-meter span { display: block; height: 10px; border-radius: 999px; margin-top: 6px; background: linear-gradient(90deg,#22c55e,#fde047,#ef4444); width: var(--fear-line-width); }
         .promise-light { position: absolute; left: 50%; top: 18%; width: 180px; height: 180px; transform: translateX(-50%); border-radius: 999px; background: radial-gradient(circle,rgba(255,255,255,.92) 0 12%,rgba(255,216,102,.56) 13% 42%,transparent 70%); filter: blur(.3px); z-index: 1; }
         .progress-path { position: absolute; left: 8%; right: 8%; bottom: 6%; height: 18px; border-radius: 999px; background: rgba(15,23,42,.72); border: 2px solid rgba(255,255,255,.72); z-index: 5; overflow: hidden; }
         .progress-path span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg,#fef08a,#22c55e); width: var(--progress); box-shadow: 0 0 20px rgba(34,197,94,.7); }
+        .action-burst { position: absolute; left: 28%; bottom: 28%; z-index: 6; pointer-events: none; border-radius: 999px; padding: 10px 14px; background: rgba(255,255,255,.9); color: #14532d; font-family: var(--font-nunito); font-weight: 1000; box-shadow: 0 14px 32px rgba(0,0,0,.22); animation: burst-rise .8s ease-out both; }
+        .guide-card { display: grid; grid-template-columns: 58px 1fr; gap: 12px; align-items: center; border-radius: 20px; padding: 12px; margin-bottom: 12px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); }
+        .guide-avatar { position: relative; width: 56px; height: 62px; border-radius: 26px 26px 16px 16px; background: linear-gradient(180deg,#6b3f20 0 16%,#f8d29a 17% 34%,#fef3c7 35% 42%,#16a34a 43% 100%); border: 2px solid rgba(255,255,255,.72); }
+        .guide-avatar.caleb { background: linear-gradient(180deg,#5b3418 0 16%,#f8d29a 17% 34%,#fef3c7 35% 42%,#2563eb 43% 100%); }
+        .guide-avatar.rosie { background: linear-gradient(180deg,#4b2e83 0 16%,#f0c7a0 17% 34%,#fef3c7 35% 42%,#7c3aed 43% 100%); }
+        .guide-avatar::after { content: ''; position: absolute; top: 24px; left: 16px; width: 24px; height: 8px; border-radius: 999px; background: rgba(120,53,15,.42); }
+        .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+        .badge-chip { border-radius: 999px; padding: 7px 10px; background: linear-gradient(180deg,#fef3c7,#fbbf24); color: #3b2307; font-family: var(--font-nunito); font-size: .76rem; font-weight: 1000; box-shadow: 0 8px 18px rgba(0,0,0,.18); }
         .giants-card { border-radius: 26px; padding: 18px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); box-shadow: 0 20px 60px rgba(0,0,0,.2); }
         .giants-stat { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; margin: 14px 0; }
         .giants-stat div { border-radius: 16px; padding: 9px; background: rgba(15,23,42,.76); border: 1px solid rgba(255,255,255,.18); text-align: center; font-family: var(--font-nunito); font-weight: 1000; }
@@ -334,6 +385,10 @@ export default function FaithOverGiantsPage() {
         .power-row button:disabled { opacity: .48; filter: grayscale(.35); }
         .arena-overlay { position: absolute; inset: 0; z-index: 8; display: grid; place-items: center; padding: 18px; background: rgba(5,9,20,.62); }
         .arena-overlay > div { max-width: 650px; border-radius: 28px; padding: 24px; background: rgba(255,255,255,.96); color: #0d1f3c; border: 3px solid #ffd866; text-align: center; }
+        .reward-medal { width: 84px; height: 84px; margin: 0 auto 10px; border-radius: 999px; display: grid; place-items: center; background: radial-gradient(circle,#fff 0 18%,#fef08a 19% 54%,#f59e0b 55%); border: 5px solid #fff7ed; box-shadow: 0 16px 36px rgba(0,0,0,.2),0 0 28px rgba(251,191,36,.65); color: #78350f; font-family: var(--font-nunito); font-weight: 1000; }
+        @keyframes courage-pulse { 0% { filter: saturate(1); } 40% { filter: saturate(1.35) brightness(1.06); } 100% { filter: saturate(1); } }
+        @keyframes fear-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 55% { transform: translateX(5px); } }
+        @keyframes burst-rise { 0% { opacity: 0; transform: translateY(18px) scale(.92); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-34px) scale(1.08); } }
         @media (max-width: 880px) { .giants-grid { grid-template-columns: 1fr; } .promise-arena { min-height: 470px; } .giants-stat { grid-template-columns: repeat(2,1fr); } .giant { width: 42px; height: 94px; } .giant.boss { width: 78px; height: 148px; } .helper { width: 34px; height: 62px; } .helper.leader { width: 44px; height: 78px; } }
       `}</style>
 
@@ -352,16 +407,18 @@ export default function FaithOverGiantsPage() {
         </div>
 
         <section className="giants-grid">
-          <div className="promise-arena" aria-label={copy.title}>
+          <div className={`promise-arena ${lastAction === 'step' ? 'is-step' : lastAction === 'hit' ? 'is-hit' : lastAction === 'power' ? 'is-power' : ''}`} aria-label={copy.title}>
             <div className="hills" aria-hidden="true" />
             <div className="promise-light" aria-hidden="true" />
+            <div className="pressure-meter" aria-hidden="true">{copy.pressure}<span style={{ ['--fear-line-width' as string]: `${clamp(fearLine, 0, 100)}%` }} /></div>
             <div className="team" aria-hidden="true">
-              <div className="helper leader">🛡️</div>
-              {Array.from({ length: Math.max(0, Math.min(helpers - 1, 7)) }).map((_, index) => <div key={index} className="helper">👣</div>)}
+              <div className="helper leader"><span className="shield" /></div>
+              {Array.from({ length: Math.max(0, Math.min(helpers - 1, 7)) }).map((_, index) => <div key={index} className="helper" />)}
             </div>
             <div className="giant-line" style={{ ['--fear-line' as string]: fearLine }} aria-hidden="true">
-              {isBoss ? <div className="giant boss">{isRu ? 'Страх' : 'Fear'}</div> : Array.from({ length: level.giants }).map((_, index) => <div key={index} className="giant">!</div>)}
+              {isBoss ? <div className="giant boss">{isRu ? 'Страх' : 'Fear'}</div> : Array.from({ length: level.giants }).map((_, index) => <div key={index} className="giant" />)}
             </div>
+            {lastAction !== 'none' && phase === 'play' && <div className="action-burst">{lastAction === 'hit' ? `-${isRu ? 'сердце' : 'heart'}` : lastAction === 'power' ? `+${copy.fuel}` : `+${copy.courage}`}</div>}
             <div className="progress-path" aria-label={`${copy.courage}: ${Math.round(progressPercent)}%`}><span style={{ ['--progress' as string]: `${progressPercent}%` }} /></div>
 
             {phase === 'intro' && (
@@ -379,7 +436,9 @@ export default function FaithOverGiantsPage() {
               <div className="arena-overlay">
                 <div>
                   <p className="puzzle-label">{phase === 'victory' ? copy.victory : phase === 'defeat' ? copy.defeat : copy.completed}</p>
+                  {phase !== 'defeat' && <div className="reward-medal">{copy.reward}</div>}
                   <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '2rem', margin: '6px 0 10px' }}>{isRu ? level.nameRu : level.nameEn}</h2>
+                  {phase !== 'defeat' && <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#92400e' }}>{copy.badgeEarned}: {isRu ? level.badgeRu : level.badgeEn}</p>}
                   <div className="pull-quote" style={{ margin: '12px 0', textAlign: 'left' }}>
                     <p className="pq-text">&ldquo;{isRu ? scripture.textRu : scripture.textEn}&rdquo;</p>
                     <span className="pq-ref">— {isRu ? scripture.refRu : scripture.refEn}</span>
@@ -392,6 +451,14 @@ export default function FaithOverGiantsPage() {
           </div>
 
           <aside className="giants-card">
+            <div className="guide-card">
+              <div className={`guide-avatar ${guide.tone}`} aria-hidden="true" />
+              <div>
+                <p className="puzzle-label" style={{ color: '#ffd866', margin: 0 }}>{isRu ? guide.roleRu : guide.roleEn}</p>
+                <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, margin: '2px 0 4px', color: '#fff' }}>{isRu ? guide.nameRu : guide.nameEn}</h3>
+                <p style={{ fontFamily: 'var(--font-lora)', color: 'rgba(255,255,255,.88)', fontWeight: 700, lineHeight: 1.42, fontSize: '.92rem' }}>{isRu ? guide.lineRu : guide.lineEn}</p>
+              </div>
+            </div>
             <p className="puzzle-label" style={{ color: '#ffd866' }}>{isRu ? level.nameRu : level.nameEn}</p>
             <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '1.35rem', color: '#fff', marginBottom: 8 }}>{phase === 'question' ? copy.answerTitle : copy.report}</h2>
             {isBoss && <p style={{ fontFamily: 'var(--font-nunito)', color: '#fed7aa', fontWeight: 900, lineHeight: 1.45, marginBottom: 8 }}>{copy.bossHint}</p>}
@@ -419,6 +486,15 @@ export default function FaithOverGiantsPage() {
                   {phase === 'play' ? copy.stand : copy.restart}
                 </button>
                 <p style={{ marginTop: 10, minHeight: 38, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#dbeafe', lineHeight: 1.45 }}>{message || (isRu ? scripture.question.feedbackRu : scripture.question.feedbackEn)}</p>
+
+                {badges.length > 0 && (
+                  <div className="badge-row" aria-label={copy.reward}>
+                    {badges.map((badge) => {
+                      const earnedLevel = LEVELS.find((item) => item.badgeEn === badge)
+                      return <span className="badge-chip" key={badge}>{earnedLevel ? (isRu ? earnedLevel.badgeRu : earnedLevel.badgeEn) : badge}</span>
+                    })}
+                  </div>
+                )}
 
                 <div style={{ marginTop: 16 }}>
                   <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#ffd866' }}>{copy.powerupsTitle}</h3>
