@@ -140,15 +140,6 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images, nextQue
     setPhase('story')
   }
 
-  function replay() {
-    setStarted(false)
-    setFinished(false)
-    setIndex(0)
-    setSelected(null)
-    setPhase('story')
-    setSolved(scenes.map(() => false))
-  }
-
   return (
     <main className={`courage-page ${isGameplay ? 'playing' : ''}`}>
       <style>{`
@@ -378,7 +369,7 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images, nextQue
             </div>
             <div className="quest-finish-actions">
               <Link href={nextQuest.href} className="quest-button green">{nextQuest.label[lang]}</Link>
-              <button className="quest-button secondary" onClick={replay}>{t.replay}</button>
+              <Link href="/quests" className="quest-button secondary">{t.back}</Link>
             </div>
           </section>
         ) : (
