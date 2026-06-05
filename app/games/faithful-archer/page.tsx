@@ -382,7 +382,7 @@ export default function FaithfulArcherPage() {
       ctx!.clearRect(0, 0, width, height)
       drawBackground(ctx!, width, height)
       for (const target of targetsRef.current) drawTarget(ctx!, target, modelRef.current.time)
-      drawArcher(ctx!, archer(), modelRef.current.time)
+      drawArcher(ctx!, archer(), modelRef.current.time, pointerRef.current)
       drawAim(ctx!, archer())
       drawArrows(ctx!)
       drawEffects(ctx!)
@@ -655,18 +655,43 @@ function drawRagdollDummy(ctx: CanvasRenderingContext2D, target: Target, time: n
   ctx.restore(); ctx.restore()
 }
 
-function drawArcher(ctx: CanvasRenderingContext2D, a: { x: number; y: number }, time: number) {
+function drawArcher(ctx: CanvasRenderingContext2D, a: { x: number; y: number }, time: number, pointer: { down: boolean; x: number; y: number }) {
+  // How far the player has pulled back (0–1), drives string + lean animations
+  const pullPower = pointer.down
+    ? Math.min(1, Math.hypot((a.x + 34) - pointer.x, (a.y - 56) - pointer.y) / MAX_DRAW)
+    : 0
+  const pullBack = pullPower * 22   // px the string midpoint moves back
+  const lean     = pullPower * 0.12 // body leans back when at full draw
+
   ctx.save(); ctx.translate(a.x, a.y); ctx.lineCap = 'round'; ctx.lineJoin = 'round'
   ctx.fillStyle = 'rgba(32,48,71,.18)'; ellipse(ctx, 10, 18, 92, 18)
   limb(ctx, -10, -8, -34, 35, 12, '#31552d'); limb(ctx, 8, -8, 30, 35, 12, '#31552d')
   limb(ctx, -34, 35, -50, 38, 10, '#4b3218'); limb(ctx, 30, 35, 48, 38, 10, '#4b3218')
-  ctx.rotate(Math.sin(time * 5) * 0.02); ctx.fillStyle = '#4aa96c'; ctx.strokeStyle = '#203047'; ctx.lineWidth = 3; roundRect(ctx, -22, -74, 44, 68, 18, true, true)
+  ctx.rotate(Math.sin(time * 5) * 0.02 - lean)
+  ctx.fillStyle = '#4aa96c'; ctx.strokeStyle = '#203047'; ctx.lineWidth = 3; roundRect(ctx, -22, -74, 44, 68, 18, true, true)
   ctx.fillStyle = '#ffe27a'; roundRect(ctx, -15, -62, 30, 14, 8, true)
   ctx.fillStyle = '#f5c99b'; ctx.strokeStyle = '#203047'; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(0, -101, 19, 0, Math.PI * 2); ctx.fill(); ctx.stroke()
   ctx.fillStyle = '#6b3f22'; ctx.beginPath(); ctx.arc(-5, -111, 18, Math.PI, Math.PI * 2); ctx.fill()
   ctx.fillStyle = '#203047'; ctx.beginPath(); ctx.arc(6, -102, 2.2, 0, Math.PI * 2); ctx.fill()
   limb(ctx, -17, -54, 18, -54, 11, '#f5c99b'); limb(ctx, 18, -54, 34, -56, 10, '#f5c99b')
-  ctx.save(); ctx.translate(34, -56); ctx.rotate(-0.35); ctx.strokeStyle = '#7a4e20'; ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(0, 0, 33, -1.25, 1.25); ctx.stroke(); ctx.strokeStyle = 'rgba(255,255,255,.8)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(10, -31); ctx.lineTo(-10, 0); ctx.lineTo(10, 31); ctx.stroke(); ctx.restore()
+
+  // Bow + animated string
+  ctx.save(); ctx.translate(34, -56); ctx.rotate(-0.35)
+  if (pullPower > 0.75) { ctx.shadowColor = '#ffe27a'; ctx.shadowBlur = 16 }
+  ctx.strokeStyle = pullPower > 0.75 ? '#f7c948' : '#7a4e20'; ctx.lineWidth = 5
+  ctx.beginPath(); ctx.arc(0, 0, 33, -1.25, 1.25); ctx.stroke()
+  ctx.shadowBlur = 0
+  // String — pulls back proportional to draw power
+  ctx.strokeStyle = pullPower > 0.75 ? '#ffe27a' : 'rgba(255,255,255,.85)'; ctx.lineWidth = 1.5
+  ctx.beginPath(); ctx.moveTo(10, -31); ctx.lineTo(-10 - pullBack, 0); ctx.lineTo(10, 31); ctx.stroke()
+  // Nocked arrow visible while drawing
+  if (pointer.down && pullBack > 2) {
+    ctx.strokeStyle = '#5b371f'; ctx.lineWidth = 4
+    ctx.beginPath(); ctx.moveTo(-10 - pullBack, 0); ctx.lineTo(16, 0); ctx.stroke()
+    ctx.fillStyle = '#203047'; ctx.beginPath(); ctx.moveTo(21, 0); ctx.lineTo(13, -5); ctx.lineTo(13, 5); ctx.closePath(); ctx.fill()
+    ctx.fillStyle = '#79c96b'; ctx.beginPath(); ctx.moveTo(-10 - pullBack, 0); ctx.lineTo(-21 - pullBack, -7); ctx.lineTo(-17 - pullBack, 0); ctx.lineTo(-21 - pullBack, 7); ctx.closePath(); ctx.fill()
+  }
+  ctx.restore()
   ctx.restore()
 }
 
