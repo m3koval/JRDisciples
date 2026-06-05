@@ -169,17 +169,17 @@ const ui = {
     "finish": "Finish Quest"
   },
   "ru": {
-    "quest": "Forgiveness Bridge",
-    "title": "Forgiveness Bridge",
-    "subtitle": "Choose mercy, cross the bridge, and learn how forgiveness heals what anger breaks.",
+    "quest": "Мост прощения",
+    "title": "Мост прощения",
+    "subtitle": "Выбери милость, перейди мост и узнай, как прощение исцеляет то, что ломает гнев.",
     "start": "Начать приключение",
     "chooseStep": "Выбрать следующий шаг",
     "continue": "Продолжить",
     "tryAgain": "Попробовать другой ответ",
     "truthLight": "Огни истины",
     "completed": "Квест завершён",
-    "badge": "Forgiveness Bridge Badge",
-    "badgeLine": "Because Jesus forgives me, I can forgive others.",
+    "badge": "Значок: Мост прощения",
+    "badgeLine": "Иисус простил меня, поэтому я могу прощать других.",
     "bigTruth": "Главная истина",
     "parent": "Вопросы для родителей / учителя",
     "questions": [
@@ -193,12 +193,12 @@ const ui = {
     "back": "Все квесты",
     "correct": "Огонь истины собран!",
     "almost": "Пока не тот путь.",
-    "verses": "Ephesians 4:32",
-    "mission": "Repair the bridge. Answer anger with mercy. Collect four truth lights.",
+    "verses": "Ефесянам 4:32",
+    "mission": "Почини мост. Ответь на гнев милостью. Собери четыре огня истины.",
     "scene": "Сцена",
     "of": "из",
     "path": "Путь квеста",
-    "finalVerse": "Because Jesus forgives me, I can forgive others.",
+    "finalVerse": "Иисус простил меня, поэтому я могу прощать других.",
     "finish": "Завершить квест"
   }
 } satisfies Record<'en' | 'ru', QuestUi>

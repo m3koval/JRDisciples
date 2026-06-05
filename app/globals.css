@@ -18,6 +18,44 @@ body {
   font-family: 'Lora', Georgia, serif;
 }
 
+html[data-lang="ru"] body {
+  font-family: var(--font-nunito), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+html[data-lang="ru"] .sec-title,
+html[data-lang="ru"] .sec-banner,
+html[data-lang="ru"] h1,
+html[data-lang="ru"] h2,
+html[data-lang="ru"] h3 {
+  font-family: var(--font-cormorant), var(--font-nunito), Georgia, serif !important;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+}
+
+html[data-lang="ru"] .eyebrow,
+html[data-lang="ru"] .puzzle-label,
+html[data-lang="ru"] .pq-ref {
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+html[data-lang="ru"] p,
+html[data-lang="ru"] li,
+html[data-lang="ru"] button,
+html[data-lang="ru"] a,
+html[data-lang="ru"] .sec-intro,
+html[data-lang="ru"] .pq-text {
+  font-family: var(--font-nunito), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+html[data-lang="ru"] p,
+html[data-lang="ru"] li,
+html[data-lang="ru"] .sec-intro {
+  line-height: 1.58;
+  letter-spacing: normal !important;
+}
+
 /* ── Alternating section backgrounds ──────────────────────── */
 .alt-bg  { background: linear-gradient(180deg,#fdf3e8,#fdf8f0); }
 .alt-bg2 { background: linear-gradient(180deg,#e8f4ff,#f0f9ff); }
@@ -286,3 +324,14 @@ body {
 }
 
 .shake { animation: shake 0.4s ease-in-out; }
+
+/* Russian typography overrides live at the end so they beat inline-heavy page styling. */
+html[data-lang="ru"] body :is(.sec-title, .sec-banner, h1, h2, h3) {
+  font-family: var(--font-cormorant), var(--font-nunito), Georgia, serif !important;
+  letter-spacing: -0.015em !important;
+  line-height: 1.12 !important;
+}
+
+html[data-lang="ru"] body :is(p, li, button, a, span, .sec-intro, .pq-text) {
+  letter-spacing: normal !important;
+}

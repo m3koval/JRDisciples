@@ -169,17 +169,17 @@ const ui = {
     "finish": "Finish Quest"
   },
   "ru": {
-    "quest": "The Storm Rescue",
-    "title": "The Storm Rescue",
-    "subtitle": "Trust Jesus in the wind and waves while helping a friend reach safe harbor.",
+    "quest": "Спасение в буре",
+    "title": "Спасение в буре",
+    "subtitle": "Доверься Иисусу среди ветра и волн и помоги другу добраться до безопасной гавани.",
     "start": "Начать приключение",
     "chooseStep": "Выбрать следующий шаг",
     "continue": "Продолжить",
     "tryAgain": "Попробовать другой ответ",
     "truthLight": "Огни истины",
     "completed": "Квест завершён",
-    "badge": "The Storm Rescue Badge",
-    "badgeLine": "Jesus is with me in the storm.",
+    "badge": "Значок: Спасение в буре",
+    "badgeLine": "Иисус со мной даже в буре.",
     "bigTruth": "Главная истина",
     "parent": "Вопросы для родителей / учителя",
     "questions": [
@@ -193,12 +193,12 @@ const ui = {
     "back": "Все квесты",
     "correct": "Огонь истины собран!",
     "almost": "Пока не тот путь.",
-    "verses": "Mark 4:39",
-    "mission": "Steady the boat. Help a friend. Collect four truth lights.",
+    "verses": "Марка 4:39",
+    "mission": "Укрепи лодку. Помоги другу. Собери четыре огня истины.",
     "scene": "Сцена",
     "of": "из",
     "path": "Путь квеста",
-    "finalVerse": "Jesus is with me in the storm.",
+    "finalVerse": "Иисус со мной даже в буре.",
     "finish": "Завершить квест"
   }
 } satisfies Record<'en' | 'ru', QuestUi>

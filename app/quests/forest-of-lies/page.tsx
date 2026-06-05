@@ -241,17 +241,17 @@ const ui = {
     "finish": "Finish Quest"
   },
   "ru": {
-    "quest": "The Forest of Lies",
-    "title": "The Forest of Lies",
-    "subtitle": "Follow truth lights through the trees and learn how God’s Word helps us reject lies.",
+    "quest": "Лес лжи",
+    "title": "Лес лжи",
+    "subtitle": "Иди за огнями истины и узнай, как Божье Слово помогает распознавать ложь.",
     "start": "Начать приключение",
     "chooseStep": "Выбрать следующий шаг",
     "continue": "Продолжить",
     "tryAgain": "Попробовать другой ответ",
     "truthLight": "Огни истины",
     "completed": "Квест завершён",
-    "badge": "The Forest of Lies Badge",
-    "badgeLine": "God’s truth helps me recognize and reject lies.",
+    "badge": "Значок: Лес лжи",
+    "badgeLine": "Божья истина помогает мне распознавать ложь.",
     "bigTruth": "Главная истина",
     "parent": "Вопросы для родителей / учителя",
     "questions": [
@@ -265,12 +265,12 @@ const ui = {
     "back": "Все квесты",
     "correct": "Огонь истины собран!",
     "almost": "Пока не тот путь.",
-    "verses": "John 8:32",
-    "mission": "Follow truth lights. Test every whisper. Collect four truth lights.",
+    "verses": "Иоанна 8:32",
+    "mission": "Иди за светом истины. Проверяй каждый шёпот. Собери четыре огня истины.",
     "scene": "Сцена",
     "of": "из",
     "path": "Путь квеста",
-    "finalVerse": "God’s truth helps me recognize and reject lies.",
+    "finalVerse": "Божья истина помогает мне распознавать ложь.",
     "finish": "Завершить квест"
   }
 } satisfies Record<'en' | 'ru', QuestUi>

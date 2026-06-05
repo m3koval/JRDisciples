@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 type Language = "en" | "ru";
 
@@ -25,6 +25,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     setLanguage(lang);
     localStorage.setItem("language", lang);
   };
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+    document.documentElement.dataset.lang = language;
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage }}>
