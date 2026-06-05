@@ -85,6 +85,9 @@ const requiredArcherSnippets = [
   "setArcherEmotion('happy'",
   "setArcherEmotion('surprised'",
   "setArcherEmotion('celebrate'",
+  'TARGET_MOTION',
+  'motionAmp',
+  'motionY',
 ];
 
 for (const snippet of requiredArcherSnippets) {
@@ -97,6 +100,7 @@ if (!/function\s+launchArrowVelocity/.test(archer)) failures.push('Faithful Arch
 if (/event\.offset[XY]/.test(archer)) failures.push('Faithful Archer route must not use PointerEvent.offsetX/offsetY; iOS Safari touch release can report bad offsets.');
 if (/arrow\.[xy] \+= arrow\.v[xy] \* dt \* 60/.test(archer)) failures.push('Faithful Archer arrow physics must use px/sec units, not frame-scaled dt * 60 movement.');
 if (/if \(target\.hit\) continue/.test(archer)) failures.push('Faithful Archer targets must stay repeatable during a run; use hitCooldown instead of permanently skipping hit targets.');
+if (/m\.levelIndex === 0 \? 0/.test(archer)) failures.push('Faithful Archer targets should move even on the first course; Mike asked for larger, more aggressive motion.');
 if (!/type\s+Target/.test(archer)) failures.push('Faithful Archer route must define typed targets.');
 if (!/const\s+SCRIPTURE/.test(archer)) failures.push('Faithful Archer route must define SCRIPTURE.');
 

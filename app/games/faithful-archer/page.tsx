@@ -17,6 +17,8 @@ type Target = {
   r: number
   phase: number
   speed: number
+  motionAmp: number
+  motionY: number
   hit: boolean
   hitCooldown: number
   wobble: number
@@ -76,6 +78,7 @@ const MAX_DRAW = 190
 const MOBILE_BREAKPOINT = 720
 const HIT_ASSIST = { desktop: 10, mobile: 18, snap: 0.92, cooldown: 0.42 }
 const EMOTION_BEATS = { release: 0.28, happy: 0.7, surprised: 0.62, celebrate: 1.15 }
+const TARGET_MOTION = { baseAmp: 42, levelAmp: 26, mobileAmp: 32, yAmp: 18, levelY: 9, speedBase: 0.62, speedStep: 0.13, levelSpeed: 0.2 }
 
 type Point = { x: number; y: number }
 
@@ -249,6 +252,8 @@ export default function FaithfulArcherPage() {
       const x = baseX + laneOffset + (seeded(i + model.targetSeed + 4) * 40 - 20)
       const y = height * (0.22 + (i / count) * 0.5) + (seeded(i + 19) * 28 - 14)
       const mobileBoost = width < MOBILE_BREAKPOINT ? 8 : 0
+      const motionAmp = Math.min(width * 0.26, TARGET_MOTION.baseAmp + model.levelIndex * TARGET_MOTION.levelAmp + (width < MOBILE_BREAKPOINT ? TARGET_MOTION.mobileAmp : 0) + i * 7)
+      const motionY = TARGET_MOTION.yAmp + model.levelIndex * TARGET_MOTION.levelY + (kind === 'lantern' ? 16 : 0)
       return {
         id: i,
         kind,
@@ -258,7 +263,9 @@ export default function FaithfulArcherPage() {
         y,
         r: (kind === 'dummy' ? 36 : kind === 'scroll' ? 28 : 31) + mobileBoost,
         phase: i * 1.7,
-        speed: 0.24 + i * 0.05 + model.levelIndex * 0.08,
+        speed: TARGET_MOTION.speedBase + i * TARGET_MOTION.speedStep + model.levelIndex * TARGET_MOTION.levelSpeed,
+        motionAmp,
+        motionY,
         hit: false,
         hitCooldown: 0,
         wobble: 0,
@@ -341,9 +348,10 @@ export default function FaithfulArcherPage() {
         t.flop.rightArm *= Math.pow(0.18, dt)
         t.flop.leftLeg *= Math.pow(0.18, dt)
         t.flop.rightLeg *= Math.pow(0.18, dt)
-        const move = m.levelIndex === 0 ? 0 : Math.sin(m.time * t.speed * difficulty + t.phase) * (20 + m.levelIndex * 10)
-        t.x = t.baseX + move
-        t.y = t.baseY + (t.kind === 'lantern' ? Math.sin(m.time * 1.3 + t.phase) * 16 : 0)
+        const move = Math.sin(m.time * t.speed * difficulty + t.phase) * t.motionAmp
+        const counterMove = Math.sin(m.time * (t.speed * 0.73 + 0.21) * difficulty + t.phase * 1.6) * t.motionY
+        t.x = clamp(t.baseX + move, t.r + 42, width - t.r - 22)
+        t.y = clamp(t.baseY + counterMove, height * 0.16, height * 0.76)
       }
 
       for (const arrow of arrowsRef.current) {
