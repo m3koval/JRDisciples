@@ -29,6 +29,8 @@ type Target = {
 }
 
 type Arrow = { x: number; y: number; vx: number; vy: number; age: number; stuck: boolean; countedMiss?: boolean; glow: boolean; trail: Point[]; stuckTargetId?: number; stuckOffset?: Point }
+type ObstacleKind = 'post' | 'beam' | 'crate'
+type Obstacle = { id: number; kind: ObstacleKind; x: number; y: number; w: number; h: number; phase: number }
 type FloatText = { x: number; y: number; txt: string; life: number; color: string }
 type Spark = { x: number; y: number; vx: number; vy: number; life: number; color: string }
 type GameModel = {
@@ -126,6 +128,27 @@ function distancePointToSegment(point: Point, start: Point, end: Point) {
   return Math.hypot(point.x - x, point.y - y)
 }
 
+function pointInObstacle(point: Point, obstacle: Obstacle) {
+  return point.x >= obstacle.x && point.x <= obstacle.x + obstacle.w && point.y >= obstacle.y && point.y <= obstacle.y + obstacle.h
+}
+
+function segmentsIntersect(a: Point, b: Point, c: Point, d: Point) {
+  const ccw = (p1: Point, p2: Point, p3: Point) => (p3.y - p1.y) * (p2.x - p1.x) > (p2.y - p1.y) * (p3.x - p1.x)
+  return ccw(a, c, d) !== ccw(b, c, d) && ccw(a, b, c) !== ccw(a, b, d)
+}
+
+function arrowHitsObstacle(start: Point, end: Point, obstacle: Obstacle) {
+  if (pointInObstacle(start, obstacle) || pointInObstacle(end, obstacle)) return true
+  const left = obstacle.x
+  const right = obstacle.x + obstacle.w
+  const top = obstacle.y
+  const bottom = obstacle.y + obstacle.h
+  return segmentsIntersect(start, end, { x: left, y: top }, { x: right, y: top })
+    || segmentsIntersect(start, end, { x: right, y: top }, { x: right, y: bottom })
+    || segmentsIntersect(start, end, { x: right, y: bottom }, { x: left, y: bottom })
+    || segmentsIntersect(start, end, { x: left, y: bottom }, { x: left, y: top })
+}
+
 function snapArrowToTarget(arrow: Arrow, target: Target) {
   const angle = Math.atan2(arrow.vy, arrow.vx)
   const visualStickRadius = target.r * HIT_ASSIST.snap
@@ -174,6 +197,7 @@ export default function FaithfulArcherPage() {
   const modelRef = useRef<GameModel>(makeModel())
   const arrowsRef = useRef<Arrow[]>([])
   const targetsRef = useRef<Target[]>([])
+  const obstaclesRef = useRef<Obstacle[]>([])
   const sparksRef = useRef<Spark[]>([])
   const floatRef = useRef<FloatText[]>([])
   const pointerRef = useRef({ down: false, x: 0, y: 0, startX: 0, startY: 0 })
@@ -200,7 +224,7 @@ export default function FaithfulArcherPage() {
     combo: 'Серия',
     course: 'Курс',
     wisdom: 'Мудрость',
-    mobileRelease: 'Мобильное управление: держи палец на поле, тяни назад от лучника, смотри на светлую траекторию и отпусти. Попадания требуют точности, но цель можно поражать снова после короткой паузы.',
+    mobileRelease: 'Мобильное управление: держи палец на поле, тяни назад от лучника, смотри на светлую траекторию и отпусти. Цели теперь меньше и дальше, а деревянные препятствия заставляют стрелять дугой — попадания требуют настоящей точности.',
     truth: 'Главная мысль: Божье Слово освещает путь. Тренируйся спокойно, целься честно и не сдавайся.',
     keep: 'Продолжить',
   } : {
@@ -218,7 +242,7 @@ export default function FaithfulArcherPage() {
     combo: 'Combo',
     course: 'Course',
     wisdom: 'Wisdom',
-    mobileRelease: 'Mobile controls: hold your finger on the field, pull back from the archer, follow the bright aim trail, then release. Hits need real aim now, but the same target can be hit again after a short pause.',
+    mobileRelease: 'Mobile controls: hold your finger on the field, pull back from the archer, follow the bright aim trail, then release. Targets are smaller and farther away now, with wooden obstacles that force arcing shots and real accuracy.',
     truth: 'Big truth: God’s Word lights the path. Practice calmly, aim honestly, and keep going.',
     keep: 'Keep Practicing',
   }
@@ -243,6 +267,7 @@ export default function FaithfulArcherPage() {
     model.best = Number.isFinite(best) ? best : 0
     modelRef.current = model
     arrowsRef.current = []
+    obstaclesRef.current = []
     sparksRef.current = []
     floatRef.current = []
     spawnTargets()
@@ -253,15 +278,17 @@ export default function FaithfulArcherPage() {
   function spawnTargets() {
     const { width, height } = sizeRef.current
     const model = modelRef.current
-    const count = width < MOBILE_BREAKPOINT ? 5 : 6
-    const baseX = width < MOBILE_BREAKPOINT ? Math.max(width * 0.48, 285) : Math.max(width * 0.52, 330)
+    const count = width < MOBILE_BREAKPOINT ? 4 : 5
+    const farAnchor = width < MOBILE_BREAKPOINT ? Math.max(width * 0.62, 310) : Math.max(width * 0.68, 520)
     targetsRef.current = Array.from({ length: count }, (_, i) => {
       const kind: TargetKind = i === 1 ? 'bell' : i === 2 ? 'scroll' : i === 3 ? 'lantern' : i === 4 ? 'dummy' : 'shield'
-      const laneOffset = (i % 2) * Math.min(width < MOBILE_BREAKPOINT ? 132 : 190, width * 0.18)
-      const x = baseX + laneOffset + (seeded(i + model.targetSeed + 4) * 40 - 20)
-      const y = height * (0.22 + (i / count) * 0.5) + (seeded(i + 19) * 28 - 14)
-      const mobileBoost = width < MOBILE_BREAKPOINT ? 8 : 0
-      const motionAmp = Math.min(width * 0.26, TARGET_MOTION.baseAmp + model.levelIndex * TARGET_MOTION.levelAmp + (width < MOBILE_BREAKPOINT ? TARGET_MOTION.mobileAmp : 0) + i * 7)
+      const laneOffset = (i % 2) * Math.min(width < MOBILE_BREAKPOINT ? 68 : 118, width * 0.13)
+      const x = Math.min(width - 42, farAnchor + laneOffset + (seeded(i + model.targetSeed + 4) * 34 - 17))
+      const y = height * (0.2 + (i / count) * 0.52) + (seeded(i + 19) * 30 - 15)
+      const mobileBoost = width < MOBILE_BREAKPOINT ? 3 : 0
+      const courseShrink = Math.min(6, model.levelIndex * 2)
+      const baseRadius = kind === 'dummy' ? 28 : kind === 'scroll' ? 21 : 25
+      const motionAmp = Math.min(width * 0.22, TARGET_MOTION.baseAmp + model.levelIndex * TARGET_MOTION.levelAmp + (width < MOBILE_BREAKPOINT ? TARGET_MOTION.mobileAmp : 0) + i * 7)
       const motionY = TARGET_MOTION.yAmp + model.levelIndex * TARGET_MOTION.levelY + (kind === 'lantern' ? 16 : 0)
       return {
         id: i,
@@ -270,7 +297,7 @@ export default function FaithfulArcherPage() {
         baseY: y,
         x,
         y,
-        r: (kind === 'dummy' ? 36 : kind === 'scroll' ? 28 : 31) + mobileBoost,
+        r: Math.max(18, baseRadius + mobileBoost - courseShrink),
         phase: i * 1.7,
         speed: TARGET_MOTION.speedBase + i * TARGET_MOTION.speedStep + model.levelIndex * TARGET_MOTION.levelSpeed,
         motionAmp,
@@ -283,6 +310,22 @@ export default function FaithfulArcherPage() {
         squash: 0,
         spin: 0,
       }
+    })
+    spawnObstacles()
+  }
+
+  function spawnObstacles() {
+    const { width, height } = sizeRef.current
+    const level = modelRef.current.levelIndex
+    const mobile = width < MOBILE_BREAKPOINT
+    const gateCount = Math.min(3, 1 + level)
+    obstaclesRef.current = Array.from({ length: gateCount }, (_, i) => {
+      const kind: ObstacleKind = i % 3 === 0 ? 'post' : i % 3 === 1 ? 'beam' : 'crate'
+      const x = width * (mobile ? 0.43 : 0.46) + i * (mobile ? 42 : 72)
+      const y = height * (0.28 + i * 0.16) + (seeded(level * 7 + i) * 34 - 17)
+      const w = kind === 'beam' ? (mobile ? 96 : 150) : kind === 'crate' ? (mobile ? 50 : 68) : (mobile ? 34 : 44)
+      const h = kind === 'beam' ? (mobile ? 24 : 30) : kind === 'crate' ? (mobile ? 52 : 68) : height * (mobile ? 0.26 : 0.32)
+      return { id: i, kind, x: clamp(x, width * 0.32, width * 0.64), y: clamp(y, height * 0.2, height * 0.68), w, h, phase: i * 1.9 + level }
     })
   }
 
@@ -389,6 +432,19 @@ export default function FaithfulArcherPage() {
           }
           arrow.stuck = true
         }
+        for (const obstacle of obstaclesRef.current) {
+          if (arrowHitsObstacle(prev, { x: arrow.x, y: arrow.y }, obstacle)) {
+            arrow.stuck = true
+            arrow.countedMiss = true
+            m.combo = 0
+            setArcherEmotion('surprised', EMOTION_BEATS.surprised)
+            floatRef.current.push({ x: arrow.x, y: arrow.y - 18, txt: isRu ? 'препятствие!' : 'blocked!', life: 0.9, color: '#7a4e20' })
+            for (let i = 0; i < 10; i++) sparksRef.current.push({ x: arrow.x, y: arrow.y, vx: (Math.random() - 0.5) * 90, vy: (Math.random() - 0.8) * 90, life: 0.35 + Math.random() * 0.35, color: '#d99f53' })
+            syncHud()
+            break
+          }
+        }
+        if (arrow.stuck && arrow.stuckTargetId === undefined) continue
         for (const target of targetsRef.current) {
           if (target.hitCooldown > 0) continue
           const hitRadius = getHitAssistRadius(target, width)
@@ -476,6 +532,7 @@ export default function FaithfulArcherPage() {
       ctx!.clearRect(0, 0, width, height)
       drawBackground(ctx!, width, height, modelRef.current.time)
       for (const target of targetsRef.current) drawTarget(ctx!, target, modelRef.current.time)
+      for (const obstacle of obstaclesRef.current) drawObstacle(ctx!, obstacle, modelRef.current.time)
       drawArcher(ctx!, archer(), modelRef.current.time, pointerRef.current, modelRef.current.emotion)
       drawAim(ctx!, archer())
       drawArrows(ctx!)
@@ -723,6 +780,25 @@ function drawBackground(ctx: CanvasRenderingContext2D, width: number, height: nu
     const sway = Math.sin(time * 3 + i) * 4
     ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + sway, y - 10, x + sway * 1.3, y - 22); ctx.stroke()
   }
+}
+
+function drawObstacle(ctx: CanvasRenderingContext2D, obstacle: Obstacle, time: number) {
+  ctx.save()
+  const sway = Math.sin(time * 1.8 + obstacle.phase) * (obstacle.kind === 'post' ? 3 : 1)
+  ctx.translate(obstacle.x + sway, obstacle.y)
+  ctx.fillStyle = 'rgba(32,48,71,.22)'; ellipse(ctx, obstacle.w / 2, obstacle.h + 8, obstacle.w * 1.2, 12)
+  ctx.fillStyle = obstacle.kind === 'beam' ? '#8a5a30' : obstacle.kind === 'crate' ? '#b57920' : '#7a4e20'
+  ctx.strokeStyle = '#4b3218'; ctx.lineWidth = 4
+  roundRect(ctx, 0, 0, obstacle.w, obstacle.h, obstacle.kind === 'post' ? 14 : 8, true, true)
+  ctx.strokeStyle = 'rgba(255,246,220,.42)'; ctx.lineWidth = 3
+  if (obstacle.kind === 'post') {
+    ctx.beginPath(); ctx.moveTo(obstacle.w / 2, 12); ctx.lineTo(obstacle.w / 2, obstacle.h - 12); ctx.stroke()
+  } else if (obstacle.kind === 'beam') {
+    ctx.beginPath(); ctx.moveTo(10, obstacle.h / 2); ctx.lineTo(obstacle.w - 10, obstacle.h / 2); ctx.stroke()
+  } else {
+    ctx.beginPath(); ctx.moveTo(8, 8); ctx.lineTo(obstacle.w - 8, obstacle.h - 8); ctx.moveTo(obstacle.w - 8, 8); ctx.lineTo(8, obstacle.h - 8); ctx.stroke()
+  }
+  ctx.restore()
 }
 
 function drawTarget(ctx: CanvasRenderingContext2D, target: Target, time: number) {

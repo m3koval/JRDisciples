@@ -79,7 +79,7 @@ const requiredArcherSnippets = [
   'distancePointToSegment',
   'snapArrowToTarget',
   'hitCooldown',
-  'Hits need real aim now',
+  'Targets are smaller and farther away now',
   'type Emotion',
   'drawArcherFace',
   'EMOTION_BEATS',
@@ -92,6 +92,13 @@ const requiredArcherSnippets = [
   'stuckTargetId',
   'stuckOffset',
   'moveStuckArrowWithTarget',
+  'type Obstacle',
+  'obstaclesRef',
+  'spawnObstacles',
+  'arrowHitsObstacle',
+  'drawObstacle',
+  'farAnchor',
+  'courseShrink',
 ];
 
 for (const snippet of requiredArcherSnippets) {
@@ -107,6 +114,7 @@ if (/if \(target\.hit\) continue/.test(archer)) failures.push('Faithful Archer t
 if (/m\.levelIndex === 0 \? 0/.test(archer)) failures.push('Faithful Archer targets should move even on the first course; Mike asked for larger, more aggressive motion.');
 if (/if \(arrow\.stuck\) continue/.test(archer)) failures.push('Faithful Archer stuck arrows must follow moving targets via stuckTargetId/stuckOffset, not freeze in world space.');
 if (/return target\.r \+/.test(archer)) failures.push('Faithful Archer hitbox must use a reduced core radius so target placement matters; do not count the whole visual radius plus assist.');
+if (/const count = width < MOBILE_BREAKPOINT \? 5 : 6/.test(archer)) failures.push('Faithful Archer targets should be fewer/smaller/farther now, not the older close dense target layout.');
 if (!/type\s+Target/.test(archer)) failures.push('Faithful Archer route must define typed targets.');
 if (!/const\s+SCRIPTURE/.test(archer)) failures.push('Faithful Archer route must define SCRIPTURE.');
 
