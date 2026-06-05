@@ -115,12 +115,6 @@ export default function TransfigurationPage() {
     localStorage.setItem('transf_done',     JSON.stringify([...done]))
   }, [unlocked, done])
 
-  useEffect(() => {
-    setTfAnswers({})
-    setScrambleOrder([])
-    setScrambleErr('')
-  }, [language])
-
   function solve(id: string, sec: number) {
     if (done.has(id)) return
     const newDone = new Set([...done, id])

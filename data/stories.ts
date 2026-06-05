@@ -136,5 +136,26 @@ export const stories: Story[] = [
       "The angel said the good news of Jesus is 'for all people.' Who does that include? How should that change the way we treat others?",
       "Jesus was the King of kings, but He was born in a stable. What does that tell us about what kind of King Jesus is?"
     ]
+  },
+  {
+    id: "jesus-baptism",
+    title: "Jesus Is Baptized",
+    emoji: "🕊️",
+    image: "/images/jr/stories/jesus-baptism/story-jesus-baptism.png",
+    reference: "Matthew 3:13-17; Mark 1:9-11; Luke 3:21-22",
+    ageNote: "Great for ages 6-10",
+    summary: [
+      "John the Baptist was preaching near the Jordan River. He told people to turn away from sin and get ready for God's kingdom. Many people came to the water to be baptized as a sign that they were sorry for sin and wanted to walk in God's way.",
+      "Then Jesus came from Galilee to the Jordan to be baptized by John. John was surprised. Jesus had never sinned, so He did not need to be baptized because He needed forgiveness. John said that Jesus should be baptizing him!",
+      "But Jesus told John that it was right to do this to fulfill all righteousness. Jesus was doing exactly what was right in God's plan. He was obeying the Father's good plan. He was standing with the people He came to save, even though He Himself was perfectly holy.",
+      "When Jesus was baptized and came up from the water, the heavens opened. The Holy Spirit came down like a dove and rested on Him. Then the Father's voice spoke from heaven: 'This is my beloved Son, with whom I am well pleased.'",
+      "Jesus' baptism shows us who He is: the beloved Son of God. It also helps us understand baptism. Baptism is not magic water that saves us. Jesus saves. Baptism is a public step of obedience that shows we trust Jesus, belong to Him, and want to follow Him with our whole life."
+    ],
+    bigTruth: "Jesus is God's beloved Son, and baptism is a public step of obedience that points to trusting and following Him.",
+    discussionQuestions: [
+      "Why was John surprised that Jesus wanted to be baptized?",
+      "What did the Father, Son, and Holy Spirit each do at Jesus' baptism?",
+      "Why is it important to remember that Jesus saves us, not the water?"
+    ]
   }
 ];

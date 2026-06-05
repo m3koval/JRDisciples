@@ -1,0 +1,62 @@
+{
+  "lesson": "baptism-prep",
+  "story": "jesus-baptism",
+  "status": "generated-png-stills-wired-ready",
+  "provider": "Hermes image_generate / configured backend",
+  "assets": [
+    {
+      "id": "story-jesus-baptism",
+      "type": "story-hero",
+      "path": "/images/jr/stories/jesus-baptism/story-jesus-baptism.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9d206e/6edO28rxyo3hK3BpvLur3_ZCO1m8Pb.png",
+      "promptFile": "/images/jr/lessons/baptism-prep/prompts.md"
+    },
+    {
+      "id": "topic-baptism-prep",
+      "type": "lesson-topic-thumbnail",
+      "path": "/images/jr/lessons/baptism-prep/topic-baptism-prep.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9d2073/u2YRM8tDtd6bwR9WG5v9W_M6GR6er7.png",
+      "promptFile": "/images/jr/lessons/baptism-prep/prompts.md"
+    },
+    {
+      "id": "01-jesus-baptized-first",
+      "type": "lesson-section-image",
+      "path": "/images/jr/lessons/baptism-prep/01-jesus-baptized-first.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9d2079/hFeWUUOjAm7wy-wmiaTu1_iKgc8g4p.png",
+      "promptFile": "/images/jr/lessons/baptism-prep/prompts.md"
+    },
+    {
+      "id": "02-baptism-sign",
+      "type": "lesson-section-image",
+      "path": "/images/jr/lessons/baptism-prep/02-baptism-sign.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9d207f/hCoeuF3Q00ypge9ATkO11_P2l79pc9.png",
+      "promptFile": "/images/jr/lessons/baptism-prep/prompts.md"
+    },
+    {
+      "id": "03-new-life",
+      "type": "lesson-section-image",
+      "path": "/images/jr/lessons/baptism-prep/03-new-life.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9d2083/qlma5uSqS29uIxfnsqfBk_mfJZ6jDi.png",
+      "promptFile": "/images/jr/lessons/baptism-prep/prompts.md"
+    },
+    {
+      "id": "04-ready-for-baptism",
+      "type": "lesson-section-image",
+      "path": "/images/jr/lessons/baptism-prep/04-ready-for-baptism.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9d2088/8jB-C21ZKX4--ftFiB2bP_JxlhMURX.png",
+      "promptFile": "/images/jr/lessons/baptism-prep/prompts.md"
+    },
+    {
+      "id": "05-gods-family",
+      "type": "lesson-section-image",
+      "path": "/images/jr/lessons/baptism-prep/05-gods-family.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9d2092/WH4E7Gn_hburEUy7PsqZA_OsukJGe8.png",
+      "promptFile": "/images/jr/lessons/baptism-prep/prompts.md"
+    }
+  ],
+  "video": {
+    "status": "motion-prompts-created-not-rendered",
+    "promptFile": "/images/jr/lessons/baptism-prep/video-motion-prompts.md",
+    "reason": "Stills were generated first as the approval gate before spending video credits."
+  }
+}

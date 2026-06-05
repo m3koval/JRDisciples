@@ -10,6 +10,15 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
+    href: "/lessons/baptism-prep",
+    image: "/images/jr/lessons/baptism-prep/topic-baptism-prep.png",
+    title: "Подготовка к крещению",
+    desc: "Узнай, что означает крещение, почему крестился Иисус и как подготовиться к открытому шагу веры. 5 детских разделов с проверками и вопросами!",
+    color: "#0a7090",
+    sections: 5,
+    emoji: "💧",
+  },
+  {
     href: "/lessons/case-for-christ-bible",
     image: "/images/jr/topic-case-for-christ-bible.png",
     title: "Можно ли доверять Библии?",
