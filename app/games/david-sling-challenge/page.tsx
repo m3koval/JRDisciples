@@ -3,355 +3,412 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 
 import Link from 'next/link'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+
+type Phase = 'intro' | 'question' | 'play' | 'result'
+type Power = 'none' | 'focus' | 'steady' | 'shield' | 'wind'
+type Result = 'ready' | 'perfect' | 'hit' | 'near' | 'miss' | 'saved'
 
 type Level = {
   nameEn: string
   nameRu: string
-  distance: number
-  zoneStart: number
-  zoneEnd: number
-  speed: number
   wind: number
+  targetAngle: number
+  window: number
+  distance: number
 }
 
 const LEVELS: Level[] = [
-  { nameEn: 'Practice Field', nameRu: 'Поле тренировки', distance: 42, zoneStart: 42, zoneEnd: 58, speed: 2.2, wind: 0 },
-  { nameEn: 'Valley Line', nameRu: 'Линия долины', distance: 55, zoneStart: 45, zoneEnd: 55, speed: 2.8, wind: -4 },
-  { nameEn: 'Long Throw', nameRu: 'Дальний бросок', distance: 68, zoneStart: 47, zoneEnd: 53, speed: 3.4, wind: 5 },
+  { nameEn: 'Valley Practice', nameRu: 'Тренировка в долине', wind: 0, targetAngle: 42, window: 17, distance: 1 },
+  { nameEn: 'Shield Line', nameRu: 'Линия щита', wind: -5, targetAngle: 50, window: 13, distance: 1.15 },
+  { nameEn: 'Long Valley Throw', nameRu: 'Дальний бросок долины', wind: 7, targetAngle: 58, window: 10, distance: 1.28 },
 ]
 
-const VERSE = {
-  en: 'and that all this assembly may know that the LORD saves not with sword and spear. For the battle is the LORD’s, and he will give you into our hand.”',
-  ru: 'и узнает весь этот сонм, что не мечом и копьем спасает Господь, ибо это война Господа, и Он предаст вас в руки наши.',
+const SCRIPTURE = {
   refEn: '1 Samuel 17:47',
   refRu: '1 Царств 17:47',
+  textEn: 'and that all this assembly may know that the LORD saves not with sword and spear. For the battle is the LORD’s, and he will give you into our hand.”',
+  textRu: 'и узнает весь этот сонм, что не мечом и копьем спасает Господь, ибо это война Господа, и Он предаст вас в руки наши.',
+  questionEn: 'What did David want everyone to know?',
+  questionRu: 'Что Давид хотел, чтобы все узнали?',
+  choicesEn: ['The battle is the LORD’s', 'The sling was magic', 'David was showing off'],
+  choicesRu: ['Это война Господа', 'Праща была волшебной', 'Давид хвалился собой'],
+  answer: 0,
 }
+
+const BG = '/images/jr/games/david-sling-v2/generated/01-playfield.png'
 
 function clamp(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value))
 }
 
-function scoreThrow(aim: number, level: Level): { result: 'perfect' | 'hit' | 'near' | 'miss'; points: number; flight: number } {
-  const center = (level.zoneStart + level.zoneEnd) / 2
-  const miss = Math.abs(aim + level.wind - center)
-  if (miss <= 2) return { result: 'perfect', points: 100, flight: clamp(72 + level.distance * 0.18, 72, 86) }
-  if (aim + level.wind >= level.zoneStart && aim + level.wind <= level.zoneEnd) return { result: 'hit', points: 60, flight: clamp(66 + level.distance * 0.14, 66, 80) }
-  if (miss <= 12) return { result: 'near', points: 20, flight: clamp(48 + level.distance * 0.12, 48, 64) }
-  return { result: 'miss', points: 0, flight: clamp(24 + level.distance * 0.08, 24, 42) }
+function angleDiff(a: number, b: number) {
+  const diff = Math.abs((((a - b) % 360) + 540) % 360 - 180)
+  return diff
 }
 
 export default function DavidSlingChallengePage() {
   const { language } = useLanguage()
   const isRu = language === 'ru'
-  const [started, setStarted] = useState(false)
-  const [aim, setAim] = useState(20)
-  const [direction, setDirection] = useState(1)
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const rafRef = useRef<number | null>(null)
+  const holdRef = useRef(false)
+  const angleRef = useRef(28)
+  const speedRef = useRef(0.45)
+  const stoneRef = useRef<{ x: number; y: number; vx: number; vy: number; active: boolean }>({ x: 0, y: 0, vx: 0, vy: 0, active: false })
+  const impactRef = useRef(0)
+
+  const [phase, setPhase] = useState<Phase>('intro')
   const [levelIndex, setLevelIndex] = useState(0)
-  const [throwsLeft, setThrowsLeft] = useState(5)
   const [score, setScore] = useState(0)
   const [best, setBest] = useState(0)
-  const [messageKey, setMessageKey] = useState<'ready' | 'perfect' | 'hit' | 'near' | 'miss' | 'done'>('ready')
-  const [stoneFlight, setStoneFlight] = useState(0)
-  const [showWisdom, setShowWisdom] = useState(false)
-  const releaseLock = useRef(false)
+  const [throwsLeft, setThrowsLeft] = useState(5)
+  const [result, setResult] = useState<Result>('ready')
+  const [wisdomFuel, setWisdomFuel] = useState(0)
+  const [power, setPower] = useState<Power>('none')
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
+  const [message, setMessage] = useState('')
 
   const level = LEVELS[Math.min(levelIndex, LEVELS.length - 1)]
-  const isDone = started && (throwsLeft <= 0 || levelIndex >= LEVELS.length)
+  const effectiveWindow = level.window + (power === 'steady' ? 8 : 0)
+  const effectiveWind = power === 'wind' ? Math.round(level.wind / 3) : level.wind
 
   const copy = isRu ? {
-    back: 'Все игры',
-    eyebrow: 'Игра на точность',
-    title: 'Праща Давида',
-    subtitle: 'Раскрути пращу и отпусти камень в нужный момент. Победа — не в силе, а в доверии Господу.',
-    start: 'Начать',
-    release: 'Отпустить!',
-    next: 'Следующий уровень',
-    restart: 'Играть снова',
-    score: 'Очки',
-    best: 'Рекорд',
-    throws: 'Броски',
-    level: 'Уровень',
-    wind: 'Ветер',
-    target: 'Зелёная зона — лучший момент',
-    ready: 'Следи за пращой. Нажми, когда метка в зелёной зоне.',
-    perfect: 'Точно вовремя! Давид доверял Господу.',
-    hit: 'Попадание! Хороший бросок.',
-    near: 'Близко! Попробуй отпустить чуть точнее.',
-    miss: 'Мимо. Не сдавайся — настройся и пробуй снова.',
-    done: 'Раунд окончен. Открой мудрость и попробуй улучшить рекорд.',
-    wisdomTitle: 'Библейская мудрость',
-    how: 'Как играть',
-    howText: 'Следи за вращением пращи. Нажми “Отпустить”, когда метка и дуга показывают лучший момент. На компьютере можно нажать кнопку или пробел.',
-    childTruth: 'Главная истина: Бог сильнее страха. Давид не хвалился собой — он доверял Господу.',
+    back: 'Все игры', eyebrow: 'David Sling v2', title: 'Праща Давида',
+    subtitle: 'Теперь это игровой прототип: набирай ритм, держи вращение и отпускай пращу в правильный момент. Божье Слово дает настоящую помощь в игре.',
+    start: 'Начать v2', questionTitle: 'Сначала Божье Слово', questionHelp: 'Ответь правильно, чтобы получить Мудрость и усиление для броска.',
+    correct: 'Верно! +2 Мудрости. Выбери усиление.', wrong: 'Хорошая попытка. Прочитай стих и попробуй снова.',
+    rhythm: 'Нажимай ритм', hold: 'Держи вращение', release: 'Отпусти бросок', next: 'Следующий уровень', again: 'Снова',
+    score: 'Очки', best: 'Рекорд', throws: 'Броски', fuel: 'Мудрость', wind: 'Ветер', level: 'Уровень',
+    focus: 'Мудрый фокус', steady: 'Твердая рука', shield: 'Щит доверия', calmWind: 'Успокоить ветер',
+    focusDesc: 'замедляет вращение', steadyDesc: 'расширяет окно', shieldDesc: 'спасает один промах', windDesc: 'уменьшает ветер',
+    ready: 'Набери скорость пращи, удерживай вращение и отпусти по дуге.', perfect: 'Точно! Давид доверял Господу.', hit: 'Попадание! Хороший бросок.', near: 'Близко. Настрой ритм и попробуй еще.', miss: 'Промах. Не сдавайся — вера продолжает путь.', saved: 'Щит доверия дал повтор без потери.',
   } : {
-    back: 'All Games',
-    eyebrow: 'Timing Game',
-    title: 'David Sling Challenge',
-    subtitle: 'Swing the sling and release the stone at the right moment. The win is not brute strength — it is trusting the Lord.',
-    start: 'Start',
-    release: 'Release!',
-    next: 'Next Level',
-    restart: 'Play Again',
-    score: 'Score',
-    best: 'Best',
-    throws: 'Throws',
-    level: 'Level',
-    wind: 'Wind',
-    target: 'Green zone = best timing',
-    ready: 'Watch the sling. Release when the marker is in the green zone.',
-    perfect: 'Perfect timing! David trusted the Lord.',
-    hit: 'Hit! Strong timing.',
-    near: 'Close! Release a little more carefully.',
-    miss: 'Miss. Do not quit — reset and try again.',
-    done: 'Round complete. Unlock the wisdom and try to beat your best.',
-    wisdomTitle: 'Bible Wisdom',
-    how: 'How to play',
-    howText: 'Watch the sling rotation. Press Release when the marker and arc show the best moment. On desktop, click the button or press Space.',
-    childTruth: 'Big truth: God is stronger than fear. David was not bragging in himself — he trusted the Lord.',
+    back: 'All Games', eyebrow: 'David Sling v2', title: 'David Sling Challenge',
+    subtitle: 'Now rebuilt as a real game prototype: tap rhythm, hold the spin, and release the sling at the right moment. God’s Word gives real help inside the game.',
+    start: 'Start v2', questionTitle: 'God’s Word First', questionHelp: 'Answer correctly to earn Wisdom Fuel and choose a throw advantage.',
+    correct: 'Correct! +2 Wisdom Fuel. Choose a power-up.', wrong: 'Good try. Read the verse and try again.',
+    rhythm: 'Tap Rhythm', hold: 'Hold Spin', release: 'Release Throw', next: 'Next Level', again: 'Play Again',
+    score: 'Score', best: 'Best', throws: 'Throws', fuel: 'Wisdom', wind: 'Wind', level: 'Level',
+    focus: 'Wisdom Focus', steady: 'Steady Hand', shield: 'Trust Shield', calmWind: 'Calm Wind',
+    focusDesc: 'slows rotation', steadyDesc: 'widens release window', shieldDesc: 'saves one miss', windDesc: 'reduces wind',
+    ready: 'Build sling speed, hold the spin, then release on the dotted line.', perfect: 'Perfect! David trusted the Lord.', hit: 'Hit! Strong timing.', near: 'Close. Tune the rhythm and try again.', miss: 'Miss. Do not quit — faith keeps moving.', saved: 'Trust Shield gave you a safe retry.',
   }
 
-  const message = copy[messageKey]
-  const slingRotation = useMemo(() => -75 + aim * 1.5, [aim])
-  const resultClass = messageKey === 'perfect' || messageKey === 'hit' ? 'is-hit' : messageKey === 'near' ? 'is-near' : messageKey === 'miss' ? 'is-miss' : ''
+  const draw = useCallback(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    const rect = canvas.getBoundingClientRect()
+    const dpr = window.devicePixelRatio || 1
+    const width = Math.max(720, Math.round(rect.width * dpr))
+    const height = Math.max(420, Math.round(rect.height * dpr))
+    if (canvas.width !== width || canvas.height !== height) {
+      canvas.width = width
+      canvas.height = height
+    }
+    ctx.save()
+    ctx.scale(dpr, dpr)
+    const w = width / dpr
+    const h = height / dpr
+
+    ctx.clearRect(0, 0, w, h)
+
+    const david = { x: w * 0.22, y: h * 0.62 }
+    const target = { x: w * 0.78, y: h * 0.48 }
+    const nowAngle = angleRef.current
+    const radians = (nowAngle * Math.PI) / 180
+    const aimLength = w * 0.47
+    const arcEnd = { x: david.x + Math.cos(radians) * aimLength, y: david.y - Math.sin(radians) * h * 0.52 }
+    const targetAngle = level.targetAngle + effectiveWind
+    const targetRad = (targetAngle * Math.PI) / 180
+    const zoneEnd = { x: david.x + Math.cos(targetRad) * aimLength, y: david.y - Math.sin(targetRad) * h * 0.52 }
+
+    ctx.lineCap = 'round'
+    ctx.lineWidth = 16
+    ctx.strokeStyle = 'rgba(34,197,94,.32)'
+    ctx.beginPath()
+    ctx.moveTo(david.x, david.y)
+    ctx.quadraticCurveTo(w * 0.48, h * 0.12, zoneEnd.x, zoneEnd.y)
+    ctx.stroke()
+
+    ctx.lineWidth = 5
+    ctx.setLineDash([11, 12])
+    ctx.strokeStyle = 'rgba(255,255,255,.9)'
+    ctx.shadowBlur = 14
+    ctx.shadowColor = '#facc15'
+    ctx.beginPath()
+    ctx.moveTo(david.x, david.y)
+    ctx.quadraticCurveTo(w * 0.47, h * 0.14, arcEnd.x, arcEnd.y)
+    ctx.stroke()
+    ctx.setLineDash([])
+    ctx.shadowBlur = 0
+
+    ctx.strokeStyle = '#78350f'
+    ctx.lineWidth = 5
+    ctx.beginPath()
+    ctx.arc(david.x, david.y, 34 + speedRef.current * 4, 0, Math.PI * 2)
+    ctx.stroke()
+    ctx.fillStyle = '#57534e'
+    ctx.beginPath()
+    ctx.arc(david.x + Math.cos(radians) * 38, david.y - Math.sin(radians) * 38, 9, 0, Math.PI * 2)
+    ctx.fill()
+
+    const stone = stoneRef.current
+    if (stone.active) {
+      stone.x += stone.vx
+      stone.y += stone.vy
+      stone.vy += 0.32
+      ctx.fillStyle = '#f8fafc'
+      ctx.shadowBlur = 20
+      ctx.shadowColor = '#fde68a'
+      ctx.beginPath()
+      ctx.arc(stone.x, stone.y, 11, 0, Math.PI * 2)
+      ctx.fill()
+      ctx.shadowBlur = 0
+      if (stone.x > w * 0.9 || stone.y > h * 0.9) stone.active = false
+    }
+
+    if (impactRef.current > 0) {
+      impactRef.current -= 1
+      ctx.fillStyle = `rgba(250,204,21,${impactRef.current / 26})`
+      ctx.beginPath()
+      ctx.arc(target.x, target.y, 30 + (26 - impactRef.current) * 3, 0, Math.PI * 2)
+      ctx.fill()
+    }
+
+    ctx.fillStyle = 'rgba(15,23,42,.72)'
+    ctx.fillRect(14, 14, 230, 76)
+    ctx.fillStyle = '#fff7ed'
+    ctx.font = '800 16px Nunito, sans-serif'
+    ctx.fillText(`${copy.wind}: ${effectiveWind > 0 ? '+' : ''}${effectiveWind}`, 28, 42)
+    ctx.fillText(`${isRu ? 'Окно' : 'Window'}: ±${effectiveWindow}°`, 28, 68)
+
+    ctx.restore()
+    rafRef.current = window.requestAnimationFrame(draw)
+  }, [copy.wind, effectiveWind, effectiveWindow, isRu, level.targetAngle])
 
   useEffect(() => {
-    const stored = Number(localStorage.getItem('david-sling-best') || '0')
+    const stored = Number(localStorage.getItem('david-sling-v2-best') || '0')
     setBest(Number.isFinite(stored) ? stored : 0)
-  }, [])
+    rafRef.current = window.requestAnimationFrame(draw)
+    return () => {
+      if (rafRef.current) window.cancelAnimationFrame(rafRef.current)
+    }
+  }, [draw])
 
   useEffect(() => {
-    if (!started || isDone) return
-    const tick = window.setInterval(() => {
-      setAim((value) => {
-        let next = value + direction * level.speed
-        if (next >= 100) {
-          next = 100
-          setDirection(-1)
-        }
-        if (next <= 0) {
-          next = 0
-          setDirection(1)
-        }
-        return next
-      })
-    }, 28)
-    return () => window.clearInterval(tick)
-  }, [started, isDone, direction, level.speed])
+    if (phase !== 'play') return
+    const timer = window.setInterval(() => {
+      const slow = power === 'focus' ? 0.48 : 1
+      angleRef.current = (angleRef.current + speedRef.current * slow) % 360
+      if (!holdRef.current) speedRef.current = clamp(speedRef.current - 0.018, 0.45, 5.2)
+    }, 16)
+    return () => window.clearInterval(timer)
+  }, [phase, power])
 
   useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
+    const onDown = (event: KeyboardEvent) => {
       if (event.code === 'Space') {
         event.preventDefault()
-        releaseStone()
+        holdSpin()
       }
     }
-    window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
+    const onUp = (event: KeyboardEvent) => {
+      if (event.code === 'Space') {
+        event.preventDefault()
+        releaseThrow()
+      }
+    }
+    window.addEventListener('keydown', onDown)
+    window.addEventListener('keyup', onUp)
+    return () => {
+      window.removeEventListener('keydown', onDown)
+      window.removeEventListener('keyup', onUp)
+    }
   })
 
-  useEffect(() => {
-    if (!isDone) return
-    setMessageKey('done')
-    setShowWisdom(true)
-    setBest((prev) => {
-      const next = Math.max(prev, score)
-      localStorage.setItem('david-sling-best', String(next))
+  function begin() {
+    setPhase('question')
+    setLevelIndex(0)
+    setScore(0)
+    setThrowsLeft(5)
+    setResult('ready')
+    setMessage('')
+    setPower('none')
+    setSelectedAnswer(null)
+    angleRef.current = 28
+    speedRef.current = 0.45
+    stoneRef.current.active = false
+  }
+
+  function answer(index: number) {
+    setSelectedAnswer(index)
+    if (index === SCRIPTURE.answer) {
+      setWisdomFuel((value) => value + 2)
+      setMessage(copy.correct)
+      setPhase('play')
+    } else {
+      setMessage(copy.wrong)
+    }
+  }
+
+  function choosePower(next: Power) {
+    const cost = next === 'none' ? 0 : 1
+    if (wisdomFuel < cost) return
+    setWisdomFuel((value) => value - cost)
+    setPower(next)
+    setMessage(next === 'focus' ? copy.focusDesc : next === 'steady' ? copy.steadyDesc : next === 'shield' ? copy.shieldDesc : next === 'wind' ? copy.windDesc : copy.ready)
+  }
+
+  function tapRhythm() {
+    if (phase !== 'play') return
+    speedRef.current = clamp(speedRef.current + 0.62, 0.45, 5.2)
+    setMessage(copy.ready)
+  }
+
+  function holdSpin() {
+    if (phase !== 'play') return
+    holdRef.current = true
+    speedRef.current = clamp(speedRef.current + 0.18, 0.45, 5.2)
+  }
+
+  function stopHold() {
+    holdRef.current = false
+  }
+
+  function releaseThrow() {
+    if (phase !== 'play' || throwsLeft <= 0 || stoneRef.current.active) return
+    holdRef.current = false
+    const adjustedAngle = (angleRef.current + effectiveWind + 360) % 360
+    const diff = angleDiff(adjustedAngle, level.targetAngle)
+    const launch = (angleRef.current * Math.PI) / 180
+    const canvas = canvasRef.current
+    const rect = canvas?.getBoundingClientRect()
+    const w = rect?.width || 900
+    const h = rect?.height || 520
+    stoneRef.current = {
+      x: w * 0.22,
+      y: h * 0.62,
+      vx: Math.cos(launch) * (11 + level.distance * 2),
+      vy: -Math.sin(launch) * (9 + level.distance * 2.5),
+      active: true,
+    }
+    setThrowsLeft((value) => Math.max(0, value - 1))
+
+    let points = 0
+    let nextResult: Result = 'miss'
+    if (diff <= 3) { points = 120; nextResult = 'perfect'; impactRef.current = 26 }
+    else if (diff <= effectiveWindow) { points = 75; nextResult = 'hit'; impactRef.current = 22 }
+    else if (diff <= effectiveWindow + 9) { points = 25; nextResult = 'near'; impactRef.current = 12 }
+    else if (power === 'shield') { nextResult = 'saved'; points = 0 }
+
+    setResult(nextResult)
+    setMessage(copy[nextResult])
+    setScore((current) => {
+      const next = current + points
+      const bestNext = Math.max(best, next)
+      setBest(bestNext)
+      localStorage.setItem('david-sling-v2-best', String(bestNext))
       return next
     })
-  }, [isDone, score])
 
-  function startGame() {
-    setStarted(true)
-    setAim(20)
-    setDirection(1)
-    setLevelIndex(0)
-    setThrowsLeft(5)
-    setScore(0)
-    setMessageKey('ready')
-    setStoneFlight(0)
-    setShowWisdom(false)
-    releaseLock.current = false
-  }
-
-  function releaseStone() {
-    if (!started || isDone || releaseLock.current) return
-    releaseLock.current = true
-    const throwResult = scoreThrow(aim, level)
-    setStoneFlight(throwResult.flight)
-    setScore((current) => current + throwResult.points)
-    setThrowsLeft((current) => Math.max(0, current - 1))
-    setMessageKey(throwResult.result)
-    if (throwResult.result === 'perfect' || throwResult.result === 'hit') {
-      setShowWisdom(true)
+    if (nextResult === 'perfect' || nextResult === 'hit') {
+      window.setTimeout(() => {
+        if (levelIndex < LEVELS.length - 1) {
+          setLevelIndex((value) => value + 1)
+          setPhase('question')
+          setSelectedAnswer(null)
+          setPower('none')
+          setMessage('')
+          angleRef.current = 28
+          speedRef.current = 0.45
+        } else {
+          setPhase('result')
+        }
+      }, 950)
+    } else if (throwsLeft <= 1) {
+      window.setTimeout(() => setPhase('result'), 850)
     }
-    window.setTimeout(() => {
-      setStoneFlight(0)
-      if (throwResult.result === 'perfect' || throwResult.result === 'hit') {
-        setLevelIndex((current) => Math.min(LEVELS.length, current + 1))
-      }
-      setAim(20)
-      setDirection(1)
-      releaseLock.current = false
-    }, 850)
   }
+
+  const choices = isRu ? SCRIPTURE.choicesRu : SCRIPTURE.choicesEn
 
   return (
-    <main style={{ minHeight: '100vh', background: 'linear-gradient(180deg,#071225,#0d1f3c 58%,#f8fafc)', color: '#fff' }}>
+    <main className="dsv2-page">
       <style>{`
-        .sling-wrap { max-width: 1120px; margin: 0 auto; padding: 24px 14px 54px; }
-        .sling-grid { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(280px,.75fr); gap: 18px; align-items: stretch; }
-        .sling-arena { position: relative; min-height: 560px; overflow: hidden; border-radius: 34px; border: 4px solid rgba(255,216,102,.82); background: linear-gradient(180deg,#27a7f4 0%,#8bd6ff 30%,#c8f2ff 46%,#d7b26a 47%,#70a83a 68%,#24551d 100%); box-shadow: 0 28px 90px rgba(0,0,0,.35); touch-action: manipulation; isolation: isolate; }
-        .sling-arena::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 15% 13%,rgba(255,255,255,.72),transparent 11%),radial-gradient(circle at 68% 22%,rgba(255,216,102,.2),transparent 20%),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size: auto,auto,50px 50px; pointer-events: none; z-index: 0; }
-        .sling-arena::after { content: ''; position: absolute; left: -8%; right: -8%; bottom: 0; height: 36%; background: radial-gradient(ellipse at 20% 100%,#376f25 0 28%,transparent 29%),radial-gradient(ellipse at 72% 100%,#4b7f2a 0 30%,transparent 31%),linear-gradient(180deg,rgba(189,142,64,.18),#4f8c30 30%,#24551d 78%,#163414); z-index: 0; }
-        .mountains { position: absolute; inset: auto 0 31% 0; height: 33%; background: linear-gradient(135deg,transparent 0 22%,rgba(142,112,63,.78) 23% 41%,transparent 42%),linear-gradient(225deg,transparent 0 17%,rgba(76,120,80,.74) 18% 39%,transparent 40%),linear-gradient(180deg,transparent 0 58%,rgba(73,104,59,.32) 59%); opacity: .88; z-index: 0; }
-        .cloud { position: absolute; top: 10%; width: 122px; height: 38px; border-radius: 999px; background: rgba(255,255,255,.9); filter: blur(.1px); box-shadow: 28px -14px 0 6px rgba(255,255,255,.74),64px 3px 0 1px rgba(255,255,255,.68),92px -4px 0 -3px rgba(255,255,255,.55); z-index: 1; }
-        .cloud.one { left: 9%; } .cloud.two { right: 14%; top: 18%; transform: scale(.9); opacity: .82; }
-        .block-ledge { position: absolute; left: 4%; bottom: 7%; width: 188px; height: 58px; z-index: 2; background: linear-gradient(180deg,#f8d98b,#c69138); border-radius: 12px; box-shadow: inset 0 0 0 3px rgba(255,255,255,.34),0 16px 34px rgba(0,0,0,.22); }
-        .block-ledge::before { content: ''; position: absolute; inset: -22px 18px auto 24px; height: 34px; border-radius: 10px; background: linear-gradient(180deg,#ffe5a3,#d8a34b); box-shadow: 52px 8px 0 #c88f31,104px -3px 0 #f4c967; }
-        .toy-blocks { position: absolute; right: 2%; bottom: 5%; width: 184px; height: 88px; z-index: 2; background: linear-gradient(90deg,#61b13e 0 24%,transparent 25% 36%,#dc3f32 37% 50%,transparent 51% 61%,#f2c94c 62% 76%,transparent 77%); opacity: .9; filter: drop-shadow(0 12px 16px rgba(0,0,0,.18)); }
-        .valley-river { position: absolute; left: 35%; right: 28%; bottom: 27%; height: 28px; border-radius: 999px; background: linear-gradient(90deg,#38bdf8,#e0f2fe,#0ea5e9); transform: rotate(-8deg); box-shadow: 0 0 20px rgba(56,189,248,.48); z-index: 1; }
-        .crowd { position: absolute; left: 1%; right: 1%; bottom: 28%; height: 42px; z-index: 2; opacity: .78; background: radial-gradient(circle at 9% 55%,#5b3418 0 3px,transparent 4px),radial-gradient(circle at 16% 45%,#8b5a2b 0 3px,transparent 4px),radial-gradient(circle at 24% 60%,#5b3418 0 3px,transparent 4px),radial-gradient(circle at 73% 48%,#5b3418 0 3px,transparent 4px),radial-gradient(circle at 81% 60%,#8b5a2b 0 3px,transparent 4px),radial-gradient(circle at 90% 50%,#5b3418 0 3px,transparent 4px); }
-        .david { position: absolute; left: 10%; bottom: 12%; width: 130px; height: 178px; z-index: 5; filter: drop-shadow(0 18px 20px rgba(0,0,0,.24)); }
-        .david .head { position: absolute; left: 34px; top: 0; width: 64px; height: 66px; border-radius: 50% 50% 45% 45%; background: radial-gradient(circle at 34% 32%,#ffe3b1,#f6b86f 72%); border: 3px solid rgba(255,255,255,.8); box-shadow: inset -8px -8px 0 rgba(196,93,37,.12); }
-        .david .hair { position: absolute; left: 25px; top: -8px; width: 78px; height: 50px; border-radius: 42px 42px 22px 22px; background: radial-gradient(circle at 19% 40%,#5b3418 0 11px,transparent 12px),radial-gradient(circle at 41% 24%,#6b3f20 0 14px,transparent 15px),radial-gradient(circle at 63% 35%,#4b2b16 0 13px,transparent 14px),#5b3418; }
-        .david .face { position: absolute; left: 50px; top: 25px; width: 38px; height: 22px; border-radius: 999px; background: radial-gradient(circle at 28% 36%,#1f2937 0 2px,transparent 3px),radial-gradient(circle at 70% 36%,#1f2937 0 2px,transparent 3px); }
-        .david .face::after { content: ''; position: absolute; left: 10px; top: 12px; width: 18px; height: 8px; border-bottom: 3px solid #7c2d12; border-radius: 999px; }
-        .david .body { position: absolute; left: 28px; top: 59px; width: 74px; height: 84px; border-radius: 28px 28px 18px 18px; background: linear-gradient(180deg,#6fbf5b,#388b3b); border: 3px solid rgba(255,255,255,.72); box-shadow: inset -10px -14px 0 rgba(20,83,45,.2); }
-        .david .strap { position: absolute; left: 34px; top: 64px; width: 78px; height: 9px; border-radius: 999px; background: #7c3f16; transform: rotate(56deg); z-index: 2; }
-        .david .arm { position: absolute; width: 46px; height: 15px; border-radius: 999px; background: #f6b86f; border: 2px solid rgba(255,255,255,.6); transform-origin: right center; }
-        .david .arm.left { left: 1px; top: 78px; transform: rotate(-30deg); }
-        .david .arm.right { right: 4px; top: 81px; transform: rotate(24deg); }
-        .david .leg { position: absolute; width: 20px; height: 60px; top: 132px; border-radius: 12px; background: linear-gradient(180deg,#f6b86f 0 46%,#7c2d12 47%); }
-        .david .leg.left { left: 36px; transform: rotate(14deg); } .david .leg.right { right: 34px; transform: rotate(-12deg); }
-        .david::after { content: ''; position: absolute; left: 16px; right: 10px; bottom: -12px; height: 18px; border-radius: 999px; background: rgba(15,23,42,.22); filter: blur(3px); }
-        .trajectory { position: absolute; left: 20%; bottom: 31%; width: 56%; height: 46%; overflow: visible; pointer-events: none; z-index: 3; opacity: .74; }
-        .trajectory path { fill: none; stroke: rgba(255,255,255,.82); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 10 13; filter: drop-shadow(0 0 9px rgba(255,216,102,.72)); }
-        .trajectory .arc-glow { stroke: rgba(251,191,36,.35); stroke-width: 12; stroke-dasharray: none; }
-        .sling-orbit { position: absolute; left: calc(11% + 34px); bottom: calc(10% + 78px); width: 96px; height: 96px; border-radius: 999px; border: 3px dashed rgba(255,255,255,.75); box-shadow: 0 0 0 8px rgba(255,216,102,.1),0 0 28px rgba(255,216,102,.42); z-index: 6; }
-        .sling { position: absolute; left: calc(11% + 82px); bottom: calc(10% + 126px); width: 118px; height: 6px; transform-origin: left center; border-radius: 999px; background: linear-gradient(90deg,#78350f,#facc15 76%,#78350f); box-shadow: 0 0 0 2px rgba(255,255,255,.35),0 0 22px rgba(250,204,21,.48); z-index: 7; transition: transform .04s linear; }
-        .sling::after { content: '●'; position: absolute; right: -10px; top: -18px; color: #57534e; font-size: 34px; text-shadow: 0 2px 0 #fff,0 0 16px rgba(255,255,255,.7); }
-        .stone { position: absolute; left: 20%; bottom: 39%; width: 25px; height: 25px; border-radius: 999px; background: radial-gradient(circle at 35% 28%,#a8a29e,#57534e 68%); border: 3px solid #e7e5e4; box-shadow: 0 8px 20px rgba(0,0,0,.34),0 0 18px rgba(255,255,255,.52); transform: translateX(calc(var(--flight) * 1%)) translateY(calc(var(--arc) * -1px)); opacity: var(--visible); transition: transform .72s cubic-bezier(.2,.7,.2,1), opacity .18s; z-index: 8; }
-        .impact { position: absolute; right: 12%; bottom: 45%; width: 108px; height: 108px; border-radius: 999px; background: radial-gradient(circle,rgba(254,240,138,.95) 0 12%,rgba(251,191,36,.65) 13% 34%,transparent 35%); opacity: 0; transform: scale(.7); z-index: 6; pointer-events: none; }
-        .sling-arena.is-hit .impact { animation: impact-pop .8s ease-out; }
-        .sling-arena.is-near .impact { animation: near-pop .7s ease-out; }
-        .sling-arena.is-miss .trajectory { opacity: .38; }
-        .giant-target { position: absolute; right: 6%; bottom: 12%; width: 190px; height: 294px; z-index: 4; filter: drop-shadow(0 28px 28px rgba(0,0,0,.28)); }
-        .giant-target .spear { position: absolute; left: 38px; top: 14px; width: 9px; height: 240px; border-radius: 999px; background: linear-gradient(90deg,#5b3418,#a16207,#5b3418); transform: rotate(-6deg); z-index: 0; }
-        .giant-target .spear::before { content: ''; position: absolute; left: -13px; top: -28px; width: 35px; height: 45px; clip-path: polygon(50% 0,100% 70%,52% 100%,0 70%); background: linear-gradient(135deg,#f8fafc,#94a3b8); border-radius: 8px; }
-        .giant-target .giant-head { position: absolute; left: 68px; top: 0; width: 78px; height: 78px; border-radius: 50% 50% 44% 44%; background: radial-gradient(circle at 38% 30%,#ffd6a4,#c46a3a 72%); border: 4px solid rgba(255,255,255,.55); box-shadow: inset -10px -8px 0 rgba(120,53,15,.18); }
-        .giant-target .helmet { position: absolute; left: 58px; top: -10px; width: 98px; height: 44px; border-radius: 48px 48px 12px 12px; background: linear-gradient(180deg,#fde68a,#a16207); border: 3px solid rgba(255,255,255,.55); }
-        .giant-target .helmet::after { content: ''; position: absolute; left: 40px; top: -18px; width: 24px; height: 28px; border-radius: 14px 14px 4px 4px; background: linear-gradient(180deg,#f97316,#7c2d12); }
-        .giant-target .beard { position: absolute; left: 74px; top: 48px; width: 66px; height: 55px; border-radius: 18px 18px 32px 32px; background: radial-gradient(circle at 28% 20%,#3b2415 0 10px,transparent 11px),radial-gradient(circle at 55% 24%,#4b2b16 0 12px,transparent 13px),#3b2415; }
-        .giant-target .giant-face { position: absolute; left: 82px; top: 31px; width: 48px; height: 24px; background: radial-gradient(circle at 28% 40%,#111827 0 3px,transparent 4px),radial-gradient(circle at 72% 40%,#111827 0 3px,transparent 4px); z-index: 2; }
-        .giant-target .armor { position: absolute; left: 45px; top: 78px; width: 114px; height: 136px; border-radius: 44px 44px 20px 20px; background: repeating-linear-gradient(0deg,#7c5b2f 0 15px,#9f7436 16px 29px); border: 4px solid rgba(255,229,166,.74); box-shadow: inset -12px -18px 0 rgba(68,38,12,.18); }
-        .giant-target .armor::before { content: ''; position: absolute; left: -24px; top: 36px; width: 164px; height: 20px; border-radius: 999px; background: rgba(104,65,27,.95); }
-        .giant-target .shield { position: absolute; right: -4px; top: 92px; width: 102px; height: 126px; border-radius: 50%; background: radial-gradient(circle,#facc15 0 13%,#8b5a2b 14% 43%,#d6a75f 44% 49%,#6b3f20 50% 100%); border: 6px solid #fef3c7; box-shadow: inset 0 0 0 6px rgba(120,53,15,.55),0 18px 32px rgba(0,0,0,.24); z-index: 4; }
-        .giant-target .legs { position: absolute; left: 61px; right: 26px; bottom: 0; height: 88px; background: linear-gradient(90deg,#7c2d12 0 32%,transparent 33% 58%,#7c2d12 59%); border-radius: 18px; }
-        .giant-target::after { content: ''; position: absolute; left: 20px; right: 10px; bottom: -14px; height: 22px; border-radius: 999px; background: rgba(15,23,42,.24); filter: blur(5px); }
-        .meter { position: relative; overflow: hidden; height: 34px; border-radius: 999px; background: rgba(15,23,42,.9); border: 2px solid rgba(255,255,255,.5); margin-top: 12px; }
-        .zone { position: absolute; top: 0; bottom: 0; background: linear-gradient(180deg,#bbf7d0,#22c55e); box-shadow: 0 0 24px rgba(34,197,94,.8); }
-        .marker { position: absolute; top: -8px; width: 8px; height: 50px; border-radius: 999px; background: #f97316; box-shadow: 0 0 18px rgba(249,115,22,.9); transform: translateX(-50%); }
-        .sling-card { border-radius: 26px; padding: 18px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); box-shadow: 0 20px 60px rgba(0,0,0,.2); }
-        .sling-stat { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin: 14px 0; }
-        .sling-stat div { border-radius: 16px; padding: 9px; background: rgba(15,23,42,.78); border: 1px solid rgba(255,255,255,.18); text-align: center; font-family: var(--font-nunito); font-weight: 1000; }
-        @keyframes impact-pop { 0% { opacity: 0; transform: scale(.55); } 18% { opacity: 1; transform: scale(1.08); } 100% { opacity: 0; transform: scale(1.45); } }
-        @keyframes near-pop { 0% { opacity: 0; transform: scale(.45); } 22% { opacity: .72; transform: scale(.88); } 100% { opacity: 0; transform: scale(1.18); } }
-        @media (max-width: 860px) { .sling-grid { grid-template-columns: 1fr; } .sling-arena { min-height: 470px; } .giant-target { right: -1%; bottom: 10%; transform: scale(.72); transform-origin: right bottom; } .david { left: 5%; bottom: 12%; transform: scale(.74); transform-origin: left bottom; } .block-ledge { left: 2%; bottom: 7%; transform: scale(.74); transform-origin: left bottom; } .toy-blocks { opacity: .54; transform: scale(.7); transform-origin: right bottom; } .crowd { bottom: 31%; } .sling-orbit { left: calc(5% + 25px); bottom: calc(12% + 62px); width: 76px; height: 76px; } .sling { left: calc(5% + 63px); bottom: calc(12% + 100px); width: 92px; } .trajectory { left: 18%; width: 58%; bottom: 34%; } .sling-stat { grid-template-columns: repeat(2,1fr); } }
+        .dsv2-page { min-height: 100vh; color: #fff; background: linear-gradient(180deg,#06172f,#10294b 62%,#f8fafc); }
+        .dsv2-wrap { max-width: 1180px; margin: 0 auto; padding: 24px 14px 58px; }
+        .dsv2-hero { max-width: 920px; }
+        .dsv2-title { font-family: var(--font-cinzel); font-size: clamp(1.95rem,5.8vw,4.1rem); line-height: .95; margin: 4px 0 10px; }
+        .dsv2-subtitle { font-family: var(--font-lora); color: rgba(255,255,255,.9); font-weight: 800; line-height: 1.45; }
+        .dsv2-stats { display: grid; grid-template-columns: repeat(5,1fr); gap: 9px; margin: 12px 0; }
+        .dsv2-stats div { border-radius: 16px; padding: 10px; background: rgba(15,23,42,.72); border: 1px solid rgba(255,255,255,.18); text-align: center; font-family: var(--font-nunito); font-weight: 1000; }
+        .dsv2-grid { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(310px,.65fr); gap: 16px; align-items: stretch; }
+        .dsv2-stage { position: relative; border-radius: 32px; overflow: hidden; border: 4px solid rgba(255,216,102,.9); background: radial-gradient(circle at center,#123f73,#07182f); box-shadow: 0 32px 92px rgba(0,0,0,.38); touch-action: none; }
+        .dsv2-bg { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; object-position: center center; z-index: 0; }
+        .dsv2-stage canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; display: block; background: transparent; opacity: 1; }
+        .dsv2-overlay { position: absolute; inset: auto 16px 16px 16px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: center; pointer-events: none; }
+        .dsv2-overlay button { pointer-events: auto; border: 0; border-radius: 18px; padding: 14px 18px; min-height: 56px; font-family: var(--font-nunito); font-weight: 1000; background: linear-gradient(180deg,#fef08a,#f59e0b); color: #3b2307; box-shadow: 0 12px 28px rgba(0,0,0,.25); }
+        .dsv2-card { border-radius: 26px; padding: 18px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); box-shadow: 0 20px 60px rgba(0,0,0,.22); }
+        .dsv2-card h2, .dsv2-card h3 { font-family: var(--font-nunito); font-weight: 1000; color: #ffd866; }
+        .dsv2-card p { font-family: var(--font-lora); font-weight: 800; line-height: 1.58; color: rgba(255,255,255,.9); }
+        .dsv2-choice, .dsv2-power { width: 100%; border: 0; border-radius: 16px; padding: 12px 14px; margin-top: 9px; text-align: left; font-family: var(--font-nunito); font-weight: 1000; background: rgba(255,255,255,.95); color: #0d1f3c; box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+        .dsv2-choice.selected { outline: 4px solid #fbbf24; }
+        .dsv2-power.active { background: linear-gradient(180deg,#bbf7d0,#22c55e); }
+        .dsv2-scripture { border-radius: 20px; padding: 14px; background: rgba(15,23,42,.68); border: 1px solid rgba(255,255,255,.2); margin: 12px 0; }
+        .dsv2-scripture strong { color: #bfdbfe; font-family: var(--font-nunito); }
+        .dsv2-message { min-height: 44px; color: #fde68a !important; font-family: var(--font-nunito) !important; font-weight: 1000 !important; }
+        @media (max-width: 900px) { .dsv2-grid { grid-template-columns: 1fr; } .dsv2-stats { grid-template-columns: repeat(2,1fr); } }
       `}</style>
-
-      <div className="sling-wrap">
+      <div className="dsv2-wrap">
         <Link href="/games" style={{ color: '#ffd866', fontFamily: 'var(--font-nunito)', fontWeight: 1000, textDecoration: 'none' }}>← {copy.back}</Link>
-        <p className="eyebrow" style={{ color: '#7ec8e3', marginTop: 20 }}>{copy.eyebrow}</p>
-        <h1 style={{ fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2.15rem,7vw,4.4rem)', lineHeight: 1, margin: '6px 0 12px' }}>{copy.title}</h1>
-        <p style={{ maxWidth: 780, fontFamily: 'var(--font-lora)', color: 'rgba(255,255,255,.9)', fontWeight: 700, lineHeight: 1.7 }}>{copy.subtitle}</p>
-
-        <div className="sling-stat">
+        <section className="dsv2-hero">
+          <p className="eyebrow" style={{ color: '#7ec8e3', marginTop: 20 }}>{copy.eyebrow}</p>
+          <h1 className="dsv2-title">{copy.title}</h1>
+          <p className="dsv2-subtitle">{copy.subtitle}</p>
+        </section>
+        <div className="dsv2-stats">
+          <div>{copy.level}<br />{Math.min(levelIndex + 1, LEVELS.length)}/{LEVELS.length}</div>
           <div>{copy.score}<br />{score}</div>
           <div>{copy.best}<br />{best}</div>
           <div>{copy.throws}<br />{throwsLeft}</div>
-          <div>{copy.level}<br />{Math.min(levelIndex + 1, LEVELS.length)}/{LEVELS.length}</div>
+          <div>{copy.fuel}<br />{wisdomFuel}</div>
         </div>
-
-        <section className="sling-grid">
-          <div className={`sling-arena ${resultClass}`} aria-label={copy.title}>
-            <div className="mountains" aria-hidden="true" />
-            <div className="valley-river" aria-hidden="true" />
-            <div className="crowd" aria-hidden="true" />
-            <div className="block-ledge" aria-hidden="true" />
-            <div className="toy-blocks" aria-hidden="true" />
-            <div className="cloud one" aria-hidden="true" />
-            <div className="cloud two" aria-hidden="true" />
-            <svg className="trajectory" viewBox="0 0 520 260" aria-hidden="true">
-              <path className="arc-glow" d="M12 218 C 158 42, 336 34, 506 170" />
-              <path d="M12 218 C 158 42, 336 34, 506 170" />
-            </svg>
-            <div className="david" aria-hidden="true">
-              <span className="hair" />
-              <span className="head" />
-              <span className="face" />
-              <span className="body" />
-              <span className="strap" />
-              <span className="arm left" />
-              <span className="arm right" />
-              <span className="leg left" />
-              <span className="leg right" />
-            </div>
-            <div className="sling-orbit" aria-hidden="true" />
-            <div className="sling" style={{ transform: `rotate(${slingRotation}deg)` }} aria-hidden="true" />
-            <div className="stone" style={{ ['--flight' as string]: stoneFlight, ['--arc' as string]: stoneFlight > 0 ? 116 : 0, ['--visible' as string]: stoneFlight > 0 ? 1 : 0 }} aria-hidden="true" />
-            <div className="impact" aria-hidden="true" />
-            <div className="giant-target" aria-hidden="true">
-              <span className="spear" />
-              <span className="giant-head" />
-              <span className="helmet" />
-              <span className="beard" />
-              <span className="giant-face" />
-              <span className="armor" />
-              <span className="shield" />
-              <span className="legs" />
+        <section className="dsv2-grid">
+          <div className="dsv2-stage" onPointerDown={holdSpin} onPointerUp={releaseThrow} onPointerLeave={stopHold}>
+            <img className="dsv2-bg" src={BG} alt="" aria-hidden="true" />
+            <canvas ref={canvasRef} aria-label={copy.title} />
+            {phase === 'intro' && <div className="arena-overlay"><div><h2>{copy.title}</h2><p>{copy.subtitle}</p><button className="pz-btn" onClick={begin}>{copy.start}</button></div></div>}
+            <div className="dsv2-overlay">
+              <button onClick={(e) => { e.stopPropagation(); tapRhythm() }}>{copy.rhythm}</button>
+              <button onPointerDown={(e) => { e.stopPropagation(); holdSpin() }} onPointerUp={(e) => { e.stopPropagation(); releaseThrow() }}>{copy.hold} / {copy.release}</button>
             </div>
           </div>
-
-          <aside className="sling-card">
+          <aside className="dsv2-card">
             <p className="puzzle-label" style={{ color: '#ffd866' }}>{isRu ? level.nameRu : level.nameEn}</p>
-            <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '1.35rem', color: '#fff', marginBottom: 8 }}>{copy.target}</h2>
-            <p style={{ fontFamily: 'var(--font-lora)', lineHeight: 1.65, color: 'rgba(255,255,255,.88)', fontWeight: 700 }}>{message}</p>
-            <p style={{ marginTop: 8, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#bfdbfe' }}>{copy.wind}: {level.wind > 0 ? `+${level.wind}` : level.wind}</p>
-
-            <div className="meter" aria-label={copy.target}>
-              <span className="zone" style={{ left: `${level.zoneStart}%`, width: `${level.zoneEnd - level.zoneStart}%` }} />
-              <span className="marker" style={{ left: `${aim}%` }} />
+            <h2>{phase === 'question' ? copy.questionTitle : result === 'ready' ? copy.release : copy[result]}</h2>
+            <div className="dsv2-scripture">
+              <p>&ldquo;{isRu ? SCRIPTURE.textRu : SCRIPTURE.textEn}&rdquo;</p>
+              <strong>— {isRu ? SCRIPTURE.refRu : SCRIPTURE.refEn}</strong>
             </div>
-
-            <button className="pz-btn" style={{ marginTop: 16, width: '100%', minHeight: 58, fontSize: '1.05rem' }} onClick={started ? releaseStone : startGame}>
-              {started && !isDone ? copy.release : copy.start}
-            </button>
-
-            {isDone && (
-              <button className="pz-btn" style={{ marginTop: 10, width: '100%', minHeight: 52, background: '#e2e8f0', color: '#0d1f3c' }} onClick={startGame}>{copy.restart}</button>
-            )}
-
-            <div style={{ marginTop: 16, borderRadius: 20, padding: 14, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.16)' }}>
-              <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#ffd866', marginBottom: 6 }}>{copy.how}</h3>
-              <p style={{ fontFamily: 'var(--font-lora)', lineHeight: 1.58, color: 'rgba(255,255,255,.88)', fontSize: '.95rem' }}>{copy.howText}</p>
-            </div>
+            {phase === 'question' ? <>
+              <p>{copy.questionHelp}</p>
+              <h3>{isRu ? SCRIPTURE.questionRu : SCRIPTURE.questionEn}</h3>
+              {choices.map((choice, index) => <button className={`dsv2-choice ${selectedAnswer === index ? 'selected' : ''}`} key={choice} onClick={() => answer(index)}>{choice}</button>)}
+            </> : <>
+              <p className="dsv2-message">{message || copy.ready}</p>
+              <h3>{isRu ? 'Усиления' : 'Power-ups'}</h3>
+              <button className={`dsv2-power ${power === 'focus' ? 'active' : ''}`} onClick={() => choosePower('focus')}>{copy.focus} · 1<br /><span>{copy.focusDesc}</span></button>
+              <button className={`dsv2-power ${power === 'steady' ? 'active' : ''}`} onClick={() => choosePower('steady')}>{copy.steady} · 1<br /><span>{copy.steadyDesc}</span></button>
+              <button className={`dsv2-power ${power === 'shield' ? 'active' : ''}`} onClick={() => choosePower('shield')}>{copy.shield} · 1<br /><span>{copy.shieldDesc}</span></button>
+              <button className={`dsv2-power ${power === 'wind' ? 'active' : ''}`} onClick={() => choosePower('wind')}>{copy.calmWind} · 1<br /><span>{copy.windDesc}</span></button>
+              {phase === 'result' && <button className="pz-btn" style={{ width: '100%', marginTop: 14 }} onClick={begin}>{copy.again}</button>}
+            </>}
           </aside>
-        </section>
-
-        <section style={{ marginTop: 18, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 14 }}>
-          <div className="sling-card">
-            <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#ffd866', marginBottom: 8 }}>{copy.wisdomTitle}</h2>
-            <div className="pull-quote" style={{ margin: 0, opacity: showWisdom ? 1 : .72 }}>
-              <p className="pq-text">&ldquo;{isRu ? VERSE.ru : VERSE.en}&rdquo;</p>
-              <span className="pq-ref">— {isRu ? VERSE.refRu : VERSE.refEn}</span>
-            </div>
-          </div>
-          <div className="sling-card">
-            <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#ffd866', marginBottom: 8 }}>{isRu ? 'Главная мысль' : 'Big Truth'}</h2>
-            <p style={{ fontFamily: 'var(--font-lora)', lineHeight: 1.65, color: 'rgba(255,255,255,.9)', fontWeight: 700 }}>{copy.childTruth}</p>
-          </div>
         </section>
       </div>
     </main>

@@ -1,6 +1,6 @@
 {
   "game": "david-sling-challenge-v2",
-  "status": "source-still-for-approval",
+  "status": "v2-playfield-prototype",
   "assets": [
     {
       "id": "00-source-still",
@@ -15,7 +15,22 @@
         "dottedTrajectoryVisible": true,
         "noReadableTextOrLogosObserved": true,
         "noGoreOrHorrorObserved": true,
-        "notes": "Strong source-still candidate for approval. Treat as art-direction anchor only; not wired into the live game yet."
+        "notes": "Approved by Mike as way better. Used as art-direction anchor."
+      }
+    },
+    {
+      "id": "01-playfield",
+      "type": "active-game-playfield-background",
+      "path": "/images/jr/games/david-sling-v2/generated/01-playfield.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9d1f69/wr0rwbCNtd2VnnoHLW5Ar_VnTE2emi.png",
+      "qa": {
+        "polished3dAnimatedStyle": true,
+        "brightChildSafeValley": true,
+        "davidLeftGiantRight": true,
+        "notMostlyEmptySky": true,
+        "noReadableTextOrLogosObserved": true,
+        "noGoreOrHorrorObserved": true,
+        "notes": "Generated from the approved direction for the active v2 playfield so the game route immediately shows David, Goliath, valley, and open trajectory space."
       }
     }
   ]
