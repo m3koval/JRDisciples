@@ -28,7 +28,7 @@ type Target = {
   spin: number
 }
 
-type Arrow = { x: number; y: number; vx: number; vy: number; age: number; stuck: boolean; countedMiss?: boolean; glow: boolean; trail: Point[] }
+type Arrow = { x: number; y: number; vx: number; vy: number; age: number; stuck: boolean; countedMiss?: boolean; glow: boolean; trail: Point[]; stuckTargetId?: number; stuckOffset?: Point }
 type FloatText = { x: number; y: number; txt: string; life: number; color: string }
 type Spark = { x: number; y: number; vx: number; vy: number; life: number; color: string }
 type GameModel = {
@@ -131,8 +131,17 @@ function snapArrowToTarget(arrow: Arrow, target: Target) {
   const visualStickRadius = target.r * HIT_ASSIST.snap
   arrow.x = target.x - Math.cos(angle) * visualStickRadius
   arrow.y = target.y - Math.sin(angle) * visualStickRadius
+  arrow.stuckTargetId = target.id
+  arrow.stuckOffset = { x: arrow.x - target.x, y: arrow.y - target.y }
   arrow.trail.unshift({ x: arrow.x, y: arrow.y })
   arrow.trail = arrow.trail.slice(0, 8)
+}
+
+function moveStuckArrowWithTarget(arrow: Arrow, target: Target) {
+  if (!arrow.stuckOffset) return
+  arrow.x = target.x + arrow.stuckOffset.x
+  arrow.y = target.y + arrow.stuckOffset.y
+  arrow.trail = [{ x: arrow.x, y: arrow.y }]
 }
 
 function makeModel(): GameModel {
@@ -355,7 +364,12 @@ export default function FaithfulArcherPage() {
       }
 
       for (const arrow of arrowsRef.current) {
-        if (arrow.stuck) continue
+        if (arrow.stuck) {
+          arrow.age += dt
+          const stuckTarget = arrow.stuckTargetId === undefined ? undefined : targetsRef.current.find((t) => t.id === arrow.stuckTargetId)
+          if (stuckTarget) moveStuckArrowWithTarget(arrow, stuckTarget)
+          continue
+        }
         arrow.age += dt
         arrow.vx += m.wind * 220 * dt
         arrow.vy += (calmRef.current ? ARROW_GRAVITY.calm : ARROW_GRAVITY.fast) * dt
@@ -394,6 +408,7 @@ export default function FaithfulArcherPage() {
       if (targetsRef.current.length && targetsRef.current.every((t) => t.hit)) {
         m.levelIndex = Math.min(3, m.levelIndex + 1)
         m.targetSeed += 10
+        arrowsRef.current = arrowsRef.current.filter((a) => !a.stuck)
         spawnTargets()
         setArcherEmotion('celebrate', EMOTION_BEATS.celebrate)
         floatRef.current.push({ x: width * 0.52, y: height * 0.22, txt: isRu ? 'новый курс!' : 'next course!', life: 1.4, color: '#31552d' })

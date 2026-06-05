@@ -88,6 +88,9 @@ const requiredArcherSnippets = [
   'TARGET_MOTION',
   'motionAmp',
   'motionY',
+  'stuckTargetId',
+  'stuckOffset',
+  'moveStuckArrowWithTarget',
 ];
 
 for (const snippet of requiredArcherSnippets) {
@@ -101,6 +104,7 @@ if (/event\.offset[XY]/.test(archer)) failures.push('Faithful Archer route must 
 if (/arrow\.[xy] \+= arrow\.v[xy] \* dt \* 60/.test(archer)) failures.push('Faithful Archer arrow physics must use px/sec units, not frame-scaled dt * 60 movement.');
 if (/if \(target\.hit\) continue/.test(archer)) failures.push('Faithful Archer targets must stay repeatable during a run; use hitCooldown instead of permanently skipping hit targets.');
 if (/m\.levelIndex === 0 \? 0/.test(archer)) failures.push('Faithful Archer targets should move even on the first course; Mike asked for larger, more aggressive motion.');
+if (/if \(arrow\.stuck\) continue/.test(archer)) failures.push('Faithful Archer stuck arrows must follow moving targets via stuckTargetId/stuckOffset, not freeze in world space.');
 if (!/type\s+Target/.test(archer)) failures.push('Faithful Archer route must define typed targets.');
 if (!/const\s+SCRIPTURE/.test(archer)) failures.push('Faithful Archer route must define SCRIPTURE.');
 
