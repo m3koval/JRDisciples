@@ -202,15 +202,30 @@ export default function DavidSlingChallengePage() {
       <style>{`
         .sling-wrap { max-width: 1120px; margin: 0 auto; padding: 24px 14px 54px; }
         .sling-grid { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(280px,.75fr); gap: 18px; align-items: stretch; }
-        .sling-arena { position: relative; min-height: 560px; overflow: hidden; border-radius: 34px; border: 4px solid rgba(255,216,102,.82); background: linear-gradient(180deg,#65b8df 0%,#dbeafe 35%,#c7e77b 36%,#3b7a2a 100%); box-shadow: 0 28px 90px rgba(0,0,0,.35); touch-action: manipulation; isolation: isolate; }
-        .sling-arena::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 18% 16%,rgba(255,255,255,.76),transparent 12%),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px); background-size: auto,48px 48px; pointer-events: none; z-index: 0; }
-        .sling-arena::after { content: ''; position: absolute; left: -6%; right: -6%; bottom: 0; height: 38%; background: radial-gradient(ellipse at 22% 100%,#2f6f25 0 25%,transparent 26%),radial-gradient(ellipse at 62% 100%,#2c621f 0 30%,transparent 31%),linear-gradient(180deg,transparent,#24551d 44%,#173b16); z-index: 0; }
-        .mountains { position: absolute; inset: auto 0 34% 0; height: 32%; background: linear-gradient(135deg,transparent 0 24%,rgba(72,114,80,.7) 25% 43%,transparent 44%),linear-gradient(225deg,transparent 0 18%,rgba(48,92,72,.72) 19% 38%,transparent 39%); opacity: .8; z-index: 0; }
-        .cloud { position: absolute; top: 12%; width: 112px; height: 36px; border-radius: 999px; background: rgba(255,255,255,.78); filter: blur(.2px); box-shadow: 28px -12px 0 4px rgba(255,255,255,.65),58px 2px 0 0 rgba(255,255,255,.56); z-index: 1; }
-        .cloud.one { left: 12%; } .cloud.two { right: 18%; top: 19%; transform: scale(.82); opacity: .7; }
-        .david { position: absolute; left: 11%; bottom: 10%; width: 108px; height: 150px; border-radius: 48px 48px 30px 30px; background: linear-gradient(180deg,#f6c37a 0 24%,#fef3c7 25% 31%,#f97316 32% 70%,#7c2d12 71%); border: 4px solid rgba(255,255,255,.82); box-shadow: 0 16px 36px rgba(0,0,0,.28); display: grid; place-items: start center; font-size: 2.05rem; padding-top: 12px; z-index: 5; }
-        .david::before { content: ''; position: absolute; top: 42px; left: 28px; width: 52px; height: 18px; border-radius: 999px; background: rgba(120,53,15,.55); transform: rotate(-12deg); }
-        .david::after { content: ''; position: absolute; left: 20px; right: 20px; bottom: -12px; height: 18px; border-radius: 999px; background: rgba(15,23,42,.22); filter: blur(3px); }
+        .sling-arena { position: relative; min-height: 560px; overflow: hidden; border-radius: 34px; border: 4px solid rgba(255,216,102,.82); background: linear-gradient(180deg,#27a7f4 0%,#8bd6ff 30%,#c8f2ff 46%,#d7b26a 47%,#70a83a 68%,#24551d 100%); box-shadow: 0 28px 90px rgba(0,0,0,.35); touch-action: manipulation; isolation: isolate; }
+        .sling-arena::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 15% 13%,rgba(255,255,255,.72),transparent 11%),radial-gradient(circle at 68% 22%,rgba(255,216,102,.2),transparent 20%),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size: auto,auto,50px 50px; pointer-events: none; z-index: 0; }
+        .sling-arena::after { content: ''; position: absolute; left: -8%; right: -8%; bottom: 0; height: 36%; background: radial-gradient(ellipse at 20% 100%,#376f25 0 28%,transparent 29%),radial-gradient(ellipse at 72% 100%,#4b7f2a 0 30%,transparent 31%),linear-gradient(180deg,rgba(189,142,64,.18),#4f8c30 30%,#24551d 78%,#163414); z-index: 0; }
+        .mountains { position: absolute; inset: auto 0 31% 0; height: 33%; background: linear-gradient(135deg,transparent 0 22%,rgba(142,112,63,.78) 23% 41%,transparent 42%),linear-gradient(225deg,transparent 0 17%,rgba(76,120,80,.74) 18% 39%,transparent 40%),linear-gradient(180deg,transparent 0 58%,rgba(73,104,59,.32) 59%); opacity: .88; z-index: 0; }
+        .cloud { position: absolute; top: 10%; width: 122px; height: 38px; border-radius: 999px; background: rgba(255,255,255,.9); filter: blur(.1px); box-shadow: 28px -14px 0 6px rgba(255,255,255,.74),64px 3px 0 1px rgba(255,255,255,.68),92px -4px 0 -3px rgba(255,255,255,.55); z-index: 1; }
+        .cloud.one { left: 9%; } .cloud.two { right: 14%; top: 18%; transform: scale(.9); opacity: .82; }
+        .block-ledge { position: absolute; left: 4%; bottom: 7%; width: 188px; height: 58px; z-index: 2; background: linear-gradient(180deg,#f8d98b,#c69138); border-radius: 12px; box-shadow: inset 0 0 0 3px rgba(255,255,255,.34),0 16px 34px rgba(0,0,0,.22); }
+        .block-ledge::before { content: ''; position: absolute; inset: -22px 18px auto 24px; height: 34px; border-radius: 10px; background: linear-gradient(180deg,#ffe5a3,#d8a34b); box-shadow: 52px 8px 0 #c88f31,104px -3px 0 #f4c967; }
+        .toy-blocks { position: absolute; right: 2%; bottom: 5%; width: 184px; height: 88px; z-index: 2; background: linear-gradient(90deg,#61b13e 0 24%,transparent 25% 36%,#dc3f32 37% 50%,transparent 51% 61%,#f2c94c 62% 76%,transparent 77%); opacity: .9; filter: drop-shadow(0 12px 16px rgba(0,0,0,.18)); }
+        .valley-river { position: absolute; left: 35%; right: 28%; bottom: 27%; height: 28px; border-radius: 999px; background: linear-gradient(90deg,#38bdf8,#e0f2fe,#0ea5e9); transform: rotate(-8deg); box-shadow: 0 0 20px rgba(56,189,248,.48); z-index: 1; }
+        .crowd { position: absolute; left: 1%; right: 1%; bottom: 28%; height: 42px; z-index: 2; opacity: .78; background: radial-gradient(circle at 9% 55%,#5b3418 0 3px,transparent 4px),radial-gradient(circle at 16% 45%,#8b5a2b 0 3px,transparent 4px),radial-gradient(circle at 24% 60%,#5b3418 0 3px,transparent 4px),radial-gradient(circle at 73% 48%,#5b3418 0 3px,transparent 4px),radial-gradient(circle at 81% 60%,#8b5a2b 0 3px,transparent 4px),radial-gradient(circle at 90% 50%,#5b3418 0 3px,transparent 4px); }
+        .david { position: absolute; left: 10%; bottom: 12%; width: 130px; height: 178px; z-index: 5; filter: drop-shadow(0 18px 20px rgba(0,0,0,.24)); }
+        .david .head { position: absolute; left: 34px; top: 0; width: 64px; height: 66px; border-radius: 50% 50% 45% 45%; background: radial-gradient(circle at 34% 32%,#ffe3b1,#f6b86f 72%); border: 3px solid rgba(255,255,255,.8); box-shadow: inset -8px -8px 0 rgba(196,93,37,.12); }
+        .david .hair { position: absolute; left: 25px; top: -8px; width: 78px; height: 50px; border-radius: 42px 42px 22px 22px; background: radial-gradient(circle at 19% 40%,#5b3418 0 11px,transparent 12px),radial-gradient(circle at 41% 24%,#6b3f20 0 14px,transparent 15px),radial-gradient(circle at 63% 35%,#4b2b16 0 13px,transparent 14px),#5b3418; }
+        .david .face { position: absolute; left: 50px; top: 25px; width: 38px; height: 22px; border-radius: 999px; background: radial-gradient(circle at 28% 36%,#1f2937 0 2px,transparent 3px),radial-gradient(circle at 70% 36%,#1f2937 0 2px,transparent 3px); }
+        .david .face::after { content: ''; position: absolute; left: 10px; top: 12px; width: 18px; height: 8px; border-bottom: 3px solid #7c2d12; border-radius: 999px; }
+        .david .body { position: absolute; left: 28px; top: 59px; width: 74px; height: 84px; border-radius: 28px 28px 18px 18px; background: linear-gradient(180deg,#6fbf5b,#388b3b); border: 3px solid rgba(255,255,255,.72); box-shadow: inset -10px -14px 0 rgba(20,83,45,.2); }
+        .david .strap { position: absolute; left: 34px; top: 64px; width: 78px; height: 9px; border-radius: 999px; background: #7c3f16; transform: rotate(56deg); z-index: 2; }
+        .david .arm { position: absolute; width: 46px; height: 15px; border-radius: 999px; background: #f6b86f; border: 2px solid rgba(255,255,255,.6); transform-origin: right center; }
+        .david .arm.left { left: 1px; top: 78px; transform: rotate(-30deg); }
+        .david .arm.right { right: 4px; top: 81px; transform: rotate(24deg); }
+        .david .leg { position: absolute; width: 20px; height: 60px; top: 132px; border-radius: 12px; background: linear-gradient(180deg,#f6b86f 0 46%,#7c2d12 47%); }
+        .david .leg.left { left: 36px; transform: rotate(14deg); } .david .leg.right { right: 34px; transform: rotate(-12deg); }
+        .david::after { content: ''; position: absolute; left: 16px; right: 10px; bottom: -12px; height: 18px; border-radius: 999px; background: rgba(15,23,42,.22); filter: blur(3px); }
         .trajectory { position: absolute; left: 20%; bottom: 31%; width: 56%; height: 46%; overflow: visible; pointer-events: none; z-index: 3; opacity: .74; }
         .trajectory path { fill: none; stroke: rgba(255,255,255,.82); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 10 13; filter: drop-shadow(0 0 9px rgba(255,216,102,.72)); }
         .trajectory .arc-glow { stroke: rgba(251,191,36,.35); stroke-width: 12; stroke-dasharray: none; }
@@ -222,9 +237,19 @@ export default function DavidSlingChallengePage() {
         .sling-arena.is-hit .impact { animation: impact-pop .8s ease-out; }
         .sling-arena.is-near .impact { animation: near-pop .7s ease-out; }
         .sling-arena.is-miss .trajectory { opacity: .38; }
-        .giant-target { position: absolute; right: 7%; bottom: 14%; width: 154px; height: 224px; border-radius: 72px 72px 30px 30px; background: linear-gradient(180deg,#64748b,#1e293b); border: 5px solid #cbd5e1; box-shadow: 0 24px 60px rgba(0,0,0,.34); display: grid; place-items: center; font-family: var(--font-nunito); font-weight: 1000; text-align: center; color: #fff; z-index: 4; }
-        .giant-target::before { content: ''; width: 94px; height: 94px; border-radius: 999px; background: radial-gradient(circle,#fef2f2 0 18%,#ef4444 19% 35%,#fff 36% 53%,#ef4444 54% 100%); box-shadow: inset 0 0 0 4px rgba(0,0,0,.08),0 0 24px rgba(239,68,68,.28); }
-        .giant-target::after { content: ''; position: absolute; left: 18px; right: 18px; bottom: -12px; height: 20px; border-radius: 999px; background: rgba(15,23,42,.22); filter: blur(4px); }
+        .giant-target { position: absolute; right: 6%; bottom: 12%; width: 190px; height: 294px; z-index: 4; filter: drop-shadow(0 28px 28px rgba(0,0,0,.28)); }
+        .giant-target .spear { position: absolute; left: 38px; top: 14px; width: 9px; height: 240px; border-radius: 999px; background: linear-gradient(90deg,#5b3418,#a16207,#5b3418); transform: rotate(-6deg); z-index: 0; }
+        .giant-target .spear::before { content: ''; position: absolute; left: -13px; top: -28px; width: 35px; height: 45px; clip-path: polygon(50% 0,100% 70%,52% 100%,0 70%); background: linear-gradient(135deg,#f8fafc,#94a3b8); border-radius: 8px; }
+        .giant-target .giant-head { position: absolute; left: 68px; top: 0; width: 78px; height: 78px; border-radius: 50% 50% 44% 44%; background: radial-gradient(circle at 38% 30%,#ffd6a4,#c46a3a 72%); border: 4px solid rgba(255,255,255,.55); box-shadow: inset -10px -8px 0 rgba(120,53,15,.18); }
+        .giant-target .helmet { position: absolute; left: 58px; top: -10px; width: 98px; height: 44px; border-radius: 48px 48px 12px 12px; background: linear-gradient(180deg,#fde68a,#a16207); border: 3px solid rgba(255,255,255,.55); }
+        .giant-target .helmet::after { content: ''; position: absolute; left: 40px; top: -18px; width: 24px; height: 28px; border-radius: 14px 14px 4px 4px; background: linear-gradient(180deg,#f97316,#7c2d12); }
+        .giant-target .beard { position: absolute; left: 74px; top: 48px; width: 66px; height: 55px; border-radius: 18px 18px 32px 32px; background: radial-gradient(circle at 28% 20%,#3b2415 0 10px,transparent 11px),radial-gradient(circle at 55% 24%,#4b2b16 0 12px,transparent 13px),#3b2415; }
+        .giant-target .giant-face { position: absolute; left: 82px; top: 31px; width: 48px; height: 24px; background: radial-gradient(circle at 28% 40%,#111827 0 3px,transparent 4px),radial-gradient(circle at 72% 40%,#111827 0 3px,transparent 4px); z-index: 2; }
+        .giant-target .armor { position: absolute; left: 45px; top: 78px; width: 114px; height: 136px; border-radius: 44px 44px 20px 20px; background: repeating-linear-gradient(0deg,#7c5b2f 0 15px,#9f7436 16px 29px); border: 4px solid rgba(255,229,166,.74); box-shadow: inset -12px -18px 0 rgba(68,38,12,.18); }
+        .giant-target .armor::before { content: ''; position: absolute; left: -24px; top: 36px; width: 164px; height: 20px; border-radius: 999px; background: rgba(104,65,27,.95); }
+        .giant-target .shield { position: absolute; right: -4px; top: 92px; width: 102px; height: 126px; border-radius: 50%; background: radial-gradient(circle,#facc15 0 13%,#8b5a2b 14% 43%,#d6a75f 44% 49%,#6b3f20 50% 100%); border: 6px solid #fef3c7; box-shadow: inset 0 0 0 6px rgba(120,53,15,.55),0 18px 32px rgba(0,0,0,.24); z-index: 4; }
+        .giant-target .legs { position: absolute; left: 61px; right: 26px; bottom: 0; height: 88px; background: linear-gradient(90deg,#7c2d12 0 32%,transparent 33% 58%,#7c2d12 59%); border-radius: 18px; }
+        .giant-target::after { content: ''; position: absolute; left: 20px; right: 10px; bottom: -14px; height: 22px; border-radius: 999px; background: rgba(15,23,42,.24); filter: blur(5px); }
         .meter { position: relative; overflow: hidden; height: 34px; border-radius: 999px; background: rgba(15,23,42,.9); border: 2px solid rgba(255,255,255,.5); margin-top: 12px; }
         .zone { position: absolute; top: 0; bottom: 0; background: linear-gradient(180deg,#bbf7d0,#22c55e); box-shadow: 0 0 24px rgba(34,197,94,.8); }
         .marker { position: absolute; top: -8px; width: 8px; height: 50px; border-radius: 999px; background: #f97316; box-shadow: 0 0 18px rgba(249,115,22,.9); transform: translateX(-50%); }
@@ -233,7 +258,7 @@ export default function DavidSlingChallengePage() {
         .sling-stat div { border-radius: 16px; padding: 9px; background: rgba(15,23,42,.78); border: 1px solid rgba(255,255,255,.18); text-align: center; font-family: var(--font-nunito); font-weight: 1000; }
         @keyframes impact-pop { 0% { opacity: 0; transform: scale(.55); } 18% { opacity: 1; transform: scale(1.08); } 100% { opacity: 0; transform: scale(1.45); } }
         @keyframes near-pop { 0% { opacity: 0; transform: scale(.45); } 22% { opacity: .72; transform: scale(.88); } 100% { opacity: 0; transform: scale(1.18); } }
-        @media (max-width: 860px) { .sling-grid { grid-template-columns: 1fr; } .sling-arena { min-height: 470px; } .giant-target { width: 108px; height: 168px; right: 5%; } .giant-target::before { width: 70px; height: 70px; } .david { width: 80px; height: 118px; left: 7%; } .sling-orbit { left: calc(7% + 25px); bottom: calc(10% + 62px); width: 76px; height: 76px; } .sling { left: calc(7% + 63px); bottom: calc(10% + 100px); width: 92px; } .trajectory { left: 18%; width: 58%; bottom: 34%; } .sling-stat { grid-template-columns: repeat(2,1fr); } }
+        @media (max-width: 860px) { .sling-grid { grid-template-columns: 1fr; } .sling-arena { min-height: 470px; } .giant-target { right: -1%; bottom: 10%; transform: scale(.72); transform-origin: right bottom; } .david { left: 5%; bottom: 12%; transform: scale(.74); transform-origin: left bottom; } .block-ledge { left: 2%; bottom: 7%; transform: scale(.74); transform-origin: left bottom; } .toy-blocks { opacity: .54; transform: scale(.7); transform-origin: right bottom; } .crowd { bottom: 31%; } .sling-orbit { left: calc(5% + 25px); bottom: calc(12% + 62px); width: 76px; height: 76px; } .sling { left: calc(5% + 63px); bottom: calc(12% + 100px); width: 92px; } .trajectory { left: 18%; width: 58%; bottom: 34%; } .sling-stat { grid-template-columns: repeat(2,1fr); } }
       `}</style>
 
       <div className="sling-wrap">
@@ -252,18 +277,41 @@ export default function DavidSlingChallengePage() {
         <section className="sling-grid">
           <div className={`sling-arena ${resultClass}`} aria-label={copy.title}>
             <div className="mountains" aria-hidden="true" />
+            <div className="valley-river" aria-hidden="true" />
+            <div className="crowd" aria-hidden="true" />
+            <div className="block-ledge" aria-hidden="true" />
+            <div className="toy-blocks" aria-hidden="true" />
             <div className="cloud one" aria-hidden="true" />
             <div className="cloud two" aria-hidden="true" />
             <svg className="trajectory" viewBox="0 0 520 260" aria-hidden="true">
               <path className="arc-glow" d="M12 218 C 158 42, 336 34, 506 170" />
               <path d="M12 218 C 158 42, 336 34, 506 170" />
             </svg>
-            <div className="david" aria-hidden="true">👦</div>
+            <div className="david" aria-hidden="true">
+              <span className="hair" />
+              <span className="head" />
+              <span className="face" />
+              <span className="body" />
+              <span className="strap" />
+              <span className="arm left" />
+              <span className="arm right" />
+              <span className="leg left" />
+              <span className="leg right" />
+            </div>
             <div className="sling-orbit" aria-hidden="true" />
             <div className="sling" style={{ transform: `rotate(${slingRotation}deg)` }} aria-hidden="true" />
             <div className="stone" style={{ ['--flight' as string]: stoneFlight, ['--arc' as string]: stoneFlight > 0 ? 116 : 0, ['--visible' as string]: stoneFlight > 0 ? 1 : 0 }} aria-hidden="true" />
             <div className="impact" aria-hidden="true" />
-            <div className="giant-target" aria-hidden="true" />
+            <div className="giant-target" aria-hidden="true">
+              <span className="spear" />
+              <span className="giant-head" />
+              <span className="helmet" />
+              <span className="beard" />
+              <span className="giant-face" />
+              <span className="armor" />
+              <span className="shield" />
+              <span className="legs" />
+            </div>
           </div>
 
           <aside className="sling-card">
