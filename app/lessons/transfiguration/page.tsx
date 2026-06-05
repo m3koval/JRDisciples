@@ -48,7 +48,7 @@ const CHARS_EN = [
   { id:'moses',  emoji:'📜', name:'Moses',          role:'The Lawgiver',    back:"I received God's Law on Mount Sinai. Jesus came to perfectly fulfill every commandment — something no one else ever could!" },
   { id:'elijah', emoji:'🔥', name:'Elijah',          role:'The Prophet',     back:"I declared God's Word to Israel for years. But Jesus is the Word of God Himself — the greatest Prophet who ever lived!" },
   { id:'peter',  emoji:'🪨', name:'Peter',           role:'The Disciple',    back:'"Lord, it is good for us to be here!" Seeing Jesus in His glory changed me forever. I never forgot that mountain.' },
-  { id:'voice',  emoji:'☁️', name:'God the Father',  role:'The Voice',       back:'"This is my Son, whom I love — listen to Him!" God Himself declared who Jesus is. That changes everything.' },
+  { id:'voice',  emoji:'☁️', name:'God the Father',  role:'The Voice',       back:'"This is my beloved Son, with whom I am well pleased — listen to him!" God Himself declared who Jesus is. That changes everything.' },
 ]
 const CHARS_RU = [
   { id:'moses',  emoji:'📜', name:'Моисей',          role:'Законодатель',   back:'Я получил Закон Божий на горе Синай. Иисус пришёл, чтобы совершенно исполнить каждую заповедь — чего никто другой не смог!' },
