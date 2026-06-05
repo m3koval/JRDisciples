@@ -59,8 +59,9 @@ const COURSES = {
 
 const STORAGE_KEY = 'faithful-archer-best'
 const ARROW_SPEED = { calm: 720, fast: 860 }
-const ARROW_GRAVITY = { calm: 780, fast: 920 }
+const ARROW_GRAVITY = { calm: 720, fast: 880 }
 const MAX_DRAW = 190
+const MOBILE_BREAKPOINT = 720
 
 type Point = { x: number; y: number }
 
@@ -147,7 +148,7 @@ export default function FaithfulArcherPage() {
     combo: 'Серия',
     course: 'Курс',
     wisdom: 'Мудрость',
-    mobileRelease: 'Мобильное управление: потяни от лучника назад, прицелься и отпусти палец.',
+    mobileRelease: 'Мобильное управление: держи палец на поле, тяни назад от лучника, смотри на светлую траекторию и отпусти. На телефоне цели увеличены и попадания прощают чуть больше.',
     truth: 'Главная мысль: Божье Слово освещает путь. Тренируйся спокойно, целься честно и не сдавайся.',
     keep: 'Продолжить',
   } : {
@@ -165,7 +166,7 @@ export default function FaithfulArcherPage() {
     combo: 'Combo',
     course: 'Course',
     wisdom: 'Wisdom',
-    mobileRelease: 'Mobile controls: pull back from the archer, aim, and release your finger.',
+    mobileRelease: 'Mobile controls: hold your finger on the field, pull back from the archer, follow the bright aim trail, then release. Phone targets are larger and a little more forgiving.',
     truth: 'Big truth: God’s Word lights the path. Practice calmly, aim honestly, and keep going.',
     keep: 'Keep Practicing',
   }
@@ -194,12 +195,14 @@ export default function FaithfulArcherPage() {
   function spawnTargets() {
     const { width, height } = sizeRef.current
     const model = modelRef.current
-    const count = width < 720 ? 4 : 6
-    const baseX = Math.max(width * 0.52, 330)
+    const count = width < MOBILE_BREAKPOINT ? 5 : 6
+    const baseX = width < MOBILE_BREAKPOINT ? Math.max(width * 0.48, 285) : Math.max(width * 0.52, 330)
     targetsRef.current = Array.from({ length: count }, (_, i) => {
-      const kind: TargetKind = i === 1 ? 'bell' : i === 2 ? 'scroll' : i === 3 ? 'lantern' : i === 5 ? 'dummy' : 'shield'
-      const x = baseX + (i % 2) * Math.min(190, width * 0.18) + (seeded(i + model.targetSeed + 4) * 48 - 24)
-      const y = height * (0.24 + (i / count) * 0.48) + (seeded(i + 19) * 36 - 18)
+      const kind: TargetKind = i === 1 ? 'bell' : i === 2 ? 'scroll' : i === 3 ? 'lantern' : i === 4 ? 'dummy' : 'shield'
+      const laneOffset = (i % 2) * Math.min(width < MOBILE_BREAKPOINT ? 132 : 190, width * 0.18)
+      const x = baseX + laneOffset + (seeded(i + model.targetSeed + 4) * 40 - 20)
+      const y = height * (0.22 + (i / count) * 0.5) + (seeded(i + 19) * 28 - 14)
+      const mobileBoost = width < MOBILE_BREAKPOINT ? 8 : 0
       return {
         id: i,
         kind,
@@ -207,7 +210,7 @@ export default function FaithfulArcherPage() {
         baseY: y,
         x,
         y,
-        r: kind === 'dummy' ? 36 : kind === 'scroll' ? 28 : 31,
+        r: (kind === 'dummy' ? 36 : kind === 'scroll' ? 28 : 31) + mobileBoost,
         phase: i * 1.7,
         speed: 0.24 + i * 0.05 + model.levelIndex * 0.08,
         hit: false,
@@ -314,7 +317,8 @@ export default function FaithfulArcherPage() {
           if (target.hit) continue
           const dx = arrow.x - target.x
           const dy = arrow.y - target.y
-          if (dx * dx + dy * dy < (target.r + 13) * (target.r + 13)) hitTarget(arrow, target)
+          const mobileForgiveness = width < MOBILE_BREAKPOINT ? 24 : 13
+          if (dx * dx + dy * dy < (target.r + mobileForgiveness) * (target.r + mobileForgiveness)) hitTarget(arrow, target)
         }
       }
 
@@ -464,11 +468,13 @@ export default function FaithfulArcherPage() {
       pointerRef.current.x = point.x
       pointerRef.current.y = point.y
     }
-    const onPointerUp = (event: PointerEvent) => {
+    const onPointerUp = () => {
       const point = pointerRef.current
-      const release = getCanvasPoint(canvas!, event)
-      if (point.down) shoot(release.x, release.y)
+      if (point.down) shoot(point.x, point.y)
       point.down = false
+    }
+    const onPointerCancel = () => {
+      pointerRef.current.down = false
     }
     const onKey = (event: KeyboardEvent) => {
       if (event.code === 'Space') {
@@ -488,7 +494,7 @@ export default function FaithfulArcherPage() {
     canvas.addEventListener('pointerdown', onPointerDown)
     canvas.addEventListener('pointermove', onPointerMove)
     canvas.addEventListener('pointerup', onPointerUp)
-    canvas.addEventListener('pointercancel', onPointerUp)
+    canvas.addEventListener('pointercancel', onPointerCancel)
     raf = requestAnimationFrame(frame)
     return () => {
       cancelAnimationFrame(raf)
@@ -497,7 +503,7 @@ export default function FaithfulArcherPage() {
       canvas.removeEventListener('pointerdown', onPointerDown)
       canvas.removeEventListener('pointermove', onPointerMove)
       canvas.removeEventListener('pointerup', onPointerUp)
-      canvas.removeEventListener('pointercancel', onPointerUp)
+      canvas.removeEventListener('pointercancel', onPointerCancel)
     }
   // Canvas loop owns mutable game refs; recreating only when language or modal state changes is intentional.
   // eslint-disable-next-line react-hooks/exhaustive-deps

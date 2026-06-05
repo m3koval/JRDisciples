@@ -66,6 +66,8 @@ const requiredArcherSnippets = [
   'launchArrowVelocity',
   'ARROW_SPEED',
   'ARROW_GRAVITY',
+  'MOBILE_BREAKPOINT',
+  'shoot(point.x, point.y)',
 ];
 
 for (const snippet of requiredArcherSnippets) {
