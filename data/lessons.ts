@@ -26,8 +26,8 @@ export const lessonTopics: LessonTopic[] = [
   {
     href: "/lessons/baptism-prep",
     image: "/images/jr/lessons/baptism-prep/topic-baptism-prep.png",
-    title: "Baptism Prep Class",
-    desc: "Learn what baptism means, why Jesus was baptized, and how to get ready for this public step of faith. 5 child-friendly sections with checks and prep questions!",
+    title: "Why Get Baptized?",
+    desc: "Learn what baptism means, why Jesus was baptized, and why followers of Jesus choose this public step of faith. 5 child-friendly sections with checks and questions!",
     color: "#0a7090",
     sections: 5,
     emoji: "💧",

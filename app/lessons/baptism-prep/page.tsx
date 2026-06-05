@@ -124,7 +124,7 @@ const sectionsEn: PrepSection[] = [
     bigIdea: 'Baptism is public because following Jesus is not hidden. God gives parents, pastors, teachers, and the church to help us.',
     body: [
       'Baptism is public. That means other people see it. Your parents, pastor, teacher, and church family can celebrate with you and pray for you.',
-      'A baptism prep class is a safe place to ask questions. You can practice sharing your testimony: “I trust Jesus because…” and “I want to be baptized because…”',
+      'This lesson is a safe place to ask, “Why get baptized?” You can practice sharing your testimony: “I trust Jesus because…” and “I want to be baptized because…”',
       'Do not rush because of pressure. Take the next wise step: pray, talk with a trusted adult, and ask honest questions.',
     ],
     activityTitle: 'Choose the wise next step',
@@ -222,7 +222,7 @@ const sectionsRu: PrepSection[] = [
     bigIdea: 'Крещение открытое, потому что следование за Иисусом не скрывают. Бог даёт родителей, пасторов, учителей и церковь, чтобы помогать нам.',
     body: [
       'Крещение открытое. Это значит, что другие люди его видят. Родители, пастор, учитель и церковная семья могут радоваться с тобой и молиться за тебя.',
-      'Подготовка к крещению — безопасное место для вопросов. Ты можешь потренироваться рассказывать своё свидетельство: «Я доверяю Иисусу, потому что…» и «Я хочу креститься, потому что…».',
+      'Урок «Зачем креститься?» — безопасное место для вопросов. Ты можешь потренироваться рассказывать своё свидетельство: «Я доверяю Иисусу, потому что…» и «Я хочу креститься, потому что…».',
       'Не спеши из-за давления. Сделай следующий мудрый шаг: молись, поговори с доверенным взрослым и задавай честные вопросы.',
     ],
     activityTitle: 'Выбери мудрый следующий шаг',
@@ -325,15 +325,15 @@ export default function BaptismPrepPage() {
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <div style={{ fontSize: '4.4rem', marginBottom: 12 }}>💧🕊️</div>
           <p style={{ color: '#c9f7ff', fontFamily: 'var(--font-nunito)', fontWeight: 950, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 10 }}>
-            {isRu ? 'Детский класс подготовки' : 'Children’s Preparation Class'}
+            {isRu ? 'Детский урок о крещении' : 'Children’s Baptism Lesson'}
           </p>
           <h1 style={{ color: '#fff', fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,5vw,3.2rem)', margin: '0 0 14px', textShadow: '0 3px 16px rgba(0,0,0,.28)' }}>
-            {isRu ? 'Подготовка к крещению' : 'Baptism Prep Class'}
+            {isRu ? 'Зачем Креститься' : 'Why Get Baptized?'}
           </h1>
           <p style={{ color: 'rgba(255,255,255,.94)', fontFamily: 'var(--font-lora)', fontSize: '1.08rem', lineHeight: 1.75, margin: '0 auto', maxWidth: 780 }}>
             {isRu
-              ? 'Интерактивный урок для детей о крещении Иисуса, Евангелии, послушании, готовности и мудром следующем шаге без давления.'
-              : 'An interactive lesson for children about Jesus’ baptism, the gospel, obedience, readiness, and the wise next step without pressure.'}
+              ? 'Интерактивный урок для детей о крещении Иисуса, Евангелии, послушании и о том, зачем последователи Иисуса крестятся — без давления.'
+              : 'An interactive lesson for children about Jesus’ baptism, the gospel, obedience, and why followers of Jesus get baptized — without pressure.'}
           </p>
 
           <div style={{ margin: '26px auto 0', maxWidth: 620, padding: 16, background: 'rgba(255,255,255,.14)', border: '1px solid rgba(255,255,255,.28)', borderRadius: 18 }}>
@@ -476,7 +476,7 @@ export default function BaptismPrepPage() {
         </section>
 
         <section className="puzzle-box" style={{ ['--pz-color' as string]: '#7b56d9', marginTop: 28, background: '#fbf8ff' }}>
-          <p className="puzzle-label">📝 {isRu ? 'Вопросы подготовки' : 'Prep Questions'}</p>
+          <p className="puzzle-label">📝 {isRu ? 'Вопросы для разговора' : 'Talk-It-Through Questions'}</p>
           <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 950, color: '#5537a0', marginBottom: 12 }}>
             {isRu ? 'Потренируйся отвечать простыми словами' : 'Practice Answering in Simple Words'}
           </h2>
