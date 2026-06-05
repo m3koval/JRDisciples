@@ -8,6 +8,7 @@ export const translations = {
       puzzles: "Puzzles",
       rebus: "Rebus",
       quests: "Quests",
+      games: "Games",
       lessons: "Lessons",
     },
     home: {
@@ -51,6 +52,8 @@ export const translations = {
       rebusDesc: "Solve picture clues to find Bible words!",
       quests: "Bible Quests",
       questsDesc: "Choose your path in interactive Bible adventures!",
+      games: "Bible Games",
+      gamesDesc: "Play quick games that reward Bible wisdom!",
       lessons: "Lessons",
       lessonsDesc: "Explore Bible topics step by step — with challenges!",
     },
@@ -166,6 +169,7 @@ export const translations = {
       puzzles: "Головоломки",
       rebus: "Ребусы",
       quests: "Квесты",
+      games: "Игры",
       lessons: "Уроки",
     },
     home: {
@@ -209,6 +213,8 @@ export const translations = {
       rebusDesc: "Разгадай картинки и найди библейские слова!",
       quests: "Библейские квесты",
       questsDesc: "Выбирай путь в интерактивных библейских приключениях!",
+      games: "Библейские игры",
+      gamesDesc: "Играй в короткие игры и открывай библейскую мудрость!",
       lessons: "Уроки",
       lessonsDesc: "Изучай библейские темы пошагово — с заданиями!",
     },

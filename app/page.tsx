@@ -196,6 +196,7 @@ export default function HomePage() {
               { href: "/memory", image: "/images/jr/verse-memory.png", title: t.activities.memory, desc: t.activities.memoryDesc, color: "#2a6a10" },
               { href: "/puzzles", image: "/images/jr/word-puzzles.png", title: t.activities.puzzles, desc: t.activities.puzzlesDesc, color: "#7030a0" },
               { href: "/rebus", image: "/images/jr/rebus-puzzles.png", title: t.activities.rebus, desc: t.activities.rebusDesc, color: "#c05010" },
+              { href: "/games", image: "/images/jr/quests/quest-hub-map.png", title: t.activities.games, desc: t.activities.gamesDesc, color: "#b45309" },
               { href: "/lessons", image: "/images/jr/lessons-hero.png", title: t.activities.lessons, desc: t.activities.lessonsDesc, color: "#0d3a6a" },
             ].map((act) => (
               <Link

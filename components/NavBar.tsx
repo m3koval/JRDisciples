@@ -15,6 +15,7 @@ function navLinks(t: Translations) {
     { href: "/puzzles", label: t.nav.puzzles },
     { href: "/rebus",   label: t.nav.rebus },
     { href: "/quests",  label: t.nav.quests },
+    { href: "/games",   label: t.nav.games },
     { href: "/lessons", label: t.nav.lessons },
   ];
 }
