@@ -99,6 +99,16 @@ const requiredArcherSnippets = [
   'drawObstacle',
   'farAnchor',
   'courseShrink',
+  'impactDistance',
+  'getObstacleBounds',
+  'hitFlash',
+  'obstacle.hitFlash',
+  'spawnMissDust',
+  'aimBlocked',
+  'releasePointerCapture',
+  'lostpointercapture',
+  'getTargetFeedback',
+  'ring!',
 ];
 
 for (const snippet of requiredArcherSnippets) {
@@ -115,6 +125,8 @@ if (/m\.levelIndex === 0 \? 0/.test(archer)) failures.push('Faithful Archer targ
 if (/if \(arrow\.stuck\) continue/.test(archer)) failures.push('Faithful Archer stuck arrows must follow moving targets via stuckTargetId/stuckOffset, not freeze in world space.');
 if (/return target\.r \+/.test(archer)) failures.push('Faithful Archer hitbox must use a reduced core radius so target placement matters; do not count the whole visual radius plus assist.');
 if (/const count = width < MOBILE_BREAKPOINT \? 5 : 6/.test(archer)) failures.push('Faithful Archer targets should be fewer/smaller/farther now, not the older close dense target layout.');
+if (/const bullseye = Math\.hypot\(arrow\.x - target\.x/.test(archer)) failures.push('Faithful Archer bullseye scoring must use pre-snap impactDistance, not snapped arrow coordinates.');
+if (/ctx\.translate\(obstacle\.x \+ sway/.test(archer)) failures.push('Faithful Archer obstacle drawing and collision must share getObstacleBounds so visible obstacle position matches collision.');
 if (!/type\s+Target/.test(archer)) failures.push('Faithful Archer route must define typed targets.');
 if (!/const\s+SCRIPTURE/.test(archer)) failures.push('Faithful Archer route must define SCRIPTURE.');
 

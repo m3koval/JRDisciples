@@ -30,7 +30,7 @@ type Target = {
 
 type Arrow = { x: number; y: number; vx: number; vy: number; age: number; stuck: boolean; countedMiss?: boolean; glow: boolean; trail: Point[]; stuckTargetId?: number; stuckOffset?: Point }
 type ObstacleKind = 'post' | 'beam' | 'crate'
-type Obstacle = { id: number; kind: ObstacleKind; x: number; y: number; w: number; h: number; phase: number }
+type Obstacle = { id: number; kind: ObstacleKind; x: number; y: number; w: number; h: number; phase: number; hitFlash: number; wobble: number }
 type FloatText = { x: number; y: number; txt: string; life: number; color: string }
 type Spark = { x: number; y: number; vx: number; vy: number; life: number; color: string }
 type GameModel = {
@@ -130,6 +130,11 @@ function distancePointToSegment(point: Point, start: Point, end: Point) {
 
 function pointInObstacle(point: Point, obstacle: Obstacle) {
   return point.x >= obstacle.x && point.x <= obstacle.x + obstacle.w && point.y >= obstacle.y && point.y <= obstacle.y + obstacle.h
+}
+
+function getObstacleBounds(obstacle: Obstacle, time: number): Obstacle {
+  const sway = Math.sin(time * 1.8 + obstacle.phase) * (obstacle.kind === 'post' ? 3 : 1)
+  return { ...obstacle, x: obstacle.x + sway }
 }
 
 function segmentsIntersect(a: Point, b: Point, c: Point, d: Point) {
@@ -325,7 +330,7 @@ export default function FaithfulArcherPage() {
       const y = height * (0.28 + i * 0.16) + (seeded(level * 7 + i) * 34 - 17)
       const w = kind === 'beam' ? (mobile ? 96 : 150) : kind === 'crate' ? (mobile ? 50 : 68) : (mobile ? 34 : 44)
       const h = kind === 'beam' ? (mobile ? 24 : 30) : kind === 'crate' ? (mobile ? 52 : 68) : height * (mobile ? 0.26 : 0.32)
-      return { id: i, kind, x: clamp(x, width * 0.32, width * 0.64), y: clamp(y, height * 0.2, height * 0.68), w, h, phase: i * 1.9 + level }
+      return { id: i, kind, x: clamp(x, width * 0.32, width * 0.64), y: clamp(y, height * 0.2, height * 0.68), w, h, phase: i * 1.9 + level, hitFlash: 0, wobble: 0 }
     })
   }
 
@@ -379,6 +384,19 @@ export default function FaithfulArcherPage() {
       syncHud()
     }
 
+    function spawnMissDust(x: number, y: number, width: number, height: number) {
+      const px = clamp(x, 30, width - 30)
+      const py = clamp(y, 40, height * 0.84)
+      for (let i = 0; i < 9; i++) sparksRef.current.push({
+        x: px,
+        y: py,
+        vx: (Math.random() - 0.5) * 80,
+        vy: -Math.random() * 85,
+        life: 0.32 + Math.random() * 0.34,
+        color: i % 2 ? '#d99f53' : '#fff6dc',
+      })
+    }
+
     function update(dt: number) {
       const m = modelRef.current
       if (!m.running || wisdomCard) return
@@ -388,6 +406,11 @@ export default function FaithfulArcherPage() {
       m.wind = Math.sin(m.time * 0.8) * (calmRef.current ? 0.014 : 0.025)
       const { width, height } = sizeRef.current
       const difficulty = calmRef.current ? 0.58 : 1
+
+      for (const obstacle of obstaclesRef.current) {
+        obstacle.hitFlash *= Math.pow(0.08, dt)
+        obstacle.wobble *= Math.pow(0.12, dt)
+      }
 
       for (const t of targetsRef.current) {
         t.squash *= Math.pow(0.08, dt)
@@ -428,14 +451,18 @@ export default function FaithfulArcherPage() {
             m.combo = 0
             setArcherEmotion('surprised', EMOTION_BEATS.surprised)
             floatRef.current.push({ x: clamp(arrow.x, 90, width - 90), y: clamp(arrow.y, 90, height - 90), txt: isRu ? 'ещё раз' : 'try again', life: 1, color: '#7a4e20' })
+            spawnMissDust(arrow.x, arrow.y, width, height)
             syncHud()
           }
           arrow.stuck = true
         }
         for (const obstacle of obstaclesRef.current) {
-          if (arrowHitsObstacle(prev, { x: arrow.x, y: arrow.y }, obstacle)) {
+          const obstacleBounds = getObstacleBounds(obstacle, m.time)
+          if (arrowHitsObstacle(prev, { x: arrow.x, y: arrow.y }, obstacleBounds)) {
             arrow.stuck = true
             arrow.countedMiss = true
+            obstacle.hitFlash = 1
+            obstacle.wobble = 1
             m.combo = 0
             setArcherEmotion('surprised', EMOTION_BEATS.surprised)
             floatRef.current.push({ x: arrow.x, y: arrow.y - 18, txt: isRu ? 'препятствие!' : 'blocked!', life: 0.9, color: '#7a4e20' })
@@ -480,8 +507,17 @@ export default function FaithfulArcherPage() {
       }
     }
 
+    function getTargetFeedback(target: Target) {
+      if (target.kind === 'bell') return { text: isRu ? 'звон!' : 'ring!', color: '#f7c948', spark: '#ffd166' }
+      if (target.kind === 'lantern') return { text: isRu ? 'свет!' : 'glow!', color: '#d97706', spark: '#ffe27a' }
+      if (target.kind === 'scroll') return { text: isRu ? 'мудрость!' : 'wisdom!', color: '#7a4e20', spark: '#fff6dc' }
+      if (target.kind === 'dummy') return { text: isRu ? 'качнулся!' : 'wobble!', color: '#31552d', spark: '#8ee36a' }
+      return { text: isRu ? 'точно!' : 'clean!', color: '#31552d', spark: '#8ee36a' }
+    }
+
     function hitTarget(arrow: Arrow, target: Target) {
       const m = modelRef.current
+      const impactDistance = Math.hypot(arrow.x - target.x, arrow.y - target.y)
       snapArrowToTarget(arrow, target)
       arrow.stuck = true
       target.hit = true
@@ -501,7 +537,7 @@ export default function FaithfulArcherPage() {
       }
       m.combo += 1
       setArcherEmotion('happy', EMOTION_BEATS.happy)
-      const bullseye = Math.hypot(arrow.x - target.x, arrow.y - target.y) < target.r * 0.42
+      const bullseye = impactDistance < target.r * 0.42
       let points = bullseye ? 55 : 25
       if (target.kind === 'bell') points += 20
       if (target.kind === 'lantern') points += 25
@@ -512,11 +548,13 @@ export default function FaithfulArcherPage() {
       m.best = Math.max(m.best, m.score)
       localStorage.setItem(STORAGE_KEY, String(m.best))
       m.wisdomMeter += target.wisdom ? 34 : 12
+      const feedback = getTargetFeedback(target)
       if (target.wisdom) {
         const msg = (isRu ? FAITH_POPUPS.ru : FAITH_POPUPS.en)[m.verseIndex % FAITH_POPUPS.en.length]
         floatRef.current.push({ x: target.x, y: target.y - 92, txt: msg, life: 1.35, color: '#d97706' })
       }
-      for (let i = 0; i < 20; i++) sparksRef.current.push({ x: target.x, y: target.y, vx: (Math.random() - 0.5) * 130, vy: (Math.random() - 0.9) * 150, life: 0.55 + Math.random() * 0.55, color: target.kind === 'lantern' ? '#ffd166' : '#8ee36a' })
+      for (let i = 0; i < 20; i++) sparksRef.current.push({ x: target.x, y: target.y, vx: (Math.random() - 0.5) * 130, vy: (Math.random() - 0.9) * 150, life: 0.55 + Math.random() * 0.55, color: i % 3 === 0 ? feedback.spark : (target.kind === 'lantern' ? '#ffd166' : '#8ee36a') })
+      floatRef.current.push({ x: target.x, y: target.y - 62, txt: feedback.text, life: 0.85, color: feedback.color })
       floatRef.current.push({ x: target.x, y: target.y - 38, txt: (bullseye ? (isRu ? 'В центр +' : 'Bullseye +') : '+') + points, life: 1.1, color: bullseye ? '#d97706' : '#31552d' })
       if (m.combo === 3) floatRef.current.push({ x: target.x, y: target.y - 72, txt: isRu ? 'Сосредоточено!' : 'Focused!', life: 1.1, color: '#31552d' })
       if (m.wisdomMeter >= 100) {
@@ -576,13 +614,21 @@ export default function FaithfulArcherPage() {
       if (showGuideRef.current) {
         drawCtx.fillStyle = 'rgba(255,255,255,.82)'
         let x = bx, y = by, vx = launch.vx, vy = launch.vy
+        let aimBlocked = false
         const step = 1 / 30
         for (let i = 0; i < 42; i++) {
+          const prev = { x, y }
           vx += modelRef.current.wind * 220 * step
           vy += (calmRef.current ? ARROW_GRAVITY.calm : ARROW_GRAVITY.fast) * step
           x += vx * step
           y += vy * step
-          if (i % 2 === 0) { drawCtx.beginPath(); drawCtx.arc(x, y, 3, 0, Math.PI * 2); drawCtx.fill() }
+          const hitPreview = obstaclesRef.current.some((obstacle) => arrowHitsObstacle(prev, { x, y }, getObstacleBounds(obstacle, modelRef.current.time)))
+          if (hitPreview) aimBlocked = true
+          if (i % 2 === 0) {
+            drawCtx.fillStyle = aimBlocked ? 'rgba(249,115,22,.88)' : 'rgba(255,255,255,.82)'
+            drawCtx.beginPath(); drawCtx.arc(x, y, aimBlocked ? 4.2 : 3, 0, Math.PI * 2); drawCtx.fill()
+          }
+          if (aimBlocked) { drawCtx.strokeStyle = 'rgba(249,115,22,.72)'; drawCtx.lineWidth = 3; drawCtx.beginPath(); drawCtx.arc(x, y, 12, 0, Math.PI * 2); drawCtx.stroke(); break }
         }
       }
       drawCtx.restore()
@@ -633,16 +679,22 @@ export default function FaithfulArcherPage() {
       canvas!.setPointerCapture(event.pointerId)
     }
     const onPointerMove = (event: PointerEvent) => {
+      event.preventDefault()
       const point = getCanvasPoint(canvas!, event)
       pointerRef.current.x = point.x
       pointerRef.current.y = point.y
     }
-    const onPointerUp = () => {
+    const onPointerUp = (event: PointerEvent) => {
+      event.preventDefault()
       const point = pointerRef.current
       if (point.down) shoot(point.x, point.y)
       point.down = false
+      if (canvas!.hasPointerCapture(event.pointerId)) canvas!.releasePointerCapture(event.pointerId)
     }
     const onPointerCancel = () => {
+      pointerRef.current.down = false
+    }
+    const onLostPointerCapture = () => {
       pointerRef.current.down = false
     }
     const onKey = (event: KeyboardEvent) => {
@@ -664,6 +716,7 @@ export default function FaithfulArcherPage() {
     canvas.addEventListener('pointermove', onPointerMove)
     canvas.addEventListener('pointerup', onPointerUp)
     canvas.addEventListener('pointercancel', onPointerCancel)
+    canvas.addEventListener('lostpointercapture', onLostPointerCapture)
     raf = requestAnimationFrame(frame)
     return () => {
       cancelAnimationFrame(raf)
@@ -673,6 +726,7 @@ export default function FaithfulArcherPage() {
       canvas.removeEventListener('pointermove', onPointerMove)
       canvas.removeEventListener('pointerup', onPointerUp)
       canvas.removeEventListener('pointercancel', onPointerCancel)
+      canvas.removeEventListener('lostpointercapture', onLostPointerCapture)
     }
   // Canvas loop owns mutable game refs; recreating only when language or modal state changes is intentional.
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -784,19 +838,23 @@ function drawBackground(ctx: CanvasRenderingContext2D, width: number, height: nu
 
 function drawObstacle(ctx: CanvasRenderingContext2D, obstacle: Obstacle, time: number) {
   ctx.save()
-  const sway = Math.sin(time * 1.8 + obstacle.phase) * (obstacle.kind === 'post' ? 3 : 1)
-  ctx.translate(obstacle.x + sway, obstacle.y)
-  ctx.fillStyle = 'rgba(32,48,71,.22)'; ellipse(ctx, obstacle.w / 2, obstacle.h + 8, obstacle.w * 1.2, 12)
+  const bounds = getObstacleBounds(obstacle, time)
+  const bump = Math.sin(time * 16 + obstacle.phase) * obstacle.wobble * 0.08
+  ctx.translate(bounds.x + bounds.w / 2, bounds.y + bounds.h / 2)
+  ctx.rotate(bump)
+  ctx.translate(-bounds.w / 2, -bounds.h / 2)
+  ctx.fillStyle = 'rgba(32,48,71,.22)'; ellipse(ctx, bounds.w / 2, bounds.h + 8, bounds.w * 1.2, 12)
   ctx.fillStyle = obstacle.kind === 'beam' ? '#8a5a30' : obstacle.kind === 'crate' ? '#b57920' : '#7a4e20'
-  ctx.strokeStyle = '#4b3218'; ctx.lineWidth = 4
-  roundRect(ctx, 0, 0, obstacle.w, obstacle.h, obstacle.kind === 'post' ? 14 : 8, true, true)
+  ctx.strokeStyle = obstacle.hitFlash > 0.2 ? '#ffe27a' : '#4b3218'; ctx.lineWidth = obstacle.hitFlash > 0.2 ? 6 : 4
+  roundRect(ctx, 0, 0, bounds.w, bounds.h, obstacle.kind === 'post' ? 14 : 8, true, true)
+  if (obstacle.hitFlash > 0.05) { ctx.globalAlpha = obstacle.hitFlash * 0.38; ctx.fillStyle = '#fff6dc'; roundRect(ctx, 4, 4, bounds.w - 8, bounds.h - 8, obstacle.kind === 'post' ? 12 : 6, true); ctx.globalAlpha = 1 }
   ctx.strokeStyle = 'rgba(255,246,220,.42)'; ctx.lineWidth = 3
   if (obstacle.kind === 'post') {
-    ctx.beginPath(); ctx.moveTo(obstacle.w / 2, 12); ctx.lineTo(obstacle.w / 2, obstacle.h - 12); ctx.stroke()
+    ctx.beginPath(); ctx.moveTo(bounds.w / 2, 12); ctx.lineTo(bounds.w / 2, bounds.h - 12); ctx.stroke()
   } else if (obstacle.kind === 'beam') {
-    ctx.beginPath(); ctx.moveTo(10, obstacle.h / 2); ctx.lineTo(obstacle.w - 10, obstacle.h / 2); ctx.stroke()
+    ctx.beginPath(); ctx.moveTo(10, bounds.h / 2); ctx.lineTo(bounds.w - 10, bounds.h / 2); ctx.stroke()
   } else {
-    ctx.beginPath(); ctx.moveTo(8, 8); ctx.lineTo(obstacle.w - 8, obstacle.h - 8); ctx.moveTo(obstacle.w - 8, 8); ctx.lineTo(8, obstacle.h - 8); ctx.stroke()
+    ctx.beginPath(); ctx.moveTo(8, 8); ctx.lineTo(bounds.w - 8, bounds.h - 8); ctx.moveTo(bounds.w - 8, 8); ctx.lineTo(8, bounds.h - 8); ctx.stroke()
   }
   ctx.restore()
 }
