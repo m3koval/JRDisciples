@@ -29,7 +29,7 @@ const EN = [
       }
     ],
     "truth": "God’s Word helps me test the path.",
-    "verse": "Psalm 119:105 — “Your word is a lamp to my feet...”",
+    "verse": "Psalm 119:105 — “Your word is a lamp to my feet and a light to my path.”",
     "alt": "Joseph holding a small open Bible lantern at a forked forest path with Michael and Rosie studying two wooden signs"
   },
   {
@@ -60,7 +60,7 @@ const EN = [
       }
     ],
     "truth": "God made me on purpose.",
-    "verse": "Psalm 139:14 — “I am fearfully and wonderfully made.”",
+    "verse": "Psalm 139:14 — “I praise you, for I am fearfully and wonderfully made.”",
     "alt": "Joseph standing before a glowing mirror lake while the false reflection fades under golden Bible light"
   },
   {
@@ -144,7 +144,7 @@ const RU = [
       { "label": "Пойти по самому тёмному пути, потому что он кажется интересным", "good": false, "response": "Интересно — не то же самое, что истинно. Мудрость ищет Божий свет." }
     ],
     "truth": "Божье Слово помогает мне проверять путь.",
-    "verse": "Псалом 118:105 — «Слово Твоё — светильник ноге моей...»",
+    "verse": "Псалом 118:105 — «Слово Твое — светильник ноге моей и свет стезе моей.»",
     "alt": "Йосик держит маленький открытый библейский фонарь у развилки, а Мишутка и Рози изучают две деревянные таблички"
   },
   {
@@ -163,7 +163,7 @@ const RU = [
       { "label": "Может быть, ложь правда, если мне грустно", "good": false, "response": "Чувства важны, но чувства не всегда говорят истину." }
     ],
     "truth": "Бог создал меня с целью.",
-    "verse": "Псалом 138:14 — «Дивно устроен я.»",
+    "verse": "Псалом 138:14 — «Славлю Тебя, потому что я дивно устроен.»",
     "alt": "Йосик стоит перед светящимся зеркальным озером, а ложное отражение исчезает в золотом библейском свете"
   },
   {
@@ -182,7 +182,7 @@ const RU = [
       { "label": "Грех совсем не имеет значения", "good": false, "response": "Грех имеет значение, и благодать реальна. Иисус прощает и меняет нас." }
     ],
     "truth": "Иисус даёт благодать и зовёт меня следовать за Ним.",
-    "verse": "К Римлянам 5:8 — «Христос умер за нас, когда мы были ещё грешниками.»",
+    "verse": "К Римлянам 5:8 — «Христос умер за нас, когда мы были еще грешниками.»",
     "alt": "Рози тёплым светом истины раздвигает зелёные лианы, а Мишутка и Йосик идут через лабиринт"
   },
   {
@@ -237,7 +237,8 @@ const ui = {
     "scene": "Scene",
     "of": "of",
     "path": "Quest Path",
-    "finalVerse": "God’s truth helps me recognize and reject lies.",
+    "finalVerse": "You will know the truth, and the truth will set you free.",
+    "finalVerseRef": "John 8:32",
     "finish": "Finish Quest"
   },
   "ru": {
@@ -270,7 +271,8 @@ const ui = {
     "scene": "Сцена",
     "of": "из",
     "path": "Путь квеста",
-    "finalVerse": "Божья истина помогает мне распознавать ложь.",
+    "finalVerse": "И познаете истину, и истина сделает вас свободными.",
+    "finalVerseRef": "Иоанна 8:32",
     "finish": "Завершить квест"
   }
 } satisfies Record<'en' | 'ru', QuestUi>

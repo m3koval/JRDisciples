@@ -175,6 +175,8 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images, nextQue
         .quest-title { font-family: var(--font-cinzel); color: var(--deep); font-size: clamp(2rem,6vw,3.7rem); line-height: .98; margin: 0 0 10px; }
         .quest-subtitle { font-family: var(--font-lora); color: #374151; font-weight: 700; line-height: 1.55; font-size: 1rem; margin-bottom: 12px; }
         .verse-strip { border-radius: 18px; background: #fff7ed; border: 2px solid #fed7aa; padding: 11px 13px; color: #7c2d12; font-family: var(--font-nunito); font-weight: 900; margin: 12px 0; }
+        .verse-strip .verse-ref { display: block; font-size: .78rem; letter-spacing: 1px; text-transform: uppercase; opacity: .78; margin-bottom: 6px; }
+        .verse-strip .verse-quote { display: block; font-family: var(--font-lora); font-style: italic; font-weight: 800; line-height: 1.5; }
         .quest-button { display: inline-flex; width: fit-content; min-height: 54px; align-items: center; justify-content: center; border: none; border-radius: 999px; padding: 0 26px; background: linear-gradient(180deg,#6366f1,#4338ca); color: #fff; font-family: var(--font-nunito); font-weight: 1000; cursor: pointer; box-shadow: 0 14px 28px rgba(79,70,229,.28); transition: transform .18s, filter .18s; }
         .quest-button:hover { transform: translateY(-1px); filter: brightness(1.08); }
         .quest-button.green { background: linear-gradient(180deg,#22c55e,#15803d); }
@@ -350,7 +352,10 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images, nextQue
                 <p className="quest-kicker">{t.quest}</p>
                 <h1 className="quest-title">{t.title}</h1>
                 <p className="quest-subtitle">{t.subtitle}</p>
-                <div className="verse-strip">{t.verses}</div>
+                <div className="verse-strip">
+                  <span className="verse-ref">{t.verses}</span>
+                  <span className="verse-quote">{t.finalVerse}</span>
+                </div>
                 <p className="quest-subtitle">{t.mission}</p>
                 <button type="button" className="quest-button" onClick={() => setStarted(true)}>{t.start}</button>
               </div>

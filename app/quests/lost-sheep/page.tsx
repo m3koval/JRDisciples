@@ -29,7 +29,7 @@ const EN = [
       }
     ],
     "truth": "Jesus cares about the lost.",
-    "verse": "Luke 15:4 — the shepherd goes after the one that is lost.",
+    "verse": "Luke 15:4 — “go after the one that is lost, until he finds it”",
     "alt": "Children counting sheep near a warm sheepfold"
   },
   {
@@ -60,7 +60,7 @@ const EN = [
       }
     ],
     "truth": "The shepherd keeps seeking.",
-    "verse": "Ezekiel 34:16 — God says He will seek the lost.",
+    "verse": "Ezekiel 34:16 — “I will seek the lost, and I will bring back the strayed”",
     "alt": "Children following shepherd light over hills"
   },
   {
@@ -91,7 +91,7 @@ const EN = [
       }
     ],
     "truth": "Jesus carries the rescued home.",
-    "verse": "Luke 15:5 — the shepherd lays the sheep on his shoulders, rejoicing.",
+    "verse": "Luke 15:5 — “he lays it on his shoulders, rejoicing.”",
     "alt": "A lamb rescued from thorny branches"
   },
   {
@@ -122,7 +122,7 @@ const EN = [
       }
     ],
     "truth": "Jesus rejoices to save the lost.",
-    "verse": "Luke 15:7 — there is joy in heaven over one sinner who repents.",
+    "verse": "Luke 15:7 — “there will be more joy in heaven over one sinner who repents”",
     "alt": "Children rejoicing as a lamb comes home"
   }
 ] satisfies QuestScene[]
@@ -156,7 +156,7 @@ const RU = [
       }
     ],
     "truth": "Иисус заботится о потерянных.",
-    "verse": "Луки 15:4 — пастырь идёт за потерянной овцой.",
+    "verse": "Луки 15:4 — «не оставит девяноста девяти в пустыне и не пойдет за пропавшею, пока не найдет ее?»",
     "alt": "Дети считают овец возле тёплого двора"
   },
   {
@@ -187,7 +187,7 @@ const RU = [
       }
     ],
     "truth": "Пастырь продолжает искать.",
-    "verse": "Иезекииль 34:16 — Бог говорит, что отыщет потерянное.",
+    "verse": "Иезекииль 34:16 — «Потерявшуюся отыщу и угнанную возвращу»",
     "alt": "Дети идут за светом пастыря по холмам"
   },
   {
@@ -218,7 +218,7 @@ const RU = [
       }
     ],
     "truth": "Иисус несёт спасённого домой.",
-    "verse": "Луки 15:5 — пастырь с радостью кладёт овцу на плечи.",
+    "verse": "Луки 15:5 — «а найдя, возьмет ее на плечи свои с радостью»",
     "alt": "Ягнёнок спасён из колючих веток"
   },
   {
@@ -249,7 +249,7 @@ const RU = [
       }
     ],
     "truth": "Иисус радуется, спасая потерянных.",
-    "verse": "Луки 15:7 — на небесах радость об одном грешнике кающемся.",
+    "verse": "Луки 15:7 — «на небесах более радости будет об одном грешнике кающемся»",
     "alt": "Дети радуются возвращению ягнёнка домой"
   }
 ] satisfies QuestScene[]
@@ -286,7 +286,8 @@ const ui: Record<'en' | 'ru', QuestUi> = {
     "prayer": "Lord Jesus, thank You for seeking and saving the lost. Help me repent, trust You, and rejoice when others come home to You. Amen.",
     "verses": "Luke 15:3–7 · Ezekiel 34:16 · John 10:11",
     "mission": "Follow the shepherd’s light, find the lamb, and rejoice over rescue.",
-    "finalVerse": "Luke 15:3–7 — Jesus tells of joy over one sinner who repents."
+    "finalVerse": "Rejoice with me, for I have found my sheep that was lost.",
+    "finalVerseRef": "Luke 15:6"
   },
   "ru": {
     "chooseStep": "Выбрать следующий шаг",
@@ -319,7 +320,8 @@ const ui: Record<'en' | 'ru', QuestUi> = {
     "prayer": "Господь Иисус, спасибо, что Ты ищешь и спасаешь погибших. Помоги мне каяться, доверять Тебе и радоваться, когда другие возвращаются к Тебе. Аминь.",
     "verses": "Луки 15:3–7 · Иезекииль 34:16 · Иоанна 10:11",
     "mission": "Иди за светом пастыря, найди ягнёнка и радуйся спасению.",
-    "finalVerse": "Луки 15:3–7 — Иисус говорит о радости из-за одного кающегося грешника."
+    "finalVerse": "Порадуйтесь со мною: я нашел мою пропавшую овцу.",
+    "finalVerseRef": "Луки 15:6"
   }
 }
 

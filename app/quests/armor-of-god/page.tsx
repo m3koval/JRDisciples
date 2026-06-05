@@ -29,7 +29,7 @@ const EN = [
       }
     ],
     "truth": "God’s truth holds me steady.",
-    "verse": "Ephesians 6:14 — the belt of truth helps God’s people stand.",
+    "verse": "Ephesians 6:14 — “Stand therefore, having fastened on the belt of truth”",
     "alt": "Children at a canyon gate with a glowing Bible path"
   },
   {
@@ -60,7 +60,7 @@ const EN = [
       }
     ],
     "truth": "Faith answers fear with trust.",
-    "verse": "Ephesians 6:16 — faith is like a shield.",
+    "verse": "Ephesians 6:16 — “In all circumstances take up the shield of faith”",
     "alt": "Children crossing a bridge with a bright shield of faith"
   },
   {
@@ -91,7 +91,7 @@ const EN = [
       }
     ],
     "truth": "Jesus guards my mind with salvation.",
-    "verse": "Ephesians 6:17 — the helmet of salvation guards God’s people.",
+    "verse": "Ephesians 6:17 — “and take the helmet of salvation”",
     "alt": "Children in a pass with a glowing helmet symbol"
   },
   {
@@ -122,7 +122,7 @@ const EN = [
       }
     ],
     "truth": "God’s Word helps me stand firm.",
-    "verse": "Ephesians 6:17–18 — God’s Word and prayer help believers stand.",
+    "verse": "Ephesians 6:17 — “and the sword of the Spirit, which is the word of God”",
     "alt": "Children opening a glowing Bible as fog clears"
   }
 ] satisfies QuestScene[]
@@ -156,7 +156,7 @@ const RU = [
       }
     ],
     "truth": "Божья истина держит меня крепко.",
-    "verse": "Ефесянам 6:14 — пояс истины помогает Божьему народу стоять.",
+    "verse": "Ефесянам 6:14 — «Итак станьте, препоясав чресла ваши истиною»",
     "alt": "Дети у ворот ущелья со светящейся библейской тропой"
   },
   {
@@ -187,7 +187,7 @@ const RU = [
       }
     ],
     "truth": "Вера отвечает страху доверием.",
-    "verse": "Ефесянам 6:16 — вера похожа на щит.",
+    "verse": "Ефесянам 6:16 — «а паче всего возьмите щит веры»",
     "alt": "Дети переходят мост с ярким щитом веры"
   },
   {
@@ -218,7 +218,7 @@ const RU = [
       }
     ],
     "truth": "Иисус хранит мой разум спасением.",
-    "verse": "Ефесянам 6:17 — шлем спасения хранит Божий народ.",
+    "verse": "Ефесянам 6:17 — «и шлем спасения возьмите»",
     "alt": "Дети в проходе с символом светящегося шлема"
   },
   {
@@ -249,7 +249,7 @@ const RU = [
       }
     ],
     "truth": "Божье Слово помогает мне стоять крепко.",
-    "verse": "Ефесянам 6:17–18 — Божье Слово и молитва помогают верующим стоять.",
+    "verse": "Ефесянам 6:17 — «и меч духовный, который есть Слово Божие»",
     "alt": "Дети открывают светящуюся Библию, и туман рассеивается"
   }
 ] satisfies QuestScene[]
@@ -286,7 +286,8 @@ const ui: Record<'en' | 'ru', QuestUi> = {
     "prayer": "Lord, help me stand firm in Your strength. Guard my heart with truth, faith, salvation, and Your Word. Amen.",
     "verses": "Ephesians 6:10–18 · Psalm 119:11 · Hebrews 4:12",
     "mission": "Choose God’s armor pieces and stand firm through the canyon.",
-    "finalVerse": "Ephesians 6:10–18 — God tells His people to put on His armor."
+    "finalVerse": "Put on the whole armor of God, that you may be able to stand against the schemes of the devil.",
+    "finalVerseRef": "Ephesians 6:11"
   },
   "ru": {
     "chooseStep": "Выбрать следующий шаг",
@@ -319,7 +320,8 @@ const ui: Record<'en' | 'ru', QuestUi> = {
     "prayer": "Господь, помоги мне стоять крепко Твоей силой. Храни моё сердце истиной, верой, спасением и Твоим Словом. Аминь.",
     "verses": "Ефесянам 6:10–18 · Псалом 118:11 · Евреям 4:12",
     "mission": "Выбирай Божье всеоружие и стой крепко в ущелье.",
-    "finalVerse": "Ефесянам 6:10–18 — Бог велит Своему народу облечься во всеоружие Божье."
+    "finalVerse": "Облекитесь во всеоружие Божие, чтобы вам можно было стать против козней диавольских.",
+    "finalVerseRef": "Ефесянам 6:11"
   }
 }
 

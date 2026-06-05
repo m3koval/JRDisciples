@@ -29,7 +29,7 @@ const EN = [
       }
     ],
     "truth": "My neighbor is the person God calls me to love.",
-    "verse": "Luke 10:25–37 — Jesus answers the neighbor question with mercy.",
+    "verse": "Luke 10:27 — “You shall love your neighbor as yourself.”",
     "alt": "Children choosing the mercy road"
   },
   {
@@ -60,7 +60,7 @@ const EN = [
       }
     ],
     "truth": "Mercy notices and helps.",
-    "verse": "Luke 10:33 — the Samaritan saw the man and had compassion.",
+    "verse": "Luke 10:33 — “when he saw him, he had compassion.”",
     "alt": "Children helping a traveler beside a road"
   },
   {
@@ -91,7 +91,7 @@ const EN = [
       }
     ],
     "truth": "Love gives practical mercy.",
-    "verse": "Luke 10:34 — the Samaritan cared for the man’s wounds.",
+    "verse": "Luke 10:34 — “He went to him and bound up his wounds”",
     "alt": "Children sharing supplies from a mercy kit"
   },
   {
@@ -122,7 +122,7 @@ const EN = [
       }
     ],
     "truth": "Jesus calls me to go and do mercy.",
-    "verse": "Luke 10:37 — Jesus says to go and do likewise.",
+    "verse": "Luke 10:37 — “You go, and do likewise.”",
     "alt": "Children at a warm safe inn"
   }
 ] satisfies QuestScene[]
@@ -156,7 +156,7 @@ const RU = [
       }
     ],
     "truth": "Мой ближний — тот, кого Бог зовёт меня любить.",
-    "verse": "Луки 10:25–37 — Иисус отвечает на вопрос о ближнем историей милости.",
+    "verse": "Луки 10:27 — «возлюби ближнего твоего, как самого себя.»",
     "alt": "Дети выбирают дорогу милости"
   },
   {
@@ -187,7 +187,7 @@ const RU = [
       }
     ],
     "truth": "Милость замечает и помогает.",
-    "verse": "Луки 10:33 — самарянин увидел человека и сжалился.",
+    "verse": "Луки 10:33 — «увидев его, сжалился»",
     "alt": "Дети помогают путнику у дороги"
   },
   {
@@ -218,7 +218,7 @@ const RU = [
       }
     ],
     "truth": "Любовь даёт практическую милость.",
-    "verse": "Луки 10:34 — самарянин позаботился о ранах человека.",
+    "verse": "Луки 10:34 — «подойдя, перевязал ему раны»",
     "alt": "Дети делятся припасами из сумки милости"
   },
   {
@@ -249,7 +249,7 @@ const RU = [
       }
     ],
     "truth": "Иисус зовёт меня идти и поступать с милостью.",
-    "verse": "Луки 10:37 — Иисус говорит идти и поступать так же.",
+    "verse": "Луки 10:37 — «иди, и ты поступай так же.»",
     "alt": "Дети у тёплого безопасного дома"
   }
 ] satisfies QuestScene[]
@@ -286,7 +286,8 @@ const ui: Record<'en' | 'ru', QuestUi> = {
     "prayer": "Lord Jesus, give me eyes to see people who need mercy. Help me love my neighbor with action, kindness, and courage. Amen.",
     "verses": "Luke 10:25–37 · Micah 6:8 · Ephesians 4:32",
     "mission": "Walk Mercy Road and choose compassion instead of excuses.",
-    "finalVerse": "Luke 10:25–37 — Jesus teaches what neighbor-love looks like."
+    "finalVerse": "You shall love your neighbor as yourself.",
+    "finalVerseRef": "Luke 10:27"
   },
   "ru": {
     "chooseStep": "Выбрать следующий шаг",
@@ -319,7 +320,8 @@ const ui: Record<'en' | 'ru', QuestUi> = {
     "prayer": "Господь Иисус, дай мне видеть людей, которым нужна милость. Помоги мне любить ближнего делом, добротой и смелостью. Аминь.",
     "verses": "Луки 10:25–37 · Михей 6:8 · Ефесянам 4:32",
     "mission": "Иди по Дороге милости и выбирай сострадание вместо оправданий.",
-    "finalVerse": "Луки 10:25–37 — Иисус учит, как выглядит любовь к ближнему."
+    "finalVerse": "Возлюби ближнего твоего, как самого себя.",
+    "finalVerseRef": "Луки 10:27"
   }
 }
 

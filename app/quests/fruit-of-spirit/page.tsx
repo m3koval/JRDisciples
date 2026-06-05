@@ -29,7 +29,7 @@ const EN = [
       }
     ],
     "truth": "Spirit fruit starts with life from Jesus.",
-    "verse": "John 15:5 — Jesus teaches that fruit comes from abiding in Him.",
+    "verse": "John 15:5 — “Whoever abides in me and I in him, he it is that bears much fruit”",
     "alt": "Children beside a glowing Bible vine at a garden gate"
   },
   {
@@ -60,7 +60,7 @@ const EN = [
       }
     ],
     "truth": "The Spirit helps me choose peace.",
-    "verse": "Galatians 5:22 — peace is fruit of the Spirit.",
+    "verse": "Galatians 5:22 — “the fruit of the Spirit is love, joy, peace”",
     "alt": "Children choosing a peaceful stepping stone on a muddy garden path"
   },
   {
@@ -91,7 +91,7 @@ const EN = [
       }
     ],
     "truth": "Kindness is love in action.",
-    "verse": "Ephesians 4:32 — God calls His people to be kind and tenderhearted.",
+    "verse": "Ephesians 4:32 — “Be kind to one another, tenderhearted”",
     "alt": "Children helping gather fruit in a warm orchard"
   },
   {
@@ -122,7 +122,7 @@ const EN = [
       }
     ],
     "truth": "The Spirit grows self-control and joy.",
-    "verse": "Galatians 5:22–23 — joy and self-control are fruit of the Spirit.",
+    "verse": "Galatians 5:22–23 — “the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control”",
     "alt": "Children sharing golden fruit at the top of a hill"
   }
 ] satisfies QuestScene[]
@@ -156,7 +156,7 @@ const RU = [
       }
     ],
     "truth": "Плод Духа начинается с жизни от Иисуса.",
-    "verse": "Иоанна 15:5 — Иисус учит, что плод приходит, когда мы пребываем в Нём.",
+    "verse": "Иоанна 15:5 — «кто пребывает во Мне, и Я в нем, тот приносит много плода»",
     "alt": "Дети возле светящейся библейской лозы у ворот сада"
   },
   {
@@ -187,7 +187,7 @@ const RU = [
       }
     ],
     "truth": "Дух помогает мне выбирать мир.",
-    "verse": "Галатам 5:22 — мир является плодом Духа.",
+    "verse": "Галатам 5:22 — «Плод же духа: любовь, радость, мир»",
     "alt": "Дети выбирают мирную ступеньку на грязной садовой тропе"
   },
   {
@@ -218,7 +218,7 @@ const RU = [
       }
     ],
     "truth": "Доброта — это любовь в действии.",
-    "verse": "Ефесянам 4:32 — Бог призывает Свой народ быть добрым и сострадательным.",
+    "verse": "Ефесянам 4:32 — «будьте друг ко другу добры, сострадательны»",
     "alt": "Дети помогают собрать плоды в тёплом саду"
   },
   {
@@ -249,7 +249,7 @@ const RU = [
       }
     ],
     "truth": "Дух растит воздержание и радость.",
-    "verse": "Галатам 5:22–23 — радость и воздержание являются плодом Духа.",
+    "verse": "Галатам 5:22–23 — «Плод же духа: любовь, радость, мир, долготерпение, благость, милосердие, вера, кротость, воздержание. На таковых нет закона.»",
     "alt": "Дети делятся золотым плодом на вершине холма"
   }
 ] satisfies QuestScene[]
@@ -286,7 +286,8 @@ const ui: Record<'en' | 'ru', QuestUi> = {
     "prayer": "Holy Spirit, grow Your fruit in me. Help me love like Jesus, choose peace, show kindness, and use self-control today. Amen.",
     "verses": "Galatians 5:22–23 · John 15:5 · Ephesians 4:32",
     "mission": "Choose Spirit-grown responses in the garden and collect four truth lights.",
-    "finalVerse": "Galatians 5:22–23 — the Spirit grows His fruit in God’s people."
+    "finalVerse": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control; against such things there is no law.",
+    "finalVerseRef": "Galatians 5:22–23"
   },
   "ru": {
     "chooseStep": "Выбрать следующий шаг",
@@ -319,7 +320,8 @@ const ui: Record<'en' | 'ru', QuestUi> = {
     "prayer": "Святой Дух, расти Твой плод во мне. Помоги мне любить как Иисус, выбирать мир, проявлять доброту и иметь воздержание сегодня. Аминь.",
     "verses": "Галатам 5:22–23 · Иоанна 15:5 · Ефесянам 4:32",
     "mission": "Выбирай поступки по Духу в саду и собери четыре огня истины.",
-    "finalVerse": "Галатам 5:22–23 — Дух растит Свой плод в Божьем народе."
+    "finalVerse": "Плод же духа: любовь, радость, мир, долготерпение, благость, милосердие, вера, кротость, воздержание. На таковых нет закона.",
+    "finalVerseRef": "Галатам 5:22–23"
   }
 }
 

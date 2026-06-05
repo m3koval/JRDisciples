@@ -17,7 +17,7 @@ const EN = [
       { label: 'Copy the tallest tower without checking the ground', good: false, response: 'Copying what looks successful is not the same as wisdom. Check the foundation.' },
     ],
     truth: 'Wisdom starts by listening to Jesus.',
-    verse: 'Matthew 7:24 — “Everyone then who hears these words of mine and does them will be like a wise man...”',
+    verse: 'Matthew 7:24 — “Everyone then who hears these words of mine and does them will be like a wise man who built his house on the rock.”',
     alt: 'Joseph studying a wobbly sand tower while Michael Rosie and Gracie look at a glowing Bible foundation marker',
   },
   {
@@ -36,7 +36,7 @@ const EN = [
       { label: 'Build half on rock and half on sand', good: false, response: 'Half obedience is still a weak foundation. Jesus is worth trusting fully.' },
     ],
     truth: 'Obedience is a strong foundation.',
-    verse: 'Luke 6:47–48 — the wise builder dug deep and laid the foundation on the rock.',
+    verse: 'Luke 6:48 — “he is like a man building a house, who dug deep and laid the foundation on the rock.”',
     alt: 'Rosie pointing to a glowing rock foundation under soft sand while the children prepare to build carefully',
   },
   {
@@ -55,7 +55,7 @@ const EN = [
       { label: 'If life is hard, stop listening to Jesus', good: false, response: 'No. Storms are when we need His words even more.' },
     ],
     truth: 'Jesus’ words stand in the storm.',
-    verse: 'Matthew 7:25 — “The rain fell, and the floods came... but it did not fall...”',
+    verse: 'Matthew 7:25 — “And the rain fell, and the floods came, and the winds blew and beat on that house, but it did not fall.”',
     alt: 'The children inside a small warm house on rock as gentle rain and wind test the walls without fear',
   },
   {
@@ -74,7 +74,7 @@ const EN = [
       { label: 'Feel proud and call everyone else foolish', good: false, response: 'Wisdom should make us humble, thankful, and ready to help others.' },
     ],
     truth: 'I build my life on Jesus by doing what He says.',
-    verse: 'James 1:22 — “Be doers of the word, and not hearers only...”',
+    verse: 'James 1:22 — “But be doers of the word, and not hearers only, deceiving yourselves.”',
     alt: 'Michael Joseph Rosie and Gracie celebrating beside a warm little house standing on rock after the storm',
   },
 ] satisfies QuestScene[]
@@ -86,7 +86,7 @@ const RU = [
       { label: 'Послушать слова Иисуса и выбрать правильное основание', good: true, response: 'Мудрый выбор. Иисус говорит, что мудрый строитель слышит Его слова и исполняет их.' },
       { label: 'Строить как можно быстрее, чтобы все похвалили', good: false, response: 'Слишком рано слишком много скорости. Большая башня на плохом основании не устоит.' },
       { label: 'Скопировать самую высокую башню, не проверяя землю', good: false, response: 'Копировать то, что выглядит успешным, — не то же самое, что мудрость. Проверь основание.' },
-    ], truth: 'Мудрость начинается с того, что мы слушаем Иисуса.', verse: 'Матфея 7:24 — «Всякого, кто слушает слова Мои сии и исполняет их, уподоблю мужу благоразумному...»', alt: 'Йосик смотрит на шаткую песочную башню, а Мишутка, Рози и Грейси видят светящийся знак библейского основания',
+    ], truth: 'Мудрость начинается с того, что мы слушаем Иисуса.', verse: 'Матфея 7:24 — «Всякого, кто слушает слова Мои сии и исполняет их, уподоблю мужу благоразумному, который построил дом свой на камне»', alt: 'Йосик смотрит на шаткую песочную башню, а Мишутка, Рози и Грейси видят светящийся знак библейского основания',
   },
   {
     id: 'rock-foundation', place: 'Каменное основание', title: 'Докопаться до камня', body: 'Рози находит под песком ровный камень, а на нём светится открытая Библия. Камень не такой яркий, как песочная башня, но он крепкий. Строить здесь нужно терпеливо.', caption: 'Крепкое место скрыто глубже, чем блестящий песок.', danger: 'Песок шепчет: «Исполнять слова Иисуса слишком трудно».', echo: 'Слишком трудно...', thought: 'Повинуйся Ему.', prompt: 'Какое основание выбрать друзьям?',
@@ -94,7 +94,7 @@ const RU = [
       { label: 'Строить на камне: слушать Иисуса и исполнять Его слова', good: true, response: 'Да. Мудрый строитель не только слышит Иисуса. Он повинуется Ему.' },
       { label: 'Строить на песке, потому что так легче', good: false, response: 'Лёгкое основание может быть опасным. Иисус зовёт нас к послушанию, а не к лёгким обходным путям.' },
       { label: 'Построить половину на камне, половину на песке', good: false, response: 'Половинчатое послушание — слабое основание. Иисусу можно доверять полностью.' },
-    ], truth: 'Послушание — крепкое основание.', verse: 'Луки 6:47–48 — мудрый строитель копал глубоко и положил основание на камне.', alt: 'Рози показывает светящееся каменное основание под мягким песком, а дети готовятся строить осторожно',
+    ], truth: 'Послушание — крепкое основание.', verse: 'Луки 6:48 — «он подобен человеку, строящему дом, который копал, углубился и положил основание на камне»', alt: 'Рози показывает светящееся каменное основание под мягким песком, а дети готовятся строить осторожно',
   },
   {
     id: 'storm-test', place: 'Испытание бурей', title: 'Дождь на крыше', body: 'Над Двором строителей собираются облака. Дождь стучит по крыше. Ветер давит на стены. Грейси держит Рози за руку, а буря проверяет, на чём стоит дом.', caption: 'Буря не создаёт основание. Она показывает, какое оно.', danger: 'Ветер говорит: «Если пришла трудность, слова Иисуса не работают».', echo: 'Сдавайся...', thought: 'Стой на истине.', prompt: 'Что детям помнить во время бури?',
@@ -102,7 +102,7 @@ const RU = [
       { label: 'Трудности бывают, но слова Иисуса стоят крепко', good: true, response: 'Верно. Иисус не обещал жизнь без бурь. Он учит, где стоять, когда бури приходят.' },
       { label: 'У христиан никогда не бывает трудных дней', good: false, response: 'Осторожно. Иисус сказал, что дождь и ветер пришли к обоим домам. Разница была в основании.' },
       { label: 'Если трудно, перестать слушать Иисуса', good: false, response: 'Нет. В бурю Его слова нужны нам ещё больше.' },
-    ], truth: 'Слова Иисуса стоят крепко в бурю.', verse: 'Матфея 7:25 — «И пошёл дождь, и разлились реки... и он не упал...»', alt: 'Дети внутри маленького тёплого дома на камне, а спокойный дождь и ветер испытывают стены',
+    ], truth: 'Слова Иисуса стоят крепко в бурю.', verse: 'Матфея 7:25 — «и пошел дождь, и разлились реки, и подули ветры, и устремились на дом тот, и он не упал»', alt: 'Дети внутри маленького тёплого дома на камне, а спокойный дождь и ветер испытывают стены',
   },
   {
     id: 'house-stands', place: 'Дом, который устоял', title: 'Значок мудрого строителя', body: 'Когда буря проходит, песочная башня превращается в смешную кучу песка, но маленький дом на камне стоит. Друзья благодарят Иисуса за то, что Он учит строить верную жизнь.', caption: 'Дом устоял, потому что был построен на правильном основании.', danger: 'Последняя табличка говорит: «Просто слушай урок. Жить по нему не нужно».', echo: 'Только слушай...', thought: 'Исполняй Слово.', prompt: 'Какой следующий шаг мудрого строителя?',
@@ -110,16 +110,16 @@ const RU = [
       { label: 'Попросить Иисуса помочь исполнить одну истину сегодня', good: true, response: 'Хорошо. Мудрые строители превращают истину в верный поступок, шаг за шагом.' },
       { label: 'Забыть урок, когда буря закончилась', good: false, response: 'Цель не просто пережить одну бурю. Иисус учит нас жить.' },
       { label: 'Гордиться собой и называть всех остальных глупыми', good: false, response: 'Мудрость делает нас смиренными, благодарными и готовыми помогать другим.' },
-    ], truth: 'Я строю жизнь на Иисусе, когда исполняю Его слова.', verse: 'Иакова 1:22 — «Будьте же исполнители слова, а не слышатели только...»', alt: 'Мишутка, Йосик, Рози и Грейси радуются возле тёплого маленького дома на камне после бури',
+    ], truth: 'Я строю жизнь на Иисусе, когда исполняю Его слова.', verse: 'Иакова 1:22 — «Будьте же исполнители слова, а не слышатели только, обманывающие самих себя.»', alt: 'Мишутка, Йосик, Рози и Грейси радуются возле тёплого маленького дома на камне после бури',
   },
 ] satisfies QuestScene[]
 
 const ui: Record<'en' | 'ru', QuestUi> = {
   en: {
-    quest: 'Wise Builder Quest', title: 'The House on the Rock', subtitle: 'An interactive Bible adventure about hearing Jesus, obeying His words, and building a life that stands.', start: 'Begin Adventure', chooseStep: 'Choose the Next Step', continue: 'Continue', tryAgain: 'Try another answer', truthLight: 'Truth Lights', completed: 'Quest Complete', badge: 'Wise Builder Badge', badgeLine: 'I build my life on Jesus by doing what He says.', bigTruth: 'Big Truth', parent: 'Parent / Teacher Talk', questions: ['What made one house wise and the other foolish?', 'Did both houses face a storm?', 'What is one thing Jesus teaches that you can obey this week?', 'Why is hearing God’s Word not enough by itself?'], prayer: 'Lord Jesus, help me not only hear Your words but do them. Build my life on You, the true Rock. Give me wisdom, courage, and obedience today. Amen.', replay: 'Play Again', back: 'All Quests', correct: 'Truth light collected!', almost: 'Not the right line yet.', verses: 'Matthew 7:24–27 · Luke 6:47–49 · James 1:22', mission: 'Choose the right foundation. Test the house in the storm. Learn to hear and obey Jesus.', scene: 'Scene', of: 'of', path: 'Quest Path', finalVerse: '“Everyone then who hears these words of mine and does them will be like a wise man...”', finish: 'Finish Quest'
+    quest: 'Wise Builder Quest', title: 'The House on the Rock', subtitle: 'An interactive Bible adventure about hearing Jesus, obeying His words, and building a life that stands.', start: 'Begin Adventure', chooseStep: 'Choose the Next Step', continue: 'Continue', tryAgain: 'Try another answer', truthLight: 'Truth Lights', completed: 'Quest Complete', badge: 'Wise Builder Badge', badgeLine: 'I build my life on Jesus by doing what He says.', bigTruth: 'Big Truth', parent: 'Parent / Teacher Talk', questions: ['What made one house wise and the other foolish?', 'Did both houses face a storm?', 'What is one thing Jesus teaches that you can obey this week?', 'Why is hearing God’s Word not enough by itself?'], prayer: 'Lord Jesus, help me not only hear Your words but do them. Build my life on You, the true Rock. Give me wisdom, courage, and obedience today. Amen.', replay: 'Play Again', back: 'All Quests', correct: 'Truth light collected!', almost: 'Not the right line yet.', verses: 'Matthew 7:24–27 · Luke 6:47–49 · James 1:22', mission: 'Choose the right foundation. Test the house in the storm. Learn to hear and obey Jesus.', scene: 'Scene', of: 'of', path: 'Quest Path', finalVerse: 'Everyone then who hears these words of mine and does them will be like a wise man who built his house on the rock.', finalVerseRef: 'Matthew 7:24', finish: 'Finish Quest'
   },
   ru: {
-    quest: 'Квест мудрого строителя', title: 'Дом на камне', subtitle: 'Интерактивное библейское приключение о том, как слушать Иисуса, исполнять Его слова и строить жизнь, которая устоит.', start: 'Начать приключение', chooseStep: 'Выбрать следующий шаг', continue: 'Продолжить', tryAgain: 'Попробовать другой ответ', truthLight: 'Огни истины', completed: 'Квест завершён', badge: 'Значок мудрого строителя', badgeLine: 'Я строю жизнь на Иисусе, когда исполняю Его слова.', bigTruth: 'Главная истина', parent: 'Вопросы для родителей / учителя', questions: ['Почему один строитель был мудрым, а другой неразумным?', 'Пришла ли буря к обоим домам?', 'Какую одну заповедь Иисуса ты можешь исполнить на этой неделе?', 'Почему мало только слушать Божье Слово?'], prayer: 'Господь Иисус, помоги мне не только слушать Твои слова, но и исполнять их. Построй мою жизнь на Тебе, истинном Камне. Дай мне мудрость, смелость и послушание сегодня. Аминь.', replay: 'Играть снова', back: 'Все квесты', correct: 'Огонь истины собран!', almost: 'Пока не тот путь.', verses: 'Матфея 7:24–27 · Луки 6:47–49 · Иакова 1:22', mission: 'Выбери правильное основание. Проверь дом бурей. Учись слушать Иисуса и повиноваться Ему.', scene: 'Сцена', of: 'из', path: 'Путь квеста', finalVerse: '«Всякого, кто слушает слова Мои сии и исполняет их, уподоблю мужу благоразумному...»', finish: 'Завершить квест'
+    quest: 'Квест мудрого строителя', title: 'Дом на камне', subtitle: 'Интерактивное библейское приключение о том, как слушать Иисуса, исполнять Его слова и строить жизнь, которая устоит.', start: 'Начать приключение', chooseStep: 'Выбрать следующий шаг', continue: 'Продолжить', tryAgain: 'Попробовать другой ответ', truthLight: 'Огни истины', completed: 'Квест завершён', badge: 'Значок мудрого строителя', badgeLine: 'Я строю жизнь на Иисусе, когда исполняю Его слова.', bigTruth: 'Главная истина', parent: 'Вопросы для родителей / учителя', questions: ['Почему один строитель был мудрым, а другой неразумным?', 'Пришла ли буря к обоим домам?', 'Какую одну заповедь Иисуса ты можешь исполнить на этой неделе?', 'Почему мало только слушать Божье Слово?'], prayer: 'Господь Иисус, помоги мне не только слушать Твои слова, но и исполнять их. Построй мою жизнь на Тебе, истинном Камне. Дай мне мудрость, смелость и послушание сегодня. Аминь.', replay: 'Играть снова', back: 'Все квесты', correct: 'Огонь истины собран!', almost: 'Пока не тот путь.', verses: 'Матфея 7:24–27 · Луки 6:47–49 · Иакова 1:22', mission: 'Выбери правильное основание. Проверь дом бурей. Учись слушать Иисуса и повиноваться Ему.', scene: 'Сцена', of: 'из', path: 'Путь квеста', finalVerse: 'Всякого, кто слушает слова Мои сии и исполняет их, уподоблю мужу благоразумному, который построил дом свой на камне.', finalVerseRef: 'Матфея 7:24', finish: 'Завершить квест'
   },
 }
 
