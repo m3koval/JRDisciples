@@ -3,6 +3,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 
 import Link from 'next/link'
+import type { MouseEvent, PointerEvent } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -81,10 +82,15 @@ export default function DavidSlingChallengePage() {
     window.setTimeout(() => setButtonFlash(null), 180)
   }
 
+  function stopTap(event: PointerEvent<HTMLElement> | MouseEvent<HTMLElement>) {
+    event.preventDefault()
+    event.stopPropagation()
+  }
+
   const copy = isRu ? {
     back: 'Все игры', eyebrow: 'David Sling v2', title: 'Праща Давида',
     subtitle: 'Теперь это игровой прототип: набирай ритм, держи вращение и отпускай пращу в правильный момент. Божье Слово дает настоящую помощь в игре.',
-    start: 'Начать миссию', mission: 'Миссия с пращой', questionTitle: 'Сначала Божье Слово', questionHelp: 'Ответь правильно, чтобы получить Мудрость и усиление для броска.',
+    start: 'Начать миссию', quit: 'Выйти', mission: 'Миссия с пращой', questionTitle: 'Сначала Божье Слово', questionHelp: 'Ответь правильно, чтобы получить Мудрость и усиление для броска.',
     stepBible: 'Прочитай стих', stepPower: 'Выбери помощь', stepPlay: 'Ритм • держи • отпусти', speed: 'Скорость пращи', perfectZone: 'Зеленая дуга = лучший момент',
     correct: 'Верно! +2 Мудрости. Выбери усиление.', wrong: 'Хорошая попытка. Прочитай стих и попробуй снова.',
     rhythm: 'Ритм', hold: 'Держи', release: 'Отпусти!', next: 'Следующий уровень', again: 'Снова',
@@ -95,7 +101,7 @@ export default function DavidSlingChallengePage() {
   } : {
     back: 'All Games', eyebrow: 'David Sling v2', title: 'David Sling Challenge',
     subtitle: 'Now rebuilt as a real game prototype: tap rhythm, hold the spin, and release the sling at the right moment. God’s Word gives real help inside the game.',
-    start: 'Start Mission', mission: 'Sling Mission', questionTitle: 'God’s Word First', questionHelp: 'Answer correctly to earn Wisdom Fuel and choose a throw advantage.',
+    start: 'Start Mission', quit: 'Exit', mission: 'Sling Mission', questionTitle: 'God’s Word First', questionHelp: 'Answer correctly to earn Wisdom Fuel and choose a throw advantage.',
     stepBible: 'Read the verse', stepPower: 'Choose help', stepPlay: 'Tap • hold • release', speed: 'Sling Speed', perfectZone: 'Green arc = best release',
     correct: 'Correct! +2 Wisdom Fuel. Choose a power-up.', wrong: 'Good try. Read the verse and try again.',
     rhythm: 'Tap Rhythm', hold: 'Hold', release: 'Release!', next: 'Next Level', again: 'Play Again',
@@ -256,6 +262,16 @@ export default function DavidSlingChallengePage() {
     stoneRef.current.active = false
   }
 
+  function exitGame() {
+    holdRef.current = false
+    stoneRef.current.active = false
+    setPhase('intro')
+    setPower('none')
+    setSelectedAnswer(null)
+    setMessage('')
+    setResult('ready')
+  }
+
   function answer(index: number) {
     setSelectedAnswer(index)
     if (index === SCRIPTURE.answer) {
@@ -361,6 +377,7 @@ export default function DavidSlingChallengePage() {
   const phaseSteps = [copy.stepBible, copy.stepPower, copy.stepPlay]
   const canUseGameControls = phase === 'play' && !stoneRef.current.active
   const canChoosePower = phase === 'play' && wisdomFuel > 0
+  const isGameOpen = phase !== 'intro'
 
   return (
     <main className="dsv2-page">
@@ -370,14 +387,23 @@ export default function DavidSlingChallengePage() {
         .dsv2-hero { max-width: 920px; }
         .dsv2-title { font-family: var(--font-cinzel); font-size: clamp(1.95rem,5.8vw,4.1rem); line-height: .95; margin: 4px 0 10px; }
         .dsv2-subtitle { font-family: var(--font-lora); color: rgba(255,255,255,.9); font-weight: 800; line-height: 1.45; }
+        .dsv2-hero-start { margin-top: 12px; }
         .dsv2-stats { display: grid; grid-template-columns: repeat(5,1fr); gap: 9px; margin: 12px 0; }
         .dsv2-stats div { border-radius: 16px; padding: 10px; background: rgba(15,23,42,.72); border: 1px solid rgba(255,255,255,.18); text-align: center; font-family: var(--font-nunito); font-weight: 1000; }
         .dsv2-stat-icons { display: block; color: #ffd866; letter-spacing: .04em; }
         .dsv2-phase-strip { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 14px; }
         .dsv2-step { border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: 8px 12px; background: rgba(15,23,42,.66); font-family: var(--font-nunito); font-weight: 1000; color: #cbd5e1; }
         .dsv2-step.active { background: linear-gradient(180deg,#fef08a,#f59e0b); color: #3b2307; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(245,158,11,.35); }
+        .dsv2-play-shell.fullscreen { position: fixed; inset: 0; z-index: 9999; display: grid; grid-template-rows: auto auto minmax(0,1fr); gap: 8px; padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); overflow: auto; background: radial-gradient(circle at top,#193b6d,#06172f 64%,#020617); }
+        .dsv2-play-shell.fullscreen .dsv2-stats { margin: 0; grid-template-columns: repeat(6, minmax(88px,1fr)); }
+        .dsv2-exit { display: none; border: 0; border-radius: 16px; padding: 10px 14px; font-family: var(--font-nunito); font-weight: 1000; background: linear-gradient(180deg,#fee2e2,#fb7185); color: #450a0a; box-shadow: 0 6px 0 #9f1239; cursor: pointer; touch-action: manipulation; }
+        .dsv2-play-shell:not(.fullscreen) .dsv2-stats, .dsv2-play-shell:not(.fullscreen) .dsv2-phase-strip, .dsv2-play-shell:not(.fullscreen) .dsv2-card { display: none; }
+        .dsv2-play-shell.fullscreen .dsv2-exit { display: block; }
         .dsv2-grid { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(310px,.65fr); gap: 16px; align-items: stretch; }
-        .dsv2-stage { position: relative; border-radius: 32px; overflow: hidden; border: 4px solid rgba(255,216,102,.9); background: radial-gradient(circle at center,#123f73,#07182f); box-shadow: 0 32px 92px rgba(0,0,0,.38); touch-action: none; }
+        .dsv2-play-shell.fullscreen .dsv2-grid { min-height: 0; }
+        .dsv2-play-shell.fullscreen .dsv2-stage { min-height: min(58vh, 520px); }
+        .dsv2-play-shell.fullscreen .dsv2-bg { height: 100%; object-fit: cover; }
+        .dsv2-stage { position: relative; border-radius: 32px; overflow: hidden; border: 4px solid rgba(255,216,102,.9); background: radial-gradient(circle at center,#123f73,#07182f); box-shadow: 0 32px 92px rgba(0,0,0,.38); touch-action: manipulation; }
         .dsv2-bg { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; object-position: center center; z-index: 0; }
         .dsv2-stage canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; display: block; background: transparent; opacity: 1; pointer-events: none; }
         .dsv2-intro-overlay { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; padding: 20px; background: linear-gradient(180deg,rgba(4,10,25,.42),rgba(4,10,25,.72)); }
@@ -388,7 +414,7 @@ export default function DavidSlingChallengePage() {
         .dsv2-start-steps span { border-radius: 16px; padding: 10px; background: #dbeafe; font-family: var(--font-nunito); font-weight: 1000; }
         .dsv2-start { border: 0; border-radius: 22px; padding: 16px 26px; font-family: var(--font-nunito); font-size: 1.05rem; font-weight: 1000; color: #3b2307; background: linear-gradient(180deg,#fef08a,#f59e0b); box-shadow: 0 14px 0 #92400e, 0 26px 36px rgba(0,0,0,.28); cursor: pointer; touch-action: manipulation; }
         .dsv2-start:active, .dsv2-game-btn:active, .dsv2-power:active, .dsv2-choice:active { transform: translateY(4px); }
-        .dsv2-overlay { position: absolute; z-index: 3; inset: auto 16px 16px 16px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center; pointer-events: none; }
+        .dsv2-overlay { position: absolute; z-index: 3; inset: auto 16px 16px 16px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center; pointer-events: auto; }
         .dsv2-game-btn { pointer-events: auto; border: 0; border-radius: 24px; padding: 14px 20px; min-height: 62px; min-width: 160px; font-family: var(--font-nunito); font-weight: 1000; color: #3b2307; background: linear-gradient(180deg,#fef3c7,#f59e0b); box-shadow: 0 10px 0 #92400e, 0 20px 30px rgba(0,0,0,.25); cursor: pointer; touch-action: manipulation; }
         .dsv2-game-btn.release { color: #052e16; background: linear-gradient(180deg,#bbf7d0,#22c55e); box-shadow: 0 10px 0 #166534, 0 20px 30px rgba(0,0,0,.25); }
         .dsv2-game-btn.flash { animation: dsv2-pop .18s ease-out; }
@@ -407,7 +433,7 @@ export default function DavidSlingChallengePage() {
         .dsv2-scripture strong { color: #bfdbfe; font-family: var(--font-nunito); }
         .dsv2-message { min-height: 44px; color: #fde68a !important; font-family: var(--font-nunito) !important; font-weight: 1000 !important; }
         @keyframes dsv2-pop { 0% { transform: scale(1); } 55% { transform: scale(1.08); } 100% { transform: scale(1); } }
-        @media (max-width: 900px) { .dsv2-grid { grid-template-columns: 1fr; } .dsv2-stats { grid-template-columns: repeat(2,1fr); } .dsv2-start-steps { grid-template-columns: 1fr; } .dsv2-game-btn { min-width: 130px; } }
+        @media (max-width: 900px) { .dsv2-grid { grid-template-columns: 1fr; } .dsv2-stats { grid-template-columns: repeat(2,1fr); } .dsv2-play-shell.fullscreen { overflow: auto; grid-template-rows: auto auto auto; gap: 6px; } .dsv2-play-shell.fullscreen .dsv2-stats { grid-template-columns: repeat(6, minmax(48px,1fr)); gap: 5px; } .dsv2-play-shell.fullscreen .dsv2-stats div, .dsv2-play-shell.fullscreen .dsv2-exit { min-height: 46px; padding: 5px; border-radius: 12px; font-size: .7rem; } .dsv2-play-shell.fullscreen .dsv2-stat-icons { font-size: .78rem; white-space: nowrap; overflow: hidden; } .dsv2-play-shell.fullscreen .dsv2-phase-strip { gap: 5px; margin: 4px 0; } .dsv2-play-shell.fullscreen .dsv2-step { padding: 5px 7px; font-size: .72rem; } .dsv2-play-shell.fullscreen .dsv2-stage { min-height: 46vh; border-radius: 20px; } .dsv2-play-shell.fullscreen.phase-question .dsv2-card { order: -1; } .dsv2-play-shell.fullscreen.phase-question .dsv2-stage { min-height: 28vh; } .dsv2-play-shell.fullscreen.phase-question .dsv2-overlay { display: none; } .dsv2-play-shell.fullscreen .dsv2-card { max-height: none; } .dsv2-start-steps { grid-template-columns: 1fr; } .dsv2-game-btn { min-width: 130px; } }
       `}</style>
       <div className="dsv2-wrap">
         <Link href="/games" style={{ color: '#ffd866', fontFamily: 'var(--font-nunito)', fontWeight: 1000, textDecoration: 'none' }}>← {copy.back}</Link>
@@ -415,13 +441,16 @@ export default function DavidSlingChallengePage() {
           <p className="eyebrow" style={{ color: '#7ec8e3', marginTop: 20 }}>{copy.eyebrow}</p>
           <h1 className="dsv2-title">{copy.title}</h1>
           <p className="dsv2-subtitle">{copy.subtitle}</p>
+          {!isGameOpen && <button className="dsv2-start dsv2-hero-start" type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); begin() }} onClick={stopTap}>▶ {copy.start}</button>}
         </section>
+        <div className={`dsv2-play-shell ${isGameOpen ? `fullscreen phase-${phase}` : ''}`}>
         <div className="dsv2-stats">
           <div>{copy.level}<br />{Math.min(levelIndex + 1, LEVELS.length)}/{LEVELS.length}</div>
           <div>{copy.score}<br />{score}</div>
           <div>{copy.best}<br />{best}</div>
           <div>{copy.throws}<span className="dsv2-stat-icons">{'🪨'.repeat(Math.max(0, throwsLeft))}</span></div>
           <div>{copy.fuel}<span className="dsv2-stat-icons">{'💛'.repeat(Math.min(5, wisdomFuel)) || '0'}</span></div>
+          <button className="dsv2-exit" type="button" onPointerUp={(event) => { stopTap(event); exitGame() }} onClick={stopTap}>↩ {copy.quit}</button>
         </div>
         <div className="dsv2-phase-strip" aria-label={isRu ? 'Этапы игры' : 'Game steps'}>
           {phaseSteps.map((step, index) => (
@@ -429,7 +458,7 @@ export default function DavidSlingChallengePage() {
           ))}
         </div>
         <section className="dsv2-grid">
-          <div className="dsv2-stage" onPointerDown={holdSpin} onPointerUp={releaseThrow} onPointerCancel={stopHold} onPointerLeave={stopHold}>
+          <div className="dsv2-stage">
             <img className="dsv2-bg" src={BG} alt="" aria-hidden="true" />
             <canvas ref={canvasRef} aria-label={copy.title} />
             <div className="dsv2-meter" aria-live="polite">
@@ -437,10 +466,10 @@ export default function DavidSlingChallengePage() {
               <div className="dsv2-meter-track"><div className="dsv2-meter-fill" style={{ width: `${speedMeter}%` }} /></div>
               <small>{copy.perfectZone}</small>
             </div>
-            {phase === 'intro' && <div className="dsv2-intro-overlay"><div className="dsv2-intro-card"><h2>{copy.mission}</h2><p>{copy.subtitle}</p><div className="dsv2-start-steps"><span>📖 {copy.stepBible}</span><span>💛 {copy.stepPower}</span><span>🪨 {copy.stepPlay}</span></div><button className="dsv2-start" type="button" onPointerDown={(e) => e.stopPropagation()} onPointerUp={(e) => e.stopPropagation()} onClick={(e) => { e.stopPropagation(); begin() }}>▶ {copy.start}</button></div></div>}
+            {phase === 'intro' && <div className="dsv2-intro-overlay"><div className="dsv2-intro-card"><h2>{copy.mission}</h2><p>{copy.subtitle}</p><div className="dsv2-start-steps"><span>📖 {copy.stepBible}</span><span>💛 {copy.stepPower}</span><span>🪨 {copy.stepPlay}</span></div><button className="dsv2-start" type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); begin() }} onClick={stopTap}>▶ {copy.start}</button></div></div>}
             {canUseGameControls && <div className="dsv2-overlay">
-              <button className={`dsv2-game-btn ${buttonFlash === 'rhythm' ? 'flash' : ''}`} type="button" onPointerDown={(e) => e.stopPropagation()} onPointerUp={(e) => e.stopPropagation()} onClick={(e) => { e.stopPropagation(); tapRhythm() }}>⚡ {copy.rhythm}</button>
-              <button className={`dsv2-game-btn release ${buttonFlash === 'hold' || buttonFlash === 'release' ? 'flash' : ''}`} type="button" onPointerDown={(e) => { e.stopPropagation(); holdSpin() }} onPointerUp={(e) => { e.stopPropagation(); releaseThrow() }} onPointerCancel={(e) => { e.stopPropagation(); stopHold() }}>🌀 {copy.hold} / 🎯 {copy.release}</button>
+              <button className={`dsv2-game-btn ${buttonFlash === 'rhythm' ? 'flash' : ''}`} type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); tapRhythm() }} onClick={stopTap}>⚡ {copy.rhythm}</button>
+              <button className={`dsv2-game-btn release ${buttonFlash === 'hold' || buttonFlash === 'release' ? 'flash' : ''}`} type="button" onPointerDown={(event) => { stopTap(event); holdSpin() }} onPointerUp={(event) => { stopTap(event); releaseThrow() }} onPointerCancel={(event) => { stopTap(event); stopHold() }} onClick={stopTap}>🌀 {copy.hold} / 🎯 {copy.release}</button>
             </div>}
           </div>
           <aside className="dsv2-card">
@@ -453,18 +482,19 @@ export default function DavidSlingChallengePage() {
             {phase === 'question' ? <>
               <p>{copy.questionHelp}</p>
               <h3>{isRu ? SCRIPTURE.questionRu : SCRIPTURE.questionEn}</h3>
-              {choices.map((choice, index) => <button className={`dsv2-choice ${selectedAnswer === index ? 'selected' : ''}`} key={choice} type="button" onClick={() => answer(index)}>{choice}</button>)}
+              {choices.map((choice, index) => <button className={`dsv2-choice ${selectedAnswer === index ? 'selected' : ''}`} key={choice} type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); answer(index) }} onClick={stopTap}>{choice}</button>)}
             </> : <>
               <p className="dsv2-message">{message || copy.ready}</p>
               <h3>{isRu ? 'Усиления' : 'Power-ups'}</h3>
-              <button disabled={!canChoosePower} className={`dsv2-power ${power === 'focus' ? 'active' : ''} ${buttonFlash === 'power' && power === 'focus' ? 'flash' : ''}`} type="button" onClick={() => choosePower('focus')}>👁️ {copy.focus} · 💛1<br /><span>{copy.focusDesc}</span></button>
-              <button disabled={!canChoosePower} className={`dsv2-power ${power === 'steady' ? 'active' : ''} ${buttonFlash === 'power' && power === 'steady' ? 'flash' : ''}`} type="button" onClick={() => choosePower('steady')}>✋ {copy.steady} · 💛1<br /><span>{copy.steadyDesc}</span></button>
-              <button disabled={!canChoosePower} className={`dsv2-power ${power === 'shield' ? 'active' : ''} ${buttonFlash === 'power' && power === 'shield' ? 'flash' : ''}`} type="button" onClick={() => choosePower('shield')}>🛡️ {copy.shield} · 💛1<br /><span>{copy.shieldDesc}</span></button>
-              <button disabled={!canChoosePower} className={`dsv2-power ${power === 'wind' ? 'active' : ''} ${buttonFlash === 'power' && power === 'wind' ? 'flash' : ''}`} type="button" onClick={() => choosePower('wind')}>🌬️ {copy.calmWind} · 💛1<br /><span>{copy.windDesc}</span></button>
+              <button disabled={!canChoosePower} className={`dsv2-power ${power === 'focus' ? 'active' : ''} ${buttonFlash === 'power' && power === 'focus' ? 'flash' : ''}`} type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); choosePower('focus') }} onClick={stopTap}>👁️ {copy.focus} · 💛1<br /><span>{copy.focusDesc}</span></button>
+              <button disabled={!canChoosePower} className={`dsv2-power ${power === 'steady' ? 'active' : ''} ${buttonFlash === 'power' && power === 'steady' ? 'flash' : ''}`} type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); choosePower('steady') }} onClick={stopTap}>✋ {copy.steady} · 💛1<br /><span>{copy.steadyDesc}</span></button>
+              <button disabled={!canChoosePower} className={`dsv2-power ${power === 'shield' ? 'active' : ''} ${buttonFlash === 'power' && power === 'shield' ? 'flash' : ''}`} type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); choosePower('shield') }} onClick={stopTap}>🛡️ {copy.shield} · 💛1<br /><span>{copy.shieldDesc}</span></button>
+              <button disabled={!canChoosePower} className={`dsv2-power ${power === 'wind' ? 'active' : ''} ${buttonFlash === 'power' && power === 'wind' ? 'flash' : ''}`} type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); choosePower('wind') }} onClick={stopTap}>🌬️ {copy.calmWind} · 💛1<br /><span>{copy.windDesc}</span></button>
               {phase === 'result' && <button className="dsv2-start" type="button" style={{ width: '100%', marginTop: 14, boxShadow: '0 10px 0 #92400e, 0 18px 26px rgba(0,0,0,.22)' }} onClick={begin}>{copy.again}</button>}
             </>}
           </aside>
         </section>
+        </div>
       </div>
     </main>
   )
