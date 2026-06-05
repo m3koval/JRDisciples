@@ -61,6 +61,7 @@ export default function TruthRunnerPage() {
   const pointerTarget = useRef<{ x: number; y: number; active: boolean }>({ x: 50, y: 80, active: false })
   const arenaRef = useRef<HTMLDivElement | null>(null)
   const playerElRef = useRef<HTMLDivElement | null>(null)
+  const secondsRef = useRef(75)
   const nextId = useRef(1)
 
   const copy = isRu ? {
@@ -127,17 +128,29 @@ export default function TruthRunnerPage() {
 
   useEffect(() => {
     if (!running) return
-    const timer = window.setInterval(() => setSeconds((s) => Math.max(0, s - 1)), 1000)
+    const timer = window.setInterval(() => {
+      setSeconds((s) => {
+        const next = Math.max(0, s - 1)
+        secondsRef.current = next
+        return next
+      })
+    }, 1000)
     return () => window.clearInterval(timer)
   }, [running])
 
   useEffect(() => {
     if (!running) return
-    const spawner = window.setInterval(() => {
-      const kind: Item['kind'] = Math.random() > 0.34 ? 'truth' : 'lie'
-      setItems((prev) => [...prev.slice(-13), { id: nextId.current++, x: 8 + Math.random() * 84, y: -8, kind }])
-    }, 650)
-    return () => window.clearInterval(spawner)
+    let timeout: number
+    function spawn() {
+      const elapsed = 75 - secondsRef.current
+      const interval = Math.max(300, 650 - (elapsed / 75) * 340)
+      const lieChance = Math.min(0.6, 0.28 + (elapsed / 75) * 0.38)
+      const kind: Item['kind'] = Math.random() > lieChance ? 'truth' : 'lie'
+      setItems((prev) => [...prev.slice(-16), { id: nextId.current++, x: 8 + Math.random() * 84, y: -8, kind }])
+      timeout = window.setTimeout(spawn, interval)
+    }
+    timeout = window.setTimeout(spawn, 650)
+    return () => window.clearTimeout(timeout)
   }, [running])
 
   useEffect(() => {
@@ -161,7 +174,8 @@ export default function TruthRunnerPage() {
         }
         return p
       })
-      setItems((prev) => prev.map((item) => ({ ...item, y: item.y + (item.kind === 'truth' ? 1.15 : 1.45) })).filter((item) => item.y < 104))
+      const difficulty = 1 + ((75 - secondsRef.current) / 75) * 1.8
+      setItems((prev) => prev.map((item) => ({ ...item, y: item.y + (item.kind === 'truth' ? 1.15 : 1.45) * difficulty })).filter((item) => item.y < 104))
       frame = window.requestAnimationFrame(tick)
     }
     frame = window.requestAnimationFrame(tick)
@@ -211,6 +225,7 @@ export default function TruthRunnerPage() {
     setMessage('')
     setWisdomIndex(0)
     pointerTarget.current = { x: 50, y: 80, active: false }
+    secondsRef.current = 75
   }
 
   function exitGame() {
