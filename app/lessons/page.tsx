@@ -5,6 +5,7 @@ import { lessonTopics } from "@/data/lessons";
 import { lessonTopicsRu } from "@/data/lessons-ru";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/lib/useTranslation";
+import { JrFullImageTile } from "@/components/JrFullImageTile";
 
 export default function LessonsPage() {
   const { language } = useLanguage();
@@ -41,30 +42,16 @@ export default function LessonsPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {currentTopics.map((topic) => (
-              <Link
+              <JrFullImageTile
                 key={topic.href}
                 href={topic.href}
-                className="puzzle-box block no-underline hover:no-underline"
-                style={{ ["--pz-color" as string]: topic.color, textDecoration: "none", height: "100%", display: "flex", flexDirection: "column", textAlign: "left" }}
-              >
-                <p className="puzzle-label">{t.common.section} · {topic.sections} {t.lessons.sections}</p>
-                <div style={{ height: 86, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12 }}>
-                  {topic.image ? (
-                    <img src={topic.image} alt={topic.title} style={{ width: 80, height: 80, objectFit: "contain" }} />
-                  ) : (
-                    <span style={{ fontSize: "3.2rem" }}>{topic.emoji}</span>
-                  )}
-                </div>
-                <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 950, fontSize: "1.08rem", color: "var(--text)", marginBottom: 8, lineHeight: 1.22, minHeight: 52, display: "flex", alignItems: "center" }}>
-                  {topic.title}
-                </h3>
-                <p style={{ fontFamily: language === "ru" ? "var(--font-nunito)" : "var(--font-lora)", fontSize: "0.92rem", color: "#555", lineHeight: 1.58, flex: 1, marginBottom: 0 }}>
-                  {topic.desc}
-                </p>
-                <div className="pz-btn" style={{ marginTop: 14, textAlign: "center" }}>
-                  {t.lessons.start} →
-                </div>
-              </Link>
+                image={topic.image || "/images/jr/lessons-hero.png"}
+                title={topic.title}
+                label={`${t.common.section} · ${topic.sections} ${t.lessons.sections}`}
+                description={topic.desc}
+                cta={t.lessons.start}
+                color={topic.color}
+              />
             ))}
           </div>
 

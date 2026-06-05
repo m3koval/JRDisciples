@@ -230,11 +230,15 @@ export default function QuestsPage() {
         .coming-header { margin: 46px 0 20px; text-align: center; }
         .coming-title { font-family: var(--font-cinzel); color: var(--deep); font-size: clamp(1.8rem,5vw,2.6rem); margin-bottom: 8px; }
         .quest-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
-        .quest-card { background: rgba(255,255,255,.94); border-radius: 26px; overflow: hidden; border: 2px solid rgba(13,31,60,.08); box-shadow: 0 18px 42px rgba(13,31,60,.12); text-decoration: none; color: inherit; }
-        .quest-card-media { aspect-ratio: 4 / 3; overflow: hidden; background: #0d1f3c; }
-        .quest-card-copy { padding: 18px; }
-        .quest-card h3 { font-family: var(--font-nunito); font-weight: 1000; color: var(--deep); font-size: 1.22rem; margin-bottom: 8px; }
-        .quest-card .status-pill { margin-top: 14px; margin-bottom: 0; }
+        .quest-card { position: relative; min-height: 360px; border-radius: 30px; overflow: hidden; border: 4px solid rgba(79,70,229,.75); box-shadow: 0 22px 56px rgba(13,31,60,.2); text-decoration: none; color: inherit; background: #0d1f3c; }
+        .quest-card-media { position: absolute; inset: 0; overflow: hidden; background: #0d1f3c; }
+        .quest-card-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg,rgba(7,18,36,.08),rgba(7,18,36,.3) 36%,rgba(7,18,36,.92)); }
+        .quest-card-copy { position: relative; z-index: 1; min-height: 360px; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; }
+        .quest-card h3 { font-family: var(--font-nunito); font-weight: 1000; color: #fff; font-size: clamp(1.35rem,4vw,1.9rem); line-height: 1.05; margin-bottom: 10px; text-shadow: 0 8px 26px rgba(0,0,0,.45); }
+        .quest-card p { color: rgba(255,255,255,.95); text-shadow: 0 5px 18px rgba(0,0,0,.45); }
+        .quest-card .status-pill { margin-bottom: 8px; background: rgba(255,216,102,.94); color: #3b2307; }
+        .quest-card .quest-truth { margin-bottom: 0; background: rgba(255,247,237,.92); }
+        .quest-card .quest-start-cta { margin-top: 14px; }
         .back-link { display: block; margin-top: 28px; text-align: center; color: var(--fire); font-family: var(--font-nunito); font-weight: 900; text-decoration: none; }
         @keyframes questMapDrift { from { transform: scale(1.04) translate3d(-10px,-6px,0); } to { transform: scale(1.1) translate3d(12px,8px,0); } }
         @keyframes orbFloat { 0%,100% { transform: translate3d(0,0,0) scale(.8); opacity: .35; } 50% { transform: translate3d(18px,-44px,0) scale(1.2); opacity: 1; } }

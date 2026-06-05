@@ -6,6 +6,7 @@ import { storiesRu } from "@/data/stories-ru";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/lib/useTranslation";
 import { useState, useRef } from "react";
+import { JrFullImageTile } from "@/components/JrFullImageTile";
 
 const PZ_COLORS = ["#ff6b1a","#0a7090","#7030a0","#2a6a10","#c05010","#104f8a"];
 
@@ -57,30 +58,16 @@ export default function StoriesPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {currentStories.map((story, i) => (
-              <Link
+              <JrFullImageTile
                 key={story.id}
                 href={`/stories/${story.id}`}
-                className="puzzle-box block"
-                style={{ ["--pz-color" as string]: PZ_COLORS[i % PZ_COLORS.length], textDecoration: "none" }}
-              >
-                <p className="puzzle-label">{story.reference}</p>
-                <div style={{ height: 80, display: "flex", alignItems: "center", marginBottom: 8 }}>
-                  {story.image ? (
-                    <img src={story.image} alt={story.title} style={{ width: 80, height: 80, objectFit: "contain", borderRadius: 12 }} />
-                  ) : (
-                    <span style={{ fontSize: "3rem" }}>{story.emoji}</span>
-                  )}
-                </div>
-                <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.15rem", color: "var(--text)", marginBottom: 6 }}>
-                  {story.title}
-                </h3>
-                <p style={{ fontFamily: "var(--font-lora)", fontStyle: "italic", fontSize: "0.88rem", color: "#555", lineHeight: 1.6, borderLeft: "3px solid var(--pz-color)", paddingLeft: 10 }}>
-                  &ldquo;{story.bigTruth}&rdquo;
-                </p>
-                <div className="pz-btn" style={{ textAlign: "center", marginTop: 14 }}>
-                  {t.stories.readStory} 📖
-                </div>
-              </Link>
+                image={story.image || "/images/jr/bible-stories.png"}
+                title={story.title}
+                label={story.reference}
+                description={`“${story.bigTruth}”`}
+                cta={`${t.stories.readStory} 📖`}
+                color={PZ_COLORS[i % PZ_COLORS.length]}
+              />
             ))}
           </div>
 

@@ -5,6 +5,7 @@ import { memoryVerses } from "@/data/memory-verses";
 import { memoryVersesRu } from "@/data/memory-verses-ru";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/lib/useTranslation";
+import { JrFullImageTile } from "@/components/JrFullImageTile";
 
 const PZ_COLORS = ["#2a6a10","#0a7090","#ff6b1a","#7030a0","#c05010","#104f8a","#40b870","#7030a0"];
 
@@ -42,34 +43,21 @@ export default function MemoryListPage() {
             — {t.memory.introRef}
           </p>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {currentVerses.map((verse, i) => {
               const color = PZ_COLORS[i % PZ_COLORS.length];
               return (
-                <Link
+                <JrFullImageTile
                   key={verse.id}
                   href={`/memory/${verse.id}`}
-                  className="puzzle-box"
-                  style={{ ["--pz-color" as string]: color, textDecoration: "none", display: "flex", alignItems: "flex-start", gap: 14 }}
-                >
-                  <div style={{ fontSize: "2.5rem", lineHeight: 1, flexShrink: 0 }}>{verse.emoji}</div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-                      <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.05rem", color: "var(--text)", margin: 0 }}>
-                        {verse.reference}
-                      </h3>
-                      <span style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "1px", color: color, background: "#f8f8f8", borderRadius: 20, padding: "2px 8px" }}>
-                        {verse.theme}
-                      </span>
-                    </div>
-                    <p style={{ fontFamily: "var(--font-lora)", fontStyle: "italic", fontSize: "0.9rem", color: "#555", lineHeight: 1.6, margin: "0 0 8px" }}>
-                      &ldquo;{verse.text}&rdquo;
-                    </p>
-                    <span style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "0.82rem", color: color }}>
-                      {t.memory.practiceNow} →
-                    </span>
-                  </div>
-                </Link>
+                  image="/images/jr/verse-memory.png"
+                  title={verse.reference}
+                  label={verse.theme}
+                  description={`“${verse.text}”`}
+                  cta={t.memory.practiceNow}
+                  color={color}
+                  minHeight={315}
+                />
               );
             })}
           </div>

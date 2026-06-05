@@ -5,6 +5,7 @@ import { rebusPuzzles } from "@/data/rebus";
 import { rebusRu } from "@/data/rebus-ru";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/lib/useTranslation";
+import { JrFullImageTile } from "@/components/JrFullImageTile";
 
 const PZ_COLORS = ["#c05010","#0a7090","#2a6a10","#7030a0","#ff6b1a","#104f8a"];
 
@@ -43,28 +44,16 @@ export default function RebusListPage() {
             {currentPuzzles.map((puzzle, i) => {
               const color = PZ_COLORS[i % PZ_COLORS.length];
               return (
-                <Link
+                <JrFullImageTile
                   key={puzzle.id}
                   href={`/rebus/${puzzle.id}`}
-                  className="puzzle-box block"
-                  style={{ ["--pz-color" as string]: color, textDecoration: "none" }}
-                >
-                  <p className="puzzle-label">🧩 {t.rebus.puzzle}</p>
-                  <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1rem", color: "var(--text)", marginBottom: 10 }}>
-                    {puzzle.title}
-                  </h3>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", marginBottom: 12 }}>
-                    {puzzle.clues.slice(0, 5).map((clue, j) => (
-                      <span key={j} style={{ fontSize: clue.type === "emoji" ? "2rem" : "1.1rem", fontFamily: clue.type === "emoji" ? "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" : "var(--font-nunito)", fontWeight: 900, color: clue.type === "minus" ? "#c00" : "#555" }}>
-                        {clue.type === "plus" ? "+" : clue.type === "minus" ? "−" : clue.type === "equals" ? "=" : clue.value}
-                      </span>
-                    ))}
-                    <span style={{ fontSize: "1.1rem", color: "#ccc", fontWeight: 900 }}>= ?</span>
-                  </div>
-                  <div className="pz-btn" style={{ textAlign: "center", marginTop: 14 }}>
-                    {language === 'ru' ? 'Разгадай!' : 'Solve It!'} →
-                  </div>
-                </Link>
+                  image="/images/jr/rebus-puzzles.png"
+                  title={puzzle.title}
+                  label={`🧩 ${t.rebus.puzzle}`}
+                  description={language === 'ru' ? 'Рассмотри картинки, знаки и подсказки — найди скрытое библейское слово.' : 'Look at the pictures, signs, and clues — find the hidden Bible word.'}
+                  cta={language === 'ru' ? 'Разгадай!' : 'Solve It!'}
+                  color={color}
+                />
               );
             })}
           </div>

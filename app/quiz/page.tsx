@@ -7,6 +7,7 @@ import { stories } from "@/data/stories";
 import { storiesRu } from "@/data/stories-ru";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/lib/useTranslation";
+import { JrFullImageTile } from "@/components/JrFullImageTile";
 
 const PZ_COLORS = ["#ff6b1a","#0a7090","#7030a0","#2a6a10","#c05010","#104f8a"];
 
@@ -48,24 +49,16 @@ export default function QuizListPage() {
               const color = PZ_COLORS[i % PZ_COLORS.length];
               const storyQuizLabel = language === 'ru' ? 'Тест по истории' : 'Story Quiz';
               return (
-                <Link
+                <JrFullImageTile
                   key={quiz.id}
                   href={`/quiz/${quiz.id}`}
-                  className="puzzle-box block"
-                  style={{ ["--pz-color" as string]: color, textDecoration: "none" }}
-                >
-                  <p className="puzzle-label">{storyQuizLabel} · {story?.reference ?? (language === 'ru' ? 'Библейский тест' : 'Bible Quiz')}</p>
-                  <div style={{ fontSize: "3rem", marginBottom: 8 }}>{quiz.emoji}</div>
-                  <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.1rem", color: "var(--text)", marginBottom: 6 }}>
-                    {quiz.title}
-                  </h3>
-                  <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.8rem", color: color, background: "#f8f8f8", borderRadius: 20, padding: "3px 10px", display: "inline-block" }}>
-                    {language === 'ru' ? '5 вопросов · Получи ⭐' : '5 Questions · Earn a ⭐'}
-                  </p>
-                  <div className="pz-btn" style={{ textAlign: "center", marginTop: 14 }}>
-                    {language === 'ru' ? 'Начать тест' : 'Start Quiz'} →
-                  </div>
-                </Link>
+                  image={story?.image || "/images/jr/bible-quizzes.png"}
+                  title={quiz.title}
+                  label={`${storyQuizLabel} · ${story?.reference ?? (language === 'ru' ? 'Библейский тест' : 'Bible Quiz')}`}
+                  description={language === 'ru' ? '5 вопросов · Получи ⭐' : '5 Questions · Earn a ⭐'}
+                  cta={language === 'ru' ? 'Начать тест' : 'Start Quiz'}
+                  color={color}
+                />
               );
             })}
           </div>

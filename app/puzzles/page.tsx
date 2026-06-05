@@ -5,6 +5,7 @@ import { wordPuzzles } from "@/data/word-puzzles";
 import { wordPuzzlesRu } from "@/data/word-puzzles-ru";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/lib/useTranslation";
+import { JrFullImageTile } from "@/components/JrFullImageTile";
 
 const PZ_COLORS = ["#7030a0","#0a7090","#c05010"];
 
@@ -43,27 +44,16 @@ export default function PuzzlesListPage() {
             {currentPuzzles.map((puzzle, i) => {
               const color = PZ_COLORS[i % PZ_COLORS.length];
               return (
-                <Link
+                <JrFullImageTile
                   key={puzzle.id}
                   href={`/puzzles/${puzzle.id}`}
-                  className="puzzle-box block"
-                  style={{ ["--pz-color" as string]: color, textDecoration: "none" }}
-                >
-                  <p className="puzzle-label">{puzzle.theme}</p>
-                  <div style={{ fontSize: "3rem", marginBottom: 8 }}>{puzzle.emoji}</div>
-                  <h3 style={{ fontFamily: "var(--font-nunito)", fontWeight: 900, fontSize: "1.1rem", color: "var(--text)", marginBottom: 6 }}>
-                    {puzzle.title}
-                  </h3>
-                  <p style={{ fontFamily: "var(--font-lora)", fontSize: "0.88rem", color: "#555", lineHeight: 1.6, marginBottom: 10 }}>
-                    {puzzle.description}
-                  </p>
-                  <span style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, fontSize: "0.8rem", color: color }}>
-                    {t.puzzles.findWords} {puzzle.words.length} {t.puzzles.words}
-                  </span>
-                  <div className="pz-btn" style={{ textAlign: "center", marginTop: 14 }}>
-                    {t.puzzles.play} →
-                  </div>
-                </Link>
+                  image="/images/jr/word-puzzles.png"
+                  title={puzzle.title}
+                  label={puzzle.theme}
+                  description={`${puzzle.description} ${t.puzzles.findWords} ${puzzle.words.length} ${t.puzzles.words}`}
+                  cta={t.puzzles.play}
+                  color={color}
+                />
               );
             })}
           </div>
