@@ -11,7 +11,8 @@
     "check:bilingual": "node scripts/check-bilingual-content-parity.mjs",
     "check:scripture": "node scripts/check-lesson-scripture-localization.mjs",
     "check:case-russian": "node scripts/check-case-for-christ-russian-copy.mjs",
-    "check:assets": "node scripts/check-image-assets.mjs"
+    "check:assets": "node scripts/check-image-assets.mjs",
+    "check:games": "node scripts/check-games-section.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

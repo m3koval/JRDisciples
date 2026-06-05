@@ -27,6 +27,16 @@ export default function GamesPage() {
 
   const games = isRu ? [
     {
+      href: '/games/faith-over-giants',
+      emoji: '🛡️🍇',
+      label: 'Новая стратегия',
+      title: 'Вера сильнее великанов',
+      desc: '10 уровней мужества: отвечай на Божье Слово внутри игры, копи Мудрость и веди народ через страх.',
+      details: ['10 уровней', 'Мудрость', 'усиления', 'детям'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(255,216,102,.52),transparent 25%),linear-gradient(135deg,#7c3f16,#14532d)',
+      border: 'rgba(255,216,102,.92)'
+    },
+    {
       href: '/games/david-sling-challenge',
       emoji: '🪨🎯',
       label: 'Главная игра',
@@ -47,6 +57,16 @@ export default function GamesPage() {
       border: 'rgba(126,200,227,.82)'
     },
   ] : [
+    {
+      href: '/games/faith-over-giants',
+      emoji: '🛡️🍇',
+      label: 'New Strategy',
+      title: 'Faith Over Giants',
+      desc: '10 courage levels: answer God’s Word inside the game, save Wisdom Fuel, and lead the people through fear.',
+      details: ['10 levels', 'Wisdom Fuel', 'power-ups', 'kid-safe'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(255,216,102,.52),transparent 25%),linear-gradient(135deg,#7c3f16,#14532d)',
+      border: 'rgba(255,216,102,.92)'
+    },
     {
       href: '/games/david-sling-challenge',
       emoji: '🪨🎯',
