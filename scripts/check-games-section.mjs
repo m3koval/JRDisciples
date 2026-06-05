@@ -74,6 +74,7 @@ const requiredArcherSnippets = [
   'target.spin',
   'FAITH_POPUPS',
   'HIT_ASSIST',
+  'core: 0.64',
   'getHitAssistRadius',
   'distancePointToSegment',
   'snapArrowToTarget',
@@ -105,6 +106,7 @@ if (/arrow\.[xy] \+= arrow\.v[xy] \* dt \* 60/.test(archer)) failures.push('Fait
 if (/if \(target\.hit\) continue/.test(archer)) failures.push('Faithful Archer targets must stay repeatable during a run; use hitCooldown instead of permanently skipping hit targets.');
 if (/m\.levelIndex === 0 \? 0/.test(archer)) failures.push('Faithful Archer targets should move even on the first course; Mike asked for larger, more aggressive motion.');
 if (/if \(arrow\.stuck\) continue/.test(archer)) failures.push('Faithful Archer stuck arrows must follow moving targets via stuckTargetId/stuckOffset, not freeze in world space.');
+if (/return target\.r \+/.test(archer)) failures.push('Faithful Archer hitbox must use a reduced core radius so target placement matters; do not count the whole visual radius plus assist.');
 if (!/type\s+Target/.test(archer)) failures.push('Faithful Archer route must define typed targets.');
 if (!/const\s+SCRIPTURE/.test(archer)) failures.push('Faithful Archer route must define SCRIPTURE.');
 

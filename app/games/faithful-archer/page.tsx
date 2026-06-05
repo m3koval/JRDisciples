@@ -76,7 +76,7 @@ const ARROW_SPEED = { calm: 720, fast: 860 }
 const ARROW_GRAVITY = { calm: 720, fast: 880 }
 const MAX_DRAW = 190
 const MOBILE_BREAKPOINT = 720
-const HIT_ASSIST = { desktop: 10, mobile: 18, snap: 0.92, cooldown: 0.42 }
+const HIT_ASSIST = { desktop: 2, mobile: 6, core: 0.64, snap: 0.92, cooldown: 0.42 }
 const EMOTION_BEATS = { release: 0.28, happy: 0.7, surprised: 0.62, celebrate: 1.15 }
 const TARGET_MOTION = { baseAmp: 42, levelAmp: 26, mobileAmp: 32, yAmp: 18, levelY: 9, speedBase: 0.62, speedStep: 0.13, levelSpeed: 0.2 }
 
@@ -112,7 +112,7 @@ function clamp(value: number, min: number, max: number) {
 }
 
 function getHitAssistRadius(target: Target, width: number) {
-  return target.r + (width < MOBILE_BREAKPOINT ? HIT_ASSIST.mobile : HIT_ASSIST.desktop)
+  return target.r * HIT_ASSIST.core + (width < MOBILE_BREAKPOINT ? HIT_ASSIST.mobile : HIT_ASSIST.desktop)
 }
 
 function distancePointToSegment(point: Point, start: Point, end: Point) {
