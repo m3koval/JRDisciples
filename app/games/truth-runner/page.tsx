@@ -8,6 +8,7 @@ import { useLanguage } from '@/context/LanguageContext'
 
 type Item = { id: number; x: number; y: number; kind: 'truth' | 'lie' }
 type Wisdom = { en: string; ru: string; refEn: string; refRu: string }
+type Direction = 'up' | 'down' | 'left' | 'right'
 
 const WISDOM: Wisdom[] = [
   {
@@ -60,6 +61,8 @@ export default function TruthRunnerPage() {
   const [message, setMessage] = useState('')
   const [wisdomIndex, setWisdomIndex] = useState(0)
   const keys = useRef<Record<string, boolean>>({})
+  const holds = useRef<Record<Direction, boolean>>({ up: false, down: false, left: false, right: false })
+  const holdStartedAt = useRef<Record<Direction, number>>({ up: 0, down: 0, left: 0, right: 0 })
   const nextId = useRef(1)
 
   const copy = isRu ? {
@@ -78,7 +81,7 @@ export default function TruthRunnerPage() {
     lie: 'Ложь',
     wisdom: 'Мудрость открыта',
     how: 'Как играть',
-    howText: 'Двигайся стрелками/WASD или кнопками. Собирай золотые огни. Не касайся тёмных шёпотов.',
+    howText: 'Двигайся стрелками/WASD или кнопками. На телефоне удерживай кнопку, чтобы бежать быстрее. Собирай золотые огни и избегай тёмных шёпотов.',
     reward: 'Награда — Божья мудрость',
     gameOver: 'Игра окончена',
     leaderboard: 'Лидерборд позже: семейные рекорды, значки и недельные вызовы.',
@@ -100,7 +103,7 @@ export default function TruthRunnerPage() {
     lie: 'Lie',
     wisdom: 'Wisdom Unlocked',
     how: 'How to play',
-    howText: 'Move with arrow keys/WASD or the buttons. Collect golden lights. Avoid dark whispers.',
+    howText: 'Move with arrow keys/WASD or the buttons. On mobile, hold a direction button to run faster. Collect golden lights and avoid dark whispers.',
     reward: 'Reward — God’s wisdom',
     gameOver: 'Game Over',
     leaderboard: 'Leaderboard later: family scores, badges, and weekly challenges.',
@@ -146,13 +149,17 @@ export default function TruthRunnerPage() {
     if (!running) return
     let frame = 0
     const tick = () => {
-      const left = keys.current.arrowleft || keys.current.a
-      const right = keys.current.arrowright || keys.current.d
-      const up = keys.current.arrowup || keys.current.w
-      const down = keys.current.arrowdown || keys.current.s
+      const now = performance.now()
+      const left = keys.current.arrowleft || keys.current.a || holds.current.left
+      const right = keys.current.arrowright || keys.current.d || holds.current.right
+      const up = keys.current.arrowup || keys.current.w || holds.current.up
+      const down = keys.current.arrowdown || keys.current.s || holds.current.down
+      const heldLongEnough = (directionName: Direction) => holds.current[directionName] && now - holdStartedAt.current[directionName] > 260
+      const xSpeed = heldLongEnough('left') || heldLongEnough('right') ? 4.6 : 3.2
+      const ySpeed = heldLongEnough('up') || heldLongEnough('down') ? 4.2 : 3
       setPlayer((p) => ({
-        x: clamp(p.x + (left ? -2.8 : 0) + (right ? 2.8 : 0), 5, 95),
-        y: clamp(p.y + (up ? -2.5 : 0) + (down ? 2.5 : 0), 12, 88),
+        x: clamp(p.x + (left ? -xSpeed : 0) + (right ? xSpeed : 0), 5, 95),
+        y: clamp(p.y + (up ? -ySpeed : 0) + (down ? ySpeed : 0), 12, 88),
       }))
       setItems((prev) => prev.map((item) => ({ ...item, y: item.y + (item.kind === 'truth' ? 1.15 : 1.45) })).filter((item) => item.y < 104))
       frame = window.requestAnimationFrame(tick)
@@ -203,6 +210,20 @@ export default function TruthRunnerPage() {
     setItems([])
     setMessage('')
     setWisdomIndex(0)
+    holds.current = { up: false, down: false, left: false, right: false }
+    holdStartedAt.current = { up: 0, down: 0, left: 0, right: 0 }
+  }
+
+  function startHold(directionName: Direction, dx: number, dy: number, startedAt: number) {
+    if (!started) startGame()
+    holdStartedAt.current[directionName] = startedAt
+    holds.current[directionName] = true
+    nudge(dx, dy)
+  }
+
+  function stopHold(directionName: Direction) {
+    holds.current[directionName] = false
+    holdStartedAt.current[directionName] = 0
   }
 
   function nudge(dx: number, dy: number) {
@@ -223,7 +244,8 @@ export default function TruthRunnerPage() {
         .hud { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin: 14px 0; }
         .hud-card { border-radius: 18px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); padding: 10px; text-align: center; font-family: var(--font-nunito); font-weight: 1000; }
         .mobile-controls { display: grid; grid-template-columns: repeat(3,56px); gap: 8px; justify-content: center; margin-top: 14px; }
-        .mobile-controls button { min-height: 52px; border: 0; border-radius: 16px; font-family: var(--font-nunito); font-weight: 1000; background: #fff; color: #0d1f3c; }
+        .mobile-controls button { min-height: 56px; border: 0; border-radius: 16px; font-family: var(--font-nunito); font-weight: 1000; background: #fff; color: #0d1f3c; touch-action: none; user-select: none; -webkit-user-select: none; box-shadow: 0 10px 24px rgba(0,0,0,.24); }
+        .mobile-controls button:active { transform: translateY(2px); background: #ffd866; }
         @keyframes road { from { background-position: 0 0; } to { background-position: 0 92px; } }
         @media (max-width: 720px) { .hud { grid-template-columns: repeat(2,1fr); } .arena { min-height: 390px; } }
       `}</style>
@@ -278,11 +300,11 @@ export default function TruthRunnerPage() {
 
         <div className="mobile-controls" aria-label="Controls">
           <span />
-          <button onClick={() => nudge(0, -7)}>↑</button>
+          <button onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); startHold('up', 0, -9, event.timeStamp) }} onPointerUp={() => stopHold('up')} onPointerCancel={() => stopHold('up')} onPointerLeave={() => stopHold('up')}>↑</button>
           <span />
-          <button onClick={() => nudge(-7, 0)}>←</button>
-          <button onClick={() => nudge(0, 7)}>↓</button>
-          <button onClick={() => nudge(7, 0)}>→</button>
+          <button onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); startHold('left', -9, 0, event.timeStamp) }} onPointerUp={() => stopHold('left')} onPointerCancel={() => stopHold('left')} onPointerLeave={() => stopHold('left')}>←</button>
+          <button onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); startHold('down', 0, 9, event.timeStamp) }} onPointerUp={() => stopHold('down')} onPointerCancel={() => stopHold('down')} onPointerLeave={() => stopHold('down')}>↓</button>
+          <button onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); startHold('right', 9, 0, event.timeStamp) }} onPointerUp={() => stopHold('right')} onPointerCancel={() => stopHold('right')} onPointerLeave={() => stopHold('right')}>→</button>
         </div>
 
         <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 14, marginTop: 18 }}>
