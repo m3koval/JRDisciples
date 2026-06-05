@@ -79,6 +79,12 @@ const requiredArcherSnippets = [
   'snapArrowToTarget',
   'hitCooldown',
   'Hits need real aim now',
+  'type Emotion',
+  'drawArcherFace',
+  'EMOTION_BEATS',
+  "setArcherEmotion('happy'",
+  "setArcherEmotion('surprised'",
+  "setArcherEmotion('celebrate'",
 ];
 
 for (const snippet of requiredArcherSnippets) {

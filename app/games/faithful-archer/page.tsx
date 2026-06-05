@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 
+type Emotion = 'idle' | 'focus' | 'release' | 'happy' | 'surprised' | 'celebrate'
+
 type TargetKind = 'shield' | 'bell' | 'lantern' | 'dummy' | 'scroll'
 type Target = {
   id: number
@@ -39,6 +41,8 @@ type GameModel = {
   wind: number
   targetSeed: number
   recoil: number
+  emotion: Emotion
+  emotionUntil: number
   verseIndex: number
 }
 
@@ -71,6 +75,7 @@ const ARROW_GRAVITY = { calm: 720, fast: 880 }
 const MAX_DRAW = 190
 const MOBILE_BREAKPOINT = 720
 const HIT_ASSIST = { desktop: 10, mobile: 18, snap: 0.92, cooldown: 0.42 }
+const EMOTION_BEATS = { release: 0.28, happy: 0.7, surprised: 0.62, celebrate: 1.15 }
 
 type Point = { x: number; y: number }
 
@@ -140,6 +145,8 @@ function makeModel(): GameModel {
     wind: 0.012,
     targetSeed: 0,
     recoil: 0,
+    emotion: 'idle',
+    emotionUntil: 0,
     verseIndex: 0,
   }
 }
@@ -205,6 +212,12 @@ export default function FaithfulArcherPage() {
   }
 
   const courseName = useMemo(() => (isRu ? COURSES.ru : COURSES.en)[Math.min(hud.level, COURSES.en.length - 1)], [hud.level, isRu])
+
+  function setArcherEmotion(emotion: Emotion, duration: number) {
+    const m = modelRef.current
+    m.emotion = emotion
+    m.emotionUntil = m.time + duration
+  }
 
   function syncHud() {
     const m = modelRef.current
@@ -300,6 +313,7 @@ export default function FaithfulArcherPage() {
       const launch = launchArrowVelocity({ x: bowX, y: bowY }, { x: tx, y: ty }, calmRef.current)
       if (!launch) return
       arrowsRef.current.push({ x: bowX, y: bowY, vx: launch.vx, vy: launch.vy, age: 0, stuck: false, glow: launch.power > 1.12, trail: [] })
+      setArcherEmotion('release', EMOTION_BEATS.release)
       m.arrowsLeft -= 1
       m.recoil = 7
       floatRef.current.push({ x: bowX, y: bowY - 32, txt: isRu ? 'ровно!' : 'steady!', life: 0.75, color: '#31552d' })
@@ -310,6 +324,7 @@ export default function FaithfulArcherPage() {
       const m = modelRef.current
       if (!m.running || wisdomCard) return
       m.time += dt
+      if (m.emotion !== 'idle' && m.emotionUntil <= m.time) m.emotion = 'idle'
       m.recoil *= Math.pow(0.05, dt)
       m.wind = Math.sin(m.time * 0.8) * (calmRef.current ? 0.014 : 0.025)
       const { width, height } = sizeRef.current
@@ -346,6 +361,7 @@ export default function FaithfulArcherPage() {
           if (!arrow.countedMiss) {
             arrow.countedMiss = true
             m.combo = 0
+            setArcherEmotion('surprised', EMOTION_BEATS.surprised)
             floatRef.current.push({ x: clamp(arrow.x, 90, width - 90), y: clamp(arrow.y, 90, height - 90), txt: isRu ? 'ещё раз' : 'try again', life: 1, color: '#7a4e20' })
             syncHud()
           }
@@ -371,6 +387,7 @@ export default function FaithfulArcherPage() {
         m.levelIndex = Math.min(3, m.levelIndex + 1)
         m.targetSeed += 10
         spawnTargets()
+        setArcherEmotion('celebrate', EMOTION_BEATS.celebrate)
         floatRef.current.push({ x: width * 0.52, y: height * 0.22, txt: isRu ? 'новый курс!' : 'next course!', life: 1.4, color: '#31552d' })
         syncHud()
       }
@@ -404,6 +421,7 @@ export default function FaithfulArcherPage() {
         rightLeg: -0.62 + impact * 0.22,
       }
       m.combo += 1
+      setArcherEmotion('happy', EMOTION_BEATS.happy)
       const bullseye = Math.hypot(arrow.x - target.x, arrow.y - target.y) < target.r * 0.42
       let points = bullseye ? 55 : 25
       if (target.kind === 'bell') points += 20
@@ -435,7 +453,7 @@ export default function FaithfulArcherPage() {
       ctx!.clearRect(0, 0, width, height)
       drawBackground(ctx!, width, height, modelRef.current.time)
       for (const target of targetsRef.current) drawTarget(ctx!, target, modelRef.current.time)
-      drawArcher(ctx!, archer(), modelRef.current.time, pointerRef.current)
+      drawArcher(ctx!, archer(), modelRef.current.time, pointerRef.current, modelRef.current.emotion)
       drawAim(ctx!, archer())
       drawArrows(ctx!)
       drawEffects(ctx!)
@@ -755,11 +773,12 @@ function drawRagdollDummy(ctx: CanvasRenderingContext2D, target: Target, time: n
   ctx.restore(); ctx.restore()
 }
 
-function drawArcher(ctx: CanvasRenderingContext2D, a: { x: number; y: number }, time: number, pointer: { down: boolean; x: number; y: number }) {
+function drawArcher(ctx: CanvasRenderingContext2D, a: { x: number; y: number }, time: number, pointer: { down: boolean; x: number; y: number }, emotion: Emotion) {
   // Original “faithful stickman” pose: snappy silhouette, no copied characters/assets.
   const pullPower = pointer.down
     ? Math.min(1, Math.hypot((a.x + 34) - pointer.x, (a.y - 56) - pointer.y) / MAX_DRAW)
     : 0
+  const faceEmotion: Emotion = pointer.down ? 'focus' : emotion
   const pullBack = pullPower * 28
   const lean = pullPower * 0.16
   const idle = Math.sin(time * 5) * 2
@@ -779,9 +798,11 @@ function drawArcher(ctx: CanvasRenderingContext2D, a: { x: number; y: number }, 
   ctx.fillStyle = '#ffe27a'; roundRect(ctx, -18, -63, 36, 12, 8, true)
 
   ctx.save(); ctx.translate(0, -104); ctx.rotate(headTilt)
+  const headSquash = faceEmotion === 'surprised' ? 1.1 : faceEmotion === 'happy' || faceEmotion === 'celebrate' ? 0.96 : 1
+  ctx.scale(1 / headSquash, headSquash)
   ctx.fillStyle = '#f5c99b'; ctx.strokeStyle = '#203047'; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(0, 0, 20, 0, Math.PI * 2); ctx.fill(); ctx.stroke()
   ctx.fillStyle = '#6b3f22'; ctx.beginPath(); ctx.arc(-4, -10, 18, Math.PI, Math.PI * 2); ctx.fill()
-  ctx.fillStyle = '#203047'; ctx.beginPath(); ctx.arc(7, -2, 2.4, 0, Math.PI * 2); ctx.fill()
+  drawArcherFace(ctx, faceEmotion, time)
   ctx.restore()
 
   const bowHand = { x: 39, y: -58 }
@@ -805,6 +826,51 @@ function drawArcher(ctx: CanvasRenderingContext2D, a: { x: number; y: number }, 
   }
   ctx.restore()
   ctx.restore()
+}
+
+function drawArcherFace(ctx: CanvasRenderingContext2D, emotion: Emotion, time: number) {
+  // Original expressive stickman face: simple emotions, readable at phone size.
+  const blink = emotion === 'idle' && Math.sin(time * 2.7) > 0.965
+  ctx.strokeStyle = '#203047'
+  ctx.fillStyle = '#203047'
+  ctx.lineWidth = 2.4
+
+  if (emotion === 'focus') {
+    ctx.beginPath(); ctx.moveTo(-10, -7); ctx.lineTo(-2, -5); ctx.moveTo(5, -5); ctx.lineTo(13, -8); ctx.stroke()
+    ctx.beginPath(); ctx.arc(-5, -1, 2.6, 0, Math.PI * 2); ctx.arc(9, -1, 2.6, 0, Math.PI * 2); ctx.fill()
+    ctx.beginPath(); ctx.moveTo(-6, 9); ctx.quadraticCurveTo(2, 12, 12, 8); ctx.stroke()
+    return
+  }
+
+  if (emotion === 'surprised') {
+    ctx.beginPath(); ctx.arc(-6, -2, 2.7, 0, Math.PI * 2); ctx.arc(8, -2, 2.7, 0, Math.PI * 2); ctx.fill()
+    ctx.beginPath(); ctx.moveTo(-11, -9); ctx.quadraticCurveTo(-6, -13, -1, -9); ctx.moveTo(3, -9); ctx.quadraticCurveTo(8, -13, 14, -8); ctx.stroke()
+    ctx.beginPath(); ctx.arc(2, 9, 5.2, 0, Math.PI * 2); ctx.stroke()
+    return
+  }
+
+  if (emotion === 'happy' || emotion === 'celebrate') {
+    ctx.beginPath(); ctx.arc(-6, -2, 2.4, 0, Math.PI * 2); ctx.arc(8, -2, 2.4, 0, Math.PI * 2); ctx.fill()
+    ctx.beginPath(); ctx.arc(1, 5, 9, 0.12 * Math.PI, 0.88 * Math.PI); ctx.stroke()
+    if (emotion === 'celebrate') {
+      ctx.fillStyle = '#f7c948'
+      star(ctx, 14, -15, 5, 4.8, 2.2)
+    }
+    return
+  }
+
+  if (emotion === 'release') {
+    ctx.beginPath(); ctx.arc(-5, -1, 2.3, 0, Math.PI * 2); ctx.arc(9, -1, 2.3, 0, Math.PI * 2); ctx.fill()
+    ctx.beginPath(); ctx.moveTo(-3, 9); ctx.lineTo(11, 7); ctx.stroke()
+    return
+  }
+
+  if (blink) {
+    ctx.beginPath(); ctx.moveTo(-9, -1); ctx.lineTo(-3, -1); ctx.moveTo(6, -1); ctx.lineTo(12, -1); ctx.stroke()
+  } else {
+    ctx.beginPath(); ctx.arc(-6, -2, 2.3, 0, Math.PI * 2); ctx.arc(8, -2, 2.3, 0, Math.PI * 2); ctx.fill()
+  }
+  ctx.beginPath(); ctx.arc(1, 5, 7, 0.16 * Math.PI, 0.78 * Math.PI); ctx.stroke()
 }
 
 function drawStartHint(ctx: CanvasRenderingContext2D, width: number, height: number) {
