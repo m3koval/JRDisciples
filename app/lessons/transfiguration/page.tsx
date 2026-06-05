@@ -226,7 +226,7 @@ export default function TransfigurationPage() {
   // ── Tile style helper ──────────────────────────────────────────────────────
   function tileStyle(inSlot: boolean): React.CSSProperties {
     return {
-      padding: '8px 14px', borderRadius: 10,
+      padding: '11px 16px', borderRadius: 10, minHeight: 44,
       background: inSlot ? ACCENT : '#f0ede8',
       color: inSlot ? '#fff' : 'var(--text)',
       border: `2px solid ${inSlot ? ACCENT : '#ddd'}`,
@@ -466,35 +466,47 @@ export default function TransfigurationPage() {
                         <div
                           key={c.id}
                           onClick={() => !isFlipped && flipChar(c.id)}
-                          style={{
-                            flex: '1 1 180px', maxWidth: 240, minHeight: 150,
-                            borderRadius: 18, padding: '18px 14px',
-                            cursor: isFlipped ? 'default' : 'pointer', userSelect: 'none',
-                            background: isFlipped ? ACCENT_GLOW : '#fff',
-                            border: `3px solid ${isFlipped ? ACCENT : '#ddd'}`,
-                            boxShadow: '0 3px 14px rgba(0,0,0,.09)',
-                            transition: 'background .3s, border-color .3s',
-                            textAlign: 'center',
-                          }}
+                          style={{ flex: '1 1 180px', maxWidth: 240, minHeight: 190, perspective: '700px', cursor: isFlipped ? 'default' : 'pointer', userSelect: 'none' }}
                         >
-                          {!isFlipped ? (
-                            <>
+                          <div style={{
+                            position: 'relative', width: '100%', height: '100%', minHeight: 190,
+                            transformStyle: 'preserve-3d',
+                            transition: 'transform 0.55s ease',
+                            transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                          }}>
+                            {/* Front */}
+                            <div style={{
+                              position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+                              backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden',
+                              borderRadius: 18, padding: '18px 14px',
+                              background: '#fff', border: '3px solid #ddd',
+                              boxShadow: '0 3px 14px rgba(0,0,0,.09)',
+                              textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                            }}>
                               <div style={{ fontSize: '2.2rem', marginBottom: 8 }}>{c.emoji}</div>
                               <div style={{ fontFamily: 'var(--font-cinzel)', fontSize: '0.9rem', color: ACCENT_DARK, marginBottom: 6 }}>{c.name}</div>
                               <div style={{ fontFamily: 'var(--font-nunito)', fontWeight: 700, fontSize: '0.78rem', color: '#888' }}>{c.role}</div>
                               <div style={{ fontFamily: 'var(--font-nunito)', fontSize: '0.65rem', fontWeight: 900, letterSpacing: 1, color: '#bbb', marginTop: 10, textTransform: 'uppercase' }}>
                                 {isRu ? 'Нажми ▾' : 'Tap ▾'}
                               </div>
-                            </>
-                          ) : (
-                            <>
+                            </div>
+                            {/* Back */}
+                            <div style={{
+                              position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+                              backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden',
+                              transform: 'rotateY(180deg)',
+                              borderRadius: 18, padding: '18px 14px',
+                              background: ACCENT_GLOW, border: `3px solid ${ACCENT}`,
+                              boxShadow: '0 3px 14px rgba(0,0,0,.09)',
+                              textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                            }}>
                               <div style={{ fontSize: '1.5rem', marginBottom: 6 }}>{c.emoji}</div>
                               <div style={{ fontFamily: 'var(--font-cinzel)', fontSize: '0.8rem', color: ACCENT_DARK, marginBottom: 8 }}>{c.name}</div>
-                              <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', fontSize: '0.82rem', color: '#444', lineHeight: 1.6 }}>
+                              <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', fontSize: '0.82rem', color: '#444', lineHeight: 1.6, margin: 0 }}>
                                 {c.back}
                               </p>
-                            </>
-                          )}
+                            </div>
+                          </div>
                         </div>
                       )
                     })}
