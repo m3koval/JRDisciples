@@ -62,6 +62,10 @@ const requiredArcherSnippets = [
   'target-course',
   'mobile-release',
   'drawRagdollDummy',
+  'getCanvasPoint',
+  'launchArrowVelocity',
+  'ARROW_SPEED',
+  'ARROW_GRAVITY',
 ];
 
 for (const snippet of requiredArcherSnippets) {
@@ -69,6 +73,10 @@ for (const snippet of requiredArcherSnippets) {
 }
 
 if (!/function\s+drawRagdollDummy/.test(archer)) failures.push('Faithful Archer route must define drawRagdollDummy.');
+if (!/function\s+getCanvasPoint/.test(archer)) failures.push('Faithful Archer route must define getCanvasPoint for mobile-safe touch coordinates.');
+if (!/function\s+launchArrowVelocity/.test(archer)) failures.push('Faithful Archer route must define launchArrowVelocity for deterministic projectile math.');
+if (/event\.offset[XY]/.test(archer)) failures.push('Faithful Archer route must not use PointerEvent.offsetX/offsetY; iOS Safari touch release can report bad offsets.');
+if (/arrow\.[xy] \+= arrow\.v[xy] \* dt \* 60/.test(archer)) failures.push('Faithful Archer arrow physics must use px/sec units, not frame-scaled dt * 60 movement.');
 if (!/type\s+Target/.test(archer)) failures.push('Faithful Archer route must define typed targets.');
 if (!/const\s+SCRIPTURE/.test(archer)) failures.push('Faithful Archer route must define SCRIPTURE.');
 

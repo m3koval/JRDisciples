@@ -58,6 +58,36 @@ const COURSES = {
 }
 
 const STORAGE_KEY = 'faithful-archer-best'
+const ARROW_SPEED = { calm: 720, fast: 860 }
+const ARROW_GRAVITY = { calm: 780, fast: 920 }
+const MAX_DRAW = 190
+
+type Point = { x: number; y: number }
+
+function launchArrowVelocity(bow: Point, release: Point, calm: boolean) {
+  const dx = bow.x - release.x
+  const dy = bow.y - release.y
+  const draw = Math.min(MAX_DRAW, Math.hypot(dx, dy))
+  if (draw < 13) return null
+  const angle = Math.atan2(dy, dx)
+  const power = clamp(draw / 132, 0.42, 1.45)
+  const speed = (calm ? ARROW_SPEED.calm : ARROW_SPEED.fast) * power
+  return {
+    vx: Math.cos(angle) * speed,
+    vy: Math.sin(angle) * speed,
+    power,
+    draw,
+    angle,
+  }
+}
+
+function getCanvasPoint(canvas: HTMLCanvasElement, event: PointerEvent): Point {
+  const rect = canvas.getBoundingClientRect()
+  return {
+    x: clamp(event.clientX - rect.left, 0, rect.width),
+    y: clamp(event.clientY - rect.top, 0, rect.height),
+  }
+}
 
 function clamp(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value))
@@ -228,14 +258,9 @@ export default function FaithfulArcherPage() {
       const a = archer()
       const bowX = a.x + 34
       const bowY = a.y - 58
-      const dx = bowX - tx
-      const dy = bowY - ty
-      const dist = Math.min(190, Math.hypot(dx, dy))
-      if (dist < 13) return
-      const angle = Math.atan2(dy, dx)
-      const power = Math.max(0.36, dist / 132)
-      const speed = (calmRef.current ? 10.9 : 12.8) * power
-      arrowsRef.current.push({ x: bowX, y: bowY, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, age: 0, stuck: false, glow: power > 1.12 })
+      const launch = launchArrowVelocity({ x: bowX, y: bowY }, { x: tx, y: ty }, calmRef.current)
+      if (!launch) return
+      arrowsRef.current.push({ x: bowX, y: bowY, vx: launch.vx, vy: launch.vy, age: 0, stuck: false, glow: launch.power > 1.12 })
       m.arrowsLeft -= 1
       m.recoil = 7
       floatRef.current.push({ x: bowX, y: bowY - 32, txt: isRu ? 'ровно!' : 'steady!', life: 0.75, color: '#31552d' })
@@ -271,11 +296,11 @@ export default function FaithfulArcherPage() {
       for (const arrow of arrowsRef.current) {
         if (arrow.stuck) continue
         arrow.age += dt
-        arrow.vx += m.wind * 60 * dt
-        arrow.vy += (calmRef.current ? 358 : 430) * dt
+        arrow.vx += m.wind * 220 * dt
+        arrow.vy += (calmRef.current ? ARROW_GRAVITY.calm : ARROW_GRAVITY.fast) * dt
         arrow.vx *= Math.pow(0.997, dt * 60)
-        arrow.x += arrow.vx * dt * 60
-        arrow.y += arrow.vy * dt * 60
+        arrow.x += arrow.vx * dt
+        arrow.y += arrow.vy * dt
         if (arrow.y > height * 0.83 || arrow.x > width + 120 || arrow.x < -120 || arrow.age > 5) {
           if (!arrow.countedMiss) {
             arrow.countedMiss = true
@@ -369,11 +394,9 @@ export default function FaithfulArcherPage() {
       if (!pointer.down || !modelRef.current.running || wisdomCard) return
       const bx = a.x + 34
       const by = a.y - 58
-      const dx = bx - pointer.x
-      const dy = by - pointer.y
-      const dist = Math.min(190, Math.hypot(dx, dy))
-      const angle = Math.atan2(dy, dx)
-      const power = Math.max(0.36, dist / 132)
+      const launch = launchArrowVelocity({ x: bx, y: by }, { x: pointer.x, y: pointer.y }, calmRef.current)
+      if (!launch) return
+      const { draw: dist, angle, power } = launch
       drawCtx.save()
       drawCtx.strokeStyle = 'rgba(255,255,255,.9)'
       drawCtx.lineWidth = 3
@@ -389,12 +412,13 @@ export default function FaithfulArcherPage() {
       roundRect(drawCtx, bx - 44, by + 48, 88 * Math.min(1, power), 11, 999, true)
       if (showGuideRef.current) {
         drawCtx.fillStyle = 'rgba(255,255,255,.82)'
-        let x = bx, y = by, vx = Math.cos(angle) * (calmRef.current ? 10.9 : 12.8) * power, vy = Math.sin(angle) * (calmRef.current ? 10.9 : 12.8) * power
-        for (let i = 0; i < 34; i++) {
-          vx += modelRef.current.wind * 2.6
-          vy += calmRef.current ? 0.27 : 0.33
-          x += vx * 2.1
-          y += vy * 2.1
+        let x = bx, y = by, vx = launch.vx, vy = launch.vy
+        const step = 1 / 30
+        for (let i = 0; i < 42; i++) {
+          vx += modelRef.current.wind * 220 * step
+          vy += (calmRef.current ? ARROW_GRAVITY.calm : ARROW_GRAVITY.fast) * step
+          x += vx * step
+          y += vy * step
           if (i % 2 === 0) { drawCtx.beginPath(); drawCtx.arc(x, y, 3, 0, Math.PI * 2); drawCtx.fill() }
         }
       }
@@ -431,16 +455,19 @@ export default function FaithfulArcherPage() {
 
     const onPointerDown = (event: PointerEvent) => {
       event.preventDefault()
-      pointerRef.current = { down: true, x: event.offsetX, y: event.offsetY, startX: event.offsetX, startY: event.offsetY }
+      const point = getCanvasPoint(canvas!, event)
+      pointerRef.current = { down: true, x: point.x, y: point.y, startX: point.x, startY: point.y }
       canvas!.setPointerCapture(event.pointerId)
     }
     const onPointerMove = (event: PointerEvent) => {
-      pointerRef.current.x = event.offsetX
-      pointerRef.current.y = event.offsetY
+      const point = getCanvasPoint(canvas!, event)
+      pointerRef.current.x = point.x
+      pointerRef.current.y = point.y
     }
     const onPointerUp = (event: PointerEvent) => {
       const point = pointerRef.current
-      if (point.down) shoot(event.offsetX, event.offsetY)
+      const release = getCanvasPoint(canvas!, event)
+      if (point.down) shoot(release.x, release.y)
       point.down = false
     }
     const onKey = (event: KeyboardEvent) => {
