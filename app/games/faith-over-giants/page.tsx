@@ -41,7 +41,7 @@ const SCRIPTURE: Scripture[] = [
   {
     refEn: 'Joshua 1:9',
     refRu: 'Иисуса Навина 1:9',
-    textEn: 'Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the LORD your God is with you wherever you go.”',
+    textEn: 'Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the LORD your God is with you wherever you go."',
     textRu: 'Вот Я повелеваю тебе: будь тверд и мужествен, не страшись и не ужасайся; ибо с тобою Господь Бог твой везде, куда ни пойдешь.',
     question: {
       promptEn: 'What did God tell Joshua to be?',
@@ -56,7 +56,7 @@ const SCRIPTURE: Scripture[] = [
   {
     refEn: 'Numbers 14:9',
     refRu: 'Числа 14:9',
-    textEn: 'Only do not rebel against the LORD. And do not fear the people of the land, for they are bread for us. Their protection is removed from them, and the LORD is with us; do not fear them.”',
+    textEn: 'Only do not rebel against the LORD. And do not fear the people of the land, for they are bread for us. Their protection is removed from them, and the LORD is with us; do not fear them."',
     textRu: 'только против Господа не восставайте и не бойтесь народа земли сей, ибо он достанется нам на съедение: защиты у них не стало, а с нами Господь; не бойтесь их.',
     question: {
       promptEn: 'Why did Caleb say not to fear?',
@@ -71,10 +71,10 @@ const SCRIPTURE: Scripture[] = [
   {
     refEn: 'Deuteronomy 31:6',
     refRu: 'Второзаконие 31:6',
-    textEn: 'Be strong and courageous. Do not fear or be in dread of them, for it is the LORD your God who goes with you. He will not leave you or forsake you.”',
+    textEn: 'Be strong and courageous. Do not fear or be in dread of them, for it is the LORD your God who goes with you. He will not leave you or forsake you."',
     textRu: 'Будьте тверды и мужественны, не бойтесь, и не страшитесь их, ибо Господь Бог твой Сам пойдет с тобою, не отступит от тебя и не оставит тебя.',
     question: {
-      promptEn: 'What promise helps God’s people keep going?',
+      promptEn: "What promise helps God's people keep going?",
       promptRu: 'Какое обещание помогает Божьему народу идти дальше?',
       choicesEn: ['God goes with His people', 'We never need help', 'Big problems are not real'],
       choicesRu: ['Бог идет со Своим народом', 'Нам никогда не нужна помощь', 'Больших трудностей не бывает'],
@@ -106,27 +106,29 @@ const GUIDES: Guide[] = [
 
 const powerups: Record<Powerup, { cost: number; labelEn: string; labelRu: string; descEn: string; descRu: string }> = {
   people: {
-    cost: 2,
+    cost: 4,
     labelEn: 'Stand Together',
     labelRu: 'Стоять вместе',
-    descEn: '+1 helper for stronger courage steps',
-    descRu: '+1 помощник для сильных шагов мужества',
+    descEn: '+1 helper → stronger rally',
+    descRu: '+1 помощник → мощнее сплочение',
   },
   health: {
-    cost: 2,
+    cost: 3,
     labelEn: 'Courage Rest',
     labelRu: 'Отдых мужества',
     descEn: 'Regain 2 hearts',
     descRu: 'Вернуть 2 сердца',
   },
   strength: {
-    cost: 3,
+    cost: 5,
     labelEn: 'Be Strong',
     labelRu: 'Будь тверд',
-    descEn: 'Temporary strong push against fear',
-    descRu: 'Временный сильный шаг против страха',
+    descEn: 'Next hits deal double damage',
+    descRu: 'Следующие удары вдвое сильнее',
   },
 }
+
+const BOSS_MAX_HP = 12
 
 function clamp(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value))
@@ -137,11 +139,12 @@ export default function FaithOverGiantsPage() {
   const isRu = language === 'ru'
   const [phase, setPhase] = useState<Phase>('intro')
   const [levelIndex, setLevelIndex] = useState(0)
-  const [progress, setProgress] = useState(0)
+  const [giantHps, setGiantHps] = useState<number[]>([])
+  const [hittingIndex, setHittingIndex] = useState<number | null>(null)
   const [fearLine, setFearLine] = useState(16)
   const [health, setHealth] = useState(6)
   const [helpers, setHelpers] = useState(2)
-  const [wisdomFuel, setWisdomFuel] = useState(0)
+  const [coins, setCoins] = useState(0)
   const [strengthTurns, setStrengthTurns] = useState(0)
   const [message, setMessage] = useState('')
   const [lastAction, setLastAction] = useState<'none' | 'step' | 'hit' | 'power' | 'badge'>('none')
@@ -151,8 +154,9 @@ export default function FaithOverGiantsPage() {
 
   const level = LEVELS[Math.min(levelIndex, LEVELS.length - 1)]
   const scripture = SCRIPTURE[level.scriptureIndex]
-  const progressPercent = clamp((progress / level.fear) * 100, 0, 100)
   const isBoss = levelIndex === LEVELS.length - 1
+  const giantMaxHp = isBoss ? BOSS_MAX_HP : 2 + Math.floor(levelIndex / 3)
+  const progressPercent = giantHps.length > 0 ? (giantHps.filter(hp => hp <= 0).length / giantHps.length) * 100 : 0
   const couragePower = useMemo(() => helpers * 8 + (strengthTurns > 0 ? 18 : 0), [helpers, strengthTurns])
   const guide = GUIDES[phase === 'question' ? 2 : levelIndex % 2]
 
@@ -168,14 +172,14 @@ export default function FaithOverGiantsPage() {
     level: 'Уровень',
     hearts: 'Сердца',
     helpers: 'Помощники',
-    fuel: 'Мудрость',
+    coins: '🪙 Монеты',
     fear: 'Страх',
     courage: 'Мужество',
     answerTitle: 'Сначала Божье Слово',
-    answerHelp: 'Ответь правильно, чтобы получить Мудрость для усилений.',
-    correct: 'Верно! +2 Мудрости.',
+    answerHelp: 'Ответь правильно — получи монеты для усилений.',
+    correct: 'Верно! +3 🪙',
     wrong: 'Хорошая попытка. Посмотри на стих и попробуй снова.',
-    stand: 'Шаг мужества',
+    stand: 'Стоять твёрдо!',
     report: 'Верный ответ',
     victory: 'Победа веры!',
     defeat: 'Страх остановил путь. Попробуй снова с Божьим Словом.',
@@ -187,11 +191,12 @@ export default function FaithOverGiantsPage() {
     badgeEarned: 'Новая награда',
     reward: 'Награда',
     pressure: 'Давление страха',
+    tapHint: 'Нажимай на великанов, чтобы сражаться!',
   } : {
     back: 'All Games',
     eyebrow: 'Bible Strategy Game',
     title: 'Faith Over Giants',
-    subtitle: 'Lead the people forward, answer God’s Word inside the game, and push back fear with courage, obedience, and trust in the Lord.',
+    subtitle: "Lead the people forward, answer God's Word inside the game, and push back fear with courage, obedience, and trust in the Lord.",
     start: 'Start the Journey',
     continue: 'Next Level',
     restart: 'Play Again',
@@ -199,25 +204,33 @@ export default function FaithOverGiantsPage() {
     level: 'Level',
     hearts: 'Hearts',
     helpers: 'Helpers',
-    fuel: 'Wisdom Fuel',
+    coins: '🪙 Coins',
     fear: 'Fear',
     courage: 'Courage',
-    answerTitle: 'God’s Word First',
-    answerHelp: 'Answer correctly to earn Wisdom Fuel for power-ups.',
-    correct: 'Correct! +2 Wisdom Fuel.',
+    answerTitle: "God's Word First",
+    answerHelp: 'Answer correctly to earn coins for power-ups.',
+    correct: 'Correct! +3 🪙',
     wrong: 'Good try. Look at the verse and try again.',
-    stand: 'Courage Step',
+    stand: 'Stand Firm!',
     report: 'Faithful Report',
     victory: 'Faith Victory!',
-    defeat: 'Fear stopped the journey. Try again with God’s Word.',
+    defeat: "Fear stopped the journey. Try again with God's Word.",
     completed: 'Level cleared. The giants looked big, but God is greater than fear.',
-    bossHint: 'The final boss is not a person. It is big fear that God’s people must reject.',
+    bossHint: "The final boss is not a person. It is big fear that God's people must reject.",
     powerupsTitle: 'Power-ups',
     scriptureTitle: 'Scripture inside the game',
-    bigTruth: 'Big truth: God’s promises are bigger than the giants we fear.',
+    bigTruth: "Big truth: God's promises are bigger than the giants we fear.",
     badgeEarned: 'New Reward',
     reward: 'Reward',
     pressure: 'Fear Pressure',
+    tapHint: 'Tap the giants to fight them!',
+  }
+
+  function initGiants(index: number) {
+    const lvl = LEVELS[Math.min(index, LEVELS.length - 1)]
+    const isBossLevel = index === LEVELS.length - 1
+    const hp = isBossLevel ? BOSS_MAX_HP : 2 + Math.floor(index / 3)
+    setGiantHps(Array.from({ length: lvl.giants }, () => hp))
   }
 
   useEffect(() => {
@@ -233,7 +246,7 @@ export default function FaithOverGiantsPage() {
         if (next >= 100) {
           setHealth((h) => Math.max(0, h - 1))
           setLastAction('hit')
-          setMessage(isRu ? 'Страх подошел близко — держись Божьего обещания.' : 'Fear pressed close — hold to God’s promise.')
+          setMessage(isRu ? 'Страх подошел близко — держись Божьего обещания.' : "Fear pressed close — hold to God's promise.")
           return 26
         }
         return next
@@ -242,38 +255,43 @@ export default function FaithOverGiantsPage() {
     return () => window.clearInterval(timer)
   }, [phase, level.speed, isRu])
 
+  // Defeat check
   useEffect(() => {
     if (phase !== 'play') return
     if (health <= 0) {
       setPhase('defeat')
-      return
     }
-    if (progress >= level.fear) {
-      if (levelIndex >= LEVELS.length - 1) {
-        setBadges((earned) => earned.includes(level.badgeEn) ? earned : [...earned, level.badgeEn])
-        setLastAction('badge')
-        setPhase('victory')
-        setBestLevel(10)
-        localStorage.setItem('faith-over-giants-best-level', '10')
-      } else {
-        setBadges((earned) => earned.includes(level.badgeEn) ? earned : [...earned, level.badgeEn])
-        setLastAction('badge')
-        setPhase('levelComplete')
-        const nextBest = Math.max(bestLevel, levelIndex + 1)
-        setBestLevel(nextBest)
-        localStorage.setItem('faith-over-giants-best-level', String(nextBest))
-      }
+  }, [phase, health])
+
+  // Level complete check: all giants defeated
+  useEffect(() => {
+    if (phase !== 'play') return
+    if (giantHps.length === 0) return
+    if (!giantHps.every(hp => hp <= 0)) return
+    if (levelIndex >= LEVELS.length - 1) {
+      setBadges((earned) => earned.includes(level.badgeEn) ? earned : [...earned, level.badgeEn])
+      setLastAction('badge')
+      setPhase('victory')
+      setBestLevel(10)
+      localStorage.setItem('faith-over-giants-best-level', '10')
+    } else {
+      setBadges((earned) => earned.includes(level.badgeEn) ? earned : [...earned, level.badgeEn])
+      setLastAction('badge')
+      setPhase('levelComplete')
+      const nextBest = Math.max(bestLevel, levelIndex + 1)
+      setBestLevel(nextBest)
+      localStorage.setItem('faith-over-giants-best-level', String(nextBest))
     }
-  }, [phase, health, progress, level.fear, level.badgeEn, levelIndex, bestLevel])
+  }, [phase, giantHps, level.badgeEn, levelIndex, bestLevel])
 
   function startGame() {
     setPhase('question')
     setLevelIndex(0)
-    setProgress(0)
+    initGiants(0)
     setFearLine(16)
     setHealth(6)
     setHelpers(2)
-    setWisdomFuel(0)
+    setCoins(0)
     setStrengthTurns(0)
     setSelectedAnswer(null)
     setLastAction('none')
@@ -284,7 +302,7 @@ export default function FaithOverGiantsPage() {
   function answerQuestion(index: number) {
     setSelectedAnswer(index)
     if (index === scripture.question.answer) {
-      setWisdomFuel((fuel) => fuel + 2)
+      setCoins((c) => c + 3)
       setLastAction('power')
       setMessage(copy.correct)
       window.setTimeout(() => {
@@ -297,8 +315,9 @@ export default function FaithOverGiantsPage() {
   }
 
   function nextLevel() {
-    setLevelIndex((current) => current + 1)
-    setProgress(0)
+    const next = levelIndex + 1
+    setLevelIndex(next)
+    initGiants(next)
     setFearLine(16)
     setHealth((h) => Math.min(6, h + 1))
     setStrengthTurns(0)
@@ -308,19 +327,39 @@ export default function FaithOverGiantsPage() {
     setPhase('question')
   }
 
+  function attackGiant(index: number) {
+    if (phase !== 'play') return
+    if (giantHps[index] <= 0) return
+    const dmg = strengthTurns > 0 ? 2 : 1
+    setHittingIndex(index)
+    window.setTimeout(() => setHittingIndex(null), 340)
+    setGiantHps((hps) => {
+      const next = [...hps]
+      next[index] = Math.max(0, next[index] - dmg)
+      if (next[index] <= 0) setCoins((c) => c + 1)
+      return next
+    })
+    if (strengthTurns > 0) setStrengthTurns((turns) => Math.max(0, turns - 1))
+    setLastAction('step')
+    setMessage(dmg === 2
+      ? (isRu ? 'Двойной удар! +1 🪙 за победу.' : 'Double strike! +1 🪙 for the victory.')
+      : (isRu ? 'Удар верой! Стой твёрдо — Господь с тобой.' : 'Strike with faith! Stand firm — the LORD is with you.')
+    )
+  }
+
   function courageStep() {
     if (phase !== 'play') return
-    setProgress((value) => value + couragePower)
-    setFearLine((value) => clamp(value - 9, 10, 100))
+    const pushBack = helpers * 5 + (strengthTurns > 0 ? 14 : 0)
+    setFearLine((value) => clamp(value - pushBack, 10, 100))
     setLastAction('step')
-    setMessage(isRu ? 'Верный ответ отталкивает страх — команда продвигается!' : 'A faithful report pushes fear back — the team advances!')
+    setMessage(isRu ? 'Верный ответ отталкивает страх — команда держится!' : 'A faithful report pushes fear back — the team stands firm!')
     if (strengthTurns > 0) setStrengthTurns((turns) => Math.max(0, turns - 1))
   }
 
   function spendPowerup(kind: Powerup) {
     const power = powerups[kind]
-    if (phase !== 'play' || wisdomFuel < power.cost) return
-    setWisdomFuel((fuel) => fuel - power.cost)
+    if (phase !== 'play' || coins < power.cost) return
+    setCoins((c) => c - power.cost)
     if (kind === 'people') {
       setHelpers((count) => Math.min(8, count + 1))
       setLastAction('power')
@@ -337,6 +376,9 @@ export default function FaithOverGiantsPage() {
       setMessage(isRu ? 'Следующие шаги сильнее: будь тверд и мужествен.' : 'The next steps are stronger: be strong and courageous.')
     }
   }
+
+  // Current boss HP for display
+  const bossCurrentHp = isBoss && giantHps.length > 0 ? giantHps[0] : 0
 
   return (
     <main style={{ minHeight: '100vh', background: 'linear-gradient(180deg,#071225,#123522 54%,#f8fafc)', color: '#fff' }}>
@@ -358,10 +400,14 @@ export default function FaithOverGiantsPage() {
         .helper.leader { width: 54px; height: 92px; background: linear-gradient(180deg,#5b3418 0 12%,#f8d29a 13% 24%,#fef3c7 25% 32%,#16a34a 33% 72%,#78350f 73%); }
         .helper.leader .shield { position: absolute; left: -10px; top: 34px; width: 24px; height: 32px; border-radius: 12px 12px 16px 16px; background: linear-gradient(180deg,#fde68a,#d97706); border: 2px solid #fff7ed; box-shadow: 0 0 14px rgba(253,230,138,.65); }
         .giant-line { position: absolute; right: 8%; bottom: 11%; z-index: 3; display: flex; align-items: end; gap: 8px; transform: translateX(calc((100 - var(--fear-line)) * .62%)); transition: transform .45s ease; }
-        .giant { position: relative; width: 54px; height: 118px; border-radius: 34px 34px 18px 18px; background: linear-gradient(180deg,#64748b,#1e293b); border: 4px solid #cbd5e1; box-shadow: 0 16px 38px rgba(0,0,0,.32); display: grid; place-items: center; font-family: var(--font-nunito); font-weight: 1000; color: #fff; }
+        .giant { position: relative; width: 54px; height: 118px; border-radius: 34px 34px 18px 18px; background: linear-gradient(180deg,#64748b,#1e293b); border: 4px solid #cbd5e1; box-shadow: 0 16px 38px rgba(0,0,0,.32); display: grid; place-items: center; font-family: var(--font-nunito); font-weight: 1000; color: #fff; cursor: pointer; touch-action: manipulation; user-select: none; -webkit-user-select: none; transition: opacity .38s ease-out, transform .38s ease-out; }
         .giant::before { content: ''; position: absolute; top: 20px; width: 24px; height: 12px; border-radius: 999px; background: rgba(15,23,42,.65); box-shadow: 0 18px 0 rgba(148,163,184,.38); }
         .giant::after { content: ''; position: absolute; bottom: -10px; left: 7px; right: 7px; height: 14px; border-radius: 999px; background: rgba(15,23,42,.28); filter: blur(4px); }
         .giant.boss { width: 106px; height: 196px; border-radius: 64px 64px 28px 28px; background: linear-gradient(180deg,#78350f,#1e293b 58%,#020617); border-color: #fed7aa; font-size: 1.05rem; text-align: center; box-shadow: 0 26px 70px rgba(0,0,0,.42),0 0 46px rgba(249,115,22,.28); }
+        .giant-hit { animation: giant-hit-flash .34s ease-out; }
+        .giant-dead { opacity: 0; transform: translateY(14px) scale(0.7); pointer-events: none; }
+        .giant-hp-bar { position: absolute; bottom: 8px; left: 8px; right: 8px; height: 10px; border-radius: 999px; background: rgba(15,23,42,.6); overflow: hidden; }
+        .giant-hp-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg,#ef4444,#fbbf24); transition: width .2s ease; }
         .pressure-meter { position: absolute; right: 7%; top: 7%; z-index: 5; width: 170px; border-radius: 18px; padding: 10px; background: rgba(15,23,42,.72); border: 1px solid rgba(255,255,255,.32); font-family: var(--font-nunito); font-weight: 1000; }
         .pressure-meter span { display: block; height: 10px; border-radius: 999px; margin-top: 6px; background: linear-gradient(90deg,#22c55e,#fde047,#ef4444); width: var(--fear-line-width); }
         .promise-light { position: absolute; left: 50%; top: 18%; width: 180px; height: 180px; transform: translateX(-50%); border-radius: 999px; background: radial-gradient(circle,rgba(255,255,255,.92) 0 12%,rgba(255,216,102,.56) 13% 42%,transparent 70%); filter: blur(.3px); z-index: 1; }
@@ -389,6 +435,7 @@ export default function FaithOverGiantsPage() {
         @keyframes courage-pulse { 0% { filter: saturate(1); } 40% { filter: saturate(1.35) brightness(1.06); } 100% { filter: saturate(1); } }
         @keyframes fear-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 55% { transform: translateX(5px); } }
         @keyframes burst-rise { 0% { opacity: 0; transform: translateY(18px) scale(.92); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-34px) scale(1.08); } }
+        @keyframes giant-hit-flash { 0%,100% { filter: brightness(1); transform: scale(1); } 30% { filter: brightness(3) saturate(0); transform: scale(1.14); } }
         @media (max-width: 880px) { .giants-grid { grid-template-columns: 1fr; } .promise-arena { min-height: 470px; } .giants-stat { grid-template-columns: repeat(2,1fr); } .giant { width: 42px; height: 94px; } .giant.boss { width: 78px; height: 148px; } .helper { width: 34px; height: 62px; } .helper.leader { width: 44px; height: 78px; } }
       `}</style>
 
@@ -402,7 +449,7 @@ export default function FaithOverGiantsPage() {
           <div>{copy.level}<br />{Math.min(levelIndex + 1, 10)}/10</div>
           <div>{copy.hearts}<br />{'❤️'.repeat(health) || '—'}</div>
           <div>{copy.helpers}<br />{helpers}</div>
-          <div>{copy.fuel}<br />{wisdomFuel}</div>
+          <div>{copy.coins}<br />{coins}</div>
           <div>{isRu ? 'Лучший' : 'Best'}<br />{bestLevel}/10</div>
         </div>
 
@@ -416,9 +463,37 @@ export default function FaithOverGiantsPage() {
               {Array.from({ length: Math.max(0, Math.min(helpers - 1, 7)) }).map((_, index) => <div key={index} className="helper" />)}
             </div>
             <div className="giant-line" style={{ ['--fear-line' as string]: fearLine }} aria-hidden="true">
-              {isBoss ? <div className="giant boss">{isRu ? 'Страх' : 'Fear'}</div> : Array.from({ length: level.giants }).map((_, index) => <div key={index} className="giant" />)}
+              {giantHps.map((hp, index) => {
+                const isHitting = hittingIndex === index
+                const isDead = hp <= 0
+                const classNames = ['giant', isBoss ? 'boss' : '', isHitting ? 'giant-hit' : '', isDead ? 'giant-dead' : ''].filter(Boolean).join(' ')
+                return (
+                  <div
+                    key={index}
+                    className={classNames}
+                    onClick={() => attackGiant(index)}
+                    role="button"
+                    aria-label={isBoss ? (isRu ? 'Страх' : 'Fear') : `Giant ${index + 1}`}
+                  >
+                    {isBoss ? (
+                      <>
+                        {isRu ? 'Страх' : 'Fear'}
+                        <div className="giant-hp-bar">
+                          <div className="giant-hp-bar-fill" style={{ width: `${(hp / BOSS_MAX_HP) * 100}%` }} />
+                        </div>
+                      </>
+                    ) : (
+                      <div style={{ position: 'absolute', top: -20, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 3 }}>
+                        {Array.from({ length: giantMaxHp }).map((_, i) => (
+                          <span key={i} style={{ display: 'block', width: 7, height: 7, borderRadius: '50%', background: i < hp ? '#ef4444' : 'rgba(255,255,255,.2)', flexShrink: 0 }} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
             </div>
-            {lastAction !== 'none' && phase === 'play' && <div className="action-burst">{lastAction === 'hit' ? `-${isRu ? 'сердце' : 'heart'}` : lastAction === 'power' ? `+${copy.fuel}` : `+${copy.courage}`}</div>}
+            {lastAction !== 'none' && phase === 'play' && <div className="action-burst">{lastAction === 'hit' ? `-${isRu ? 'сердце' : 'heart'}` : lastAction === 'power' ? '+3 🪙' : `+${copy.courage}`}</div>}
             <div className="progress-path" aria-label={`${copy.courage}: ${Math.round(progressPercent)}%`}><span style={{ ['--progress' as string]: `${progressPercent}%` }} /></div>
 
             {phase === 'intro' && (
@@ -426,7 +501,7 @@ export default function FaithOverGiantsPage() {
                 <div>
                   <p className="puzzle-label">{copy.bigTruth}</p>
                   <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '2rem', margin: '6px 0 10px' }}>{isRu ? 'Путь к обетованию' : 'The Promise Journey'}</h2>
-                  <p style={{ fontFamily: 'var(--font-lora)', fontWeight: 700, lineHeight: 1.62 }}>{isRu ? 'Это не игра про жестокость. Это игра про верный ответ: Бог больше страха.' : 'This is not a violence game. It is a faithful-report game: God is greater than fear.'}</p>
+                  <p style={{ fontFamily: 'var(--font-lora)', fontWeight: 700, lineHeight: 1.62 }}>{isRu ? 'Нажимай на великанов, чтобы сражаться с ними. Это не игра про жестокость. Это игра про верный ответ: Бог больше страха.' : 'Tap the giants to fight them. This is not a violence game. It is a faithful-report game: God is greater than fear.'}</p>
                   <button className="pz-btn" style={{ width: 'auto', marginTop: 16, padding: '12px 28px' }} onClick={startGame}>{copy.start}</button>
                 </div>
               </div>
@@ -482,10 +557,17 @@ export default function FaithOverGiantsPage() {
               </div>
             ) : (
               <div style={{ marginTop: 16 }}>
+                {isBoss && phase === 'play' && (
+                  <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#fed7aa', marginBottom: 8 }}>
+                    {isRu ? `Здоровье босса: ${bossCurrentHp}/${BOSS_MAX_HP}` : `Boss HP: ${bossCurrentHp}/${BOSS_MAX_HP}`}
+                  </p>
+                )}
                 <button className="pz-btn" style={{ width: '100%', minHeight: 58, fontSize: '1.05rem' }} onClick={phase === 'play' ? courageStep : startGame}>
                   {phase === 'play' ? copy.stand : copy.restart}
                 </button>
-                <p style={{ marginTop: 10, minHeight: 38, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#dbeafe', lineHeight: 1.45 }}>{message || (isRu ? scripture.question.feedbackRu : scripture.question.feedbackEn)}</p>
+                <p style={{ marginTop: 10, minHeight: 38, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#dbeafe', lineHeight: 1.45 }}>
+                  {message || (phase === 'play' ? copy.tapHint : (isRu ? scripture.question.feedbackRu : scripture.question.feedbackEn))}
+                </p>
 
                 {badges.length > 0 && (
                   <div className="badge-row" aria-label={copy.reward}>
@@ -502,8 +584,8 @@ export default function FaithOverGiantsPage() {
                     {(Object.keys(powerups) as Powerup[]).map((key) => {
                       const power = powerups[key]
                       return (
-                        <button key={key} disabled={phase !== 'play' || wisdomFuel < power.cost} onClick={() => spendPowerup(key)}>
-                          {isRu ? power.labelRu : power.labelEn} · {power.cost} {isRu ? 'мудр.' : 'fuel'}<br />
+                        <button key={key} disabled={phase !== 'play' || coins < power.cost} onClick={() => spendPowerup(key)}>
+                          {isRu ? power.labelRu : power.labelEn} · {power.cost} 🪙<br />
                           <span style={{ fontWeight: 800, opacity: .78 }}>{isRu ? power.descRu : power.descEn}</span>
                         </button>
                       )
