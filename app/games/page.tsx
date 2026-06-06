@@ -27,6 +27,16 @@ export default function GamesPage() {
 
   const games = isRu ? [
     {
+      href: '/games/shepherd-light-adventure',
+      emoji: '🐑✨',
+      label: 'Премиум приключение',
+      title: 'Приключение Света Пастыря',
+      desc: 'Веди Михаила, собирай Свет Пастыря и помогай ягненку вернуться домой — Евангелие внутри игры, не викторина.',
+      details: ['приключение', 'Евангелие', 'тач-экран', 'сюжет'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(254,243,199,.62),transparent 25%),linear-gradient(135deg,#0f766e,#365314)',
+      border: 'rgba(254,243,199,.94)'
+    },
+    {
       href: '/games/faithful-archer',
       emoji: '🏹✨',
       label: 'Новая аркада',
@@ -67,6 +77,16 @@ export default function GamesPage() {
       border: 'rgba(126,200,227,.82)'
     },
   ] : [
+    {
+      href: '/games/shepherd-light-adventure',
+      emoji: '🐑✨',
+      label: 'Premium Adventure',
+      title: 'Shepherd Light Adventure',
+      desc: 'Guide Michael, gather Shepherd Light, and help the lamb come home — gospel truth inside gameplay, not a quiz.',
+      details: ['adventure', 'gospel', 'touch-screen', 'story'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(254,243,199,.62),transparent 25%),linear-gradient(135deg,#0f766e,#365314)',
+      border: 'rgba(254,243,199,.94)'
+    },
     {
       href: '/games/faithful-archer',
       emoji: '🏹✨',
