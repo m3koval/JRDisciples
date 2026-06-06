@@ -429,8 +429,8 @@ export default function FaithOverGiantsPage() {
         .answer-grid button.selected { outline: 4px solid #fbbf24; }
         .power-row { display: grid; gap: 10px; margin-top: 10px; }
         .power-row button:disabled { opacity: .48; filter: grayscale(.35); }
-        .arena-overlay { position: absolute; inset: 0; z-index: 8; display: grid; place-items: center; padding: 18px; background: rgba(5,9,20,.62); }
-        .arena-overlay > div { max-width: 650px; border-radius: 28px; padding: 24px; background: rgba(255,255,255,.96); color: #0d1f3c; border: 3px solid #ffd866; text-align: center; }
+        .arena-overlay { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; padding: 18px; background: rgba(5,9,20,.72); }
+        .arena-overlay > div { max-width: 480px; width: 100%; border-radius: 28px; padding: 24px; background: rgba(255,255,255,.96); color: #0d1f3c; border: 3px solid #ffd866; text-align: center; overflow-y: auto; max-height: 90dvh; }
         .reward-medal { width: 84px; height: 84px; margin: 0 auto 10px; border-radius: 999px; display: grid; place-items: center; background: radial-gradient(circle,#fff 0 18%,#fef08a 19% 54%,#f59e0b 55%); border: 5px solid #fff7ed; box-shadow: 0 16px 36px rgba(0,0,0,.2),0 0 28px rgba(251,191,36,.65); color: #78350f; font-family: var(--font-nunito); font-weight: 1000; }
         @keyframes courage-pulse { 0% { filter: saturate(1); } 40% { filter: saturate(1.35) brightness(1.06); } 100% { filter: saturate(1); } }
         @keyframes fear-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 55% { transform: translateX(5px); } }
