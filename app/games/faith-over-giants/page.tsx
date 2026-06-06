@@ -83,19 +83,79 @@ const SCRIPTURE: Scripture[] = [
       feedbackRu: 'Правильно. Бог не оставляет Свой народ один.',
     },
   },
+  {
+    refEn: 'Isaiah 41:10',
+    refRu: 'Исаия 41:10',
+    textEn: 'Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand."',
+    textRu: 'Не бойся, ибо Я с тобою; не смущайся, ибо Я Бог твой; Я укреплю тебя, и помогу тебе, и поддержу тебя десницею правды Моей.',
+    question: {
+      promptEn: 'What three things does God promise to do for His people?',
+      promptRu: 'Что три вещи обещает Бог Своему народу?',
+      choicesEn: ['Strengthen, help, and uphold them', 'Leave, forget, and ignore them', 'Test, punish, and abandon them'],
+      choicesRu: ['Укрепить, помочь и поддержать', 'Оставить, забыть и игнорировать', 'Испытать, наказать и бросить'],
+      answer: 0,
+      feedbackEn: "Right. God's hand is under His people — they cannot fall alone.",
+      feedbackRu: 'Верно. Рука Бога держит Его народ — они не упадут одни.',
+    },
+  },
+  {
+    refEn: '2 Chronicles 20:15',
+    refRu: '2 Паралипоменон 20:15',
+    textEn: 'Do not be afraid and do not be dismayed at this great horde, for the battle is not yours but God\'s."',
+    textRu: 'Не бойтесь и не страшитесь множества сего великого, ибо не ваша война, а Божья.',
+    question: {
+      promptEn: "When God's people face something huge, whose battle is it?",
+      promptRu: 'Когда народ Божий встречает что-то огромное, чья это война?',
+      choicesEn: ["God's battle, not ours", 'Our battle alone', 'The strongest person wins'],
+      choicesRu: ['Битва Бога, не наша', 'Только наша битва', 'Побеждает сильнейший'],
+      answer: 0,
+      feedbackEn: 'Yes. Trusting God means letting Him fight the biggest battles.',
+      feedbackRu: 'Да. Доверять Богу — значит позволить Ему сражаться в самых трудных битвах.',
+    },
+  },
+  {
+    refEn: 'Psalm 27:1',
+    refRu: 'Псалом 26:1',
+    textEn: 'The LORD is my light and my salvation; whom shall I fear? The LORD is the stronghold of my life; of whom shall I be afraid?"',
+    textRu: 'Господь — просвещение мое и спасение мое: кого мне бояться? Господь — крепость жизни моей: кого мне страшиться?',
+    question: {
+      promptEn: 'What two things does the psalmist call the LORD?',
+      promptRu: 'Какими двумя словами псалмопевец называет Господа?',
+      choicesEn: ['Light and stronghold', 'Far away and silent', 'Angry and distant'],
+      choicesRu: ['Свет и крепость', 'Далёкий и молчаливый', 'Сердитый и далёкий'],
+      answer: 0,
+      feedbackEn: 'Right. Because the LORD is our light and fortress, fear has no foothold.',
+      feedbackRu: 'Верно. Потому что Господь — наш свет и крепость, страху нет места.',
+    },
+  },
+  {
+    refEn: 'Proverbs 29:25',
+    refRu: 'Притчи 29:25',
+    textEn: 'The fear of man lays a snare, but whoever trusts in the LORD is safe."',
+    textRu: 'Боязнь перед людьми ставит сеть; а надеющийся на Господа будет безопасен.',
+    question: {
+      promptEn: 'What happens when we fear people instead of trusting God?',
+      promptRu: 'Что происходит, когда мы боимся людей вместо того, чтобы доверять Богу?',
+      choicesEn: ['We fall into a trap', 'We become stronger', 'Nothing changes'],
+      choicesRu: ['Мы попадаем в ловушку', 'Мы становимся сильнее', 'Ничего не меняется'],
+      answer: 0,
+      feedbackEn: 'Right. Fear of people is a trap. Trust in the LORD is the way out.',
+      feedbackRu: 'Верно. Страх перед людьми — ловушка. Доверие Господу — выход из неё.',
+    },
+  },
 ]
 
 const LEVELS: Level[] = [
   { nameEn: 'Scout the Land', nameRu: 'Осмотреть землю', giants: 1, fear: 42, speed: 0.95, scriptureIndex: 0, badgeEn: 'Scout Badge', badgeRu: 'Значок разведчика' },
   { nameEn: 'Grapes of Promise', nameRu: 'Виноград обетования', giants: 2, fear: 54, speed: 1.05, scriptureIndex: 1, badgeEn: 'Promise Grapes', badgeRu: 'Виноград обетования' },
-  { nameEn: 'The Fear Report', nameRu: 'Испуганный ответ', giants: 3, fear: 68, speed: 1.18, scriptureIndex: 1, badgeEn: 'Truth Listener', badgeRu: 'Слушатель истины' },
+  { nameEn: 'The Fear Report', nameRu: 'Испуганный ответ', giants: 3, fear: 68, speed: 1.18, scriptureIndex: 4, badgeEn: 'Truth Listener', badgeRu: 'Слушатель истины' },
   { nameEn: 'Caleb Speaks Up', nameRu: 'Халев говорит верно', giants: 4, fear: 84, speed: 1.32, scriptureIndex: 1, badgeEn: 'Faithful Report', badgeRu: 'Верный ответ' },
   { nameEn: 'Courage Camp', nameRu: 'Стан мужества', giants: 5, fear: 104, speed: 1.48, scriptureIndex: 2, badgeEn: 'Courage Camp', badgeRu: 'Стан мужества' },
-  { nameEn: 'Jordan Crossing', nameRu: 'Переход Иордана', giants: 6, fear: 126, speed: 1.65, scriptureIndex: 0, badgeEn: 'River Step', badgeRu: 'Шаг через реку' },
-  { nameEn: 'Jericho March', nameRu: 'Марш у Иерихона', giants: 7, fear: 150, speed: 1.84, scriptureIndex: 2, badgeEn: 'Obedient March', badgeRu: 'Послушный марш' },
-  { nameEn: 'Hill Country Challenge', nameRu: 'Испытание горной земли', giants: 8, fear: 176, speed: 2.05, scriptureIndex: 0, badgeEn: 'Hill Courage', badgeRu: 'Мужество в горах' },
-  { nameEn: 'Stand Together', nameRu: 'Стоять вместе', giants: 9, fear: 204, speed: 2.28, scriptureIndex: 2, badgeEn: 'Together Shield', badgeRu: 'Щит единства' },
-  { nameEn: 'Level 10: Promise Boss', nameRu: 'Уровень 10: Страх-великан', giants: 1, fear: 238, speed: 2.55, scriptureIndex: 0, badgeEn: 'Promise Victor', badgeRu: 'Победитель обещания' },
+  { nameEn: 'Jordan Crossing', nameRu: 'Переход Иордана', giants: 6, fear: 126, speed: 1.65, scriptureIndex: 3, badgeEn: 'River Step', badgeRu: 'Шаг через реку' },
+  { nameEn: 'Jericho March', nameRu: 'Марш у Иерихона', giants: 7, fear: 150, speed: 1.84, scriptureIndex: 6, badgeEn: 'Obedient March', badgeRu: 'Послушный марш' },
+  { nameEn: 'Hill Country Challenge', nameRu: 'Испытание горной земли', giants: 8, fear: 176, speed: 2.05, scriptureIndex: 5, badgeEn: 'Hill Courage', badgeRu: 'Мужество в горах' },
+  { nameEn: 'Stand Together', nameRu: 'Стоять вместе', giants: 9, fear: 204, speed: 2.28, scriptureIndex: 3, badgeEn: 'Together Shield', badgeRu: 'Щит единства' },
+  { nameEn: 'Face the Big Fear', nameRu: 'Встреча с большим страхом', giants: 1, fear: 238, speed: 2.55, scriptureIndex: 2, badgeEn: 'Promise Victor', badgeRu: 'Победитель обещания' },
 ]
 
 const GUIDES: Guide[] = [
@@ -151,6 +211,7 @@ export default function FaithOverGiantsPage() {
   const [badges, setBadges] = useState<string[]>([])
   const [bestLevel, setBestLevel] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
+  const [answerLocked, setAnswerLocked] = useState(false)
 
   const level = LEVELS[Math.min(levelIndex, LEVELS.length - 1)]
   const scripture = SCRIPTURE[level.scriptureIndex]
@@ -192,6 +253,9 @@ export default function FaithOverGiantsPage() {
     reward: 'Награда',
     pressure: 'Давление страха',
     tapHint: 'Нажимай на великанов, чтобы сражаться!',
+    helpersHint: 'каждый отталкивает страх',
+    bossWarning: '⚠️ Последнее испытание впереди: большой страх. Держись обещания Господа!',
+    reflection: '💭 Подумай: какой «великан» пугает тебя в жизни? Как обещание Господа помогает идти вперёд?',
   } : {
     back: 'All Games',
     eyebrow: 'Bible Strategy Game',
@@ -224,6 +288,9 @@ export default function FaithOverGiantsPage() {
     reward: 'Reward',
     pressure: 'Fear Pressure',
     tapHint: 'Tap the giants to fight them!',
+    helpersHint: 'each one pushes fear back',
+    bossWarning: "⚠️ The final challenge is ahead: big fear itself. Hold to the LORD's promise!",
+    reflection: "💭 Think about this: what is one 'giant' in your own life? How does God's promise help you keep going?",
   }
 
   function initGiants(index: number) {
@@ -294,23 +361,32 @@ export default function FaithOverGiantsPage() {
     setCoins(0)
     setStrengthTurns(0)
     setSelectedAnswer(null)
+    setAnswerLocked(false)
     setLastAction('none')
     setBadges([])
     setMessage('')
   }
 
   function answerQuestion(index: number) {
+    if (answerLocked) return
     setSelectedAnswer(index)
     if (index === scripture.question.answer) {
       setCoins((c) => c + 3)
       setLastAction('power')
       setMessage(copy.correct)
+      setAnswerLocked(true)
       window.setTimeout(() => {
         setSelectedAnswer(null)
+        setAnswerLocked(false)
         setPhase('play')
-      }, 650)
+      }, 1400)
     } else {
+      setAnswerLocked(true)
       setMessage(copy.wrong)
+      window.setTimeout(() => {
+        setSelectedAnswer(null)
+        setAnswerLocked(false)
+      }, 1200)
     }
   }
 
@@ -322,6 +398,7 @@ export default function FaithOverGiantsPage() {
     setHealth((h) => Math.min(6, h + 1))
     setStrengthTurns(0)
     setSelectedAnswer(null)
+    setAnswerLocked(false)
     setLastAction('none')
     setMessage('')
     setPhase('question')
@@ -409,7 +486,7 @@ export default function FaithOverGiantsPage() {
         .giant-hp-bar { position: absolute; bottom: 8px; left: 8px; right: 8px; height: 10px; border-radius: 999px; background: rgba(15,23,42,.6); overflow: hidden; }
         .giant-hp-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg,#ef4444,#fbbf24); transition: width .2s ease; }
         .pressure-meter { position: absolute; right: 7%; top: 7%; z-index: 5; width: 170px; border-radius: 18px; padding: 10px; background: rgba(15,23,42,.72); border: 1px solid rgba(255,255,255,.32); font-family: var(--font-nunito); font-weight: 1000; }
-        .pressure-meter span { display: block; height: 10px; border-radius: 999px; margin-top: 6px; background: linear-gradient(90deg,#22c55e,#fde047,#ef4444); width: var(--fear-line-width); }
+        .pressure-meter span { display: block; height: 10px; border-radius: 999px; margin-top: 6px; background: linear-gradient(90deg,#22c55e,#fde047,#ef4444); width: var(--fear-line-width); transition: width 0.75s linear; }
         .promise-light { position: absolute; left: 50%; top: 18%; width: 180px; height: 180px; transform: translateX(-50%); border-radius: 999px; background: radial-gradient(circle,rgba(255,255,255,.92) 0 12%,rgba(255,216,102,.56) 13% 42%,transparent 70%); filter: blur(.3px); z-index: 1; }
         .progress-path { position: absolute; left: 8%; right: 8%; bottom: 6%; height: 18px; border-radius: 999px; background: rgba(15,23,42,.72); border: 2px solid rgba(255,255,255,.72); z-index: 5; overflow: hidden; }
         .progress-path span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg,#fef08a,#22c55e); width: var(--progress); box-shadow: 0 0 20px rgba(34,197,94,.7); }
@@ -427,6 +504,7 @@ export default function FaithOverGiantsPage() {
         .answer-grid { display: grid; gap: 10px; margin-top: 14px; }
         .answer-grid button, .power-row button { border: 0; border-radius: 16px; padding: 12px 14px; font-family: var(--font-nunito); font-weight: 1000; text-align: left; background: rgba(255,255,255,.94); color: #0d1f3c; box-shadow: 0 10px 22px rgba(0,0,0,.18); }
         .answer-grid button.selected { outline: 4px solid #fbbf24; }
+        .answer-grid button:disabled { opacity: .52; cursor: not-allowed; }
         .power-row { display: grid; gap: 10px; margin-top: 10px; }
         .power-row button:disabled { opacity: .48; filter: grayscale(.35); }
         .arena-overlay { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; padding: 18px; background: rgba(5,9,20,.72); }
@@ -436,7 +514,7 @@ export default function FaithOverGiantsPage() {
         @keyframes fear-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 55% { transform: translateX(5px); } }
         @keyframes burst-rise { 0% { opacity: 0; transform: translateY(18px) scale(.92); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-34px) scale(1.08); } }
         @keyframes giant-hit-flash { 0%,100% { filter: brightness(1); transform: scale(1); } 30% { filter: brightness(3) saturate(0); transform: scale(1.14); } }
-        @media (max-width: 880px) { .giants-grid { grid-template-columns: 1fr; } .promise-arena { min-height: 470px; } .giants-stat { grid-template-columns: repeat(2,1fr); } .giant { width: 42px; height: 94px; } .giant.boss { width: 78px; height: 148px; } .helper { width: 34px; height: 62px; } .helper.leader { width: 44px; height: 78px; } }
+        @media (max-width: 880px) { .giants-grid { grid-template-columns: 1fr; } .promise-arena { min-height: 470px; } .giants-stat { grid-template-columns: repeat(2,1fr); } .giant { width: 54px; height: 108px; font-size: .8rem; } .giant.boss { width: 88px; height: 158px; } .helper { width: 34px; height: 62px; } .helper.leader { width: 44px; height: 78px; } }
       `}</style>
 
       <div className="giants-wrap">
@@ -448,7 +526,7 @@ export default function FaithOverGiantsPage() {
         <div className="giants-stat">
           <div>{copy.level}<br />{Math.min(levelIndex + 1, 10)}/10</div>
           <div>{copy.hearts}<br />{'❤️'.repeat(health) || '—'}</div>
-          <div>{copy.helpers}<br />{helpers}</div>
+          <div>{copy.helpers}<br />{helpers}<br /><span style={{ fontSize: '.66rem', opacity: .65, fontWeight: 700 }}>{copy.helpersHint}</span></div>
           <div>{copy.coins}<br />{coins}</div>
           <div>{isRu ? 'Лучший' : 'Best'}<br />{bestLevel}/10</div>
         </div>
@@ -518,6 +596,14 @@ export default function FaithOverGiantsPage() {
                     <p className="pq-text">&ldquo;{isRu ? scripture.textRu : scripture.textEn}&rdquo;</p>
                     <span className="pq-ref">— {isRu ? scripture.refRu : scripture.refEn}</span>
                   </div>
+                  {phase === 'levelComplete' && levelIndex === LEVELS.length - 2 && (
+                    <p style={{ margin: '14px 0 10px', padding: '10px 14px', borderRadius: 12, background: '#fef3c7', color: '#78350f', fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '.9rem' }}>{copy.bossWarning}</p>
+                  )}
+                  {phase === 'victory' && (
+                    <div style={{ margin: '14px 0 12px', padding: '12px 16px', borderRadius: 14, background: 'rgba(5,9,20,.06)', textAlign: 'left' }}>
+                      <p style={{ fontFamily: 'var(--font-lora)', color: '#0d1f3c', fontWeight: 700, lineHeight: 1.6, margin: 0 }}>{copy.reflection}</p>
+                    </div>
+                  )}
                   {phase === 'levelComplete' && <button className="pz-btn" style={{ width: 'auto', padding: '12px 28px' }} onClick={nextLevel}>{copy.continue}</button>}
                   {phase !== 'levelComplete' && <button className="pz-btn" style={{ width: 'auto', padding: '12px 28px' }} onClick={startGame}>{copy.playAgain}</button>}
                 </div>
@@ -550,7 +636,7 @@ export default function FaithOverGiantsPage() {
                 <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, marginTop: 10 }}>{isRu ? scripture.question.promptRu : scripture.question.promptEn}</h3>
                 <div className="answer-grid">
                   {(isRu ? scripture.question.choicesRu : scripture.question.choicesEn).map((choice, index) => (
-                    <button key={choice} className={selectedAnswer === index ? 'selected' : ''} onClick={() => answerQuestion(index)}>{choice}</button>
+                    <button key={choice} disabled={answerLocked} className={selectedAnswer === index ? 'selected' : ''} onClick={() => answerQuestion(index)}>{choice}</button>
                   ))}
                 </div>
                 <p style={{ marginTop: 10, minHeight: 24, fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: selectedAnswer === scripture.question.answer ? '#bbf7d0' : '#fed7aa' }}>{message || ' '}</p>
