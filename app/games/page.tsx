@@ -23,6 +23,16 @@ export default function GamesPage() {
 
   const games = isRu ? [
     {
+      href: '/games/shield-of-faith',
+      emoji: '🛡️🔥',
+      label: 'Новый шутер',
+      title: 'Щит Веры',
+      desc: 'Раскалённые стрелы летят со всех сторон — собирай доспехи Бога, стреляй Словом и пройди 10 волн тьмы. Ефесянам 6:16.',
+      details: ['10 волн', 'доспехи', 'рекорд', 'тач-экран'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(147,197,253,.42),transparent 25%),linear-gradient(135deg,#0c1a4a,#1e3a5f)',
+      border: 'rgba(147,197,253,.85)'
+    },
+    {
       href: '/games/shepherd-light-adventure',
       emoji: '🐑✨',
       label: 'Премиум приключение',
@@ -82,7 +92,37 @@ export default function GamesPage() {
       bg: 'radial-gradient(circle at 70% 20%,rgba(126,200,227,.45),transparent 26%),linear-gradient(135deg,#17437a,#102a52)',
       border: 'rgba(126,200,227,.82)'
     },
+    {
+      href: '/games/spot-the-difference',
+      emoji: '🔍✨',
+      label: 'Найди отличия',
+      title: 'Библейские сцены',
+      desc: 'Найди 5 отличий в двух картинках с чудесами из Библии. Каждое отличие рассказывает историю!',
+      details: ['4 сцены', 'наблюдение', 'чудеса', 'детям'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(34,197,94,.3),transparent 25%),linear-gradient(135deg,#064e3b,#1e3a5f)',
+      border: 'rgba(34,197,94,.7)'
+    },
+    {
+      href: '/games/escape-room-daniel',
+      emoji: '🦁🗝️',
+      label: 'Комната-загадка',
+      title: 'Яма со львами',
+      desc: '4 комнаты, 4 загадки — пройди путь Даниила от указа царя до чуда Бога. Даниил 6.',
+      details: ['4 комнаты', 'загадки', 'история', 'Даниил'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(167,139,250,.4),transparent 25%),linear-gradient(135deg,#0c0a1e,#2c1810)',
+      border: 'rgba(167,139,250,.75)'
+    },
   ] : [
+    {
+      href: '/games/shield-of-faith',
+      emoji: '🛡️🔥',
+      label: 'New Shooter',
+      title: 'Shield of Faith',
+      desc: 'Fiery darts fly from every direction — collect God\'s armor, fire the Word, and survive 10 waves of darkness. Ephesians 6:16.',
+      details: ['10 waves', 'armor', 'best score', 'touch-screen'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(147,197,253,.42),transparent 25%),linear-gradient(135deg,#0c1a4a,#1e3a5f)',
+      border: 'rgba(147,197,253,.85)'
+    },
     {
       href: '/games/shepherd-light-adventure',
       emoji: '🐑✨',
@@ -142,6 +182,26 @@ export default function GamesPage() {
       details: ['1 player', 'quick', 'best score', 'wisdom'],
       bg: 'radial-gradient(circle at 70% 20%,rgba(126,200,227,.45),transparent 26%),linear-gradient(135deg,#17437a,#102a52)',
       border: 'rgba(126,200,227,.82)'
+    },
+    {
+      href: '/games/spot-the-difference',
+      emoji: '🔍✨',
+      label: 'Puzzle',
+      title: 'Spot the Difference',
+      desc: 'Find 5 differences in two Bible miracle scenes. Every difference you spot teaches the story!',
+      details: ['4 scenes', 'observation', 'miracles', 'kid-safe'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(34,197,94,.3),transparent 25%),linear-gradient(135deg,#064e3b,#1e3a5f)',
+      border: 'rgba(34,197,94,.7)'
+    },
+    {
+      href: '/games/escape-room-daniel',
+      emoji: '🦁🗝️',
+      label: 'Escape Room',
+      title: "Lion's Den",
+      desc: '4 rooms, 4 puzzles — follow Daniel\'s journey from the king\'s decree to God\'s miracle. Daniel 6.',
+      details: ['4 rooms', 'puzzles', 'story', 'Daniel'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(167,139,250,.4),transparent 25%),linear-gradient(135deg,#0c0a1e,#2c1810)',
+      border: 'rgba(167,139,250,.75)'
     },
   ]
 
