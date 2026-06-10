@@ -10,6 +10,15 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
+    href: "/lessons/jonah-big-fish",
+    image: "/images/jr/story-jonah.png",
+    title: "Иона и большая рыба",
+    desc: "Пророк, который побежал НЕ ТУДА! Пройди с Ионой от бури до живота рыбы и до спасения целого города. 4 раздела: порядок истории, голоса с корабля, сборка молитвы и правда/ложь!",
+    color: "#075985",
+    sections: 4,
+    emoji: "🐋",
+  },
+  {
     href: "/lessons/baptism-prep",
     image: "/images/jr/lessons/baptism-prep/topic-baptism-prep.png",
     title: "Зачем Креститься",

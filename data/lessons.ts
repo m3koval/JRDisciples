@@ -24,6 +24,15 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/jonah-big-fish",
+    image: "/images/jr/story-jonah.png",
+    title: "Jonah & the Big Fish",
+    desc: "The prophet who ran the WRONG way! Follow Jonah from the storm to the fish's belly to a whole city saved. 4 sections with story ordering, voices from the ship, a prayer builder, and true/false!",
+    color: "#075985",
+    sections: 4,
+    emoji: "🐋",
+  },
+  {
     href: "/lessons/baptism-prep",
     image: "/images/jr/lessons/baptism-prep/topic-baptism-prep.png",
     title: "Why Get Baptized?",

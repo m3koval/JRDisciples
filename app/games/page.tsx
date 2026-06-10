@@ -11,18 +11,14 @@ export default function GamesPage() {
     eyebrow: 'Игровая зона',
     title: 'Библейские игры',
     intro: 'Короткие, весёлые игры, где победа помогает запомнить Божью мудрость, а не просто набрать очки.',
-    trend: 'Что мы заметили на CrazyGames',
-    trendText: 'Лучшие игры часто дают простой цикл: быстро начать, попробовать ещё раз, улучшить рекорд, открыть следующий уровень. Поэтому главный первый формат здесь — мобильная игра на точность: отпусти пращу в правильный момент.',
     play: 'Играть',
-    coming: 'Дальше можно добавить семейный лидерборд, значки, уровни сложности и недельные вызовы.'
+    coming: 'Скоро появятся новые игры — побей свой рекорд и заглядывай ещё!'
   } : {
     eyebrow: 'Game Zone',
     title: 'Bible Games',
     intro: 'Short, fun games where winning helps kids remember God’s wisdom — not just chase points.',
-    trend: 'What CrazyGames shows us',
-    trendText: 'The best arcade games usually have a simple loop: start fast, try again, beat your score, unlock the next challenge. So the strongest first format here is a mobile-friendly timing game: release the sling at the right moment.',
     play: 'Play',
-    coming: 'Next we can add family leaderboards, badges, difficulty ladders, and weekly challenges.'
+    coming: 'More games are on the way — beat your best score and check back soon!'
   }
 
   const games = isRu ? [
@@ -51,8 +47,8 @@ export default function GamesPage() {
       emoji: '🛡️🍇',
       label: 'Новая стратегия',
       title: 'Вера сильнее великанов',
-      desc: '10 уровней мужества: отвечай на Божье Слово внутри игры, копи Мудрость и веди народ через страх.',
-      details: ['10 уровней', 'Мудрость', 'усиления', 'детям'],
+      desc: '10 уровней мужества: сражайся с великанами, отвечай на Божье Слово, зарабатывай монеты на усиления.',
+      details: ['10 уровней', 'монеты', 'усиления', 'детям'],
       bg: 'radial-gradient(circle at 72% 18%,rgba(255,216,102,.52),transparent 25%),linear-gradient(135deg,#7c3f16,#14532d)',
       border: 'rgba(255,216,102,.92)'
     },
@@ -102,8 +98,8 @@ export default function GamesPage() {
       emoji: '🛡️🍇',
       label: 'New Strategy',
       title: 'Faith Over Giants',
-      desc: '10 courage levels: answer God’s Word inside the game, save Wisdom Fuel, and lead the people through fear.',
-      details: ['10 levels', 'Wisdom Fuel', 'power-ups', 'kid-safe'],
+      desc: '10 courage levels: tap to fight the giants, answer God’s Word, and earn coins for power-ups.',
+      details: ['10 levels', 'coins', 'power-ups', 'kid-safe'],
       bg: 'radial-gradient(circle at 72% 18%,rgba(255,216,102,.52),transparent 25%),linear-gradient(135deg,#7c3f16,#14532d)',
       border: 'rgba(255,216,102,.92)'
     },
@@ -138,11 +134,6 @@ export default function GamesPage() {
         <p style={{ maxWidth: 760, fontFamily: 'var(--font-lora)', fontWeight: 700, lineHeight: 1.75, color: 'rgba(255,255,255,.88)', fontSize: '1.05rem' }}>{copy.intro}</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 18, marginTop: 30 }}>
-          <article style={{ borderRadius: 26, padding: 22, background: 'rgba(255,255,255,.1)', border: '2px solid rgba(126,200,227,.45)', boxShadow: '0 22px 70px rgba(0,0,0,.24)' }}>
-            <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '1.25rem', color: '#ffd866', marginBottom: 10 }}>{copy.trend}</h2>
-            <p style={{ fontFamily: 'var(--font-lora)', lineHeight: 1.68, color: 'rgba(255,255,255,.88)' }}>{copy.trendText}</p>
-          </article>
-
           {games.map((game) => (
             <Link key={game.href} href={game.href} style={{ position: 'relative', overflow: 'hidden', minHeight: 330, borderRadius: 30, padding: 24, textDecoration: 'none', color: 'inherit', background: game.bg, border: `4px solid ${game.border}`, boxShadow: '0 28px 80px rgba(0,0,0,.34)' }}>
               <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px)', backgroundSize: '42px 42px', opacity: .45 }} />
