@@ -382,7 +382,17 @@ export default function EscapeRoomDanielPage() {
             </div>
 
             {/* Puzzle content */}
-            <div style={{ background: 'rgba(255,255,255,.04)', borderRadius: 20, padding: '22px 18px', border: '1px solid rgba(167,139,250,.2)' }}>
+            <div style={{
+              position: 'relative',
+              overflow: 'hidden',
+              background: `linear-gradient(180deg,rgba(12,10,30,.8),rgba(12,10,30,.92)), url(/images/jr/games/escape-room/${ROOM_BG_NAMES[roomIdx]}.png)`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              borderRadius: 20,
+              padding: '22px 18px',
+              border: '1px solid rgba(167,139,250,.32)',
+              boxShadow: '0 18px 48px rgba(0,0,0,.32)'
+            }}>
               {phase === 'room1' && <Room1 onClear={handleClear} isRu={isRu} />}
               {phase === 'room2' && <Room2 onClear={handleClear} isRu={isRu} />}
               {phase === 'room3' && <Room3 onClear={handleClear} isRu={isRu} />}

@@ -205,6 +205,14 @@ export default function GamesPage() {
     },
   ]
 
+  const gameImages: Record<string, string> = {
+    '/games/shield-of-faith': '/images/jr/games/shield-of-faith-hero.png',
+    '/games/shepherd-light-adventure': '/images/jr/games/shepherd-light-adventure/hero-shepherd-light.png',
+    '/games/manna-trail': '/images/jr/games/manna-trail/hero-manna-trail.png',
+    '/games/spot-the-difference': '/images/jr/games/spot/spot-water-to-wine-after.png',
+    '/games/escape-room-daniel': '/images/jr/games/escape-room/escape-room-daniel-den.png',
+  }
+
   return (
     <main style={{ minHeight: '100vh', background: 'linear-gradient(180deg,#081428,#0d1f3c 42%,#f7fbff)' }}>
       <section style={{ maxWidth: 1080, margin: '0 auto', padding: '48px 18px 64px', color: '#fff' }}>
@@ -214,25 +222,38 @@ export default function GamesPage() {
         <p style={{ maxWidth: 760, fontFamily: 'var(--font-lora)', fontWeight: 700, lineHeight: 1.75, color: 'rgba(255,255,255,.88)', fontSize: '1.05rem' }}>{copy.intro}</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 18, marginTop: 30 }}>
-          {games.map((game) => (
-            <Link key={game.href} href={game.href} style={{ position: 'relative', overflow: 'hidden', minHeight: 330, borderRadius: 30, padding: 24, textDecoration: 'none', color: 'inherit', background: game.bg, border: `4px solid ${game.border}`, boxShadow: '0 28px 80px rgba(0,0,0,.34)' }}>
-              <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px)', backgroundSize: '42px 42px', opacity: .45 }} />
-              <div style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <div style={{ fontSize: '3rem', marginBottom: 10 }}>{game.emoji}</div>
-                  <p className="puzzle-label" style={{ color: '#ffd866' }}>{game.label}</p>
-                  <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '2rem', lineHeight: 1.05, margin: '4px 0 10px', color: '#fff' }}>{game.title}</h2>
-                  <p style={{ fontFamily: 'var(--font-lora)', color: 'rgba(255,255,255,.92)', lineHeight: 1.6, fontWeight: 700 }}>{game.desc}</p>
-                </div>
-                <div>
-                  <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
-                    {game.details.map((d) => <span key={d} style={{ borderRadius: 999, padding: '7px 10px', background: 'rgba(255,255,255,.14)', border: '1px solid rgba(255,255,255,.22)', fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '.78rem' }}>{d}</span>)}
+          {games.map((game) => {
+            const image = gameImages[game.href]
+            return (
+              <Link key={game.href} href={game.href} style={{ position: 'relative', overflow: 'hidden', minHeight: 330, borderRadius: 30, padding: 24, textDecoration: 'none', color: 'inherit', background: game.bg, border: `4px solid ${game.border}`, boxShadow: '0 28px 80px rgba(0,0,0,.34)' }}>
+                {image && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={image}
+                    alt=""
+                    aria-hidden="true"
+                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: .78 }}
+                  />
+                )}
+                <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: image ? 'linear-gradient(180deg,rgba(0,0,0,.18),rgba(5,13,30,.74) 56%,rgba(5,13,30,.9))' : undefined }} />
+                <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px)', backgroundSize: '42px 42px', opacity: image ? .18 : .45 }} />
+                <div style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <div style={{ fontSize: '3rem', marginBottom: 10, filter: image ? 'drop-shadow(0 4px 10px rgba(0,0,0,.55))' : undefined }}>{game.emoji}</div>
+                    <p className="puzzle-label" style={{ color: '#ffd866' }}>{game.label}</p>
+                    <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '2rem', lineHeight: 1.05, margin: '4px 0 10px', color: '#fff', textShadow: image ? '0 3px 18px rgba(0,0,0,.75)' : undefined }}>{game.title}</h2>
+                    <p style={{ fontFamily: 'var(--font-lora)', color: 'rgba(255,255,255,.94)', lineHeight: 1.6, fontWeight: 800, textShadow: image ? '0 2px 12px rgba(0,0,0,.75)' : undefined }}>{game.desc}</p>
                   </div>
-                  <span className="pz-btn" style={{ display: 'inline-flex', width: 'auto', padding: '12px 24px', background: 'linear-gradient(180deg,#fbbf24,#f97316)', color: '#3b2307' }}>{copy.play} →</span>
+                  <div>
+                    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
+                      {game.details.map((d) => <span key={d} style={{ borderRadius: 999, padding: '7px 10px', background: image ? 'rgba(5,13,30,.48)' : 'rgba(255,255,255,.14)', border: '1px solid rgba(255,255,255,.26)', fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '.78rem' }}>{d}</span>)}
+                    </div>
+                    <span className="pz-btn" style={{ display: 'inline-flex', width: 'auto', padding: '12px 24px', background: 'linear-gradient(180deg,#fbbf24,#f97316)', color: '#3b2307' }}>{copy.play} →</span>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            )
+          })}
         </div>
 
         <p style={{ marginTop: 22, fontFamily: 'var(--font-nunito)', color: '#dbeafe', fontWeight: 800 }}>{copy.coming}</p>

@@ -1,0 +1,67 @@
+{
+  "generatedBy": "Apex via FAL image tool",
+  "branch": "claude/mobile-hero-image-layout-MYuSB",
+  "style": "Polished child-safe 3D animated Bible storybook, warm Pixar-like emotion, subtle Minecraft/block-world forms where fitting, original IP, no readable text/logos/watermarks.",
+  "assets": [
+    {
+      "path": "/images/jr/games/spot/spot-water-to-wine-before.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc71a/92wL_hMQG-6XWO2ClXq4O_EVRh7IAn.png"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-feeding-5000-before.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc721/zSTTQpDexGtN0nOtgICx-_McpZoYnj.png"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-calm-storm-before.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc727/eeHdFmBbMNEvWeWKweL5x_rArXNofL.png"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-zacchaeus-before.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc72d/JOTCIO7nixW5wxk5tKETt_x3Rwt5Ue.png"
+    },
+    {
+      "path": "/images/jr/games/escape-room/escape-room-daniel-decree.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc734/JZ1TqYXrVWbNpZUWt_-3f_DON5KkNA.png"
+    },
+    {
+      "path": "/images/jr/games/escape-room/escape-room-daniel-window.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc73b/ASOTfZbTlDMMXVJ7sjPW8_8xJVNAvU.png"
+    },
+    {
+      "path": "/images/jr/games/escape-room/escape-room-daniel-den.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc741/VVG4QKyP456loEjyjkNTp_p3CuIlHk.png"
+    },
+    {
+      "path": "/images/jr/games/escape-room/escape-room-daniel-victory.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc747/X6IE1HtlvSSXbwIlycfM-_yANT2tbF.png"
+    },
+    {
+      "path": "/images/jr/games/shield-of-faith-hero.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc74e/OacSkGP1O2GxJXJfd5vDb_bfrOPrQn.png"
+    },
+    {
+      "path": "/images/jr/games/manna-trail/hero-manna-trail.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc6e1/jpFttqYO1Mu-JCMdJLoZd_KylC5pvq.png"
+    },
+    {
+      "path": "/images/jr/games/shepherd-light-adventure/hero-shepherd-light.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc6e8/HWOXW6GoyKir7tbBIpZKh_Zb04kuuj.png"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-water-to-wine-after.png",
+      "source": "derived from matching before image with exactly five visible overlay differences at configured hotspot regions"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-feeding-5000-after.png",
+      "source": "derived from matching before image with exactly five visible overlay differences at configured hotspot regions"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-calm-storm-after.png",
+      "source": "derived from matching before image with exactly five visible overlay differences at configured hotspot regions"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-zacchaeus-after.png",
+      "source": "derived from matching before image with exactly five visible overlay differences at configured hotspot regions"
+    }
+  ]
+}

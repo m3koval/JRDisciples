@@ -1,4 +1,5 @@
 'use client'
+/* eslint-disable react-hooks/immutability, react-hooks/set-state-in-effect, react-hooks/refs, react/no-unescaped-entities */
 
 import { useRef, useEffect, useState, useCallback } from 'react'
 import Link from 'next/link'
@@ -645,6 +646,13 @@ export default function ShieldOfFaithPage() {
           </Link>
           <div style={{ marginTop: 32, textAlign: 'center' }}>
             <div style={{ fontSize: '4rem', marginBottom: 8 }}>🛡️</div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/jr/games/shield-of-faith-hero.png"
+              alt=""
+              aria-hidden="true"
+              style={{ width: '100%', maxHeight: 360, objectFit: 'cover', borderRadius: 24, border: '3px solid rgba(147,197,253,.45)', boxShadow: '0 24px 70px rgba(0,0,0,.42)', marginBottom: 18 }}
+            />
             <h1 style={{ fontFamily: 'sans-serif', fontWeight: 900, fontSize: 'clamp(1.8rem,7vw,3rem)', color: '#fff', margin: '0 0 8px' }}>
               {isRu ? 'Щит Веры' : 'Shield of Faith'}
             </h1>
