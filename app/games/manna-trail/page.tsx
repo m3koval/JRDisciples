@@ -29,6 +29,10 @@ const VERSES_EN: Verse[] = [
   { words: ['I', 'am', 'the', 'bread', 'of', 'life'], ref: 'John 6:35' },
   { words: ['Taste', 'and', 'see', 'that', 'the', 'LORD', 'is', 'good'], ref: 'Psalm 34:8' },
   { words: ['My', 'God', 'will', 'supply', 'every', 'need', 'of', 'yours'], ref: 'Philippians 4:19' },
+  { words: ['I', 'am', 'the', 'living', 'bread', 'that', 'came', 'down', 'from', 'heaven'], ref: 'John 6:51' },
+  { words: ['He', 'rained', 'down', 'on', 'them', 'manna', 'to', 'eat'], ref: 'Psalm 78:24' },
+  { words: ['Feed', 'me', 'with', 'the', 'food', 'that', 'is', 'needful', 'for', 'me'], ref: 'Proverbs 30:8' },
+  { words: ['The', 'LORD', 'is', 'my', 'shepherd', 'I', 'shall', 'not', 'want'], ref: 'Psalm 23:1' },
 ]
 const VERSES_RU: Verse[] = [
   { words: ['Хлеб', 'наш', 'насущный', 'дай', 'нам', 'на', 'сей', 'день'], ref: 'Матфея 6:11' },
@@ -36,6 +40,10 @@ const VERSES_RU: Verse[] = [
   { words: ['Я', 'есмь', 'хлеб', 'жизни'], ref: 'Иоанна 6:35' },
   { words: ['Вкусите', 'и', 'увидите', 'как', 'благ', 'Господь'], ref: 'Псалом 33:9' },
   { words: ['Бог', 'мой', 'да', 'восполнит', 'всякую', 'нужду', 'вашу'], ref: 'Филиппийцам 4:19' },
+  { words: ['Я', 'хлеб', 'живый', 'сшедший', 'с', 'небес'], ref: 'Иоанна 6:51' },
+  { words: ['Он', 'одождил', 'на', 'них', 'манну', 'в', 'пищу'], ref: 'Псалом 77:24' },
+  { words: ['Питай', 'меня', 'насущным', 'хлебом'], ref: 'Притчи 30:8' },
+  { words: ['Господь', 'Пастырь', 'мой', 'я', 'ни', 'в', 'чем', 'не', 'буду', 'нуждаться'], ref: 'Псалом 22:1' },
 ]
 
 function randCell(blocked: Cell[]): Cell {

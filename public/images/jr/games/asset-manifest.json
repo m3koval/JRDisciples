@@ -1,6 +1,6 @@
 {
   "generatedBy": "Apex via FAL image tool",
-  "branch": "claude/mobile-hero-image-layout-MYuSB",
+  "branch": "apex/game-levels-jonah-review",
   "style": "Polished child-safe 3D animated Bible storybook, warm Pixar-like emotion, subtle Minecraft/block-world forms where fitting, original IP, no readable text/logos/watermarks.",
   "assets": [
     {
@@ -61,6 +61,38 @@
     },
     {
       "path": "/images/jr/games/spot/spot-zacchaeus-after.png",
+      "source": "derived from matching before image with exactly five visible overlay differences at configured hotspot regions"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-good-samaritan-before.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc7b3/7jyR5GiBedpmOY7mbz7em_5RZFsHJf.png"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-lost-sheep-before.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc7ba/tQPSeOMKxs_psAgy73o2s_4cHRqeLb.png"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-daniel-lions-before.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc7c0/H2DVZu3Wj68HLq1eNN1Tb_EzUwavgL.png"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-empty-tomb-before.png",
+      "sourceUrl": "https://v3b.fal.media/files/b/0a9dc7c6/LBCV0VBoJIMuG2iwaVPab_vfegBKvE.png"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-good-samaritan-after.png",
+      "source": "derived from matching before image with exactly five visible overlay differences at configured hotspot regions"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-lost-sheep-after.png",
+      "source": "derived from matching before image with exactly five visible overlay differences at configured hotspot regions"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-daniel-lions-after.png",
+      "source": "derived from matching before image with exactly five visible overlay differences at configured hotspot regions"
+    },
+    {
+      "path": "/images/jr/games/spot/spot-empty-tomb-after.png",
       "source": "derived from matching before image with exactly five visible overlay differences at configured hotspot regions"
     }
   ]
