@@ -305,6 +305,42 @@ export default function JonahBigFishPage() {
         </button>
       </div>
 
+      {/* ── Story map / lesson frame ───────────────────────────────── */}
+      <section style={{ background: '#eef8fc', padding: '28px 20px 34px', borderBottom: '1px solid rgba(7,89,133,.14)' }}>
+        <div style={{ maxWidth: 920, margin: '0 auto' }}>
+          <p className="eyebrow" style={{ textAlign: 'center' }}>
+            {isRu ? 'Перед заданиями' : 'Before the activities'}
+          </p>
+          <h2 className="sec-title" style={{ textAlign: 'center', marginBottom: 12 }}>
+            {isRu ? 'Это интерактивная библейская история — с уроком внутри' : 'This is an interactive Bible story — with the lesson inside'}
+          </h2>
+          <p className="sec-intro" style={{ maxWidth: 760, margin: '0 auto 22px', textAlign: 'center' }}>
+            {isRu
+              ? 'Если ребёнок ещё не знает историю Ионы, начните здесь. Каждое задание становится легче, когда он сначала увидит путь: Бог зовёт, Иона бежит, Бог спасает, Ниневия получает милость.'
+              : 'If a child does not already know Jonah, start here. Each task gets easier when they first see the path: God calls, Jonah runs, God rescues, Nineveh receives mercy.'}
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: 14 }}>
+            {[
+              isRu ? ['📣','Бог зовёт','Иди в Ниневию и предупреди людей.'] : ['📣','God calls','Go to Nineveh and warn the people.'],
+              isRu ? ['🏃','Иона бежит','Он выбирает корабль в противоположную сторону.'] : ['🏃','Jonah runs','He chooses a ship going the opposite way.'],
+              isRu ? ['🌊','Бог спасает','Буря останавливает бегство, а большая рыба сохраняет жизнь Ионы.'] : ['🌊','God rescues','The storm stops the running, and the big fish preserves Jonah’s life.'],
+              isRu ? ['💚','Бог милует','Ниневия кается, и Бог показывает милость даже врагам Ионы.'] : ['💚','God shows mercy','Nineveh repents, and God shows mercy even to Jonah’s enemies.'],
+            ].map(([emoji, title, body]) => (
+              <div key={title} style={{ background: '#fff', borderRadius: 18, padding: '18px 16px', boxShadow: '0 4px 18px rgba(7,89,133,.1)', border: '1px solid rgba(7,89,133,.12)' }}>
+                <div style={{ fontSize: '2rem', marginBottom: 8 }}>{emoji}</div>
+                <h3 style={{ fontFamily: 'var(--font-cinzel)', color: ACCENT_DARK, fontSize: '1rem', marginBottom: 8 }}>{title}</h3>
+                <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 800, color: '#475569', lineHeight: 1.55, fontSize: '.9rem', margin: 0 }}>{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="kid-note" style={{ marginTop: 20 }}>
+            {isRu
+              ? 'Главный урок: Бог не только останавливает плохой путь — Он даёт второй шанс и учит нас радоваться Его милости к другим.'
+              : 'Main lesson: God does not only stop the wrong road — He gives second chances and teaches us to rejoice when He shows mercy to others.'}
+          </div>
+        </div>
+      </section>
+
       {/* ════════════════ SECTION 1 ══════════════════════════════════ */}
       <section id="sec-1" style={{ background: '#fff', padding: '0 0 8px' }}>
         <div style={{ background: `linear-gradient(135deg,${ACCENT},${ACCENT_DARK})`, padding: '14px 20px', textAlign: 'center' }}>
