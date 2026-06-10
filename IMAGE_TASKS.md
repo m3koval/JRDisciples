@@ -144,21 +144,23 @@ Save location: `public/images/jr/games/`
 
 ---
 
-## Integration Notes for Claude
+## Integration Notes
 
-Once images are committed to the paths above, Claude will:
+**No code changes are needed. Just commit the images to the exact paths above
+and everything auto-upgrades:**
 
-1. **Spot the Difference** — `SceneIllustration` already checks for
-   `/images/jr/games/spot/spot-[scene.id]-[side].png`. When the file exists,
-   the `<img>` renders and the SVG fallback is hidden via `onLoad`. No code
-   changes needed — just commit the images.
+1. **Spot the Difference** — the game tries to load
+   `/images/jr/games/spot/spot-[scene-id]-[before|after].png` for each panel.
+   When the file exists the image renders; until then an SVG illustration
+   shows as fallback.
 
-2. **Escape Room** — Update the room panel `background` style in
-   `app/games/escape-room-daniel/page.tsx` — search for `// ROOM_BG_TODO`
-   and uncomment the `backgroundImage` lines for each room.
+2. **Escape Room** — each room renders
+   `/images/jr/games/escape-room/[name].png` as a low-opacity background
+   layer. A missing file is simply transparent; the gradient shows through.
 
-3. **Shield of Faith hero** — Add `<img>` to the games page card or to the
-   Shield of Faith menu screen. Currently the card uses a gradient only.
+3. **Shield of Faith hero** — optional polish. If
+   `/images/jr/games/shield-of-faith-hero.png` is committed, Claude can wire
+   it into the menu screen in a follow-up (the game is fully playable without it).
 
-4. **Games index cards** — Optionally add thumbnail images to the new game
-   cards at `/games` page using `games-hero` pattern matching existing cards.
+**Checklist for APEX:** commit images at the exact paths, push to `main`
+(or open a PR). File names are case-sensitive. PNG format.
