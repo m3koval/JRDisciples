@@ -33,6 +33,16 @@ export default function GamesPage() {
       border: 'rgba(254,243,199,.94)'
     },
     {
+      href: '/games/manna-trail',
+      emoji: '🍞🐍',
+      label: 'Классическая змейка',
+      title: 'Тропа манны',
+      desc: 'Старая добрая «змейка»: собирай манну с неба, лови золотые слова и складывай стих — уровень за уровнем быстрее!',
+      details: ['клавиатура', 'свайп', 'стихи', 'рекорд'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(253,230,138,.5),transparent 25%),linear-gradient(135deg,#0c4a6e,#14532d)',
+      border: 'rgba(253,230,138,.92)'
+    },
+    {
       href: '/games/faithful-archer',
       emoji: '🏹✨',
       label: 'Новая аркада',
@@ -82,6 +92,16 @@ export default function GamesPage() {
       details: ['adventure', 'gospel', 'touch-screen', 'story'],
       bg: 'radial-gradient(circle at 72% 18%,rgba(254,243,199,.62),transparent 25%),linear-gradient(135deg,#0f766e,#365314)',
       border: 'rgba(254,243,199,.94)'
+    },
+    {
+      href: '/games/manna-trail',
+      emoji: '🍞🐍',
+      label: 'Classic Snake',
+      title: 'Manna Trail',
+      desc: 'Snake like the good old days: gather manna from heaven, catch golden words, and build the verse — faster every level!',
+      details: ['keyboard', 'swipe', 'verses', 'best score'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(253,230,138,.5),transparent 25%),linear-gradient(135deg,#0c4a6e,#14532d)',
+      border: 'rgba(253,230,138,.92)'
     },
     {
       href: '/games/faithful-archer',
