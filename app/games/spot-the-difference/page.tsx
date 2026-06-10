@@ -134,9 +134,9 @@ const SCENES: Scene[] = [
 
 const TOTAL_DIFFS = 5
 
-// ─── Illustrated panel (canvas) ───────────────────────────────────────────────
-// Each panel draws a simplified Bible scene illustration.
-// Replace with real images by placing /images/spot/[id]-before.png + after.png
+// ─── Illustrated panel ────────────────────────────────────────────────────────
+// Tries to load /images/jr/games/spot/spot-[id]-[before|after].png.
+// Falls back to the SVG illustration if the image hasn't been generated yet.
 
 function ScenePanel({
   scene, side, found, onTap, disabled
@@ -149,7 +149,9 @@ function ScenePanel({
 }) {
   const [ripples, setRipples] = useState<Array<{ id: number; x: number; y: number; ts: number }>>([])
   const [wrongRipple, setWrongRipple] = useState<{ x: number; y: number; ts: number } | null>(null)
+  const [imgLoaded, setImgLoaded] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+  const imgSrc = `/images/jr/games/spot/spot-${scene.id}-${side === 'left' ? 'before' : 'after'}.png`
 
   const handleClick = useCallback((e: React.MouseEvent | React.TouchEvent) => {
     if (disabled) return
@@ -202,8 +204,17 @@ function ScenePanel({
         boxShadow: '0 8px 32px rgba(0,0,0,.4)'
       }}
     >
-      {/* Illustrated content */}
-      <SceneIllustration scene={scene} side={side} />
+      {/* Real image (shown when available) */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={imgSrc}
+        alt=""
+        onLoad={() => setImgLoaded(true)}
+        onError={() => setImgLoaded(false)}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: imgLoaded ? 'block' : 'none' }}
+      />
+      {/* SVG fallback (shown until real image loads) */}
+      {!imgLoaded && <SceneIllustration scene={scene} side={side} />}
 
       {/* Label */}
       <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'rgba(0,0,0,.55)', padding: '6px 10px', textAlign: 'center' }}>

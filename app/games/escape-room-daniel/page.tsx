@@ -294,6 +294,11 @@ export default function EscapeRoomDanielPage() {
   const isCleared = (idx: number) => clearedRooms.has(idx)
   const allCleared = clearedRooms.size >= ROOMS.length
 
+  // ROOM_BG_TODO: when images land in public/images/jr/games/escape-room/,
+  // add these background images to the room section div, keyed by roomIdx:
+  // const roomBgs = ['escape-room-daniel-decree','escape-room-daniel-window','escape-room-daniel-den','escape-room-daniel-victory']
+  // then add to the <section> style: backgroundImage:`url(/images/jr/games/escape-room/${roomBgs[roomIdx]}.png)`,backgroundSize:'cover'
+
   return (
     <main style={{ minHeight: '100dvh', background: 'linear-gradient(180deg,#0c0a1e,#1a1040 50%,#2c1810)', userSelect: 'none', WebkitUserSelect: 'none' }}>
       <section style={{ maxWidth: 620, margin: '0 auto', padding: '28px 18px 72px', color: '#fff' }}>
