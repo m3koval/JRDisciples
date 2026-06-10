@@ -61,6 +61,7 @@ export default function MannaTrailPage() {
   // Game state lives in refs so the loop never waits on React
   const phaseRef = useRef<Phase>('menu')
   const snakeRef = useRef<Cell[]>([])
+  const prevSnakeRef = useRef<Cell[]>([])
   const dirRef = useRef<Dir>({ x: 1, y: 0 })
   const dirQueueRef = useRef<Dir[]>([])
   const mannaRef = useRef<Cell>({ x: 0, y: 0 })
@@ -76,7 +77,9 @@ export default function MannaTrailPage() {
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const wrapRef = useRef<HTMLDivElement | null>(null)
-  const swipeRef = useRef<{ x: number; y: number } | null>(null)
+  // virtual joystick: hold anywhere and steer; anchor follows the thumb
+  const joyRef = useRef<{ ax: number; ay: number; cx: number; cy: number } | null>(null)
+  const joyVecRef = useRef<{ x: number; y: number } | null>(null)
 
   const verse = VERSES[(level - 1) % VERSES.length]
 
@@ -116,22 +119,53 @@ export default function MannaTrailPage() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
+  const JOY_DEAD = 12   // px before steering kicks in
+  const JOY_REACH = 52  // max thumb-to-anchor distance; anchor gets dragged along
+
   function onPointerDown(e: React.PointerEvent) {
-    swipeRef.current = { x: e.clientX, y: e.clientY }
+    if ((e.target as HTMLElement).closest('button')) return
+    e.currentTarget.setPointerCapture?.(e.pointerId)
+    joyRef.current = { ax: e.clientX, ay: e.clientY, cx: e.clientX, cy: e.clientY }
+    joyVecRef.current = null
   }
   function onPointerMove(e: React.PointerEvent) {
-    const start = swipeRef.current
-    if (!start || phaseRef.current !== 'play') return
-    const dx = e.clientX - start.x
-    const dy = e.clientY - start.y
-    if (Math.abs(dx) < 24 && Math.abs(dy) < 24) return
-    if (Math.abs(dx) > Math.abs(dy)) pushDir({ x: dx > 0 ? 1 : -1, y: 0 })
-    else pushDir({ x: 0, y: dy > 0 ? 1 : -1 })
-    // re-anchor so one drag can steer multiple turns, snake.io style
-    swipeRef.current = { x: e.clientX, y: e.clientY }
+    const joy = joyRef.current
+    if (!joy || phaseRef.current !== 'play') return
+    joy.cx = e.clientX
+    joy.cy = e.clientY
+    let dx = joy.cx - joy.ax
+    let dy = joy.cy - joy.ay
+    const dist = Math.hypot(dx, dy)
+    // drag the anchor along like slither-style joysticks, so steering
+    // keeps working however far the thumb wanders
+    if (dist > JOY_REACH) {
+      const k = (dist - JOY_REACH) / dist
+      joy.ax += dx * k
+      joy.ay += dy * k
+      dx = joy.cx - joy.ax
+      dy = joy.cy - joy.ay
+    }
+    joyVecRef.current = Math.hypot(dx, dy) > JOY_DEAD ? { x: dx, y: dy } : null
   }
   function onPointerUp() {
-    swipeRef.current = null
+    joyRef.current = null
+    joyVecRef.current = null
+  }
+
+  // Turn the joystick vector into a grid direction. If the thumb pulls
+  // straight backwards (a U-turn), steer with the perpendicular component
+  // instead of ignoring the input — this is what makes it feel "smart".
+  function resolveJoyDir(vec: { x: number; y: number }, cur: Dir): Dir | null {
+    const ax = Math.abs(vec.x)
+    const ay = Math.abs(vec.y)
+    const primary: Dir = ax >= ay ? { x: Math.sign(vec.x), y: 0 } : { x: 0, y: Math.sign(vec.y) }
+    if (primary.x === -cur.x && primary.y === -cur.y) {
+      const secondary: Dir = ax >= ay ? { x: 0, y: Math.sign(vec.y) } : { x: Math.sign(vec.x), y: 0 }
+      const secMag = ax >= ay ? ay : ax
+      if (secMag > JOY_DEAD * 0.5 && (secondary.x !== 0 || secondary.y !== 0)) return secondary
+      return null
+    }
+    return primary
   }
 
   // ── Game setup ─────────────────────────────────────────────────────────────
@@ -144,8 +178,11 @@ export default function MannaTrailPage() {
   function startGame() {
     const cy = Math.floor(GRID / 2)
     snakeRef.current = [{ x: 7, y: cy }, { x: 6, y: cy }, { x: 5, y: cy }, { x: 4, y: cy }]
+    prevSnakeRef.current = snakeRef.current.map(c => ({ ...c }))
     dirRef.current = { x: 1, y: 0 }
     dirQueueRef.current = []
+    joyRef.current = null
+    joyVecRef.current = null
     doveRef.current = null
     nextDoveAtRef.current = performance.now() + DOVE_EVERY_MS
     slowUntilRef.current = 0
@@ -221,12 +258,17 @@ export default function MannaTrailPage() {
 
     function tick(now: number) {
       const snake = snakeRef.current
-      // apply one queued turn per tick
+      prevSnakeRef.current = snake.map(c => ({ x: c.x, y: c.y }))
+      // keyboard queue first, otherwise steer from the held joystick
       const q = dirQueueRef.current
-      if (q.length > 0) {
-        const d = q.shift()!
+      let want: Dir | null = null
+      if (q.length > 0) want = q.shift()!
+      else if (joyVecRef.current) want = resolveJoyDir(joyVecRef.current, dirRef.current)
+      if (want) {
         const cur = dirRef.current
-        if (!(d.x === -cur.x && d.y === -cur.y)) dirRef.current = d
+        if (!(want.x === -cur.x && want.y === -cur.y) && !(want.x === cur.x && want.y === cur.y)) {
+          dirRef.current = want
+        }
       }
       const dir = dirRef.current
       const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y }
@@ -286,7 +328,7 @@ export default function MannaTrailPage() {
       return { cell, ox, oy, size }
     }
 
-    function draw(now: number) {
+    function draw(now: number, frac: number) {
       const { cell, ox, oy, size } = geometry()
       const w = canvas!.width
       const h = canvas!.height
@@ -371,11 +413,17 @@ export default function MannaTrailPage() {
         }
       }
 
-      // snake — gradient trail, glowing head with eyes
+      // snake — gradient trail gliding between cells (interpolated rendering)
       const snake = snakeRef.current
+      const prev = prevSnakeRef.current
       const n = snake.length
+      const lerpPos = (i: number) => {
+        const cur = snake[i]
+        const was = prev[Math.min(i, prev.length - 1)] ?? cur
+        return { x: was.x + (cur.x - was.x) * frac, y: was.y + (cur.y - was.y) * frac }
+      }
       for (let i = n - 1; i >= 0; i--) {
-        const s = snake[i]
+        const s = lerpPos(i)
         const t = n === 1 ? 0 : i / (n - 1) // 0 head → 1 tail
         const r = Math.round(251 - t * (251 - 20))
         const g = Math.round(191 - t * (191 - 184))
@@ -393,7 +441,7 @@ export default function MannaTrailPage() {
       }
       // eyes on head
       if (n > 0) {
-        const hd = snake[0]
+        const hd = lerpPos(0)
         const d = dirRef.current
         const cx = ox + (hd.x + 0.5) * cell
         const cy = oy + (hd.y + 0.5) * cell
@@ -411,6 +459,25 @@ export default function MannaTrailPage() {
           ctx!.arc(cx + fx * 1.3 + sx * sign, cy + fy * 1.3 + sy * sign, cell * 0.05, 0, Math.PI * 2)
           ctx!.fill()
         }
+      }
+
+      // joystick indicator while steering
+      const joy = joyRef.current
+      if (joy && phaseRef.current === 'play') {
+        const rect = wrap!.getBoundingClientRect()
+        const jax = (joy.ax - rect.left) * dpr
+        const jay = (joy.ay - rect.top) * dpr
+        const jcx = (joy.cx - rect.left) * dpr
+        const jcy = (joy.cy - rect.top) * dpr
+        ctx!.strokeStyle = 'rgba(255,255,255,.22)'
+        ctx!.lineWidth = 2 * dpr
+        ctx!.beginPath()
+        ctx!.arc(jax, jay, JOY_REACH * dpr, 0, Math.PI * 2)
+        ctx!.stroke()
+        ctx!.fillStyle = 'rgba(251,191,36,.5)'
+        ctx!.beginPath()
+        ctx!.arc(jcx, jcy, 14 * dpr, 0, Math.PI * 2)
+        ctx!.fill()
       }
 
       // particles
@@ -483,8 +550,11 @@ export default function MannaTrailPage() {
           acc -= tickMs
           tick(now)
         }
+        // render between ticks: 0 = just ticked, 1 = next tick due
+        draw(now, Math.min(1, acc / tickMs))
+        return
       }
-      draw(now)
+      draw(now, 1)
     }
 
     raf = requestAnimationFrame(frame)
@@ -517,7 +587,7 @@ export default function MannaTrailPage() {
     how1: '🍞 Собирай манну — караван растёт, +1 очко',
     how2: '⭐ Лови золотые слова по порядку — собери весь стих и пройди уровень',
     how3: '🕊️ Голубь замедляет время на 5 секунд',
-    how4: '⌨️ Стрелки / WASD · 📱 Свайп в любую сторону',
+    how4: '⌨️ Стрелки / WASD · 📱 Держи палец на экране и веди в нужную сторону — где угодно',
     nextWord: 'Следующее слово',
   } : {
     back: 'All Games',
@@ -540,7 +610,7 @@ export default function MannaTrailPage() {
     how1: '🍞 Eat manna — the trail grows, +1 point',
     how2: '⭐ Catch the golden words in order — finish the verse to clear the level',
     how3: '🕊️ The dove slows time for 5 seconds',
-    how4: '⌨️ Arrows / WASD · 📱 Swipe anywhere',
+    how4: '⌨️ Arrows / WASD · 📱 Hold your thumb anywhere and steer',
     nextWord: 'Next word',
   }
 

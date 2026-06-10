@@ -394,7 +394,7 @@ export default function DavidSlingChallengePage() {
         .dsv2-phase-strip { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 14px; }
         .dsv2-step { border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: 8px 12px; background: rgba(15,23,42,.66); font-family: var(--font-nunito); font-weight: 1000; color: #cbd5e1; }
         .dsv2-step.active { background: linear-gradient(180deg,#fef08a,#f59e0b); color: #3b2307; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(245,158,11,.35); }
-        .dsv2-play-shell.fullscreen { position: fixed; inset: 0; z-index: 9999; display: grid; grid-template-rows: auto auto minmax(0,1fr); gap: 8px; padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); overflow: auto; background: radial-gradient(circle at top,#193b6d,#06172f 64%,#020617); }
+        .dsv2-play-shell.fullscreen { position: fixed; inset: 0; z-index: 9999; display: grid; grid-template-rows: auto auto minmax(0,1fr); gap: 8px; padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); overflow: auto; background: radial-gradient(circle at top,#193b6d,#06172f 64%,#020617); user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
         .dsv2-play-shell.fullscreen .dsv2-stats { margin: 0; grid-template-columns: repeat(6, minmax(88px,1fr)); }
         .dsv2-exit { display: none; border: 0; border-radius: 16px; padding: 10px 14px; font-family: var(--font-nunito); font-weight: 1000; background: linear-gradient(180deg,#fee2e2,#fb7185); color: #450a0a; box-shadow: 0 6px 0 #9f1239; cursor: pointer; touch-action: manipulation; }
         .dsv2-play-shell:not(.fullscreen) .dsv2-stats, .dsv2-play-shell:not(.fullscreen) .dsv2-phase-strip, .dsv2-play-shell:not(.fullscreen) .dsv2-card { display: none; }
@@ -403,7 +403,7 @@ export default function DavidSlingChallengePage() {
         .dsv2-play-shell.fullscreen .dsv2-grid { min-height: 0; }
         .dsv2-play-shell.fullscreen .dsv2-stage { min-height: min(58vh, 520px); }
         .dsv2-play-shell.fullscreen .dsv2-bg { height: 100%; object-fit: cover; }
-        .dsv2-stage { position: relative; border-radius: 32px; overflow: hidden; border: 4px solid rgba(255,216,102,.9); background: radial-gradient(circle at center,#123f73,#07182f); box-shadow: 0 32px 92px rgba(0,0,0,.38); touch-action: manipulation; }
+        .dsv2-stage { position: relative; border-radius: 32px; overflow: hidden; border: 4px solid rgba(255,216,102,.9); background: radial-gradient(circle at center,#123f73,#07182f); box-shadow: 0 32px 92px rgba(0,0,0,.38); touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
         .dsv2-bg { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; object-position: center center; z-index: 0; }
         .dsv2-stage canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; display: block; background: transparent; opacity: 1; pointer-events: none; }
         .dsv2-intro-overlay { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; padding: 20px; background: linear-gradient(180deg,rgba(4,10,25,.42),rgba(4,10,25,.72)); }
@@ -415,7 +415,8 @@ export default function DavidSlingChallengePage() {
         .dsv2-start { border: 0; border-radius: 22px; padding: 16px 26px; font-family: var(--font-nunito); font-size: 1.05rem; font-weight: 1000; color: #3b2307; background: linear-gradient(180deg,#fef08a,#f59e0b); box-shadow: 0 14px 0 #92400e, 0 26px 36px rgba(0,0,0,.28); cursor: pointer; touch-action: manipulation; }
         .dsv2-start:active, .dsv2-game-btn:active, .dsv2-power:active, .dsv2-choice:active { transform: translateY(4px); }
         .dsv2-overlay { position: absolute; z-index: 3; inset: auto 20px 18px 20px; display: flex; flex-wrap: nowrap; align-items: flex-end; justify-content: space-between; pointer-events: auto; }
-        .dsv2-game-btn { pointer-events: auto; border: 0; border-radius: 999px; width: 76px; height: 76px; display: grid; place-items: center; font-family: var(--font-nunito); font-weight: 1000; font-size: .72rem; line-height: 1.2; color: #3b2307; background: linear-gradient(180deg,#fef3c7,#f59e0b); box-shadow: 0 7px 0 #92400e, 0 14px 28px rgba(0,0,0,.3); cursor: pointer; touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+        .dsv2-game-btn { pointer-events: auto; border: 0; border-radius: 999px; width: 76px; height: 76px; display: grid; place-items: center; font-family: var(--font-nunito); font-weight: 1000; font-size: .72rem; line-height: 1.2; color: #3b2307; background: linear-gradient(180deg,#fef3c7,#f59e0b); box-shadow: 0 7px 0 #92400e, 0 14px 28px rgba(0,0,0,.3); cursor: pointer; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+        .dsv2-game-btn * { user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; pointer-events: none; }
         .dsv2-game-btn.release { color: #052e16; background: linear-gradient(180deg,#bbf7d0,#22c55e); box-shadow: 0 7px 0 #166534, 0 14px 28px rgba(0,0,0,.3); }
         .dsv2-game-btn.flash { animation: dsv2-pop .18s ease-out; }
         .dsv2-meter { position: absolute; z-index: 3; left: 16px; top: 16px; width: min(300px, calc(100% - 32px)); border-radius: 18px; padding: 12px; background: rgba(15,23,42,.76); border: 1px solid rgba(255,255,255,.22); font-family: var(--font-nunito); font-weight: 1000; }
@@ -443,7 +444,7 @@ export default function DavidSlingChallengePage() {
           <p className="dsv2-subtitle">{copy.subtitle}</p>
           {!isGameOpen && <button className="dsv2-start dsv2-hero-start" type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); begin() }} onClick={stopTap}>▶ {copy.start}</button>}
         </section>
-        <div className={`dsv2-play-shell ${isGameOpen ? `fullscreen phase-${phase}` : ''}`}>
+        <div className={`dsv2-play-shell ${isGameOpen ? `fullscreen phase-${phase}` : ''}`} onContextMenu={(event) => { if (isGameOpen) event.preventDefault() }}>
         <div className="dsv2-stats">
           <div>{copy.level}<br />{Math.min(levelIndex + 1, LEVELS.length)}/{LEVELS.length}</div>
           <div>{copy.score}<br />{score}</div>
