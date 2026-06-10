@@ -344,17 +344,17 @@ export default function MannaTrailPage() {
       ctx!.fill()
       ctx!.restore()
       ctx!.fillStyle = '#78350f'
-      ctx!.font = `900 ${cell * 0.5}px var(--font-nunito), sans-serif`
+      ctx!.font = `900 ${cell * 0.5}px sans-serif`
       ctx!.textAlign = 'center'
       ctx!.textBaseline = 'middle'
       ctx!.fillText('★', wx + cell * 0.5, wy + cell * 0.54)
       // floating label
       const labelY = wy - cell * 0.42 < oy ? wy + cell * 1.12 : wy - cell * 0.42
-      ctx!.font = `900 ${Math.max(11 * dpr, cell * 0.42)}px var(--font-nunito), sans-serif`
+      ctx!.font = `900 ${Math.max(13 * dpr, cell * 0.52)}px sans-serif`
       const tw = ctx!.measureText(nextWord).width
       const lx = Math.min(Math.max(wx + cell * 0.5, ox + tw / 2 + 8 * dpr), ox + size - tw / 2 - 8 * dpr)
       ctx!.fillStyle = 'rgba(7,21,39,.85)'
-      roundRect(ctx!, lx - tw / 2 - 6 * dpr, labelY - cell * 0.28, tw + 12 * dpr, cell * 0.56, cell * 0.2)
+      roundRect(ctx!, lx - tw / 2 - 8 * dpr, labelY - cell * 0.34, tw + 16 * dpr, cell * 0.68, cell * 0.24)
       ctx!.fill()
       ctx!.fillStyle = '#fde68a'
       ctx!.fillText(nextWord, lx, labelY)
