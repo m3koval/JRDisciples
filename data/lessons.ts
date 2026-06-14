@@ -24,6 +24,24 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/how-to-pray",
+    image: "/images/jr/lessons/how-to-pray/topic-how-to-pray.png",
+    title: "How to Talk to God",
+    desc: "Daniel prayed even when it was dangerous. Jesus gave us a pattern. Paul said bring your worries to God. 4 sections: who God is, coming humbly, giving worries to God, and building your own prayer.",
+    color: "#7c3aed",
+    sections: 4,
+    emoji: "🙏",
+  },
+  {
+    href: "/lessons/mustard-seed-faith",
+    image: "/images/jr/lessons/mustard-seed-faith/topic-mustard-seed-faith.png",
+    title: "Mustard Seed Faith",
+    desc: "Right after the Transfiguration, a desperate father runs to Jesus. The disciples couldn't help — but Jesus healed immediately. What does faith the size of a mustard seed really mean? 4 sections.",
+    color: "#15803d",
+    sections: 4,
+    emoji: "🌱",
+  },
+  {
     href: "/lessons/jonah-big-fish",
     image: "/images/jr/story-jonah.png",
     title: "Jonah & the Big Fish",
