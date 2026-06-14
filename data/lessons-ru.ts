@@ -10,6 +10,24 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
+    href: "/lessons/how-to-pray",
+    image: "/images/jr/lessons/how-to-pray/topic-how-to-pray.png",
+    title: "Как разговаривать с Богом",
+    desc: "Даниил молился даже когда это было опасно. Иисус дал нам образец. Павел сказал — несите тревоги Богу. 4 раздела: кто такой Бог, приходить смиренно, отдавать тревоги Богу и строить свою молитву.",
+    color: "#7c3aed",
+    sections: 4,
+    emoji: "🙏",
+  },
+  {
+    href: "/lessons/mustard-seed-faith",
+    image: "/images/jr/lessons/mustard-seed-faith/topic-mustard-seed-faith.png",
+    title: "Вера с горчичное зерно",
+    desc: "Сразу после Преображения к Иисусу прибегает отчаявшийся отец. Ученики не смогли помочь — но Иисус исцелил немедленно. Что значит вера с горчичное зерно? 4 раздела.",
+    color: "#15803d",
+    sections: 4,
+    emoji: "🌱",
+  },
+  {
     href: "/lessons/jonah-big-fish",
     image: "/images/jr/story-jonah.png",
     title: "Иона и большая рыба",
