@@ -443,18 +443,18 @@ export default function HowToPrayPage() {
                 : 'Tap each card to discover something important about God!'}
             </p>
 
-            {done.has('flip') ? (
-              <div style={{ textAlign: 'center', padding: '16px 0' }}>
+            {done.has('flip') && (
+              <div style={{ textAlign: 'center', padding: '4px 0 18px' }}>
                 <div style={{ fontSize: '2.2rem', marginBottom: 8 }}>✅</div>
-                <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#2a7a2a' }}>
-                  {isRu ? 'Ты познакомился с Богом — теперь можно молиться!' : "You've met God — now you're ready to pray!"}
+                <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#2a7a2a', margin: 0 }}>
+                  {isRu ? 'Ты познакомился с Богом, с Которым разговариваешь! Перечитай карточки ниже.' : "You've met the God you're talking to! Read the cards again below."}
                 </p>
               </div>
-            ) : (
-              <>
+            )}
+            <>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
                   {FLIP_ACTIVE.map(card => {
-                    const isFlipped = flipped.has(card.id)
+                    const isFlipped = done.has('flip') || flipped.has(card.id)
                     return (
                       <div
                         key={card.id}
@@ -532,17 +532,18 @@ export default function HowToPrayPage() {
                     )
                   })}
                 </div>
-                <p style={{
-                  fontFamily: 'var(--font-nunito)', fontWeight: 800,
-                  fontSize: '0.82rem', color: '#888',
-                  textAlign: 'center', marginTop: 14,
-                }}>
-                  {isRu
-                    ? `Открыто: ${flipped.size} из ${FLIP_ACTIVE.length}`
-                    : `Revealed: ${flipped.size} of ${FLIP_ACTIVE.length}`}
-                </p>
-              </>
-            )}
+                {!done.has('flip') && (
+                  <p style={{
+                    fontFamily: 'var(--font-nunito)', fontWeight: 800,
+                    fontSize: '0.82rem', color: '#888',
+                    textAlign: 'center', marginTop: 14,
+                  }}>
+                    {isRu
+                      ? `Открыто: ${flipped.size} из ${FLIP_ACTIVE.length}`
+                      : `Revealed: ${flipped.size} of ${FLIP_ACTIVE.length}`}
+                  </p>
+                )}
+            </>
           </div>
 
           {/* Daniel connection callout — shown after section 1 done */}
@@ -651,23 +652,68 @@ export default function HowToPrayPage() {
               </p>
 
               {done.has('sort') ? (
-                <div style={{ textAlign: 'center', padding: '16px 0' }}>
-                  <div style={{ fontSize: '2.2rem', marginBottom: 8 }}>✅</div>
-                  <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#4ade80' }}>
-                    {isRu ? 'Отлично! Ты понимаешь разницу!' : 'Great job! You understand the difference!'}
-                  </p>
-                  <div style={{
-                    marginTop: 18, padding: '16px 18px',
-                    background: 'rgba(124,58,237,.2)', borderRadius: 14,
-                    border: `1.5px solid ${ACCENT}`,
-                    fontFamily: 'var(--font-lora)', fontStyle: 'italic',
-                    fontSize: '0.97rem', color: '#e9d5ff', lineHeight: 1.7,
-                  }}>
-                    {isRu
-                      ? '"И прости нам долги наши, как и мы прощаем должникам нашим." — Матфея 6:12'
-                      : '"Forgive us our debts, as we also have forgiven our debtors." — Matthew 6:12'}
+                <>
+                  <div style={{ textAlign: 'center', padding: '4px 0 18px' }}>
+                    <div style={{ fontSize: '2.2rem', marginBottom: 8 }}>✅</div>
+                    <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#4ade80', margin: 0 }}>
+                      {isRu ? 'Отлично! Ты понимаешь разницу! Посмотри ещё раз ниже, что куда относится.' : 'Great job! You understand the difference! Review below which attitude is which.'}
+                    </p>
+                    <div style={{
+                      marginTop: 18, padding: '16px 18px',
+                      background: 'rgba(124,58,237,.2)', borderRadius: 14,
+                      border: `1.5px solid ${ACCENT}`,
+                      fontFamily: 'var(--font-lora)', fontStyle: 'italic',
+                      fontSize: '0.97rem', color: '#e9d5ff', lineHeight: 1.7,
+                    }}>
+                      {isRu
+                        ? '"И прости нам долги наши, как и мы прощаем должникам нашим." — Матфея 6:12'
+                        : '"Forgive us our debts, as we also have forgiven our debtors." — Matthew 6:12'}
+                    </div>
                   </div>
-                </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14 }}>
+                    {(['HUMBLE', 'PROUD'] as const).map(col => {
+                      const isHumble = col === 'HUMBLE'
+                      const colColor = isHumble ? '#4ade80' : '#f87171'
+                      return (
+                        <div key={col} style={{
+                          flex: '1 1 280px',
+                          background: isHumble ? 'rgba(74,222,128,.12)' : 'rgba(248,113,113,.12)',
+                          border: `1.5px solid ${isHumble ? 'rgba(74,222,128,.5)' : 'rgba(248,113,113,.5)'}`,
+                          borderRadius: 14, padding: '16px 14px',
+                        }}>
+                          <p style={{
+                            fontFamily: 'var(--font-nunito)', fontWeight: 900,
+                            fontSize: '0.82rem', color: colColor,
+                            letterSpacing: 2, textTransform: 'uppercase',
+                            textAlign: 'center', marginBottom: 12,
+                          }}>
+                            {isHumble
+                              ? (isRu ? '🙇 СМИРЕННО' : '🙇 HUMBLE')
+                              : (isRu ? '😤 ГОРДО' : '😤 PROUD')}
+                          </p>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                            {SORT_ITEMS.filter(s => s.answer === col).map(item => (
+                              <div key={item.id} style={{
+                                background: 'rgba(255,255,255,.06)',
+                                border: '1.5px solid rgba(255,255,255,.14)',
+                                borderRadius: 12, padding: '10px 12px',
+                              }}>
+                                <p style={{
+                                  fontFamily: 'var(--font-nunito)', fontWeight: 700,
+                                  fontSize: '0.9rem', color: 'rgba(233,213,255,.9)',
+                                  lineHeight: 1.45, margin: 0,
+                                }}>
+                                  <span style={{ color: colColor, fontWeight: 900 }}>✓ </span>
+                                  {isRu ? item.textRu : item.textEn}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </>
               ) : (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                   {SORT_ITEMS.map(item => {
@@ -823,9 +869,54 @@ export default function HowToPrayPage() {
                   : 'Tap each worry card to give it to God!'}
               </p>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center', marginBottom: 24 }}>
+              {done.has('worry') && (
+                <>
+                  <div style={{
+                    padding: '20px 22px',
+                    background: ACCENT_GLOW,
+                    border: `2px solid ${ACCENT}`,
+                    borderRadius: 16, textAlign: 'center', marginBottom: 16,
+                  }}>
+                    <div style={{ fontSize: '2rem', marginBottom: 10 }}>🕊️</div>
+                    <p style={{
+                      fontFamily: 'var(--font-nunito)', fontWeight: 900,
+                      fontSize: '0.95rem', color: '#2a7a2a', marginBottom: 12,
+                    }}>
+                      {isRu
+                        ? '✅ Ты отдал Богу все свои заботы! Посмотри на них ещё раз ниже.'
+                        : '✅ You handed every worry to God! See them all below.'}
+                    </p>
+                    <div style={{
+                      fontFamily: 'var(--font-lora)', fontStyle: 'italic',
+                      fontSize: '0.97rem', color: ACCENT_DARK,
+                      lineHeight: 1.75,
+                    }}>
+                      {isRu
+                        ? '"И мир Божий, который превыше всякого ума, соблюдёт сердца ваши и помышления ваши во Христе Иисусе." — Фил. 4:7'
+                        : '"And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus." — Philippians 4:7'}
+                    </div>
+                  </div>
+                  <div style={{
+                    padding: '14px 18px',
+                    background: 'rgba(124,58,237,.1)',
+                    border: `1.5px solid rgba(124,58,237,.3)`,
+                    borderRadius: 12, textAlign: 'center', marginBottom: 24,
+                  }}>
+                    <p style={{
+                      fontFamily: 'var(--font-nunito)', fontWeight: 800,
+                      fontSize: '0.88rem', color: '#3b2468', lineHeight: 1.6, margin: 0,
+                    }}>
+                      🦁 {isRu
+                        ? 'Даниил молился С БЛАГОДАРНОСТЬЮ даже в опасности (Даниил 6:10). И ты тоже можешь!'
+                        : 'Daniel prayed WITH THANKSGIVING even in danger (Daniel 6:10). You can too.'}
+                    </p>
+                  </div>
+                </>
+              )}
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center', marginBottom: done.has('worry') ? 0 : 24 }}>
                 {WORRY_TILES.map(tile => {
-                  const given = givenWorries.has(tile.id)
+                  const given = done.has('worry') || givenWorries.has(tile.id)
                   return (
                     <div
                       key={tile.id}
@@ -872,42 +963,7 @@ export default function HowToPrayPage() {
                 })}
               </div>
 
-              {done.has('worry') ? (
-                <>
-                  <div style={{
-                    padding: '20px 22px',
-                    background: ACCENT_GLOW,
-                    border: `2px solid ${ACCENT}`,
-                    borderRadius: 16, textAlign: 'center', marginBottom: 16,
-                  }}>
-                    <div style={{ fontSize: '2rem', marginBottom: 10 }}>🕊️</div>
-                    <div style={{
-                      fontFamily: 'var(--font-lora)', fontStyle: 'italic',
-                      fontSize: '0.97rem', color: ACCENT_DARK,
-                      lineHeight: 1.75, marginBottom: 10,
-                    }}>
-                      {isRu
-                        ? '"И мир Божий, который превыше всякого ума, соблюдёт сердца ваши и помышления ваши во Христе Иисусе." — Фил. 4:7'
-                        : '"And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus." — Philippians 4:7'}
-                    </div>
-                  </div>
-                  <div style={{
-                    padding: '14px 18px',
-                    background: 'rgba(124,58,237,.1)',
-                    border: `1.5px solid rgba(124,58,237,.3)`,
-                    borderRadius: 12, textAlign: 'center',
-                  }}>
-                    <p style={{
-                      fontFamily: 'var(--font-nunito)', fontWeight: 800,
-                      fontSize: '0.88rem', color: '#3b2468', lineHeight: 1.6, margin: 0,
-                    }}>
-                      🦁 {isRu
-                        ? 'Даниил молился С БЛАГОДАРНОСТЬЮ даже в опасности (Даниил 6:10). И ты тоже можешь!'
-                        : 'Daniel prayed WITH THANKSGIVING even in danger (Daniel 6:10). You can too.'}
-                    </p>
-                  </div>
-                </>
-              ) : (
+              {!done.has('worry') && (
                 <p style={{
                   fontFamily: 'var(--font-nunito)', fontWeight: 800,
                   fontSize: '0.85rem', color: '#6b5a8a',
@@ -1005,8 +1061,15 @@ export default function HowToPrayPage() {
                       {isRu ? '✨ ХВАЛА' : '✨ PRAISE'}
                     </span>
                     <span style={{ fontStyle: 'italic' }}>
-                      {isRu ? 'Боже, Ты — ' : 'God, You are '}
-                      {[...praiseSelected].join(isRu ? ', ' : ', ')}.
+                      {praiseSelected.size > 0
+                        ? <>
+                            {isRu ? 'Боже, Ты — ' : 'God, You are '}
+                            {[...praiseSelected].map(k => {
+                              const idx = PRAISE_EN.indexOf(k)
+                              return isRu ? PRAISE_RU[idx] : k
+                            }).join(', ')}.
+                          </>
+                        : (isRu ? '"Боже, Ты — ..."' : '"God, You are ..."')}
                     </span>
                   </div>
                   <div style={{ marginBottom: 14 }}>
@@ -1014,8 +1077,15 @@ export default function HowToPrayPage() {
                       {isRu ? '🙇 ЧЕСТНОСТЬ' : '🙇 HONEST'}
                     </span>
                     <span style={{ fontStyle: 'italic' }}>
-                      {isRu ? 'Прости меня за: ' : 'Please forgive me for: '}
-                      {[...honestSelected].join(isRu ? ', ' : ', ')}.
+                      {honestSelected.size > 0
+                        ? <>
+                            {isRu ? 'Прости меня за: ' : 'Please forgive me for: '}
+                            {[...honestSelected].map(k => {
+                              const idx = HONEST_EN.indexOf(k)
+                              return isRu ? HONEST_RU[idx] : k
+                            }).join(', ')}.
+                          </>
+                        : (isRu ? '"Прости меня за ..."' : '"Please forgive me for ..."')}
                     </span>
                   </div>
                   <div>
@@ -1023,8 +1093,15 @@ export default function HowToPrayPage() {
                       {isRu ? '🙏 ПРОСЬБА' : '🙏 ASKING'}
                     </span>
                     <span style={{ fontStyle: 'italic' }}>
-                      {isRu ? 'Помоги мне с: ' : 'I need Your help with: '}
-                      {[...askingSelected].join(isRu ? ', ' : ', ')}.
+                      {askingSelected.size > 0
+                        ? <>
+                            {isRu ? 'Помоги мне с: ' : 'I need Your help with: '}
+                            {[...askingSelected].map(k => {
+                              const idx = ASKING_EN.indexOf(k)
+                              return isRu ? ASKING_RU[idx] : k
+                            }).join(', ')}.
+                          </>
+                        : (isRu ? '"Мне нужна Твоя помощь с ..."' : '"I need Your help with ..."')}
                     </span>
                   </div>
                   <div style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid rgba(255,255,255,.15)', fontStyle: 'italic', color: 'rgba(233,213,255,.7)', fontSize: '0.95rem' }}>

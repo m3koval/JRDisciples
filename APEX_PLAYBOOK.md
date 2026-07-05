@@ -61,8 +61,14 @@ Read the NEWEST existing lesson page first (currently
   connects to the previous lesson if it's part of a series.
 - Every section: teaching text (2 short paragraphs max), a 💡 callout with the
   section's ONE big idea, a verse box with exact scripture, then the activity.
+- **Call to action (mandatory):** every lesson ends with a concrete weekly
+  mission the kid can actually DO — small, specific, tied to the story's
+  truth (e.g., Coin in the Fish → "do one thing this week you don't have to
+  do, willingly, for someone else — and don't announce it"). Offer 3–4
+  concrete example actions. Truth that never becomes action is trivia.
 - Win screen: fixed fullscreen overlay, one-sentence takeaway a kid can
-  repeat, the key verse, back-to-lesson + all-lessons buttons.
+  repeat, the key verse, a one-line reminder of the weekly mission,
+  back-to-lesson + all-lessons buttons.
 - All inline styles. No Tailwind. Fonts: `var(--font-nunito)` (headings/UI),
   `var(--font-lora)` (body/verse, italic for scripture).
 
@@ -148,6 +154,12 @@ meaningful gradient `bg`, `border`, 4 detail chips, and honest description.
    answer buttons lock during feedback so double-taps don't skip content.
 5. **Celebration:** every completion gets a visible reward moment (animation,
    emoji burst, encouraging line). Progress is always visible.
+   **Completed activities stay reviewable:** the success banner ADDS to the
+   content — it never replaces it. After finishing, the kid (or a parent)
+   must still see what was learned: sequences render in correct order, flip
+   cards stay face-up, quizzes show every answer with its explanation, built
+   prayers/verses remain on screen. Success replaces the *interaction*, not
+   the *content*.
 6. **Text sizes:** minimum `0.85rem` body on mobile; headings scale with
    `clamp()`.
 7. **One idea per screen.** If a section teaches three things, it's three
@@ -213,6 +225,7 @@ meaningful gradient `bg`, `border`, 4 detail chips, and honest description.
 - [ ] At least one never-seen-before activity or mechanic twist
 - [ ] Mobile: tap targets ≥44px, no text selection, overlays fullscreen-fixed
 - [ ] Gentle failure + available hints + celebration on completion
+- [ ] Completed activities remain visible for review (content never vanishes)
 - [ ] `tsc --noEmit` zero errors; `npm run build` passes; `check:bilingual` passes
 - [ ] Registered in data files / index pages (both languages)
 - [ ] Topic/hero image generated at the exact contract path (or fallback confirmed)

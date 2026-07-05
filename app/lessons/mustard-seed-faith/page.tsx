@@ -362,11 +362,11 @@ export default function MustardSeedFaithPage() {
   }
 
   // ── Locked section placeholder ─────────────────────────────────────────────
-  function LockedPlaceholder({ secNum }: { secNum: number }) {
+  function LockedPlaceholder({ secNum, light }: { secNum: number; light?: boolean }) {
     return (
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 20px', textAlign: 'center' }}>
         <div style={{ fontSize: '2.5rem', marginBottom: 12 }}>🔒</div>
-        <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 800, color: 'rgba(255,255,255,.5)', fontSize: '1rem' }}>
+        <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 800, color: light ? 'rgba(20,83,45,.6)' : 'rgba(255,255,255,.5)', fontSize: '1rem' }}>
           {isRu
             ? `Заверши Раздел ${secNum - 1}, чтобы открыть этот раздел!`
             : `Complete Section ${secNum - 1} to unlock this section!`}
@@ -618,11 +618,42 @@ export default function MustardSeedFaithPage() {
             </p>
 
             {done.has('seq') ? (
-              <div style={{ textAlign: 'center', padding: '16px 0' }}>
-                <div style={{ fontSize: '2rem', marginBottom: 8 }}>✅</div>
-                <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#86efac' }}>
-                  {isRu ? 'Отлично! Ты знаешь эту историю!' : 'Great job! You know the story!'}
-                </p>
+              <div>
+                <div style={{ textAlign: 'center', padding: '4px 0 16px' }}>
+                  <div style={{ fontSize: '2rem', marginBottom: 8 }}>✅</div>
+                  <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#86efac', margin: 0 }}>
+                    {isRu ? 'Отлично! Вот вся история по порядку:' : 'Great job! Here is the whole story in order:'}
+                  </p>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {SEQ_CORRECT.map((id, i) => {
+                    const ev = seqById[id]
+                    return (
+                      <div key={id} style={{
+                        display: 'flex', alignItems: 'center', gap: 12,
+                        padding: '12px 16px', borderRadius: 12,
+                        background: ACCENT_GLOW,
+                        border: `2px solid ${ACCENT}`,
+                      }}>
+                        <div style={{
+                          width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
+                          background: '#4ade80', color: '#052e16',
+                          fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.9rem',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        }}>
+                          {i + 1}
+                        </div>
+                        <span style={{ fontSize: '1.2rem' }}>{ev.emoji}</span>
+                        <span style={{
+                          fontFamily: 'var(--font-nunito)', fontWeight: 700,
+                          fontSize: '0.9rem', color: 'rgba(255,255,255,.85)', lineHeight: 1.4,
+                        }}>
+                          {ev.text}
+                        </span>
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -748,18 +779,19 @@ export default function MustardSeedFaithPage() {
                   : 'Tap each card to learn what each participant tells us!'}
               </p>
 
-              {done.has('flip') ? (
-                <div style={{ textAlign: 'center', padding: '16px 0' }}>
+              {done.has('flip') && (
+                <div style={{ textAlign: 'center', padding: '4px 0 18px' }}>
                   <div style={{ fontSize: '2rem', marginBottom: 8 }}>✅</div>
-                  <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#86efac' }}>
-                    {isRu ? 'Ты познакомился со всеми участниками!' : "You've met all the participants!"}
+                  <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#86efac', margin: 0 }}>
+                    {isRu ? 'Ты познакомился со всеми четырьмя участниками! Перечитай их истории ниже.' : "You've met all four participants! Read their stories again below."}
                   </p>
                 </div>
-              ) : (
+              )}
+              {(
                 <>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
                     {CHARS_ACTIVE.map(c => {
-                      const isFlipped = flipped.has(c.id)
+                      const isFlipped = done.has('flip') || flipped.has(c.id)
                       return (
                         <div
                           key={c.id}
@@ -838,15 +870,17 @@ export default function MustardSeedFaithPage() {
                       )
                     })}
                   </div>
-                  <p style={{
-                    fontFamily: 'var(--font-nunito)', fontWeight: 700,
-                    fontSize: '0.82rem', color: 'rgba(255,255,255,.45)',
-                    textAlign: 'center', marginTop: 14,
-                  }}>
-                    {isRu
-                      ? `Открыто: ${flipped.size} из ${CHARS_ACTIVE.length}`
-                      : `Revealed: ${flipped.size} of ${CHARS_ACTIVE.length}`}
-                  </p>
+                  {!done.has('flip') && (
+                    <p style={{
+                      fontFamily: 'var(--font-nunito)', fontWeight: 700,
+                      fontSize: '0.82rem', color: 'rgba(255,255,255,.45)',
+                      textAlign: 'center', marginTop: 14,
+                    }}>
+                      {isRu
+                        ? `Открыто: ${flipped.size} из ${CHARS_ACTIVE.length}`
+                        : `Revealed: ${flipped.size} of ${CHARS_ACTIVE.length}`}
+                    </p>
+                  )}
                 </>
               )}
             </div>
@@ -953,9 +987,11 @@ export default function MustardSeedFaithPage() {
                   <div style={{ textAlign: 'center', padding: '8px 0 16px' }}>
                     <div style={{ fontSize: '2rem', marginBottom: 8 }}>✅</div>
                     <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#86efac', marginBottom: 6 }}>
-                      {isRu
-                        ? `Ты ответил на все вопросы! Счёт: ${tfScore}/5`
-                        : `You answered all questions! Score: ${tfScore}/5`}
+                      {Object.keys(tfAnswers).length > 0
+                        ? (isRu
+                          ? `Ты ответил на все вопросы! Счёт: ${tfScore}/5`
+                          : `You answered all questions! Score: ${tfScore}/5`)
+                        : (isRu ? 'Раздел пройден! Вот все ответы:' : 'Section complete! Here are all the answers:')}
                     </p>
                     <p style={{
                       fontFamily: 'var(--font-nunito)', fontWeight: 700,
@@ -966,6 +1002,41 @@ export default function MustardSeedFaithPage() {
                         ? 'Иисус был честен с учениками. Но Он не отвергал их — Он учил их. Вера в правильного Человека важнее, чем большая вера.'
                         : "Jesus was honest with his disciples. But He wasn't giving up on them — He was teaching them. Faith in the right Person matters more than having a lot of faith."}
                     </p>
+                  </div>
+
+                  {/* Answer review — every statement, its verdict, and why */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    {TF_ACTIVE.map(q => (
+                      <div key={q.id} style={{
+                        padding: '14px 16px', borderRadius: 14,
+                        background: q.correct ? 'rgba(74,222,128,.08)' : 'rgba(248,113,113,.08)',
+                        border: `1.5px solid ${q.correct ? 'rgba(74,222,128,.45)' : 'rgba(248,113,113,.45)'}`,
+                      }}>
+                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 8 }}>
+                          <span style={{
+                            flexShrink: 0, padding: '3px 10px', borderRadius: 999,
+                            background: q.correct ? 'rgba(74,222,128,.18)' : 'rgba(248,113,113,.18)',
+                            color: q.correct ? '#4ade80' : '#f87171',
+                            fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.72rem',
+                          }}>
+                            {q.correct ? (isRu ? '✅ ПРАВДА' : '✅ TRUE') : (isRu ? '❌ ЛОЖЬ' : '❌ FALSE')}
+                          </span>
+                          <span style={{
+                            fontFamily: 'var(--font-nunito)', fontWeight: 700,
+                            fontSize: '0.9rem', color: 'rgba(255,255,255,.85)', lineHeight: 1.45,
+                          }}>
+                            {q.text}
+                          </span>
+                        </div>
+                        <p style={{
+                          fontFamily: 'var(--font-lora)', fontStyle: 'italic',
+                          fontSize: '0.85rem', color: 'rgba(255,255,255,.6)',
+                          lineHeight: 1.6, margin: 0, paddingLeft: 4,
+                        }}>
+                          💡 {q.explain}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               ) : (
@@ -1060,8 +1131,10 @@ export default function MustardSeedFaithPage() {
       </section>
 
       {/* ════════════════ SECTION 4 · FAITH THE SIZE OF A SEED ══════════ */}
+      {/* Light background from the start — the section's text colors are dark,
+          so a tall dark→light gradient would swallow the heading at the top */}
       <section id="sec-4" style={{
-        background: 'linear-gradient(180deg,#0f2d1a,#e8f5e9)',
+        background: 'linear-gradient(180deg,#d4ecd9,#e8f5e9)',
         padding: '0 0 8px',
       }}>
         <div style={{
@@ -1077,7 +1150,7 @@ export default function MustardSeedFaithPage() {
         </div>
 
         {!unlocked.has(4) ? (
-          <LockedPlaceholder secNum={4} />
+          <LockedPlaceholder secNum={4} light />
         ) : (
           <div style={{ maxWidth: 860, margin: '0 auto', padding: '36px 20px 40px' }}>
             <p style={{

@@ -341,11 +341,11 @@ export default function CoinInTheFishPage() {
   const seqById      = Object.fromEntries(SEQ_ACTIVE.map(e => [e.id, e]))
 
   // ── Locked section placeholder ─────────────────────────────────────────────
-  function LockedPlaceholder({ secNum }: { secNum: number }) {
+  function LockedPlaceholder({ secNum, light }: { secNum: number; light?: boolean }) {
     return (
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 20px', textAlign: 'center' }}>
         <div style={{ fontSize: '2.5rem', marginBottom: 12 }}>🔒</div>
-        <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 800, color: 'rgba(255,255,255,.5)', fontSize: '1rem' }}>
+        <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 800, color: light ? 'rgba(21,94,117,.6)' : 'rgba(255,255,255,.5)', fontSize: '1rem' }}>
           {isRu
             ? `Заверши Раздел ${secNum - 1}, чтобы открыть этот раздел!`
             : `Complete Section ${secNum - 1} to unlock this section!`}
@@ -431,6 +431,15 @@ export default function CoinInTheFishPage() {
               ? '"Пойди на море, брось уду, и первую рыбу, которая попадётся, возьми; и, открыв у ней рот, найдёшь статир; возьми его и отдай им за Меня и за себя." — Мф 17:27'
               : '"Go to the lake and throw out your line. Take the first fish you catch; open its mouth and you will find a coin. Take it and give it to them for my tax and yours." — Matthew 17:27'}
           </div>
+          <p style={{
+            fontFamily: 'var(--font-nunito)', fontWeight: 800,
+            fontSize: '0.9rem', color: '#fbbf24', lineHeight: 1.6,
+            maxWidth: 440, marginBottom: 28,
+          }}>
+            {isRu
+              ? '🪙 Не забудь «Вызов монеты»: сделай на этой неделе одно дело, которое ты не обязан делать, — добровольно, ради другого.'
+              : "🪙 Don't forget your Coin Challenge: this week, do one thing you don't have to do — willingly, for someone else."}
+          </p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
             <button onClick={() => setWon(false)} style={{
               padding: '14px 32px',
@@ -629,11 +638,42 @@ export default function CoinInTheFishPage() {
             </p>
 
             {done.has('seq') ? (
-              <div style={{ textAlign: 'center', padding: '16px 0' }}>
-                <div style={{ fontSize: '2rem', marginBottom: 8 }}>✅</div>
-                <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#67e8f9' }}>
-                  {isRu ? 'Отлично! Ты знаешь эту историю!' : 'Great job! You know the story!'}
-                </p>
+              <div>
+                <div style={{ textAlign: 'center', padding: '4px 0 16px' }}>
+                  <div style={{ fontSize: '2rem', marginBottom: 8 }}>✅</div>
+                  <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#67e8f9', margin: 0 }}>
+                    {isRu ? 'Отлично! Вот вся история по порядку:' : 'Great job! Here is the whole story in order:'}
+                  </p>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {SEQ_CORRECT.map((id, i) => {
+                    const ev = seqById[id]
+                    return (
+                      <div key={id} style={{
+                        display: 'flex', alignItems: 'center', gap: 12,
+                        padding: '12px 16px', borderRadius: 12,
+                        background: ACCENT_GLOW,
+                        border: `2px solid ${ACCENT}`,
+                      }}>
+                        <div style={{
+                          width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
+                          background: '#4ade80', color: '#052e16',
+                          fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.9rem',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        }}>
+                          {i + 1}
+                        </div>
+                        <span style={{ fontSize: '1.2rem' }}>{ev.emoji}</span>
+                        <span style={{
+                          fontFamily: 'var(--font-nunito)', fontWeight: 700,
+                          fontSize: '0.9rem', color: 'rgba(255,255,255,.85)', lineHeight: 1.4,
+                        }}>
+                          {ev.text}
+                        </span>
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -759,18 +799,19 @@ export default function CoinInTheFishPage() {
                   : 'Tap each card to discover what this story is really saying!'}
               </p>
 
-              {done.has('flip') ? (
-                <div style={{ textAlign: 'center', padding: '16px 0' }}>
+              {done.has('flip') && (
+                <div style={{ textAlign: 'center', padding: '4px 0 18px' }}>
                   <div style={{ fontSize: '2rem', marginBottom: 8 }}>✅</div>
-                  <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#67e8f9' }}>
-                    {isRu ? 'Ты нашёл все четыре сокровища!' : "You've found all four treasures!"}
+                  <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#67e8f9', margin: 0 }}>
+                    {isRu ? 'Ты нашёл все четыре сокровища! Перечитай их ниже.' : "You've found all four treasures! Read them again below."}
                   </p>
                 </div>
-              ) : (
+              )}
+              {(
                 <>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
                     {CARDS_ACTIVE.map(c => {
-                      const isFlipped = flipped.has(c.id)
+                      const isFlipped = done.has('flip') || flipped.has(c.id)
                       return (
                         <div
                           key={c.id}
@@ -849,15 +890,17 @@ export default function CoinInTheFishPage() {
                       )
                     })}
                   </div>
-                  <p style={{
-                    fontFamily: 'var(--font-nunito)', fontWeight: 700,
-                    fontSize: '0.82rem', color: 'rgba(255,255,255,.45)',
-                    textAlign: 'center', marginTop: 14,
-                  }}>
-                    {isRu
-                      ? `Открыто: ${flipped.size} из ${CARDS_ACTIVE.length}`
-                      : `Revealed: ${flipped.size} of ${CARDS_ACTIVE.length}`}
-                  </p>
+                  {!done.has('flip') && (
+                    <p style={{
+                      fontFamily: 'var(--font-nunito)', fontWeight: 700,
+                      fontSize: '0.82rem', color: 'rgba(255,255,255,.45)',
+                      textAlign: 'center', marginTop: 14,
+                    }}>
+                      {isRu
+                        ? `Открыто: ${flipped.size} из ${CARDS_ACTIVE.length}`
+                        : `Revealed: ${flipped.size} of ${CARDS_ACTIVE.length}`}
+                    </p>
+                  )}
                 </>
               )}
             </div>
@@ -881,6 +924,87 @@ export default function CoinInTheFishPage() {
                 {isRu
                   ? '"Пётр говорит Ему: с посторонних. Иисус сказал ему: итак сыны свободны; но, чтобы нам не соблазнить их, пойди на море, брось уду, и первую рыбу, которая попадётся, возьми, и, открыв у ней рот, найдёшь статир; возьми его и отдай им за Меня и за себя."'
                   : '"\'From others,\' Peter answered. \'Then the sons are exempt,\' Jesus said to him. \'But so that we may not cause offense, go to the lake and throw out your line. Take the first fish you catch; open its mouth and you will find a coin. Take it and give it to them for my tax and yours.\'"'}
+              </p>
+            </div>
+
+            {/* ── The Pattern: Son of God → willing payment ─────────────── */}
+            <div style={{
+              marginTop: 24, padding: '22px 18px',
+              background: 'rgba(255,255,255,.05)', borderRadius: 20,
+              border: `2px solid ${ACCENT}`,
+            }}>
+              <p style={{
+                fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.72rem',
+                color: '#22d3ee', letterSpacing: 2, textTransform: 'uppercase',
+                textAlign: 'center', marginBottom: 4,
+              }}>
+                {isRu ? '🔍 Секретный узор Матфея' : "🔍 Matthew's Secret Pattern"}
+              </p>
+              <p style={{
+                fontFamily: 'var(--font-nunito)', fontWeight: 700,
+                fontSize: '0.88rem', color: 'rgba(255,255,255,.7)',
+                textAlign: 'center', marginBottom: 18, lineHeight: 1.55,
+              }}>
+                {isRu
+                  ? 'Смотри, как Матфей повторяет одно и то же — три раза подряд:'
+                  : 'Watch how Matthew repeats the same beat — three times in a row:'}
+              </p>
+
+              {(isRu ? [
+                { son: '«Ты — Сын Бога Живого!» — Пётр', sonRef: 'Мф 16:16', pay: '«Мне должно пострадать и быть убитым… и воскреснуть»', payRef: 'Мф 16:21' },
+                { son: '«Сей есть Сын Мой Возлюбленный!» — Бог Отец', sonRef: 'Мф 17:5', pay: '«Сын Человеческий предан будет… убьют Его, и в третий день воскреснет»', payRef: 'Мф 17:22–23' },
+                { son: '«Итак, сыны свободны»', sonRef: 'Мф 17:26', pay: '«…возьми монету и отдай — за Меня и за себя»', payRef: 'Мф 17:27' },
+              ] : [
+                { son: '"You are the Son of the living God!" — Peter', sonRef: 'Matt 16:16', pay: '"I must suffer and be killed… and be raised"', payRef: 'Matt 16:21' },
+                { son: '"This is My beloved Son!" — God the Father', sonRef: 'Matt 17:5', pay: '"The Son of Man will be betrayed and killed… and on the third day rise"', payRef: 'Matt 17:22–23' },
+                { son: '"Then the sons are free"', sonRef: 'Matt 17:26', pay: '"…take the coin and pay — for Me and you"', payRef: 'Matt 17:27' },
+              ]).map((row, i) => (
+                <div key={i} style={{
+                  display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'stretch',
+                  marginBottom: 10,
+                }}>
+                  <div style={{
+                    flex: '1 1 46%', minWidth: 130, padding: '12px 14px', borderRadius: 12,
+                    background: 'rgba(103,232,249,.1)', border: '1.5px solid rgba(103,232,249,.4)',
+                  }}>
+                    <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.68rem', color: '#67e8f9', textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 4px' }}>
+                      👑 {isRu ? 'Сын Божий' : 'Son of God'} · {row.sonRef}
+                    </p>
+                    <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', fontSize: '0.82rem', color: 'rgba(255,255,255,.85)', lineHeight: 1.5, margin: 0 }}>
+                      {row.son}
+                    </p>
+                  </div>
+                  <div style={{
+                    flex: '1 1 46%', minWidth: 130, padding: '12px 14px', borderRadius: 12,
+                    background: 'rgba(251,191,36,.08)', border: '1.5px solid rgba(251,191,36,.4)',
+                  }}>
+                    <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.68rem', color: '#fbbf24', textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 4px' }}>
+                      {i === 2 ? '🪙' : '✝️'} {isRu ? 'Готов заплатить' : 'Willing to Pay'} · {row.payRef}
+                    </p>
+                    <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', fontSize: '0.82rem', color: 'rgba(255,255,255,.85)', lineHeight: 1.5, margin: 0 }}>
+                      {row.pay}
+                    </p>
+                  </div>
+                </div>
+              ))}
+
+              <p style={{
+                fontFamily: 'var(--font-nunito)', fontWeight: 900,
+                fontSize: '0.85rem', color: '#fbbf24', textAlign: 'center',
+                margin: '16px 0 12px', letterSpacing: 1,
+              }}>
+                {isRu
+                  ? 'СЫН БОЖИЙ → ГОТОВ ЗАПЛАТИТЬ → СЫН БОЖИЙ → ГОТОВ ЗАПЛАТИТЬ'
+                  : 'SON OF GOD → WILLING TO PAY → SON OF GOD → WILLING TO PAY'}
+              </p>
+              <p style={{
+                fontFamily: 'var(--font-lora)', fontSize: '0.95rem',
+                color: 'rgba(255,255,255,.85)', lineHeight: 1.75,
+                textAlign: 'center', margin: 0,
+              }}>
+                {isRu
+                  ? 'Видишь? Каждый раз, когда Матфей показывает, что Иисус — СЫН Бога, он тут же показывает: Сын ГОТОВ заплатить. Монеты хватило, чтобы заплатить налог на храм. Но никакая монета на земле не может заплатить за грех. Поэтому Сын выбрал крест: Он умер и воскрес на третий день — точно так, как обещал. Монета покрыла налог Петра. Смерть и воскресение Иисуса покрывают тебя.'
+                  : "See it? Every time Matthew shows that Jesus is God's SON, he immediately shows the Son CHOOSING to pay. A coin was enough to pay the temple tax. But no coin on earth can pay for sin. That's why the Son chose the cross: He died and rose on the third day — exactly what He said He would do. The coin covered Peter's tax. Jesus' death and resurrection covers you."}
               </p>
             </div>
           </div>
@@ -964,9 +1088,11 @@ export default function CoinInTheFishPage() {
                   <div style={{ textAlign: 'center', padding: '8px 0 16px' }}>
                     <div style={{ fontSize: '2rem', marginBottom: 8 }}>✅</div>
                     <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#67e8f9', marginBottom: 6 }}>
-                      {isRu
-                        ? `Ты ответил на все вопросы! Счёт: ${tfScore}/5`
-                        : `You answered all questions! Score: ${tfScore}/5`}
+                      {Object.keys(tfAnswers).length > 0
+                        ? (isRu
+                          ? `Ты ответил на все вопросы! Счёт: ${tfScore}/5`
+                          : `You answered all questions! Score: ${tfScore}/5`)
+                        : (isRu ? 'Раздел пройден! Вот все ответы:' : 'Section complete! Here are all the answers:')}
                     </p>
                     <p style={{
                       fontFamily: 'var(--font-nunito)', fontWeight: 700,
@@ -977,6 +1103,41 @@ export default function CoinInTheFishPage() {
                         ? 'Иисус никогда не использовал силу для Себя одного. Каждое чудо помогало кому-то. Даже эта монета — половина была для Петра.'
                         : "Jesus never used His power selfishly. Every miracle helped someone. Even this coin — half of it was for Peter."}
                     </p>
+                  </div>
+
+                  {/* Answer review — every statement, its verdict, and why */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    {TF_ACTIVE.map(q => (
+                      <div key={q.id} style={{
+                        padding: '14px 16px', borderRadius: 14,
+                        background: q.correct ? 'rgba(74,222,128,.08)' : 'rgba(248,113,113,.08)',
+                        border: `1.5px solid ${q.correct ? 'rgba(74,222,128,.45)' : 'rgba(248,113,113,.45)'}`,
+                      }}>
+                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 8 }}>
+                          <span style={{
+                            flexShrink: 0, padding: '3px 10px', borderRadius: 999,
+                            background: q.correct ? 'rgba(74,222,128,.18)' : 'rgba(248,113,113,.18)',
+                            color: q.correct ? '#4ade80' : '#f87171',
+                            fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.72rem',
+                          }}>
+                            {q.correct ? (isRu ? '✅ ПРАВДА' : '✅ TRUE') : (isRu ? '🐟 ВЫДУМКА' : '🐟 FISHY')}
+                          </span>
+                          <span style={{
+                            fontFamily: 'var(--font-nunito)', fontWeight: 700,
+                            fontSize: '0.9rem', color: 'rgba(255,255,255,.85)', lineHeight: 1.45,
+                          }}>
+                            {q.text}
+                          </span>
+                        </div>
+                        <p style={{
+                          fontFamily: 'var(--font-lora)', fontStyle: 'italic',
+                          fontSize: '0.85rem', color: 'rgba(255,255,255,.6)',
+                          lineHeight: 1.6, margin: 0, paddingLeft: 4,
+                        }}>
+                          💡 {q.explain}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               ) : (
@@ -1071,8 +1232,10 @@ export default function CoinInTheFishPage() {
       </section>
 
       {/* ════════════════ SECTION 4 · CAST YOUR LINE ════════════════════ */}
+      {/* Light background from the start — the section's text colors are dark,
+          so a tall dark→light gradient would swallow the heading at the top */}
       <section id="sec-4" style={{
-        background: 'linear-gradient(180deg,#0d4f66,#e0f7fa)',
+        background: 'linear-gradient(180deg,#c9ecf4,#e0f7fa)',
         padding: '0 0 8px',
       }}>
         <div style={{
@@ -1088,7 +1251,7 @@ export default function CoinInTheFishPage() {
         </div>
 
         {!unlocked.has(4) ? (
-          <LockedPlaceholder secNum={4} />
+          <LockedPlaceholder secNum={4} light />
         ) : (
           <div style={{ maxWidth: 860, margin: '0 auto', padding: '36px 20px 40px' }}>
             <p style={{
@@ -1347,7 +1510,7 @@ export default function CoinInTheFishPage() {
                 </div>
 
                 <div style={{
-                  padding: '24px 22px', marginBottom: 28,
+                  padding: '24px 22px', marginBottom: 20,
                   background: ACCENT_GLOW, borderRadius: 18,
                   border: `2px solid ${ACCENT}`,
                 }}>
@@ -1360,6 +1523,63 @@ export default function CoinInTheFishPage() {
                     {isRu
                       ? 'Есть ли что-то, что нужно твоей семье прямо сейчас? Расскажи Богу — Он может ответить так, как никто не ожидает.'
                       : 'Is there something your family needs right now? Tell God about it — He may answer in a way nobody expects.'}
+                  </p>
+                </div>
+
+                {/* ── The Coin Challenge: this week's call to action ──────── */}
+                <div style={{
+                  padding: '24px 22px', marginBottom: 28,
+                  background: 'linear-gradient(135deg,#fbbf2418,#f9731618)', borderRadius: 18,
+                  border: '2px solid #d97706',
+                }}>
+                  <div style={{ fontSize: '2rem', textAlign: 'center', marginBottom: 8 }}>🪙</div>
+                  <p style={{
+                    fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.75rem',
+                    color: '#b45309', letterSpacing: 2, textTransform: 'uppercase',
+                    textAlign: 'center', marginBottom: 10,
+                  }}>
+                    {isRu ? 'Задание на неделю · Вызов монеты' : "This Week's Mission · The Coin Challenge"}
+                  </p>
+                  <p style={{
+                    fontFamily: 'var(--font-lora)', fontSize: '0.98rem', color: '#78350f',
+                    lineHeight: 1.7, marginBottom: 14, textAlign: 'center',
+                  }}>
+                    {isRu
+                      ? 'Иисус сделал то, что НЕ был должен делать — добровольно, ради других. Теперь твоя очередь. Выбери на этой неделе ОДНО дело, которое ты не обязан делать, — и сделай его с радостью:'
+                      : "Jesus did something He did NOT have to do — willingly, for others. Now it's your turn. Pick ONE thing this week that you don't have to do — and do it anyway, with joy:"}
+                  </p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 14 }}>
+                    {(isRu ? [
+                      ['🚪', 'Пропусти кого-то вперёд — уступи своё место или очередь'],
+                      ['🧹', 'Сделай дело по дому, о котором никто не просил'],
+                      ['🎁', 'Поделись тем, что принадлежит тебе'],
+                      ['🤝', 'Помоги брату, сестре или другу с чем-то трудным'],
+                    ] : [
+                      ['🚪', 'Let someone go first — give up your spot or your turn'],
+                      ['🧹', 'Do a chore nobody asked you to do'],
+                      ['🎁', 'Share something that belongs to you'],
+                      ['🤝', 'Help a sibling or friend with something hard'],
+                    ]).map(([icon, text]) => (
+                      <div key={text} style={{
+                        display: 'flex', gap: 10, alignItems: 'center',
+                        padding: '10px 14px', borderRadius: 12,
+                        background: 'rgba(255,255,255,.65)', border: '1.5px solid rgba(217,119,6,.35)',
+                      }}>
+                        <span style={{ fontSize: '1.15rem' }}>{icon}</span>
+                        <span style={{ fontFamily: 'var(--font-nunito)', fontWeight: 700, fontSize: '0.88rem', color: '#78350f', lineHeight: 1.45 }}>
+                          {text}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <p style={{
+                    fontFamily: 'var(--font-nunito)', fontWeight: 800,
+                    fontSize: '0.85rem', color: '#b45309',
+                    lineHeight: 1.6, textAlign: 'center', margin: 0,
+                  }}>
+                    {isRu
+                      ? 'Секретное правило: не объявляй об этом и не жди награды. Сделай тихо — как Сын, который заплатил монетой из рыбы.'
+                      : "Secret rule: don't announce it, don't expect a reward. Do it quietly — like the Son who paid with a coin from a fish."}
                   </p>
                 </div>
               </>
