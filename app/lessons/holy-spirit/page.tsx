@@ -895,12 +895,24 @@ export default function HolySpiritLesson() {
             {L.s7.wonQuote}
             <span style={{ display: 'block', fontStyle: 'normal', fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '.72rem', letterSpacing: 1, textTransform: 'uppercase', color: 'var(--flame2)', marginTop: 6 }}>{L.s7.wonQuoteRef}</span>
           </blockquote>
-          <button
-            onClick={() => setWon(false)}
-            style={{ padding: '14px 32px', background: 'linear-gradient(135deg,var(--fire),var(--flame2))', color: '#fff', border: 'none', borderRadius: 18, fontFamily: 'var(--font-nunito)', fontSize: '1.1rem', fontWeight: 900, cursor: 'pointer' }}
-          >
-            {L.s7.wonBtn}
-          </button>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+            <button
+              onClick={() => setWon(false)}
+              style={{ padding: '14px 32px', background: 'linear-gradient(135deg,var(--fire),var(--flame2))', color: '#fff', border: 'none', borderRadius: 18, fontFamily: 'var(--font-nunito)', fontSize: '1.1rem', fontWeight: 900, cursor: 'pointer' }}
+            >
+              {L.s7.wonBtn}
+            </button>
+            <button
+              onClick={() => {
+                localStorage.removeItem('hs_unlocked')
+                localStorage.removeItem('hs_done')
+                window.location.reload()
+              }}
+              style={{ padding: '14px 32px', background: 'linear-gradient(135deg,#fbbf24,#d97706)', color: '#3b2307', border: 'none', borderRadius: 18, fontFamily: 'var(--font-nunito)', fontSize: '1.1rem', fontWeight: 900, cursor: 'pointer' }}
+            >
+              {isRu ? '🔄 Пройти заново' : '🔄 Do It Again'}
+            </button>
+          </div>
         </div>
       )}
 

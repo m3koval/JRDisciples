@@ -67,8 +67,10 @@ Read the NEWEST existing lesson page first (currently
   do, willingly, for someone else — and don't announce it"). Offer 3–4
   concrete example actions. Truth that never becomes action is trivia.
 - Win screen: fixed fullscreen overlay, one-sentence takeaway a kid can
-  repeat, the key verse, a one-line reminder of the weekly mission,
-  back-to-lesson + all-lessons buttons.
+  repeat, the key verse, a one-line reminder of the weekly mission, and
+  three buttons: back-to-lesson, "🔄 Do It Again" (clears the lesson's
+  localStorage keys and reloads so a kid can replay without hunting for a
+  hidden reset), and all-lessons.
 - All inline styles. No Tailwind. Fonts: `var(--font-nunito)` (headings/UI),
   `var(--font-lora)` (body/verse, italic for scripture).
 

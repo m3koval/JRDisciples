@@ -449,6 +449,21 @@ export default function CoinInTheFishPage() {
             }}>
               {isRu ? '← Вернуться к уроку' : '← Back to Lesson'}
             </button>
+            <button
+              onClick={() => {
+                localStorage.removeItem('coin-fish_unlocked')
+                localStorage.removeItem('coin-fish_done')
+                window.location.reload()
+              }}
+              style={{
+                padding: '14px 32px',
+                background: 'linear-gradient(135deg,#fbbf24,#d97706)',
+                color: '#3b2307', border: 'none', borderRadius: 18,
+                fontFamily: 'var(--font-nunito)', fontSize: '1rem', fontWeight: 900, cursor: 'pointer',
+              }}
+            >
+              {isRu ? '🔄 Пройти заново' : '🔄 Do It Again'}
+            </button>
             <Link href="/lessons" style={{
               padding: '14px 32px',
               background: 'rgba(255,255,255,.08)',

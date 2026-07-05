@@ -683,12 +683,24 @@ export default function WhoIsJesusLesson() {
           <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 800, color: 'rgba(255,255,255,.85)', lineHeight: 1.7, marginBottom: 28, fontSize: '1.05rem', maxWidth: 440 }}>
             {L.s5.trophyBody}
           </p>
-          <button
-            onClick={() => setWon(false)}
-            style={{ padding: '14px 32px', background: `linear-gradient(135deg,${ACCENT},#c0294a)`, color: '#fff', border: 'none', borderRadius: 18, fontFamily: 'var(--font-nunito)', fontSize: '1.1rem', fontWeight: 900, cursor: 'pointer' }}
-          >
-            {L.s5.back}
-          </button>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+            <button
+              onClick={() => setWon(false)}
+              style={{ padding: '14px 32px', background: `linear-gradient(135deg,${ACCENT},#c0294a)`, color: '#fff', border: 'none', borderRadius: 18, fontFamily: 'var(--font-nunito)', fontSize: '1.1rem', fontWeight: 900, cursor: 'pointer' }}
+            >
+              {L.s5.back}
+            </button>
+            <button
+              onClick={() => {
+                localStorage.removeItem('wij_unlocked')
+                localStorage.removeItem('wij_done')
+                window.location.reload()
+              }}
+              style={{ padding: '14px 32px', background: 'linear-gradient(135deg,#fbbf24,#d97706)', color: '#3b2307', border: 'none', borderRadius: 18, fontFamily: 'var(--font-nunito)', fontSize: '1.1rem', fontWeight: 900, cursor: 'pointer' }}
+            >
+              {isRu ? '🔄 Пройти заново' : '🔄 Do It Again'}
+            </button>
+          </div>
         </div>
       )}
 

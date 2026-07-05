@@ -255,14 +255,31 @@ export default function TransfigurationPage() {
               ? 'Иисус явил Свою славу на горе — и Он хочет явить её и в твоей жизни! Пусть Его Дух обновляет тебя каждый день.'
               : 'Jesus revealed His glory on the mountain — and He wants to reveal it in your life too! Let His Spirit transform you day by day.'}
           </p>
-          <button onClick={() => setWon(false)} style={{
-            padding: '14px 32px',
-            background: `linear-gradient(135deg,${ACCENT},${ACCENT_DARK})`,
-            color: '#fff', border: 'none', borderRadius: 18,
-            fontFamily: 'var(--font-nunito)', fontSize: '1.1rem', fontWeight: 900, cursor: 'pointer',
-          }}>
-            {isRu ? '← Вернуться к уроку' : '← Back to Lesson'}
-          </button>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+            <button onClick={() => setWon(false)} style={{
+              padding: '14px 32px',
+              background: `linear-gradient(135deg,${ACCENT},${ACCENT_DARK})`,
+              color: '#fff', border: 'none', borderRadius: 18,
+              fontFamily: 'var(--font-nunito)', fontSize: '1.1rem', fontWeight: 900, cursor: 'pointer',
+            }}>
+              {isRu ? '← Вернуться к уроку' : '← Back to Lesson'}
+            </button>
+            <button
+              onClick={() => {
+                localStorage.removeItem('transf_unlocked')
+                localStorage.removeItem('transf_done')
+                window.location.reload()
+              }}
+              style={{
+                padding: '14px 32px',
+                background: 'linear-gradient(135deg,#fbbf24,#d97706)',
+                color: '#3b2307', border: 'none', borderRadius: 18,
+                fontFamily: 'var(--font-nunito)', fontSize: '1.1rem', fontWeight: 900, cursor: 'pointer',
+              }}
+            >
+              {isRu ? '🔄 Пройти заново' : '🔄 Do It Again'}
+            </button>
+          </div>
         </div>
       )}
 
