@@ -45,7 +45,7 @@ export const lessonTopics: LessonTopic[] = [
     href: "/lessons/jonah-big-fish",
     image: "/images/jr/story-jonah.png",
     title: "Jonah & the Big Fish",
-    desc: "The prophet who ran the WRONG way! Follow Jonah from the storm to the fish's belly to a whole city saved. 4 sections with story ordering, voices from the ship, a prayer builder, and true/false!",
+    desc: "An interactive Bible story with the lesson built in: follow Jonah from running away, through the storm and fish, to Nineveh receiving mercy. Includes a story map plus 4 guided activities.",
     color: "#075985",
     sections: 4,
     emoji: "🐋",
