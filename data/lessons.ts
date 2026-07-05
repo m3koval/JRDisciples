@@ -24,6 +24,15 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/coin-in-the-fish",
+    image: "/images/jr/lessons/coin-in-the-fish/topic-coin-in-the-fish.png",
+    title: "The Coin in the Fish's Mouth",
+    desc: "Tax collectors corner Peter with a question — and Jesus answers it before Peter even asks. Kings' sons don't pay taxes, but Jesus paid anyway, with a coin from a fish! Matthew 17:24-27, 4 sections.",
+    color: "#0e7490",
+    sections: 4,
+    emoji: "🪙",
+  },
+  {
     href: "/lessons/how-to-pray",
     image: "/images/jr/lessons/how-to-pray/topic-how-to-pray.png",
     title: "How to Talk to God",

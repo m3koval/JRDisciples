@@ -144,6 +144,32 @@ Save location: `public/images/jr/games/`
 
 ---
 
+## 4. Lesson Topic Cards
+
+Save location: `public/images/jr/lessons/[lesson-id]/`
+
+Topic card images for the /lessons index page. Landscape-friendly but works
+cropped — keep the main subject centred.
+
+### `how-to-pray/topic-how-to-pray.png`
+> A child kneeling by an open window at golden hour, hands folded, eyes closed,
+> peaceful smile. Soft light streaming in. In the sky outside, a subtle warm
+> glow suggests God listening. Deep purple and gold palette. Watercolour
+> storybook style.
+
+### `mustard-seed-faith/topic-mustard-seed-faith.png`
+> A tiny mustard seed held between a child's finger and thumb in the foreground,
+> and behind it — a huge mountain moving aside with rays of light. Green and
+> gold palette. Sense of wonder, not fear. Watercolour storybook style.
+
+### `coin-in-the-fish/topic-coin-in-the-fish.png`
+> Peter (bearded fisherman, joyful surprise on his face) kneeling at the edge
+> of the Sea of Galilee holding a fish, and in the fish's open mouth a shining
+> silver coin glinting in the sunlight. Blue-teal water, warm sky. Watercolour
+> storybook style.
+
+---
+
 ## Integration Notes
 
 **No code changes are needed. Just commit the images to the exact paths above

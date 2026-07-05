@@ -10,6 +10,15 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
+    href: "/lessons/coin-in-the-fish",
+    image: "/images/jr/lessons/coin-in-the-fish/topic-coin-in-the-fish.png",
+    title: "Монета во рту рыбы",
+    desc: "Сборщики налога задают Петру вопрос — а Иисус отвечает раньше, чем Пётр успел спросить. Сыновья царей не платят пошлину, но Иисус заплатил — монетой из рыбы! Мф 17:24-27, 4 раздела.",
+    color: "#0e7490",
+    sections: 4,
+    emoji: "🪙",
+  },
+  {
     href: "/lessons/how-to-pray",
     image: "/images/jr/lessons/how-to-pray/topic-how-to-pray.png",
     title: "Как разговаривать с Богом",
