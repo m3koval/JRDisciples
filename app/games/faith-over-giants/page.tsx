@@ -3,7 +3,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 
 import Link from 'next/link'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 
 type Phase = 'intro' | 'question' | 'play' | 'levelComplete' | 'victory' | 'defeat'
@@ -218,7 +218,7 @@ export default function FaithOverGiantsPage() {
   const isBoss = levelIndex === LEVELS.length - 1
   const giantMaxHp = isBoss ? BOSS_MAX_HP : 2 + Math.floor(levelIndex / 3)
   const progressPercent = giantHps.length > 0 ? (giantHps.filter(hp => hp <= 0).length / giantHps.length) * 100 : 0
-  const couragePower = useMemo(() => helpers * 8 + (strengthTurns > 0 ? 18 : 0), [helpers, strengthTurns])
+
   const guide = GUIDES[phase === 'question' ? 2 : levelIndex % 2]
 
   const copy = isRu ? {

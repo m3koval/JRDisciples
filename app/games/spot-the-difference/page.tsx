@@ -1,7 +1,7 @@
 'use client'
 /* eslint-disable react/no-unescaped-entities */
 
-import { useState, useRef, useCallback, useEffect } from 'react'
+import { useState, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -506,8 +506,6 @@ export default function SpotTheDifferencePage() {
   const [sceneIdx, setSceneIdx]   = useState(0)
   const [found, setFound]         = useState<Set<number>>(new Set())
   const [phase, setPhase]         = useState<'story'|'game'|'verse'|'results'>('story')
-  const [wrongFlash, setWrongFlash] = useState(false)
-  const wrongTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const scene = SCENES[sceneIdx]
   const allFound = found.size >= TOTAL_DIFFS

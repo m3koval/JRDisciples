@@ -1,16 +1,12 @@
 'use client'
 
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type Phase = 'intro' | 'room1' | 'room2' | 'room3' | 'room4' | 'victory'
 
-interface Puzzle {
-  id: string
-  solved: boolean
-}
 
 // ─── Room 1: The Decree ───────────────────────────────────────────────────────
 // Unscramble the king's decree to understand what Daniel was ordered NOT to do.
@@ -150,7 +146,6 @@ function Room3({ onClear, isRu }: { onClear: () => void; isRu: boolean }) {
   }
 
   const q = TF_QUESTIONS[current]
-  const correct = answers.filter(Boolean).length
 
   return (
     <div>

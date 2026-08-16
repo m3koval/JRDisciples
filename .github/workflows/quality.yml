@@ -1,0 +1,51 @@
+name: Quality Gates
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint without warning regressions
+        run: npm run lint -- --max-warnings=32
+
+      - name: Check quest links
+        run: npm run test:quests
+
+      - name: Check bilingual parity
+        run: npm run check:bilingual
+
+      - name: Check Scripture localization
+        run: npm run check:scripture
+
+      - name: Check Russian lesson copy
+        run: npm run check:case-russian
+
+      - name: Check image assets
+        run: npm run check:assets
+
+      - name: Check games
+        run: npm run check:games
+
+      - name: Build production bundle
+        run: npm run build

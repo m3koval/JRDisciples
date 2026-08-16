@@ -580,7 +580,7 @@ export default function HolySpiritLesson() {
     setWsSel(new Set())
     setWsFound(new Set())
     /* eslint-enable react-hooks/set-state-in-effect */
-  }, [isRu]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [isRu])
 
   function solve(id: string, sec: number) {
     if (done.has(id)) return

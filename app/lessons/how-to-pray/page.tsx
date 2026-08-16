@@ -159,9 +159,7 @@ export default function HowToPrayPage() {
 
   function placeSortItem(id: string, column: 'HUMBLE' | 'PROUD') {
     if (done.has('sort')) return
-    const item = SORT_ITEMS.find(s => s.id === id)
-    if (!item) return
-    const isCorrect = item.answer === column
+    if (!SORT_ITEMS.some(item => item.id === id)) return
     const newAnswers = { ...sortAnswers, [id]: column }
     const newChecked = { ...sortChecked, [id]: true }
     setSortAnswers(newAnswers)
@@ -196,7 +194,8 @@ export default function HowToPrayPage() {
     if (prayerBuilt) return
     setPraiseSelected(prev => {
       const next = new Set(prev)
-      next.has(item) ? next.delete(item) : next.add(item)
+      if (next.has(item)) next.delete(item)
+      else next.add(item)
       return next
     })
   }
@@ -204,7 +203,8 @@ export default function HowToPrayPage() {
     if (prayerBuilt) return
     setHonestSelected(prev => {
       const next = new Set(prev)
-      next.has(item) ? next.delete(item) : next.add(item)
+      if (next.has(item)) next.delete(item)
+      else next.add(item)
       return next
     })
   }
@@ -212,7 +212,8 @@ export default function HowToPrayPage() {
     if (prayerBuilt) return
     setAskingSelected(prev => {
       const next = new Set(prev)
-      next.has(item) ? next.delete(item) : next.add(item)
+      if (next.has(item)) next.delete(item)
+      else next.add(item)
       return next
     })
   }

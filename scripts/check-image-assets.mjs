@@ -23,11 +23,16 @@ const files = sourceDirs.flatMap(walk)
 const missing = []
 const refs = new Map()
 
+function isDynamicRef(ref) {
+  return ref.includes('${') || ref.includes('[')
+}
+
 for (const file of files) {
   const text = fs.readFileSync(file, 'utf8')
   const rel = path.relative(root, file)
   for (const match of text.matchAll(imagePattern)) {
     const ref = match[0]
+    if (isDynamicRef(ref)) continue
     const asset = path.join(root, 'public', ref)
     if (!fs.existsSync(asset)) missing.push(`${rel}: ${ref}`)
     if (!refs.has(ref)) refs.set(ref, new Set())

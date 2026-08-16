@@ -415,7 +415,7 @@ export default function WhoIsJesusLesson() {
     setWsSel(new Set())
     setWsFound(new Set())
     /* eslint-enable react-hooks/set-state-in-effect */
-  }, [isRu]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [isRu])
 
   // ─── solve() ─────────────────────────────────────────────────────────────────
   function solve(id: string, sec: number) {

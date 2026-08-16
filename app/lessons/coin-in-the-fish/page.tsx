@@ -192,6 +192,19 @@ const LAKE_SLOTS = [
 const FISH_SLOT_EN = [2, 5, 0, 3, 1, 4]
 const FISH_SLOT_RU = [4, 1, 3, 0, 2]
 
+function LockedPlaceholder({ secNum, light, isRu }: { secNum: number; light?: boolean; isRu: boolean }) {
+  return (
+    <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 20px', textAlign: 'center' }}>
+      <div style={{ fontSize: '2.5rem', marginBottom: 12 }}>🔒</div>
+      <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 800, color: light ? 'rgba(21,94,117,.6)' : 'rgba(255,255,255,.5)', fontSize: '1rem' }}>
+        {isRu
+          ? `Заверши Раздел ${secNum - 1}, чтобы открыть этот раздел!`
+          : `Complete Section ${secNum - 1} to unlock this section!`}
+      </p>
+    </div>
+  )
+}
+
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function CoinInTheFishPage() {
   const { language } = useLanguage()
@@ -340,19 +353,6 @@ export default function CoinInTheFishPage() {
   const SEQ_ACTIVE   = isRu ? SEQ_RU   : SEQ_EN
   const seqById      = Object.fromEntries(SEQ_ACTIVE.map(e => [e.id, e]))
 
-  // ── Locked section placeholder ─────────────────────────────────────────────
-  function LockedPlaceholder({ secNum, light }: { secNum: number; light?: boolean }) {
-    return (
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 20px', textAlign: 'center' }}>
-        <div style={{ fontSize: '2.5rem', marginBottom: 12 }}>🔒</div>
-        <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 800, color: light ? 'rgba(21,94,117,.6)' : 'rgba(255,255,255,.5)', fontSize: '1rem' }}>
-          {isRu
-            ? `Заверши Раздел ${secNum - 1}, чтобы открыть этот раздел!`
-            : `Complete Section ${secNum - 1} to unlock this section!`}
-        </p>
-      </div>
-    )
-  }
 
   // ── TF score after done ───────────────────────────────────────────────────
   const tfScore = Object.entries(tfAnswers).filter(([id, ans]) => {
@@ -760,7 +760,7 @@ export default function CoinInTheFishPage() {
         </div>
 
         {!unlocked.has(2) ? (
-          <LockedPlaceholder secNum={2} />
+          <LockedPlaceholder secNum={2} isRu={isRu} />
         ) : (
           <div style={{ maxWidth: 860, margin: '0 auto', padding: '36px 20px 40px' }}>
             <p style={{
@@ -1044,7 +1044,7 @@ export default function CoinInTheFishPage() {
         </div>
 
         {!unlocked.has(3) ? (
-          <LockedPlaceholder secNum={3} />
+          <LockedPlaceholder secNum={3} isRu={isRu} />
         ) : (
           <div style={{ maxWidth: 860, margin: '0 auto', padding: '36px 20px 40px' }}>
             <p style={{
@@ -1266,7 +1266,7 @@ export default function CoinInTheFishPage() {
         </div>
 
         {!unlocked.has(4) ? (
-          <LockedPlaceholder secNum={4} light />
+          <LockedPlaceholder secNum={4} light isRu={isRu} />
         ) : (
           <div style={{ maxWidth: 860, margin: '0 auto', padding: '36px 20px 40px' }}>
             <p style={{
