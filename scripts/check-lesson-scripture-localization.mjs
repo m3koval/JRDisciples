@@ -32,6 +32,7 @@ const verifiedLessonRequirements = {
     ['defines Russian Scripture before rendering', /const\s+scriptureRu\s*=/],
     ['uses Bible.com ESV source links', /https:\/\/www\.bible\.com\/bible\/59\/MAT\.19\./],
     ['uses Bible.com RST source links', /https:\/\/www\.bible\.com\/bible\/167\/MAT\.19\./],
+    ['labels the full sermon context Matthew 19:13–26 in English and Russian', /Matthew 19:13–26[\s\S]*Матфея 19:13–26|Матфея 19:13–26[\s\S]*Matthew 19:13–26/],
     ['labels English Scripture ESV', /translation:\s*'ESV'/],
     ['labels Russian Scripture RST', /translation:\s*'RST'/],
     ['contains the 12-tile English memory challenge', /const\s+memoryEn[\s\S]*love-a[\s\S]*lack-b/],

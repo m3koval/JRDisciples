@@ -36,7 +36,7 @@ export const lessonTopics: LessonTopic[] = [
     href: "/lessons/one-thing-you-lack",
     image: "/images/jr/lessons/one-thing-you-lack/topic-one-thing-you-lack-fal.png",
     title: "One Thing You Lack",
-    desc: "A rich young man asks Jesus how to gain eternal life. Jesus lovingly exposes the thing ruling his heart and calls him to follow. Matthew 19:16–26, with story, memory, heart-choice, and gospel-truth challenges.",
+    desc: "Children come to Jesus with open hands; a rich young man asks how to gain eternal life. Jesus lovingly exposes the thing ruling his heart and calls him to follow. Matthew 19:13–26, with story, memory, heart-choice, and gospel-truth challenges.",
     color: "#b45309",
     sections: 4,
     emoji: "👑",

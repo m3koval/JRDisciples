@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
@@ -12,9 +12,15 @@ const CREAM = '#fffbeb'
 const STORAGE_KEY = 'one-thing-you-lack'
 const PROGRESS_EVENT = 'one-thing-you-lack-progress'
 const DEFAULT_PROGRESS = JSON.stringify({ unlocked: [1], done: [] })
+let volatileProgress = DEFAULT_PROGRESS
 
 function getProgressSnapshot(): string {
-  return localStorage.getItem(STORAGE_KEY) ?? DEFAULT_PROGRESS
+  try {
+    volatileProgress = localStorage.getItem(STORAGE_KEY) ?? volatileProgress
+  } catch {
+    // Keep the lesson playable when a privacy policy blocks storage.
+  }
+  return volatileProgress
 }
 
 function subscribeToProgress(onStoreChange: () => void) {
@@ -42,7 +48,22 @@ function parseProgress(raw: string): { unlocked: Set<number>; done: Set<string> 
 }
 
 function saveProgress(unlocked: Set<number>, done: Set<string>) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({ unlocked: [...unlocked], done: [...done] }))
+  volatileProgress = JSON.stringify({ unlocked: [...unlocked], done: [...done] })
+  try {
+    localStorage.setItem(STORAGE_KEY, volatileProgress)
+  } catch {
+    // The in-memory snapshot still updates through PROGRESS_EVENT.
+  }
+  window.dispatchEvent(new Event(PROGRESS_EVENT))
+}
+
+function clearProgress() {
+  volatileProgress = DEFAULT_PROGRESS
+  try {
+    localStorage.removeItem(STORAGE_KEY)
+  } catch {
+    // Reload below restores the in-memory default when storage is blocked.
+  }
   window.dispatchEvent(new Event(PROGRESS_EVENT))
 }
 
@@ -346,6 +367,7 @@ export default function OneThingYouLackPage() {
   const progressRaw = useSyncExternalStore(subscribeToProgress, getProgressSnapshot, () => DEFAULT_PROGRESS)
   const { unlocked, done } = useMemo(() => parseProgress(progressRaw), [progressRaw])
   const [won, setWon] = useState(false)
+  const completionDialogRef = useRef<HTMLDivElement>(null)
 
   const [sequence, setSequence] = useState<string[]>([])
   const [sequenceWrong, setSequenceWrong] = useState(false)
@@ -360,6 +382,43 @@ export default function OneThingYouLackPage() {
   const [truthFeedback, setTruthFeedback] = useState<'right' | 'wrong' | null>(null)
 
   const storyById = useMemo(() => Object.fromEntries(story.map(step => [step.id, step])), [story])
+
+  useEffect(() => {
+    if (!won) return
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null
+    const dialog = completionDialogRef.current
+    dialog?.focus()
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault()
+        setWon(false)
+        return
+      }
+      if (event.key !== 'Tab' || !dialog) return
+      const focusable = [...dialog.querySelectorAll<HTMLElement>('button, a[href], [tabindex]:not([tabindex="-1"])')].filter(element => !element.hasAttribute('disabled'))
+      if (!focusable.length) {
+        event.preventDefault()
+        dialog.focus()
+        return
+      }
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      previousFocus?.focus()
+    }
+  }, [won])
 
   function solve(id: string, section: number) {
     if (done.has(id)) return
@@ -444,7 +503,7 @@ export default function OneThingYouLackPage() {
 
   function resetAll() {
     if (!confirm(isRu ? 'Сбросить весь прогресс урока?' : 'Reset all lesson progress?')) return
-    localStorage.removeItem(STORAGE_KEY)
+    clearProgress()
     window.location.reload()
   }
 
@@ -458,9 +517,9 @@ export default function OneThingYouLackPage() {
       `}</style>
 
       {won && (
-        <div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(28,13,4,.97)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: 28 }}>
+        <div ref={completionDialogRef} role="dialog" aria-modal="true" aria-labelledby="one-thing-complete-title" tabIndex={-1} style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(28,13,4,.97)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: 28, outline: 'none' }}>
           <div style={{ fontSize: '4.5rem', animation: 'softGlow 2s infinite' }}>👑</div>
-          <h2 style={{ color: GOLD, fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: 'clamp(1.5rem,5vw,2.3rem)', margin: '14px 0 10px' }}>
+          <h2 id="one-thing-complete-title" style={{ color: GOLD, fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: 'clamp(1.5rem,5vw,2.3rem)', margin: '14px 0 10px' }}>
             {isRu ? 'Одного недостаёт: следовать за Иисусом' : 'One thing matters: follow Jesus'}
           </h2>
           <p style={{ maxWidth: 590, color: 'rgba(255,255,255,.84)', fontFamily: 'var(--font-lora)', lineHeight: 1.75 }}>
@@ -486,7 +545,7 @@ export default function OneThingYouLackPage() {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,rgba(28,13,4,.48),rgba(28,13,4,.9))' }} />
         <div style={{ position: 'relative', maxWidth: 720 }}>
           <div style={{ fontSize: '4.2rem', marginBottom: 14, animation: 'softGlow 2.4s infinite' }}>👑🤲</div>
-          <p style={{ margin: '0 0 9px', color: '#fde68a', fontFamily: 'var(--font-nunito)', fontWeight: 900, letterSpacing: 2, fontSize: '.82rem', textTransform: 'uppercase' }}>{isRu ? 'Матфея 19:16–26' : 'Matthew 19:16–26'}</p>
+          <p style={{ margin: '0 0 9px', color: '#fde68a', fontFamily: 'var(--font-nunito)', fontWeight: 900, letterSpacing: 2, fontSize: '.82rem', textTransform: 'uppercase' }}>{isRu ? 'Матфея 19:13–26' : 'Matthew 19:13–26'}</p>
           <h1 style={{ margin: '0 0 14px', color: '#fff', fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: 'clamp(2rem,6vw,3.3rem)', lineHeight: 1.12 }}>{isRu ? 'Одного тебе недостаёт' : 'One Thing You Lack'}</h1>
           <p style={{ maxWidth: 650, margin: '0 auto', color: 'rgba(255,255,255,.9)', fontFamily: 'var(--font-lora)', fontSize: '1.04rem', lineHeight: 1.75 }}>
             {isRu

@@ -12,6 +12,7 @@ const CREAM = '#eff6ff'
 const PROGRESS_KEY = 'every-one-matters'
 const PROGRESS_EVENT = 'every-one-matters-progress'
 const DEFAULT_PROGRESS = JSON.stringify({ found: false, scenarioIndex: 0, scenariosComplete: false, truthIndex: 0, complete: false })
+let volatileProgress = DEFAULT_PROGRESS
 
 type Progress = {
   found: boolean
@@ -22,7 +23,12 @@ type Progress = {
 }
 
 function getProgressSnapshot() {
-  return localStorage.getItem(PROGRESS_KEY) ?? DEFAULT_PROGRESS
+  try {
+    volatileProgress = localStorage.getItem(PROGRESS_KEY) ?? volatileProgress
+  } catch {
+    // Keep the lesson playable when a privacy policy blocks storage.
+  }
+  return volatileProgress
 }
 
 function subscribeToProgress(onStoreChange: () => void) {
@@ -35,6 +41,16 @@ function subscribeToProgress(onStoreChange: () => void) {
     window.removeEventListener('storage', handleStorage)
     window.removeEventListener(PROGRESS_EVENT, onStoreChange)
   }
+}
+
+function writeProgress(value: string) {
+  volatileProgress = value
+  try {
+    localStorage.setItem(PROGRESS_KEY, value)
+  } catch {
+    // The in-memory snapshot still updates through PROGRESS_EVENT.
+  }
+  window.dispatchEvent(new Event(PROGRESS_EVENT))
 }
 
 function parseProgress(value: string): Progress {
@@ -217,8 +233,7 @@ export default function EveryOneMattersPage() {
   const sheep = useMemo(() => Array.from({ length: 20 }, (_, index) => ({ index, wandering: index === 13 })), [])
 
   function saveProgress(patch: Partial<Progress>) {
-    localStorage.setItem(PROGRESS_KEY, JSON.stringify({ ...progress, ...patch }))
-    window.dispatchEvent(new Event(PROGRESS_EVENT))
+    writeProgress(JSON.stringify({ ...progress, ...patch }))
   }
 
   function chooseScenario(choice: Choice) {

@@ -15,10 +15,16 @@ const LanguageContext = createContext<LanguageContextType>({
 });
 
 const LANGUAGE_EVENT = "jr-language-change";
+let volatileLanguage: Language = "en";
 
 function getLanguageSnapshot(): Language {
-  const saved = localStorage.getItem("language");
-  return saved === "ru" ? "ru" : "en";
+  try {
+    const saved = localStorage.getItem("language");
+    volatileLanguage = saved === "ru" ? "ru" : "en";
+  } catch {
+    // Some privacy modes block storage. Keep language switching usable in memory.
+  }
+  return volatileLanguage;
 }
 
 function getServerLanguageSnapshot(): Language {
@@ -37,6 +43,16 @@ function subscribeToLanguage(onStoreChange: () => void) {
   };
 }
 
+function writeLanguage(lang: Language) {
+  volatileLanguage = lang;
+  try {
+    localStorage.setItem("language", lang);
+  } catch {
+    // The in-memory snapshot still updates through LANGUAGE_EVENT.
+  }
+  window.dispatchEvent(new Event(LANGUAGE_EVENT));
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const language = useSyncExternalStore(
     subscribeToLanguage,
@@ -45,8 +61,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   );
 
   const handleSetLanguage = (lang: Language) => {
-    localStorage.setItem("language", lang);
-    window.dispatchEvent(new Event(LANGUAGE_EVENT));
+    writeLanguage(lang);
   };
 
   useEffect(() => {
