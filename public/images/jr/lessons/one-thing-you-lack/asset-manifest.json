@@ -1,0 +1,13 @@
+{
+  "provider": "FAL.ai",
+  "model": "GPT Image 2",
+  "generatedAt": "2026-08-16",
+  "sourceUrl": "https://v3b.fal.media/files/b/0aa695e8/cKy5dx9Gm-f71_VwgAoUb_8wmxP21K.png",
+  "asset": "topic-one-thing-you-lack-fal.png",
+  "dimensions": [1024, 768],
+  "prompt": "prompts/topic-one-thing-you-lack.md",
+  "qa": {
+    "status": "PASS",
+    "checks": ["child-safe", "Matthew 19:16-26 alignment", "Jesus shown loving and inviting", "no readable text", "no hard anatomy artifacts", "4:3 crop-safe", "Junior Disciples warm 3D style"]
+  }
+}

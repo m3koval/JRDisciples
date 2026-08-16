@@ -1,0 +1,13 @@
+{
+  "provider": "FAL.ai",
+  "model": "GPT Image 2",
+  "generatedAt": "2026-08-16",
+  "sourceUrl": "https://v3b.fal.media/files/b/0aa695e2/5qg6pyN7B6_P5YbRuvzGR_TjAzSBBO.png",
+  "asset": "topic-every-one-matters-fal.png",
+  "dimensions": [1024, 768],
+  "prompt": "prompts/topic-every-one-matters.md",
+  "qa": {
+    "status": "PASS",
+    "checks": ["child-safe", "Matthew 18:10-14 alignment", "no readable text", "no hard anatomy artifacts", "4:3 crop-safe", "Junior Disciples warm 3D style"]
+  }
+}

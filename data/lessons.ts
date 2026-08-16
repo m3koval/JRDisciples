@@ -24,6 +24,24 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/every-one-matters",
+    image: "/images/jr/lessons/every-one-matters/topic-every-one-matters-fal.png",
+    title: "Every One Matters",
+    desc: "Matthew 18:10–14 — Discover the Father's heart for the weak, overlooked, and wandering. Find the one and practice noticing people others miss.",
+    color: "#1d4ed8",
+    sections: 3,
+    emoji: "🐑",
+  },
+  {
+    href: "/lessons/one-thing-you-lack",
+    image: "/images/jr/lessons/one-thing-you-lack/topic-one-thing-you-lack-fal.png",
+    title: "One Thing You Lack",
+    desc: "A rich young man asks Jesus how to gain eternal life. Jesus lovingly exposes the thing ruling his heart and calls him to follow. Matthew 19:16–26, with story, memory, heart-choice, and gospel-truth challenges.",
+    color: "#b45309",
+    sections: 4,
+    emoji: "👑",
+  },
+  {
     href: "/lessons/coin-in-the-fish",
     image: "/images/jr/lessons/coin-in-the-fish/topic-coin-in-the-fish.png",
     title: "The Coin in the Fish's Mouth",

@@ -10,6 +10,24 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
+    href: "/lessons/every-one-matters",
+    image: "/images/jr/lessons/every-one-matters/topic-every-one-matters-fal.png",
+    title: "Важен каждый",
+    desc: "Матфея 18:10–14 — Узнай сердце Отца к слабым, незаметным и заблудившимся. Найди одну овцу и учись замечать тех, кого другие пропускают.",
+    color: "#1d4ed8",
+    sections: 3,
+    emoji: "🐑",
+  },
+  {
+    href: "/lessons/one-thing-you-lack",
+    image: "/images/jr/lessons/one-thing-you-lack/topic-one-thing-you-lack-fal.png",
+    title: "Одного тебе недостаёт",
+    desc: "Богатый юноша спрашивает Иисуса, как получить вечную жизнь. Иисус с любовью показывает, что управляет его сердцем, и зовёт следовать за Ним. Мф 19:16–26: история, игра памяти, выбор сердца и проверка Евангелия.",
+    color: "#b45309",
+    sections: 4,
+    emoji: "👑",
+  },
+  {
     href: "/lessons/coin-in-the-fish",
     image: "/images/jr/lessons/coin-in-the-fish/topic-coin-in-the-fish.png",
     title: "Монета во рту рыбы",
