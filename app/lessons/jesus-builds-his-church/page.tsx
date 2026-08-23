@@ -196,6 +196,19 @@ const WALL_ROWS: number[][] = [
 ]
 const WALL_TOTAL = 10
 
+function LockedPlaceholder({ secNum, light, isRu }: { secNum: number; light?: boolean; isRu: boolean }) {
+  return (
+    <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 20px', textAlign: 'center' }}>
+      <div style={{ fontSize: '2.5rem', marginBottom: 12 }}>🔒</div>
+      <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 800, color: light ? 'rgba(124,45,18,.6)' : 'rgba(255,255,255,.5)', fontSize: '1rem' }}>
+        {isRu
+          ? `Заверши Раздел ${secNum - 1}, чтобы открыть этот раздел!`
+          : `Complete Section ${secNum - 1} to unlock this section!`}
+      </p>
+    </div>
+  )
+}
+
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function JesusBuildsHisChurchPage() {
   const { language } = useLanguage()
@@ -354,20 +367,6 @@ export default function JesusBuildsHisChurchPage() {
 
   const stoneById = Object.fromEntries(STONES.map(s => [s.id, s]))
   const stoneLabel = (id: string) => (isRu ? stoneById[id].ru : stoneById[id].en)
-
-  // ── Locked section placeholder ─────────────────────────────────────────────
-  function LockedPlaceholder({ secNum, light }: { secNum: number; light?: boolean }) {
-    return (
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 20px', textAlign: 'center' }}>
-        <div style={{ fontSize: '2.5rem', marginBottom: 12 }}>🔒</div>
-        <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 800, color: light ? 'rgba(124,45,18,.6)' : 'rgba(255,255,255,.5)', fontSize: '1rem' }}>
-          {isRu
-            ? `Заверши Раздел ${secNum - 1}, чтобы открыть этот раздел!`
-            : `Complete Section ${secNum - 1} to unlock this section!`}
-        </p>
-      </div>
-    )
-  }
 
   // ════════════════════ JSX ══════════════════════════════════════════════════
   return (
@@ -799,7 +798,7 @@ export default function JesusBuildsHisChurchPage() {
         </div>
 
         {!unlocked.has(2) ? (
-          <LockedPlaceholder secNum={2} />
+          <LockedPlaceholder secNum={2} isRu={isRu} />
         ) : (
           <div style={{ maxWidth: 860, margin: '0 auto', padding: '36px 20px 40px' }}>
             <p style={{
@@ -1061,7 +1060,7 @@ export default function JesusBuildsHisChurchPage() {
         </div>
 
         {!unlocked.has(3) ? (
-          <LockedPlaceholder secNum={3} />
+          <LockedPlaceholder secNum={3} isRu={isRu} />
         ) : (
           <div style={{ maxWidth: 860, margin: '0 auto', padding: '36px 20px 40px' }}>
             <p style={{
@@ -1281,7 +1280,7 @@ export default function JesusBuildsHisChurchPage() {
         </div>
 
         {!unlocked.has(4) ? (
-          <LockedPlaceholder secNum={4} light />
+          <LockedPlaceholder secNum={4} light isRu={isRu} />
         ) : (
           <div style={{ maxWidth: 860, margin: '0 auto', padding: '36px 20px 40px' }}>
             <p style={{

@@ -10,6 +10,15 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
+    href: "/lessons/gods-cutting",
+    image: "/images/jr/lessons/gods-cutting/topic-gods-cutting-fal.png",
+    title: "Божья огранка",
+    desc: "Бытие 37–44 — Проследи путь Иуды от зависти и самозащиты к покаянию и жертвенной любви. Собери историю, пройди пять жизненных выборов, прими решение Иуды и заверши проверку Евангелия.",
+    color: "#6d28d9",
+    sections: 4,
+    emoji: "💎",
+  },
+  {
     href: "/lessons/jesus-builds-his-church",
     image: "/images/jr/lessons/jesus-builds-his-church/topic-jesus-builds-his-church.png",
     title: "Иисус строит Свою Церковь",

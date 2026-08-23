@@ -1,0 +1,14 @@
+{
+  "lesson": "jesus-builds-his-church",
+  "generatedAt": "2026-08-23",
+  "provider": "FAL.ai / GPT Image 2",
+  "reason": "Supply the catalog image referenced by the rebased lesson commit.",
+  "assets": [
+    {
+      "path": "/images/jr/lessons/jesus-builds-his-church/topic-jesus-builds-his-church.png",
+      "width": 1024,
+      "height": 768,
+      "status": "visual QA passed"
+    }
+  ]
+}

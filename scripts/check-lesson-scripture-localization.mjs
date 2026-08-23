@@ -15,6 +15,21 @@ const caseLessonSlugs = fs
 const failures = []
 
 const verifiedLessonRequirements = {
+  'gods-cutting': [
+    ['defines English Scripture before rendering', /const\s+scriptureEn\s*=/],
+    ['defines Russian Scripture before rendering', /const\s+scriptureRu\s*=/],
+    ['uses Bible.com Genesis ESV source links', /https:\/\/www\.bible\.com\/bible\/59\/GEN\.44\.33\.ESV/],
+    ['uses Bible.com Genesis RST source links', /https:\/\/www\.bible\.com\/bible\/167\/GEN\.44\.33\.RST/],
+    ['uses Bible.com Gospel ESV and RST source links', /ROM\.5\.8\.ESV[\s\S]*ROM\.5\.8\.RST/],
+    ['contains the bilingual six-step sermon story', /const\s+storyEn[\s\S]*const\s+storyRu/],
+    ['contains the bilingual five-scenario application challenge', /const\s+scenariosEn[\s\S]*const\s+scenariosRu/],
+    ['contains the bilingual Gospel truth check', /const\s+truthsEn[\s\S]*const\s+truthsRu/],
+    ['preserves the sermon’s Genesis 37 to Genesis 44 contrast', /give Joseph away to save himself[\s\S]*offered himself so Benjamin could go free/],
+    ['guards children from unsafe hardship teaching', /Never stay in danger to “prove faith.”/],
+    ['guards against automatic holiness by suffering', /Hard circumstances do not automatically make anyone holy/],
+    ['guards salvation by works', /changed choices are fruit of His work, not payment for salvation/],
+    ['keeps blocked-storage progress playable', /in-memory fallback/],
+  ],
   'every-one-matters': [
     ['defines English Scripture before rendering', /const\s+scriptureEn\s*=/],
     ['defines Russian Scripture before rendering', /const\s+scriptureRu\s*=/],

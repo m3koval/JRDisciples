@@ -24,6 +24,15 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/gods-cutting",
+    image: "/images/jr/lessons/gods-cutting/topic-gods-cutting-fal.png",
+    title: "Shaped by God",
+    desc: "Genesis 37–44 — Follow Judah from jealousy and self-protection to repentance and sacrificial love. Build the story, polish five real-life choices, make Judah’s decision, and complete the Gospel truth check.",
+    color: "#6d28d9",
+    sections: 4,
+    emoji: "💎",
+  },
+  {
     href: "/lessons/jesus-builds-his-church",
     image: "/images/jr/lessons/jesus-builds-his-church/topic-jesus-builds-his-church.png",
     title: "Jesus Builds His Church",
