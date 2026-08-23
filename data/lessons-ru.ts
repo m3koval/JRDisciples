@@ -10,6 +10,15 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
+    href: "/lessons/jesus-builds-his-church",
+    image: "/images/jr/lessons/jesus-builds-his-church/topic-jesus-builds-his-church.png",
+    title: "Иисус строит Свою Церковь",
+    desc: "«Я создам Церковь Мою, и врата ада не одолеют её». Церковь — это не здание, а люди! Возрастай как Иисус, созидай как Иисус, достигай как Иисус — и поставь свой живой камень в стену. Мф 16:18, 4 раздела.",
+    color: "#c2410c",
+    sections: 4,
+    emoji: "🧱",
+  },
+  {
     href: "/lessons/every-one-matters",
     image: "/images/jr/lessons/every-one-matters/topic-every-one-matters-fal.png",
     title: "Важен каждый",

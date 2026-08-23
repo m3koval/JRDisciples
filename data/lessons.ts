@@ -24,6 +24,15 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/jesus-builds-his-church",
+    image: "/images/jr/lessons/jesus-builds-his-church/topic-jesus-builds-his-church.png",
+    title: "Jesus Builds His Church",
+    desc: "\"I will build My Church — and the gates of hell will not overcome it.\" The Church isn't a building: it's people! Grow like Jesus, build like Jesus, reach like Jesus — and place your own living stone in the wall. Matthew 16:18, 4 sections.",
+    color: "#c2410c",
+    sections: 4,
+    emoji: "🧱",
+  },
+  {
     href: "/lessons/every-one-matters",
     image: "/images/jr/lessons/every-one-matters/topic-every-one-matters-fal.png",
     title: "Every One Matters",

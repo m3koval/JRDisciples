@@ -162,6 +162,13 @@ cropped — keep the main subject centred.
 > and behind it — a huge mountain moving aside with rays of light. Green and
 > gold palette. Sense of wonder, not fear. Watercolour storybook style.
 
+### `jesus-builds-his-church/topic-jesus-builds-his-church.png`
+> Jesus as a joyful builder placing a warm glowing stone into a low stone
+> wall, and the stones of the wall subtly show friendly faces of children
+> and grown-ups of different ages — living stones. Golden-hour light, olive
+> trees and a hill town in the background. Warm brick-orange and gold
+> palette. Watercolour storybook style.
+
 ### `coin-in-the-fish/topic-coin-in-the-fish.png`
 > Peter (bearded fisherman, joyful surprise on his face) kneeling at the edge
 > of the Sea of Galilee holding a fish, and in the fish's open mouth a shining
