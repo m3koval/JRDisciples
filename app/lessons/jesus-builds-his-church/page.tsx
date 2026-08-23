@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo, useRef, useSyncExternalStore } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -9,6 +9,111 @@ import { useLanguage } from '@/context/LanguageContext'
 const ACCENT      = '#c2410c'
 const ACCENT_DARK = '#7c2d12'
 const ACCENT_GLOW = 'rgba(194,65,12,.15)'
+
+const STORAGE_UNLOCKED = 'church-build_unlocked'
+const STORAGE_DONE = 'church-build_done'
+const STORAGE_PROGRESS = 'church-build_progress_v2'
+const PROGRESS_EVENT = 'church-build-progress'
+const DEFAULT_PROGRESS = JSON.stringify({ unlocked: [1], done: [] })
+const COMPLETION_ORDER = ['tf', 'sort', 'flip', 'wall'] as const
+let churchStorageDisabled = false
+let volatileProgress = DEFAULT_PROGRESS
+
+type StoredProgress = { unlocked: number[]; done: string[] }
+
+function normalizeProgress(value: unknown): StoredProgress {
+  const record = value && typeof value === 'object' ? value as Partial<StoredProgress> : {}
+  const rawDone = Array.isArray(record.done) ? record.done.filter((id): id is string => typeof id === 'string') : []
+  const done: string[] = []
+  for (const id of COMPLETION_ORDER) {
+    if (!rawDone.includes(id)) break
+    done.push(id)
+  }
+  const unlocked = [1]
+  if (done.includes('tf')) unlocked.push(2)
+  if (done.includes('sort')) unlocked.push(3)
+  if (done.includes('flip')) unlocked.push(4)
+  return { unlocked, done }
+}
+
+function getProgressSnapshot() {
+  if (typeof window === 'undefined' || churchStorageDisabled) return volatileProgress
+  try {
+    const current = localStorage.getItem(STORAGE_PROGRESS)
+    if (current) {
+      volatileProgress = JSON.stringify(normalizeProgress(JSON.parse(current)))
+    } else {
+      const legacyDone = JSON.parse(localStorage.getItem(STORAGE_DONE) ?? '[]')
+      volatileProgress = JSON.stringify(normalizeProgress({ done: legacyDone }))
+    }
+  } catch {
+    churchStorageDisabled = true
+  }
+  return volatileProgress
+}
+
+function subscribeToProgress(onStoreChange: () => void) {
+  const onStorage = (event: StorageEvent) => {
+    if ([STORAGE_PROGRESS, STORAGE_UNLOCKED, STORAGE_DONE].includes(event.key ?? '')) onStoreChange()
+  }
+  window.addEventListener('storage', onStorage)
+  window.addEventListener(PROGRESS_EVENT, onStoreChange)
+  return () => {
+    window.removeEventListener('storage', onStorage)
+    window.removeEventListener(PROGRESS_EVENT, onStoreChange)
+  }
+}
+
+function saveProgress(done: Set<string>) {
+  volatileProgress = JSON.stringify(normalizeProgress({ done: [...done] }))
+  if (!churchStorageDisabled) {
+    try { localStorage.setItem(STORAGE_PROGRESS, volatileProgress) } catch { churchStorageDisabled = true }
+  }
+  window.dispatchEvent(new Event(PROGRESS_EVENT))
+}
+
+function removeStoredProgress() {
+  volatileProgress = DEFAULT_PROGRESS
+  if (!churchStorageDisabled) {
+    for (const key of [STORAGE_PROGRESS, STORAGE_UNLOCKED, STORAGE_DONE]) {
+      try { localStorage.removeItem(key) } catch { churchStorageDisabled = true; break }
+    }
+  }
+  window.dispatchEvent(new Event(PROGRESS_EVENT))
+}
+
+const SCRIPTURE_EN = {
+  matthew16: 'I will build my church, and the gates of hell shall not prevail against it.',
+  luke2: 'And Jesus increased in wisdom and in stature and in favor with God and man.',
+  mark3: 'And he appointed twelve (whom he also named apostles) so that they might be with him and he might send them out to preach',
+  peter2: 'you yourselves like living stones are being built up as a spiritual house',
+  matthew28: 'Go therefore and make disciples of all nations',
+}
+
+const SCRIPTURE_RU = {
+  matthew16: 'Я создам Церковь Мою, и врата ада не одолеют ее',
+  luke2: 'Иисус же преуспевал в премудрости и возрасте и в любви у Бога и человеков.',
+  mark3: 'И поставил из них двенадцать, чтобы с Ним были и чтобы посылать их на проповедь',
+  peter2: 'и сами, как живые камни, устрояйте из себя дом духовный',
+  matthew28: 'Итак идите, научите все народы',
+}
+
+const SCRIPTURE_LINKS = {
+  en: [
+    ['Matthew 16:18', 'https://www.bible.com/bible/59/MAT.16.18.ESV'],
+    ['Luke 2:52', 'https://www.bible.com/bible/59/LUK.2.52.ESV'],
+    ['Mark 3:14', 'https://www.bible.com/bible/59/MRK.3.14.ESV'],
+    ['1 Peter 2:5', 'https://www.bible.com/bible/59/1PE.2.5.ESV'],
+    ['Matthew 28:19', 'https://www.bible.com/bible/59/MAT.28.19.ESV'],
+  ],
+  ru: [
+    ['Матфея 16:18', 'https://www.bible.com/bible/167/MAT.16.18.RST'],
+    ['Луки 2:52', 'https://www.bible.com/bible/167/LUK.2.52.RST'],
+    ['Марка 3:14', 'https://www.bible.com/bible/167/MRK.3.14.RST'],
+    ['1 Петра 2:5', 'https://www.bible.com/bible/167/1PE.2.5.RST'],
+    ['Матфея 28:19', 'https://www.bible.com/bible/167/MAT.28.19.RST'],
+  ],
+} as const
 
 // ─── Section unlock requirements ─────────────────────────────────────────────
 const SECTION_REQS: Record<number, string[]> = {
@@ -24,13 +129,13 @@ const TF_EN = [
     id: 'q1',
     text: 'The Church that Jesus builds is a building made of bricks and stone.',
     correct: false,
-    explain: 'The Church is people — everyone who loves and follows Jesus. A building is just where the Church meets!',
+    explain: 'The Church is people — everyone who trusts and follows Jesus. A building is just where the Church meets!',
   },
   {
     id: 'q2',
     text: "Jesus said 'I will build My Church' — He is the builder.",
     correct: true,
-    explain: "Matthew 16:18. It's His project, His Church, His promise. We get to be part of it.",
+    explain: "Matthew 16:18. It is His Church and His promise. Everyone who trusts Jesus belongs to His people.",
   },
   {
     id: 'q3',
@@ -42,13 +147,13 @@ const TF_EN = [
     id: 'q4',
     text: 'The Church only started because people decided to make a club about Jesus.',
     correct: false,
-    explain: 'Jesus Himself started it, chose it, and builds it. It was His plan from the beginning.',
+    explain: 'Jesus promised to build His Church. It is His work and His plan, not a club people invented.',
   },
   {
     id: 'q5',
     text: 'Kids are too young to be part of the Church Jesus is building.',
     correct: false,
-    explain: "Jesus said 'Let the little children come to me.' You are a real part of His Church right now — not someday.",
+    explain: "Jesus welcomes children. A child who trusts and follows Him is not a second-class part of God's people.",
   },
 ]
 
@@ -57,13 +162,13 @@ const TF_RU = [
     id: 'q1',
     text: 'Церковь, которую строит Иисус, — это здание из кирпичей и камня.',
     correct: false,
-    explain: 'Церковь — это люди: все, кто любит Иисуса и идёт за Ним. Здание — лишь место, где Церковь собирается!',
+    explain: 'Церковь — это люди: все, кто верит в Иисуса и следует за Ним. Здание — лишь место, где Церковь собирается!',
   },
   {
     id: 'q2',
     text: 'Иисус сказал: «Я создам Церковь Мою» — строитель именно Он.',
     correct: true,
-    explain: 'Матф. 16:18. Это Его проект, Его Церковь, Его обещание. А нам дано быть её частью.',
+    explain: 'Матфея 16:18. Это Его Церковь и Его обещание. Каждый, кто верит в Иисуса, принадлежит к Его народу.',
   },
   {
     id: 'q3',
@@ -75,13 +180,13 @@ const TF_RU = [
     id: 'q4',
     text: 'Церковь появилась просто потому, что люди решили создать кружок про Иисуса.',
     correct: false,
-    explain: 'Иисус Сам начал её, Сам избрал и Сам строит. Это был Его план с самого начала.',
+    explain: 'Иисус обещал создать Свою Церковь. Это Его труд и Его план, а не придуманный людьми кружок.',
   },
   {
     id: 'q5',
     text: 'Дети слишком малы, чтобы быть частью Церкви, которую строит Иисус.',
     correct: false,
-    explain: 'Иисус сказал: «Пустите детей приходить ко Мне». Ты — настоящая часть Его Церкви уже сейчас, а не когда-нибудь потом.',
+    explain: 'Иисус принимает детей. Ребёнок, который верит в Него и следует за Ним, — не второстепенная часть Божьего народа.',
   },
 ]
 
@@ -115,29 +220,22 @@ const CARDS_EN = [
     id: 'gather',
     emoji: '🤝',
     name: 'He Gathered',
-    role: 'Friendship first',
-    back: "Jesus didn't wait for people to find Him. He walked up to fishermen and tax collectors and said 'Follow Me.' He built friendships first — the Church began as friends around Jesus.",
+    role: 'He built relationships',
+    back: 'Jesus appointed twelve to be with Him. They walked and ate with Him, asked questions, watched His life, and learned through a real relationship.',
   },
   {
     id: 'show',
     emoji: '👣',
     name: 'He Showed',
     role: 'Deed and word',
-    back: "Jesus didn't just talk. He washed feet, fed the hungry, forgave enemies — and THEN said 'do as I have done.' He taught by deed and word.",
+    back: "Jesus did not only talk. The sermon points to the upper room: their Teacher knelt and washed His disciples' feet, then taught them to follow His example. He taught by deed and word.",
   },
   {
     id: 'send',
     emoji: '📨',
     name: 'He Sent',
-    role: 'Real jobs for real friends',
-    back: "Jesus gave His friends real jobs: 'Go, preach, heal.' He trusted them with His mission even before they were perfect. He still gives real jobs to His people — including you.",
-  },
-  {
-    id: 'pray',
-    emoji: '🙏',
-    name: 'He Prayed',
-    role: 'All night with the Father',
-    back: 'Before choosing the twelve, Jesus prayed all night. He built His Church on His knees first. Every strong thing He built started with talking to the Father.',
+    role: 'He assigned and sent disciples',
+    back: 'Jesus gave His disciples real responsibility and sent them to serve. He knew they would make mistakes, but He taught and corrected them. We do not earn salvation by serving; people Jesus saves are invited to join His mission.',
   },
 ]
 
@@ -146,29 +244,22 @@ const CARDS_RU = [
     id: 'gather',
     emoji: '🤝',
     name: 'Он собирал',
-    role: 'Сначала дружба',
-    back: 'Иисус не ждал, пока люди Его найдут. Он Сам подходил к рыбакам и сборщикам налогов и говорил: «Иди за Мной». Сначала Он строил дружбу — Церковь началась как друзья рядом с Иисусом.',
+    role: 'Он строил отношения',
+    back: 'Иисус поставил двенадцать, чтобы они были с Ним. Они ходили и ели с Ним, задавали вопросы, наблюдали за Его жизнью и учились через настоящие отношения.',
   },
   {
     id: 'show',
     emoji: '👣',
     name: 'Он показывал',
     role: 'Дело и слово',
-    back: 'Иисус не просто говорил. Он умывал ноги, кормил голодных, прощал врагов — и ТОЛЬКО ПОТОМ сказал: «делайте, как Я сделал вам». Он учил делом и словом.',
+    back: 'Иисус не только говорил. В проповеди вспоминается горница: Учитель встал на колени и умыл ноги ученикам, а затем учил их следовать Его примеру. Он учил делом и словом.',
   },
   {
     id: 'send',
     emoji: '📨',
     name: 'Он посылал',
-    role: 'Настоящие поручения',
-    back: 'Иисус давал Своим друзьям настоящие поручения: «Идите, проповедуйте, исцеляйте». Он доверил им Своё дело ещё до того, как они стали совершенными. Он и сегодня даёт настоящие поручения Своим людям — и тебе тоже.',
-  },
-  {
-    id: 'pray',
-    emoji: '🙏',
-    name: 'Он молился',
-    role: 'Всю ночь с Отцом',
-    back: 'Прежде чем избрать двенадцать, Иисус молился всю ночь. Сначала Он строил Свою Церковь на коленях. Всё крепкое, что Он строил, начиналось с разговора с Отцом.',
+    role: 'Он поручал и посылал учеников',
+    back: 'Иисус давал ученикам настоящую ответственность и посылал их служить. Он знал, что они будут ошибаться, но учил и исправлял их. Служением мы не зарабатываем спасение; люди, которых спас Иисус, приглашены участвовать в Его деле.',
   },
 ]
 
@@ -177,13 +268,13 @@ const STONES: { id: string; emoji: string; en: string; ru: string }[] = [
   { id: 'crowds',     emoji: '👥', en: 'The crowds on the hill',  ru: 'Толпы на холме' },
   { id: 'zacchaeus',  emoji: '🌳', en: 'Zacchaeus in the tree',   ru: 'Закхей на дереве' },
   { id: 'well',       emoji: '🏺', en: 'The woman at the well',   ru: 'Женщина у колодца' },
-  { id: 'bartimaeus', emoji: '👁️', en: 'Blind Bartimaeus',        ru: 'Слепой Вартимей' },
+  { id: 'freedman',   emoji: '🌊', en: 'The man Jesus set free',   ru: 'Человек, которого освободил Иисус' },
   { id: 'twelve',     emoji: '🎣', en: 'The twelve disciples',    ru: 'Двенадцать учеников' },
   { id: 'pastor',     emoji: '📖', en: 'Your pastor',             ru: 'Твой пастор' },
   { id: 'parents',    emoji: '🏠', en: 'Your parents',            ru: 'Твои родители' },
   { id: 'missionary', emoji: '✈️', en: 'A missionary far away',   ru: 'Миссионер в далёкой стране' },
   { id: 'friend',     emoji: '🎒', en: 'Your friend at school',   ru: 'Твой друг в школе' },
-  { id: 'you',        emoji: '⭐', en: 'YOU',                     ru: 'ТЫ' },
+  { id: 'you',        emoji: '⭐', en: 'YOU — trust Jesus?',         ru: 'ТЫ — веришь Иисусу?' },
 ]
 
 // Wall shape: 4 rows of slots, rendered top→bottom, FILLED bottom→up like a
@@ -215,38 +306,54 @@ export default function JesusBuildsHisChurchPage() {
   const isRu = language === 'ru'
 
   // ── Progress ───────────────────────────────────────────────────────────────
-  const [unlocked, setUnlocked] = useState<Set<number>>(() => {
-    try {
-      const u = typeof window !== 'undefined' && localStorage.getItem('church-build_unlocked')
-      if (u) return new Set(JSON.parse(u) as number[])
-    } catch { /* ignore */ }
-    return new Set([1])
-  })
-  const [done, setDone] = useState<Set<string>>(() => {
-    try {
-      const d = typeof window !== 'undefined' && localStorage.getItem('church-build_done')
-      if (d) return new Set(JSON.parse(d) as string[])
-    } catch { /* ignore */ }
-    return new Set()
-  })
+  const progressSnapshot = useSyncExternalStore(subscribeToProgress, getProgressSnapshot, () => DEFAULT_PROGRESS)
+  const storedProgress = useMemo(() => normalizeProgress(JSON.parse(progressSnapshot)), [progressSnapshot])
+  const unlocked = useMemo(() => new Set(storedProgress.unlocked), [storedProgress])
+  const done = useMemo(() => new Set(storedProgress.done), [storedProgress])
   const [won, setWon] = useState(false)
+  const [announcement, setAnnouncement] = useState('')
+  const winHeadingRef = useRef<HTMLHeadingElement>(null)
+  const winDialogRef = useRef<HTMLDivElement>(null)
+  const previousFocusRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
-    localStorage.setItem('church-build_unlocked', JSON.stringify([...unlocked]))
-    localStorage.setItem('church-build_done',     JSON.stringify([...done]))
-  }, [unlocked, done])
+    if (!won) return
+    previousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
+    winHeadingRef.current?.focus()
+    const handleDialogKeys = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setWon(false)
+      if (event.key !== 'Tab') return
+      const focusable = winDialogRef.current?.querySelectorAll<HTMLElement>('button, a[href], [tabindex]:not([tabindex="-1"])')
+      if (!focusable?.length) return
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (event.shiftKey && (document.activeElement === first || document.activeElement === winHeadingRef.current)) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+    window.addEventListener('keydown', handleDialogKeys)
+    return () => {
+      window.removeEventListener('keydown', handleDialogKeys)
+      previousFocusRef.current?.focus()
+    }
+  }, [won])
 
   function solve(id: string, sec: number) {
     if (done.has(id)) return
     const newDone = new Set([...done, id])
-    setDone(newDone)
+    saveProgress(newDone)
     const reqs = SECTION_REQS[sec]
     if (reqs.every(r => newDone.has(r))) {
       if (sec < 4) {
-        setUnlocked(prev => new Set([...prev, sec + 1]))
+        setAnnouncement(isRu ? `Раздел ${sec} завершён. Раздел ${sec + 1} открыт.` : `Section ${sec} complete. Section ${sec + 1} unlocked.`)
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
         setTimeout(() => {
-          document.getElementById(`sec-${sec + 1}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }, 2000)
+          document.getElementById(`sec-${sec + 1}`)?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })
+        }, reduceMotion ? 0 : 2000)
       } else {
         setTimeout(() => setWon(true), 700)
       }
@@ -262,12 +369,6 @@ export default function JesusBuildsHisChurchPage() {
     return '🔒'
   }
 
-  function resetAll() {
-    if (!confirm(isRu ? 'Сбросить весь прогресс?' : 'Reset all progress?')) return
-    localStorage.removeItem('church-build_unlocked')
-    localStorage.removeItem('church-build_done')
-    window.location.reload()
-  }
 
   // ── Activity 1: True/False (one at a time) ─────────────────────────────────
   const [tfIdx, setTfIdx] = useState(0)
@@ -282,6 +383,12 @@ export default function JesusBuildsHisChurchPage() {
     if (!q) return
     const isCorrect = answer === q.correct
     setTfFlash(isCorrect ? 'correct' : 'wrong')
+    if (!isCorrect) {
+      setAnnouncement(isRu ? 'Пока неверно. Попробуй ещё раз.' : 'Not quite. Try again.')
+      setTimeout(() => setTfFlash(null), 850)
+      return
+    }
+    setAnnouncement(isRu ? 'Верно!' : 'Correct!')
     const next = { ...tfAnswers, [id]: answer }
     setTfAnswers(next)
     setTimeout(() => {
@@ -313,6 +420,7 @@ export default function JesusBuildsHisChurchPage() {
   function sortTap(cat: GrowCat) {
     if (done.has('sort') || !sortCurrent || sortFlash || sortWrongCat) return
     if (sortCurrent.cat === cat) {
+      setAnnouncement(isRu ? 'Верно!' : 'Correct!')
       setSortFlash(true)
       const itemId = sortCurrent.id
       setTimeout(() => {
@@ -323,6 +431,7 @@ export default function JesusBuildsHisChurchPage() {
         if (nextIdx === GROW_ORDER.length) solve('sort', 2)
       }, 450)
     } else {
+      setAnnouncement(isRu ? 'Не сюда. Попробуй другую сторону роста.' : 'Not there. Try another growth area.')
       setSortWrongCat(cat)
       setTimeout(() => setSortWrongCat(null), 550)
     }
@@ -344,9 +453,9 @@ export default function JesusBuildsHisChurchPage() {
   const [wallPlaced, setWallPlaced] = useState<string[]>([])      // stone ids, in placement order
   const [wallFlying, setWallFlying] = useState<string | null>(null)
 
-  const wallComplete = done.has('wall') || wallPlaced.length === WALL_TOTAL
+  const wallComplete = wallPlaced.length === WALL_TOTAL || (done.has('wall') && wallPlaced.length === 0)
   // After a reload the placement order is gone — rebuild the wall in canonical order
-  const wallEffective = done.has('wall') && wallPlaced.length < WALL_TOTAL
+  const wallEffective = done.has('wall') && wallPlaced.length === 0
     ? STONES.map(s => s.id)
     : wallPlaced
 
@@ -355,18 +464,37 @@ export default function JesusBuildsHisChurchPage() {
     setWallFlying(id)
     // wallFlying blocks other taps during the flight, so the closure value is safe
     const next = [...wallPlaced, id]
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (next.length === WALL_TOTAL) {
+      saveProgress(new Set([...done, 'wall']))
+      setTimeout(() => setWon(true), reduceMotion ? 0 : 2220)
+    }
     setTimeout(() => {
       setWallFlying(null)
       setWallPlaced(next)
-      if (next.length === WALL_TOTAL) {
-        // Let the glow + cross celebration breathe before the win screen
-        setTimeout(() => solve('wall', 4), 1800)
-      }
-    }, 420)
+    }, reduceMotion ? 0 : 420)
   }
 
   const stoneById = Object.fromEntries(STONES.map(s => [s.id, s]))
   const stoneLabel = (id: string) => (isRu ? stoneById[id].ru : stoneById[id].en)
+
+  function resetAll(confirmFirst = true) {
+    if (confirmFirst && !confirm(isRu ? 'Сбросить весь прогресс?' : 'Reset all progress?')) return
+    removeStoredProgress()
+    setWon(false)
+    setAnnouncement('')
+    setTfIdx(0)
+    setTfAnswers({})
+    setTfFlash(null)
+    setSortIdx(0)
+    setSortPlaced({ wisdom: [], body: [], god: [], people: [] })
+    setSortWrongCat(null)
+    setSortFlash(false)
+    setFlipped(new Set())
+    setWallPlaced([])
+    setWallFlying(null)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   // ════════════════════ JSX ══════════════════════════════════════════════════
   return (
@@ -403,25 +531,33 @@ export default function JesusBuildsHisChurchPage() {
           65%  { transform: scale(1.12); opacity: 1; }
           100% { transform: scale(1); opacity: 1; }
         }
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+          }
+        }
       `}</style>
 
       {/* ── Win Screen ──────────────────────────────────────────────────── */}
       {won && (
-        <div style={{
+        <div ref={winDialogRef} role="dialog" aria-modal="true" aria-labelledby="church-win-heading" style={{
           position: 'fixed', inset: 0, zIndex: 9999,
           background: 'rgba(20,7,2,.97)',
           display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
           textAlign: 'center', padding: 30, overflowY: 'auto',
         }}>
           <div style={{ fontSize: '4rem', marginBottom: 16 }}>🧱⛪</div>
-          <h2 style={{
+          <h2 id="church-win-heading" ref={winHeadingRef} tabIndex={-1} style={{
             fontFamily: 'var(--font-nunito)', fontWeight: 900,
             fontSize: 'clamp(1.4rem,4vw,2rem)', color: '#fdba74',
             marginBottom: 14, lineHeight: 1.3, maxWidth: 520,
           }}>
             {isRu
-              ? 'Иисус до сих пор строит Свою Церковь — и ты один из Его живых камней.'
-              : 'Jesus is still building His Church — and you are one of His living stones.'}
+              ? 'Иисус до сих пор строит Свою Церковь. Каждый, кто верит в Него и следует за Ним, — один из Его живых камней.'
+              : 'Jesus is still building His Church. Everyone who trusts and follows Him is one of His living stones.'}
           </h2>
           <div style={{
             fontFamily: 'var(--font-lora)', fontStyle: 'italic',
@@ -431,8 +567,8 @@ export default function JesusBuildsHisChurchPage() {
             borderRadius: 14, border: '1.5px solid rgba(194,65,12,.4)',
           }}>
             {isRu
-              ? '"Идите, научите все народы…" — Мф 28:19'
-              : '"Go and make disciples of all nations…" — Matthew 28:19'}
+              ? `«${SCRIPTURE_RU.matthew28}…» — Матфея 28:19 (RST)`
+              : `“${SCRIPTURE_EN.matthew28}…” — Matthew 28:19 (ESV)`}
           </div>
           <p style={{
             fontFamily: 'var(--font-nunito)', fontWeight: 800,
@@ -440,8 +576,8 @@ export default function JesusBuildsHisChurchPage() {
             maxWidth: 460, marginBottom: 28,
           }}>
             {isRu
-              ? '🧱 Не забудь «Вызов строителя»: достигни одного, пригласи одного или молись об одном по имени — каждый день на этой неделе.'
-              : "🧱 Don't forget the Builder's Challenge: reach one, invite one, or pray for one by name — every day this week."}
+              ? '🧱 Не забудь «Вызов строителя»: вместе с родителем или надёжным взрослым прояви доброту к одному человеку, пригласи одного или молись об одном по имени на этой неделе.'
+              : "🧱 Don't forget the Builder's Challenge: with a parent or trusted adult, show kindness to one person, invite one, or pray for one by name this week."}
           </p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
             <button onClick={() => setWon(false)} style={{
@@ -453,11 +589,7 @@ export default function JesusBuildsHisChurchPage() {
               {isRu ? '← Вернуться к уроку' : '← Back to Lesson'}
             </button>
             <button
-              onClick={() => {
-                localStorage.removeItem('church-build_unlocked')
-                localStorage.removeItem('church-build_done')
-                window.location.reload()
-              }}
+              onClick={() => resetAll(false)}
               style={{
                 padding: '14px 32px',
                 background: 'linear-gradient(135deg,#fbbf24,#d97706)',
@@ -494,7 +626,7 @@ export default function JesusBuildsHisChurchPage() {
           fontSize: 'clamp(1.8rem,5vw,2.8rem)', color: '#fdba74',
           marginBottom: 10, lineHeight: 1.2,
         }}>
-          {isRu ? 'Иисус строит Свою Церковь' : 'Jesus Builds His Church'}
+          {isRu ? 'Церковь — как строил её Иисус' : 'The Church — How Jesus Built It'}
         </h1>
         <p style={{
           fontFamily: 'var(--font-nunito)', fontWeight: 800,
@@ -509,17 +641,25 @@ export default function JesusBuildsHisChurchPage() {
           maxWidth: 540, lineHeight: 1.75, marginBottom: 28,
         }}>
           {isRu
-            ? '"Я создам Церковь Мою, и врата ада не одолеют её." — Мф 16:18'
-            : '"I will build My Church, and the gates of hell will not overcome it." — Matthew 16:18'}
+            ? `«${SCRIPTURE_RU.matthew16}». — Матфея 16:18 (RST)`
+            : `“${SCRIPTURE_EN.matthew16}” — Matthew 16:18 (ESV)`}
         </div>
         <p style={{
           fontFamily: 'var(--font-nunito)', fontWeight: 700,
           fontSize: '0.9rem', color: 'rgba(255,255,255,.55)',
-          maxWidth: 480, lineHeight: 1.65,
+          maxWidth: 480, lineHeight: 1.65, marginBottom: 12,
         }}>
           {isRu
-            ? 'Иисус вырос в доме плотника — Иосиф научил Его работать с деревом и камнем. Но Его главная стройка — не дом. Однажды Он посмотрел на Своих друзей и объявил самый большой план в истории: «Я создам Церковь Мою». И Он строит её до сих пор — из людей. Из тебя.'
-            : "Jesus grew up in a carpenter's home — Joseph taught Him to work with wood and stone. But His greatest building project was never a house. One day He looked at His friends and announced the biggest plan in history: 'I will build My Church.' And He is still building it today — out of people. Out of you."}
+            ? 'Иисус обещал Сам создать Свою Церковь. Он возрастал, созидал учеников и посылал их достигать других. Сегодня Он продолжает строить Свой народ — всех, кто верит в Него и следует за Ним.'
+            : 'Jesus promised to build His Church Himself. He grew, built up disciples, and sent them to reach others. Today He continues building His people — everyone who trusts and follows Him.'}
+        </p>
+        <p style={{
+          fontFamily: 'var(--font-nunito)', fontWeight: 800,
+          fontSize: '0.84rem', color: '#fed7aa', maxWidth: 570, lineHeight: 1.65, margin: 0,
+        }}>
+          {isRu
+            ? '🪧 В проповеди эти три слова названы путевыми знаками, которые помогают Божьему народу помнить верный путь: ВОЗРАСТАТЬ · СОЗИДАТЬ · ДОСТИГАТЬ (Иеремия 31:21).'
+            : '🪧 The sermon calls these three words road markers that help God’s people remember the faithful path: GROW · BUILD UP · REACH (Jeremiah 31:21).'}
         </p>
       </section>
 
@@ -530,7 +670,13 @@ export default function JesusBuildsHisChurchPage() {
         borderBottom: `2px solid ${ACCENT}`,
         padding: '10px 20px', textAlign: 'center',
       }}>
-        <span style={{
+        <span
+          role="progressbar"
+          aria-label={isRu ? 'Прогресс урока' : 'Lesson progress'}
+          aria-valuemin={0}
+          aria-valuemax={4}
+          aria-valuenow={secDoneCount}
+          style={{
           fontFamily: 'var(--font-nunito)', fontWeight: 900,
           fontSize: '0.95rem', color: ACCENT_DARK, letterSpacing: 1,
         }}>
@@ -538,13 +684,16 @@ export default function JesusBuildsHisChurchPage() {
           {[1, 2, 3, 4].map(n => progressIcon(n)).join(' ')}{' '}
           {secDoneCount}/4
         </span>
-        <button onClick={resetAll} style={{
+        <button onClick={() => resetAll()} style={{
           marginLeft: 16, fontFamily: 'var(--font-nunito)', fontSize: '0.7rem',
           fontWeight: 900, color: '#aaa', background: 'none', border: 'none',
           cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1,
         }}>
           {isRu ? 'сбросить' : 'reset'}
         </button>
+      </div>
+      <div role="status" aria-live="polite" aria-atomic="true" style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}>
+        {announcement}
       </div>
 
       {/* ════════════════ SECTION 1 · NOT A BUILDING ════════════════════ */}
@@ -584,8 +733,8 @@ export default function JesusBuildsHisChurchPage() {
             lineHeight: 1.8, marginBottom: 16,
           }}>
             {isRu
-              ? 'Когда Иисус сказал: «Я создам Церковь Мою», ученики могли представить молотки, камни и строительные леса. Но Иисус говорил не о стенах, кирпичах и крыше. Церковь, которую Он строит, состоит из ЛЮДЕЙ — из всех, кто любит Его и идёт за Ним.'
-              : "When Jesus said 'I will build My Church,' the disciples might have pictured hammers, stones, and scaffolding. But Jesus wasn't talking about walls, bricks, or a roof. The Church He builds is made of PEOPLE — everyone who loves Him and follows Him."}
+              ? 'Когда Иисус сказал: «Я создам Церковь Мою», Он говорил не о стенах, кирпичах и крыше. Церковь, которую Он строит, — это ЛЮДИ: все, кто верит в Иисуса и следует за Ним.'
+              : "When Jesus said, 'I will build my church,' He was not talking about walls, bricks, or a roof. The Church He builds is PEOPLE: everyone who trusts Jesus and follows Him."}
           </p>
           <p style={{
             fontFamily: 'var(--font-lora)', fontSize: '1.02rem', color: 'rgba(255,255,255,.8)',
@@ -608,8 +757,23 @@ export default function JesusBuildsHisChurchPage() {
               fontSize: '0.97rem', color: '#fdba74', lineHeight: 1.7, margin: 0,
             }}>
               {isRu
-                ? '💡 Главная мысль: Церковь — это не место, куда ходят, а люди, к которым ты принадлежишь. И Строитель — Сам Иисус.'
-                : "💡 The big idea: the Church is not a place you go — it's a people you belong to. And the Builder is Jesus Himself."}
+                ? '💡 Главная мысль: Церковь — это не просто место, куда ходят. Это Божий народ, собранный вокруг Иисуса. И Строитель — Сам Иисус.'
+                : "💡 The big idea: the Church is not merely a place you go. It is God's people gathered around Jesus. And the Builder is Jesus Himself."}
+            </p>
+          </div>
+
+          <div style={{
+            margin: '0 0 28px', padding: '18px 22px',
+            background: 'rgba(74,222,128,.08)', borderRadius: 16,
+            border: '1.5px solid rgba(74,222,128,.45)',
+          }}>
+            <p style={{
+              fontFamily: 'var(--font-nunito)', fontWeight: 800,
+              fontSize: '0.95rem', color: '#bbf7d0', lineHeight: 1.7, margin: 0,
+            }}>
+              {isRu
+                ? '✝️ Благая весть: Иисус умер за наши грехи и воскрес. Мы становимся частью Его народа по Божьей благодати, когда верим в Иисуса и следуем за Ним. Рост, служение, посещение церкви и завершение этого урока не могут заслужить спасение.'
+                : '✝️ The good news: Jesus died for our sins and rose again. We become part of His people by God’s grace when we trust and follow Jesus. We do not earn salvation by growing, serving, attending church, or finishing this lesson.'}
             </p>
           </div>
 
@@ -623,15 +787,15 @@ export default function JesusBuildsHisChurchPage() {
               fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.72rem',
               color: '#fb923c', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 8,
             }}>
-              {isRu ? 'Матфея 16:18' : 'Matthew 16:18'}
+              {isRu ? 'Матфея 16:18 · RST' : 'Matthew 16:18 · ESV'}
             </p>
             <p style={{
               fontFamily: 'var(--font-lora)', fontStyle: 'italic',
               fontSize: '1rem', color: 'rgba(255,255,255,.8)', lineHeight: 1.75, margin: 0,
             }}>
               {isRu
-                ? '"Я создам Церковь Мою, и врата ада не одолеют её."'
-                : '"I will build My Church, and the gates of hell will not overcome it."'}
+                ? `«${SCRIPTURE_RU.matthew16}».`
+                : `“${SCRIPTURE_EN.matthew16}”`}
             </p>
           </div>
 
@@ -844,8 +1008,8 @@ export default function JesusBuildsHisChurchPage() {
                 fontSize: '0.97rem', color: '#fdba74', lineHeight: 1.7, margin: 0,
               }}>
                 {isRu
-                  ? '💡 Расти — это не только становиться выше. Иисус рос сразу в ЧЕТЫРЁХ направлениях: ум, тело, Бог, люди.'
-                  : '💡 Growing is not only about getting taller. Jesus grew in FOUR directions at once — mind, body, God, people.'}
+                  ? '💡 Расти — это не только становиться выше. Иисус рос сразу в ЧЕТЫРЁХ направлениях: ум, тело, Бог, люди. Проповедник напомнил: мудрость — не просто много знать, а применять истину в жизни. Знание должно становиться верным поступком.'
+                  : '💡 Growing is not only about getting taller. Jesus grew in FOUR directions: mind, body, God, and people. The preacher reminded us that wisdom is not merely knowing a lot; it is using truth in real life. Knowledge should become faithful action.'}
               </p>
             </div>
 
@@ -859,15 +1023,15 @@ export default function JesusBuildsHisChurchPage() {
                 fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.72rem',
                 color: '#fb923c', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 8,
               }}>
-                {isRu ? 'Луки 2:52' : 'Luke 2:52'}
+                {isRu ? 'Луки 2:52 · RST' : 'Luke 2:52 · ESV'}
               </p>
               <p style={{
                 fontFamily: 'var(--font-lora)', fontStyle: 'italic',
                 fontSize: '1rem', color: 'rgba(255,255,255,.8)', lineHeight: 1.75, margin: 0,
               }}>
                 {isRu
-                  ? '"Иисус же преуспевал в премудрости и возрасте и в любви у Бога и человеков."'
-                  : '"And Jesus grew in wisdom and stature, and in favor with God and man."'}
+                  ? `«${SCRIPTURE_RU.luke2}»`
+                  : `“${SCRIPTURE_EN.luke2}”`}
               </p>
             </div>
 
@@ -1090,8 +1254,8 @@ export default function JesusBuildsHisChurchPage() {
               lineHeight: 1.8, marginBottom: 16,
             }}>
               {isRu
-                ? 'Открой каждую карточку и узнай четыре способа, которыми Иисус строил Свою команду — самую первую Церковь.'
-                : 'Flip each card to discover the four ways Jesus built His team — the very first Church.'}
+                ? 'Открой каждую карточку и узнай три способа, которыми Иисус созидал учеников: отношения, пример и служение.'
+                : 'Flip each card to discover three ways Jesus built up His disciples: relationships, example, and ministry.'}
             </p>
 
             {/* Callout */}
@@ -1106,8 +1270,8 @@ export default function JesusBuildsHisChurchPage() {
                 fontSize: '0.97rem', color: '#fdba74', lineHeight: 1.7, margin: 0,
               }}>
                 {isRu
-                  ? '💡 Иисус строил дружбой, примером, доверием и молитвой. Эти четыре инструмента работают и сегодня — и все они помещаются в твоих руках.'
-                  : '💡 Jesus built with friendship, example, trust, and prayer. Four tools that still work today — and they all fit in your hands.'}
+                  ? '💡 Иисус собирал людей и строил отношения, показывал пример делом и словом, а затем поручал служение и посылал учеников.'
+                  : '💡 Jesus gathered people and built relationships, showed an example in deed and word, then assigned ministry and sent disciples.'}
               </p>
             </div>
 
@@ -1136,8 +1300,8 @@ export default function JesusBuildsHisChurchPage() {
                   <div style={{ fontSize: '2rem', marginBottom: 8 }}>✅</div>
                   <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#fdba74', margin: 0 }}>
                     {isRu
-                      ? 'Ты нашёл все четыре инструмента строителя! Перечитай их ниже.'
-                      : "You found all four of the Builder's tools! Read them again below."}
+                      ? 'Ты нашёл все три способа! Перечитай их ниже.'
+                      : 'You found all three methods! Read them again below.'}
                   </p>
                 </div>
               )}
@@ -1145,13 +1309,17 @@ export default function JesusBuildsHisChurchPage() {
                 {CARDS_ACTIVE.map(c => {
                   const isFlipped = done.has('flip') || flipped.has(c.id)
                   return (
-                    <div
+                    <button
+                      type="button"
                       key={c.id}
                       onClick={() => !isFlipped && flipCard(c.id)}
+                      aria-expanded={isFlipped}
+                      aria-label={isFlipped ? `${c.name}: ${c.back}` : `${c.name}. ${isRu ? 'Открыть карточку' : 'Reveal card'}`}
                       style={{
                         flex: '1 1 180px', maxWidth: 240,
                         minHeight: 230, perspective: '700px',
                         cursor: isFlipped ? 'default' : 'pointer', userSelect: 'none',
+                        appearance: 'none', padding: 0, background: 'none', border: 'none', color: 'inherit',
                       }}
                     >
                       <div style={{
@@ -1161,7 +1329,7 @@ export default function JesusBuildsHisChurchPage() {
                         transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
                       }}>
                         {/* Front */}
-                        <div style={{
+                        <div aria-hidden={isFlipped} style={{
                           position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
                           backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden',
                           borderRadius: 18, padding: '18px 14px',
@@ -1192,7 +1360,7 @@ export default function JesusBuildsHisChurchPage() {
                           </div>
                         </div>
                         {/* Back */}
-                        <div style={{
+                        <div aria-hidden={!isFlipped} style={{
                           position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
                           backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden',
                           transform: 'rotateY(180deg)',
@@ -1218,7 +1386,7 @@ export default function JesusBuildsHisChurchPage() {
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </button>
                   )
                 })}
               </div>
@@ -1245,15 +1413,15 @@ export default function JesusBuildsHisChurchPage() {
                 fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.72rem',
                 color: '#fb923c', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 8,
               }}>
-                {isRu ? 'Марка 3:14' : 'Mark 3:14'}
+                {isRu ? 'Марка 3:14 · RST' : 'Mark 3:14 · ESV'}
               </p>
               <p style={{
                 fontFamily: 'var(--font-lora)', fontStyle: 'italic',
                 fontSize: '1rem', color: 'rgba(255,255,255,.8)', lineHeight: 1.75, margin: 0,
               }}>
                 {isRu
-                  ? '"И поставил из них двенадцать, чтобы с Ним были и чтобы посылать их на проповедь."'
-                  : '"He appointed twelve that they might be with him and that he might send them out to preach."'}
+                  ? `«${SCRIPTURE_RU.mark3}»`
+                  : `“${SCRIPTURE_EN.mark3}”`}
               </p>
             </div>
           </div>
@@ -1302,17 +1470,31 @@ export default function JesusBuildsHisChurchPage() {
               lineHeight: 1.8, marginBottom: 16,
             }}>
               {isRu
-                ? 'Иисус достигал МНОГИХ: Он проповедовал огромным толпам на склонах холмов и у моря. Но Он достигал и ОДНОГО: Он никогда не проходил мимо человека, которого не замечали остальные, — Закхея на дереве, женщины у колодца, слепого Вартимея, кричащего у дороги.'
-                : 'Jesus reached the MANY: He preached to huge crowds on hillsides and by the sea. But He also reached the ONE: He never walked past the person everyone else ignored — Zacchaeus up in his tree, the woman at the well, blind Bartimaeus shouting by the road.'}
+                ? 'Иисус достигал МНОГИХ: Он проповедовал большим толпам на склонах холмов и у моря. Он также встречался с ОДНИМ человеком лично: с женщиной у колодца, с Закхеем и со страдавшим человеком за озером, которого другие боялись, а Иисус освободил.'
+                : 'Jesus reached the MANY: He preached to large crowds on hillsides and by the sea. He also met the ONE personally: the woman at the well, Zacchaeus, and a suffering man across the lake whom others feared but Jesus set free.'}
             </p>
             <p style={{
               fontFamily: 'var(--font-lora)', fontSize: '1.02rem', color: '#5c2a10',
               lineHeight: 1.8, marginBottom: 16,
             }}>
               {isRu
-                ? 'И Он достигал НОВЫХ: Он готовил Своих друзей, чтобы ОНИ достигли людей, которых Он не встретил лицом к лицу. Ученик учил ученика, друг рассказывал другу — две тысячи лет — и так добрая весть дошла до ТЕБЯ.'
-                : 'And He reached the NEW: He trained His friends so THEY could reach people He never met face to face. Disciple taught disciple, friend told friend, for two thousand years — and that is how the good news reached YOU.'}
+                ? 'И Он достигал НОВЫХ через подготовленных учеников: Иисус послал их нести Евангелие за пределы мест Его земного служения. Ученик учил ученика, друг рассказывал другу — и так добрая весть дошла до нас.'
+                : 'And He reached the NEW through prepared disciples: Jesus sent them to carry the Gospel beyond the places of His earthly ministry. Disciple taught disciple, friend told friend—and that is how the good news reached us.'}
             </p>
+
+            <div style={{
+              margin: '8px 0 24px', padding: '16px 20px', background: '#fff7ed',
+              borderRadius: 14, border: '1.5px solid #ea580c', color: '#7c2d12',
+            }}>
+              <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 900, margin: '0 0 8px' }}>
+                {isRu ? 'Три вопроса из проповеди:' : 'The sermon’s three questions:'}
+              </p>
+              <p style={{ fontFamily: 'var(--font-lora)', fontWeight: 700, lineHeight: 1.75, margin: 0 }}>
+                {isRu
+                  ? 'В чём я возрастаю? Кого я созидаю? Кого я достигаю? Для каждого верующего это ответственность и возможность подражать Иисусу.'
+                  : 'What am I growing in? Whom am I building up? Whom am I reaching? For every believer, this is a responsibility and an opportunity to imitate Jesus.'}
+              </p>
+            </div>
 
             {/* Callout */}
             <div style={{
@@ -1326,8 +1508,8 @@ export default function JesusBuildsHisChurchPage() {
                 fontSize: '0.97rem', color: ACCENT_DARK, lineHeight: 1.7, margin: 0,
               }}>
                 {isRu
-                  ? '💡 Каждый камень в этой стене — человек, которого достиг Иисус. Нажимай на камни и строй Церковь — и посмотри внимательно: один из камней — это ты.'
-                  : '💡 Every stone in this wall is a person Jesus reached. Tap the stones and build the Church — and look carefully: one of the stones is you.'}
+                  ? '💡 Каждый камень — человек, которого Иисус достигает и зовёт верить в Него и следовать за Ним. Один камень задаёт вопрос лично тебе.'
+                  : '💡 Every stone is someone Jesus reaches and calls to trust and follow Him. One stone asks the question personally of you.'}
               </p>
             </div>
 
@@ -1446,8 +1628,8 @@ export default function JesusBuildsHisChurchPage() {
                     border: `1.5px solid ${ACCENT}`, marginBottom: 14,
                   }}>
                     {isRu
-                      ? '"И сами, как живые камни, устройте из себя дом духовный." — 1 Пет 2:5'
-                      : '"You also, like living stones, are being built into a spiritual house." — 1 Peter 2:5'}
+                      ? `«${SCRIPTURE_RU.peter2}». — 1 Петра 2:5 (RST)`
+                      : `“${SCRIPTURE_EN.peter2}.” — 1 Peter 2:5 (ESV)`}
                   </div>
                   <p style={{
                     fontFamily: 'var(--font-nunito)', fontWeight: 800,
@@ -1455,8 +1637,8 @@ export default function JesusBuildsHisChurchPage() {
                     maxWidth: 520, margin: '0 auto',
                   }}>
                     {isRu
-                      ? 'Посмотри на стену — толпы, один человек, новые… и ТЫ. Иисус и сегодня строит Свою Церковь, и ты — один из Его живых камней.'
-                      : 'Look at the wall — the crowds, the one, the new… and YOU. Jesus is still building His Church today, and you are one of His living stones.'}
+                      ? 'Посмотри на стену — многие, один человек, новые… и место для ТЕБЯ. Иисус и сегодня строит Свою Церковь. Когда ты веришь в Него и следуешь за Ним, Он соединяет тебя со Своим народом.'
+                      : 'Look at the wall — the many, the one, the new… and a place for YOU. Jesus is still building His Church today. When you trust and follow Him, He joins you to His people.'}
                   </p>
                 </div>
               ) : (
@@ -1532,12 +1714,12 @@ export default function JesusBuildsHisChurchPage() {
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 14 }}>
                   {(isRu ? [
-                    ['🙋', 'Достигни ОДНОГО: поговори с ребёнком, с которым никто не разговаривает, — узнай, как его зовут'],
-                    ['🏠', 'Пригласи: позови друга, двоюродного брата или сестру в церковь или детский клуб'],
+                    ['🙋', 'Вместе с родителем, учителем или надёжным взрослым прояви доброту к тому, кто остался один'],
+                    ['🏠', 'Спроси родителя или опекуна, прежде чем приглашать друга в церковь или детский клуб'],
                     ['🙏', 'Молись: выбери одного человека и молись о нём по имени каждый день на этой неделе'],
                   ] : [
-                    ['🙋', 'Reach ONE: talk to the kid nobody talks to — learn their name'],
-                    ['🏠', "Invite: bring a friend or cousin to church or kids' club"],
+                    ['🙋', 'With a parent, teacher, or trusted adult, be kind to a kid who is left out'],
+                    ['🏠', "Ask your parent or guardian before inviting a friend to church or kids' club"],
                     ['🙏', 'Pray: pick one person and pray for them by name every day this week'],
                   ]).map(([icon, text]) => (
                     <div key={text} style={{
@@ -1558,8 +1740,8 @@ export default function JesusBuildsHisChurchPage() {
                   lineHeight: 1.6, textAlign: 'center', margin: 0,
                 }}>
                   {isRu
-                    ? 'Секретное правило: строителям не нужны аплодисменты. Иисус видит каждый камень.'
-                    : "Secret rule: builders don't need applause. Jesus sees every stone."}
+                    ? 'Помни: строителям не нужны аплодисменты. Иисус видит каждый верный шаг.'
+                    : "Remember: builders don't need applause. Jesus sees every faithful step."}
                 </p>
               </div>
             )}
@@ -1574,15 +1756,24 @@ export default function JesusBuildsHisChurchPage() {
                 fontFamily: 'var(--font-nunito)', fontWeight: 900, fontSize: '0.72rem',
                 color: ACCENT_DARK, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 10,
               }}>
-                {isRu ? 'Матфея 28:19' : 'Matthew 28:19'}
+                {isRu ? 'Матфея 28:19 · RST' : 'Matthew 28:19 · ESV'}
               </p>
               <p style={{
                 fontFamily: 'var(--font-lora)', fontStyle: 'italic',
                 fontSize: '1rem', color: ACCENT_DARK, lineHeight: 1.8, margin: 0,
               }}>
                 {isRu
-                  ? '"Идите, научите все народы…"'
-                  : '"Go and make disciples of all nations…"'}
+                  ? `«${SCRIPTURE_RU.matthew28}…»`
+                  : `“${SCRIPTURE_EN.matthew28}…”`}
+              </p>
+              <p style={{ fontFamily: 'var(--font-nunito)', fontSize: '0.78rem', color: ACCENT_DARK, lineHeight: 1.7, margin: '14px 0 0' }}>
+                {isRu ? 'Проверенные места Писания: ' : 'Verified Scripture: '}
+                {(isRu ? SCRIPTURE_LINKS.ru : SCRIPTURE_LINKS.en).map(([label, url], index, links) => (
+                  <span key={url}>
+                    <a href={url} target="_blank" rel="noreferrer" style={{ color: ACCENT_DARK, fontWeight: 800 }}>{label}</a>
+                    {index < links.length - 1 ? ' · ' : ''}
+                  </span>
+                ))}
               </p>
             </div>
           </div>

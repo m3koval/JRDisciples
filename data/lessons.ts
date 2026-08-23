@@ -35,8 +35,8 @@ export const lessonTopics: LessonTopic[] = [
   {
     href: "/lessons/jesus-builds-his-church",
     image: "/images/jr/lessons/jesus-builds-his-church/topic-jesus-builds-his-church.png",
-    title: "Jesus Builds His Church",
-    desc: "\"I will build My Church — and the gates of hell will not overcome it.\" The Church isn't a building: it's people! Grow like Jesus, build like Jesus, reach like Jesus — and place your own living stone in the wall. Matthew 16:18, 4 sections.",
+    title: "The Church — How Jesus Built It",
+    desc: "Jesus builds His people. See how He grew, built relationships, modeled truth in deed and word, sent disciples to serve, and reached the many, the one, and the new. Matthew 16:18, 4 sections.",
     color: "#c2410c",
     sections: 4,
     emoji: "🧱",
