@@ -24,6 +24,15 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/grace-in-the-kingdom",
+    image: "/images/jr/lessons/grace-in-the-kingdom/topic-grace-in-the-kingdom.png",
+    title: "Grace in the Kingdom of Heaven",
+    desc: "Matthew 19:16–20:16 — See the call, wisdom, and love of grace through Jesus’ vineyard story. Learn why salvation is God’s gift, not a prize for outperforming someone else.",
+    color: "#6d28d9",
+    sections: 5,
+    emoji: "🎁",
+  },
+  {
     href: "/lessons/gods-cutting",
     image: "/images/jr/lessons/gods-cutting/topic-gods-cutting-fal.png",
     title: "Shaped by God",

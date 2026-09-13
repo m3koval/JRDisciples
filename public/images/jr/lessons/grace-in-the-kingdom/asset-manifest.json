@@ -1,0 +1,70 @@
+{
+  "lesson": "grace-in-the-kingdom",
+  "generatedAt": "2026-09-13",
+  "visualQa": "PASS — full seven-image lesson pack inspected as a contact sheet; all assets are child-safe polished warm 3D human art, use no readable text or logos, and preserve the intended Scripture and sermon beats without implying that salvation is earned.",
+  "assets": [
+    {
+      "file": "topic-grace-in-the-kingdom.png",
+      "purpose": "lesson topic card and hero",
+      "provider": "FAL via Hermes image_generate",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aaa46ae/1okgu9fPzm-57d-GLm9Kp_PiSgP7OP.png",
+      "prompt": "prompts/00-topic.md",
+      "dimensions": "1024x768",
+      "qa": "PASS — generous vineyard owner and workers, Michael in green with glowing open Bible."
+    },
+    {
+      "file": "01-calling-times.png",
+      "purpose": "Matthew 20 calling-times story beat",
+      "provider": "FAL via Hermes image_generate",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aaa5201/gF2xACWAxOJATlifXDpT3_rq7MBYAM.png",
+      "prompt": "prompts/01-calling-times.md",
+      "dimensions": "1024x768",
+      "qa": "PASS — repeated invitations across the day, vineyard context, consistent Michael."
+    },
+    {
+      "file": "02-payment-comparison.png",
+      "purpose": "payment and comparison teaching beat",
+      "provider": "FAL via Hermes image_generate",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aaa5201/cM0bHw4Hspk5V4AZ9GO3q_9LkndKOn.png",
+      "prompt": "prompts/02-payment-comparison.md",
+      "dimensions": "1024x768",
+      "qa": "PASS — generosity and dissatisfied comparison shown without villainizing the workers."
+    },
+    {
+      "file": "03-gift-versus-wages.png",
+      "purpose": "salvation as gift rather than earned wages",
+      "provider": "FAL via Hermes image_generate",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aaa51f6/zSjC_zjebiwQS72X3ZRGl_HYlGSFsE.png",
+      "prompt": "prompts/03-gift-versus-wages.md",
+      "dimensions": "1024x768",
+      "qa": "PASS — visual contrast points to the open Bible and cross; caption explicitly guards grace from works."
+    },
+    {
+      "file": "04-cross-gospel.png",
+      "purpose": "cross and Gospel truth teaching beat",
+      "provider": "FAL via Hermes image_generate",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aaa520d/LK2pgxb-zVjV_gZ6FX4E7_BnFJKGAz.png",
+      "prompt": "prompts/04-cross-gospel.md",
+      "dimensions": "1024x768",
+      "qa": "PASS — reverent empty cross, hopeful children, consistent Michael, no graphic suffering."
+    },
+    {
+      "file": "05-sentry-pardon.png",
+      "purpose": "Civil War sentry pardon sermon illustration",
+      "provider": "FAL via Hermes image_generate",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aaa520e/-sv96LZ5dcQXYCCC01tIN_weWpuHaE.png",
+      "prompt": "prompts/05-sentry-pardon.md",
+      "dimensions": "1024x768",
+      "qa": "PASS — remorse, pardon, and mercy shown without execution, battle, or violence."
+    },
+    {
+      "file": "06-completion-home.png",
+      "purpose": "lesson completion and not-home-yet teaching beat",
+      "provider": "FAL via Hermes image_generate",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aaa520e/ZJBcFM2mUpbeWTK8XDOHa_TpokoEqP.png",
+      "prompt": "prompts/06-completion-home.md",
+      "dimensions": "1024x768",
+      "qa": "PASS — unified workers, open vineyard gate, humble joy, consistent Michael."
+    }
+  ]
+}

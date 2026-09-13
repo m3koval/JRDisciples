@@ -10,6 +10,15 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
+    href: "/lessons/grace-in-the-kingdom",
+    image: "/images/jr/lessons/grace-in-the-kingdom/topic-grace-in-the-kingdom.png",
+    title: "Благодать в Царстве Небесном",
+    desc: "Матфея 19:16–20:16 — Увидь призыв, мудрость и любовь благодати в притче Иисуса о винограднике. Узнай, почему спасение — Божий дар, а не приз за победу над другими.",
+    color: "#6d28d9",
+    sections: 5,
+    emoji: "🎁",
+  },
+  {
     href: "/lessons/gods-cutting",
     image: "/images/jr/lessons/gods-cutting/topic-gods-cutting-fal.png",
     title: "Божья огранка",
