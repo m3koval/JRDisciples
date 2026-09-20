@@ -1,0 +1,61 @@
+{
+  "lesson": "whose-mark",
+  "provider": "FAL.ai via Hermes image_generate",
+  "generatedAt": "2026-09-20",
+  "style": "Polished warm 3D animated human characters; child-safe; no generated readable text",
+  "assets": [
+    {
+      "file": "00-hero-whose-mark.png",
+      "purpose": "lesson hero and topic card",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aab3240/23Qy8FljQWYmfBR254lEh_nhzRCP1U.png",
+      "prompt": "prompts.md#00-hero--the-impossible-question",
+      "dimensions": "1024x768",
+      "qa": "PASS"
+    },
+    {
+      "file": "01-hidden-trap.png",
+      "purpose": "the leaders' hidden trap",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aab3248/xjz_5GKqL1hD3ooXKH1ol_ek1LsuPj.png",
+      "prompt": "prompts.md#01-the-hidden-trap",
+      "dimensions": "1024x768",
+      "qa": "PASS"
+    },
+    {
+      "file": "02-look-at-coin.png",
+      "purpose": "Jesus asks whose image is on the coin",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aab3248/RnenZfznet0va8awRV29m_BzAUNZQn.png",
+      "prompt": "prompts.md#02-look-at-the-coin",
+      "dimensions": "1024x768",
+      "qa": "PASS"
+    },
+    {
+      "file": "03-faithful-both-lanes.png",
+      "purpose": "faithful everyday civic responsibility under God",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aab3248/srGxg_rFyK2wKNq9ghEZc_9iYxQoae.png",
+      "prompt": "prompts.md#03-faithful-in-both-lanes",
+      "dimensions": "1024x768",
+      "qa": "PASS"
+    },
+    {
+      "file": "04-gods-image.png",
+      "purpose": "people bear God's image",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aab324d/KFnddGbxWO12XUzGBvkw8_ylh3bX2Y.png",
+      "prompt": "prompts.md#04-gods-image-on-people",
+      "dimensions": "1024x768",
+      "qa": "PASS"
+    },
+    {
+      "file": "05-open-hands-loyal-heart.png",
+      "purpose": "completion and lived response",
+      "sourceUrl": "https://v3b.fal.media/files/b/0aab324d/7udO2Sc8sDf-L2vnXtu8U_130AEbmB.png",
+      "prompt": "prompts.md#05-completion--open-hands-loyal-heart",
+      "dimensions": "1024x768",
+      "qa": "PASS"
+    }
+  ],
+  "visualQa": {
+    "contactSheet": "contact-sheet.jpg",
+    "status": "PASS",
+    "notes": "All six stills match the intended beats, are child-safe, show no readable generated text, and passed anatomy/physical-plausibility inspection. The hero was accepted as the style gate before the remaining pack was generated."
+  }
+}

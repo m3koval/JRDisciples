@@ -24,6 +24,15 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/whose-mark",
+    image: "/images/jr/lessons/whose-mark/00-hero-whose-mark.png",
+    title: "Whose Mark?",
+    desc: "Matthew 22:15–22 — Walk into the leaders’ trap, examine Caesar’s coin, discover God’s image on people, and practice honest responsibility, worship, and obeying God first.",
+    color: "#173f73",
+    sections: 5,
+    emoji: "🪙",
+  },
+  {
     href: "/lessons/grace-in-the-kingdom",
     image: "/images/jr/lessons/grace-in-the-kingdom/topic-grace-in-the-kingdom.png",
     title: "Grace in the Kingdom of Heaven",

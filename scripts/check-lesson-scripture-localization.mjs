@@ -91,6 +91,20 @@ const verifiedLessonRequirements = {
     ['teaches in English that the kingdom is received as Jesus’ gift', /God’s kingdom is received: as Jesus’ gift, not a prize we earn/],
     ['teaches the same gift-not-prize truth in Russian', /Божье Царство: как подарок Иисуса, а не как награду, которую мы заработали/],
   ],
+  'whose-mark': [
+    ['defines English Scripture before rendering', /const\s+scriptureEn\s*=/],
+    ['defines Russian Scripture before rendering', /const\s+scriptureRu\s*=/],
+    ['uses exact-source Matthew 22:21 ESV and RST links', /MAT\.22\.21\.ESV[\s\S]*MAT\.22\.21\.RST/],
+    ['uses exact-source Genesis 1:27 ESV and RST links', /GEN\.1\.27\.ESV[\s\S]*GEN\.1\.27\.RST/],
+    ['preserves exact Matthew 22:21 ESV wording', /Therefore render to Caesar the things that are Caesar’s, and to God the things that are God’s/],
+    ['preserves exact Matthew 22:21 RST wording', /итак отдавайте кесарево кесарю, а Божие Богу/],
+    ['contains the bilingual child application challenge', /const\s+scenariosEn[\s\S]*const\s+scenariosRu/],
+    ['contains the bilingual truth check', /const\s+truthsEn[\s\S]*const\s+truthsRu/],
+    ['guards against a sacred-secular split', /Your whole life is already lived before God/],
+    ['guards worship from human claims', /Worship God alone/],
+    ['defines the obey-God-first boundary', /“Obey God first” applies when a command truly requires sin, not merely when a rule feels inconvenient/],
+    ['keeps blocked-storage progress playable', /in-memory copy still keeps this visit playable/],
+  ],
 }
 
 for (const slug of caseLessonSlugs) {

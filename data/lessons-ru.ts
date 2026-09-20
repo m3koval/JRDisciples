@@ -10,6 +10,15 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
+    href: "/lessons/whose-mark",
+    image: "/images/jr/lessons/whose-mark/00-hero-whose-mark.png",
+    title: "Чей образ?",
+    desc: "Матфея 22:15–22 — Разбери ловушку, рассмотри монету кесаря, открой Божий образ на людях и учись честной ответственности, поклонению и послушанию прежде Богу.",
+    color: "#173f73",
+    sections: 5,
+    emoji: "🪙",
+  },
+  {
     href: "/lessons/grace-in-the-kingdom",
     image: "/images/jr/lessons/grace-in-the-kingdom/topic-grace-in-the-kingdom.png",
     title: "Благодать в Царстве Небесном",
