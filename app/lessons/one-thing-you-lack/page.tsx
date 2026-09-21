@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
+import { ExternalSourceLink } from '@/components/ExternalSourceLink'
 
 const LESSON_ID = 'one-thing-you-lack'
 const ACCENT = '#b45309'
@@ -305,11 +306,15 @@ const panel: CSSProperties = {
 function ScriptureBox({ verse, isRu }: { verse: Scripture; isRu: boolean }) {
   return (
     <div style={{ ...panel, margin: '24px 0', borderColor: 'rgba(251,191,36,.5)', background: 'rgba(251,191,36,.08)' }}>
-      <a href={verse.url} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+      <ExternalSourceLink
+        href={verse.url}
+        appLabel={<p style={{ margin: '0 0 9px', fontFamily: 'var(--font-nunito)', color: GOLD, fontSize: '.73rem', fontWeight: 900, letterSpacing: 1.5, textTransform: 'uppercase' }}>{verse.reference} · {verse.translation}</p>}
+        style={{ textDecoration: 'none' }}
+      >
         <p style={{ margin: '0 0 9px', fontFamily: 'var(--font-nunito)', color: GOLD, fontSize: '.73rem', fontWeight: 900, letterSpacing: 1.5, textTransform: 'uppercase' }}>
           {verse.reference} · {verse.translation} ↗
         </p>
-      </a>
+      </ExternalSourceLink>
       <p style={{ margin: 0, color: 'rgba(255,255,255,.9)', fontFamily: 'var(--font-lora)', fontSize: '1rem', fontStyle: 'italic', lineHeight: 1.75 }}>
         “{verse.text}”
       </p>
@@ -601,9 +606,13 @@ export default function OneThingYouLackPage() {
                 ? 'Прямо перед этим родители привели к Иисусу маленьких детей (Матфея 19:13–15). Им нечем было хвалиться и нечем было платить — они просто пришли. Богатый юноша пришёл с достижениями и руками, занятыми сокровищем, и спросил, что ещё ему сделать. Это не значит, что дети безгрешны. Это показывает, как принимают Божье Царство: как подарок Иисуса, а не как награду, которую мы заработали.'
                 : 'Just before this, parents brought little children to Jesus (Matthew 19:13–15). They had no status to boast about and nothing with which to pay—they simply came. The rich young man came with achievements and hands full of treasure, asking what else he could do. This does not mean children are sinless. It shows how God’s kingdom is received: as Jesus’ gift, not a prize we earn.'}
             </p>
-            <a href="https://www.youtube.com/watch?v=dx03mEwgHKM" target="_blank" rel="noreferrer" style={{ color: GOLD, fontFamily: 'var(--font-nunito)', fontSize: '.78rem', fontWeight: 900 }}>
+            <ExternalSourceLink
+              href="https://www.youtube.com/watch?v=dx03mEwgHKM"
+              appLabel={isRu ? 'Источник проповеди: The Church of Eleven22 · Matthew S5E9' : 'Sermon source: The Church of Eleven22 · Matthew S5E9'}
+              style={{ color: GOLD, fontFamily: 'var(--font-nunito)', fontSize: '.78rem', fontWeight: 900 }}
+            >
               {isRu ? 'Сопоставлено с проповедью The Church of Eleven22 · Matthew S5E9 ↗' : 'Cross-reference: The Church of Eleven22 · Matthew S5E9 ↗'}
-            </a>
+            </ExternalSourceLink>
           </div>
           <Activity label={isRu ? 'ЗАДАНИЕ 1 · СОБЕРИ ИСТОРИЮ' : 'ACTIVITY 1 · BUILD THE STORY'} intro={isRu ? 'Ты уже прочитал основу. Нажми события по порядку.' : 'You have the story primer. Tap the events in Bible order.'}>
             {done.has('story') && <p style={{ color: '#86efac', fontFamily: 'var(--font-nunito)', fontWeight: 900, textAlign: 'center' }}>✅ {isRu ? 'История собрана!' : 'Story complete!'}</p>}

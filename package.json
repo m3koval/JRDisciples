@@ -5,6 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:app": "CAPACITOR_BUILD=1 NEXT_PUBLIC_APP_SHELL=1 next build",
+    "app:sync": "npm run build:app && cap sync ios && npm run check:app",
+    "app:doctor": "cap doctor",
+    "app:open": "cap open ios",
+    "check:app": "node scripts/check-app-bundle.mjs",
     "start": "next start",
     "lint": "eslint",
     "test:quests": "node scripts/check-quest-next-links.mjs",
@@ -15,11 +20,14 @@
     "check:games": "node scripts/check-games-section.mjs"
   },
   "dependencies": {
-    "next": "16.2.6",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/ios": "^8.5.2",
+    "next": "^16.3.5",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.5.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

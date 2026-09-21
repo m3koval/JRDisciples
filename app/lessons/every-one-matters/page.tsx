@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useMemo, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { recordGradedAnswer, markLessonComplete } from '@/lib/lesson-mastery'
+import { ExternalSourceLink } from '@/components/ExternalSourceLink'
 
 const LESSON_ID = 'every-one-matters'
 const BLUE = '#1d4ed8'
@@ -210,7 +211,7 @@ const truthsRu = [
 function ScriptureBox({ value, isRu }: { value: Scripture; isRu: boolean }) {
   return (
     <div style={{ margin: '20px 0', padding: 20, borderRadius: 18, border: '2px solid rgba(29,78,216,.22)', background: '#fff', boxShadow: '0 10px 30px rgba(30,64,175,.08)' }}>
-      <a href={value.url} target="_blank" rel="noreferrer" style={{ color: BLUE, fontFamily: 'var(--font-nunito)', fontWeight: 900, textDecoration: 'none' }}>{value.reference} · {value.translation} ↗</a>
+      <ExternalSourceLink href={value.url} appLabel={`${value.reference} · ${value.translation}`} style={{ color: BLUE, fontFamily: 'var(--font-nunito)', fontWeight: 900, textDecoration: 'none' }}>{value.reference} · {value.translation} ↗</ExternalSourceLink>
       <blockquote style={{ margin: '12px 0 5px', color: NAVY, fontFamily: 'var(--font-lora)', fontSize: 'clamp(1rem,2.5vw,1.2rem)', lineHeight: 1.7 }}>“{value.text}”</blockquote>
       <small style={{ color: '#64748b', fontFamily: 'var(--font-nunito)', fontWeight: 700 }}>{isRu ? 'Точный текст и ссылка: Bible.com' : 'Exact text and source link: Bible.com'}</small>
     </div>

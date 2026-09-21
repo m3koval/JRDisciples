@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useMemo, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
+import { ExternalSourceLink } from '@/components/ExternalSourceLink'
 
 const LESSON_ID = 'gods-cutting'
 const PURPLE = '#6d28d9'
@@ -190,7 +191,7 @@ function Panel({ children, style }: { children: ReactNode; style?: CSSProperties
 
 function ScriptureBox({ value, isRu }: { value: ScriptureValue; isRu: boolean }) {
   return <div style={{ padding: 20, borderRadius: 18, background: '#fff', border: '2px solid rgba(109,40,217,.2)', margin: '18px 0' }}>
-    <a href={value.url} target="_blank" rel="noreferrer" style={{ color: PURPLE, fontWeight: 900, textDecoration: 'none' }}>{value.reference} · {value.translation} ↗</a>
+    <ExternalSourceLink href={value.url} appLabel={`${value.reference} · ${value.translation}`} style={{ color: PURPLE, fontWeight: 900, textDecoration: 'none' }}>{value.reference} · {value.translation} ↗</ExternalSourceLink>
     <blockquote style={{ margin: '12px 0 5px', color: DEEP, fontFamily: 'var(--font-lora)', fontSize: 'clamp(1rem,2.5vw,1.2rem)', lineHeight: 1.65 }}>“{value.text}”</blockquote>
     <small style={{ color: '#64748b', fontWeight: 700 }}>{isRu ? 'Точный текст и ссылка: Bible.com' : 'Exact text and source link: Bible.com'}</small>
   </div>

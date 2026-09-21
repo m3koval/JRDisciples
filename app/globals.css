@@ -335,3 +335,15 @@ html[data-lang="ru"] body :is(.sec-title, .sec-banner, h1, h2, h3) {
 html[data-lang="ru"] body :is(p, li, button, a, span, .sec-intro, .pq-text) {
   letter-spacing: normal !important;
 }
+html[data-app-shell="capacitor"] {
+  overscroll-behavior: none;
+  background: #0b1f3a;
+}
+
+html[data-app-shell="capacitor"] body {
+  min-height: 100dvh;
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+}
