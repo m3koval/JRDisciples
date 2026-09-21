@@ -2,23 +2,21 @@
 
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
-import { lessonTopics } from '@/data/lessons'
-import { lessonTopicsRu } from '@/data/lessons-ru'
-import { useAppLessonProgress } from '@/lib/app-progress'
+import { journeyUnits } from '@/data/journey'
+import { useJourneyProgress } from '@/lib/journey-progress'
 import styles from './page.module.css'
 
 const copy = {
-  en: { eyebrow: 'Your journey', title: 'Faithful progress', intro: 'See what you finished, celebrate what you learned, and choose one clear next step.', lessons: 'Lessons completed', stars: 'Stars earned', next: 'Continue next', complete: 'Completed', begin: 'Not started', open: 'Open lesson' },
-  ru: { eyebrow: 'Твой путь', title: 'Верный прогресс', intro: 'Посмотри, что завершено, порадуйся изученному и выбери один ясный следующий шаг.', lessons: 'Уроков завершено', stars: 'Звёзд заработано', next: 'Продолжить', complete: 'Завершено', begin: 'Не начато', open: 'Открыть урок' },
+  en: { eyebrow: 'Your journey', title: 'Faithful progress', intro: 'See the road behind you and the one clear step ahead.', units: 'Units completed', steps: 'Steps completed', next: 'Continue Journey', complete: 'Badge earned', current: 'In progress', locked: 'Locked', open: 'View unit' },
+  ru: { eyebrow: 'Твой путь', title: 'Верный прогресс', intro: 'Посмотри пройденный путь и один ясный следующий шаг.', units: 'Разделов завершено', steps: 'Шагов завершено', next: 'Продолжить путь', complete: 'Значок получен', current: 'В процессе', locked: 'Закрыто', open: 'Открыть раздел' },
 }
 
 export default function ProgressPage() {
   const { language } = useLanguage()
-  const text = copy[language]
-  const topics = language === 'ru' ? lessonTopicsRu : lessonTopics
-  const progress = useAppLessonProgress()
-  const lastIndex = lessonTopics.findIndex((topic) => topic.href === progress.lastLesson)
-  const nextLesson = topics[lastIndex >= 0 ? lastIndex : 0]
+  const lang = language === 'ru' ? 'ru' : 'en'
+  const text = copy[lang]
+  const progress = useJourneyProgress()
+  const completedUnits = progress.unitProgress.filter((unit) => unit.complete).length
 
   return (
     <main className={styles.page}>
@@ -27,26 +25,25 @@ export default function ProgressPage() {
       <p className={styles.intro}>{text.intro}</p>
 
       <section className={styles.summary} aria-label={text.title}>
-        <div><strong>{progress.completedLessons}</strong><span>{text.lessons}</span></div>
-        <div><strong>{progress.totalStars}</strong><span>{text.stars}</span></div>
-        <Link href={nextLesson.href}><strong>→</strong><span>{text.next}</span></Link>
+        <div><strong>{completedUnits}/{journeyUnits.length}</strong><span>{text.units}</span></div>
+        <div><strong>{progress.completedRequired}/{progress.totalRequired}</strong><span>{text.steps}</span></div>
+        <Link href={progress.nextStep ? `${progress.nextStep.href}?journey=1` : '/journey'}><strong>→</strong><span>{text.next}</span></Link>
       </section>
 
       <section className={styles.grid}>
-        {topics.map((topic) => {
-          const stars = progress.starsByHref[topic.href] ?? 0
+        {journeyUnits.map((unit, index) => {
+          const state = progress.unitProgress[index]
+          const label = state.complete ? text.complete : state.unlocked ? text.current : text.locked
           return (
-            <Link key={topic.href} href={topic.href} className={styles.card}>
-              <img src={topic.image || '/images/jr/lessons-hero.png'} alt="" />
+            <Link key={unit.id} href="/journey" className={`${styles.card} ${!state.unlocked ? styles.locked : ''}`} aria-disabled={!state.unlocked || undefined}>
+              <img src={unit.image} alt="" />
               <span className={styles.scrim} aria-hidden="true" />
               <span className={styles.copy}>
-                <small>{stars ? text.complete : text.begin}</small>
-                <strong>{topic.title}</strong>
+                <small>{label}</small>
+                <strong>{unit.title[lang]}</strong>
                 <span className={styles.cardBottom}>
-                  <span className={styles.stars} aria-label={`${stars} of 3 stars`}>
-                    {[1, 2, 3].map((star) => <span key={star} className={stars >= star ? styles.earned : ''}>★</span>)}
-                  </span>
-                  <em>{text.open} →</em>
+                  <span>{state.completed}/{state.total}</span>
+                  <em>{state.unlocked ? `${text.open} →` : '🔒'}</em>
                 </span>
               </span>
             </Link>

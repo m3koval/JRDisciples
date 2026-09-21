@@ -1,8 +1,10 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import { JourneyNextAction } from '@/components/app/JourneyNextAction'
 
 export type QuestChoice = { label: string; good: boolean; response: string }
 
@@ -68,6 +70,7 @@ type QuestAdventureProps = {
 
 export function QuestAdventure({ scenesByLanguage, uiByLanguage, images, nextQuest }: QuestAdventureProps) {
   const { language } = useLanguage()
+  const pathname = usePathname()
   const lang = language === 'ru' ? 'ru' : 'en'
   const scenes = scenesByLanguage[lang]
   const t = uiByLanguage[lang]
@@ -368,7 +371,11 @@ export function QuestAdventure({ scenesByLanguage, uiByLanguage, images, nextQue
               <div className="prayer-box">{t.prayer}</div>
             </div>
             <div className="quest-finish-actions">
-              <Link href={nextQuest.href} className="quest-button green">{nextQuest.label[lang]}</Link>
+              {process.env.NEXT_PUBLIC_APP_SHELL === '1' ? (
+                <JourneyNextAction currentHref={pathname} autoComplete />
+              ) : (
+                <Link href={nextQuest.href} className="quest-button green">{nextQuest.label[lang]}</Link>
+              )}
               <Link href="/quests" className="quest-button secondary">{t.back}</Link>
             </div>
           </section>

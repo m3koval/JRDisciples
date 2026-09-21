@@ -35,7 +35,7 @@ export default function PuzzleClient({ id }: { id: string }) {
             <h1 className="sec-title">{puzzle.title}</h1>
           </div>
 
-          <WordSearchGame key={puzzle.id} puzzle={puzzle} />
+          <WordSearchGame key={puzzle.id} puzzle={puzzle} journeyHref={`/puzzles/${id}`} />
 
           <div style={{ marginTop: 32, textAlign: "center" }}>
             <Link href="/puzzles" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#7030a0", textDecoration: "none" }}>

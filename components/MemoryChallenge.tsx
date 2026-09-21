@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import type { MemoryVerse } from "@/data/memory-verses";
 import Link from "next/link";
+import { JourneyNextAction } from "@/components/app/JourneyNextAction";
 
 const PZ_COLOR = "#2a6a10";
 
@@ -26,7 +27,7 @@ function launchConfetti() {
   }
 }
 
-export default function MemoryChallenge({ verse }: { verse: MemoryVerse }) {
+export default function MemoryChallenge({ verse, journeyHref }: { verse: MemoryVerse; journeyHref?: string }) {
   const [stage, setStage] = useState<"read" | "practice" | "complete">("read");
   const words = verse.text.replace(/[.,;!?]/g, "").split(" ");
   const blankedIndexes = words.map((_, i) => i % 2 !== 0);
@@ -113,6 +114,7 @@ export default function MemoryChallenge({ verse }: { verse: MemoryVerse }) {
             More Verses
           </Link>
         </div>
+        {journeyHref && <div style={{ marginTop: 16 }}><JourneyNextAction currentHref={journeyHref} autoComplete /></div>}
       </div>
     );
   }

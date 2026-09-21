@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import type { RebusPuzzle } from "@/data/rebus";
 import Link from "next/link";
+import { JourneyNextAction } from "@/components/app/JourneyNextAction";
 
 function launchConfetti() {
   const colors = ["#ff6b1a","#ffb347","#f0c040","#40b870","#7ec8e3","#c084fc","#f472b6","#fff"];
@@ -26,7 +27,7 @@ function launchConfetti() {
 
 const PZ_COLOR = "#c05010";
 
-export default function RebusCard({ puzzle }: { puzzle: RebusPuzzle }) {
+export default function RebusCard({ puzzle, journeyHref }: { puzzle: RebusPuzzle; journeyHref?: string }) {
   const [input, setInput] = useState("");
   const [showHint, setShowHint] = useState(false);
   const [solved, setSolved] = useState(false);
@@ -144,6 +145,7 @@ export default function RebusCard({ puzzle }: { puzzle: RebusPuzzle }) {
           <Link href="/rebus" className="pz-btn" style={{ display: "inline-block", width: "auto", padding: "10px 28px", textDecoration: "none" }}>
             Try Another Puzzle →
           </Link>
+          {journeyHref && <div style={{ marginTop: 12 }}><JourneyNextAction currentHref={journeyHref} autoComplete /></div>}
         </div>
       )}
     </div>

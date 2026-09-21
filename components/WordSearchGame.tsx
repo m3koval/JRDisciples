@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import type { WordPuzzle } from "@/data/word-puzzles";
 import { generateWordSearch } from "@/lib/wordSearch";
 import Link from "next/link";
+import { JourneyNextAction } from "@/components/app/JourneyNextAction";
 
 const PZ_COLOR = "#7030a0";
 const GRID_SIZE = 10;
@@ -47,7 +48,7 @@ function buildGrid(words: string[]): string[][] {
   return generateWordSearch(words, GRID_SIZE, GRID_SIZE, isCyrillic ? FILL_RU : FILL_EN);
 }
 
-export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
+export default function WordSearchGame({ puzzle, journeyHref }: { puzzle: WordPuzzle; journeyHref?: string }) {
   const [grid, setGrid] = useState<string[][]>(() => buildGrid(puzzle.words));
   const [startCell, setStartCell] = useState<Cell | null>(null);
   const [hoverCell, setHoverCell] = useState<Cell | null>(null);
@@ -107,6 +108,7 @@ export default function WordSearchGame({ puzzle }: { puzzle: WordPuzzle }) {
             More Puzzles →
           </Link>
         </div>
+        {journeyHref && <div style={{ marginTop: 16 }}><JourneyNextAction currentHref={journeyHref} autoComplete /></div>}
       </div>
     );
   }

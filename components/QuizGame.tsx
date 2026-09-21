@@ -3,8 +3,9 @@
 import { useState, useRef } from "react";
 import type { Quiz } from "@/data/quizzes";
 import Link from "next/link";
+import { JourneyNextAction } from "@/components/app/JourneyNextAction";
 
-interface Props { quiz: Quiz; pzColor: string; }
+interface Props { quiz: Quiz; pzColor: string; journeyHref?: string; }
 
 function launchConfetti() {
   const colors = ["#ff6b1a","#ffb347","#f0c040","#40b870","#7ec8e3","#c084fc","#f472b6","#fff"];
@@ -27,7 +28,7 @@ function launchConfetti() {
   }
 }
 
-export default function QuizGame({ quiz, pzColor }: Props) {
+export default function QuizGame({ quiz, pzColor, journeyHref }: Props) {
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [score, setScore] = useState(0);
@@ -92,6 +93,7 @@ export default function QuizGame({ quiz, pzColor }: Props) {
             More Quizzes
           </Link>
         </div>
+        {journeyHref && <div style={{ marginTop: 16 }}><JourneyNextAction currentHref={journeyHref} autoComplete /></div>}
       </div>
     );
   }

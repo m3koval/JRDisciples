@@ -5,6 +5,7 @@ const root = process.cwd()
 const out = join(root, 'out')
 const iosPublic = join(root, 'ios', 'App', 'App', 'public')
 const configPath = join(root, 'capacitor.config.ts')
+const journeyPath = join(root, 'data', 'journey.ts')
 const failures = []
 
 function walk(directory) {
@@ -22,6 +23,17 @@ function routeLabel(path) {
 
 if (!existsSync(out)) failures.push('Static app export is missing: run npm run build:app')
 if (!existsSync(configPath)) failures.push('capacitor.config.ts is missing')
+
+if (existsSync(journeyPath)) {
+  const journeySource = readFileSync(journeyPath, 'utf8')
+  const matches = [...journeySource.matchAll(/step\('([^']+)',\s*'[^']+',\s*'([^']+)'/g)]
+  const ids = matches.map((match) => match[1])
+  if (new Set(ids).size !== ids.length) failures.push('Disciple Journey contains duplicate step IDs')
+  for (const [, id, href] of matches) {
+    const route = join(out, href.replace(/^\//, ''), 'index.html')
+    if (!existsSync(route)) failures.push(`Disciple Journey step ${id} points to a missing route: ${href}`)
+  }
+}
 
 const htmlFiles = walk(out).filter((path) => extname(path) === '.html')
 const indexFiles = htmlFiles.filter((path) => path.endsWith('index.html'))

@@ -34,7 +34,7 @@ export default function RebusClient({ id }: { id: string }) {
             <h1 className="sec-title">{puzzle.title}</h1>
           </div>
 
-          <RebusCard puzzle={puzzle} />
+          <RebusCard puzzle={puzzle} journeyHref={`/rebus/${id}`} />
 
           <div style={{ marginTop: 32, textAlign: "center" }}>
             <Link href="/rebus" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#c05010", textDecoration: "none" }}>

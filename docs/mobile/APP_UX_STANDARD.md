@@ -41,9 +41,10 @@ Prefer short teaching plus meaningful interaction over long reading walls. Give 
 
 ## App shell behavior
 
-- Portrait uses a five-item bottom navigation: Home, Learn, Play, Quests, Progress.
+- Portrait uses a five-item bottom navigation: Today, Journey, Practice, Progress, Explore.
 - iPad/landscape converts that navigation into a compact left rail.
-- Home prioritizes Continue, today's Scripture, visible progress, and four clear choices.
+- Today prioritizes one required Next Step, the current unit truth, visible progress, and the next three ordered steps.
+- Journey is the authoritative sequence; Practice only shows relevant unlocked reinforcement; Explore is the optional full library.
 - The website retains its discovery-oriented header, hero, long homepage, and footer.
 - The app does not use a forced hero video as a loading gate.
 - A native splash must be instant and static; optional motion may be nonblocking and must respect Reduce Motion.
