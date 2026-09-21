@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:capacitor": "BUILD_TARGET=capacitor next build",
     "start": "next start",
     "lint": "eslint",
     "test:quests": "node scripts/check-quest-next-links.mjs",
