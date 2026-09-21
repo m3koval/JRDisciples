@@ -5,8 +5,9 @@ import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { rememberLesson } from '@/lib/app-progress'
-import { allJourneySteps } from '@/data/journey'
+import { allJourneySteps, journeyManualLessonHrefs } from '@/data/journey'
 import { JourneyLessonAdvance } from './JourneyLessonAdvance'
+import { JourneyNextAction } from './JourneyNextAction'
 import styles from './AppShell.module.css'
 
 type IconName = 'home' | 'journey' | 'practice' | 'progress' | 'explore'
@@ -27,19 +28,20 @@ const copy = {
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
+  const routePath = pathname !== '/' ? pathname.replace(/\/$/, '') : pathname
   const { language, setLanguage } = useLanguage()
   const text = copy[language]
-  const isGame = pathname.startsWith('/games/')
-  const isJourneyContent = allJourneySteps.some((step) => step.href === pathname)
+  const isGame = routePath.startsWith('/games/')
+  const isJourneyContent = allJourneySteps.some((step) => step.href === routePath)
 
-  useEffect(() => { rememberLesson(pathname) }, [pathname])
+  useEffect(() => { rememberLesson(routePath) }, [routePath])
 
   const items: Array<{ href: string; label: string; icon: IconName; active: boolean }> = [
-    { href: '/', label: text.today, icon: 'home', active: pathname === '/' },
-    { href: '/journey', label: text.journey, icon: 'journey', active: pathname.startsWith('/journey') || isJourneyContent },
-    { href: '/practice', label: text.practice, icon: 'practice', active: pathname.startsWith('/practice') },
-    { href: '/progress', label: text.progress, icon: 'progress', active: pathname.startsWith('/progress') },
-    { href: '/explore', label: text.explore, icon: 'explore', active: pathname.startsWith('/explore') },
+    { href: '/', label: text.today, icon: 'home', active: routePath === '/' },
+    { href: '/journey', label: text.journey, icon: 'journey', active: routePath.startsWith('/journey') || isJourneyContent },
+    { href: '/practice', label: text.practice, icon: 'practice', active: routePath.startsWith('/practice') },
+    { href: '/progress', label: text.progress, icon: 'progress', active: routePath.startsWith('/progress') },
+    { href: '/explore', label: text.explore, icon: 'explore', active: routePath.startsWith('/explore') },
   ]
 
   if (isGame) return <div className={styles.gameShell}>{children}</div>
@@ -76,8 +78,15 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         ))}
       </nav>
 
-      <div className={styles.content}>{children}</div>
-      <JourneyLessonAdvance pathname={pathname} />
+      <div className={styles.content}>
+        {children}
+        {journeyManualLessonHrefs.has(routePath) && (
+          <section className={styles.manualCompletion}>
+            <JourneyNextAction currentHref={routePath} />
+          </section>
+        )}
+      </div>
+      <JourneyLessonAdvance pathname={routePath} />
     </div>
   )
 }

@@ -153,3 +153,14 @@ export const journeyUnits: JourneyUnit[] = [
 export const allJourneySteps = journeyUnits.flatMap((unit, unitIndex) => unit.steps.map((journeyStep, stepIndex) => ({
   ...journeyStep, unitId: unit.id, unitIndex, stepIndex,
 })))
+
+// Legacy lessons without shared star-mastery completion. Guided mode places
+// an explicit completion action after the full lesson body for these routes.
+export const journeyManualLessonHrefs = new Set([
+  '/lessons/baptism-prep',
+  '/lessons/case-for-christ-bible',
+  '/lessons/case-for-christ-cross',
+  '/lessons/case-for-christ-gods-son',
+  '/lessons/case-for-christ-resurrection',
+  '/lessons/grace-in-the-kingdom',
+])

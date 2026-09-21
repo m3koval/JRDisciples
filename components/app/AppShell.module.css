@@ -119,6 +119,14 @@
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
+.manualCompletion {
+  padding: 22px 16px 34px;
+  display: flex;
+  justify-content: center;
+  background: #eef6f2;
+}
+.manualCompletion:empty { display: none; }
+
 @media (min-width: 560px) {
   .offlineBadge { display: inline; }
 }
