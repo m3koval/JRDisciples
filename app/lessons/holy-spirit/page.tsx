@@ -5,6 +5,9 @@ import { useLanguage } from '@/context/LanguageContext'
 import { lessons } from '@/data/lessons'
 import { lessonsRu } from '@/data/lessons-ru'
 import { generateWordSearchWithCoords } from '@/lib/wordSearch'
+import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
+
+const LESSON_ID = 'hs'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 type Tile = { uid: string; word: string }
@@ -532,6 +535,7 @@ export default function HolySpiritLesson() {
   const [wsSel,   setWsSel]   = useState<Set<string>>(new Set())
   const [wsFound, setWsFound] = useState<Set<string>>(new Set())
   const [wsStart, setWsStart] = useState<[number,number]|null>(null)
+  const [wsEverErred, setWsEverErred] = useState(false)
 
   // active scramble data
   const SC1_TILES_ACTIVE = isRu ? SC1_TILES_RU : SC1_TILES
@@ -594,6 +598,7 @@ export default function HolySpiritLesson() {
           document.getElementById(`sec-${sec + 1}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }, 700)
       } else {
+        markLessonComplete(LESSON_ID)
         setTimeout(() => setWon(true), 700)
       }
     }
@@ -607,6 +612,8 @@ export default function HolySpiritLesson() {
   const [r2, setR2] = useState('')
   const [r1Err, setR1Err] = useState('')
   const [r2Err, setR2Err] = useState('')
+  const [r1EverErred, setR1EverErred] = useState(false)
+  const [r2EverErred, setR2EverErred] = useState(false)
 
   function checkR1() {
     const v = r1.trim().toLowerCase()
@@ -614,8 +621,10 @@ export default function HolySpiritLesson() {
       ? ['живёт','живет','живёт в','живет в'].some(a => v === a || v.startsWith(a))
       : ['lives','lives in','lives inside'].some(a => v === a || v.startsWith(a))
     if (ok) {
+      recordGradedAnswer(LESSON_ID, !r1EverErred)
       solve('r1', 1)
     } else {
+      setR1EverErred(true)
       setR1Err(L.s1.r1Err)
       setTimeout(() => setR1Err(''), 2500)
     }
@@ -626,8 +635,10 @@ export default function HolySpiritLesson() {
       ? ['троица','один бог','единый бог','3 в 1','три в одном','три личности один'].some(a => v === a || v.startsWith(a))
       : ['trinity','3 in 1','three in one','one god','three persons one god','3 persons one god'].some(a => v === a || v.startsWith(a))
     if (ok) {
+      recordGradedAnswer(LESSON_ID, !r2EverErred)
       solve('r2', 1)
     } else {
+      setR2EverErred(true)
       setR2Err(L.s1.r2Err)
       setTimeout(() => setR2Err(''), 2500)
     }
@@ -675,10 +686,14 @@ export default function HolySpiritLesson() {
         setWsFound(newFound)
         setWsSel(new Set())
         setWsStart(null)
-        if (newFound.size === Object.keys(wsCoords).length) solve('ws', 2)
+        if (newFound.size === Object.keys(wsCoords).length) {
+          recordGradedAnswer(LESSON_ID, !wsEverErred)
+          solve('ws', 2)
+        }
         return
       }
     }
+    setWsEverErred(true)
     setWsSel(selSet)
     setWsStart(null)
     setTimeout(() => setWsSel(new Set()), 600)
@@ -700,6 +715,8 @@ export default function HolySpiritLesson() {
   const [m2R, setM2R] = useState<string|null>(null)
   const [m2Matched, setM2Matched] = useState<Set<string>>(new Set())
   const [m2Shake,   setM2Shake]   = useState<Set<string>>(new Set())
+  const [m1EverErred, setM1EverErred] = useState(false)
+  const [m2EverErred, setM2EverErred] = useState(false)
 
   function doMatch(
     newLeft: string|null, newRight: string|null,
@@ -709,23 +726,29 @@ export default function HolySpiritLesson() {
     setR: (v: string|null) => void,
     setShake: (s: Set<string>) => void,
     challengeId: string,
+    everErred: boolean,
+    setEverErred: (v: boolean) => void,
   ) {
     if (!newLeft || !newRight) return
     if (newLeft === newRight) {
       const nm = new Set([...matched, newLeft])
       setMatched(nm)
       setL(null); setR(null)
-      if (nm.size === 4) solve(challengeId, 3)
+      if (nm.size === 4) {
+        recordGradedAnswer(LESSON_ID, !everErred)
+        solve(challengeId, 3)
+      }
     } else {
+      setEverErred(true)
       setShake(new Set([newLeft, newRight]))
       setTimeout(() => { setShake(new Set()); setL(null); setR(null) }, 700)
     }
   }
 
-  function pickLeft1(id: string)  { if (m1Matched.has(id)) return; setM1L(id); doMatch(id, m1R, m1Matched, setM1Matched, setM1L, setM1R, setM1Shake, 'match1') }
-  function pickRight1(id: string) { if (m1Matched.has(id)) return; setM1R(id); doMatch(m1L, id, m1Matched, setM1Matched, setM1L, setM1R, setM1Shake, 'match1') }
-  function pickLeft2(id: string)  { if (m2Matched.has(id)) return; setM2L(id); doMatch(id, m2R, m2Matched, setM2Matched, setM2L, setM2R, setM2Shake, 'match2') }
-  function pickRight2(id: string) { if (m2Matched.has(id)) return; setM2R(id); doMatch(m2L, id, m2Matched, setM2Matched, setM2L, setM2R, setM2Shake, 'match2') }
+  function pickLeft1(id: string)  { if (m1Matched.has(id)) return; setM1L(id); doMatch(id, m1R, m1Matched, setM1Matched, setM1L, setM1R, setM1Shake, 'match1', m1EverErred, setM1EverErred) }
+  function pickRight1(id: string) { if (m1Matched.has(id)) return; setM1R(id); doMatch(m1L, id, m1Matched, setM1Matched, setM1L, setM1R, setM1Shake, 'match1', m1EverErred, setM1EverErred) }
+  function pickLeft2(id: string)  { if (m2Matched.has(id)) return; setM2L(id); doMatch(id, m2R, m2Matched, setM2Matched, setM2L, setM2R, setM2Shake, 'match2', m2EverErred, setM2EverErred) }
+  function pickRight2(id: string) { if (m2Matched.has(id)) return; setM2R(id); doMatch(m2L, id, m2Matched, setM2Matched, setM2L, setM2R, setM2Shake, 'match2', m2EverErred, setM2EverErred) }
 
   function matchItemStyle(id: string, side: 'L'|'R', isLeft: boolean,
     lSel: string|null, rSel: string|null,
@@ -752,13 +775,22 @@ export default function HolySpiritLesson() {
   const [az2,     setAz2]     = useState<Tile[]>([])
   const [az1Used, setAz1Used] = useState<Set<string>>(new Set())
   const [az2Used, setAz2Used] = useState<Set<string>>(new Set())
+  const [az1EverErred, setAz1EverErred] = useState(false)
+  const [az2EverErred, setAz2EverErred] = useState(false)
 
   function addToAz1(tile: Tile) {
     if (az1Used.has(tile.uid)) return
     const newUsed = new Set([...az1Used, tile.uid])
     const newAz   = [...az1, tile]
     setAz1Used(newUsed); setAz1(newAz)
-    if (newAz.length === SC1_ANS_ACTIVE.length && newAz.every((t,i) => t.word.toLowerCase() === SC1_ANS_ACTIVE[i])) solve('sc1', 4)
+    if (newAz.length === SC1_ANS_ACTIVE.length) {
+      if (newAz.every((t,i) => t.word.toLowerCase() === SC1_ANS_ACTIVE[i])) {
+        recordGradedAnswer(LESSON_ID, !az1EverErred)
+        solve('sc1', 4)
+      } else {
+        setAz1EverErred(true)
+      }
+    }
   }
   function removeFromAz1(tile: Tile) {
     setAz1Used(p => { const n = new Set(p); n.delete(tile.uid); return n })
@@ -769,7 +801,14 @@ export default function HolySpiritLesson() {
     const newUsed = new Set([...az2Used, tile.uid])
     const newAz   = [...az2, tile]
     setAz2Used(newUsed); setAz2(newAz)
-    if (newAz.length === SC2_ANS_ACTIVE.length && newAz.every((t,i) => t.word.toLowerCase() === SC2_ANS_ACTIVE[i])) solve('sc2', 4)
+    if (newAz.length === SC2_ANS_ACTIVE.length) {
+      if (newAz.every((t,i) => t.word.toLowerCase() === SC2_ANS_ACTIVE[i])) {
+        recordGradedAnswer(LESSON_ID, !az2EverErred)
+        solve('sc2', 4)
+      } else {
+        setAz2EverErred(true)
+      }
+    }
   }
   function removeFromAz2(tile: Tile) {
     setAz2Used(p => { const n = new Set(p); n.delete(tile.uid); return n })
@@ -803,6 +842,7 @@ export default function HolySpiritLesson() {
   const [bk,        setBk]        = useState<Record<string,string>>({b1:'',b2:'',b3:'',b4:'',b5:'',b6:''})
   const [fitbErr,   setFitbErr]   = useState('')
   const [fitbCheck, setFitbCheck] = useState(false)
+  const [fitbEverErred, setFitbEverErred] = useState(false)
 
   const usedWords = Object.values(bk).filter(Boolean)
   function wb6Pick(word: string) {
@@ -823,8 +863,10 @@ export default function HolySpiritLesson() {
     setFitbCheck(true)
     if (Object.entries(FITB_ANSWERS_ACTIVE).every(([id, ans]) => bk[id] === ans)) {
       setFitbErr('')
+      recordGradedAnswer(LESSON_ID, !fitbEverErred)
       solve('fitb', 6)
     } else {
+      setFitbEverErred(true)
       setFitbErr(L.s6.fitbErr)
       setTimeout(() => { setFitbErr(''); setFitbCheck(false) }, 3000)
     }
@@ -849,14 +891,17 @@ export default function HolySpiritLesson() {
   function resetAll() {
     if (!confirm(L.resetConfirm)) return
     localStorage.removeItem('hs_unlocked'); localStorage.removeItem('hs_done')
+    resetLessonMastery(LESSON_ID)
     setUnlocked(new Set([1])); setDone(new Set()); setWon(false)
     setR1(''); setR2(''); setR1Err(''); setR2Err('')
-    setWsSel(new Set()); setWsFound(new Set())
-    setM1L(null); setM1R(null); setM1Matched(new Set()); setM1Shake(new Set())
-    setM2L(null); setM2R(null); setM2Matched(new Set()); setM2Shake(new Set())
+    setR1EverErred(false); setR2EverErred(false)
+    setWsSel(new Set()); setWsFound(new Set()); setWsEverErred(false)
+    setM1L(null); setM1R(null); setM1Matched(new Set()); setM1Shake(new Set()); setM1EverErred(false)
+    setM2L(null); setM2R(null); setM2Matched(new Set()); setM2Shake(new Set()); setM2EverErred(false)
     setAz1([]); setAz2([]); setAz1Used(new Set()); setAz2Used(new Set())
+    setAz1EverErred(false); setAz2EverErred(false)
     setFruitsOpen(new Set())
-    setWbSel(null); setBk({b1:'',b2:'',b3:'',b4:'',b5:'',b6:''}); setFitbErr(''); setFitbCheck(false)
+    setWbSel(null); setBk({b1:'',b2:'',b3:'',b4:'',b5:'',b6:''}); setFitbErr(''); setFitbCheck(false); setFitbEverErred(false)
     setDecoded({}); setDecErr('')
   }
 
@@ -906,6 +951,7 @@ export default function HolySpiritLesson() {
               onClick={() => {
                 localStorage.removeItem('hs_unlocked')
                 localStorage.removeItem('hs_done')
+                resetLessonMastery(LESSON_ID)
                 window.location.reload()
               }}
               style={{ padding: '14px 32px', background: 'linear-gradient(135deg,#fbbf24,#d97706)', color: '#3b2307', border: 'none', borderRadius: 18, fontFamily: 'var(--font-nunito)', fontSize: '1.1rem', fontWeight: 900, cursor: 'pointer' }}

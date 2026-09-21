@@ -4,7 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useMemo, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
 
+const LESSON_ID = 'whose-mark'
 const BLUE = '#173f73'
 const GOLD = '#d99a25'
 const INK = '#17243a'
@@ -245,6 +247,10 @@ export default function WhoseMarkPage() {
   const { coinRevealed, scenarioIndex, scenariosComplete, truthIndex, complete } = progress
   const [scenarioFeedback, setScenarioFeedback] = useState<{ ok: boolean; text: string } | null>(null)
   const [truthFeedback, setTruthFeedback] = useState<{ ok: boolean; text: string } | null>(null)
+  // Tracks which scenario/truth indices were ever answered wrong before being
+  // answered correctly, so mastery only credits a true first-try correct.
+  const [scenarioErred, setScenarioErred] = useState<Set<number>>(new Set())
+  const [truthErred, setTruthErred] = useState<Set<number>>(new Set())
   const percent = complete ? 100 : scenariosComplete ? 76 + truthIndex * 5 : coinRevealed ? 28 + scenarioIndex * 9 : 12
 
   function saveProgress(patch: Partial<Progress>) {
@@ -254,9 +260,11 @@ export default function WhoseMarkPage() {
   function chooseScenario(choice: Choice) {
     if (scenarioFeedback || scenariosComplete) return
     setScenarioFeedback({ ok: choice.correct, text: choice.explain })
+    if (!choice.correct) setScenarioErred(prev => new Set(prev).add(scenarioIndex))
     window.setTimeout(() => {
       setScenarioFeedback(null)
       if (!choice.correct) return
+      recordGradedAnswer(LESSON_ID, !scenarioErred.has(scenarioIndex))
       if (scenarioIndex < scenarios.length - 1) saveProgress({ scenarioIndex: scenarioIndex + 1 })
       else saveProgress({ scenariosComplete: true })
     }, 1150)
@@ -267,18 +275,26 @@ export default function WhoseMarkPage() {
     const item = truths[truthIndex]
     const ok = answer === item.answer
     setTruthFeedback({ ok, text: ok ? item.explain : (isRu ? 'Вернись к смыслу отрывка и попробуй ещё раз.' : 'Return to the passage’s meaning and try again.') })
+    if (!ok) setTruthErred(prev => new Set(prev).add(truthIndex))
     window.setTimeout(() => {
       setTruthFeedback(null)
       if (!ok) return
+      recordGradedAnswer(LESSON_ID, !truthErred.has(truthIndex))
       if (truthIndex < truths.length - 1) saveProgress({ truthIndex: truthIndex + 1 })
-      else saveProgress({ complete: true })
+      else {
+        saveProgress({ complete: true })
+        markLessonComplete(LESSON_ID)
+      }
     }, 1150)
   }
 
   function restart() {
     writeProgress(DEFAULT_PROGRESS)
+    resetLessonMastery(LESSON_ID)
     setScenarioFeedback(null)
     setTruthFeedback(null)
+    setScenarioErred(new Set())
+    setTruthErred(new Set())
   }
 
   return <main style={{ minHeight: '100vh', background: `radial-gradient(circle at 15% 0,rgba(252,211,77,.28),transparent 30%),linear-gradient(180deg,${CREAM},#e7f0fb 72%,#dbeafe)`, color: INK }}>

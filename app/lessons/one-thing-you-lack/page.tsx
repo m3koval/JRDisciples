@@ -4,7 +4,9 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSPro
 import Link from 'next/link'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
+import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
 
+const LESSON_ID = 'one-thing-you-lack'
 const ACCENT = '#b45309'
 const ACCENT_DARK = '#78350f'
 const GOLD = '#fbbf24'
@@ -64,6 +66,7 @@ function clearProgress() {
   } catch {
     // Reload below restores the in-memory default when storage is blocked.
   }
+  resetLessonMastery(LESSON_ID)
   window.dispatchEvent(new Event(PROGRESS_EVENT))
 }
 
@@ -371,15 +374,18 @@ export default function OneThingYouLackPage() {
 
   const [sequence, setSequence] = useState<string[]>([])
   const [sequenceWrong, setSequenceWrong] = useState(false)
+  const [sequenceEverErred, setSequenceEverErred] = useState(false)
   const [openCards, setOpenCards] = useState<string[]>([])
   const [matchedPairs, setMatchedPairs] = useState<Set<string>>(new Set())
   const [memoryBusy, setMemoryBusy] = useState(false)
   const [heartIndex, setHeartIndex] = useState(0)
   const [heartPick, setHeartPick] = useState<number | null>(null)
   const [heartFeedback, setHeartFeedback] = useState<'right' | 'wrong' | null>(null)
+  const [heartEverErred, setHeartEverErred] = useState(false)
   const [truthIndex, setTruthIndex] = useState(0)
   const [truthPick, setTruthPick] = useState<boolean | null>(null)
   const [truthFeedback, setTruthFeedback] = useState<'right' | 'wrong' | null>(null)
+  const [truthEverErred, setTruthEverErred] = useState(false)
 
   const storyById = useMemo(() => Object.fromEntries(story.map(step => [step.id, step])), [story])
 
@@ -430,6 +436,7 @@ export default function OneThingYouLackPage() {
       setTimeout(() => document.getElementById(`section-${section + 1}`)?.scrollIntoView({ behavior: 'smooth' }), 850)
     } else {
       saveProgress(nextUnlocked, nextDone)
+      markLessonComplete(LESSON_ID)
       setTimeout(() => setWon(true), 500)
     }
   }
@@ -439,12 +446,16 @@ export default function OneThingYouLackPage() {
     const expected = STORY_ORDER[sequence.length]
     if (id !== expected) {
       setSequenceWrong(true)
+      setSequenceEverErred(true)
       setTimeout(() => { setSequence([]); setSequenceWrong(false) }, 700)
       return
     }
     const next = [...sequence, id]
     setSequence(next)
-    if (next.length === STORY_ORDER.length) solve('story', 1)
+    if (next.length === STORY_ORDER.length) {
+      recordGradedAnswer(LESSON_ID, !sequenceEverErred)
+      solve('story', 1)
+    }
   }
 
   function flipMemory(card: MemoryCard) {
@@ -454,7 +465,9 @@ export default function OneThingYouLackPage() {
     if (next.length < 2) return
     setMemoryBusy(true)
     const first = memory.find(item => item.id === next[0])
-    if (first?.pair === card.pair) {
+    const isMatch = first?.pair === card.pair
+    recordGradedAnswer(LESSON_ID, isMatch)
+    if (isMatch) {
       const pairs = new Set([...matchedPairs, card.pair])
       setMatchedPairs(pairs)
       setTimeout(() => {
@@ -473,9 +486,12 @@ export default function OneThingYouLackPage() {
     setHeartPick(choiceIndex)
     setHeartFeedback(chosen.correct ? 'right' : 'wrong')
     if (!chosen.correct) {
+      setHeartEverErred(true)
       setTimeout(() => { setHeartPick(null); setHeartFeedback(null) }, 950)
       return
     }
+    recordGradedAnswer(LESSON_ID, !heartEverErred)
+    setHeartEverErred(false)
     setTimeout(() => {
       if (heartIndex === heart.length - 1) solve('heart', 3)
       else setHeartIndex(value => value + 1)
@@ -490,9 +506,12 @@ export default function OneThingYouLackPage() {
     setTruthPick(answer)
     setTruthFeedback(correct ? 'right' : 'wrong')
     if (!correct) {
+      setTruthEverErred(true)
       setTimeout(() => { setTruthPick(null); setTruthFeedback(null) }, 950)
       return
     }
+    recordGradedAnswer(LESSON_ID, !truthEverErred)
+    setTruthEverErred(false)
     setTimeout(() => {
       if (truthIndex === truth.length - 1) solve('truth', 4)
       else setTruthIndex(value => value + 1)

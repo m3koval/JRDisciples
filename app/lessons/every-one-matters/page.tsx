@@ -4,7 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useMemo, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import { recordGradedAnswer, markLessonComplete } from '@/lib/lesson-mastery'
 
+const LESSON_ID = 'every-one-matters'
 const BLUE = '#1d4ed8'
 const NAVY = '#172554'
 const GOLD = '#fbbf24'
@@ -230,6 +232,8 @@ export default function EveryOneMattersPage() {
   const { found, scenarioIndex, scenariosComplete, truthIndex, complete } = progress
   const [scenarioFeedback, setScenarioFeedback] = useState<{ ok: boolean; text: string } | null>(null)
   const [truthFeedback, setTruthFeedback] = useState<{ ok: boolean; text: string } | null>(null)
+  const [scenarioErred, setScenarioErred] = useState(false)
+  const [truthErred, setTruthErred] = useState(false)
   const sheep = useMemo(() => Array.from({ length: 20 }, (_, index) => ({ index, wandering: index === 13 })), [])
 
   function saveProgress(patch: Partial<Progress>) {
@@ -239,12 +243,18 @@ export default function EveryOneMattersPage() {
   function chooseScenario(choice: Choice) {
     if (scenarioFeedback || scenariosComplete) return
     setScenarioFeedback({ ok: choice.correct, text: choice.explain })
-    if (choice.correct) setTimeout(() => {
-      if (scenarioIndex < scenarios.length - 1) saveProgress({ scenarioIndex: scenarioIndex + 1 })
-      else saveProgress({ scenariosComplete: true })
-      setScenarioFeedback(null)
-    }, 1050)
-    else setTimeout(() => setScenarioFeedback(null), 1100)
+    if (choice.correct) {
+      recordGradedAnswer(LESSON_ID, !scenarioErred)
+      setScenarioErred(false)
+      setTimeout(() => {
+        if (scenarioIndex < scenarios.length - 1) saveProgress({ scenarioIndex: scenarioIndex + 1 })
+        else saveProgress({ scenariosComplete: true })
+        setScenarioFeedback(null)
+      }, 1050)
+    } else {
+      setScenarioErred(true)
+      setTimeout(() => setScenarioFeedback(null), 1100)
+    }
   }
 
   function answerTruth(answer: boolean) {
@@ -252,12 +262,20 @@ export default function EveryOneMattersPage() {
     const item = truths[truthIndex]
     const ok = answer === item.answer
     setTruthFeedback({ ok, text: ok ? item.explain : (isRu ? 'Посмотри на смысл отрывка и попробуй ещё раз.' : 'Look again at the passage’s meaning and try once more.') })
-    if (ok) setTimeout(() => {
-      if (truthIndex === truths.length - 1) saveProgress({ complete: true })
-      else saveProgress({ truthIndex: truthIndex + 1 })
-      setTruthFeedback(null)
-    }, 1050)
-    else setTimeout(() => setTruthFeedback(null), 1000)
+    if (ok) {
+      recordGradedAnswer(LESSON_ID, !truthErred)
+      setTruthErred(false)
+      setTimeout(() => {
+        if (truthIndex === truths.length - 1) {
+          markLessonComplete(LESSON_ID)
+          saveProgress({ complete: true })
+        } else saveProgress({ truthIndex: truthIndex + 1 })
+        setTruthFeedback(null)
+      }, 1050)
+    } else {
+      setTruthErred(true)
+      setTimeout(() => setTruthFeedback(null), 1000)
+    }
   }
 
   return (

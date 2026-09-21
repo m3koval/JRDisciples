@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { generateWordSearchWithCoords } from '@/lib/wordSearch'
+import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
+
+const LESSON_ID = 'wij' // matches lib/lesson-mastery-registry.ts
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type Tile = { uid: string; word: string }
@@ -377,6 +380,7 @@ export default function WhoIsJesusLesson() {
   const [wsSel,    setWsSel]    = useState<Set<string>>(new Set())
   const [wsFound,  setWsFound]  = useState<Set<string>>(new Set())
   const [wsStart,  setWsStart]  = useState<[number,number]|null>(null)
+  const [wsEverWrong, setWsEverWrong] = useState(false)
 
   // ─── Progress state ───────────────────────────────────────────────────────────
   const [unlocked, setUnlocked] = useState<Set<number>>(() => {
@@ -430,6 +434,7 @@ export default function WhoIsJesusLesson() {
           document.getElementById(`sec-${sec + 1}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }, 700)
       } else {
+        markLessonComplete(LESSON_ID)
         setTimeout(() => setWon(true), 700)
       }
     }
@@ -455,6 +460,7 @@ export default function WhoIsJesusLesson() {
   const [matchDone,  setMatchDone]  = useState<Set<string>>(new Set())
   const [matchWrong, setMatchWrong] = useState<string|null>(null)
   const [matchSide,  setMatchSide]  = useState<'left'|'right'|null>(null)
+  const [matchEverErred, setMatchEverErred] = useState(false)
 
   function pickMatchLeft(id: string) {
     if (matchDone.has(id)) return
@@ -490,9 +496,13 @@ export default function WhoIsJesusLesson() {
       const nm = new Set([...matchDone, leftId])
       setMatchDone(nm)
       setMatchSel(null); setMatchSide(null)
-      if (nm.size === 4) solve('match', 2)
+      if (nm.size === 4) {
+        recordGradedAnswer(LESSON_ID, !matchEverErred)
+        solve('match', 2)
+      }
     } else {
       setMatchWrong(leftId + '|' + rightId)
+      setMatchEverErred(true)
       setTimeout(() => {
         setMatchWrong(null)
         setMatchSel(null)
@@ -569,12 +579,16 @@ export default function WhoIsJesusLesson() {
         setWsFound(newFound)
         setWsSel(new Set())
         setWsStart(null)
-        if (newFound.size === Object.keys(wsCoords).length) solve('ws', 3)
+        if (newFound.size === Object.keys(wsCoords).length) {
+          recordGradedAnswer(LESSON_ID, !wsEverWrong)
+          solve('ws', 3)
+        }
         return
       }
     }
     setWsSel(selSet)
     setWsStart(null)
+    setWsEverWrong(true)
     setTimeout(() => setWsSel(new Set()), 600)
   }
 
@@ -591,6 +605,8 @@ export default function WhoIsJesusLesson() {
   function answerTf(id: string, answer: boolean) {
     if (tfAnswers[id] !== undefined && tfAnswers[id] !== null) return
     const TF = isRu ? TF_RU : TF_EN
+    const q = TF.find(q => q.id === id)
+    if (q) recordGradedAnswer(LESSON_ID, answer === q.correct)
     const next = { ...tfAnswers, [id]: answer }
     setTfAnswers(next)
     const allDone = TF.every(q => next[q.id] !== undefined && next[q.id] !== null)
@@ -600,6 +616,7 @@ export default function WhoIsJesusLesson() {
   // ─── Section 5: Scramble ──────────────────────────────────────────────────────
   const [scrambleOrder, setScrambleOrder] = useState<string[]>([])
   const [scrambleErr,   setScrambleErr]   = useState('')
+  const [scrambleEverErred, setScrambleEverErred] = useState(false)
 
   const SC_TILES_ACTIVE = isRu ? SC_TILES_RU : SC_TILES_EN
   const SC_ANS_ACTIVE   = isRu ? SC_ANS_RU   : SC_ANS_EN
@@ -620,10 +637,12 @@ export default function WhoIsJesusLesson() {
     })
     if (placed.length === SC_ANS_ACTIVE.length && placed.every((w, i) => w === SC_ANS_ACTIVE[i])) {
       setScrambleErr('')
+      recordGradedAnswer(LESSON_ID, !scrambleEverErred)
       solve('scramble', 5)
     } else {
       const msg = isRu ? '❌ Не совсем — продолжай пробовать!' : '❌ Not quite — keep trying!'
       setScrambleErr(msg)
+      setScrambleEverErred(true)
       setTimeout(() => setScrambleErr(''), 2500)
     }
   }
@@ -633,14 +652,15 @@ export default function WhoIsJesusLesson() {
     if (!confirm(L.resetConfirm)) return
     localStorage.removeItem('wij_unlocked')
     localStorage.removeItem('wij_done')
+    resetLessonMastery(LESSON_ID)
     setUnlocked(new Set([1]))
     setDone(new Set())
     setWon(false)
     setFlipped(new Set())
-    setMatchSel(null); setMatchDone(new Set()); setMatchWrong(null); setMatchSide(null)
-    setWsSel(new Set()); setWsFound(new Set())
+    setMatchSel(null); setMatchDone(new Set()); setMatchWrong(null); setMatchSide(null); setMatchEverErred(false)
+    setWsSel(new Set()); setWsFound(new Set()); setWsEverWrong(false)
     setTfAnswers({})
-    setScrambleOrder([]); setScrambleErr('')
+    setScrambleOrder([]); setScrambleErr(''); setScrambleEverErred(false)
   }
 
   // ─── Shared layout constants ──────────────────────────────────────────────────
@@ -694,6 +714,7 @@ export default function WhoIsJesusLesson() {
               onClick={() => {
                 localStorage.removeItem('wij_unlocked')
                 localStorage.removeItem('wij_done')
+                resetLessonMastery(LESSON_ID)
                 window.location.reload()
               }}
               style={{ padding: '14px 32px', background: 'linear-gradient(135deg,#fbbf24,#d97706)', color: '#3b2307', border: 'none', borderRadius: 18, fontFamily: 'var(--font-nunito)', fontSize: '1.1rem', fontWeight: 900, cursor: 'pointer' }}

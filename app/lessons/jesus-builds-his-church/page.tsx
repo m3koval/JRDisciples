@@ -3,6 +3,9 @@
 import { useState, useEffect, useMemo, useRef, useSyncExternalStore } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
+import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
+
+const LESSON_ID = 'church-build' // matches lib/lesson-mastery-registry.ts
 
 // ─── Theme ────────────────────────────────────────────────────────────────────
 // Warm brick & stone — Jesus the Builder
@@ -374,6 +377,10 @@ export default function JesusBuildsHisChurchPage() {
   const [tfIdx, setTfIdx] = useState(0)
   const [tfAnswers, setTfAnswers] = useState<Record<string, boolean | null>>({})
   const [tfFlash, setTfFlash] = useState<'correct' | 'wrong' | null>(null)
+  // Tracks whether the CURRENT question has already been missed once — wrong
+  // taps here don't advance, they let the kid retry the same question, so we
+  // need this to know if the eventual correct tap was really a first try.
+  const [tfCurrentEverWrong, setTfCurrentEverWrong] = useState(false)
 
   const TF_ACTIVE = isRu ? TF_RU : TF_EN
 
@@ -385,14 +392,17 @@ export default function JesusBuildsHisChurchPage() {
     setTfFlash(isCorrect ? 'correct' : 'wrong')
     if (!isCorrect) {
       setAnnouncement(isRu ? 'Пока неверно. Попробуй ещё раз.' : 'Not quite. Try again.')
+      setTfCurrentEverWrong(true)
       setTimeout(() => setTfFlash(null), 850)
       return
     }
     setAnnouncement(isRu ? 'Верно!' : 'Correct!')
+    recordGradedAnswer(LESSON_ID, !tfCurrentEverWrong)
     const next = { ...tfAnswers, [id]: answer }
     setTfAnswers(next)
     setTimeout(() => {
       setTfFlash(null)
+      setTfCurrentEverWrong(false)
       if (tfIdx < TF_ACTIVE.length - 1) {
         setTfIdx(i => i + 1)
       } else {
@@ -413,6 +423,10 @@ export default function JesusBuildsHisChurchPage() {
   })
   const [sortWrongCat, setSortWrongCat] = useState<GrowCat | null>(null)
   const [sortFlash, setSortFlash] = useState(false)               // green flash on correct
+  // Tracks whether the CURRENT card has already been placed wrong once — a
+  // wrong tap just wiggles and lets the kid retry the same card, so we need
+  // this to know if the eventual correct tap was really a first try.
+  const [sortCurrentEverWrong, setSortCurrentEverWrong] = useState(false)
 
   const growById = Object.fromEntries(GROW_ITEMS.map(i => [i.id, i]))
   const sortCurrent = sortIdx < GROW_ORDER.length ? growById[GROW_ORDER[sortIdx]] : null
@@ -423,9 +437,11 @@ export default function JesusBuildsHisChurchPage() {
       setAnnouncement(isRu ? 'Верно!' : 'Correct!')
       setSortFlash(true)
       const itemId = sortCurrent.id
+      recordGradedAnswer(LESSON_ID, !sortCurrentEverWrong)
       setTimeout(() => {
         setSortPlaced(prev => ({ ...prev, [cat]: [...prev[cat], itemId] }))
         setSortFlash(false)
+        setSortCurrentEverWrong(false)
         const nextIdx = sortIdx + 1
         setSortIdx(nextIdx)
         if (nextIdx === GROW_ORDER.length) solve('sort', 2)
@@ -433,6 +449,7 @@ export default function JesusBuildsHisChurchPage() {
     } else {
       setAnnouncement(isRu ? 'Не сюда. Попробуй другую сторону роста.' : 'Not there. Try another growth area.')
       setSortWrongCat(cat)
+      setSortCurrentEverWrong(true)
       setTimeout(() => setSortWrongCat(null), 550)
     }
   }
@@ -467,6 +484,7 @@ export default function JesusBuildsHisChurchPage() {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (next.length === WALL_TOTAL) {
       saveProgress(new Set([...done, 'wall']))
+      markLessonComplete(LESSON_ID)
       setTimeout(() => setWon(true), reduceMotion ? 0 : 2220)
     }
     setTimeout(() => {
@@ -481,15 +499,18 @@ export default function JesusBuildsHisChurchPage() {
   function resetAll(confirmFirst = true) {
     if (confirmFirst && !confirm(isRu ? 'Сбросить весь прогресс?' : 'Reset all progress?')) return
     removeStoredProgress()
+    resetLessonMastery(LESSON_ID)
     setWon(false)
     setAnnouncement('')
     setTfIdx(0)
     setTfAnswers({})
     setTfFlash(null)
+    setTfCurrentEverWrong(false)
     setSortIdx(0)
     setSortPlaced({ wisdom: [], body: [], god: [], people: [] })
     setSortWrongCat(null)
     setSortFlash(false)
+    setSortCurrentEverWrong(false)
     setFlipped(new Set())
     setWallPlaced([])
     setWallFlying(null)
