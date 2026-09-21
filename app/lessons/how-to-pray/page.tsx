@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
+import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
+
+const LESSON_ID = 'how-to-pray' // matches lib/lesson-mastery-registry.ts
 
 // ─── Theme ────────────────────────────────────────────────────────────────────
 const ACCENT      = '#7c3aed'
@@ -132,6 +135,7 @@ export default function HowToPrayPage() {
           document.getElementById(`sec-${sec + 1}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }, 1800)
       } else {
+        markLessonComplete(LESSON_ID)
         setTimeout(() => setWon(true), 700)
       }
     }
@@ -156,14 +160,22 @@ export default function HowToPrayPage() {
   // ── Activity 2: Sort activity ─────────────────────────────────────────────
   const [sortAnswers, setSortAnswers] = useState<Record<string, 'HUMBLE' | 'PROUD' | null>>({})
   const [sortChecked, setSortChecked] = useState<Record<string, boolean>>({})
+  // Tracks which items have already fed the mastery score — survives resetSort()
+  // so a "Try again" replay never double-counts an item's first attempt.
+  const [sortGraded, setSortGraded] = useState<Set<string>>(new Set())
 
   function placeSortItem(id: string, column: 'HUMBLE' | 'PROUD') {
     if (done.has('sort')) return
-    if (!SORT_ITEMS.some(item => item.id === id)) return
+    const item = SORT_ITEMS.find(item => item.id === id)
+    if (!item) return
     const newAnswers = { ...sortAnswers, [id]: column }
     const newChecked = { ...sortChecked, [id]: true }
     setSortAnswers(newAnswers)
     setSortChecked(newChecked)
+    if (!sortGraded.has(id)) {
+      recordGradedAnswer(LESSON_ID, column === item.answer)
+      setSortGraded(prev => new Set([...prev, id]))
+    }
     if (SORT_ITEMS.every(s => newAnswers[s.id] === s.answer)) {
       solve('sort', 2)
     }
@@ -233,6 +245,7 @@ export default function HowToPrayPage() {
     if (!confirm(isRu ? 'Сбросить весь прогресс?' : 'Reset all progress?')) return
     localStorage.removeItem('how-to-pray_unlocked')
     localStorage.removeItem('how-to-pray_done')
+    resetLessonMastery(LESSON_ID)
     window.location.reload()
   }
 
@@ -310,6 +323,7 @@ export default function HowToPrayPage() {
               onClick={() => {
                 localStorage.removeItem('how-to-pray_unlocked')
                 localStorage.removeItem('how-to-pray_done')
+                resetLessonMastery(LESSON_ID)
                 window.location.reload()
               }}
               style={{

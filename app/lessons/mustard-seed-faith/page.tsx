@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
+import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
+
+const LESSON_ID = 'mustard-faith' // matches lib/lesson-mastery-registry.ts
 
 // ─── Theme ────────────────────────────────────────────────────────────────────
 const ACCENT      = '#15803d'
@@ -247,6 +250,7 @@ export default function MustardSeedFaithPage() {
           document.getElementById(`sec-${sec + 1}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }, 2000)
       } else {
+        markLessonComplete(LESSON_ID)
         setTimeout(() => setWon(true), 700)
       }
     }
@@ -265,6 +269,7 @@ export default function MustardSeedFaithPage() {
   const [seqShuffled] = useState<string[]>(shuffleIds)
   const [seqOrder, setSeqOrder] = useState<string[]>([])
   const [seqErr, setSeqErr] = useState(false)
+  const [seqEverErred, setSeqEverErred] = useState(false)
 
   function seqTap(id: string) {
     if (done.has('seq') || seqOrder.includes(id)) return
@@ -272,9 +277,11 @@ export default function MustardSeedFaithPage() {
     if (next.length === SEQ_CORRECT.length) {
       if (next.every((v, i) => v === SEQ_CORRECT[i])) {
         setSeqOrder(next)
+        recordGradedAnswer(LESSON_ID, !seqEverErred)
         solve('seq', 1)
       } else {
         setSeqErr(true)
+        setSeqEverErred(true)
         setTimeout(() => { setSeqOrder([]); setSeqErr(false) }, 800)
       }
       return
@@ -306,6 +313,7 @@ export default function MustardSeedFaithPage() {
     if (!q) return
     const isCorrect = answer === q.correct
     setTfFlash(isCorrect ? 'correct' : 'wrong')
+    recordGradedAnswer(LESSON_ID, isCorrect)
     const next = { ...tfAnswers, [id]: answer }
     setTfAnswers(next)
     setTimeout(() => {
@@ -321,6 +329,7 @@ export default function MustardSeedFaithPage() {
   // ── Activity 4: Scramble ──────────────────────────────────────────────────
   const [scrambleOrder, setScrambleOrder] = useState<string[]>([])
   const [scrambleErr, setScrambleErr] = useState('')
+  const [scrambleEverErred, setScrambleEverErred] = useState(false)
 
   const SC_TILES = isRu ? SC_TILES_RU : SC_TILES_EN
   const SC_ANS   = isRu ? SC_ANS_RU   : SC_ANS_EN
@@ -342,10 +351,12 @@ export default function MustardSeedFaithPage() {
   function checkScramble() {
     if (scrambleCorrect) {
       setScrambleErr('')
+      recordGradedAnswer(LESSON_ID, !scrambleEverErred)
       solve('scramble', 4)
     } else {
       const msg = isRu ? '❌ Не совсем — попробуй ещё раз!' : '❌ Not quite — try again!'
       setScrambleErr(msg)
+      setScrambleEverErred(true)
       setTimeout(() => setScrambleErr(''), 2500)
     }
   }
@@ -354,6 +365,7 @@ export default function MustardSeedFaithPage() {
     if (!confirm(isRu ? 'Сбросить весь прогресс?' : 'Reset all progress?')) return
     localStorage.removeItem('mustard-faith_unlocked')
     localStorage.removeItem('mustard-faith_done')
+    resetLessonMastery(LESSON_ID)
     window.location.reload()
   }
 
@@ -433,6 +445,7 @@ export default function MustardSeedFaithPage() {
               onClick={() => {
                 localStorage.removeItem('mustard-faith_unlocked')
                 localStorage.removeItem('mustard-faith_done')
+                resetLessonMastery(LESSON_ID)
                 window.location.reload()
               }}
               style={{

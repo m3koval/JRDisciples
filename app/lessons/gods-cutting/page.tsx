@@ -4,7 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useMemo, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
 
+const LESSON_ID = 'gods-cutting'
 const PURPLE = '#6d28d9'
 const DEEP = '#312e81'
 const GOLD = '#f59e0b'
@@ -67,6 +69,7 @@ function clearProgress() {
   if (!storageDisabled) {
     try { localStorage.removeItem(STORAGE_KEY) } catch { storageDisabled = true }
   }
+  resetLessonMastery(LESSON_ID)
   window.dispatchEvent(new Event(PROGRESS_EVENT))
 }
 
@@ -201,6 +204,10 @@ export default function GodsCuttingLesson() {
   const raw = useSyncExternalStore(subscribeToProgress, getProgressSnapshot, () => DEFAULT_PROGRESS)
   const progress = useMemo(() => parseProgress(raw), [raw])
   const [feedback, setFeedback] = useState('')
+  const [storyEverErred, setStoryEverErred] = useState(false)
+  const [scenarioErred, setScenarioErred] = useState(false)
+  const [judahErred, setJudahErred] = useState(false)
+  const [truthErred, setTruthErred] = useState(false)
   const story = isRu ? storyRu : storyEn
   const scenarios = isRu ? scenariosRu : scenariosEn
   const truths = isRu ? truthsRu : truthsEn
@@ -210,24 +217,53 @@ export default function GodsCuttingLesson() {
 
   function update(next: Partial<Progress>) { saveProgress({ ...progress, ...next }) }
   function chooseStory(id: string) {
-    if (id === storyOrder[progress.story]) { setFeedback(isRu ? 'Верная грань! Продолжай.' : 'Right facet! Keep going.'); update({ story: progress.story + 1 }) }
-    else setFeedback(isRu ? 'Не этот шаг. Посмотри на историю ещё раз.' : 'Not that step yet. Look at the story again.')
+    if (id === storyOrder[progress.story]) {
+      setFeedback(isRu ? 'Верная грань! Продолжай.' : 'Right facet! Keep going.')
+      const nextStory = progress.story + 1
+      if (nextStory === storyOrder.length) {
+        recordGradedAnswer(LESSON_ID, !storyEverErred)
+        setStoryEverErred(false)
+      }
+      update({ story: nextStory })
+    } else {
+      setStoryEverErred(true)
+      setFeedback(isRu ? 'Не этот шаг. Посмотри на историю ещё раз.' : 'Not that step yet. Look at the story again.')
+    }
   }
   function chooseScenario(choice: Choice) {
     setFeedback(choice.explain)
-    if (choice.correct) update({ scenarios: progress.scenarios + 1 })
+    if (choice.correct) {
+      recordGradedAnswer(LESSON_ID, !scenarioErred)
+      setScenarioErred(false)
+      update({ scenarios: progress.scenarios + 1 })
+    } else {
+      setScenarioErred(true)
+    }
   }
   function chooseJudah(correct: boolean) {
-    if (correct) { setFeedback(isRu ? 'Да. Иуда предложил себя вместо Вениамина.' : 'Yes. Judah offered himself in Benjamin’s place.'); update({ judah: true }) }
-    else setFeedback(isRu ? 'Это повторило бы старый выбор: спасти себя ценой брата.' : 'That would repeat the old choice: save himself at his brother’s cost.')
+    if (correct) {
+      setFeedback(isRu ? 'Да. Иуда предложил себя вместо Вениамина.' : 'Yes. Judah offered himself in Benjamin’s place.')
+      recordGradedAnswer(LESSON_ID, !judahErred)
+      setJudahErred(false)
+      update({ judah: true })
+    } else {
+      setJudahErred(true)
+      setFeedback(isRu ? 'Это повторило бы старый выбор: спасти себя ценой брата.' : 'That would repeat the old choice: save himself at his brother’s cost.')
+    }
   }
   function chooseTruth(answer: boolean) {
     const current = truths[progress.truth]
     const correct = answer === current.answer
     setFeedback(current.explain)
     if (correct) {
+      recordGradedAnswer(LESSON_ID, !truthErred)
+      setTruthErred(false)
       const nextTruth = progress.truth + 1
-      update({ truth: nextTruth, complete: nextTruth === truths.length })
+      const isComplete = nextTruth === truths.length
+      if (isComplete) markLessonComplete(LESSON_ID)
+      update({ truth: nextTruth, complete: isComplete })
+    } else {
+      setTruthErred(true)
     }
   }
 

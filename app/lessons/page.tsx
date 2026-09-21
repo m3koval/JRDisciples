@@ -6,6 +6,8 @@ import { lessonTopicsRu } from "@/data/lessons-ru";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/lib/useTranslation";
 import { JrFullImageTile } from "@/components/JrFullImageTile";
+import { LessonStars } from "@/components/LessonStars";
+import { lessonMasteryId } from "@/lib/lesson-mastery-registry";
 
 export default function LessonsPage() {
   const { language } = useLanguage();
@@ -51,7 +53,11 @@ export default function LessonsPage() {
                 description={topic.desc}
                 cta={t.lessons.start}
                 color={topic.color}
-              />
+              >
+                <div style={{ position: "absolute", top: 16, right: 16, zIndex: 2 }}>
+                  <LessonStars lessonId={lessonMasteryId(topic.href)} />
+                </div>
+              </JrFullImageTile>
             ))}
           </div>
 

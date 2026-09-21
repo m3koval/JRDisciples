@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
+import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
+
+const LESSON_ID = 'coin-fish' // matches lib/lesson-mastery-registry.ts
 
 // ─── Theme ────────────────────────────────────────────────────────────────────
 const ACCENT      = '#0e7490'
@@ -244,6 +247,7 @@ export default function CoinInTheFishPage() {
           document.getElementById(`sec-${sec + 1}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }, 2000)
       } else {
+        markLessonComplete(LESSON_ID)
         setTimeout(() => setWon(true), 700)
       }
     }
@@ -263,15 +267,19 @@ export default function CoinInTheFishPage() {
   const [seqOrder, setSeqOrder] = useState<string[]>([])
   const [seqErr, setSeqErr] = useState(false)
 
+  const [seqEverErred, setSeqEverErred] = useState(false)
+
   function seqTap(id: string) {
     if (done.has('seq') || seqOrder.includes(id)) return
     const next = [...seqOrder, id]
     if (next.length === SEQ_CORRECT.length) {
       if (next.every((v, i) => v === SEQ_CORRECT[i])) {
         setSeqOrder(next)
+        recordGradedAnswer(LESSON_ID, !seqEverErred)
         solve('seq', 1)
       } else {
         setSeqErr(true)
+        setSeqEverErred(true)
         setTimeout(() => { setSeqOrder([]); setSeqErr(false) }, 800)
       }
       return
@@ -303,6 +311,7 @@ export default function CoinInTheFishPage() {
     if (!q) return
     const isCorrect = answer === q.correct
     setTfFlash(isCorrect ? 'correct' : 'wrong')
+    recordGradedAnswer(LESSON_ID, isCorrect)
     const next = { ...tfAnswers, [id]: answer }
     setTfAnswers(next)
     setTimeout(() => {
@@ -320,6 +329,7 @@ export default function CoinInTheFishPage() {
   const [fishFlash, setFishFlash]   = useState<number | null>(null)  // fish turning into a coin
   const [fishWrong, setFishWrong]   = useState<number | null>(null)  // fish wiggling "not me!"
   const [versePeek, setVersePeek]   = useState(false)      // hint: show the target verse
+  const [fishEverMissed, setFishEverMissed] = useState(false)
 
   const FISH_WORDS = isRu ? FISH_WORDS_RU : FISH_WORDS_EN
   const FISH_SLOTS = isRu ? FISH_SLOT_RU  : FISH_SLOT_EN
@@ -333,9 +343,13 @@ export default function CoinInTheFishPage() {
       setTimeout(() => {
         setFishFlash(null)
         setFishCaught(next)
-        if (next === total) solve('fish', 4)
+        if (next === total) {
+          recordGradedAnswer(LESSON_ID, !fishEverMissed && !versePeek)
+          solve('fish', 4)
+        }
       }, 650)
     } else {
+      setFishEverMissed(true)
       setFishWrong(i)
       setTimeout(() => setFishWrong(null), 500)
     }
@@ -345,6 +359,7 @@ export default function CoinInTheFishPage() {
     if (!confirm(isRu ? 'Сбросить весь прогресс?' : 'Reset all progress?')) return
     localStorage.removeItem('coin-fish_unlocked')
     localStorage.removeItem('coin-fish_done')
+    resetLessonMastery(LESSON_ID)
     window.location.reload()
   }
 
@@ -453,6 +468,7 @@ export default function CoinInTheFishPage() {
               onClick={() => {
                 localStorage.removeItem('coin-fish_unlocked')
                 localStorage.removeItem('coin-fish_done')
+                resetLessonMastery(LESSON_ID)
                 window.location.reload()
               }}
               style={{

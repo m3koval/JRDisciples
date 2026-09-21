@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
+import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
+
+const LESSON_ID = 'transf' // matches lib/lesson-mastery-registry.ts
 
 // ─── Theme ────────────────────────────────────────────────────────────────────
 const ACCENT      = '#8a6500'
@@ -127,6 +130,7 @@ export default function TransfigurationPage() {
           document.getElementById(`sec-${sec + 1}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }, 2000)
       } else {
+        markLessonComplete(LESSON_ID)
         setTimeout(() => setWon(true), 700)
       }
     }
@@ -139,6 +143,7 @@ export default function TransfigurationPage() {
   const [seqShuffled] = useState<string[]>(shuffleIds)
   const [seqOrder,    setSeqOrder]    = useState<string[]>([])
   const [seqErr,      setSeqErr]      = useState(false)
+  const [seqEverErred, setSeqEverErred] = useState(false)
 
   function seqTap(id: string) {
     if (done.has('seq') || seqOrder.includes(id)) return
@@ -146,9 +151,11 @@ export default function TransfigurationPage() {
     if (next.length === SEQ_CORRECT.length) {
       if (next.every((v, i) => v === SEQ_CORRECT[i])) {
         setSeqOrder(next)
+        recordGradedAnswer(LESSON_ID, !seqEverErred)
         solve('seq', 1)
       } else {
         setSeqErr(true)
+        setSeqEverErred(true)
         setTimeout(() => { setSeqOrder([]); setSeqErr(false) }, 800)
       }
       return
@@ -173,6 +180,8 @@ export default function TransfigurationPage() {
   function answerTf(id: string, answer: boolean) {
     if (tfAnswers[id] !== undefined && tfAnswers[id] !== null) return
     const TF = isRu ? TF_RU : TF_EN
+    const q = TF.find(q => q.id === id)
+    if (q) recordGradedAnswer(LESSON_ID, answer === q.correct)
     const next = { ...tfAnswers, [id]: answer }
     setTfAnswers(next)
     if (TF.every(q => next[q.id] !== undefined && next[q.id] !== null)) solve('tf', 3)
@@ -181,6 +190,7 @@ export default function TransfigurationPage() {
   // ── Activity 4: Scramble ──────────────────────────────────────────────────
   const [scrambleOrder, setScrambleOrder] = useState<string[]>([])
   const [scrambleErr,   setScrambleErr]   = useState('')
+  const [scrambleEverErred, setScrambleEverErred] = useState(false)
 
   const SC_TILES  = isRu ? SC_TILES_RU  : SC_TILES_EN
   const SC_ANS    = isRu ? SC_ANS_RU    : SC_ANS_EN
@@ -196,10 +206,12 @@ export default function TransfigurationPage() {
     const placed = scrambleOrder.map(uid => SC_TILES.find(t => t.uid === uid)?.word.toLowerCase() ?? '')
     if (placed.length === SC_ANS.length && placed.every((w, i) => w === SC_ANS[i])) {
       setScrambleErr('')
+      recordGradedAnswer(LESSON_ID, !scrambleEverErred)
       solve('scramble', 4)
     } else {
       const msg = isRu ? '❌ Не совсем — попробуй ещё раз!' : '❌ Not quite — try again!'
       setScrambleErr(msg)
+      setScrambleEverErred(true)
       setTimeout(() => setScrambleErr(''), 2500)
     }
   }
@@ -208,6 +220,7 @@ export default function TransfigurationPage() {
     if (!confirm(isRu ? 'Сбросить весь прогресс?' : 'Reset all progress?')) return
     localStorage.removeItem('transf_unlocked')
     localStorage.removeItem('transf_done')
+    resetLessonMastery(LESSON_ID)
     window.location.reload()
   }
 
@@ -268,6 +281,7 @@ export default function TransfigurationPage() {
               onClick={() => {
                 localStorage.removeItem('transf_unlocked')
                 localStorage.removeItem('transf_done')
+                resetLessonMastery(LESSON_ID)
                 window.location.reload()
               }}
               style={{

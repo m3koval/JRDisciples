@@ -61,6 +61,23 @@ Read the NEWEST existing lesson page first (currently
   connects to the previous lesson if it's part of a series.
 - Every section: teaching text (2 short paragraphs max), a 💡 callout with the
   section's ONE big idea, a verse box with exact scripture, then the activity.
+- **Star mastery (mandatory):** every lesson reports how well a kid did, not
+  just whether they finished. Import `recordGradedAnswer`,
+  `markLessonComplete`, `resetLessonMastery` from `lib/lesson-mastery.ts` and
+  define `const LESSON_ID = '<slug>'` matching the route. Call
+  `recordGradedAnswer(LESSON_ID, correctOnFirstTry)` once per graded item —
+  a quiz question, a multiple-choice pick, a sort placement — the FIRST time
+  it's answered; for a continuous activity with a shared wrong-state (a
+  sequencing puzzle, a word search) track one `everErred` flag and record
+  the whole activity as a single graded item when it's finally solved. Pure
+  exploration activities (flip cards, a prayer/wall builder, anything
+  without a wrong answer) are never graded — kids aren't penalized for
+  choices that are all valid. Call `markLessonComplete(LESSON_ID)` once at
+  the win trigger, and `resetLessonMastery(LESSON_ID)` everywhere the
+  lesson's own progress reset lives. New lessons need no registry entry —
+  their `LESSON_ID` should just be the route slug; the `/lessons` index
+  shows the resulting 1–3 star badge automatically via `<LessonStars>`.
+  See `app/lessons/coin-in-the-fish/page.tsx` for the reference wiring.
 - **Call to action (mandatory):** every lesson ends with a concrete weekly
   mission the kid can actually DO — small, specific, tied to the story's
   truth (e.g., Coin in the Fish → "do one thing this week you don't have to
