@@ -1,4 +1,5 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
+import { createHash } from 'node:crypto'
 import { extname, join, relative } from 'node:path'
 
 const root = process.cwd()
@@ -80,6 +81,37 @@ for (const path of walk(out)) {
   }
 }
 
+// The embedded engine must survive both static export and Capacitor sync intact.
+const gameRoute = 'games/trail-of-truth/index.html'
+const gameBuild = 'games/trail-of-truth-block-adventure/build'
+const sha256 = (path) => createHash('sha256').update(readFileSync(path)).digest('hex')
+const requiredGameFiles = ['index.html', 'index.js', 'index.wasm', 'index.pck', 'release-manifest.json']
+for (const base of [out, iosPublic]) {
+  const route = join(base, gameRoute)
+  if (!existsSync(route) || !statSync(route).size) {
+    failures.push(`Missing Trail of Truth route: ${route}`)
+  } else if (!readFileSync(route, 'utf8').includes(`/${gameBuild}/index.html`)) {
+    failures.push(`Trail of Truth route does not embed the expected engine: ${route}`)
+  }
+}
+if (existsSync(join(out, gameRoute)) && existsSync(join(iosPublic, gameRoute)) &&
+    sha256(join(out, gameRoute)) !== sha256(join(iosPublic, gameRoute))) {
+  failures.push('Trail of Truth route hash differs after iOS sync')
+}
+for (const name of requiredGameFiles) {
+  const source = join(root, 'public', gameBuild, name)
+  if (!existsSync(source) || !statSync(source).size) {
+    failures.push(`Missing Trail of Truth source artifact: ${name}`)
+    continue
+  }
+  for (const base of [out, iosPublic]) {
+    const bundled = join(base, gameBuild, name)
+    if (!existsSync(bundled) || sha256(bundled) !== sha256(source)) {
+      failures.push(`Trail of Truth artifact hash mismatch or missing file: ${bundled}`)
+    }
+  }
+}
+
 if (failures.length) {
   console.error([...new Set(failures)].map((item) => `- ${item}`).join('\n'))
   process.exit(1)
@@ -88,3 +120,4 @@ if (failures.length) {
 console.log(`App bundle checks passed for ${indexFiles.length} offline routes.`)
 console.log('All HTML references resolve locally; no remote links or resources remain in the app export.')
 console.log('Every exported file is present in the synced iOS bundle.')
+console.log('Trail of Truth route and engine artifacts verified with exact SHA-256 copies into iOS.')

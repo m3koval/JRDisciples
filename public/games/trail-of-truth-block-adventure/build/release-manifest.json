@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "project": "faithful-trail-block-1",
+  "sources": {
+    "THIRD_PARTY_NOTICES.md": "91ecc8bc98ce7fbc033fcd3d3489a5dd5c2d876a1c069d1aa14d90dbddbfe708",
+    "assets/environment/Door_1_Round.bin": "783db477a76115724668f8846695651725b955af6b5b23a503f834b206ebc958",
+    "assets/environment/Door_1_Round.gltf": "243fe5e3418e2459bcab858055d34e5441b60180a5efaadef440419e25cc27aa",
+    "assets/environment/PROVENANCE.md": "a1a8421bfefce01824d8459a22b7038ee30357e8446ac0e926ef6d70584e7c2d",
+    "assets/environment/Prop_Chimney.bin": "d8fb86bae7360511b362240c22431c6a463a38a3519059e0abf7fc343ef920f9",
+    "assets/environment/Prop_Chimney.gltf": "eeda2bd328baa49ce2260b2df1f0280db4ebc3752fa784371b2da5752697c3ba",
+    "assets/environment/Prop_WoodenFence_Single.bin": "aac37141af8f33e762b330486fd1cbd1c12a96b2978f491be4a58e24f1fe9ec1",
+    "assets/environment/Prop_WoodenFence_Single.gltf": "c9f787c03c62dd94268da84bf3e4dacf554b2a5a9beee38314e37ff5d929c407",
+    "assets/environment/Roof_Front_Brick8.bin": "f1c1127fd89f74f9d24593cb75d37f0ce60204d56d3baf7607cc99798194f708",
+    "assets/environment/Roof_Front_Brick8.gltf": "ecd3588791a7b3b5ebf93b2bcd611aae714bf1cd695ec86c32a939a86bce8590",
+    "assets/environment/Roof_RoundTiles_8x8.bin": "e294f4c589e799f20bcf3b78f33057be7d47e56a05bd00ba872afe2f11a44c23",
+    "assets/environment/Roof_RoundTiles_8x8.gltf": "9c345408d676cc1dd25b17e44f29bb2bd7c64a3ab9ae1659eafbcb529534693f",
+    "assets/environment/T_Brick_BaseColor.png": "53050db967813ef3d5df31726a12d38dedaa9256828110576e78de03d21eda7c",
+    "assets/environment/T_Brick_Normal.png": "775f6e26d7a34d899f15ebabe4d4a5f60f7e2cd9c1e09299d1daa1beec82dbe4",
+    "assets/environment/T_Brick_Roughness.png": "62e68368aae84a103ad5384b3a175f582b0651d8480806a859ca1706a826b41e",
+    "assets/environment/T_Plaster_BaseColor.png": "c422d7561cb87f37a734e8652fc90238da09b4b8396bb9bbac73872967b32d70",
+    "assets/environment/T_Plaster_Normal.png": "b72912cf53e20793978317e1400eb7f3760cf6f7bad2e80c1457f5cf6918352b",
+    "assets/environment/T_Plaster_ORM.png": "3e18041e3fd2ef17b123a9d57dfc27dcdbea43f2e1954ce5e4f7c32624b18b52",
+    "assets/environment/T_RockTrim_BaseColor.png": "dc889ea3471a023ec231236ebf74dd65ca3a2c7925a4ebe85e9143853005f7ca",
+    "assets/environment/T_RockTrim_Normal.png": "4b058f1af1bd30d6be4694d6a58432d381a96f6c3262342de86a6a541f3ec68e",
+    "assets/environment/T_RockTrim_ORM.png": "277ba054bfd4fa8bc8031adcc886e19160a944d246a6e67f8e98bb7dc568f0f0",
+    "assets/environment/T_RoundTiles_BaseColor.png": "2832d1163afa4cf77193e1705bd0a6d1f5f6b85980f7f9886ef52250b99fdf14",
+    "assets/environment/T_RoundTiles_Normal.png": "4f700c4c2ad3ff35f9daf4e247e0a1f591465ef0232c2d9be54a970d3f6f3d03",
+    "assets/environment/T_RoundTiles_Roughness.png": "082850e1768e414cc62755b53d0e234c515fd18e5e1ecc9ad0a10f306b799aac",
+    "assets/environment/T_WoodTrim_BaseColor.png": "a49c3a574a05aa566ccf2e66759c7b1202654cfccfac07a8090b961e02b33237",
+    "assets/environment/T_WoodTrim_Normal.png": "b1c233c5a1d1bd1baf304c1086b7bdc8220d659be52ba5b5aa2c60c3bb448ef0",
+    "assets/environment/T_WoodTrim_Roughness.png": "da8fbe349e56d77883dfea0ba2a62d026e357fd5f64ac0c9e7be4b12f60e51be",
+    "assets/environment/Wall_Plaster_Door_Round.bin": "0b347db7975bcf39d97b7df77e884e2df8877b024f396b517d0a7cb6bf56332e",
+    "assets/environment/Wall_Plaster_Door_Round.gltf": "15514442b52ed9e4bea685faaf83c45ca68a227810d5cec5f66b0f311f5f6fc7",
+    "assets/environment/Wall_Plaster_Straight.bin": "986bf171c62e9019eea9aab709d19d07a3bd5021ff76ab749f57563f364858f3",
+    "assets/environment/Wall_Plaster_Straight.gltf": "3bef920cbba4d124df4ca401439d893e0569f88f56049239e3480a04008fd0ac",
+    "assets/environment/Wall_Plaster_Window_Wide_Round.bin": "833f44b4d5c60805e081604cebb5f763cd88712fb9aeab321af2c5a2cf5cafcc",
+    "assets/environment/Wall_Plaster_Window_Wide_Round.gltf": "99400c34093727a7fb82345c1afc9ae151797c1d4452ebf32fdb314ce85ea0aa",
+    "assets/environment/capture_environment.gd": "e228b96a1edd4a203b346c82ac6fcdd439f9f5bb5e245640de01e269a8096e50",
+    "assets/environment/cobble.png": "0ad1d8892cea86fa6c14c0ae176b86caad0523b3f9887bf59f6177932d6d7c1a",
+    "assets/environment/flower_yellowC.glb": "4115c017390b3e157466a8719e9e2af6c5385505135e7012982b9410760ba9f3",
+    "assets/environment/plant_bushDetailed.glb": "2e0487020d68ccf664435db9d829c78ae00e6d2785ee3ec10b9f89cc70a10406",
+    "assets/environment/village_finish.gd": "b6cb72724518fc2c463abca78269d03ac00d8c4aa79f34a0d1ea17345c7e7624",
+    "assets/lamb.glb": "5df8aaf7c2cdcd5cf321c4cadf6e775c6ef4e7e69de96fbbe7bdc850d71617fb",
+    "assets/michael.glb": "fddb290aae7b65da54640c1f67821a0c93940fccd89f5c3d88848a86ad88756d",
+    "assets/michael_texture_pbr_20250901.png": "96ff2f85b757f0730072483b019c1f5f2315fc2ed0b9b5f1c196ebeb158d2a2e",
+    "assets/michael_texture_pbr_20250901_normal.png": "1cd3ca0c6e5a1999e91fa9d6ba2a43a7a7de1aee312e4d7162098db99f8bcd22",
+    "export_presets.cfg": "7860b98938d4c74aa42f0b0ab64d67d9e453aa4df7996ba52bb2e88169df0cfa",
+    "main.tscn": "a991dc21f45f40e6fe19a7edb003281bef06093e30b2bb14e38ea540cf2ebd25",
+    "project.godot": "cad282a1b3502f948763fce5fa34c6901691d03c50f10f73809b598eacbf3295",
+    "scripts/adventure_rewards.gd": "c193cae9c1b4b4ea850568c227ffc47d6b11731bf7f9904e2f2828bf36fc15d2",
+    "scripts/audio.gd": "413279530913d1288e5b45a9c96914b079c5d37167662c39699accbacba34b23",
+    "scripts/main.gd": "e4e06b16d417099f28c8a0908dbb8cab61b8477c9f75beabe5ee83712d83f9ad",
+    "scripts/player.gd": "803fc4909b517ca13f825d6725fdccf0e06410b5aab0dfb2fefafd3f1cd6f2ce",
+    "scripts/trail_map.gd": "a3b97ae3eb1d72aa15ee926a612988dbb0c2eb31b51770a1412474a44f001349",
+    "scripts/world.gd": "1123a79668859c0d33e7fe9debd1a87c43564f2a649f42fb240096a5a46c8bb9"
+  },
+  "artifacts": {
+    "index.html": {
+      "sha256": "538ea90f42893ab58ba3b9bf7d27279f7fede12dc71b63a1f6ab11cb8a9e871b",
+      "bytes": 5510,
+      "gzip_bytes": 2233
+    },
+    "index.js": {
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+      "bytes": 279815,
+      "gzip_bytes": 68471
+    },
+    "index.wasm": {
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
+      "bytes": 39514754,
+      "gzip_bytes": 10054758
+    },
+    "index.pck": {
+      "sha256": "fe9a56660d2c05f65f16d68b15099245e63ab4ed174deba9b39f3e25eb1c5ad6",
+      "bytes": 12615372,
+      "gzip_bytes": 12509001
+    }
+  }
+}
