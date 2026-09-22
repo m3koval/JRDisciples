@@ -266,7 +266,10 @@ export default function MustardSeedFaithPage() {
   }
 
   // ── Activity 1: Sequence ──────────────────────────────────────────────────
-  const [seqShuffled] = useState<string[]>(shuffleIds)
+  // SSR renders the stable order; shuffling only after mount avoids a
+  // hydration mismatch (Math.random() would differ between server and client).
+  const [seqShuffled, setSeqShuffled] = useState<string[]>(SEQ_CORRECT)
+  useEffect(() => { setSeqShuffled(shuffleIds()) }, [])
   const [seqOrder, setSeqOrder] = useState<string[]>([])
   const [seqErr, setSeqErr] = useState(false)
   const [seqEverErred, setSeqEverErred] = useState(false)
