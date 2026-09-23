@@ -13,6 +13,10 @@
 # testing
 /coverage
 
+# Godot editor/import caches (source and web exports remain tracked)
+/game/**/.godot/
+/tools/**/__pycache__/
+
 # next.js
 /.next/
 /out/

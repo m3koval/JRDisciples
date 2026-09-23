@@ -151,7 +151,7 @@ func _make_bridge() -> void:
 		panel.add_child(body)
 		var shape: CollisionShape3D = CollisionShape3D.new()
 		var box: BoxShape3D = BoxShape3D.new()
-		box.size = Vector3(2.3, 0.22, 4.0)
+		box.size = Vector3(2.3, 0.22, 2.0)
 		shape.shape = box
 		shape.position = Vector3(x, -0.11, 0)
 		shape.disabled = true
@@ -160,12 +160,12 @@ func _make_bridge() -> void:
 		# Fine plank seams are visual only: a single flush collider cannot snag feet.
 		for plank: int in range(6):
 			var px: float = x - 1.15 + (float(plank) + 0.5) * 2.3 / 6.0
-			_mesh(panel, Vector3(px, -0.11, 0), Vector3(2.3 / 6.0 - 0.012, 0.22, 4), "plank_light" if plank % 2 == 0 else "plank")
-		for z: float in [-1.65, 1.65]:
+			_mesh(panel, Vector3(px, -0.11, 0), Vector3(2.3 / 6.0 - 0.012, 0.22, 2), "plank_light" if plank % 2 == 0 else "plank")
+		for z: float in [-.8, .8]:
 			_mesh(panel, Vector3(x, -0.27, z), Vector3(2.3, 0.16, 0.18), "wood")
 	# Existing abutments mark the task, but do not reach across the water.
 	for x: float in [2.45, 7.55]:
-		for z: float in [-2.25, 2.25]:
+		for z: float in [-1.25, 1.25]:
 			_solid("BridgeMarker", Vector3(x, 0.4, z), Vector3(0.35, 0.8, 0.35), "wood")
 			_block(Vector3(x, 0.83, z), Vector3(0.44, 0.12, 0.44), "plank_light")
 
@@ -242,9 +242,9 @@ func _make_trees_and_landmarks() -> void:
 		VillageFinish.rounded(self,p + Vector3(0.85,h+0.35,-0.5),Vector3(2.4,2.2,2.5),Color("74944e"))
 		# Grouped understory, never random clutter across the walking routes.
 		VillageFinish.place(self,"plant_bushDetailed.glb",p + Vector3(1.3,0,0.8),Vector3.ONE * 0.8)
-	# Right-bank lamb meadow is a quiet framed destination, left open around (14,-6).
-	_solid("MeadowRock", Vector3(17.6, 0.45, -9), Vector3(2, 0.9, 1.7), "stone")
-	VillageFinish.rounded(self, Vector3(17.6, 0.35, -9), Vector3(2.5, 1.7, 2.3), Color("92988a"))
+	# The trail bends around this outcrop into the lamb's sheltered alcove.
+	_solid("MeadowRock", Vector3(17.6, 1.1, -9), Vector3(2.6, 2.2, 2.0), "stone")
+	VillageFinish.rounded(self, Vector3(17.6, 1.1, -9), Vector3(3, 2.6, 2.5), Color("92988a"))
 	for i: int in range(12):
 		var x: float = 10.5 + float(i % 6) * 1.0
 		var z: float = -9.6 - float(i / 6) * 0.7
@@ -256,7 +256,10 @@ func _make_trees_and_landmarks() -> void:
 
 func _solid(label: String, center: Vector3, size: Vector3, material_key: String) -> void:
 	if label not in ["WestCliff", "EastCliff", "NorthCliff", "SouthCliff", "ShelterRoof", "MeadowRock"]:
-		_block(center, size, material_key)
+		# Grass caps used to share the exact earth top plane: visible z-fighting.
+		# Recess only the brown render mesh, keeping collision ground unchanged.
+		var inset: float = .08 if label in ["LeftBank", "RightBank"] else (.02 if label == "SeedTerrace" else 0.0)
+		_block(center - Vector3(0, inset * .5, 0), size - Vector3(0, inset, 0), material_key)
 	var body: StaticBody3D = StaticBody3D.new()
 	body.name = label
 	body.position = center

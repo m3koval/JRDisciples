@@ -1,0 +1,115 @@
+{
+  "checks": {
+    "trusted_start": true,
+    "starts_zero_points": true,
+    "map_opens": true,
+    "map_pauses_player": true,
+    "map_closes": true,
+    "invalid_action": true,
+    "walk_(-10, 3)": true,
+    "joystick_keeps_camera_(-10, 3)": true,
+    "tracks_discovered": true,
+    "walk_(1.2, 0)": true,
+    "joystick_keeps_camera_(1.2, 0)": true,
+    "bridge_discovered": true,
+    "walk_(-7, -2)": true,
+    "joystick_keeps_camera_(-7, -2)": true,
+    "pickup_1": true,
+    "no_runtime_errors": true
+  },
+  "errors": [],
+  "state": {
+    "adventure_points": 10,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "",
+    "carrying": 0,
+    "complete": false,
+    "context": "",
+    "crossing_found": true,
+    "earned_rewards": [
+      "tracks"
+    ],
+    "following": false,
+    "fps": 2,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -7.70122528076172,
+      0.000234376639127731,
+      -2.1283221244812
+    ],
+    "recoveries": 0,
+    "reward_saved": false,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tick": 2559,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        728,
+        481
+      ],
+      "banner_blue": [
+        206.5,
+        79
+      ],
+      "banner_gold": [
+        207.5,
+        79
+      ],
+      "banner_green": [
+        214,
+        79
+      ],
+      "jump": [
+        788,
+        394
+      ],
+      "language": [
+        725,
+        44
+      ],
+      "map": [
+        762,
+        103
+      ],
+      "pause": [
+        802.5,
+        44
+      ],
+      "primary": [
+        422,
+        462
+      ],
+      "rewards": [
+        762,
+        159
+      ],
+      "secondary": [
+        422,
+        464
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      844,
+      542
+    ],
+    "yaw": 0
+  }
+}

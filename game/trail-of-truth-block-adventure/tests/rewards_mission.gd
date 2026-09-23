@@ -13,6 +13,8 @@ func check(label: String, value: bool) -> void:
         game._interact()
         super.check("empty_action_zero_points", game.adventure_points == 0)
     super.check(label, value)
+    if label == "old_lamb_spot_still_searching":
+        super.check("search_has_no_extra_points", game.adventure_points == 30)
     var milestones := {"tracks_discovered": 10, "bridge_complete": 30, "lamb_discovered": 50, "rescued": 100}
     if milestones.has(label):
         super.check("points_" + label, game.adventure_points == milestones[label])

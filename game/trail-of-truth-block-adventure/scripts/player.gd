@@ -30,6 +30,36 @@ var _camera_pivot: Node3D
 var _arm: SpringArm3D
 var _joystick: JoystickDisplay
 
+class CarryPose extends SkeletonModifier3D:
+	var controller: CharacterBody3D
+	func _process_modification() -> void:
+		if not controller.carrying:
+			return
+		var skeleton: Skeleton3D = get_skeleton()
+		# Override only arms after locomotion animation. Legs retain the accepted rig;
+		# the plank stays on a stable facing socket, never on a swinging hand bone.
+		for side: String in ["L", "R"]:
+			var sign_x: float = 1.0 if side == "L" else -1.0
+			for segment: String in ["upper_arm", "forearm"]:
+				var bone: int = skeleton.find_bone(segment + "." + side)
+				if bone < 0:
+					continue
+				var target: Vector3 = Vector3(sign_x * 0.27, 0.72, 0.34) if segment == "forearm" else Vector3(sign_x * 0.25, 0.73, 0.10)
+				target = skeleton.to_local(controller._visual.to_global(target))
+				var pose: Transform3D = skeleton.get_bone_global_pose(bone)
+				# Reset roll from the accepted rest pose rather than accumulate twists.
+				pose.basis = skeleton.get_bone_global_rest(bone).basis
+				var turn := Quaternion(pose.basis.y.normalized(), (target - pose.origin).normalized())
+				pose.basis = Basis(turn) * pose.basis
+				skeleton.set_bone_global_pose(bone, pose)
+		# Michael's lantern is attached to his right hand in the accepted rig.
+		# Stow it during two-handed work instead of swinging it through the board.
+		var lantern_bone: int = skeleton.find_bone("lantern")
+		if lantern_bone >= 0:
+			var lantern_pose: Transform3D = skeleton.get_bone_global_pose(lantern_bone)
+			lantern_pose.basis = lantern_pose.basis.scaled(Vector3.ONE * .001)
+			skeleton.set_bone_global_pose(lantern_bone, lantern_pose)
+
 class JoystickDisplay extends Control:
 	var active: bool = false
 	var origin: Vector2 = Vector2.ZERO
@@ -64,6 +94,12 @@ func _ready() -> void:
 	if scene != null:
 		var model: Node = scene.instantiate()
 		_visual.add_child(model)
+		var skeletons: Array[Node] = model.find_children("*", "Skeleton3D", true, false)
+		if not skeletons.is_empty():
+			var carry_pose := CarryPose.new()
+			carry_pose.name = "CarryPose"
+			carry_pose.controller = self
+			skeletons[0].add_child(carry_pose)
 		_animation = _find_animation(model)
 		if _animation != null:
 			for animation_name: StringName in _animation.get_animation_list():
@@ -74,7 +110,7 @@ func _ready() -> void:
 							_animation.get_animation(animation_name).loop_mode = Animation.LOOP_LINEAR
 	carry_socket = Node3D.new()
 	carry_socket.name = "CarrySocket"
-	carry_socket.position = Vector3(0.0, 0.82, 0.48)
+	carry_socket.position = Vector3(0.0, 0.72, 0.34)
 	_visual.add_child(carry_socket)
 	_camera_pivot = Node3D.new()
 	_camera_pivot.name = "CameraFollow"
@@ -96,7 +132,9 @@ func _ready() -> void:
 	_camera.fov = 58.0
 	_camera.near = 0.08
 	_camera.far = 140.0
-	_arm.add_child(_camera)
+	# SpringArm's direct children snap to collision distance. Filter recovery only;
+	# inward retraction remains immediate so smoothing never enters an obstacle.
+	_camera_pivot.add_child(_camera)
 	_camera.position.z = _arm.spring_length
 	_camera.current = true
 	_camera_pivot.rotation = Vector3(_pitch, _yaw, 0.0)
@@ -184,17 +222,24 @@ func _unhandled_input(event: InputEvent) -> void:
 		queue_jump()
 		get_viewport().set_input_as_handled()
 	if event is InputEventScreenTouch and event.pressed and not event.canceled:
+		if event.index == _stick_id or event.index == _look_id:
+			return
+		_mouse_look = false
 		var size: Vector2 = get_viewport().get_visible_rect().size
 		if event.position.x < size.x * 0.45 and event.position.y > size.y * 0.40 and _stick_id == -1:
 			_stick_id = event.index
-			_stick_origin = event.position
-			_stick_vector = Vector2.ZERO
+			_stick_origin = _joystick_resting_origin()
+			# Preserve the existing broad left-pad drag contract away from the
+			# visible stick, without teleporting its on-screen base to the finger.
+			if event.position.distance_to(_stick_origin) > JOYSTICK_RADIUS * 1.5:
+				_stick_origin = event.position
+			_stick_vector = ((event.position - _stick_origin) / JOYSTICK_RADIUS).limit_length()
 			_refresh_joystick()
 			get_viewport().set_input_as_handled()
 		elif event.position.x >= size.x * 0.45 and event.position.y > size.y * 0.20 and _look_id == -1:
 			_look_id = event.index
 			get_viewport().set_input_as_handled()
-	if event is InputEventMouseButton and event.pressed and event.device != -1:
+	if event is InputEventMouseButton and event.pressed and event.device != -1 and _stick_id == -1 and _look_id == -1:
 		if event.button_index in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT]:
 			_mouse_look = true
 			get_viewport().set_input_as_handled()
@@ -203,13 +248,20 @@ func _rotate_camera(relative: Vector2, sensitivity: float) -> void:
 	_yaw -= relative.x * sensitivity
 	_pitch = clampf(_pitch - relative.y * sensitivity, -1.05, -0.12)
 
+func _joystick_resting_origin() -> Vector2:
+	var size: Vector2 = get_viewport().get_visible_rect().size
+	return Vector2(minf(104.0, size.x * 0.24), size.y - (180.0 if size.x < 440.0 else 112.0))
+
+func _process(delta: float) -> void:
+	if is_instance_valid(_camera):
+		var distance: float = _arm.get_hit_length()
+		_camera.position.z = minf(distance, lerpf(_camera.position.z, distance, 1.0 - exp(-5.0 * delta)))
+
 func _refresh_joystick() -> void:
 	if is_instance_valid(_joystick):
-		var viewport_size: Vector2 = get_viewport().get_visible_rect().size
-		var resting_origin := Vector2(minf(104.0, viewport_size.x * 0.24), viewport_size.y - (180.0 if viewport_size.x < 440.0 else 112.0))
 		_joystick.visible = _enabled
 		_joystick.active = _stick_id != -1
-		_joystick.origin = _stick_origin if _joystick.active else resting_origin
+		_joystick.origin = _joystick_resting_origin()
 		_joystick.displacement = _stick_vector * JOYSTICK_RADIUS if _joystick.active else Vector2.ZERO
 		_joystick.queue_redraw()
 

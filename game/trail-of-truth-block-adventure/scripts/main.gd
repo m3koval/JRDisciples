@@ -2,6 +2,9 @@ extends Node3D
 ## A complete small adventure: free exploration, physical repair, and rescue.
 const SPAWN := Vector3(-11, 0.15, 7)
 const CAMP := Vector3(-11, 0, 7)
+const LAMB_DISCOVERY_RADIUS := 2.6
+const LAMB_ALCOVE := Vector3(18.5, .02, -11)
+var lamb_exit_route: Array[Vector3] = []
 const LUKE_EN := "Luke 19:10 · ESV\n“For the Son of Man came to seek and to save the lost.”"
 const LUKE_RU := "Луки 19:10 · Синодальный перевод\n«ибо Сын Человеческий пришел взыскать и спасти погибшее»."
 const JOHN_EN := "John 10:11 · ESV\n“I am the good shepherd. The good shepherd lays down his life for the sheep.”"
@@ -110,7 +113,7 @@ func _box(parent: Node3D, pos: Vector3, size: Vector3, color: Color) -> MeshInst
 
 func _build_objects() -> void:
     # Split hoofprints form a readable trail, rather than a spoiler waypoint.
-    for origin in [Vector3(-10, 0, 3), Vector3(-8, 0, 1), Vector3(-5, 0, 0), Vector3(-2, 0, 0), Vector3(9, 0, 0), Vector3(12, 0, -2), Vector3(13, 0, -4)]:
+    for origin in [Vector3(-10, 0, 3), Vector3(-8, 0, 1), Vector3(-5, 0, 0), Vector3(-2, 0, 0), Vector3(9, 0, 0), Vector3(12, 0, -2), Vector3(13, 0, -5), Vector3(13.5, 0, -8), Vector3(14.8, 0, -10.7), Vector3(17, 0, -11)]:
         var marks := Node3D.new()
         marks.position = origin
         add_child(marks)
@@ -122,9 +125,9 @@ func _build_objects() -> void:
         var board := Node3D.new()
         board.position = pos
         add_child(board)
-        _box(board, Vector3.ZERO, Vector3(1.8, .22, .52), Color("b07843"))
+        _box(board, Vector3.ZERO, Vector3(1.6, .12, .26), Color("b07843"))
         for offset in [-.55, .55]:
-            _box(board, Vector3(offset, .125, 0), Vector3(.08, .015, .50), Color("70513b"))
+            _box(board, Vector3(offset, .065, 0), Vector3(.08, .01, .24), Color("70513b"))
         boards.append(board)
     var seed_positions := [Vector3(-17, .3, 10), Vector3(-13, 1.3, -10), Vector3(18, .3, 7)]
     for pos in seed_positions:
@@ -135,15 +138,15 @@ func _build_objects() -> void:
         _box(pouch, Vector3(0, .29, 0), Vector3(.26, .12, .23), Color("557a44"))
         seeds.append(pouch)
     lamb = Node3D.new()
-    lamb.position = Vector3(14, 0.02, -6)
+    lamb.position = LAMB_ALCOVE
     add_child(lamb)
     lamb_model = preload("res://assets/lamb.glb").instantiate()
     lamb_model.scale = Vector3.ONE * .82
     lamb.add_child(lamb_model)
     bell = AudioStreamPlayer3D.new()
     bell.stream = preload("res://scripts/audio.gd").tone(880.0, .42)
-    bell.unit_size = 10.0
-    bell.max_distance = 35.0
+    bell.unit_size = 4.0
+    bell.max_distance = 14.0
     bell.volume_db = -10.0
     lamb.add_child(bell)
     cue = AudioStreamPlayer.new()
@@ -151,7 +154,7 @@ func _build_objects() -> void:
     add_child(cue)
     for label in ["FrontL", "HindR", "FrontR", "HindL"]:
         lamb_legs.append(lamb_model.find_child(label, true, false))
-    preview = _box(self, Vector3(3.85, .07, 0), Vector3(2.25, .15, 3.8), Color(.45, .95, .72, .35))
+    preview = _box(self, Vector3(3.85, .07, 0), Vector3(2.25, .15, 1.9), Color(.45, .95, .72, .35))
     preview.material_override.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
     preview.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
     highlight = MeshInstance3D.new()
@@ -186,7 +189,7 @@ func _physics_process(delta: float) -> void:
         trail_found = true
         _earn("tracks")
         _notice("crossing")
-    if not lamb_found and bridge_stage == 2 and player.position.distance_to(lamb.position) < 5.0:
+    if not lamb_found and bridge_stage == 2 and _can_reach_lamb():
         lamb_found = true
         _earn("lamb")
         _notice("found")
@@ -221,14 +224,29 @@ func _process(delta: float) -> void:
         telemetry_timer = .15
         _telemetry()
 
+func _can_reach_lamb() -> bool:
+    if player.position.distance_to(lamb.position) >= LAMB_DISCOVERY_RADIUS:
+        return false
+    var ray := PhysicsRayQueryParameters3D.create(player.global_position + Vector3(0, 1.0, 0), lamb.global_position + Vector3(0, .6, 0))
+    ray.exclude = [player.get_rid()]
+    return get_world_3d().direct_space_state.intersect_ray(ray).is_empty()
+
 func _follow_lamb(delta: float) -> void:
     var to_player: Vector3 = player.position - lamb.position
     to_player.y = 0
     if to_player.length() > 10:
         return
     var target: Vector3 = player.position
+    # Leave the alcove along its open west side before turning toward the bridge.
+    # These are navigation waypoints, not extra discovery/reward gates.
+    while not lamb_exit_route.is_empty() and Vector2(lamb.position.x - lamb_exit_route[0].x, lamb.position.z - lamb_exit_route[0].z).length() < .18:
+        lamb_exit_route.pop_front()
     # Explicit bridge waypoints keep the companion on real ground in both directions.
-    if lamb.position.x > 7.3 and player.position.x < 7.3:
+    if not lamb_exit_route.is_empty():
+        if to_player.length() <= 1.35:
+            return
+        target = lamb_exit_route[0]
+    elif lamb.position.x > 7.3 and player.position.x < 7.3:
         target = Vector3(8.0, 0, 0) if absf(lamb.position.z) > .4 else Vector3(1.8, 0, 0)
     elif lamb.position.x < 2.7 and player.position.x > 2.7:
         target = Vector3(2.0, 0, 0) if absf(lamb.position.z) > .4 else Vector3(8.2, 0, 0)
@@ -271,7 +289,7 @@ func _choose_context() -> void:
                 context_index = i
                 highlight.global_position = seeds[i].position - Vector3(0, .2, 0)
                 break
-    if context_kind == "" and bridge_stage == 2 and not following and pos.distance_to(lamb.position) < 3:
+    if context_kind == "" and bridge_stage == 2 and not following and _can_reach_lamb():
         context_kind = "call"
         highlight.global_position = lamb.position + Vector3(0, .12, 0)
     highlight.visible = context_kind != ""
@@ -332,6 +350,7 @@ func _interact() -> void:
             _notice("garden" if seeds_found.size() == 3 else "seed")
         "call":
             following = true
+            lamb_exit_route.assign([Vector3(14.8, 0, -11), Vector3(14, 0, -7)])
             _notice("follow")
     _choose_context()
     _refresh_ui()

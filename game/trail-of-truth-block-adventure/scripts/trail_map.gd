@@ -6,7 +6,7 @@ extends Control
 
 const WORLD_BOUNDS := Rect2(-22.0, -17.0, 45.0, 34.0)
 const CAMP := Vector3(-11.0, 0.0, 7.0)
-const SEARCH_AREA := Rect2(9.0, -12.0, 12.0, 11.0)
+const SEARCH_AREA := Rect2(10.0, -14.0, 11.0, 13.0)
 var _language: String = "en"
 var _player_position := CAMP
 var _bridge_stage: int = 0
@@ -84,9 +84,9 @@ func _draw() -> void:
 	if not _lamb_discovered:
 		_world_rect(SEARCH_AREA, Color(1, 0.91, 0.50, 0.24))
 		_world_rect(SEARCH_AREA, Color("ffe198"), false)
-		_tag(world_to_map(Vector3(15, 0, -13)), _t("Search area", "Зона поиска"))
+		_tag(world_to_map(Vector3(15, 0, -15)), _t("Search area", "Зона поиска"))
 	for stage: int in range(2):
-		var crossing := Rect2(2.7 + stage * 2.3, -2, 2.3, 4)
+		var crossing := Rect2(2.7 + stage * 2.3, -1, 2.3, 2)
 		_world_rect(crossing, Color("e0b777") if stage < _bridge_stage else Color("304f4e"))
 		_world_rect(crossing, Color("f4d396"), false)
 	_tag(world_to_map(Vector3(5, 0, 4.7)), _t("Bridge %d/2", "Мост %d/2") % _bridge_stage)
