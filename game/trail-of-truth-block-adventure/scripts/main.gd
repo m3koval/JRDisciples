@@ -121,13 +121,13 @@ func _build_objects() -> void:
         for side in [-1, 1]:
             for toe in [-1, 1]:
                 _box(marks, Vector3(side * .19 + toe * .046, .028, side * .19), Vector3(.065, .026, .18), Color("66503d"))
-    for pos in [Vector3(-7, 0.32, -2), Vector3(-15, 0.32, -5)]:
+    for pos in [Vector3(-7, 0.23, -2), Vector3(-15, 0.23, -5)]:
         var board := Node3D.new()
         board.position = pos
         add_child(board)
-        _box(board, Vector3.ZERO, Vector3(1.6, .12, .26), Color("b07843"))
-        for offset in [-.55, .55]:
-            _box(board, Vector3(offset, .065, 0), Vector3(.08, .01, .24), Color("70513b"))
+        # A tapered cut log, sized against Michael's own height, reads as
+        # something a boy can shoulder better than a flat plank did.
+        board.add_child(preload("res://assets/log.glb").instantiate())
         boards.append(board)
     var seed_positions := [Vector3(-17, .3, 10), Vector3(-13, 1.3, -10), Vector3(18, .3, 7)]
     for pos in seed_positions:
@@ -323,7 +323,9 @@ func _interact() -> void:
             carrying = context_index
             boards[carrying].reparent(player.carry_socket, false)
             boards[carrying].position = Vector3.ZERO
-            boards[carrying].rotation = Vector3.ZERO
+            # Log's long axis is local X at rest; turning it 90° lays it
+            # front-to-back along the shoulder, the way a log is really carried.
+            boards[carrying].rotation = Vector3(0, deg_to_rad(90), 0)
             player.carrying = true
             _notice("carry")
         "place":

@@ -67,13 +67,14 @@ func run() -> void:
 		player._animation.play(player._animations[clip])
 		player._animation.advance(0.25)
 		modifier._process_modification()
-		for side: String in ["L", "R"]:
-			var hand: Vector3 = player._visual.to_local(skeleton.to_global(skeleton.get_bone_global_pose(skeleton.find_bone("hand." + side)).origin))
-			print("CARRY_HAND ", clip, " ", side, " ", hand)
-			check(hand.z > 0.20 and hand.y > 0.55 and hand.y < 1.2, clip + " " + side + " hand holds forward instead of swinging")
+		# Log rides the left shoulder: the left hand grips it up at shoulder
+		# height; the right hand stays free for the lantern.
+		var hand: Vector3 = player._visual.to_local(skeleton.to_global(skeleton.get_bone_global_pose(skeleton.find_bone("hand.L")).origin))
+		print("CARRY_HAND ", clip, " L ", hand)
+		check(hand.x > 0.1 and hand.y > 0.85 and hand.y < 1.2 and hand.z > 0.15, clip + " left hand grips the shouldered log instead of swinging")
 	check(player.carry_socket.transform == socket_before, "board attachment does not bob with locomotion clips")
 	var lantern: int = skeleton.find_bone("lantern")
-	check(skeleton.get_bone_global_pose(lantern).basis.x.length() < .01, "hand lantern is stowed during two-handed carrying")
+	check(skeleton.get_bone_global_pose(lantern).basis.x.length() > .5, "right hand keeps its lantern during one-shoulder carrying")
 	player.carrying = false
 	var arm: int = skeleton.find_bone("upper_arm.L")
 	var before: Transform3D = skeleton.get_bone_global_pose(arm)

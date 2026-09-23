@@ -32,33 +32,44 @@ var _joystick: JoystickDisplay
 
 class CarryPose extends SkeletonModifier3D:
 	var controller: CharacterBody3D
+	# Left-hand grip on the shouldered log, in the facing (_visual) space:
+	# the model faces +Z and its left side is +X. The pole pushes the elbow
+	# down and outward so the arm wraps up under the log.
+	const GRIP_L := Vector3(0.26, 0.97, 0.24)
+	const POLE_L := Vector3(1.0, -0.6, 0.2)
 	func _process_modification() -> void:
 		if not controller.carrying:
 			return
 		var skeleton: Skeleton3D = get_skeleton()
-		# Override only arms after locomotion animation. Legs retain the accepted rig;
-		# the plank stays on a stable facing socket, never on a swinging hand bone.
-		for side: String in ["L", "R"]:
-			var sign_x: float = 1.0 if side == "L" else -1.0
-			for segment: String in ["upper_arm", "forearm"]:
-				var bone: int = skeleton.find_bone(segment + "." + side)
-				if bone < 0:
-					continue
-				var target: Vector3 = Vector3(sign_x * 0.27, 0.72, 0.34) if segment == "forearm" else Vector3(sign_x * 0.25, 0.73, 0.10)
-				target = skeleton.to_local(controller._visual.to_global(target))
-				var pose: Transform3D = skeleton.get_bone_global_pose(bone)
-				# Reset roll from the accepted rest pose rather than accumulate twists.
-				pose.basis = skeleton.get_bone_global_rest(bone).basis
-				var turn := Quaternion(pose.basis.y.normalized(), (target - pose.origin).normalized())
-				pose.basis = Basis(turn) * pose.basis
-				skeleton.set_bone_global_pose(bone, pose)
-		# Michael's lantern is attached to his right hand in the accepted rig.
-		# Stow it during two-handed work instead of swinging it through the board.
-		var lantern_bone: int = skeleton.find_bone("lantern")
-		if lantern_bone >= 0:
-			var lantern_pose: Transform3D = skeleton.get_bone_global_pose(lantern_bone)
-			lantern_pose.basis = lantern_pose.basis.scaled(Vector3.ONE * .001)
-			skeleton.set_bone_global_pose(lantern_bone, lantern_pose)
+		var upper: int = skeleton.find_bone("upper_arm.L")
+		var fore: int = skeleton.find_bone("forearm.L")
+		var hand: int = skeleton.find_bone("hand.L")
+		if upper < 0 or fore < 0 or hand < 0:
+			return
+		# Two-bone IK after locomotion: only the left arm is overridden. The
+		# right hand keeps its lantern, and the log stays on a stable socket
+		# rather than a swinging hand bone.
+		var grip: Vector3 = skeleton.to_local(controller._visual.to_global(GRIP_L))
+		var pole: Vector3 = skeleton.global_basis.inverse() * controller._visual.global_basis * POLE_L
+		var shoulder: Vector3 = skeleton.get_bone_global_pose(upper).origin
+		var a: float = skeleton.get_bone_rest(fore).origin.length()
+		var b: float = skeleton.get_bone_rest(hand).origin.length()
+		var to_grip: Vector3 = grip - shoulder
+		var d: float = clampf(to_grip.length(), 0.01, (a + b) * 0.999)
+		var dir: Vector3 = to_grip.normalized()
+		var cos_a: float = clampf((a * a + d * d - b * b) / (2.0 * a * d), -1.0, 1.0)
+		var bend: Vector3 = (pole - dir * pole.dot(dir)).normalized()
+		var elbow: Vector3 = shoulder + dir * (a * cos_a) + bend * (a * sqrt(1.0 - cos_a * cos_a))
+		_aim(skeleton, upper, elbow)
+		_aim(skeleton, fore, shoulder + dir * d)
+	func _aim(skeleton: Skeleton3D, bone: int, target: Vector3) -> void:
+		var pose: Transform3D = skeleton.get_bone_global_pose(bone)
+		# Reset roll from the accepted rest pose rather than accumulate twists.
+		# Bones in this rig point along their local +Y.
+		pose.basis = skeleton.get_bone_global_rest(bone).basis
+		var turn := Quaternion(pose.basis.y.normalized(), (target - pose.origin).normalized())
+		pose.basis = Basis(turn) * pose.basis
+		skeleton.set_bone_global_pose(bone, pose)
 
 class JoystickDisplay extends Control:
 	var active: bool = false
@@ -110,7 +121,9 @@ func _ready() -> void:
 							_animation.get_animation(animation_name).loop_mode = Animation.LOOP_LINEAR
 	carry_socket = Node3D.new()
 	carry_socket.name = "CarrySocket"
-	carry_socket.position = Vector3(0.0, 0.72, 0.34)
+	# Resting on top of the left shoulder beside the head, clear of the hair
+	# and torso; the log runs front-to-back along it.
+	carry_socket.position = Vector3(0.29, 1.07, 0.02)
 	_visual.add_child(carry_socket)
 	_camera_pivot = Node3D.new()
 	_camera_pivot.name = "CameraFollow"
@@ -245,8 +258,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 
 func _rotate_camera(relative: Vector2, sensitivity: float) -> void:
-	_yaw -= relative.x * sensitivity
-	_pitch = clampf(_pitch - relative.y * sensitivity, -1.05, -0.12)
+	# Mobile WebViews can coalesce several touch moves into one event; clamp
+	# each so a single batch can't whip the camera around.
+	var step: Vector2 = relative.limit_length(48.0)
+	_yaw -= step.x * sensitivity
+	_pitch = clampf(_pitch - step.y * sensitivity, -1.05, -0.12)
 
 func _joystick_resting_origin() -> Vector2:
 	var size: Vector2 = get_viewport().get_visible_rect().size

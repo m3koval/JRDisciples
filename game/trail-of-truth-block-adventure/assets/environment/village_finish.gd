@@ -77,21 +77,26 @@ static func path_material() -> StandardMaterial3D:
 static func ground_material(color: Color) -> StandardMaterial3D:
 	var mat := StandardMaterial3D.new()
 	mat.albedo_color = color
+	# A single moderate-frequency noise layer reads as grass variation
+	# without a flat wash. (A second multiplied "detail" layer was tried
+	# here but two independently-seeded noise fields at different UV
+	# scales beat against each other into a shimmering moiré pattern as
+	# the camera moves — one layer avoids that interference entirely.)
 	var noise := FastNoiseLite.new()
-	noise.frequency = 0.045
-	noise.fractal_octaves = 3
+	noise.frequency = 0.12
+	noise.fractal_octaves = 2
 	var texture := NoiseTexture2D.new()
 	texture.width = 256
 	texture.height = 256
 	texture.noise = noise
 	texture.seamless = true
 	var ramp := Gradient.new()
-	ramp.set_color(0,Color(0.72,0.79,0.65))
-	ramp.set_color(1,Color(0.85,0.89,0.77))
+	ramp.set_color(0,Color(0.70,0.78,0.63))
+	ramp.set_color(1,Color(0.87,0.91,0.79))
 	texture.color_ramp = ramp
 	mat.albedo_texture = texture
 	mat.uv1_triplanar = true
 	mat.uv1_world_triplanar = true
-	mat.uv1_scale = Vector3.ONE * 0.08
+	mat.uv1_scale = Vector3.ONE * 0.25
 	mat.roughness = 1.0
 	return mat
