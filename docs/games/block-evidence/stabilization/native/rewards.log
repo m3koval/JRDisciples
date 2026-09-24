@@ -35,6 +35,8 @@ native cosmetic reload: true
 reload duplicate: true
 book pauses: true
 RU book: true
+scene reload resumes shepherd checkpoint: true
+explicit new rescue prepares replay: true
 REPLAY 130 green 0 false
 scene replay retains lifetime awards: true
-REWARD_CHECKS=36 FAILED=false
+REWARD_CHECKS=38 FAILED=false

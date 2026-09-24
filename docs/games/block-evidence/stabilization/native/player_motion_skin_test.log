@@ -5,6 +5,8 @@ PASS look advances smoothly on render frames without a physics tick
 PASS pause freezes render camera
 PASS source mesh and skin data are preserved
 PASS DPR2 camera matches CSS displacement
+PASS DPR2 joystick retains CSS-sized visual
+PASS DPR2 visible and input joystick anchors agree
 PASS carry edge expansion bounded for Michael_Cloth_Matte
 WORST Michael_Cloth_Matte 0.00000011920929 rest=(0.139124, 0.797992, 0.067624) -> (0.139251, 0.735933, 0.053166) weights=[10, 0, 0, 0] / [11, 0, 0, 0]
 PASS carry edge expansion bounded for Michael_Skin_Soft

@@ -58,5 +58,40 @@
     "test": "reward_layout",
     "passed": true,
     "exit": 0
+  },
+  {
+    "test": "escort_collisions",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "cave_victory_test",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "cave_campaign_test",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "cave_combat_test",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "flock_campaign_test",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "flock_progression",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "irrigation_flow_test",
+    "passed": true,
+    "exit": 0
   }
 ]

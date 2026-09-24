@@ -1,0 +1,62 @@
+[
+  {
+    "route": "/",
+    "http": 200,
+    "errors": [],
+    "broken_images": []
+  },
+  {
+    "route": "/journey/",
+    "http": 200,
+    "errors": [],
+    "broken_images": []
+  },
+  {
+    "route": "/practice/",
+    "http": 200,
+    "errors": [],
+    "broken_images": []
+  },
+  {
+    "route": "/progress/",
+    "http": 200,
+    "errors": [],
+    "broken_images": []
+  },
+  {
+    "route": "/lessons/coin-in-the-fish/",
+    "http": 200,
+    "errors": [],
+    "broken_images": []
+  },
+  {
+    "route": "/lessons/jonah-big-fish/",
+    "http": 200,
+    "errors": [],
+    "broken_images": []
+  },
+  {
+    "route": "/lessons/mustard-seed-faith/",
+    "http": 200,
+    "errors": [],
+    "broken_images": []
+  },
+  {
+    "route": "/lessons/transfiguration/",
+    "http": 200,
+    "errors": [],
+    "broken_images": []
+  },
+  {
+    "route": "/stories/noah/",
+    "http": 200,
+    "errors": [],
+    "broken_images": []
+  },
+  {
+    "route": "/games/",
+    "http": 200,
+    "errors": [],
+    "broken_images": []
+  }
+]

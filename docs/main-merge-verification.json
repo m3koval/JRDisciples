@@ -1,0 +1,268 @@
+{
+  "status": "verified_functional_handoff_not_visual_or_device_acceptance",
+  "core_native_tests": [
+    {
+      "test": "scenery_clearance",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "terrain_surfaces",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "ipad_player_test",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "player_motion_skin_test",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "mobile_ui_readability",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "world_tap_ui",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "search_regressions",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "rewards",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "rewards_mission",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "edge_cases",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "review_regressions",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "reward_layout",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "escort_collisions",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "cave_victory_test",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "cave_campaign_test",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "cave_combat_test",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "flock_campaign_test",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "flock_progression",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "test": "irrigation_flow_test",
+      "passed": true,
+      "exit": 0
+    }
+  ],
+  "native_additional": [
+    {
+      "test": "scale_distance",
+      "passed": true,
+      "marker": "SCALE_DISTANCE_FAILURES=0"
+    },
+    {
+      "test": "opening_state",
+      "passed": true,
+      "marker": "OPENING_ART_FAILURES=0"
+    },
+    {
+      "test": "opening_route",
+      "passed": true,
+      "marker": "localized true"
+    }
+  ],
+  "irrigation_native": [
+    {
+      "test": "irrigation_construction_test",
+      "exit_code": 0,
+      "passed": true,
+      "marker": "CONSTRUCTION_FAILURES=0",
+      "errors": []
+    },
+    {
+      "test": "irrigation_construction_playthrough",
+      "exit_code": 0,
+      "passed": true,
+      "marker": "CONSTRUCTION_HOST_FAILURES=0",
+      "errors": []
+    },
+    {
+      "test": "irrigation_geometry_playthrough",
+      "exit_code": 0,
+      "passed": true,
+      "marker": "CONSTRUCTION_HOST_FAILURES=0",
+      "errors": []
+    },
+    {
+      "test": "irrigation_site_playthrough",
+      "exit_code": 0,
+      "passed": true,
+      "marker": "CONSTRUCTION_HOST_FAILURES=0",
+      "errors": []
+    },
+    {
+      "test": "garden_art_test",
+      "exit_code": 0,
+      "passed": true,
+      "marker": "GARDEN_ART_FAILURES=0",
+      "errors": []
+    },
+    {
+      "test": "garden_art_capture",
+      "exit_code": 0,
+      "passed": true,
+      "marker": "ART_FIXTURE_COMPLETE",
+      "errors": []
+    }
+  ],
+  "app_browser_routes": [
+    {
+      "route": "/",
+      "http": 200,
+      "errors": [],
+      "broken_images": []
+    },
+    {
+      "route": "/journey/",
+      "http": 200,
+      "errors": [],
+      "broken_images": []
+    },
+    {
+      "route": "/practice/",
+      "http": 200,
+      "errors": [],
+      "broken_images": []
+    },
+    {
+      "route": "/progress/",
+      "http": 200,
+      "errors": [],
+      "broken_images": []
+    },
+    {
+      "route": "/lessons/coin-in-the-fish/",
+      "http": 200,
+      "errors": [],
+      "broken_images": []
+    },
+    {
+      "route": "/lessons/jonah-big-fish/",
+      "http": 200,
+      "errors": [],
+      "broken_images": []
+    },
+    {
+      "route": "/lessons/mustard-seed-faith/",
+      "http": 200,
+      "errors": [],
+      "broken_images": []
+    },
+    {
+      "route": "/lessons/transfiguration/",
+      "http": 200,
+      "errors": [],
+      "broken_images": []
+    },
+    {
+      "route": "/stories/noah/",
+      "http": 200,
+      "errors": [],
+      "broken_images": []
+    },
+    {
+      "route": "/games/",
+      "http": 200,
+      "errors": [],
+      "broken_images": []
+    }
+  ],
+  "browser_touch_partial": {
+    "status": "intentionally_stopped_software_renderer_budget",
+    "checks": {
+      "trusted_start": true,
+      "map_opens": true,
+      "map_pauses_player": true,
+      "map_closes": true,
+      "invalid_action": true,
+      "walk_(-10, 3)": true,
+      "joystick_keeps_camera_(-10, 3)": true,
+      "tracks_discovered": true,
+      "walk_(1.2, 0)": true,
+      "joystick_keeps_camera_(1.2, 0)": true,
+      "bridge_discovered": true,
+      "walk_(-7, -2)": true,
+      "joystick_keeps_camera_(-7, -2)": true,
+      "world_tap_target_available": true,
+      "world_tap_pickup": true,
+      "pickup_1": true,
+      "place_1": true,
+      "walk_(-15, -5)": true,
+      "joystick_keeps_camera_(-15, -5)": true,
+      "pickup_2": true,
+      "walk_(1.5, 0)": true,
+      "joystick_keeps_camera_(1.5, 0)": true,
+      "place_2": true,
+      "walk_(9, 0)": true,
+      "joystick_keeps_camera_(9, 0)": true
+    },
+    "errors": [],
+    "full_browser_rescue_replay": "not_verified_this_run"
+  },
+  "packaging": {
+    "offline_routes": 99,
+    "app_sync": "pass",
+    "export_hash_guard": "pass",
+    "production_build": "webpack pass",
+    "github_quality_gates": "pass at 5f09216",
+    "vercel_preview": "pass at 5f09216"
+  },
+  "limits": [
+    "Opening creek art remains owner-rejected; further redesign not implemented.",
+    "No Xcode/signing/physical iPad validation on Linux.",
+    "Duplicate opening visual runner stopped after its state/route passes to avoid repeating the completed irrigation crossing suite."
+  ]
+}
