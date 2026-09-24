@@ -63,14 +63,42 @@ func solid(pos: Vector3, size: Vector3, color: Color, show_mesh := true) -> void
 func sign_at(pos: Vector3) -> Label3D:
     var label := Label3D.new()
     label.position = pos
-    label.font_size = 36
-    label.pixel_size = .008
+    label.font_size = 28
+    label.pixel_size = .004
     label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
     label.no_depth_test = false
-    label.visibility_range_end = 13
+    label.visibility_range_end = 10
     add_child(label)
     labels.append(label)
     return label
+
+# CPU skin evaluation also works before the render server registers the skin.
+# Imported mesh AABBs omit bind transforms (these rigs differ by 100x there).
+static func posed_bounds(mesh: MeshInstance3D) -> AABB:
+    if mesh.skin == null: return mesh.global_transform * mesh.get_aabb()
+    var skeleton := mesh.get_node(mesh.skeleton) as Skeleton3D
+    var skin := mesh.skin
+    var transforms: Array[Transform3D] = []
+    for bind in range(skin.get_bind_count()):
+        var bone := skin.get_bind_bone(bind)
+        if bone < 0: bone = skeleton.find_bone(skin.get_bind_name(bind))
+        transforms.append(skeleton.global_transform * skeleton.get_bone_global_pose(bone) * skin.get_bind_pose(bind))
+    var result := AABB()
+    var first := true
+    for surface in range(mesh.mesh.get_surface_count()):
+        var arrays := mesh.mesh.surface_get_arrays(surface)
+        var vertices: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]
+        var bones: PackedInt32Array = arrays[Mesh.ARRAY_BONES]
+        var weights: PackedFloat32Array = arrays[Mesh.ARRAY_WEIGHTS]
+        var stride := bones.size() / vertices.size()
+        for v in range(vertices.size()):
+            var point := Vector3.ZERO
+            for k in range(stride):
+                var i := v*stride+k
+                if weights[i] > 0: point += (transforms[bones[i]] * vertices[v]) * weights[i]
+            result = AABB(point, Vector3.ZERO) if first else result.expand(point)
+            first = false
+    return result
 
 func make_person(file: String, at: Vector3, gardener: bool) -> void:
     # Existing lawful generated adult rigs, instanced without touching shared resources.
@@ -79,8 +107,8 @@ func make_person(file: String, at: Vector3, gardener: bool) -> void:
     actor.position = at
     add_child(actor)
     var model := (load("res://assets/villagers/" + file + ".glb") as PackedScene).instantiate() as Node3D
-    model.scale = Vector3.ONE * (.615 if gardener else .66)
-    model.position.y = .615 if gardener else .66
+    # Source rigs are already feet-origin adults, not centered unit proxies.
+    # Normalize their authored mesh bounds, never offset by half the scale.
     actor.add_child(model)
     var animations := model.find_children("*", "AnimationPlayer", true, false)
     if not animations.is_empty():
@@ -89,6 +117,18 @@ func make_person(file: String, at: Vector3, gardener: bool) -> void:
             anim.play(anim.get_animation_list()[0])
             anim.advance(0)
             anim.stop(false)
+    var extent := AABB()
+    var first := true
+    for item in model.find_children("*", "MeshInstance3D", true, false):
+        var mesh := item as MeshInstance3D
+        var b: AABB = actor.global_transform.affine_inverse() * posed_bounds(mesh)
+        extent = b if first else extent.merge(b)
+        first = false
+    var stature := 1.70 if gardener else 1.78
+    var factor := stature / extent.size.y
+    model.scale = Vector3.ONE * factor
+    model.position.y = -extent.position.y * factor
+    actor.set_meta("stature", stature)
     # Preserve authored clothing instead of covering it with rigid proxy panels.
     # Role props distinguish these model variants until new character art is approved.
     if gardener:
@@ -101,13 +141,13 @@ func make_person(file: String, at: Vector3, gardener: bool) -> void:
     var collision := CollisionShape3D.new()
     var capsule := CapsuleShape3D.new()
     capsule.radius = .3
-    capsule.height = 1.7
+    capsule.height = stature
     collision.shape = capsule
-    collision.position.y = .85
+    collision.position.y = stature * .5
     body.add_child(collision)
     actor.add_child(body)
     actors.append(actor)
-    sign_at(at + Vector3.UP*2.25)
+    sign_at(at + Vector3.UP*(stature + .25))
 
 func _ready() -> void:
     name = "WaterForTheVillage"

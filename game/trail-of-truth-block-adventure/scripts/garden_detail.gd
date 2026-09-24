@@ -1,5 +1,5 @@
 extends RefCounted
-## Original authored curved garden meshes; presentation only, no route colliders.
+## Original authored curved garden meshes; bench solids only, no bed route colliders.
 static func material(color: String) -> StandardMaterial3D:
     var m := StandardMaterial3D.new()
     m.albedo_color = Color(color)
@@ -144,6 +144,7 @@ static func pot(parent: Node3D, at: Vector3, radius: float) -> void:
 static func bench(parent: Node3D) -> void:
     var n := Node3D.new()
     parent.add_child(n)
+    n.name = "PottingBench"
     n.position = Vector3(149,0,4)
     for x in [-.78,.78]:
         for z in [-.34,.34]: box(n,Vector3(x,.39,z),Vector3(.11,.78,.11),"796347")
@@ -152,6 +153,18 @@ static func bench(parent: Node3D) -> void:
         box(n,Vector3(0,.81,-.4+i*.2),Vector3(1.85,.09,.185),["a58a64","b2976e"][i%2])
         box(n,Vector3(0,.24,-.32+i*.16),Vector3(1.55,.055,.14),"8e7452")
     box(n,Vector3(0,.67,.35),Vector3(1.7,.16,.08),"8e7452")
+    # Match reachable solid timber only; keep the open underside, not a full box.
+    for timber in n.get_children():
+        if not timber is MeshInstance3D: continue
+        var body := StaticBody3D.new()
+        body.collision_layer = 2
+        body.position = timber.position
+        var shape := CollisionShape3D.new()
+        var volume := BoxShape3D.new()
+        volume.size = timber.mesh.size
+        shape.shape = volume
+        body.add_child(shape)
+        n.add_child(body)
     pot(n,Vector3(-.6,.86,0),.20)
     pot(n,Vector3(-.12,.86,-.15),.16)
     pot(n,Vector3(.5,.27,0),.19)
