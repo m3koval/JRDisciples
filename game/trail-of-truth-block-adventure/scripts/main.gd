@@ -11,6 +11,8 @@ const JOHN_EN := "John 10:11 · ESV\n“I am the good shepherd. The good shepher
 const JOHN_RU := "Иоанна 10:11 · Синодальный перевод\n«Я есмь пастырь добрый: пастырь добрый полагает жизнь свою за овец»."
 signal camp_banner_changed(color_id: String)
 var rewards = preload("res://scripts/adventure_rewards.gd").new()
+var campaign = preload("res://scripts/flock_campaign.gd").new()
+var caves = preload("res://scripts/cave_campaign.gd").new()
 var adventure_points: int:
     get: return rewards.total()
 var camp_banner_color: String:
@@ -204,6 +206,18 @@ func _ready() -> void:
     add_child(player)
     player.set_enabled(false)
     _build_objects()
+    campaign.host = self
+    add_child(campaign)
+    if campaign.stage > 0:
+        completed = true
+        following = true
+        lamb.position = CAMP
+        bridge_stage = 2
+        world.set_bridge_stage(2)
+        for board in boards:
+            board.visible = false
+    caves.host = self
+    add_child(caves)
     _build_ui()
     var observer := WorldTapObserver.new()
     observer.controller = self
@@ -255,7 +269,19 @@ func _build_objects() -> void:
         _box(pouch, Vector3.ZERO, Vector3(.42, .48, .33), Color("e4bd6a"))
         _box(pouch, Vector3(0, .29, 0), Vector3(.26, .12, .23), Color("557a44"))
         seeds.append(pouch)
-    lamb = Node3D.new()
+    # A non-blocking companion still sweeps against world solids. Layer zero
+    # keeps it out of player movement, camera and discovery sightline queries.
+    lamb = CharacterBody3D.new()
+    lamb.collision_layer = 0
+    lamb.collision_mask = 1
+    lamb.add_collision_exception_with(player)
+    var lamb_shape := CollisionShape3D.new()
+    var footprint := CylinderShape3D.new()
+    footprint.radius = .35
+    footprint.height = .7
+    lamb_shape.shape = footprint
+    lamb_shape.position.y = .5
+    lamb.add_child(lamb_shape)
     lamb.position = LAMB_ALCOVE
     add_child(lamb)
     lamb_model = preload("res://assets/lamb.glb").instantiate()
@@ -298,6 +324,12 @@ func _build_objects() -> void:
 func _physics_process(delta: float) -> void:
     if paused:
         return
+    if caves.active:
+        caves.tick(delta)
+        if Input.is_action_just_pressed("interact"): _interact()
+        _choose_context()
+        return
+    campaign.tick(delta)
     if not trail_found and player.position.distance_to(Vector3(-10, 0, 3)) < 3.2:
         trail_found = true
         _earn("tracks")
@@ -370,14 +402,29 @@ func _follow_lamb(delta: float) -> void:
         target = Vector3(2.0, 0, 0) if absf(lamb.position.z) > .4 else Vector3(8.2, 0, 0)
     elif lamb.position.x >= 2.7 and lamb.position.x <= 7.3:
         target = Vector3(1.8 if player.position.x < 5 else 8.2, 0, 0)
+    elif player.position.distance_to(CAMP) < 3.0:
+        # Walk home even when the player stops at the entrance. Do not enlarge
+        # the rescue gate or teleport the trailing lamb into its radius.
+        target = CAMP
     var direction: Vector3 = target - lamb.position
     direction.y = 0
     var routing: bool = target.distance_to(player.position) > .1
     var walking: bool = direction.length() > (.18 if routing else 1.35) or (lamb.position.x > 2.5 and lamb.position.x < 7.5)
     if walking:
-        var step: Vector3 = direction.normalized() * minf(4.1 * delta, direction.length())
-        lamb.position += step
-        lamb.position.y = .03
+        var before: Vector3 = lamb.position
+        var motion := direction.normalized() * minf(4.1 * clampf(delta, 0, .05), direction.length())
+        # At most three swept contacts per tick; no direct position correction
+        # through cottages/rocks, and no unbounded catch-up on a slow frame.
+        for contact in range(3):
+            if motion.length_squared() < .000001:
+                break
+            var collision := (lamb as CharacterBody3D).move_and_collide(motion)
+            if collision == null:
+                break
+            motion = collision.get_remainder().slide(collision.get_normal())
+            motion.y = 0
+        var step: Vector3 = lamb.position - before
+        walking = step.length_squared() > .000001
         lamb.rotation.y = lerp_angle(lamb.rotation.y, atan2(-step.z, step.x), minf(delta * 8, 1))
         lamb_stride += step.length() * 11
     for i in range(lamb_legs.size()):
@@ -388,6 +435,34 @@ func _choose_context() -> void:
     context_kind = ""
     context_index = -1
     highlight.visible = false
+    if caves.active or caves.context() == "caves":
+        context_kind = caves.context()
+        target_marker.position = caves.destination() + Vector3.UP * 2.5
+        target_marker.visible = true
+        return
+    if campaign.stage > 0:
+        context_kind = campaign.context()
+        target_marker.position = campaign.destination() + Vector3.UP * 2.5
+        target_marker.visible = campaign.stage < 6
+        if campaign.stage == 6 and not garden_saved:
+            var best_seed := INF
+            for i in range(seeds.size()):
+                if not seeds_found.has(i):
+                    var distance: float = player.position.distance_to(seeds[i].position)
+                    if distance < best_seed:
+                        best_seed = distance
+                        target_marker.position = seeds[i].position + Vector3.UP * 2.5
+                        target_marker.visible = true
+        # Optional seeds remain available without bypassing a flock action.
+        if context_kind == "":
+            for i in range(seeds.size()):
+                if not seeds_found.has(i) and player.position.distance_to(seeds[i].position) < 2.2:
+                    context_kind = "seed"
+                    context_index = i
+                    highlight.global_position = seeds[i].position - Vector3(0, .2, 0)
+                    highlight.visible = true
+                    break
+        return
     var pos: Vector3 = player.position
     if carrying >= 0:
         if pos.distance_to(Vector3(1.5 if bridge_stage == 0 else 3.6, 0, 0)) < 3.2:
@@ -434,6 +509,17 @@ func _choose_context() -> void:
 
 func _interact() -> void:
     if paused:
+        return
+    _choose_context()
+    if caves.active or context_kind == "caves":
+        caves.interact()
+        _choose_context()
+        _refresh_ui()
+        return
+    if campaign.stage > 0 and context_kind != "seed":
+        campaign.interact()
+        _choose_context()
+        _refresh_ui()
         return
     _choose_context()
     match context_kind:
@@ -485,6 +571,9 @@ func _complete() -> void:
     _apply_banner_to_world()
     _save_progress()
     modal_kind = "complete"
+    campaign.stage = 1
+    campaign.restore()
+    _save_progress()
     paused = true
     player.set_enabled(false)
     _refresh_ui()
@@ -496,7 +585,7 @@ func _notice(key: String) -> void:
     cue.play()
 
 func _toggle_pause() -> void:
-    if modal_kind == "intro" or modal_kind == "complete":
+    if modal_kind in ["intro", "complete", "flock_complete", "cave_intro", "cave_complete"]:
         return
     paused = not paused
     modal_kind = "pause" if paused else ""
@@ -514,13 +603,49 @@ func _open_map() -> void:
     _refresh_ui()
 
 func _primary_action() -> void:
+    if modal_kind == "flock_complete":
+        if caves.start():
+            modal_kind = "cave_intro"
+            _refresh_ui()
+            return
     paused = false
     modal_kind = ""
     player.set_enabled(true)
     _refresh_ui()
 
 func _secondary_action() -> void:
+    if modal_kind == "flock_complete":
+        paused = false
+        modal_kind = ""
+        player.set_enabled(true)
+        _refresh_ui()
+        return
+    if caves.active and modal_kind == "pause":
+        caves.active = false
+        caves.visible = false
+        player.position = SPAWN
+        player.velocity = Vector3.ZERO
+        _save_progress()
+        _primary_action()
+        return
+    if not _prepare_replay():
+        _refresh_ui()
+        return
     get_tree().reload_current_scene()
+
+func _prepare_replay() -> bool:
+    var previous_stage: int = campaign.stage
+    var previous_caves: Dictionary = caves.snapshot()
+    var previous_health: int = caves.health
+    caves.load_checkpoint(null, 0)
+    campaign.stage = 0
+    _save_progress()
+    if not saves_ok:
+        campaign.stage = previous_stage
+        caves.load_checkpoint(previous_caves, previous_stage)
+        caves.health = previous_health
+        return false
+    return true
 
 func _set_language() -> void:
     language = "en" if language == "ru" else "ru"
@@ -593,9 +718,11 @@ func _apply_progress(data: Variant) -> void:
             reward_saved = reward_saved or rescued
         if planted is bool:
             garden_saved = garden_saved or planted
+    campaign.load_checkpoint(data.get("campaign") if data is Dictionary else null, reward_saved)
+    caves.load_checkpoint(data.get("caves") if data is Dictionary else null, campaign.stage)
 
 func _save_progress() -> void:
-    var text := JSON.stringify({"version": 2, "rescued": reward_saved, "garden": garden_saved, "rewards": rewards.snapshot()})
+    var text := JSON.stringify({"version": 3, "rescued": reward_saved, "garden": garden_saved, "rewards": rewards.snapshot(), "campaign": {"stage": campaign.stage}, "caves": caves.snapshot()})
     if OS.has_feature("web"):
         saves_ok = JavaScriptBridge.eval("(function(){try{localStorage.setItem('jd.block.v1'," + JSON.stringify(text) + ");return true}catch(e){return false}})()") == true
     else:
@@ -603,6 +730,8 @@ func _save_progress() -> void:
         saves_ok = file != null
         if file:
             file.store_string(text)
+            file.flush()
+            saves_ok = file.get_error() == OK
             file.close()
 
 func _panel() -> StyleBoxFlat:
@@ -650,7 +779,12 @@ func _build_ui() -> void:
     header = PanelContainer.new()
     header.mouse_filter = Control.MOUSE_FILTER_IGNORE
     header.add_theme_stylebox_override("panel", _panel())
-    header.minimum_size_changed.connect(func(): header.size.y = header.get_combined_minimum_size().y)
+    header.minimum_size_changed.connect(func():
+        header.size.y = header.get_combined_minimum_size().y
+        # Wrapped text settles after container layout; reposition utility buttons
+        # again instead of retaining a stale first-frame portrait height.
+        if is_instance_valid(modal): _layout_ui.call_deferred(false)
+    )
     hud.add_child(header)
     var stack := VBoxContainer.new()
     stack.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -665,6 +799,27 @@ func _build_ui() -> void:
     rewards_button = _button(hud, _open_rewards)
     jump_button = _button(hud, func(): player.queue_jump())
     action_button = _button(hud, _interact)
+    # One useful action, not a combat/tool grid. Keep the thumb anchors intact.
+    var action_style := _panel()
+    action_style.bg_color = Color("f2cc76")
+    action_style.set_border_width_all(2)
+    action_style.border_color = Color("fff0bd")
+    action_style.content_margin_left = 12
+    action_style.content_margin_right = 12
+    action_button.add_theme_stylebox_override("normal", action_style)
+    action_button.add_theme_color_override("font_color", Color("183c33"))
+    action_button.add_theme_color_override("font_hover_color", Color("183c33"))
+    action_button.add_theme_stylebox_override("hover", action_style)
+    var action_pressed := action_style.duplicate() as StyleBoxFlat
+    action_pressed.bg_color = Color("d9ad51")
+    action_pressed.border_color = Color("183c33")
+    action_button.add_theme_stylebox_override("pressed", action_pressed)
+    action_button.add_theme_color_override("font_pressed_color", Color("183c33"))
+    var jump_style := _panel()
+    jump_style.bg_color = Color("244f62")
+    jump_style.content_margin_left = 12
+    jump_style.content_margin_right = 12
+    jump_button.add_theme_stylebox_override("normal", jump_style)
     notice = _label(20)
     # Scene lighting can put white paving behind this floating text.
     notice.add_theme_color_override("font_outline_color", Color("102d23"))
@@ -739,14 +894,14 @@ func _layout_ui(update_density: bool = true) -> void:
     counter.add_theme_font_size_override("font_size", 18)
     # Portrait: one readable objective, then a single utility row. No narrow
     # text column beside a tower of buttons. Landscape leaves the view open.
-    var row_y := 110.0 if narrow else 12.0
+    var row_y := maxf(110.0, header.position.y + header.get_combined_minimum_size().y + 8.0) if narrow else 12.0
     language_button.position = Vector2(12 if narrow else size.x - 188, row_y)
     language_button.size = Vector2(60, 48)
     pause_button.position = Vector2(80 if narrow else size.x - 120, row_y)
     pause_button.size = Vector2(108, 48)
     map_button.position = Vector2(196 if narrow else size.x - 188, row_y if narrow else 68)
     map_button.size = Vector2(112 if narrow else 176, 48)
-    rewards_button.position = Vector2(12 if narrow else size.x - 188, 166 if narrow else 124)
+    rewards_button.position = Vector2(12 if narrow else size.x - 188, row_y + 56 if narrow else 124)
     rewards_button.size = Vector2(176, 48)
     jump_button.position = Vector2(size.x - 124, size.y - 182)
     jump_button.size = Vector2(112, 68)
@@ -759,7 +914,7 @@ func _layout_ui(update_density: bool = true) -> void:
         header.size.x = size.x - 356
         jump_button.position.y = size.y - 168
         jump_button.size.y = 56
-    notice.position = Vector2(12, 224 if narrow else 110)
+    notice.position = Vector2(12, row_y + 114 if narrow else 110)
     notice.size = Vector2(size.x - 24 if narrow else size.x - 356, 80)
     input_hint.visible = false # Instructions remain in Pause; do not crowd play.
     var width := minf(620, size.x - 24)
@@ -794,14 +949,30 @@ func _refresh_ui() -> void:
     if completed:
         goal = t("Home together · explore the clearing", "Вместе дома · исследуй поляну")
     objective.text = goal
+    if campaign.stage > 0:
+        objective.text = campaign.objective()
+        if campaign.stage == 6:
+            objective.text = t("Next: find 3 seed pouches for the garden", "Дальше: найди 3 мешочка семян для сада") if not garden_saved else t("Everyone home · explore or start a new rescue", "Все дома · гуляй или начни спасение заново")
+        campaign.warning.text = t("Distant lion · prototype marker", "Лев вдали · временный знак")
     counter.text = ""
     counter.visible = crossing_found and bridge_stage < 2
     if crossing_found and bridge_stage < 2:
         counter.text = t("Bridge logs %d/2", "Брёвна для моста: %d/2") % bridge_stage
+    # Persistent equipped-state feedback survives the short pickup toast.
+    # No fictitious slots or new inventory mechanics: only the actual held log.
+    if carrying >= 0:
+        counter.visible = true
+        counter.text = t("Holding: log · bridge %d/2", "В руках: бревно · мост %d/2") % bridge_stage
+    counter.add_theme_color_override("font_color", Color("ffe09b") if carrying >= 0 else Color.WHITE)
+    if campaign.stage > 0:
+        counter.text = campaign.progress_text()
+        if campaign.stage == 6 and not garden_saved:
+            counter.text = t("Seed pouches: %d/3", "Мешочки семян: %d/3") % seeds_found.size()
+        counter.visible = not counter.text.is_empty()
     language_button.text = "EN" if language == "ru" else "RU"
     pause_button.text = t("Pause", "Пауза")
     map_button.text = t("Map", "Карта")
-    map_button.visible = not paused
+    map_button.visible = not paused and not caves.active
     rewards_button.visible = not paused
     rewards_button.text = t("Book · %d", "Книга · %d") % adventure_points
     banner_choices.visible = modal_kind in ["complete", "rewards"] and rewards.earned.has("rescue")
@@ -815,25 +986,39 @@ func _refresh_ui() -> void:
     jump_button.text = t("Jump", "Прыжок")
     action_button.visible = context_kind != "" and not paused
     action_button.text = {"pickup":t("Pick up", "Взять"), "place":t("Place log", "Положить бревно"), "seed":t("Collect", "Собрать"), "call":t("Call", "Позвать")}.get(context_kind, "")
+    if campaign.stage > 0 and context_kind != "seed":
+        action_button.text = campaign.action_text()
+    if caves.active or context_kind == "caves": action_button.text = caves.action_text()
     input_hint.text = t("WASD · drag to look · Space · E", "WASD · веди, чтобы осмотреться · Пробел · E") if not DisplayServer.is_touchscreen_available() else t("Left: move · Right: look", "Слева: идти · справа: смотреть")
     var notices := {"water":t("Back on shore. Log safe!", "Ты на берегу. Бревно цело!"), "carry":t("Walk to the glowing outline by the crossing.", "Иди к светлому контуру у мостика."), "placed":t("One more log!", "Нужно ещё одно бревно!"), "bridge":t("You made a way across. Listen for the lamb!", "Теперь можно перейти. Прислушайся к ягнёнку!"), "seed":t("A seed pouch for the camp garden.", "Семена для сада в лагере."), "garden":t("The camp garden is growing!", "В лагере появился сад!"), "follow":t("It trusts you. Stay close and lead it home.", "Он доверяет тебе. Будь рядом и веди домой.")}
     notice.text = notices.get(notice_key, "") if notice_timer > 0 else ""
+    var flock_notices := {"flock_step":t("Well done! Follow your next goal.", "Получилось! Смотри на следующую цель."), "flock_wood":t("Board collected. Follow the marker to the fence.", "Доска у тебя. Иди к метке у ограды."), "flock_repair":t("One rail repaired!", "Одна секция готова!"), "flock_call":t("They heard you. Walk slowly and stay close.", "Овечки услышали. Иди медленно и будь рядом."), "flock_count":t("One more sheep counted safely home.", "Ещё одна овечка дома. Посчитали!")}
+    if notice_timer > 0 and flock_notices.has(notice_key):
+        notice.text = flock_notices[notice_key]
     var discoveries := {"tracks": t("Little hoofprints! Where do they lead?", "Маленькие следы! Куда они ведут?"), "crossing": t("The tracks cross the creek! Let's fix the bridge.", "Следы ведут через ручей! Починим мостик."), "found": t("You found it! Get close and call gently.", "Ты нашёл ягнёнка! Подойди и ласково позови.")}
     if notice_timer > 0 and discoveries.has(notice_key):
         notice.text = discoveries[notice_key]
+    # A previous discovery must not contradict the child's latest action.
+    if carrying >= 0 and notice_key in ["tracks", "crossing", "carry"] and notice_timer > 0:
+        notice.text = t("Take it to the bridge outline.", "Неси к контуру мостика.")
     if paused:
         _tap_candidates.clear()
     shade.visible = paused
     modal.visible = paused
     jump_button.visible = not paused
-    secondary.visible = modal_kind == "pause"
+    secondary.visible = modal_kind in ["pause", "flock_complete"]
     modal_body.add_theme_font_size_override("font_size", 22)
     if modal_kind == "intro":
         modal_title.text = t("The Lost Lamb", "Потерявшийся ягнёнок")
         modal_body.text = t("A lamb is missing! Follow the tracks and bell. Bring it home.\n\n", "Ягнёнок потерялся! Иди по следам и на звон. Приведи его домой.\n\n") + (LUKE_RU if language == "ru" else LUKE_EN)
         primary.text = t("Let’s find it!", "Найти малыша!")
+        if campaign.stage > 0:
+            modal_title.text = t("Care for the flock", "Позаботься о стаде")
+            modal_body.text = t("A make-believe shepherd adventure. Walk close, call gently, and move slowly so every sheep can follow. Return for waiting sheep.\n\n", "Это выдуманное приключение пастуха. Подойди, позови и иди медленно. Вернись за отставшими овечками.\n\n") + campaign.objective()
+            primary.text = t("Continue", "Продолжить")
     elif modal_kind == "map":
         modal_title.text = t("Find the way home", "Найди дорогу домой")
+        if campaign.stage > 0: modal_title.text = campaign.objective()
         trail_map.set_language(language)
         primary.text = t("Continue", "Продолжить")
     elif modal_kind == "complete":
@@ -843,7 +1028,13 @@ func _refresh_ui() -> void:
         modal_body.text += t("\nJesus saves us. Rescue is not a prize we earn with points.", "\nИисус спасает нас. Спасение нельзя заработать очками.")
         if not saves_ok:
             modal_body.text += t("\nThis browser could not save your camp reward.", "\nБраузер не смог сохранить награду лагеря.")
-        primary.text = t("Keep exploring", "Исследовать дальше")
+        primary.text = t("Care for the flock", "Позаботиться о стаде")
+    elif modal_kind == "flock_complete":
+        modal_title.text = t("Every sheep is home!", "Все овечки дома!")
+        modal_body.text = t("You gathered, guided, repaired, sheltered, and counted the flock. Thank you for caring for every sheep!\n\n", "Ты собрал стадо, починил ограду, укрыл овечек и привёл всех домой. Спасибо за заботу!\n\n") + (JOHN_RU if language == "ru" else JOHN_EN)
+        modal_body.text += t("\n\nNext: follow the clues in three caves and bring another lamb home. You can also explore the clearing. Your earned rewards stay with you.", "\n\nДальше: изучи следы в трёх пещерах и приведи домой ещё одного ягнёнка. Можно и погулять на поляне. Твои награды останутся.")
+        if not saves_ok: modal_body.text += "\n" + campaign.progress_text()
+        primary.text = t("Explore the clearing", "Исследовать поляну")
     elif modal_kind == "rewards":
         modal_title.text = t("My adventure book", "Моя книга приключений")
         modal_body.text = _reward_summary()
@@ -855,6 +1046,30 @@ func _refresh_ui() -> void:
         modal_body.text = (LUKE_RU if language == "ru" else LUKE_EN) + t("\n\nWalk: WASD / left joystick\nLook: drag on the right\nJump: Space / Jump\nInteract: tap a nearby log, seed pouch or bridge outline / E / action button", "\n\nИдти: WASD / левый джойстик\nСмотреть: вести справа\nПрыгать: Пробел / Прыжок\nДействовать: коснись бревна, семян или контура моста рядом / E / кнопка")
         primary.text = t("Continue", "Продолжить")
     secondary.text = t("New rescue", "Начать заново")
+    if modal_kind == "flock_complete": secondary.text = t("Explore clearing", "Гулять на поляне")
+    if caves.active and modal_kind == "pause": secondary.text = t("Return to clearing", "На поляну")
+    if not saves_ok and modal_kind == "pause":
+        modal_body.text += t("\nCould not save. New rescue will wait until saving works.", "\nНе удалось сохранить. Начнём заново, когда сохранение заработает.")
+    if caves.active:
+        objective.text = caves.objective()
+        counter.text = caves.progress_text()
+        counter.visible = true
+        notice.text = caves.notice_text()
+        caves.sync_labels()
+        if modal_kind in ["intro", "cave_intro", "pause"]:
+            modal_title.text = t("The three caves", "Три пещеры")
+            modal_body.text = caves.intro_text() + caves.credits()
+            primary.text = t("Continue", "Продолжить")
+        elif modal_kind == "cave_complete":
+            modal_title.text = t("The lamb is safe!", "Ягнёнок в безопасности!")
+            modal_body.text = t("You watched, made room, and cared for the lamb. All animals are safe. Walk to camp to return to the clearing.", "Ты был внимателен и позаботился о ягнёнке. Все звери целы. Иди в лагерь, чтобы вернуться на поляну.") + "\n\n" + (JOHN_RU if language == "ru" else JOHN_EN)
+            primary.text = t("Explore", "Гулять")
+    elif campaign.stage == 6:
+        objective.text = t("Next: return to camp for the three caves", "Дальше: вернись в лагерь к трём пещерам") if caves.stage < 6 else t("All safe · explore for garden seeds", "Все в безопасности · ищи семена для сада")
+        if modal_kind == "flock_complete":
+            primary.text = t("Continue to caves", "Дальше: пещеры")
+    if caves.active and paused and not saves_ok:
+        modal_body.text += t("\n\nNot saved on this device. Keep playing; leaving may lose this checkpoint.", "\n\nНе сохранено на устройстве. Можно играть дальше, но при выходе этот шаг может потеряться.")
     header.visible = not paused
     pause_button.visible = not paused
     notice.visible = not paused
@@ -884,4 +1099,8 @@ func _telemetry() -> void:
     payload["earned_rewards"] = rewards.earned.keys()
     payload["camp_banner_color"] = camp_banner_color
     payload["rewards_open"] = modal_kind == "rewards"
+    payload["campaign_stage"] = campaign.stage
+    payload["caves"] = caves.snapshot()
+    payload["cave_health"] = caves.health
+    payload["cave_phase"] = caves.phase
     JavaScriptBridge.eval("window.__trailBlock=" + JSON.stringify(payload), true)

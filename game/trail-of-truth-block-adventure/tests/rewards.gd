@@ -64,6 +64,12 @@ func run() -> void:
     var replay = load("res://main.tscn").instantiate()
     root.add_child(replay)
     await process_frame
+    check("scene reload resumes shepherd checkpoint", replay.campaign.stage == 1 and replay.bridge_stage == 2 and replay.completed)
+    check("explicit new rescue prepares replay", replay._prepare_replay())
+    replay.free()
+    replay = load("res://main.tscn").instantiate()
+    root.add_child(replay)
+    await process_frame
     print("REPLAY ", replay.adventure_points, " ", replay.camp_banner_color, " ", replay.bridge_stage, " ", replay.completed)
     check("scene replay retains lifetime awards", replay.adventure_points == 130 and replay.camp_banner_color == "green" and replay.bridge_stage == 0 and not replay.completed)
     replay.free()

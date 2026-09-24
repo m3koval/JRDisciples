@@ -110,7 +110,7 @@ func run() -> void:
     await shot("completed")
     game._set_language()
     await shot("completed-ru")
-    check("localized",game.language=="ru" and game.objective.text.contains("Вместе"))
+    check("localized",game.language=="ru" and game.modal_title.text == "Вместе дома!" and game.primary.text == "Позаботиться о стаде" and game.campaign.stage == 1)
     var file := FileAccess.open("user://native-checks.json", FileAccess.WRITE)
     if file:
         file.store_string(JSON.stringify(results,"  "))
