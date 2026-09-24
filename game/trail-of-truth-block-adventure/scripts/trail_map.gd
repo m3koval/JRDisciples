@@ -15,7 +15,7 @@ var _lamb_position := Vector3.ZERO
 var _rescued: bool = false
 
 func _init() -> void:
-	custom_minimum_size = Vector2(300, 290)
+	custom_minimum_size = Vector2(0, 330)
 	# Map clicks must not become camera drags or joystick presses underneath.
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	clip_contents = true
@@ -55,13 +55,13 @@ func _world_rect(rect: Rect2, color: Color, filled: bool = true) -> void:
 	var end: Vector2 = world_to_map(Vector3(rect.end.x, 0, rect.end.y))
 	draw_rect(Rect2(start, end - start), color, filled, -1.0 if filled else 1.5)
 
-func _text(at: Vector2, text: String, font_size: int = 14, color: Color = Color("f9edcf")) -> void:
+func _text(at: Vector2, text: String, font_size: int = 18, color: Color = Color("f9edcf")) -> void:
 	draw_string(ThemeDB.fallback_font, at, text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, color)
 
 func _tag(at: Vector2, text: String) -> void:
-	var extent: Vector2 = ThemeDB.fallback_font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, 14)
+	var extent: Vector2 = ThemeDB.fallback_font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, 18)
 	var origin := Vector2(clampf(at.x - extent.x * 0.5, 6, size.x - extent.x - 6), at.y)
-	draw_rect(Rect2(origin + Vector2(-4, -15), Vector2(extent.x + 8, 20)), Color(0.06, 0.16, 0.13, 0.9))
+	draw_rect(Rect2(origin + Vector2(-4, -19), Vector2(extent.x + 8, 26)), Color(0.06, 0.16, 0.13, 0.9))
 	_text(origin, text)
 
 func _draw() -> void:
@@ -72,7 +72,7 @@ func _draw() -> void:
 	panel.set_corner_radius_all(14)
 	draw_style_box(panel, Rect2(Vector2.ZERO, size))
 	_text(Vector2(16, 27), _t("Clearing map", "Карта поляны"), 20)
-	_text(Vector2(size.x - 38, 27), _t("N", "С"), 14)
+	_text(Vector2(size.x - 38, 27), _t("N", "С"), 18)
 	var rect: Rect2 = map_rect()
 	draw_rect(rect, Color("78945d"))
 	_world_rect(Rect2(7.3, -17, 15.7, 34), Color("90aa6c"))
@@ -104,4 +104,4 @@ func _draw() -> void:
 	draw_circle(marker, 5, Color("7cecff"))
 	draw_arc(marker, 8, 0, TAU, 32, Color("e7ffff"), 2, true)
 	draw_circle(Vector2(21, size.y - 29), 5, Color("7cecff"))
-	_text(Vector2(34, size.y - 24), _t("You · cross at the bridge", "Ты · переходи по мосту"), 14)
+	_text(Vector2(34, size.y - 24), _t("You · use the bridge", "Ты · иди по мосту"), 18)

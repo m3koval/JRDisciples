@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+surface_tops 0.0 -0.07999992370605 1.00000000931323 0.98000001907349
+left_bank_grass_above_earth true
+right_bank_grass_above_earth true
+terrace_grass_above_earth true
+bank_collision_ground_unchanged true
+bridge_child_scale true

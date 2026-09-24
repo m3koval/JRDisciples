@@ -48,6 +48,7 @@ func run() -> void:
 	drag(1, Vector2(size.x * 0.8, size.y * 0.6), Vector2(40, 0))
 	check(is_equal_approx(player._yaw, yaw), "joystick crossing right half never rotates camera")
 	drag(2, Vector2(size.x * 0.8, size.y * 0.6), Vector2(20, 0))
+	player._process(1.0 / 60.0)
 	check(not is_equal_approx(player._yaw, yaw), "independent right pointer still orbits")
 	touch(1, Vector2.ZERO, false)
 	check(player._stick_id == -1 and player._look_id == 2, "release movement preserves independent look")
@@ -67,11 +68,10 @@ func run() -> void:
 		player._animation.play(player._animations[clip])
 		player._animation.advance(0.25)
 		modifier._process_modification()
-		# Log rides the left shoulder: the left hand grips it up at shoulder
-		# height; the right hand stays free for the lantern.
-		var hand: Vector3 = player._visual.to_local(skeleton.to_global(skeleton.get_bone_global_pose(skeleton.find_bone("hand.L")).origin))
-		print("CARRY_HAND ", clip, " L ", hand)
-		check(hand.x > 0.1 and hand.y > 0.85 and hand.y < 1.2 and hand.z > 0.15, clip + " left hand grips the shouldered log instead of swinging")
+		# Conservative authored arm pose avoids the raised-IK garment defect.
+		for label in ["upper_arm.L", "forearm.L", "hand.L"]:
+			var bone: int = skeleton.find_bone(label)
+			check(skeleton.get_bone_pose(bone).is_equal_approx(skeleton.get_bone_rest(bone)), clip + " preserves authored carry arm " + label)
 	check(player.carry_socket.transform == socket_before, "board attachment does not bob with locomotion clips")
 	var lantern: int = skeleton.find_bone("lantern")
 	check(skeleton.get_bone_global_pose(lantern).basis.x.length() > .5, "right hand keeps its lantern during one-shoulder carrying")

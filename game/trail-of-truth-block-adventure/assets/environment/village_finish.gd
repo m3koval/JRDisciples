@@ -13,6 +13,7 @@ static func place(parent: Node3D, file: String, pos: Vector3, size: Vector3 = Ve
 static func cottage(host: Node3D, pos: Vector3, yaw: float, size: float) -> void:
 	var house := Node3D.new()
 	house.name = "TimberPlasterCottage"
+	house.set_meta("scenery_kind", "cottage")
 	host.add_child(house)
 	house.position = pos
 	house.rotation_degrees.y = yaw

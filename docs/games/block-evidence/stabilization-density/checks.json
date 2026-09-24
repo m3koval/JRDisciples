@@ -1,0 +1,17 @@
+{
+  "dpr": 2,
+  "viewport": [
+    780,
+    1566
+  ],
+  "canvas": {
+    "x": 0,
+    "y": 61,
+    "width": 390,
+    "height": 783
+  },
+  "movement": true,
+  "joystick_no_camera": true,
+  "map": true,
+  "errors": []
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "test": "scenery_clearance",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "terrain_surfaces",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "ipad_player_test",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "player_motion_skin_test",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "mobile_ui_readability",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "world_tap_ui",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "search_regressions",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "rewards",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "rewards_mission",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "edge_cases",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "review_regressions",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "reward_layout",
+    "passed": true,
+    "exit": 0
+  }
+]

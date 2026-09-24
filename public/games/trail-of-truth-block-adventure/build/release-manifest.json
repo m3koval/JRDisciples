@@ -39,7 +39,7 @@
     "assets/environment/cobble.png": "0ad1d8892cea86fa6c14c0ae176b86caad0523b3f9887bf59f6177932d6d7c1a",
     "assets/environment/flower_yellowC.glb": "4115c017390b3e157466a8719e9e2af6c5385505135e7012982b9410760ba9f3",
     "assets/environment/plant_bushDetailed.glb": "2e0487020d68ccf664435db9d829c78ae00e6d2785ee3ec10b9f89cc70a10406",
-    "assets/environment/village_finish.gd": "63cdec94a84192b1ae37d131292f7f2e73cb2c4f150419b287f9e5703b00393f",
+    "assets/environment/village_finish.gd": "958b32a811a57ad48f7b4fce8ac8bbf13d8d7f264d0deee88626161951cc3c83",
     "assets/lamb.glb": "5df8aaf7c2cdcd5cf321c4cadf6e775c6ef4e7e69de96fbbe7bdc850d71617fb",
     "assets/log.glb": "e599bb882d77e1f5144f5b8130d9915641035b7a832fbb3b7b4cd0b950957e19",
     "assets/michael.glb": "fddb290aae7b65da54640c1f67821a0c93940fccd89f5c3d88848a86ad88756d",
@@ -50,14 +50,14 @@
     "project.godot": "cad282a1b3502f948763fce5fa34c6901691d03c50f10f73809b598eacbf3295",
     "scripts/adventure_rewards.gd": "c193cae9c1b4b4ea850568c227ffc47d6b11731bf7f9904e2f2828bf36fc15d2",
     "scripts/audio.gd": "413279530913d1288e5b45a9c96914b079c5d37167662c39699accbacba34b23",
-    "scripts/main.gd": "1ce65ee6d3cd16be7c798b19d17d06bf291d63d58ea90e41a4f504ebad2601d6",
-    "scripts/player.gd": "c5804a113fcbac92b73a94f2675927804266ad05260afd481369806c5b4d7c26",
-    "scripts/trail_map.gd": "93141975732e09695b869269b177b653946edabb2365938a3d50fddd01aafd68",
-    "scripts/world.gd": "8f8826281640bcc5a65659b179818e43f2d53584423172a25fae7a3ecaa22fdb"
+    "scripts/main.gd": "1e25a1b0243b85280b6980d2575b306a7d06f4c4e67447f04c8f87c79a18f567",
+    "scripts/player.gd": "66b3d70417809a56fb2360a1eaaa9dcbf358a705108cf72742bd9a12f791c4e9",
+    "scripts/trail_map.gd": "0d75420c71ee0ab5847b096dbf19149e880150e2f66d1b2bb9b83118bd3f2c2d",
+    "scripts/world.gd": "a1031ff1d561bdb8bac5248e3820149f42062dfa61574c10889bfd73f72b46b7"
   },
   "artifacts": {
     "index.html": {
-      "sha256": "1dc00cee932be355ad414a523517b78fbe00ff2d97ea732fd8d6afd3d7d0a5ca",
+      "sha256": "21df43666c3d4db1e26c7ae54b0d2418b569467605dc89058d9e472ed9221b0e",
       "bytes": 5510,
       "gzip_bytes": 2233
     },
@@ -72,9 +72,9 @@
       "gzip_bytes": 10054758
     },
     "index.pck": {
-      "sha256": "a1f86a3978ed7a39a4db15c0d76fc29684e8bfd5ddcbdac2b75b103ca80bcdf5",
-      "bytes": 12621680,
-      "gzip_bytes": 12515199
+      "sha256": "4ee04434248d859ae63555da6f6cd930a310e6ee820dab69ca91d429cee0034d",
+      "bytes": 12626032,
+      "gzip_bytes": 12519587
     }
   }
 }

@@ -10,7 +10,7 @@ TOUCH=os.environ.get('BLOCK_TOUCH')=='1'
 def run():
     with sync_playwright() as pw:
         browser=pw.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader','--enable-webgl','--ignore-gpu-blocklist','--disable-dev-shm-usage'])
-        context=browser.new_context(viewport={'width':844,'height':600} if TOUCH else {'width':960,'height':600},has_touch=True)
+        context=browser.new_context(viewport={'width':844,'height':600} if TOUCH else {'width':960,'height':600},has_touch=True,device_scale_factor=float(os.environ.get('BLOCK_DPR','1')))
         page=context.new_page()
         page.on('pageerror',lambda e: errors.append(str(e)))
         page.on('console',lambda m: errors.append(m.text) if m.type=='error' else None)
@@ -42,7 +42,7 @@ def run():
             s=state(); x,y=s['ui'][name]; box=engine().locator('canvas').bounding_box()
             return box['x']+x*box['width']/s['viewport'][0],box['y']+y*box['height']/s['viewport'][1]
         def click(name):
-            if state()['paused'] and name not in ('language','pause','map','rewards'):
+            if state()['paused'] and name not in ('language','pause','map','rewards','primary','secondary','banner_blue','banner_gold','banner_green'):
                 for _ in range(8):
                     x,y=point(name);box=engine().locator('canvas').bounding_box();s=state()
                     assert box is not None, 'Canvas must be visible before input'
@@ -71,8 +71,8 @@ def run():
             held=set();start=time.monotonic()
             box=engine().locator('canvas').bounding_box();initial=state();vw,vh=initial['viewport']
             assert box is not None, 'Canvas must be visible for joystick input'
-            ox=box['x']+min(104,vw*.24)*box['width']/vw
-            oy=box['y']+(vh-(180 if vw<440 else 112))*box['height']/vh
+            ox=box['x']+min(104,box['width']*.24)
+            oy=box['y']+box['height']-(180 if box['width']<440 else 112)
             if TOUCH:touches('touchStart',[(7,ox,oy)])
             while time.monotonic()-start<timeout:
                 s=state();p=s['position']; dx=x-p[0];dz=z-p[2]
@@ -112,7 +112,14 @@ def run():
             keypress('e');check('invalid_action',state()['bridge']==0 and not state()['complete'])
             walk(-10,3);check('tracks_discovered',state()['trail_found'])
             walk(1.2,0);check('bridge_discovered',state()['crossing_found'])
-            walk(-7,-2);keypress('e');check('pickup_1',state()['carrying']==0)
+            walk(-7,-2)
+            if TOUCH and os.environ.get('BLOCK_WORLD_TAP')=='1':
+                target=state().get('tap_target',{});check('world_tap_target_available',target.get('kind')=='pickup')
+                box=engine().locator('canvas').bounding_box();assert box is not None
+                s=state();tx,ty=target['position'];px=box['x']+tx*box['width']/s['viewport'][0];py=box['y']+ty*box['height']/s['viewport'][1]
+                page.touchscreen.tap(px,py);settle();check('world_tap_pickup',state()['carrying']==0)
+            else:keypress('e')
+            check('pickup_1',state()['carrying']==0)
             shot('carrying-plank')
             if os.environ.get('BLOCK_CARRY_ONLY')=='1':
                 check('no_runtime_errors',not errors)
@@ -151,13 +158,40 @@ def run():
             def touches(kind,points): cdp.send('Input.dispatchTouchEvent',{'type':kind,'touchPoints':[{'x':x,'y':y,'id':i} for i,x,y in points]})
             box=engine().locator('canvas').bounding_box();s=state();vw,vh=s['viewport']
             assert box is not None, 'Canvas must be visible for portrait input'
-            ox=box['x']+min(104,vw*.24)*box['width']/vw;oy=box['y']+(vh-180)*box['height']/vh
+            ox=box['x']+min(104,box['width']*.24);oy=box['y']+box['height']-180
             yaw0=s['yaw'];p0=s['position'];touches('touchStart',[(1,ox,oy)]);touches('touchMove',[(1,ox,oy-55)]);settle();settle();touches('touchEnd',[]);settle()
             p1=state()['position'];check('joystick_moves',math.dist(p0,p1)>1)
             check('portrait_joystick_no_camera_rotation',abs(state()['yaw']-yaw0)<.001)
             settle();check('joystick_releases',math.dist(p1,state()['position'])<.25)
             y0=state()['position'][1];x,y=point('jump');page.touchscreen.tap(x,y);engine().wait_for_function('window.__trailBlock.position[1] > '+str(y0+.1),timeout=10000);check('touch_jump',True)
             yaw=state()['yaw'];touches('touchStart',[(2,300,410)]);touches('touchMove',[(2,240,410)]);touches('touchEnd',[]);settle();check('touch_camera',abs(state()['yaw']-yaw)>.05)
+            # Exercise both thumbs concurrently, not two isolated input checks.
+            box=engine().locator('canvas').bounding_box();s=state();vw,vh=s['viewport']
+            assert box is not None
+            ox=box['x']+min(104,box['width']*.24);oy=box['y']+box['height']-180
+            rx=box['x']+box['width']*.77;ry=box['y']+box['height']*.50
+            trace=[];before=state()
+            assert box is not None
+            touches('touchStart',[(31,ox,oy)])
+            touches('touchMove',[(31,ox,oy-35)])
+            touches('touchStart',[(31,ox,oy-35),(32,rx,ry)])
+            for step in range(12):
+                touches('touchMove',[(31,ox,oy-35),(32,rx-(step+1)*3,ry)])
+                page.wait_for_timeout(65);trace.append(state())
+            touches('touchEnd',[(31,ox,oy-35)])
+            settle();after_look=state()
+            touches('touchStart',[(31,ox,oy-35),(33,rx,ry)])
+            for step in range(12):
+                touches('touchMove',[(31,ox,oy-35),(33,rx+(step+1)*3,ry)])
+                page.wait_for_timeout(65);trace.append(state())
+            touches('touchEnd',[]);settle();settle()
+            stopped=state();settle();settle()
+            (OUT/'two-thumb-trace.json').write_text(json.dumps(trace,indent=2))
+            check('two_thumb_moves_while_looking',math.dist(before['position'],after_look['position'])>.2)
+            check('two_thumb_look_responds',abs(after_look['yaw']-before['yaw'])>.04)
+            check('two_thumb_no_large_yaw_steps',all(abs(b['yaw']-a['yaw'])<.25 for a,b in zip(trace,trace[1:])))
+            check('two_thumb_release_stops_walk',math.dist(stopped['position'],state()['position'])<.25)
+            shot('two-thumb-finished')
             page.set_viewport_size({'width':844,'height':390});page.wait_for_timeout(500);shot('phone-landscape')
             click('pause');check('landscape_pause',state()['paused']);shot('phone-landscape-pause')
             page.mouse.move(440,230);page.mouse.wheel(0,500);settle();shot('phone-landscape-pause-scrolled')

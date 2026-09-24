@@ -19,8 +19,12 @@ var _look_id: int = -1
 var _stick_origin: Vector2 = Vector2.ZERO
 var _stick_vector: Vector2 = Vector2.ZERO
 var _mouse_look: bool = false
+var _input_scale: float = 1.0
 var _yaw: float = 0.0
 var _pitch: float = -0.40
+# Angular displacement still to apply, not an event-rate-dependent velocity.
+var _look_pending: Vector2 = Vector2.ZERO
+const LOOK_RESPONSE: float = 18.0
 var _visual: Node3D
 var _animation: AnimationPlayer
 var _animations: Dictionary = {}
@@ -32,44 +36,17 @@ var _joystick: JoystickDisplay
 
 class CarryPose extends SkeletonModifier3D:
 	var controller: CharacterBody3D
-	# Left-hand grip on the shouldered log, in the facing (_visual) space:
-	# the model faces +Z and its left side is +X. The pole pushes the elbow
-	# down and outward so the arm wraps up under the log.
-	const GRIP_L := Vector3(0.26, 0.97, 0.24)
-	const POLE_L := Vector3(1.0, -0.6, 0.2)
 	func _process_modification() -> void:
 		if not controller.carrying:
 			return
+		# The imported garment cannot safely support the extreme raised-arm IK.
+		# Use the authored relaxed left-arm rest pose while the shoulder supports
+		# the log. Preserve mesh weights instead of guessing anatomical thresholds.
 		var skeleton: Skeleton3D = get_skeleton()
-		var upper: int = skeleton.find_bone("upper_arm.L")
-		var fore: int = skeleton.find_bone("forearm.L")
-		var hand: int = skeleton.find_bone("hand.L")
-		if upper < 0 or fore < 0 or hand < 0:
-			return
-		# Two-bone IK after locomotion: only the left arm is overridden. The
-		# right hand keeps its lantern, and the log stays on a stable socket
-		# rather than a swinging hand bone.
-		var grip: Vector3 = skeleton.to_local(controller._visual.to_global(GRIP_L))
-		var pole: Vector3 = skeleton.global_basis.inverse() * controller._visual.global_basis * POLE_L
-		var shoulder: Vector3 = skeleton.get_bone_global_pose(upper).origin
-		var a: float = skeleton.get_bone_rest(fore).origin.length()
-		var b: float = skeleton.get_bone_rest(hand).origin.length()
-		var to_grip: Vector3 = grip - shoulder
-		var d: float = clampf(to_grip.length(), 0.01, (a + b) * 0.999)
-		var dir: Vector3 = to_grip.normalized()
-		var cos_a: float = clampf((a * a + d * d - b * b) / (2.0 * a * d), -1.0, 1.0)
-		var bend: Vector3 = (pole - dir * pole.dot(dir)).normalized()
-		var elbow: Vector3 = shoulder + dir * (a * cos_a) + bend * (a * sqrt(1.0 - cos_a * cos_a))
-		_aim(skeleton, upper, elbow)
-		_aim(skeleton, fore, shoulder + dir * d)
-	func _aim(skeleton: Skeleton3D, bone: int, target: Vector3) -> void:
-		var pose: Transform3D = skeleton.get_bone_global_pose(bone)
-		# Reset roll from the accepted rest pose rather than accumulate twists.
-		# Bones in this rig point along their local +Y.
-		pose.basis = skeleton.get_bone_global_rest(bone).basis
-		var turn := Quaternion(pose.basis.y.normalized(), (target - pose.origin).normalized())
-		pose.basis = Basis(turn) * pose.basis
-		skeleton.set_bone_global_pose(bone, pose)
+		for label in ["upper_arm.L", "forearm.L", "hand.L"]:
+			var bone := skeleton.find_bone(label)
+			if bone >= 0:
+				skeleton.set_bone_pose(bone, skeleton.get_bone_rest(bone))
 
 class JoystickDisplay extends Control:
 	var active: bool = false
@@ -160,6 +137,7 @@ func _ready() -> void:
 	_joystick.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	layer.add_child(_joystick)
 	get_viewport().size_changed.connect(_clear_input)
+	_update_input_scale()
 	_refresh_joystick()
 
 func set_enabled(value: bool) -> void:
@@ -178,12 +156,14 @@ func get_camera() -> Camera3D:
 	return _camera
 
 func _clear_input() -> void:
+	_update_input_scale()
 	_keys.clear()
 	_jump_buffer = 0.0
 	_stick_id = -1
 	_look_id = -1
 	_stick_vector = Vector2.ZERO
 	_mouse_look = false
+	_look_pending = Vector2.ZERO
 	move_input = Vector2.ZERO
 	_refresh_joystick()
 
@@ -209,7 +189,7 @@ func _input(event: InputEvent) -> void:
 		return
 	if event is InputEventScreenDrag:
 		if event.index == _stick_id:
-			_stick_vector = ((event.position - _stick_origin) / JOYSTICK_RADIUS).limit_length()
+			_stick_vector = ((event.position - _stick_origin) / (JOYSTICK_RADIUS * _input_scale)).limit_length()
 			_refresh_joystick()
 			get_viewport().set_input_as_handled()
 		elif event.index == _look_id:
@@ -244,9 +224,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			_stick_origin = _joystick_resting_origin()
 			# Preserve the existing broad left-pad drag contract away from the
 			# visible stick, without teleporting its on-screen base to the finger.
-			if event.position.distance_to(_stick_origin) > JOYSTICK_RADIUS * 1.5:
+			if event.position.distance_to(_stick_origin) > JOYSTICK_RADIUS * _input_scale * 1.5:
 				_stick_origin = event.position
-			_stick_vector = ((event.position - _stick_origin) / JOYSTICK_RADIUS).limit_length()
+			_stick_vector = ((event.position - _stick_origin) / (JOYSTICK_RADIUS * _input_scale)).limit_length()
 			_refresh_joystick()
 			get_viewport().set_input_as_handled()
 		elif event.position.x >= size.x * 0.45 and event.position.y > size.y * 0.20 and _look_id == -1:
@@ -258,17 +238,37 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 
 func _rotate_camera(relative: Vector2, sensitivity: float) -> void:
-	# Mobile WebViews can coalesce several touch moves into one event; clamp
-	# each so a single batch can't whip the camera around.
-	var step: Vector2 = relative.limit_length(48.0)
-	_yaw -= step.x * sensitivity
-	_pitch = clampf(_pitch - step.y * sensitivity, -1.05, -0.12)
+	# Keep the complete displacement: WebViews coalesce events at low FPS.
+	# Smoothing happens once per rendered frame, never once per input event.
+	_look_pending.x -= relative.x * sensitivity / _input_scale
+	_look_pending.y = clampf(_pitch + _look_pending.y - relative.y * sensitivity / _input_scale, -1.05, -0.12) - _pitch
+
+func _update_input_scale() -> void:
+	_input_scale = 1.0
+	if OS.has_feature("web"):
+		var css_width = JavaScriptBridge.eval("document.querySelector('canvas')?.getBoundingClientRect().width || 0")
+		if (css_width is float or css_width is int) and css_width > 0:
+			_input_scale = maxf(1.0, get_viewport().get_visible_rect().size.x / float(css_width))
 
 func _joystick_resting_origin() -> Vector2:
-	var size: Vector2 = get_viewport().get_visible_rect().size
-	return Vector2(minf(104.0, size.x * 0.24), size.y - (180.0 if size.x < 440.0 else 112.0))
+	var size: Vector2 = get_viewport().get_visible_rect().size / _input_scale
+	return Vector2(minf(104.0, size.x * 0.24), size.y - (180.0 if size.x < 440.0 else 112.0)) * _input_scale
 
 func _process(delta: float) -> void:
+	if not _enabled:
+		return
+	var step: Vector2 = _look_pending * (1.0 - exp(-LOOK_RESPONSE * delta))
+	_look_pending -= step
+	_yaw += step.x
+	_pitch += step.y
+	# Render-rate camera updates avoid a physics-rate staircase during orbit.
+	# Movement and telemetry use this same displayed yaw, not an ahead-of-view target.
+	_camera_pivot.rotation = Vector3(_pitch, _yaw, 0.0)
+	var target: Vector3 = global_position + Vector3.UP * 1.05
+	if _camera_pivot.global_position.distance_to(target) > 8.0:
+		_camera_pivot.global_position = target
+	else:
+		_camera_pivot.global_position = _camera_pivot.global_position.lerp(target, 1.0 - exp(-12.0 * delta))
 	if is_instance_valid(_camera):
 		var distance: float = _arm.get_hit_length()
 		_camera.position.z = minf(distance, lerpf(_camera.position.z, distance, 1.0 - exp(-5.0 * delta)))
@@ -277,7 +277,8 @@ func _refresh_joystick() -> void:
 	if is_instance_valid(_joystick):
 		_joystick.visible = _enabled
 		_joystick.active = _stick_id != -1
-		_joystick.origin = _joystick_resting_origin()
+		_joystick.scale = Vector2.ONE * _input_scale
+		_joystick.origin = _joystick_resting_origin() / _input_scale
 		_joystick.displacement = _stick_vector * JOYSTICK_RADIUS if _joystick.active else Vector2.ZERO
 		_joystick.queue_redraw()
 
@@ -312,13 +313,6 @@ func _physics_process(delta: float) -> void:
 		# This imported Michael faces +Z (not Godot's conventional -Z).
 		_visual.rotation.y = lerp_angle(_visual.rotation.y, atan2(direction.x, direction.z), 1.0 - exp(-14.0 * delta))
 	_play_animation("Jump" if not is_on_floor() else ("Run" if Vector2(velocity.x, velocity.z).length() > 0.15 else "Idle"))
-	# Positional assistance keeps avatar framed without fighting manual orbit yaw.
-	var target: Vector3 = global_position + Vector3.UP * 1.05
-	if _camera_pivot.global_position.distance_to(target) > 8.0:
-		_camera_pivot.global_position = target
-	else:
-		_camera_pivot.global_position = _camera_pivot.global_position.lerp(target, 1.0 - exp(-12.0 * delta))
-	_camera_pivot.rotation = Vector3(_pitch, _yaw, 0.0)
 
 func _find_animation(node: Node) -> AnimationPlayer:
 	if node is AnimationPlayer:

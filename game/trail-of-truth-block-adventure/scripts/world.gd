@@ -21,8 +21,8 @@ func _ready() -> void:
 	_make_land()
 	_make_bridge()
 	_make_camp()
-	_make_trees_and_landmarks()
 	VillageFinish.setup(self)
+	_make_trees_and_landmarks()
 	_flush_batches()
 	set_bridge_stage(_bridge_stage)
 	set_camp_restored(_camp_restored)
@@ -225,6 +225,19 @@ func _make_camp() -> void:
 		friend.rotation.y = .5 if at.x < -12 else -.7
 		add_child(friend)
 
+func _tree_clears_buildings(p: Vector3) -> bool:
+	# Include every canopy lobe and a roof/wall clearance, not just the trunk.
+	var canopy := Rect2(Vector2(p.x - 2.05, p.z - 1.75), Vector2(4.1, 3.5))
+	for house in get_children():
+		if house.get_meta("scenery_kind", "") != "cottage":
+			continue
+		for mesh in house.find_children("*", "MeshInstance3D", true, false):
+			var bounds: AABB = mesh.global_transform * mesh.get_aabb()
+			var footprint := Rect2(Vector2(bounds.position.x, bounds.position.z), Vector2(bounds.size.x, bounds.size.z)).grow(.4)
+			if canopy.intersects(footprint):
+				return false
+	return true
+
 func _make_trees_and_landmarks() -> void:
 	var positions: Array[Vector3] = [
 		Vector3(-19, 0, -13), Vector3(-18, 0, -8), Vector3(-20, 0, 0),
@@ -235,6 +248,8 @@ func _make_trees_and_landmarks() -> void:
 	]
 	for i: int in range(positions.size()):
 		var p: Vector3 = positions[i]
+		if not _tree_clears_buildings(p):
+			continue
 		var h: float = 3.1 + float(i % 3) * 0.4
 		_solid("TreeTrunk", p + Vector3(0, h * 0.5, 0), Vector3(0.65, h, 0.65), "wood")
 		VillageFinish.rounded(self,p + Vector3(0,h+0.25,0),Vector3(3.5,2.9,3.3),Color("638755"))

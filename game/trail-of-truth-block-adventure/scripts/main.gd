@@ -56,7 +56,7 @@ var jump_button: Button
 var language_button: Button
 var pause_button: Button
 var rewards_button: Button
-var banner_choices: HBoxContainer
+var banner_choices: GridContainer
 var banner_buttons: Array[Button] = []
 var map_button: Button
 var trail_map: Control
@@ -73,6 +73,120 @@ var target_marker: MeshInstance3D
 var bell: AudioStreamPlayer3D
 var cue: AudioStreamPlayer
 var bell_timer := 3.0
+var _tap_candidates: Dictionary = {}
+var _tap_touches: Dictionary = {}
+var _ui_ratio := 1.0
+
+func _clear_world_taps() -> void:
+    _tap_candidates.clear()
+    _tap_touches.clear()
+
+func _notification(what: int) -> void:
+    if what in [NOTIFICATION_APPLICATION_FOCUS_OUT, NOTIFICATION_WM_WINDOW_FOCUS_OUT, NOTIFICATION_APPLICATION_PAUSED]:
+        _clear_world_taps()
+
+class WorldTapObserver extends Node:
+    var controller: Node
+    func _input(event: InputEvent) -> void:
+        controller._observe_world_tap(event)
+
+func _tap_blocked(at: Vector2) -> bool:
+    var viewport_size := get_viewport().get_visible_rect().size
+    # Match the player's broad movement pad, not just the visible joystick.
+    if at.x < viewport_size.x * .45 and at.y > viewport_size.y * .40:
+        return true
+    for control in [header, language_button, pause_button, map_button, rewards_button, jump_button, action_button]:
+        if control.is_visible_in_tree() and control.get_global_rect().has_point(at):
+            return true
+    return paused
+
+func _observe_world_tap(event: InputEvent) -> void:
+    # Track even GUI-owned fingers: a held button plus a look tap is not a pickup.
+    if event is InputEventScreenTouch:
+        if event.pressed and not event.canceled:
+            _tap_touches[event.index] = true
+        else:
+            _tap_touches.erase(event.index)
+    if paused or _tap_touches.size() > 1:
+        _tap_candidates.clear()
+        return
+    var id := -2
+    var at := Vector2.ZERO
+    var down := false
+    var released := false
+    var canceled := false
+    if event is InputEventScreenTouch:
+        id = event.index
+        at = event.position
+        down = event.pressed
+        released = not event.pressed
+        canceled = event.canceled
+    elif event is InputEventScreenDrag:
+        id = event.index
+        at = event.position
+    elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.device != -1:
+        id = -1
+        at = event.position
+        down = event.pressed
+        released = not event.pressed
+    elif event is InputEventMouseMotion and event.device != -1:
+        id = -1
+        at = event.position
+    else:
+        return
+    if down:
+        # Never turn a second-finger look gesture into an interaction.
+        if not _tap_candidates.is_empty() or player._stick_id >= 0 or player._look_id >= 0:
+            _tap_candidates.clear()
+            return
+        if not _tap_blocked(at):
+            var target := _world_tap_target()
+            if not target.is_empty() and Vector2(target.position[0], target.position[1]).distance_to(at) <= target.radius:
+                _tap_candidates[id] = {"start": at, "time": Time.get_ticks_msec(), "kind": context_kind, "index": context_index}
+    elif _tap_candidates.has(id):
+        var candidate: Dictionary = _tap_candidates[id]
+        if canceled or at.distance_to(candidate.start) > 12.0 * _ui_ratio or _tap_blocked(at):
+            _tap_candidates.erase(id)
+        elif released:
+            _tap_candidates.erase(id)
+            if Time.get_ticks_msec() - candidate.time <= 350:
+                _choose_context()
+                if context_kind == candidate.kind and context_index == candidate.index:
+                    _try_world_tap(at)
+
+func _world_tap_target() -> Dictionary:
+    # Read-only, in engine viewport pixels. Telemetry never chooses/mutates context.
+    if paused:
+        return {}
+    var target: Vector3
+    match context_kind:
+        "pickup": target = boards[context_index].global_position + Vector3.UP * .15
+        "seed": target = seeds[context_index].global_position
+        "place": target = preview.global_position + Vector3.UP * .20
+        _: return {} # No hitting animals, scenery, or remote rewards.
+    var camera: Camera3D = player.get_camera()
+    if camera.is_position_behind(target):
+        return {}
+    var projected := camera.unproject_position(target)
+    if not get_viewport().get_visible_rect().has_point(projected) or _tap_blocked(projected):
+        return {}
+    # Projection alone would allow picking through walls. Check both sightlines.
+    for origin in [camera.global_position, player.global_position + Vector3.UP]:
+        var ray := PhysicsRayQueryParameters3D.create(origin, target)
+        ray.exclude = [player.get_rid()]
+        if not get_world_3d().direct_space_state.intersect_ray(ray).is_empty():
+            return {}
+    return {"kind": context_kind, "index": context_index, "position": [projected.x, projected.y], "radius": 32.0 * _ui_ratio}
+
+func _try_world_tap(at: Vector2) -> bool:
+    if _tap_blocked(at):
+        return false
+    _choose_context() # Same distance, inventory and chapter gates as E/button.
+    var target := _world_tap_target()
+    if target.is_empty() or Vector2(target.position[0], target.position[1]).distance_to(at) > target.radius:
+        return false
+    _interact()
+    return true
 
 func t(en: String, ru: String) -> String:
     return ru if language == "ru" else en
@@ -91,7 +205,11 @@ func _ready() -> void:
     player.set_enabled(false)
     _build_objects()
     _build_ui()
+    var observer := WorldTapObserver.new()
+    observer.controller = self
+    add_child(observer)
     get_viewport().size_changed.connect(_layout_ui)
+    get_viewport().size_changed.connect(_clear_world_taps)
     _layout_ui()
     _refresh_ui()
 
@@ -515,7 +633,7 @@ func _button(parent: Node, callback: Callable) -> Button:
     pressed.content_margin_right = 12
     pressed.bg_color = Color("487a52")
     button.add_theme_stylebox_override("pressed", pressed)
-    button.add_theme_font_size_override("font_size", 18)
+    button.add_theme_font_size_override("font_size", 20)
     button.focus_mode = Control.FOCUS_NONE
     button.pressed.connect(callback)
     parent.add_child(button)
@@ -526,19 +644,20 @@ func _build_ui() -> void:
     layer.layer = 20
     add_child(layer)
     hud = Control.new()
-    hud.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+    hud.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
     hud.mouse_filter = Control.MOUSE_FILTER_IGNORE
     layer.add_child(hud)
     header = PanelContainer.new()
     header.mouse_filter = Control.MOUSE_FILTER_IGNORE
     header.add_theme_stylebox_override("panel", _panel())
+    header.minimum_size_changed.connect(func(): header.size.y = header.get_combined_minimum_size().y)
     hud.add_child(header)
     var stack := VBoxContainer.new()
     stack.mouse_filter = Control.MOUSE_FILTER_IGNORE
     header.add_child(stack)
     objective = _label(21)
     stack.add_child(objective)
-    counter = _label(14)
+    counter = _label(18)
     stack.add_child(counter)
     language_button = _button(hud, _set_language)
     pause_button = _button(hud, _toggle_pause)
@@ -546,7 +665,10 @@ func _build_ui() -> void:
     rewards_button = _button(hud, _open_rewards)
     jump_button = _button(hud, func(): player.queue_jump())
     action_button = _button(hud, _interact)
-    notice = _label(17)
+    notice = _label(20)
+    # Scene lighting can put white paving behind this floating text.
+    notice.add_theme_color_override("font_outline_color", Color("102d23"))
+    notice.add_theme_constant_override("outline_size", 6)
     notice.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
     hud.add_child(notice)
     input_hint = _label(13)
@@ -574,11 +696,11 @@ func _build_ui() -> void:
     modal_title = _label(28)
     modal_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
     content.add_child(modal_title)
-    modal_body = _label(18)
+    modal_body = _label(22)
     content.add_child(modal_body)
     trail_map = preload("res://scripts/trail_map.gd").new()
     content.add_child(trail_map)
-    banner_choices = HBoxContainer.new()
+    banner_choices = GridContainer.new()
     banner_choices.add_theme_constant_override("separation", 8)
     modal_column.add_child(banner_choices)
     for id in ["blue", "gold", "green"]:
@@ -592,65 +714,90 @@ func _build_ui() -> void:
     secondary = _button(modal_column, _secondary_action)
     secondary.custom_minimum_size.y = 46
 
-func _layout_ui() -> void:
-    var size := get_viewport().get_visible_rect().size
-    var narrow := size.x < 700
-    header.position = Vector2(14, 14)
-    header.size = Vector2(maxf(160, size.x - 176), 100 if narrow else 76)
-    objective.add_theme_font_size_override("font_size", 17 if narrow else 21)
-    counter.add_theme_font_size_override("font_size", 12 if narrow else 14)
-    pause_button.add_theme_font_size_override("font_size", 16 if narrow else 18)
-    language_button.position = Vector2(size.x - 150, 18)
-    language_button.size = Vector2(62, 52)
-    pause_button.position = Vector2(size.x - 80, 18)
-    pause_button.size = Vector2(66, 52)
-    map_button.position = Vector2(size.x - 150, 78)
-    map_button.size = Vector2(136, 48)
-    rewards_button.position = Vector2(size.x - 150, 134)
-    rewards_button.size = Vector2(136, 48)
-    jump_button.position = Vector2(size.x - 96, size.y - 185)
-    jump_button.size = Vector2(80, 74)
-    action_button.position = Vector2(size.x - 216, size.y - 98)
-    action_button.size = Vector2(200, 74)
-    if size.y < 430:
-        map_button.position = Vector2(size.x - 216, 98)
-        map_button.size = Vector2(80, 48)
-        rewards_button.position = Vector2(size.x - 128, 98)
-        rewards_button.size = Vector2(114, 48)
-    notice.position = Vector2(20, 190 if narrow else 150)
-    notice.size = Vector2(size.x - (40 if narrow else 240), 65)
-    input_hint.position = Vector2(size.x * .28, size.y - 34)
-    input_hint.size = Vector2(size.x * .40, 30)
-    var width := minf(530, size.x - 32)
-    modal_title.add_theme_font_size_override("font_size", 22 if size.y < 500 else 28)
-    modal_body.add_theme_font_size_override("font_size", 15 if size.y < 500 else 18)
-    modal_content.add_theme_constant_override("separation", 8 if size.y < 500 else 16)
-    var height := minf(460, size.y - 28)
-    modal.position = Vector2((size.x - width) * .5, (size.y - height) * .5)
+func _ui_pixel_ratio() -> float:
+    # With stretch disabled, Web canvas pixels can be DPR-scaled backing pixels.
+    # Size UI in CSS pixels, independently of the 3D viewport and player input.
+    if OS.has_feature("web"):
+        var css_width = JavaScriptBridge.eval("document.querySelector('canvas')?.getBoundingClientRect().width || 0")
+        if css_width is float or css_width is int:
+            if css_width > 0:
+                return maxf(1.0, get_viewport().get_visible_rect().size.x / float(css_width))
+    return 1.0
+
+func _layout_ui(update_density: bool = true) -> void:
+    if update_density:
+        _ui_ratio = _ui_pixel_ratio()
+    var ratio := _ui_ratio
+    var size := get_viewport().get_visible_rect().size / ratio
+    hud.scale = Vector2.ONE * ratio
+    hud.size = size
+    var short_screen := size.y < 430
+    var narrow := size.x < 700 and not short_screen
+    header.position = Vector2(12, 12)
+    header.size = Vector2(size.x - 24 if narrow else size.x - 204, 0)
+    objective.add_theme_font_size_override("font_size", 22)
+    counter.add_theme_font_size_override("font_size", 18)
+    # Portrait: one readable objective, then a single utility row. No narrow
+    # text column beside a tower of buttons. Landscape leaves the view open.
+    var row_y := 110.0 if narrow else 12.0
+    language_button.position = Vector2(12 if narrow else size.x - 188, row_y)
+    language_button.size = Vector2(60, 48)
+    pause_button.position = Vector2(80 if narrow else size.x - 120, row_y)
+    pause_button.size = Vector2(108, 48)
+    map_button.position = Vector2(196 if narrow else size.x - 188, row_y if narrow else 68)
+    map_button.size = Vector2(112 if narrow else 176, 48)
+    rewards_button.position = Vector2(12 if narrow else size.x - 188, 166 if narrow else 124)
+    rewards_button.size = Vector2(176, 48)
+    jump_button.position = Vector2(size.x - 124, size.y - 182)
+    jump_button.size = Vector2(112, 68)
+    action_button.position = Vector2(size.x - 212, size.y - 102)
+    action_button.size = Vector2(200, 68)
+    if short_screen:
+        map_button.position = Vector2(size.x - 332, 12)
+        map_button.size = Vector2(136, 48)
+        rewards_button.position = Vector2(size.x - 188, 68)
+        header.size.x = size.x - 356
+        jump_button.position.y = size.y - 168
+        jump_button.size.y = 56
+    notice.position = Vector2(12, 224 if narrow else 110)
+    notice.size = Vector2(size.x - 24 if narrow else size.x - 356, 80)
+    input_hint.visible = false # Instructions remain in Pause; do not crowd play.
+    var width := minf(620, size.x - 24)
+    var height := minf(660, size.y - 84)
+    modal_title.add_theme_font_size_override("font_size", 28)
+    modal_body.add_theme_font_size_override("font_size", 22)
+    modal_content.add_theme_constant_override("separation", 12)
+    banner_choices.columns = 1 if width < 420 else 3
+    modal.position = Vector2((size.x - width) * .5, 72 + (size.y - 84 - height) * .5)
     modal.size = Vector2(width, height)
+    # Language remains reachable above modals without obscuring their text.
+    if paused:
+        language_button.position = Vector2(size.x - 76, 16)
+        modal_content.add_theme_constant_override("separation", 12)
 
 func _refresh_ui() -> void:
     var goal := t("Find the lamb's tracks", "Найди следы ягнёнка")
     if trail_found:
-        goal = t("Follow the tracks to the creek", "Иди по следам к ручью")
+        goal = t("Follow the tracks", "Иди по следам")
     if crossing_found:
-        goal = t("Repair the bridge to keep searching", "Почини мостик и продолжи поиски")
+        goal = t("Repair the bridge", "Почини мостик")
     if carrying >= 0:
-        goal = t("Carry the board to the crossing", "Отнеси доску к мостику")
+        goal = t("Log to the bridge", "Неси бревно к мостику")
     elif bridge_stage == 2:
         goal = t("Follow the bell · find the lamb", "Иди на звон · найди ягнёнка")
         if lamb_found:
-            goal = t("There you are! Approach and call gently", "Вот ты где! Подойди и позови")
+            goal = t("Call the lamb gently", "Ласково позови ягнёнка")
     if following:
-        goal = t("Bring your new friend back to camp", "Приведи нового друга в лагерь")
+        goal = t("Bring the lamb home", "Приведи ягнёнка домой")
         if player.position.distance_to(lamb.position) > 9:
             goal = t("The lamb is waiting · return to it", "Ягнёнок ждёт · вернись к нему")
     if completed:
         goal = t("Home together · explore the clearing", "Вместе дома · исследуй поляну")
     objective.text = goal
-    counter.text = t("THE LOST LAMB · Search, rescue, home", "ПОТЕРЯВШИЙСЯ ЯГНЁНОК · Найди и приведи домой")
+    counter.text = ""
+    counter.visible = crossing_found and bridge_stage < 2
     if crossing_found and bridge_stage < 2:
-        counter.text = t("Bridge boards %d/2 · Tracks continue across!", "Доски %d/2 · Следы ведут на другой берег!") % bridge_stage
+        counter.text = t("Bridge logs %d/2", "Брёвна для моста: %d/2") % bridge_stage
     language_button.text = "EN" if language == "ru" else "RU"
     pause_button.text = t("Pause", "Пауза")
     map_button.text = t("Map", "Карта")
@@ -661,33 +808,34 @@ func _refresh_ui() -> void:
     var color_ids := ["blue", "gold", "green"]
     var color_names := [t("Blue", "Синий"), t("Gold", "Золотой"), t("Green", "Зелёный")]
     for i in range(banner_buttons.size()):
-        banner_buttons[i].text = ("* " if camp_banner_color == color_ids[i] else "") + color_names[i]
+        banner_buttons[i].text = color_names[i]
+        banner_buttons[i].modulate = Color("ffe09b") if camp_banner_color == color_ids[i] else Color.WHITE
     trail_map.visible = modal_kind == "map"
     modal_body.visible = modal_kind != "map"
     jump_button.text = t("Jump", "Прыжок")
     action_button.visible = context_kind != "" and not paused
-    action_button.text = {"pickup":t("Pick up", "Взять"), "place":t("Place board", "Положить доску"), "seed":t("Collect", "Собрать"), "call":t("Call gently", "Позвать ласково")}.get(context_kind, "")
+    action_button.text = {"pickup":t("Pick up", "Взять"), "place":t("Place log", "Положить бревно"), "seed":t("Collect", "Собрать"), "call":t("Call", "Позвать")}.get(context_kind, "")
     input_hint.text = t("WASD · drag to look · Space · E", "WASD · веди, чтобы осмотреться · Пробел · E") if not DisplayServer.is_touchscreen_available() else t("Left: move · Right: look", "Слева: идти · справа: смотреть")
-    var notices := {"water":t("Back on safe ground. You kept your board.", "Снова на берегу. Доска осталась у тебя."), "carry":t("Walk to the glowing outline by the crossing.", "Иди к светлому контуру у мостика."), "placed":t("One more board will finish the crossing.", "Ещё одна доска — и мостик готов."), "bridge":t("You made a way across. Listen for the lamb!", "Теперь можно перейти. Прислушайся к ягнёнку!"), "seed":t("A seed pouch for the camp garden.", "Семена для сада в лагере."), "garden":t("The camp garden is growing!", "В лагере появился сад!"), "follow":t("It trusts you. Stay close and lead it home.", "Он доверяет тебе. Будь рядом и веди домой.")}
+    var notices := {"water":t("Back on shore. Log safe!", "Ты на берегу. Бревно цело!"), "carry":t("Walk to the glowing outline by the crossing.", "Иди к светлому контуру у мостика."), "placed":t("One more log!", "Нужно ещё одно бревно!"), "bridge":t("You made a way across. Listen for the lamb!", "Теперь можно перейти. Прислушайся к ягнёнку!"), "seed":t("A seed pouch for the camp garden.", "Семена для сада в лагере."), "garden":t("The camp garden is growing!", "В лагере появился сад!"), "follow":t("It trusts you. Stay close and lead it home.", "Он доверяет тебе. Будь рядом и веди домой.")}
     notice.text = notices.get(notice_key, "") if notice_timer > 0 else ""
     var discoveries := {"tracks": t("Little hoofprints! Where do they lead?", "Маленькие следы! Куда они ведут?"), "crossing": t("The tracks cross the creek! Let's fix the bridge.", "Следы ведут через ручей! Починим мостик."), "found": t("You found it! Get close and call gently.", "Ты нашёл ягнёнка! Подойди и ласково позови.")}
     if notice_timer > 0 and discoveries.has(notice_key):
         notice.text = discoveries[notice_key]
+    if paused:
+        _tap_candidates.clear()
     shade.visible = paused
     modal.visible = paused
     jump_button.visible = not paused
-    secondary.visible = modal_kind not in ["intro", "map", "complete"]
-    var short_screen := get_viewport().get_visible_rect().size.y < 500
-    modal_content.add_theme_constant_override("separation", 8 if modal_kind == "complete" or short_screen else 16)
-    modal_body.add_theme_font_size_override("font_size", 15 if short_screen else (16 if modal_kind == "complete" else 18))
+    secondary.visible = modal_kind == "pause"
+    modal_body.add_theme_font_size_override("font_size", 22)
     if modal_kind == "intro":
         modal_title.text = t("The Lost Lamb", "Потерявшийся ягнёнок")
-        modal_body.text = t("One little lamb slipped out of the fold!\n\nYour assignment: follow its hoofprints, listen for its bell, and bring it safely home. Start by looking along the path.\n\n", "Один ягнёнок выбежал из загона!\n\nТвоё задание: найди следы, прислушайся к колокольчику и приведи ягнёнка домой. Начни с тропинки.\n\n") + (LUKE_RU if language == "ru" else LUKE_EN)
-        primary.text = t("Find the little explorer!", "Найти малыша!")
+        modal_body.text = t("A lamb is missing! Follow the tracks and bell. Bring it home.\n\n", "Ягнёнок потерялся! Иди по следам и на звон. Приведи его домой.\n\n") + (LUKE_RU if language == "ru" else LUKE_EN)
+        primary.text = t("Let’s find it!", "Найти малыша!")
     elif modal_kind == "map":
         modal_title.text = t("Find the way home", "Найди дорогу домой")
         trail_map.set_language(language)
-        primary.text = t("Back to the adventure", "Вернуться к приключению")
+        primary.text = t("Continue", "Продолжить")
     elif modal_kind == "complete":
         modal_title.text = t("Home together!", "Вместе дома!")
         modal_body.text = t("The lamb is home! Choose your camp banner.\n\n", "Ягнёнок дома! Выбери флаг лагеря.\n\n") + (JOHN_RU if language == "ru" else JOHN_EN)
@@ -701,12 +849,16 @@ func _refresh_ui() -> void:
         modal_body.text = _reward_summary()
         if not saves_ok:
             modal_body.text += t("\nCould not save on this device.", "\nНе удалось сохранить на этом устройстве.")
-        primary.text = t("Back to the adventure", "Вернуться к приключению")
+        primary.text = t("Continue", "Продолжить")
     else:
         modal_title.text = t("Take a breath", "Передохни")
-        modal_body.text = (LUKE_RU if language == "ru" else LUKE_EN) + t("\n\nWalk: WASD / left joystick\nLook: drag on the right\nJump: Space / Jump\nInteract: E / nearby action", "\n\nИдти: WASD / левый джойстик\nСмотреть: вести справа\nПрыгать: Пробел / Прыжок\nДействовать: E / кнопка рядом")
+        modal_body.text = (LUKE_RU if language == "ru" else LUKE_EN) + t("\n\nWalk: WASD / left joystick\nLook: drag on the right\nJump: Space / Jump\nInteract: tap a nearby log, seed pouch or bridge outline / E / action button", "\n\nИдти: WASD / левый джойстик\nСмотреть: вести справа\nПрыгать: Пробел / Прыжок\nДействовать: коснись бревна, семян или контура моста рядом / E / кнопка")
         primary.text = t("Continue", "Продолжить")
-    secondary.text = t("Start a new rescue", "Начать спасение заново")
+    secondary.text = t("New rescue", "Начать заново")
+    header.visible = not paused
+    pause_button.visible = not paused
+    notice.visible = not paused
+    _layout_ui(false)
 
 func _telemetry() -> void:
     if not OS.has_feature("web"):
@@ -718,6 +870,7 @@ func _telemetry() -> void:
         var center: Vector2 = pair[1].get_global_rect().get_center()
         points[pair[0]] = [center.x, center.y]
     payload["ui"] = points
+    payload["tap_target"] = _world_tap_target()
     payload["yaw"] = player._yaw
     payload["viewport"] = [get_viewport().get_visible_rect().size.x, get_viewport().get_visible_rect().size.y]
     payload["fps"] = Engine.get_frames_per_second()
