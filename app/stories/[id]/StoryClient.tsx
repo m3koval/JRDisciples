@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 import { useEffect } from "react";
+import { JourneyNextAction } from "@/components/app/JourneyNextAction";
 
 const BANNER_CLASSES = ["sb-1","sb-2","sb-3","sb-4","sb-5","sb-6"];
 const PZ_COLORS = ["#ff6b1a","#0a7090","#7030a0","#2a6a10","#c05010","#104f8a"];
@@ -101,8 +102,11 @@ export default function StoryClient({ id }: { id: string }) {
             💡 {language === 'ru' ? 'Попроси взрослого или учителя рассказать, что эта история означает для них!' : 'Ask a grown-up or teacher to share what this story means to them!'}
           </div>
 
+          <div style={{ textAlign: "center", marginTop: 28 }}>
+            <JourneyNextAction currentHref={`/stories/${id}`} />
+          </div>
           {/* Quiz CTA */}
-          {quiz && (
+          {quiz && process.env.NEXT_PUBLIC_APP_SHELL !== '1' && (
             <div style={{ textAlign: "center", marginTop: 28 }}>
               <p style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#555", marginBottom: 12 }}>
                 {language === 'ru' ? 'Готов проверить, что ты выучил?' : 'Ready to test what you learned?'}

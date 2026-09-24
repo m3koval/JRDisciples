@@ -1,0 +1,42 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+invalid and locked: true
+award tracks: true
+duplicate tracks: true
+award bridge: true
+duplicate bridge: true
+award lamb: true
+duplicate lamb: true
+award rescue: true
+duplicate rescue: true
+award garden: true
+duplicate garden: true
+exact cap: true
+deliberate choice: true
+roundtrip: true
+legacy rescue: true
+legacy garden: true
+legacy full: true
+corrupt fields: true
+corrupt fields: true
+corrupt fields: true
+corrupt fields: true
+corrupt fields: true
+corrupt fields: true
+corrupt fields: true
+corrupt fields: true
+invalid interaction earns nothing: true
+locked main choice: true
+garden gameplay awards once: true
+garden cannot be farmed: true
+native partial save reload: true
+main choice: true
+native cosmetic reload: true
+reload duplicate: true
+book pauses: true
+RU book: true
+scene reload resumes shepherd checkpoint: true
+explicit new rescue prepares replay: true
+REPLAY 130 green 0 false
+scene replay retains lifetime awards: true
+REWARD_CHECKS=38 FAILED=false

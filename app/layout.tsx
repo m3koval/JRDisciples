@@ -1,9 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cinzel_Decorative, Cormorant_Garamond, Lora, Nunito } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import SiteFooter from "@/components/SiteFooter";
+import AppShell from "@/components/app/AppShell";
 import { LanguageProvider } from "@/context/LanguageContext";
+
+const isAppBuild = process.env.CAPACITOR_BUILD === "1";
 
 const cinzel = Cinzel_Decorative({
   weight: ["400", "700"],
@@ -39,14 +42,30 @@ export const metadata: Metadata = {
   description: "Fun Bible stories, quizzes, puzzles, and verse memory for kids ages 6–10.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: isAppBuild ? "cover" : undefined,
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cinzel.variable} ${cormorant.variable} ${lora.variable} ${nunito.variable}`}>
+    <html
+      lang="en"
+      data-app-shell={isAppBuild ? "capacitor" : undefined}
+      className={`${cinzel.variable} ${cormorant.variable} ${lora.variable} ${nunito.variable}`}
+    >
       <body>
         <LanguageProvider>
-          <NavBar />
-          <main>{children}</main>
-          <SiteFooter />
+          {isAppBuild ? (
+            <AppShell>{children}</AppShell>
+          ) : (
+            <>
+              <NavBar />
+              <main>{children}</main>
+              <SiteFooter />
+            </>
+          )}
         </LanguageProvider>
       </body>
     </html>

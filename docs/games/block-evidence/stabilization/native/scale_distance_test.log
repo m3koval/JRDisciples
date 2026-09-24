@@ -1,0 +1,33 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.
+     at: _create_xic (platform/linuxbsd/x11/display_server_x11.cpp:6347)
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 128 bits)
+
+PLAYER_BOUNDS [P: (147.7241, -0.000169, 6.794852), S: (0.552292, 1.340886, 0.421453)]
+ACTOR_BOUNDS Mira_Gardener [P: (149.5263, -0.0, 6.754922), S: (0.947205, 1.7, 0.490527)]
+ACTOR_BOUNDS Oren_Waterkeeper [P: (155.4607, -0.0, -11.21809), S: (1.078598, 1.78, 0.4355)]
+CAMERA 0 fov=58.0 spring=5.80000019073486 pivot=(0.0, 1.05, 0.0)
+PRODUCE_BOUNDS [P: (148.623, 0.0325, 5.623), S: (0.795349, 0.611102, 0.754)]
+CROP_BOUNDS [P: (150.6026, 0.17975, 7.123599), S: (0.734833, 0.323629, 0.716402)]
+PASS accepted child stature
+PASS child feet on floor
+PASS adult taller than child: Mira_Gardener
+PASS adult feet on floor: Mira_Gardener
+PASS NPC blocks body
+PASS context available outside capsule
+PASS adult taller than child: Oren_Waterkeeper
+PASS adult feet on floor: Oren_Waterkeeper
+PASS NPC blocks body
+PASS context available outside capsule
+PASS bench blocks body at visible timber
+PASS old corridor meets intended solid crossing ramp
+PASS bed exit corridor below crossing stays open
+PASS out of reach has no context
+PASS accepted capsule preserved
+PASS mature cabbage dimensions bounded
+PASS harvest basket dimensions bounded
+PASS equal-depth projected adult taller
+PASS equal-depth projected adult taller
+SCALE_DISTANCE_FAILURES=0

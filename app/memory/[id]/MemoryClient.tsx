@@ -36,7 +36,7 @@ export default function MemoryClient({ id }: { id: string }) {
             <h1 className="sec-title">{verse.reference}</h1>
           </div>
 
-          <MemoryChallenge verse={verse} />
+          <MemoryChallenge verse={verse} journeyHref={`/memory/${id}`} />
 
           <div style={{ marginTop: 32, textAlign: "center" }}>
             <Link href="/memory" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: "#2a6a10", textDecoration: "none" }}>

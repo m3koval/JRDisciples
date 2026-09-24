@@ -1,0 +1,22 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS ordinary rescue completion starts gather
+PASS paused interaction rejected
+PASS nearby visible sheep calls advance gather
+PASS straggler waits without teleport
+PASS remote pasture cannot complete
+PASS pasture requires all three physically present
+PASS collect board 0
+PASS collect board 1
+PASS two separate world repairs unlock shelter
+PASS unsafe gate closure rejected
+PASS gate remains closed during shelter beat
+PASS safe gathering and gate interaction unlock return
+PASS three individual counts finish chapter
+PASS completion idempotent
+PASS checkpoint readback
+PASS old rescue save migrates to gather
+PASS malformed stage rejected
+FLOCK_FAILURES=0 (fixture gates, not input-driven traversal)
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)

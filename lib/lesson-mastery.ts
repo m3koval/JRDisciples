@@ -25,7 +25,7 @@
 //   const stars = useLessonStars(LESSON_ID)   // 0 | 1 | 2 | 3, reactive
 // ─────────────────────────────────────────────────────────────────────────────
 
-import { useEffect, useState } from 'react'
+import { useCallback, useSyncExternalStore } from 'react'
 
 export type MasteryRecord = {
   firstTryCorrect: number
@@ -36,6 +36,7 @@ export type MasteryRecord = {
 
 const KEY_PREFIX = 'jr-mastery:'
 const EVENT_NAME = 'jr-mastery-change'
+const volatileRecords = new Map<string, MasteryRecord>()
 
 function keyFor(lessonId: string) {
   return `${KEY_PREFIX}${lessonId}`
@@ -45,23 +46,26 @@ function readRaw(lessonId: string): MasteryRecord | null {
   if (typeof window === 'undefined') return null
   try {
     const raw = localStorage.getItem(keyFor(lessonId))
-    if (!raw) return null
+    if (!raw) return volatileRecords.get(lessonId) ?? null
     const parsed = JSON.parse(raw)
     if (
       typeof parsed?.firstTryCorrect === 'number' &&
       typeof parsed?.totalGraded === 'number' &&
       typeof parsed?.completed === 'boolean'
     ) {
-      return parsed as MasteryRecord
+      const record = parsed as MasteryRecord
+      volatileRecords.set(lessonId, record)
+      return record
     }
   } catch {
-    /* ignore corrupt data */
+    /* storage unavailable or corrupt — use the in-memory session record */
   }
-  return null
+  return volatileRecords.get(lessonId) ?? null
 }
 
 function writeRaw(lessonId: string, record: MasteryRecord) {
   if (typeof window === 'undefined') return
+  volatileRecords.set(lessonId, record)
   try {
     localStorage.setItem(keyFor(lessonId), JSON.stringify(record))
   } catch {
@@ -95,6 +99,7 @@ export function markLessonComplete(lessonId: string) {
 /** Clears a lesson's mastery record — call alongside a lesson's own progress reset. */
 export function resetLessonMastery(lessonId: string) {
   if (typeof window === 'undefined') return
+  volatileRecords.delete(lessonId)
   try { localStorage.removeItem(keyFor(lessonId)) } catch { /* ignore */ }
   window.dispatchEvent(new CustomEvent(EVENT_NAME, { detail: { lessonId } }))
 }
@@ -115,16 +120,16 @@ export function getLessonStars(lessonId: string): 0 | 1 | 2 | 3 {
 
 /** Reactive hook for displaying stars — updates live if the record changes (e.g. another tab). */
 export function useLessonStars(lessonId: string): 0 | 1 | 2 | 3 {
-  const [stars, setStars] = useState<0 | 1 | 2 | 3>(0)
-
-  useEffect(() => {
-    setStars(getLessonStars(lessonId))
+  const subscribe = useCallback((onStoreChange: () => void) => {
     const onChange = (e: Event) => {
       const detail = (e as CustomEvent).detail as { lessonId?: string } | undefined
-      if (!detail || detail.lessonId === lessonId) setStars(getLessonStars(lessonId))
+      if (!detail || detail.lessonId === lessonId) onStoreChange()
     }
     const onStorage = (e: StorageEvent) => {
-      if (e.key === keyFor(lessonId)) setStars(getLessonStars(lessonId))
+      if (e.key === keyFor(lessonId)) {
+        if (e.newValue === null) volatileRecords.delete(lessonId)
+        onStoreChange()
+      }
     }
     window.addEventListener(EVENT_NAME, onChange)
     window.addEventListener('storage', onStorage)
@@ -134,5 +139,8 @@ export function useLessonStars(lessonId: string): 0 | 1 | 2 | 3 {
     }
   }, [lessonId])
 
-  return stars
+  const getSnapshot = useCallback(() => getLessonStars(lessonId), [lessonId])
+  const getServerSnapshot = useCallback((): 0 => 0, [])
+
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 }

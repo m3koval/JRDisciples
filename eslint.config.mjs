@@ -10,6 +10,10 @@ const eslintConfig = defineConfig([
     // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
+    "public/games/trail-of-truth-block-adventure/build/**",
+    "ios/App/App/public/**",
+    "ios/App/build/**",
+    "ios/DerivedData/**",
     "build/**",
     "next-env.d.ts",
   ]),

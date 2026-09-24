@@ -1,0 +1,133 @@
+{
+  "checks": {
+    "trusted_start": true,
+    "map_opens": true,
+    "map_pauses_player": true,
+    "map_closes": true,
+    "invalid_action": true,
+    "walk_(-10, 3)": true,
+    "joystick_keeps_camera_(-10, 3)": true,
+    "tracks_discovered": true,
+    "walk_(1.2, 0)": true,
+    "joystick_keeps_camera_(1.2, 0)": true,
+    "bridge_discovered": true,
+    "walk_(-7, -2)": true,
+    "joystick_keeps_camera_(-7, -2)": true,
+    "world_tap_target_available": true,
+    "world_tap_pickup": true,
+    "pickup_1": true,
+    "place_1": true,
+    "walk_(-15, -5)": true,
+    "joystick_keeps_camera_(-15, -5)": true,
+    "pickup_2": true,
+    "walk_(1.5, 0)": true,
+    "joystick_keeps_camera_(1.5, 0)": true,
+    "place_2": true,
+    "walk_(9, 0)": true,
+    "joystick_keeps_camera_(9, 0)": true
+  },
+  "errors": [],
+  "state": {
+    "adventure_points": 30,
+    "adventure_points_cap": 130,
+    "bridge": 2,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "",
+    "campaign_stage": 0,
+    "carrying": -1,
+    "cave_health": 3,
+    "cave_phase": "idle",
+    "caves": {
+      "active": false,
+      "steps": []
+    },
+    "complete": false,
+    "context": "",
+    "crossing_found": true,
+    "earned_rewards": [
+      "tracks",
+      "bridge"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      9.66562461853027,
+      0.000234376639127731,
+      0.00500722555443645
+    ],
+    "recoveries": 0,
+    "reward_saved": false,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 3654,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        732,
+        532
+      ],
+      "banner_blue": [
+        163.5,
+        110
+      ],
+      "banner_gold": [
+        164.5,
+        110
+      ],
+      "banner_green": [
+        171.5,
+        110
+      ],
+      "jump": [
+        776,
+        452
+      ],
+      "language": [
+        686,
+        38
+      ],
+      "map": [
+        744,
+        94
+      ],
+      "pause": [
+        778,
+        38
+      ],
+      "primary": [
+        422,
+        549
+      ],
+      "rewards": [
+        744,
+        150
+      ],
+      "secondary": [
+        198.5,
+        110
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      844,
+      600
+    ],
+    "yaw": 0
+  }
+}

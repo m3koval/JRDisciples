@@ -4,8 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "build:capacitor": "BUILD_TARGET=capacitor next build",
+    "build": "next build --webpack",
+    "build:app": "CAPACITOR_BUILD=1 NEXT_PUBLIC_APP_SHELL=1 next build --webpack",
+    "app:sync": "npm run build:app && cap sync ios && npm run check:app",
+    "app:doctor": "cap doctor",
+    "app:open": "cap open ios",
+    "check:app": "node scripts/check-app-bundle.mjs",
     "start": "next start",
     "lint": "eslint",
     "test:quests": "node scripts/check-quest-next-links.mjs",
@@ -13,14 +17,18 @@
     "check:scripture": "node scripts/check-lesson-scripture-localization.mjs",
     "check:case-russian": "node scripts/check-case-for-christ-russian-copy.mjs",
     "check:assets": "node scripts/check-image-assets.mjs",
-    "check:games": "node scripts/check-games-section.mjs"
+    "check:games": "node scripts/check-games-section.mjs",
+    "build:capacitor": "npm run build:app"
   },
   "dependencies": {
-    "next": "16.2.6",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/ios": "^8.5.2",
+    "next": "^16.3.5",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.5.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

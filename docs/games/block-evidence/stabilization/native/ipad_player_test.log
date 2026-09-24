@@ -1,0 +1,28 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS stick remains at visible resting anchor
+PASS fixed stick reaches full right from anchor
+PASS owned movement pointer cannot acquire look
+PASS mouse stream cannot orbit during owned touch
+PASS joystick crossing right half never rotates camera
+PASS independent right pointer still orbits
+PASS release movement preserves independent look
+PASS pause clears both pointer owners
+PASS engine emulated mouse cannot acquire orbit
+PASS carried board stays close to torso
+PASS camera distance is filtered independently of instantaneous spring arm
+PASS Idle preserves authored carry arm upper_arm.L
+PASS Idle preserves authored carry arm forearm.L
+PASS Idle preserves authored carry arm hand.L
+PASS Run preserves authored carry arm upper_arm.L
+PASS Run preserves authored carry arm forearm.L
+PASS Run preserves authored carry arm hand.L
+PASS Jump preserves authored carry arm upper_arm.L
+PASS Jump preserves authored carry arm forearm.L
+PASS Jump preserves authored carry arm hand.L
+PASS board attachment does not bob with locomotion clips
+PASS right hand keeps its lantern during one-shoulder carrying
+PASS carry override stops after release
+CAMERA_RECOVERY 1.3837867975235 hit=5.80000019073486
+PASS camera recovers gradually instead of snapping outward
+IPAD_PLAYER_TEST_FAILURES=0

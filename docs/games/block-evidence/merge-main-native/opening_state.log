@@ -1,0 +1,25 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS new bridge craft does not introduce crossing collider
+PASS riverbank art preserves collision contract
+PASS left damage follows repair stage 0
+PASS right damage follows repair stage 0
+PASS original panel visibility retained
+PASS original panel collision authority retained
+PASS original panel visibility retained
+PASS original panel collision authority retained
+PASS left damage follows repair stage 1
+PASS right damage follows repair stage 1
+PASS original panel visibility retained
+PASS original panel collision authority retained
+PASS original panel visibility retained
+PASS original panel collision authority retained
+PASS left damage follows repair stage 2
+PASS right damage follows repair stage 2
+PASS original panel visibility retained
+PASS original panel collision authority retained
+PASS original panel visibility retained
+PASS original panel collision authority retained
+PASS water remains below authoritative deck
+PASS river opening footprint retained
+OPENING_ART_FAILURES=0

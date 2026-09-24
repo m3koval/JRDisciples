@@ -1,0 +1,20 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS coalesced and split look deltas retain equal total rotation
+PASS look advances smoothly on render frames without a physics tick
+PASS pause freezes render camera
+PASS source mesh and skin data are preserved
+PASS DPR2 camera matches CSS displacement
+PASS DPR2 joystick retains CSS-sized visual
+PASS DPR2 visible and input joystick anchors agree
+PASS carry edge expansion bounded for Michael_Cloth_Matte
+WORST Michael_Cloth_Matte 0.00000011920929 rest=(0.139124, 0.797992, 0.067624) -> (0.139251, 0.735933, 0.053166) weights=[10, 0, 0, 0] / [11, 0, 0, 0]
+PASS carry edge expansion bounded for Michael_Skin_Soft
+WORST Michael_Skin_Soft 0.000000115484 rest=(0.262254, 0.469539, -0.00778) -> (0.258346, 0.470531, -0.009654) weights=[16, 0, 0, 0] / [12, 0, 0, 0]
+PASS carry edge expansion bounded for Michael_Hair_Rough
+WORST Michael_Hair_Rough 0.0 rest=(0.128935, 1.202023, 0.129933) -> (0.128935, 1.202023, 0.129933) weights=[5, 0, 0, 0] / [5, 0, 0, 0]
+PASS carry edge expansion bounded for Michael_Leather
+WORST Michael_Leather 0.00000006332994 rest=(0.145749, 0.812452, -0.076568) -> (0.141321, 0.762129, -0.066415) weights=[10, 0, 0, 0] / [11, 0, 0, 0]
+PASS carry edge expansion bounded for Michael_Lantern_Brass
+WORST Michael_Lantern_Brass 0.00000010803342 rest=(-0.100755, 0.593863, 0.093986) -> (-0.10279, 0.576368, 0.091643) weights=[1, 0, 0, 0] / [9, 0, 0, 0]
+PLAYER_MOTION_SKIN_FAILURES=0

@@ -23,6 +23,16 @@ export default function GamesPage() {
 
   const games = isRu ? [
     {
+      href: '/games/trail-of-truth',
+      emoji: '🐑🏕️',
+      label: 'Трёхмерное приключение',
+      title: 'Тропа истины',
+      desc: 'Задание «Потерявшийся ягнёнок»: исследуй мир с джойстиком и картой, приведи ягнёнка домой и получи флаг для лагеря. Флаг — игровая награда. Иисус спасает нас; спасение нельзя заработать очками.',
+      details: ['ягнёнок', 'джойстик', 'карта', 'флаг лагеря'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(254,243,199,.62),transparent 25%),linear-gradient(135deg,#244b3b,#365314)',
+      border: 'rgba(254,243,199,.94)'
+    },
+    {
       href: '/games/shield-of-faith',
       emoji: '🛡️🔥',
       label: 'Новый шутер',
@@ -113,6 +123,16 @@ export default function GamesPage() {
       border: 'rgba(167,139,250,.75)'
     },
   ] : [
+    {
+      href: '/games/trail-of-truth',
+      emoji: '🐑🏕️',
+      label: '3D Adventure',
+      title: 'Trail of Truth',
+      desc: 'The Lost Lamb quest: explore with a touch joystick and map, bring the lamb home, and earn a camp flag. The flag is a game reward. Jesus saves us; salvation is not earned with points.',
+      details: ['lost lamb', 'touch joystick', 'map', 'camp flag'],
+      bg: 'radial-gradient(circle at 72% 18%,rgba(254,243,199,.62),transparent 25%),linear-gradient(135deg,#244b3b,#365314)',
+      border: 'rgba(254,243,199,.94)'
+    },
     {
       href: '/games/shield-of-faith',
       emoji: '🛡️🔥',

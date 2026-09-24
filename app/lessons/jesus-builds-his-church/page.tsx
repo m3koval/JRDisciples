@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo, useRef, useSyncExternalStore } from 'reac
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
+import { ExternalSourceLink } from '@/components/ExternalSourceLink'
 
 const LESSON_ID = 'church-build' // matches lib/lesson-mastery-registry.ts
 
@@ -1791,7 +1792,7 @@ export default function JesusBuildsHisChurchPage() {
                 {isRu ? 'Проверенные места Писания: ' : 'Verified Scripture: '}
                 {(isRu ? SCRIPTURE_LINKS.ru : SCRIPTURE_LINKS.en).map(([label, url], index, links) => (
                   <span key={url}>
-                    <a href={url} target="_blank" rel="noreferrer" style={{ color: ACCENT_DARK, fontWeight: 800 }}>{label}</a>
+                    <ExternalSourceLink href={url} appLabel={label} style={{ color: ACCENT_DARK, fontWeight: 800 }}>{label}</ExternalSourceLink>
                     {index < links.length - 1 ? ' · ' : ''}
                   </span>
                 ))}

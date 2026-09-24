@@ -143,6 +143,8 @@ export default function TransfigurationPage() {
   // SSR renders the stable order; shuffling only after mount avoids a
   // hydration mismatch (Math.random() would differ between server and client).
   const [seqShuffled, setSeqShuffled] = useState<string[]>(SEQ_CORRECT)
+  // Intentional one-time client randomization after deterministic SSR hydration.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setSeqShuffled(shuffleIds()) }, [])
   const [seqOrder,    setSeqOrder]    = useState<string[]>([])
   const [seqErr,      setSeqErr]      = useState(false)

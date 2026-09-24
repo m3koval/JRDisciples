@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useRef } from "react";
 import { useTranslation } from "@/lib/useTranslation";
+import AppHome from "@/components/app/AppHome";
 
 // Static star positions so they're consistent between server and client
 const STARS = [
@@ -29,6 +30,10 @@ const STARS = [
 ];
 
 export default function HomePage() {
+  return process.env.NEXT_PUBLIC_APP_SHELL === '1' ? <AppHome /> : <WebHome />;
+}
+
+function WebHome() {
   const t = useTranslation();
   const [videoEnded, setVideoEnded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -160,7 +165,7 @@ export default function HomePage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { href: "/stories", title: t.home.kidsPathTitle, desc: t.home.kidsPathDesc, color: "#ff6b1a", step: "1" },
+                { href: "/stories", title: t.home.kidsPathTitle, desc: t.home.kidsPathDesc, color: "#b45309", step: "1" },
                 { href: "/quests", title: t.home.familyPathTitle, desc: t.home.familyPathDesc, color: "#2a6a10", step: "2" },
                 { href: "/lessons", title: t.home.classPathTitle, desc: t.home.classPathDesc, color: "#0d3a6a", step: "3" },
               ].map((path) => (
@@ -191,7 +196,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { href: "/stories", image: "/images/jr/bible-stories.png", title: t.activities.stories, desc: t.activities.storiesDesc, color: "#ff6b1a" },
+              { href: "/stories", image: "/images/jr/bible-stories.png", title: t.activities.stories, desc: t.activities.storiesDesc, color: "#b45309" },
               { href: "/quiz", image: "/images/jr/bible-quizzes.png", title: t.activities.quizzes, desc: t.activities.quizzesDesc, color: "#0a7090" },
               { href: "/memory", image: "/images/jr/verse-memory.png", title: t.activities.memory, desc: t.activities.memoryDesc, color: "#2a6a10" },
               { href: "/puzzles", image: "/images/jr/word-puzzles.png", title: t.activities.puzzles, desc: t.activities.puzzlesDesc, color: "#7030a0" },

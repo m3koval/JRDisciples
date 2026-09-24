@@ -1,0 +1,2354 @@
+[
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -11.4793939590454,
+      2.33985483646393e-05,
+      1.40357160568237
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1574,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.300000011920929
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -11.8855218887329,
+      2.33985483646393e-05,
+      0.1554856300354
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1606,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.31499874007568
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 2,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -12.0977182388306,
+      2.33985483646393e-05,
+      -0.465509712696075
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1622,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.329899759592081
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -12.536431312561,
+      2.33985483646393e-05,
+      -1.70249104499817
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1654,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.344987286080141
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 2,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -12.7671823501587,
+      2.33985483646393e-05,
+      -2.31683206558228
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1670,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.359896130452398
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "pickup",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -13.2429056167603,
+      2.33985483646393e-05,
+      -3.54005479812622
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1702,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.374988804956956
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "pickup",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 2,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -13.7369928359985,
+      2.33985483646393e-05,
+      -4.75597620010376
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1734,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.389988812532465
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "pickup",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -14.2536935806274,
+      0.000934440002311021,
+      -5.82503843307495
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1766,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.404998995591995
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "pickup",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 2,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -14.7938508987427,
+      0.000774916377849877,
+      -5.84293603897095
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1798,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.419999170219853
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "pickup",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -15.0877017974854,
+      0.000936566793825477,
+      -6.29103374481201
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1814,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.434881423004299
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "pickup",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 2,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -15.6537494659424,
+      0.000936566793825477,
+      -7.47516536712646
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1846,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.449990358459218
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -16.2570991516113,
+      0.000726735393982381,
+      -8.15841293334961
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1878,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.464990102282172
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -16.862621307373,
+      0.000726735393982381,
+      -9.32289981842041
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1958,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.480000011218501
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 2,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -17.4687004089355,
+      0.000726735393982381,
+      -10.4870843887329
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1990,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.48000001121909
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -17.7717399597168,
+      0.000726735393982381,
+      -11.0691766738892
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 2006,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.48000001121909
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 2,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -18.3778190612793,
+      0.000726735393982381,
+      -12.2333612442017
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 2038,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.48000001121909
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -18.5047912597656,
+      -0.000421716773416847,
+      -12.4649801254272
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 2054,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.48000001121909
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -18.5047912597656,
+      -0.000421716773416847,
+      -12.4649801254272
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 2086,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.48000001121909
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 2,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -18.5047912597656,
+      -0.000421716773416847,
+      -12.4649801254272
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 2102,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.48000001121909
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -18.5047912597656,
+      -0.000421716773416847,
+      -12.4649801254272
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 2134,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.48000001121909
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 2,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -18.5047912597656,
+      -0.000421716773416847,
+      -12.4649801254272
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 2150,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.48000001121909
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -18.5047912597656,
+      -0.000421716773416847,
+      -12.4649801254272
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 2182,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.48000001121909
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 2,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -18.5047912597656,
+      -0.000421716773416847,
+      -12.4649801254272
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 2198,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.48000001121909
+  },
+  {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "blue",
+    "carrying": -1,
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 2,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -18.5047912597656,
+      -0.000421716773416847,
+      -12.4649801254272
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 2230,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        278,
+        715
+      ],
+      "banner_blue": [
+        195,
+        539.5
+      ],
+      "banner_gold": [
+        195,
+        595.5
+      ],
+      "banner_green": [
+        195,
+        651.5
+      ],
+      "jump": [
+        322,
+        635
+      ],
+      "language": [
+        42,
+        136
+      ],
+      "map": [
+        252,
+        136
+      ],
+      "pause": [
+        134,
+        136
+      ],
+      "primary": [
+        195,
+        712.5
+      ],
+      "rewards": [
+        100,
+        192
+      ],
+      "secondary": [
+        98.5,
+        129.5
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      390,
+      783
+    ],
+    "yaw": 0.48000001121909
+  }
+]

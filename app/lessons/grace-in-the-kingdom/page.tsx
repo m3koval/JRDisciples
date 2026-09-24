@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useMemo, useState, type CSSProperties, type ReactNode } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import { ExternalSourceLink } from '@/components/ExternalSourceLink'
 
 const PURPLE = '#6d28d9'
 const NAVY = '#20123d'
@@ -128,7 +129,7 @@ function Card({ children, style }: { children: ReactNode; style?: CSSProperties 
 
 function ScriptureBox({ value, isRu }: { value: Scripture; isRu: boolean }) {
   return <div style={{ padding: 20, borderRadius: 20, background: '#fffaf0', border: '2px solid rgba(245,158,11,.28)', margin: '18px 0' }}>
-    <a href={value.url} target="_blank" rel="noreferrer" style={{ color: PURPLE, fontWeight: 900, textDecoration: 'none' }}>{value.reference} · {value.translation} ↗</a>
+    <ExternalSourceLink href={value.url} appLabel={`${value.reference} · ${value.translation}`} style={{ color: PURPLE, fontWeight: 900, textDecoration: 'none' }}>{value.reference} · {value.translation} ↗</ExternalSourceLink>
     <blockquote style={{ margin: '12px 0 6px', color: NAVY, fontFamily: 'var(--font-lora)', fontSize: 'clamp(1rem,2.4vw,1.2rem)', lineHeight: 1.7 }}>“{value.text}”</blockquote>
     <small style={{ color: '#6b7280', fontWeight: 700 }}>{isRu ? 'Точный текст и ссылка: Bible.com' : 'Exact text and source link: Bible.com'}</small>
   </div>

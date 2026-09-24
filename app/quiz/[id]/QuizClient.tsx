@@ -45,7 +45,7 @@ export default function QuizClient({ id }: { id: string }) {
             <p className="eyebrow">{language === 'ru' ? 'История' : 'From the Story'}: {story?.title}</p>
             <h1 className="sec-title">{quiz.title}</h1>
           </div>
-          <QuizGame quiz={quiz} pzColor={color} />
+          <QuizGame quiz={quiz} pzColor={color} journeyHref={`/quiz/${id}`} />
           <div style={{ marginTop: 32, textAlign: "center" }}>
             <Link href="/quiz" style={{ fontFamily: "var(--font-nunito)", fontWeight: 800, color: color, textDecoration: "none" }}>
               ← {language === 'ru' ? 'Попробуй другую викторину' : 'Try Another Quiz'}
