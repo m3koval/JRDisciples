@@ -14,7 +14,9 @@ var drive_count := 0
 var animal_index := -1
 var lunge_from := Vector3.ZERO
 var lunge_to := Vector3.ZERO
+var retreat_from := Vector3.ZERO
 var animals: Array[Node3D] = []
+var animal_motion: Array[Node3D] = []
 var signs: Array[Label3D] = []
 var lamb: CharacterBody3D
 var wool_read := false
@@ -124,6 +126,9 @@ func make_animal(id: String, pos: Vector3) -> Node3D:
     var node := add_asset(id,pos,Vector3(2.5,1.8,3))
     if node.get_child_count() == 0:
         host._box(node,Vector3(0,.8,0),Vector3(1.2,1.2,2),Color("bd9558") if id == "lion" else Color("785a46"))
+    var motion := preload("res://scripts/cave_animal_motion.gd").new()
+    motion.attach(node,id)
+    animal_motion.append(motion)
     return node
 
 func restore() -> void:
@@ -138,6 +143,8 @@ func restore() -> void:
     timer = 0
     for i in range(animals.size()):
         animals[i].position = ENTRANCES[i]+Vector3(0,0,-8)
+        animals[i].rotation = Vector3.ZERO
+        animal_motion[i].reset_pose()
         animals[i].visible = stage < (2 if i == 0 else 4)
     lamb.position = CAMP+Vector3(1,0,0) if stage == 6 else ENTRANCES[2]+Vector3(0,0,-10)
     if active: teleport_camp()
@@ -208,6 +215,7 @@ func interact() -> void:
             message_time = 3
         "drive":
             drive_count += 1
+            retreat_from = animals[animal_index].position
             phase = "retreat"
             timer = 1.2
         "call_lamb": phase = "following"
@@ -240,6 +248,15 @@ func retry_checkpoint() -> void:
 
 func tick(delta: float) -> void:
     if host.paused or not active: return
+    _tick_gameplay(delta)
+    for i in range(animals.size()):
+        var state := phase if i == animal_index and stage in [1,3] else "idle"
+        var facing := Vector3.BACK
+        if state in ["warn","lunge","recover"]: facing = lunge_to-lunge_from
+        elif state == "retreat": facing = ENTRANCES[i]+Vector3(0,0,-12)-animals[i].position
+        animal_motion[i].step(delta,state,timer,facing)
+
+func _tick_gameplay(delta: float) -> void:
     invulnerability = maxf(0,invulnerability-delta)
     message_time = maxf(0,message_time-delta)
     var p: Vector3 = host.player.position
@@ -281,13 +298,11 @@ func tick(delta: float) -> void:
             lunge_from = animal.position
             lunge_to = Vector3(clampf(p.x,ENTRANCES[i].x-3.4,ENTRANCES[i].x+3.4),0,clampf(p.z,-12,-3.5))
         "warn":
-            animal.rotation.z = sin(timer*9)*.05
             if timer <= 0:
                 phase = "lunge"
                 timer = .7
-                animal.rotation.z = 0
         "lunge":
-            animal.position = lunge_from.lerp(lunge_to,clampf(1-timer/.7,0,1))
+            animal.position = lunge_from.lerp(lunge_to,smoothstep(0,1,clampf(1-timer/.7,0,1)))
             if near(animal.position,1.3): hurt()
             if phase == "lunge" and timer <= 0:
                 phase = "recover"
@@ -295,7 +310,9 @@ func tick(delta: float) -> void:
         "recover":
             if timer <= 0: phase = "idle"
         "retreat":
-            animal.position = animal.position.move_toward(ENTRANCES[i]+Vector3(0,0,-12),delta*4)
+            # Reach the exit before hiding; the old constant-speed retreat could
+            # disappear several metres short of it. Ease start/stop, face travel.
+            animal.position = retreat_from.lerp(ENTRANCES[i]+Vector3(0,0,-12),smoothstep(0,1,clampf(1-timer/1.2,0,1)))
             if timer <= 0:
                 if drive_count >= 2:
                     animal.visible = false
