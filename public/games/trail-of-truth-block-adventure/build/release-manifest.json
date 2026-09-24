@@ -3,6 +3,14 @@
   "project": "faithful-trail-block-1",
   "sources": {
     "THIRD_PARTY_NOTICES.md": "d1b400288da64aba905940226a8785bec561ca987fd8f9dc10f35f8ffce650c3",
+    "assets/caves/CREDITS.md": "1e84e172de1d2335ad348868b6d9633c7a945463ef311bc0b081e360acc16e4e",
+    "assets/caves/Textures/colormap.png": "4a19ed0e790c888e0c8097bef5178f9316a5cbc93b17fca66c1a4660a85078b9",
+    "assets/caves/bear.glb": "e36363e07cfc3f7b4f9e6997b860daae8ac30a90b0d41a0316ec90a84ebed09c",
+    "assets/caves/bear_08beartexture.jpg": "9dc4d6ac20a7838ca76314d6c25e85e7131c40b59c367b564abca6f884b4497a",
+    "assets/caves/corridor.glb": "007604ae74e1f4e6d66c2e3d2ec5d9689328203f5bb3c7cf2ec5752ee71372c7",
+    "assets/caves/gate-rock.glb": "02a81649c50d6683bee1782ba0ed618bdbadd6ae6bbbc9875a822bae8ba3c693",
+    "assets/caves/lion.glb": "e7e64a59768bf2251fd25b641fef1eaf260e857c9e519cd1b08360b3fcfe21f3",
+    "assets/caves/lion_Lion_BaseColor.png": "6daec40bd5f6d12744780c3eb292553895ae8b6e564541dcdbfc9b046d8e29eb",
     "assets/environment/Door_1_Round.bin": "783db477a76115724668f8846695651725b955af6b5b23a503f834b206ebc958",
     "assets/environment/Door_1_Round.gltf": "243fe5e3418e2459bcab858055d34e5441b60180a5efaadef440419e25cc27aa",
     "assets/environment/PROVENANCE.md": "a1a8421bfefce01824d8459a22b7038ee30357e8446ac0e926ef6d70584e7c2d",
@@ -52,21 +60,29 @@
     "assets/villagers/simeon_texture_0.png": "b137145cafe9dfeb55af8f9f86988c775588f6bd8b5cfddfe7bc9ccd1d8e6976",
     "assets/villagers/tobias.glb": "39523f9fe2f522b3b5d48f982712cd182334f94c6e035cd2ab9cfd211897b0fe",
     "assets/villagers/tobias_texture_0.png": "034a48838be13cb8c7a3d570e072408b15851cd967d5e27d5744305324ad5e86",
+    "docs/cave-animation.md": "127f4ae956467ef6a2e05786cb4638a602656a08615afd44f1a02b025519a65c",
+    "docs/cave-combat.md": "0565640cbe00dfdde353c2cc2448b82ff0e4062059befac6a28051d530d5bab1",
+    "docs/flock-contract.md": "d6d3189301752f1f7cee229a703d6685c37a4191ac6c66738a4db8b262ffb996",
+    "docs/gameplay-fixes-verification.md": "53d0c0cb637f8e9effce05056ca0aa1098198426ccd21355d7ffb8efb189585b",
     "export_presets.cfg": "7860b98938d4c74aa42f0b0ab64d67d9e453aa4df7996ba52bb2e88169df0cfa",
     "main.tscn": "a991dc21f45f40e6fe19a7edb003281bef06093e30b2bb14e38ea540cf2ebd25",
     "project.godot": "cad282a1b3502f948763fce5fa34c6901691d03c50f10f73809b598eacbf3295",
     "scripts/adventure_rewards.gd": "c193cae9c1b4b4ea850568c227ffc47d6b11731bf7f9904e2f2828bf36fc15d2",
     "scripts/audio.gd": "413279530913d1288e5b45a9c96914b079c5d37167662c39699accbacba34b23",
-    "scripts/main.gd": "3a33677d324b1418e1ff7839eff3e69c17e0800669c8b62493f63f422e4e2460",
+    "scripts/cave_animal_motion.gd": "be5a77adceb1700b0012ebfa9c7943f8911efa1fc5393baa21e8cd8aff0a0827",
+    "scripts/cave_block_animal.gd": "da5e6035dc0f4480d9d655c316547477399de99b8f4b73ee51190a67f653d24f",
+    "scripts/cave_campaign.gd": "c44eae60b1e5ffe06abb1632de0868fd1860d6a7e44724259b2b6aabbef41b2f",
+    "scripts/flock_campaign.gd": "082c78848f66c31f0b44cb162ef28af087db82f78249f685bf873ab3967a4af1",
+    "scripts/main.gd": "6ba92c1b68a53813e2bab26d0af04529ec0a2b090467602d1bd367b0e57ce6c3",
     "scripts/player.gd": "9b8056fe6f6ab80ee70c3c74e06cb62acb42d7d2361bc856d3c84fe82b7deb8b",
     "scripts/trail_map.gd": "0d75420c71ee0ab5847b096dbf19149e880150e2f66d1b2bb9b83118bd3f2c2d",
     "scripts/world.gd": "465c1e41a9fa0f12d7a24fbe5165ef029d23574483b17a47b24a99159d696c41"
   },
   "artifacts": {
     "index.html": {
-      "sha256": "2b0ed3bdbfafb37fc551eeeb52b238bb586d3e6b95868639ebbde7df7789dc34",
+      "sha256": "fb31530c03e45210a8264d15368c7eedfab3aa13c7bb21eb039cd72236f45482",
       "bytes": 5510,
-      "gzip_bytes": 2233
+      "gzip_bytes": 2231
     },
     "index.js": {
       "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
@@ -79,9 +95,9 @@
       "gzip_bytes": 10054758
     },
     "index.pck": {
-      "sha256": "84ee019384322b0f43898533d5275f443bac147cb919f41545262dd6f6289f2d",
-      "bytes": 18691884,
-      "gzip_bytes": 18536542
+      "sha256": "95792de1bc44ead3de306ab9cbfae377b2644651acb607b42c850bc787039e9d",
+      "bytes": 20525124,
+      "gzip_bytes": 20351455
     }
   }
 }
