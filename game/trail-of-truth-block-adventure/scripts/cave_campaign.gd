@@ -23,6 +23,50 @@ var wool_read := false
 var warning_mark: MeshInstance3D
 var message := ""
 var message_time := 0.0
+const STAFF_REACH := 2.8
+const STAFF_COOLDOWN := .75
+var staff_cooldown := 0.0
+var staff_swing := 0.0
+var staff: Node3D
+var bodies: Array[CharacterBody3D] = []
+
+func in_arena(p: Vector3, i: int) -> bool:
+    return p.z <= -3.5 and p.z >= -12.5 and absf(p.x-ENTRANCES[i].x) <= 3.8
+
+func clear_path(a: Vector3, b: Vector3) -> bool:
+    var ray := PhysicsRayQueryParameters3D.create(a+Vector3.UP*.8,b+Vector3.UP*.8,1)
+    ray.exclude = [host.player.get_rid()]
+    return get_world_3d().direct_space_state.intersect_ray(ray).is_empty()
+
+func move_animal(i: int, target: Vector3, distance: float) -> void:
+    target = Vector3(clampf(target.x,ENTRANCES[i].x-3.5,ENTRANCES[i].x+3.5),0,clampf(target.z,-12,-3.5))
+    var body := bodies[i]
+    body.position = animals[i].position
+    body.move_and_collide(body.position.direction_to(target)*minf(distance,body.position.distance_to(target)))
+    animals[i].position = body.position
+
+func defend() -> void:
+    if host.paused or not active or animal_index < 0 or phase not in ["chase","warn","lunge","recover"]: return
+    if staff_cooldown > 0:
+        message = "cooldown"
+        message_time = .5
+        return
+    staff_cooldown = STAFF_COOLDOWN
+    staff_swing = .3
+    if not can_drive():
+        message = "miss"
+        message_time = 1.2
+        return
+    drive_count += 1
+    var away: Vector3 = animals[animal_index].position-host.player.position
+    away.y = 0
+    if away.length() < .1: away = Vector3.FORWARD
+    move_animal(animal_index,animals[animal_index].position+away.normalized()*1.4,1.4)
+    retreat_from = animals[animal_index].position
+    phase = "retreat"
+    timer = 1.2
+    message = "defended"
+    message_time = 1.2
 var stage: int:
     get: return completed_steps.size()
 
@@ -68,6 +112,25 @@ func _ready() -> void:
         signs.append(sign)
     animals.append(make_animal("lion",ENTRANCES[0]+Vector3(0,0,-8)))
     animals.append(make_animal("bear",ENTRANCES[1]+Vector3(0,0,-8)))
+    for animal in animals:
+        var body := CharacterBody3D.new()
+        body.collision_layer = 0
+        body.collision_mask = 1
+        var collider := CollisionShape3D.new()
+        var capsule := CapsuleShape3D.new()
+        capsule.radius = .55
+        capsule.height = 1.4
+        collider.shape = capsule
+        collider.position.y = .75
+        body.add_child(collider)
+        add_child(body)
+        body.add_collision_exception_with(host.player)
+        bodies.append(body)
+    staff = Node3D.new()
+    staff.name = "DefenseStaff"
+    add_child(staff)
+    host._box(staff,Vector3(.55,1,1),Vector3(.12,.12,2),Color("a36c38"))
+    staff.visible = false
     lamb = CharacterBody3D.new()
     lamb.collision_layer = 0
     lamb.collision_mask = 1
@@ -123,9 +186,12 @@ func add_asset(id: String, pos: Vector3, bounds: Vector3) -> Node3D:
     return wrapper
 
 func make_animal(id: String, pos: Vector3) -> Node3D:
-    var node := add_asset(id,pos,Vector3(2.5,1.8,3))
-    if node.get_child_count() == 0:
-        host._box(node,Vector3(0,.8,0),Vector3(1.2,1.2,2),Color("bd9558") if id == "lion" else Color("785a46"))
+    var node := Node3D.new()
+    add_child(node)
+    node.position = pos
+    var rig := preload("res://scripts/cave_block_animal.gd").new()
+    node.add_child(rig)
+    rig.configure(id)
     var motion := preload("res://scripts/cave_animal_motion.gd").new()
     motion.attach(node,id)
     animal_motion.append(motion)
@@ -141,6 +207,10 @@ func restore() -> void:
     animal_index = -1
     drive_count = 0
     timer = 0
+    staff_cooldown = 0
+    staff_swing = 0
+    staff.visible = false
+    message_time = 0
     for i in range(animals.size()):
         animals[i].position = ENTRANCES[i]+Vector3(0,0,-8)
         animals[i].rotation = Vector3.ZERO
@@ -170,20 +240,18 @@ func context() -> String:
         if stage == 5 and lamb.position.distance_to(CAMP) < 3: return "home"
         if health < 3: return "heal"
         if stage == 6: return "return"
-    if can_drive(): return "drive"
+    if animal_index >= 0 and phase in ["chase","warn","lunge","recover"] and in_arena(host.player.position,animal_index): return "drive"
     if stage in [0,2,4] and near(ENTRANCES[stage/2]): return "clue"
     if stage == 4 and message_time > 0: return "" # clue is the only entrance action
     if stage == 5 and near(lamb.position,3) and phase == "waiting": return "call_lamb"
     return ""
 
 func can_drive() -> bool:
-    if phase != "recover" or animal_index < 0: return false
+    if phase not in ["chase","warn","lunge","recover"] or animal_index < 0: return false
     var p: Vector3 = host.player.position
-    if p.z > -1 or p.z < -13 or absf(p.x-ENTRANCES[animal_index].x) > 4: return false
-    if not near(animals[animal_index].position,4.5): return false
-    var ray := PhysicsRayQueryParameters3D.create(p+Vector3.UP*.8,animals[animal_index].position+Vector3.UP*.8)
-    ray.exclude = [host.player.get_rid()]
-    return get_world_3d().direct_space_state.intersect_ray(ray).is_empty()
+    if not in_arena(p,animal_index): return false
+    if not near(animals[animal_index].position,STAFF_REACH): return false
+    return clear_path(p,animals[animal_index].position)
 
 func advance() -> void:
     if stage >= 6: return
@@ -214,10 +282,7 @@ func interact() -> void:
             message = "healed"
             message_time = 3
         "drive":
-            drive_count += 1
-            retreat_from = animals[animal_index].position
-            phase = "retreat"
-            timer = 1.2
+            defend()
         "call_lamb": phase = "following"
         "home":
             advance()
@@ -248,11 +313,17 @@ func retry_checkpoint() -> void:
 
 func tick(delta: float) -> void:
     if host.paused or not active: return
+    staff_cooldown = maxf(0,staff_cooldown-delta)
+    staff_swing = maxf(0,staff_swing-delta)
+    staff.visible = staff_swing > 0
+    staff.position = host.player.position
+    staff.rotation.y = host.player._visual.rotation.y + sin((1-staff_swing/.3)*PI)*1.2-.6
     _tick_gameplay(delta)
     for i in range(animals.size()):
         var state := phase if i == animal_index and stage in [1,3] else "idle"
         var facing := Vector3.BACK
-        if state in ["warn","lunge","recover"]: facing = lunge_to-lunge_from
+        if state == "chase": facing = host.player.position-animals[i].position
+        elif state in ["warn","lunge","recover"]: facing = lunge_to-lunge_from
         elif state == "retreat": facing = ENTRANCES[i]+Vector3(0,0,-12)-animals[i].position
         animal_motion[i].step(delta,state,timer,facing)
 
@@ -264,7 +335,8 @@ func _tick_gameplay(delta: float) -> void:
         retry_checkpoint()
         return
     warning_mark.visible = phase in ["warn", "lunge"]
-    warning_mark.position = lunge_to + Vector3.UP*.04
+    warning_mark.position = (animals[1].position if animal_index == 1 else lunge_to) + Vector3.UP*.04
+    warning_mark.scale = Vector3(5.6/2.6,1,5.6/2.6) if animal_index == 1 else Vector3.ONE
     if stage == 4 and wool_read and near(lamb.position,2.5):
         advance()
         phase = "waiting"
@@ -284,36 +356,45 @@ func _tick_gameplay(delta: float) -> void:
     var i := 0 if stage == 1 else 1
     # Let the child clear the narrow rock arch before asking for a sideways
     # dodge. The fight takes place in the wider chamber, not in its doorway.
-    if not near(ENTRANCES[i]+Vector3(0,0,-7),8) or p.z > -3.5:
+    if not in_arena(p,i):
         phase = "idle"
-        animals[i].position = ENTRANCES[i]+Vector3(0,0,-8)
+        animal_index = -1
+        warning_mark.visible = false
+        move_animal(i,ENTRANCES[i]+Vector3(0,0,-8),delta*4)
         return
     animal_index = i
     timer -= delta
     var animal := animals[i]
     match phase:
         "idle":
+            phase = "chase"
+        "chase":
+            if not clear_path(animal.position,p): return
+            var flat := Vector3(p.x,0,p.z)
+            move_animal(i,flat,delta*(3.2 if i == 0 else 1.9))
+            if animal.position.distance_to(flat) > (3.2 if i == 0 else 2.5): return
             phase = "warn"
-            timer = 1.6
+            timer = 1.1 if i == 0 else 1.4
             lunge_from = animal.position
             lunge_to = Vector3(clampf(p.x,ENTRANCES[i].x-3.4,ENTRANCES[i].x+3.4),0,clampf(p.z,-12,-3.5))
         "warn":
             if timer <= 0:
                 phase = "lunge"
-                timer = .7
+                timer = .45 if i == 0 else .22
         "lunge":
-            animal.position = lunge_from.lerp(lunge_to,smoothstep(0,1,clampf(1-timer/.7,0,1)))
-            if near(animal.position,1.3): hurt()
+            if i == 0: move_animal(i,lunge_to,delta*10)
+            # Attack volumes are grounded: feet above this height clear either attack.
+            var flat_distance := Vector2(p.x-animal.position.x,p.z-animal.position.z).length()
+            if p.y < .85 and flat_distance < (1.35 if i == 0 else 2.8) and clear_path(animal.position,p): hurt()
             if phase == "lunge" and timer <= 0:
                 phase = "recover"
-                timer = 3.5
+                timer = 2.2
         "recover":
             if timer <= 0: phase = "idle"
         "retreat":
-            # Reach the exit before hiding; the old constant-speed retreat could
-            # disappear several metres short of it. Ease start/stop, face travel.
-            animal.position = retreat_from.lerp(ENTRANCES[i]+Vector3(0,0,-12),smoothstep(0,1,clampf(1-timer/1.2,0,1)))
-            if timer <= 0:
+            # Retreat stays collision swept, just like pursuit and knockback.
+            move_animal(i,ENTRANCES[i]+Vector3(0,0,-12),delta*5)
+            if timer <= 0 and animal.position.distance_to(ENTRANCES[i]+Vector3(0,0,-12)) < .001:
                 if drive_count >= 2:
                     animal.visible = false
                     advance()
@@ -334,15 +415,16 @@ func destination() -> Vector3:
 func objective() -> String:
     if stage == 4 and not wool_read:
         return host.t("3 · Read the wool clue at the right entrance", "3 · Изучи шерсть у правого входа")
-    if phase == "warn": return host.t("Warning! Move sideways · do not approach", "Внимание! Отойди в сторону · не подходи")
-    if phase == "lunge": return host.t("Dodge sideways!", "Отойди в сторону!")
-    if phase == "recover": return host.t("Now: come close and drive it away", "Теперь подойди и отпугни зверя")
+    if phase == "chase": return host.t("Run and make room · staff defends nearby", "Беги и держи расстояние · посох защищает вблизи")
+    if phase == "warn": return host.t("Warning! Run sideways or time a jump", "Внимание! Беги в сторону или прыгни вовремя")
+    if phase == "lunge": return host.t("Run · jump · defend!", "Беги · прыгай · защищайся!")
+    if phase == "recover": return host.t("Come within staff reach · defend", "Подойди на длину посоха · защищайся")
     if stage == 5: return host.t("Call the lamb · walk slowly to green camp", "Позови ягнёнка · веди к зелёному лагерю")
     if stage == 6: return host.t("Safe together! Return to the clearing", "Все в безопасности! Вернись на поляну")
     return [host.t("1 · Read tracks at the left cave", "1 · Изучи следы у левой пещеры"),host.t("Lion cave · dodge, then drive away twice", "Пещера льва · уклонись и отпугни дважды"),host.t("2 · Read tracks at the middle cave", "2 · Изучи следы у средней пещеры"),host.t("Bear cave · dodge, then drive away twice", "Пещера медведя · уклонись и отпугни дважды"),host.t("3 · White wool! Search the right cave", "3 · Белая шерсть! Ищи в правой пещере")][mini(stage,4)]
 
 func action_text() -> String:
-    return {"caves":host.t("Continue to caves", "Дальше: пещеры"),"clue":host.t("Read the clue", "Изучить следы"),"drive":host.t("Drive away", "Отпугнуть"),"heal":host.t("Rest and heal", "Отдохнуть"),"call_lamb":host.t("Call the lamb", "Позвать ягнёнка"),"home":host.t("Welcome home", "Мы дома"),"return":host.t("Return to clearing", "На поляну")}.get(context(),"")
+    return {"caves":host.t("Continue to caves", "Дальше: пещеры"),"clue":host.t("Read the clue", "Изучить следы"),"drive":host.t("Defend · staff", "Защита · посох"),"heal":host.t("Rest and heal", "Отдохнуть"),"call_lamb":host.t("Call the lamb", "Позвать ягнёнка"),"home":host.t("Welcome home", "Мы дома"),"return":host.t("Return to clearing", "На поляну")}.get(context(),"")
 
 func progress_text() -> String:
     var result: String = host.t("Health %d/3 · green camp heals · %d/6", "Здоровье %d/3 · отдых в лагере · %d/6") % [health,stage]
@@ -351,6 +433,9 @@ func progress_text() -> String:
 
 func notice_text() -> String:
     if message_time <= 0: return ""
+    if message == "miss": return host.t("Staff missed · move closer with a clear path", "Посох не достал · подойди, преграда мешает")
+    if message == "cooldown": return host.t("Staff is readying · keep moving", "Посох готовится · продолжай двигаться")
+    if message == "defended": return host.t("Made room! The animal retreats unharmed", "Есть место! Зверь отступает невредимым")
     return {"wool":host.t("Soft white wool leads inside the right cave.", "Белая шерсть ведёт внутрь правой пещеры."),"tracks":host.t("Animal tracks! Wait for the warning, dodge sideways, then act.", "Следы зверя! Жди сигнала, отойди в сторону и действуй."),"healed":host.t("Rested! All three hearts restored.", "Отдохнул! Здоровье восстановлено."),"ouch":host.t("A bump! Move away; you have a moment of safety.", "Ушиб! Отойди; сейчас ты ненадолго защищён."),"retry":host.t("Safe at camp. Rested and ready; your progress is kept.", "Ты в лагере. Отдохнул! Твой успех сохранён."),"safe":host.t("The animal went away unharmed. Follow the next clue!", "Зверь ушёл невредимым. Ищи следующую подсказку!")}.get(message,"")
 
 func sync_labels() -> void:
@@ -358,7 +443,7 @@ func sync_labels() -> void:
     get_node("CampSign").text = host.t("Safe camp · rest here", "Лагерь · здесь безопасно")
 
 func intro_text() -> String:
-    return host.t("Fictional shepherd practice inspired by young David, not a Bible retelling.\nThree caves: lion, bear, then a lost lamb. Read each clue. An animal warns before moving: dodge sideways, then use Drive away during its rest. Do this twice. No animals are hurt or killed.\nGreen camp restores health. If you need another try, your completed steps stay safe.\nIn real life, never approach wild animals; ask an adult for help.", "Выдуманная игра о заботливом пастухе, вдохновлённая юным Давидом, а не пересказ Библии.\nТри пещеры: лев, медведь и потерявшийся ягнёнок. Изучи следы. Зверь предупреждает: отойди в сторону, затем нажми «Отпугнуть», пока он отдыхает. Сделай это дважды. Звери уходят невредимыми.\nЗелёный лагерь восстанавливает здоровье. При повторной попытке пройденные шаги сохраняются.\nВ жизни не подходи к диким зверям; попроси взрослого помочь.")
+    return host.t("Fictional shepherd practice inspired by young David, not a Bible retelling.\nThree caves: lion, bear, then a lost lamb. Read each clue. Lion pursues and pounces; bear approaches slowly with a wide ground swipe. Run sideways or time a jump after the warning. Defend with your staff nearby (E / action button). A missed swing needs time to ready again. Two defenses send each animal away. No animals are hurt or killed.\nGreen camp restores health. If you need another try, your completed steps stay safe.\nIn real life, never approach wild animals; ask an adult for help.", "Выдуманная игра о заботливом пастухе, вдохновлённая юным Давидом, а не пересказ Библии.\nТри пещеры: лев, медведь и потерявшийся ягнёнок. Изучи следы. Лев преследует и прыгает, медведь идёт медленно и широко машет лапой. После сигнала беги в сторону или прыгни вовремя. Защищайся посохом вблизи (E / кнопка). После взмаха нужно подождать. Две защиты отпугнут зверя. Звери уходят невредимыми.\nЗелёный лагерь восстанавливает здоровье. При повторной попытке пройденные шаги сохраняются.\nВ жизни не подходи к диким зверям; попроси взрослого помочь.")
 
 func credits() -> String:
-    return host.t("\n\nArt credits (static models; whole-object motion):\nLion — Poly by Google, CC BY 3.0\nBear — madtrollstudio, CC BY 3.0\nCave kit — Kenney, CC0\n", "\n\nАвторы моделей (без скелетной анимации):\nЛев — Poly by Google, CC BY 3.0\nМедведь — madtrollstudio, CC BY 3.0\nПещеры — Kenney, CC0\n") + "https://creativecommons.org/licenses/by/3.0/\nhttps://kenney.nl/assets"
+    return host.t("\n\nArt credits:\nOriginal articulated block animals — project procedural art\nCave kit — Kenney, CC0\nArchived animal GLB credits: assets/caves/CREDITS\n", "\n\nАвторы моделей:\nОригинальные подвижные блочные звери — процедурная графика проекта\nПещеры — Kenney, CC0\nАвторы архивных GLB: assets/caves/CREDITS\n") + "https://creativecommons.org/licenses/by/3.0/\nhttps://kenney.nl/assets"

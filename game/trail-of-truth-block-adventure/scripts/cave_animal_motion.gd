@@ -1,6 +1,6 @@
 extends Node3D
 ## Presentation only: never moves the gameplay actor or advances the campaign.
-## The licensed source meshes are unrigged. No fabricated skeletal clips.
+## Supports original articulated blocks and archived static source meshes.
 var body := Node3D.new()
 var species := "lion"
 var clock := 0.0
@@ -28,6 +28,8 @@ func reset_pose() -> void:
     last_phase = "idle"
     phase_age = 0
     previous_position = get_parent().position
+    for child in body.get_children():
+        if child.has_method("reset_pose"): child.reset_pose()
 
 func step(delta: float, state: String, remaining: float, facing: Vector3) -> void:
     if delta <= 0: return
@@ -39,6 +41,9 @@ func step(delta: float, state: String, remaining: float, facing: Vector3) -> voi
     var actor_position: Vector3 = get_parent().position
     var travelled := actor_position.distance_to(previous_position)
     previous_position = actor_position
+    for child in body.get_children():
+        if child.has_method("pose"):
+            child.pose(delta,state,remaining,travelled/maxf(delta,.0001) if travelled < 2.0 else 0.0)
     # Distance-driven retreat cadence does not keep stepping when stationary.
     if travelled < 2.0: stride += travelled * (7.0 if species == "lion" else 5.5)
     facing.y = 0

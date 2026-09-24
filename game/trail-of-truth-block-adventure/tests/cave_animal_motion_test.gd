@@ -57,7 +57,9 @@ func run() -> void:
     c.drive_count = 1
     c.interact()
     check(c.phase == "retreat","context starts retreat")
-    for n in range(73): c.tick(1.0/60)
+    for n in range(180):
+        c.tick(1.0/60)
+        if not c.animals[0].visible: break
     check(c.animals[0].position.distance_to(c.ENTRANCES[0]+Vector3(0,0,-12)) < .001,"retreat reaches exit before hiding")
     check(c.stage == 2 and not c.animals[0].visible,"retreat completes exactly one stage")
     c.restore()

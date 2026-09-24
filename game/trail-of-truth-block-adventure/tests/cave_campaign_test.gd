@@ -38,22 +38,26 @@ func run() -> void:
         check(c.stage == i*2+1,"clue unlocks corresponding animal")
         for turn in range(2):
             game.player.position = c.ENTRANCES[i]+Vector3(0,0,-4)
-            c.tick(.01)
-            check(c.phase == "warn","readable warning precedes lunge")
+            for frame in range(240):
+                c.tick(1.0/60)
+                if c.phase == "warn": break
+            check(c.phase == "warn","pursuit leads to readable warning before attack")
             var before: float = c.timer
             game.paused = true
             c.tick(10)
             check(c.timer == before,"pause freezes encounter timer")
             game.paused = false
-            c.interact()
-            check(c.drive_count == turn,"cannot drive away during warning")
+            check(c.health == 3,"warning never damages player")
             game.player.position.x += 3
             c.tick(1.7)
             c.tick(.71)
             check(c.phase == "recover" and c.health == 3,"sideways dodge avoids damage")
+            game.player.position = c.animals[i].position + Vector3(1.5,0,0)
             game._interact()
-            check(c.phase == "retreat","recovery action drives away")
-            c.tick(1.3)
+            check(c.phase == "retreat","in-reach staff defense drives away")
+            for frame in range(180):
+                c.tick(1.0/60)
+                if c.phase == "idle": break
         check(c.stage == (i+1)*2 and not c.animals[i].visible,"animal retreats unharmed and checkpoint advances")
     game.player.position = c.ENTRANCES[2]+Vector3(0,0,-10)
     c.tick(.01)

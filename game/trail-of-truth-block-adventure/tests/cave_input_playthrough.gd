@@ -84,6 +84,7 @@ func run() -> void:
             check(await wait_phase("warn"),"input encounter warning")
             check(await walk(c.ENTRANCES[i]+Vector3(3,0,-5)),"dodge clear of the rock doorway")
             check(await wait_phase("recover"),"input dodge reaches recovery")
+            check(await walk(c.animals[i].position+Vector3(1.6,0,0),.25),"approach within real staff reach")
             await action()
             check(c.phase == "retreat","input action drives animal away")
             check(await wait_phase("idle"),"retreat finishes")

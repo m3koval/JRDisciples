@@ -7,7 +7,8 @@ func run() -> void:
         quit(1)
         return
     root.size = Vector2i(640,400)
-    var output := "/tmp/jd-animal-animation-review"
+    var output := OS.get_environment("JD_ANIMAL_PREVIEW_DIR")
+    if output.is_empty(): output = "/tmp/jd-block-animal-review"
     DirAccess.make_dir_recursive_absolute(output)
     var game = load("res://scripts/main.gd").new()
     root.add_child(game)
@@ -57,7 +58,7 @@ func run() -> void:
                     actor.position.z = 3*(1.0-smoothstep(0,1,progress))
                     direction = Vector3.FORWARD
                 motion.step(1.0/30,state,remaining,direction)
-                label.text = ("LION" if index == 0 else "BEAR")+" · "+state.to_upper()+"\nNative animation study · unrigged source mesh"
+                label.text = ("LION" if index == 0 else "BEAR")+" · "+state.to_upper()+"\nNative motion study · articulated block rig"
                 await process_frame
                 await RenderingServer.frame_post_draw
                 root.get_texture().get_image().save_png(output+"/frame%04d.png"%frame)
