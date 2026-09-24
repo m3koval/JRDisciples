@@ -1,0 +1,404 @@
+{
+  "schema_version": 1,
+  "batch": "generated-20260924",
+  "runtime_enabled": false,
+  "characters": [
+    {
+      "id": "michael",
+      "name": {
+        "en": "Michael",
+        "ru": "Мишутка"
+      },
+      "status": "generated_review_asset",
+      "game_ready": false,
+      "assets": {
+        "reference": {
+          "path": "michael/reference.png",
+          "sha256": "ff20d6209c7063d5c664b44334fb0e97a87dda1c862aa51b6e0bda398e0d7b61",
+          "bytes": 2058061
+        },
+        "rig": {
+          "path": "michael/rig.glb",
+          "sha256": "5a2a81822e27554024157f8dfb610a027dc0af47117b6bf6d97eba05fce897c1",
+          "bytes": 23542672
+        },
+        "walk": {
+          "path": "michael/walk.glb",
+          "sha256": "c08ec1a2cd29f667b7a4eda3a9af208e0cfbba6a6881265dd004df130367b611",
+          "bytes": 23555444
+        },
+        "run": {
+          "path": "michael/run.glb",
+          "sha256": "df5f3c21f3a64816fa7ccda3584bd9f233c36f88dcbc73ca6aa12d0d431ce257",
+          "bytes": 23550832
+        }
+      },
+      "rig_joint_count": 24,
+      "limitations": [
+        "No articulated fingers or facial animation system",
+        "Clothing/contact QA and target-device optimization required",
+        "No runtime integration or deployment"
+      ]
+    },
+    {
+      "id": "rosie",
+      "name": {
+        "en": "Rosie",
+        "ru": "Рози"
+      },
+      "status": "generated_review_asset",
+      "game_ready": false,
+      "assets": {
+        "reference": {
+          "path": "rosie/reference.png",
+          "sha256": "8f936f2fd48d904c7921c898a2ca77fbdd25b1964f480c85f471e2e4968dd422",
+          "bytes": 1935286
+        },
+        "rig": {
+          "path": "rosie/rig.glb",
+          "sha256": "c937c28320e15767cc5677adef6f87c04ef33431580b0e5447b0823b8427ff3b",
+          "bytes": 21047576
+        },
+        "walk": {
+          "path": "rosie/walk.glb",
+          "sha256": "eb993c77867f52cbbc04a81584e303b1367b2864c27760315a555385584edc8e",
+          "bytes": 21060344
+        },
+        "run": {
+          "path": "rosie/run.glb",
+          "sha256": "756a7dcbb6d5477fcfe0a657e27d8bc086dd24654d39675207d6760d0c9f4961",
+          "bytes": 21055736
+        }
+      },
+      "rig_joint_count": 24,
+      "limitations": [
+        "No articulated fingers or facial animation system",
+        "Clothing/contact QA and target-device optimization required",
+        "No runtime integration or deployment"
+      ]
+    },
+    {
+      "id": "joseph",
+      "name": {
+        "en": "Joseph",
+        "ru": "Йосик"
+      },
+      "status": "blocked_reference",
+      "game_ready": false,
+      "assets": {},
+      "blocker": "Provider reference-image refusals; old crop is low-resolution and not a clean A-pose. No model or rig generated."
+    },
+    {
+      "id": "gracie",
+      "name": {
+        "en": "Gracie",
+        "ru": "Грейси"
+      },
+      "status": "generated_review_asset",
+      "game_ready": false,
+      "assets": {
+        "reference": {
+          "path": "gracie/reference.png",
+          "sha256": "abe81524c8c72b4e9c284c0bbff6fa28fe51e34e769318950a24070c7f1cc46f",
+          "bytes": 1471441
+        },
+        "rig": {
+          "path": "gracie/rig.glb",
+          "sha256": "1a500c041e8262e004e4a0f332b813c14876b2049d4cb25ac11eba2d83b46acf",
+          "bytes": 22204388
+        },
+        "walk": {
+          "path": "gracie/walk.glb",
+          "sha256": "1f460bf9aba459efb2b45d54b05ae4715bf0f89d40d70f30ffbf79782ffb9caf",
+          "bytes": 22217160
+        },
+        "run": {
+          "path": "gracie/run.glb",
+          "sha256": "65e1d04bfcdd1cd4ab8090621f4e6c07918238874be06cd64fe0793f9e4e9a17",
+          "bytes": 22212556
+        }
+      },
+      "rig_joint_count": 24,
+      "limitations": [
+        "No articulated fingers or facial animation system",
+        "Clothing/contact QA and target-device optimization required",
+        "No runtime integration or deployment"
+      ]
+    },
+    {
+      "id": "simeon",
+      "name": {
+        "en": "Grandpa Simeon",
+        "ru": "Дедушка Симеон"
+      },
+      "status": "generated_review_asset",
+      "game_ready": false,
+      "assets": {
+        "reference": {
+          "path": "simeon/reference.png",
+          "sha256": "61ea7587e6ad9a18a854719c228b3bbded8cd96dc68f3095c6c1880a305e379c",
+          "bytes": 2215624
+        },
+        "rig": {
+          "path": "simeon/rig.glb",
+          "sha256": "7aeae58636471ef4188be7c08c93b30f704f15cdb92157a82bda011f20f3d6f4",
+          "bytes": 20495868
+        },
+        "walk": {
+          "path": "simeon/walk.glb",
+          "sha256": "8ce9b88e2423e56667465ad892633a15b2fc21f8d815fa60fa1fb3f87e1ed207",
+          "bytes": 20508636
+        },
+        "run": {
+          "path": "simeon/run.glb",
+          "sha256": "165e547daf49232a1d55a41c3111b30e28bad4cbb8ab0b9ac3e3fa053c3406a1",
+          "bytes": 20504032
+        }
+      },
+      "rig_joint_count": 24,
+      "limitations": [
+        "No articulated fingers or facial animation system",
+        "Clothing/contact QA and target-device optimization required",
+        "No runtime integration or deployment"
+      ]
+    },
+    {
+      "id": "anna",
+      "name": {
+        "en": "Aunt Anna",
+        "ru": "Тётя Анна"
+      },
+      "status": "generated_review_asset",
+      "game_ready": false,
+      "assets": {
+        "reference": {
+          "path": "anna/reference.png",
+          "sha256": "0d9ff0ecbe8d215a92b7cea45ffcdf7c2627f6ce04ec79e06a9d9c9be689af98",
+          "bytes": 2062563
+        },
+        "rig": {
+          "path": "anna/rig.glb",
+          "sha256": "532d553993eea17c4a7e8cddc6246bbcfc7350b20b9eee1d55643d0996fb0fcb",
+          "bytes": 19201888
+        },
+        "walk": {
+          "path": "anna/walk.glb",
+          "sha256": "997b157570478aff522024f2ac11bf4cd4ce9b38fd1f7680f2049c16191e0c9c",
+          "bytes": 19214660
+        },
+        "run": {
+          "path": "anna/run.glb",
+          "sha256": "73701c3bbe68465c26c7bd979b8aced39be81ac51bdf550540511ae4b0f45047",
+          "bytes": 19210056
+        }
+      },
+      "rig_joint_count": 24,
+      "limitations": [
+        "No articulated fingers or facial animation system",
+        "Clothing/contact QA and target-device optimization required",
+        "No runtime integration or deployment"
+      ]
+    },
+    {
+      "id": "tobias",
+      "name": {
+        "en": "Tobias the baker",
+        "ru": "Пекарь Товия"
+      },
+      "status": "generated_review_asset",
+      "game_ready": false,
+      "assets": {
+        "reference": {
+          "path": "tobias/reference.png",
+          "sha256": "9874bcc75d9a23c881aa51791b56488c17dbf5443573ce387ba394da0aa43008",
+          "bytes": 2131097
+        },
+        "rig": {
+          "path": "tobias/rig.glb",
+          "sha256": "56747f76a025870fe1710b36f88e1401ed2d14345abfbfacc4a0c4d4b937f58a",
+          "bytes": 20124700
+        },
+        "walk": {
+          "path": "tobias/walk.glb",
+          "sha256": "f9aedf1bb1bcc0ad208b5fcee191f6298e877479097649470eb607f84af185bc",
+          "bytes": 20137476
+        },
+        "run": {
+          "path": "tobias/run.glb",
+          "sha256": "8e702680bc85ce2f5e0e4865a99b29eb31d74aeb7b0648ececf06fd92e8744f7",
+          "bytes": 20132864
+        }
+      },
+      "rig_joint_count": 24,
+      "limitations": [
+        "No articulated fingers or facial animation system",
+        "Clothing/contact QA and target-device optimization required",
+        "No runtime integration or deployment"
+      ]
+    }
+  ],
+  "motion_sources": [
+    {
+      "path": "motion-sources/carry_box.glb",
+      "sha256": "47fbccc6aab28df05e3262794121ae4bd74abb15d5ad12bdff233dec2a3de07b",
+      "bytes": 177216
+    },
+    {
+      "path": "motion-sources/celebrate.glb",
+      "sha256": "40e23df9d7dc1fb43d0f2865b008240d46262f382cce34c0f0a5b5d9c775d3f3",
+      "bytes": 114952
+    },
+    {
+      "path": "motion-sources/crouch_walk.glb",
+      "sha256": "755a094b69c60a1e43aa1f3a251d8af3364044b839d66d8d75a1b0e301f0932c",
+      "bytes": 115092
+    },
+    {
+      "path": "motion-sources/dig.glb",
+      "sha256": "724a5646584a54d21ac616dc0431b2d8c37c538b1bceae557110328c14f42136",
+      "bytes": 115100
+    },
+    {
+      "path": "motion-sources/fall_land.glb",
+      "sha256": "f9ab8a6fd51721986070fd3ed0e9bb9f7c22f972c130d8934e7244b60faa5f26",
+      "bytes": 114548
+    },
+    {
+      "path": "motion-sources/gather.glb",
+      "sha256": "751dab59e105a46aff3356101e81072e21351821160445d98535f64574bfd99d",
+      "bytes": 115236
+    },
+    {
+      "path": "motion-sources/give_receive.glb",
+      "sha256": "cdffac134b8bc36d2f4fd0cd6529844e1c624d412ae823bc22277d25e7ace337",
+      "bytes": 115380
+    },
+    {
+      "path": "motion-sources/hammer.glb",
+      "sha256": "665f30e9c099a2b4fd77d6582cb64e5ae58bb2980c8be4f81355a24cf70f7ff7",
+      "bytes": 115096
+    },
+    {
+      "path": "motion-sources/idle.glb",
+      "sha256": "5e594be7a6f17bbfaa7beff8eca519c617a8ebb8193ffdf0ca022bfd189f39d0",
+      "bytes": 114964
+    },
+    {
+      "path": "motion-sources/jump_land.glb",
+      "sha256": "294c0fb2b7267f7f66d0a4f1c473639e90604912a49ac388f7a242d5ea613212",
+      "bytes": 115096
+    },
+    {
+      "path": "motion-sources/knead_bread.glb",
+      "sha256": "53fa8cc603512f7a71e5140be8919c931d87f11c5361f86a2b71bfe9c53e41b7",
+      "bytes": 115112
+    },
+    {
+      "path": "motion-sources/kneel_pet.glb",
+      "sha256": "adc336dcffb29e7e96ae02ccf18926d3f32a82a2de42831efae478e6bab191c2",
+      "bytes": 115380
+    },
+    {
+      "path": "motion-sources/lamb_lift.glb",
+      "sha256": "0b82d51e919027918653837291f48aeaf170a04200fb97d2050ddeb1376f7298",
+      "bytes": 115240
+    },
+    {
+      "path": "motion-sources/lamb_release.glb",
+      "sha256": "123d950fc1ad75f68a81d81802a5544125db62b506677b89cf3053ab3a3e931d",
+      "bytes": 114692
+    },
+    {
+      "path": "motion-sources/lamb_shoulder_carry.glb",
+      "sha256": "6b306fb8d8100d175366d7ebadb9e602c933eabe360745bcf3688db73b40b11e",
+      "bytes": 185228
+    },
+    {
+      "path": "motion-sources/listen_talk.glb",
+      "sha256": "a7b671855590455acf2bdaf9959cbc2a54d0173bc2aee1bb4cb8b82e1995af01",
+      "bytes": 114972
+    },
+    {
+      "path": "motion-sources/look_point.glb",
+      "sha256": "3eec2b04af86eee02f1bc07c9a6a3366dee84e0b36d26abb89686accfb5f6223",
+      "bytes": 115376
+    },
+    {
+      "path": "motion-sources/low_mantle.glb",
+      "sha256": "7fe7b90a874af4797a20b878524185940841da35a39d6c6863c00de79474439c",
+      "bytes": 114808
+    },
+    {
+      "path": "motion-sources/pickup_place.glb",
+      "sha256": "f373db5795e298f3abbee93731531b65fc7356a75d2b0e9810bda8b8d8660b22",
+      "bytes": 115256
+    },
+    {
+      "path": "motion-sources/plant.glb",
+      "sha256": "f3759202e550e46cd11cf20b54e481003a6eabde7f12c7015ba97feb18233318",
+      "bytes": 115244
+    },
+    {
+      "path": "motion-sources/pull.glb",
+      "sha256": "b7f149c2b6670306220714d5c7e930c8383911fd91c3f48fc2675ef9cfe3a3c3",
+      "bytes": 114688
+    },
+    {
+      "path": "motion-sources/push.glb",
+      "sha256": "d497ccba547223762c47ac56fe535ce1f39329cf9479fd6c3947d29fb31af85b",
+      "bytes": 115116
+    },
+    {
+      "path": "motion-sources/reach_high.glb",
+      "sha256": "8f3e79c3c9b476fdd5925d63402156bf15ebe5318bddcbd29ac8d82427b21434",
+      "bytes": 114980
+    },
+    {
+      "path": "motion-sources/run.glb",
+      "sha256": "61dec9b3db43fc984d88cdf92f92588fc5658d3273fcd29dda5e374c22e1c4fa",
+      "bytes": 224488
+    },
+    {
+      "path": "motion-sources/shape_bread.glb",
+      "sha256": "d00777797bac672c6e70a5da302692ddbbe71f4ef4220c85048409fcd0e2db49",
+      "bytes": 114960
+    },
+    {
+      "path": "motion-sources/start_stop.glb",
+      "sha256": "ae57c6bb9d80ff167746a47faabd4d7717939186bdcb2ce970e35cdff5635eac",
+      "bytes": 161828
+    },
+    {
+      "path": "motion-sources/stumble_recover.glb",
+      "sha256": "36d61b0a1575d7a6a38d09e14b448eef4dcad50949750a001a0ca1c144df119a",
+      "bytes": 213760
+    },
+    {
+      "path": "motion-sources/sweep.glb",
+      "sha256": "253a76f28c3807ca33e6a2c4ce3984801d7baa741a2dc03aefa5736bdef3713f",
+      "bytes": 115380
+    },
+    {
+      "path": "motion-sources/turn_left.glb",
+      "sha256": "4422572fc430a73d1c3729a06bf0d8e7342ff80c88c16b09c2afeea952088bcc",
+      "bytes": 114968
+    },
+    {
+      "path": "motion-sources/walk.glb",
+      "sha256": "e081eb1f30826aac8f42822c98cc395a7a8bf5db010d437536a74f44ad19cab3",
+      "bytes": 217920
+    },
+    {
+      "path": "motion-sources/water.glb",
+      "sha256": "f5aad7493d21f9291bc3aa525dcb6529e6f93a5cd85787afd920cb59e8389700",
+      "bytes": 114976
+    },
+    {
+      "path": "motion-sources/wave_beckon.glb",
+      "sha256": "d1e3dbef83a9063b00fa7fea4cd110321a4f8da9735294f8c74323f0af5f66eb",
+      "bytes": 115264
+    }
+  ],
+  "motion_status": "Generated source clips, not retargeted; visual misses documented in motion-sources/VISUAL_REVIEW.md",
+  "experimental_carry_included": false
+}
