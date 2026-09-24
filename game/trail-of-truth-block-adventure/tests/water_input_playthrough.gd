@@ -27,6 +27,13 @@ func run() -> void:
     game.player._yaw = 0
     check(await walk(Vector3(150,0,8.5)),"walk to gardener on real collision floor")
     await capture("dry-garden")
+    root.size = Vector2i(768,1024)
+    for n in range(6): await process_frame
+    game._layout_ui()
+    await capture("dry-garden-portrait")
+    root.size = Vector2i(1280,720)
+    for n in range(6): await process_frame
+    game._layout_ui()
     await action()
     check(c.stage == 1 and game.paused,"keyboard meets Mira")
     game.primary.pressed.emit()

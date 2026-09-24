@@ -49,8 +49,8 @@ func load_checkpoint(data: Variant, cave_stage: int) -> void:
 func snapshot() -> Dictionary:
     return {"active": active, "steps": completed_steps.duplicate()}
 
-func solid(pos: Vector3, size: Vector3, color: Color) -> void:
-    host._box(self, pos, size, color)
+func solid(pos: Vector3, size: Vector3, color: Color, show_mesh := true) -> void:
+    if show_mesh: host._box(self, pos, size, color)
     var body := StaticBody3D.new()
     body.position = pos
     var shape := CollisionShape3D.new()
@@ -115,13 +115,14 @@ func _ready() -> void:
     name = "WaterForTheVillage"
     # Offset chapter uses its own floor, beyond the old world and cave colliders.
     solid(Vector3(160,-.5,0),Vector3(32,1,32),Color("a5aa70"))
-    for x in [144,176]: solid(Vector3(x,1,0),Vector3(.6,2,32),Color("9b9477"))
-    for z in [-16,16]: solid(Vector3(160,1,z),Vector3(32,2,.6),Color("9b9477"))
-    host._box(self,Vector3(157,.012,0),Vector3(2,.025,26),Color("d1b784"))
+    for x in [144,176]: solid(Vector3(x,1,0),Vector3(.6,2,32),Color("9b9477"),false)
+    for z in [-16,16]: solid(Vector3(160,1,z),Vector3(32,2,.6),Color("9b9477"),false)
+    var landscape := preload("res://scripts/water_environment.gd").new()
+    add_child(landscape)
     # Continuous watercourse leads visibly uphill from the dry beds to the source.
     host._box(self,Vector3(160,.025,-2),Vector3(1.8,.05,22),Color("715d45"))
     for x in [159,161]:
-        for z in [-7,6]: solid(Vector3(x,.15,z),Vector3(.18,.3,10),Color("c5b89a"))
+        for z in [-7,6]: solid(Vector3(x,.15,z),Vector3(.18,.3,10),Color("c5b89a"),false)
     solid(Vector3(160,.12,0),Vector3(3,.24,2),Color("a98455"))
     host._box(self,Vector3(164,.04,-13),Vector3(9,.08,3),Color("397a99"))
     host._box(self,Vector3(156,.03,8),Vector3(8,.06,1.4),Color("715d45"))
@@ -148,6 +149,9 @@ func _ready() -> void:
         wheel.position = Vector3(-1.6,1,0)
         wheel.material_override = host._material(Color("edc06d"))
         gate.add_child(wheel)
+        for spoke in range(4):
+            var bar: MeshInstance3D = host._box(gate,Vector3(-1.6,1,0),Vector3(.055,.60,.055),Color("b58e54"))
+            bar.rotation.z = spoke*PI/4
         gates.append(gate)
         sign_at(pos+Vector3(0,1.9,0))
     debris = Node3D.new()
@@ -188,21 +192,6 @@ func _ready() -> void:
     for n in range(4): host._box(produce,Vector3((n%2)*.3-.15,.42,(n/2)*.2-.1),Vector3(.24,.24,.2),Color("e8ad43"))
     make_person("anna",GARDENER,true)
     make_person("tobias",KEEPER,false)
-    # Existing CC0 scenery frames the irrigation yard without obstructing its bank.
-    var scenery = preload("res://assets/environment/village_finish.gd")
-    for pos in [Vector3(146,0,13),Vector3(146,0,-12),Vector3(173,0,13),Vector3(173,0,-11)]:
-        scenery.place(self,"plant_bushDetailed.glb",pos,Vector3.ONE*2)
-        scenery.place(self,"flower_yellowC.glb",pos+Vector3(1,0,0),Vector3.ONE*1.4)
-    for z in [5,7,9,11]:
-        scenery.place(self,"Prop_WoodenFence_Single.gltf",Vector3(147,0,z),Vector3.ONE*.7,90)
-    for z in [-12,-10]:
-        scenery._round(self,Vector3(154,.5,z),.4,1,Color("986b44"))
-    # A small shaded seed table makes Mira's work area identifiable at a glance.
-    host._box(self,Vector3(149,.75,4),Vector3(2,.12,1),Color("ac8052"))
-    for x in [148.2,149.8]:
-        host._box(self,Vector3(x,.36,4),Vector3(.12,.72,.7),Color("886343"))
-        host._box(self,Vector3(x,1.3,3.65),Vector3(.1,2.6,.1),Color("886343"))
-    host._box(self,Vector3(149,2.6,4),Vector3(2.5,.08,1.8),Color("c39459"))
     restore()
 
 func restore() -> void:
