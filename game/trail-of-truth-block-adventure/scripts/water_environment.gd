@@ -60,64 +60,23 @@ func _ready() -> void:
     orb.height = 1
     orb.radial_segments = 12
     orb.rings = 6
-    # A scenic meadow continues beyond the retained collision rectangle.
-    piece(Vector3(160,-.16,0),Vector3(110,.2,100),"8eaa6a")
-    var ground := MeshInstance3D.new()
-    var plane := PlaneMesh.new()
-    plane.size = Vector2(500,500)
-    ground.mesh = plane
-    ground.position = Vector3(160,.008,0)
-    ground.material_override = KIT.ground_material(Color("a4b57a"))
-    add_child(ground)
-    ribbon([Vector3(150,0,15),Vector3(149.8,0,11),Vector3(150,0,8),Vector3(151,0,5),Vector3(154,0,3),Vector3(156.7,0,1),Vector3(157,0,-3),Vector3(156.8,0,-7),Vector3(156,0,-11),Vector3(155,0,-15)],1.18,"c9b18a")
-    ribbon([Vector3(149.5,0,12.5),Vector3(153,0,12),Vector3(156.9,0,10),Vector3(157,0,6),Vector3(156.7,0,1)],1.05,"c9b18a",.085)
-    ribbon([Vector3(149,0,8.5),Vector3(152,0,8.5),Vector3(155,0,8.5),Vector3(157,0,8.5)],.48,"c9b18a",.10)
-    # Tiny aggregate is batched, not hundreds of independent draw calls.
-    for n in range(100):
-        var z := -12.0 + float(n)*.25
-        var x := 156.85 + sin(n*12.3)*.77
-        piece(Vector3(x,.06,z),Vector3(.055+absf(sin(n))*.09,.025,.08),"dfc9a3",true)
-    # Staggered masonry courses frame the original stateful water surfaces.
-    for x in [159.0,161.0]:
-        for course in range(2):
-            for n in range(29):
-                var z := -12.4+n*.74+course*.32
-                if absf(z)<1.05: continue
-                piece(Vector3(x,.10+course*.16,z),Vector3(.32,.16,.70),["b5ad90","cac1a1","a49d83"][n%3],false,sin(n*2.0)*.025)
-    for z in [7.26,8.74]:
-        for n in range(11):
-            piece(Vector3(152.2+n*.7,.14,z),Vector3(.66,.23,.25),"b5ad90")
-    # Bridge decking stays on the existing collision crossing.
-    for n in range(9): piece(Vector3(158.6+n*.35,.255,0),Vector3(.32,.09,1.95),"ae8a59")
-    for z in [-8.0,-2.0,4.0]:
-        for x in [158.95,161.05]:
-            piece(Vector3(x,.77,z),Vector3(.26,1.54,.29),"796343")
-            piece(Vector3(x,.15,z),Vector3(.49,.3,.49),"b5ad90")
-        piece(Vector3(160,1.53,z),Vector3(2.6,.22,.36),"90714b")
-        piece(Vector3(158.4,.57,z),Vector3(.15,1.05,.15),"796343")
-        piece(Vector3(159.1,1.0,z),Vector3(1.4,.10,.10),"796343")
-    for z in [-2.64,-1.36]:
-        for n in range(10): piece(Vector3(161.2+n*.68,.13,z),Vector3(.64,.22,.23),"b5ad90")
+    preload("res://scripts/garden_terrain.gd").build(self)
+    # Tapered earth shoulders meet the lining base. No solver bed is lowered.
+    # These are scenic shoulders outside the existing walking corridor.
+    earth_bank(161.02,163.2,-10.2,-7,.96,.96)
+    earth_bank(161.02,162.8,-7,-3,.66,.66)
+    earth_bank(161.02,162.4,-3,7.2,.36,.36)
+    earth_bank(158.98,158.45,-10.2,-7,.96,.96)
+    earth_bank(158.98,158.45,-3,5.55,.36,.36)
     # The spring is nested in rock and planting rather than a blue rectangle.
     for n in range(15):
         var angle := n*PI/14
         piece(Vector3(164+cos(angle)*4.6,.25,-13-sin(angle)*1.7),Vector3(1.25,.7,1),["a49d83","b5ad90"][n%2],true)
-    # Raised vegetable plots: low borders, open cross-walking lane retained.
-    for x in [151.5,154.0]:
-        for z in [6.45,11.55]: piece(Vector3(x,.16,z),Vector3(2.1,.26,.16),"90714b")
-        for edge in [-1.0,1.0]:
-            for z in [7.35,10.2]: piece(Vector3(x+edge,.13,z),Vector3(.14,.20,1.9),"90714b")
     # Buildings are beyond the bank/walking routes. Reuse only the CC0 kit.
     KIT.cottage(self,Vector3(138,0,-6),90,.85,"")
     KIT.cottage(self,Vector3(169,0,-21),0,.95,"")
     KIT.cottage(self,Vector3(181,0,4),-90,.80,"")
-    # Broad, low hills conceal the hard level edge without invading the actors.
-    for n in range(14):
-        var angle := float(n)*TAU/14
-        var p := Vector3(160+cos(angle)*30,-1.4,-1+sin(angle)*29)
-        piece(p,Vector3(19,5.5+sin(n*2.0)*1.4,17),["91a977","819d6b","a2b782"][n%3],true)
-    for p in [Vector3(145,0,13),Vector3(143,0,4),Vector3(146,0,-14),Vector3(152,0,-18),Vector3(173,0,-13),Vector3(176,0,-4),Vector3(173,0,12),Vector3(165,0,18),Vector3(140,0,-16)]:
-        tree(p,1.1+sin(p.x)*.17,p.z)
+    preload("res://scripts/garden_foliage.gd").build(self)
     # Group planting in edge drifts: leave the central yard quiet and readable.
     for n in range(36):
         var side := -1.0 if n%2==0 else 1.0
@@ -129,6 +88,30 @@ func _ready() -> void:
         for n in range(3): KIT.place(self,"flower_yellowC.glb",p+Vector3(.35*n-.3,0,.45+sin(n)*.2),Vector3.ONE*.8)
     for z in [5,7,9,11]: KIT.place(self,"Prop_WoodenFence_Single.gltf",Vector3(147,0,z),Vector3.ONE*.7,90)
     flush()
+
+func earth_bank(inner: float, outer: float, start: float, end: float, high: float, low: float) -> void:
+    var st := SurfaceTool.new()
+    st.begin(Mesh.PRIMITIVE_TRIANGLES)
+    var count := 12
+    for n in range(count):
+        var z0 := lerpf(start,end,float(n)/count)
+        var z1 := lerpf(start,end,float(n+1)/count)
+        var y0 := lerpf(high,low,float(n)/count)
+        var y1 := lerpf(high,low,float(n+1)/count)
+        var edge0 := outer+sin(n*1.7)*.08
+        var edge1 := outer+sin((n+1)*1.7)*.08
+        var points: Array[Vector3] = [Vector3(inner,y0,z0),Vector3(edge0,.018,z0),Vector3(edge1,.018,z1),Vector3(inner,y0,z0),Vector3(edge1,.018,z1),Vector3(inner,y1,z1)]
+        if outer < inner: points.reverse()
+        for v in points:
+            st.set_color(Color(.18,0,0,1))
+            st.set_uv(Vector2(v.x,v.z)*.4)
+            st.add_vertex(v)
+    st.generate_normals()
+    var node := MeshInstance3D.new()
+    node.mesh = st.commit()
+    node.material_override = preload("res://scripts/garden_terrain.gd").material()
+    node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+    add_child(node)
 
 func flush() -> void:
     for key in batches:

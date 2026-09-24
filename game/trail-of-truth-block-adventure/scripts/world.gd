@@ -5,6 +5,7 @@ extends Node3D
 const VillageFinish = preload("res://assets/environment/village_finish.gd")
 
 var cottages: Array[Node3D] = []
+var _bridge_craft: Node3D
 var _bridge_stage: int = 0
 var _camp_restored: bool = false
 var _panels: Array[Node3D] = []
@@ -25,12 +26,17 @@ func _ready() -> void:
 	VillageFinish.setup(self)
 	_make_trees_and_landmarks()
 	_flush_batches()
+	preload("res://scripts/opening_river_art.gd").build(self)
+	_bridge_craft = preload("res://scripts/bridge_craft.gd").build(self)
 	set_bridge_stage(_bridge_stage)
 	set_camp_restored(_camp_restored)
 	set_camp_banner(_banner_color)
 
 func set_bridge_stage(stage: int) -> void:
 	_bridge_stage = clampi(stage, 0, 2)
+	if is_instance_valid(_bridge_craft):
+		_bridge_craft.get_node("LeftBreak").visible = _bridge_stage < 1
+		_bridge_craft.get_node("RightBreak").visible = _bridge_stage < 2
 	for i: int in range(_panels.size()):
 		_panels[i].visible = i < _bridge_stage
 		_panel_shapes[i].set_deferred("disabled", i >= _bridge_stage)
@@ -105,12 +111,7 @@ func _make_land() -> void:
 	_solid("RightBank", Vector3(15.15, -1.5, 0), Vector3(15.7, 3, 34), "earth")
 	_block(Vector3(-9.65, -0.04, 0), Vector3(24.7, 0.08, 34), "grass")
 	_block(Vector3(15.15, -0.04, 0), Vector3(15.7, 0.08, 34), "grass_light")
-	_block(Vector3(5, -0.72, 0), Vector3(4.6, 0.08, 38), "water")
-	# Pale broken ripples are deliberately flat, opaque, shader-free decorations.
-	for i: int in range(24):
-		var z: float = -17.5 + float(i) * 1.5
-		var x: float = 3.5 + float(i % 3) * 1.1
-		_block(Vector3(x, -0.671, z), Vector3(0.65, 0.015, 0.08), "water_light")
+	# River surface and bank contact now authored by OpeningRiverArt.
 	# Broad contiguous paths make both bridge approaches visually obvious.
 	_block(Vector3(-3.2, 0.006, 0), Vector3(11.8, 0.012, 3.6), "path")
 	_block(Vector3(10.2, 0.006, 0), Vector3(5.8, 0.012, 3.6), "path")
@@ -136,10 +137,7 @@ func _make_land() -> void:
 	for z: float in [-14.0, -7.0, 0.0, 7.0, 14.0]:
 		VillageFinish.rounded(self,Vector3(-24.5,1.5,z),Vector3(7,7,10),Color("859b70"))
 		VillageFinish.rounded(self,Vector3(25.5,1.5,z),Vector3(7,7,10),Color("859b70"))
-	# Stepped exposed riverbank stone, outside the crossing corridor.
-	for z: float in [-14.0, -10.0, -6.0, 6.0, 10.0, 14.0]:
-		_block(Vector3(2.65, -0.35, z), Vector3(0.35, 0.55, 2.7), "stone")
-		_block(Vector3(7.35, -0.4, z + 0.5), Vector3(0.35, 0.45, 2.1), "stone_light")
+	# Natural sloped shoreline replaces the repeated rectangular bank stones.
 
 func _make_bridge() -> void:
 	for i: int in range(2):
@@ -168,7 +166,7 @@ func _make_bridge() -> void:
 	for x: float in [2.45, 7.55]:
 		for z: float in [-1.25, 1.25]:
 			_solid("BridgeMarker", Vector3(x, 0.4, z), Vector3(0.35, 0.8, 0.35), "wood")
-			_block(Vector3(x, 0.83, z), Vector3(0.44, 0.12, 0.44), "plank_light")
+			# Sculpted marker cap supplied by BridgeCraft; collider above retained.
 
 func _make_camp() -> void:
 	# Open-front shelter behind the spawn; camp return radius stays unobstructed.
@@ -271,7 +269,7 @@ func _make_trees_and_landmarks() -> void:
 		_block(Vector3(x, 0.13, 12.4), Vector3(0.35, 0.26, 0.5), "leaf_light")
 
 func _solid(label: String, center: Vector3, size: Vector3, material_key: String) -> void:
-	if label not in ["WestCliff", "EastCliff", "NorthCliff", "SouthCliff", "ShelterRoof", "MeadowRock"]:
+	if label not in ["WestCliff", "EastCliff", "NorthCliff", "SouthCliff", "ShelterRoof", "MeadowRock", "BridgeMarker"]:
 		# Grass caps used to share the exact earth top plane: visible z-fighting.
 		# Recess only the brown render mesh, keeping collision ground unchanged.
 		var inset: float = .08 if label in ["LeftBank", "RightBank"] else (.02 if label == "SeedTerrace" else 0.0)
