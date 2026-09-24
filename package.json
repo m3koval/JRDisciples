@@ -17,7 +17,8 @@
     "check:scripture": "node scripts/check-lesson-scripture-localization.mjs",
     "check:case-russian": "node scripts/check-case-for-christ-russian-copy.mjs",
     "check:assets": "node scripts/check-image-assets.mjs",
-    "check:games": "node scripts/check-games-section.mjs"
+    "check:games": "node scripts/check-games-section.mjs",
+    "build:capacitor": "npm run build:app"
   },
   "dependencies": {
     "@capacitor/core": "^8.5.2",

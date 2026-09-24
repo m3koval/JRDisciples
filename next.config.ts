@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const isAppBuild = process.env.CAPACITOR_BUILD === "1";
+const isAppBuild = process.env.CAPACITOR_BUILD === "1" || process.env.BUILD_TARGET === "capacitor";
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["10.0.5.74"],

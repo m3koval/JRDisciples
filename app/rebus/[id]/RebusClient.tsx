@@ -4,17 +4,23 @@ import { rebusPuzzles } from "@/data/rebus";
 import { rebusRu } from "@/data/rebus-ru";
 import RebusCard from "@/components/RebusCard";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
+import { useEffect } from "react";
 
 const BANNERS = ["sb-5","sb-2","sb-4","sb-3","sb-1","sb-6"];
 const BGS     = ["alt-bg5","alt-bg2","alt-bg4","alt-bg6","alt-bg","alt-bg3"];
 
 export default function RebusClient({ id }: { id: string }) {
   const { language } = useLanguage();
+  const router = useRouter();
 
   const currentPuzzles = language === 'ru' ? rebusRu : rebusPuzzles;
   const idx = currentPuzzles.findIndex((p) => p.id === id);
 
+  useEffect(() => {
+    if (idx === -1) router.replace('/rebus');
+  }, [idx, router]);
 
   if (idx === -1) return null;
 

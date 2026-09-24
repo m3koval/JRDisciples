@@ -5,7 +5,9 @@ import { storiesRu } from "@/data/stories-ru";
 import { quizzes } from "@/data/quizzes";
 import { quizzesRu } from "@/data/quizzes-ru";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
+import { useEffect } from "react";
 import { JourneyNextAction } from "@/components/app/JourneyNextAction";
 
 const BANNER_CLASSES = ["sb-1","sb-2","sb-3","sb-4","sb-5","sb-6"];
@@ -14,10 +16,14 @@ const ALT_BGS = ["alt-bg","alt-bg2","alt-bg3","alt-bg4","alt-bg5","alt-bg6"];
 
 export default function StoryClient({ id }: { id: string }) {
   const { language } = useLanguage();
+  const router = useRouter();
 
   const currentStories = language === 'ru' ? storiesRu : stories;
   const idx = currentStories.findIndex((s) => s.id === id);
 
+  useEffect(() => {
+    if (idx === -1) router.replace('/stories');
+  }, [idx, router]);
 
   if (idx === -1) return null;
 
@@ -99,7 +105,6 @@ export default function StoryClient({ id }: { id: string }) {
           <div style={{ textAlign: "center", marginTop: 28 }}>
             <JourneyNextAction currentHref={`/stories/${id}`} />
           </div>
-
           {/* Quiz CTA */}
           {quiz && process.env.NEXT_PUBLIC_APP_SHELL !== '1' && (
             <div style={{ textAlign: "center", marginTop: 28 }}>

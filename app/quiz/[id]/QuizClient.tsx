@@ -6,19 +6,25 @@ import { stories } from "@/data/stories";
 import { storiesRu } from "@/data/stories-ru";
 import QuizGame from "@/components/QuizGame";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
+import { useEffect } from "react";
 
 const PZ_COLORS = ["#ff6b1a","#0a7090","#7030a0","#2a6a10","#c05010","#104f8a"];
 const BANNER_CLASSES = ["sb-1","sb-2","sb-3","sb-4","sb-5","sb-6"];
 
 export default function QuizClient({ id }: { id: string }) {
   const { language } = useLanguage();
+  const router = useRouter();
 
   const currentQuizzes = language === 'ru' ? quizzesRu : quizzes;
   const currentStories = language === 'ru' ? storiesRu : stories;
 
   const idx = currentQuizzes.findIndex((q) => q.id === id);
 
+  useEffect(() => {
+    if (idx === -1) router.replace('/quiz');
+  }, [idx, router]);
 
   if (idx === -1) return null;
 

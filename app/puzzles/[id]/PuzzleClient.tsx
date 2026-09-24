@@ -4,17 +4,23 @@ import { wordPuzzles } from "@/data/word-puzzles";
 import { wordPuzzlesRu } from "@/data/word-puzzles-ru";
 import WordSearchGame from "@/components/WordSearchGame";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
+import { useEffect } from "react";
 
 const BANNERS = ["sb-3","sb-5","sb-6"];
 const BGS = ["alt-bg6","alt-bg2","alt-bg"];
 
 export default function PuzzleClient({ id }: { id: string }) {
   const { language } = useLanguage();
+  const router = useRouter();
 
   const currentPuzzles = language === 'ru' ? wordPuzzlesRu : wordPuzzles;
   const idx = currentPuzzles.findIndex((p) => p.id === id);
 
+  useEffect(() => {
+    if (idx === -1) router.replace('/puzzles');
+  }, [idx, router]);
 
   if (idx === -1) return null;
 

@@ -1,11 +1,13 @@
 import { memoryVerses } from "@/data/memory-verses";
+import { memoryVersesRu } from "@/data/memory-verses-ru";
 import MemoryClient from "./MemoryClient";
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return memoryVerses.map((item) => ({ id: item.id }));
+export async function generateStaticParams() {
+  const ids = new Set([...memoryVerses, ...memoryVersesRu].map((v) => v.id));
+  return [...ids].map((id) => ({ id }));
 }
+
+export const dynamicParams = false;
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

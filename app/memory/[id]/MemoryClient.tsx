@@ -4,14 +4,20 @@ import { memoryVerses } from "@/data/memory-verses";
 import { memoryVersesRu } from "@/data/memory-verses-ru";
 import MemoryChallenge from "@/components/MemoryChallenge";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
+import { useEffect } from "react";
 
 export default function MemoryClient({ id }: { id: string }) {
   const { language } = useLanguage();
+  const router = useRouter();
 
   const currentVerses = language === 'ru' ? memoryVersesRu : memoryVerses;
   const verse = currentVerses.find((v) => v.id === id);
 
+  useEffect(() => {
+    if (!verse) router.replace('/memory');
+  }, [verse, router]);
 
   if (!verse) return null;
 
