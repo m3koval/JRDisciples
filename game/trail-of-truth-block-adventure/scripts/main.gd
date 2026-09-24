@@ -47,6 +47,7 @@ signal camp_banner_changed(color_id: String)
 var rewards = preload("res://scripts/adventure_rewards.gd").new()
 var campaign = preload("res://scripts/flock_campaign.gd").new()
 var caves = preload("res://scripts/cave_campaign.gd").new()
+var water_chapter = preload("res://scripts/water_campaign.gd").new()
 var adventure_points: int:
     get: return rewards.total()
 var camp_banner_color: String:
@@ -260,6 +261,8 @@ func _ready() -> void:
             board.visible = false
     caves.host = self
     add_child(caves)
+    water_chapter.host = self
+    add_child(water_chapter)
     _build_ui()
     var observer := WorldTapObserver.new()
     observer.controller = self
@@ -417,6 +420,11 @@ func _build_villagers() -> void:
 func _physics_process(delta: float) -> void:
     if paused:
         return
+    if water_chapter.active:
+        water_chapter.tick(delta)
+        if Input.is_action_just_pressed("interact"): _interact()
+        _choose_context()
+        return
     if caves.active:
         caves.tick(delta)
         if Input.is_action_just_pressed("interact"): _interact()
@@ -558,6 +566,11 @@ func _choose_context() -> void:
     context_kind = ""
     context_index = -1
     highlight.visible = false
+    if water_chapter.active or water_chapter.entry_available():
+        context_kind = water_chapter.context()
+        target_marker.position = water_chapter.destination() + Vector3.UP * 2.5
+        target_marker.visible = water_chapter.stage < 9
+        return
     if caves.active or caves.context() == "caves":
         context_kind = caves.context()
         target_marker.position = caves.destination() + Vector3.UP * 2.5
@@ -585,7 +598,7 @@ func _choose_context() -> void:
                     highlight.global_position = seeds[i].position - Vector3(0, .2, 0)
                     highlight.visible = true
                     break
-        return
+        if context_kind != "" or campaign.stage < 6: return
     var pos: Vector3 = player.position
     if carrying >= 0:
         if pos.distance_to(Vector3(1.5 if bridge_stage == 0 else 3.6, 0, 0)) < 3.2:
@@ -649,12 +662,17 @@ func _interact() -> void:
     if paused:
         return
     _choose_context()
+    if water_chapter.active or context_kind == "water_start":
+        water_chapter.interact()
+        _choose_context()
+        _refresh_ui()
+        return
     if caves.active or context_kind == "caves":
         caves.interact()
         _choose_context()
         _refresh_ui()
         return
-    if campaign.stage > 0 and context_kind != "seed":
+    if campaign.stage > 0 and context_kind not in ["seed", "talk", "door"]:
         campaign.interact()
         _choose_context()
         _refresh_ui()
@@ -753,7 +771,7 @@ func _notice(key: String) -> void:
     cue.play()
 
 func _toggle_pause() -> void:
-    if modal_kind in ["intro", "complete", "flock_complete", "cave_intro", "cave_complete"]:
+    if modal_kind in ["intro", "complete", "flock_complete", "cave_intro", "cave_complete", "water_intro", "water_complete", "water_talk"]:
         return
     paused = not paused
     modal_kind = "pause" if paused else ""
@@ -763,6 +781,11 @@ func _toggle_pause() -> void:
 func _open_map() -> void:
     if paused:
         return
+    if water_chapter.active:
+        # The old map covers only the clearing. Show current chapter guidance,
+        # never a misleading marker off its map.
+        _toggle_pause()
+        return
     paused = true
     modal_kind = "map"
     player.set_enabled(false)
@@ -771,6 +794,11 @@ func _open_map() -> void:
     _refresh_ui()
 
 func _primary_action() -> void:
+    if modal_kind == "cave_complete" or (modal_kind == "intro" and caves.stage == 6 and not water_chapter.active):
+        if water_chapter.start():
+            modal_kind = "water_intro"
+            _refresh_ui()
+            return
     if modal_kind == "flock_complete":
         if caves.start():
             modal_kind = "cave_intro"
@@ -782,6 +810,14 @@ func _primary_action() -> void:
     _refresh_ui()
 
 func _secondary_action() -> void:
+    if water_chapter.active and modal_kind == "pause":
+        water_chapter.active = false
+        water_chapter.hide()
+        player.position = SPAWN
+        player.velocity = Vector3.ZERO
+        _save_progress()
+        _primary_action()
+        return
     if modal_kind == "flock_complete":
         paused = false
         modal_kind = ""
@@ -804,13 +840,16 @@ func _secondary_action() -> void:
 func _prepare_replay() -> bool:
     var previous_stage: int = campaign.stage
     var previous_caves: Dictionary = caves.snapshot()
+    var previous_water: Dictionary = water_chapter.snapshot()
     var previous_health: int = caves.health
+    water_chapter.load_checkpoint(null, 0)
     caves.load_checkpoint(null, 0)
     campaign.stage = 0
     _save_progress()
     if not saves_ok:
         campaign.stage = previous_stage
         caves.load_checkpoint(previous_caves, previous_stage)
+        water_chapter.load_checkpoint(previous_water, caves.stage)
         caves.health = previous_health
         return false
     return true
@@ -888,9 +927,11 @@ func _apply_progress(data: Variant) -> void:
             garden_saved = garden_saved or planted
     campaign.load_checkpoint(data.get("campaign") if data is Dictionary else null, reward_saved)
     caves.load_checkpoint(data.get("caves") if data is Dictionary else null, campaign.stage)
+    water_chapter.load_checkpoint(data.get("water") if data is Dictionary else null, caves.stage)
+    if water_chapter.active: caves.active = false
 
 func _save_progress() -> void:
-    var text := JSON.stringify({"version": 3, "rescued": reward_saved, "garden": garden_saved, "rewards": rewards.snapshot(), "campaign": {"stage": campaign.stage}, "caves": caves.snapshot()})
+    var text := JSON.stringify({"version": 4, "rescued": reward_saved, "garden": garden_saved, "rewards": rewards.snapshot(), "campaign": {"stage": campaign.stage}, "caves": caves.snapshot(), "water": water_chapter.snapshot()})
     if OS.has_feature("web"):
         saves_ok = JavaScriptBridge.eval("(function(){try{localStorage.setItem('jd.block.v1'," + JSON.stringify(text) + ");return true}catch(e){return false}})()") == true
     else:
@@ -1161,7 +1202,7 @@ func _refresh_ui() -> void:
     language_button.text = "EN" if language == "ru" else "RU"
     pause_button.text = t("Pause", "Пауза")
     map_button.text = t("Map", "Карта")
-    map_button.visible = not paused and not caves.active
+    map_button.visible = not paused and not caves.active and not water_chapter.active
     rewards_button.visible = not paused
     rewards_button.text = t("Book · %d", "Книга · %d") % adventure_points
     banner_choices.visible = modal_kind in ["complete", "rewards"] and rewards.earned.has("rescue")
@@ -1178,6 +1219,7 @@ func _refresh_ui() -> void:
     if campaign.stage > 0 and context_kind not in ["seed", "talk", "door"]:
         action_button.text = campaign.action_text()
     if caves.active or context_kind == "caves": action_button.text = caves.action_text()
+    if water_chapter.active or context_kind == "water_start": action_button.text = water_chapter.action_text()
     input_hint.text = t("WASD · drag to look · Space · E", "WASD · веди, чтобы осмотреться · Пробел · E") if not DisplayServer.is_touchscreen_available() else t("Left: move · Right: look", "Слева: идти · справа: смотреть")
     var notices := {"water":t("Back on shore. Log safe!", "Ты на берегу. Бревно цело!"), "carry":t("Walk to the glowing outline by the crossing.", "Иди к светлому контуру у мостика."), "placed":t("One more log!", "Нужно ещё одно бревно!"), "bridge":t("You made a way across. Listen for the lamb!", "Теперь можно перейти. Прислушайся к ягнёнку!"), "seed":t("A seed pouch for the camp garden.", "Семена для сада в лагере."), "garden":t("The camp garden is growing!", "В лагере появился сад!"), "follow":t("It trusts you. Stay close and lead it home.", "Он доверяет тебе. Будь рядом и веди домой.")}
     notice.text = notices.get(notice_key, "") if notice_timer > 0 else ""
@@ -1256,14 +1298,21 @@ func _refresh_ui() -> void:
             primary.text = t("Continue", "Продолжить")
         elif modal_kind == "cave_complete":
             modal_title.text = t("The lamb is safe!", "Ягнёнок в безопасности!")
-            modal_body.text = t("You watched, made room, and cared for the lamb. All animals are safe. Walk to camp to return to the clearing.", "Ты был внимателен и позаботился о ягнёнке. Все звери целы. Иди в лагерь, чтобы вернуться на поляну.") + "\n\n" + (JOHN_RU if language == "ru" else JOHN_EN)
-            primary.text = t("Explore", "Гулять")
+            modal_body.text = t("You protected the flock and brought the lamb home. Next, Mira needs help bringing water to the village garden.", "Ты защитил стадо и привёл ягнёнка домой. Теперь Мире нужна помощь: вернуть воду в деревенский сад.") + "\n\n" + (JOHN_RU if language == "ru" else JOHN_EN)
+            primary.text = t("Next: water for the village", "Дальше: вода для деревни")
     elif campaign.stage == 6:
         objective.text = t("Next: return to camp for the three caves", "Дальше: вернись в лагерь к трём пещерам") if caves.stage < 6 else t("All safe · explore for garden seeds", "Все в безопасности · ищи семена для сада")
         if modal_kind == "flock_complete":
             primary.text = t("Continue to caves", "Дальше: пещеры")
     if caves.active and paused and not saves_ok:
         modal_body.text += t("\n\nNot saved on this device. Keep playing; leaving may lose this checkpoint.", "\n\nНе сохранено на устройстве. Можно играть дальше, но при выходе этот шаг может потеряться.")
+    if caves.stage == 6 and not water_chapter.active:
+        objective.text = t("Next: village water · return to camp", "Дальше: вода для сада · вернись в лагерь")
+        if modal_kind == "intro":
+            modal_title.text = t("Next: water for the village", "Дальше: вода для деревни")
+            modal_body.text = t("The flock is safe. A dry garden needs your help. Meet Mira and Oren in a new fictional village adventure.", "Стадо в безопасности. Сухому саду нужна помощь. Встреть Миру и Орена в новом выдуманном приключении.")
+            primary.text = t("Continue", "Продолжить")
+    water_chapter.refresh_ui()
     shade.visible = paused and modal_kind != "talk"
     modal_tail.visible = paused and modal_kind == "talk"
     header.visible = not paused
