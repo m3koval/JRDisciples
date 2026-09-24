@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { journeyUnits } from '@/data/journey'
 import { useJourneyProgress } from '@/lib/journey-progress'
@@ -36,7 +37,7 @@ export default function JourneyPage() {
           return (
             <article key={unit.id} className={`${styles.unit} ${!state.unlocked ? styles.locked : ''} ${isCurrent ? styles.current : ''}`}>
               <div className={styles.unitHero}>
-                <img src={unit.image} alt="" />
+                <Image src={unit.image} alt="" fill sizes="(max-width: 620px) 100vw, 50vw" />
                 <span aria-hidden="true" />
                 <div>
                   <small>{state.complete ? text.complete : isCurrent ? text.current : `${state.completed}/${state.total} ${text.steps}`}</small>

@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "build:app": "CAPACITOR_BUILD=1 NEXT_PUBLIC_APP_SHELL=1 next build",
+    "build": "next build --webpack",
+    "build:app": "CAPACITOR_BUILD=1 NEXT_PUBLIC_APP_SHELL=1 next build --webpack",
     "app:sync": "npm run build:app && cap sync ios && npm run check:app",
     "app:doctor": "cap doctor",
     "app:open": "cap open ios",

@@ -3,7 +3,7 @@ import os, subprocess, tempfile, re, json, hashlib, shutil
 ROOT=Path(__file__).resolve().parents[1]
 GAME=ROOT/'game/trail-of-truth-block-adventure'
 OUT=Path('/tmp/jd-opening-evidence'); OUT.mkdir(exist_ok=True)
-ENGINE='/home/helper/tools/godot-4.7.2/godot'
+ENGINE=os.environ.get('GODOT_BIN', '/home/helper/tools/godot-4.7.2/godot')
 def manifest():
     paths=[GAME/'project.godot']
     for folder in ['scripts','tests','assets/opening_art']:
@@ -31,6 +31,9 @@ assert manifest()==initial,'Source changed during verification'
 (OUT/'tested-source-sha256.json').write_text(json.dumps(initial,indent=2))
 for tag in ['before','after']:
     for width in [1280,720]:
-        p=Path(f'/tmp/jd-opening-{tag}-{width}.png'); shutil.copy2(p,OUT/p.name)
-shutil.copy2('/tmp/jd-opening-before.log',OUT/'before-capture.log')
+        p=Path(f'/tmp/jd-opening-{tag}-{width}.png')
+        if p.exists(): shutil.copy2(p,OUT/p.name)
+        elif tag == 'after': raise FileNotFoundError(p)
+baseline=Path('/tmp/jd-opening-before.log')
+if baseline.exists(): shutil.copy2(baseline,OUT/'before-capture.log')
 print('OPENING_NATIVE_VERIFICATION=PASS',flush=True)

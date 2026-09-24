@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { journeyUnits } from '@/data/journey'
 import { useJourneyProgress } from '@/lib/journey-progress'
@@ -36,7 +37,7 @@ export default function ProgressPage() {
           const label = state.complete ? text.complete : state.unlocked ? text.current : text.locked
           return (
             <Link key={unit.id} href="/journey" className={`${styles.card} ${!state.unlocked ? styles.locked : ''}`} aria-disabled={!state.unlocked || undefined}>
-              <img src={unit.image} alt="" />
+              <Image src={unit.image} alt="" fill sizes="(max-width: 620px) 100vw, 50vw" />
               <span className={styles.scrim} aria-hidden="true" />
               <span className={styles.copy}>
                 <small>{label}</small>

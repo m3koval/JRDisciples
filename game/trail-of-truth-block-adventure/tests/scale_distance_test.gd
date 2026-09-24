@@ -50,8 +50,13 @@ func run() -> void:
         check(game.water_chapter.context() != "", "context available outside capsule")
     game.player.position = Vector3(149,0,5.3)
     check(game.player.test_move(game.player.global_transform, Vector3(0,0,-1.3)), "bench blocks body at visible timber")
+    # The old eastward sweep now reaches the deliberately solid footbridge ramp.
+    # Verify that exact obstruction, then check the walk-around exit below its toe.
     game.player.position = Vector3(150,0,8.5)
-    check(not game.player.test_move(game.player.global_transform, Vector3(7,0,0)), "bed corridor stays open")
+    var crossing_hit := KinematicCollision3D.new()
+    check(game.player.test_move(game.player.global_transform, Vector3(7,0,0), crossing_hit) and crossing_hit.get_collider().name == "WalkableDeckAndRamps", "old corridor meets intended solid crossing ramp")
+    game.player.position = Vector3(150,0,9.5)
+    check(not game.player.test_move(game.player.global_transform, Vector3(7,0,0)), "bed exit corridor below crossing stays open")
     game.player.position = game.water_chapter.GARDENER + Vector3(0,0,2.2)
     check(game.water_chapter.context() == "", "out of reach has no context")
     var capsule: CapsuleShape3D = game.player.get_child(0).shape

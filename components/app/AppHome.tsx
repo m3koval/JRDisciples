@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { allJourneySteps, journeyUnits } from '@/data/journey'
 import { useJourneyProgress } from '@/lib/journey-progress'
@@ -47,7 +48,7 @@ export default function AppHome() {
 
       <div className={styles.dashboard}>
         <Link href={`${next.href}?journey=1`} className={styles.continueCard}>
-          <img src={unit.image} alt="" />
+          <Image src={unit.image} alt="" fill sizes="(max-width: 620px) 100vw, 50vw" />
           <span className={styles.scrim} aria-hidden="true" />
           <span className={styles.continueCopy}>
             <span className={styles.cardLabel}>{text.next}</span>

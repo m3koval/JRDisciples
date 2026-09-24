@@ -3,7 +3,7 @@ from pathlib import Path
 import os, subprocess, tempfile, re, json, shutil, hashlib
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT/'game/trail-of-truth-block-adventure'
-ENGINE = '/home/helper/tools/godot-4.7.2/godot'
+ENGINE = os.environ.get('GODOT_BIN', '/home/helper/tools/godot-4.7.2/godot')
 OUT = Path('/tmp/jd-reference-quality-evidence')
 OUT.mkdir(exist_ok=True)
 def source_manifest():

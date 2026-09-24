@@ -6,7 +6,7 @@ BUILD=ROOT/'public/games/trail-of-truth-block-adventure/build'
 MANIFEST=BUILD/'release-manifest.json'
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def sources():
-    return {str(p.relative_to(PROJECT)):digest(p) for p in sorted(PROJECT.rglob('*')) if p.is_file() and '.godot' not in p.parts and p.suffix in ['.gd','.godot','.tscn','.cfg','.glb','.gltf','.bin','.png','.jpg','.jpeg','.webp','.tres','.md'] and 'tests' not in p.parts}
+    return {str(p.relative_to(PROJECT)):digest(p) for p in sorted(PROJECT.rglob('*')) if p.is_file() and '.godot' not in p.parts and p.suffix in ['.gd','.gdshader','.godot','.tscn','.cfg','.glb','.gltf','.bin','.png','.jpg','.jpeg','.webp','.tres','.md'] and 'tests' not in p.parts}
 def artifacts():
     return {name:{'sha256':digest(BUILD/name),'bytes':(BUILD/name).stat().st_size,'gzip_bytes':len(gzip.compress((BUILD/name).read_bytes(),mtime=0))} for name in ['index.html','index.js','index.wasm','index.pck']}
 def check():

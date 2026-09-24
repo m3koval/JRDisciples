@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { journeyUnits } from '@/data/journey'
 import { useJourneyProgress } from '@/lib/journey-progress'
@@ -30,7 +31,7 @@ export default function PracticePage() {
         <section className={styles.grid}>
           {practice.map((item) => (
             <Link key={item.id} href={item.href} className={styles.card}>
-              <img src={item.unit.image} alt="" />
+              <Image src={item.unit.image} alt="" fill sizes="(max-width: 620px) 100vw, 50vw" />
               <span className={styles.scrim} aria-hidden="true" />
               <span className={styles.copy}>
                 <small>{item.unitIndex === progress.currentUnitIndex ? text.current : item.unit.title[lang]}</small>

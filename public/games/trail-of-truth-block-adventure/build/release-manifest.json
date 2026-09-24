@@ -48,11 +48,17 @@
     "assets/environment/flower_yellowC.glb": "4115c017390b3e157466a8719e9e2af6c5385505135e7012982b9410760ba9f3",
     "assets/environment/plant_bushDetailed.glb": "2e0487020d68ccf664435db9d829c78ae00e6d2785ee3ec10b9f89cc70a10406",
     "assets/environment/village_finish.gd": "f8aeec2ffc1a346b2aa5203401230df4fce82c478fc12ee2354d9d22e9769bd0",
+    "assets/garden_art/PROVENANCE.md": "9707f4018860c551a5d44658f7811c1ad5c261916ce2b1a525ac6b9031169311",
+    "assets/garden_art/ground.gdshader": "2cee5ae7d7f21c107d4af28bcfeb36afb03a63d0b4c569db389c14821bc46e52",
+    "assets/garden_art/painted_ground.png": "df5eae4ab26b6bf6fcacedbb4d675b3d6961a1bcf4c499fcf8a7d026f202e7e1",
+    "assets/garden_art/water.gdshader": "5acb71ffd36967b55521dc30bc514adcaa366bd77ef9b4fe2295634d66cbc26a",
     "assets/lamb.glb": "5df8aaf7c2cdcd5cf321c4cadf6e775c6ef4e7e69de96fbbe7bdc850d71617fb",
     "assets/log.glb": "e599bb882d77e1f5144f5b8130d9915641035b7a832fbb3b7b4cd0b950957e19",
     "assets/michael.glb": "fddb290aae7b65da54640c1f67821a0c93940fccd89f5c3d88848a86ad88756d",
     "assets/michael_texture_pbr_20250901.png": "96ff2f85b757f0730072483b019c1f5f2315fc2ed0b9b5f1c196ebeb158d2a2e",
     "assets/michael_texture_pbr_20250901_normal.png": "1cd3ca0c6e5a1999e91fa9d6ba2a43a7a7de1aee312e4d7162098db99f8bcd22",
+    "assets/opening_art/river.gdshader": "34ffba4e372556e46cb7647dc6bcdbd87c806b3fb4d8b4ae4135505966355f80",
+    "assets/opening_art/shore.gdshader": "b445acac558da85d656f6b0706837862f187900c2ce4feef6e77046e2caca7bb",
     "assets/villagers/PROVENANCE.md": "35f456aba434851dad99c4a8665f2dbb3cf2a14eeee834685d5a09c7d4535ce2",
     "assets/villagers/anna.glb": "b7174fd09bbfa3a0fc909c4414c8c1ae4350d704c3f7049767b05aa4cec0d8a6",
     "assets/villagers/anna_texture_0.png": "ced96834c381f7a8bee2927c91fcc33e8d9f0440d49a70371454daa0616c64f9",
@@ -64,25 +70,40 @@
     "docs/cave-combat.md": "0565640cbe00dfdde353c2cc2448b82ff0e4062059befac6a28051d530d5bab1",
     "docs/flock-contract.md": "d6d3189301752f1f7cee229a703d6685c37a4191ac6c66738a4db8b262ffb996",
     "docs/gameplay-fixes-verification.md": "53d0c0cb637f8e9effce05056ca0aa1098198426ccd21355d7ffb8efb189585b",
+    "docs/water-chapter.md": "87964ff2106c54c03586e77797cfe4472df5ea2aff5bb478ff067bf8155dd80a",
     "export_presets.cfg": "7860b98938d4c74aa42f0b0ab64d67d9e453aa4df7996ba52bb2e88169df0cfa",
     "main.tscn": "a991dc21f45f40e6fe19a7edb003281bef06093e30b2bb14e38ea540cf2ebd25",
-    "project.godot": "cad282a1b3502f948763fce5fa34c6901691d03c50f10f73809b598eacbf3295",
+    "project.godot": "a304d3102c3e4afca251572d6c7f41478d3b105bf482df2f9d6d6e2105422103",
     "scripts/adventure_rewards.gd": "c193cae9c1b4b4ea850568c227ffc47d6b11731bf7f9904e2f2828bf36fc15d2",
     "scripts/audio.gd": "413279530913d1288e5b45a9c96914b079c5d37167662c39699accbacba34b23",
+    "scripts/bridge_craft.gd": "0742fead93e75e9519ef5401a754c2b0eec44e95e8ee5b187b34c5936530a900",
     "scripts/cave_animal_motion.gd": "be5a77adceb1700b0012ebfa9c7943f8911efa1fc5393baa21e8cd8aff0a0827",
     "scripts/cave_block_animal.gd": "da5e6035dc0f4480d9d655c316547477399de99b8f4b73ee51190a67f653d24f",
     "scripts/cave_campaign.gd": "c44eae60b1e5ffe06abb1632de0868fd1860d6a7e44724259b2b6aabbef41b2f",
     "scripts/flock_campaign.gd": "082c78848f66c31f0b44cb162ef28af087db82f78249f685bf873ab3967a4af1",
-    "scripts/main.gd": "6ba92c1b68a53813e2bab26d0af04529ec0a2b090467602d1bd367b0e57ce6c3",
+    "scripts/garden_detail.gd": "89f9d7541edc8e100c65d1bfafd3ecdbee612c16dd621090333fe9d380940daa",
+    "scripts/garden_foliage.gd": "c1f4b84951b2b8d3393301c8fe396ea74ae4d38ac2b79930f65662c36490140a",
+    "scripts/garden_footbridge.gd": "46c7ea9de08fde816aea6b62e8c93a271e196c79429f611e3976e4c50862fc04",
+    "scripts/garden_lighting.gd": "70f56859b3cf202d4f9499d274f033e06c9ad298bd158217050bebf6534c9071",
+    "scripts/garden_terrain.gd": "c9bebf3c7540b77fc31585d1012e4ffd5549c32e0274a11a43e72425dd57ed5d",
+    "scripts/garden_workshop_art.gd": "5b9857dd485097290a6d2a99eacffbaff60f9adc371091d4de926b8358b4432f",
+    "scripts/irrigation_construction.gd": "19ad1c4387da96e8c96d9057f738f670a7a9fda81d6b4f183bb119b95b44baee",
+    "scripts/irrigation_flow.gd": "fb5a6360841b09ee3ec0f0aae7744efe28013ca5ddd8284dd981ee3a5128d249",
+    "scripts/irrigation_geometry.gd": "907a70001f3840dc0157c7d9d2285f6b7931ff7f2085b34c4c46be88641b5a24",
+    "scripts/irrigation_winch.gd": "2c39ce6701d20ed6de567054bf811a448f9aeea47c7d2da4a097eaf0ac02c411",
+    "scripts/main.gd": "3344fab41973c8127d0c814dc7b85f7c064b6363696d90477760a0ead42a94f9",
+    "scripts/opening_river_art.gd": "ff9f4e96b4588762fc421b1e550a31188aa72f3a850122f7d566c573a0d1ab2a",
     "scripts/player.gd": "9b8056fe6f6ab80ee70c3c74e06cb62acb42d7d2361bc856d3c84fe82b7deb8b",
     "scripts/trail_map.gd": "0d75420c71ee0ab5847b096dbf19149e880150e2f66d1b2bb9b83118bd3f2c2d",
-    "scripts/world.gd": "465c1e41a9fa0f12d7a24fbe5165ef029d23574483b17a47b24a99159d696c41"
+    "scripts/water_campaign.gd": "a4948d5006308faa2801ad2033555d1e534f9525a2338ffa8bd10c26d9fdccf8",
+    "scripts/water_environment.gd": "9385fe6d07c6ba3ac8ccdbdaa62a0a1daef02dbf08c42923a3732d0ad7966f87",
+    "scripts/world.gd": "3bda057f6713a2ddf4f9f0eaeb12a5f699271828d082fe4c6cbdd77d0e9cb5ed"
   },
   "artifacts": {
     "index.html": {
-      "sha256": "fb31530c03e45210a8264d15368c7eedfab3aa13c7bb21eb039cd72236f45482",
+      "sha256": "9b799b2ac7d54899afc6d4b718fc8882870552adf47d4fb4f4b3a879f755260d",
       "bytes": 5510,
-      "gzip_bytes": 2231
+      "gzip_bytes": 2232
     },
     "index.js": {
       "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
@@ -95,9 +116,9 @@
       "gzip_bytes": 10054758
     },
     "index.pck": {
-      "sha256": "95792de1bc44ead3de306ab9cbfae377b2644651acb607b42c850bc787039e9d",
-      "bytes": 20525124,
-      "gzip_bytes": 20351455
+      "sha256": "b3c1891f2556be8fa81c7b108b9da8569f07a5f1fce97f812aee3709408297ec",
+      "bytes": 20992612,
+      "gzip_bytes": 20814604
     }
   }
 }

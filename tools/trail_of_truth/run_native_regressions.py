@@ -1,5 +1,5 @@
 """Run Godot regressions with bounded time and fail on script errors, not only exit status."""
-import pathlib, subprocess, sys, json
+import pathlib, subprocess, sys, json, os, tempfile
 ROOT=pathlib.Path(__file__).resolve().parents[2]
 PROJECT=ROOT/'game/trail-of-truth-block-adventure'
 GODOT='/home/helper/tools/godot-4.7.2/godot'
@@ -9,9 +9,11 @@ tests=sys.argv[1:] or ['scenery_clearance','terrain_surfaces','ipad_player_test'
 results=[]
 for test in tests:
     try:
-        r=subprocess.run([GODOT,'--headless','--path',str(PROJECT),'--script',f'res://tests/{test}.gd','--quit-after','10000'],capture_output=True,text=True,timeout=150)
+        with tempfile.TemporaryDirectory(prefix='jd-regression-'+test+'-') as home:
+            env=dict(os.environ, XDG_DATA_HOME=home+'/data', XDG_CONFIG_HOME=home+'/config', XDG_CACHE_HOME=home+'/cache')
+            r=subprocess.run([os.environ.get('GODOT_BIN',GODOT),'--headless','--fixed-fps','60','--path',str(PROJECT),'--script',f'res://tests/{test}.gd'],env=env,capture_output=True,text=True,timeout=150)
         log=r.stdout+r.stderr
-        passed=r.returncode==0 and not any(s in log for s in ['SCRIPT ERROR:', 'FAIL ', 'FAILED=true'])
+        passed=r.returncode==0 and not any(s in log for s in ['SCRIPT ERROR:', 'ERROR:', 'FAIL ', 'FAILED=true'])
         (OUT/(test+'.log')).write_text(log)
         results.append({'test':test,'passed':passed,'exit':r.returncode})
         print(test,'PASS' if passed else 'FAIL',flush=True)
