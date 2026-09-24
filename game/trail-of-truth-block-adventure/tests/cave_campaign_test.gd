@@ -54,11 +54,11 @@ func run() -> void:
             check(c.phase == "recover" and c.health == 3,"sideways dodge avoids damage")
             game.player.position = c.animals[i].position + Vector3(1.5,0,0)
             game._interact()
-            check(c.phase == "retreat","in-reach staff defense drives away")
+            check(c.phase == ("retreat" if turn == 0 else "victory"),"first hit knocks back; final hit wins")
             for frame in range(180):
                 c.tick(1.0/60)
                 if c.phase == "idle": break
-        check(c.stage == (i+1)*2 and not c.animals[i].visible,"animal retreats unharmed and checkpoint advances")
+        check(c.stage == (i+1)*2 and not c.animals[i].visible,"attacker defeated and checkpoint advances")
     game.player.position = c.ENTRANCES[2]+Vector3(0,0,-10)
     c.tick(.01)
     check(c.stage == 4,"last clue required before discovery")
@@ -94,7 +94,7 @@ func run() -> void:
     check(c.active and c.stage == 6,"completed checkpoint reload")
     game.language = "ru"
     game._refresh_ui()
-    check(game.modal_title.text == "Ягнёнок в безопасности!" and c.intro_text().contains("Выдуманная"),"Russian completion and instructions")
+    check(game.modal_title.text == "Ягнёнок в безопасности!" and c.intro_text().contains("Выдуманное приключение пастуха"),"Russian completion and instructions")
     game.saves_ok = false
     game._refresh_ui()
     check(game.modal_body.text.contains("Не сохранено"),"save failure remains visible on paused cave completion")

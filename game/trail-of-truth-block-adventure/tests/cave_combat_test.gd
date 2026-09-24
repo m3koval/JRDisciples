@@ -42,7 +42,7 @@ func run() -> void:
         check(c.health == 3,"airborne feet clear attack %d"%i)
     fixture()
     c.defend()
-    check(c.drive_count == 1 and c.phase == "retreat","staff interrupts warning, nonlethal knockback")
+    check(c.drive_count == 1 and c.phase == "retreat","staff interrupts warning with knockback")
     check(c.animals[0].position.z < -7,"staff knockback moves animal away")
     c.phase = "recover"
     for n in range(30): c.defend()

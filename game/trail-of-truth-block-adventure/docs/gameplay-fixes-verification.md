@@ -1,5 +1,7 @@
 # Gameplay and three-cave chapter verification — 2026-09-24
 
+> Historical initial-chapter verification below. Current combat uses attacker HP and decisive defeat with a non-graphic poof, not unharmed retreat. See [cave-combat.md](cave-combat.md) for the current mechanics, content direction, fresh tests and build handoff. The original art and test counts below describe that earlier snapshot.
+
 ## Implemented
 
 The original tracks → bridge → lamb rescue continues into the existing flock scaffold: gather three sheep, pasture escort, two-board fence repair, shelter/gate, return and counting. Completion now offers the three-cave chapter as its primary next action; optional garden exploration remains available.

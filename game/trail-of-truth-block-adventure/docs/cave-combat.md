@@ -1,38 +1,45 @@
-# Bounded cave defense
+# Cave combat: victory and protection
 
-Original child-safe encounter rules, not Minecraft code/assets or a Bible retelling. Lion → bear → lamb clue/discovery → escort/home remains the strict saved prefix. No animal health, killing, loot or lamb damage was added. Existing three-heart player health, invulnerability, camp healing and checkpoint retry remain.
+## Content direction
 
-## Controls and rules
+Defeat the attacking predators and protect the flock. This is not an unharmed-retreat mechanic. A defeated animal disappears into a short block-style poof; there is no blood, corpse, loot or graphic injury. Player-facing English and Russian text no longer promises that no animal is hurt or adds unsolicited wilderness-safety warnings. Readable attack anticipation remains a gameplay cue, not a disclaimer.
 
-- Existing movement (WASD / joystick) runs; Space / Jump uses the actual player jump physics.
-- One contextual **Defend · staff** action (E / action button), available during chase, warning, attack and recovery in the active chamber. Reach is 2.8 m with line of sight. Any valid swing consumes a 0.75 s cooldown, including a miss. Feedback distinguishes misses, readying and successful defense.
-- Successful defense interrupts attacks, collision-sweeps 1.4 m knockback and initiates retreat. Two defenses finish an encounter without harming the animal.
-- Staff is a standalone cave-node visual following player position and visual facing. It is NOT hand-rig/arm animation; no player, clothing, carry or skeleton files changed.
-- Lion pursues at 3.2 m/s, warns 1.1 s, then pounces toward a locked target at 10 m/s for 0.45 s. Bear pursues at 1.9 m/s, warns 1.4 s, then performs a stationary 2.8 m ground swipe for 0.22 s. Both recover for 2.2 s.
-- Warning never damages. Actual attack requires feet below 0.85 m, horizontal overlap and clear world LOS. Running sideways and timed run/jump are verified; jumping too early or landing in the pounce can still bump the player.
-- Animal CharacterBody proxies sweep capsule motion against world geometry. Pursuit stops when LOS is obstructed; there is deliberately no navigation/pathfinding through obstacles. Movement, knockback and retreat are clamped inside each chamber. Leaving its inner bounds cancels the attack and returns the animal toward home. Camp is outside every leash.
-- Pause freezes cooldowns, staff swing, encounter motion and attacks. Restore clears transient combat state while preserving the validated checkpoint prefix.
+The biblical basis is [1 Samuel 17:34–37, ESV](https://www.bible.com/bible/59/1SA.17.34-37.ESV), verified against Bible.com: David describes killing predators while rescuing sheep and credits the Lord with delivering him. Non-graphic presentation must not change that outcome into harmless retreat. The three caves, exact hit count, staff controls and checkpoint system are fictional game design, not details asserted by the passage. Existing quoted Scripture in the rescue/reward flow is unchanged.
 
-## Integration
+## Mechanics
 
-`main.gd` already ticks caves before recomputing context; no main changes needed. Existing internal action key `drive` is retained, now labeled Defend. `make_animal` instantiates the original `cave_block_animal.gd` rig beneath the presentation wrapper. Its independent head, tail, hip and knee poses receive encounter state and measured movement speed; pause and checkpoint reset also freeze/reset those poses. EN/RU credits describe the original articulated art; archived GLB credits remain in assets/caves/CREDITS. Retreat completion now requires reaching the chamber retreat point, not just a timer expiring.
+- Lion → bear → wool clue → lamb discovery/call → escort home remains the saved sequence. Existing `lion_safe` / `bear_safe` save IDs remain compatible; they now mean the threat is defeated.
+- Each attacker has **2 HP**. A compact two-segment, camera-facing bar appears above only the active attacker. First landed staff strike reduces HP to 1, interrupts its attack and collision-sweeps knockback; it withdraws to reset before attacking again. The final landed strike reduces HP to 0 and wins immediately.
+- Final defeat hides the animal and HP bar, clears the attack cue, and plays a **0.65-second poof** at its position. Twelve original block puffs expand and shrink without blood, explosions, flashing or borrowed Minecraft assets. The visual is driven by simulation delta, not an autonomous tween.
+- Victory text: **“Victory! You protected the flock.” / “Победа! Ты защитил стадо.”** The objective and notice do not repeat the same message simultaneously.
+- The winning hit saves the completed encounter immediately, before the visual ends. Moving out of the arena or pausing cannot cancel an earned victory; extra taps cannot grant more progress.
+- Existing WASD/joystick movement, Space/Jump and contextual **Defend · staff** action remain. Reach is 2.8 m, cooldown 0.75 s. Misses consume cooldown but no enemy HP; walls block both strikes and attacks.
+- Lion: pursuit 3.2 m/s, anticipation 1.1 s, locked-target pounce 10 m/s for 0.45 s. Bear: pursuit 1.9 m/s, anticipation 1.4 s, 2.8 m ground swipe for 0.22 s. Both recover for 2.2 s.
+- Run sideways or time a jump to clear attacks. Grounded damage requires feet below 0.85 m, horizontal overlap and clear line of sight. Camp remains outside the attack leash.
+- Player HP remains 3. At zero, return to camp and reset the unfinished encounter to full enemy HP. Previously completed encounters remain completed. This is checkpoint recovery, not victory for losing.
+- Pause freezes attacks, cooldown, animation and poof. Restore clears transient effects; a new adventure restores both attackers.
 
-## Verification
+## Integration and boundaries
 
-Canonical command (use a separate temporary save directory per test):
+`cave_campaign.gd` owns combat, HP bar and poof. `cave_block_animal.gd` provides original articulated animal meshes under `cave_animal_motion.gd`. No changes to player, clothing, carry assets, village code or the main app shell were needed for this pass. The staff is still a simple independent visual, not a hand-rigged swing; this pass does not claim to fix that limitation.
+
+## Verified source tests
+
+Canonical engine: Godot 4.7.2. Each headless suite uses a fresh `XDG_DATA_HOME` and `--fixed-fps 60`.
+
+**23/23 suites passed:** `cave_victory_test`, `cave_combat_test`, `cave_block_animal_test`, `cave_animal_motion_test`, `cave_campaign_test`, `cave_input_playthrough`, `cave_ui`, `flock_campaign_test`, `flock_ui`, `flock_progression`, `escort_collisions`, `search_regressions`, `review_regressions`, `rewards`, `world_tap_ui`, `mobile_ui_readability`, `reward_layout`, `terrain_surfaces`, `scenery_clearance`, `ipad_player_test`, `rewards_mission`, `edge_cases`, `village_interiors`.
+
+The new victory suite checks HP changes and bar textures, no premature completion, immediate checkpoint readback, poof placement/visibility, pause, effect expiry outside the arena, duplicate-hit prevention, restore, loss/reset and EN/RU content. It passed **30 checks** both headlessly and under the native renderer. The first batch caught an old Russian assertion for “Выдуманная”; the revised copy uses “Выдуманное приключение пастуха,” and its exact-text assertion now passes.
+
+Reproduce from this game directory:
 
 ```sh
-XDG_DATA_HOME=$(mktemp -d) /home/helper/tools/godot-4.7.2/godot --headless --fixed-fps 60 --path . --script tests/cave_combat_test.gd
+XDG_DATA_HOME=$(mktemp -d) /path/to/godot --headless --fixed-fps 60 --path . --script tests/cave_victory_test.gd
+XDG_DATA_HOME=$(mktemp -d) /path/to/godot --headless --fixed-fps 60 --path . --script tests/cave_input_playthrough.gd
 ```
 
-Also run `tests/cave_campaign_test.gd` and `tests/cave_input_playthrough.gd` with the same options.
+For native visual evidence, run `cave_victory_test.gd` with a renderer and set `JD_VICTORY_EVIDENCE` to an isolated output directory. It captures full HP, first hit and defeat for each species. These are posed visual fixtures, separate from the native input-driven full-route test. No physical iPad or WKWebView claim.
 
-- Combat: warning safety; grounded-hit and airborne controls for each animal; real native Space+D run/jump physics versus stationary grounded-hit controls; reach misses/cooldown spam/knockback; pause; wall-blocked staff, damage and pursuit; clamp/leash/reset.
-- Campaign: strict save validation and order, warning/dodge/close defense, animal completion, lamb clue/discovery/escort, health/retry, save readback, Russian UI and replay reset.
-- Input playthrough: real native movement/interact through both caves, close staff approach, lamb discovery and real-collider escort home. No browser/touch-device evidence is claimed.
+## Build handoff
 
-Verified on the isolated HEAD-plus-candidate source tree with Godot 4.7.2: **21/21 native regression suites passed**, including combat, articulated rig (2,729 checks), animation, campaign, full cave input route, EN/RU cave layout (408 checks), flock, rewards, world-tap, mobile layout, terrain, scenery, player and replay/water/jump edge cases. Each suite used an isolated save directory. The first isolated edge-case attempt lacked the expected evidence output directory; rebuilding the fixture with the repository's directory shape resolved that harness error.
-
-The full input route also passed under the native OpenGL renderer (`CAVE_INPUT_FAILURES=0`), with fresh lamb-discovery and completion captures. A separate native posed animation study produced 378 frames; sampled idle/warning/lunge/recovery/retreat frames and a pounce close-up were inspected. The block animals are identifiable and limb-articulated; this remains procedural prototype animation, not authored skeletal clips or foot IK. Staff presentation is not yet a hand-attached swing animation.
-
-No browser, physical iPad, export, app sync, push or deployment was performed. Native layout/input evidence is not device-performance or child-playtest approval.
+Source changes only. Mike will have Claude build and deploy to the iPads. **The checked-in `public/games/trail-of-truth-block-adventure/build/` bundle was not regenerated in this pass** and must not be mistaken for the new gameplay. Claude should pull the pushed source branch, rerun the source tests, then use the established Godot export/app sync/Xcode workflow. No paid APIs, export, app build, app sync or device deployment was performed by this pass.
