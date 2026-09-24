@@ -44,6 +44,39 @@ This is the source-of-truth character bible for Junior Disciples children used i
 - Personality anchor: trusting, bright, and brave in a younger-child way; may need help but should not be portrayed as helpless or terrified
 - Prompt lock: Gracie must look like the same 6–7-year-old child in every scene. Keep her younger than Michael/Rosie/Joseph without making her toddler-like.
 
+## Village adults (Trail of Truth · The Lost Lamb)
+
+Grown-up villagers the children can talk to. Same visual world as the children: polished 3D animated humans with warm, rounded, friendly faces — never low-poly, faceted, Lego/minifig, or realistic. Adult proportions (clearly taller than Michael), gently stylized. Clothing is simple Bible-times village dress in earthy dyed wool and linen; no modern clothing, no armor, no weapons.
+
+### Grandpa Simeon / Дедушка Симеон
+
+- Role: the old shepherd whose lamb is lost; waits at the camp shelter and gives the first hint
+- Age: about 70
+- Visual anchor: kind elderly man, full white beard and white hair, warm tan skin, smile lines, cream linen tunic under a brown wool mantle, rope belt, leather sandals
+- Personality anchor: gentle, patient, knows every sheep by name
+
+### Aunt Anna / Тётя Анна
+
+- Role: mother of a village family; welcomes the children into her home by the hearth
+- Age: about 35
+- Visual anchor: warm brown skin, dark hair under a soft indigo headscarf, long indigo dress with a cream sash, leather sandals, rounded kind face
+- Personality anchor: warm and hospitable; remembers searching her whole house for a lost silver coin
+
+### Tobias the baker / Пекарь Товия
+
+- Role: village baker; works at the domed bread oven
+- Age: about 40
+- Visual anchor: sturdy build, short dark beard, olive skin, cream tunic with red-brown sleeves, flour-dusted apron, soft cloth cap, leather sandals, cheerful face
+- Personality anchor: cheerful and generous; bakes before sunrise and shares bread
+
+### 3D reference image prompt (one character per image)
+
+Image-to-3D needs a clean character sheet, not a scene. Generate each adult separately with this block, replacing the bracketed description with that character's visual anchor:
+
+> Full-body character reference of [visual anchor], polished 3D animated film style matching a friendly children's Bible adventure, adult proportions, standing in a relaxed A-pose with arms slightly away from the body, facing the camera, feet fully visible, empty hands, no props, plain light-grey background, soft even lighting, no shadows, no text.
+
+Reject a reference if the hands hold anything, arms touch the body, the pose is turned sideways, clothing is modern, or the style drifts toward low-poly, minifig, or photoreal.
+
 ## Reserved names / future-use map
 
 These names are reserved and should not be used for the current main cast unless intentionally introduced later:
