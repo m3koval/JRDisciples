@@ -83,7 +83,7 @@
     "scripts/flock_campaign.gd": "082c78848f66c31f0b44cb162ef28af087db82f78249f685bf873ab3967a4af1",
     "scripts/garden_detail.gd": "89f9d7541edc8e100c65d1bfafd3ecdbee612c16dd621090333fe9d380940daa",
     "scripts/garden_foliage.gd": "c1f4b84951b2b8d3393301c8fe396ea74ae4d38ac2b79930f65662c36490140a",
-    "scripts/garden_footbridge.gd": "46c7ea9de08fde816aea6b62e8c93a271e196c79429f611e3976e4c50862fc04",
+    "scripts/garden_footbridge.gd": "66df54d1969c3ad06140d423c3c7fdc016909e0e6f06f1eefd97d473e95a0ba1",
     "scripts/garden_lighting.gd": "70f56859b3cf202d4f9499d274f033e06c9ad298bd158217050bebf6534c9071",
     "scripts/garden_terrain.gd": "c9bebf3c7540b77fc31585d1012e4ffd5549c32e0274a11a43e72425dd57ed5d",
     "scripts/garden_workshop_art.gd": "5b9857dd485097290a6d2a99eacffbaff60f9adc371091d4de926b8358b4432f",
@@ -91,7 +91,7 @@
     "scripts/irrigation_flow.gd": "fb5a6360841b09ee3ec0f0aae7744efe28013ca5ddd8284dd981ee3a5128d249",
     "scripts/irrigation_geometry.gd": "907a70001f3840dc0157c7d9d2285f6b7931ff7f2085b34c4c46be88641b5a24",
     "scripts/irrigation_winch.gd": "2c39ce6701d20ed6de567054bf811a448f9aeea47c7d2da4a097eaf0ac02c411",
-    "scripts/main.gd": "3344fab41973c8127d0c814dc7b85f7c064b6363696d90477760a0ead42a94f9",
+    "scripts/main.gd": "ce82667175db5588d7246078a6d6980459fd56b55325f9819db8eb1ce03d9bad",
     "scripts/opening_river_art.gd": "ff9f4e96b4588762fc421b1e550a31188aa72f3a850122f7d566c573a0d1ab2a",
     "scripts/player.gd": "9b8056fe6f6ab80ee70c3c74e06cb62acb42d7d2361bc856d3c84fe82b7deb8b",
     "scripts/trail_map.gd": "0d75420c71ee0ab5847b096dbf19149e880150e2f66d1b2bb9b83118bd3f2c2d",
@@ -101,7 +101,7 @@
   },
   "artifacts": {
     "index.html": {
-      "sha256": "9b799b2ac7d54899afc6d4b718fc8882870552adf47d4fb4f4b3a879f755260d",
+      "sha256": "666474d1af539dc7bfa7bb460827812fb6f81e8b944bb447d763988a7ef02f31",
       "bytes": 5510,
       "gzip_bytes": 2232
     },
@@ -116,9 +116,9 @@
       "gzip_bytes": 10054758
     },
     "index.pck": {
-      "sha256": "b3c1891f2556be8fa81c7b108b9da8569f07a5f1fce97f812aee3709408297ec",
-      "bytes": 20992612,
-      "gzip_bytes": 20814604
+      "sha256": "73056c66bf09a03aa0df1599ab502aaa6dc6b023f95814f56f8ac8bbebd335df",
+      "bytes": 20992916,
+      "gzip_bytes": 20814886
     }
   }
 }

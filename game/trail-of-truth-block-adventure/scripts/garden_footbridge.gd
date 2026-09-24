@@ -24,6 +24,19 @@ static func build(parent: Node3D, geometry) -> void:
         var left: float = CENTER_X-WIDTH*.5
         var right: float = CENTER_X+WIDTH*.5
         for v in [Vector3(left,a.y,a.x),Vector3(right,a.y,a.x),Vector3(right,b.y,b.x),Vector3(left,a.y,a.x),Vector3(right,b.y,b.x),Vector3(left,b.y,b.x)]: st.add_vertex(v)
+        # Collision-only side aprons (no matching visible mesh, like the deck
+        # itself): the deck's lateral edge is otherwise a sheer face where it
+        # sits above ground, blocking anyone who reaches the crossing from
+        # its side — the intended approach along the channel bank — rather
+        # than walking up from one end. Slopes stay under floor_max_angle
+        # even at the tallest mid-span point (~38° at APRON_WIDTH 1.0).
+        const APRON_WIDTH := 1.0
+        for side in [-1,1]:
+            var edge: float = CENTER_X+side*WIDTH*.5
+            var outer: float = CENTER_X+side*(WIDTH*.5+APRON_WIDTH)
+            var apron: Array[Vector3] = [Vector3(edge,a.y,a.x),Vector3(outer,0,a.x),Vector3(outer,0,b.x),Vector3(edge,a.y,a.x),Vector3(outer,0,b.x),Vector3(edge,b.y,b.x)]
+            if side < 0: apron.reverse()
+            for v in apron: st.add_vertex(v)
         # Side stringers hold the deck; low timber rails show the crossing direction.
         for side in [-1,1]:
             var x: float = CENTER_X+side*(WIDTH*.5-.08)

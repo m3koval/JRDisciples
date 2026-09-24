@@ -1136,7 +1136,10 @@ func _layout_ui(update_density: bool = true) -> void:
     notice.position = Vector2(12, row_y + 114 if narrow else 110)
     notice.size = Vector2(size.x - 24 if narrow else size.x - 356, 80)
     input_hint.visible = false # Instructions remain in Pause; do not crowd play.
-    var is_talk := modal_kind == "talk"
+    # Short lines (a villager greeting, Mira's one-liner) read as a comic
+    # bubble; longer instructional text (Oren's tutorial, chapter intros)
+    # keeps the full panel so it is not clipped into a tiny box.
+    var is_talk := modal_kind in ["talk", "water_talk"] and modal_body.text.length() <= 180
     var width := minf(340, size.x - 40) if is_talk else minf(620, size.x - 24)
     modal_title.add_theme_font_size_override("font_size", 17 if is_talk else 28)
     modal_body.add_theme_font_size_override("font_size", 16 if is_talk else 22)
