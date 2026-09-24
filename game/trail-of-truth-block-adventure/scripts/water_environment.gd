@@ -107,10 +107,6 @@ func _ready() -> void:
         for z in [6.45,11.55]: piece(Vector3(x,.16,z),Vector3(2.1,.26,.16),"90714b")
         for edge in [-1.0,1.0]:
             for z in [7.35,10.2]: piece(Vector3(x+edge,.13,z),Vector3(.14,.20,1.9),"90714b")
-        for n in range(8):
-            var z := 6.8+n*.6
-            if absf(z-8.5)<.65: continue
-            piece(Vector3(x,.115,z),Vector3(1.7,.08,.16),"95724b",true)
     # Buildings are beyond the bank/walking routes. Reuse only the CC0 kit.
     KIT.cottage(self,Vector3(138,0,-6),90,.85,"")
     KIT.cottage(self,Vector3(169,0,-21),0,.95,"")
@@ -132,13 +128,6 @@ func _ready() -> void:
         KIT.place(self,"plant_bushDetailed.glb",p,Vector3.ONE*.8)
         for n in range(3): KIT.place(self,"flower_yellowC.glb",p+Vector3(.35*n-.3,0,.45+sin(n)*.2),Vector3.ONE*.8)
     for z in [5,7,9,11]: KIT.place(self,"Prop_WoodenFence_Single.gltf",Vector3(147,0,z),Vector3.ONE*.7,90)
-    # Small open potting bench, no giant canopy panel over a person.
-    for x in [148.3,149.7]:
-        for z in [3.65,4.35]: piece(Vector3(x,.37,z),Vector3(.12,.74,.12),"796343")
-    for n in range(4): piece(Vector3(149,.77,3.65+n*.23),Vector3(1.8,.10,.20),"ae8a59")
-    for n in range(3):
-        piece(Vector3(148.5+n*.45,.96,4),Vector3(.30,.32,.30),"b98561",true)
-        KIT.place(self,"plant_bushDetailed.glb",Vector3(148.5+n*.45,1.08,4),Vector3.ONE*.23)
     flush()
 
 func flush() -> void:

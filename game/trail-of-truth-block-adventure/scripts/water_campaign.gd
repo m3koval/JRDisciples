@@ -92,9 +92,7 @@ func make_person(file: String, at: Vector3, gardener: bool) -> void:
     # Preserve authored clothing instead of covering it with rigid proxy panels.
     # Role props distinguish these model variants until new character art is approved.
     if gardener:
-        host._box(actor, Vector3(.62,.32,.1), Vector3(.5,.48,.45), Color("ae7d46"))
-        for n in range(3):
-            host._box(actor, Vector3(.46+n*.14,.6,.1), Vector3(.1,.12,.22), Color("eac066"))
+        preload("res://scripts/garden_detail.gd").basket(actor,Vector3(.70,0,.1))
     else:
         host._box(actor, Vector3(.65,.85,0), Vector3(.09,1.7,.09), Color("bb945e"))
         for n in range(4): host._box(actor,Vector3(.65,.4+n*.3,.05),Vector3(.17,.035,.03),Color("f0e0b8"))
@@ -163,33 +161,27 @@ func _ready() -> void:
     repair = host._box(self,SLUICE+Vector3(2,.25,.55),Vector3(1.9,.5,.13),Color("d5a75f"))
     host._box(self,SLUICE+Vector3(-.4,.12,.7),Vector3(.4,.18,1.4),Color("d5a75f"))
     sign_at(SLUICE+Vector3(0,2,0))
-    for x in [151.5,154]:
-        host._box(self,Vector3(x,.055,9),Vector3(1.9,.11,5),Color("765339"))
-        for z in [7.5,9,10.5]:
-            var plant := Node3D.new()
-            plant.position = Vector3(x,.13,z)
-            add_child(plant)
-            host._box(plant,Vector3(0,.28,0),Vector3(.1,.56,.1),Color("5d8045"))
-            for n in range(5):
-                var leaf := MeshInstance3D.new()
-                var shape := SphereMesh.new()
-                shape.radius = .24
-                shape.height = .48
-                shape.radial_segments = 8
-                shape.rings = 4
-                leaf.mesh = shape
-                var angle := float(n) * TAU / 5.0
-                leaf.position = Vector3(cos(angle)*.18,.32,sin(angle)*.18)
-                leaf.scale = Vector3(1,.23,1.6)
-                leaf.rotation = Vector3(.22, -angle, .15)
-                leaf.material_override = host._material(Color("75a54d"))
-                plant.add_child(leaf)
-            plants.append(plant)
-    produce = Node3D.new()
-    produce.position = Vector3(149,0,6)
-    add_child(produce)
-    host._box(produce,Vector3(0,.18,0),Vector3(.8,.36,.6),Color("aa7749"))
-    for n in range(4): host._box(produce,Vector3((n%2)*.3-.15,.42,(n/2)*.2-.1),Vector3(.24,.24,.2),Color("e8ad43"))
+    var detail = preload("res://scripts/garden_detail.gd")
+    for x in [151.5,154.0]:
+        for segment in [Vector2(6.65,7.0),Vector2(9.15,11.3)]:
+            var length: float = segment.y-segment.x
+            host._box(self,Vector3(x,.055,(segment.x+segment.y)*.5),Vector3(1.85,.11,length+.35),Color("6b513c"))
+            for row in [-.55,0,.55]:
+                var ridge := CylinderMesh.new()
+                ridge.top_radius = .095
+                ridge.bottom_radius = .095
+                ridge.height = length+.22
+                ridge.radial_segments = 8
+                var r = detail.mesh(self,ridge,Vector3(x+row,.11,(segment.x+segment.y)*.5),"876849")
+                r.rotation.x = PI/2
+            var count := 1 if length < 1 else 3
+            for j in range(count):
+                for row in [-.53,.53]:
+                    var at := Vector3(x+row,.15,segment.x+j*.8)
+                    var plant: Node3D = detail.cabbage(self,at,.85) if x < 153 else detail.carrot(self,at)
+                    plants.append(plant)
+    detail.bench(self)
+    produce = detail.basket(self,Vector3(149,0,6))
     make_person("anna",GARDENER,true)
     make_person("tobias",KEEPER,false)
     restore()
@@ -342,10 +334,8 @@ func sync() -> void:
     spill_water.visible = spilling and wrong_time > 0
     if spilling and wrong_time > 0: gates[1].position.y = .4
     for plant in plants:
-        plant.scale.y = 1 if stage >= 7 else .35
-        plant.rotation.z = 0 if stage >= 7 else .5
-        for leaf in plant.get_children():
-            leaf.material_override.albedo_color = Color("65963d") if stage >= 7 else Color("ad8a49")
+        plant.scale.y = 1 if stage >= 7 else .72
+        preload("res://scripts/garden_detail.gd").set_watered(plant,stage >= 7)
     labels[0].text = t("1 · SPILL", "1 · СБРОС") + (t(" · closed", " · закрыт") if stage >= 5 else t(" · open", " · открыт"))
     labels[1].text = t("2 · SPRING", "2 · РОДНИК")
     labels[2].text = t("3 · GARDEN", "3 · САД")
