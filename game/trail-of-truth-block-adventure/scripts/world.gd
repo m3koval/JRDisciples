@@ -4,6 +4,7 @@ extends Node3D
 
 const VillageFinish = preload("res://assets/environment/village_finish.gd")
 
+var cottages: Array[Node3D] = []
 var _bridge_stage: int = 0
 var _camp_restored: bool = false
 var _panels: Array[Node3D] = []

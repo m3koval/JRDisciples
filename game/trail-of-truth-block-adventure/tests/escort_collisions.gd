@@ -38,7 +38,11 @@ func run() -> void:
         clear = clear and not (p.x < -15.08 and p.x > -20.52 and p.z > 1.58 and p.z < 7.02)
         bounded = bounded and p.distance_to(before) <= 4.1 / 60 + .002
     check("cottage_sweep_never_enters_solid", clear)
-    check("cottage_stops_at_near_wall", game.lamb.position.x > -14.74 and game.lamb.position.x < -14.6)
+    # Walk-in cottage front wall is now at local z=4.3 (formerly a solid box).
+    # Check the actual wall face plus the unchanged companion radius.
+    var wall_x: float = game.world.cottages[0].to_global(Vector3(0,0,4.3)).x
+    var radius: float = (game.lamb.get_child(0) as CollisionShape3D).shape.radius
+    check("cottage_stops_at_near_wall", absf(game.lamb.position.x-(wall_x+radius)) < .01)
     check("swept_steps_are_speed_bounded", bounded)
     check("blocked_escort_does_not_complete", not game.completed)
     # Oblique pursuit slides along the actual cottage, then clears its corner.

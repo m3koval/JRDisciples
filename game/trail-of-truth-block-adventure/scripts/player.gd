@@ -111,6 +111,9 @@ func _ready() -> void:
 	_arm.name = "CameraCollision"
 	_arm.spring_length = 5.8
 	_arm.margin = 0.18
+	# Layer 2 holds cottage walls/furniture: they block the player, and the camera
+	# only while outdoors (indoors it lifts above the walls instead).
+	collision_mask = 1 | 2
 	_arm.collision_mask = collision_mask
 	var camera_shape: SphereShape3D = SphereShape3D.new()
 	camera_shape.radius = 0.20
@@ -139,6 +142,14 @@ func _ready() -> void:
 	get_viewport().size_changed.connect(_clear_input)
 	_update_input_scale()
 	_refresh_joystick()
+
+var _interior: bool = false
+
+func set_interior(value: bool) -> void:
+	if value == _interior:
+		return
+	_interior = value
+	_arm.collision_mask = 1 if value else (1 | 2)
 
 func set_enabled(value: bool) -> void:
 	_enabled = value
@@ -261,6 +272,10 @@ func _process(delta: float) -> void:
 	_look_pending -= step
 	_yaw += step.x
 	_pitch += step.y
+	# Indoors (roof hidden) the camera tilts down and pulls in to look into the room.
+	_arm.spring_length = lerpf(_arm.spring_length, 3.6 if _interior else 5.8, 1.0 - exp(-4.0 * delta))
+	if _interior and _pitch > -0.85:
+		_pitch = lerpf(_pitch, -0.95, 1.0 - exp(-4.0 * delta))
 	# Render-rate camera updates avoid a physics-rate staircase during orbit.
 	# Movement and telemetry use this same displayed yaw, not an ahead-of-view target.
 	_camera_pivot.rotation = Vector3(_pitch, _yaw, 0.0)

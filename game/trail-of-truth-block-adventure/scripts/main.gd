@@ -4,7 +4,41 @@ const SPAWN := Vector3(-11, 0.15, 7)
 const CAMP := Vector3(-11, 0, 7)
 const LAMB_DISCOVERY_RADIUS := 2.6
 const LAMB_ALCOVE := Vector3(18.5, .02, -11)
+const VillageFinish = preload("res://assets/environment/village_finish.gd")
+const TALK_RADIUS := 2.1
+const DOOR_RADIUS := 1.8
+# Small talk: one line for the current story stage, then a chat line on repeat visits.
+# Hints never gate progress; every line stays short enough to read aloud to a 6-year-old.
+const VILLAGER_LINES := {
+    "elder": {
+        "start": ["Peace to you, little shepherd! One of my lambs slipped out of the fold. Look for tiny hoofprints by the path.", "Мир тебе, маленький пастух! Один мой ягнёнок выбежал из загона. Поищи маленькие следы у тропинки."],
+        "bridge": ["The tracks cross the creek, but the old bridge is broken. Two strong logs would fix it.", "Следы ведут за ручей, но старый мостик сломан. Его починят два крепких бревна."],
+        "search": ["Listen for its little bell. Lambs hide in quiet places — maybe behind the big rock.", "Прислушайся к колокольчику. Ягнята прячутся в тихих местах — может быть, за большим камнем."],
+        "follow": ["You found it! Walk slowly so it can keep up with you.", "Ты нашёл его! Иди не спеша, чтобы он поспевал за тобой."],
+        "done": ["Jesus told a story like this: the shepherd was so glad, he called his friends to celebrate!", "Иисус рассказывал такую историю: пастух так радовался, что позвал друзей праздновать!"],
+        "chat": ["I have cared for sheep my whole life. Every single one has a name.", "Я всю жизнь пасу овец. У каждой из них есть имя."],
+    },
+    "mother": {
+        "start": ["Welcome! Come in and warm up by the fire.", "Добро пожаловать! Заходи, погрейся у огня."],
+        "bridge": ["The storm broke the creek bridge. Look for logs lying near the cottages.", "Буря сломала мостик через ручей. Поищи брёвна возле домиков."],
+        "search": ["Once I lost a silver coin. I swept the whole house until I found it!", "Однажды я потеряла серебряную монету. Я подмела весь дом, пока не нашла её!"],
+        "follow": ["Oh, the little lamb! Take it home to Grandpa Simeon.", "Ах, ягнёночек! Отведи его домой к дедушке Симеону."],
+        "done": ["The lamb, the coin, and you — every one matters to God!", "И ягнёнок, и монета, и ты — каждый дорог Богу!"],
+        "chat": ["The fire keeps us warm, and the table has room for one more.", "Огонь нас греет, а за столом всегда найдётся место ещё для одного."],
+    },
+    "baker": {
+        "start": ["Fresh bread, right from the oven! God gives us our daily bread.", "Свежий хлеб, прямо из печи! Бог даёт нам хлеб наш насущный."],
+        "bridge": ["This morning I saw a little lamb run past my door toward the creek.", "Утром я видел, как маленький ягнёнок пробежал мимо моей двери к ручью."],
+        "search": ["Across the creek the trail bends round a big rock. Keep your ears open!", "За ручьём тропинка огибает большой камень. Слушай внимательно!"],
+        "follow": ["There it is! I will save a crust of bread for your lamb.", "Вот он! Я оставлю корочку хлеба для твоего ягнёнка."],
+        "done": ["A lamb found and bread to share — what a good day!", "Ягнёнок нашёлся, и есть хлеб, чтобы поделиться, — какой хороший день!"],
+        "chat": ["I knead the dough before sunrise. The oven has to be very hot.", "Я замешиваю тесто ещё до рассвета. Печь должна быть очень горячей."],
+    },
+}
 var lamb_exit_route: Array[Vector3] = []
+var villagers: Array[Dictionary] = []
+var talk_index := -1
+var _inside_cottage := -1
 const LUKE_EN := "Luke 19:10 · ESV\n“For the Son of Man came to seek and to save the lost.”"
 const LUKE_RU := "Луки 19:10 · Синодальный перевод\n«ибо Сын Человеческий пришел взыскать и спасти погибшее»."
 const JOHN_EN := "John 10:11 · ESV\n“I am the good shepherd. The good shepherd lays down his life for the sheep.”"
@@ -63,6 +97,7 @@ var banner_buttons: Array[Button] = []
 var map_button: Button
 var trail_map: Control
 var modal: PanelContainer
+var modal_tail: ColorRect
 var modal_content: VBoxContainer
 var shade: ColorRect
 var modal_title: Label
@@ -165,6 +200,8 @@ func _world_tap_target() -> Dictionary:
         "pickup": target = boards[context_index].global_position + Vector3.UP * .15
         "seed": target = seeds[context_index].global_position
         "place": target = preview.global_position + Vector3.UP * .20
+        "door": target = VillageFinish.door_point(world.cottages[context_index])
+        "talk": target = villagers[context_index].node.global_position + Vector3.UP * 1.3
         _: return {} # No hitting animals, scenery, or remote rewards.
     var camera: Camera3D = player.get_camera()
     if camera.is_position_behind(target):
@@ -175,7 +212,12 @@ func _world_tap_target() -> Dictionary:
     # Projection alone would allow picking through walls. Check both sightlines.
     for origin in [camera.global_position, player.global_position + Vector3.UP]:
         var ray := PhysicsRayQueryParameters3D.create(origin, target)
-        ray.exclude = [player.get_rid()]
+        var excluded: Array[RID] = [player.get_rid()]
+        if context_kind == "door":
+            excluded.append((world.cottages[context_index].get_meta("door_body") as StaticBody3D).get_rid())
+        elif context_kind == "talk":
+            excluded.append((villagers[context_index].body as StaticBody3D).get_rid())
+        ray.exclude = excluded
         if not get_world_3d().direct_space_state.intersect_ray(ray).is_empty():
             return {}
     return {"kind": context_kind, "index": context_index, "position": [projected.x, projected.y], "radius": 32.0 * _ui_ratio}
@@ -273,7 +315,7 @@ func _build_objects() -> void:
     # keeps it out of player movement, camera and discovery sightline queries.
     lamb = CharacterBody3D.new()
     lamb.collision_layer = 0
-    lamb.collision_mask = 1
+    lamb.collision_mask = 1 | VillageFinish.INTERIOR_LAYER
     lamb.add_collision_exception_with(player)
     var lamb_shape := CollisionShape3D.new()
     var footprint := CylinderShape3D.new()
@@ -320,6 +362,57 @@ func _build_objects() -> void:
         _box(garden, at, Vector3(.08, .36, .08), Color("5b8b4c"))
         _box(garden, at + Vector3(0, .23, 0), Vector3(.28, .16, .28), Color("eebf5f"))
     garden.visible = garden_saved
+    _build_villagers()
+
+func _build_villagers() -> void:
+    # Quaternius CC0 villagers, adult-sized next to Michael. Indoor positions are
+    # in cottage-local units; the elder waits by the shelter's east post, facing
+    # spawn and clear of the westward seed route.
+    # Generated to match Michael's own style (see docs/junior-disciples-character-library.md).
+    # Source rig's feet sit below its own origin, not at it; foot_offset (raw
+    # units × scale) lifts each model so its feet land on the floor at y=0.
+    var specs := [
+        {"id": "elder", "model": "res://assets/villagers/simeon.glb", "en": "Grandpa Simeon", "ru": "Дедушка Симеон", "house": -1, "at": Vector3(-9.9, 0, 9.8), "yaw": -158.0, "scale": .63, "foot_offset": .63},
+        {"id": "mother", "model": "res://assets/villagers/anna.glb", "en": "Aunt Anna", "ru": "Тётя Анна", "house": 0, "at": Vector3(-0.4, 0, -1.3), "yaw": 0.0, "scale": .615, "foot_offset": .615},
+        {"id": "baker", "model": "res://assets/villagers/tobias.glb", "en": "Tobias the baker", "ru": "Пекарь Товия", "house": 1, "at": Vector3(0.4, 0, -1.2), "yaw": 0.0, "scale": .625, "foot_offset": .625},
+    ]
+    for spec in specs:
+        var root := Node3D.new()
+        root.name = "Villager_" + spec.id
+        add_child(root)
+        var yaw: float = deg_to_rad(spec.yaw)
+        if spec.house >= 0:
+            var house: Node3D = world.cottages[spec.house]
+            root.global_position = house.to_global(spec.at)
+            yaw += house.rotation.y
+        else:
+            root.global_position = spec.at
+        root.rotation.y = yaw
+        var model: Node3D = (load(spec.model) as PackedScene).instantiate()
+        model.scale = Vector3.ONE * spec.scale
+        model.position.y = spec.foot_offset
+        root.add_child(model)
+        # Source rig ships one rest-pose keyframe, not a loopable idle clip;
+        # play it once to strike that pose, then rely on the gentle sway in
+        # _process(delta) below for a little life.
+        var anim: AnimationPlayer = model.find_children("*", "AnimationPlayer", true, false).front()
+        if anim != null and not anim.get_animation_list().is_empty():
+            anim.play(anim.get_animation_list()[0])
+            anim.advance(0)
+            anim.stop(false)
+        # Blocks the player (layer 2) so nobody walks through a villager.
+        var body := StaticBody3D.new()
+        body.collision_layer = VillageFinish.INTERIOR_LAYER
+        body.collision_mask = 0
+        var shape := CollisionShape3D.new()
+        var capsule := CapsuleShape3D.new()
+        capsule.radius = .28
+        capsule.height = 1.6
+        shape.shape = capsule
+        shape.position.y = .8
+        body.add_child(shape)
+        root.add_child(body)
+        villagers.append({"id": spec.id, "en": spec.en, "ru": spec.ru, "node": root, "model": model, "base_y": spec.foot_offset, "body": body, "yaw": yaw, "talks": 0, "sway_seed": randf() * TAU, "greet_t": 0.0})
 
 func _physics_process(delta: float) -> void:
     if paused:
@@ -365,6 +458,22 @@ func _process(delta: float) -> void:
         _toggle_pause()
     if notice_timer > 0:
         notice_timer = maxf(0, notice_timer - delta)
+    _update_interior()
+    for v in villagers:
+        var node: Node3D = v.node
+        var to_player: Vector3 = player.global_position - node.global_position
+        var want: float = v.yaw if Vector2(to_player.x, to_player.z).length() > 3.5 else atan2(to_player.x, to_player.z)
+        node.rotation.y = lerp_angle(node.rotation.y, want, 1.0 - exp(-5.0 * delta))
+        # Source rig has no idle loop; a slow breathing bob and a little bow
+        # when greeted keep a standing villager from reading as a statue.
+        var model: Node3D = v.model
+        var breathe: float = sin(Time.get_ticks_msec() * .0011 + v.sway_seed) * .012
+        var greet: float = maxf(0.0, v.greet_t)
+        if greet > 0.0:
+            v.greet_t = greet - delta
+        var bow: float = sin(minf(greet, .6) / .6 * PI)
+        model.position.y = v.base_y + breathe - bow * .05
+        model.rotation.x = -bow * .12
     preview.visible = carrying >= 0 and not paused
     preview.position.x = 3.85 if bridge_stage == 0 else 6.15
     if not paused:
@@ -373,6 +482,20 @@ func _process(delta: float) -> void:
     if telemetry_timer <= 0:
         telemetry_timer = .15
         _telemetry()
+
+func _update_interior() -> void:
+    var inside := -1
+    for i in range(world.cottages.size()):
+        if VillageFinish.is_inside(world.cottages[i], player.global_position):
+            inside = i
+    if inside == _inside_cottage:
+        return
+    if _inside_cottage >= 0:
+        VillageFinish.set_roof_visible(world.cottages[_inside_cottage], true)
+    if inside >= 0:
+        VillageFinish.set_roof_visible(world.cottages[inside], false)
+    _inside_cottage = inside
+    player.set_interior(inside >= 0)
 
 func _can_reach_lamb() -> bool:
     if player.position.distance_to(lamb.position) >= LAMB_DISCOVERY_RADIUS:
@@ -485,6 +608,21 @@ func _choose_context() -> void:
     if context_kind == "" and bridge_stage == 2 and not following and _can_reach_lamb():
         context_kind = "call"
         highlight.global_position = lamb.position + Vector3(0, .12, 0)
+    if context_kind == "":
+        for i in range(villagers.size()):
+            if pos.distance_to(villagers[i].node.global_position) < TALK_RADIUS:
+                context_kind = "talk"
+                context_index = i
+                highlight.global_position = villagers[i].node.global_position + Vector3(0, .05, 0)
+                break
+    if context_kind == "":
+        for i in range(world.cottages.size()):
+            var door: Vector3 = VillageFinish.door_point(world.cottages[i])
+            if Vector2(pos.x - door.x, pos.z - door.z).length() < DOOR_RADIUS:
+                context_kind = "door"
+                context_index = i
+                highlight.global_position = Vector3(door.x, .05, door.z)
+                break
     highlight.visible = context_kind != ""
     var destination := CAMP
     if carrying >= 0:
@@ -554,12 +692,42 @@ func _interact() -> void:
                 _earn("garden")
                 _save_progress()
             _notice("garden" if seeds_found.size() == 3 else "seed")
+        "door":
+            var house: Node3D = world.cottages[context_index]
+            VillageFinish.set_door_open(house, not house.get_meta("door_open"))
+        "talk":
+            _start_talk(context_index)
         "call":
             following = true
             lamb_exit_route.assign([Vector3(14.8, 0, -11), Vector3(14, 0, -7)])
             _notice("follow")
     _choose_context()
     _refresh_ui()
+
+func _story_stage() -> String:
+    if completed:
+        return "done"
+    if following:
+        return "follow"
+    if bridge_stage == 2:
+        return "search"
+    if trail_found or crossing_found or carrying >= 0 or bridge_stage > 0:
+        return "bridge"
+    return "start"
+
+func _start_talk(i: int) -> void:
+    talk_index = i
+    villagers[i].talks += 1
+    villagers[i].greet_t = .6
+    paused = true
+    modal_kind = "talk"
+    player.set_enabled(false)
+
+func _villager_line(v: Dictionary) -> String:
+    var lines: Dictionary = VILLAGER_LINES[v.id]
+    # First visit (and every other one after) answers the current stage.
+    var line: Array = lines[_story_stage()] if v.talks % 2 == 1 else lines["chat"]
+    return line[1] if language == "ru" else line[0]
 
 func _complete() -> void:
     if completed:
@@ -836,6 +1004,16 @@ func _build_ui() -> void:
     modal = PanelContainer.new()
     modal.add_theme_stylebox_override("panel", _panel())
     hud.add_child(modal)
+    # Small triangular tail for the compact "talk" speech bubble: a square
+    # rotated 45°, half-hidden behind the bubble's bottom edge.
+    modal_tail = ColorRect.new()
+    modal_tail.color = Color(.075, .17, .14, .94)
+    modal_tail.size = Vector2(22, 22)
+    modal_tail.pivot_offset = Vector2(11, 11)
+    modal_tail.rotation_degrees = 45
+    modal_tail.mouse_filter = Control.MOUSE_FILTER_IGNORE
+    modal_tail.visible = false
+    hud.add_child(modal_tail)
     var modal_column := VBoxContainer.new()
     modal_column.add_theme_constant_override("separation", 8)
     modal.add_child(modal_column)
@@ -917,14 +1095,25 @@ func _layout_ui(update_density: bool = true) -> void:
     notice.position = Vector2(12, row_y + 114 if narrow else 110)
     notice.size = Vector2(size.x - 24 if narrow else size.x - 356, 80)
     input_hint.visible = false # Instructions remain in Pause; do not crowd play.
-    var width := minf(620, size.x - 24)
-    var height := minf(660, size.y - 84)
-    modal_title.add_theme_font_size_override("font_size", 28)
-    modal_body.add_theme_font_size_override("font_size", 22)
-    modal_content.add_theme_constant_override("separation", 12)
+    var is_talk := modal_kind == "talk"
+    var width := minf(340, size.x - 40) if is_talk else minf(620, size.x - 24)
+    modal_title.add_theme_font_size_override("font_size", 17 if is_talk else 28)
+    modal_body.add_theme_font_size_override("font_size", 16 if is_talk else 22)
+    modal_content.add_theme_constant_override("separation", 4 if is_talk else 12)
+    primary.custom_minimum_size.y = 38 if is_talk else 54
+    primary.add_theme_font_size_override("font_size", 15 if is_talk else 20)
     banner_choices.columns = 1 if width < 420 else 3
-    modal.position = Vector2((size.x - width) * .5, 72 + (size.y - 84 - height) * .5)
+    # Fixed, not auto-sized: a wrapped Label's minimum height isn't reliably
+    # known the same frame its width changes, so auto-sizing clipped text.
+    var height := 220.0 if is_talk else minf(660, size.y - 84)
     modal.size = Vector2(width, height)
+    if is_talk:
+        # A speech bubble near the top of the screen, tail pointing down at
+        # the scene below, rather than a screen-covering panel for one line.
+        modal.position = Vector2((size.x - width) * .5, 96)
+        modal_tail.position = Vector2(size.x * .5 - 11, 96 + height - 3)
+    else:
+        modal.position = Vector2((size.x - width) * .5, 72 + (size.y - 84 - height) * .5)
     # Language remains reachable above modals without obscuring their text.
     if paused:
         language_button.position = Vector2(size.x - 76, 16)
@@ -985,8 +1174,8 @@ func _refresh_ui() -> void:
     modal_body.visible = modal_kind != "map"
     jump_button.text = t("Jump", "Прыжок")
     action_button.visible = context_kind != "" and not paused
-    action_button.text = {"pickup":t("Pick up", "Взять"), "place":t("Place log", "Положить бревно"), "seed":t("Collect", "Собрать"), "call":t("Call", "Позвать")}.get(context_kind, "")
-    if campaign.stage > 0 and context_kind != "seed":
+    action_button.text = {"pickup":t("Pick up", "Взять"), "place":t("Place log", "Положить бревно"), "seed":t("Collect", "Собрать"), "call":t("Call", "Позвать"), "talk":t("Talk", "Поговорить"), "door":(t("Close", "Закрыть") if context_kind == "door" and world.cottages[context_index].get_meta("door_open") else t("Open", "Открыть"))}.get(context_kind, "")
+    if campaign.stage > 0 and context_kind not in ["seed", "talk", "door"]:
         action_button.text = campaign.action_text()
     if caves.active or context_kind == "caves": action_button.text = caves.action_text()
     input_hint.text = t("WASD · drag to look · Space · E", "WASD · веди, чтобы осмотреться · Пробел · E") if not DisplayServer.is_touchscreen_available() else t("Left: move · Right: look", "Слева: идти · справа: смотреть")
@@ -1035,6 +1224,11 @@ func _refresh_ui() -> void:
         modal_body.text += t("\n\nNext: follow the clues in three caves and bring another lamb home. You can also explore the clearing. Your earned rewards stay with you.", "\n\nДальше: изучи следы в трёх пещерах и приведи домой ещё одного ягнёнка. Можно и погулять на поляне. Твои награды останутся.")
         if not saves_ok: modal_body.text += "\n" + campaign.progress_text()
         primary.text = t("Explore the clearing", "Исследовать поляну")
+    elif modal_kind == "talk":
+        var v: Dictionary = villagers[talk_index]
+        modal_title.text = t(v.en, v.ru)
+        modal_body.text = _villager_line(v)
+        primary.text = t("Thank you!", "Спасибо!")
     elif modal_kind == "rewards":
         modal_title.text = t("My adventure book", "Моя книга приключений")
         modal_body.text = _reward_summary()
@@ -1043,7 +1237,7 @@ func _refresh_ui() -> void:
         primary.text = t("Continue", "Продолжить")
     else:
         modal_title.text = t("Take a breath", "Передохни")
-        modal_body.text = (LUKE_RU if language == "ru" else LUKE_EN) + t("\n\nWalk: WASD / left joystick\nLook: drag on the right\nJump: Space / Jump\nInteract: tap a nearby log, seed pouch or bridge outline / E / action button", "\n\nИдти: WASD / левый джойстик\nСмотреть: вести справа\nПрыгать: Пробел / Прыжок\nДействовать: коснись бревна, семян или контура моста рядом / E / кнопка")
+        modal_body.text = (LUKE_RU if language == "ru" else LUKE_EN) + t("\n\nWalk: WASD / left joystick\nLook: drag on the right\nJump: Space / Jump\nInteract: tap a nearby log, seed pouch, bridge outline, door or villager / E / action button", "\n\nИдти: WASD / левый джойстик\nСмотреть: вести справа\nПрыгать: Пробел / Прыжок\nДействовать: коснись бревна, семян, контура моста, двери или жителя рядом / E / кнопка")
         primary.text = t("Continue", "Продолжить")
     secondary.text = t("New rescue", "Начать заново")
     if modal_kind == "flock_complete": secondary.text = t("Explore clearing", "Гулять на поляне")
@@ -1070,6 +1264,8 @@ func _refresh_ui() -> void:
             primary.text = t("Continue to caves", "Дальше: пещеры")
     if caves.active and paused and not saves_ok:
         modal_body.text += t("\n\nNot saved on this device. Keep playing; leaving may lose this checkpoint.", "\n\nНе сохранено на устройстве. Можно играть дальше, но при выходе этот шаг может потеряться.")
+    shade.visible = paused and modal_kind != "talk"
+    modal_tail.visible = paused and modal_kind == "talk"
     header.visible = not paused
     pause_button.visible = not paused
     notice.visible = not paused

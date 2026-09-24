@@ -2,7 +2,7 @@
   "schema": 1,
   "project": "faithful-trail-block-1",
   "sources": {
-    "THIRD_PARTY_NOTICES.md": "91ecc8bc98ce7fbc033fcd3d3489a5dd5c2d876a1c069d1aa14d90dbddbfe708",
+    "THIRD_PARTY_NOTICES.md": "d1b400288da64aba905940226a8785bec561ca987fd8f9dc10f35f8ffce650c3",
     "assets/environment/Door_1_Round.bin": "783db477a76115724668f8846695651725b955af6b5b23a503f834b206ebc958",
     "assets/environment/Door_1_Round.gltf": "243fe5e3418e2459bcab858055d34e5441b60180a5efaadef440419e25cc27aa",
     "assets/environment/PROVENANCE.md": "a1a8421bfefce01824d8459a22b7038ee30357e8446ac0e926ef6d70584e7c2d",
@@ -39,25 +39,32 @@
     "assets/environment/cobble.png": "0ad1d8892cea86fa6c14c0ae176b86caad0523b3f9887bf59f6177932d6d7c1a",
     "assets/environment/flower_yellowC.glb": "4115c017390b3e157466a8719e9e2af6c5385505135e7012982b9410760ba9f3",
     "assets/environment/plant_bushDetailed.glb": "2e0487020d68ccf664435db9d829c78ae00e6d2785ee3ec10b9f89cc70a10406",
-    "assets/environment/village_finish.gd": "958b32a811a57ad48f7b4fce8ac8bbf13d8d7f264d0deee88626161951cc3c83",
+    "assets/environment/village_finish.gd": "f8aeec2ffc1a346b2aa5203401230df4fce82c478fc12ee2354d9d22e9769bd0",
     "assets/lamb.glb": "5df8aaf7c2cdcd5cf321c4cadf6e775c6ef4e7e69de96fbbe7bdc850d71617fb",
     "assets/log.glb": "e599bb882d77e1f5144f5b8130d9915641035b7a832fbb3b7b4cd0b950957e19",
     "assets/michael.glb": "fddb290aae7b65da54640c1f67821a0c93940fccd89f5c3d88848a86ad88756d",
     "assets/michael_texture_pbr_20250901.png": "96ff2f85b757f0730072483b019c1f5f2315fc2ed0b9b5f1c196ebeb158d2a2e",
     "assets/michael_texture_pbr_20250901_normal.png": "1cd3ca0c6e5a1999e91fa9d6ba2a43a7a7de1aee312e4d7162098db99f8bcd22",
+    "assets/villagers/PROVENANCE.md": "35f456aba434851dad99c4a8665f2dbb3cf2a14eeee834685d5a09c7d4535ce2",
+    "assets/villagers/anna.glb": "b7174fd09bbfa3a0fc909c4414c8c1ae4350d704c3f7049767b05aa4cec0d8a6",
+    "assets/villagers/anna_texture_0.png": "ced96834c381f7a8bee2927c91fcc33e8d9f0440d49a70371454daa0616c64f9",
+    "assets/villagers/simeon.glb": "48a31019eca1a1de5f681fa4ae301c2d66950bb4cc69ef8ed3f25b9c7df1bd5e",
+    "assets/villagers/simeon_texture_0.png": "b137145cafe9dfeb55af8f9f86988c775588f6bd8b5cfddfe7bc9ccd1d8e6976",
+    "assets/villagers/tobias.glb": "39523f9fe2f522b3b5d48f982712cd182334f94c6e035cd2ab9cfd211897b0fe",
+    "assets/villagers/tobias_texture_0.png": "034a48838be13cb8c7a3d570e072408b15851cd967d5e27d5744305324ad5e86",
     "export_presets.cfg": "7860b98938d4c74aa42f0b0ab64d67d9e453aa4df7996ba52bb2e88169df0cfa",
     "main.tscn": "a991dc21f45f40e6fe19a7edb003281bef06093e30b2bb14e38ea540cf2ebd25",
     "project.godot": "cad282a1b3502f948763fce5fa34c6901691d03c50f10f73809b598eacbf3295",
     "scripts/adventure_rewards.gd": "c193cae9c1b4b4ea850568c227ffc47d6b11731bf7f9904e2f2828bf36fc15d2",
     "scripts/audio.gd": "413279530913d1288e5b45a9c96914b079c5d37167662c39699accbacba34b23",
-    "scripts/main.gd": "1e25a1b0243b85280b6980d2575b306a7d06f4c4e67447f04c8f87c79a18f567",
-    "scripts/player.gd": "66b3d70417809a56fb2360a1eaaa9dcbf358a705108cf72742bd9a12f791c4e9",
+    "scripts/main.gd": "3a33677d324b1418e1ff7839eff3e69c17e0800669c8b62493f63f422e4e2460",
+    "scripts/player.gd": "9b8056fe6f6ab80ee70c3c74e06cb62acb42d7d2361bc856d3c84fe82b7deb8b",
     "scripts/trail_map.gd": "0d75420c71ee0ab5847b096dbf19149e880150e2f66d1b2bb9b83118bd3f2c2d",
-    "scripts/world.gd": "a1031ff1d561bdb8bac5248e3820149f42062dfa61574c10889bfd73f72b46b7"
+    "scripts/world.gd": "465c1e41a9fa0f12d7a24fbe5165ef029d23574483b17a47b24a99159d696c41"
   },
   "artifacts": {
     "index.html": {
-      "sha256": "21df43666c3d4db1e26c7ae54b0d2418b569467605dc89058d9e472ed9221b0e",
+      "sha256": "2b0ed3bdbfafb37fc551eeeb52b238bb586d3e6b95868639ebbde7df7789dc34",
       "bytes": 5510,
       "gzip_bytes": 2233
     },
@@ -72,9 +79,9 @@
       "gzip_bytes": 10054758
     },
     "index.pck": {
-      "sha256": "4ee04434248d859ae63555da6f6cd930a310e6ee820dab69ca91d429cee0034d",
-      "bytes": 12626032,
-      "gzip_bytes": 12519587
+      "sha256": "84ee019384322b0f43898533d5275f443bac147cb919f41545262dd6f6289f2d",
+      "bytes": 18691884,
+      "gzip_bytes": 18536542
     }
   }
 }
