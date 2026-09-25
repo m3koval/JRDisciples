@@ -143,7 +143,9 @@ def run():
             click('primary');click('pause')
             click('secondary');page.wait_for_timeout(600);check('replay',state()['bridge']==0 and not state()['complete'])
             check('reward_retained',state()['reward_saved'])
-            page.reload();ready()
+            # Match initial navigation: the engine's telemetry is the readiness
+            # authority, not the outer document's load event on software WebGL.
+            page.reload(wait_until='domcontentloaded', timeout=90000);ready()
             check('reload_reward',state()['reward_saved'])
             if os.environ.get('BLOCK_REWARDS')=='1':
                 check('earned_choice_persists',state()['adventure_points']==100 and state()['camp_banner_color']=='blue')

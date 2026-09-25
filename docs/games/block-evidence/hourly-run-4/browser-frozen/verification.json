@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "command": [
+    "/home/helper/.hermes/hermes-agent/venv/bin/python",
+    "/tmp/jd-next-adventure/tools/trail_of_truth/test_block_browser.py"
+  ],
+  "scope": "full exported-browser touch campaign and reload; not physical iPad",
+  "error": "Command '['/home/helper/.hermes/hermes-agent/venv/bin/python', '/tmp/jd-next-adventure/tools/trail_of_truth/test_block_browser.py']' timed out after 1799.9999744268134 seconds"
+}

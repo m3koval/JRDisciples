@@ -1,0 +1,17 @@
+fresh_intro True
+portrait_start True
+map_pause True
+map_close True
+portrait_walk True
+stick_does_not_turn_camera True
+release_stops True
+portrait_jump True
+portrait_look True
+two_thumb_movement True
+two_thumb_look True
+reload_engine_ready True
+reload_touch_start True
+landscape_pause True
+landscape_resume True
+no_runtime_errors True
+FRESH_TOUCH_RELOAD_FOLLOWUP=PASS

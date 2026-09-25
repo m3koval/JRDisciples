@@ -247,9 +247,7 @@ func _make_trees_and_landmarks() -> void:
 			continue
 		var h: float = 3.1 + float(i % 3) * 0.4
 		_solid("TreeTrunk", p + Vector3(0, h * 0.5, 0), Vector3(0.65, h, 0.65), "wood")
-		VillageFinish.rounded(self,p + Vector3(0,h+0.25,0),Vector3(3.5,2.9,3.3),Color("638755"))
-		VillageFinish.rounded(self,p + Vector3(-0.85,h+0.6,0.4),Vector3(2.4,2.2,2.6),Color("87a25d"))
-		VillageFinish.rounded(self,p + Vector3(0.85,h+0.35,-0.5),Vector3(2.4,2.2,2.5),Color("74944e"))
+		preload("res://scripts/opening_trees.gd").build(self, p, h, i)
 		# Grouped understory, never random clutter across the walking routes.
 		VillageFinish.place(self,"plant_bushDetailed.glb",p + Vector3(1.3,0,0.8),Vector3.ONE * 0.8)
 	# The trail bends around this outcrop into the lamb's sheltered alcove.
@@ -265,7 +263,7 @@ func _make_trees_and_landmarks() -> void:
 		_block(Vector3(x, 0.13, 12.4), Vector3(0.35, 0.26, 0.5), "leaf_light")
 
 func _solid(label: String, center: Vector3, size: Vector3, material_key: String) -> void:
-	if label not in ["WestCliff", "EastCliff", "NorthCliff", "SouthCliff", "ShelterRoof", "MeadowRock", "BridgeMarker"]:
+	if label not in ["TreeTrunk", "WestCliff", "EastCliff", "NorthCliff", "SouthCliff", "ShelterRoof", "MeadowRock", "BridgeMarker"]:
 		# Grass caps used to share the exact earth top plane: visible z-fighting.
 		# Recess only the brown render mesh, keeping collision ground unchanged.
 		var inset: float = .08 if label in ["LeftBank", "RightBank"] else (.02 if label == "SeedTerrace" else 0.0)

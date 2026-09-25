@@ -1,0 +1,26 @@
+[
+  {
+    "test": "opening_foliage_test",
+    "passed": false,
+    "exit_code": 1,
+    "errors": [
+      "FAIL Opening uses authored branching trees, not orb crowns",
+      "FAIL Finite whole-opening leaf budget",
+      "FAIL Exactly one existing collider per tree"
+    ],
+    "marker": "OPENING_FOLIAGE_FAILURES=0",
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/opening_foliage_test.gd"
+    ]
+  }
+]
