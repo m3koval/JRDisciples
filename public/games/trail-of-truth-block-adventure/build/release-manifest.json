@@ -92,16 +92,16 @@
     "scripts/irrigation_geometry.gd": "907a70001f3840dc0157c7d9d2285f6b7931ff7f2085b34c4c46be88641b5a24",
     "scripts/irrigation_winch.gd": "2c39ce6701d20ed6de567054bf811a448f9aeea47c7d2da4a097eaf0ac02c411",
     "scripts/main.gd": "ce82667175db5588d7246078a6d6980459fd56b55325f9819db8eb1ce03d9bad",
-    "scripts/opening_river_art.gd": "ff9f4e96b4588762fc421b1e550a31188aa72f3a850122f7d566c573a0d1ab2a",
+    "scripts/opening_river_art.gd": "b5b984a25fed91bf72426433e35b1264368052566e3a783c505411978dd573f0",
     "scripts/player.gd": "9b8056fe6f6ab80ee70c3c74e06cb62acb42d7d2361bc856d3c84fe82b7deb8b",
     "scripts/trail_map.gd": "0d75420c71ee0ab5847b096dbf19149e880150e2f66d1b2bb9b83118bd3f2c2d",
     "scripts/water_campaign.gd": "a4948d5006308faa2801ad2033555d1e534f9525a2338ffa8bd10c26d9fdccf8",
     "scripts/water_environment.gd": "9385fe6d07c6ba3ac8ccdbdaa62a0a1daef02dbf08c42923a3732d0ad7966f87",
-    "scripts/world.gd": "3bda057f6713a2ddf4f9f0eaeb12a5f699271828d082fe4c6cbdd77d0e9cb5ed"
+    "scripts/world.gd": "53b2fe0957aefbbb44e698e038f72d4e16529c5f8f3b0eb907a6ad91f616e1b8"
   },
   "artifacts": {
     "index.html": {
-      "sha256": "666474d1af539dc7bfa7bb460827812fb6f81e8b944bb447d763988a7ef02f31",
+      "sha256": "f9378d7284dccf59792d96a90270e0817fd06242cf900a46ba7c8d49c37b76ff",
       "bytes": 5510,
       "gzip_bytes": 2232
     },
@@ -116,9 +116,9 @@
       "gzip_bytes": 10054758
     },
     "index.pck": {
-      "sha256": "73056c66bf09a03aa0df1599ab502aaa6dc6b023f95814f56f8ac8bbebd335df",
-      "bytes": 20992916,
-      "gzip_bytes": 20814886
+      "sha256": "1f8cf4702b21cee27a907883aefa00f751cc3a74646a51c07e46561741bd3cde",
+      "bytes": 20993076,
+      "gzip_bytes": 20815022
     }
   }
 }

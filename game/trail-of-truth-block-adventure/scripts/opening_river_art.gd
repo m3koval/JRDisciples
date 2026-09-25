@@ -5,8 +5,10 @@ static func build(host: Node3D) -> void:
     var root := Node3D.new()
     root.name = "OpeningRiverArt"
     host.add_child(root)
-    _land(root,-6.0,2.7)
-    _land(root,7.3,15.0)
+    # A single material surface per physical bank, not a rectangular patch
+    # floating over differently colored ground. Keep the river collision gap.
+    _land(root,-22.0,2.7)
+    _land(root,7.3,23.0)
     _shore(root,2.7,1.0)
     _shore(root,7.3,-1.0)
     var river := MeshInstance3D.new()
@@ -48,13 +50,17 @@ static func _land(parent: Node3D, x0: float,x1: float) -> void:
     var st := SurfaceTool.new()
     st.begin(Mesh.PRIMITIVE_TRIANGLES)
     var nx: int = int(ceil((x1-x0)/.25))
-    var nz: int = 64
+    var nz: int = 136
     for j in range(nz+1):
         for i in range(nx+1):
             var x: float = lerpf(x0,x1,float(i)/nx)
-            var z: float = -8.0+j*.25
-            var d: float = absf(z)
-            if x > 11.5: d = minf(d,absf(x-13.3))
+            var z: float = -17.0+j*.25
+            var p := Vector2(x,z)
+            # Finite connected routes with rounded worn ends, not infinite
+            # stripes/T rectangles. The missing bridge remains an actual gap.
+            var d: float = _route_distance(p,Vector2(-10.5,0),Vector2(13.3,0))
+            d = minf(d,_route_distance(p,Vector2(-10.5,0),Vector2(-10.5,9.0)))
+            d = minf(d,_route_distance(p,Vector2(13.3,0),Vector2(13.3,-6.5)))
             var wobble: float = sin(x*1.45+sin(z*2.0))*.12
             var path: float = 1.0-smoothstep(1.0+wobble,1.85+wobble,d)
             st.set_color(Color(path,0,0,1))
@@ -65,11 +71,16 @@ static func _land(parent: Node3D, x0: float,x1: float) -> void:
             for index in [a,a+1,a+nx+2,a,a+nx+2,a+nx+1]: st.add_index(index)
     st.generate_normals()
     var mesh := MeshInstance3D.new()
-    mesh.name = "BlendedBridgeApproach"
+    mesh.name = "BlendedBridgeApproachLeft" if x0 < 0 else "BlendedBridgeApproachRight"
     mesh.mesh = st.commit()
     mesh.material_override = preload("res://scripts/garden_terrain.gd").material()
     mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
     parent.add_child(mesh)
+
+static func _route_distance(point: Vector2, start: Vector2, end: Vector2) -> float:
+    var segment := end-start
+    var t := clampf((point-start).dot(segment)/segment.length_squared(),0.0,1.0)
+    return point.distance_to(start+segment*t)
 
 static func _shore(parent: Node3D, edge: float, direction: float) -> void:
     var st := SurfaceTool.new()
@@ -81,7 +92,7 @@ static func _shore(parent: Node3D, edge: float, direction: float) -> void:
         if absf((za+zb)*.5) < 1.5: continue
         var xa: float = edge+direction*(.68+.14*sin(za*1.6))
         var xb: float = edge+direction*(.68+.14*sin(zb*1.6))
-        var vertices := [Vector3(edge,.025,za),Vector3(edge,.025,zb),Vector3(xb,-.84,zb),Vector3(xa,-.84,za)]
+        var vertices := [Vector3(edge,.028,za),Vector3(edge,.028,zb),Vector3(xb,-.84,zb),Vector3(xa,-.84,za)]
         for n in ([0,2,1,0,3,2] if direction > 0 else [0,1,2,0,2,3]):
             st.set_color(Color(0,0,0,1) if vertices[n].y > 0 else Color(.03,.88,0,1))
             st.add_vertex(vertices[n])

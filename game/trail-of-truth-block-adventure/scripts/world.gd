@@ -112,11 +112,8 @@ func _make_land() -> void:
 	_block(Vector3(-9.65, -0.04, 0), Vector3(24.7, 0.08, 34), "grass")
 	_block(Vector3(15.15, -0.04, 0), Vector3(15.7, 0.08, 34), "grass_light")
 	# River surface and bank contact now authored by OpeningRiverArt.
-	# Broad contiguous paths make both bridge approaches visually obvious.
-	_block(Vector3(-3.2, 0.006, 0), Vector3(11.8, 0.012, 3.6), "path")
-	_block(Vector3(10.2, 0.006, 0), Vector3(5.8, 0.012, 3.6), "path")
-	_block(Vector3(-10.5, 0.006, 3.6), Vector3(3.6, 0.012, 9), "path")
-	_block(Vector3(13.3, 0.006, -3.2), Vector3(3, 0.012, 6.6), "path")
+	# Connected worn paths are authored in OpeningRiverArt's bank surfaces;
+	# no overlapping rectangular path blocks or additional collision authority.
 	# Optional seed terrace: two visible step surfaces leading to Y=1.
 	_solid("SeedTerrace", Vector3(-13, 0.5, -10), Vector3(5.5, 1, 4.5), "earth_light")
 	_block(Vector3(-13, 0.99, -10), Vector3(5.5, 0.02, 4.5), "grass_light")

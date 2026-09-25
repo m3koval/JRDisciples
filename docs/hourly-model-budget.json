@@ -1,0 +1,13 @@
+{
+  "sprint": "Junior Disciples six-run improvement sprint",
+  "currency": "USD",
+  "cap": 10,
+  "cap_cents": 1000,
+  "actual_spent": 0,
+  "actual_spent_cents": 0,
+  "pending_commitments": [],
+  "transactions": [],
+  "budget_owner": "parent integrator only",
+  "policy": "Reserve full maximum including fees before any paid action; unknown pending charges count against cap; no speculative generation. Six implementation passes maximum including manual run 1.",
+  "run_1": {"vendor": "none", "asset": "custom opening terrain code", "license": "project-authored", "price": 0, "proof": "No paid API or purchase submitted", "qa_results": "Native opening route/state and additive terrain checks pass; matched portrait/landscape inspected; Web touch pickup smoke passes. Terrain improvement only, not owner-approved whole-scene quality."}
+}
