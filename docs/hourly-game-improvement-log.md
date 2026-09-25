@@ -63,6 +63,7 @@
 - This tick delivered recovery/verification tooling and the previously unpushed integrated foliage, **not new art or a new level**. No implication that the original broader improvement backlog is finished.
 - Spend: **$0 actual, $0 pending, $10 unused** across all runs.
 - **4/6 runs consumed; two remain.** No schedule extension/new schedule. Keep PR7 draft; no merge/deploy/device claim.
+- Handoff: `fb1a7f92d9a14bf3b815a89a45578de3a1a51094` pushed to `apex/jd-six-run-improvements` and exact remote SHA verified. PR7 remains the review target. Remote main unchanged at `36aae66a0a8cc194dfd97663d0de533f8f7ec153`. Only pre-existing untracked merge evidence remains outside this milestone.
 
 ## Remaining dependency/backlog (not silently completed)
 0. Close the full exported-browser gate first: from this unchanged export, start `BLOCK_URL=http://127.0.0.1:8133/games/trail-of-truth/ BLOCK_EVIDENCE=hourly-run-5/browser-frozen python tools/trail_of_truth/verify_browser_snapshot.py` early with the new 40-minute bound (verify local server health first). Run 4 proved real rescue/reload and two-thumb checks but not final landscape resume. Keep failed/partial evidence; do not relabel it or concatenate it into a full-suite pass.
