@@ -11,13 +11,22 @@ static func build(host: Node3D) -> void:
     _escarpment(root)
     for layer in range(3):
         _horizon(root, layer)
-    rock(root, "MeadowOutcrop", Vector3(17.6,0,-9), Vector3(3.0,2.6,2.45), 7)
-    # Smaller seams of the same local stone at bends, not uniform pebble noise.
-    for item in [[Vector3(2.38,-.33,-6.4),Vector3(1.2,.65,2.2),2],
-        [Vector3(7.48,-.37,5.8),Vector3(1.4,.7,2.8),4],
-        [Vector3(2.42,-.44,9.2),Vector3(.9,.65,1.6),11],
-        [Vector3(7.7,-.22,-10.2),Vector3(1.4,.8,2.1),13]]:
-        rock(root,"CreekLedge",item[0],item[1],item[2])
+    # Scanned rocks (Poly Haven CC0, assets/scans/PROVENANCE.md). The hero
+    # boulder covers world.gd's MeadowRock collider (x 16.3..18.9, z -10..-8);
+    # two smaller rocks close the lamb's alcove (main.gd LAMB_ALCOVE, 18.5,-11)
+    # on the east and south, leaving it open to the west where the trail
+    # arrives.
+    var scans := preload("res://scripts/cave_scenery.gd")
+    scans.scan(root, "namaqualand_cliff_01", Vector3(17.5, -.15, -9.6), .5, 180)
+    scans.scan(root, "rock_moss_a", Vector3(19.8, -.12, -11.2), .6, 40)
+    scans.scan(root, "rock_moss_e", Vector3(18.4, -.1, -12.5), .55, 110)
+    scans.scan(root, "namaqualand_boulder_05", Vector3(15.9, -.05, -7.5), 1.3, 200)
+    # Smaller mossy stones sunk into the creek banks at the bends.
+    for item in [[Vector3(2.38, -.25, -6.4), "rock_moss_b", .42, 35.0],
+        [Vector3(7.48, -.25, 5.8), "rock_moss_c", .4, -18.0],
+        [Vector3(2.42, -.28, 9.2), "rock_moss_d", .4, 160.0],
+        [Vector3(7.7, -.22, -10.2), "rock_moss_f", .42, 75.0]]:
+        scans.scan(root, item[1], item[0], item[2], item[3])
 
 static func _material() -> ShaderMaterial:
     var m := ShaderMaterial.new()
@@ -57,10 +66,10 @@ static func _escarpment(parent: Node3D) -> void:
             var p := _boundary(angle)
             var outward := Vector3(cos(angle),0,sin(angle))
             # Broad irregular ridgelines with small erosion breaks, no domes.
-            var h := 4.6+1.05*(sin(angle*5+.8)+1)+.55*sin(angle*11)
+            var h := 2.0+1.8*pow(.5+.5*sin(angle*5+.8),2.0)+.65*sin(angle*11)
             var crease := sin(angle*31+.7)*.25+sin(angle*17)*.35
-            var offsets := [0.0,.35,.65,1.0,2.2,6.0,13.0,24.0]
-            var heights := [-.12,.65,1.8,3.0,h,h*.89,h*.4,-.7]
+            var offsets := [0.0,.8,2.2,4.2,7.5,12.0,19.0,29.0]
+            var heights := [-.12,.38,.85,1.25,h,h*.89,h*.4,-.7]
             # Recessed buttresses break the straight wall without projecting
             # inside the retained collision boundary or across walking ground.
             var buttress := (.5+.5*sin(angle*19+.7))*.85 + (.5+.5*sin(angle*37))*.24
@@ -80,12 +89,19 @@ static func _escarpment(parent: Node3D) -> void:
             var b: Vector3 = rings[j][i+1]
             var c: Vector3 = rings[j+1][i+1]
             var d: Vector3 = rings[j+1][i]
-            var stone := Color("9b9a7b").lerp(Color("777c69"),.5+.25*sin(i*.41+j))
-            var col: Color = stone if j < 4 else Color("657d49").lerp(Color("899958"),.5+.25*sin(i*.19))
-            # Low grassy toe breaks the edge; broken stratified faces carry the boundary.
-            if j == 0: col = Color("72884c")
+            var stone := Color("8a8570").lerp(Color("6d6a58"),.5+.25*sin(i*.41+j))
+            var col := Color("618644").lerp(Color("7a9c58"),.5+.25*sin(i*.19+j*.8))
+            # Exposed rock reads where the ridge actually bulges outward
+            # (same buttress term the geometry above uses), so gray stone
+            # tracks real protruding relief instead of a flat painted patch
+            # decoupled from the silhouette underneath it.
+            var seam_angle: float = float(i)*TAU/count
+            var seam_buttress := (.5+.5*sin(seam_angle*19+.7))*.85 + (.5+.5*sin(seam_angle*37))*.24
+            if j in [1,2]: col = col.lerp(stone, smoothstep(.55,.95,seam_buttress))
+            if j == 0: col = Color("6f8a4a")
             _tri(st,a,c,b,col)
             _tri(st,a,d,c,col)
+    st.index()
     _mesh(parent,"ContinuousEscarpment",st)
 
 static func _horizon(parent: Node3D, layer: int) -> void:
@@ -117,7 +133,7 @@ static func rock(parent: Node3D, label: String, at: Vector3, size: Vector3, seed
     var rings: Array[PackedVector3Array] = []
     for j in range(5):
         var row := PackedVector3Array()
-        var scale_xz: float = [1.0,1.06,.96,.89,.62][j]
+        var scale_xz: float = [1.0,1.08,.91,.80,.51][j]
         for i in range(contour.size()):
             var p: Vector2 = contour[i]*scale_xz
             var y: float = [-.09,.17,.46,.78,1.0][j]
@@ -127,10 +143,10 @@ static func rock(parent: Node3D, label: String, at: Vector3, size: Vector3, seed
     for j in range(4):
         for i in range(8):
             var n := (i+1)%8
-            var col := Color("95947e").lerp(Color("bdbaa1"),rng.randf_range(.1,.65))
+            var col := Color("555c56").lerp(Color("8a8069"),rng.randf_range(.1,.65))
             # Godot front faces are clockwise: side normals face outward.
             _tri(st,rings[j][i],rings[j][n],rings[j+1][n],col)
             _tri(st,rings[j][i],rings[j+1][n],rings[j+1][i],col)
     for i in range(8):
-        _tri(st,rings[4][i],rings[4][(i+1)%8],at+Vector3(-.035,size.y*.99,.025),Color("b5b297"))
+        _tri(st,rings[4][i],rings[4][(i+1)%8],at+Vector3(-.035,size.y*.99,.025),Color("85816a"))
     return _mesh(parent,label,st)

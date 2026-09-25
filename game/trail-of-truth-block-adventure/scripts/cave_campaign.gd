@@ -18,6 +18,11 @@ var retreat_from := Vector3.ZERO
 var animals: Array[Node3D] = []
 var animal_motion: Array[Node3D] = []
 var signs: Array[Label3D] = []
+var lantern: OmniLight3D
+var animal_rigs: Array[Node3D] = []
+var lamb_model: Node3D
+var campfire: OmniLight3D
+var base_ambient := -1.0
 var lamb: CharacterBody3D
 var wool_read := false
 var warning_mark: MeshInstance3D
@@ -166,29 +171,31 @@ func snapshot() -> Dictionary:
     return {"active": active, "steps": completed_steps.duplicate()}
 
 func _ready() -> void:
-    solid(Vector3(100,-.5,0), Vector3(40,1,32), Color("b49a74"))
-    for pos in [Vector3(80,3,0),Vector3(120,3,0)]: solid(pos,Vector3(1,6,32),Color("756b61"))
-    for pos in [Vector3(100,3,-16),Vector3(100,3,16)]: solid(pos,Vector3(40,6,1),Color("756b61"))
+    # Enclosed, scanned-rock chambers: see cave_scenery.gd.
+    preload("res://scripts/cave_scenery.gd").build(self, ENTRANCES)
+    visibility_changed.connect(sync_backdrop)
     for i in range(3):
         var e: Vector3 = ENTRANCES[i]
-        # Three real, walk-in chambers. Open roofs keep the orbit camera usable.
-        for side in [-1,1]:
-            solid(e+Vector3(side*4.8,2,-7),Vector3(1,4,14),Color("bd8e65"))
-        solid(e+Vector3(0,2,-14),Vector3(10,4,1),Color("b98b64"))
-        # Terraced mountain crowns are visual only, above the navigable chambers.
-        host._box(self,e+Vector3(0,6,-11),Vector3(10,3,5),Color("bd8e65"))
-        host._box(self,e+Vector3(0,8,-12),Vector3(6,2,3),Color("d3a77b"))
-        var gate_art := add_asset("gate-rock",e+Vector3(0,0,-.2),Vector3(10,8.1,5))
-        for mesh in gate_art.find_children("*","MeshInstance3D",true,false): mesh.create_trimesh_collision()
-        # Corridor asset is decoration; hand-built solids define safe navigation.
-        var corridor := add_asset("corridor",e+Vector3(0,-.12,-12),Vector3(8,5,6))
-        corridor.rotation.y = PI/2
+        # Wooden clue board beside (not in) the walk-in line at x = e.x.
+        var post := Node3D.new()
+        post.position = e+Vector3(-2.9,0,2.2)
+        add_child(post)
+        host._box(post,Vector3(0,.8,0),Vector3(.14,1.6,.14),Color("5c4530"))
+        host._box(post,Vector3(0,1.55,0),Vector3(1.9,.6,.08),Color("8a6040"))
         var sign := Label3D.new()
-        sign.position = e+Vector3(0,2.7,1)
-        sign.font_size = 46
-        sign.pixel_size = .014
+        sign.position = post.position+Vector3(0,1.55,.06)
+        sign.font_size = 34
+        sign.pixel_size = .01
+        sign.modulate = Color("fff4df")
+        sign.outline_size = 8
         add_child(sign)
         signs.append(sign)
+    lantern = OmniLight3D.new()
+    lantern.light_color = Color("ffc47a")
+    lantern.light_energy = 0.0
+    lantern.omni_range = 7.5
+    lantern.position = Vector3(.3,1.1,.35)
+    host.player.add_child(lantern)
     animals.append(make_animal("lion",ENTRANCES[0]+Vector3(0,0,-8)))
     animals.append(make_animal("bear",ENTRANCES[1]+Vector3(0,0,-8)))
     build_health_bars()
@@ -221,9 +228,27 @@ func _ready() -> void:
     shape.shape = capsule
     shape.position.y = .4
     lamb.add_child(shape)
-    lamb.add_child(preload("res://assets/lamb.glb").instantiate())
+    lamb_model = preload("res://assets/lamb.glb").instantiate()
+    lamb.add_child(lamb_model)
     add_child(lamb)
-    host._box(self,CAMP+Vector3(0,.08,0),Vector3(5,.16,4),Color("72935f"))
+    # Green grass ring marks the healing camp; the fire pit sits to one side
+    # so the camp spawn point never lands in it.
+    var ring := MeshInstance3D.new()
+    var disc := CylinderMesh.new()
+    disc.top_radius = 2.8
+    disc.bottom_radius = 2.9
+    disc.height = .02
+    ring.mesh = disc
+    ring.material_override = preload("res://assets/environment/village_finish.gd").ground_material(Color("5f7d45"))
+    ring.position = CAMP+Vector3(0,.01,0)
+    add_child(ring)
+    var fire := preload("res://scripts/cave_scenery.gd").scan(self,"stone_fire_pit",CAMP+Vector3(-2.4,.19,.8),1.0,20)
+    campfire = OmniLight3D.new()
+    campfire.light_color = Color("ffa050")
+    campfire.light_energy = 1.6
+    campfire.omni_range = 6.0
+    campfire.position = Vector3(0,.7,0)
+    fire.add_child(campfire)
     var camp_sign := Label3D.new()
     camp_sign.position = CAMP+Vector3(0,2.5,0)
     camp_sign.name = "CampSign"
@@ -246,25 +271,6 @@ func solid(pos: Vector3, size: Vector3, color: Color) -> void:
     body.add_child(shape)
     host._box(body,Vector3.ZERO,size,color)
 
-func add_asset(id: String, pos: Vector3, bounds: Vector3) -> Node3D:
-    var path := "res://assets/caves/"+id+".glb"
-    var wrapper := Node3D.new()
-    add_child(wrapper)
-    wrapper.position = pos
-    if ResourceLoader.exists(path):
-        var model: Node3D = load(path).instantiate()
-        wrapper.add_child(model)
-        var box := AABB()
-        var first := true
-        for mesh in model.find_children("*","MeshInstance3D",true,false):
-            var a: AABB = model.global_transform.affine_inverse()*mesh.global_transform*mesh.get_aabb()
-            box = a if first else box.merge(a)
-            first = false
-        if not first:
-            var factor := minf(bounds.x/maxf(box.size.x,.01),minf(bounds.y/maxf(box.size.y,.01),bounds.z/maxf(box.size.z,.01)))
-            model.scale *= factor
-            model.position = -Vector3(box.get_center().x,box.position.y,box.get_center().z)*factor
-    return wrapper
 
 func make_animal(id: String, pos: Vector3) -> Node3D:
     var node := Node3D.new()
@@ -272,6 +278,7 @@ func make_animal(id: String, pos: Vector3) -> Node3D:
     node.position = pos
     var rig := preload("res://scripts/cave_block_animal.gd").new()
     node.add_child(rig)
+    animal_rigs.append(rig)
     rig.configure(id)
     var motion := preload("res://scripts/cave_animal_motion.gd").new()
     motion.attach(node,id)
@@ -301,7 +308,34 @@ func restore() -> void:
         animals[i].visible = stage < (2 if i == 0 else 4)
     lamb.position = CAMP+Vector3(1,0,0) if stage == 6 else ENTRANCES[2]+Vector3(0,0,-10)
     if active: teleport_camp()
+    sync_darkness(1.0)
     sync_labels()
+
+func sync_backdrop() -> void:
+    # The opening meadow's 95m distant-hills ring runs straight through this
+    # courtyard; hide it whenever the caves are shown.
+    var ridge := host.find_child("DistantRidge1", true, false) as Node3D
+    if ridge: ridge.visible = not visible
+
+func chamber_of(p: Vector3) -> int:
+    for i in range(ENTRANCES.size()):
+        if p.z < -.4 and absf(p.x-ENTRANCES[i].x) < 5.3: return i
+    return -1
+
+func sync_darkness(delta: float) -> void:
+    # Chambers are dark: what is inside only shows once you step in, by
+    # lantern light, so the courtyard never gives away which cave holds what.
+    # Only the models hide; animals[i].visible stays the "undefeated" state.
+    var inside := chamber_of(host.player.position) if active else -1
+    for i in range(animal_rigs.size()):
+        animal_rigs[i].visible = inside == i
+    lamb_model.visible = stage >= 5 or inside == 2
+    var blend := 1.0-exp(-5.0*delta)
+    lantern.light_energy = lerpf(lantern.light_energy, 2.6 if inside >= 0 else 0.0, blend)
+    var env: Environment = get_world_3d().environment
+    if env == null: return
+    if base_ambient < 0: base_ambient = env.ambient_light_energy
+    env.ambient_light_energy = lerpf(env.ambient_light_energy, base_ambient*(.3 if inside >= 0 else 1.0), blend)
 
 func teleport_camp() -> void:
     host.player.position = CAMP+Vector3(0,.2,0)
@@ -404,6 +438,9 @@ func tick(delta: float) -> void:
     staff.rotation.y = host.player._visual.rotation.y + sin((1-staff_swing/.3)*PI)*1.2-.6
     _tick_gameplay(delta)
     sync_health_bars()
+    sync_darkness(delta)
+    var t := Time.get_ticks_msec()
+    campfire.light_energy = 1.5+.25*sin(t*.011)*sin(t*.0037)
     for i in range(animals.size()):
         var state := phase if i == animal_index and stage in [1,3] else "idle"
         var facing := Vector3.BACK

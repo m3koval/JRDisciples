@@ -89,7 +89,7 @@ static func _route_distance(point: Vector2, start: Vector2, end: Vector2) -> flo
 
 static func shore_width(z: float, direction: float) -> float:
     # Broad alternating shelves, not a straight trench with a wavy bottom edge.
-    return .60+.32*sin(z*.53+direction*.9)+.16*sin(z*1.21+.4)
+    return .93+.43*sin(z*.53+direction*.9)+.19*sin(z*1.21+.4)
 
 static func _shore(parent: Node3D, edge: float, direction: float) -> void:
     var st := SurfaceTool.new()
@@ -105,8 +105,8 @@ static func _shore(parent: Node3D, edge: float, direction: float) -> void:
             var shoulder := smoothstep(1.5,2.6,absf(z))
             width *= lerpf(.18,1.0,shoulder)
             rows.append([Vector3(edge,.028,z),
-                Vector3(edge+direction*width*.32,-.17-.045*sin(z*.9),z),
-                Vector3(edge+direction*width*.86,-.40-.06*sin(z*.6+.7),z),
+                Vector3(edge+direction*width*.55,-.12-.045*sin(z*.9),z),
+                Vector3(edge+direction*width*.90,-.33-.06*sin(z*.6+.7),z),
                 Vector3(edge+direction*(width+.22),-.77,z),
                 Vector3(edge+direction*(width+.39),-1.02,z)])
         for j in range(4):
