@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS active cave has no floating waypoint cube
+PASS clue forward of rocks and outside central approach corridor 0
+PASS clue lettering on board front 0
+PASS support cannot z-fight with clue lettering 0
+PASS clue forward of rocks and outside central approach corridor 1
+PASS clue lettering on board front 1
+PASS support cannot z-fight with clue lettering 1
+PASS clue forward of rocks and outside central approach corridor 2
+PASS clue lettering on board front 2
+PASS support cannot z-fight with clue lettering 2
+PASS hidden model does not mark living animal defeated
+PASS entry starts gradual actual material reveal
+PASS entry completes reveal
+PASS courtyard does not expose cave contents
+CAVE_PRESENTATION_FAILURES=0

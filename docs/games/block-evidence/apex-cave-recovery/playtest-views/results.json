@@ -1,0 +1,21 @@
+[
+  {
+    "test": "cave_recovery_capture",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_recovery_capture.gd"
+    ]
+  }
+]

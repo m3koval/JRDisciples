@@ -7,6 +7,7 @@ ENGINE=os.environ.get('GODOT_BIN','/home/helper/tools/godot-4.7.2/godot')
 OUT=ROOT/'docs/games/block-evidence/apex-cave-recovery'
 JOBS={'cave_reveal_test':'CAVE_REVEAL_FAILURES=0','cave_presentation_test':'CAVE_PRESENTATION_FAILURES=0','cave_input_playthrough':'CAVE_INPUT_FAILURES=0','cave_campaign_test':'CAVE_FAILURES=0','cave_combat_test':'CAVE_COMBAT_FAILURES=0','cave_victory_test':'CAVE_VICTORY_FAILURES=0','garden_art_test':'GARDEN_ART_FAILURES=0'}
 JOBS.update({'cave_shell_geometry_test':'CAVE_SHELL_GEOMETRY_PASS','cave_animal_motion_test':'ANIMAL_MOTION_FAILURES=0','cave_block_animal_test':'failures=0','escort_collisions':'rescue_reward_earned true'})
+JOBS.update({'cave_choice_test':'CAVE_CHOICE_FAILURES=0','cave_botanical_art_test':'CAVE_BOTANICAL_ART_PASS'})
 def snapshot():
     return {str(p.relative_to(GAME)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(GAME.rglob('*')) if p.is_file() and '.godot' not in p.parts and p.suffix in ('.gd','.gdshader','.glb','.gltf','.png','.jpg','.godot','.tscn','.tres')}
 def main():

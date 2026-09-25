@@ -1,5 +1,5 @@
 extends Node3D
-## Original authored block-quadrupeds; no imported art, textures or skeletal claims.
+## Authored continuous sculpted quadrupeds, with independently articulated joints.
 ## +Z forward, rest paws at y=0. Presentation only; caller owns time/pause/movement.
 ## configure("lion"|"bear"), pose(delta,state,remaining,speed), reset_pose().
 var species := "lion"
@@ -28,38 +28,42 @@ func configure(animal_species: String) -> void:
     var fur := Color("785039") if bear else Color("d6a34f")
     var light := Color("b88b60") if bear else Color("f1ce87")
     var dark := Color("4a3027") if bear else Color("89502b")
-    # Intersecting inset slabs create deliberate stepped/chamfered silhouettes.
-    _block(rig, "Torso", Vector3(0,.91,-.15), Vector3(1.02 if bear else .86,.65,1.48), fur)
-    _block(rig, "BackCrown", Vector3(0,1.22,-.17), Vector3(.86 if bear else .70,.16,1.22), fur)
-    _block(rig, "Chest", Vector3(0,.94,.39), Vector3(1.09 if bear else .94,.69,.53), fur)
-    _block(rig, "ChestBib", Vector3(0,.89,.667), Vector3(.53,.37,.025), light)
+    # One continuous barrel: tapered haunch, tucked belly, broad shoulder hump.
+    var width := 1.0 if bear else .84
+    _loft(rig, "Torso", Vector3.ZERO, [
+        Vector4(-.90,.91,.12,.16), Vector4(-.78,.93,.37*width,.30),
+        Vector4(-.52,.94,.49*width,.35), Vector4(-.15,.94,.48*width,.34),
+        Vector4(.20,1.00,.52*width,.36 if bear else .32),
+        Vector4(.43,.99,.53*width,.34), Vector4(.64,.91,.32*width,.27),
+        Vector4(.68,.91,.06,.12)], fur, 20)
+    _block(rig, "ChestBib", Vector3(0,.83,.59), Vector3(.45,.35,.13), light)
     for i in range(4):
         var front := i < 2
         var x := -.39 if i % 2 == 0 else .39
         var hip := _pivot(rig, ["FrontLeft", "FrontRight", "RearLeft", "RearRight"][i], Vector3(x,.65,.47 if front else -.65))
         legs.append(hip)
-        _block(hip, "UpperLeg", Vector3(0,-.15,0), Vector3(.29 if bear else .24,.36,.29), fur)
+        _block(hip, "UpperLeg", Vector3(0,-.09,0), Vector3(.34 if bear else .28,.52,.34), fur)
         var knee := _pivot(hip, "Knee", Vector3(0,-.31,0))
         knees.append(knee)
-        _block(knee, "Shin", Vector3(0,-.11,0), Vector3(.25 if bear else .20,.26,.23), fur)
+        _block(knee, "Shin", Vector3(0,-.11,0), Vector3(.27 if bear else .22,.30,.25), fur)
         _block(knee, "Paw", Vector3(0,-.265,.065), Vector3(.34 if bear else .29,.15,.40), dark if bear else light)
     head = _pivot(rig, "HeadPivot", Vector3(0,1.10,.62))
     if not bear:
-        # A broad golden-brown ruff frames the face; stepped corners, not spikes.
-        _block(head, "Mane", Vector3(0,.02,.02), Vector3(1.04,.82,.44), dark)
-        _block(head, "ManeCrown", Vector3(0,.43,.03), Vector3(.72,.14,.40), dark)
-        for side in [-1,1]:
-            _block(head, "ManeCheek", Vector3(side*.48,-.02,.06), Vector3(.18,.58,.40), Color("a96832"))
-        _block(head, "ManeBib", Vector3(0,-.40,.07), Vector3(.65,.17,.39), dark)
-    _block(head, "Face", Vector3(0,.10,.25), Vector3(.75 if bear else .68,.59,.54), fur)
-    _block(head, "BrowCrown", Vector3(0,.39,.24), Vector3(.59,.10,.43), fur)
+        # Continuous swept ruff; angular locks are part of the surface, not boxes.
+        _loft(head, "Mane", Vector3.ZERO, [Vector4(-.20,.02,.22,.28),
+            Vector4(-.08,.01,.48,.43), Vector4(.08,-.015,.54,.49),
+            Vector4(.22,.015,.46,.42), Vector4(.28,.04,.31,.30)], dark, 24, true)
+    # Skull narrows into the cheek plane in a single sculpted surface.
+    _loft(head, "Face", Vector3.ZERO, [Vector4(-.01,.12,.12,.15),
+        Vector4(.10,.13,.33 if bear else .29,.29),
+        Vector4(.31,.11,.375 if bear else .34,.29),
+        Vector4(.46,.055,.29,.22), Vector4(.54,-.025,.19,.15)], fur, 20)
     for side in [-1,1]:
-        var ear := _pivot(head, "EarLeft" if side < 0 else "EarRight", Vector3(side*.34,.43,.16))
-        _block(ear, "EarBase", Vector3.ZERO, Vector3(.23,.20,.19), fur)
-        _block(ear, "EarCap", Vector3(0,.10,0), Vector3(.16,.06,.15), fur)
+        var ear := _pivot(head, "EarLeft" if side < 0 else "EarRight", Vector3(side*.30,.43,.18))
+        _block(ear, "EarBase", Vector3.ZERO, Vector3(.23,.26,.19), fur)
         _block(ear, "EarInner", Vector3(0,0,.101), Vector3(.12,.11,.018), light)
-        _block(head, "Eye", Vector3(side*.235,.19,.527), Vector3(.085,.10,.025), Color("282626"))
-        _block(head, "EyeGlint", Vector3(side*.235-.014,.215,.543), Vector3(.024,.028,.012), Color("fff4d5"))
+        _block(head, "Eye", Vector3(side*.20,.14,.491), Vector3(.085,.10,.025), Color("282626"))
+        _block(head, "EyeGlint", Vector3(side*.20-.014,.165,.505), Vector3(.024,.028,.012), Color("fff4d5"))
         _block(head, "MuzzleCheek", Vector3(side*.13,-.075,.56), Vector3(.28,.22,.22), light)
     _block(head, "Nose", Vector3(0,.01,.686), Vector3(.19,.105,.065), Color("352b29"))
     _block(head, "Chin", Vector3(0,-.19,.55), Vector3(.36,.065,.18), light)
@@ -81,15 +85,63 @@ func _pivot(parent: Node3D, label: String, at: Vector3) -> Node3D:
     return node
 
 func _block(parent: Node3D, label: String, at: Vector3, size: Vector3, color: Color) -> void:
+    # Rounded anatomically tapered cross sections, with a flatter paw sole.
+    var rings: Array = []
+    for pair in [[-.5,.05],[-.43,.58],[-.25,.91],[0.0,1.0],[.25,.91],[.43,.58],[.5,.05]]:
+        rings.append(Vector4(float(pair[0])*size.z, 0, size.x*.5*float(pair[1]), size.y*.5*float(pair[1])))
+    if label in ["UpperLeg", "Shin"]:
+        rings.clear()
+        for pair in [[-.5,.72],[-.38,.91],[0.0,1.0],[.38,.91],[.5,.72]]:
+            rings.append(Vector4(float(pair[0])*size.y, 0, size.x*.5*float(pair[1]), size.z*.5*float(pair[1])))
+    _loft(parent,label,at,rings,color,16)
+    if label in ["UpperLeg", "Shin"]:
+        (parent.get_child(parent.get_child_count()-1) as Node3D).rotation.x = PI*.5
+
+func _loft(parent: Node3D, label: String, at: Vector3, rings: Array, color: Color, segments: int = 20, fur_locks: bool = false) -> void:
     var mesh := MeshInstance3D.new()
     mesh.name = label
-    var box := BoxMesh.new()
-    box.size = size
-    mesh.mesh = box
+    var vertices := PackedVector3Array()
+    var normals := PackedVector3Array()
+    var colors := PackedColorArray()
+    var indices := PackedInt32Array()
+    for j in range(rings.size()):
+        var ring: Vector4 = rings[j]
+        for i in range(segments):
+            var theta := TAU*float(i)/segments
+            var lock := (1.0 if i%2 == 0 else .91) if fur_locks else 1.0
+            vertices.append(Vector3(cos(theta)*ring.z*lock,ring.y+sin(theta)*ring.w*lock,ring.x))
+            var prev: Vector4 = rings[maxi(0,j-1)]
+            var next: Vector4 = rings[mini(rings.size()-1,j+1)]
+            var slope := ((next.z-prev.z)*cos(theta)*cos(theta)+(next.w-prev.w)*sin(theta)*sin(theta)+(next.y-prev.y)*sin(theta))/maxf(.001,next.x-prev.x)
+            normals.append(Vector3(cos(theta)/maxf(.01,ring.z),sin(theta)/maxf(.01,ring.w),-slope/maxf(.01,(ring.z+ring.w)*.5)).normalized())
+            var shade := 1.0
+            if fur_locks: shade = .87 + .13*float((i+j)%3)/2.0
+            colors.append(Color(shade,shade,shade))
+            if j < rings.size()-1:
+                var a := j*segments+i
+                var b := j*segments+(i+1)%segments
+                var c := (j+1)*segments+i
+                var d := (j+1)*segments+(i+1)%segments
+                indices.append_array(PackedInt32Array([a,c,b,b,c,d]))
+    # Close both ends; all runtime surfaces are authored, connected topology.
+    for end in [0,rings.size()-1]:
+        var base: int = end*segments
+        for i in range(1,segments-1):
+            indices.append_array(PackedInt32Array([base,base+i,base+i+1] if end == 0 else [base,base+i+1,base+i]))
+    var arrays := []
+    arrays.resize(Mesh.ARRAY_MAX)
+    arrays[Mesh.ARRAY_VERTEX] = vertices
+    arrays[Mesh.ARRAY_NORMAL] = normals
+    arrays[Mesh.ARRAY_COLOR] = colors
+    arrays[Mesh.ARRAY_INDEX] = indices
+    var surface := ArrayMesh.new()
+    surface.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
+    mesh.mesh = surface
     var key := color.to_html()
     if not _materials.has(key):
         var material := StandardMaterial3D.new()
         material.albedo_color = color
+        material.vertex_color_use_as_albedo = true
         material.roughness = .88
         _materials[key] = material
     mesh.material_override = _materials[key]

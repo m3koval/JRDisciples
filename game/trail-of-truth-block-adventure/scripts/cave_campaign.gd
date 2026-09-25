@@ -43,8 +43,8 @@ var animal_health_bars: Array[Sprite3D] = []
 var health_textures: Array[Texture2D] = []
 
 func animal_health(i: int) -> int:
-    if stage >= i*2+2: return 0
-    return maxi(0,ANIMAL_MAX_HEALTH-drive_count) if stage == i*2+1 else ANIMAL_MAX_HEALTH
+    if completed_steps.has(STEPS[i*2+1]): return 0
+    return maxi(0,ANIMAL_MAX_HEALTH-drive_count) if animal_index == i else ANIMAL_MAX_HEALTH
 
 func build_health_bars() -> void:
     for hp in range(ANIMAL_MAX_HEALTH+1):
@@ -97,6 +97,8 @@ func pose_poof() -> void:
         puff.scale = Vector3.ONE * maxf(.001,1.0-smoothstep(.25,1,progress))
 
 func defeat_animal() -> void:
+    if animal_index < 0 or animal_health(animal_index) > 0: return
+    var won_step: String = STEPS[animal_index*2+1]
     # Award the actual win immediately, independent of effect duration or leash.
     poof.position = animals[animal_index].position
     animals[animal_index].hide()
@@ -109,7 +111,7 @@ func defeat_animal() -> void:
     animal_index = -1
     message = "victory"
     message_time = 4
-    advance()
+    earn(won_step)
     sync_health_bars()
 
 func in_arena(p: Vector3, i: int) -> bool:
@@ -159,18 +161,32 @@ var stage: int:
 func load_checkpoint(data: Variant, flock_stage: int) -> void:
     active = false
     completed_steps.clear()
+    wool_read = false
     health = 3
     if flock_stage != 6 or not data is Dictionary: return
     if not data.get("active") is bool or not data.get("steps") is Array: return
     var values: Array = data.steps
     if values.size() > STEPS.size(): return
+    var version: Variant = data.get("version", 1)
+    if not (version is int or version is float): return
+    if version != 1 and version != 2: return
+    var nonlinear: bool = version == 2
+    if (nonlinear or data.has("wool_read")) and not data.get("wool_read") is bool: return
+    var checked: Array[String] = []
     for i in range(values.size()):
-        if not values[i] is String or values[i] != STEPS[i]: return
+        if not values[i] is String or values[i] not in STEPS or values[i] in checked: return
+        if not nonlinear and values[i] != STEPS[i]: return
+        if values[i] == "lion_safe" and "lion_clue" not in checked: return
+        if values[i] == "bear_safe" and "bear_clue" not in checked: return
+        if values[i] == "lamb_found" and nonlinear and not data.wool_read: return
+        if values[i] == "home" and checked.size() != 5: return
+        checked.append(values[i])
     active = data.active
     for value in values: completed_steps.append(value)
+    wool_read = data.get("wool_read", completed_steps.has("lamb_found"))
 
 func snapshot() -> Dictionary:
-    return {"active": active, "steps": completed_steps.duplicate()}
+    return {"version": 2, "active": active, "steps": completed_steps.duplicate(), "wool_read": wool_read or completed_steps.has("lamb_found")}
 
 func _ready() -> void:
     # Enclosed, scanned-rock chambers: see cave_scenery.gd.
@@ -180,10 +196,10 @@ func _ready() -> void:
         var e: Vector3 = ENTRANCES[i]
         # Wooden clue board beside (not in) the walk-in line at x = e.x.
         var post := Node3D.new()
-        # Seat the smaller clue in the clear left throat, away from jamb rocks.
-        # Preserve center-route clearance; do not draw text through stone.
+        # Courtyard-side station forward of the rock apron: outside the
+        # interior camera sightline, retaining the original readable scale.
         post.name = "CaveCluePost%d" % i
-        post.position = e+Vector3(-1.15,0,-1.35)
+        post.position = e+Vector3(-1.8,0,1.9)
         add_child(post)
         host._box(post,Vector3(0,.65,-.08),Vector3(.14,1.3,.14),Color("5c4530"))
         host._box(post,Vector3(0,1.25,0),Vector3(1.40,.50,.10),Color("765038"))
@@ -193,6 +209,7 @@ func _ready() -> void:
         sign.pixel_size = .008
         sign.modulate = Color("fff4df")
         sign.outline_size = 4
+        sign.double_sided = false
         add_child(sign)
         signs.append(sign)
     lantern = OmniLight3D.new()
@@ -298,7 +315,6 @@ func restore() -> void:
     health = 3
     invulnerability = 0
     phase = "idle"
-    wool_read = false
     warning_mark.visible = false
     poof.hide()
     animal_index = -1
@@ -313,7 +329,7 @@ func restore() -> void:
         animals[i].position = ENTRANCES[i]+Vector3(0,0,-8)
         animals[i].rotation = Vector3.ZERO
         animal_motion[i].reset_pose()
-        animals[i].visible = stage < (2 if i == 0 else 4)
+        animals[i].visible = not completed_steps.has(STEPS[i*2+1])
     lamb.position = CAMP+Vector3(1,0,0) if stage == 6 else ENTRANCES[2]+Vector3(0,0,-10)
     if active: teleport_camp()
     sync_darkness(1.0)
@@ -369,8 +385,7 @@ func context() -> String:
         if health < 3: return "heal"
         if stage == 6: return "return"
     if animal_index >= 0 and phase in ["chase","warn","lunge","recover"] and in_arena(host.player.position,animal_index): return "drive"
-    if stage in [0,2,4] and near(ENTRANCES[stage/2]): return "clue"
-    if stage == 4 and message_time > 0: return "" # clue is the only entrance action
+    if nearby_clue() >= 0: return "clue"
     if stage == 5 and near(lamb.position,3) and phase == "waiting": return "call_lamb"
     return ""
 
@@ -381,10 +396,19 @@ func can_drive() -> bool:
     if not near(animals[animal_index].position,STAFF_REACH): return false
     return clear_path(p,animals[animal_index].position)
 
-func advance() -> void:
-    if stage >= 6: return
-    completed_steps.append(STEPS[stage])
+func earn(step: String) -> void:
+    if completed_steps.has(step): return
+    completed_steps.append(step)
     host._save_progress()
+
+func nearby_clue() -> int:
+    for i in range(3):
+        if (near(ENTRANCES[i]) or near(signs[i].position)) and (not wool_read if i == 2 else not completed_steps.has(STEPS[i*2])):
+            return i
+    return -1
+
+func safe_to_escort() -> bool:
+    return completed_steps.has("lion_safe") and completed_steps.has("bear_safe")
 
 func interact() -> void:
     if host.paused: return
@@ -395,13 +419,15 @@ func interact() -> void:
             host.paused = true
             host.player.set_enabled(false)
         "clue":
-            if stage == 4:
+            var clue := nearby_clue()
+            if clue == 2:
                 # Last clue points inside; discovery requires actually reaching lamb.
                 wool_read = true
+                host._save_progress()
                 message = "wool"
                 message_time = 6
             else:
-                advance()
+                earn(STEPS[clue*2])
                 message = "tracks"
                 message_time = 5
         "heal":
@@ -413,7 +439,7 @@ func interact() -> void:
             defend()
         "call_lamb": phase = "following"
         "home":
-            advance()
+            earn("home")
             host.modal_kind = "cave_complete"
             host.paused = true
             host.player.set_enabled(false)
@@ -452,7 +478,7 @@ func tick(delta: float) -> void:
     var t := Time.get_ticks_msec()
     campfire.light_energy = 1.5+.25*sin(t*.011)*sin(t*.0037)
     for i in range(animals.size()):
-        var state := phase if i == animal_index and stage in [1,3] else "idle"
+        var state := phase if i == animal_index else "idle"
         var facing := Vector3.BACK
         if state == "chase": facing = host.player.position-animals[i].position
         elif state in ["warn","lunge","recover"]: facing = lunge_to-lunge_from
@@ -476,9 +502,9 @@ func _tick_gameplay(delta: float) -> void:
     warning_mark.visible = phase in ["warn", "lunge"]
     warning_mark.position = (animals[1].position if animal_index == 1 else lunge_to) + Vector3.UP*.04
     warning_mark.scale = Vector3(5.6/2.6,1,5.6/2.6) if animal_index == 1 else Vector3.ONE
-    if stage == 4 and wool_read and near(lamb.position,2.5):
-        advance()
-        phase = "waiting"
+    if wool_read and not completed_steps.has("lamb_found") and near(lamb.position,2.5):
+        earn("lamb_found")
+        if safe_to_escort(): phase = "waiting"
     if stage == 5:
         if phase not in ["waiting","following"]: phase = "waiting"
         if phase == "following":
@@ -491,11 +517,25 @@ func _tick_gameplay(delta: float) -> void:
             if direction.length() > .7 and lamb.position.distance_to(p) < 10:
                 lamb.move_and_collide(direction.normalized()*minf(delta*3,direction.length()))
         return
-    if stage not in [1,3]: return
-    var i := 0 if stage == 1 else 1
+    var i := chamber_of(p)
+    # Return every unfinished attacker in an unoccupied chamber on every tick,
+    # not just the departure frame before animal_index is cleared.
+    for other in range(animals.size()):
+        if other != i and not completed_steps.has(STEPS[other*2+1]):
+            move_animal(other,ENTRANCES[other]+Vector3(0,0,-8),delta*4)
+    if i < 0 or i > 1 or not completed_steps.has(STEPS[i*2]) or completed_steps.has(STEPS[i*2+1]):
+        animal_index = -1
+        drive_count = 0
+        phase = "idle"
+        warning_mark.hide()
+        return
+    if animal_index >= 0 and animal_index != i:
+        drive_count = 0
+        phase = "idle"
     # Let the child clear the narrow rock arch before asking for a sideways
     # dodge. The fight takes place in the wider chamber, not in its doorway.
     if not in_arena(p,i):
+        drive_count = 0
         phase = "idle"
         animal_index = -1
         warning_mark.visible = false
@@ -541,21 +581,35 @@ func destination() -> Vector3:
     if not active: return host.CAMP
     if health < 3 and near(CAMP,5): return CAMP
     if stage == 6 or (stage == 5 and phase == "following"): return CAMP
-    if stage == 4 and not wool_read: return ENTRANCES[2]
-    if stage >= 4: return lamb.position
-    return ENTRANCES[stage/2]+Vector3(0,0,-4 if stage%2 == 1 else 0)
+    if safe_to_escort(): return lamb.position if wool_read else ENTRANCES[2]
+    var nearest := -1
+    var distance := INF
+    for i in range(3):
+        if (completed_steps.has("lamb_found") if i == 2 else completed_steps.has(STEPS[i*2+1])): continue
+        var d: float = host.player.position.distance_to(ENTRANCES[i])
+        if d < distance:
+            distance = d
+            nearest = i
+    if nearest == 2: return lamb.position if wool_read else ENTRANCES[2]
+    return ENTRANCES[nearest]+Vector3(0,0,-4 if completed_steps.has(STEPS[nearest*2]) else 0)
 
 func objective() -> String:
     if phase == "victory": return host.t("Victory! You protected the flock.", "Победа! Ты защитил стадо.")
-    if stage == 4 and not wool_read:
-        return host.t("3 · Read the wool clue at the right entrance", "3 · Изучи шерсть у правого входа")
+    if safe_to_escort() and not wool_read:
+        return host.t("Read the wool clue at the right entrance", "Изучи шерсть у правого входа")
     if phase == "chase": return host.t("Run and make room · staff defends nearby", "Беги и держи расстояние · посох защищает вблизи")
     if phase == "warn": return host.t("Warning! Run sideways or time a jump", "Внимание! Беги в сторону или прыгни вовремя")
     if phase == "lunge": return host.t("Run · jump · defend!", "Беги · прыгай · защищайся!")
     if phase == "recover": return host.t("Come within staff reach · defend", "Подойди на длину посоха · защищайся")
     if stage == 5: return host.t("Call the lamb · walk slowly to green camp", "Позови ягнёнка · веди к зелёному лагерю")
     if stage == 6: return host.t("Safe together! Return to the clearing", "Все в безопасности! Вернись на поляну")
-    return [host.t("1 · Read tracks at the left cave", "1 · Изучи следы у левой пещеры"),host.t("Lion cave · defeat the attacker", "Пещера льва · победи нападающего зверя"),host.t("2 · Read tracks at the middle cave", "2 · Изучи следы у средней пещеры"),host.t("Bear cave · defeat the attacker", "Пещера медведя · победи нападающего зверя"),host.t("3 · White wool! Search the right cave", "3 · Белая шерсть! Ищи в правой пещере")][mini(stage,4)]
+    if safe_to_escort(): return host.t("White wool leads inside · find the lamb", "Белая шерсть ведёт внутрь · найди ягнёнка")
+    if completed_steps.has("lamb_found"):
+        return host.t("Lamb found! Make both animal caves safe, then return for it", "Ягнёнок найден! Победи обоих зверей и вернись за ним")
+    var inside := chamber_of(host.player.position)
+    if inside in [0,1] and completed_steps.has(STEPS[inside*2]) and not completed_steps.has(STEPS[inside*2+1]):
+        return host.t("Follow the tracks inside · staff ready", "Иди по следам внутрь · приготовь посох")
+    return host.t("Choose any cave · read its clue and explore", "Выбери любую пещеру · изучи следы и войди")
 
 func action_text() -> String:
     return {"caves":host.t("Continue to caves", "Дальше: пещеры"),"clue":host.t("Read the clue", "Изучить следы"),"drive":host.t("Defend · staff", "Защита · посох"),"heal":host.t("Rest and heal", "Отдохнуть"),"call_lamb":host.t("Call the lamb", "Позвать ягнёнка"),"home":host.t("Welcome home", "Мы дома"),"return":host.t("Return to clearing", "На поляну")}.get(context(),"")
@@ -574,11 +628,11 @@ func notice_text() -> String:
     return {"wool":host.t("Soft white wool leads inside the right cave.", "Белая шерсть ведёт внутрь правой пещеры."),"tracks":host.t("Animal tracks! Wait for the warning, dodge sideways, then act.", "Следы зверя! Жди сигнала, отойди в сторону и действуй."),"healed":host.t("Rested! All three hearts restored.", "Отдохнул! Здоровье восстановлено."),"ouch":host.t("A bump! Move away; you have a moment of safety.", "Ушиб! Отойди; сейчас ты ненадолго защищён."),"retry":host.t("Safe at camp. Rested and ready; your progress is kept.", "Ты в лагере. Отдохнул! Твой успех сохранён."),"victory":host.t("Victory! You protected the flock. Follow the next clue!", "Победа! Ты защитил стадо. Ищи следующую подсказку!")}.get(message,"")
 
 func sync_labels() -> void:
-    for i in range(signs.size()): signs[i].text = [host.t("1 · Paw prints", "1 · Следы лап"),host.t("2 · Big tracks", "2 · Большие следы"),host.t("3 · White wool", "3 · Белая шерсть")][i]
+    for i in range(signs.size()): signs[i].text = [host.t("Paw prints", "Следы лап"),host.t("Big tracks", "Большие следы"),host.t("White wool", "Белая шерсть")][i]
     get_node("CampSign").text = host.t("Safe camp · rest here", "Лагерь · здесь безопасно")
 
 func intro_text() -> String:
-    return host.t("Protect the flock. Defeat the lion and bear, then bring the lost lamb home.\n\nWatch the attack cue. Run sideways or jump, then strike with your staff (E / action button). Land two hits to win. Each swing takes a moment to ready again.\n\nRest at camp to recover health. If you fall, restart the unfinished fight; completed steps stay earned.\n\nA fictional shepherd adventure inspired by David.", "Защити стадо. Победи льва и медведя, затем приведи потерявшегося ягнёнка домой.\n\nСледи за движениями зверя. Беги в сторону или прыгай, затем бей посохом (E / кнопка). Два попадания — победа. Между взмахами нужна короткая пауза.\n\nОтдых в лагере восстановит здоровье. При поражении начни незаконченный бой заново; пройденные шаги сохранятся.\n\nВыдуманное приключение пастуха, вдохновлённое Давидом.")
+    return host.t("Choose any cave and read its clue. Find the lamb early or face either animal first. Defeat both attackers before escorting the lamb home.\n\nWatch the attack cue. Run sideways or jump, then strike with your staff (E / action button). Land two hits to win. Each swing takes a moment to ready again.\n\nRest at camp to recover health. If you fall, restart the unfinished fight; completed steps stay earned.\n\nA fictional shepherd adventure inspired by David.", "Выбери любую пещеру и изучи следы. Найди ягнёнка сначала или начни с любого зверя. Победи обоих нападающих, прежде чем вести ягнёнка домой.\n\nСледи за движениями зверя. Беги в сторону или прыгай, затем бей посохом (E / кнопка). Два попадания — победа. Между взмахами нужна короткая пауза.\n\nОтдых в лагере восстановит здоровье. При поражении начни незаконченный бой заново; пройденные шаги сохранятся.\n\nВыдуманное приключение пастуха, вдохновлённое Давидом.")
 
 func credits() -> String:
-    return host.t("\n\nArt credits:\nOriginal articulated block animals — project procedural art\nCave kit — Kenney, CC0\nArchived animal GLB credits: assets/caves/CREDITS\n", "\n\nАвторы моделей:\nОригинальные подвижные блочные звери — процедурная графика проекта\nПещеры — Kenney, CC0\nАвторы архивных GLB: assets/caves/CREDITS\n") + "https://creativecommons.org/licenses/by/3.0/\nhttps://kenney.nl/assets"
+    return host.t("\n\nArt credits:\nOriginal articulated animals and cave shell — project art\nRock scans and textures — Poly Haven, CC0\nLegacy cave kit — Kenney, CC0\nArchived animal GLB credits: assets/caves/CREDITS\n", "\n\nАвторы моделей:\nОригинальные подвижные звери и пещеры — графика проекта\nСканы камней и текстуры — Poly Haven, CC0\nИсходный набор пещер — Kenney, CC0\nАвторы архивных GLB: assets/caves/CREDITS\n") + "https://creativecommons.org/licenses/by/3.0/\nhttps://kenney.nl/assets\nhttps://polyhaven.com"

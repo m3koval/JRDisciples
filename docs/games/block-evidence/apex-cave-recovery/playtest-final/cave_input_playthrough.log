@@ -1,0 +1,44 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS walk courtyard to cave 0
+PASS walk through real entrance 0
+PASS input reads clue 0
+PASS enter wide encounter chamber
+PASS input encounter warning
+PASS dodge clear of the rock doorway
+PASS input dodge reaches recovery
+PASS approach within real staff reach
+PASS input strike knocks back or defeats attacker
+PASS hit reaction finishes
+PASS enter wide encounter chamber
+PASS input encounter warning
+PASS dodge clear of the rock doorway
+PASS input dodge reaches recovery
+PASS approach within real staff reach
+PASS input strike knocks back or defeats attacker
+PASS hit reaction finishes
+PASS input encounter complete
+PASS walk courtyard to cave 1
+PASS walk through real entrance 1
+PASS input reads clue 1
+PASS enter wide encounter chamber
+PASS input encounter warning
+PASS dodge clear of the rock doorway
+PASS input dodge reaches recovery
+PASS approach within real staff reach
+PASS input strike knocks back or defeats attacker
+PASS hit reaction finishes
+PASS enter wide encounter chamber
+PASS input encounter warning
+PASS dodge clear of the rock doorway
+PASS input dodge reaches recovery
+PASS approach within real staff reach
+PASS input strike knocks back or defeats attacker
+PASS hit reaction finishes
+PASS input encounter complete
+PASS walk to lamb cave
+PASS enter third cave
+PASS input discovers lamb
+PASS input calls lamb
+PASS real collider input escort finishes at camp
+CAVE_INPUT_FAILURES=0

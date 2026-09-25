@@ -108,12 +108,12 @@ static func build(parent: Node3D, entrance: Vector3, stone: Material, outer_ston
     # Deep mouth apron joins the throat to a massive asymmetric hillside crown.
     var mouth := profile(0, variant)
     var rim := PackedVector3Array([
-        Vector3(-5.95,-.08,.25),Vector3(-5.82,1.1,.4),
-        Vector3(-5.55,3.1,.1),Vector3(-4.8,4.9,-.35),
-        Vector3(-3.95,5.92,-.6),Vector3(-2.2,6.5,-.8),
-        Vector3(-.45,6.82,-.9),Vector3(2.05,6.37,-.5),
-        Vector3(3.7,5.65,-.15),Vector3(5.12,4.63,.15),
-        Vector3(5.64,2.8,.55),Vector3(5.9,.8,.65),Vector3(5.95,-.08,.4)
+        Vector3(-5.95,-.08,-.25),Vector3(-5.62,1.1,-.15),
+        Vector3(-4.65,3.1,-.65),Vector3(-3.75,4.55,-1.05),
+        Vector3(-3.25,5.18,-1.25),Vector3(-1.9,5.48,-1.45),
+        Vector3(-.45,5.72,-1.3),Vector3(1.75,5.40,-1.15),
+        Vector3(3.2,5.02,-.95),Vector3(4.15,4.30,-.6),
+        Vector3(5.14,2.8,-.25),Vector3(5.75,.8,.05),Vector3(5.95,-.08,-.1)
     ])
     st = SurfaceTool.new()
     st.begin(Mesh.PRIMITIVE_TRIANGLES)
@@ -125,8 +125,14 @@ static func build(parent: Node3D, entrance: Vector3, stone: Material, outer_ston
         b.z += .36 if (k+1)%3 == 0 else .17
         _triangle(st,mouth[k],mouth[k+1],a,Vector3.BACK)
         _triangle(st,mouth[k+1],b,a,Vector3.BACK)
-        _triangle(st,a,b,rim[k],Vector3.BACK)
-        _triangle(st,b,rim[k+1],rim[k],Vector3.BACK)
+        var c := a.lerp(rim[k], .48)
+        var d := b.lerp(rim[k+1], .48)
+        c.z -= .20 + float(k%3)*.045
+        d.z -= .20 + float((k+1)%3)*.045
+        _triangle(st,a,b,c,Vector3.BACK)
+        _triangle(st,b,d,c,Vector3.BACK)
+        _triangle(st,c,d,rim[k],Vector3.BACK)
+        _triangle(st,d,rim[k+1],rim[k],Vector3.BACK)
     _surface(root,"FracturedOverhangAndMouth",st,outer_stone)
     # Exterior mantle connects the crown to the hillside instead of leaving
     # a freestanding stone arch with sky visible behind its upper edge.
@@ -157,18 +163,24 @@ static func _dress_floor(root: Node3D, stone: Material, variant: int) -> void:
     # Low talus stays at the sides, clear of the combat envelope and doorway.
     var st := SurfaceTool.new()
     st.begin(Mesh.PRIMITIVE_TRIANGLES)
-    for i in range(12):
+    # Broken sediment plates have a bevel and a planar fractured crown,
+    # not the old evenly spaced pointed miniature pyramids.
+    for i in range(8):
         var side := -1.0 if i%2 == 0 else 1.0
-        var z := -2.9-float(i/2)*1.8
-        var base := Vector3(side*4.06,.025,z)
-        var radius := .14+float(i%3)*.025
-        var top := base+Vector3(side*.02,.16+float(i%4)*.035,.015)
+        var z := -3.3-float(i/2)*2.65
+        var base := Vector3(side*4.05,.012,z)
+        var radius := .16+float(i%3)*.026
+        var top := base+Vector3(side*.025,.10+float(i%3)*.025,.035)
         for k in range(5):
-            var angle := float(k)*TAU/5.0
-            var next := float(k+1)*TAU/5.0
-            var a := base+Vector3(cos(angle)*radius,0,sin(angle)*radius*1.7)
-            var b := base+Vector3(cos(next)*radius,0,sin(next)*radius*1.7)
-            _triangle(st,a,b,top,Vector3.UP)
+            var angle := float(k)*TAU/5.0+.32
+            var next := float(k+1)*TAU/5.0+.32
+            var a := base+Vector3(cos(angle)*radius,0,sin(angle)*radius*2.0)
+            var b := base+Vector3(cos(next)*radius,0,sin(next)*radius*2.0)
+            var ai := top+(a-base)*.72
+            var bi := top+(b-base)*.72
+            _triangle(st,a,b,ai,Vector3(side,.4,0))
+            _triangle(st,b,bi,ai,Vector3(side,.4,0))
+            _triangle(st,ai,bi,top,Vector3.UP)
     _surface(root,"GroundedEdgeTalus",st,stone)
     var straw := StandardMaterial3D.new()
     straw.albedo_color = Color("8c7750")
@@ -177,10 +189,10 @@ static func _dress_floor(root: Node3D, stone: Material, variant: int) -> void:
     st = SurfaceTool.new()
     st.begin(Mesh.PRIMITIVE_TRIANGLES)
     # Small old bedding patch, not a furnished dungeon or a gameplay marker.
-    for i in range(35):
+    for i in range(65):
         var angle := float(i)*2.39996
-        var radius := sqrt(float(i)/35.0)*.72
-        var p := Vector3(2.85+cos(angle)*radius,.012,-11.5+sin(angle)*radius*.65)
+        var radius := sqrt(float(i)/65.0)*1.05
+        var p := Vector3(2.70+cos(angle)*radius,.026+float(i%3)*.007,-11.5+sin(angle)*radius*.65)
         var d := Vector3(cos(angle+variant)*.20,0,sin(angle+variant)*.20)
         _triangle(st,p-d,p+d,p+Vector3(.018,.013,.018),Vector3.UP)
     _surface(root,"SparseDryGrassBedding",st,straw)

@@ -22,7 +22,7 @@ func run() -> void:
     for i in range(3):
         var post = c.get_node("CaveCluePost%d"%i)
         var offset: Vector3 = post.position-c.ENTRANCES[i]
-        check(offset.z <= -1.3 and offset.z >= -1.4 and offset.x+.70 <= -.40 and offset.x-.70 >= -1.9,"clue in clear throat with central route clearance %d"%i)
+        check(is_equal_approx(offset.z,1.9) and offset.x+.70 <= -1.1,"clue forward of rocks and outside central approach corridor %d"%i)
         check(c.signs[i].position.z>post.position.z,"clue lettering on board front %d"%i)
         var support := post.get_child(0) as MeshInstance3D
         var support_front: float = post.position.z + support.position.z + support.get_aabb().end.z

@@ -51,7 +51,9 @@ static func scan(parent: Node3D, id: String, at: Vector3, scale: float, yaw: flo
     return node
 
 static func build(parent: Node3D, entrances: Array) -> void:
-    var rock := material("rock_face_03", .22, Color(.86, .8, .72))
+    var rock := material("rock_face_03", .30, Color(.73, .72, .65))
+    rock.normal_scale = .55
+    rock.roughness = .96
     var inner := material("rock_face_03", .26, Color(.70, .63, .53))
     inner.roughness = .97
     inner.normal_scale = .65
@@ -76,6 +78,9 @@ static func build(parent: Node3D, entrances: Array) -> void:
         preload("res://scripts/cave_shell_art.gd").build(parent, e, inner, rock, entrances.find(e))
         _dress_entrance(parent, e)
     _dress_hill(parent)
+    _hill_backdrop(parent, rock)
+    _clear_overlapping_horizon(parent)
+    preload("res://scripts/cave_botanical_art.gd").build(parent, entrances)
 
 static func _dress_entrance(parent: Node3D, e: Vector3) -> void:
     # Scanned faces frame the doorway; the crown cliff sits on the lintel.
@@ -89,6 +94,53 @@ static func _dress_entrance(parent: Node3D, e: Vector3) -> void:
     scan(parent, "rock_face_02", e + Vector3(.25, 4.50, .72), .72, 12)
     scan(parent, "namaqualand_boulder_05", e + Vector3(-DOOR_HALF - .8, 0, 1.3), 1.1, 30)
     scan(parent, "boulder_01", e + Vector3(DOOR_HALF + 1.2, 0, 1.5), .9, -40)
+
+static func _clear_overlapping_horizon(parent: Node3D) -> void:
+    # Opening chapter's 95m-radius scenic ring crosses this chapter's court.
+    # Remove only intersecting triangles, retaining the rest of that horizon.
+    # No scan, physics body, or gameplay node is hidden or modified.
+    for node in parent.get_parent().find_children("DistantRidge1", "MeshInstance3D", true, false):
+        var arrays: Array = node.mesh.surface_get_arrays(0)
+        var vertices: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]
+        var indices := PackedInt32Array()
+        var reserved := AABB(Vector3(79,-6,-20),Vector3(42,40,40))
+        for i in range(0,vertices.size(),3):
+            var bounds := AABB(node.global_transform * vertices[i],Vector3.ZERO)
+            bounds = bounds.expand(node.global_transform * vertices[i+1])
+            bounds = bounds.expand(node.global_transform * vertices[i+2])
+            if not reserved.intersects(bounds): indices.append_array(PackedInt32Array([i,i+1,i+2]))
+        arrays[Mesh.ARRAY_INDEX] = indices
+        var trimmed := ArrayMesh.new()
+        trimmed.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
+        node.mesh = trimmed
+
+static func _hill_backdrop(parent: Node3D, rock: Material) -> void:
+    # A continuous bedrock ridge behind the scans, not floating face cards.
+    # Entire footprint is beyond the courtyard's z=-16 boundary; no routes,
+    # chamber interiors, or authoritative colliders are changed.
+    var shell = preload("res://scripts/cave_shell_art.gd")
+    var st := SurfaceTool.new()
+    st.begin(Mesh.PRIMITIVE_TRIANGLES)
+    var previous := PackedVector3Array()
+    for i in range(13):
+        var x := 70.0 + i * 5.0
+        var height: float = 4.0 + [10.0,12.3,13.5,12.8,14.6,13.9,12.7,14.2,13.4,12.8,13.9,11.8,10.0][i]
+        var section := PackedVector3Array([
+            Vector3(x,-1,-16.7), Vector3(x,5.4,-17.0),
+            Vector3(x,height*.74,-18.5-float(i%3)*.45),
+            Vector3(x,height,-21.0), Vector3(x,6,-26),Vector3(x,-1,-27)
+        ])
+        if not previous.is_empty():
+            for k in range(section.size()-1):
+                var outward := Vector3(0,1,1 if k < 3 else -1)
+                shell._triangle(st,previous[k],section[k],previous[k+1],outward)
+                shell._triangle(st,section[k],section[k+1],previous[k+1],outward)
+        if i == 0 or i == 12:
+            for k in range(1,section.size()-1):
+                shell._triangle(st,section[0],section[k],section[k+1],Vector3.LEFT if i == 0 else Vector3.RIGHT)
+        previous = section
+    var ridge: MeshInstance3D = shell._surface(parent,"ContinuousHillsideBedrock",st,rock)
+    ridge.set_meta("art_only",true)
 
 static func _dress_hill(parent: Node3D) -> void:
     for x in [82.0, 94.0, 106.0, 118.0]:
