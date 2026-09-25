@@ -50,13 +50,33 @@ static func build(parent: Node3D) -> Node3D:
 			var beam := _member(broken, "TornStringer", Vector3(bank_x + direction * 0.15, -0.235, z), Vector3(0.76, 0.18, 0.20), 0.019, wood, fresh, j + side * 3 + 1)
 			if side == 1:
 				beam.rotation.y = PI
-		# Short surviving deck fingers form a ragged bank edge, never a span.
+		# Seated cross-bearer supports all seven surviving boards. The former
+		# deck tops sat below the new .028 terrain, hiding the repair's cause.
+		var bearer := _member(root, "BankCrossBearer", Vector3(bank_x, -0.15, 0), Vector3(2.06, 0.17, 0.22), 0.019, wood)
+		bearer.rotation.y = PI * .5
+		# Ragged, short cantilevers: visible broken ends, never a walkable span.
+		# Seven lengthwise boards match the replacement panels, not two
+		# unrelated construction languages before and after repairing.
+		var lengths := [0.87, 1.08, 0.78, 1.02, 0.82, 1.12, 0.91]
 		for j: int in range(7):
-			var length: float = 0.49 + 0.06 * sin(float(j * 7 + side * 3))
-			var plank := _member(broken, "SplitDeckEnd", Vector3(bank_x + direction * 0.07, -0.065, -0.87 + j * 0.29), Vector3(length, 0.105, 0.277), 0.012, wood, fresh, j + 11 + side * 9)
+			var length: float = lengths[j if side == 0 else 6 - j]
+			var plank := _member(broken, "SplitDeckEnd", Vector3(bank_x + direction * 0.03, -0.008, -0.855 + j * 0.285), Vector3(length, 0.12, 0.272), 0.012, wood, fresh, j + 11 + side * 9)
+			plank.set_meta("bridge_deck", true)
 			if side == 1:
 				plank.rotation.y = PI
 	return root
+
+static func repaired_panel(parent: Node3D, x: float) -> void:
+	# Presentation only: host retains its single flush collider and stage.
+	var board := _material(Color("a9895c"), .9, true)
+	var alternate := _material(Color("b29265"), .92, true)
+	var ends := _material(Color("bd9a69"), .94, false)
+	var bearer_mat := _material(Color("786047"), .9, true)
+	for j: int in range(7):
+		_member(parent, "DeckTimber%d" % j, Vector3(x, -.06, -.855 + j * .285), Vector3(2.3, .12, .272), .012, board if j % 2 == 0 else alternate, ends)
+	for dx: float in [-.99, 0.0, .99]:
+		var bearer := _member(parent, "DeckCrossBearer", Vector3(x + dx, -.19, 0), Vector3(2.02, .14, .16), .014, bearer_mat)
+		bearer.rotation.y = PI * .5
 
 static func _material(color: Color, roughness: float, grain: bool) -> StandardMaterial3D:
 	var mat := StandardMaterial3D.new()

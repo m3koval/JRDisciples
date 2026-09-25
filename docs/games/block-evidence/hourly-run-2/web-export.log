@@ -1,0 +1,172 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (4 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/colormap.png-97f5423e73a9f47f5d8720c8426dc145.ctex[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://assets/caves/Textures/colormap.png.import[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bear.glb-55bc66e4ca227fcd46f8238dd21e37cf.scn[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://assets/caves/bear.glb.import[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bear_08beartexture.jpg-24ae80cff722845f27990a8334f8c106.ctex[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://assets/caves/bear_08beartexture.jpg.import[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/corridor.glb-7212dbab84202166ccb1b105f0da64d3.scn[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://assets/caves/corridor.glb.import[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gate-rock.glb-4cb6436b73f1b0f55c8c01eb8bfe312f.scn[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://assets/caves/gate-rock.glb.import[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lion.glb-4674386887f899d2f737593e6b4dd935.scn[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://assets/caves/lion.glb.import[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lion_Lion_BaseColor.png-a1e88e143a7eb422194a2d3c52a6fcd3.ctex[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://assets/caves/lion_Lion_BaseColor.png.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://assets/environment/capture_environment.gdc[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cobble.png-0c06a2500631a3070fcd760a8b8f341a.ctex[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://assets/environment/cobble.png.import[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/Door_1_Round.gltf-0b15dca3740804c370ee759ece482242.scn[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://assets/environment/Door_1_Round.gltf.import[39m[0m
+[  14% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/flower_yellowC.glb-310291b1053da81d3f45a3927213ba99.scn[39m[0m
+[  14% ] [90m[1msavepack[22m | Storing File: res://assets/environment/flower_yellowC.glb.import[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/plant_bushDetailed.glb-bc0e9a36e49a9b7cfe9cbe6ffacff014.scn[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://assets/environment/plant_bushDetailed.glb.import[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/Prop_Chimney.gltf-77686c7093657fbd70dfece847c0527d.scn[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://assets/environment/Prop_Chimney.gltf.import[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/Prop_WoodenFence_Single.gltf-29e74fdc6edee6f4ef0f42c6c18089c3.scn[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://assets/environment/Prop_WoodenFence_Single.gltf.import[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/Roof_Front_Brick8.gltf-2af308615a17ee47d2912af577ccc611.scn[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://assets/environment/Roof_Front_Brick8.gltf.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/Roof_RoundTiles_8x8.gltf-5f8040d5f1d2cc756e00bd0556f766f6.scn[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://assets/environment/Roof_RoundTiles_8x8.gltf.import[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_Brick_BaseColor.png-a841e34dc7d8e1720c29a0daeabc6ce8.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_Brick_BaseColor.png.import[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_Brick_Normal.png-ef5ca47261933043b42a3c9d61f777f5.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_Brick_Normal.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_Brick_Roughness.png-47c8162befc9fd9b49985149bbd2057c.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_Brick_Roughness.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_Plaster_BaseColor.png-2aae76e18550883723e935fad3fcdaa1.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_Plaster_BaseColor.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_Plaster_Normal.png-6f87e456dcf8c4315e7b3ea0762a989d.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_Plaster_Normal.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_Plaster_ORM.png-23c0ebd797cae134364a5ff459364ddc.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_Plaster_ORM.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_RockTrim_BaseColor.png-0899be51cac4dca43c4a853806741d3a.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_RockTrim_BaseColor.png.import[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_RockTrim_Normal.png-179c846bbc552c480eb353a0c295ecb2.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_RockTrim_Normal.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_RockTrim_ORM.png-47ca7a9fae712b90233c7730882296d8.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_RockTrim_ORM.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_RoundTiles_BaseColor.png-afbc0d993fb05fd2938431d91cfcf91c.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_RoundTiles_BaseColor.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_RoundTiles_Normal.png-22f05d7e51fe26af926552155b59b7be.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_RoundTiles_Normal.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_RoundTiles_Roughness.png-e5654380ce9741c8061739d837fb3d93.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_RoundTiles_Roughness.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_WoodTrim_BaseColor.png-e1eb0af85345f200707a38a08964d212.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_WoodTrim_BaseColor.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_WoodTrim_Normal.png-20fbfab31aae295aaa5f0b937c973efa.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_WoodTrim_Normal.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/T_WoodTrim_Roughness.png-8f38d5ca855c6e4dcd4d553c2376f5a7.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://assets/environment/T_WoodTrim_Roughness.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://assets/environment/village_finish.gdc[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/Wall_Plaster_Door_Round.gltf-ffbad1820f33044dd234e7a453d51ce5.scn[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://assets/environment/Wall_Plaster_Door_Round.gltf.import[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/Wall_Plaster_Straight.gltf-397e7f136d21c79ff8b3306ed5ce0bee.scn[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://assets/environment/Wall_Plaster_Straight.gltf.import[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/Wall_Plaster_Window_Wide_Round.gltf-8a13af723fa14514fa9fbbc034f63aa3.scn[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://assets/environment/Wall_Plaster_Window_Wide_Round.gltf.import[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://assets/garden_art/ground.gdshader[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/painted_ground.png-dd0fd249fe1d6f614e8c29e944c36b74.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://assets/garden_art/painted_ground.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://assets/garden_art/water.gdshader[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://assets/opening_art/river.gdshader[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://assets/opening_art/shore.gdshader[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/anna.glb-863e7e87bdce2a919ebf847231e7dd98.scn[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://assets/villagers/anna.glb.import[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/anna_texture_0.png-41b1aa8d2b3b8d07304f8fb3ec1144fb.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://assets/villagers/anna_texture_0.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/simeon.glb-b9cf2dcf4266d8927a0e94df94f8c921.scn[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://assets/villagers/simeon.glb.import[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/simeon_texture_0.png-113e8b4a1ddd2ddc12631137faddb348.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://assets/villagers/simeon_texture_0.png.import[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tobias.glb-0809243819bd2b2e3e9cee0d6655c827.scn[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://assets/villagers/tobias.glb.import[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tobias_texture_0.png-db82fc0a236693164fba8ed72192dac7.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://assets/villagers/tobias_texture_0.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lamb.glb-e8cf6fda86595c1088fce7535b7cf1ce.scn[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://assets/lamb.glb.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/log.glb-aea637ae14592a1104986660984fc049.scn[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://assets/log.glb.import[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/michael.glb-f905b66ba7e76a99a009ef981e6ead9e.scn[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://assets/michael.glb.import[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/michael_texture_pbr_20250901.png-b6436606fbe18696aaba30803f0e42a5.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://assets/michael_texture_pbr_20250901.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/michael_texture_pbr_20250901_normal.png-0ff25a1dd442ecd1348f103ccde87d4b.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://assets/michael_texture_pbr_20250901_normal.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://scripts/adventure_rewards.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://scripts/audio.gdc[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://scripts/bridge_craft.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://scripts/cave_animal_motion.gdc[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://scripts/cave_block_animal.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://scripts/cave_campaign.gdc[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://scripts/flock_campaign.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://scripts/garden_detail.gdc[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://scripts/garden_foliage.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://scripts/garden_footbridge.gdc[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://scripts/garden_lighting.gdc[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://scripts/garden_terrain.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://scripts/garden_workshop_art.gdc[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://scripts/irrigation_construction.gdc[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://scripts/irrigation_flow.gdc[39m[0m
+[  85% ] [90m[1msavepack[22m | Storing File: res://scripts/irrigation_geometry.gdc[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://scripts/irrigation_winch.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | Storing File: res://scripts/main.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://scripts/opening_river_art.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://scripts/player.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/trail_map.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://scripts/water_campaign.gdc[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://scripts/water_environment.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | Storing File: res://scripts/world.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://assets/environment/capture_environment.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://assets/environment/village_finish.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/adventure_rewards.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/audio.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/bridge_craft.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/cave_animal_motion.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/cave_block_animal.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/cave_campaign.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/flock_campaign.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/garden_detail.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/garden_foliage.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/garden_footbridge.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/garden_lighting.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/garden_terrain.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/garden_workshop_art.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/irrigation_construction.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/irrigation_flow.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/irrigation_geometry.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/irrigation_winch.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/main.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/opening_river_art.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/player.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/trail_map.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/water_campaign.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/water_environment.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/world.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://main.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/global_script_class_cache.cfg[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m

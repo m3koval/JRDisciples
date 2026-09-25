@@ -23,9 +23,22 @@
 - Run count: 1/6 complete, five implementation passes remain. A later tick after run 6 must not create a seventh pass. No scheduler created, duplicated or extended; scheduler repeat state not modified in this run.
 - Handoff: implementation commit `8bbac69c9228f3e95d9964b7cf63af48b450a51f` pushed and exact remote SHA read back. One draft review PR: https://github.com/m3koval/JRDisciples/pull/7 (OPEN, draft; GitHub Quality Gates and automatic Vercel preview pending at readback). Future runs update this PR; do not open duplicates. No main merge. Working tree retains only the pre-existing untracked merge evidence after the milestone.
 
+## Run 2 — completed bridge timber milestone (2026-09-25)
+- Found a concrete visual regression: surviving broken deck tops were buried beneath the continuous bank terrain. Raised them above that surface, made the short torn ends readable, and added seated cross-bearers. Repaired panels now use matching beveled lengthwise boards instead of unrelated transverse plain boxes.
+- Kept original single flush panel colliders, repair stages, saved progression, rewards, accepted rigs/scales, garden, irrigation, controls and EN/RU. This is integrated bridge presentation, not a new construction mechanic.
+- RED: additive `bridge_timber_test` failed four checks on the old implementation. GREEN: seven native jobs passed with isolated XDG state, Xvfb, fixed 60 Hz, explicit completion markers and no engine/script errors. Includes original physical opening rescue/Russian-completion route, terrain, clearance, damage removal/replay and new timber geometry checks. Original assertions unchanged.
+- Matched normal-camera broken before/after and partial/repaired landscape/portrait evidence: `docs/games/block-evidence/hourly-run-2/`. Inspected broken, partial and repaired states. Stage fixtures are seeded composition only; their transient discovery speech is not routed narrative acceptance. Source manifest covers 137 unchanged runtime/test/asset files.
+- Genuine Godot 4.7.2 Web rebuild, fresh release stamp/guard and webpack `npm run app:sync` passed; 99 offline routes and exact copied engine hashes verified. Export log has no engine/script errors. No signing/device/live deployment.
+- Bilingual and Scripture guards pass; no Scripture changed. ESLint: 0 errors, 32 existing warnings; diff whitespace check passes.
+- Full exported-browser touch route passed **65 checks**, exit 0, no runtime errors: normal hosted entry → map → clues → world-tap pickup → both repairs → crossing → lamb rescue → Russian completion → replay/reload → portrait move/jump/look → concurrent two-thumb inputs → landscape pause/resume. Unlike run 1, this was NOT a pickup-only smoke. Physical browser bridge and portrait replay captures inspected. Runtime Russian completion is verified; the independently English outer route shell was not localized by this game-language toggle.
+- Final `check_run2_evidence.py` passes: 137 frozen game files, seven native jobs, 65 browser checks, all six current stage/orientation image files valid. The guard was first exercised against incomplete browser evidence and correctly rejected missing completion. Current Web release guard also passes.
+- Run count: **2/6 complete; four runs remain**. No schedule created, duplicated, extended or modified. Existing draft review PR7 is the handoff target on `apex/jd-six-run-improvements`; main is unchanged at `36aae66a0a8cc194dfd97663d0de533f8f7ec153`. Protected-tree and pre-existing untracked evidence preserved.
+- Spend: $0 actual, $0 pending, $10 unused across the sprint. No purchasing or paid generation.
+- Scope: broken-span readability improved, but tree/hill silhouettes, broad banks and overall scene richness STILL fail the reference-quality floor. Owner visual approval, child enjoyment and physical-device acceptance remain open.
+
 ## Remaining dependency/backlog (not silently completed)
-1. Run-1 terrain card complete; next dependency is stronger bank/tree/broken-span composition, not another terrain-plan document.
-2. Opening foliage/tree silhouettes, broken timber readability and composition still owner-rejected; preserve garden.
+1. Run-1 terrain and run-2 timber presentation cards implemented; next opening dependency is stronger tree/bank composition, not another planning document.
+2. Opening foliage/tree silhouettes and overall composition still owner-rejected; preserve garden. Broken-timber visibility is improved, not owner-approved.
 3. Audit canonical next-level transitions and implement bounded connected progression improvements after opening card.
 4. Meaningful hands-on challenge and exploration improvements; retain EN/RU, saves and exact Scripture.
 5. Further scene coverage and normal input-route checks; no child-enjoyment claim from tests.

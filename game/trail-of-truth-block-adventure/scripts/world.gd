@@ -153,10 +153,9 @@ func _make_bridge() -> void:
 		shape.disabled = true
 		body.add_child(shape)
 		_panel_shapes.append(shape)
-		# Fine plank seams are visual only: a single flush collider cannot snag feet.
-		for plank: int in range(6):
-			var px: float = x - 1.15 + (float(plank) + 0.5) * 2.3 / 6.0
-			_mesh(panel, Vector3(px, -0.11, 0), Vector3(2.3 / 6.0 - 0.012, 0.22, 2), "plank_light" if plank % 2 == 0 else "plank")
+		# One flush collider remains authoritative; beveled lengthwise boards
+		# now match the surviving ends and expose consistent timber joinery.
+		preload("res://scripts/bridge_craft.gd").repaired_panel(panel, x)
 		for z: float in [-.8, .8]:
 			_mesh(panel, Vector3(x, -0.27, z), Vector3(2.3, 0.16, 0.18), "wood")
 	# Existing abutments mark the task, but do not reach across the water.

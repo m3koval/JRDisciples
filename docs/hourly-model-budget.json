@@ -9,5 +9,6 @@
   "transactions": [],
   "budget_owner": "parent integrator only",
   "policy": "Reserve full maximum including fees before any paid action; unknown pending charges count against cap; no speculative generation. Six implementation passes maximum including manual run 1.",
+  "run_2": {"vendor": "none", "asset": "project-authored bridge decking and cross-bearers", "license": "project-authored", "price": 0, "proof": "No paid API or purchase submitted", "qa_results": "Native geometry, staged replacement/replay, original rescue route pass. Landscape/portrait broken, partial and repaired captures; improved readability, not owner-approved whole-scene art."},
   "run_1": {"vendor": "none", "asset": "custom opening terrain code", "license": "project-authored", "price": 0, "proof": "No paid API or purchase submitted", "qa_results": "Native opening route/state and additive terrain checks pass; matched portrait/landscape inspected; Web touch pickup smoke passes. Terrain improvement only, not owner-approved whole-scene quality."}
 }
