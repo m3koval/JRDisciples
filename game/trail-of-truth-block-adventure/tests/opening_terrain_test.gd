@@ -29,5 +29,29 @@ func run() -> void:
                 if point.y > 0.0:
                     check(is_equal_approx(point.y,.028), "shore lip joins terrain without daylight gap")
                     break
+    var landscape := world.get_node("OpeningLandscape")
+    var cliff: MeshInstance3D = landscape.get_node("ContinuousEscarpment")
+    var cliff_points: PackedVector3Array = cliff.mesh.surface_get_arrays(0)[Mesh.ARRAY_VERTEX]
+    var outside := true
+    for p in cliff_points:
+        outside = outside and (p.x <= -21.999 or p.x >= 22.999 or absf(p.z) >= 16.999)
+    check(outside, "scenic cliff relief stays outside walkable rectangle")
+    check(cliff_points.size() < 9000, "continuous cliff bounded vertex budget")
+    var fixture := Node3D.new()
+    root.add_child(fixture)
+    var rock = preload("res://scripts/opening_landscape.gd").rock(fixture,"NormalProbe",Vector3.ZERO,Vector3.ONE,7)
+    var arrays: Array = rock.mesh.surface_get_arrays(0)
+    var normals: PackedVector3Array = arrays[Mesh.ARRAY_NORMAL]
+    var points: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]
+    var cap_up := true
+    var sides_out := true
+    for i in range(points.size()):
+        if i >= 192:
+            cap_up = cap_up and normals[i].y > .5
+        else:
+            sides_out = sides_out and normals[i].dot(Vector3(points[i].x,0,points[i].z)) > 0.0
+    check(cap_up, "rock cap normals face upward")
+    check(sides_out, "rock side normals face outward")
+    fixture.queue_free()
     print("OPENING_TERRAIN_FAILURES=", failures)
     quit(failures)

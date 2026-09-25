@@ -63,7 +63,12 @@ static func _land(parent: Node3D, x0: float,x1: float) -> void:
             d = minf(d,_route_distance(p,Vector2(13.3,0),Vector2(13.3,-6.5)))
             var wobble: float = sin(x*1.45+sin(z*2.0))*.12
             var path: float = 1.0-smoothstep(1.0+wobble,1.85+wobble,d)
-            st.set_color(Color(path,0,0,1))
+            var bank_edge: float = 2.7 if x0 < 0 else 7.3
+            var from_water: float = absf(x-bank_edge)
+            var erosion: float = (1.0-smoothstep(.12,.85+.28*sin(z*.81),from_water))*smoothstep(1.55,2.7,absf(z))
+            # Dry scalloped earth meets the shelf below, without moving the
+            # authoritative Y=0 walking surface or narrowing either approach.
+            st.set_color(Color(maxf(path,erosion*.70),erosion*.16,0,1))
             st.add_vertex(Vector3(x,.028,z))
     for j in range(nz):
         for i in range(nx):
@@ -82,20 +87,35 @@ static func _route_distance(point: Vector2, start: Vector2, end: Vector2) -> flo
     var t := clampf((point-start).dot(segment)/segment.length_squared(),0.0,1.0)
     return point.distance_to(start+segment*t)
 
+static func shore_width(z: float, direction: float) -> float:
+    # Broad alternating shelves, not a straight trench with a wavy bottom edge.
+    return .60+.32*sin(z*.53+direction*.9)+.16*sin(z*1.21+.4)
+
 static func _shore(parent: Node3D, edge: float, direction: float) -> void:
     var st := SurfaceTool.new()
     st.begin(Mesh.PRIMITIVE_TRIANGLES)
-    for i in range(76):
-        var za: float = -19+i*.5
-        var zb: float = za+.5
-        # Leave the crossing's vertical stone abutments exposed, not buried in soil.
+    for i in range(152):
+        var za: float = -19+i*.25
+        var zb: float = za+.25
+        # Keep all four bearing faces and the water clearance beneath them open.
         if absf((za+zb)*.5) < 1.5: continue
-        var xa: float = edge+direction*(.68+.14*sin(za*1.6))
-        var xb: float = edge+direction*(.68+.14*sin(zb*1.6))
-        var vertices := [Vector3(edge,.028,za),Vector3(edge,.028,zb),Vector3(xb,-.84,zb),Vector3(xa,-.84,za)]
-        for n in ([0,2,1,0,3,2] if direction > 0 else [0,1,2,0,2,3]):
-            st.set_color(Color(0,0,0,1) if vertices[n].y > 0 else Color(.03,.88,0,1))
-            st.add_vertex(vertices[n])
+        var rows: Array = []
+        for z: float in [za,zb]:
+            var width := shore_width(z,direction)
+            var shoulder := smoothstep(1.5,2.6,absf(z))
+            width *= lerpf(.18,1.0,shoulder)
+            rows.append([Vector3(edge,.028,z),
+                Vector3(edge+direction*width*.32,-.17-.045*sin(z*.9),z),
+                Vector3(edge+direction*width*.86,-.40-.06*sin(z*.6+.7),z),
+                Vector3(edge+direction*(width+.22),-.77,z),
+                Vector3(edge+direction*(width+.39),-1.02,z)])
+        for j in range(4):
+            var vertices := [rows[0][j],rows[1][j],rows[1][j+1],rows[0][j+1]]
+            for n in ([0,2,1,0,3,2] if direction > 0 else [0,1,2,0,2,3]):
+                var height: float = vertices[n].y
+                var wet := 1.0-smoothstep(-.80,-.25,height)
+                st.set_color(Color(.63,lerpf(.15,.82,wet),0,1))
+                st.add_vertex(vertices[n])
     st.generate_normals()
     var mesh := MeshInstance3D.new()
     mesh.name = "SculptedShore"

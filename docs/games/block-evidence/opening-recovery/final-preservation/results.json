@@ -1,0 +1,42 @@
+[
+  {
+    "test": "opening_foliage_test",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "marker": "OPENING_FOLIAGE_FAILURES=0",
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-opening-visual-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/opening_foliage_test.gd"
+    ]
+  },
+  {
+    "test": "garden_art_test",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "marker": "GARDEN_ART_FAILURES=0",
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-opening-visual-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/garden_art_test.gd"
+    ]
+  }
+]

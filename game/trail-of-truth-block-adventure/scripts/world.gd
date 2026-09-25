@@ -124,16 +124,9 @@ func _make_land() -> void:
 	_solid("EastCliff", Vector3(24, 1.7, 0), Vector3(2, 5.4, 36), "earth")
 	_solid("NorthCliff", Vector3(0.5, 1.7, -18), Vector3(49, 5.4, 2), "earth")
 	_solid("SouthCliff", Vector3(0.5, 1.7, 18), Vector3(49, 5.4, 2), "earth")
-	# Chunked caps and layered distant hills keep the clearing from reading as a slab.
-	for i: int in range(10):
-		var x: float = -22.0 + float(i) * 5.0
-		var h: float = 1.4 + float(i % 3) * 0.65
-		VillageFinish.rounded(self,Vector3(x,2.0,-20.8),Vector3(9,h+6,9),Color("82996d"))
-		VillageFinish.rounded(self,Vector3(x,2.0,21.8),Vector3(9,h+6,9),Color("8a9e71"))
-		VillageFinish.rounded(self,Vector3(x,3,-28),Vector3(14,h+11,12),Color("718f7c"))
-	for z: float in [-14.0, -7.0, 0.0, 7.0, 14.0]:
-		VillageFinish.rounded(self,Vector3(-24.5,1.5,z),Vector3(7,7,10),Color("859b70"))
-		VillageFinish.rounded(self,Vector3(25.5,1.5,z),Vector3(7,7,10),Color("859b70"))
+	# Authored mesh landscape replaces the oversized rounded perimeter shapes.
+	# All pre-existing physical boundaries above remain authoritative.
+	preload("res://scripts/opening_landscape.gd").build(self)
 	# Natural sloped shoreline replaces the repeated rectangular bank stones.
 
 func _make_bridge() -> void:
@@ -252,7 +245,7 @@ func _make_trees_and_landmarks() -> void:
 		VillageFinish.place(self,"plant_bushDetailed.glb",p + Vector3(1.3,0,0.8),Vector3.ONE * 0.8)
 	# The trail bends around this outcrop into the lamb's sheltered alcove.
 	_solid("MeadowRock", Vector3(17.6, 1.1, -9), Vector3(2.6, 2.2, 2.0), "stone")
-	VillageFinish.rounded(self, Vector3(17.6, 1.1, -9), Vector3(3, 2.6, 2.5), Color("92988a"))
+	# Layered MeadowOutcrop mesh is authored by OpeningLandscape.
 	for i: int in range(12):
 		var x: float = 10.5 + float(i % 6) * 1.0
 		var z: float = -9.6 - float(i / 6) * 0.7

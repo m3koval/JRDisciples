@@ -1,0 +1,35 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.
+     at: _create_xic (platform/linuxbsd/x11/display_server_x11.cpp:6347)
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 128 bits)
+
+SCRIPT ERROR: Parse Error: Cannot infer the type of "color" variable because the value doesn't have a set type.
+          at: GDScript::reload (res://scripts/opening_landscape.gd:92)
+          GDScript backtrace (most recent call first):
+              [0] run (res://tests/opening_foliage_capture.gd:5)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+          at: GDScript::reload (res://scripts/world.gd:0)
+          GDScript backtrace (most recent call first):
+              [0] run (res://tests/opening_foliage_capture.gd:5)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+          at: GDScript::reload (res://scripts/main.gd:0)
+          GDScript backtrace (most recent call first):
+              [0] run (res://tests/opening_foliage_capture.gd:5)
+ERROR: Failed to load script "res://scripts/main.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/opening_foliage_capture.gd:5)
+SCRIPT ERROR: Invalid call. Nonexistent function 'build' in base 'GDScript'.
+          at: _make_land (res://scripts/world.gd:129)
+          GDScript backtrace (most recent call first):
+              [0] _make_land (res://scripts/world.gd:129)
+              [1] _ready (res://scripts/world.gd:23)
+              [2] _ready (res://scripts/main.gd:244)
+              [3] run (res://tests/opening_foliage_capture.gd:6)
+CAPTURE /tmp/jd-foliage-pilot-bridge-1280.png
+CAPTURE /tmp/jd-foliage-pilot-bridge-720.png
+CAPTURE /tmp/jd-foliage-pilot-grove-1280.png
+CAPTURE /tmp/jd-foliage-pilot-grove-720.png
+OPENING_FOLIAGE_CAPTURE_COMPLETE
