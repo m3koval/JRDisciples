@@ -21,6 +21,7 @@
 - Frozen-source recheck: 76 recorded files unchanged; release manifest separately covers game assets/shaders. `tools/trail_of_truth/verify_hourly_snapshot.py hourly-run-1` validates native/browser evidence and budget.
 - Spend: $0 actual; $0 pending; $10 unused. No paid requests or purchases.
 - Run count: 1/6 complete, five implementation passes remain. A later tick after run 6 must not create a seventh pass. No scheduler created, duplicated or extended; scheduler repeat state not modified in this run.
+- Handoff: implementation commit `8bbac69c9228f3e95d9964b7cf63af48b450a51f` pushed and exact remote SHA read back. One draft review PR: https://github.com/m3koval/JRDisciples/pull/7 (OPEN, draft; GitHub Quality Gates and automatic Vercel preview pending at readback). Future runs update this PR; do not open duplicates. No main merge. Working tree retains only the pre-existing untracked merge evidence after the milestone.
 
 ## Remaining dependency/backlog (not silently completed)
 1. Run-1 terrain card complete; next dependency is stronger bank/tree/broken-span composition, not another terrain-plan document.
