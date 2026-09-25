@@ -1,0 +1,86 @@
+[
+  {
+    "test": "irrigation_construction_test",
+    "exit_code": 0,
+    "passed": true,
+    "marker": "CONSTRUCTION_FAILURES=0",
+    "log": "/tmp/jd-reference-quality-evidence/irrigation_construction_test.log",
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/irrigation_construction_test.gd"
+    ]
+  },
+  {
+    "test": "irrigation_construction_playthrough",
+    "exit_code": 0,
+    "passed": true,
+    "marker": "CONSTRUCTION_HOST_FAILURES=0",
+    "log": "/tmp/jd-reference-quality-evidence/irrigation_construction_playthrough.log",
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/irrigation_construction_playthrough.gd"
+    ]
+  },
+  {
+    "test": "irrigation_geometry_playthrough",
+    "exit_code": 0,
+    "passed": true,
+    "marker": "CONSTRUCTION_HOST_FAILURES=0",
+    "log": "/tmp/jd-reference-quality-evidence/irrigation_geometry_playthrough.log",
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/irrigation_geometry_playthrough.gd"
+    ]
+  },
+  {
+    "test": "irrigation_site_playthrough",
+    "exit_code": 0,
+    "passed": true,
+    "marker": "CONSTRUCTION_HOST_FAILURES=0",
+    "log": "/tmp/jd-reference-quality-evidence/irrigation_site_playthrough.log",
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/irrigation_site_playthrough.gd"
+    ]
+  }
+]

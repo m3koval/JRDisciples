@@ -76,7 +76,7 @@
     "project.godot": "a304d3102c3e4afca251572d6c7f41478d3b105bf482df2f9d6d6e2105422103",
     "scripts/adventure_rewards.gd": "c193cae9c1b4b4ea850568c227ffc47d6b11731bf7f9904e2f2828bf36fc15d2",
     "scripts/audio.gd": "413279530913d1288e5b45a9c96914b079c5d37167662c39699accbacba34b23",
-    "scripts/bridge_craft.gd": "0742fead93e75e9519ef5401a754c2b0eec44e95e8ee5b187b34c5936530a900",
+    "scripts/bridge_craft.gd": "d80683afc1a19423073369fbef759876c39b0dacfb4b61db417edebb103ceb1e",
     "scripts/cave_animal_motion.gd": "be5a77adceb1700b0012ebfa9c7943f8911efa1fc5393baa21e8cd8aff0a0827",
     "scripts/cave_block_animal.gd": "da5e6035dc0f4480d9d655c316547477399de99b8f4b73ee51190a67f653d24f",
     "scripts/cave_campaign.gd": "c44eae60b1e5ffe06abb1632de0868fd1860d6a7e44724259b2b6aabbef41b2f",
@@ -92,18 +92,19 @@
     "scripts/irrigation_geometry.gd": "907a70001f3840dc0157c7d9d2285f6b7931ff7f2085b34c4c46be88641b5a24",
     "scripts/irrigation_winch.gd": "2c39ce6701d20ed6de567054bf811a448f9aeea47c7d2da4a097eaf0ac02c411",
     "scripts/main.gd": "ce82667175db5588d7246078a6d6980459fd56b55325f9819db8eb1ce03d9bad",
-    "scripts/opening_river_art.gd": "ff9f4e96b4588762fc421b1e550a31188aa72f3a850122f7d566c573a0d1ab2a",
+    "scripts/opening_river_art.gd": "b5b984a25fed91bf72426433e35b1264368052566e3a783c505411978dd573f0",
+    "scripts/opening_trees.gd": "9fc49dfb9e26238cc7e37f12959f39406a1af9136936afa3b5e70c149a2fdb23",
     "scripts/player.gd": "9b8056fe6f6ab80ee70c3c74e06cb62acb42d7d2361bc856d3c84fe82b7deb8b",
     "scripts/trail_map.gd": "0d75420c71ee0ab5847b096dbf19149e880150e2f66d1b2bb9b83118bd3f2c2d",
     "scripts/water_campaign.gd": "a4948d5006308faa2801ad2033555d1e534f9525a2338ffa8bd10c26d9fdccf8",
     "scripts/water_environment.gd": "9385fe6d07c6ba3ac8ccdbdaa62a0a1daef02dbf08c42923a3732d0ad7966f87",
-    "scripts/world.gd": "3bda057f6713a2ddf4f9f0eaeb12a5f699271828d082fe4c6cbdd77d0e9cb5ed"
+    "scripts/world.gd": "fa0ca9b2c4c47f306c1c05453c515b6acc6a2d392bbf5f2976d1b034feb6c82c"
   },
   "artifacts": {
     "index.html": {
-      "sha256": "666474d1af539dc7bfa7bb460827812fb6f81e8b944bb447d763988a7ef02f31",
+      "sha256": "7027589f50256f6497e5caed45261bdbeacfaed3221fdea25dee16aa5c456976",
       "bytes": 5510,
-      "gzip_bytes": 2232
+      "gzip_bytes": 2231
     },
     "index.js": {
       "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
@@ -116,9 +117,9 @@
       "gzip_bytes": 10054758
     },
     "index.pck": {
-      "sha256": "73056c66bf09a03aa0df1599ab502aaa6dc6b023f95814f56f8ac8bbebd335df",
-      "bytes": 20992916,
-      "gzip_bytes": 20814886
+      "sha256": "9947abb4197804a0a77bc66bed8ea2883b88ec7a0fd736739af821bd3ab52684",
+      "bytes": 20997152,
+      "gzip_bytes": 20818934
     }
   }
 }

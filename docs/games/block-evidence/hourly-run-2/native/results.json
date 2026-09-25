@@ -1,0 +1,142 @@
+[
+  {
+    "test": "bridge_timber_test",
+    "passed": true,
+    "exit_code": 0,
+    "marker": "BRIDGE_TIMBER_FAILURES=0",
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/bridge_timber_test.gd"
+    ]
+  },
+  {
+    "test": "opening_art_test",
+    "passed": true,
+    "exit_code": 0,
+    "marker": "OPENING_ART_FAILURES=0",
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/opening_art_test.gd"
+    ]
+  },
+  {
+    "test": "opening_terrain_test",
+    "passed": true,
+    "exit_code": 0,
+    "marker": "OPENING_TERRAIN_FAILURES=0",
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/opening_terrain_test.gd"
+    ]
+  },
+  {
+    "test": "terrain_surfaces",
+    "passed": true,
+    "exit_code": 0,
+    "marker": "bridge_child_scale true",
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/terrain_surfaces.gd"
+    ]
+  },
+  {
+    "test": "opening_art_playthrough",
+    "passed": true,
+    "exit_code": 0,
+    "marker": "localized true",
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/opening_art_playthrough.gd"
+    ]
+  },
+  {
+    "test": "scenery_clearance",
+    "passed": true,
+    "exit_code": 0,
+    "marker": "failed=false",
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/scenery_clearance.gd"
+    ]
+  },
+  {
+    "test": "bridge_timber_capture",
+    "passed": true,
+    "exit_code": 0,
+    "marker": "BRIDGE_TIMBER_CAPTURE_COMPLETE",
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/bridge_timber_capture.gd"
+    ]
+  }
+]

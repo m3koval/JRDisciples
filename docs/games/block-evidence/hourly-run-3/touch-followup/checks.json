@@ -1,0 +1,124 @@
+{
+  "scope": "fresh context; no rescue or earned-reward persistence claim",
+  "checks": {
+    "fresh_intro": true,
+    "portrait_start": true,
+    "map_pause": true,
+    "map_close": true,
+    "portrait_walk": true,
+    "stick_does_not_turn_camera": true,
+    "release_stops": true,
+    "portrait_jump": true,
+    "portrait_look": true,
+    "two_thumb_movement": true,
+    "two_thumb_look": true,
+    "reload_engine_ready": true,
+    "reload_touch_start": true,
+    "landscape_pause": true,
+    "landscape_resume": true,
+    "no_runtime_errors": true
+  },
+  "errors": [],
+  "state": {
+    "adventure_points": 10,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      4.587890625
+    ],
+    "camp_banner_color": "",
+    "campaign_stage": 0,
+    "carrying": -1,
+    "cave_health": 3,
+    "cave_phase": "idle",
+    "caves": {
+      "active": false,
+      "steps": []
+    },
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      -11,
+      0.000234376639127731,
+      7
+    ],
+    "recoveries": 0,
+    "reward_saved": false,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 476,
+    "trail_found": false,
+    "ui": {
+      "action": [
+        732,
+        264
+      ],
+      "banner_blue": [
+        163.5,
+        110
+      ],
+      "banner_gold": [
+        164.5,
+        110
+      ],
+      "banner_green": [
+        171.5,
+        110
+      ],
+      "jump": [
+        776,
+        192
+      ],
+      "language": [
+        686,
+        38
+      ],
+      "map": [
+        580,
+        38
+      ],
+      "pause": [
+        778,
+        38
+      ],
+      "primary": [
+        422,
+        221
+      ],
+      "rewards": [
+        744,
+        94
+      ],
+      "secondary": [
+        422,
+        282
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      844,
+      332
+    ],
+    "yaw": 0
+  }
+}

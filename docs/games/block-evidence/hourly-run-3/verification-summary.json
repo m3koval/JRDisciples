@@ -1,0 +1,15 @@
+{
+  "status": "native_and_fresh_touch_pass_full_browser_runner_incomplete",
+  "frozen_files": 140,
+  "native_jobs": 7,
+  "mission_browser_checks": 47,
+  "mission_browser_exit": 1,
+  "mission_browser_blocker": "30s outer load-event timeout after completed rescue/Russian/replay",
+  "post_reload_observed_reward_saved": true,
+  "fresh_touch_followup_checks": 16,
+  "fresh_touch_followup_exit": 0,
+  "full_gate": "still fails; rerun corrected full runner before next expansion",
+  "spent_cents": 0,
+  "pending_cents": 0,
+  "unused_cents": 1000
+}

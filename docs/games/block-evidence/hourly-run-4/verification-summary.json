@@ -1,0 +1,28 @@
+{
+  "run": 4,
+  "remaining_runs": 2,
+  "status": "development_milestone_full_browser_gate_open",
+  "frozen_game_files": 140,
+  "native_jobs_passed": 7,
+  "browser_recorded_checks": 60,
+  "browser_successful_checks": 60,
+  "browser_errors": [],
+  "browser_wrapper": {
+    "passed": false,
+    "command": [
+      "/home/helper/.hermes/hermes-agent/venv/bin/python",
+      "/tmp/jd-next-adventure/tools/trail_of_truth/test_block_browser.py"
+    ],
+    "scope": "full exported-browser touch campaign and reload; not physical iPad",
+    "error": "Command '['/home/helper/.hermes/hermes-agent/venv/bin/python', '/tmp/jd-next-adventure/tools/trail_of_truth/test_block_browser.py']' timed out after 1799.9999744268134 seconds"
+  },
+  "missing_full_browser_gates": [
+    "landscape_resume",
+    "no_runtime_errors"
+  ],
+  "current_source_and_export_match_test_start": true,
+  "low_dpr_probe": "intentionally stopped: observed 1fps; not acceptance evidence",
+  "spent_cents": 0,
+  "pending_cents": 0,
+  "unused_cents": 1000
+}

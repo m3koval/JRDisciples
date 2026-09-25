@@ -1,0 +1,170 @@
+{
+  "checks": {
+    "trusted_start": true,
+    "map_opens": true,
+    "map_pauses_player": true,
+    "map_closes": true,
+    "invalid_action": true,
+    "walk_(-10, 3)": true,
+    "joystick_keeps_camera_(-10, 3)": true,
+    "tracks_discovered": true,
+    "walk_(1.2, 0)": true,
+    "joystick_keeps_camera_(1.2, 0)": true,
+    "bridge_discovered": true,
+    "walk_(-7, -2)": true,
+    "joystick_keeps_camera_(-7, -2)": true,
+    "pickup_1": true,
+    "place_1": true,
+    "walk_(-15, -5)": true,
+    "joystick_keeps_camera_(-15, -5)": true,
+    "pickup_2": true,
+    "walk_(1.5, 0)": true,
+    "joystick_keeps_camera_(1.5, 0)": true,
+    "place_2": true,
+    "walk_(9, 0)": true,
+    "joystick_keeps_camera_(9, 0)": true,
+    "walk_(14, -6)": true,
+    "joystick_keeps_camera_(14, -6)": true,
+    "lamb_not_at_old_easy_spot": true,
+    "walk_(14, -10.8)": true,
+    "joystick_keeps_camera_(14, -10.8)": true,
+    "walk_(18.5, -11)": true,
+    "joystick_keeps_camera_(18.5, -11)": true,
+    "call_lamb": true,
+    "walk_(14, -11)": true,
+    "joystick_keeps_camera_(14, -11)": true,
+    "walk_(13, -6)": true,
+    "joystick_keeps_camera_(13, -6)": true,
+    "walk_(8, 0)": true,
+    "joystick_keeps_camera_(8, 0)": true,
+    "walk_(1.8, 0)": true,
+    "joystick_keeps_camera_(1.8, 0)": true,
+    "walk_(-6, 5)": true,
+    "joystick_keeps_camera_(-6, 5)": true,
+    "walk_(-10, 7)": true,
+    "joystick_keeps_camera_(-10, 7)": true,
+    "browser_complete": true,
+    "russian": true,
+    "replay": true,
+    "reward_retained": true,
+    "reload_reward": true,
+    "touch_start": true,
+    "portrait_map": true,
+    "joystick_moves": true,
+    "portrait_joystick_no_camera_rotation": true,
+    "joystick_releases": true,
+    "touch_jump": true,
+    "touch_camera": true,
+    "two_thumb_moves_while_looking": true,
+    "two_thumb_look_responds": true,
+    "two_thumb_no_large_yaw_steps": true,
+    "two_thumb_release_stops_walk": true,
+    "landscape_pause": true
+  },
+  "errors": [],
+  "state": {
+    "adventure_points": 100,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "",
+    "campaign_stage": 0,
+    "carrying": -1,
+    "cave_health": 3,
+    "cave_phase": "idle",
+    "caves": {
+      "active": false,
+      "steps": []
+    },
+    "complete": false,
+    "context": "",
+    "crossing_found": false,
+    "earned_rewards": [
+      "tracks",
+      "bridge",
+      "lamb",
+      "rescue"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": true,
+    "position": [
+      -18.5041828155518,
+      0.000727694656234235,
+      -12.4587621688843
+    ],
+    "recoveries": 0,
+    "reward_saved": true,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 2228,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        732,
+        264
+      ],
+      "banner_blue": [
+        163.5,
+        110
+      ],
+      "banner_gold": [
+        164.5,
+        110
+      ],
+      "banner_green": [
+        171.5,
+        110
+      ],
+      "jump": [
+        776,
+        192
+      ],
+      "language": [
+        798,
+        42
+      ],
+      "map": [
+        580,
+        38
+      ],
+      "pause": [
+        778,
+        38
+      ],
+      "primary": [
+        422,
+        221
+      ],
+      "rewards": [
+        744,
+        94
+      ],
+      "secondary": [
+        422,
+        282
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      844,
+      332
+    ],
+    "yaw": 0.480000012272285
+  }
+}
