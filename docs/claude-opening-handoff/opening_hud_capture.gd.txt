@@ -1,0 +1,43 @@
+extends SceneTree
+## Seeded native layout/camera evidence, not routed gameplay or device proof.
+var failures := 0
+func _initialize() -> void: call_deferred("run")
+func check(ok: bool, label: String) -> void:
+    if not ok:
+        failures += 1
+        print("FAIL ", label)
+func run() -> void:
+    var game = load("res://main.tscn").instantiate()
+    root.add_child(game)
+    await physics_frame
+    game.primary.pressed.emit()
+    game.player.position = Vector3(0,0,1.8)
+    game.player._yaw = -1.22
+    game.player._pitch = -.45
+    for n in 20: await physics_frame
+    game.set_process(false)
+    game.crossing_found = true
+    game.trail_found = true
+    game.notice_key = "crossing"
+    game.notice_timer = 5
+    for shape in [Vector2i(1280,720), Vector2i(720,1280), Vector2i(390,783)]:
+        root.size = shape
+        for lang in ["en", "ru"]:
+            game.language = lang
+            game._refresh_ui()
+            for n in 8: await process_frame
+            var tag := str(shape.x) + "-" + lang
+            check(game.header.size.x <= 440, tag + "/compact")
+            check(game.objective.get_theme_font_size("font_size") == 22, tag + "/type")
+            check(game.header.get_global_rect().encloses(game.objective.get_global_rect()), tag + "/objective_inside")
+            check(game.header.get_global_rect().encloses(game.counter.get_global_rect()), tag + "/counter_inside")
+            for button in [game.language_button, game.pause_button, game.map_button, game.rewards_button]:
+                check(button.size.x >= 44 and button.size.y >= 44, tag + "/touch")
+                check(not game.header.get_global_rect().intersects(button.get_global_rect()), tag + "/separate")
+                check(button.get_theme_font("font").get_string_size(button.text, HORIZONTAL_ALIGNMENT_LEFT, -1, button.get_theme_font_size("font_size")).x + 24 <= button.size.x + 1, tag + "/text_fits")
+            await RenderingServer.frame_post_draw
+            var path := "/tmp/jd-hud-evidence/hud-" + tag + ".png"
+            root.get_texture().get_image().save_png(path)
+            print("CAPTURE ", path, " header=", game.header.get_global_rect())
+    print("OPENING_HUD_COMPLETE failures=", failures)
+    quit(1 if failures else 0)
