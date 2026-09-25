@@ -37,6 +37,18 @@ class SnapshotEvidenceTests(unittest.TestCase):
         result['errors'] = ['SCRIPT ERROR: invalid call']
         with self.assertRaises(AssertionError): self.verify(result=result)
 
+    def test_normal_route_cannot_be_omitted(self):
+        # A final completion flag alone does not prove repairs/escort/input.
+        for gate in ('trusted_start', 'map_pauses_player', 'invalid_action',
+                     'pickup_1', 'place_1', 'pickup_2', 'place_2', 'call_lamb',
+                     'reward_retained', 'joystick_releases',
+                     'two_thumb_look_responds', 'two_thumb_release_stops_walk',
+                     'landscape_pause', 'landscape_replay_reachable'):
+            with self.subTest(gate=gate):
+                result = copy.deepcopy(self.result)
+                result['checks'].pop(gate, None)
+                with self.assertRaises(AssertionError): self.verify(result=result)
+
     def test_string_truth_is_not_evidence(self):
         result = copy.deepcopy(self.result)
         result['checks']['replay'] = 'true'

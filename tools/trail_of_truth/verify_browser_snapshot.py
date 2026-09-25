@@ -12,9 +12,17 @@ import sys
 
 from check_block_release import sources, artifacts, check, ROOT, BUILD
 
-REQUIRED = ('browser_complete', 'russian', 'replay', 'reload_reward',
+REQUIRED = ('trusted_start', 'map_opens', 'map_pauses_player', 'map_closes',
+            'invalid_action', 'tracks_discovered', 'bridge_discovered',
+            'pickup_1', 'place_1', 'pickup_2', 'place_2',
+            'lamb_not_at_old_easy_spot', 'call_lamb', 'browser_complete',
+            'russian', 'replay', 'reward_retained', 'reload_reward',
             'touch_start', 'touch_jump', 'touch_camera', 'portrait_map',
-            'two_thumb_moves_while_looking', 'landscape_resume', 'no_runtime_errors')
+            'joystick_moves', 'portrait_joystick_no_camera_rotation',
+            'joystick_releases', 'two_thumb_moves_while_looking',
+            'two_thumb_look_responds', 'two_thumb_no_large_yaw_steps',
+            'two_thumb_release_stops_walk', 'landscape_pause',
+            'landscape_replay_reachable', 'landscape_resume', 'no_runtime_errors')
 
 
 def snapshot():

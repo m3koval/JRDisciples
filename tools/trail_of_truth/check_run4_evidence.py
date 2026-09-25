@@ -7,8 +7,16 @@ from verify_opening_foliage import JOBS
 from verify_browser_snapshot import snapshot, validate
 from check_block_release import check
 
+# Retain the old filename/default for recorded commands, but reuse the gate
+# across runs when native source has not changed. Never combine partial browser
+# attempts: browser_run must contain one successful full invocation.
+import argparse
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--native-run', type=int, default=4, choices=range(1, 7))
+parser.add_argument('--browser-run', type=int, default=4, choices=range(1, 7))
+args = parser.parse_args()
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT/'docs/games/block-evidence/hourly-run-4'
+OUT = ROOT/f'docs/games/block-evidence/hourly-run-{args.native_run}'
 manifest = json.loads((OUT/'after/tested-source-sha256.json').read_text())
 for name, digest in manifest.items():
     assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest() == digest, name
@@ -20,7 +28,7 @@ for view in ['bridge', 'grove']:
         with Image.open(OUT/'after'/f'jd-foliage-after-{view}-{w}.png') as image:
             assert image.size == (w,h)
             image.verify()
-browser_dir = OUT/'browser-frozen'
+browser_dir = ROOT/f'docs/games/block-evidence/hourly-run-{args.browser_run}/browser-frozen'
 status = json.loads((browser_dir/'verification.json').read_text())
 assert status['passed'] is True
 before = json.loads((browser_dir/'snapshot-before.json').read_text())
@@ -28,9 +36,21 @@ after = json.loads((browser_dir/'snapshot-after.json').read_text())
 assert snapshot() == after, 'Current disk differs from tested app snapshot'
 result = json.loads((browser_dir/'checks.json').read_text())
 validate(result, before, after, status['exit_code'])
+# Screenshot existence is capture integrity, not a visual-quality approval.
+for name, dimensions in {'desktop-bridge': (844, 600),
+                         'desktop-complete': (844, 600),
+                         'desktop-complete-ru': (844, 600),
+                         'portrait-game': (390, 844),
+                         'two-thumb-finished': (390, 844),
+                         'phone-landscape': (844, 390),
+                         'tablet-landscape': (1024, 768)}.items():
+    with Image.open(browser_dir/(name+'.png')) as image:
+        dpr = status['device_scale_factor']
+        assert image.size == tuple(round(v*dpr) for v in dimensions), name
+        image.verify()
 assert check()
 budget = json.loads((ROOT/'docs/hourly-model-budget.json').read_text())
 pending = sum(row['reserved_cents'] for row in budget['pending_commitments'])
 unused = budget['cap_cents']-budget['actual_spent_cents']-pending
 assert unused >= 0
-print(json.dumps(dict(run=4, remaining_runs=2, frozen_game_files=len(manifest), native_jobs=len(rows), browser_checks=len(result['checks']), spent_cents=budget['actual_spent_cents'], pending_cents=pending, unused_cents=unused), indent=2))
+print(json.dumps(dict(run=args.browser_run, native_evidence_run=args.native_run, remaining_runs=6-args.browser_run, frozen_game_files=len(manifest), native_jobs=len(rows), browser_checks=len(result['checks']), spent_cents=budget['actual_spent_cents'], pending_cents=pending, unused_cents=unused), indent=2))
