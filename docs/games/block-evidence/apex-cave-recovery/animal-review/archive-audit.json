@@ -1,0 +1,26 @@
+{
+  "lion": {
+    "sha256": "e7e64a59768bf2251fd25b641fef1eaf260e857c9e519cd1b08360b3fcfe21f3",
+    "bytes": 2015612,
+    "mesh_count": 1,
+    "primitive_count": 1,
+    "vertex_count": 3098,
+    "triangles": 1350,
+    "skins": 0,
+    "animations": 0,
+    "joint_attributes": false,
+    "separate_limb_nodes": false
+  },
+  "bear": {
+    "sha256": "e36363e07cfc3f7b4f9e6997b860daae8ac30a90b0d41a0316ec90a84ebed09c",
+    "bytes": 120960,
+    "mesh_count": 1,
+    "primitive_count": 1,
+    "vertex_count": 1876,
+    "triangles": 946,
+    "skins": 0,
+    "animations": 0,
+    "joint_attributes": false,
+    "separate_limb_nodes": false
+  }
+}

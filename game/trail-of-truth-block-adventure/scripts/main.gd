@@ -588,7 +588,9 @@ func _choose_context() -> void:
     if caves.active or caves.context() == "caves":
         context_kind = caves.context()
         target_marker.position = caves.destination() + Vector3.UP * 2.5
-        target_marker.visible = true
+        # Cave guidance is carried by the map, nearby clue and objective.
+        # The old floating cube spoiled the mouth silhouette and lantern view.
+        target_marker.visible = not caves.active
         return
     if campaign.stage > 0:
         context_kind = campaign.context()

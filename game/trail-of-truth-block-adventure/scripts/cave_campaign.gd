@@ -18,6 +18,8 @@ var retreat_from := Vector3.ZERO
 var animals: Array[Node3D] = []
 var animal_motion: Array[Node3D] = []
 var signs: Array[Label3D] = []
+var animal_reveals: Array = []
+var lamb_reveal
 var lantern: OmniLight3D
 var animal_rigs: Array[Node3D] = []
 var lamb_model: Node3D
@@ -178,16 +180,19 @@ func _ready() -> void:
         var e: Vector3 = ENTRANCES[i]
         # Wooden clue board beside (not in) the walk-in line at x = e.x.
         var post := Node3D.new()
-        post.position = e+Vector3(-2.9,0,2.2)
+        # Seat the smaller clue in the clear left throat, away from jamb rocks.
+        # Preserve center-route clearance; do not draw text through stone.
+        post.name = "CaveCluePost%d" % i
+        post.position = e+Vector3(-1.15,0,-1.35)
         add_child(post)
-        host._box(post,Vector3(0,.8,0),Vector3(.14,1.6,.14),Color("5c4530"))
-        host._box(post,Vector3(0,1.55,0),Vector3(1.9,.6,.08),Color("8a6040"))
+        host._box(post,Vector3(0,.65,-.08),Vector3(.14,1.3,.14),Color("5c4530"))
+        host._box(post,Vector3(0,1.25,0),Vector3(1.40,.50,.10),Color("765038"))
         var sign := Label3D.new()
-        sign.position = post.position+Vector3(0,1.55,.06)
-        sign.font_size = 34
-        sign.pixel_size = .01
+        sign.position = post.position+Vector3(0,1.25,.07)
+        sign.font_size = 24
+        sign.pixel_size = .008
         sign.modulate = Color("fff4df")
-        sign.outline_size = 8
+        sign.outline_size = 4
         add_child(sign)
         signs.append(sign)
     lantern = OmniLight3D.new()
@@ -199,6 +204,8 @@ func _ready() -> void:
     animals.append(make_animal("lion",ENTRANCES[0]+Vector3(0,0,-8)))
     animals.append(make_animal("bear",ENTRANCES[1]+Vector3(0,0,-8)))
     build_health_bars()
+    for rig in animal_rigs:
+        animal_reveals.append(preload("res://scripts/cave_reveal.gd").new(rig))
     for animal in animals:
         var body := CharacterBody3D.new()
         body.collision_layer = 0
@@ -230,6 +237,7 @@ func _ready() -> void:
     lamb.add_child(shape)
     lamb_model = preload("res://assets/lamb.glb").instantiate()
     lamb.add_child(lamb_model)
+    lamb_reveal = preload("res://scripts/cave_reveal.gd").new(lamb_model)
     add_child(lamb)
     # Green grass ring marks the healing camp; the fire pit sits to one side
     # so the camp spawn point never lands in it.
@@ -327,9 +335,11 @@ func sync_darkness(delta: float) -> void:
     # lantern light, so the courtyard never gives away which cave holds what.
     # Only the models hide; animals[i].visible stays the "undefeated" state.
     var inside := chamber_of(host.player.position) if active else -1
-    for i in range(animal_rigs.size()):
-        animal_rigs[i].visible = inside == i
-    lamb_model.visible = stage >= 5 or inside == 2
+    for i in range(animal_reveals.size()):
+        animal_reveals[i].update(inside == i, delta, inside != i)
+    # Leaving hides contents immediately; entering reveals them with the lamp,
+    # rather than a one-frame pop. Logical animal victory visibility is untouched.
+    lamb_reveal.update(stage >= 5 or inside == 2, delta, stage < 5 and inside != 2)
     var blend := 1.0-exp(-5.0*delta)
     lantern.light_energy = lerpf(lantern.light_energy, 2.6 if inside >= 0 else 0.0, blend)
     var env: Environment = get_world_3d().environment

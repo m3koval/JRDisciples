@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "trusted_touch_starts_export": true,
+    "trusted_keyboard_moves_player": true,
+    "touch_map_opens_and_pauses": true,
+    "touch_map_closes_and_resumes": true,
+    "no_runtime_errors": true
+  },
+  "errors": [],
+  "scope": "Static app iframe boot, trusted touch start/map, keyboard movement only. Not full cave browser route or physical iPad QA."
+}
