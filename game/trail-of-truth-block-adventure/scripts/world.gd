@@ -112,11 +112,8 @@ func _make_land() -> void:
 	_block(Vector3(-9.65, -0.04, 0), Vector3(24.7, 0.08, 34), "grass")
 	_block(Vector3(15.15, -0.04, 0), Vector3(15.7, 0.08, 34), "grass_light")
 	# River surface and bank contact now authored by OpeningRiverArt.
-	# Broad contiguous paths make both bridge approaches visually obvious.
-	_block(Vector3(-3.2, 0.006, 0), Vector3(11.8, 0.012, 3.6), "path")
-	_block(Vector3(10.2, 0.006, 0), Vector3(5.8, 0.012, 3.6), "path")
-	_block(Vector3(-10.5, 0.006, 3.6), Vector3(3.6, 0.012, 9), "path")
-	_block(Vector3(13.3, 0.006, -3.2), Vector3(3, 0.012, 6.6), "path")
+	# Connected worn paths are authored in OpeningRiverArt's bank surfaces;
+	# no overlapping rectangular path blocks or additional collision authority.
 	# Optional seed terrace: two visible step surfaces leading to Y=1.
 	_solid("SeedTerrace", Vector3(-13, 0.5, -10), Vector3(5.5, 1, 4.5), "earth_light")
 	_block(Vector3(-13, 0.99, -10), Vector3(5.5, 0.02, 4.5), "grass_light")
@@ -127,16 +124,9 @@ func _make_land() -> void:
 	_solid("EastCliff", Vector3(24, 1.7, 0), Vector3(2, 5.4, 36), "earth")
 	_solid("NorthCliff", Vector3(0.5, 1.7, -18), Vector3(49, 5.4, 2), "earth")
 	_solid("SouthCliff", Vector3(0.5, 1.7, 18), Vector3(49, 5.4, 2), "earth")
-	# Chunked caps and layered distant hills keep the clearing from reading as a slab.
-	for i: int in range(10):
-		var x: float = -22.0 + float(i) * 5.0
-		var h: float = 1.4 + float(i % 3) * 0.65
-		VillageFinish.rounded(self,Vector3(x,2.0,-20.8),Vector3(9,h+6,9),Color("82996d"))
-		VillageFinish.rounded(self,Vector3(x,2.0,21.8),Vector3(9,h+6,9),Color("8a9e71"))
-		VillageFinish.rounded(self,Vector3(x,3,-28),Vector3(14,h+11,12),Color("718f7c"))
-	for z: float in [-14.0, -7.0, 0.0, 7.0, 14.0]:
-		VillageFinish.rounded(self,Vector3(-24.5,1.5,z),Vector3(7,7,10),Color("859b70"))
-		VillageFinish.rounded(self,Vector3(25.5,1.5,z),Vector3(7,7,10),Color("859b70"))
+	# Authored mesh landscape replaces the oversized rounded perimeter shapes.
+	# All pre-existing physical boundaries above remain authoritative.
+	preload("res://scripts/opening_landscape.gd").build(self)
 	# Natural sloped shoreline replaces the repeated rectangular bank stones.
 
 func _make_bridge() -> void:
@@ -156,10 +146,9 @@ func _make_bridge() -> void:
 		shape.disabled = true
 		body.add_child(shape)
 		_panel_shapes.append(shape)
-		# Fine plank seams are visual only: a single flush collider cannot snag feet.
-		for plank: int in range(6):
-			var px: float = x - 1.15 + (float(plank) + 0.5) * 2.3 / 6.0
-			_mesh(panel, Vector3(px, -0.11, 0), Vector3(2.3 / 6.0 - 0.012, 0.22, 2), "plank_light" if plank % 2 == 0 else "plank")
+		# One flush collider remains authoritative; beveled lengthwise boards
+		# now match the surviving ends and expose consistent timber joinery.
+		preload("res://scripts/bridge_craft.gd").repaired_panel(panel, x)
 		for z: float in [-.8, .8]:
 			_mesh(panel, Vector3(x, -0.27, z), Vector3(2.3, 0.16, 0.18), "wood")
 	# Existing abutments mark the task, but do not reach across the water.
@@ -251,14 +240,12 @@ func _make_trees_and_landmarks() -> void:
 			continue
 		var h: float = 3.1 + float(i % 3) * 0.4
 		_solid("TreeTrunk", p + Vector3(0, h * 0.5, 0), Vector3(0.65, h, 0.65), "wood")
-		VillageFinish.rounded(self,p + Vector3(0,h+0.25,0),Vector3(3.5,2.9,3.3),Color("638755"))
-		VillageFinish.rounded(self,p + Vector3(-0.85,h+0.6,0.4),Vector3(2.4,2.2,2.6),Color("87a25d"))
-		VillageFinish.rounded(self,p + Vector3(0.85,h+0.35,-0.5),Vector3(2.4,2.2,2.5),Color("74944e"))
+		preload("res://scripts/opening_trees.gd").build(self, p, h, i)
 		# Grouped understory, never random clutter across the walking routes.
 		VillageFinish.place(self,"plant_bushDetailed.glb",p + Vector3(1.3,0,0.8),Vector3.ONE * 0.8)
 	# The trail bends around this outcrop into the lamb's sheltered alcove.
 	_solid("MeadowRock", Vector3(17.6, 1.1, -9), Vector3(2.6, 2.2, 2.0), "stone")
-	VillageFinish.rounded(self, Vector3(17.6, 1.1, -9), Vector3(3, 2.6, 2.5), Color("92988a"))
+	# Layered MeadowOutcrop mesh is authored by OpeningLandscape.
 	for i: int in range(12):
 		var x: float = 10.5 + float(i % 6) * 1.0
 		var z: float = -9.6 - float(i / 6) * 0.7
@@ -269,7 +256,7 @@ func _make_trees_and_landmarks() -> void:
 		_block(Vector3(x, 0.13, 12.4), Vector3(0.35, 0.26, 0.5), "leaf_light")
 
 func _solid(label: String, center: Vector3, size: Vector3, material_key: String) -> void:
-	if label not in ["WestCliff", "EastCliff", "NorthCliff", "SouthCliff", "ShelterRoof", "MeadowRock", "BridgeMarker"]:
+	if label not in ["TreeTrunk", "WestCliff", "EastCliff", "NorthCliff", "SouthCliff", "ShelterRoof", "MeadowRock", "BridgeMarker"]:
 		# Grass caps used to share the exact earth top plane: visible z-fighting.
 		# Recess only the brown render mesh, keeping collision ground unchanged.
 		var inset: float = .08 if label in ["LeftBank", "RightBank"] else (.02 if label == "SeedTerrace" else 0.0)

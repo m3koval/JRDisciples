@@ -1,0 +1,219 @@
+[
+  {
+    "test": "cave_reveal_test",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--headless",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_reveal_test.gd"
+    ]
+  },
+  {
+    "test": "cave_presentation_test",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--headless",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_presentation_test.gd"
+    ]
+  },
+  {
+    "test": "cave_shell_geometry_test",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--headless",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_shell_geometry_test.gd"
+    ]
+  },
+  {
+    "test": "cave_input_playthrough",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--headless",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_input_playthrough.gd"
+    ]
+  },
+  {
+    "test": "cave_campaign_test",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--headless",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_campaign_test.gd"
+    ]
+  },
+  {
+    "test": "cave_combat_test",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--headless",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_combat_test.gd"
+    ]
+  },
+  {
+    "test": "cave_victory_test",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--headless",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_victory_test.gd"
+    ]
+  },
+  {
+    "test": "cave_animal_motion_test",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--headless",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_animal_motion_test.gd"
+    ]
+  },
+  {
+    "test": "cave_block_animal_test",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--headless",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_block_animal_test.gd"
+    ]
+  },
+  {
+    "test": "escort_collisions",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--headless",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/escort_collisions.gd"
+    ]
+  },
+  {
+    "test": "garden_art_test",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--headless",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/garden_art_test.gd"
+    ]
+  },
+  {
+    "test": "cave_recovery_capture",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/apex-cave-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_recovery_capture.gd"
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "file": "environment-unfinished.patch",
+    "sha256": "8f281ede4e4c8cfe5dccbe3d527c598854fa9956bad5596df4f367554c04b87c",
+    "status": "unfinished, not applied to handoff runtime"
+  },
+  {
+    "file": "hud-unfinished.patch",
+    "sha256": "29dc28ce619db23f55e8d0bb51c2e27f9469fadb48067225c88a2fe0a33db5a7",
+    "status": "unfinished, not applied to handoff runtime"
+  }
+]

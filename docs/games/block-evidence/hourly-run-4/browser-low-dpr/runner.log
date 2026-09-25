@@ -1,0 +1,9 @@
+trusted_start True
+map_opens True
+map_pauses_player True
+map_closes True
+invalid_action True
+walk_(-10, 3) True
+joystick_keeps_camera_(-10, 3) True
+tracks_discovered True
+walk_(1.2, 0) True

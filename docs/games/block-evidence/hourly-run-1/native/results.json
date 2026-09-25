@@ -1,0 +1,42 @@
+[
+  {
+    "test": "terrain_surfaces",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "marker": "bridge_child_scale true",
+    "log": "/tmp/jd-opening-evidence/terrain_surfaces.log"
+  },
+  {
+    "test": "opening_art_test",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "marker": "OPENING_ART_FAILURES=0",
+    "log": "/tmp/jd-opening-evidence/opening_art_test.log"
+  },
+  {
+    "test": "opening_art_playthrough",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "marker": "localized true",
+    "log": "/tmp/jd-opening-evidence/opening_art_playthrough.log"
+  },
+  {
+    "test": "irrigation_site_playthrough",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "marker": "CONSTRUCTION_HOST_FAILURES=0",
+    "log": "/tmp/jd-opening-evidence/irrigation_site_playthrough.log"
+  },
+  {
+    "test": "capture",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "marker": "UNREPAIRED_STAGE=0",
+    "log": "/tmp/jd-opening-evidence/capture.log"
+  }
+]

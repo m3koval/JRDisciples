@@ -1,5 +1,12 @@
 # Main-branch iPad handoff
 
+## Current cave playtest update
+
+For the cave-quality/free-choice update and physical iPad acceptance, follow
+[`cave-playtest-ipad-handoff.md`](cave-playtest-ipad-handoff.md). Claude on Mike's
+Mac owns Xcode build/signing and installation. The earlier baseline notes below
+remain historical; they are not evidence of installation of the current update.
+
 ## Build on the Mac
 
 Use the merged `main` from `https://github.com/m3koval/JRDisciples`.

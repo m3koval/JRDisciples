@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "command": [
+    "/home/helper/.hermes/hermes-agent/venv/bin/python",
+    "/tmp/jd-next-adventure/tools/trail_of_truth/test_block_browser.py"
+  ],
+  "url": "http://127.0.0.1:8133/games/trail-of-truth/",
+  "device_scale_factor": 1.0,
+  "scope": "full exported-browser touch campaign and reload; not physical iPad",
+  "exit_code": 0,
+  "checks": 63,
+  "required": [
+    "browser_complete",
+    "russian",
+    "replay",
+    "reload_reward",
+    "touch_start",
+    "touch_jump",
+    "touch_camera",
+    "portrait_map",
+    "two_thumb_moves_while_looking",
+    "landscape_resume",
+    "no_runtime_errors"
+  ]
+}

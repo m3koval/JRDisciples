@@ -1,0 +1,28 @@
+[
+  {
+    "test": "opening_foliage_capture",
+    "passed": false,
+    "exit_code": 0,
+    "errors": [
+      "SCRIPT ERROR: Parse Error: Cannot infer the type of \"color\" variable because the value doesn't have a set type.",
+      "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+      "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+      "ERROR: Failed to load script \"res://scripts/main.gd\" with error \"Compilation failed\".",
+      "SCRIPT ERROR: Invalid call. Nonexistent function 'build' in base 'GDScript'."
+    ],
+    "marker": "OPENING_FOLIAGE_CAPTURE_COMPLETE",
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/tmp/jd-opening-visual-recovery/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/opening_foliage_capture.gd"
+    ]
+  }
+]

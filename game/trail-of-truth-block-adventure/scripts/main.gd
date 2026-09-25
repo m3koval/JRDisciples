@@ -311,8 +311,22 @@ func _build_objects() -> void:
         var pouch := Node3D.new()
         pouch.position = pos
         add_child(pouch)
-        _box(pouch, Vector3.ZERO, Vector3(.42, .48, .33), Color("e4bd6a"))
-        _box(pouch, Vector3(0, .29, 0), Vector3(.26, .12, .23), Color("557a44"))
+        # A sculpted drawstring sack (see assets/opening_art/PROVENANCE.md), not the
+        # earlier flat two-box placeholder. glTF export does not carry
+        # Blender's node-graph material edits into a Godot-readable form
+        # (confirmed with the opening-scene rocks too), so colors are
+        # reapplied directly by mesh name instead of trusting the import.
+        var sack := preload("res://assets/seed_pouch.glb").instantiate() as Node3D
+        sack.scale = Vector3.ONE * .25
+        # Scanned burlap weave (Poly Haven hessian_230), mapped in the sack's
+        # own space so the weave stays sized to the pouch.
+        var burlap: StandardMaterial3D = preload("res://scripts/cave_scenery.gd").material("hessian_230", 1.4, Color("fff3dc"))
+        burlap.uv1_world_triplanar = false
+        for mesh in sack.find_children("*", "MeshInstance3D", true, false):
+            if mesh.name.begins_with("PouchBody"): mesh.material_override = burlap
+            elif mesh.name.begins_with("PouchTie"): mesh.material_override = _material(Color("57402b"))
+            elif mesh.name.begins_with("PouchLeaf"): mesh.material_override = _material(Color("6b9a48"))
+        pouch.add_child(sack)
         seeds.append(pouch)
     # A non-blocking companion still sweeps against world solids. Layer zero
     # keeps it out of player movement, camera and discovery sightline queries.
@@ -574,7 +588,9 @@ func _choose_context() -> void:
     if caves.active or caves.context() == "caves":
         context_kind = caves.context()
         target_marker.position = caves.destination() + Vector3.UP * 2.5
-        target_marker.visible = true
+        # Cave guidance is carried by the map, nearby clue and objective.
+        # The old floating cube spoiled the mouth silhouette and lantern view.
+        target_marker.visible = not caves.active
         return
     if campaign.stage > 0:
         context_kind = campaign.context()
@@ -987,7 +1003,13 @@ func _build_ui() -> void:
     layer.add_child(hud)
     header = PanelContainer.new()
     header.mouse_filter = Control.MOUSE_FILTER_IGNORE
-    header.add_theme_stylebox_override("panel", _panel())
+    var objective_style := _panel()
+    objective_style.content_margin_left = 14
+    objective_style.content_margin_right = 14
+    objective_style.content_margin_top = 8
+    objective_style.content_margin_bottom = 8
+    objective_style.set_corner_radius_all(14)
+    header.add_theme_stylebox_override("panel", objective_style)
     header.minimum_size_changed.connect(func():
         header.size.y = header.get_combined_minimum_size().y
         # Wrapped text settles after container layout; reposition utility buttons
@@ -1108,20 +1130,26 @@ func _layout_ui(update_density: bool = true) -> void:
     var short_screen := size.y < 430
     var narrow := size.x < 700 and not short_screen
     header.position = Vector2(12, 12)
-    header.size = Vector2(size.x - 24 if narrow else size.x - 204, 0)
+    # Size the world objective to its content, never to the entire landscape.
+    # Keep type fixed and allow longer translations to wrap naturally.
+    var text_width := objective.get_theme_font("font").get_string_size(objective.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 22).x
+    if counter.visible:
+        text_width = maxf(text_width, counter.get_theme_font("font").get_string_size(counter.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 18).x)
+    var card_limit := minf(440, size.x - 24 if narrow else size.x - 264)
+    header.size = Vector2(minf(card_limit, maxf(220, text_width + 28)), 0)
     objective.add_theme_font_size_override("font_size", 22)
     counter.add_theme_font_size_override("font_size", 18)
     # Portrait: one readable objective, then a single utility row. No narrow
     # text column beside a tower of buttons. Landscape leaves the view open.
-    var row_y := maxf(110.0, header.position.y + header.get_combined_minimum_size().y + 8.0) if narrow else 12.0
+    var row_y := header.position.y + header.get_combined_minimum_size().y + 8.0 if narrow else 12.0
     language_button.position = Vector2(12 if narrow else size.x - 188, row_y)
     language_button.size = Vector2(60, 48)
     pause_button.position = Vector2(80 if narrow else size.x - 120, row_y)
     pause_button.size = Vector2(108, 48)
-    map_button.position = Vector2(196 if narrow else size.x - 188, row_y if narrow else 68)
-    map_button.size = Vector2(112 if narrow else 176, 48)
-    rewards_button.position = Vector2(12 if narrow else size.x - 188, row_y + 56 if narrow else 124)
-    rewards_button.size = Vector2(176, 48)
+    map_button.position = Vector2(196 if narrow else size.x - 244, row_y if narrow else 68)
+    map_button.size = Vector2(112 if narrow else 88, 48)
+    rewards_button.position = Vector2(12 if narrow else size.x - 148, row_y + 56 if narrow else 68)
+    rewards_button.size = Vector2(136, 48)
     jump_button.position = Vector2(size.x - 124, size.y - 182)
     jump_button.size = Vector2(112, 68)
     action_button.position = Vector2(size.x - 212, size.y - 102)
@@ -1130,11 +1158,12 @@ func _layout_ui(update_density: bool = true) -> void:
         map_button.position = Vector2(size.x - 332, 12)
         map_button.size = Vector2(136, 48)
         rewards_button.position = Vector2(size.x - 188, 68)
-        header.size.x = size.x - 356
+        header.size.x = minf(header.size.x, size.x - 356)
         jump_button.position.y = size.y - 168
         jump_button.size.y = 56
-    notice.position = Vector2(12, row_y + 114 if narrow else 110)
-    notice.size = Vector2(size.x - 24 if narrow else size.x - 356, 80)
+    notice.position = Vector2(12, row_y + 114 if narrow else header.position.y + header.get_combined_minimum_size().y + 8)
+    notice.size = Vector2(size.x - 24 if narrow else minf(500, size.x - 356), 80)
+    notice.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
     input_hint.visible = false # Instructions remain in Pause; do not crowd play.
     # Short lines (a villager greeting, Mira's one-liner) read as a comic
     # bubble; longer instructional text (Oren's tutorial, chapter intros)

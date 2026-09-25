@@ -1,0 +1,26 @@
+{
+  "pass": true,
+  "failures": [],
+  "artifacts": {
+    "index.html": {
+      "sha256": "7027589f50256f6497e5caed45261bdbeacfaed3221fdea25dee16aa5c456976",
+      "bytes": 5510,
+      "gzip_bytes": 2231
+    },
+    "index.js": {
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+      "bytes": 279815,
+      "gzip_bytes": 68471
+    },
+    "index.wasm": {
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
+      "bytes": 39514754,
+      "gzip_bytes": 10054758
+    },
+    "index.pck": {
+      "sha256": "9947abb4197804a0a77bc66bed8ea2883b88ec7a0fd736739af821bd3ab52684",
+      "bytes": 20997152,
+      "gzip_bytes": 20818934
+    }
+  }
+}

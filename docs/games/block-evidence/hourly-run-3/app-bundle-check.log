@@ -1,0 +1,8 @@
+
+> jrdisciples@0.1.0 check:app
+> node scripts/check-app-bundle.mjs
+
+App bundle checks passed for 99 offline routes.
+All HTML references resolve locally; no remote links or resources remain in the app export.
+Every exported file is present in the synced iOS bundle.
+Trail of Truth route and engine artifacts verified with exact SHA-256 copies into iOS.

@@ -1,0 +1,27 @@
+[
+  {
+    "test": "opening_terrain_test",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "scenery_clearance",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "search_regressions",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "world_tap_ui",
+    "passed": true,
+    "exit": 0
+  },
+  {
+    "test": "ipad_player_test",
+    "passed": true,
+    "exit": 0
+  }
+]

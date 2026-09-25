@@ -1,0 +1,73 @@
+trusted_start True
+map_opens True
+map_pauses_player True
+map_closes True
+invalid_action True
+walk_(-10, 3) True
+joystick_keeps_camera_(-10, 3) True
+tracks_discovered True
+walk_(1.2, 0) True
+joystick_keeps_camera_(1.2, 0) True
+bridge_discovered True
+walk_(-7, -2) True
+joystick_keeps_camera_(-7, -2) True
+pickup_1 True
+walk_(1.2, 0) True
+joystick_keeps_camera_(1.2, 0) True
+place_1 True
+walk_(-15, -5) True
+joystick_keeps_camera_(-15, -5) True
+pickup_2 True
+walk_(1.5, 0) True
+joystick_keeps_camera_(1.5, 0) True
+place_2 True
+walk_(9, 0) True
+joystick_keeps_camera_(9, 0) True
+walk_(14, -6) True
+joystick_keeps_camera_(14, -6) True
+lamb_not_at_old_easy_spot True
+walk_(14, -10.8) True
+joystick_keeps_camera_(14, -10.8) True
+walk_(18.5, -11) True
+joystick_keeps_camera_(18.5, -11) True
+call_lamb True
+walk_(14, -11) True
+joystick_keeps_camera_(14, -11) True
+walk_(13, -6) True
+joystick_keeps_camera_(13, -6) True
+walk_(8, 0) True
+joystick_keeps_camera_(8, 0) True
+walk_(1.8, 0) True
+joystick_keeps_camera_(1.8, 0) True
+walk_(-6, 5) True
+joystick_keeps_camera_(-6, 5) True
+walk_(-10, 7) True
+joystick_keeps_camera_(-10, 7) True
+browser_complete True
+russian True
+replay True
+reward_retained True
+Traceback (most recent call last):
+  File "/tmp/jd-next-adventure/tools/trail_of_truth/test_block_browser.py", line 206, in <module>
+    if __name__=='__main__':run()
+                            ^^^^^
+  File "/tmp/jd-next-adventure/tools/trail_of_truth/test_block_browser.py", line 146, in run
+    page.reload();ready()
+    ^^^^^^^^^^^^^
+  File "/home/helper/.hermes/hermes-agent/venv/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 9921, in reload
+    self._sync(
+  File "/home/helper/.hermes/hermes-agent/venv/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/helper/.hermes/hermes-agent/venv/lib/python3.11/site-packages/playwright/_impl/_page.py", line 568, in reload
+    await self._channel.send(
+  File "/home/helper/.hermes/hermes-agent/venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/helper/.hermes/hermes-agent/venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.reload: Timeout 30000ms exceeded.
+Call log:
+  - waiting for navigation until "load"
+    - navigated to "http://127.0.0.1:8133/games/trail-of-truth/"
+

@@ -1,0 +1,116 @@
+{
+  "checks": {
+    "trusted_start": true,
+    "map_opens": true,
+    "map_pauses_player": true,
+    "map_closes": true,
+    "invalid_action": true,
+    "walk_(-10, 3)": true,
+    "joystick_keeps_camera_(-10, 3)": true,
+    "tracks_discovered": true,
+    "walk_(1.2, 0)": true
+  },
+  "errors": [],
+  "state": {
+    "adventure_points": 10,
+    "adventure_points_cap": 130,
+    "bridge": 0,
+    "camera": [
+      0,
+      0,
+      5.80000019073486
+    ],
+    "camp_banner_color": "",
+    "campaign_stage": 0,
+    "carrying": -1,
+    "cave_health": 3,
+    "cave_phase": "idle",
+    "caves": {
+      "active": false,
+      "steps": []
+    },
+    "complete": false,
+    "context": "",
+    "crossing_found": true,
+    "earned_rewards": [
+      "tracks"
+    ],
+    "following": false,
+    "fps": 1,
+    "garden_saved": false,
+    "lamb": [
+      18.5,
+      0.0199999995529652,
+      -11
+    ],
+    "lamb_found": false,
+    "language": "en",
+    "map_open": false,
+    "paused": false,
+    "position": [
+      0.508334696292877,
+      0.000234376639127731,
+      0.224362790584564
+    ],
+    "recoveries": 0,
+    "reward_saved": false,
+    "rewards_open": false,
+    "save_ok": true,
+    "seeds": 0,
+    "tap_target": {},
+    "tick": 1409,
+    "trail_found": true,
+    "ui": {
+      "action": [
+        310,
+        203
+      ],
+      "banner_blue": [
+        63.5,
+        110
+      ],
+      "banner_gold": [
+        64.5,
+        110
+      ],
+      "banner_green": [
+        71.5,
+        110
+      ],
+      "jump": [
+        354,
+        131
+      ],
+      "language": [
+        264,
+        38
+      ],
+      "map": [
+        158,
+        38
+      ],
+      "pause": [
+        356,
+        38
+      ],
+      "primary": [
+        211,
+        220
+      ],
+      "rewards": [
+        322,
+        94
+      ],
+      "secondary": [
+        98.5,
+        110
+      ]
+    },
+    "version": "block-1",
+    "viewport": [
+      422,
+      271
+    ],
+    "yaw": 0
+  }
+}

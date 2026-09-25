@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+cottage_sweep_never_enters_solid true
+cottage_stops_at_near_wall true
+swept_steps_are_speed_bounded true
+blocked_escort_does_not_complete true
+oblique_follow_slides_around_cottage true
+long_delta_is_bounded true
+distant_player_does_not_drag_lamb true
+camp_does_not_complete_before_lamb_arrives true
+camp_edge_wait_completes true
+camp_edge_player_was_not_moved true
+rescue_reward_earned true

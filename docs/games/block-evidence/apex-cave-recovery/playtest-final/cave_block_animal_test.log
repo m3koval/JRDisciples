@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ANIMAL_BOUNDS lion [P: (-0.54, -0.0, -1.425), S: (1.08, 1.66, 2.7635)]
+ANIMAL_BOUNDS bear [P: (-0.56, -0.0, -1.11), S: (1.12, 1.66, 2.4485)]
+CAVE_BLOCK_ANIMAL_TEST checks=2729 failures=0

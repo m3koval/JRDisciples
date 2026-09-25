@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS two continuous bank surfaces
+PASS surface reaches bank limits without interior rectangular cutoff
+PASS terrain never conceals missing bridge
+PASS walkable surface retains authoritative flat ground
+PASS surface reaches bank limits without interior rectangular cutoff
+PASS terrain never conceals missing bridge
+PASS walkable surface retains authoritative flat ground
+PASS opening terrain vertex budget
+PASS bridge approach center stays on route
+PASS path ends instead of extending infinitely
+PASS shore lip joins terrain without daylight gap
+PASS shore lip joins terrain without daylight gap
+OPENING_TERRAIN_FAILURES=0
