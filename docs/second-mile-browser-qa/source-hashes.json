@@ -1,0 +1,8 @@
+{
+  "app/lessons/second-mile/page.tsx": "cff2e4439e0598cad17b0e5888e0959af8b0315c929cca34af8030b1c4727e82",
+  "app/lessons/second-mile/content.ts": "e01ce64c3db10ab6dc56396436d35b55f683c417af437540a6783ffcff095b13",
+  "app/lessons/second-mile/page.module.css": "36be7970e674172be69892d1c831fd579b304edf0739879851cb2c3fb700fa31",
+  "data/journey.ts": "72f625c178ad215d1977728f3f5a082132c6c505ce6bca63c75964d1822458ed",
+  "data/lessons.ts": "c67f383fdc556d5bb0dab07211a9d67cdc8190d2238fb295024b4412e49e3f4d",
+  "data/lessons-ru.ts": "d01c5b1ac077d162a8246cb0556b02ed041ff9a9cf3f56f79071534a5d921af7"
+}

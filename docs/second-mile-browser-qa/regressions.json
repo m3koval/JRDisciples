@@ -1,0 +1,17 @@
+{
+  "url": "http://127.0.0.1:3108",
+  "checks": [
+    {
+      "name": "completed-checkpoint-scene-2",
+      "passed": true
+    },
+    {
+      "name": "completed-checkpoint-scene-3",
+      "passed": true
+    },
+    {
+      "name": "stale-readable-storage-write-denied-touch-progression",
+      "passed": true
+    }
+  ]
+}

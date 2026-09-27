@@ -130,6 +130,7 @@ export const journeyUnits: JourneyUnit[] = [
       step('prayer-practice', 'practice', '/puzzles/lords-prayer', 'The Lord’s Prayer Search', 'Поиск слов молитвы Господней'),
       step('church-lesson', 'lesson', '/lessons/jesus-builds-his-church', 'Jesus Builds His Church', 'Иисус строит Свою Церковь'),
       step('open-hands', 'lesson', '/lessons/one-thing-you-lack', 'One Thing You Lack', 'Одного тебе недостаёт'),
+      step('second-mile', 'lesson', '/lessons/second-mile', 'The Second Mile', 'Второе поприще'),
       step('every-one-matters', 'lesson', '/lessons/every-one-matters', 'Every One Matters', 'Важен каждый'),
       step('doers-scripture', 'scripture', '/memory/james-1-22', 'Be Doers of the Word', 'Будьте исполнителями слова'),
     ],

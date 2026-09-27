@@ -1,0 +1,53 @@
+{
+  "method": "Compared all 8 displayed excerpts against Bible.com extracted pages. Ephesians displays verses 8–9 from 8–10 context. Matthew 5:44 has no terminal punctuation in Bible.com single-verse text, preserved exactly.",
+  "verses": [
+    {
+      "reference": "Matthew 5:41",
+      "quote": "And if anyone forces you to go one mile, go with him two miles.",
+      "url": "https://www.bible.com/bible/59/MAT.5.41.ESV",
+      "verified": true
+    },
+    {
+      "reference": "Matthew 5:44",
+      "quote": "But I say to you, Love your enemies and pray for those who persecute you",
+      "url": "https://www.bible.com/bible/59/MAT.5.44.ESV",
+      "verified": true
+    },
+    {
+      "reference": "Romans 12:21",
+      "quote": "Do not be overcome by evil, but overcome evil with good.",
+      "url": "https://www.bible.com/bible/59/ROM.12.21.ESV",
+      "verified": true
+    },
+    {
+      "reference": "Ephesians 2:8–9",
+      "quote": "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast.",
+      "url": "https://www.bible.com/bible/59/EPH.2.8-10.ESV",
+      "verified": true
+    },
+    {
+      "reference": "Матфея 5:41",
+      "quote": "и кто принудит тебя идти с ним одно поприще, иди с ним два.",
+      "url": "https://www.bible.com/bible/167/MAT.5.41.RST",
+      "verified": true
+    },
+    {
+      "reference": "Матфея 5:44",
+      "quote": "А Я говорю вам: любите врагов ваших, благословляйте проклинающих вас, благотворите ненавидящим вас и молитесь за обижающих вас и гонящих вас",
+      "url": "https://www.bible.com/bible/167/MAT.5.44.RST",
+      "verified": true
+    },
+    {
+      "reference": "Римлянам 12:21",
+      "quote": "Не будь побежден злом, но побеждай зло добром.",
+      "url": "https://www.bible.com/bible/167/ROM.12.21.RST",
+      "verified": true
+    },
+    {
+      "reference": "Ефесянам 2:8–9",
+      "quote": "Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар: не от дел, чтобы никто не хвалился.",
+      "url": "https://www.bible.com/bible/167/EPH.2.8-10.RST",
+      "verified": true
+    }
+  ]
+}
