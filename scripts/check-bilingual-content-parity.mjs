@@ -96,7 +96,13 @@ for (const href of unique(lessonHrefsEn)) {
     continue
   }
 
-  const page = fs.readFileSync(absPage, 'utf8')
+  // Inspect actual route-local imported content too, not just monolithic pages.
+  // Missing imports still fail the build; no route gets a parity exemption.
+  const routeSource = fs.readFileSync(absPage, 'utf8')
+  const localModules = [...routeSource.matchAll(/from\s+['"](\.\/[\w/-]+)['"]/g)]
+    .map(match => path.resolve(path.dirname(absPage), `${match[1]}.ts`))
+    .filter(file => file.startsWith(path.dirname(absPage) + path.sep) && fs.existsSync(file))
+  const page = [routeSource, ...localModules.map(file => fs.readFileSync(file, 'utf8'))].join('\n')
   if (/\bWEB\b|World English Bible/.test(page)) {
     failures.push(`lesson route: ${slug} contains WEB/public-domain Scripture wording or label`)
   }

@@ -1,0 +1,3992 @@
+{
+  "checks": [
+    {
+      "name": "en-00-cover/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The Junior Disciples discover a road of generous love"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-00-cover/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The Junior Disciples discover a road of generous love"
+        }
+      ]
+    },
+    {
+      "name": "en-00-cover/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The Junior Disciples discover a road of generous love"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-00-cover/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The Junior Disciples discover a road of generous love"
+        }
+      ]
+    },
+    {
+      "name": "en-00-cover/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The Junior Disciples discover a road of generous love"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-00-cover/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The Junior Disciples discover a road of generous love"
+        }
+      ]
+    },
+    {
+      "name": "en-00-cover/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The Junior Disciples discover a road of generous love"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-00-cover/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The Junior Disciples discover a road of generous love"
+        }
+      ]
+    },
+    {
+      "name": "en-01-learn/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-01-learn/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "en-01-learn/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-01-learn/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "en-01-learn/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-01-learn/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "en-01-learn/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-01-learn/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "en-01/hint-open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-01-puzzle-hint/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-01-puzzle-hint/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "en-01-puzzle-hint/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-01-puzzle-hint/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "en-01-puzzle-hint/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-01-puzzle-hint/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "en-01-puzzle-hint/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-01-puzzle-hint/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "en-01/wrong-cannot-advance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-01/wrong-stays-in-puzzle",
+      "passed": true,
+      "detail": {
+        "scene": 1,
+        "phase": "do",
+        "order": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "sorted": [],
+        "matched": [],
+        "graded": [
+          "order-1"
+        ],
+        "plan": null
+      }
+    },
+    {
+      "name": "en-01/language-retains-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-01/reload-resumes-partial",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-01/correct-and-learning-feedback",
+      "passed": true,
+      "detail": "✓ You found it!\n\nThe extra mile pictures willing love, not a new distance rule for children."
+    },
+    {
+      "name": "en-01-result/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-01-result/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "en-01-result/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-01-result/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "en-01-result/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-01-result/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "en-01-result/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-01-result/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "en-02-learn/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-02-learn/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "en-02-learn/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-02-learn/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "en-02-learn/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-02-learn/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "en-02-learn/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-02-learn/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "en-02/hint-open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-02-puzzle-hint/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-02-puzzle-hint/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "en-02-puzzle-hint/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-02-puzzle-hint/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "en-02-puzzle-hint/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-02-puzzle-hint/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "en-02-puzzle-hint/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-02-puzzle-hint/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "en-02/wrong-cannot-advance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-02/wrong-stays-in-puzzle",
+      "passed": true,
+      "detail": {
+        "scene": 2,
+        "phase": "do",
+        "order": [],
+        "sorted": [],
+        "matched": [],
+        "graded": [
+          "order-1",
+          "heart-0"
+        ],
+        "plan": null
+      }
+    },
+    {
+      "name": "en-02/language-retains-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-02/reload-resumes-partial",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-02/correct-and-learning-feedback",
+      "passed": true,
+      "detail": "✓ You found it!\n\nJesus can free us from keeping a revenge score. Ask Him for a willing heart."
+    },
+    {
+      "name": "en-02-result/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-02-result/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "en-02-result/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-02-result/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "en-02-result/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-02-result/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "en-02-result/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-02-result/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "en-03-learn/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-03-learn/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "en-03-learn/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-03-learn/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "en-03-learn/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-03-learn/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "en-03-learn/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-03-learn/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "en-03/hint-open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-03-puzzle-hint/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-03-puzzle-hint/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "en-03-puzzle-hint/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-03-puzzle-hint/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "en-03-puzzle-hint/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-03-puzzle-hint/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "en-03-puzzle-hint/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-03-puzzle-hint/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "en-03/wrong-cannot-advance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-03/wrong-stays-in-puzzle",
+      "passed": true,
+      "detail": {
+        "scene": 3,
+        "phase": "do",
+        "order": [],
+        "sorted": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "matched": [],
+        "graded": [
+          "order-1",
+          "heart-0",
+          "heart-1",
+          "heart-2",
+          "heart-3",
+          "help-0"
+        ],
+        "plan": null
+      }
+    },
+    {
+      "name": "en-03/language-retains-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-03/reload-resumes-partial",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-03/correct-and-learning-feedback",
+      "passed": true,
+      "detail": "✓ You found it!\n\nKindness is not a trick to change someone. They may still be unkind. We can choose good and get help."
+    },
+    {
+      "name": "en-03-result/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-03-result/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "en-03-result/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-03-result/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "en-03-result/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-03-result/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "en-03-result/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-03-result/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "en-04-learn/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-04-learn/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "en-04-learn/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-04-learn/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "en-04-learn/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-04-learn/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "en-04-learn/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-04-learn/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "en-04/hint-open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-04-puzzle-hint/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-04-puzzle-hint/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "en-04-puzzle-hint/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-04-puzzle-hint/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "en-04-puzzle-hint/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-04-puzzle-hint/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "en-04-puzzle-hint/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-04-puzzle-hint/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "en-04/wrong-cannot-advance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-04/wrong-stays-in-puzzle",
+      "passed": true,
+      "detail": {
+        "scene": 4,
+        "phase": "do",
+        "order": [
+          2,
+          1,
+          0
+        ],
+        "sorted": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "matched": [
+          0,
+          1,
+          2
+        ],
+        "graded": [
+          "order-1",
+          "heart-0",
+          "heart-1",
+          "heart-2",
+          "heart-3",
+          "help-0",
+          "help-1",
+          "help-2",
+          "order-4"
+        ],
+        "plan": null
+      }
+    },
+    {
+      "name": "en-04/language-retains-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-04/reload-resumes-partial",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-04/correct-and-learning-feedback",
+      "passed": true,
+      "detail": "✓ You found it!\n\nGrace comes first! Our help reflects God’s generosity; it never earns salvation."
+    },
+    {
+      "name": "en-04-result/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-04-result/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "en-04-result/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-04-result/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "en-04-result/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-04-result/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "en-04-result/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-04-result/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "en/mastery-first-attempt-only",
+      "passed": true,
+      "detail": {
+        "firstTryCorrect": 5,
+        "totalGraded": 9,
+        "completed": true,
+        "updatedAt": 1790520120065
+      }
+    },
+    {
+      "name": "en/completion-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en-05-completion-plan/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends celebrate a new step of love"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-05-completion-plan/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends celebrate a new step of love"
+        }
+      ]
+    },
+    {
+      "name": "en-05-completion-plan/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends celebrate a new step of love"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-05-completion-plan/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends celebrate a new step of love"
+        }
+      ]
+    },
+    {
+      "name": "en-05-completion-plan/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends celebrate a new step of love"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-05-completion-plan/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends celebrate a new step of love"
+        }
+      ]
+    },
+    {
+      "name": "en-05-completion-plan/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "The friends celebrate a new step of love"
+          }
+        ]
+      }
+    },
+    {
+      "name": "en-05-completion-plan/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "The friends celebrate a new step of love"
+        }
+      ]
+    },
+    {
+      "name": "en/plan-persists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en/completion-idempotent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en/replay",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en/replay-resets-progress-and-mastery",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "en/no-page-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "ru-00-cover/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Юные ученики открывают путь щедрой любви"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-00-cover/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Юные ученики открывают путь щедрой любви"
+        }
+      ]
+    },
+    {
+      "name": "ru-00-cover/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Юные ученики открывают путь щедрой любви"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-00-cover/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Юные ученики открывают путь щедрой любви"
+        }
+      ]
+    },
+    {
+      "name": "ru-00-cover/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Юные ученики открывают путь щедрой любви"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-00-cover/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Юные ученики открывают путь щедрой любви"
+        }
+      ]
+    },
+    {
+      "name": "ru-00-cover/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Юные ученики открывают путь щедрой любви"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-00-cover/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Юные ученики открывают путь щедрой любви"
+        }
+      ]
+    },
+    {
+      "name": "ru-01-learn/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Историческая иллюстрация: груз на римской дороге"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-01-learn/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Историческая иллюстрация: груз на римской дороге"
+        }
+      ]
+    },
+    {
+      "name": "ru-01-learn/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Историческая иллюстрация: груз на римской дороге"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-01-learn/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Историческая иллюстрация: груз на римской дороге"
+        }
+      ]
+    },
+    {
+      "name": "ru-01-learn/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Историческая иллюстрация: груз на римской дороге"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-01-learn/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Историческая иллюстрация: груз на римской дороге"
+        }
+      ]
+    },
+    {
+      "name": "ru-01-learn/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Историческая иллюстрация: груз на римской дороге"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-01-learn/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Историческая иллюстрация: груз на римской дороге"
+        }
+      ]
+    },
+    {
+      "name": "ru-01/hint-open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-01-puzzle-hint/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Историческая иллюстрация: груз на римской дороге"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-01-puzzle-hint/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Историческая иллюстрация: груз на римской дороге"
+        }
+      ]
+    },
+    {
+      "name": "ru-01-puzzle-hint/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Историческая иллюстрация: груз на римской дороге"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-01-puzzle-hint/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Историческая иллюстрация: груз на римской дороге"
+        }
+      ]
+    },
+    {
+      "name": "ru-01-puzzle-hint/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Историческая иллюстрация: груз на римской дороге"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-01-puzzle-hint/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Историческая иллюстрация: груз на римской дороге"
+        }
+      ]
+    },
+    {
+      "name": "ru-01-puzzle-hint/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Историческая иллюстрация: груз на римской дороге"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-01-puzzle-hint/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Историческая иллюстрация: груз на римской дороге"
+        }
+      ]
+    },
+    {
+      "name": "ru-01/wrong-cannot-advance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-01/wrong-stays-in-puzzle",
+      "passed": true,
+      "detail": {
+        "scene": 1,
+        "phase": "do",
+        "order": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "sorted": [],
+        "matched": [],
+        "graded": [
+          "order-1"
+        ],
+        "plan": null
+      }
+    },
+    {
+      "name": "ru-01/language-retains-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-01/reload-resumes-partial",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-01/correct-and-learning-feedback",
+      "passed": true,
+      "detail": "✓ Получилось!\n\nВторое поприще — образ добровольной любви, а не новое правило расстояния для детей."
+    },
+    {
+      "name": "ru-01-result/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Историческая иллюстрация: груз на римской дороге"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-01-result/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Историческая иллюстрация: груз на римской дороге"
+        }
+      ]
+    },
+    {
+      "name": "ru-01-result/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Историческая иллюстрация: груз на римской дороге"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-01-result/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Историческая иллюстрация: груз на римской дороге"
+        }
+      ]
+    },
+    {
+      "name": "ru-01-result/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Историческая иллюстрация: груз на римской дороге"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-01-result/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Историческая иллюстрация: груз на римской дороге"
+        }
+      ]
+    },
+    {
+      "name": "ru-01-result/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Историческая иллюстрация: груз на римской дороге"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-01-result/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Историческая иллюстрация: груз на римской дороге"
+        }
+      ]
+    },
+    {
+      "name": "ru-02-learn/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Друзья размышляют о щедром сердце"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-02-learn/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Друзья размышляют о щедром сердце"
+        }
+      ]
+    },
+    {
+      "name": "ru-02-learn/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Друзья размышляют о щедром сердце"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-02-learn/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Друзья размышляют о щедром сердце"
+        }
+      ]
+    },
+    {
+      "name": "ru-02-learn/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья размышляют о щедром сердце"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-02-learn/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья размышляют о щедром сердце"
+        }
+      ]
+    },
+    {
+      "name": "ru-02-learn/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья размышляют о щедром сердце"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-02-learn/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья размышляют о щедром сердце"
+        }
+      ]
+    },
+    {
+      "name": "ru-02/hint-open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-02-puzzle-hint/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья размышляют о щедром сердце"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-02-puzzle-hint/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья размышляют о щедром сердце"
+        }
+      ]
+    },
+    {
+      "name": "ru-02-puzzle-hint/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья размышляют о щедром сердце"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-02-puzzle-hint/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья размышляют о щедром сердце"
+        }
+      ]
+    },
+    {
+      "name": "ru-02-puzzle-hint/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья размышляют о щедром сердце"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-02-puzzle-hint/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья размышляют о щедром сердце"
+        }
+      ]
+    },
+    {
+      "name": "ru-02-puzzle-hint/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья размышляют о щедром сердце"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-02-puzzle-hint/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья размышляют о щедром сердце"
+        }
+      ]
+    },
+    {
+      "name": "ru-02/wrong-cannot-advance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-02/wrong-stays-in-puzzle",
+      "passed": true,
+      "detail": {
+        "scene": 2,
+        "phase": "do",
+        "order": [],
+        "sorted": [],
+        "matched": [],
+        "graded": [
+          "order-1",
+          "heart-0"
+        ],
+        "plan": null
+      }
+    },
+    {
+      "name": "ru-02/language-retains-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-02/reload-resumes-partial",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-02/correct-and-learning-feedback",
+      "passed": true,
+      "detail": "✓ Получилось!\n\nИисус освобождает нас от желания мстить. Попроси Его помочь любить от сердца."
+    },
+    {
+      "name": "ru-02-result/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья размышляют о щедром сердце"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-02-result/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья размышляют о щедром сердце"
+        }
+      ]
+    },
+    {
+      "name": "ru-02-result/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья размышляют о щедром сердце"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-02-result/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья размышляют о щедром сердце"
+        }
+      ]
+    },
+    {
+      "name": "ru-02-result/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья размышляют о щедром сердце"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-02-result/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья размышляют о щедром сердце"
+        }
+      ]
+    },
+    {
+      "name": "ru-02-result/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья размышляют о щедром сердце"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-02-result/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья размышляют о щедром сердце"
+        }
+      ]
+    },
+    {
+      "name": "ru-03-learn/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-03-learn/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+        }
+      ]
+    },
+    {
+      "name": "ru-03-learn/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-03-learn/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+        }
+      ]
+    },
+    {
+      "name": "ru-03-learn/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-03-learn/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+        }
+      ]
+    },
+    {
+      "name": "ru-03-learn/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-03-learn/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+        }
+      ]
+    },
+    {
+      "name": "ru-03/hint-open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-03-puzzle-hint/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-03-puzzle-hint/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+        }
+      ]
+    },
+    {
+      "name": "ru-03-puzzle-hint/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-03-puzzle-hint/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+        }
+      ]
+    },
+    {
+      "name": "ru-03-puzzle-hint/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-03-puzzle-hint/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+        }
+      ]
+    },
+    {
+      "name": "ru-03-puzzle-hint/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-03-puzzle-hint/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+        }
+      ]
+    },
+    {
+      "name": "ru-03/wrong-cannot-advance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-03/wrong-stays-in-puzzle",
+      "passed": true,
+      "detail": {
+        "scene": 3,
+        "phase": "do",
+        "order": [],
+        "sorted": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "matched": [],
+        "graded": [
+          "order-1",
+          "heart-0",
+          "heart-1",
+          "heart-2",
+          "heart-3",
+          "help-0"
+        ],
+        "plan": null
+      }
+    },
+    {
+      "name": "ru-03/language-retains-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-03/reload-resumes-partial",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-03/correct-and-learning-feedback",
+      "passed": true,
+      "detail": "✓ Получилось!\n\nДоброта — не хитрость, чтобы изменить другого. Он может остаться недобрым. Мы можем делать добро и просить помощи."
+    },
+    {
+      "name": "ru-03-result/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-03-result/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+        }
+      ]
+    },
+    {
+      "name": "ru-03-result/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-03-result/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+        }
+      ]
+    },
+    {
+      "name": "ru-03-result/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-03-result/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+        }
+      ]
+    },
+    {
+      "name": "ru-03-result/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-03-result/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Мишутка ставит корзину яблок на садовый стол, а Йосик предлагает воду"
+        }
+      ]
+    },
+    {
+      "name": "ru-04-learn/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Друзья узнают, что благодать — дар"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-04-learn/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Друзья узнают, что благодать — дар"
+        }
+      ]
+    },
+    {
+      "name": "ru-04-learn/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Друзья узнают, что благодать — дар"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-04-learn/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Друзья узнают, что благодать — дар"
+        }
+      ]
+    },
+    {
+      "name": "ru-04-learn/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья узнают, что благодать — дар"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-04-learn/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья узнают, что благодать — дар"
+        }
+      ]
+    },
+    {
+      "name": "ru-04-learn/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья узнают, что благодать — дар"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-04-learn/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья узнают, что благодать — дар"
+        }
+      ]
+    },
+    {
+      "name": "ru-04/hint-open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-04-puzzle-hint/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья узнают, что благодать — дар"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-04-puzzle-hint/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья узнают, что благодать — дар"
+        }
+      ]
+    },
+    {
+      "name": "ru-04-puzzle-hint/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья узнают, что благодать — дар"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-04-puzzle-hint/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья узнают, что благодать — дар"
+        }
+      ]
+    },
+    {
+      "name": "ru-04-puzzle-hint/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья узнают, что благодать — дар"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-04-puzzle-hint/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья узнают, что благодать — дар"
+        }
+      ]
+    },
+    {
+      "name": "ru-04-puzzle-hint/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья узнают, что благодать — дар"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-04-puzzle-hint/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья узнают, что благодать — дар"
+        }
+      ]
+    },
+    {
+      "name": "ru-04/wrong-cannot-advance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-04/wrong-stays-in-puzzle",
+      "passed": true,
+      "detail": {
+        "scene": 4,
+        "phase": "do",
+        "order": [
+          2,
+          1,
+          0
+        ],
+        "sorted": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "matched": [
+          0,
+          1,
+          2
+        ],
+        "graded": [
+          "order-1",
+          "heart-0",
+          "heart-1",
+          "heart-2",
+          "heart-3",
+          "help-0",
+          "help-1",
+          "help-2",
+          "order-4"
+        ],
+        "plan": null
+      }
+    },
+    {
+      "name": "ru-04/language-retains-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-04/reload-resumes-partial",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-04/correct-and-learning-feedback",
+      "passed": true,
+      "detail": "✓ Получилось!\n\nСначала благодать! Наша помощь отражает Божью щедрость, но ею нельзя заслужить спасение."
+    },
+    {
+      "name": "ru-04-result/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья узнают, что благодать — дар"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-04-result/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья узнают, что благодать — дар"
+        }
+      ]
+    },
+    {
+      "name": "ru-04-result/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья узнают, что благодать — дар"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-04-result/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья узнают, что благодать — дар"
+        }
+      ]
+    },
+    {
+      "name": "ru-04-result/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья узнают, что благодать — дар"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-04-result/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья узнают, что благодать — дар"
+        }
+      ]
+    },
+    {
+      "name": "ru-04-result/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья узнают, что благодать — дар"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-04-result/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья узнают, что благодать — дар"
+        }
+      ]
+    },
+    {
+      "name": "ru/mastery-first-attempt-only",
+      "passed": true,
+      "detail": {
+        "firstTryCorrect": 5,
+        "totalGraded": 9,
+        "completed": true,
+        "updatedAt": 1790520147795
+      }
+    },
+    {
+      "name": "ru/completion-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru-05-completion-plan/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Друзья радуются новому шагу любви"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-05-completion-plan/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Друзья радуются новому шагу любви"
+        }
+      ]
+    },
+    {
+      "name": "ru-05-completion-plan/ipad-landscape/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1180,
+        "scroll": 1180,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Друзья радуются новому шагу любви"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-05-completion-plan/ipad-landscape/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Друзья радуются новому шагу любви"
+        }
+      ]
+    },
+    {
+      "name": "ru-05-completion-plan/ipad-portrait/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 820,
+        "scroll": 820,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья радуются новому шагу любви"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-05-completion-plan/ipad-portrait/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья радуются новому шагу любви"
+        }
+      ]
+    },
+    {
+      "name": "ru-05-completion-plan/phone/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=828&q=75",
+            "loaded": true,
+            "alt": "Друзья радуются новому шагу любви"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ru-05-completion-plan/phone/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=828&q=75",
+          "loaded": true,
+          "alt": "Друзья радуются новому шагу любви"
+        }
+      ]
+    },
+    {
+      "name": "ru/plan-persists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru/completion-idempotent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru/replay",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru/replay-resets-progress-and-mastery",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ru/no-page-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "malformed-json/recover-and-interact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "malformed-json/no-page-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "malformed-shape/recover-and-interact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "malformed-shape/no-page-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "blocked-en-00-cover/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The Junior Disciples discover a road of generous love"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-00-cover/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F00-cover.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The Junior Disciples discover a road of generous love"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-01-learn/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-01-learn/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-01/hint-open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en-01-puzzle-hint/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-01-puzzle-hint/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-01/wrong-cannot-advance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en-01/language-retains-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en-01/correct-and-learning-feedback",
+      "passed": true,
+      "detail": "✓ You found it!\n\nThe extra mile pictures willing love, not a new distance rule for children."
+    },
+    {
+      "name": "blocked-en-01-result/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "A Roman-road illustration of carrying a load"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-01-result/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F01-road.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "A Roman-road illustration of carrying a load"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-02-learn/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-02-learn/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-02/hint-open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en-02-puzzle-hint/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-02-puzzle-hint/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-02/wrong-cannot-advance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en-02/language-retains-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en-02/correct-and-learning-feedback",
+      "passed": true,
+      "detail": "✓ You found it!\n\nJesus can free us from keeping a revenge score. Ask Him for a willing heart."
+    },
+    {
+      "name": "blocked-en-02-result/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends consider a willing and generous heart"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-02-result/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F02-heart.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends consider a willing and generous heart"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-03-learn/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-03-learn/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-03/hint-open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en-03-puzzle-hint/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-03-puzzle-hint/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-03/wrong-cannot-advance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en-03/language-retains-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en-03/correct-and-learning-feedback",
+      "passed": true,
+      "detail": "✓ You found it!\n\nKindness is not a trick to change someone. They may still be unkind. We can choose good and get help."
+    },
+    {
+      "name": "blocked-en-03-result/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-03-result/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F03-help.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "Michael brings an apple basket to a garden table while Joseph offers water"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-04-learn/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-04-learn/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-04/hint-open",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en-04-puzzle-hint/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-04-puzzle-hint/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-04/wrong-cannot-advance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en-04/language-retains-progress",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en-04/correct-and-learning-feedback",
+      "passed": true,
+      "detail": "✓ You found it!\n\nGrace comes first! Our help reflects God’s generosity; it never earns salvation."
+    },
+    {
+      "name": "blocked-en-04-result/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends learn that grace is a gift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-04-result/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F04-grace.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends learn that grace is a gift"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en-05-completion-plan/desktop/no-overflow",
+      "passed": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "images": [
+          {
+            "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=640&q=75",
+            "loaded": true,
+            "alt": "The friends celebrate a new step of love"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blocked-en-05-completion-plan/desktop/images",
+      "passed": true,
+      "detail": [
+        {
+          "src": "http://127.0.0.1:3108/_next/image?url=%2Fimages%2Fjr%2Flessons%2Fsecond-mile%2F05-complete.webp&w=640&q=75",
+          "loaded": true,
+          "alt": "The friends celebrate a new step of love"
+        }
+      ]
+    },
+    {
+      "name": "blocked-en/replay",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blocked-en/no-page-errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "screenshots": [
+    "docs/second-mile-browser-qa/screenshots/en-00-cover-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-00-cover-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-00-cover-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-00-cover-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-01-learn-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-01-learn-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-01-learn-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-01-learn-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-01-puzzle-hint-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-01-puzzle-hint-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-01-puzzle-hint-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-01-puzzle-hint-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-01-result-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-01-result-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-01-result-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-01-result-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-02-learn-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-02-learn-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-02-learn-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-02-learn-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-02-puzzle-hint-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-02-puzzle-hint-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-02-puzzle-hint-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-02-puzzle-hint-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-02-result-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-02-result-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-02-result-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-02-result-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-03-learn-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-03-learn-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-03-learn-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-03-learn-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-03-puzzle-hint-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-03-puzzle-hint-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-03-puzzle-hint-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-03-puzzle-hint-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-03-result-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-03-result-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-03-result-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-03-result-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-04-learn-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-04-learn-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-04-learn-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-04-learn-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-04-puzzle-hint-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-04-puzzle-hint-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-04-puzzle-hint-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-04-puzzle-hint-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-04-result-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-04-result-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-04-result-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-04-result-phone.png",
+    "docs/second-mile-browser-qa/screenshots/en-05-completion-plan-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/en-05-completion-plan-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/en-05-completion-plan-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/en-05-completion-plan-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-00-cover-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-00-cover-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-00-cover-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-00-cover-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-01-learn-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-01-learn-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-01-learn-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-01-learn-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-01-puzzle-hint-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-01-puzzle-hint-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-01-puzzle-hint-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-01-puzzle-hint-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-01-result-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-01-result-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-01-result-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-01-result-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-02-learn-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-02-learn-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-02-learn-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-02-learn-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-02-puzzle-hint-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-02-puzzle-hint-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-02-puzzle-hint-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-02-puzzle-hint-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-02-result-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-02-result-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-02-result-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-02-result-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-03-learn-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-03-learn-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-03-learn-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-03-learn-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-03-puzzle-hint-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-03-puzzle-hint-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-03-puzzle-hint-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-03-puzzle-hint-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-03-result-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-03-result-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-03-result-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-03-result-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-04-learn-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-04-learn-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-04-learn-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-04-learn-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-04-puzzle-hint-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-04-puzzle-hint-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-04-puzzle-hint-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-04-puzzle-hint-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-04-result-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-04-result-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-04-result-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-04-result-phone.png",
+    "docs/second-mile-browser-qa/screenshots/ru-05-completion-plan-desktop.png",
+    "docs/second-mile-browser-qa/screenshots/ru-05-completion-plan-ipad-landscape.png",
+    "docs/second-mile-browser-qa/screenshots/ru-05-completion-plan-ipad-portrait.png",
+    "docs/second-mile-browser-qa/screenshots/ru-05-completion-plan-phone.png"
+  ],
+  "errors": [],
+  "selector_notes": [
+    "Puzzle actions use existing data-testid. Language switch uses accessible shell label; hint uses lesson-scoped summary; plan uses lesson radio; replay uses localized accessible name because these controls initially have no testids."
+  ],
+  "started": "2026-09-27T14:41:34Z",
+  "url": "http://127.0.0.1:3108",
+  "browser": "chromium",
+  "summary": {
+    "passed": 336,
+    "failed": 0,
+    "screenshots": 112
+  }
+}

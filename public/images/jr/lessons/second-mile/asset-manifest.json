@@ -1,0 +1,96 @@
+{
+  "assets": [
+    {
+      "id": "00-cover",
+      "file": "00-cover.webp",
+      "source_url": "https://v3b.fal.media/files/b/0aac1cf1/83pd2Q8RlSYFnEocedlEL_5Vkv4hX8.png",
+      "provider": "FAL GPT Image 2",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 196164,
+      "sha256": "d81126207eeb822e22d1917d9b6a60b278e9b654012381b96eaf4eafa09d1b47",
+      "prompt": "prompts/00-cover.md",
+      "visual_qa": "PASS",
+      "visual_qa_note": "Consistent green/blue child cast; shared baskets, inviting path, no readable marks."
+    },
+    {
+      "id": "01-road",
+      "file": "01-road.webp",
+      "source_url": "https://v3b.fal.media/files/b/0aac1cf8/jYo0FybaPE9mcHvzDi3W8_tvCajAUQ.png",
+      "provider": "FAL GPT Image 2",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 187752,
+      "sha256": "4420a65082c9df0421c62f463c94a4181b2d0d245fff8020bdae874d41148670",
+      "prompt": "prompts/01-road.md",
+      "visual_qa": "PASS",
+      "visual_qa_note": "Adult historical illustration; modest load, restrained soldier; not a factual reconstruction."
+    },
+    {
+      "id": "02-heart",
+      "file": "02-heart.webp",
+      "source_url": "https://v3b.fal.media/files/b/0aac1cf9/H_R91UctOp0bn5PPlV6Gg_X4pGJND6.png",
+      "provider": "FAL GPT Image 2",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 223100,
+      "sha256": "bc6637f51cb6cbc691c01f08bd1129fda93c40d2de4ed0f83c764569aed0eda3",
+      "prompt": "prompts/02-heart.md",
+      "visual_qa": "PASS",
+      "visual_qa_note": "Clear swept courtyard and remaining leaves; natural broom grip; canonical boys."
+    },
+    {
+      "id": "03-help",
+      "file": "03-help.webp",
+      "source_url": "https://v3b.fal.media/files/b/0aac1d07/Jeby3XtO6b0P6MCXifkcd_U25eDJHu.png",
+      "provider": "FAL GPT Image 2",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 160456,
+      "sha256": "ca9b7a1deed641d18bc0862a68ce834a3fe448ffcbd4aba2bdb213708c5ff703",
+      "prompt": "prompts/03-help.md",
+      "visual_qa": "PASS",
+      "visual_qa_note": "Basket on table and offered cup of water; plausible hands and warm service."
+    },
+    {
+      "id": "04-grace",
+      "file": "04-grace.webp",
+      "source_url": "https://v3b.fal.media/files/b/0aac1d01/E2fAIAFSATQ9gKsQ6lzfG_Bw9tWi25.png",
+      "provider": "FAL GPT Image 2",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 198936,
+      "sha256": "d349bed4465b2a4706ba77f97074ca6f410dcd292f16d1ef4314fe9cd94e38fb",
+      "prompt": "prompts/04-grace.md",
+      "visual_qa": "PASS",
+      "visual_qa_note": "Rosie purple with open unlettered Bible, Michael listening; no earned-salvation imagery."
+    },
+    {
+      "id": "05-complete",
+      "file": "05-complete.webp",
+      "source_url": "https://v3b.fal.media/files/b/0aac1d00/HAeud2M7TctlPTYAB9kXB_5KA51oj5.png",
+      "provider": "FAL GPT Image 2",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "bytes": 196272,
+      "sha256": "d1fb1574421c9df17b8d4ea2362487f79ff64cccb80fae283a5961750a1929be",
+      "prompt": "prompts/05-complete.md",
+      "visual_qa": "PASS",
+      "visual_qa_note": "Four friends, canonical color/height relationships, shared baskets; no trophy or text."
+    }
+  ],
+  "expected_count": 6,
+  "reference_cover": "https://v3b.fal.media/files/b/0aac1cf1/83pd2Q8RlSYFnEocedlEL_5Vkv4hX8.png"
+}

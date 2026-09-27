@@ -24,6 +24,15 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/second-mile",
+    image: "/images/jr/lessons/second-mile/00-cover.webp",
+    title: "The Second Mile",
+    desc: "Matthew 5:41 — Build the verse, sort heart motives, match wise help, and discover generous love as a response to grace.",
+    color: "#17675c",
+    sections: 4,
+    emoji: "👣",
+  },
+  {
     href: "/lessons/whose-mark",
     image: "/images/jr/lessons/whose-mark/00-hero-whose-mark.png",
     title: "Whose Mark?",

@@ -10,6 +10,15 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
+    href: "/lessons/second-mile",
+    image: "/images/jr/lessons/second-mile/00-cover.webp",
+    title: "Второе поприще",
+    desc: "Матфея 5:41 — Собери стих, разбери мысли сердца, найди мудрую помощь и открой щедрую любовь в ответ на благодать.",
+    color: "#17675c",
+    sections: 4,
+    emoji: "👣",
+  },
+  {
     href: "/lessons/whose-mark",
     image: "/images/jr/lessons/whose-mark/00-hero-whose-mark.png",
     title: "Чей образ?",

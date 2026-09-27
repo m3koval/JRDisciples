@@ -15,6 +15,17 @@ const caseLessonSlugs = fs
 const failures = []
 
 const verifiedLessonRequirements = {
+  'second-mile': [
+    ['defines English Scripture', /const\s+scriptureEn\s*=/],
+    ['defines Russian Scripture', /const\s+scriptureRu\s*=/],
+    ['uses Matthew 5:41 ESV and RST sources', /MAT\.5\.41\.ESV[\s\S]*MAT\.5\.41\.RST/],
+    ['preserves exact Matthew 5:41 ESV', /And if anyone forces you to go one mile, go with him two miles\./],
+    ['preserves exact Matthew 5:41 RST', /и кто принудит тебя идти с ним одно поприще, иди с ним два\./],
+    ['preserves enemy-love context', /Love your enemies and pray for those who persecute you/],
+    ['guards against earning salvation', /We serve in thanks, not to buy His love/],
+    ['guards against guaranteeing kindness changes others', /They may still be unkind/],
+    ['contains translated puzzle instructions', /Собери слова Иисуса[\s\S]*Разложи мысли[\s\S]*Соедини ситуацию[\s\S]*Собери путь благодати/],
+  ],
   'gods-cutting': [
     ['defines English Scripture before rendering', /const\s+scriptureEn\s*=/],
     ['defines Russian Scripture before rendering', /const\s+scriptureRu\s*=/],
@@ -134,7 +145,11 @@ for (const [slug, requirements] of Object.entries(verifiedLessonRequirements)) {
     failures.push(`${slug}: missing published page`)
     continue
   }
-  const text = fs.readFileSync(pagePath, 'utf8')
+  const routeSource = fs.readFileSync(pagePath, 'utf8')
+  const localModules = [...routeSource.matchAll(/from\s+['"](\.\/[\w/-]+)['"]/g)]
+    .map(match => path.resolve(path.dirname(pagePath), `${match[1]}.ts`))
+    .filter(file => file.startsWith(path.dirname(pagePath) + path.sep) && fs.existsSync(file))
+  const text = [routeSource, ...localModules.map(file => fs.readFileSync(file, 'utf8'))].join('\n')
   if (/\bWEB\b|World English Bible/.test(text)) {
     failures.push(`${slug}: contains WEB wording or label in published page`)
   }
