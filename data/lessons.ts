@@ -24,6 +24,15 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   {
+    href: "/lessons/living-word",
+    image: "/images/jr/topic-case-for-christ-bible.png",
+    title: "Know God's Word. Let It Change Your Life.",
+    desc: "Discover four connected truths: trust the living Jesus, let Scripture correct your ideas, practice patience and kindness, and check what you hear.",
+    color: "#12665d",
+    sections: 4,
+    emoji: "📖",
+  },
+  {
     href: "/lessons/second-mile",
     image: "/images/jr/lessons/second-mile/00-cover.webp",
     title: "The Second Mile",
