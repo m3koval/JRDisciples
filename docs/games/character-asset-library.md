@@ -2,7 +2,15 @@
 
 Canonical appearance and EN/RU names remain defined in [the character bible](../junior-disciples-character-library.md).
 
-## Current revision: seven-character review candidates
+## Current motion cleanup: v3 review candidates
+
+[Motion cleanup report](../../source/character-library/motion-cleanup-v3/README.md) · [Manifest](../../source/character-library/motion-cleanup-v3/manifest.json)
+
+Updated walk/run candidates for all seven characters, plus matching revised Rosie/Joseph rigs. Final exports have complete-timeline 60 Hz hand/body surface screening and flat-ground sole checks. Joseph's pouch/wrist weight repair and Rosie's conservative geometry/animation cleanup are separate from the rejected intermediate attempts. No runtime substitution is enabled.
+
+**Visual holds remain:** Simeon/Anna running cloth, Tobias running shoulder/sleeve, Rosie hem/seam polish. Numerical contact PASS is not game-ready certification. See the report for excluded collision regions, controller/terrain/prop-contact and device gates. Verify with `python tools/trail_of_truth/check_character_motion.py`.
+
+## Previous revision: seven-character review candidates
 
 [Revision v2 report](../../source/character-library/revision-v2/README.md) · [Manifest](../../source/character-library/revision-v2/manifest.json) · [Seven-character lineup](../../source/character-library/revision-v2/seven-character-scale-lineup.png)
 
