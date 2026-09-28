@@ -2,6 +2,10 @@ extends Node3D
 ## Authored continuous sculpted quadrupeds, with independently articulated joints.
 ## +Z forward, rest paws at y=0. Presentation only; caller owns time/pause/movement.
 ## configure("lion"|"bear"), pose(delta,state,remaining,speed), reset_pose().
+const Anatomy = preload("res://scripts/cave_animal_anatomy.gd")
+var paws: Array[MeshInstance3D] = []
+var jaw: Node3D
+var ears: Array[Node3D] = []
 var species := "lion"
 var rig: Node3D
 var head: Node3D
@@ -21,6 +25,8 @@ func configure(animal_species: String) -> void:
     species = "bear" if animal_species == "bear" else "lion"
     legs.clear()
     knees.clear()
+    paws.clear()
+    ears.clear()
     _rests.clear()
     _materials.clear()
     rig = _pivot(self, "ArticulatedBody", Vector3.ZERO)
@@ -28,53 +34,70 @@ func configure(animal_species: String) -> void:
     var fur := Color("785039") if bear else Color("d6a34f")
     var light := Color("b88b60") if bear else Color("f1ce87")
     var dark := Color("4a3027") if bear else Color("89502b")
-    # One continuous barrel: tapered haunch, tucked belly, broad shoulder hump.
-    var width := 1.0 if bear else .84
-    _loft(rig, "Torso", Vector3.ZERO, [
-        Vector4(-.90,.91,.12,.16), Vector4(-.78,.93,.37*width,.30),
-        Vector4(-.52,.94,.49*width,.35), Vector4(-.15,.94,.48*width,.34),
-        Vector4(.20,1.00,.52*width,.36 if bear else .32),
-        Vector4(.43,.99,.53*width,.34), Vector4(.64,.91,.32*width,.27),
-        Vector4(.68,.91,.06,.12)], fur, 20)
-    _block(rig, "ChestBib", Vector3(0,.83,.59), Vector3(.45,.35,.13), light)
+    _loft(rig, "Torso", Vector3.ZERO, Anatomy.torso(bear), fur, 24)
+    # Neck bridges skull into the shoulder rather than a floating sphere.
+    _loft(rig, "Neck", Vector3.ZERO, [Vector4(.42,1.01,.27,.26),
+        Vector4(.60,1.13,.28,.29),Vector4(.81,1.20,.22,.24)], fur, 20)
     for i in range(4):
         var front := i < 2
         var x := -.39 if i % 2 == 0 else .39
         var hip := _pivot(rig, ["FrontLeft", "FrontRight", "RearLeft", "RearRight"][i], Vector3(x,.65,.47 if front else -.65))
         legs.append(hip)
-        _block(hip, "UpperLeg", Vector3(0,-.09,0), Vector3(.34 if bear else .28,.52,.34), fur)
+        _loft(hip, "UpperLeg", Vector3(0,-.07,0), Anatomy.limb(front,bear,false), fur, 16)
+        (hip.get_node("UpperLeg") as Node3D).rotation.x = PI*.5
         var knee := _pivot(hip, "Knee", Vector3(0,-.31,0))
         knees.append(knee)
-        _block(knee, "Shin", Vector3(0,-.11,0), Vector3(.27 if bear else .22,.30,.25), fur)
-        _block(knee, "Paw", Vector3(0,-.265,.065), Vector3(.34 if bear else .29,.15,.40), dark if bear else light)
+        _loft(knee, "Shin", Vector3(0,-.11,0), Anatomy.limb(front,bear,true), fur, 16)
+        (knee.get_node("Shin") as Node3D).rotation.x = PI*.5
+        _loft(knee, "Paw", Vector3(0,-.265,.025), Anatomy.paw(bear), fur if bear else light, 16)
+        var paw := knee.get_node("Paw") as MeshInstance3D
+        # Profile has a genuine level sole, not an ellipsoid contacting one point.
+        paw.position.y = -.34-paw.get_aabb().position.y
+        paws.append(paw)
+        for toe in range(3):
+            _loft(paw,"ToeCrease%d"%toe,Vector3((toe-1)*.075,.025,.17),[
+                Vector4(-.035,0,.006,.008),Vector4(.022,0,.004,.007)],dark,6)
     head = _pivot(rig, "HeadPivot", Vector3(0,1.10,.62))
     if not bear:
         # Continuous swept ruff; angular locks are part of the surface, not boxes.
         _loft(head, "Mane", Vector3.ZERO, [Vector4(-.20,.02,.22,.28),
             Vector4(-.08,.01,.48,.43), Vector4(.08,-.015,.54,.49),
             Vector4(.22,.015,.46,.42), Vector4(.28,.04,.31,.30)], dark, 24, true)
-    # Skull narrows into the cheek plane in a single sculpted surface.
-    _loft(head, "Face", Vector3.ZERO, [Vector4(-.01,.12,.12,.15),
-        Vector4(.10,.13,.33 if bear else .29,.29),
-        Vector4(.31,.11,.375 if bear else .34,.29),
-        Vector4(.46,.055,.29,.22), Vector4(.54,-.025,.19,.15)], fur, 20)
+    _loft(head, "Face", Vector3.ZERO, Anatomy.face(bear), fur, 24)
     for side in [-1,1]:
-        var ear := _pivot(head, "EarLeft" if side < 0 else "EarRight", Vector3(side*.30,.43,.18))
-        _block(ear, "EarBase", Vector3.ZERO, Vector3(.23,.26,.19), fur)
-        _block(ear, "EarInner", Vector3(0,0,.101), Vector3(.12,.11,.018), light)
-        _block(head, "Eye", Vector3(side*.20,.14,.491), Vector3(.085,.10,.025), Color("282626"))
-        _block(head, "EyeGlint", Vector3(side*.20-.014,.165,.505), Vector3(.024,.028,.012), Color("fff4d5"))
-        _block(head, "MuzzleCheek", Vector3(side*.13,-.075,.56), Vector3(.28,.22,.22), light)
-    _block(head, "Nose", Vector3(0,.01,.686), Vector3(.19,.105,.065), Color("352b29"))
-    _block(head, "Chin", Vector3(0,-.19,.55), Vector3(.36,.065,.18), light)
+        var ear := _pivot(head, "EarLeft" if side < 0 else "EarRight", Vector3(side*.255,.36,.12))
+        ears.append(ear)
+        _loft(ear,"EarBase",Vector3.ZERO,[Vector4(-.055,0,.08,.095),
+            Vector4(0,.025,.115,.13),Vector4(.065,.02,.085,.095)],fur,16)
+        _loft(ear,"EarInner",Vector3(0,0,.066),[Vector4(0,.025,.058,.067),Vector4(.008,.025,.055,.062)],dark,16)
+        var eye_at := Vector3(side*.235,.12,.382)
+        _block(head, "Eye", eye_at, Vector3(.068,.063,.047), Color("241e18"))
+        _block(head, "EyeGlint", eye_at+Vector3(-.008,.013,.023), Vector3(.014,.016,.009), Color("fff4d5"))
+        # Brow is an authored wedge, not a second round eye socket.
+        _loft(head,"Brow",Vector3(side*.22,.175,.34),[
+            Vector4(-.045,0,.08,.035),Vector4(.04,-.01,.073,.023)],fur,10)
+    _loft(head,"Muzzle",Vector3.ZERO,[Vector4(.40,-.09,.19,.10),
+        Vector4(.52,-.095,.215 if not bear else .155,.105),
+        Vector4(.65 if not bear else .72,-.08,.145,.073)],light,20)
+    _loft(head,"Nose",Vector3(0,-.03,.67 if not bear else .73),[
+        Vector4(-.022,0,.105,.057),Vector4(.022,-.015,.083,.038)],Color("302720"),12)
+    jaw = _pivot(head,"JawPivot",Vector3(0,-.15,.33))
+    _loft(jaw,"MouthLine",Vector3.ZERO,[Vector4(.08,-.02,.15,.022),
+        Vector4(.29,-.017,.13,.018)],Color("392820"),12)
+    _loft(jaw,"LowerJaw",Vector3.ZERO,[Vector4(0,-.035,.12,.035),
+        Vector4(.14,-.05,.16,.045),Vector4(.29,-.045,.105,.027)],light,16)
     tail = _pivot(rig, "TailPivot", Vector3(0,1.02,-.88))
     if bear:
         _block(tail, "ShortTail", Vector3(0,.015,-.10), Vector3(.23,.23,.26), fur)
     else:
-        _block(tail, "TailStem", Vector3(0,.025,-.22), Vector3(.12,.12,.48), fur)
-        var tip := _pivot(tail, "TailTip", Vector3(0,.025,-.43))
-        _block(tip, "TailTuft", Vector3(0,.04,0), Vector3(.23,.24,.23), dark)
+        _loft(tail,"TailStem",Vector3.ZERO,[Vector4(-.57,.18,.025,.027),
+            Vector4(-.49,.08,.038,.035),Vector4(-.34,-.03,.045,.04),
+            Vector4(-.16,-.035,.05,.045),Vector4(0,0,.06,.055)],fur,12)
+        var tip := _pivot(tail, "TailTip", Vector3(0,.18,-.57))
+        _loft(tip,"TailTuft",Vector3.ZERO,[Vector4(-.12,.035,.012,.02),
+            Vector4(-.055,.025,.085,.10),Vector4(.035,0,.048,.05)],dark,12,true)
     _remember(rig)
+    for paw in paws: _rests[paw] = paw.transform
     reset_pose()
 
 func _pivot(parent: Node3D, label: String, at: Vector3) -> Node3D:
@@ -109,13 +132,17 @@ func _loft(parent: Node3D, label: String, at: Vector3, rings: Array, color: Colo
         for i in range(segments):
             var theta := TAU*float(i)/segments
             var lock := (1.0 if i%2 == 0 else .91) if fur_locks else 1.0
-            vertices.append(Vector3(cos(theta)*ring.z*lock,ring.y+sin(theta)*ring.w*lock,ring.x))
+            var vertex := Vector3(cos(theta)*ring.z*lock,ring.y+sin(theta)*ring.w*lock,ring.x)
+            if label == "Paw": vertex.y = maxf(vertex.y,-.060)
+            vertices.append(vertex)
             var prev: Vector4 = rings[maxi(0,j-1)]
             var next: Vector4 = rings[mini(rings.size()-1,j+1)]
             var slope := ((next.z-prev.z)*cos(theta)*cos(theta)+(next.w-prev.w)*sin(theta)*sin(theta)+(next.y-prev.y)*sin(theta))/maxf(.001,next.x-prev.x)
             normals.append(Vector3(cos(theta)/maxf(.01,ring.z),sin(theta)/maxf(.01,ring.w),-slope/maxf(.01,(ring.z+ring.w)*.5)).normalized())
             var shade := 1.0
-            if fur_locks: shade = .87 + .13*float((i+j)%3)/2.0
+            if label in ["Torso","Face","Neck"]:
+                shade = .87+.13*smoothstep(-.5,.6,sin(theta))
+            if fur_locks: shade = .84 + .16*float((i+j)%3)/2.0
             colors.append(Color(shade,shade,shade))
             if j < rings.size()-1:
                 var a := j*segments+i
@@ -208,15 +235,25 @@ func pose(delta: float, state: String, remaining: float, speed: float) -> void:
             for i in range(4):
                 targets[i] = .10*settle if i < 2 else -.08*settle
                 bends[i] = .10*settle
+    var warning := smoothstep(0,1,clampf(phase_age/.45,0,1)) if state in ["warn","windup","telegraph"] else 0.0
+    jaw.rotation.x = lerpf(jaw.rotation.x,.20*warning,blend)
+    for ear in ears:
+        ear.rotation.x = lerpf(ear.rotation.x,-.32*warning,blend)
     head.rotation = head.rotation.lerp(head_target,blend)
     tail.rotation = tail.rotation.lerp(tail_target,blend)
     for i in range(4):
         legs[i].rotation.x = lerpf(legs[i].rotation.x, targets[i], blend)
         legs[i].rotation.z = lerpf(legs[i].rotation.z, -.18*sin(clampf(1.0-remaining/.7,0,1)*PI) if species == "bear" and state == "lunge" and i == 0 else 0.0, blend)
         knees[i].rotation.x = lerpf(knees[i].rotation.x,bends[i],blend)
-        # Lift each hip only enough to keep its rotating paw's corners off ground.
-        # Uses four lightweight box corners via native AABB, not physics or IK.
+        # Wrist counter-rotation keeps the sole level; swing clears the floor.
+        # This is local planar contact, not terrain IK or a world foot lock.
+        var paw := paws[i]
+        var walking := state in ["retreat","walk","approach","chase","idle"]
+        var swing := maxf(0.0,-sin(stride+(PI if i in [1,2] else 0.0))) * moving if walking else 0.0
+        paw.rotation.x = -(legs[i].rotation.x+knees[i].rotation.x) if walking else 0.0
         legs[i].position.y = .65
-        var paw := knees[i].get_node("Paw") as MeshInstance3D
         var box: AABB = legs[i].transform * knees[i].transform * paw.transform * paw.get_aabb()
-        legs[i].position.y += maxf(0.0,-box.position.y)
+        if walking:
+            legs[i].position.y += -box.position.y + .095*swing
+        else:
+            legs[i].position.y += maxf(0.0,-box.position.y)

@@ -1,0 +1,51 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS locked before flock completion
+PASS malformed or skipped checkpoint rejected
+PASS malformed or skipped checkpoint rejected
+PASS malformed or skipped checkpoint rejected
+PASS malformed or skipped checkpoint rejected
+PASS save cannot bypass flock
+PASS explicit next chapter CTA
+PASS CTA enters paused cave instructions
+PASS offset camp transition
+PASS remote lamb cannot skip animals
+PASS clue unlocks corresponding animal
+PASS pursuit leads to readable warning before attack
+PASS pause freezes encounter timer
+PASS warning never damages player
+PASS sideways dodge avoids damage
+PASS first hit knocks back; final hit wins
+PASS pursuit leads to readable warning before attack
+PASS pause freezes encounter timer
+PASS warning never damages player
+PASS sideways dodge avoids damage
+PASS first hit knocks back; final hit wins
+PASS attacker defeated and checkpoint advances
+PASS clue unlocks corresponding animal
+PASS pursuit leads to readable warning before attack
+PASS pause freezes encounter timer
+PASS warning never damages player
+PASS sideways dodge avoids damage
+PASS first hit knocks back; final hit wins
+PASS pursuit leads to readable warning before attack
+PASS pause freezes encounter timer
+PASS warning never damages player
+PASS sideways dodge avoids damage
+PASS first hit knocks back; final hit wins
+PASS attacker defeated and checkpoint advances
+PASS last clue required before discovery
+PASS marker points to required wool clue before lamb
+PASS physical lamb discovery
+PASS lamb call starts escort
+PASS invulnerability prevents repeated contact damage
+PASS paused damage is rejected
+PASS safe camp heals
+PASS zero health retries at safe checkpoint
+PASS home gate requires lamb at camp
+PASS main save readback includes cave checkpoint
+PASS completed checkpoint reload
+PASS Russian completion and instructions
+PASS save failure remains visible on paused cave completion
+PASS new rescue clears cave progress
+CAVE_FAILURES=0

@@ -57,13 +57,13 @@ static func build(parent: Node3D, entrances: Array) -> Node3D:
     for e: Vector3 in entrances:
         # Plant communities at the foot of stone: the central +/-2m remains bare.
         for side in [-1.0,1.0]:
-            for n in range(5):
-                var p := e+Vector3(side*(2.8+float(n)*.49),.025,2.35+sin(float(n)*1.7)*.55)
+            for n in range(3):
+                var p := e+Vector3(side*(3.1+float(n)*.65),.025,2.35+sin(float(n)*1.7)*.55)
                 _fern(fern,p,.68+float(n%3)*.17,float(n)+side)
-                for j in range(3):
+                for j in range(2):
                     _grass(grass,p+Vector3(side*float(j)*.21,0,.33+float(j)*.14),.24+float(j)*.09,float(n+j))
             # Rock ledge vegetation stays above the entry clearance.
-            for n in range(4):
+            for n in range(2):
                 var p := e+Vector3(side*(2.15+float(n)*.20),4.85+float(n)*.06,-.92)
                 _fern(fern,p,.32+float(n%2)*.12,float(n))
         # Moss is a thin crevice-bound ribbon on the apron, not a green blob.
@@ -75,7 +75,7 @@ static func build(parent: Node3D, entrances: Array) -> Node3D:
             Shell._triangle(moss,b,b+Vector3(0,.09,-.018),a+Vector3(0,.15,-.025),Vector3.BACK)
         # Sparse sheltered dry grasses end at the threshold: deep caves stay dark.
         for side in [-1.0,1.0]:
-            for n in range(4):
+            for n in range(2):
                 _grass(ochre,e+Vector3(side*(3.9+float(n%2)*.12),.025,-2.3-float(n)*2.2),.18+float(n%2)*.07,float(n))
     # Camp's green healing marker remains authoritative. A broken planted arc
     # grounds its edge while retaining all approach paths and the fire-pit gap.

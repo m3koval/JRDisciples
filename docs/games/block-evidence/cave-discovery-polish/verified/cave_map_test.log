@@ -1,0 +1,28 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS cave map button is discoverable
+PASS map pauses the real host
+PASS paused map hides floating teaching text
+PASS map title describes current chapter
+PASS normal cave Map opens cave geography, not clearing
+PASS hidden lamb position discarded
+PASS cave landmarks inside map (320.0, 330.0) (100.0, 0.0, 10.0)
+PASS cave landmarks inside map (320.0, 330.0) (88.0, 0.0, 0.0)
+PASS cave landmarks inside map (320.0, 330.0) (100.0, 0.0, 0.0)
+PASS cave landmarks inside map (320.0, 330.0) (112.0, 0.0, 0.0)
+PASS cave landmarks inside map (320.0, 330.0) (88.0, 0.0, -12.0)
+PASS distinct cave positions do not clamp to same edge
+PASS cave landmarks inside map (660.0, 390.0) (100.0, 0.0, 10.0)
+PASS cave landmarks inside map (660.0, 390.0) (88.0, 0.0, 0.0)
+PASS cave landmarks inside map (660.0, 390.0) (100.0, 0.0, 0.0)
+PASS cave landmarks inside map (660.0, 390.0) (112.0, 0.0, 0.0)
+PASS cave landmarks inside map (660.0, 390.0) (88.0, 0.0, -12.0)
+PASS distinct cave positions do not clamp to same edge
+PASS closing cave map resumes
+PASS map does not mutate progress
+PASS only discovered lamb is shown
+PASS discovery is not reunion
+PASS clearing resets cave state and hides secret
+PASS localized map label en
+PASS localized map label ru
+CAVE_MAP_FAILURES=0

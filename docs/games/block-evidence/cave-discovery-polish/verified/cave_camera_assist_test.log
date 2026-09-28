@@ -1,0 +1,14 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS gentle three-quarter encounter framing
+PASS portrait encounter expands field of view
+PASS spring shape mask length and camera collision position untouched
+PASS touch look owns yaw
+PASS manual release retains three-second grace
+PASS mouse look owns yaw
+PASS keyboard movement heading never steered
+PASS touch movement heading never steered
+PASS looking away is not force-recentered
+PASS landscape unchanged and FOV restored
+PASS outside caves untouched
+CAVE_CAMERA_ASSIST_FAILURES=0

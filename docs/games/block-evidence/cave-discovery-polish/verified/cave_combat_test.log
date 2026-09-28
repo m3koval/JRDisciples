@@ -1,0 +1,24 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS warning is harmless 0
+PASS grounded attack hits 0
+PASS airborne feet clear attack 0
+PASS warning is harmless 1
+PASS grounded attack hits 1
+PASS airborne feet clear attack 1
+PASS staff interrupts warning with knockback
+PASS staff knockback moves animal away
+PASS spam cannot bypass cooldown
+PASS out of reach misses and consumes cooldown
+PASS pause freezes attack, staff, movement
+PASS native grounded control takes hit 0
+PASS native run + Space dodges attack 0
+PASS native grounded control takes hit 1
+PASS native run + Space dodges attack 1
+PASS wall blocks staff
+PASS wall blocks attack damage
+PASS pursuit cannot cross wall
+PASS arena clamps movement
+PASS camp leash cancels attacks
+PASS checkpoint resets transient defense
+CAVE_COMBAT_FAILURES=0

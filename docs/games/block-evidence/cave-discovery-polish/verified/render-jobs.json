@@ -1,0 +1,129 @@
+[
+  {
+    "test": "cave_recovery_capture",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "files": [
+      "cave-1-entrance-1280.png",
+      "cave-1-entrance-720.png",
+      "cave-2-threshold-1280.png",
+      "cave-2-threshold-720.png",
+      "cave-3-inside-1280.png",
+      "cave-3-inside-720.png"
+    ],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/cave-discovery-polish/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_recovery_capture.gd"
+    ]
+  },
+  {
+    "test": "cave_map_capture",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "files": [
+      "map-en-1280.png",
+      "map-en-720.png",
+      "map-ru-1280.png",
+      "map-ru-720.png"
+    ],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/cave-discovery-polish/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_map_capture.gd"
+    ]
+  },
+  {
+    "test": "cave_discovery_capture",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "files": [
+      "state-0-1280.png",
+      "state-0-720.png",
+      "state-1-1280.png",
+      "state-1-720.png",
+      "state-2-1280.png",
+      "state-2-720.png"
+    ],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/cave-discovery-polish/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_discovery_capture.gd"
+    ]
+  },
+  {
+    "test": "cave_animal_sculpt_review",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "files": [
+      "lion.png",
+      "bear.png"
+    ],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/cave-discovery-polish/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_animal_sculpt_review.gd"
+    ]
+  },
+  {
+    "test": "cave_input_playthrough",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "files": [
+      "jd-cave-play-animal-0-safe.png",
+      "jd-cave-play-animal-1-safe.png",
+      "jd-cave-play-lamb-found.png",
+      "jd-cave-play-complete.png"
+    ],
+    "command": [
+      "xvfb-run",
+      "-a",
+      "/home/helper/tools/godot-4.7.2/godot",
+      "--path",
+      "/mnt/hermes-storage/jd-handoffs/cave-discovery-polish/game/trail-of-truth-block-adventure",
+      "--rendering-method",
+      "gl_compatibility",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://tests/cave_input_playthrough.gd"
+    ]
+  }
+]

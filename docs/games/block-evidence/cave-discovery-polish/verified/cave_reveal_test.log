@@ -1,0 +1,11 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS starts hidden without changing actor parent
+PASS surface material copied
+PASS first frame gradual reveal
+PASS shared source material untouched
+PASS actual copied material fades
+PASS paused clock does not advance reveal
+PASS fully visible restores opaque original
+PASS leaving hides contents immediately
+CAVE_REVEAL_FAILURES=0

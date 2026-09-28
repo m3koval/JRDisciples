@@ -13,6 +13,23 @@ var _bridge_stage: int = 0
 var _lamb_discovered: bool = false
 var _lamb_position := Vector3.ZERO
 var _rescued: bool = false
+var _cave_mode := false
+var _bounds := WORLD_BOUNDS
+var _cave_entrances: Array = []
+var _cave_steps: Array = []
+var _cave_camp := Vector3.ZERO
+
+func set_cave_state(player_position: Vector3, entrances: Array, camp: Vector3, steps: Array, lamb_position: Vector3) -> void:
+	_cave_mode = true
+	_bounds = Rect2(80,-16,40,32)
+	_player_position = player_position
+	_cave_entrances = entrances.duplicate()
+	_cave_camp = camp
+	_cave_steps = steps.duplicate()
+	_lamb_discovered = steps.has("lamb_found")
+	_lamb_position = lamb_position if _lamb_discovered else Vector3.ZERO
+	_rescued = steps.has("home")
+	queue_redraw()
 
 func _init() -> void:
 	custom_minimum_size = Vector2(0, 330)
@@ -29,6 +46,8 @@ func set_language(language: String) -> void:
 	queue_redraw()
 
 func set_state(player_position: Vector3, bridge_stage: int, lamb_discovered: bool = false, lamb_position: Vector3 = Vector3.ZERO, rescued: bool = false) -> void:
+	_cave_mode = false
+	_bounds = WORLD_BOUNDS
 	_player_position = player_position
 	_bridge_stage = clampi(bridge_stage, 0, 2)
 	_lamb_discovered = lamb_discovered
@@ -42,13 +61,13 @@ func _t(en: String, ru: String) -> String:
 func map_rect() -> Rect2:
 	# Uniform scale prevents the river width / crossing geometry being distorted.
 	var available := Vector2(maxf(1, size.x - 32), maxf(1, size.y - 96))
-	var scale_factor: float = minf(available.x / WORLD_BOUNDS.size.x, available.y / WORLD_BOUNDS.size.y)
-	var extent: Vector2 = WORLD_BOUNDS.size * scale_factor
+	var scale_factor: float = minf(available.x / _bounds.size.x, available.y / _bounds.size.y)
+	var extent: Vector2 = _bounds.size * scale_factor
 	return Rect2(Vector2((size.x - extent.x) * 0.5, 42 + (available.y - extent.y) * 0.5), extent)
 
 func world_to_map(world_position: Vector3) -> Vector2:
 	var rect: Rect2 = map_rect()
-	return rect.position + (Vector2(world_position.x, world_position.z) - WORLD_BOUNDS.position) / WORLD_BOUNDS.size * rect.size
+	return rect.position + (Vector2(world_position.x, world_position.z) - _bounds.position) / _bounds.size * rect.size
 
 func _world_rect(rect: Rect2, color: Color, filled: bool = true) -> void:
 	var start: Vector2 = world_to_map(Vector3(rect.position.x, 0, rect.position.y))
@@ -64,6 +83,41 @@ func _tag(at: Vector2, text: String) -> void:
 	draw_rect(Rect2(origin + Vector2(-4, -19), Vector2(extent.x + 8, 26)), Color(0.06, 0.16, 0.13, 0.9))
 	_text(origin, text)
 
+func _draw_caves() -> void:
+	_text(Vector2(16,27), _t("Cave search", "Поиск в пещерах"),20)
+	_text(Vector2(size.x-38,27),_t("N","С"),18)
+	var rect := map_rect()
+	draw_rect(rect,Color("a59371"))
+	# Accurate chamber footprints; landmarks are visible geography, not secret contents.
+	for i in range(_cave_entrances.size()):
+		var e: Vector3 = _cave_entrances[i]
+		_world_rect(Rect2(e.x-5,-14,10,12),Color("685e4e"))
+		_world_rect(Rect2(e.x-1.1,-2,2.2,3),Color("d8bf91"))
+		var center := world_to_map(e+Vector3(0,0,-8))
+		var cleared: bool = _cave_steps.has(["lion_safe","bear_safe","lamb_found"][i])
+		if cleared:
+			draw_circle(center,10,Color("305649"))
+			draw_polyline(PackedVector2Array([center+Vector2(-5,0),center+Vector2(-1,4),center+Vector2(6,-5)]),Color("f4e7bd"),2.5,true)
+		else:
+			draw_arc(center,10,PI,TAU,20,Color("e3c797"),3,true)
+			draw_line(center+Vector2(-10,0),center+Vector2(-10,7),Color("e3c797"),3)
+			draw_line(center+Vector2(10,0),center+Vector2(10,7),Color("e3c797"),3)
+		_tag(world_to_map(e+Vector3(0,0,3.2)),str(i+1))
+	var camp := world_to_map(_cave_camp)
+	draw_colored_polygon(PackedVector2Array([camp+Vector2(-9,6),camp+Vector2(0,-9),camp+Vector2(9,6)]),Color("fff0c6"))
+	_tag(camp+Vector2(0,24),_t("Rest camp","Лагерь"))
+	if _lamb_discovered:
+		var lamb := world_to_map(_lamb_position)
+		draw_circle(lamb,6,Color("fff7e1"))
+		draw_arc(lamb,7,0,TAU,24,Color("514433"),2,true)
+		_tag(lamb+Vector2(0,-15),_t("Home!","Дома!") if _rescued else _t("Lamb","Ягнёнок"))
+	var player := world_to_map(_player_position).clamp(rect.position+Vector2.ONE*8,rect.end-Vector2.ONE*8)
+	draw_circle(player,8,Color("153e50"))
+	draw_circle(player,5,Color("7cecff"))
+	draw_arc(player,8,0,TAU,24,Color("e7ffff"),2,true)
+	draw_circle(Vector2(21,size.y-27),5,Color("7cecff"))
+	_text(Vector2(34,size.y-22),_t("You · explore any cave","Ты · выбери пещеру"),17)
+
 func _draw() -> void:
 	var panel := StyleBoxFlat.new()
 	panel.bg_color = Color("183c33")
@@ -71,6 +125,9 @@ func _draw() -> void:
 	panel.set_border_width_all(2)
 	panel.set_corner_radius_all(14)
 	draw_style_box(panel, Rect2(Vector2.ZERO, size))
+	if _cave_mode:
+		_draw_caves()
+		return
 	_text(Vector2(16, 27), _t("Clearing map", "Карта поляны"), 20)
 	_text(Vector2(size.x - 38, 27), _t("N", "С"), 18)
 	var rect: Rect2 = map_rect()
