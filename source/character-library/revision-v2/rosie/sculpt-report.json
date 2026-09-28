@@ -1,0 +1,26 @@
+[
+  {
+    "asset": "rig",
+    "vertices": 62554,
+    "triangles": 96634,
+    "moved_vertices": 10043,
+    "max_displacement_m": 0.019847959280014038,
+    "unchanged_nonhair": true
+  },
+  {
+    "asset": "walk",
+    "vertices": 62554,
+    "triangles": 96634,
+    "moved_vertices": 10043,
+    "max_displacement_m": 0.019847959280014038,
+    "unchanged_nonhair": true
+  },
+  {
+    "asset": "run",
+    "vertices": 62554,
+    "triangles": 96634,
+    "moved_vertices": 10043,
+    "max_displacement_m": 0.019847959280014038,
+    "unchanged_nonhair": true
+  }
+]

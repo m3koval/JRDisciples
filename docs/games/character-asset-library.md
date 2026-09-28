@@ -2,7 +2,15 @@
 
 Canonical appearance and EN/RU names remain defined in [the character bible](../junior-disciples-character-library.md).
 
-## Registered generated batch
+## Current revision: seven-character review candidates
+
+[Revision v2 report](../../source/character-library/revision-v2/README.md) · [Manifest](../../source/character-library/revision-v2/manifest.json) · [Seven-character lineup](../../source/character-library/revision-v2/seven-character-scale-lineup.png)
+
+Joseph now has a reference, rig and walk/run clips; his earlier blocker below is historical. Rosie has a non-destructive wavy-hair mesh correction. All seven have optimized 24-joint rig/walk/run candidates at approximately 24,000 triangles each, with fresh-import and sampled deformation checks. The 21 optimized GLBs total 49.91 MB. Originals are retained.
+
+These are still **review candidates, not live-game replacements**. Device performance, full-cycle garment/foot contact and task-specific hand/prop contact remain release gates. Proposed relative heights are demonstrated in the lineup, not baked into gameplay.
+
+## Historical generated batch
 
 [Manifest](../../source/character-library/generated-20260924/manifest.json) · [Preview](../../source/character-library/generated-20260924/six-models-preview.jpg) · [Movement acceptance](../../source/character-library/generated-20260924/MOVEMENT_ACCEPTANCE.md)
 
