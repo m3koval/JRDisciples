@@ -1,0 +1,1092 @@
+{
+  "checks": [
+    {
+      "name": "phone-en/http",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en-cover/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en-cover/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en-1-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en-1-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en/1/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en/1/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en-2-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en-2-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en/2/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en/2/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en-3-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en-3-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en/3/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en/3/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en-4-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en-4-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en/4/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en/4/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en-complete/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en-complete/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en/saved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en/resumes-completion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-en/no-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "phone-ru/http",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru-cover/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru-cover/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru-1-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru-1-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru/1/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru/1/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru-2-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru-2-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru/2/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru/2/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru-3-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru-3-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru/3/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru/3/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru-4-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru-4-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru/4/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru/4/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru-complete/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru-complete/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru/saved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru/resumes-completion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "phone-ru/no-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "ipad-portrait-en/http",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en-cover/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en-cover/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en-1-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en-1-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en/1/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en/1/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en-2-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en-2-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en/2/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en/2/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en-3-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en-3-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en/3/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en/3/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en-4-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en-4-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en/4/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en/4/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en-complete/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en-complete/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en/saved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en/resumes-completion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-en/no-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "ipad-portrait-ru/http",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru-cover/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru-cover/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru-1-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru-1-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru/1/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru/1/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru-2-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru-2-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru/2/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru/2/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru-3-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru-3-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru/3/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru/3/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru-4-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru-4-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru/4/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru/4/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru-complete/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru-complete/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru/saved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru/resumes-completion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-portrait-ru/no-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "ipad-landscape-en/http",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en-cover/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en-cover/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en-1-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en-1-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en/1/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en/1/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en-2-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en-2-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en/2/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en/2/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en-3-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en-3-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en/3/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en/3/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en-4-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en-4-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en/4/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en/4/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en-complete/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en-complete/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en/saved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en/resumes-completion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-en/no-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "ipad-landscape-ru/http",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru-cover/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru-cover/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru-1-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru-1-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru/1/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru/1/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru-2-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru-2-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru/2/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru/2/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru-3-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru-3-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru/3/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru/3/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru-4-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru-4-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru/4/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru/4/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru-complete/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru-complete/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru/saved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru/resumes-completion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ipad-landscape-ru/no-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop-en/http",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en-cover/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en-cover/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en-1-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en-1-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en/1/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en/1/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en-2-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en-2-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en/2/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en/2/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en-3-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en-3-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en/3/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en/3/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en-4-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en-4-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en/4/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en/4/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en-complete/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en-complete/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en/saved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en/resumes-completion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-en/no-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "desktop-ru/http",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru-cover/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru-cover/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru-1-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru-1-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru/1/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru/1/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru-2-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru-2-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru/2/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru/2/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru-3-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru-3-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru/3/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru/3/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru-4-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru-4-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru/4/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru/4/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru-complete/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru-complete/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru/saved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru/resumes-completion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "desktop-ru/no-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "storage-disabled-en/http",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en-cover/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en-cover/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en-1-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en-1-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en/1/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en/1/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en-2-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en-2-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en/2/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en/2/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en-3-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en-3-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en/3/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en/3/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en-4-activity/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en-4-activity/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en/4/retry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en/4/solved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en-complete/width",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en-complete/images",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "storage-disabled-en/no-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "malformed-resume/{bad",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "malformed-resume/{\"scene\": 3, \"phase\": \"do\", \"matched\": [0, 1, 2]}",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "malformed-resume/{\"scene\": 2, \"phase\": \"learn\", \"order\": [2, 1, 0]}",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "errors": [],
+  "passed": 217,
+  "total": 217
+}

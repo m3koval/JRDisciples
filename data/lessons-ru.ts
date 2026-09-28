@@ -10,6 +10,15 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   {
+    href: "/lessons/living-word",
+    image: "/images/jr/topic-case-for-christ-bible.png",
+    title: "Узнавай Божье Слово. Пусть оно меняет твою жизнь.",
+    desc: "Открой четыре связанные истины: доверяй живому Иисусу, принимай исправление из Писания, учись терпению и доброте и проверяй услышанное.",
+    color: "#12665d",
+    sections: 4,
+    emoji: "📖",
+  },
+  {
     href: "/lessons/second-mile",
     image: "/images/jr/lessons/second-mile/00-cover.webp",
     title: "Второе поприще",
