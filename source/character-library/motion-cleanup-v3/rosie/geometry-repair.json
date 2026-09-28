@@ -1,0 +1,146 @@
+{
+  "rig": {
+    "removed_covered_upper_thigh_faces": 473,
+    "source": "/home/helper/work/JRDisciples/source/character-library/revision-v2/rosie/rig.glb",
+    "metrics": {
+      "bytes": 1896576,
+      "sha256": "0114b9317ef4db62e4b89b2fea9950b1d3b7c2ebe225883b035662f61aec4866",
+      "triangles": 23527,
+      "joints": [
+        24
+      ],
+      "joint_names": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ]
+      ],
+      "animations": [
+        {
+          "name": "Armature|clip0|baselayer",
+          "channels": 72,
+          "duration": 0.0
+        }
+      ],
+      "skin_attributes": true
+    }
+  },
+  "walk": {
+    "removed_covered_upper_thigh_faces": 473,
+    "source": "/home/helper/jd_motion_cleanup/rosie-animation-only/walk.glb",
+    "metrics": {
+      "bytes": 1927676,
+      "sha256": "f3cdfab6680fef2029fa26963168d2df34bf83501891bd297ea48773df9bd52c",
+      "triangles": 23527,
+      "joints": [
+        24
+      ],
+      "joint_names": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ]
+      ],
+      "animations": [
+        {
+          "name": "Armature|walking_man|baselayer.001",
+          "channels": 72,
+          "duration": 1.0333333333333332
+        }
+      ],
+      "skin_attributes": true
+    }
+  },
+  "run": {
+    "removed_covered_upper_thigh_faces": 473,
+    "source": "/home/helper/jd_motion_cleanup/rosie-animation-only/run.glb",
+    "metrics": {
+      "bytes": 1916108,
+      "sha256": "463bf3d6c49e4bafbc34c62305369b5e2f5ed8a2a323949d1f8d78804ac2cdc9",
+      "triangles": 23527,
+      "joints": [
+        24
+      ],
+      "joint_names": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ]
+      ],
+      "animations": [
+        {
+          "name": "Armature|running|baselayer.001",
+          "channels": 72,
+          "duration": 0.6333333333333333
+        }
+      ],
+      "skin_attributes": true
+    }
+  }
+}

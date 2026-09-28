@@ -1,0 +1,20 @@
+{
+  "joseph": {
+    "run": {
+      "trials": [
+        {
+          "angle": 12,
+          "forearm": -12,
+          "pairs": 0,
+          "collision_frames": 0
+        }
+      ],
+      "selected_abduction_degrees": 12,
+      "forearm_degrees": -12,
+      "max_ground_correction": 0.04660199210047722,
+      "status": "candidate_pending_independent_reimport_contact_scan",
+      "source": "/home/helper/jd_motion_cleanup/joseph-input/joseph/run.glb",
+      "output": "/home/helper/jd_motion_cleanup/joseph-flex/joseph/run.glb"
+    }
+  }
+}

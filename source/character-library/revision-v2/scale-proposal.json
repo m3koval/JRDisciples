@@ -1,0 +1,47 @@
+{
+  "status": "art-direction proposal; not runtime integrated",
+  "characters": [
+    {
+      "name": "michael",
+      "source_height": 1.3400003388284816,
+      "proposed_height_m": 1.4,
+      "scale": 1.0447758552240174
+    },
+    {
+      "name": "rosie",
+      "source_height": 1.2999994387585332,
+      "proposed_height_m": 1.32,
+      "scale": 1.0153850537509208
+    },
+    {
+      "name": "joseph",
+      "source_height": 1.2799994457302546,
+      "proposed_height_m": 1.34,
+      "scale": 1.0468754533213993
+    },
+    {
+      "name": "gracie",
+      "source_height": 1.1799999235657168,
+      "proposed_height_m": 1.17,
+      "scale": 0.9915254879546948
+    },
+    {
+      "name": "simeon",
+      "source_height": 1.7799993320109948,
+      "proposed_height_m": 1.72,
+      "scale": 0.9662924974566091
+    },
+    {
+      "name": "anna",
+      "source_height": 1.6800000963723534,
+      "proposed_height_m": 1.66,
+      "scale": 0.9880951814136559
+    },
+    {
+      "name": "tobias",
+      "source_height": 1.799999190028501,
+      "proposed_height_m": 1.78,
+      "scale": 0.9888893338734311
+    }
+  ]
+}

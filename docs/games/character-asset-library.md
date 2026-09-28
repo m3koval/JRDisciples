@@ -2,7 +2,23 @@
 
 Canonical appearance and EN/RU names remain defined in [the character bible](../junior-disciples-character-library.md).
 
-## Registered generated batch
+## Current motion cleanup: v3 review candidates
+
+[Motion cleanup report](../../source/character-library/motion-cleanup-v3/README.md) · [Manifest](../../source/character-library/motion-cleanup-v3/manifest.json)
+
+Updated walk/run candidates for all seven characters, plus matching revised Rosie/Joseph rigs. Final exports have complete-timeline 60 Hz hand/body surface screening and flat-ground sole checks. Joseph's pouch/wrist weight repair and Rosie's conservative geometry/animation cleanup are separate from the rejected intermediate attempts. No runtime substitution is enabled.
+
+**Visual holds remain:** Simeon/Anna running cloth, Tobias running shoulder/sleeve, Rosie hem/seam polish. Numerical contact PASS is not game-ready certification. See the report for excluded collision regions, controller/terrain/prop-contact and device gates. Verify with `python tools/trail_of_truth/check_character_motion.py`.
+
+## Previous revision: seven-character review candidates
+
+[Revision v2 report](../../source/character-library/revision-v2/README.md) · [Manifest](../../source/character-library/revision-v2/manifest.json) · [Seven-character lineup](../../source/character-library/revision-v2/seven-character-scale-lineup.png)
+
+Joseph now has a reference, rig and walk/run clips; his earlier blocker below is historical. Rosie has a non-destructive wavy-hair mesh correction. All seven have optimized 24-joint rig/walk/run candidates at approximately 24,000 triangles each, with fresh-import and sampled deformation checks. The 21 optimized GLBs total 49.91 MB. Originals are retained.
+
+These are still **review candidates, not live-game replacements**. Device performance, full-cycle garment/foot contact and task-specific hand/prop contact remain release gates. Proposed relative heights are demonstrated in the lineup, not baked into gameplay.
+
+## Historical generated batch
 
 [Manifest](../../source/character-library/generated-20260924/manifest.json) · [Preview](../../source/character-library/generated-20260924/six-models-preview.jpg) · [Movement acceptance](../../source/character-library/generated-20260924/MOVEMENT_ACCEPTANCE.md)
 

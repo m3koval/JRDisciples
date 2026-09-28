@@ -1,0 +1,808 @@
+{
+  "name": "simeon",
+  "status": "candidate_pending_visual_review",
+  "method": "Blender collapse 24k target, welded UV duplicate vertices, skin-derived head weighting, JPEG90 2048px",
+  "files": {
+    "rig": {
+      "before": {
+        "bytes": 20495868,
+        "sha256": "7aeae58636471ef4188be7c08c93b30f704f15cdb92157a82bda011f20f3d6f4",
+        "triangles": 99003,
+        "joints": [
+          24
+        ],
+        "joint_names": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront"
+          ]
+        ],
+        "animations": [
+          {
+            "name": "Armature|clip0|baselayer",
+            "channels": 72,
+            "duration": 0.0
+          }
+        ],
+        "skin_attributes": true
+      },
+      "after": {
+        "bytes": 1966988,
+        "sha256": "aab778bf54296dd3c04026bc966d99cf12381ea9a9a2539bd04145a246a7bd0e",
+        "triangles": 23999,
+        "joints": [
+          24
+        ],
+        "joint_names": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront"
+          ]
+        ],
+        "animations": [
+          {
+            "name": "Armature|clip0|baselayer",
+            "channels": 72,
+            "duration": 0.0
+          }
+        ],
+        "skin_attributes": true
+      },
+      "checks": {
+        "source_unchanged": true,
+        "triangle_budget": true,
+        "joints_preserved": true,
+        "animation_count_preserved": true,
+        "skinned": true,
+        "reimported": true,
+        "textures_within_2k": true
+      },
+      "qa": {
+        "original": {
+          "mesh_objects": 1,
+          "blender_triangles": 99003,
+          "bones": [
+            24
+          ],
+          "images": [
+            {
+              "name": "texture_0",
+              "width": 4096,
+              "height": 4096
+            }
+          ],
+          "actions": [
+            {
+              "name": "Armature|clip0|baselayer",
+              "frames": [
+                9.0,
+                9.0
+              ]
+            }
+          ],
+          "bounds": [
+            [
+              -0.49637022614479065,
+              -0.19828680157661438,
+              4.333232794806463e-08
+            ],
+            [
+              0.4963706135749817,
+              0.19828706979751587,
+              1.7799993753433228
+            ]
+          ],
+          "motion_samples": [
+            {
+              "frame": 9.0,
+              "min_z": 4.333232794806463e-08,
+              "max_z": 1.7799993753433228
+            },
+            {
+              "frame": 9.0,
+              "min_z": 4.333232794806463e-08,
+              "max_z": 1.7799993753433228
+            },
+            {
+              "frame": 9.0,
+              "min_z": 4.333232794806463e-08,
+              "max_z": 1.7799993753433228
+            },
+            {
+              "frame": 9.0,
+              "min_z": 4.333232794806463e-08,
+              "max_z": 1.7799993753433228
+            },
+            {
+              "frame": 9.0,
+              "min_z": 4.333232794806463e-08,
+              "max_z": 1.7799993753433228
+            },
+            {
+              "frame": 9.0,
+              "min_z": 4.333232794806463e-08,
+              "max_z": 1.7799993753433228
+            },
+            {
+              "frame": 9.0,
+              "min_z": 4.333232794806463e-08,
+              "max_z": 1.7799993753433228
+            },
+            {
+              "frame": 9.0,
+              "min_z": 4.333232794806463e-08,
+              "max_z": 1.7799993753433228
+            },
+            {
+              "frame": 9.0,
+              "min_z": 4.333232794806463e-08,
+              "max_z": 1.7799993753433228
+            }
+          ],
+          "ground_z": 4.333232794806463e-08
+        },
+        "optimized": {
+          "mesh_objects": 1,
+          "blender_triangles": 23999,
+          "bones": [
+            24
+          ],
+          "images": [
+            {
+              "name": "texture_0",
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "actions": [
+            {
+              "name": "Armature|clip0|baselayer",
+              "frames": [
+                9.0,
+                9.0
+              ]
+            }
+          ],
+          "bounds": [
+            [
+              -0.49585866928100586,
+              -0.19832918047904968,
+              5.4749496484873816e-05
+            ],
+            [
+              0.49612879753112793,
+              0.1983436495065689,
+              1.7799994945526123
+            ]
+          ],
+          "motion_samples": [
+            {
+              "frame": 9.0,
+              "min_z": 5.4749496484873816e-05,
+              "max_z": 1.7799994945526123
+            },
+            {
+              "frame": 9.0,
+              "min_z": 5.4749496484873816e-05,
+              "max_z": 1.7799994945526123
+            },
+            {
+              "frame": 9.0,
+              "min_z": 5.4749496484873816e-05,
+              "max_z": 1.7799994945526123
+            },
+            {
+              "frame": 9.0,
+              "min_z": 5.4749496484873816e-05,
+              "max_z": 1.7799994945526123
+            },
+            {
+              "frame": 9.0,
+              "min_z": 5.4749496484873816e-05,
+              "max_z": 1.7799994945526123
+            },
+            {
+              "frame": 9.0,
+              "min_z": 5.4749496484873816e-05,
+              "max_z": 1.7799994945526123
+            },
+            {
+              "frame": 9.0,
+              "min_z": 5.4749496484873816e-05,
+              "max_z": 1.7799994945526123
+            },
+            {
+              "frame": 9.0,
+              "min_z": 5.4749496484873816e-05,
+              "max_z": 1.7799994945526123
+            },
+            {
+              "frame": 9.0,
+              "min_z": 5.4749496484873816e-05,
+              "max_z": 1.7799994945526123
+            }
+          ],
+          "ground_z": 5.4749496484873816e-05
+        }
+      }
+    },
+    "walk": {
+      "before": {
+        "bytes": 20508636,
+        "sha256": "8ce9b88e2423e56667465ad892633a15b2fc21f8d815fa60fa1fb3f87e1ed207",
+        "triangles": 99003,
+        "joints": [
+          24
+        ],
+        "joint_names": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront"
+          ]
+        ],
+        "animations": [
+          {
+            "name": "Armature|walking_man|baselayer",
+            "channels": 72,
+            "duration": 1.0333333333333332
+          }
+        ],
+        "skin_attributes": true
+      },
+      "after": {
+        "bytes": 1997028,
+        "sha256": "9f3604237578944ca09cb8f2af5066e3892357b9654b1f68c77140fbc4d5ce9a",
+        "triangles": 23999,
+        "joints": [
+          24
+        ],
+        "joint_names": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront"
+          ]
+        ],
+        "animations": [
+          {
+            "name": "Armature|walking_man|baselayer",
+            "channels": 72,
+            "duration": 1.0333333333333332
+          }
+        ],
+        "skin_attributes": true
+      },
+      "checks": {
+        "source_unchanged": true,
+        "triangle_budget": true,
+        "joints_preserved": true,
+        "animation_count_preserved": true,
+        "skinned": true,
+        "reimported": true,
+        "textures_within_2k": true
+      },
+      "qa": {
+        "original": {
+          "mesh_objects": 1,
+          "blender_triangles": 99003,
+          "bones": [
+            24
+          ],
+          "images": [
+            {
+              "name": "texture_0",
+              "width": 4096,
+              "height": 4096
+            }
+          ],
+          "actions": [
+            {
+              "name": "Armature|walking_man|baselayer",
+              "frames": [
+                1.0,
+                32.0
+              ]
+            }
+          ],
+          "bounds": [
+            [
+              -0.40526941418647766,
+              -0.2929329574108124,
+              -0.0073839458636939526
+            ],
+            [
+              0.4183332324028015,
+              0.16784898936748505,
+              1.7558695077896118
+            ]
+          ],
+          "motion_samples": [
+            {
+              "frame": 1.0,
+              "min_z": -0.0073839458636939526,
+              "max_z": 1.7558695077896118
+            },
+            {
+              "frame": 4.875,
+              "min_z": 0.0009640249190852046,
+              "max_z": 1.7511402368545532
+            },
+            {
+              "frame": 8.75,
+              "min_z": -0.007223536726087332,
+              "max_z": 1.710911512374878
+            },
+            {
+              "frame": 12.625,
+              "min_z": -0.0025744091253727674,
+              "max_z": 1.701761245727539
+            },
+            {
+              "frame": 16.5,
+              "min_z": -0.0015992374392226338,
+              "max_z": 1.743664026260376
+            },
+            {
+              "frame": 20.375,
+              "min_z": -0.005655715707689524,
+              "max_z": 1.7489875555038452
+            },
+            {
+              "frame": 24.25,
+              "min_z": -0.01217115018516779,
+              "max_z": 1.7097740173339844
+            },
+            {
+              "frame": 28.125,
+              "min_z": 0.0007970330188982189,
+              "max_z": 1.7046386003494263
+            },
+            {
+              "frame": 32.0,
+              "min_z": -0.007383693475276232,
+              "max_z": 1.7558698654174805
+            }
+          ],
+          "ground_z": -0.0073839458636939526
+        },
+        "optimized": {
+          "mesh_objects": 1,
+          "blender_triangles": 23999,
+          "bones": [
+            24
+          ],
+          "images": [
+            {
+              "name": "texture_0",
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "actions": [
+            {
+              "name": "Armature|walking_man|baselayer",
+              "frames": [
+                1.0,
+                32.0
+              ]
+            }
+          ],
+          "bounds": [
+            [
+              -0.40579408407211304,
+              -0.2913554906845093,
+              -0.008068770170211792
+            ],
+            [
+              0.4187249541282654,
+              0.16818496584892273,
+              1.7558693885803223
+            ]
+          ],
+          "motion_samples": [
+            {
+              "frame": 1.0,
+              "min_z": -0.008068770170211792,
+              "max_z": 1.7558693885803223
+            },
+            {
+              "frame": 4.875,
+              "min_z": 0.0002776042965706438,
+              "max_z": 1.7511396408081055
+            },
+            {
+              "frame": 8.75,
+              "min_z": -0.007970106787979603,
+              "max_z": 1.7109118700027466
+            },
+            {
+              "frame": 12.625,
+              "min_z": -0.002335160970687866,
+              "max_z": 1.7017616033554077
+            },
+            {
+              "frame": 16.5,
+              "min_z": -0.001521695521660149,
+              "max_z": 1.743664264678955
+            },
+            {
+              "frame": 20.375,
+              "min_z": -0.005545840598642826,
+              "max_z": 1.7489875555038452
+            },
+            {
+              "frame": 24.25,
+              "min_z": -0.012004326097667217,
+              "max_z": 1.7097742557525635
+            },
+            {
+              "frame": 28.125,
+              "min_z": 0.0003090889658778906,
+              "max_z": 1.7046380043029785
+            },
+            {
+              "frame": 32.0,
+              "min_z": -0.008068669587373734,
+              "max_z": 1.7558695077896118
+            }
+          ],
+          "ground_z": -0.008068770170211792
+        }
+      }
+    },
+    "run": {
+      "before": {
+        "bytes": 20504032,
+        "sha256": "165e547daf49232a1d55a41c3111b30e28bad4cbb8ab0b9ac3e3fa053c3406a1",
+        "triangles": 99003,
+        "joints": [
+          24
+        ],
+        "joint_names": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront"
+          ]
+        ],
+        "animations": [
+          {
+            "name": "Armature|running|baselayer",
+            "channels": 72,
+            "duration": 0.6333333333333333
+          }
+        ],
+        "skin_attributes": true
+      },
+      "after": {
+        "bytes": 1985464,
+        "sha256": "1c16bc21a90ca0f0a41233408b1479551f9352e95a3ba8c755e3820c69ab6da1",
+        "triangles": 23999,
+        "joints": [
+          24
+        ],
+        "joint_names": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront"
+          ]
+        ],
+        "animations": [
+          {
+            "name": "Armature|running|baselayer",
+            "channels": 72,
+            "duration": 0.6333333333333333
+          }
+        ],
+        "skin_attributes": true
+      },
+      "checks": {
+        "source_unchanged": true,
+        "triangle_budget": true,
+        "joints_preserved": true,
+        "animation_count_preserved": true,
+        "skinned": true,
+        "reimported": true,
+        "textures_within_2k": true
+      },
+      "qa": {
+        "original": {
+          "mesh_objects": 1,
+          "blender_triangles": 99003,
+          "bones": [
+            24
+          ],
+          "images": [
+            {
+              "name": "texture_0",
+              "width": 4096,
+              "height": 4096
+            }
+          ],
+          "actions": [
+            {
+              "name": "Armature|running|baselayer",
+              "frames": [
+                1.0,
+                20.0
+              ]
+            }
+          ],
+          "bounds": [
+            [
+              -0.3645382225513458,
+              -0.5290648937225342,
+              -0.009850522503256798
+            ],
+            [
+              0.3845166563987732,
+              0.4368651211261749,
+              1.653774380683899
+            ]
+          ],
+          "motion_samples": [
+            {
+              "frame": 1.0,
+              "min_z": -0.009850522503256798,
+              "max_z": 1.653774380683899
+            },
+            {
+              "frame": 3.375,
+              "min_z": 0.07304209470748901,
+              "max_z": 1.7057461738586426
+            },
+            {
+              "frame": 5.75,
+              "min_z": 0.007996178232133389,
+              "max_z": 1.6984127759933472
+            },
+            {
+              "frame": 8.125,
+              "min_z": -0.010022138245403767,
+              "max_z": 1.6446949243545532
+            },
+            {
+              "frame": 10.5,
+              "min_z": -0.019794557243585587,
+              "max_z": 1.6425150632858276
+            },
+            {
+              "frame": 12.875,
+              "min_z": 0.07433829456567764,
+              "max_z": 1.7001173496246338
+            },
+            {
+              "frame": 15.25,
+              "min_z": 0.007735822815448046,
+              "max_z": 1.7156119346618652
+            },
+            {
+              "frame": 17.625,
+              "min_z": -0.012418527156114578,
+              "max_z": 1.6625263690948486
+            },
+            {
+              "frame": 20.0,
+              "min_z": -0.009850899688899517,
+              "max_z": 1.6537748575210571
+            }
+          ],
+          "ground_z": -0.009850522503256798
+        },
+        "optimized": {
+          "mesh_objects": 1,
+          "blender_triangles": 23999,
+          "bones": [
+            24
+          ],
+          "images": [
+            {
+              "name": "texture_0",
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "actions": [
+            {
+              "name": "Armature|running|baselayer",
+              "frames": [
+                1.0,
+                20.0
+              ]
+            }
+          ],
+          "bounds": [
+            [
+              -0.3589034676551819,
+              -0.5293111801147461,
+              -0.010702771134674549
+            ],
+            [
+              0.3838053047657013,
+              0.4368402361869812,
+              1.6537739038467407
+            ]
+          ],
+          "motion_samples": [
+            {
+              "frame": 1.0,
+              "min_z": -0.010702771134674549,
+              "max_z": 1.6537739038467407
+            },
+            {
+              "frame": 3.375,
+              "min_z": 0.07247834652662277,
+              "max_z": 1.7057459354400635
+            },
+            {
+              "frame": 5.75,
+              "min_z": 0.008061656728386879,
+              "max_z": 1.6984127759933472
+            },
+            {
+              "frame": 8.125,
+              "min_z": -0.009897587820887566,
+              "max_z": 1.6446948051452637
+            },
+            {
+              "frame": 10.5,
+              "min_z": -0.02058340236544609,
+              "max_z": 1.6425154209136963
+            },
+            {
+              "frame": 12.875,
+              "min_z": 0.0737123116850853,
+              "max_z": 1.7001169919967651
+            },
+            {
+              "frame": 15.25,
+              "min_z": 0.008985881693661213,
+              "max_z": 1.7156115770339966
+            },
+            {
+              "frame": 17.625,
+              "min_z": -0.013215615414083004,
+              "max_z": 1.66252601146698
+            },
+            {
+              "frame": 20.0,
+              "min_z": -0.010703220963478088,
+              "max_z": 1.6537737846374512
+            }
+          ],
+          "ground_z": -0.010702771134674549
+        }
+      }
+    }
+  }
+}
