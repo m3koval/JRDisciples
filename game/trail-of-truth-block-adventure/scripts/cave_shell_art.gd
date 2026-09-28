@@ -165,11 +165,11 @@ static func _dress_floor(root: Node3D, stone: Material, variant: int) -> void:
     st.begin(Mesh.PRIMITIVE_TRIANGLES)
     # Broken sediment plates have a bevel and a planar fractured crown,
     # not the old evenly spaced pointed miniature pyramids.
-    for i in range(8):
+    for i in range(4):
         var side := -1.0 if i%2 == 0 else 1.0
-        var z := -3.3-float(i/2)*2.65
-        var base := Vector3(side*4.05,.012,z)
-        var radius := .16+float(i%3)*.026
+        var z := -4.4-float(i/2)*5.1
+        var base := Vector3(side*4.62,.012,z)
+        var radius := .26+float(i%3)*.018
         var top := base+Vector3(side*.025,.10+float(i%3)*.025,.035)
         for k in range(5):
             var angle := float(k)*TAU/5.0+.32
@@ -189,9 +189,9 @@ static func _dress_floor(root: Node3D, stone: Material, variant: int) -> void:
     st = SurfaceTool.new()
     st.begin(Mesh.PRIMITIVE_TRIANGLES)
     # Small old bedding patch, not a furnished dungeon or a gameplay marker.
-    for i in range(65):
+    for i in range(40):
         var angle := float(i)*2.39996
-        var radius := sqrt(float(i)/65.0)*1.05
+        var radius := sqrt(float(i)/40.0)*.82
         var p := Vector3(2.70+cos(angle)*radius,.026+float(i%3)*.007,-11.5+sin(angle)*radius*.65)
         var d := Vector3(cos(angle+variant)*.20,0,sin(angle+variant)*.20)
         _triangle(st,p-d,p+d,p+Vector3(.018,.013,.018),Vector3.UP)

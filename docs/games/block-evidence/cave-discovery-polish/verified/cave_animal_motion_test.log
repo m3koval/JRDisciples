@@ -1,0 +1,107 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS idle breathing 0
+PASS anticipation gathers weight 0
+PASS faces diagonal target 0
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS species-specific lunge lift 0
+PASS landing settles 0
+PASS presentation never moves gameplay actor 0
+PASS reset clears facing and residual pose 0
+PASS idle breathing 1
+PASS anticipation gathers weight 1
+PASS faces diagonal target 1
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS finite bounded pose
+PASS species-specific lunge lift 1
+PASS landing settles 1
+PASS presentation never moves gameplay actor 1
+PASS reset clears facing and residual pose 1
+PASS pause freezes animation and encounter
+PASS animation preserves contextual drive window
+PASS finishing strike starts victory poof
+PASS poof appears at defeated attacker, not retreat exit
+PASS defeat completes exactly one stage
+PASS checkpoint clears stale animation
+ANIMAL_MOTION_FAILURES=0

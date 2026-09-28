@@ -47,6 +47,7 @@ signal camp_banner_changed(color_id: String)
 var rewards = preload("res://scripts/adventure_rewards.gd").new()
 var campaign = preload("res://scripts/flock_campaign.gd").new()
 var caves = preload("res://scripts/cave_campaign.gd").new()
+var cave_camera_assist = preload("res://scripts/cave_camera_assist.gd").new()
 var water_chapter = preload("res://scripts/water_campaign.gd").new()
 var adventure_points: int:
     get: return rewards.total()
@@ -481,6 +482,7 @@ func _process(delta: float) -> void:
     if notice_timer > 0:
         notice_timer = maxf(0, notice_timer - delta)
     _update_interior()
+    cave_camera_assist.step(player, caves, paused, get_viewport().get_visible_rect().size, delta)
     for v in villagers:
         var node: Node3D = v.node
         var to_player: Vector3 = player.global_position - node.global_position
@@ -806,7 +808,10 @@ func _open_map() -> void:
     modal_kind = "map"
     player.set_enabled(false)
     trail_map.set_language(language)
-    trail_map.set_state(player.position, bridge_stage, lamb_found, lamb.position, completed)
+    if caves.active:
+        trail_map.set_cave_state(player.position, caves.ENTRANCES, caves.CAMP, caves.completed_steps, caves.lamb.position)
+    else:
+        trail_map.set_state(player.position, bridge_stage, lamb_found, lamb.position, completed)
     _refresh_ui()
 
 func _primary_action() -> void:
@@ -1179,6 +1184,7 @@ func _layout_ui(update_density: bool = true) -> void:
     # Fixed, not auto-sized: a wrapped Label's minimum height isn't reliably
     # known the same frame its width changes, so auto-sizing clipped text.
     var height := 220.0 if is_talk else minf(660, size.y - 84)
+    if modal_kind == "map": height = minf(500, size.y - 84)
     modal.size = Vector2(width, height)
     if is_talk:
         # A speech bubble near the top of the screen, tail pointing down at
@@ -1234,7 +1240,7 @@ func _refresh_ui() -> void:
     language_button.text = "EN" if language == "ru" else "RU"
     pause_button.text = t("Pause", "Пауза")
     map_button.text = t("Map", "Карта")
-    map_button.visible = not paused and not caves.active and not water_chapter.active
+    map_button.visible = not paused and not water_chapter.active
     rewards_button.visible = not paused
     rewards_button.text = t("Book · %d", "Книга · %d") % adventure_points
     banner_choices.visible = modal_kind in ["complete", "rewards"] and rewards.earned.has("rescue")
@@ -1281,7 +1287,8 @@ func _refresh_ui() -> void:
             primary.text = t("Continue", "Продолжить")
     elif modal_kind == "map":
         modal_title.text = t("Find the way home", "Найди дорогу домой")
-        if campaign.stage > 0: modal_title.text = campaign.objective()
+        if caves.active: modal_title.text = t("Follow the clues", "Иди по следам")
+        elif campaign.stage > 0: modal_title.text = campaign.objective()
         trail_map.set_language(language)
         primary.text = t("Continue", "Продолжить")
     elif modal_kind == "complete":
@@ -1324,6 +1331,9 @@ func _refresh_ui() -> void:
         counter.visible = true
         notice.text = caves.notice_text()
         caves.sync_labels()
+        if paused:
+            caves.discovery.cue.hide()
+            caves.discovery.lamb_cue.hide()
         if modal_kind in ["intro", "cave_intro", "pause"]:
             modal_title.text = t("The three caves", "Три пещеры")
             modal_body.text = caves.intro_text() + caves.credits()

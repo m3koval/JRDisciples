@@ -1,0 +1,179 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS JSON checkpoint roundtrip
+PASS wool clue persists before discovery
+PASS early or late physical discovery
+PASS no unsafe escort bypass
+PASS early lamb visible inside its chamber
+PASS early lamb concealed outside chamber
+PASS JSON checkpoint roundtrip
+PASS early lamb stays concealed after reload at camp
+PASS localized return-after-combat guidance
+PASS localized return-after-combat guidance
+PASS JSON checkpoint roundtrip
+PASS chosen encounter starts
+PASS two valid strikes win chosen encounter
+PASS JSON checkpoint roundtrip
+PASS chosen encounter starts
+PASS two valid strikes win chosen encounter
+PASS JSON checkpoint roundtrip
+PASS all choices converge on escort
+PASS discovered lamb callable after either combat order
+PASS home requires physical companion
+PASS one home completion
+PASS no duplicate completion
+PASS earned completion is idempotent even while unpaused
+PASS JSON checkpoint roundtrip
+PASS JSON checkpoint roundtrip
+PASS wool clue persists before discovery
+PASS early or late physical discovery
+PASS no unsafe escort bypass
+PASS early lamb visible inside its chamber
+PASS early lamb concealed outside chamber
+PASS JSON checkpoint roundtrip
+PASS early lamb stays concealed after reload at camp
+PASS localized return-after-combat guidance
+PASS localized return-after-combat guidance
+PASS JSON checkpoint roundtrip
+PASS chosen encounter starts
+PASS two valid strikes win chosen encounter
+PASS JSON checkpoint roundtrip
+PASS chosen encounter starts
+PASS two valid strikes win chosen encounter
+PASS JSON checkpoint roundtrip
+PASS all choices converge on escort
+PASS discovered lamb callable after either combat order
+PASS home requires physical companion
+PASS one home completion
+PASS no duplicate completion
+PASS earned completion is idempotent even while unpaused
+PASS JSON checkpoint roundtrip
+PASS chosen encounter starts
+PASS two valid strikes win chosen encounter
+PASS JSON checkpoint roundtrip
+PASS chosen encounter starts
+PASS two valid strikes win chosen encounter
+PASS JSON checkpoint roundtrip
+PASS JSON checkpoint roundtrip
+PASS wool clue persists before discovery
+PASS early or late physical discovery
+PASS JSON checkpoint roundtrip
+PASS all choices converge on escort
+PASS discovered lamb callable after either combat order
+PASS home requires physical companion
+PASS one home completion
+PASS no duplicate completion
+PASS earned completion is idempotent even while unpaused
+PASS JSON checkpoint roundtrip
+PASS chosen encounter starts
+PASS two valid strikes win chosen encounter
+PASS JSON checkpoint roundtrip
+PASS JSON checkpoint roundtrip
+PASS wool clue persists before discovery
+PASS early or late physical discovery
+PASS no unsafe escort bypass
+PASS early lamb visible inside its chamber
+PASS early lamb concealed outside chamber
+PASS JSON checkpoint roundtrip
+PASS early lamb stays concealed after reload at camp
+PASS localized return-after-combat guidance
+PASS localized return-after-combat guidance
+PASS JSON checkpoint roundtrip
+PASS chosen encounter starts
+PASS two valid strikes win chosen encounter
+PASS JSON checkpoint roundtrip
+PASS all choices converge on escort
+PASS discovered lamb callable after either combat order
+PASS home requires physical companion
+PASS one home completion
+PASS no duplicate completion
+PASS earned completion is idempotent even while unpaused
+PASS JSON checkpoint roundtrip
+PASS chosen encounter starts
+PASS two valid strikes win chosen encounter
+PASS JSON checkpoint roundtrip
+PASS JSON checkpoint roundtrip
+PASS wool clue persists before discovery
+PASS early or late physical discovery
+PASS no unsafe escort bypass
+PASS early lamb visible inside its chamber
+PASS early lamb concealed outside chamber
+PASS JSON checkpoint roundtrip
+PASS early lamb stays concealed after reload at camp
+PASS localized return-after-combat guidance
+PASS localized return-after-combat guidance
+PASS JSON checkpoint roundtrip
+PASS chosen encounter starts
+PASS two valid strikes win chosen encounter
+PASS JSON checkpoint roundtrip
+PASS all choices converge on escort
+PASS discovered lamb callable after either combat order
+PASS home requires physical companion
+PASS one home completion
+PASS no duplicate completion
+PASS earned completion is idempotent even while unpaused
+PASS JSON checkpoint roundtrip
+PASS chosen encounter starts
+PASS two valid strikes win chosen encounter
+PASS JSON checkpoint roundtrip
+PASS chosen encounter starts
+PASS two valid strikes win chosen encounter
+PASS JSON checkpoint roundtrip
+PASS JSON checkpoint roundtrip
+PASS wool clue persists before discovery
+PASS early or late physical discovery
+PASS JSON checkpoint roundtrip
+PASS all choices converge on escort
+PASS discovered lamb callable after either combat order
+PASS home requires physical companion
+PASS one home completion
+PASS no duplicate completion
+PASS earned completion is idempotent even while unpaused
+PASS JSON checkpoint roundtrip
+PASS unfinished lion hit recorded
+PASS switching caves cannot transfer staff damage
+PASS JSON checkpoint roundtrip
+PASS multiple clues persist while unfinished fights reset
+PASS unfinished animal returns all the way home after departure
+PASS returned animal is healthy and cannot attack from courtyard
+PASS legacy prefix migration 0
+PASS JSON checkpoint roundtrip
+PASS legacy prefix migration 1
+PASS JSON checkpoint roundtrip
+PASS legacy prefix migration 2
+PASS JSON checkpoint roundtrip
+PASS legacy prefix migration 3
+PASS JSON checkpoint roundtrip
+PASS legacy prefix migration 4
+PASS JSON checkpoint roundtrip
+PASS legacy prefix migration 5
+PASS JSON checkpoint roundtrip
+PASS legacy prefix migration 6
+PASS JSON checkpoint roundtrip
+PASS invalid nonlinear dependency rejected
+PASS invalid nonlinear dependency rejected
+PASS invalid nonlinear dependency rejected
+PASS invalid nonlinear dependency rejected
+PASS malformed checkpoint version rejected
+PASS malformed checkpoint version rejected
+PASS malformed checkpoint version rejected
+PASS malformed checkpoint version rejected
+PASS malformed checkpoint version rejected
+PASS malformed checkpoint version rejected
+PASS malformed clue state rejected before typed assignment
+PASS malformed clue state rejected before typed assignment
+PASS malformed clue state rejected before typed assignment
+PASS malformed clue state rejected before typed assignment
+PASS malformed clue state rejected before typed assignment
+PASS malformed clue state rejected before typed assignment
+PASS malformed clue state rejected before typed assignment
+PASS malformed clue state rejected before typed assignment
+PASS malformed clue state rejected before typed assignment
+PASS malformed clue state rejected before typed assignment
+PASS board outside entrance camera corridor
+PASS readable front-facing clue retained
+PASS board outside entrance camera corridor
+PASS readable front-facing clue retained
+PASS board outside entrance camera corridor
+PASS readable front-facing clue retained
+CAVE_CHOICE_FAILURES=0

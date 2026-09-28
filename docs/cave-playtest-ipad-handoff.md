@@ -22,6 +22,10 @@ npm run app:open
 
 The checked-in game export is part of the handoff; installing Godot on the Mac is not necessary. Use the existing Xcode app project, signing team and application identity. Select each connected iPad and Build/Run. Do not delete/reinstall the app to work around a build issue without preserving saved progress first.
 
+## Discovery-polish follow-up
+
+The cave discovery update includes a rebuilt embedded game. Linux verification passed all 17 native suites, app sync for 101 offline routes, and exact engine hashes across public export, static output and iOS public bundle. On device, additionally check paw-print/wool clues, distinct lion/bear warnings, portrait camera yielding to manual look, cave Map in EN/RU, and lamb discovery/follow/reunion. See `docs/cave-discovery-polish.md` for visual limitations.
+
 ## Improvements to inspect
 
 - Connected cave vaults, rock mouth transitions, restrained foliage and interior bedding/talus.

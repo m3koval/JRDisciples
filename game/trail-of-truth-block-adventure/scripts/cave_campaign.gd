@@ -41,6 +41,11 @@ var poof: Node3D
 const ANIMAL_MAX_HEALTH := 2
 var animal_health_bars: Array[Sprite3D] = []
 var health_textures: Array[Texture2D] = []
+var discovery: Node3D
+# Lion commits to a fast lane; bear plants for a slower circular swipe.
+const WINDUP := [1.1, 1.65]
+const ATTACK_TIME := [.45, .22]
+const RECOVERY := [1.8, 2.6]
 
 func animal_health(i: int) -> int:
     if completed_steps.has(STEPS[i*2+1]): return 0
@@ -283,6 +288,9 @@ func _ready() -> void:
     warning_mark = host._box(self,Vector3.ZERO,Vector3(2.6,.04,2.6),Color("edb453"))
     warning_mark.visible = false
     build_poof()
+    discovery = preload("res://scripts/cave_discovery.gd").new()
+    add_child(discovery)
+    discovery.setup(self)
     restore()
 
 func solid(pos: Vector3, size: Vector3, color: Color) -> void:
@@ -331,6 +339,7 @@ func restore() -> void:
         animal_motion[i].reset_pose()
         animals[i].visible = not completed_steps.has(STEPS[i*2+1])
     lamb.position = CAMP+Vector3(1,0,0) if stage == 6 else ENTRANCES[2]+Vector3(0,0,-10)
+    if discovery: discovery.reset()
     if active: teleport_camp()
     sync_darkness(1.0)
     sync_labels()
@@ -440,6 +449,7 @@ func interact() -> void:
         "call_lamb": phase = "following"
         "home":
             earn("home")
+            discovery.reunite()
             host.modal_kind = "cave_complete"
             host.paused = true
             host.player.set_enabled(false)
@@ -475,6 +485,7 @@ func tick(delta: float) -> void:
     _tick_gameplay(delta)
     sync_health_bars()
     sync_darkness(delta)
+    discovery.tick(delta)
     var t := Time.get_ticks_msec()
     campfire.light_energy = 1.5+.25*sin(t*.011)*sin(t*.0037)
     for i in range(animals.size()):
@@ -499,9 +510,6 @@ func _tick_gameplay(delta: float) -> void:
     if p.y < -.8 or p.x < 80 or p.x > 120 or absf(p.z) > 16:
         retry_checkpoint()
         return
-    warning_mark.visible = phase in ["warn", "lunge"]
-    warning_mark.position = (animals[1].position if animal_index == 1 else lunge_to) + Vector3.UP*.04
-    warning_mark.scale = Vector3(5.6/2.6,1,5.6/2.6) if animal_index == 1 else Vector3.ONE
     if wool_read and not completed_steps.has("lamb_found") and near(lamb.position,2.5):
         earn("lamb_found")
         if safe_to_escort(): phase = "waiting"
@@ -553,13 +561,13 @@ func _tick_gameplay(delta: float) -> void:
             move_animal(i,flat,delta*(3.2 if i == 0 else 1.9))
             if animal.position.distance_to(flat) > (3.2 if i == 0 else 2.5): return
             phase = "warn"
-            timer = 1.1 if i == 0 else 1.4
+            timer = WINDUP[i]
             lunge_from = animal.position
             lunge_to = Vector3(clampf(p.x,ENTRANCES[i].x-3.4,ENTRANCES[i].x+3.4),0,clampf(p.z,-12,-3.5))
         "warn":
             if timer <= 0:
                 phase = "lunge"
-                timer = .45 if i == 0 else .22
+                timer = ATTACK_TIME[i]
         "lunge":
             if i == 0: move_animal(i,lunge_to,delta*10)
             # Attack volumes are grounded: feet above this height clear either attack.
@@ -567,7 +575,7 @@ func _tick_gameplay(delta: float) -> void:
             if p.y < .85 and flat_distance < (1.35 if i == 0 else 2.8) and clear_path(animal.position,p): hurt()
             if phase == "lunge" and timer <= 0:
                 phase = "recover"
-                timer = 2.2
+                timer = RECOVERY[i]
         "recover":
             if timer <= 0: phase = "idle"
         "retreat":
@@ -598,7 +606,7 @@ func objective() -> String:
     if safe_to_escort() and not wool_read:
         return host.t("Read the wool clue at the right entrance", "Изучи шерсть у правого входа")
     if phase == "chase": return host.t("Run and make room · staff defends nearby", "Беги и держи расстояние · посох защищает вблизи")
-    if phase == "warn": return host.t("Warning! Run sideways or time a jump", "Внимание! Беги в сторону или прыгни вовремя")
+    if phase == "warn": return discovery.guidance()
     if phase == "lunge": return host.t("Run · jump · defend!", "Беги · прыгай · защищайся!")
     if phase == "recover": return host.t("Come within staff reach · defend", "Подойди на длину посоха · защищайся")
     if stage == 5: return host.t("Call the lamb · walk slowly to green camp", "Позови ягнёнка · веди к зелёному лагерю")
@@ -625,14 +633,14 @@ func notice_text() -> String:
     if message == "miss": return host.t("Staff missed · move closer with a clear path", "Посох не достал · подойди, преграда мешает")
     if message == "cooldown": return host.t("Staff is readying · keep moving", "Посох готовится · продолжай двигаться")
     if message == "defended": return host.t("Good hit! Stay ready for its next attack.", "Попал! Готовься к следующей атаке.")
-    return {"wool":host.t("Soft white wool leads inside the right cave.", "Белая шерсть ведёт внутрь правой пещеры."),"tracks":host.t("Animal tracks! Wait for the warning, dodge sideways, then act.", "Следы зверя! Жди сигнала, отойди в сторону и действуй."),"healed":host.t("Rested! All three hearts restored.", "Отдохнул! Здоровье восстановлено."),"ouch":host.t("A bump! Move away; you have a moment of safety.", "Ушиб! Отойди; сейчас ты ненадолго защищён."),"retry":host.t("Safe at camp. Rested and ready; your progress is kept.", "Ты в лагере. Отдохнул! Твой успех сохранён."),"victory":host.t("Victory! You protected the flock. Follow the next clue!", "Победа! Ты защитил стадо. Ищи следующую подсказку!")}.get(message,"")
+    return {"wool":host.t("Soft white wool leads inside the right cave.", "Белая шерсть ведёт внутрь правой пещеры."),"tracks":host.t("Two staff hits win. Dodge the ground cue, then move close and strike.", "Два удара посохом — победа. Уйди с метки, подойди и ударь."),"healed":host.t("Rested! All three hearts restored.", "Отдохнул! Здоровье восстановлено."),"ouch":host.t("A bump! Move away; you have a moment of safety.", "Ушиб! Отойди; сейчас ты ненадолго защищён."),"retry":host.t("Safe at camp. Rested and ready; your progress is kept.", "Ты в лагере. Отдохнул! Твой успех сохранён."),"victory":host.t("Victory! You protected the flock. Follow the next clue!", "Победа! Ты защитил стадо. Ищи следующую подсказку!")}.get(message,"")
 
 func sync_labels() -> void:
     for i in range(signs.size()): signs[i].text = [host.t("Paw prints", "Следы лап"),host.t("Big tracks", "Большие следы"),host.t("White wool", "Белая шерсть")][i]
     get_node("CampSign").text = host.t("Safe camp · rest here", "Лагерь · здесь безопасно")
 
 func intro_text() -> String:
-    return host.t("Choose any cave and read its clue. Find the lamb early or face either animal first. Defeat both attackers before escorting the lamb home.\n\nWatch the attack cue. Run sideways or jump, then strike with your staff (E / action button). Land two hits to win. Each swing takes a moment to ready again.\n\nRest at camp to recover health. If you fall, restart the unfinished fight; completed steps stay earned.\n\nA fictional shepherd adventure inspired by David.", "Выбери любую пещеру и изучи следы. Найди ягнёнка сначала или начни с любого зверя. Победи обоих нападающих, прежде чем вести ягнёнка домой.\n\nСледи за движениями зверя. Беги в сторону или прыгай, затем бей посохом (E / кнопка). Два попадания — победа. Между взмахами нужна короткая пауза.\n\nОтдых в лагере восстановит здоровье. При поражении начни незаконченный бой заново; пройденные шаги сохранятся.\n\nВыдуманное приключение пастуха, вдохновлённое Давидом.")
+    return host.t("A lamb is missing. Choose any cave and follow its tracks or wool.\n\nProtect the path from both attackers, then bring the lamb home. Clues and attack cues will help as you explore.\n\nA fictional shepherd adventure inspired by David.", "Пропал ягнёнок. Выбери любую пещеру и ищи следы лап или шерсть.\n\nПобеди обоих зверей и приведи ягнёнка домой. Подсказки помогут в пути и перед атакой.\n\nВыдуманное приключение пастуха, вдохновлённое Давидом.")
 
 func credits() -> String:
     return host.t("\n\nArt credits:\nOriginal articulated animals and cave shell — project art\nRock scans and textures — Poly Haven, CC0\nLegacy cave kit — Kenney, CC0\nArchived animal GLB credits: assets/caves/CREDITS\n", "\n\nАвторы моделей:\nОригинальные подвижные звери и пещеры — графика проекта\nСканы камней и текстуры — Poly Haven, CC0\nИсходный набор пещер — Kenney, CC0\nАвторы архивных GLB: assets/caves/CREDITS\n") + "https://creativecommons.org/licenses/by/3.0/\nhttps://kenney.nl/assets\nhttps://polyhaven.com"

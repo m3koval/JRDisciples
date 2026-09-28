@@ -1,0 +1,33 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS full HP only on active attacker 0
+PASS other attacker bar hidden 0
+PASS first hit lowers HP without granting victory 0
+PASS visible HP falls to one segment 0
+PASS final hit defeats and advances once 0
+PASS animal replaced by poof, HP bar gone 0
+PASS clear victory state 0
+PASS victory checkpoint saved before effect finishes 0
+PASS pause freezes poof and defeat 0
+PASS effect expires away from arena, no repeated awards 0
+PASS restore preserves victory without stale effect 0
+PASS full HP only on active attacker 1
+PASS other attacker bar hidden 1
+PASS first hit lowers HP without granting victory 1
+PASS visible HP falls to one segment 1
+PASS final hit defeats and advances once 1
+PASS animal replaced by poof, HP bar gone 1
+PASS clear victory state 1
+PASS victory checkpoint saved before effect finishes 1
+PASS pause freezes poof and defeat 1
+PASS effect expires away from arena, no repeated awards 1
+PASS restore preserves victory without stale effect 1
+PASS zero player HP resets unfinished fight, not progression
+PASS previous victory remains earned on loss
+PASS loss returns to checkpoint camp
+PASS no unsolicited no-harm/safety copy en
+PASS victory is protection en
+PASS no unsolicited no-harm/safety copy ru
+PASS victory is protection ru
+PASS new adventure resets both attackers
+CAVE_VICTORY_CHECKS=30 CAVE_VICTORY_FAILURES=0

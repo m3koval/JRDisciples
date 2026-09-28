@@ -1,0 +1,39 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS warning leaves ground readable
+PASS three independent physical evidence trails
+PASS paw pads, toes and wool tufts are actual 3D meshes
+PASS reach and HP contracts unchanged
+PASS concise localized intro en
+PASS proximity wool teaching en
+PASS proximity paw teaching en
+PASS concise localized intro ru
+PASS proximity wool teaching ru
+PASS proximity paw teaching ru
+PASS species windup 0
+PASS cue visible on first windup frame 0
+PASS lane versus radial telegraph 0
+PASS charge cue includes both endpoint damage radii
+PASS committed attack target does not track dodge 0
+PASS species attack duration 0
+PASS attack still damages player 0
+PASS species recovery window 0
+PASS attack cue ends on recovery 0
+PASS species windup 1
+PASS cue visible on first windup frame 1
+PASS lane versus radial telegraph 1
+PASS committed attack target does not track dodge 1
+PASS species attack duration 1
+PASS attack still damages player 1
+PASS species recovery window 1
+PASS attack cue ends on recovery 1
+PASS lamb first remains legal, escort still gated by protection
+PASS early rescue recognition without premature escort
+PASS unchanged version two save schema
+PASS call starts escort after both victories
+PASS moving lamb reacts and follows
+PASS pause freezes presentation
+PASS home action shows reunion alongside existing completion
+PASS paused reunion has grounded settled lamb
+PASS completed checkpoint restores reunion
+CAVE_DISCOVERY_CHECKS=36 CAVE_DISCOVERY_FAILURES=0

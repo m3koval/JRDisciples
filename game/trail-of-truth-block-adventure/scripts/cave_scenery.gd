@@ -22,6 +22,21 @@ static func material(id: String, scale: float, tint: Color = Color.WHITE) -> Sta
     m.uv1_scale = Vector3.ONE * scale
     return m
 
+static func quiet_stone(id: String, tint: Color) -> StandardMaterial3D:
+    # Keep broad mineral variation, not scan-sized gravel that competes with
+    # small animal silhouettes. Shared floor/wall palette and world mapping.
+    var m := material(id, .24, tint)
+    var image := m.albedo_texture.get_image()
+    if image.is_compressed(): image.decompress()
+    image.resize(64, 64, Image.INTERPOLATE_LANCZOS)
+    image.generate_mipmaps()
+    m.albedo_texture = ImageTexture.create_from_image(image)
+    m.normal_scale = .16
+    m.roughness_texture = null
+    m.roughness = .97
+    m.metallic_specular = .18
+    return m
+
 static func solid(parent: Node3D, center: Vector3, size: Vector3, mat: Material, visual: bool = true) -> StaticBody3D:
     var body := StaticBody3D.new()
     body.position = center
@@ -51,13 +66,10 @@ static func scan(parent: Node3D, id: String, at: Vector3, scale: float, yaw: flo
     return node
 
 static func build(parent: Node3D, entrances: Array) -> void:
-    var rock := material("rock_face_03", .30, Color(.73, .72, .65))
-    rock.normal_scale = .55
-    rock.roughness = .96
-    var inner := material("rock_face_03", .26, Color(.70, .63, .53))
-    inner.roughness = .97
-    inner.normal_scale = .65
-    var ground := material("rocky_trail", .16, Color(.95, .9, .82))
+    var rock := quiet_stone("rock_face_03", Color(.82, .74, .62))
+    var inner := quiet_stone("rock_face_03", Color(.78, .69, .56))
+    var ground := quiet_stone("rock_face_03", Color(.88, .79, .65))
+    ground.normal_scale = .08
     solid(parent, Vector3(100, -.5, 0), Vector3(40, 1, 32), ground)
     # Courtyard perimeter; the hill hides most of it.
     for x in [80.0, 120.0]: solid(parent, Vector3(x, 3, 0), Vector3(1, 6, 32), rock)
