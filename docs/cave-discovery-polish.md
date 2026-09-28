@@ -2,7 +2,7 @@
 
 ## Scope and delivery boundary
 
-Implemented on `apex/cave-discovery-polish` from `main` at `3170263`. This is a **native-tested source milestone**, not a rebuilt embedded web/iOS bundle or installed iPad release. No main merge, push, paid generation or device deployment is part of this pass. Accepted human characters, existing version-2 saves, free cave choice, staff reach/health contracts and downstream chapter state remain intact.
+Implemented on `apex/cave-discovery-polish` from `main` at `3170263`. The initial source milestone was committed as `95dfbb7`. Mike subsequently authorized push and merge. Current main was integrated, all 17 native suites passed again, and the embedded Web game was rebuilt with Godot 4.7.2. App sync and exact artifact-copy checks passed for 101 offline routes. Physical iPad installation remains Claude’s Mac handoff; no paid generation was used. Accepted human characters, existing version-2 saves, free cave choice, staff reach/health contracts and downstream chapter state remain intact.
 
 ## Implemented
 
@@ -38,4 +38,4 @@ Evidence: [verified folder](games/block-evidence/cave-discovery-polish/verified/
 - Paw prints and wool are modeled evidence, not a new tracking simulation. The lamb has visual reactions; no new bleat/voice/audio asset was added. Reunion feedback is not a new family/NPC cinematic.
 - The camera assistance is modest; the two actors can still overlap from some viewpoints. Native tests/captures do not establish two-thumb comfort or sustained iPad performance.
 - Bridge/irrigation instructional redesign, whole-map art replacement and additional chapters were not implemented in this bounded cave pass.
-- The embedded game files and source release manifest still describe the previous export. Before a release/merge intended for the iPads, rebuild the engine using the existing pipeline, verify the source/export manifest, run app sync and its exact-copy guard, then have Claude build/install with existing signing and preserved children’s saves. Do not claim that pulling this source alone updates the installed app.
+- The rebuilt game and source release manifest are included in this merge candidate. Linux app sync verified exact copies into the static output and iOS public bundle. Claude must still build/install through Xcode with existing signing and preserved children’s saves. Pulling main does not update an installed app. Fresh browser interaction and physical-device testing were not rerun for this packaging pass.
