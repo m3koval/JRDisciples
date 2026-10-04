@@ -174,7 +174,10 @@ export const content = {
         "alt": "Young travelers sharing help and kindness on the path",
         "paragraphs": [
           "How do you think Lincoln felt when his tools came back? A gift like that gives you a reason to be thankful. Jesus’ gift is greater still. He does not just forgive us—He frees us to live a new way.",
-          "Remember the three truths: my Father loves me and judges fairly; my home is with God; Jesus gave His life to rescue me. Together, they help me tell the truth, welcome others, and follow Jesus with thanks."
+          "Remember the three truths: my Father loves me and judges fairly; my home is with God; Jesus gave His life to rescue me. Together, they help me tell the truth, welcome others, and follow Jesus with thanks.",
+          "What happens when you do wrong again? Remorse means feeling sorry. That can be a beginning, but repentance goes further: you turn away from sin and turn to God. You tell Him the truth, ask forgiveness, and trust Him to help you change.",
+          "Here are two thoughts to compare. Condemnation says, ‘You did wrong. God will never want you. Hide!’ Conviction—God showing us our sin—says, ‘That was wrong. Come to God, confess it, and turn away from it.’ His correction can hurt, but it calls us back, not into hopeless hiding. There is no condemnation for those who belong to Christ Jesus (Romans 8:1).",
+          "Remember the hidden toy? Do not just feel bad and leave it hidden. Tell God the truth, return the toy, and ask your friend to forgive you. Making things right does not buy God’s love. It is a step of turning from sin and following Jesus. Don’t run from Him. Run to Him—and turn away from the sin."
         ],
         "truth": "I follow Jesus because of His love—not to earn it.",
         "verse": "ransom",
@@ -183,7 +186,7 @@ export const content = {
         "instruction": "Try six questions about the Bible and everyday choices. Read the explanation, then keep going.",
         "hint": "Remember our Father, our journey, and the rescue Jesus gave us.",
         "learn": "Choose one next step: tell the truth, welcome someone, share, or help at home. Tell a grown-up your plan. Ask God to help you carry it out. Gratitude becomes something we do.",
-        "question": "What is one way you can thank Jesus through your choices tomorrow?"
+        "question": "If you do wrong, what would running to God instead of hiding look like?"
       }
     ] satisfies Stage[],
     matchLabels: [
@@ -503,7 +506,10 @@ export const content = {
         "alt": "Юные странники помогают друг другу в пути",
         "paragraphs": [
           "Как ты думаешь, что почувствовал Линкольн, получив инструменты обратно? Такой подарок вызывает благодарность. Дар Иисуса ещё больше. Он не только прощает — Он освобождает нас для новой жизни.",
-          "Запомни три истины: мой Отец любит меня и судит справедливо; мой дом — с Богом; Иисус отдал жизнь, чтобы спасти меня. Вместе они помогают говорить правду, принимать других и следовать за Иисусом с благодарностью."
+          "Запомни три истины: мой Отец любит меня и судит справедливо; мой дом — с Богом; Иисус отдал жизнь, чтобы спасти меня. Вместе они помогают говорить правду, принимать других и следовать за Иисусом с благодарностью.",
+          "А если ты снова поступил плохо? Сожалеть о поступке — начало. Но покаяние идёт дальше: ты отворачиваешься от греха и обращаешься к Богу. Говоришь Ему правду, просишь прощения и доверяешь Ему помочь тебе измениться.",
+          "Сравни две мысли. Осуждение говорит: «Ты поступил плохо. Бог никогда тебя не примет. Прячься!» Обличение — когда Бог показывает нам наш грех — зовёт: «Это было плохо. Приди к Богу, признайся и оставь грех». Божье исправление может быть болезненным, но зовёт вернуться, а не прятаться без надежды. Тем, кто во Христе Иисусе, нет осуждения (Римлянам 8:1).",
+          "Помнишь спрятанную игрушку? Не просто сожалей, оставляя её у себя. Скажи Богу правду, верни игрушку и попроси друга простить тебя. Исправляя поступок, ты не покупаешь Божью любовь. Ты учишься оставлять грех и следовать за Иисусом. Беги не от Него, а к Нему — и оставляй грех."
         ],
         "truth": "Я следую за Иисусом из-за Его любви, а не чтобы её заслужить.",
         "verse": "ransom",
@@ -512,7 +518,7 @@ export const content = {
         "instruction": "Ответь на шесть вопросов о Библии и обычных поступках. Прочитай объяснение и двигайся дальше.",
         "hint": "Вспомни нашего Отца, наш путь и спасение, которое подарил Иисус.",
         "learn": "Выбери один шаг: сказать правду, принять кого-то в игру, поделиться или помочь дома. Расскажи взрослому о своём плане. Попроси Бога помочь. Так благодарность становится делом.",
-        "question": "Каким поступком ты можешь поблагодарить Иисуса завтра?"
+        "question": "Если ты поступил плохо, как прийти к Богу вместо того, чтобы прятаться?"
       }
     ] satisfies Stage[],
     matchLabels: [

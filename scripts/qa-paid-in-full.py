@@ -29,6 +29,11 @@ with sync_playwright() as p:
    btn(t['continue']+' →').click()
   for stage in range(5):
    page.locator(f'[data-testid="stage-{stage}"]').wait_for()
+   if stage==4:
+    for paragraph in t['stages'][stage]['paragraphs']:
+     page.get_by_text(paragraph,exact=True).wait_for()
+    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
+    page.screenshot(path=str(out/f'{lang}-repentance.png'),full_page=True)
    btn('Попробовать задание →' if lang=='ru' else 'Try the activity →').click()
    btn(t['hint']).click();btn(t['hideHint']).click()
    if stage<2:
