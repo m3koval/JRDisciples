@@ -1,0 +1,58 @@
+[
+  {
+    "id": "cover",
+    "provider": "FAL.ai",
+    "model": "GPT Image 2",
+    "source": "https://v3b.fal.media/files/b/0aacf9d1/52bZ1ZABZLuwlMMsCrspn_e6LgDKWR.png",
+    "path": "public/images/jr/lessons/paid-in-full/cover.webp",
+    "dimensions": [
+      1024,
+      768
+    ],
+    "bytes": 124564,
+    "prompt_file": "docs/paid-in-full-art-prompts.json",
+    "qa": "PASS: visually inspected contact sheet; cohesive warm 3D children and scene-specific props, child-safe cross/empty tomb, no readable generated text. Actual 4:3 dimensions require responsive crop verification."
+  },
+  {
+    "id": "father-judge",
+    "provider": "FAL.ai",
+    "model": "GPT Image 2",
+    "source": "https://v3b.fal.media/files/b/0aacf9dd/s335wp60QFmQznJGmW3t5_nINIkiBO.png",
+    "path": "public/images/jr/lessons/paid-in-full/father-judge.webp",
+    "dimensions": [
+      1024,
+      768
+    ],
+    "bytes": 152524,
+    "prompt_file": "docs/paid-in-full-art-prompts.json",
+    "qa": "PASS: visually inspected contact sheet; cohesive warm 3D children and scene-specific props, child-safe cross/empty tomb, no readable generated text. Actual 4:3 dimensions require responsive crop verification."
+  },
+  {
+    "id": "travelers",
+    "provider": "FAL.ai",
+    "model": "GPT Image 2",
+    "source": "https://v3b.fal.media/files/b/0aacf9dd/q44naNk5DuA7DYHOgtCZE_SDRiGp67.png",
+    "path": "public/images/jr/lessons/paid-in-full/travelers.webp",
+    "dimensions": [
+      1024,
+      768
+    ],
+    "bytes": 179800,
+    "prompt_file": "docs/paid-in-full-art-prompts.json",
+    "qa": "PASS: visually inspected contact sheet; cohesive warm 3D children and scene-specific props, child-safe cross/empty tomb, no readable generated text. Actual 4:3 dimensions require responsive crop verification."
+  },
+  {
+    "id": "redemption",
+    "provider": "FAL.ai",
+    "model": "GPT Image 2",
+    "source": "https://v3b.fal.media/files/b/0aacf9dd/PDSBeRJ0Qsj_jAPUbmsoR_k8od4s2P.png",
+    "path": "public/images/jr/lessons/paid-in-full/redemption.webp",
+    "dimensions": [
+      1024,
+      768
+    ],
+    "bytes": 243746,
+    "prompt_file": "docs/paid-in-full-art-prompts.json",
+    "qa": "PASS: visually inspected contact sheet; cohesive warm 3D children and scene-specific props, child-safe cross/empty tomb, no readable generated text. Actual 4:3 dimensions require responsive crop verification."
+  }
+]

@@ -23,6 +23,7 @@ export interface Lesson {
 }
 
 export const lessonTopics: LessonTopic[] = [
+  { href: "/lessons/paid-in-full", image: "/images/jr/lessons/paid-in-full/cover.webp", title: "Paid in Full", desc: "1 Peter 1:17–21 — Meet our loving Father and fair Judge, pack a traveler’s heart, discover Jesus’ rescue, and build the precious promise.", color: "#17665b", sections: 5, emoji: "✉️" },
   {
     href: "/lessons/living-word",
     image: "/images/jr/topic-case-for-christ-bible.png",

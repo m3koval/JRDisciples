@@ -47,5 +47,8 @@ jobs:
       - name: Check games
         run: npm run check:games
 
+      - name: Check Paid in Full lesson
+        run: npm run check:paid-in-full
+
       - name: Build production bundle
         run: npm run build
