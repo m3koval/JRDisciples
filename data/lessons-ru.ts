@@ -9,6 +9,7 @@ export interface LessonTopic {
 }
 
 export const lessonTopicsRu: LessonTopic[] = [
+  { href: "/lessons/paid-in-full", image: "/images/jr/lessons/paid-in-full/cover.webp", title: "Оплачено полностью", desc: "1 Петра 1:17–21 — Узнай о любящем Отце и справедливом Судье, собери рюкзак сердца, открой спасение Иисуса и собери драгоценные слова.", color: "#17665b", sections: 5, emoji: "✉️" },
   {
     href: "/lessons/living-word",
     image: "/images/jr/topic-case-for-christ-bible.png",
