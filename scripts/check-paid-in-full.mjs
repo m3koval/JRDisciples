@@ -27,6 +27,14 @@ for (const [lang, scripture] of [['en', scriptureEn], ['ru', scriptureRu]]) {
   assert.equal(t.stages.length, 5)
   assert.equal(t.quiz.length, 6)
   assert.equal(t.timeline.length, 5)
+  const lincoln = lang === 'en' ? /Lincoln/ : /Линкольн/
+  assert(lincoln.test(t.intro), `${lang} opening hook introduces Lincoln`)
+  assert(lincoln.test(t.stages[0].paragraphs.join(' ')), `${lang} opening story delivers the hook`)
+  assert(lincoln.test(t.stages[4].paragraphs.join(' ')), `${lang} closing returns to the gift`)
+  assert.deepEqual(Array.from(t.stages, s => s.image), ['father-judge', 'travelers', 'redemption', 'cover', 'travelers'], 'preserve discovery imagery')
+  assert.deepEqual(Array.from(t.stages, s => s.verse), ['father', 'father', 'hope', 'colossians', 'ransom'], 'preserve Bible anchors')
+  const childCopy = [t.intro, t.grace, t.prayerNote, ...t.stages.flatMap(s => [...s.paragraphs, s.learn, s.instruction])].join(' ')
+  assert(!/magic formula|quiz cannot save|ordinary loans|not words the Bible says|волшебные слова|Тест никого не спасает|Обычные долги/.test(childCopy), `${lang} teach directly without internal caveats`)
   assert.equal(new Set(t.stages.map(s => s.activity)).size, 5)
   assert(new Set(t.quiz.map(q => q.correct)).size === 3, 'vary correct position')
   for (const q of t.quiz) { assert(q.correct >= 0 && q.correct < q.options.length); assert(q.explanation.length > 30) }
