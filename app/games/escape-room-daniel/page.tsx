@@ -3,7 +3,7 @@
 import { useEffect, useReducer, useRef } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
-import { initialState, reducer, words, questions, scripture } from './game'
+import { initialState, reducer, words, questions, scripture, windowGuidance } from './game'
 import styles from './room.module.css'
 
 const rooms = [
@@ -43,7 +43,7 @@ export default function EscapeRoomDanielPage() {
     document.addEventListener('visibilitychange', pause)
     return () => document.removeEventListener('visibilitychange', pause)
   }, [])
-  useEffect(() => { heading.current?.focus() }, [state.phase, state.room, state.question, state.verseStep])
+  useEffect(() => { heading.current?.focus() }, [state.phase, state.room, state.question, state.verseStep, state.paused])
 
   const room = rooms[state.room]
   const text = (en: string, ru: string) => isRu ? ru : en
@@ -95,10 +95,10 @@ export default function EscapeRoomDanielPage() {
             <div className={styles.inventory} aria-label={text('Key inventory', 'Собранные ключи')}>
               {rooms.map((r, i) => <span key={r.en} className={state.cleared.includes(i) ? styles.earned : ''}>{state.cleared.includes(i) ? '🗝️' : '🔒'} {isRu ? r.keyRu : r.keyEn}</span>)}
             </div>
-            <button className={styles.clueButton} aria-expanded={state.inspected} onClick={() => dispatch({ type: 'inspect' })}>
-              {text('🔎 Inspect ', '🔎 Осмотреть ')}{[text('the royal scroll', 'царский свиток'), text('the window notebook', 'запись у окна'), text('the witness note', 'свидетельство'), text('Daniel’s scroll', 'свиток Даниила')][state.room]}
+            <button className={styles.clueButton} aria-expanded={state.inspected} aria-controls="daniel-clue" onClick={() => dispatch({ type: 'inspect' })}>
+              {state.inspected ? text('Hide clue ↑', 'Скрыть подсказку ↑') : <>{text('🔎 Inspect ', '🔎 Осмотреть ')}{[text('the royal scroll', 'царский свиток'), text('the window notebook', 'запись у окна'), text('the witness note', 'свидетельство'), text('Daniel’s scroll', 'свиток Даниила')][state.room]}</>}
             </button>
-            {state.inspected && <aside className={styles.clue}>{clue}{state.room === 3 && quote}</aside>}
+            <aside id="daniel-clue" hidden={!state.inspected} className={styles.clue}>{clue}{state.room === 3 && quote}</aside>
 
             {state.room === 0 && <>
               <p>{text('What did the law forbid? Arrange the words. Tap any placed word to undo it, then check the lock.', 'Что запрещал закон? Расставь слова. Нажми на слово в ответе, чтобы убрать его. Затем проверь замок.')}</p>
@@ -111,13 +111,16 @@ export default function EscapeRoomDanielPage() {
             </>}
             {state.room === 1 && <>
               <p>{text('Set both parts of Daniel’s prayer lock: where did his windows face, and how many times did he pray each day?', 'Настрой обе части замка: куда выходили окна Даниила и сколько раз в день он молился?')}</p>
-              <fieldset disabled={right}><legend>{text('Window facing', 'Куда выходили окна')}</legend><div className={styles.choices}>
-                {[text('Egypt', 'Египет'), text('Jerusalem', 'Иерусалим'), text('The palace', 'Дворец')].map((city, i) => <button key={city} aria-pressed={state.city === i} onClick={() => dispatch({ type: 'city', value: i })}>{city}</button>)}
+              <fieldset disabled={right}><legend>{text('Window facing', 'Куда выходили окна')}</legend><div className={`${styles.choices} ${styles.windowCities}`}>
+                {[text('Egypt', 'Египет'), text('Jerusalem', 'Иерусалим'), text('The palace', 'Дворец')].map((city, i) => <button key={city} aria-pressed={state.city === i} onClick={() => dispatch({ type: 'city', value: i })}>{state.city === i && <span aria-hidden="true">✓ </span>}{city}</button>)}
               </div></fieldset>
               <fieldset disabled={right}><legend>{text('Prayers each day', 'Молитв в день')}</legend><div className={styles.choices}>
-                {[1, 2, 3].map(n => <button key={n} aria-pressed={state.prayers === n} onClick={() => dispatch({ type: 'prayers', value: n })}>{n}</button>)}
+                {[1, 2, 3].map(n => <button key={n} aria-pressed={state.prayers === n} onClick={() => dispatch({ type: 'prayers', value: n })}>{state.prayers === n && <span aria-hidden="true">✓ </span>}{n}</button>)}
               </div></fieldset>
-              {!right && <button className={styles.primary} disabled={state.city < 0 || !state.prayers} onClick={() => dispatch({ type: 'check' })}>{text('Try the window lock', 'Проверить замок окна')}</button>}
+              {!right && <>
+                <p id="daniel-window-guidance" role="status" aria-live="polite">{windowGuidance(state, lang)}</p>
+                <button className={styles.primary} aria-describedby="daniel-window-guidance" disabled={state.city < 0 || !state.prayers} onClick={() => dispatch({ type: 'check' })}>{text('Try the window lock', 'Проверить замок окна')}</button>
+              </>}
             </>}
             {state.room === 2 && <>
               <p className={styles.eyebrow}>{text(`Witness seal ${state.question + 1} of ${questions.length}`, `Печать ${state.question + 1} из ${questions.length}`)}</p>

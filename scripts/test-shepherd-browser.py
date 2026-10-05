@@ -1,14 +1,14 @@
-import json, math, time, traceback
+import json, math, time, traceback, os
 from pathlib import Path
 from playwright.sync_api import sync_playwright
-OUT=Path('/mnt/hermes-storage/jd-games-overnight/evidence/pass-04/shepherd')
+OUT=Path(os.environ.get('JD_EVIDENCE','/mnt/hermes-storage/jd-games-overnight/evidence/pass-06/shepherd'))
 levels=json.loads((OUT/'levels.json').read_text()); results=[]; errors=[]; failures=[]
 def mark(name):
  results.append(name); print('PASS',name,flush=True); (OUT/'browser-progress.json').write_text(json.dumps(results,indent=2))
 def phase(page): return page.locator('.sla-page').get_attribute('data-phase')
 def position(page): return page.locator('.sla-player').evaluate('(el)=>({x:parseFloat(el.style.left),y:parseFloat(el.style.top)})')
 def goto_point(page, target, timeout=15000):
- box=page.locator('.sla-arena').bounding_box()
+ box=page.locator('.sla-playfield').bounding_box()
  page.mouse.move(box['x']+box['width']*target['x']/100, box['y']+box['height']*target['y']/100)
  page.mouse.down()
  until=time.time()+timeout/1000
@@ -40,7 +40,7 @@ with sync_playwright() as p:
   # Unprotected deliberate collisions exercise real health, defeat and retry.
   goto_point(page,levels[0]['orbs'][0]); found=page.locator('.sla-orb').count()
   h=levels[0]['hazards'][0]
-  box=page.locator('.sla-arena').bounding_box(); page.mouse.move(box['x']+box['width']*h['x']/100,box['y']+box['height']*h['y']/100); page.mouse.down()
+  box=page.locator('.sla-playfield').bounding_box(); page.mouse.move(box['x']+box['width']*h['x']/100,box['y']+box['height']*h['y']/100); page.mouse.down()
   page.wait_for_selector('[data-phase="failed"]',timeout=20000); page.mouse.up()
   page.screenshot(path=str(OUT/'failure.png')); mark('normal actual-pointer hazard defeat')
   page.get_by_role('button',name='Try Again').click(); page.wait_for_selector('[data-phase="play"]')
@@ -85,17 +85,17 @@ with sync_playwright() as p:
    context.close()
   context,page=open_page(browser,viewport={'width':390,'height':844},storage_block=True)
   page.get_by_role('button',name='Start Adventure').click(); page.get_by_role('button',name='Open Trail').click(); page.screenshot(path=str(OUT/'phone-storage-blocked.png'))
-  assert page.locator('.sla-arena').bounding_box()['height']>200
+  assert page.locator('.sla-playfield').bounding_box()['height']>200
   mark('blocked storage remains playable; phone viewport')
   # Real simultaneous CDP touches: moving finger plus shield finger.
-  client=context.new_cdp_session(page); arena=page.locator('.sla-arena').bounding_box(); shield=page.locator('.sla-control').first.bounding_box()
+  client=context.new_cdp_session(page); arena=page.locator('.sla-playfield').bounding_box(); shield=page.locator('.sla-control').first.bounding_box()
   a={'x':arena['x']+arena['width']*.5,'y':arena['y']+arena['height']*.8,'id':1}; b={'x':shield['x']+shield['width']/2,'y':shield['y']+shield['height']/2,'id':2}
   start=position(page); client.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[a]}); page.wait_for_timeout(200)
   client.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[a,b]}); page.wait_for_timeout(400)
   assert page.locator('.sla-control').first.get_attribute('aria-pressed')=='true'; assert position(page)['x']>start['x']
   client.send('Input.dispatchTouchEvent',{'type':'touchCancel','touchPoints':[]}); page.wait_for_timeout(200); assert page.locator('.sla-control').first.get_attribute('aria-pressed')=='false'
   pos=position(page); page.wait_for_timeout(250); assert position(page)==pos; mark('real two-touch move+shield and cancel release')
-  page.set_viewport_size({'width':844,'height':390}); page.screenshot(path=str(OUT/'phone-landscape.png')); assert page.locator('.sla-arena').bounding_box()['height']>120; mark('orientation resize remains usable')
+  page.set_viewport_size({'width':844,'height':390}); page.screenshot(path=str(OUT/'phone-landscape.png')); assert page.locator('.sla-playfield').bounding_box()['height']>120; mark('orientation resize remains usable')
   context.close()
  except Exception as e:
   errors.append(traceback.format_exc()); print(traceback.format_exc(),flush=True)

@@ -388,6 +388,43 @@ export default function ShepherdLightAdventurePage() {
         @keyframes slaFloat { 50% { transform: translateY(-7px); } }
         @keyframes slaSpin { to { rotate: 360deg; } }
         @media (max-width: 820px) { .sla-hero { grid-template-columns: 1fr; } .sla-preview { min-height: 420px; } .sla-hud { grid-template-columns: repeat(2,1fr) auto; } .sla-chip:nth-child(3),.sla-chip:nth-child(4) { display: none; } .sla-controls { grid-template-columns: 1fr 1fr; } .sla-control.call { grid-column: 1 / -1; } }
+        /* Square world units keep movement, light and hazard circles coherent.
+           The reserved headroom keeps the owned actors visible at the north edge. */
+        .sla-arena { container-type:size; background-color:#536c40; }
+        .sla-playfield { position:absolute; left:50%; top:calc(50% + 24px); transform:translate(-50%,-50%); width:min(calc(100cqw - 28px),calc(100cqh - 78px)); aspect-ratio:1; container-type:inline-size; touch-action:none; }
+        .sla-world { background:radial-gradient(ellipse at 38% 32%,#a6b77755,transparent 68%); }
+        .sla-sprite { width:clamp(56px,18cqw,116px); height:clamp(56px,18cqw,116px); }
+        .sla-sprite.lamb { width:clamp(44px,14cqw,86px); height:clamp(44px,14cqw,86px); }
+        .sla-gate { width:clamp(42px,13cqw,70px); height:clamp(38px,12cqw,64px); font-size:1.7rem; }
+        .sla-scenery { position:absolute; width:19%; aspect-ratio:1; background:center/contain no-repeat; transform:translate(-50%,-70%); opacity:.96; }
+        .sla-scenery.tree { background-image:url('/images/jr/games/shepherd-light-adventure/scenery-tree.webp'); }
+        .sla-scenery.rock { width:12%; background-image:url('/images/jr/games/shepherd-light-adventure/scenery-rock.webp'); }
+        .sla-scenery.flowers { width:10%; background-image:url('/images/jr/games/shepherd-light-adventure/scenery-flowers.webp'); }
+        .sla-orb { width:24px; height:24px; margin:-12px; }
+        .sla-game { height:100dvh; }
+        @media (orientation:landscape) {
+          .sla-game { display:grid; grid-template-columns:minmax(0,1fr) clamp(160px,23vw,250px); grid-template-rows:auto 1fr auto; }
+          .sla-arena { grid-column:1; grid-row:1 / 4; width:100%; height:100%; }
+          .sla-hud { grid-column:2; grid-row:1; grid-template-columns:1fr 1fr; }
+          .sla-hud > button { grid-column:1 / -1; }
+          .sla-chip:nth-child(3),.sla-chip:nth-child(4) { display:block; }
+          .sla-message { grid-column:2; grid-row:2; align-self:center; font-size:.9rem; }
+          .sla-controls { grid-column:2; grid-row:3; grid-template-columns:1fr; }
+          .sla-control.call { grid-column:auto; }
+          .sla-control { min-height:54px; padding:6px; }
+        }
+        @media (orientation:landscape) and (max-height:550px) {
+          .sla-game { gap:8px; grid-template-columns:minmax(0,1fr) 190px; }
+          .sla-hud { gap:5px; }
+          .sla-chip { min-height:40px; padding:4px; font-size:.76rem; }
+          .sla-chip:nth-child(3),.sla-chip:nth-child(4) { display:none; }
+          .sla-message { padding:5px 7px; font-size:.8rem; line-height:1.25; }
+          .sla-message span { display:none; }
+          .sla-controls { gap:6px; }
+          .sla-control { min-height:44px; font-size:.8rem; }
+          .sla-panel { padding:14px; }
+          .sla-panel h2 { font-size:1.7rem !important; }
+        }
         @media (prefers-reduced-motion: reduce) { .sla-orb,.sla-hazard.gust { animation: none; } .sla-player,.sla-lamb { transition: none; } }
       `}</style>
 
@@ -425,8 +462,10 @@ export default function ShepherdLightAdventurePage() {
             <button className="sla-btn danger" style={{ minHeight: 46, padding: '8px 13px' }} disabled={phase !== 'play' && phase !== 'paused'} onClick={() => setPhase(phase === 'paused' ? 'play' : 'paused')}>{phase === 'paused' ? copy.resume : copy.pause}</button>
           </div>
 
-          <div ref={arenaRef} className={`sla-arena ${level.environment}`} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerUp} onPointerCancel={pointerUp} onLostPointerCapture={() => { pointer.current.active = false; movementPointer.current = null }}>
-            <GameWorld level={level} player={player} lamb={lamb} orbs={orbs} lanternWide={lanternWide} helperActive={helperActive} spark={spark} journey={journey} playing={phase === 'play'} />
+          <div className={`sla-arena ${level.environment}`}>
+            <div ref={arenaRef} className="sla-playfield" onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerUp} onPointerCancel={pointerUp} onLostPointerCapture={() => { pointer.current.active = false; movementPointer.current = null }}>
+              <GameWorld level={level} player={player} lamb={lamb} orbs={orbs} lanternWide={lanternWide} helperActive={helperActive} spark={spark} journey={journey} playing={phase === 'play'} />
+            </div>
 
             {phase === 'briefing' && (
               <div className="sla-panel">
@@ -510,9 +549,10 @@ function GameWorld({ level, player, lamb, orbs, lanternWide, helperActive, spark
         <defs><pattern id="grass" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M2 5l-.5-1m.5 1l1-1M6 8l1-1" stroke="#9ab96e" strokeWidth=".3" opacity=".5" /></pattern></defs>
         <rect width="100" height="100" fill="url(#grass)" />
         {level.environment === 'bridge' && <><path d="M48 0 Q32 30 51 50 T52 100" fill="none" stroke="#377f96" strokeWidth="19"/><path d="M28 51L67 40" stroke="#a58554" strokeWidth="13"/><path d="M28 51L67 40" stroke="#dbc392" strokeWidth="10" strokeDasharray="1 1"/></>}
-        <path d={`M18 82 Q25 22 44 18 T76 24 Q86 58 50 62 T${level.gate.x} ${level.gate.y}`} fill="none" stroke="#bea878" strokeWidth="7" opacity=".4" />
-        {[4, 96].map(x => [16, 42, 68, 90].map(y => <g key={`${x}-${y}`}><ellipse cx={x} cy={y+2} rx="3" ry="2" fill="#17382e" opacity=".5"/><rect x={x-1} y={y-1} width="2" height="5" fill="#5f5032"/><circle cx={x} cy={y-2} r="4" fill="#315c39"/><circle cx={x-1} cy={y-3} r="2.7" fill="#57844a"/></g>))}
+        <path d={`M18 82 ${level.orbs.map(orb => `L${orb.x} ${orb.y}`).join(' ')} L${level.lambStart.x} ${level.lambStart.y} L${level.gate.x} ${level.gate.y}`} fill="none" stroke="#c6b17e" strokeWidth="7" strokeLinejoin="round" opacity=".4" />
       </svg>
+      {[0, 100].map(x => [12, 39, 68, 94].map((y, index) => <span key={`${x}-${y}`} aria-hidden="true" className={`sla-scenery ${index === 2 ? 'rock' : 'tree'}`} style={{ left: `${x}%`, top: `${y}%` }} />))}
+      {[{ x: 12, y: 5 }, { x: 64, y: 98 }, { x: 88, y: 10 }].map(point => <span key={`${point.x}-${point.y}`} aria-hidden="true" className="sla-scenery flowers" style={{ left: `${point.x}%`, top: `${point.y}%` }} />)}
       <div className="sla-gate" style={{ left: `${level.gate.x}%`, top: `${level.gate.y}%` }}>⌂</div>
       {level.hazards.map((hazard) => (
         <div key={hazard.id} className={`sla-hazard ${hazard.kind}`} style={{ left: `${hazard.x}%`, top: `${hazard.y}%`, width: `${hazard.r * 2}%`, height: `${hazard.r * 2}%` }} />

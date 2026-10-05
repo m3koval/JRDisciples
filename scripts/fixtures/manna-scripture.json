@@ -1,0 +1,131 @@
+{
+  "normalization": "Contiguous exact source excerpts. Gameplay strips punctuation only; reward retains source wording/case/punctuation.",
+  "verses": [
+    {
+      "language": "en",
+      "index": 0,
+      "quote": "Give us this day our daily bread",
+      "ref": "Matthew 6:11",
+      "source": "https://www.bible.com/bible/59/MAT.6.11.ESV"
+    },
+    {
+      "language": "en",
+      "index": 1,
+      "quote": "Man shall not live by bread alone",
+      "ref": "Matthew 4:4",
+      "source": "https://www.bible.com/bible/59/MAT.4.4.ESV"
+    },
+    {
+      "language": "en",
+      "index": 2,
+      "quote": "I am the bread of life",
+      "ref": "John 6:35",
+      "source": "https://www.bible.com/bible/59/JHN.6.35.ESV"
+    },
+    {
+      "language": "en",
+      "index": 3,
+      "quote": "Oh, taste and see that the LORD is good!",
+      "ref": "Psalm 34:8",
+      "source": "https://www.bible.com/bible/59/PSA.34.8.ESV"
+    },
+    {
+      "language": "en",
+      "index": 4,
+      "quote": "And my God will supply every need of yours",
+      "ref": "Philippians 4:19",
+      "source": "https://www.bible.com/bible/59/PHP.4.19.ESV"
+    },
+    {
+      "language": "en",
+      "index": 5,
+      "quote": "I am the living bread that came down from heaven.",
+      "ref": "John 6:51",
+      "source": "https://www.bible.com/bible/59/JHN.6.51.ESV"
+    },
+    {
+      "language": "en",
+      "index": 6,
+      "quote": "and he rained down on them manna to eat",
+      "ref": "Psalm 78:24",
+      "source": "https://www.bible.com/bible/59/PSA.78.24.ESV"
+    },
+    {
+      "language": "en",
+      "index": 7,
+      "quote": "feed me with the food that is needful for me",
+      "ref": "Proverbs 30:8",
+      "source": "https://www.bible.com/bible/59/PRO.30.8.ESV"
+    },
+    {
+      "language": "en",
+      "index": 8,
+      "quote": "The LORD is my shepherd; I shall not want.",
+      "ref": "Psalm 23:1",
+      "source": "https://www.bible.com/bible/59/PSA.23.1.ESV"
+    },
+    {
+      "language": "ru",
+      "index": 0,
+      "quote": "хлеб наш насущный дай нам на сей день",
+      "ref": "Матфея 6:11",
+      "source": "https://www.bible.com/bible/400/MAT.6.11.SYNO"
+    },
+    {
+      "language": "ru",
+      "index": 1,
+      "quote": "не хлебом одним будет жить человек",
+      "ref": "Матфея 4:4",
+      "source": "https://www.bible.com/bible/400/MAT.4.4.SYNO"
+    },
+    {
+      "language": "ru",
+      "index": 2,
+      "quote": "Я есмь хлеб жизни",
+      "ref": "Иоанна 6:35",
+      "source": "https://www.bible.com/bible/400/JHN.6.35.SYNO"
+    },
+    {
+      "language": "ru",
+      "index": 3,
+      "quote": "Вкусите и увидите, как благ Господь!",
+      "ref": "Псалом 33:9",
+      "source": "https://www.bible.com/bible/400/PSA.33.9.SYNO"
+    },
+    {
+      "language": "ru",
+      "index": 4,
+      "quote": "Бог мой да восполнит всякую нужду вашу",
+      "ref": "Филиппийцам 4:19",
+      "source": "https://www.bible.com/bible/400/PHP.4.19.SYNO"
+    },
+    {
+      "language": "ru",
+      "index": 5,
+      "quote": "Я хлеб живый, сшедший с небес",
+      "ref": "Иоанна 6:51",
+      "source": "https://www.bible.com/bible/400/JHN.6.51.SYNO"
+    },
+    {
+      "language": "ru",
+      "index": 6,
+      "quote": "и одождил на них манну в пищу",
+      "ref": "Псалом 77:24",
+      "source": "https://www.bible.com/bible/400/PSA.77.24.SYNO"
+    },
+    {
+      "language": "ru",
+      "index": 7,
+      "quote": "питай меня насущным хлебом",
+      "ref": "Притчи 30:8",
+      "source": "https://www.bible.com/bible/400/PRO.30.8.SYNO"
+    },
+    {
+      "language": "ru",
+      "index": 8,
+      "quote": "Господь — Пастырь мой; я ни в чем не буду нуждаться",
+      "ref": "Псалом 22:1",
+      "source": "https://www.bible.com/bible/400/PSA.22.1.SYNO"
+    }
+  ]
+}

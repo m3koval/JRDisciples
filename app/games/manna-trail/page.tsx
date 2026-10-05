@@ -11,7 +11,7 @@ type Cell = { x: number; y: number }
 type Dir = { x: number; y: number }
 type Phase = 'menu' | 'play' | 'levelUp' | 'over' | 'paused' | 'won'
 type Particle = { x: number; y: number; vx: number; vy: number; life: number; color: string }
-type Verse = { words: string[]; ref: string }
+type Verse = { words: string[]; quote: string; ref: string }
 
 // ─── Config ───────────────────────────────────────────────────────────────────
 
@@ -21,28 +21,31 @@ const DOVE_LIFETIME = 8000
 const SLOW_DURATION = 5000
 
 
+// Exact contiguous excerpts: Bible.com ESV (59) and Synodal (400).
+// Punctuation belongs in the reward quote, not in collectible word tiles.
+function verseWords(quote: string): string[] { return quote.replace(/[.,;!—]/g, '').split(/\s+/).filter(Boolean) }
 const VERSES_EN: Verse[] = [
-  { words: ['Give', 'us', 'this', 'day', 'our', 'daily', 'bread'], ref: 'Matthew 6:11' },
-  { words: ['Man', 'shall', 'not', 'live', 'by', 'bread', 'alone'], ref: 'Matthew 4:4' },
-  { words: ['I', 'am', 'the', 'bread', 'of', 'life'], ref: 'John 6:35' },
-  { words: ['Taste', 'and', 'see', 'that', 'the', 'LORD', 'is', 'good'], ref: 'Psalm 34:8' },
-  { words: ['My', 'God', 'will', 'supply', 'every', 'need', 'of', 'yours'], ref: 'Philippians 4:19' },
-  { words: ['I', 'am', 'the', 'living', 'bread', 'that', 'came', 'down', 'from', 'heaven'], ref: 'John 6:51' },
-  { words: ['He', 'rained', 'down', 'on', 'them', 'manna', 'to', 'eat'], ref: 'Psalm 78:24' },
-  { words: ['Feed', 'me', 'with', 'the', 'food', 'that', 'is', 'needful', 'for', 'me'], ref: 'Proverbs 30:8' },
-  { words: ['The', 'LORD', 'is', 'my', 'shepherd', 'I', 'shall', 'not', 'want'], ref: 'Psalm 23:1' },
-]
+  { quote: 'Give us this day our daily bread', ref: 'Matthew 6:11' },
+  { quote: 'Man shall not live by bread alone', ref: 'Matthew 4:4' },
+  { quote: 'I am the bread of life', ref: 'John 6:35' },
+  { quote: 'Oh, taste and see that the LORD is good!', ref: 'Psalm 34:8' },
+  { quote: 'And my God will supply every need of yours', ref: 'Philippians 4:19' },
+  { quote: 'I am the living bread that came down from heaven.', ref: 'John 6:51' },
+  { quote: 'and he rained down on them manna to eat', ref: 'Psalm 78:24' },
+  { quote: 'feed me with the food that is needful for me', ref: 'Proverbs 30:8' },
+  { quote: 'The LORD is my shepherd; I shall not want.', ref: 'Psalm 23:1' },
+].map(verse => ({ ...verse, words: verseWords(verse.quote) }))
 const VERSES_RU: Verse[] = [
-  { words: ['Хлеб', 'наш', 'насущный', 'дай', 'нам', 'на', 'сей', 'день'], ref: 'Матфея 6:11' },
-  { words: ['Не', 'хлебом', 'одним', 'будет', 'жить', 'человек'], ref: 'Матфея 4:4' },
-  { words: ['Я', 'есмь', 'хлеб', 'жизни'], ref: 'Иоанна 6:35' },
-  { words: ['Вкусите', 'и', 'увидите', 'как', 'благ', 'Господь'], ref: 'Псалом 33:9' },
-  { words: ['Бог', 'мой', 'да', 'восполнит', 'всякую', 'нужду', 'вашу'], ref: 'Филиппийцам 4:19' },
-  { words: ['Я', 'хлеб', 'живый', 'сшедший', 'с', 'небес'], ref: 'Иоанна 6:51' },
-  { words: ['Он', 'одождил', 'на', 'них', 'манну', 'в', 'пищу'], ref: 'Псалом 77:24' },
-  { words: ['Питай', 'меня', 'насущным', 'хлебом'], ref: 'Притчи 30:8' },
-  { words: ['Господь', 'Пастырь', 'мой', 'я', 'ни', 'в', 'чем', 'не', 'буду', 'нуждаться'], ref: 'Псалом 22:1' },
-]
+  { quote: 'хлеб наш насущный дай нам на сей день', ref: 'Матфея 6:11' },
+  { quote: 'не хлебом одним будет жить человек', ref: 'Матфея 4:4' },
+  { quote: 'Я есмь хлеб жизни', ref: 'Иоанна 6:35' },
+  { quote: 'Вкусите и увидите, как благ Господь!', ref: 'Псалом 33:9' },
+  { quote: 'Бог мой да восполнит всякую нужду вашу', ref: 'Филиппийцам 4:19' },
+  { quote: 'Я хлеб живый, сшедший с небес', ref: 'Иоанна 6:51' },
+  { quote: 'и одождил на них манну в пищу', ref: 'Псалом 77:24' },
+  { quote: 'питай меня насущным хлебом', ref: 'Притчи 30:8' },
+  { quote: 'Господь — Пастырь мой; я ни в чем не буду нуждаться', ref: 'Псалом 22:1' },
+].map(verse => ({ ...verse, words: verseWords(verse.quote) }))
 
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -777,9 +780,9 @@ export default function MannaTrailPage() {
                   {copy.verseDone} {copy.bonus}
                 </p>
                 <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', fontSize: '1.12rem', lineHeight: 1.6, margin: '12px 0 6px', color: '#1e293b' }}>
-                  &ldquo;{verse.words.join(' ')}&rdquo;
+                  &ldquo;{verse.quote}&rdquo;
                 </p>
-                <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#075985', marginBottom: 18 }}>— {verse.ref}</p>
+                <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#075985', marginBottom: 18 }}>— {verse.ref} · {isRu ? 'Синодальный, отрывок' : 'ESV excerpt'}</p>
                 <p style={{ marginBottom: 16, color: '#475569' }}>{copy.lesson}</p>
                 <button className="mt-btn" onClick={nextLevel}>{level === VERSES.length ? copy.finish : `${copy.resume} → ${copy.level} ${level + 1}`}</button>
               </div>

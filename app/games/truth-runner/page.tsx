@@ -7,11 +7,12 @@ import { useLanguage } from '@/context/LanguageContext'
 import { advance, beginStage, course, COURSE_LENGTH, createRun, GOAL, pause, resume, safeBest, saveBest, STAGES, type Run } from './engine'
 import styles from './runner.module.css'
 
-// Existing Scripture wording and reference pairs are preserved.
+// Full verse text verified against Bible.com ESV (59) / Synodal (400).
+// Source URLs and exact-text regression: scripts/fixtures/truth-runner-scripture.json.
 const WISDOM = [
   { en: 'Your word is a lamp to my feet and a light to my path.', ru: 'Слово Твое — светильник ноге моей и свет стезе моей.', refEn: 'Psalm 119:105', refRu: 'Псалом 118:105' },
-  { en: 'You will know the truth, and the truth will set you free.', ru: 'И познаете истину, и истина сделает вас свободными.', refEn: 'John 8:32', refRu: 'Иоанна 8:32' },
-  { en: 'Be doers of the word, and not hearers only.', ru: 'Будьте же исполнители слова, а не слышатели только.', refEn: 'James 1:22', refRu: 'Иакова 1:22' },
+  { en: 'and you will know the truth, and the truth will set you free.', ru: 'и позна́ете истину, и истина сделает вас свободными.', refEn: 'John 8:32', refRu: 'Иоанна 8:32' },
+  { en: 'But be doers of the word, and not hearers only, deceiving yourselves.', ru: 'Будьте же исполнители слова, а не слышатели только, обманывающие самих себя.', refEn: 'James 1:22', refRu: 'Иакова 1:22' },
   { en: 'When I am afraid, I put my trust in you.', ru: 'Когда я в страхе, на Тебя я уповаю.', refEn: 'Psalm 56:3', refRu: 'Псалом 55:4' },
 ]
 const EN = {

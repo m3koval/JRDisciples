@@ -31,6 +31,14 @@ export type Action =
 export function initialState(language: Language = 'en'): State {
   return { phase: 'intro', room: 0, language, cleared: [], tiles: [], city: -1, prayers: 0, question: 0, verseStep: 0, feedback: null, inspected: false, hint: false, paused: false }
 }
+// Explain the disabled lock without giving away either answer.
+export function windowGuidance(state: Pick<State, 'city' | 'prayers'>, language: Language): string {
+  const step = state.city < 0 ? (state.prayers ? 1 : 0) : (state.prayers ? 3 : 2)
+  return {
+    en: ['Choose a city, then choose how many prayers each day.', 'Now choose the city the windows faced.', 'Now choose how many prayers each day.', 'Both parts are set. Try the window lock below.'],
+    ru: ['Выбери город, затем число молитв в день.', 'Теперь выбери город, куда выходили окна.', 'Теперь выбери число молитв в день.', 'Обе части выбраны. Проверь замок окна ниже.'],
+  }[language][step]
+}
 function enterRoom(state: State, room: number): State {
   return { ...initialState(state.language), phase: 'play', cleared: state.cleared, room }
 }
@@ -52,7 +60,7 @@ export function reducer(state: State, action: Action): State {
     if (!Number.isInteger(action.value) || action.value < 0 || action.value > 3 || (action.value > 0 && !state.cleared.includes(action.value - 1))) return state
     return enterRoom(state, action.value)
   }
-  if (action.type === 'inspect') return { ...state, inspected: true }
+  if (action.type === 'inspect') return { ...state, inspected: !state.inspected }
   if (action.type === 'hint') return { ...state, hint: true, inspected: true }
   if (action.type === 'next') {
     if (state.feedback !== 'right') return state

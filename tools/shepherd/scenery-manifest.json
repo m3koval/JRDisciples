@@ -1,0 +1,31 @@
+{
+  "kind": "Transparent 2D scenery derivatives; not live 3D",
+  "renderer": "Godot 4.7.2 Compatibility",
+  "new_asset_spend_usd": 0,
+  "assets": {
+    "tree": {
+      "source": "tools/shepherd/render_scenery.gd",
+      "license": "Original procedural rounded tree; not generated premium art",
+      "source_sha256": "4b0f8fb28062235c5ae15d98538f2e73b998427b07c1d57ecf108a66d900a4bc",
+      "output": "public/images/jr/games/shepherd-light-adventure/scenery-tree.webp",
+      "sha256": "463dc0ea9060052c48ca39744370a33f3d888ab0db34dd04c7d69dbe9942c56e",
+      "bytes": 1926
+    },
+    "rock": {
+      "source": "game/trail-of-truth-block-adventure/assets/scans/rock_moss_b.glb",
+      "license": "Existing CC0 scan; Trail THIRD_PARTY_NOTICES.md",
+      "source_sha256": "c3610b9c97ffc3dbf2efe268accd32892d0a705f7a6ea85f60f078c72c60a003",
+      "output": "public/images/jr/games/shepherd-light-adventure/scenery-rock.webp",
+      "sha256": "8f222a7d5ee7c97727a2ede030dbff45c446a895a91156872c188752c66090d6",
+      "bytes": 3106
+    },
+    "flowers": {
+      "source": "game/trail-of-truth-block-adventure/assets/environment/flower_yellowC.glb",
+      "license": "Kenney Nature Kit CC0; assets/environment/PROVENANCE.md",
+      "source_sha256": "4115c017390b3e157466a8719e9e2af6c5385505135e7012982b9410760ba9f3",
+      "output": "public/images/jr/games/shepherd-light-adventure/scenery-flowers.webp",
+      "sha256": "f4c0b1433f6389c303712eafe10d139c73beeeecbcb82ac66c0abfe5b2608ffb",
+      "bytes": 2592
+    }
+  }
+}
