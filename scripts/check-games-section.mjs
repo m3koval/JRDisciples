@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 
 const root = process.cwd();
 const failures = [];
@@ -79,14 +80,18 @@ const requiredArcherSnippets = [
   'distancePointToSegment',
   'snapArrowToTarget',
   'hitCooldown',
-  'Targets are smaller and farther away now',
+  'Hit each target once',
   'type Emotion',
   'drawArcherFace',
   'EMOTION_BEATS',
   "setArcherEmotion('happy'",
   "setArcherEmotion('surprised'",
   "setArcherEmotion('celebrate'",
-  'TARGET_MOTION',
+  'targetMotion(kind, model.levelIndex)',
+  'stepFlight',
+  'roundOutcome',
+  'All four courses complete!',
+  'Collect 12 arrows',
   'motionAmp',
   'motionY',
   'stuckTargetId',
@@ -120,7 +125,8 @@ if (!/function\s+getCanvasPoint/.test(archer)) failures.push('Faithful Archer ro
 if (!/function\s+launchArrowVelocity/.test(archer)) failures.push('Faithful Archer route must define launchArrowVelocity for deterministic projectile math.');
 if (/event\.offset[XY]/.test(archer)) failures.push('Faithful Archer route must not use PointerEvent.offsetX/offsetY; iOS Safari touch release can report bad offsets.');
 if (/arrow\.[xy] \+= arrow\.v[xy] \* dt \* 60/.test(archer)) failures.push('Faithful Archer arrow physics must use px/sec units, not frame-scaled dt * 60 movement.');
-if (/if \(target\.hit\) continue/.test(archer)) failures.push('Faithful Archer targets must stay repeatable during a run; use hitCooldown instead of permanently skipping hit targets.');
+// Finite target courses award each target once; refill must retain that progress.
+if (!archer.includes('if (target.hit || target.hitCooldown > 0) continue')) failures.push('Faithful Archer must prevent duplicate target credit.');
 if (/m\.levelIndex === 0 \? 0/.test(archer)) failures.push('Faithful Archer targets should move even on the first course; Mike asked for larger, more aggressive motion.');
 if (/if \(arrow\.stuck\) continue/.test(archer)) failures.push('Faithful Archer stuck arrows must follow moving targets via stuckTargetId/stuckOffset, not freeze in world space.');
 if (/return target\.r \+/.test(archer)) failures.push('Faithful Archer hitbox must use a reduced core radius so target placement matters; do not count the whole visual radius plus assist.');
@@ -129,6 +135,12 @@ if (/const bullseye = Math\.hypot\(arrow\.x - target\.x/.test(archer)) failures.
 if (/ctx\.translate\(obstacle\.x \+ sway/.test(archer)) failures.push('Faithful Archer obstacle drawing and collision must share getObstacleBounds so visible obstacle position matches collision.');
 if (!/type\s+Target/.test(archer)) failures.push('Faithful Archer route must define typed targets.');
 if (!/const\s+SCRIPTURE/.test(archer)) failures.push('Faithful Archer route must define SCRIPTURE.');
+
+// Exercise the extracted mechanics, rather than trusting the presence of UI copy.
+for (const script of ['test-archer-physics.mjs', 'test-giants-course.mjs', 'test-david-recovery.mjs', 'test-spot-regression.mjs']) {
+  try { execFileSync(process.execPath, [path.join(root, 'scripts', script)], { cwd: root, stdio: 'pipe', timeout: 30000 }); }
+  catch { failures.push(`Gameplay regression failed: ${script}`); }
+}
 
 if (failures.length) {
   console.error('Games section checks failed:');

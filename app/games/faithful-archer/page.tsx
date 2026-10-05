@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import { stepFlight, releasePoint, roundOutcome, targetMotion } from './physics'
 
 type Emotion = 'idle' | 'focus' | 'release' | 'happy' | 'surprised' | 'celebrate'
 
@@ -80,7 +81,7 @@ const MAX_DRAW = 190
 const MOBILE_BREAKPOINT = 720
 const HIT_ASSIST = { desktop: 2, mobile: 6, core: 0.64, snap: 0.92, cooldown: 0.42 }
 const EMOTION_BEATS = { release: 0.28, happy: 0.7, surprised: 0.62, celebrate: 1.15 }
-const TARGET_MOTION = { baseAmp: 42, levelAmp: 26, mobileAmp: 32, yAmp: 18, levelY: 9, speedBase: 0.62, speedStep: 0.13, levelSpeed: 0.2 }
+
 
 type Point = { x: number; y: number }
 
@@ -104,8 +105,8 @@ function launchArrowVelocity(bow: Point, release: Point, calm: boolean) {
 function getCanvasPoint(canvas: HTMLCanvasElement, event: PointerEvent): Point {
   const rect = canvas.getBoundingClientRect()
   return {
-    x: clamp(event.clientX - rect.left, 0, rect.width),
-    y: clamp(event.clientY - rect.top, 0, rect.height),
+    x: event.clientX - rect.left,
+    y: event.clientY - rect.top,
   }
 }
 
@@ -213,6 +214,7 @@ export default function FaithfulArcherPage() {
   const [calmMode, setCalmMode] = useState(true)
   const calmRef = useRef(true)
   const [wisdomCard, setWisdomCard] = useState<{ title: string; quote: string; ref: string } | null>(null)
+  const [result, setResult] = useState<'refill' | 'complete' | null>(null)
 
   const copy = isRu ? {
     back: 'Все игры',
@@ -229,7 +231,7 @@ export default function FaithfulArcherPage() {
     combo: 'Серия',
     course: 'Курс',
     wisdom: 'Мудрость',
-    mobileRelease: 'Мобильное управление: держи палец на поле, тяни назад от лучника, смотри на светлую траекторию и отпусти. Цели теперь меньше и дальше, а деревянные препятствия заставляют стрелять дугой — попадания требуют настоящей точности.',
+    mobileRelease: 'Коснись поля в любом месте. Тяни влево и вниз — стрела летит вправо и вверх. Щит и свиток стоят, колокол качается, фонарь поднимается. Попади в каждую цель один раз!',
     truth: 'Главная мысль: Божье Слово освещает путь. Тренируйся спокойно, целься честно и не сдавайся.',
     keep: 'Продолжить',
   } : {
@@ -247,7 +249,7 @@ export default function FaithfulArcherPage() {
     combo: 'Combo',
     course: 'Course',
     wisdom: 'Wisdom',
-    mobileRelease: 'Mobile controls: hold your finger on the field, pull back from the archer, follow the bright aim trail, then release. Targets are smaller and farther away now, with wooden obstacles that force arcing shots and real accuracy.',
+    mobileRelease: 'Touch anywhere in the field. Pull left and down to shoot right and up. Shields and scrolls stay still; bells swing; lanterns rise. Hit each target once!',
     truth: 'Big truth: God’s Word lights the path. Practice calmly, aim honestly, and keep going.',
     keep: 'Keep Practicing',
   }
@@ -266,7 +268,8 @@ export default function FaithfulArcherPage() {
   }
 
   function startGame() {
-    const best = Number(localStorage.getItem(STORAGE_KEY) || '0')
+    let best = modelRef.current.best
+    try { best = Number(localStorage.getItem(STORAGE_KEY) || best) } catch { /* Practice works without storage. */ }
     const model = makeModel()
     model.running = true
     model.best = Number.isFinite(best) ? best : 0
@@ -277,14 +280,16 @@ export default function FaithfulArcherPage() {
     floatRef.current = []
     spawnTargets()
     setWisdomCard(null)
+    setResult(null)
+    pointerRef.current.down = false
     syncHud()
   }
 
   function spawnTargets() {
     const { width, height } = sizeRef.current
     const model = modelRef.current
-    const count = width < MOBILE_BREAKPOINT ? 4 : 5
-    const farAnchor = width < MOBILE_BREAKPOINT ? Math.max(width * 0.62, 310) : Math.max(width * 0.68, 520)
+    const count = 4
+    const farAnchor = width * 0.67
     targetsRef.current = Array.from({ length: count }, (_, i) => {
       const kind: TargetKind = i === 1 ? 'bell' : i === 2 ? 'scroll' : i === 3 ? 'lantern' : i === 4 ? 'dummy' : 'shield'
       const laneOffset = (i % 2) * Math.min(width < MOBILE_BREAKPOINT ? 68 : 118, width * 0.13)
@@ -292,9 +297,10 @@ export default function FaithfulArcherPage() {
       const y = height * (0.2 + (i / count) * 0.52) + (seeded(i + 19) * 30 - 15)
       const mobileBoost = width < MOBILE_BREAKPOINT ? 3 : 0
       const courseShrink = Math.min(6, model.levelIndex * 2)
-      const baseRadius = kind === 'dummy' ? 28 : kind === 'scroll' ? 21 : 25
-      const motionAmp = Math.min(width * 0.22, TARGET_MOTION.baseAmp + model.levelIndex * TARGET_MOTION.levelAmp + (width < MOBILE_BREAKPOINT ? TARGET_MOTION.mobileAmp : 0) + i * 7)
-      const motionY = TARGET_MOTION.yAmp + model.levelIndex * TARGET_MOTION.levelY + (kind === 'lantern' ? 16 : 0)
+      const baseRadius = kind === 'dummy' ? 32 : kind === 'scroll' ? 27 : 30
+      const motion = targetMotion(kind, model.levelIndex)
+      const motionAmp = motion.x
+      const motionY = motion.y
       return {
         id: i,
         kind,
@@ -304,7 +310,7 @@ export default function FaithfulArcherPage() {
         y,
         r: Math.max(18, baseRadius + mobileBoost - courseShrink),
         phase: i * 1.7,
-        speed: TARGET_MOTION.speedBase + i * TARGET_MOTION.speedStep + model.levelIndex * TARGET_MOTION.levelSpeed,
+        speed: 0.7 + model.levelIndex * 0.12,
         motionAmp,
         motionY,
         hit: false,
@@ -323,13 +329,13 @@ export default function FaithfulArcherPage() {
     const { width, height } = sizeRef.current
     const level = modelRef.current.levelIndex
     const mobile = width < MOBILE_BREAKPOINT
-    const gateCount = Math.min(3, 1 + level)
+    const gateCount = level === 0 ? 0 : 1
     obstaclesRef.current = Array.from({ length: gateCount }, (_, i) => {
       const kind: ObstacleKind = i % 3 === 0 ? 'post' : i % 3 === 1 ? 'beam' : 'crate'
       const x = width * (mobile ? 0.43 : 0.46) + i * (mobile ? 42 : 72)
-      const y = height * (0.28 + i * 0.16) + (seeded(level * 7 + i) * 34 - 17)
+      const y = height * 0.65
       const w = kind === 'beam' ? (mobile ? 96 : 150) : kind === 'crate' ? (mobile ? 50 : 68) : (mobile ? 34 : 44)
-      const h = kind === 'beam' ? (mobile ? 24 : 30) : kind === 'crate' ? (mobile ? 52 : 68) : height * (mobile ? 0.26 : 0.32)
+      const h = height * 0.18
       return { id: i, kind, x: clamp(x, width * 0.32, width * 0.64), y: clamp(y, height * 0.2, height * 0.68), w, h, phase: i * 1.9 + level, hitFlash: 0, wobble: 0 }
     })
   }
@@ -353,19 +359,29 @@ export default function FaithfulArcherPage() {
     function resize() {
       const rect = canvas!.getBoundingClientRect()
       const dpr = Math.min(window.devicePixelRatio || 1, 2)
-      const width = Math.max(320, Math.floor(rect.width))
-      const height = Math.max(430, Math.floor(rect.height))
+      const width = Math.max(1, Math.floor(rect.width))
+      const height = Math.max(1, Math.floor(rect.height))
+      const old = sizeRef.current
       sizeRef.current = { width, height, dpr }
       canvas!.width = Math.floor(width * dpr)
       canvas!.height = Math.floor(height * dpr)
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0)
-      if (modelRef.current.running) spawnTargets()
+      // Resizing (including modal effect setup) must never reset earned hits.
+      if (old.width !== width || old.height !== height) {
+        for (const t of targetsRef.current) {
+          t.baseX *= width / old.width; t.x *= width / old.width
+          t.baseY *= height / old.height; t.y *= height / old.height
+        }
+        arrowsRef.current = arrowsRef.current.filter(a => a.stuck)
+        pointerRef.current.down = false
+        spawnObstacles()
+      }
     }
 
     function archer() {
       const { width, height } = sizeRef.current
       const m = modelRef.current
-      return { x: Math.max(72, width * 0.13), y: height * 0.69 + Math.sin(m.time * 2.2) * 1.5 + m.recoil }
+      return { x: Math.max(56, width * 0.13), y: height * 0.69 + m.recoil }
     }
 
     function shoot(tx: number, ty: number) {
@@ -399,7 +415,7 @@ export default function FaithfulArcherPage() {
 
     function update(dt: number) {
       const m = modelRef.current
-      if (!m.running || wisdomCard) return
+      if (!m.running || wisdomCard || document.hidden) return
       m.time += dt
       if (m.emotion !== 'idle' && m.emotionUntil <= m.time) m.emotion = 'idle'
       m.recoil *= Math.pow(0.05, dt)
@@ -437,12 +453,8 @@ export default function FaithfulArcherPage() {
           continue
         }
         arrow.age += dt
-        arrow.vx += m.wind * 220 * dt
-        arrow.vy += (calmRef.current ? ARROW_GRAVITY.calm : ARROW_GRAVITY.fast) * dt
-        arrow.vx *= Math.pow(0.997, dt * 60)
         const prev = { x: arrow.x, y: arrow.y }
-        arrow.x += arrow.vx * dt
-        arrow.y += arrow.vy * dt
+        Object.assign(arrow, stepFlight(arrow, dt, calmRef.current ? ARROW_GRAVITY.calm : ARROW_GRAVITY.fast))
         arrow.trail.unshift({ x: arrow.x, y: arrow.y })
         arrow.trail = arrow.trail.slice(0, 8)
         if (arrow.y > height * 0.83 || arrow.x > width + 120 || arrow.x < -120 || arrow.age > 5) {
@@ -473,12 +485,12 @@ export default function FaithfulArcherPage() {
         }
         if (arrow.stuck && arrow.stuckTargetId === undefined) continue
         for (const target of targetsRef.current) {
-          if (target.hitCooldown > 0) continue
+          if (target.hit || target.hitCooldown > 0) continue
           const hitRadius = getHitAssistRadius(target, width)
           const centerDistance = Math.hypot(arrow.x - target.x, arrow.y - target.y)
           const pathDistance = distancePointToSegment({ x: target.x, y: target.y }, prev, { x: arrow.x, y: arrow.y })
           if (Math.min(centerDistance, pathDistance) < hitRadius) {
-            hitTarget(arrow, target)
+            hitTarget(arrow, target, pathDistance)
             break
           }
         }
@@ -488,8 +500,10 @@ export default function FaithfulArcherPage() {
       sparksRef.current = sparksRef.current.filter((s) => { s.x += s.vx * dt; s.y += s.vy * dt; s.vy += 32 * dt; s.life -= dt; return s.life > 0 })
       floatRef.current = floatRef.current.filter((f) => { f.y -= 30 * dt; f.life -= dt; return f.life > 0 })
 
-      if (targetsRef.current.length && targetsRef.current.every((t) => t.hit)) {
-        m.levelIndex = Math.min(3, m.levelIndex + 1)
+      const outcome = roundOutcome(m.levelIndex, targetsRef.current.length > 0 && targetsRef.current.every(t => t.hit), m.arrowsLeft, arrowsRef.current.some(a => !a.stuck))
+      if (outcome === 'advance') {
+        m.levelIndex += 1
+        m.arrowsLeft = 12
         m.targetSeed += 10
         arrowsRef.current = arrowsRef.current.filter((a) => !a.stuck)
         spawnTargets()
@@ -498,11 +512,11 @@ export default function FaithfulArcherPage() {
         syncHud()
       }
 
-      if (m.arrowsLeft <= 0 && arrowsRef.current.every((a) => a.stuck || a.age > 0.5)) {
+      if (outcome === 'refill' || outcome === 'complete') {
         m.running = false
         m.best = Math.max(m.best, m.score)
-        localStorage.setItem(STORAGE_KEY, String(m.best))
-        setWisdomCard((isRu ? SCRIPTURE.ru : SCRIPTURE.en)[m.verseIndex % SCRIPTURE.en.length])
+        try { localStorage.setItem(STORAGE_KEY, String(m.best)) } catch { /* In-memory best remains available. */ }
+        setResult(outcome)
         syncHud()
       }
     }
@@ -515,9 +529,8 @@ export default function FaithfulArcherPage() {
       return { text: isRu ? 'точно!' : 'clean!', color: '#31552d', spark: '#8ee36a' }
     }
 
-    function hitTarget(arrow: Arrow, target: Target) {
+    function hitTarget(arrow: Arrow, target: Target, impactDistance: number) {
       const m = modelRef.current
-      const impactDistance = Math.hypot(arrow.x - target.x, arrow.y - target.y)
       snapArrowToTarget(arrow, target)
       arrow.stuck = true
       target.hit = true
@@ -546,7 +559,7 @@ export default function FaithfulArcherPage() {
       points = Math.round(points * Math.min(3, 1 + Math.floor(m.combo / 3) * 0.5))
       m.score += points
       m.best = Math.max(m.best, m.score)
-      localStorage.setItem(STORAGE_KEY, String(m.best))
+      try { localStorage.setItem(STORAGE_KEY, String(m.best)) } catch { /* Storage is optional. */ }
       m.wisdomMeter += target.wisdom ? 34 : 12
       const feedback = getTargetFeedback(target)
       if (target.wisdom) {
@@ -618,10 +631,8 @@ export default function FaithfulArcherPage() {
         const step = 1 / 30
         for (let i = 0; i < 42; i++) {
           const prev = { x, y }
-          vx += modelRef.current.wind * 220 * step
-          vy += (calmRef.current ? ARROW_GRAVITY.calm : ARROW_GRAVITY.fast) * step
-          x += vx * step
-          y += vy * step
+          const next = stepFlight({ x, y, vx, vy }, step, calmRef.current ? ARROW_GRAVITY.calm : ARROW_GRAVITY.fast)
+          x = next.x; y = next.y; vx = next.vx; vy = next.vy
           const hitPreview = obstaclesRef.current.some((obstacle) => arrowHitsObstacle(prev, { x, y }, getObstacleBounds(obstacle, modelRef.current.time)))
           if (hitPreview) aimBlocked = true
           if (i % 2 === 0) {
@@ -674,18 +685,25 @@ export default function FaithfulArcherPage() {
 
     const onPointerDown = (event: PointerEvent) => {
       event.preventDefault()
+      if (!event.isPrimary || !modelRef.current.running || wisdomCard) return
       const point = getCanvasPoint(canvas!, event)
-      pointerRef.current = { down: true, x: point.x, y: point.y, startX: point.x, startY: point.y }
+      const a = archer()
+      pointerRef.current = { down: true, x: a.x + 34, y: a.y - 58, startX: point.x, startY: point.y }
       canvas!.setPointerCapture(event.pointerId)
     }
     const onPointerMove = (event: PointerEvent) => {
       event.preventDefault()
+      if (!event.isPrimary || !pointerRef.current.down) return
       const point = getCanvasPoint(canvas!, event)
-      pointerRef.current.x = point.x
-      pointerRef.current.y = point.y
+      const a = archer()
+      const release = releasePoint({ x: a.x + 34, y: a.y - 58 }, { x: pointerRef.current.startX, y: pointerRef.current.startY }, point)
+      pointerRef.current.x = release.x
+      pointerRef.current.y = release.y
     }
     const onPointerUp = (event: PointerEvent) => {
       event.preventDefault()
+      if (!event.isPrimary) return
+      onPointerMove(event)
       const point = pointerRef.current
       if (point.down) shoot(point.x, point.y)
       point.down = false
@@ -698,6 +716,7 @@ export default function FaithfulArcherPage() {
       pointerRef.current.down = false
     }
     const onKey = (event: KeyboardEvent) => {
+      if (event.target !== canvas || wisdomCard || event.repeat) return
       if (event.code === 'Space') {
         event.preventDefault()
         if (!modelRef.current.running) startGame()
@@ -712,6 +731,8 @@ export default function FaithfulArcherPage() {
     resize()
     window.addEventListener('resize', resize)
     window.addEventListener('keydown', onKey)
+    window.addEventListener('blur', onPointerCancel)
+    document.addEventListener('visibilitychange', onPointerCancel)
     canvas.addEventListener('pointerdown', onPointerDown)
     canvas.addEventListener('pointermove', onPointerMove)
     canvas.addEventListener('pointerup', onPointerUp)
@@ -722,6 +743,8 @@ export default function FaithfulArcherPage() {
       cancelAnimationFrame(raf)
       window.removeEventListener('resize', resize)
       window.removeEventListener('keydown', onKey)
+      window.removeEventListener('blur', onPointerCancel)
+      document.removeEventListener('visibilitychange', onPointerCancel)
       canvas.removeEventListener('pointerdown', onPointerDown)
       canvas.removeEventListener('pointermove', onPointerMove)
       canvas.removeEventListener('pointerup', onPointerUp)
@@ -742,7 +765,7 @@ export default function FaithfulArcherPage() {
         .archer-sub { max-width: 820px; font-family: var(--font-lora); color: rgba(255,255,255,.9); font-weight: 700; line-height: 1.58; margin: 0; }
         .archer-shell { display: grid; grid-template-columns: minmax(0,1fr) 318px; gap: 14px; align-items: stretch; }
         .target-course { position: relative; min-height: min(650px, calc(100svh - 215px)); border-radius: 32px; overflow: hidden; border: 4px solid rgba(255,216,102,.84); background: #8fd3ff; box-shadow: 0 28px 90px rgba(0,0,0,.34); touch-action: none; isolation: isolate; }
-        .target-course canvas { width: 100%; height: 100%; display: block; cursor: crosshair; touch-action: none; }
+        .target-course canvas { width: 100%; height: clamp(360px, 65svh, 620px); display: block; cursor: crosshair; touch-action: none; }
         .archer-panel { border-radius: 28px; padding: 16px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); box-shadow: 0 22px 60px rgba(0,0,0,.22); }
         .archer-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; margin-bottom: 12px; }
         .archer-stats div { border-radius: 16px; padding: 10px; text-align: center; background: rgba(15,23,42,.82); border: 1px solid rgba(255,255,255,.18); font-family: var(--font-nunito); font-weight: 1000; }
@@ -771,7 +794,10 @@ export default function FaithfulArcherPage() {
 
         <section className="archer-shell">
           <div className="target-course" aria-label={copy.title}>
-            <canvas ref={canvasRef} />
+            <canvas ref={canvasRef} tabIndex={0} aria-label={isRu ? 'Поле: тяни влево и вниз, затем отпусти' : 'Range: drag left and down, then release'} />
+            <div style={{ position: 'absolute', top: 12, left: 12, right: 12, pointerEvents: 'none', color: '#203047', fontWeight: 900, textAlign: 'center', background: '#fff6dce8', borderRadius: 14, padding: 8 }}>
+              {isRu ? 'Попади в каждую цель • Курс' : 'Hit each target once • Course'} {hud.level + 1}/4
+            </div>
           </div>
 
           <aside className="archer-panel">
@@ -796,6 +822,22 @@ export default function FaithfulArcherPage() {
         </section>
       </div>
 
+      {result && !wisdomCard && (
+        <div className="archer-wisdom-card" role="dialog" aria-modal="true" aria-label={isRu ? 'Результат' : 'Range result'}>
+          <div className="archer-wisdom-inner">
+            <h2>{result === 'complete' ? (isRu ? 'Все четыре курса пройдены!' : 'All four courses complete!') : (isRu ? 'Возьми новые стрелы!' : 'Collect more arrows!')}</h2>
+            <p>{result === 'complete' ? (isRu ? 'Отличная тренировка!' : 'Great steady practice!') : (isRu ? 'Твои попадания сохранены. Попробуй другую дугу.' : 'Your cleared targets stay cleared. Try a different arc.')}</p>
+            <button className="pz-btn" style={{ minHeight: 54 }} onClick={() => {
+              if (result === 'complete') { startGame(); return }
+              modelRef.current.arrowsLeft = 12
+              modelRef.current.running = true
+              arrowsRef.current = []
+              setResult(null)
+              syncHud()
+            }}>{result === 'complete' ? (isRu ? 'Играть снова' : 'Play again') : (isRu ? 'Взять 12 стрел' : 'Collect 12 arrows')}</button>
+          </div>
+        </div>
+      )}
       {wisdomCard && (
         <div className="archer-wisdom-card" role="dialog" aria-modal="true" aria-label={isRu ? 'Библейская мудрость' : 'Bible Wisdom'}>
           <div className="archer-wisdom-inner">
@@ -871,7 +913,7 @@ function drawTarget(ctx: CanvasRenderingContext2D, target: Target, time: number)
   else if (target.kind === 'lantern') drawLantern(ctx, time)
   else if (target.kind === 'scroll') drawScroll(ctx, time)
   else drawShield(ctx, target, time)
-  if (target.hitCooldown > 0) { ctx.globalAlpha = 0.55; ctx.fillStyle = '#fff6dc'; ctx.font = '900 18px system-ui'; ctx.textAlign = 'center'; ctx.fillText('✓', 0, 6) }
+  if (target.hit) { ctx.fillStyle = '#31552d'; ctx.beginPath(); ctx.arc(0, 0, 15, 0, Math.PI * 2); ctx.fill(); ctx.fillStyle = '#fff6dc'; ctx.font = '900 22px system-ui'; ctx.textAlign = 'center'; ctx.fillText('✓', 0, 8) }
   ctx.restore()
 }
 

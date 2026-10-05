@@ -3,7 +3,8 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { courseTurn, nextObstacle, answerOrder } from './course'
 import { useLanguage } from '@/context/LanguageContext'
 
 type Phase = 'intro' | 'question' | 'play' | 'levelComplete' | 'victory' | 'defeat'
@@ -183,8 +184,8 @@ const powerups: Record<Powerup, { cost: number; labelEn: string; labelRu: string
     cost: 5,
     labelEn: 'Be Strong',
     labelRu: 'Будь тверд',
-    descEn: 'Next hits deal double damage',
-    descRu: 'Следующие удары вдвое сильнее',
+    descEn: 'Next 3 steps clear twice the fear',
+    descRu: 'Следующие 3 шага вдвое сильнее',
   },
 }
 
@@ -212,6 +213,9 @@ export default function FaithOverGiantsPage() {
   const [bestLevel, setBestLevel] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
   const [answerLocked, setAnswerLocked] = useState(false)
+  const [resolve, setResolve] = useState(3)
+  const actionLock = useRef(false)
+  const activeObstacle = nextObstacle(giantHps)
 
   const level = LEVELS[Math.min(levelIndex, LEVELS.length - 1)]
   const scripture = SCRIPTURE[level.scriptureIndex]
@@ -252,7 +256,7 @@ export default function FaithOverGiantsPage() {
     badgeEarned: 'Новая награда',
     reward: 'Награда',
     pressure: 'Давление страха',
-    tapHint: 'Нажимай на великанов, чтобы сражаться!',
+    tapHint: 'Шаг стоит 1 решимость. Сплочение вернёт решимость и уменьшит страх. Пройди препятствия до лагеря.',
     helpersHint: 'каждый отталкивает страх',
     bossWarning: '⚠️ Последнее испытание впереди: большой страх. Держись обещания Господа!',
     reflection: '💭 Подумай: какой «великан» пугает тебя в жизни? Как обещание Господа помогает идти вперёд?',
@@ -287,7 +291,7 @@ export default function FaithOverGiantsPage() {
     badgeEarned: 'New Reward',
     reward: 'Reward',
     pressure: 'Fear Pressure',
-    tapHint: 'Tap the giants to fight them!',
+    tapHint: 'Advance costs 1 resolve. Rally restores resolve and lowers fear. Clear each obstacle to reach camp.',
     helpersHint: 'each one pushes fear back',
     bossWarning: "⚠️ The final challenge is ahead: big fear itself. Hold to the LORD's promise!",
     reflection: "💭 Think about this: what is one 'giant' in your own life? How does God's promise help you keep going?",
@@ -301,26 +305,13 @@ export default function FaithOverGiantsPage() {
   }
 
   useEffect(() => {
-    const stored = Number(localStorage.getItem('faith-over-giants-best-level') || '0')
-    setBestLevel(Number.isFinite(stored) ? stored : 0)
+    try {
+      const stored = Number(localStorage.getItem('faith-over-giants-best-level') || '0')
+      setBestLevel(Number.isFinite(stored) ? clamp(Math.floor(stored), 0, 10) : 0)
+    } catch { /* Private browsing still allows a complete journey. */ }
   }, [])
 
-  useEffect(() => {
-    if (phase !== 'play') return
-    const timer = window.setInterval(() => {
-      setFearLine((value) => {
-        const next = value + level.speed
-        if (next >= 100) {
-          setHealth((h) => Math.max(0, h - 1))
-          setLastAction('hit')
-          setMessage(isRu ? 'Страх подошел близко — держись Божьего обещания.' : "Fear pressed close — hold to God's promise.")
-          return 26
-        }
-        return next
-      })
-    }, 850)
-    return () => window.clearInterval(timer)
-  }, [phase, level.speed, isRu])
+  useEffect(() => { actionLock.current = false }, [giantHps, resolve, fearLine, coins, phase])
 
   // Defeat check
   useEffect(() => {
@@ -340,14 +331,14 @@ export default function FaithOverGiantsPage() {
       setLastAction('badge')
       setPhase('victory')
       setBestLevel(10)
-      localStorage.setItem('faith-over-giants-best-level', '10')
+      try { localStorage.setItem('faith-over-giants-best-level', '10') } catch { /* Session best remains available. */ }
     } else {
       setBadges((earned) => earned.includes(level.badgeEn) ? earned : [...earned, level.badgeEn])
       setLastAction('badge')
       setPhase('levelComplete')
       const nextBest = Math.max(bestLevel, levelIndex + 1)
       setBestLevel(nextBest)
-      localStorage.setItem('faith-over-giants-best-level', String(nextBest))
+      try { localStorage.setItem('faith-over-giants-best-level', String(nextBest)) } catch { /* Session best remains available. */ }
     }
   }, [phase, giantHps, level.badgeEn, levelIndex, bestLevel])
 
@@ -356,6 +347,7 @@ export default function FaithOverGiantsPage() {
     setLevelIndex(0)
     initGiants(0)
     setFearLine(16)
+    setResolve(3)
     setHealth(6)
     setHelpers(2)
     setCoins(0)
@@ -368,26 +360,30 @@ export default function FaithOverGiantsPage() {
   }
 
   function answerQuestion(index: number) {
-    if (answerLocked) return
+    if (phase !== 'question' || answerLocked || actionLock.current) return
     setSelectedAnswer(index)
     if (index === scripture.question.answer) {
-      setCoins((c) => c + 3)
-      setLastAction('power')
+      actionLock.current = true
+      setCoins(c => c + 3)
       setMessage(copy.correct)
       setAnswerLocked(true)
-      window.setTimeout(() => {
-        setSelectedAnswer(null)
-        setAnswerLocked(false)
-        setPhase('play')
-      }, 1400)
     } else {
-      setAnswerLocked(true)
       setMessage(copy.wrong)
-      window.setTimeout(() => {
-        setSelectedAnswer(null)
-        setAnswerLocked(false)
-      }, 1200)
     }
+  }
+
+  function retryLevel() {
+    initGiants(levelIndex)
+    setHealth(6)
+    setFearLine(16)
+    setResolve(3)
+    setCoins(0)
+    setHelpers(2)
+    setStrengthTurns(0)
+    setSelectedAnswer(null)
+    setAnswerLocked(false)
+    setMessage('')
+    setPhase('question')
   }
 
   function nextLevel() {
@@ -395,6 +391,7 @@ export default function FaithOverGiantsPage() {
     setLevelIndex(next)
     initGiants(next)
     setFearLine(16)
+    setResolve(3)
     setHealth((h) => Math.min(6, h + 1))
     setStrengthTurns(0)
     setSelectedAnswer(null)
@@ -404,38 +401,34 @@ export default function FaithOverGiantsPage() {
     setPhase('question')
   }
 
-  function attackGiant(index: number) {
-    if (phase !== 'play') return
-    if (giantHps[index] <= 0) return
-    const dmg = strengthTurns > 0 ? 2 : 1
-    setHittingIndex(index)
-    window.setTimeout(() => setHittingIndex(null), 340)
-    setGiantHps((hps) => {
-      const next = [...hps]
-      next[index] = Math.max(0, next[index] - dmg)
-      if (next[index] <= 0) setCoins((c) => c + 1)
-      return next
-    })
-    if (strengthTurns > 0) setStrengthTurns((turns) => Math.max(0, turns - 1))
-    setLastAction('step')
-    setMessage(dmg === 2
-      ? (isRu ? 'Двойной удар! +1 🪙 за победу.' : 'Double strike! +1 🪙 for the victory.')
-      : (isRu ? 'Удар верой! Стой твёрдо — Господь с тобой.' : 'Strike with faith! Stand firm — the LORD is with you.')
-    )
+  function takeTurn(type: 'advance' | 'rally', index = activeObstacle) {
+    if (phase !== 'play' || actionLock.current) return
+    const before = { obstacles: giantHps, resolve, fear: fearLine, health, coins, strength: strengthTurns }
+    const after = courseTurn(before, type === 'rally' ? { type } : { type, index }, levelIndex, helpers)
+    if (before === after) return
+    actionLock.current = true
+    setGiantHps(after.obstacles)
+    setResolve(after.resolve)
+    setFearLine(after.fear)
+    setHealth(after.health)
+    setCoins(after.coins)
+    setStrengthTurns(after.strength)
+    setHittingIndex(type === 'advance' ? index : null)
+    setLastAction(after.health < health ? 'hit' : 'step')
+    setMessage(type === 'rally'
+      ? (isRu ? 'Команда сплотилась: +1 решимость, меньше страха.' : 'Team rallied: +1 resolve, less fear.')
+      : after.health < health
+        ? (isRu ? 'Страх слишком близко. Сплотись перед следующим шагом!' : 'Fear pressed close. Rally before the next step!')
+        : (isRu ? 'Путь открывается! Следи за решимостью и страхом.' : 'The path is opening! Watch resolve and fear.'))
   }
 
-  function courageStep() {
-    if (phase !== 'play') return
-    const pushBack = helpers * 5 + (strengthTurns > 0 ? 14 : 0)
-    setFearLine((value) => clamp(value - pushBack, 10, 100))
-    setLastAction('step')
-    setMessage(isRu ? 'Верный ответ отталкивает страх — команда держится!' : 'A faithful report pushes fear back — the team stands firm!')
-    if (strengthTurns > 0) setStrengthTurns((turns) => Math.max(0, turns - 1))
-  }
+  function attackGiant(index: number) { takeTurn('advance', index) }
+  function courageStep() { takeTurn('rally') }
 
   function spendPowerup(kind: Powerup) {
     const power = powerups[kind]
-    if (phase !== 'play' || coins < power.cost) return
+    if (phase !== 'play' || coins < power.cost || actionLock.current || (kind === 'health' && health === 6) || (kind === 'people' && helpers === 8) || (kind === 'strength' && strengthTurns > 0)) return
+    actionLock.current = true
     setCoins((c) => c - power.cost)
     if (kind === 'people') {
       setHelpers((count) => Math.min(8, count + 1))
@@ -460,6 +453,20 @@ export default function FaithOverGiantsPage() {
   return (
     <main style={{ minHeight: '100vh', background: 'linear-gradient(180deg,#071225,#123522 54%,#f8fafc)', color: '#fff' }}>
       <style>{`
+        .phase-play > h1, .phase-play > p, .phase-play .guide-card { display: none; }
+        .phase-question .promise-arena { display: none; }
+        .phase-question .giants-grid { grid-template-columns: minmax(0, 680px); justify-content: center; }
+        .giant-line { transform: none !important; right: 15% !important; }
+        .giant, .giant.boss { width: 126px !important; height: 116px !important; border-radius: 48% !important; background: radial-gradient(circle at 40% 30%,#94a3b8,#334155) !important; }
+        .giant::before { display: none; }
+        .giant:disabled { cursor: default; opacity: .65; }
+        .giant:focus-visible, .pz-btn:focus-visible { outline: 4px solid #fef08a; outline-offset: 4px; }
+        .course-actions { position: relative; z-index: 8; }
+        .course-actions button { width: 100%; min-height: 56px; margin: 10px 0; }
+        .pz-btn:disabled { opacity: .5; }
+        .team, .hills, .promise-light, .promise-arena::after { pointer-events: none; }
+        @media (prefers-reduced-motion: reduce) { .promise-arena, .giant, .team, .action-burst { animation: none !important; transition: none !important; } }
+        @media (max-width: 880px) { .giants-grid { display: flex !important; flex-direction: column; } .giants-card { order: -1; } .promise-arena { min-height: 290px !important; } }
         .giants-wrap { max-width: 1140px; margin: 0 auto; padding: 24px 14px 56px; }
         .giants-grid { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(292px,.75fr); gap: 18px; align-items: stretch; }
         .promise-arena { position: relative; min-height: 570px; overflow: hidden; border-radius: 34px; border: 4px solid rgba(255,216,102,.86); background: linear-gradient(180deg,#80c7e8 0%,#dbeafe 31%,#d8b46f 32%,#73612e 100%); box-shadow: 0 30px 90px rgba(0,0,0,.34); isolation: isolate; touch-action: manipulation; }
@@ -517,7 +524,7 @@ export default function FaithOverGiantsPage() {
         @media (max-width: 880px) { .giants-grid { grid-template-columns: 1fr; } .promise-arena { min-height: 470px; } .giants-stat { grid-template-columns: repeat(2,1fr); } .giant { width: 54px; height: 108px; font-size: .8rem; } .giant.boss { width: 88px; height: 158px; } .helper { width: 34px; height: 62px; } .helper.leader { width: 44px; height: 78px; } }
       `}</style>
 
-      <div className="giants-wrap">
+      <div className={`giants-wrap phase-${phase}`}>
         <Link href="/games" style={{ color: '#ffd866', fontFamily: 'var(--font-nunito)', fontWeight: 1000, textDecoration: 'none' }}>← {copy.back}</Link>
         <p className="eyebrow" style={{ color: '#7ec8e3', marginTop: 20 }}>{copy.eyebrow}</p>
         <h1 style={{ fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,7vw,4.35rem)', lineHeight: 1, margin: '6px 0 12px' }}>{copy.title}</h1>
@@ -540,18 +547,20 @@ export default function FaithOverGiantsPage() {
               <div className="helper leader"><span className="shield" /></div>
               {Array.from({ length: Math.max(0, Math.min(helpers - 1, 7)) }).map((_, index) => <div key={index} className="helper" />)}
             </div>
-            <div className="giant-line" style={{ ['--fear-line' as string]: fearLine }} aria-hidden="true">
+            <div className="giant-line" style={{ ['--fear-line' as string]: fearLine }}>
               {giantHps.map((hp, index) => {
+                if (index !== activeObstacle) return null
                 const isHitting = hittingIndex === index
                 const isDead = hp <= 0
                 const classNames = ['giant', isBoss ? 'boss' : '', isHitting ? 'giant-hit' : '', isDead ? 'giant-dead' : ''].filter(Boolean).join(' ')
                 return (
-                  <div
+                  <button
+                    type="button"
+                    disabled={phase !== 'play' || resolve < 1}
                     key={index}
                     className={classNames}
                     onClick={() => attackGiant(index)}
-                    role="button"
-                    aria-label={isBoss ? (isRu ? 'Страх' : 'Fear') : `Giant ${index + 1}`}
+                    aria-label={isRu ? `Пройти страх ${index + 1}, осталось ${hp}` : `Advance through fear ${index + 1}, ${hp} remaining`}
                   >
                     {isBoss ? (
                       <>
@@ -567,7 +576,7 @@ export default function FaithOverGiantsPage() {
                         ))}
                       </div>
                     )}
-                  </div>
+                  </button>
                 )
               })}
             </div>
@@ -579,7 +588,7 @@ export default function FaithOverGiantsPage() {
                 <div>
                   <p className="puzzle-label">{copy.bigTruth}</p>
                   <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '2rem', margin: '6px 0 10px' }}>{isRu ? 'Путь к обетованию' : 'The Promise Journey'}</h2>
-                  <p style={{ fontFamily: 'var(--font-lora)', fontWeight: 700, lineHeight: 1.62 }}>{isRu ? 'Нажимай на великанов, чтобы сражаться с ними. Это не игра про жестокость. Это игра про верный ответ: Бог больше страха.' : 'Tap the giants to fight them. This is not a violence game. It is a faithful-report game: God is greater than fear.'}</p>
+                  <p style={{ fontFamily: 'var(--font-lora)', fontWeight: 700, lineHeight: 1.62 }}>{isRu ? 'Прочитай стих. Веди команду через облака страха: шаг расходует решимость, сплочение её возвращает. Это препятствия, а не люди.' : 'Read the verse. Guide your team through clouds of fear: advance spends resolve; rally restores it. These are obstacles, not people.'}</p>
                   <button className="pz-btn" style={{ width: 'auto', marginTop: 16, padding: '12px 28px' }} onClick={startGame}>{copy.start}</button>
                 </div>
               </div>
@@ -605,7 +614,7 @@ export default function FaithOverGiantsPage() {
                     </div>
                   )}
                   {phase === 'levelComplete' && <button className="pz-btn" style={{ width: 'auto', padding: '12px 28px' }} onClick={nextLevel}>{copy.continue}</button>}
-                  {phase !== 'levelComplete' && <button className="pz-btn" style={{ width: 'auto', padding: '12px 28px' }} onClick={startGame}>{copy.playAgain}</button>}
+                  {phase !== 'levelComplete' && <button className="pz-btn" style={{ width: 'auto', padding: '12px 28px' }} onClick={phase === 'defeat' ? retryLevel : startGame}>{phase === 'defeat' ? (isRu ? 'Повторить этот уровень' : 'Retry this checkpoint') : copy.playAgain}</button>}
                 </div>
               </div>
             )}
@@ -635,21 +644,27 @@ export default function FaithOverGiantsPage() {
                 <p style={{ fontFamily: 'var(--font-lora)', color: 'rgba(255,255,255,.9)', lineHeight: 1.55, fontWeight: 700 }}>{copy.answerHelp}</p>
                 <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, marginTop: 10 }}>{isRu ? scripture.question.promptRu : scripture.question.promptEn}</h3>
                 <div className="answer-grid">
-                  {(isRu ? scripture.question.choicesRu : scripture.question.choicesEn).map((choice, index) => (
-                    <button key={choice} disabled={answerLocked} className={selectedAnswer === index ? 'selected' : ''} onClick={() => answerQuestion(index)}>{choice}</button>
+                  {answerOrder(levelIndex).map((index) => (
+                    /* Keep original choice IDs when varying visible answer positions. */
+                    <button key={index} disabled={answerLocked} className={selectedAnswer === index ? 'selected' : ''} onClick={() => answerQuestion(index)}>{(isRu ? scripture.question.choicesRu : scripture.question.choicesEn)[index]}</button>
                   ))}
                 </div>
-                <p style={{ marginTop: 10, minHeight: 24, fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: selectedAnswer === scripture.question.answer ? '#bbf7d0' : '#fed7aa' }}>{message || ' '}</p>
+                {answerLocked && <button className="pz-btn" onClick={() => { setPhase('play'); setMessage(copy.tapHint) }}>{isRu ? 'В путь!' : 'Enter the course'}</button>}
+                <p role="status" style={{ marginTop: 10, minHeight: 24, fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: selectedAnswer === scripture.question.answer ? '#bbf7d0' : '#fed7aa' }}>{message || ' '}</p>
               </div>
             ) : (
               <div style={{ marginTop: 16 }}>
                 {isBoss && phase === 'play' && (
                   <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#fed7aa', marginBottom: 8 }}>
-                    {isRu ? `Здоровье босса: ${bossCurrentHp}/${BOSS_MAX_HP}` : `Boss HP: ${bossCurrentHp}/${BOSS_MAX_HP}`}
+                    {isRu ? `Преграда страха: ${bossCurrentHp}/${BOSS_MAX_HP}` : `Fear barrier: ${bossCurrentHp}/${BOSS_MAX_HP}`}
                   </p>
                 )}
+                {phase === 'play' && <div className="course-actions">
+                  <p>{isRu ? 'Решимость' : 'Resolve'}: {resolve}/3 · {isRu ? 'Препятствие' : 'Obstacle'} {Math.max(0, activeObstacle) + 1}/{giantHps.length} · {copy.fear}: {Math.round(fearLine)}%</p>
+                  <button className="pz-btn" disabled={resolve < 1} onClick={() => attackGiant(activeObstacle)}>{isRu ? 'Шаг вперёд −1' : 'Advance −1'}</button>
+                </div>}
                 <button className="pz-btn" style={{ width: '100%', minHeight: 58, fontSize: '1.05rem' }} onClick={phase === 'play' ? courageStep : startGame}>
-                  {phase === 'play' ? copy.stand : copy.restart}
+                  {phase === 'play' ? (isRu ? 'Сплотиться +1' : 'Rally +1') : copy.restart}
                 </button>
                 <p style={{ marginTop: 10, minHeight: 38, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#dbeafe', lineHeight: 1.45 }}>
                   {message || (phase === 'play' ? copy.tapHint : (isRu ? scripture.question.feedbackRu : scripture.question.feedbackEn))}
@@ -670,7 +685,7 @@ export default function FaithOverGiantsPage() {
                     {(Object.keys(powerups) as Powerup[]).map((key) => {
                       const power = powerups[key]
                       return (
-                        <button key={key} disabled={phase !== 'play' || coins < power.cost} onClick={() => spendPowerup(key)}>
+                        <button key={key} disabled={phase !== 'play' || coins < power.cost || (key === 'health' && health === 6) || (key === 'people' && helpers === 8) || (key === 'strength' && strengthTurns > 0)} onClick={() => spendPowerup(key)}>
                           {isRu ? power.labelRu : power.labelEn} · {power.cost} 🪙<br />
                           <span style={{ fontWeight: 800, opacity: .78 }}>{isRu ? power.descRu : power.descEn}</span>
                         </button>

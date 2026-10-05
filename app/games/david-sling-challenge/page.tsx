@@ -3,6 +3,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 
 import Link from 'next/link'
+import { resolveShot } from './mechanics'
 import type { MouseEvent, PointerEvent } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
@@ -44,10 +45,7 @@ function clamp(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value))
 }
 
-function angleDiff(a: number, b: number) {
-  const diff = Math.abs((((a - b) % 360) + 540) % 360 - 180)
-  return diff
-}
+
 
 export default function DavidSlingChallengePage() {
   const { language } = useLanguage()
@@ -59,6 +57,9 @@ export default function DavidSlingChallengePage() {
   const speedRef = useRef(0.45)
   const stoneRef = useRef<{ x: number; y: number; vx: number; vy: number; active: boolean }>({ x: 0, y: 0, vx: 0, vy: 0, active: false })
   const impactRef = useRef(0)
+  const transitionRef = useRef<number | null>(null)
+  const lockedRef = useRef(false)
+  const [checkpointScore, setCheckpointScore] = useState(0)
 
   const [phase, setPhase] = useState<Phase>('intro')
   const [levelIndex, setLevelIndex] = useState(0)
@@ -138,7 +139,7 @@ export default function DavidSlingChallengePage() {
     const radians = (nowAngle * Math.PI) / 180
     const aimLength = w * 0.47
     const arcEnd = { x: david.x + Math.cos(radians) * aimLength, y: david.y - Math.sin(radians) * h * 0.52 }
-    const targetAngle = level.targetAngle + effectiveWind
+    const targetAngle = level.targetAngle - effectiveWind
     const targetRad = (targetAngle * Math.PI) / 180
     const zoneEnd = { x: david.x + Math.cos(targetRad) * aimLength, y: david.y - Math.sin(targetRad) * h * 0.52 }
 
@@ -207,8 +208,10 @@ export default function DavidSlingChallengePage() {
   }, [copy.wind, effectiveWind, effectiveWindow, isRu, level.targetAngle])
 
   useEffect(() => {
-    const stored = Number(localStorage.getItem('david-sling-v2-best') || '0')
-    setBest(Number.isFinite(stored) ? stored : 0)
+    try {
+      const stored = Number(localStorage.getItem('david-sling-v2-best') || '0')
+      setBest(Number.isFinite(stored) && stored >= 0 ? stored : 0)
+    } catch { /* Storage is optional. */ }
     rafRef.current = window.requestAnimationFrame(draw)
     return () => {
       if (rafRef.current) window.cancelAnimationFrame(rafRef.current)
@@ -228,13 +231,13 @@ export default function DavidSlingChallengePage() {
 
   useEffect(() => {
     const onDown = (event: KeyboardEvent) => {
-      if (event.code === 'Space') {
+      if (event.code === 'Space' && phase === 'play' && !event.repeat && !(event.target instanceof HTMLElement && event.target.closest('button, a, input'))) {
         event.preventDefault()
         holdSpin()
       }
     }
     const onUp = (event: KeyboardEvent) => {
-      if (event.code === 'Space') {
+      if (event.code === 'Space' && holdRef.current) {
         event.preventDefault()
         releaseThrow()
       }
@@ -247,7 +250,42 @@ export default function DavidSlingChallengePage() {
     }
   })
 
+  useEffect(() => {
+    const cancelHold = () => { holdRef.current = false }
+    window.addEventListener('blur', cancelHold)
+    document.addEventListener('visibilitychange', cancelHold)
+    return () => {
+      window.removeEventListener('blur', cancelHold)
+      document.removeEventListener('visibilitychange', cancelHold)
+      if (transitionRef.current) clearTimeout(transitionRef.current)
+    }
+  }, [])
+
+  function cancelPending() {
+    if (transitionRef.current) clearTimeout(transitionRef.current)
+    lockedRef.current = false
+    holdRef.current = false
+    stoneRef.current.active = false
+  }
+
+  function retryLevel() {
+    cancelPending()
+    setScore(checkpointScore)
+    setThrowsLeft(5)
+    setWisdomFuel(0)
+    setPower('none')
+    setResult('ready')
+    setSelectedAnswer(null)
+    setMessage('')
+    angleRef.current = 28
+    speedRef.current = 0.45
+    setPhase('question')
+  }
+
   function begin() {
+    cancelPending()
+    setCheckpointScore(0)
+    setWisdomFuel(0)
     setPhase('question')
     setLevelIndex(0)
     setScore(0)
@@ -263,6 +301,7 @@ export default function DavidSlingChallengePage() {
   }
 
   function exitGame() {
+    cancelPending()
     holdRef.current = false
     stoneRef.current.active = false
     setPhase('intro')
@@ -305,7 +344,7 @@ export default function DavidSlingChallengePage() {
   }
 
   function holdSpin() {
-    if (phase !== 'play') return
+    if (phase !== 'play' || lockedRef.current || holdRef.current) return
     flash('hold')
     holdRef.current = true
     speedRef.current = clamp(speedRef.current + 0.18, 0.45, 5.2)
@@ -317,11 +356,11 @@ export default function DavidSlingChallengePage() {
   }
 
   function releaseThrow() {
-    if (phase !== 'play' || throwsLeft <= 0 || stoneRef.current.active) return
+    if (phase !== 'play' || throwsLeft <= 0 || stoneRef.current.active || lockedRef.current) return
     flash('release')
     holdRef.current = false
-    const adjustedAngle = (angleRef.current + effectiveWind + 360) % 360
-    const diff = angleDiff(adjustedAngle, level.targetAngle)
+    lockedRef.current = true
+    const shot = resolveShot(angleRef.current, level.targetAngle, effectiveWind, effectiveWindow, power === 'shield')
     const launch = (angleRef.current * Math.PI) / 180
     const canvas = canvasRef.current
     const rect = canvas?.getBoundingClientRect()
@@ -334,14 +373,10 @@ export default function DavidSlingChallengePage() {
       vy: -Math.sin(launch) * (9 + level.distance * 2.5),
       active: true,
     }
-    setThrowsLeft((value) => Math.max(0, value - 1))
-
-    let points = 0
-    let nextResult: Result = 'miss'
-    if (diff <= 3) { points = 120; nextResult = 'perfect'; impactRef.current = 26 }
-    else if (diff <= effectiveWindow) { points = 75; nextResult = 'hit'; impactRef.current = 22 }
-    else if (diff <= effectiveWindow + 9) { points = 25; nextResult = 'near'; impactRef.current = 12 }
-    else if (power === 'shield') { nextResult = 'saved'; points = 0 }
+    setThrowsLeft((value) => Math.max(0, value - shot.stoneCost))
+    if (shot.consumeShield) setPower('none')
+    const points = shot.points
+    const nextResult = shot.result
 
     setResult(nextResult)
     setMessage(copy[nextResult])
@@ -349,34 +384,39 @@ export default function DavidSlingChallengePage() {
       const next = current + points
       const bestNext = Math.max(best, next)
       setBest(bestNext)
-      localStorage.setItem('david-sling-v2-best', String(bestNext))
+      try { localStorage.setItem('david-sling-v2-best', String(bestNext)) } catch { /* Keep playing. */ }
       return next
     })
 
-    if (nextResult === 'perfect' || nextResult === 'hit') {
-      window.setTimeout(() => {
+    transitionRef.current = window.setTimeout(() => {
+      lockedRef.current = false
+      stoneRef.current.active = false
+      if (shot.advance) {
+        impactRef.current = 26
         if (levelIndex < LEVELS.length - 1) {
+          setCheckpointScore(score + points)
           setLevelIndex((value) => value + 1)
+          setThrowsLeft(5)
           setPhase('question')
           setSelectedAnswer(null)
           setPower('none')
           setMessage('')
+          setResult('ready')
           angleRef.current = 28
           speedRef.current = 0.45
           setSpeedMeter(9)
         } else {
           setPhase('result')
         }
-      }, 950)
-    } else if (throwsLeft <= 1) {
-      window.setTimeout(() => setPhase('result'), 850)
-    }
+      } else if (throwsLeft - shot.stoneCost <= 0) setPhase('result')
+      else setSpeedMeter(Math.round((speedRef.current / 5.2) * 100))
+    }, 950)
   }
 
   const choices = isRu ? SCRIPTURE.choicesRu : SCRIPTURE.choicesEn
   const phaseSteps = [copy.stepBible, copy.stepPower, copy.stepPlay]
-  const canUseGameControls = phase === 'play' && !stoneRef.current.active
-  const canChoosePower = phase === 'play' && wisdomFuel > 0
+  const canUseGameControls = phase === 'play' && !lockedRef.current
+  const canChoosePower = phase === 'play' && wisdomFuel > 0 && !lockedRef.current
   const isGameOpen = phase !== 'intro'
 
   return (
@@ -470,7 +510,7 @@ export default function DavidSlingChallengePage() {
             {phase === 'intro' && <div className="dsv2-intro-overlay"><div className="dsv2-intro-card"><h2>{copy.mission}</h2><div className="dsv2-start-steps"><span>📖 {copy.stepBible}</span><span>💛 {copy.stepPower}</span><span>🪨 {copy.stepPlay}</span></div><button className="dsv2-start" type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); begin() }} onClick={stopTap}>▶ {copy.start}</button></div></div>}
             {canUseGameControls && <div className="dsv2-overlay">
               <button className={`dsv2-game-btn ${buttonFlash === 'rhythm' ? 'flash' : ''}`} type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); tapRhythm() }} onClick={stopTap}>⚡<br />{copy.rhythm}</button>
-              <button className={`dsv2-game-btn release ${buttonFlash === 'hold' || buttonFlash === 'release' ? 'flash' : ''}`} type="button" onPointerDown={(event) => { stopTap(event); holdSpin() }} onPointerUp={(event) => { stopTap(event); releaseThrow() }} onPointerCancel={(event) => { stopTap(event); stopHold() }} onClick={stopTap}>🎯<br />{copy.hold}</button>
+              <button className={`dsv2-game-btn release ${buttonFlash === 'hold' || buttonFlash === 'release' ? 'flash' : ''}`} type="button" onPointerDown={(event) => { stopTap(event); event.currentTarget.setPointerCapture(event.pointerId); holdSpin() }} onPointerUp={(event) => { stopTap(event); if (holdRef.current) releaseThrow() }} onPointerCancel={(event) => { stopTap(event); stopHold() }} onClick={stopTap}>🎯<br />{copy.hold}</button>
             </div>}
           </div>
           <aside className="dsv2-card">
@@ -491,7 +531,11 @@ export default function DavidSlingChallengePage() {
               <button disabled={!canChoosePower} className={`dsv2-power ${power === 'steady' ? 'active' : ''} ${buttonFlash === 'power' && power === 'steady' ? 'flash' : ''}`} type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); choosePower('steady') }} onClick={stopTap}>✋ {copy.steady} · 💛1<br /><span>{copy.steadyDesc}</span></button>
               <button disabled={!canChoosePower} className={`dsv2-power ${power === 'shield' ? 'active' : ''} ${buttonFlash === 'power' && power === 'shield' ? 'flash' : ''}`} type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); choosePower('shield') }} onClick={stopTap}>🛡️ {copy.shield} · 💛1<br /><span>{copy.shieldDesc}</span></button>
               <button disabled={!canChoosePower} className={`dsv2-power ${power === 'wind' ? 'active' : ''} ${buttonFlash === 'power' && power === 'wind' ? 'flash' : ''}`} type="button" onPointerDown={stopTap} onPointerUp={(event) => { stopTap(event); choosePower('wind') }} onClick={stopTap}>🌬️ {copy.calmWind} · 💛1<br /><span>{copy.windDesc}</span></button>
-              {phase === 'result' && <button className="dsv2-start" type="button" style={{ width: '100%', marginTop: 14, boxShadow: '0 10px 0 #92400e, 0 18px 26px rgba(0,0,0,.22)' }} onClick={begin}>{copy.again}</button>}
+              {phase === 'result' && <>
+                <h3>{result === 'perfect' || result === 'hit' ? (isRu ? 'Все три уровня пройдены!' : 'All three levels complete!') : (isRu ? 'Попробуй этот уровень снова — путь сохранён.' : 'Try this level again — keep your progress.')}</h3>
+                {result !== 'perfect' && result !== 'hit' && <button className="dsv2-start" onClick={retryLevel}>{isRu ? 'Повторить уровень · 5 камней' : 'Retry level · 5 stones'}</button>}
+                <button className="dsv2-choice" type="button" onClick={begin}>{copy.again}</button>
+              </>}
             </>}
           </aside>
         </section>
