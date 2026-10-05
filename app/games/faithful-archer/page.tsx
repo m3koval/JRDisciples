@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { drawRange } from './range-art'
+import { Range3D } from './range-3d'
 import { beginReview, traceReview, finishReview, reviewCopy, type ShotReview, type ShotOutcome } from './shot-review'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
@@ -204,6 +204,10 @@ export default function FaithfulArcherPage() {
   const { language } = useLanguage()
   const isRu = language === 'ru'
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const visualRef = useRef<Range3D | null>(null)
+  const [renderError, setRenderError] = useState(false)
+  const [renderReady, setRenderReady] = useState(false)
+  const [renderAttempt, setRenderAttempt] = useState(0)
   const modelRef = useRef<GameModel>(makeModel())
   const arrowsRef = useRef<Arrow[]>([])
   const reviewRef = useRef<ShotReview | null>(null)
@@ -213,6 +217,7 @@ export default function FaithfulArcherPage() {
   const obstaclesRef = useRef<Obstacle[]>([])
   const sparksRef = useRef<Spark[]>([])
   const floatRef = useRef<FloatText[]>([])
+  const feedbackRef = useRef<HTMLDivElement>(null)
   const pointerRef = useRef({ down: false, x: 0, y: 0, startX: 0, startY: 0 })
   const sizeRef = useRef({ width: 960, height: 620, dpr: 1 })
   const [hud, setHud] = useState({ score: 0, best: 0, arrows: 18, combo: 0, wisdom: 0, level: 0, running: false })
@@ -308,7 +313,10 @@ export default function FaithfulArcherPage() {
     setPaused(false)
     ownedPointer.current = null
     let best = modelRef.current.best
-    try { best = Number(localStorage.getItem(STORAGE_KEY) || best) } catch { /* Practice works without storage. */ }
+    try {
+      const stored = Number(localStorage.getItem(STORAGE_KEY))
+      if (Number.isFinite(stored)) best = Math.max(best, stored, 0)
+    } catch { /* Keep in-memory progress when storage is blocked or full. */ }
     const model = makeModel()
     model.running = true
     model.best = Number.isFinite(best) ? best : 0
@@ -392,11 +400,19 @@ export default function FaithfulArcherPage() {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
+    const fail = () => { pauseGame(); setRenderError(true); setRenderReady(false) }
+    let visual: Range3D
+    try { visual = new Range3D(canvas, fail, () => setRenderReady(true)); visualRef.current = visual }
+    catch { fail(); return }
+    return () => { visual.dispose(); visualRef.current = null }
+  // Renderer lifetime is independent of pause, language and Scripture cards.
+  }, [renderAttempt])
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
     let raf = 0
     let last = 0
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 
     function resize() {
       const rect = canvas!.getBoundingClientRect()
@@ -405,9 +421,7 @@ export default function FaithfulArcherPage() {
       const height = Math.max(1, Math.floor(rect.height))
       const old = sizeRef.current
       sizeRef.current = { width, height, dpr }
-      canvas!.width = Math.floor(width * dpr)
-      canvas!.height = Math.floor(height * dpr)
-      ctx!.setTransform(dpr, 0, 0, dpr, 0, 0)
+
       // Resizing (including modal effect setup) must never reset earned hits.
       if (old.width !== width || old.height !== height) {
         reviewRef.current = null
@@ -430,7 +444,7 @@ export default function FaithfulArcherPage() {
 
     function shoot(tx: number, ty: number) {
       const m = modelRef.current
-      if (!m.running || pausedRef.current || m.arrowsLeft <= 0 || wisdomCard) return
+      if (!visualRef.current?.isReady || !m.running || pausedRef.current || m.arrowsLeft <= 0 || wisdomCard) return
       const a = archer()
       const bowX = a.x + 34
       const bowY = a.y - 58
@@ -467,7 +481,7 @@ export default function FaithfulArcherPage() {
 
     function update(dt: number) {
       const m = modelRef.current
-      if (!m.running || pausedRef.current || wisdomCard || document.hidden) return
+      if (!visualRef.current?.isReady || !m.running || pausedRef.current || wisdomCard || document.hidden) return
       m.time += dt
       if (m.emotion !== 'idle' && m.emotionUntil <= m.time) m.emotion = 'idle'
       m.recoil *= Math.pow(0.05, dt)
@@ -636,126 +650,42 @@ export default function FaithfulArcherPage() {
 
     function draw() {
       const { width, height } = sizeRef.current
-      ctx!.clearRect(0, 0, width, height)
-      drawRange(ctx!, width, height, modelRef.current.levelIndex, targetsRef.current)
-      for (const target of targetsRef.current) drawTarget(ctx!, target, modelRef.current.time)
-      for (const obstacle of obstaclesRef.current) drawObstacle(ctx!, obstacle, modelRef.current.time)
-      drawArcher(ctx!, archer(), reducedMotion.matches ? 0 : modelRef.current.time, pointerRef.current, modelRef.current.emotion)
-      drawReview(ctx!)
-      drawAim(ctx!, archer())
-      drawArrows(ctx!)
-      if (!reducedMotion.matches) drawEffects(ctx!)
+      const feedback = feedbackRef.current
+      if (feedback) {
+        while (feedback.children.length < floatRef.current.length) feedback.appendChild(document.createElement('span'))
+        Array.from(feedback.children).forEach((node, i) => {
+          const label = node as HTMLSpanElement, item = floatRef.current[i]
+          label.hidden = !item
+          if (item) {
+            label.textContent = item.txt
+            label.style.cssText = `position:absolute;left:${item.x}px;top:${item.y}px;transform:translateX(-50%);color:${item.color};font:800 16px system-ui;white-space:nowrap;text-shadow:0 1px 3px white,0 -1px 3px white;opacity:${Math.min(1,item.life*2)}`
+          }
+        })
+      }
+      const a = archer(), bow = { x: a.x + 34, y: a.y - 58 }
+      const release = pointerRef.current.down ? pointerRef.current : aimRelease(bow, aimRef.current.angle, aimRef.current.draw)
+      const launch = launchArrowVelocity(bow, release, calmRef.current)
+      const aim: Point[] = []
+      if (launch && showGuideRef.current && (pointerRef.current.down || assistRef.current) && !pausedRef.current && !wisdomCard) {
+        let p = { ...bow, vx: launch.vx, vy: launch.vy }
+        for (let i = 0; i < 42; i++) {
+          const next = stepFlight(p, 1 / 30, calmRef.current ? ARROW_GRAVITY.calm : ARROW_GRAVITY.fast)
+          if (i % 2 === 0) aim.push({ x: next.x, y: next.y })
+          if (obstaclesRef.current.some(o => arrowHitsObstacle(p, next, getObstacleBounds(o, modelRef.current.time)))) break
+          p = next
+        }
+      }
+      visualRef.current?.render({ width, height, time: modelRef.current.time, level: modelRef.current.levelIndex, bow,
+        targets: targetsRef.current, arrows: arrowsRef.current,
+        obstacles: obstaclesRef.current.map(o => getObstacleBounds(o, modelRef.current.time)), aim,
+        review: showGuideRef.current && reviewRef.current?.outcome !== 'flying' ? reviewRef.current?.points || [] : [],
+        angle: launch?.angle || 0, draw: pointerRef.current.down ? launch?.draw || 0 : 0 })
       // Read-only observation, also useful for assistive/debug tooling. No setter exists.
       canvas!.dataset.state = JSON.stringify({ time: modelRef.current.time, level: modelRef.current.levelIndex,
         score: modelRef.current.score, arrows: modelRef.current.arrowsLeft, running: modelRef.current.running,
         paused: pausedRef.current, aiming: pointerRef.current.down, review: reviewRef.current, guide: showGuideRef.current,
         bow: { x: archer().x + 34, y: archer().y - 58 }, width, height,
         targets: targetsRef.current.map(t => ({ id: t.id, kind: t.kind, x: t.x, y: t.y, r: t.r, hit: t.hit })) })
-    }
-
-    function drawReview(drawCtx: CanvasRenderingContext2D) {
-      const review = reviewRef.current
-      if (!showGuideRef.current || !review || review.outcome === 'flying' || review.points.length < 2) return
-      drawCtx.save()
-      // The thin dashed line is measured flight, not a second prediction.
-      drawCtx.lineWidth = 2.5; drawCtx.strokeStyle = '#263f59'; drawCtx.setLineDash([6, 7])
-      drawCtx.beginPath()
-      review.points.forEach((point, i) => { if (i) drawCtx.lineTo(point.x, point.y); else drawCtx.moveTo(point.x, point.y) })
-      drawCtx.stroke(); drawCtx.setLineDash([])
-      const end = review.points[review.points.length - 1]
-      drawCtx.fillStyle = '#fff6dc'; drawCtx.lineWidth = 2
-      drawCtx.beginPath(); drawCtx.arc(end.x, end.y, 9, 0, Math.PI * 2); drawCtx.fill(); drawCtx.stroke()
-      if (review.outcome === 'target') {
-        drawCtx.beginPath(); drawCtx.moveTo(end.x - 4, end.y); drawCtx.lineTo(end.x, end.y + 4); drawCtx.lineTo(end.x + 5, end.y - 4); drawCtx.stroke()
-      } else {
-        drawCtx.beginPath(); drawCtx.moveTo(end.x - 3, end.y - 3); drawCtx.lineTo(end.x + 3, end.y + 3); drawCtx.moveTo(end.x + 3, end.y - 3); drawCtx.lineTo(end.x - 3, end.y + 3); drawCtx.stroke()
-      }
-      drawCtx.restore()
-    }
-
-    function drawAim(drawCtx: CanvasRenderingContext2D, a: { x: number; y: number }) {
-      const assisted = aimRelease({ x: a.x + 34, y: a.y - 58 }, aimRef.current.angle, aimRef.current.draw)
-      const pointer = pointerRef.current.down ? pointerRef.current : { ...assisted, down: assistRef.current }
-      if (!pointer.down || !modelRef.current.running || pausedRef.current || wisdomCard) return
-      const bx = a.x + 34
-      const by = a.y - 58
-      const launch = launchArrowVelocity({ x: bx, y: by }, { x: pointer.x, y: pointer.y }, calmRef.current)
-      if (!launch) return
-      const { draw: dist, angle, power } = launch
-      drawCtx.save()
-      drawCtx.strokeStyle = 'rgba(49,85,45,.28)'
-      drawCtx.lineWidth = 5
-      drawCtx.beginPath()
-      drawCtx.arc(bx, by, MAX_DRAW, 0, Math.PI * 2)
-      drawCtx.stroke()
-      drawCtx.fillStyle = 'rgba(255,226,122,.22)'
-      drawCtx.beginPath()
-      drawCtx.arc(pointer.x, pointer.y, 24 + Math.sin(modelRef.current.time * 8) * 3, 0, Math.PI * 2)
-      drawCtx.fill()
-      drawCtx.strokeStyle = 'rgba(255,255,255,.65)'
-      drawCtx.lineWidth = 3
-      drawCtx.stroke()
-      drawCtx.strokeStyle = 'rgba(255,255,255,.9)'
-      drawCtx.lineWidth = 3
-      drawCtx.setLineDash([9, 9])
-      drawCtx.beginPath()
-      drawCtx.moveTo(bx, by)
-      drawCtx.lineTo(bx - Math.cos(angle) * dist, by - Math.sin(angle) * dist)
-      drawCtx.stroke()
-      drawCtx.setLineDash([])
-      drawCtx.fillStyle = '#ffe27a'
-      roundRect(drawCtx, bx - 44, by + 48, 88, 11, 999, true)
-      drawCtx.fillStyle = '#f97316'
-      roundRect(drawCtx, bx - 44, by + 48, 88 * Math.min(1, power), 11, 999, true)
-      if (showGuideRef.current) {
-        drawCtx.fillStyle = 'rgba(255,255,255,.82)'
-        let x = bx, y = by, vx = launch.vx, vy = launch.vy
-        let aimBlocked = false
-        const step = 1 / 30
-        for (let i = 0; i < 42; i++) {
-          const prev = { x, y }
-          const next = stepFlight({ x, y, vx, vy }, step, calmRef.current ? ARROW_GRAVITY.calm : ARROW_GRAVITY.fast)
-          x = next.x; y = next.y; vx = next.vx; vy = next.vy
-          const hitPreview = obstaclesRef.current.some((obstacle) => arrowHitsObstacle(prev, { x, y }, getObstacleBounds(obstacle, modelRef.current.time)))
-          if (hitPreview) aimBlocked = true
-          if (i % 2 === 0) {
-            drawCtx.fillStyle = aimBlocked ? 'rgba(249,115,22,.88)' : 'rgba(255,255,255,.82)'
-            drawCtx.beginPath(); drawCtx.arc(x, y, aimBlocked ? 4.2 : 3, 0, Math.PI * 2); drawCtx.fill()
-          }
-          if (aimBlocked) { drawCtx.strokeStyle = 'rgba(249,115,22,.72)'; drawCtx.lineWidth = 3; drawCtx.beginPath(); drawCtx.arc(x, y, 12, 0, Math.PI * 2); drawCtx.stroke(); break }
-        }
-      }
-      drawCtx.restore()
-    }
-
-    function drawArrows(drawCtx: CanvasRenderingContext2D) {
-      for (const arrow of arrowsRef.current) {
-        if (arrow.trail.length > 1) {
-          drawCtx.save()
-          drawCtx.lineCap = 'round'
-          drawCtx.strokeStyle = arrow.glow ? 'rgba(255,226,122,.62)' : 'rgba(255,255,255,.42)'
-          drawCtx.lineWidth = arrow.glow ? 5 : 3
-          drawCtx.beginPath()
-          arrow.trail.forEach((p, i) => { if (i === 0) drawCtx.moveTo(p.x, p.y); else drawCtx.lineTo(p.x, p.y) })
-          drawCtx.stroke()
-          drawCtx.restore()
-        }
-        const angle = Math.atan2(arrow.vy, arrow.vx)
-        drawCtx.save()
-        drawCtx.translate(arrow.x, arrow.y)
-        drawCtx.rotate(angle)
-        if (arrow.glow) { drawCtx.shadowColor = '#ffe27a'; drawCtx.shadowBlur = 13 }
-        drawCtx.strokeStyle = '#5b371f'; drawCtx.lineWidth = 4; drawCtx.beginPath(); drawCtx.moveTo(-22, 0); drawCtx.lineTo(18, 0); drawCtx.stroke()
-        drawCtx.fillStyle = '#203047'; drawCtx.beginPath(); drawCtx.moveTo(24, 0); drawCtx.lineTo(12, -6); drawCtx.lineTo(12, 6); drawCtx.closePath(); drawCtx.fill()
-        drawCtx.fillStyle = '#79c96b'; drawCtx.beginPath(); drawCtx.moveTo(-22, 0); drawCtx.lineTo(-32, -7); drawCtx.lineTo(-28, 0); drawCtx.lineTo(-32, 7); drawCtx.closePath(); drawCtx.fill()
-        drawCtx.restore()
-      }
-    }
-
-    function drawEffects(drawCtx: CanvasRenderingContext2D) {
-      for (const s of sparksRef.current) { drawCtx.globalAlpha = Math.max(0, s.life); drawCtx.fillStyle = s.color; drawCtx.beginPath(); drawCtx.arc(s.x, s.y, 3.5, 0, Math.PI * 2); drawCtx.fill(); drawCtx.globalAlpha = 1 }
-      drawCtx.textAlign = 'center'; drawCtx.font = '900 20px var(--font-nunito), system-ui'
-      for (const f of floatRef.current) { drawCtx.globalAlpha = Math.max(0, Math.min(1, f.life)); drawCtx.fillStyle = f.color; drawCtx.strokeStyle = 'rgba(255,255,255,.92)'; drawCtx.lineWidth = 4; drawCtx.strokeText(f.txt, f.x, f.y); drawCtx.fillText(f.txt, f.x, f.y); drawCtx.globalAlpha = 1 }
     }
 
     function frame(ts: number) {
@@ -833,6 +763,7 @@ export default function FaithfulArcherPage() {
     raf = requestAnimationFrame(frame)
     return () => {
       cancelAnimationFrame(raf)
+
       observer.disconnect()
       window.removeEventListener('resize', resize)
       window.removeEventListener('keydown', onKey)
@@ -846,7 +777,7 @@ export default function FaithfulArcherPage() {
     }
   // Canvas loop owns mutable game refs; recreating only when language or modal state changes is intentional.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isRu, wisdomCard])
+  }, [isRu, wisdomCard, renderAttempt])
 
   return (
     <main className={`archer-page${active ? ' archer-active' : ''}`}>
@@ -927,7 +858,15 @@ export default function FaithfulArcherPage() {
 
         <section className="archer-shell">
           <div className="target-course" aria-label={copy.title}>
-            <canvas ref={canvasRef} tabIndex={0} aria-label={isRu ? 'Поле: тяни влево и вниз, затем отпусти' : 'Range: drag left and down, then release'} />
+            <canvas key={renderAttempt} ref={canvasRef} tabIndex={0} aria-label={isRu ? 'Поле: тяни влево и вниз, затем отпусти' : 'Range: drag left and down, then release'} />
+            <div ref={feedbackRef} aria-hidden="true" style={{position:'absolute',inset:0,pointerEvents:'none',overflow:'hidden',zIndex:5}} />
+            {!renderReady && !renderError && <div role="status" style={{position:'absolute',inset:0,zIndex:60,display:'grid',placeContent:'center',background:'#173b38',padding:24}}>{isRu ? 'Готовим 3D-поле…' : 'Preparing the 3D range…'}</div>}
+            {renderError && <div role="alert" style={{position:'absolute',inset:0,zIndex:150,background:'#173b38',display:'grid',placeContent:'center',padding:24,textAlign:'center',gap:16}}>
+              <strong>{isRu ? 'Не удалось загрузить 3D-поле.' : 'The 3D range could not load.'}</strong>
+              <p>{isRu ? 'Попробуй снова. Если не получится, перезапусти приложение или используй браузер с WebGL.' : 'Try again. If it still fails, restart the app or use a browser with WebGL enabled.'}</p>
+              <button className="archer-control" onClick={() => { setRenderError(false); setRenderReady(false); setRenderAttempt(n => n + 1) }}>{isRu ? 'Повторить загрузку 3D' : 'Retry 3D range'}</button>
+              <Link href="/games">{isRu ? 'Все игры' : 'All Games'}</Link>
+            </div>}
             <div style={{ position: 'absolute', top: 12, left: 12, right: 12, pointerEvents: 'none', color: '#203047', fontWeight: 900, textAlign: 'center', background: '#fff6dce8', borderRadius: 14, padding: 8 }}>
               {isRu ? 'Попади в каждую цель • Курс' : 'Hit each target once • Course'} {hud.level + 1}/4
             </div>
@@ -999,231 +938,4 @@ export default function FaithfulArcherPage() {
       )}
     </main>
   )
-}
-
-
-function drawObstacle(ctx: CanvasRenderingContext2D, obstacle: Obstacle, time: number) {
-  ctx.save()
-  const bounds = getObstacleBounds(obstacle, time)
-  const bump = Math.sin(time * 16 + obstacle.phase) * obstacle.wobble * 0.08
-  ctx.translate(bounds.x + bounds.w / 2, bounds.y + bounds.h / 2)
-  ctx.rotate(bump)
-  ctx.translate(-bounds.w / 2, -bounds.h / 2)
-  ctx.fillStyle = 'rgba(32,48,71,.22)'; ellipse(ctx, bounds.w / 2, bounds.h + 8, bounds.w * 1.2, 12)
-  ctx.fillStyle = obstacle.kind === 'beam' ? '#8a5a30' : obstacle.kind === 'crate' ? '#b57920' : '#7a4e20'
-  ctx.strokeStyle = obstacle.hitFlash > 0.2 ? '#ffe27a' : '#4b3218'; ctx.lineWidth = obstacle.hitFlash > 0.2 ? 6 : 4
-  roundRect(ctx, 0, 0, bounds.w, bounds.h, obstacle.kind === 'post' ? 14 : 8, true, true)
-  if (obstacle.hitFlash > 0.05) { ctx.globalAlpha = obstacle.hitFlash * 0.38; ctx.fillStyle = '#fff6dc'; roundRect(ctx, 4, 4, bounds.w - 8, bounds.h - 8, obstacle.kind === 'post' ? 12 : 6, true); ctx.globalAlpha = 1 }
-  ctx.strokeStyle = 'rgba(255,246,220,.42)'; ctx.lineWidth = 3
-  if (obstacle.kind === 'post') {
-    ctx.beginPath(); ctx.moveTo(bounds.w / 2, 12); ctx.lineTo(bounds.w / 2, bounds.h - 12); ctx.stroke()
-  } else if (obstacle.kind === 'beam') {
-    ctx.beginPath(); ctx.moveTo(10, bounds.h / 2); ctx.lineTo(bounds.w - 10, bounds.h / 2); ctx.stroke()
-  } else {
-    ctx.beginPath(); ctx.moveTo(8, 8); ctx.lineTo(bounds.w - 8, bounds.h - 8); ctx.moveTo(bounds.w - 8, 8); ctx.lineTo(8, bounds.h - 8); ctx.stroke()
-  }
-  ctx.restore()
-}
-
-function drawTarget(ctx: CanvasRenderingContext2D, target: Target, time: number) {
-  ctx.save()
-  ctx.translate(target.x, target.y)
-  ctx.rotate(target.spin + Math.sin(time * 8 + target.id) * target.wobble * 0.25)
-  const squash = target.squash
-  ctx.scale(1 + squash * 0.18, 1 - squash * 0.12)
-  ctx.fillStyle = 'rgba(32,48,71,.16)'; ellipse(ctx, 0, target.r + 18, target.r * 2, 10)
-  if (target.kind === 'dummy') drawRagdollDummy(ctx, target, time)
-  else if (target.kind === 'bell') drawBell(ctx, target, time)
-  else if (target.kind === 'lantern') drawLantern(ctx, time)
-  else if (target.kind === 'scroll') drawScroll(ctx, time)
-  else drawShield(ctx, target, time)
-  if (target.hit) { ctx.fillStyle = '#31552d'; ctx.beginPath(); ctx.arc(0, 0, 15, 0, Math.PI * 2); ctx.fill(); ctx.fillStyle = '#fff6dc'; ctx.font = '900 22px system-ui'; ctx.textAlign = 'center'; ctx.fillText('✓', 0, 8) }
-  ctx.restore()
-}
-
-function drawShield(ctx: CanvasRenderingContext2D, target: Target, time: number) {
-  const breathe = 1 + Math.sin(time * 3 + target.id) * 0.035
-  ctx.save(); ctx.scale(breathe, breathe)
-  ctx.fillStyle = '#8a5a30'; ctx.beginPath(); ctx.arc(0, 0, target.r, 0, Math.PI * 2); ctx.fill()
-  ctx.fillStyle = '#fff6dc'; ctx.beginPath(); ctx.arc(0, 0, target.r * 0.74, 0, Math.PI * 2); ctx.fill()
-  ctx.fillStyle = '#3f8f5a'; ctx.beginPath(); ctx.arc(0, 0, target.r * 0.46, 0, Math.PI * 2); ctx.fill()
-  ctx.fillStyle = '#ffe27a'; star(ctx, 0, 0, 5, target.r * 0.2, target.r * 0.09)
-  ctx.restore()
-}
-
-function drawBell(ctx: CanvasRenderingContext2D, target: Target, time: number) {
-  ctx.save(); ctx.rotate(Math.sin(time * 4 + target.id) * 0.08)
-  ctx.fillStyle = '#b57920'; roundRect(ctx, -5, -54, 10, 30, 5, true)
-  ctx.fillStyle = '#f7c948'; ctx.strokeStyle = '#7a4e20'; ctx.lineWidth = 3
-  ctx.beginPath(); ctx.arc(0, 0, target.r, Math.PI * 0.08, Math.PI * 0.92, true); ctx.lineTo(-target.r * 0.75, 16); ctx.lineTo(target.r * 0.75, 16); ctx.closePath(); ctx.fill(); ctx.stroke()
-  ctx.fillStyle = '#fff6dc'; ctx.beginPath(); ctx.arc(0, 2, 8, 0, Math.PI * 2); ctx.fill()
-  ctx.restore()
-}
-
-function drawLantern(ctx: CanvasRenderingContext2D, time: number) {
-  const pulse = 1 + Math.sin(time * 5) * 0.06
-  ctx.save(); ctx.scale(pulse, pulse)
-  ctx.shadowColor = '#ffd166'; ctx.shadowBlur = 22; ctx.fillStyle = '#ffd166'; roundRect(ctx, -19, -27, 38, 54, 12, true)
-  ctx.shadowBlur = 0; ctx.strokeStyle = '#7a4e20'; ctx.lineWidth = 4; roundRect(ctx, -23, -31, 46, 62, 12, false, true)
-  ctx.fillStyle = '#fff6dc'; ellipse(ctx, 0, 0, 15, 28)
-  ctx.restore()
-}
-
-function drawScroll(ctx: CanvasRenderingContext2D, time: number) {
-  ctx.save(); ctx.rotate(Math.sin(time * 3.5) * 0.045)
-  ctx.fillStyle = '#fff6dc'; ctx.strokeStyle = '#7a4e20'; ctx.lineWidth = 3; roundRect(ctx, -26, -18, 52, 36, 10, true, true)
-  ctx.fillStyle = '#f7c948'; ctx.beginPath(); ctx.arc(-25, -18, 7, 0, Math.PI * 2); ctx.arc(25, 18, 7, 0, Math.PI * 2); ctx.fill()
-  ctx.strokeStyle = '#3f8f5a'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(-13, -2); ctx.lineTo(-2, 9); ctx.lineTo(16, -10); ctx.stroke()
-  ctx.restore()
-}
-
-function drawRagdollDummy(ctx: CanvasRenderingContext2D, target: Target, time: number) {
-  const f = target.flop
-  const sway = Math.sin(time * 11 + target.id) * target.wobble * 0.16
-  ctx.save(); ctx.rotate(f.torso + sway)
-  ctx.fillStyle = '#fff6dc'; ctx.strokeStyle = '#7a4e20'; ctx.lineWidth = 3; roundRect(ctx, -17, -18, 34, 34, 10, true, true)
-  ctx.fillStyle = '#f7c948'; ctx.beginPath(); ctx.arc(0, -1, 10, 0, Math.PI * 2); ctx.fill()
-  ctx.strokeStyle = '#31552d'; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(0, -1, 6, 0, Math.PI * 2); ctx.stroke()
-  ragLimb(ctx, 0, -22, 0, 32, 7, '#7a4e20', 0)
-  ragLimb(ctx, 0, -2, -23, -2, 7, '#7a4e20', f.leftArm)
-  ragLimb(ctx, 0, -2, 23, -2, 7, '#7a4e20', f.rightArm)
-  ragLimb(ctx, 0, 32, -20, 54, 7, '#7a4e20', f.leftLeg)
-  ragLimb(ctx, 0, 32, 20, 54, 7, '#7a4e20', f.rightLeg)
-  ctx.save(); ctx.translate(0, -39); ctx.rotate(f.head + sway * 1.5)
-  ctx.fillStyle = '#d99f53'; ctx.strokeStyle = '#7a4e20'; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(0, 0, 18, 0, Math.PI * 2); ctx.fill(); ctx.stroke()
-  ctx.fillStyle = '#31552d'; ctx.fillRect(-8, -4, 4, 4); ctx.fillRect(7, -4, 4, 4)
-  ctx.strokeStyle = '#31552d'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(0, 4, 7, 0.15 * Math.PI, 0.85 * Math.PI); ctx.stroke()
-  ctx.restore(); ctx.restore()
-}
-
-function drawArcher(ctx: CanvasRenderingContext2D, a: { x: number; y: number }, time: number, pointer: { down: boolean; x: number; y: number }, emotion: Emotion) {
-  // Original “faithful stickman” pose: snappy silhouette, no copied characters/assets.
-  const pullPower = pointer.down
-    ? Math.min(1, Math.hypot((a.x + 34) - pointer.x, (a.y - 56) - pointer.y) / MAX_DRAW)
-    : 0
-  const faceEmotion: Emotion = pointer.down ? 'focus' : emotion
-  const pullBack = pullPower * 28
-  const lean = pullPower * 0.16
-  const idle = Math.sin(time * 5) * 2
-  const brace = pullPower * 12
-  const headTilt = pointer.down ? -0.12 * pullPower : Math.sin(time * 2) * 0.03
-
-  ctx.save(); ctx.translate(a.x, a.y); ctx.lineCap = 'round'; ctx.lineJoin = 'round'
-  ctx.fillStyle = 'rgba(32,48,71,.18)'; ellipse(ctx, 10, 18, 96, 18)
-  ctx.rotate(-lean)
-
-  // Stickman legs and torso: readable viral-stick silhouette with Junior Disciples colors.
-  limb(ctx, -5, -10, -38 - brace, 36 + idle, 10, '#31552d')
-  limb(ctx, 5, -10, 36 + brace, 36 - idle, 10, '#31552d')
-  limb(ctx, -38 - brace, 36 + idle, -56 - brace, 39, 8, '#4b3218')
-  limb(ctx, 36 + brace, 36 - idle, 56 + brace, 39, 8, '#4b3218')
-  limb(ctx, 0, -82, 0, -14, 13, '#4aa96c')
-  ctx.fillStyle = '#ffe27a'; roundRect(ctx, -18, -63, 36, 12, 8, true)
-
-  ctx.save(); ctx.translate(0, -104); ctx.rotate(headTilt)
-  const headSquash = faceEmotion === 'surprised' ? 1.1 : faceEmotion === 'happy' || faceEmotion === 'celebrate' ? 0.96 : 1
-  ctx.scale(1 / headSquash, headSquash)
-  ctx.fillStyle = '#f5c99b'; ctx.strokeStyle = '#203047'; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(0, 0, 20, 0, Math.PI * 2); ctx.fill(); ctx.stroke()
-  ctx.fillStyle = '#6b3f22'; ctx.beginPath(); ctx.arc(-4, -10, 18, Math.PI, Math.PI * 2); ctx.fill()
-  drawArcherFace(ctx, faceEmotion, time)
-  ctx.restore()
-
-  const bowHand = { x: 39, y: -58 }
-  const stringHand = { x: -7 - pullBack, y: -57 + pullPower * 3 }
-  limb(ctx, -1, -60, stringHand.x, stringHand.y, 10, '#f5c99b')
-  limb(ctx, 2, -59, bowHand.x, bowHand.y, 10, '#f5c99b')
-
-  // Oversized elastic bow + nocked arrow are the visual centerpiece.
-  const bowAngle = pointer.down ? Math.atan2((a.y - 58) - pointer.y, (a.x + 34) - pointer.x) : -0.35
-  ctx.save(); ctx.translate(bowHand.x, bowHand.y); ctx.rotate(bowAngle)
-  if (pullPower > 0.75) { ctx.shadowColor = '#ffe27a'; ctx.shadowBlur = 18 }
-  ctx.strokeStyle = pullPower > 0.75 ? '#f7c948' : '#7a4e20'; ctx.lineWidth = 6
-  ctx.beginPath(); ctx.arc(0, 0, 38 + pullPower * 4, -1.25, 1.25); ctx.stroke()
-  ctx.shadowBlur = 0
-  ctx.strokeStyle = pullPower > 0.75 ? '#ffe27a' : 'rgba(255,255,255,.9)'; ctx.lineWidth = 2
-  ctx.beginPath(); ctx.moveTo(12, -36); ctx.lineTo(-12 - pullBack, 0); ctx.lineTo(12, 36); ctx.stroke()
-  if (pointer.down && pullBack > 2) {
-    ctx.strokeStyle = '#5b371f'; ctx.lineWidth = 4
-    ctx.beginPath(); ctx.moveTo(-12 - pullBack, 0); ctx.lineTo(22, 0); ctx.stroke()
-    ctx.fillStyle = '#203047'; ctx.beginPath(); ctx.moveTo(27, 0); ctx.lineTo(16, -6); ctx.lineTo(16, 6); ctx.closePath(); ctx.fill()
-    ctx.fillStyle = '#79c96b'; ctx.beginPath(); ctx.moveTo(-12 - pullBack, 0); ctx.lineTo(-25 - pullBack, -8); ctx.lineTo(-20 - pullBack, 0); ctx.lineTo(-25 - pullBack, 8); ctx.closePath(); ctx.fill()
-  }
-  ctx.restore()
-  ctx.restore()
-}
-
-function drawArcherFace(ctx: CanvasRenderingContext2D, emotion: Emotion, time: number) {
-  // Original expressive stickman face: simple emotions, readable at phone size.
-  const blink = emotion === 'idle' && Math.sin(time * 2.7) > 0.965
-  ctx.strokeStyle = '#203047'
-  ctx.fillStyle = '#203047'
-  ctx.lineWidth = 2.4
-
-  if (emotion === 'focus') {
-    ctx.beginPath(); ctx.moveTo(-10, -7); ctx.lineTo(-2, -5); ctx.moveTo(5, -5); ctx.lineTo(13, -8); ctx.stroke()
-    ctx.beginPath(); ctx.arc(-5, -1, 2.6, 0, Math.PI * 2); ctx.arc(9, -1, 2.6, 0, Math.PI * 2); ctx.fill()
-    ctx.beginPath(); ctx.moveTo(-6, 9); ctx.quadraticCurveTo(2, 12, 12, 8); ctx.stroke()
-    return
-  }
-
-  if (emotion === 'surprised') {
-    ctx.beginPath(); ctx.arc(-6, -2, 2.7, 0, Math.PI * 2); ctx.arc(8, -2, 2.7, 0, Math.PI * 2); ctx.fill()
-    ctx.beginPath(); ctx.moveTo(-11, -9); ctx.quadraticCurveTo(-6, -13, -1, -9); ctx.moveTo(3, -9); ctx.quadraticCurveTo(8, -13, 14, -8); ctx.stroke()
-    ctx.beginPath(); ctx.arc(2, 9, 5.2, 0, Math.PI * 2); ctx.stroke()
-    return
-  }
-
-  if (emotion === 'happy' || emotion === 'celebrate') {
-    ctx.beginPath(); ctx.arc(-6, -2, 2.4, 0, Math.PI * 2); ctx.arc(8, -2, 2.4, 0, Math.PI * 2); ctx.fill()
-    ctx.beginPath(); ctx.arc(1, 5, 9, 0.12 * Math.PI, 0.88 * Math.PI); ctx.stroke()
-    if (emotion === 'celebrate') {
-      ctx.fillStyle = '#f7c948'
-      star(ctx, 14, -15, 5, 4.8, 2.2)
-    }
-    return
-  }
-
-  if (emotion === 'release') {
-    ctx.beginPath(); ctx.arc(-5, -1, 2.3, 0, Math.PI * 2); ctx.arc(9, -1, 2.3, 0, Math.PI * 2); ctx.fill()
-    ctx.beginPath(); ctx.moveTo(-3, 9); ctx.lineTo(11, 7); ctx.stroke()
-    return
-  }
-
-  if (blink) {
-    ctx.beginPath(); ctx.moveTo(-9, -1); ctx.lineTo(-3, -1); ctx.moveTo(6, -1); ctx.lineTo(12, -1); ctx.stroke()
-  } else {
-    ctx.beginPath(); ctx.arc(-6, -2, 2.3, 0, Math.PI * 2); ctx.arc(8, -2, 2.3, 0, Math.PI * 2); ctx.fill()
-  }
-  ctx.beginPath(); ctx.arc(1, 5, 7, 0.16 * Math.PI, 0.78 * Math.PI); ctx.stroke()
-}
-
-
-function ragLimb(ctx: CanvasRenderingContext2D, x1: number, y1: number, x2: number, y2: number, w: number, color: string, angle: number) {
-  ctx.save(); ctx.translate(x1, y1); ctx.rotate(angle); ctx.strokeStyle = color; ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(x2 - x1, y2 - y1); ctx.stroke(); ctx.fillStyle = '#f7c948'; ctx.beginPath(); ctx.arc(0, 0, w * 0.56, 0, Math.PI * 2); ctx.fill(); ctx.restore()
-}
-
-function limb(ctx: CanvasRenderingContext2D, x1: number, y1: number, x2: number, y2: number, w: number, color: string) {
-  ctx.strokeStyle = '#203047'; ctx.lineWidth = w + 4; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.strokeStyle = color; ctx.lineWidth = w; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke()
-}
-
-
-function ellipse(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number) {
-  ctx.beginPath(); ctx.ellipse(x, y, w / 2, h / 2, 0, 0, Math.PI * 2); ctx.fill()
-}
-
-function roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number, fill = true, stroke = false) {
-  ctx.beginPath(); ctx.roundRect(x, y, w, h, r); if (fill) ctx.fill(); if (stroke) ctx.stroke()
-}
-
-function star(ctx: CanvasRenderingContext2D, cx: number, cy: number, points: number, outer: number, inner: number) {
-  ctx.beginPath()
-  for (let i = 0; i < points * 2; i++) {
-    const radius = i % 2 ? inner : outer
-    const angle = -Math.PI / 2 + i * Math.PI / points
-    const x = cx + Math.cos(angle) * radius
-    const y = cy + Math.sin(angle) * radius
-    if (i === 0) ctx.moveTo(x, y)
-    else ctx.lineTo(x, y)
-  }
-  ctx.closePath(); ctx.fill()
 }

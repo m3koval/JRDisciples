@@ -1,0 +1,56 @@
+[
+  {
+    "runtime": "public/games/faithful-archer-3d/boulder_01.glb",
+    "source": "game/trail-of-truth-block-adventure/assets/scans/boulder_01.glb",
+    "bytes": 776636,
+    "sha256": "71d6f5755143c67d46c8ff7790a0d2ed8c7d11f17c2035de4b7839c5130dfbda"
+  },
+  {
+    "runtime": "public/games/faithful-archer-3d/grove-oak.glb",
+    "source": "FAL request 01a10bc1-7738-7540-be67-0331372e01bd; docs/archer-3d-provenance.md",
+    "bytes": 1503904,
+    "sha256": "e057690d2e942b51656a641a9b91c9b68f82caec865d2ce9bc49e4ce47d0e8fb"
+  },
+  {
+    "runtime": "public/games/faithful-archer-3d/hessian_230_albedo.jpg",
+    "source": "game/trail-of-truth-block-adventure/assets/scans/textures/hessian_230_albedo.jpg",
+    "bytes": 107471,
+    "sha256": "b295be82c9814b27de37445b15eb26d71c9916272cd2350bab1538b5aa56614e"
+  },
+  {
+    "runtime": "public/games/faithful-archer-3d/michael.glb",
+    "source": "game/trail-of-truth-block-adventure/assets/michael.glb",
+    "bytes": 13384456,
+    "sha256": "fddb290aae7b65da54640c1f67821a0c93940fccd89f5c3d88848a86ad88756d"
+  },
+  {
+    "runtime": "public/games/faithful-archer-3d/plant_bushDetailed.glb",
+    "source": "game/trail-of-truth-block-adventure/assets/environment/plant_bushDetailed.glb",
+    "bytes": 10172,
+    "sha256": "2e0487020d68ccf664435db9d829c78ae00e6d2785ee3ec10b9f89cc70a10406"
+  },
+  {
+    "runtime": "public/games/faithful-archer-3d/rock_moss_a.glb",
+    "source": "game/trail-of-truth-block-adventure/assets/scans/rock_moss_a.glb",
+    "bytes": 114456,
+    "sha256": "4645ab8d18fd828a084e00d61acc0174439e19ff96bcacf1ae23941f52d9e120"
+  },
+  {
+    "runtime": "public/games/faithful-archer-3d/rock_moss_c.glb",
+    "source": "game/trail-of-truth-block-adventure/assets/scans/rock_moss_c.glb",
+    "bytes": 119760,
+    "sha256": "a8f75b7a350cdee41fe1b130d13e3b7b6f67012d06a9770561fb98c002450236"
+  },
+  {
+    "runtime": "public/games/faithful-archer-3d/rocky_trail_albedo.jpg",
+    "source": "game/trail-of-truth-block-adventure/assets/scans/textures/rocky_trail_albedo.jpg",
+    "bytes": 98868,
+    "sha256": "9cb261b72d4d65f1ea9dc2f60b3f733b3159223da4c116addb1d07111d56b6eb"
+  },
+  {
+    "runtime": "public/games/faithful-archer-3d/timber.jpg",
+    "source": "game/trail-of-truth-block-adventure/assets/environment/T_WoodTrim_BaseColor.png (cropped wood trim)",
+    "bytes": 18124,
+    "sha256": "809cfddee06785a6c5262a014297870a48a27cf9ac8c0d997ad87707f943fe79"
+  }
+]

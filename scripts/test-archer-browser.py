@@ -23,7 +23,7 @@ with sync_playwright() as pw:
    page.goto(BASE+'/games/faithful-archer',wait_until='domcontentloaded')
    page.wait_for_function(f'document.documentElement.dataset.lang === "{lang}"')
    page.get_by_role('button',name='Начать тренировку' if lang=='ru' else 'Start Training',exact=True).first.click()
-   canvas=page.locator('canvas');page.wait_for_function('!!document.querySelector("canvas")?.dataset.state')
+   canvas=page.locator('canvas');page.wait_for_function('!!document.querySelector("canvas")?.dataset.state && JSON.parse(document.querySelector("canvas").dataset.renderer || "{}").ready',timeout=60000)
    page.wait_for_timeout(250)
    cdp=context.new_cdp_session(page)
    def capture(name):

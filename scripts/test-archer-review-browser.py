@@ -11,8 +11,8 @@ with sync_playwright() as p:
   for lang in ['en','ru']:
    context=browser.new_context(viewport={'width':1024,'height':768},has_touch=True,reduced_motion='reduce');context.add_init_script(f"localStorage.setItem('language','{lang}')")
    try:
-    page=context.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.goto('http://127.0.0.1:3107/games/faithful-archer',wait_until='domcontentloaded')
-    page.get_by_role('button',name='Начать тренировку' if lang=='ru' else 'Start Training',exact=True).first.click();canvas=page.locator('canvas');page.wait_for_function('!!document.querySelector("canvas")?.dataset.state');page.clock.install();page.clock.pause_at(page.evaluate('new Date(Date.now()+1000).toISOString()'))
+    page=context.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.goto(os.environ.get('JD_BASE','http://127.0.0.1:3107')+'/games/faithful-archer',wait_until='domcontentloaded')
+    page.get_by_role('button',name='Начать тренировку' if lang=='ru' else 'Start Training',exact=True).first.click();canvas=page.locator('canvas');page.wait_for_function('!!document.querySelector("canvas")?.dataset.state && JSON.parse(document.querySelector("canvas").dataset.renderer || "{}").ready',timeout=60000);page.clock.install();page.clock.pause_at(page.evaluate('new Date(Date.now()+1000).toISOString()'))
     def state():return json.loads(canvas.get_attribute('data-state'))
     def ground():
      box=canvas.bounding_box();assert box

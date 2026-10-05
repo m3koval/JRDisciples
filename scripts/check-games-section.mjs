@@ -62,14 +62,14 @@ const requiredArcherSnippets = [
   'wisdomMeter',
   'target-course',
   'mobile-release',
-  'drawRagdollDummy',
+  'new Range3D(canvas, fail',
   'getCanvasPoint',
   'launchArrowVelocity',
   'ARROW_SPEED',
   'ARROW_GRAVITY',
   'MOBILE_BREAKPOINT',
   'shoot(point.x, point.y)',
-  'faithful stickman',
+  'visualRef.current?.render',
   'trail: Point[]',
   'target.squash',
   'target.spin',
@@ -82,7 +82,7 @@ const requiredArcherSnippets = [
   'hitCooldown',
   'Hit each target once',
   'type Emotion',
-  'drawArcherFace',
+  'visual.dispose()',
   'EMOTION_BEATS',
   "setArcherEmotion('happy'",
   "setArcherEmotion('surprised'",
@@ -101,7 +101,7 @@ const requiredArcherSnippets = [
   'obstaclesRef',
   'spawnObstacles',
   'arrowHitsObstacle',
-  'drawObstacle',
+  'obstaclesRef.current.map(o => getObstacleBounds(o, modelRef.current.time))',
   'farAnchor',
   'courseShrink',
   'impactDistance',
@@ -109,7 +109,7 @@ const requiredArcherSnippets = [
   'hitFlash',
   'obstacle.hitFlash',
   'spawnMissDust',
-  'aimBlocked',
+  'arrowHitsObstacle(p, next, getObstacleBounds(o, modelRef.current.time))',
   'releasePointerCapture',
   'lostpointercapture',
   'getTargetFeedback',
@@ -120,7 +120,15 @@ for (const snippet of requiredArcherSnippets) {
   if (!archer.includes(snippet)) failures.push(`Faithful Archer route must include: ${snippet}`);
 }
 
-if (!/function\s+drawRagdollDummy/.test(archer)) failures.push('Faithful Archer route must define drawRagdollDummy.');
+// Renderer replacement: test real mesh/rig construction and normal-route binding,
+// not names of retired Canvas2D/stickman routines. Physics checks remain intact.
+const rangePath = path.join(root, 'app/games/faithful-archer/range-3d.ts');
+const range = fs.existsSync(rangePath) ? fs.readFileSync(rangePath, 'utf8') : '';
+for (const snippet of ['THREE.WebGLRenderer', 'GLTFLoader', 'poseArm', 'makeTarget', 'makeArrow',
+  'this.renderer.render(this.scene,this.camera)', 'webglcontextlost', 'this.renderer.dispose()',
+  "t.kind==='bell'", "t.kind==='scroll'", "t.kind==='lantern'", "this.fitModel('michael'"])
+  if (!range.includes(snippet)) failures.push(`Faithful Archer 3D renderer must include: ${snippet}`);
+if (/getContext\(['"]2d/.test(archer + range)) failures.push('Faithful Archer world must not silently fall back to rejected Canvas2D artwork.');
 if (!/function\s+getCanvasPoint/.test(archer)) failures.push('Faithful Archer route must define getCanvasPoint for mobile-safe touch coordinates.');
 if (!/function\s+launchArrowVelocity/.test(archer)) failures.push('Faithful Archer route must define launchArrowVelocity for deterministic projectile math.');
 if (/event\.offset[XY]/.test(archer)) failures.push('Faithful Archer route must not use PointerEvent.offsetX/offsetY; iOS Safari touch release can report bad offsets.');
