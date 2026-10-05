@@ -14,6 +14,15 @@ function test(name, fn) { fn(); checks++; console.log('PASS', name) }
 test('full board returns null without calling randomness', () => assert.equal(m.freeCell([{x:0,y:0}], () => { throw Error('must not sample') }, 1), null))
 test('one remaining square is always found', () => { for (const r of [0, .1, .99, 1]) assert.equal(JSON.stringify(m.freeCell([{x:0,y:0},{x:1,y:0},{x:0,y:1}], () => r, 2)), '{"x":1,"y":1}') })
 test('safe tail-vacating collision and growing-body collision', () => { const s=[{x:1,y:1},{x:1,y:2},{x:0,y:2},{x:0,y:1}]; assert.equal(m.collides(s[3],s,[],false),false); assert.equal(m.collides(s[3],s,[],true),true); assert.equal(m.collides({x:-1,y:0},s,[],false),true) })
+test('collision reason distinguishes boundary, rock, trail and vacating tail', () => {
+ const snake=[{x:1,y:1},{x:1,y:2},{x:0,y:2},{x:0,y:1}]
+ assert.equal(m.collisionReason({x:-1,y:1},snake,[],false),'edge')
+ assert.equal(m.collisionReason({x:2,y:1},snake,[{x:2,y:1}],false),'rock')
+ assert.equal(m.collisionReason(snake[1],snake,[],false),'trail')
+ assert.equal(m.collisionReason(snake[3],snake,[],false),null)
+ assert.equal(m.collisionReason(snake[3],snake,[],true),'trail')
+ assert.equal(m.collisionReason({x:2,y:1},snake,[],false),null)
+})
 test('authored destinations and rocks remain disjoint at every level', () => { for(let l=1;l<=9;l++) for(let w=0;w<12;w++) { const s=m.initialTrail(), rocks=m.rocksForLevel(l), c=m.wordCell(l,w,s,rocks); assert.ok(c); assert.ok(![...s,...rocks].some(b=>m.sameCell(b,c))); } assert.equal(m.rocksForLevel(1).length,0); assert.equal(m.rocksForLevel(4).length,4); assert.equal(m.rocksForLevel(9).length,8) })
 test('unreachable word placement terminates with null', () => assert.equal(m.wordCell(1,0,[{x:0,y:0}], [{x:1,y:0},{x:0,y:1}]),null))
 test('storage unavailable, invalid, negative and stale values are safe', () => { assert.equal(m.readBest({getItem(){throw Error('blocked')}}),0); for(const value of ['NaN','-3','1.5','Infinity']) assert.equal(m.readBest({getItem:()=>value}),0); assert.equal(m.readBest({getItem:()=> '42'}),42); assert.equal(m.saveBest({setItem(){throw Error('quota')}},45),false) })
@@ -26,7 +35,7 @@ source = source.replace('  // ─── Render', `  globalThis.__game = { startG
 const slots=[], pending=[]; let hook=0, now=0, raf, language='en'
 const listeners={}
 const context2d = new Proxy({}, { get(target,key) { if(key==='measureText') return () => ({width:35}); if(key==='createLinearGradient') return () => ({addColorStop(){}}); return target[key] ?? (()=>{}); }, set(target,key,val){target[key]=val; return true} })
-const canvas={width:600,height:600,style:{},dataset:{},getContext:()=>context2d}
+const canvas={width:600,height:600,style:{},dataset:{},focus(){},getContext:()=>context2d}
 const wrap={getBoundingClientRect:()=>({width:600,height:600,left:0,top:0})}
 const jsx=(type,props)=>{ if(props?.ref) props.ref.current = type==='canvas'?canvas:wrap; return {type,props} }
 const react={

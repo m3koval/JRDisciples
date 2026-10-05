@@ -44,10 +44,15 @@ export function wordCell(level: number, word: number, snake: Cell[], blocked: Ce
   return candidates[0] ?? null
 }
 
+export type CollisionReason = 'edge' | 'rock' | 'trail'
+export function collisionReason(head: Cell, snake: Cell[], rocks: Cell[], grows: boolean): CollisionReason | null {
+  if (head.x < 0 || head.y < 0 || head.x >= GRID || head.y >= GRID) return 'edge'
+  if (rocks.some(c => sameCell(c, head))) return 'rock'
+  if ((grows ? snake : snake.slice(0, -1)).some(c => sameCell(c, head))) return 'trail'
+  return null
+}
 export function collides(head: Cell, snake: Cell[], rocks: Cell[], grows: boolean): boolean {
-  return head.x < 0 || head.y < 0 || head.x >= GRID || head.y >= GRID ||
-    rocks.some(c => sameCell(c, head)) ||
-    (grows ? snake : snake.slice(0, -1)).some(c => sameCell(c, head))
+  return collisionReason(head, snake, rocks, grows) !== null
 }
 export function tickDuration(level: number, gentle: boolean) {
   return Math.max(gentle ? 185 : 130, (gentle ? 250 : 205) - (level - 1) * 8)

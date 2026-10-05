@@ -4,9 +4,10 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
-import { GRID, MAX_TRAIL, initialTrail, rocksForLevel, freeCell, wordCell, collides, tickDuration, frameDelta, readBest, saveBest, ownsPointer } from './mechanics'
+import { GRID, MAX_TRAIL, initialTrail, rocksForLevel, freeCell, wordCell, collisionReason, tickDuration, frameDelta, readBest, saveBest, ownsPointer } from './mechanics'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
+type CollisionReason = 'edge' | 'rock' | 'trail'
 type Cell = { x: number; y: number }
 type Dir = { x: number; y: number }
 type Phase = 'menu' | 'play' | 'levelUp' | 'over' | 'paused' | 'won'
@@ -62,6 +63,8 @@ export default function MannaTrailPage() {
   const [wordsGot, setWordsGot] = useState(0)
   const [slowOn, setSlowOn] = useState(false)
   const [gentle, setGentle] = useState(true)
+  const [bump, setBump] = useState<CollisionReason>('edge')
+
   const gentleRef = useRef(true)
   const bestRef = useRef(0)
   const clockRef = useRef(0)
@@ -114,6 +117,10 @@ export default function MannaTrailPage() {
     resetTimingRef.current = true
     setPhase(next)
   }
+
+  useEffect(() => {
+    if (phase === 'play') canvasRef.current?.focus({ preventScroll: true })
+  }, [phase])
 
   // ── Direction handling ─────────────────────────────────────────────────────
   function pushDir(d: Dir) {
@@ -325,7 +332,9 @@ export default function MannaTrailPage() {
       const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y }
 
       const grows = snake.length < MAX_TRAIL && [mannaRef.current, wordTileRef.current].some(c => c && c.x === head.x && c.y === head.y)
-      if (collides(head, snake, rocksForLevel(levelRef.current), grows)) {
+      const reason = collisionReason(head, snake, rocksForLevel(levelRef.current), grows)
+      if (reason) {
+        setBump(reason)
         endGame()
         return
       }
@@ -396,13 +405,17 @@ export default function MannaTrailPage() {
       ctx!.fillStyle = bg
       ctx!.fillRect(0, 0, w, h)
 
-      // board
-      ctx!.fillStyle = 'rgba(255,255,255,.03)'
+      // A quiet sand grid: every blocking rock below is also a real collider.
+      const sand = ctx!.createLinearGradient(ox, oy, ox + size, oy + size)
+      sand.addColorStop(0, '#a97c4c')
+      sand.addColorStop(.48, '#ba905b')
+      sand.addColorStop(1, '#88633e')
+      ctx!.fillStyle = sand
       ctx!.fillRect(ox, oy, size, size)
       ctx!.strokeStyle = 'rgba(251,191,36,.55)'
       ctx!.lineWidth = 2 * dpr
       ctx!.strokeRect(ox - dpr, oy - dpr, size + 2 * dpr, size + 2 * dpr)
-      ctx!.strokeStyle = 'rgba(255,255,255,.045)'
+      ctx!.strokeStyle = 'rgba(47,31,18,.12)'
       ctx!.lineWidth = 1
       for (let i = 1; i < GRID; i++) {
         ctx!.beginPath(); ctx!.moveTo(ox + i * cell, oy); ctx!.lineTo(ox + i * cell, oy + size); ctx!.stroke()
@@ -412,10 +425,10 @@ export default function MannaTrailPage() {
       // Visible rock islands exactly match the collision map.
       for (const rock of rocksForLevel(levelRef.current)) {
         const rx = ox + rock.x * cell, ry = oy + rock.y * cell
-        ctx!.fillStyle = '#a88a62'
+        ctx!.fillStyle = '#534d48'
         roundRect(ctx!, rx + cell * .06, ry + cell * .06, cell * .88, cell * .88, cell * .25)
         ctx!.fill()
-        ctx!.fillStyle = '#ddc497'
+        ctx!.fillStyle = '#aaa199'
         ctx!.fillRect(rx + cell * .22, ry + cell * .2, cell * .4, cell * .13)
       }
 
@@ -531,6 +544,28 @@ export default function MannaTrailPage() {
         }
       }
 
+      // Gentle-mode steering forecast uses the same queue, joystick and collision
+      // contract as the next tick; no automated turn or altered collision gates.
+      if (gentleRef.current && phaseRef.current === 'play' && snakeRef.current.length) {
+        const snake = snakeRef.current
+        const direction = dirQueueRef.current[0] ?? (joyVecRef.current ? resolveJoyDir(joyVecRef.current, dirRef.current) : null) ?? dirRef.current
+        const next = { x: snake[0].x + direction.x, y: snake[0].y + direction.y }
+        const grows = snake.length < MAX_TRAIL && [mannaRef.current, wordTileRef.current].some(c => c && c.x === next.x && c.y === next.y)
+        const danger = collisionReason(next, snake, rocksForLevel(levelRef.current), grows)
+        canvas!.dataset.nextStep = JSON.stringify({ ...next, danger })
+        const nx = ox + Math.max(0, Math.min(GRID - 1, next.x)) * cell
+        const ny = oy + Math.max(0, Math.min(GRID - 1, next.y)) * cell
+        ctx!.strokeStyle = danger ? '#8b1d18' : '#fff9da'
+        ctx!.lineWidth = Math.max(2 * dpr, cell * .08)
+        ctx!.strokeRect(nx + cell * .1, ny + cell * .1, cell * .8, cell * .8)
+        if (danger) {
+          ctx!.beginPath()
+          ctx!.moveTo(nx + cell * .22, ny + cell * .22); ctx!.lineTo(nx + cell * .78, ny + cell * .78)
+          ctx!.moveTo(nx + cell * .78, ny + cell * .22); ctx!.lineTo(nx + cell * .22, ny + cell * .78)
+          ctx!.stroke()
+        }
+      } else { delete canvas!.dataset.nextStep }
+
       // joystick indicator while steering
       const joy = joyRef.current
       if (joy && phaseRef.current === 'play') {
@@ -574,7 +609,7 @@ export default function MannaTrailPage() {
       }
 
       // death flash
-      if (flashRef.current > 0) {
+      if (flashRef.current > 0 && !reducedMotionRef.current) {
         ctx!.fillStyle = `rgba(239,68,68,${flashRef.current * 0.35})`
         ctx!.fillRect(0, 0, w, h)
         flashRef.current = Math.max(0, flashRef.current - 0.05)
@@ -669,6 +704,8 @@ export default function MannaTrailPage() {
     lesson: 'Бог заботится о нас каждый день. Мы можем доверять Ему и делиться с другими.',
     journey: '9 стихов · 3 тропы · слова не теряются при ошибке',
     directions: ['Вверх', 'Влево', 'Вниз', 'Вправо'],
+    forecast: 'Спокойный путь: рамка — следующий шаг. Крестик — пора повернуть.',
+    bumps: { edge: 'Край тропы! Поворачивай до границы.', rock: 'Камень на пути! Обойди его сбоку.', trail: 'Караван пересёк свой след. Сделай круг пошире.' },
   } : {
     back: 'All Games',
     eyebrow: 'Classic Arcade',
@@ -701,6 +738,8 @@ export default function MannaTrailPage() {
     lesson: 'God cares for us each day. We can trust Him and share with others.',
     journey: '9 verses · 3 trails · keep your words after a bump',
     directions: ['Up', 'Left', 'Down', 'Right'],
+    forecast: 'Gentle trail: the outline is your next step. An × means turn now.',
+    bumps: { edge: 'The edge! Turn before the border.', rock: 'A rock in the way! Go around its side.', trail: 'You crossed your own trail. Make a wider turn.' },
   }
 
   // ─── Render ─────────────────────────────────────────────────────────────────
@@ -717,9 +756,11 @@ export default function MannaTrailPage() {
         .mt-chip.got { background: linear-gradient(180deg,#fde68a,#f59e0b); border-color: #fde68a; color: #78350f; }
         .mt-chip.next { border-color: #fbbf24; color: #fde68a; animation: mt-pulse 1.1s ease-in-out infinite; }
         .mt-arena { flex: 1; position: relative; min-height: 0; }
-        .mt-arena canvas { position: absolute; inset: 0; }
+        .mt-arena canvas { position: absolute; inset: 0; outline: none; }
+        .mt-arena canvas:focus-visible { outline: 2px solid #fde68a; outline-offset: -2px; }
         .mt-overlay { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; padding: 20px; background: rgba(4,12,22,.78); }
         .mt-card { max-height: 90dvh; overflow-y: auto; max-width: 460px; width: 100%; border-radius: 26px; padding: 26px 22px; background: rgba(255,255,255,.97); color: #0d1f3c; border: 3px solid #fbbf24; text-align: center; box-shadow: 0 30px 90px rgba(0,0,0,.5); }
+        .mt-card h2 { font: 1000 clamp(1.35rem, 4vw, 1.9rem)/1.2 var(--font-nunito); margin: 10px 0; }
         .mt-btn { border: 0; border-radius: 16px; padding: 13px 30px; background: linear-gradient(180deg,#fbbf24,#f97316); color: #3b2307; font-family: var(--font-nunito); font-weight: 1000; font-size: 1.02rem; cursor: pointer; box-shadow: 0 12px 28px rgba(0,0,0,.25); }
         .mt-slow-badge { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 5; border-radius: 999px; padding: 6px 14px; background: rgba(125,211,252,.18); border: 1px solid rgba(125,211,252,.55); color: #bae6fd; font-family: var(--font-nunito); font-weight: 1000; font-size: .82rem; }
         @keyframes mt-pulse { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
@@ -756,7 +797,7 @@ export default function MannaTrailPage() {
           </div>
           <div className="mt-arena" ref={wrapRef}>
             {slowOn && <div className="mt-slow-badge">{copy.slow}</div>}
-            <canvas ref={canvasRef} role="img" aria-label={`${copy.title}: ${copy.mission}`} />
+            <canvas tabIndex={0} ref={canvasRef} role="img" aria-label={`${copy.title}: ${copy.mission}`} />
           </div>
           {phase === 'play' && <div className="mt-controls" aria-label={copy.howTitle}>
             {[{ x: 0, y: -1 }, { x: -1, y: 0 }, { x: 0, y: 1 }, { x: 1, y: 0 }].map((dir, i) => (
@@ -773,7 +814,7 @@ export default function MannaTrailPage() {
           </div>}
 
           {phase === 'levelUp' && (
-            <div className="mt-overlay">
+            <div className="mt-overlay" role="dialog" aria-modal="true" aria-label={copy.verseDone}>
               <div className="mt-card">
                 <div style={{ fontSize: '2.6rem', marginBottom: 8 }}>🍞✨📖</div>
                 <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#b45309', letterSpacing: 1, textTransform: 'uppercase', fontSize: '.8rem' }}>
@@ -790,10 +831,11 @@ export default function MannaTrailPage() {
           )}
 
           {phase === 'over' && (
-            <div className="mt-overlay">
+            <div className="mt-overlay" role="dialog" aria-modal="true" aria-label={copy.gameOver}>
               <div className="mt-card">
                 <div style={{ fontSize: '2.6rem', marginBottom: 8 }}>🌅</div>
                 <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '1.5rem', marginBottom: 8 }}>{copy.gameOver}</h2>
+                <p style={{ fontWeight: 900, marginBottom: 10, color: '#7c3522' }}>{copy.bumps[bump]}</p>
                 <p style={{ fontFamily: 'var(--font-lora)', fontWeight: 700, lineHeight: 1.6, color: '#475569', marginBottom: 14 }}>{copy.recovery}</p>
                 <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '1.15rem', marginBottom: 18 }}>
                   ⭐ {copy.score}: {score} · 🏆 {copy.best}: {best}
@@ -829,7 +871,7 @@ export default function MannaTrailPage() {
 
           <div style={{ marginTop: 30, borderRadius: 24, padding: 20, maxWidth: 560, background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.16)' }}>
             <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#ffd866', fontSize: '1.05rem', marginBottom: 12 }}>{copy.howTitle}</h2>
-            {[copy.how1, copy.how2, copy.how3, copy.how4].map((line) => (
+            {[copy.how1, copy.how2, copy.how3, copy.how4, copy.forecast].map((line) => (
               <p key={line} style={{ fontFamily: 'var(--font-nunito)', fontWeight: 800, lineHeight: 1.7, color: 'rgba(255,255,255,.88)', fontSize: '.95rem' }}>{line}</p>
             ))}
           </div>

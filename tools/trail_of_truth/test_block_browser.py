@@ -1,5 +1,5 @@
 """Real browser input acceptance. Never writes game state or invokes game methods."""
-import json, math, time, pathlib, traceback, os
+import json, math, time, pathlib, traceback, os, base64
 from playwright.sync_api import sync_playwright
 ROOT=pathlib.Path(__file__).resolve().parents[2]
 OUT=ROOT/'docs/games/block-evidence'/os.environ.get('BLOCK_EVIDENCE','browser')
@@ -34,7 +34,9 @@ def run():
             print(name,value,flush=True)
             assert value,name
         def shot(name):
-            page.screenshot(path=str(OUT/(name+'.png')))
+            # WebGL software rendering may never settle document fonts. Capture
+            # real compositor pixels without Playwright's unrelated font wait.
+            (OUT/(name+'.png')).write_bytes(base64.b64decode(cdp.send('Page.captureScreenshot', {'format':'png'})['data']))
         def settle():
             tick=state()['tick']
             engine().wait_for_function('window.__trailBlock.tick > '+str(tick+12),timeout=15000)
@@ -92,7 +94,9 @@ def run():
                 else:
                     for k in held-want:page.keyboard.up(k)
                     for k in want-held:page.keyboard.down(k)
-                held=want;page.wait_for_timeout(150)
+                held=want
+                # Observe a real simulation step, not an assumed wall-clock FPS.
+                engine().wait_for_function('window.__trailBlock.tick > '+str(s['tick']+2),timeout=15000)
                 with (OUT/'movement.jsonl').open('a') as log:log.write(json.dumps({'target':[x,z],'position':p,'tick':s['tick'],'fps':s['fps'],'held':list(held)})+'\n')
             if TOUCH:touches('touchEnd',[])
             else:
