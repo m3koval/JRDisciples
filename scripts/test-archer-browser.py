@@ -1,48 +1,113 @@
-import json, math
+"""Actual Archer play: trusted mouse/touch/keyboard, read-only observation, no game-state injection."""
 from pathlib import Path
+import json, math, os, base64
 from playwright.sync_api import sync_playwright
-OUT=Path('/mnt/hermes-storage/jd-games-overnight/evidence/pass-04/archer'); OUT.mkdir(parents=True,exist_ok=True)
-with sync_playwright() as p:
- b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'],headless=True)
+OUT=Path(os.environ.get('JD_EVIDENCE','/mnt/hermes-storage/jd-games-overnight/evidence/pass-05/archer'));OUT.mkdir(parents=True,exist_ok=True)
+BASE=os.environ.get('JD_BASE','http://127.0.0.1:3107')
+checks=[];errors=[];requests=[]
+def record(name,ok,detail=None):
+ checks.append({'name':name,'passed':bool(ok),'detail':detail})
+ (OUT/'browser.json').write_text(json.dumps({'checks':checks,'errors':errors,'asset_failures':requests},indent=2))
+ assert ok,(name,detail)
+ print('PASS',name,flush=True)
+with sync_playwright() as pw:
+ browser=pw.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
  try:
-  page=b.new_page(viewport={'width':1024,'height':768},device_scale_factor=1)
-  errors=[]; page.on('pageerror',lambda e: errors.append(str(e)))
-  page.goto('http://127.0.0.1:3107/games/faithful-archer',wait_until='domcontentloaded')
-  page.wait_for_function('document.documentElement.dataset.lang === "en"')
-  page.get_by_role('button',name='Start Training').first.click()
-  canvas=page.locator('canvas'); canvas.scroll_into_view_if_needed(); box=canvas.bounding_box()
-  assert box is not None
-  # Solve a ballistic shot to the fixed shield from the game's seeded layout.
-  w,h=box['width'],box['height']; bx=max(56,w*.13)+34; by=h*.69-58
-  seed=lambda n: abs(math.sin(n*12.9898+78.233)*43758.5453)%1
-  tx=min(w-42,w*.67+seed(4)*34-17); ty=h*.2+seed(19)*30-15
-  t=.68; vx=(tx-bx)/t; vy=(ty-by-360*t*t)/t
-  dx=-vx*132/720; dy=-vy*132/720
-  sx=box['x']+w*.65; sy=box['y']+h*.5
-  page.mouse.move(sx,sy); page.mouse.down(); page.mouse.move(sx+dx,sy+dy,steps=10)
-  page.screenshot(path=str(OUT/'landscape-aim.png'))
-  page.mouse.up(); page.wait_for_timeout(1000)
-  score=page.locator('.archer-stats div').first.inner_text()
-  assert score!='Score\n0',score
-  # Cancel does not spend an arrow.
-  before=page.locator('.archer-stats div').nth(2).inner_text()
-  page.mouse.move(sx,sy); page.mouse.down()
-  canvas.dispatch_event('pointercancel',{'pointerId':1,'isPrimary':True})
-  page.mouse.up()
-  assert page.locator('.archer-stats div').nth(2).inner_text()==before
-  page.screenshot(path=str(OUT/'landscape-hit.png'))
-  # Exhaust arrows by shooting into ground, then verify recovery.
-  for i in range(17):
-   page.mouse.move(sx,sy);page.mouse.down();page.mouse.move(sx-35,sy-80);page.mouse.up();page.wait_for_timeout(80)
-  page.get_by_role('button',name='Collect 12 arrows').wait_for(timeout=10000)
-  page.screenshot(path=str(OUT/'recovery.png'))
-  page.get_by_role('button',name='Collect 12 arrows').click()
-  assert page.locator('.archer-stats div').nth(2).inner_text()=='Arrows\n12'
-  assert page.locator('.archer-stats div').first.inner_text()==score
-  page.set_viewport_size({'width':768,'height':1024});canvas.scroll_into_view_if_needed();page.screenshot(path=str(OUT/'portrait.png'))
-  assert page.locator('.archer-stats div').first.inner_text()==score
-  (OUT/'browser.json').write_text(json.dumps({'score_after_hit':score,'recovery':'PASS','resize_preserves_score':'PASS','page_errors':errors},indent=2))
-  assert not errors,errors
-  print('PASS real browser: aimed shield hit, cancel, 18-arrow exhaustion, refill, portrait resize; no page errors')
- finally:
-  b.close()
+  for lang in ['en','ru']:
+   context=browser.new_context(viewport={'width':1024,'height':768},has_touch=True,reduced_motion='reduce' if lang=='ru' else 'no-preference')
+   if lang=='ru':
+    context.add_init_script("localStorage.setItem('language','ru');const g=Storage.prototype.getItem;Storage.prototype.getItem=function(k){if(k==='faithful-archer-best')throw Error('blocked');return g.call(this,k)};const s=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(k==='faithful-archer-best')throw Error('quota');return s.call(this,k,v)}")
+   page=context.new_page();page.set_default_timeout(12000)
+   page.on('pageerror',lambda e:errors.append(str(e)))
+   page.on('response',lambda r:requests.append({'status':r.status,'url':r.url}) if r.status>=400 and '/_next/' in r.url else None)
+   page.goto(BASE+'/games/faithful-archer',wait_until='domcontentloaded')
+   page.wait_for_function(f'document.documentElement.dataset.lang === "{lang}"')
+   page.get_by_role('button',name='Начать тренировку' if lang=='ru' else 'Start Training',exact=True).first.click()
+   canvas=page.locator('canvas');page.wait_for_function('!!document.querySelector("canvas")?.dataset.state')
+   page.wait_for_timeout(250)
+   cdp=context.new_cdp_session(page)
+   def capture(name):
+    payload=cdp.send('Page.captureScreenshot',{'format':'png','captureBeyondViewport':False})
+    (OUT/f'{lang}-{name}.png').write_bytes(base64.b64decode(payload['data']))
+   def state():return json.loads(canvas.get_attribute('data-state'))
+   def touch(kind,pts):cdp.send('Input.dispatchTouchEvent',{'type':kind,'touchPoints':[{'id':i,'x':x,'y':y}for i,x,y in pts]})
+   def pause():
+    page.get_by_role('button',name='Пауза' if lang=='ru' else 'Pause',exact=True).click()
+    page.wait_for_function('JSON.parse(document.querySelector("canvas").dataset.state).paused')
+   def resume():page.get_by_role('button',name='Продолжить игру' if lang=='ru' else 'Resume',exact=True).click()
+   s=state();box=canvas.bounding_box()
+   record(lang+' fullscreen range visible',box['y']>=0 and box['y']+box['height']<=768 and box['height']>350,box)
+   pause();old=state();page.wait_for_timeout(200);record(lang+' pause freezes actual simulation',state()==old)
+   capture('pause');resume()
+   page.evaluate("window.dispatchEvent(new Event('blur'))")
+   page.get_by_role('button',name='Продолжить игру' if lang=='ru' else 'Resume',exact=True).wait_for()
+   record(lang+' focus loss pauses',state()['paused']);resume()
+   box=canvas.bounding_box();sx=box['x']+box['width']*.72;sy=box['y']+box['height']*.4
+   before=state()['arrows'];touch('touchStart',[(1,sx,sy)]);touch('touchMove',[(1,sx-80,sy+60)])
+   record(lang+' first touch owns draw',state()['aiming'])
+   touch('touchStart',[(1,sx-80,sy+60),(2,sx+20,sy+20)])
+   touch('touchCancel',[]);page.wait_for_timeout(50)
+   record(lang+' two-thumb cancel spends no arrow',state()['arrows']==before and not state()['aiming'])
+   # Actual non-drag input: keyboard steers angle/power and Space releases one arrow.
+   canvas.focus();page.keyboard.press('ArrowUp');page.keyboard.press('ArrowRight')
+   record(lang+' keyboard exposes accessible aim',page.get_by_role('slider',name='Угол' if lang=='ru' else 'Angle',exact=True).input_value()=='36')
+   page.keyboard.press('Space');page.wait_for_timeout(50)
+   record(lang+' keyboard fire spends exactly one',state()['arrows']==before-1)
+   # Close the optional controls before direct-drag campaign play.
+   page.get_by_role('button',name='Прицел без перетягивания' if lang=='ru' else 'Aim without dragging',exact=True).click()
+   page.wait_for_timeout(1000)
+   page.clock.install()
+   # Actual ballistic shots to visible targets. Test reads their rendered coordinates,
+   # never writes target hits/score/course. Moving target error is handled by retry.
+   completed=set(); shots=0; modal_count=0
+   for attempt in range(120):
+    keep=page.get_by_role('button',name='Продолжить' if lang=='ru' else 'Keep Practicing',exact=True)
+    if keep.count() and keep.is_visible():
+     modal_count+=1;capture(f'wisdom-{modal_count}');keep.click();page.clock.run_for(50)
+    victory=page.get_by_role('heading',name='Все четыре курса пройдены!' if lang=='ru' else 'All four courses complete!',exact=True)
+    if victory.count() and victory.is_visible():break
+    refill=page.get_by_role('button',name='Взять 12 стрел' if lang=='ru' else 'Collect 12 arrows',exact=True)
+    if refill.count() and refill.is_visible():
+     old=state();refill.click();page.clock.run_for(50)
+     record(lang+' refill retains earned hits',state()['score']==old['score'] and [t['hit'] for t in state()['targets']]==[t['hit']for t in old['targets']])
+    s=state()
+    for prior in range(s['level']):completed.add(prior)
+    pending=[t for t in s['targets'] if not t['hit']]
+    if not pending:page.clock.run_for(100);continue
+    t=pending[0];bx=s['bow']['x'];by=s['bow']['y']
+    flight=.6 if attempt%3!=2 else .8
+    vx=(t['x']-bx)/flight;vy=(t['y']-by-360*flight*flight)/flight
+    dx=-vx*132/720;dy=-vy*132/720
+    assert 13<math.hypot(dx,dy)<190,(s,t,dx,dy)
+    box=canvas.bounding_box();sx=box['x']+box['width']*.72;sy=box['y']+box['height']*.4
+    if lang=='ru':
+     touch('touchStart',[(1,sx,sy)]);touch('touchMove',[(1,sx+dx,sy+dy)]);page.clock.run_for(32)
+     if s['level'] not in completed:capture(f'course-{s["level"]+1}-aim')
+     touch('touchEnd',[])
+    else:
+     page.mouse.move(sx,sy);page.mouse.down();page.mouse.move(sx+dx,sy+dy);page.clock.run_for(32)
+     if attempt<2 or s['level'] not in completed:capture(f'course-{s["level"]+1}-aim')
+     page.mouse.up()
+    shots+=1;page.clock.run_for(1200)
+   record(lang+' actual four-course victory',victory.count()>0 and victory.is_visible(),{'shots':shots,'state':state()})
+   record(lang+' Scripture cards encountered',modal_count>=3,modal_count)
+   capture('victory')
+   page.get_by_role('button',name='Играть снова' if lang=='ru' else 'Play again',exact=True).click();page.clock.run_for(100)
+   record(lang+' replay resets course targets score',state()['level']==0 and state()['score']==0 and not any(t['hit'] for t in state()['targets']))
+   # Exhaust real arrows into the ground and recover without resetting progress.
+   s=state();box=canvas.bounding_box();sx=box['x']+box['width']*.72;sy=box['y']+box['height']*.45
+   for _ in range(s['arrows']):
+    page.mouse.move(sx,sy);page.mouse.down();page.mouse.move(sx-35,sy-80);page.mouse.up();page.clock.run_for(80)
+   page.clock.run_for(4000)
+   refill=page.get_by_role('button',name='Взять 12 стрел' if lang=='ru' else 'Collect 12 arrows',exact=True)
+   record(lang+' exhaustion offers recovery',refill.is_visible());capture('refill')
+   old=state();refill.click();page.clock.run_for(50)
+   record(lang+' refill restores arrows not score',state()['arrows']==12 and state()['score']==old['score'])
+   for width,height,label in [(768,1024,'ipad-portrait'),(390,844,'phone-portrait'),(844,390,'phone-landscape')]:
+    page.set_viewport_size({'width':width,'height':height});page.clock.run_for(100)
+    box=canvas.bounding_box();record(lang+' '+label+' range and pause in viewport',box['x']>=0 and box['y']>=0 and box['x']+box['width']<=width+1 and box['y']+box['height']<=height+1,box)
+    capture(label)
+   record(lang+' no runtime or JS asset errors',not errors and not requests)
+   context.close()
+ finally:browser.close()
+print(json.dumps({'checks':len(checks),'errors':errors,'asset_failures':requests}))

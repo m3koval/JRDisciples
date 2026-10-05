@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
+import { drawRange } from './range-art'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
-import { stepFlight, releasePoint, roundOutcome, targetMotion } from './physics'
+import { stepFlight, releasePoint, roundOutcome, targetMotion, aimRelease } from './physics'
 
 type Emotion = 'idle' | 'focus' | 'release' | 'happy' | 'surprised' | 'celebrate'
 
@@ -51,16 +52,18 @@ type GameModel = {
   verseIndex: number
 }
 
+// Exact ESV / Synodal text checked against Bible.com versions 59 / 400:
+// PSA.119.105 / PSA.118.105, JOS.1.9 (excerpt), COL.3.23.
 const SCRIPTURE = {
   en: [
     { title: 'Light the Path', quote: 'Your word is a lamp to my feet and a light to my path.', ref: 'Psalm 119:105' },
     { title: 'Courage', quote: 'Be strong and courageous.', ref: 'Joshua 1:9' },
-    { title: 'Steady Practice', quote: 'Whatever you do, work heartily, as for the Lord.', ref: 'Colossians 3:23' },
+    { title: 'Steady Practice', quote: 'Whatever you do, work heartily, as for the Lord and not for men', ref: 'Colossians 3:23' },
   ],
   ru: [
     { title: 'Свет для пути', quote: 'Слово Твое — светильник ноге моей и свет стезе моей.', ref: 'Псалом 118:105' },
     { title: 'Мужество', quote: 'будь тверд и мужествен', ref: 'Иисуса Навина 1:9' },
-    { title: 'Верная тренировка', quote: 'И все, что делаете, делайте от души, как для Господа.', ref: 'Колоссянам 3:23' },
+    { title: 'Верная тренировка', quote: 'И всё, что делаете, делайте от души, как для Господа, а не для человеков', ref: 'Колоссянам 3:23' },
   ],
 }
 
@@ -215,6 +218,34 @@ export default function FaithfulArcherPage() {
   const calmRef = useRef(true)
   const [wisdomCard, setWisdomCard] = useState<{ title: string; quote: string; ref: string } | null>(null)
   const [result, setResult] = useState<'refill' | 'complete' | null>(null)
+  const [active, setActive] = useState(false)
+  const [paused, setPaused] = useState(false)
+  const pausedRef = useRef(false)
+  const ownedPointer = useRef<number | null>(null)
+  const [aim, setAim] = useState({ angle: 35, draw: 110 })
+  const aimRef = useRef(aim)
+  const [assist, setAssist] = useState(false)
+  const assistRef = useRef(false)
+  const fireRef = useRef<() => void>(() => {})
+
+  function pauseGame() {
+    if (!modelRef.current.running) return
+    pausedRef.current = true
+    pointerRef.current.down = false
+    ownedPointer.current = null
+    setPaused(true)
+  }
+  function resumeGame() { pausedRef.current = false; setPaused(false) }
+  function changeAim(next: { angle: number; draw: number }) {
+    aimRef.current = next
+    setAim(next)
+  }
+  useEffect(() => {
+    if (!active) return
+    const before = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = before }
+  }, [active])
 
   const copy = isRu ? {
     back: 'Все игры',
@@ -268,6 +299,10 @@ export default function FaithfulArcherPage() {
   }
 
   function startGame() {
+    setActive(true)
+    pausedRef.current = false
+    setPaused(false)
+    ownedPointer.current = null
     let best = modelRef.current.best
     try { best = Number(localStorage.getItem(STORAGE_KEY) || best) } catch { /* Practice works without storage. */ }
     const model = makeModel()
@@ -355,6 +390,7 @@ export default function FaithfulArcherPage() {
     if (!ctx) return
     let raf = 0
     let last = 0
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 
     function resize() {
       const rect = canvas!.getBoundingClientRect()
@@ -386,7 +422,7 @@ export default function FaithfulArcherPage() {
 
     function shoot(tx: number, ty: number) {
       const m = modelRef.current
-      if (!m.running || m.arrowsLeft <= 0 || wisdomCard) return
+      if (!m.running || pausedRef.current || m.arrowsLeft <= 0 || wisdomCard) return
       const a = archer()
       const bowX = a.x + 34
       const bowY = a.y - 58
@@ -415,7 +451,7 @@ export default function FaithfulArcherPage() {
 
     function update(dt: number) {
       const m = modelRef.current
-      if (!m.running || wisdomCard || document.hidden) return
+      if (!m.running || pausedRef.current || wisdomCard || document.hidden) return
       m.time += dt
       if (m.emotion !== 'idle' && m.emotionUntil <= m.time) m.emotion = 'idle'
       m.recoil *= Math.pow(0.05, dt)
@@ -581,19 +617,25 @@ export default function FaithfulArcherPage() {
     function draw() {
       const { width, height } = sizeRef.current
       ctx!.clearRect(0, 0, width, height)
-      drawBackground(ctx!, width, height, modelRef.current.time)
+      drawRange(ctx!, width, height, modelRef.current.levelIndex, targetsRef.current)
       for (const target of targetsRef.current) drawTarget(ctx!, target, modelRef.current.time)
       for (const obstacle of obstaclesRef.current) drawObstacle(ctx!, obstacle, modelRef.current.time)
-      drawArcher(ctx!, archer(), modelRef.current.time, pointerRef.current, modelRef.current.emotion)
+      drawArcher(ctx!, archer(), reducedMotion.matches ? 0 : modelRef.current.time, pointerRef.current, modelRef.current.emotion)
       drawAim(ctx!, archer())
       drawArrows(ctx!)
-      drawEffects(ctx!)
-      if (!modelRef.current.running) drawStartHint(ctx!, width, height)
+      if (!reducedMotion.matches) drawEffects(ctx!)
+      // Read-only observation, also useful for assistive/debug tooling. No setter exists.
+      canvas!.dataset.state = JSON.stringify({ time: modelRef.current.time, level: modelRef.current.levelIndex,
+        score: modelRef.current.score, arrows: modelRef.current.arrowsLeft, running: modelRef.current.running,
+        paused: pausedRef.current, aiming: pointerRef.current.down,
+        bow: { x: archer().x + 34, y: archer().y - 58 }, width, height,
+        targets: targetsRef.current.map(t => ({ id: t.id, kind: t.kind, x: t.x, y: t.y, r: t.r, hit: t.hit })) })
     }
 
     function drawAim(drawCtx: CanvasRenderingContext2D, a: { x: number; y: number }) {
-      const pointer = pointerRef.current
-      if (!pointer.down || !modelRef.current.running || wisdomCard) return
+      const assisted = aimRelease({ x: a.x + 34, y: a.y - 58 }, aimRef.current.angle, aimRef.current.draw)
+      const pointer = pointerRef.current.down ? pointerRef.current : { ...assisted, down: assistRef.current }
+      if (!pointer.down || !modelRef.current.running || pausedRef.current || wisdomCard) return
       const bx = a.x + 34
       const by = a.y - 58
       const launch = launchArrowVelocity({ x: bx, y: by }, { x: pointer.x, y: pointer.y }, calmRef.current)
@@ -676,7 +718,7 @@ export default function FaithfulArcherPage() {
     }
 
     function frame(ts: number) {
-      const dt = Math.min(0.033, (ts - last) / 1000 || 0)
+      const dt = Math.max(0, Math.min(0.033, (ts - last) / 1000 || 0))
       last = ts
       update(dt)
       draw()
@@ -685,7 +727,8 @@ export default function FaithfulArcherPage() {
 
     const onPointerDown = (event: PointerEvent) => {
       event.preventDefault()
-      if (!event.isPrimary || !modelRef.current.running || wisdomCard) return
+      if (!event.isPrimary || ownedPointer.current !== null || !modelRef.current.running || pausedRef.current || wisdomCard) return
+      ownedPointer.current = event.pointerId
       const point = getCanvasPoint(canvas!, event)
       const a = archer()
       pointerRef.current = { down: true, x: a.x + 34, y: a.y - 58, startX: point.x, startY: point.y }
@@ -693,7 +736,7 @@ export default function FaithfulArcherPage() {
     }
     const onPointerMove = (event: PointerEvent) => {
       event.preventDefault()
-      if (!event.isPrimary || !pointerRef.current.down) return
+      if (event.pointerId !== ownedPointer.current || !pointerRef.current.down) return
       const point = getCanvasPoint(canvas!, event)
       const a = archer()
       const release = releasePoint({ x: a.x + 34, y: a.y - 58 }, { x: pointerRef.current.startX, y: pointerRef.current.startY }, point)
@@ -702,37 +745,45 @@ export default function FaithfulArcherPage() {
     }
     const onPointerUp = (event: PointerEvent) => {
       event.preventDefault()
-      if (!event.isPrimary) return
+      if (event.pointerId !== ownedPointer.current) return
       onPointerMove(event)
       const point = pointerRef.current
       if (point.down) shoot(point.x, point.y)
       point.down = false
+      ownedPointer.current = null
       if (canvas!.hasPointerCapture(event.pointerId)) canvas!.releasePointerCapture(event.pointerId)
     }
     const onPointerCancel = () => {
       pointerRef.current.down = false
+      ownedPointer.current = null
     }
-    const onLostPointerCapture = () => {
-      pointerRef.current.down = false
+    const onBlur = () => { onPointerCancel(); pauseGame() }
+    const onVisibility = () => { if (document.hidden) onBlur() }
+    fireRef.current = () => {
+      const a = archer()
+      const release = aimRelease({ x: a.x + 34, y: a.y - 58 }, aimRef.current.angle, aimRef.current.draw)
+      shoot(release.x, release.y)
     }
+    const onLostPointerCapture = onPointerCancel
     const onKey = (event: KeyboardEvent) => {
-      if (event.target !== canvas || wisdomCard || event.repeat) return
-      if (event.code === 'Space') {
+      if (event.code === 'Escape' && modelRef.current.running) { event.preventDefault(); pauseGame(); return }
+      if (event.target !== canvas || wisdomCard || pausedRef.current) return
+      if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.code)) {
         event.preventDefault()
-        if (!modelRef.current.running) startGame()
-        else {
-          const a = archer()
-          shoot(a.x - 118, a.y - 42)
-        }
+        assistRef.current = true; setAssist(true)
+        changeAim({ angle: clamp(aimRef.current.angle + (event.code === 'ArrowUp' ? 1 : event.code === 'ArrowDown' ? -1 : 0), 0, 80),
+          draw: clamp(aimRef.current.draw + (event.code === 'ArrowRight' ? 2 : event.code === 'ArrowLeft' ? -2 : 0), 56, 185) })
       }
-      if (event.key === 'r' || event.key === 'R') startGame()
+      if (event.code === 'Space' && !event.repeat) { event.preventDefault(); fireRef.current() }
     }
 
     resize()
+    const observer = new ResizeObserver(resize)
+    observer.observe(canvas)
     window.addEventListener('resize', resize)
     window.addEventListener('keydown', onKey)
-    window.addEventListener('blur', onPointerCancel)
-    document.addEventListener('visibilitychange', onPointerCancel)
+    window.addEventListener('blur', onBlur)
+    document.addEventListener('visibilitychange', onVisibility)
     canvas.addEventListener('pointerdown', onPointerDown)
     canvas.addEventListener('pointermove', onPointerMove)
     canvas.addEventListener('pointerup', onPointerUp)
@@ -741,10 +792,11 @@ export default function FaithfulArcherPage() {
     raf = requestAnimationFrame(frame)
     return () => {
       cancelAnimationFrame(raf)
+      observer.disconnect()
       window.removeEventListener('resize', resize)
       window.removeEventListener('keydown', onKey)
-      window.removeEventListener('blur', onPointerCancel)
-      document.removeEventListener('visibilitychange', onPointerCancel)
+      window.removeEventListener('blur', onBlur)
+      document.removeEventListener('visibilitychange', onVisibility)
       canvas.removeEventListener('pointerdown', onPointerDown)
       canvas.removeEventListener('pointermove', onPointerMove)
       canvas.removeEventListener('pointerup', onPointerUp)
@@ -756,7 +808,7 @@ export default function FaithfulArcherPage() {
   }, [isRu, wisdomCard])
 
   return (
-    <main className="archer-page">
+    <main className={`archer-page${active ? ' archer-active' : ''}`}>
       <style>{`
         .archer-page { min-height: 100vh; color: #fff; background: linear-gradient(180deg,#061429,#0d1f3c 42%,#f8fafc); }
         .archer-wrap { max-width: 1180px; margin: 0 auto; padding: 22px 12px 48px; }
@@ -779,9 +831,49 @@ export default function FaithfulArcherPage() {
         .archer-wisdom-inner { max-width: 620px; border-radius: 28px; padding: 26px; background: #fff6dc; color: #203047; border: 5px solid #f7c948; box-shadow: 0 28px 90px rgba(0,0,0,.42); text-align: center; }
         @media (max-width: 900px) { .archer-hero { grid-template-columns: 1fr; } .archer-shell { grid-template-columns: 1fr; } .target-course { min-height: min(620px, calc(100svh - 310px)); border-radius: 24px; } .archer-panel { order: -1; } }
         @media (max-width: 560px) { .archer-wrap { padding: 14px 8px 38px; } .archer-stats { grid-template-columns: repeat(3,1fr); font-size: .82rem; } .archer-panel { padding: 12px; border-radius: 22px; } .target-course { min-height: 56svh; } .archer-title { font-size: clamp(2rem,13vw,3.2rem); } }
+        .archer-active { position: fixed; inset: 0; z-index: 200; height: 100dvh; min-height: 0; background: #102b30; }
+        .archer-active .archer-wrap { height: 100%; max-width: none; padding: max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left)); display: grid; grid-template-rows: auto minmax(0,1fr); gap: 8px; }
+        .archer-active .archer-hero { display: none; }
+        .archer-toolbar { display: flex; gap: 12px; align-items: center; min-height: 48px; font-family: var(--font-nunito); }
+        .archer-toolbar strong { flex: 1; }
+        .archer-toolbar a,.archer-toolbar button,.archer-control { min-height: 44px; border: 1px solid #9ab9a5; border-radius: 12px; padding: 8px 14px; background: #24474a; color: white; font: 800 16px var(--font-nunito); }
+        .archer-active .archer-shell { min-height: 0; grid-template-columns: minmax(0,1fr) 240px; gap: 8px; }
+        .archer-active .target-course { min-height: 0; height: 100%; border-radius: 20px; border-width: 2px; }
+        .archer-active .target-course canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .archer-active .archer-panel { min-height: 0; padding: 10px; border-radius: 16px; overflow: auto; order: 0; }
+        .archer-active .archer-stats { grid-template-columns: repeat(2,1fr); font-size: 14px; gap: 5px; }
+        .archer-active .archer-stats div { padding: 6px; }
+        .archer-active .archer-stats div:nth-child(5),.archer-active .archer-stats div:nth-child(6),.archer-active .wisdom-bar { display: none; }
+        .archer-active .mobile-release { font: 700 14px/1.45 var(--font-nunito); padding: 8px; margin-top: 8px; }
+        .archer-active .mobile-release:last-child { display: none; }
+        .archer-active .archer-wisdom-card { z-index: 100; }
+        .archer-wisdom-inner { max-height: calc(100dvh - 24px); overflow: auto; }
+        .aim-controls { display: grid; gap: 8px; margin-top: 10px; font: 800 15px var(--font-nunito); }
+        .aim-controls label { display: grid; gap: 2px; }
+        .aim-controls input { width: 100%; min-height: 44px; accent-color: #ffd166; }
+        .archer-control[aria-pressed=true] { background: #826528; }
+        @media (max-width: 650px) and (orientation: portrait) {
+          .archer-active .archer-shell { grid-template-columns: 1fr; grid-template-rows: minmax(230px,1fr) auto; }
+          .archer-active .archer-panel { max-height: 37dvh; }
+          .archer-active .archer-stats { grid-template-columns: repeat(4,1fr); margin-bottom: 6px; }
+          .archer-active .puzzle-label { margin: 0 0 4px; }
+          .archer-active .archer-actions { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 5px; }
+          .archer-active .archer-toggle { font-size: 12px; padding: 6px; }
+          .archer-active .mobile-release { margin: 6px 0 0; }
+          .aim-controls { grid-template-columns: 1fr 1fr auto; align-items: end; }
+          .archer-toolbar { gap: 6px; font-size: 14px; }
+          .archer-toolbar a,.archer-toolbar button { padding: 8px; font-size: 14px; }
+        }
+        @media (max-height: 480px) and (orientation: landscape) { .archer-active .archer-shell { grid-template-columns: minmax(0,1fr) 205px; } .archer-toolbar { min-height: 44px; } }
+        @media (prefers-reduced-motion: reduce) { .archer-page * { animation: none !important; transition: none !important; } }
       `}</style>
 
       <div className="archer-wrap">
+        {active && <header className="archer-toolbar">
+          <Link href="/games">← {copy.back}</Link>
+          <strong>{courseName} · {hud.level + 1}/4</strong>
+          <button onClick={pauseGame} disabled={!hud.running || !!wisdomCard}>{isRu ? 'Пауза' : 'Pause'}</button>
+        </header>}
         <div className="archer-hero">
           <div>
             <Link href="/games" style={{ color: '#ffd866', fontFamily: 'var(--font-nunito)', fontWeight: 1000, textDecoration: 'none' }}>← {copy.back}</Link>
@@ -812,17 +904,31 @@ export default function FaithfulArcherPage() {
             </div>
             <div className="wisdom-bar" aria-label={copy.wisdom} style={{ ['--wisdom' as string]: `${hud.wisdom}%` }}><span /></div>
             <div className="archer-actions">
-              <button className="pz-btn" style={{ width: '100%', minHeight: 54 }} onClick={startGame}>{hud.running ? copy.restart : copy.start}</button>
+              {!active && <button className="pz-btn" style={{ width: '100%', minHeight: 54 }} onClick={startGame}>{copy.start}</button>}
               <label className="archer-toggle"><span>{copy.calm}</span><input type="checkbox" checked={calmMode} onChange={(event) => setCalmMode(event.target.checked)} /></label>
               <label className="archer-toggle"><span>{copy.aim}</span><input type="checkbox" checked={showGuide} onChange={(event) => setShowGuide(event.target.checked)} /></label>
             </div>
-            <p className="mobile-release">{copy.mobileRelease}</p>
+            {active && <>
+              <button className="archer-control" style={{ width: '100%', marginTop: 8 }} aria-pressed={assist} onClick={() => { assistRef.current = !assist; setAssist(!assist) }}>{isRu ? 'Прицел без перетягивания' : 'Aim without dragging'}</button>
+              {assist && <div className="aim-controls">
+                <label>{isRu ? 'Угол' : 'Angle'} {aim.angle}°<input aria-label={isRu ? 'Угол' : 'Angle'} type="range" min="0" max="80" value={aim.angle} onChange={e => changeAim({ ...aim, angle: Number(e.target.value) })} /></label>
+                <label>{isRu ? 'Сила' : 'Power'} {aim.draw}<input aria-label={isRu ? 'Сила' : 'Power'} type="range" min="56" max="185" value={aim.draw} onChange={e => changeAim({ ...aim, draw: Number(e.target.value) })} /></label>
+                <button className="pz-btn" disabled={!hud.running || paused || !!wisdomCard} onClick={() => fireRef.current()}>{isRu ? 'Выстрел' : 'Shoot'}</button>
+              </div>}
+            </>}
+            <p className="mobile-release">{active ? (isRu ? 'Тяни влево и вниз, чтобы пустить стрелу по дуге. Попади во все четыре цели.' : 'Pull left and down to arc the arrow. Clear all four targets.') : copy.mobileRelease}</p>
             <p className="mobile-release">{copy.truth}</p>
           </aside>
         </section>
       </div>
 
-      {result && !wisdomCard && (
+      {paused && <div className="archer-wisdom-card" role="dialog" aria-modal="true" aria-label={isRu ? 'Пауза' : 'Paused'}><div className="archer-wisdom-inner">
+        <h2>{isRu ? 'Пауза' : 'Paused'}</h2>
+        <p>{isRu ? 'Твои попадания сохранены.' : 'Your cleared targets stay cleared.'}</p>
+        <button className="pz-btn" onClick={resumeGame}>{isRu ? 'Продолжить игру' : 'Resume'}</button>
+        <button className="archer-control" style={{ marginLeft: 12 }} onClick={startGame}>{copy.restart}</button>
+      </div></div>}
+      {result && !wisdomCard && !paused && (
         <div className="archer-wisdom-card" role="dialog" aria-modal="true" aria-label={isRu ? 'Результат' : 'Range result'}>
           <div className="archer-wisdom-inner">
             <h2>{result === 'complete' ? (isRu ? 'Все четыре курса пройдены!' : 'All four courses complete!') : (isRu ? 'Возьми новые стрелы!' : 'Collect more arrows!')}</h2>
@@ -838,7 +944,7 @@ export default function FaithfulArcherPage() {
           </div>
         </div>
       )}
-      {wisdomCard && (
+      {wisdomCard && !paused && (
         <div className="archer-wisdom-card" role="dialog" aria-modal="true" aria-label={isRu ? 'Библейская мудрость' : 'Bible Wisdom'}>
           <div className="archer-wisdom-inner">
             <p className="puzzle-label" style={{ color: '#b45309' }}>{isRu ? 'Библейская мудрость' : 'Bible Wisdom'}</p>
@@ -853,30 +959,6 @@ export default function FaithfulArcherPage() {
   )
 }
 
-function drawBackground(ctx: CanvasRenderingContext2D, width: number, height: number, time: number) {
-  const g = ctx.createLinearGradient(0, 0, 0, height)
-  g.addColorStop(0, '#86d3ff')
-  g.addColorStop(0.5, '#e2f8ff')
-  g.addColorStop(0.51, '#79c96b')
-  g.addColorStop(1, '#3e9a5d')
-  ctx.fillStyle = g
-  ctx.fillRect(0, 0, width, height)
-  ctx.fillStyle = 'rgba(255,255,255,.82)'
-  cloud(ctx, ((width * 0.2 + time * 9) % (width + 160)) - 80, height * 0.15, 56)
-  cloud(ctx, ((width * 0.72 + time * 6) % (width + 190)) - 95, height * 0.13, 72)
-  cloud(ctx, ((width * 0.48 + time * 11) % (width + 140)) - 70, height * 0.22, 44)
-  ctx.fillStyle = '#68b767'; ellipse(ctx, width * 0.74, height * 0.6, width * 0.72, height * 0.28)
-  ctx.fillStyle = '#5daa59'; ellipse(ctx, width * 0.24, height * 0.62, width * 0.68, height * 0.24)
-  ctx.fillStyle = '#d99f53'; roundRect(ctx, 0, height * 0.8, width, height * 0.2, 0, true)
-  ctx.fillStyle = 'rgba(255,246,220,.28)'; roundRect(ctx, width * 0.1, height * 0.84, width * 0.8, 16, 12, true)
-  ctx.strokeStyle = 'rgba(49,85,45,.32)'; ctx.lineWidth = 2
-  for (let i = 0; i < 28; i++) {
-    const x = (i / 27) * width
-    const y = height * 0.83 + seeded(i + 2) * height * 0.11
-    const sway = Math.sin(time * 3 + i) * 4
-    ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + sway, y - 10, x + sway * 1.3, y - 22); ctx.stroke()
-  }
-}
 
 function drawObstacle(ctx: CanvasRenderingContext2D, obstacle: Obstacle, time: number) {
   ctx.save()
@@ -1010,7 +1092,8 @@ function drawArcher(ctx: CanvasRenderingContext2D, a: { x: number; y: number }, 
   limb(ctx, 2, -59, bowHand.x, bowHand.y, 10, '#f5c99b')
 
   // Oversized elastic bow + nocked arrow are the visual centerpiece.
-  ctx.save(); ctx.translate(bowHand.x, bowHand.y); ctx.rotate(-0.35)
+  const bowAngle = pointer.down ? Math.atan2((a.y - 58) - pointer.y, (a.x + 34) - pointer.x) : -0.35
+  ctx.save(); ctx.translate(bowHand.x, bowHand.y); ctx.rotate(bowAngle)
   if (pullPower > 0.75) { ctx.shadowColor = '#ffe27a'; ctx.shadowBlur = 18 }
   ctx.strokeStyle = pullPower > 0.75 ? '#f7c948' : '#7a4e20'; ctx.lineWidth = 6
   ctx.beginPath(); ctx.arc(0, 0, 38 + pullPower * 4, -1.25, 1.25); ctx.stroke()
@@ -1072,11 +1155,6 @@ function drawArcherFace(ctx: CanvasRenderingContext2D, emotion: Emotion, time: n
   ctx.beginPath(); ctx.arc(1, 5, 7, 0.16 * Math.PI, 0.78 * Math.PI); ctx.stroke()
 }
 
-function drawStartHint(ctx: CanvasRenderingContext2D, width: number, height: number) {
-  ctx.save(); ctx.fillStyle = 'rgba(255,246,220,.86)'; roundRect(ctx, width * 0.22, height * 0.2, width * 0.56, 86, 24, true)
-  ctx.fillStyle = '#31552d'; ctx.textAlign = 'center'; ctx.font = '1000 24px var(--font-nunito), system-ui'; ctx.fillText('Press Start / Начать', width * 0.5, height * 0.2 + 52)
-  ctx.restore()
-}
 
 function ragLimb(ctx: CanvasRenderingContext2D, x1: number, y1: number, x2: number, y2: number, w: number, color: string, angle: number) {
   ctx.save(); ctx.translate(x1, y1); ctx.rotate(angle); ctx.strokeStyle = color; ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(x2 - x1, y2 - y1); ctx.stroke(); ctx.fillStyle = '#f7c948'; ctx.beginPath(); ctx.arc(0, 0, w * 0.56, 0, Math.PI * 2); ctx.fill(); ctx.restore()
@@ -1086,9 +1164,6 @@ function limb(ctx: CanvasRenderingContext2D, x1: number, y1: number, x2: number,
   ctx.strokeStyle = '#203047'; ctx.lineWidth = w + 4; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.strokeStyle = color; ctx.lineWidth = w; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke()
 }
 
-function cloud(ctx: CanvasRenderingContext2D, x: number, y: number, s: number) {
-  ellipse(ctx, x, y, s * 1.4, s * 0.55); ellipse(ctx, x - s * 0.45, y + s * 0.05, s * 0.75, s * 0.45); ellipse(ctx, x + s * 0.45, y + s * 0.07, s * 0.85, s * 0.42); ellipse(ctx, x, y - s * 0.18, s * 0.9, s * 0.5)
-}
 
 function ellipse(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number) {
   ctx.beginPath(); ctx.ellipse(x, y, w / 2, h / 2, 0, 0, Math.PI * 2); ctx.fill()

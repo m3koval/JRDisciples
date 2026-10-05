@@ -16,6 +16,13 @@ export function roundOutcome(level: number, cleared: boolean, arrows: number, fl
   return arrows <= 0 && !flying ? 'refill' : 'play'
 }
 
+/** An accessible non-drag path uses the same launch speed and live ballistics. */
+export function aimRelease(bow: Point, angle: number, draw: number): Point {
+  const radians = Math.max(0, Math.min(80, angle)) * Math.PI / 180
+  const length = Math.max(56, Math.min(185, draw))
+  return { x: bow.x - Math.cos(radians) * length, y: bow.y + Math.sin(radians) * length }
+}
+
 export function targetMotion(kind: string, level: number) {
   if (kind === 'shield' || kind === 'scroll') return { x: 0, y: 0 }
   if (kind === 'bell') return { x: 16 + level * 5, y: 0 }

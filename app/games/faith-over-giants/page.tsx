@@ -4,7 +4,7 @@
 
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { courseTurn, nextObstacle, answerOrder } from './course'
+import { courseTurn, nextObstacle, answerOrder, courseProgress, turnForecast } from './course'
 import { useLanguage } from '@/context/LanguageContext'
 
 type Phase = 'intro' | 'question' | 'play' | 'levelComplete' | 'victory' | 'defeat'
@@ -215,13 +215,15 @@ export default function FaithOverGiantsPage() {
   const [answerLocked, setAnswerLocked] = useState(false)
   const [resolve, setResolve] = useState(3)
   const actionLock = useRef(false)
+  const checkpoint = useRef({ coins: 0, helpers: 2 })
   const activeObstacle = nextObstacle(giantHps)
 
   const level = LEVELS[Math.min(levelIndex, LEVELS.length - 1)]
   const scripture = SCRIPTURE[level.scriptureIndex]
   const isBoss = levelIndex === LEVELS.length - 1
   const giantMaxHp = isBoss ? BOSS_MAX_HP : 2 + Math.floor(levelIndex / 3)
-  const progressPercent = giantHps.length > 0 ? (giantHps.filter(hp => hp <= 0).length / giantHps.length) * 100 : 0
+  const progressPercent = courseProgress(giantHps, giantMaxHp)
+  const forecast = turnForecast({ obstacles: giantHps, resolve, fear: fearLine, health, coins, strength: strengthTurns }, levelIndex, helpers)
 
   const guide = GUIDES[phase === 'question' ? 2 : levelIndex % 2]
 
@@ -323,7 +325,7 @@ export default function FaithOverGiantsPage() {
 
   // Level complete check: all giants defeated
   useEffect(() => {
-    if (phase !== 'play') return
+    if (phase !== 'play' || health <= 0) return
     if (giantHps.length === 0) return
     if (!giantHps.every(hp => hp <= 0)) return
     if (levelIndex >= LEVELS.length - 1) {
@@ -340,9 +342,10 @@ export default function FaithOverGiantsPage() {
       setBestLevel(nextBest)
       try { localStorage.setItem('faith-over-giants-best-level', String(nextBest)) } catch { /* Session best remains available. */ }
     }
-  }, [phase, giantHps, level.badgeEn, levelIndex, bestLevel])
+  }, [phase, giantHps, health, level.badgeEn, levelIndex, bestLevel])
 
   function startGame() {
+    checkpoint.current = { coins: 0, helpers: 2 }
     setPhase('question')
     setLevelIndex(0)
     initGiants(0)
@@ -377,8 +380,8 @@ export default function FaithOverGiantsPage() {
     setHealth(6)
     setFearLine(16)
     setResolve(3)
-    setCoins(0)
-    setHelpers(2)
+    setCoins(checkpoint.current.coins)
+    setHelpers(checkpoint.current.helpers)
     setStrengthTurns(0)
     setSelectedAnswer(null)
     setAnswerLocked(false)
@@ -387,6 +390,7 @@ export default function FaithOverGiantsPage() {
   }
 
   function nextLevel() {
+    checkpoint.current = { coins, helpers }
     const next = levelIndex + 1
     setLevelIndex(next)
     initGiants(next)
@@ -522,9 +526,54 @@ export default function FaithOverGiantsPage() {
         @keyframes burst-rise { 0% { opacity: 0; transform: translateY(18px) scale(.92); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-34px) scale(1.08); } }
         @keyframes giant-hit-flash { 0%,100% { filter: brightness(1); transform: scale(1); } 30% { filter: brightness(3) saturate(0); transform: scale(1.14); } }
         @media (max-width: 880px) { .giants-grid { grid-template-columns: 1fr; } .promise-arena { min-height: 470px; } .giants-stat { grid-template-columns: repeat(2,1fr); } .giant { width: 54px; height: 108px; font-size: .8rem; } .giant.boss { width: 88px; height: 158px; } .helper { width: 34px; height: 62px; } .helper.leader { width: 44px; height: 78px; } }
+        .journey-map { display: flex; gap: 5px; list-style: none; padding: 0; margin: 12px 0; }
+        .journey-map li { flex: 1; text-align: center; border: 1px solid #94a3b8; border-radius: 8px; padding: 6px 0; font-weight: 900; background: #172a3c; }
+        .journey-map li[aria-current="step"] { outline: 3px solid #fde68a; background: #365d43; }
+        .course-sign { position: absolute; top: 16px; left: 16px; right: 16px; z-index: 6; background: #112a32; padding: 10px 14px; border-radius: 14px; font-weight: 900; }
+        .phase-play .pressure-meter { top: 85px; }
+        .turn-advice { padding: 10px; border-radius: 12px; background: #102b34; line-height: 1.5; }
+        .turn-advice[data-warning="true"] { border: 2px solid #fbbf24; }
+        .course-scripture summary { cursor: pointer; min-height: 32px; font-weight: 900; color: #fde68a; }
+        .phase-play .giants-stat { grid-template-columns: repeat(5,minmax(0,1fr)); font-size: .85rem; }
+        .phase-play .badge-row { display: none; }
+        .phase-play .promise-arena { min-height: 350px; }
+        .phase-play .giants-card { padding: 14px; }
+        @media (max-width: 880px) { .phase-play .giants-card { order: 0; } .phase-play .promise-arena { min-height: 270px !important; } .phase-play .giants-stat div { padding: 6px 2px; } .phase-play .giants-stat div:nth-child(2) { font-size: .7rem; } }
+        /* The active board owns the viewport; modal results are outside the isolated arena. */
+        .giants-wrap.phase-play { position: fixed; inset: 0; z-index: 200; width: 100%; max-width: none; height: 100dvh; padding: max(8px,env(safe-area-inset-top)) 10px max(8px,env(safe-area-inset-bottom)); background: #102c2b; display: grid; grid-template-rows: 44px auto auto minmax(0,1fr); gap: 6px; }
+        .phase-play > a { align-self: center; justify-self: start; display: inline-flex; align-items: center; min-height: 44px; padding: 6px 12px; border: 1px solid #84a794; border-radius: 12px; }
+        .phase-play .giants-stat { margin: 0; font-size: 13px; }
+        .phase-play .giants-stat div { padding: 5px; }
+        .phase-play .giants-stat div span { display: none; }
+        .phase-play .journey-map { margin: 0 0 2px; }
+        .phase-play .journey-map li { padding: 3px 0; }
+        .phase-play .giants-grid { display: grid !important; min-height: 0; grid-template-columns: minmax(0,1.1fr) minmax(280px,1fr); gap: 10px; }
+        .phase-play .promise-arena { height: 100%; min-height: 0 !important; border-radius: 22px; }
+        .phase-play .giants-card { min-height: 0; overflow: auto; background: #24433f; box-shadow: none; border-radius: 18px; }
+        .phase-play .giants-card > h2, .phase-play .giants-card > .puzzle-label { display: none; }
+        .phase-play .course-scripture { padding: 8px !important; }
+        .phase-play .course-scripture summary { min-height: 44px; display: flex; align-items: center; font-size: 14px; }
+        .phase-play .turn-advice { font-family: var(--font-nunito); font-size: 14px; }
+        .phase-play .course-actions > p:first-child { font-family: var(--font-nunito); font-size: 14px; }
+        .phase-play .course-actions { z-index: auto; }
+        @media (max-width: 880px) and (orientation: portrait) {
+          .phase-play .giants-grid { grid-template-columns: 1fr; grid-template-rows: minmax(230px,40%) minmax(0,1fr); }
+          .phase-play .giants-card { order: 0; padding: 10px; }
+          .phase-play .giant,.phase-play .giant.boss { width: 100px !important; height: 90px !important; }
+          .phase-play .course-sign { top: 10px; left: 10px; right: 10px; padding: 6px 10px; font-size: 14px; }
+          .phase-play .pressure-meter { top: 65px; width: 145px; padding: 6px; font-size: 12px; }
+        }
+        @media (max-height: 500px) and (orientation: landscape) {
+          .giants-wrap.phase-play { grid-template-rows: 44px auto minmax(0,1fr); }
+          .phase-play .journey-map { display: none; }
+          .phase-play .giants-grid { grid-template-columns: minmax(0,1fr) minmax(260px,1fr); }
+          .phase-play .giant,.phase-play .giant.boss { width: 95px !important; height: 85px !important; }
+          .phase-play .pressure-meter { left: 12px; right: auto; top: 76px; width: 125px; padding: 6px; font-size: 12px; }
+          .phase-play .team { transform: scale(.75); transform-origin: bottom left; }
+        }
       `}</style>
 
-      <div className={`giants-wrap phase-${phase}`}>
+      <div className={`giants-wrap phase-${phase}`} data-testid="giants-game" data-state={JSON.stringify({ phase, levelIndex, obstacles: giantHps, resolve, fear: fearLine, health, helpers, coins, strength: strengthTurns, badges: badges.length, answerLocked, progress: progressPercent })}>
         <Link href="/games" style={{ color: '#ffd866', fontFamily: 'var(--font-nunito)', fontWeight: 1000, textDecoration: 'none' }}>← {copy.back}</Link>
         <p className="eyebrow" style={{ color: '#7ec8e3', marginTop: 20 }}>{copy.eyebrow}</p>
         <h1 style={{ fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem,7vw,4.35rem)', lineHeight: 1, margin: '6px 0 12px' }}>{copy.title}</h1>
@@ -538,9 +587,11 @@ export default function FaithOverGiantsPage() {
           <div>{isRu ? 'Лучший' : 'Best'}<br />{bestLevel}/10</div>
         </div>
 
+        {phase !== 'intro' && <ol className="journey-map" aria-label={isRu ? 'Путь: 10 уровней' : 'Journey: 10 courses'}>{LEVELS.map((item, index) => <li key={item.nameEn} aria-current={index === levelIndex ? 'step' : undefined} aria-label={`${isRu ? item.nameRu : item.nameEn}${index < badges.length ? (isRu ? ', пройден' : ', completed') : ''}`}>{index < badges.length ? '✓' : index + 1}</li>)}</ol>}
         <section className="giants-grid">
           <div className={`promise-arena ${lastAction === 'step' ? 'is-step' : lastAction === 'hit' ? 'is-hit' : lastAction === 'power' ? 'is-power' : ''}`} aria-label={copy.title}>
             <div className="hills" aria-hidden="true" />
+            {phase === 'play' && <div className="course-sign">{isRu ? 'До лагеря' : 'Path to camp'} · {progressPercent}%<br /><small>{isRu ? 'Преграда' : 'Obstacle'} {activeObstacle + 1}/{giantHps.length} · {isRu ? 'Осталось сил страха' : 'Fear remaining'}: {giantHps[activeObstacle]}</small></div>}
             <div className="promise-light" aria-hidden="true" />
             <div className="pressure-meter" aria-hidden="true">{copy.pressure}<span style={{ ['--fear-line-width' as string]: `${clamp(fearLine, 0, 100)}%` }} /></div>
             <div className="team" aria-hidden="true">
@@ -580,9 +631,90 @@ export default function FaithOverGiantsPage() {
                 )
               })}
             </div>
-            {lastAction !== 'none' && phase === 'play' && <div className="action-burst">{lastAction === 'hit' ? `-${isRu ? 'сердце' : 'heart'}` : lastAction === 'power' ? '+3 🪙' : `+${copy.courage}`}</div>}
-            <div className="progress-path" aria-label={`${copy.courage}: ${Math.round(progressPercent)}%`}><span style={{ ['--progress' as string]: `${progressPercent}%` }} /></div>
+            {lastAction !== 'none' && phase === 'play' && <div className="action-burst">{lastAction === 'hit' ? `-${isRu ? 'сердце' : 'heart'}` : lastAction === 'power' ? (isRu ? 'Усиление!' : 'Power ready!') : `+${copy.courage}`}</div>}
+            <div className="progress-path" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progressPercent} aria-label={isRu ? 'Путь к лагерю' : 'Path to camp'}><span style={{ ['--progress' as string]: `${progressPercent}%` }} /></div>
 
+
+          </div>
+
+          <aside className="giants-card">
+            <div className="guide-card">
+              <div className={`guide-avatar ${guide.tone}`} aria-hidden="true" />
+              <div>
+                <p className="puzzle-label" style={{ color: '#ffd866', margin: 0 }}>{isRu ? guide.roleRu : guide.roleEn}</p>
+                <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, margin: '2px 0 4px', color: '#fff' }}>{isRu ? guide.nameRu : guide.nameEn}</h3>
+                <p style={{ fontFamily: 'var(--font-lora)', color: 'rgba(255,255,255,.88)', fontWeight: 700, lineHeight: 1.42, fontSize: '.92rem' }}>{isRu ? guide.lineRu : guide.lineEn}</p>
+              </div>
+            </div>
+            <p className="puzzle-label" style={{ color: '#ffd866' }}>{isRu ? level.nameRu : level.nameEn}</p>
+            <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '1.35rem', color: '#fff', marginBottom: 8 }}>{phase === 'question' ? copy.answerTitle : copy.report}</h2>
+            {isBoss && <p style={{ fontFamily: 'var(--font-nunito)', color: '#fed7aa', fontWeight: 900, lineHeight: 1.45, marginBottom: 8 }}>{copy.bossHint}</p>}
+
+            <details open={phase === 'question'} className="course-scripture" style={{ borderRadius: 20, padding: 14, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.16)' }}>
+              <summary>{copy.scriptureTitle} · {isRu ? scripture.refRu : scripture.refEn}</summary>
+              <p style={{ fontFamily: 'var(--font-lora)', lineHeight: 1.58, color: 'rgba(255,255,255,.9)', fontWeight: 700 }}>&ldquo;{isRu ? scripture.textRu : scripture.textEn}&rdquo;</p>
+              <p style={{ fontFamily: 'var(--font-nunito)', color: '#bfdbfe', fontWeight: 1000, marginTop: 8 }}>— {isRu ? scripture.refRu : scripture.refEn}</p>
+            </details>
+
+            {phase === 'question' ? (
+              <div style={{ marginTop: 16 }}>
+                <p style={{ fontFamily: 'var(--font-lora)', color: 'rgba(255,255,255,.9)', lineHeight: 1.55, fontWeight: 700 }}>{copy.answerHelp}</p>
+                <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, marginTop: 10 }}>{isRu ? scripture.question.promptRu : scripture.question.promptEn}</h3>
+                <div className="answer-grid">
+                  {answerOrder(levelIndex).map((index) => (
+                    /* Keep original choice IDs when varying visible answer positions. */
+                    <button key={index} disabled={answerLocked} className={selectedAnswer === index ? 'selected' : ''} onClick={() => answerQuestion(index)}>{(isRu ? scripture.question.choicesRu : scripture.question.choicesEn)[index]}</button>
+                  ))}
+                </div>
+                {answerLocked && <button className="pz-btn" onClick={() => { setPhase('play'); setMessage(copy.tapHint) }}>{isRu ? 'В путь!' : 'Enter the course'}</button>}
+                <p role="status" style={{ marginTop: 10, minHeight: 24, fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: selectedAnswer === scripture.question.answer ? '#bbf7d0' : '#fed7aa' }}>{message || ' '}</p>
+              </div>
+            ) : (
+              <div style={{ marginTop: 16 }}>
+                {isBoss && phase === 'play' && (
+                  <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#fed7aa', marginBottom: 8 }}>
+                    {isRu ? `Преграда страха: ${bossCurrentHp}/${BOSS_MAX_HP}` : `Fear barrier: ${bossCurrentHp}/${BOSS_MAX_HP}`}
+                  </p>
+                )}
+                {phase === 'play' && <div className="course-actions">
+                  <p>{isRu ? 'Решимость' : 'Resolve'}: {resolve}/3 · {isRu ? 'Препятствие' : 'Obstacle'} {Math.max(0, activeObstacle) + 1}/{giantHps.length} · {copy.fear}: {Math.round(fearLine)}%</p>
+                  <p className="turn-advice" data-warning={forecast.losesHeart || resolve === 0} role="status">{resolve === 0 ? (isRu ? 'Сначала сплотись: нужна решимость.' : 'Rally first: you need resolve.') : forecast.losesHeart ? (isRu ? 'Следующий шаг отнимет 1 сердце. Сплотись, чтобы снизить страх.' : 'The next advance costs 1 heart. Rally to lower fear.') : (isRu ? 'Можно идти: следующий шаг не отнимет сердце.' : 'Ready: the next advance will not cost a heart.')}<br /><small>{isRu ? `Шаг: +${forecast.pressure} страха. При 100 — минус сердце. Сплочение: −${forecast.rallyRelief} страха, +${forecast.rallyResolve} решимость. Время не торопит.` : `Advance: +${forecast.pressure} fear. At 100, lose a heart. Rally: −${forecast.rallyRelief} fear, +${forecast.rallyResolve} resolve. Take your time.`}</small></p>
+                  <button className="pz-btn" disabled={resolve < 1} onClick={() => attackGiant(activeObstacle)}>{isRu ? 'Шаг вперёд −1' : 'Advance −1'}</button>
+                </div>}
+                <button className="pz-btn" disabled={phase === 'play' && resolve === 3 && fearLine === 0} style={{ width: '100%', minHeight: 58, fontSize: '1.05rem' }} onClick={phase === 'play' ? courageStep : startGame}>
+                  {phase === 'play' ? (isRu ? 'Сплотиться +1' : 'Rally +1') : copy.restart}
+                </button>
+                <p style={{ marginTop: 10, minHeight: 38, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#dbeafe', lineHeight: 1.45 }}>
+                  {message || (phase === 'play' ? copy.tapHint : (isRu ? scripture.question.feedbackRu : scripture.question.feedbackEn))}
+                </p>
+
+                {badges.length > 0 && (
+                  <div className="badge-row" aria-label={copy.reward}>
+                    {badges.map((badge) => {
+                      const earnedLevel = LEVELS.find((item) => item.badgeEn === badge)
+                      return <span className="badge-chip" key={badge}>{earnedLevel ? (isRu ? earnedLevel.badgeRu : earnedLevel.badgeEn) : badge}</span>
+                    })}
+                  </div>
+                )}
+
+                <div style={{ marginTop: 16 }}>
+                  <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#ffd866' }}>{copy.powerupsTitle}</h3>
+                  <div className="power-row">
+                    {(Object.keys(powerups) as Powerup[]).map((key) => {
+                      const power = powerups[key]
+                      return (
+                        <button data-testid={`power-${key}`} key={key} disabled={phase !== 'play' || coins < power.cost || (key === 'health' && health === 6) || (key === 'people' && helpers === 8) || (key === 'strength' && strengthTurns > 0)} onClick={() => spendPowerup(key)}>
+                          {isRu ? power.labelRu : power.labelEn} · {power.cost} 🪙<br />
+                          <span style={{ fontWeight: 800, opacity: .78 }}>{isRu ? power.descRu : power.descEn}</span>
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            )}
+          </aside>
+        </section>
             {phase === 'intro' && (
               <div className="arena-overlay">
                 <div>
@@ -614,89 +746,11 @@ export default function FaithOverGiantsPage() {
                     </div>
                   )}
                   {phase === 'levelComplete' && <button className="pz-btn" style={{ width: 'auto', padding: '12px 28px' }} onClick={nextLevel}>{copy.continue}</button>}
+                  {phase === 'defeat' && <p>{isRu ? 'Повторим этот уровень с 6 сердцами. Монеты и помощники вернутся к началу уровня. Награды этой попытки сбросятся. Контрольная точка действует до закрытия игры.' : 'Retry this course with 6 hearts. Coins and helpers return to the start of this course; rewards from this attempt reset. This checkpoint lasts until you leave the game.'}</p>}
                   {phase !== 'levelComplete' && <button className="pz-btn" style={{ width: 'auto', padding: '12px 28px' }} onClick={phase === 'defeat' ? retryLevel : startGame}>{phase === 'defeat' ? (isRu ? 'Повторить этот уровень' : 'Retry this checkpoint') : copy.playAgain}</button>}
                 </div>
               </div>
             )}
-          </div>
-
-          <aside className="giants-card">
-            <div className="guide-card">
-              <div className={`guide-avatar ${guide.tone}`} aria-hidden="true" />
-              <div>
-                <p className="puzzle-label" style={{ color: '#ffd866', margin: 0 }}>{isRu ? guide.roleRu : guide.roleEn}</p>
-                <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, margin: '2px 0 4px', color: '#fff' }}>{isRu ? guide.nameRu : guide.nameEn}</h3>
-                <p style={{ fontFamily: 'var(--font-lora)', color: 'rgba(255,255,255,.88)', fontWeight: 700, lineHeight: 1.42, fontSize: '.92rem' }}>{isRu ? guide.lineRu : guide.lineEn}</p>
-              </div>
-            </div>
-            <p className="puzzle-label" style={{ color: '#ffd866' }}>{isRu ? level.nameRu : level.nameEn}</p>
-            <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '1.35rem', color: '#fff', marginBottom: 8 }}>{phase === 'question' ? copy.answerTitle : copy.report}</h2>
-            {isBoss && <p style={{ fontFamily: 'var(--font-nunito)', color: '#fed7aa', fontWeight: 900, lineHeight: 1.45, marginBottom: 8 }}>{copy.bossHint}</p>}
-
-            <div style={{ borderRadius: 20, padding: 14, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.16)' }}>
-              <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#ffd866', marginBottom: 6 }}>{copy.scriptureTitle}</h3>
-              <p style={{ fontFamily: 'var(--font-lora)', lineHeight: 1.58, color: 'rgba(255,255,255,.9)', fontWeight: 700 }}>&ldquo;{isRu ? scripture.textRu : scripture.textEn}&rdquo;</p>
-              <p style={{ fontFamily: 'var(--font-nunito)', color: '#bfdbfe', fontWeight: 1000, marginTop: 8 }}>— {isRu ? scripture.refRu : scripture.refEn}</p>
-            </div>
-
-            {phase === 'question' ? (
-              <div style={{ marginTop: 16 }}>
-                <p style={{ fontFamily: 'var(--font-lora)', color: 'rgba(255,255,255,.9)', lineHeight: 1.55, fontWeight: 700 }}>{copy.answerHelp}</p>
-                <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, marginTop: 10 }}>{isRu ? scripture.question.promptRu : scripture.question.promptEn}</h3>
-                <div className="answer-grid">
-                  {answerOrder(levelIndex).map((index) => (
-                    /* Keep original choice IDs when varying visible answer positions. */
-                    <button key={index} disabled={answerLocked} className={selectedAnswer === index ? 'selected' : ''} onClick={() => answerQuestion(index)}>{(isRu ? scripture.question.choicesRu : scripture.question.choicesEn)[index]}</button>
-                  ))}
-                </div>
-                {answerLocked && <button className="pz-btn" onClick={() => { setPhase('play'); setMessage(copy.tapHint) }}>{isRu ? 'В путь!' : 'Enter the course'}</button>}
-                <p role="status" style={{ marginTop: 10, minHeight: 24, fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: selectedAnswer === scripture.question.answer ? '#bbf7d0' : '#fed7aa' }}>{message || ' '}</p>
-              </div>
-            ) : (
-              <div style={{ marginTop: 16 }}>
-                {isBoss && phase === 'play' && (
-                  <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#fed7aa', marginBottom: 8 }}>
-                    {isRu ? `Преграда страха: ${bossCurrentHp}/${BOSS_MAX_HP}` : `Fear barrier: ${bossCurrentHp}/${BOSS_MAX_HP}`}
-                  </p>
-                )}
-                {phase === 'play' && <div className="course-actions">
-                  <p>{isRu ? 'Решимость' : 'Resolve'}: {resolve}/3 · {isRu ? 'Препятствие' : 'Obstacle'} {Math.max(0, activeObstacle) + 1}/{giantHps.length} · {copy.fear}: {Math.round(fearLine)}%</p>
-                  <button className="pz-btn" disabled={resolve < 1} onClick={() => attackGiant(activeObstacle)}>{isRu ? 'Шаг вперёд −1' : 'Advance −1'}</button>
-                </div>}
-                <button className="pz-btn" style={{ width: '100%', minHeight: 58, fontSize: '1.05rem' }} onClick={phase === 'play' ? courageStep : startGame}>
-                  {phase === 'play' ? (isRu ? 'Сплотиться +1' : 'Rally +1') : copy.restart}
-                </button>
-                <p style={{ marginTop: 10, minHeight: 38, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#dbeafe', lineHeight: 1.45 }}>
-                  {message || (phase === 'play' ? copy.tapHint : (isRu ? scripture.question.feedbackRu : scripture.question.feedbackEn))}
-                </p>
-
-                {badges.length > 0 && (
-                  <div className="badge-row" aria-label={copy.reward}>
-                    {badges.map((badge) => {
-                      const earnedLevel = LEVELS.find((item) => item.badgeEn === badge)
-                      return <span className="badge-chip" key={badge}>{earnedLevel ? (isRu ? earnedLevel.badgeRu : earnedLevel.badgeEn) : badge}</span>
-                    })}
-                  </div>
-                )}
-
-                <div style={{ marginTop: 16 }}>
-                  <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#ffd866' }}>{copy.powerupsTitle}</h3>
-                  <div className="power-row">
-                    {(Object.keys(powerups) as Powerup[]).map((key) => {
-                      const power = powerups[key]
-                      return (
-                        <button key={key} disabled={phase !== 'play' || coins < power.cost || (key === 'health' && health === 6) || (key === 'people' && helpers === 8) || (key === 'strength' && strengthTurns > 0)} onClick={() => spendPowerup(key)}>
-                          {isRu ? power.labelRu : power.labelEn} · {power.cost} 🪙<br />
-                          <span style={{ fontWeight: 800, opacity: .78 }}>{isRu ? power.descRu : power.descEn}</span>
-                        </button>
-                      )
-                    })}
-                  </div>
-                </div>
-              </div>
-            )}
-          </aside>
-        </section>
       </div>
     </main>
   )
