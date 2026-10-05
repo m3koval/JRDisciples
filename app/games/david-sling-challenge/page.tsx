@@ -536,10 +536,13 @@ export default function DavidSlingChallengePage() {
         .dsv2-play-shell.fullscreen .dsv2-stage { container-type: size; }
         @container (height < 340px) {
           .dsv2-play-shell.fullscreen .dsv2-bg { top: 0; bottom: 0; height: 100%; }
-          .dsv2-play-shell.fullscreen .dsv2-meter { top: 6px; left: 8px; width: 190px; padding: 5px 8px; font-size: 11px; }
+          .dsv2-play-shell.fullscreen .dsv2-meter { top: 6px; left: 8px; width: min(260px,calc(100% - 16px)); padding: 5px 8px; font-size: 13px; }
           .dsv2-play-shell.fullscreen .dsv2-meter-track { height: 5px; margin: 3px 0; }
-          .dsv2-play-shell.fullscreen .dsv2-meter small { font-size: 9px; }
+          .dsv2-play-shell.fullscreen .dsv2-meter small { font-size: 12px; line-height: 1.35; }
         }
+        .dsv2-play-shell .dsv2-meter small { font-size:12px; line-height:1.35; }
+        .dsv2-play-shell .dsv2-stat-icons { display:flex; align-items:center; justify-content:center; gap:4px; white-space:nowrap; }
+        .dsv2-play-shell .dsv2-stat-icons strong { font-size:1.05rem; line-height:1.35; font-variant-numeric:tabular-nums; }
         .dsv2-session-actions { display: flex; gap: 6px; padding: 0 !important; border: 0 !important; background: none !important; }
         .dsv2-session-actions button { flex: 1; min-width: 44px; min-height: 44px; }
         .dsv2-play-shell.fullscreen .dsv2-stats { grid-template-columns: repeat(5,minmax(0,1fr)) minmax(112px,1.6fr); }
@@ -565,8 +568,8 @@ export default function DavidSlingChallengePage() {
           <div>{copy.level}<br />{Math.min(levelIndex + 1, LEVELS.length)}/{LEVELS.length}</div>
           <div>{copy.score}<br />{score}</div>
           <div>{copy.best}<br />{best}</div>
-          <div>{copy.throws}<span className="dsv2-stat-icons">{'🪨'.repeat(Math.max(0, throwsLeft))}</span></div>
-          <div>{copy.fuel}<span className="dsv2-stat-icons">{'💛'.repeat(Math.min(5, wisdomFuel)) || '0'}</span></div>
+          <div>{copy.throws}<span className="dsv2-stat-icons" data-resource="stones" aria-label={`${copy.throws}: ${Math.max(0, throwsLeft)}`}><span aria-hidden="true">🪨</span><strong>{Math.max(0, throwsLeft)}</strong></span></div>
+          <div>{copy.fuel}<span className="dsv2-stat-icons" data-resource="wisdom" aria-label={`${copy.fuel}: ${wisdomFuel}`}><span aria-hidden="true">💛</span><strong>{wisdomFuel}</strong></span></div>
           <div className="dsv2-session-actions">
             {phase === 'play' && <button ref={pauseButtonRef} className="dsv2-pause" type="button" onClick={pauseGame}>{isRu ? 'Пауза' : 'Pause'}</button>}
             <button className="dsv2-exit" type="button" onClick={(event) => { stopTap(event); exitGame() }}>↩ {copy.quit}</button>

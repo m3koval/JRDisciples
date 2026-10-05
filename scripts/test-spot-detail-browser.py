@@ -19,6 +19,10 @@ with sync_playwright() as p:
    def button(en,ru):return page.get_by_role('button',name=ru if lang=='ru' else en,exact=True)
    try:
     page.goto('http://127.0.0.1:3107/games/spot-the-difference',wait_until='domcontentloaded');main=page.locator('main[data-phase]')
+    if os.environ.get('SPOT_GRAYSCALE')=='1':
+     # Test-only display transform: no mutation of game state/hit data. This
+     # checks the actual shipped images without relying on hue differences.
+     page.add_style_tag(content='[data-picture] img { filter: grayscale(1) !important; }')
     for i,s in enumerate(scenes):
      button('Find the differences','Найти отличия').tap();expect(main).to_have_attribute('data-phase','play')
      page.wait_for_function("[...document.querySelectorAll('[data-picture] img')].every(i=>i.complete&&i.naturalWidth===768)")
@@ -46,6 +50,11 @@ with sync_playwright() as p:
        if x+8<=ax<=x+w-8 and y+8<=ay<=y+h-8:break
        button('Next area','Следующая область').tap()
       else:raise AssertionError(('anchor unreachable',s['id'],d['anchor']))
+      if os.environ.get('SPOT_GRAYSCALE')=='1':
+       assert board.locator('img').evaluate("e=>getComputedStyle(e).filter")=='grayscale(1)'
+       button('Picture A','Картина A').tap();capture(page,f'{lang}-{s["id"]}-{j+1}-grayscale-A')
+       button('Picture B','Картина B').tap();capture(page,f'{lang}-{s["id"]}-{j+1}-grayscale-B')
+       board=page.locator('[data-picture=objects]')
       if i==0 and j==0:
        button('Picture A','Картина A').tap();board=page.locator('[data-picture=before]');capture(page,f'{lang}-jar-detail-A')
        q=target(board,d['anchor']);page.touchscreen.tap(q['x'],q['y']);expect(main).to_have_attribute('data-found','1')

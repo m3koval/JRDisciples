@@ -77,7 +77,7 @@ def main():
                     resume.click()
                     expect(shell).to_have_attribute('data-level', '2', timeout=4000)
                     expect(shell).to_have_attribute('data-phase', 'question')
-                    assert page.locator('.dsv2-stat-icons').first.inner_text().count('🪨') == 5
+                    assert page.locator('[data-resource=stones] strong').inner_text() == '5'
                     mark(lang + ': in-flight result waits behind pause, resumes once, level refills')
                     page.locator('.dsv2-choice').first.click()
                     # OS-style loss of focus while holding is a fixture, not a gameplay shortcut.

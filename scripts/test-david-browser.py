@@ -36,6 +36,7 @@ with sync_playwright() as p:
    page.screenshot(path=str(OUT/f'{lang}-exact-scripture.png'));mark(lang+' Scripture displays exact source value without added quotation wrapper')
    for level in range(1,4):
     page.locator('.dsv2-choice').first.tap();page.locator('.dsv2-game-btn.release').wait_for()
+    expect(page.locator('[data-resource=wisdom] strong')).to_have_text(str(level*2))
     if level==2:page.set_viewport_size({'width':390,'height':844})
     if level==3:page.set_viewport_size({'width':844,'height':390})
     if level>1:
@@ -43,14 +44,17 @@ with sync_playwright() as p:
      page.get_by_role('button',name='Resume' if lang=='en' else 'Продолжить',exact=True).click()
     page.screenshot(path=str(OUT/f'{lang}-level-{level}.png'));shot(page,touch=(level==1))
     if level<3:
-     expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-level',str(level+1));assert page.locator('.dsv2-stat-icons').first.inner_text().count('🪨')==5
+     expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-level',str(level+1));assert page.locator('[data-resource=stones] strong').inner_text()=='5'
     else:expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-phase','result')
     mark(f'{lang} level {level}: visible controls and earned hit')
    page.screenshot(path=str(OUT/f'{lang}-win.png'));page.get_by_role('button',name='Play Again' if lang=='en' else 'Снова',exact=True).click();expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-level','1');mark(lang+' victory/replay')
    if lang=='en':
     page.set_viewport_size({'width':1024,'height':768});page.locator('.dsv2-choice').first.click();page.locator('.dsv2-power').nth(2).click()
-    shot(page,hit=False);assert page.locator('.dsv2-stat-icons').first.inner_text().count('🪨')==5;mark('Trust Shield saves exactly one missed stone')
-    for i in range(5):shot(page,hit=False)
+    shot(page,hit=False);assert page.locator('[data-resource=stones] strong').inner_text()=='5';mark('Trust Shield saves exactly one missed stone')
+    for i in range(5):
+     shot(page,hit=False)
+     expect(page.locator('[data-resource=stones] strong')).to_have_text(str(4-i))
+    mark('visible numeric stone count follows every miss down to zero')
     expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-phase','result');page.screenshot(path=str(OUT/'failure.png'));page.get_by_role('button',name='Retry level · 5 stones',exact=True).click();expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-phase','question');mark('finite stone failure and same-level retry')
     page.locator('.dsv2-choice').first.click();hold=page.locator('.dsv2-game-btn.release');hold.focus();page.keyboard.down('Space');page.keyboard.up('Space');page.locator('.dsv2-exit').click();page.wait_for_timeout(1200);assert page.locator('.dsv2-play-shell.fullscreen').count()==0;mark('exit cancels pending shot')
    ctx.close()
