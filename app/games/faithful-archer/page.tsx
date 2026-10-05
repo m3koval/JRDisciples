@@ -903,7 +903,7 @@ export default function FaithfulArcherPage() {
         </section>
       </div>
 
-      {paused && <div className="archer-wisdom-card" role="dialog" aria-modal="true" aria-label={isRu ? 'Пауза' : 'Paused'}><div className="archer-wisdom-inner">
+      {paused && !renderError && renderReady && <div className="archer-wisdom-card" role="dialog" aria-modal="true" aria-label={isRu ? 'Пауза' : 'Paused'}><div className="archer-wisdom-inner">
         <h2>{isRu ? 'Пауза' : 'Paused'}</h2>
         <p>{isRu ? 'Твои попадания сохранены.' : 'Your cleared targets stay cleared.'}</p>
         <button className="pz-btn" onClick={resumeGame}>{isRu ? 'Продолжить игру' : 'Resume'}</button>

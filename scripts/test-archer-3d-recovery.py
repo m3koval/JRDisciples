@@ -21,7 +21,7 @@ with sync_playwright() as p:
     page.clock.install();page.clock.pause_at(page.evaluate('new Date(Date.now()+5000).toISOString()'))
     for attempt in range(8):
      s=state();t=s['targets'][0];flight=.6;dx=-(t['x']-s['bow']['x'])/flight*132/720;dy=-(t['y']-s['bow']['y']-360*flight*flight)/flight*132/720
-     box=cv.bounding_box();x=box['x']+box['width']*.72;y=box['y']+box['height']*.4
+     box=cv.bounding_box();assert box;x=box['x']+box['width']*.72;y=box['y']+box['height']*.4
      page.mouse.move(x,y);page.mouse.down();page.mouse.move(x+dx,y+dy);page.mouse.up();page.clock.run_for(1000)
      if state()['score']>5:break
     earned=state()['score'];assert earned>5 and best()==earned;mark('quota actual hit retained in memory')

@@ -6,7 +6,7 @@ passed=[];errors=[]
 def mark(n):
  passed.append(n);(OUT/'results.json').write_text(json.dumps({'passed':passed,'errors':errors},indent=2));print('PASS',n,flush=True)
 with sync_playwright() as p:
- browser=p.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+ browser=p.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader'])
  try:
   for lang in ['en','ru']:
    context=browser.new_context(viewport={'width':1024,'height':768},has_touch=True,reduced_motion='reduce');context.add_init_script(f"localStorage.setItem('language','{lang}')")

@@ -11,7 +11,7 @@ def record(name,ok,detail=None):
  assert ok,(name,detail)
  print('PASS',name,flush=True)
 with sync_playwright() as pw:
- browser=pw.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+ browser=pw.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader'])
  try:
   for lang in ['en','ru']:
    context=browser.new_context(viewport={'width':1024,'height':768},has_touch=True,reduced_motion='reduce' if lang=='ru' else 'no-preference')
