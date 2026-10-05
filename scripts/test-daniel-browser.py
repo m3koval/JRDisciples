@@ -12,7 +12,7 @@ with sync_playwright() as p:
    ctx.add_init_script(f"localStorage.setItem('language','{lang}')")
    page=ctx.new_page();page.on('pageerror',lambda e:errors.append(str(e)))
    page.on('response',lambda r:failed.append(f'{r.status} {r.url}') if r.status>=400 else None)
-   page.goto('http://127.0.0.1:3107/games/escape-room-daniel',wait_until='networkidle')
+   page.goto(os.environ.get('JD_BASE','http://127.0.0.1:3107').rstrip('/')+'/games/escape-room-daniel',wait_until='networkidle')
    page.wait_for_function('(v)=>document.documentElement.dataset.lang===v',arg=lang)
    def t(en,ru):return ru if lang=='ru' else en
    def b(en,ru=None):return page.get_by_role('button',name=t(en,ru or en),exact=True)

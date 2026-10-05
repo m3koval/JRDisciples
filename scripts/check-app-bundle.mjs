@@ -8,6 +8,7 @@ const iosPublic = join(root, 'ios', 'App', 'App', 'public')
 const configPath = join(root, 'capacitor.config.ts')
 const journeyPath = join(root, 'data', 'journey.ts')
 const failures = []
+const sha256 = (path) => createHash('sha256').update(readFileSync(path)).digest('hex')
 
 function walk(directory) {
   if (!existsSync(directory)) return []
@@ -78,13 +79,14 @@ for (const path of walk(out)) {
     failures.push(`iOS bundle is missing exported file: ${relativePath}`)
   } else if (statSync(path).size !== statSync(nativePath).size) {
     failures.push(`iOS bundle file size differs after sync: ${relativePath}`)
+  } else if (sha256(path) !== sha256(nativePath)) {
+    failures.push(`iOS bundle file hash differs after sync: ${relativePath}`)
   }
 }
 
 // The embedded engine must survive both static export and Capacitor sync intact.
 const gameRoute = 'games/trail-of-truth/index.html'
 const gameBuild = 'games/trail-of-truth-block-adventure/build'
-const sha256 = (path) => createHash('sha256').update(readFileSync(path)).digest('hex')
 const requiredGameFiles = ['index.html', 'index.js', 'index.wasm', 'index.pck', 'release-manifest.json']
 for (const base of [out, iosPublic]) {
   const route = join(base, gameRoute)
@@ -119,5 +121,5 @@ if (failures.length) {
 
 console.log(`App bundle checks passed for ${indexFiles.length} offline routes.`)
 console.log('All HTML references resolve locally; no remote links or resources remain in the app export.')
-console.log('Every exported file is present in the synced iOS bundle.')
+console.log('Every exported file matches the synced iOS bundle by exact SHA-256.')
 console.log('Trail of Truth route and engine artifacts verified with exact SHA-256 copies into iOS.')

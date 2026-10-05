@@ -34,7 +34,7 @@ def main():
                     page = context.new_page()
                     page.on('pageerror', lambda e: errors.append(str(e)))
                     page.on('response', lambda r: failures.append(f'{r.status} {r.url}') if r.status >= 400 else None)
-                    page.goto('http://127.0.0.1:3107/games/david-sling-challenge', wait_until='networkidle')
+                    page.goto(os.environ.get('JD_BASE','http://127.0.0.1:3107').rstrip('/')+'/games/david-sling-challenge', wait_until='networkidle')
                     if lang == 'ru':
                         page.get_by_role('button', name='EN', exact=True).click()
                         page.get_by_role('button', name='Русский', exact=True).click()

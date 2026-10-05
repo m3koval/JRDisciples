@@ -50,5 +50,8 @@ jobs:
       - name: Check Paid in Full lesson
         run: npm run check:paid-in-full
 
+      - name: Check offline bundle integrity guard
+        run: node scripts/test-app-bundle-integrity.mjs
+
       - name: Build production bundle
         run: npm run build

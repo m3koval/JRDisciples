@@ -12,7 +12,7 @@ with sync_playwright() as pw:
    ctx.add_init_script(f"localStorage.setItem('language','{lang}')")
    page=ctx.new_page();page.on('pageerror',lambda e:errors.append(str(e)))
    page.on('response',lambda r:failures.append(f'{r.status} {r.url}') if r.status>=400 else None)
-   page.goto('http://127.0.0.1:3107/games/truth-runner')
+   page.goto(os.environ.get('JD_BASE','http://127.0.0.1:3107').rstrip('/')+'/games/truth-runner')
    page.wait_for_function('(v)=>document.documentElement.dataset.lang===v',arg=lang)
    assert fixture[0][lang] in page.locator('blockquote').inner_text()
    page.get_by_role('button',name=('Light the trail →' if lang=='en' else 'Осветить тропу →'),exact=True).click()

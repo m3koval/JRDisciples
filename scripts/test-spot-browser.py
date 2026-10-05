@@ -7,7 +7,7 @@ import os
 ROOT = Path(__file__).resolve().parents[1]
 OUT = Path(os.environ.get('SPOT_EVIDENCE', '/mnt/hermes-storage/jd-games-overnight/evidence/pass-04/spot'))
 OUT.mkdir(parents=True, exist_ok=True)
-URL = 'http://127.0.0.1:3107/games/spot-the-difference'
+URL = os.environ.get('JD_BASE','http://127.0.0.1:3107').rstrip('/')+'/games/spot-the-difference'
 scenes = json.loads((ROOT / 'app/games/spot-the-difference/object-edits.json').read_text())
 results, taps = [], []
 

@@ -28,7 +28,7 @@ with sync_playwright() as p:
   for lang,view in [('en',{'width':1024,'height':768}),('ru',{'width':768,'height':1024})]:
    ctx=browser.new_context(viewport=view,has_touch=True,reduced_motion='reduce');ctx.add_init_script(f"localStorage.setItem('language','{lang}')")
    page=ctx.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.on('response',lambda r:http.append(r.url) if r.status>=400 else None)
-   page.goto('http://127.0.0.1:3107/games/david-sling-challenge',wait_until='domcontentloaded');page.wait_for_function('(l)=>document.documentElement.dataset.lang===l',arg=lang)
+   page.goto(os.environ.get('JD_BASE','http://127.0.0.1:3107').rstrip('/')+'/games/david-sling-challenge',wait_until='domcontentloaded');page.wait_for_function('(l)=>document.documentElement.dataset.lang===l',arg=lang)
    page.locator('.dsv2-hero-start').tap();page.locator('.dsv2-choice').nth(1).tap();expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-phase','question');mark(lang+' wrong answer cannot skip learning')
    source=(Path(__file__).resolve().parents[1]/'app/games/david-sling-challenge/page.tsx').read_text()
    exact=re.search(r"text"+('Ru' if lang=='ru' else 'En')+r": '([^']+)'",source).group(1)

@@ -13,7 +13,7 @@ with sync_playwright() as p:
    ctx=browser.new_context(viewport={'width':1024,'height':768},has_touch=True,reduced_motion='reduce');ctx.add_init_script(f"localStorage.setItem('language','{lang}')");page=ctx.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.on('response',lambda r:failed.append([r.url,r.status]) if r.status>=400 else None)
    def btn(en,ru):return page.get_by_role('button',name=re.compile('^'+re.escape(ru if lang=='ru' else en)+r'(?: →)?$'))
    try:
-    page.goto('http://127.0.0.1:3107/games/shepherd-light-adventure',wait_until='domcontentloaded');page.wait_for_selector('[data-hydrated=true]');page.clock.install();btn('Start Adventure','Начать приключение').click()
+    page.goto(os.environ.get('JD_BASE','http://127.0.0.1:3107').rstrip('/')+'/games/shepherd-light-adventure',wait_until='domcontentloaded');page.wait_for_selector('[data-hydrated=true]');page.clock.install();btn('Start Adventure','Начать приключение').click()
     for level in range(1,4):
      btn('Open Trail','Открыть тропу').click();page.wait_for_selector('[data-phase=play]')
      if level==1:

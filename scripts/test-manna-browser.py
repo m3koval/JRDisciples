@@ -10,10 +10,11 @@ def mark(name):
 with sync_playwright() as pw:
  b=pw.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
  try:
-  for lang in ['en','ru']:
+  for lang in os.environ.get('MANNA_LANGS','en,ru').split(','):
+   assert lang in ('en','ru'), f'Unsupported language: {lang}'
    c=b.new_context(viewport={'width':768,'height':1024},has_touch=True);c.add_init_script(f"localStorage.setItem('language','{lang}')")
    p=c.new_page();p.on('pageerror',lambda e:errors.append(str(e)));p.on('response',lambda r:failures.append(f'{r.status} {r.url}') if r.status>=400 else None)
-   p.goto('http://127.0.0.1:3107/games/manna-trail');p.get_by_role('button',name='▶ Start the Trail' if lang=='en' else '▶ Начать путь',exact=True).click()
+   p.goto(os.environ.get('JD_BASE','http://127.0.0.1:3107').rstrip('/')+'/games/manna-trail');p.get_by_role('button',name='▶ Start the Trail' if lang=='en' else '▶ Начать путь',exact=True).click()
    p.wait_for_timeout(100);p.clock.install()
    def state():return json.loads(p.locator('canvas').get_attribute('data-state'))
    p.clock.run_for(5000);s=state();assert s['phase']=='over' and s['words']==1,s
