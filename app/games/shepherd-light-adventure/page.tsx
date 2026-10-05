@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { createJourney, retryJourney, stepJourney, activateHelper, callLamb, guideRadius, clamp, dist, type Journey, type Point, type Orb, type Hazard } from './mechanics'
 import { useLanguage } from '@/context/LanguageContext'
+import { getGuidance, guidePath, type Guidance } from './guidance'
 
 type Phase = 'intro' | 'briefing' | 'play' | 'reward' | 'complete' | 'paused' | 'failed'
 type Environment = 'meadow' | 'bridge' | 'storm'
@@ -133,12 +134,34 @@ export default function ShepherdLightAdventurePage() {
   const elapsed = Math.floor(bankedTime + journey.time)
   const spark = Math.floor(journey.time * 20)
   const [calmMode, setCalmMode] = useState(false)
+  const [showGuide, setShowGuide] = useState(false)
 
   const level = LEVELS[Math.min(levelIndex, LEVELS.length - 1)]
   const helper = helperMeta[level.helper]
   const foundLight = orbs.filter((orb) => orb.found).length
   const canGuide = foundLight >= level.requiredLight
   const progress = Math.round((foundLight / level.requiredLight) * 100)
+  const guidance = getGuidance(journey, level, lanternWide)
+  const mapVisible = phase === 'play' && (showGuide || (level.helper === 'joseph' && helperActive))
+  const route = mapVisible && guidance.target ? guidePath(player, guidance.target, level.hazards) : []
+  const advice = isRu ? {
+    collect: `Ещё огоньков: ${guidance.remaining}. Ягнёнок ждёт, пока соберёшь свет.`,
+    return: guidance.canCall ? 'Ягнёнок вне света. Позови его или подойди ближе.' : 'Вернись к ягнёнку: он вне круга света.',
+    wait: 'Остановись: дай ягнёнку догнать тебя.',
+    escort: 'Иди к воротам. Держи ягнёнка в круге света.',
+    home: 'Подожди у ворот: ягнёнок идёт к тебе.',
+    done: '',
+  } : {
+    collect: `${guidance.remaining} lights left. The lamb waits until they are gathered.`,
+    return: guidance.canCall ? 'Lamb out of reach. Call, or walk closer.' : 'Return to the lamb: it is outside your light.',
+    wait: 'Stop a moment: let the lamb catch up.',
+    escort: 'Walk to the gate. Keep the lamb inside your light.',
+    home: 'Wait at the gate: the lamb is coming to you.',
+    done: '',
+  }
+  const helperExplanation = isRu
+    ? `${helper.ru}: заряд фонаря и 5 секунд защиты и широкого света.${level.helper === 'joseph' ? ' Метки показывают путь.' : ''}`
+    : `${helper.en}: lantern refill and 5 seconds of protection and wider light.${level.helper === 'joseph' ? ' Map marks show the way.' : ''}`
 
   const copy = isRu ? {
     back: 'Все игры', eyebrow: 'Евангельское приключение', title: 'Приключение Света Пастыря',
@@ -358,6 +381,14 @@ export default function ShepherdLightAdventurePage() {
         .sla-control.active { background: linear-gradient(180deg,#fef3c7,#f59e0b); color: #422006; }
         .sla-control:disabled { opacity: .52; }
         .sla-message { min-height: 38px; border-radius: 18px; padding: 9px 13px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.16); font-family: var(--font-nunito); font-weight: 900; text-align: center; }
+        .sla-guide-toggle { display:block; margin:5px auto 0; min-height:44px; padding:6px 12px; border:1px solid #fde68a; border-radius:12px; background:#102e43; color:#fff1bd; font:inherit; cursor:pointer; }
+        .sla-guide-toggle[aria-pressed=true] { background:#fde68a; color:#30220b; }
+        .sla-guide-map { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+        .sla-helper-note { display:block; margin-top:4px; font-size:.8em; color:#fde68a; }
+        .sla-message { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:3px 8px; }
+        .sla-message > div,.sla-message > small,.sla-message > span { grid-column:1; }
+        .sla-message .sla-guide-toggle { grid-column:2; grid-row:1 / 5; max-width:90px; margin:0; font-size:.82rem; }
+        .sla-page[data-phase=play] .sla-message > span { display:none; }
         .sla-scripture { border-radius: 22px; padding: 16px; background: linear-gradient(180deg,rgba(254,243,199,.96),rgba(255,247,237,.92)); color: #3b2307; border: 2px solid #f59e0b; font-family: var(--font-lora); font-weight: 800; line-height: 1.6; }
         .sla-owned-art { background: url('/images/jr/games/shepherd-light-adventure/hero-shepherd-light.png') center/cover; }
         .sla-terrain { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -409,6 +440,7 @@ export default function ShepherdLightAdventurePage() {
           .sla-hud > button { grid-column:1 / -1; }
           .sla-chip:nth-child(3),.sla-chip:nth-child(4) { display:block; }
           .sla-message { grid-column:2; grid-row:2; align-self:center; font-size:.9rem; }
+          .sla-message .sla-guide-toggle { grid-column:1 / -1; grid-row:auto; justify-self:center; max-width:none; }
           .sla-controls { grid-column:2; grid-row:3; grid-template-columns:1fr; }
           .sla-control.call { grid-column:auto; }
           .sla-control { min-height:54px; padding:6px; }
@@ -418,12 +450,20 @@ export default function ShepherdLightAdventurePage() {
           .sla-hud { gap:5px; }
           .sla-chip { min-height:40px; padding:4px; font-size:.76rem; }
           .sla-chip:nth-child(3),.sla-chip:nth-child(4) { display:none; }
-          .sla-message { padding:5px 7px; font-size:.8rem; line-height:1.25; }
+          .sla-message { padding:5px 7px; font-size:.8rem; line-height:1.25; min-height:0; overflow:auto; align-self:stretch; }
           .sla-message span { display:none; }
           .sla-controls { gap:6px; }
           .sla-control { min-height:44px; font-size:.8rem; }
           .sla-panel { padding:14px; }
           .sla-panel h2 { font-size:1.7rem !important; }
+        }
+        @media (orientation:portrait) and (max-height:700px) {
+          .sla-message { padding:7px; font-size:.78rem; line-height:1.25; }
+          .sla-message .sla-guide-toggle { max-width:78px; padding:5px 7px; font-size:.75rem; }
+          .sla-controls { grid-template-columns:repeat(3,minmax(0,1fr)); gap:5px; }
+          .sla-control.call { grid-column:auto; }
+          .sla-control { min-height:52px; padding:4px; font-size:.72rem; line-height:1.25; }
+          .sla-chip { min-height:44px; padding:5px; font-size:.75rem; }
         }
         @media (prefers-reduced-motion: reduce) { .sla-orb,.sla-hazard.gust { animation: none; } .sla-player,.sla-lamb { transition: none; } }
       `}</style>
@@ -464,7 +504,7 @@ export default function ShepherdLightAdventurePage() {
 
           <div className={`sla-arena ${level.environment}`}>
             <div ref={arenaRef} className="sla-playfield" onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerUp} onPointerCancel={pointerUp} onLostPointerCapture={() => { pointer.current.active = false; movementPointer.current = null }}>
-              <GameWorld level={level} player={player} lamb={lamb} orbs={orbs} lanternWide={lanternWide} helperActive={helperActive} spark={spark} journey={journey} playing={phase === 'play'} />
+              <GameWorld level={level} player={player} lamb={lamb} orbs={orbs} lanternWide={lanternWide} helperActive={helperActive} spark={spark} journey={journey} playing={phase === 'play'} guidance={guidance} route={route} mapVisible={mapVisible} />
             </div>
 
             {phase === 'briefing' && (
@@ -474,6 +514,7 @@ export default function ShepherdLightAdventurePage() {
                 <p className="sla-copy">{mission}</p>
                 <div className="sla-scripture" style={{ margin: '15px 0' }}><strong>{scriptureRef}</strong><br />“{scripture}”</div>
                 <p className="sla-copy"><strong>{helper.emoji} {isRu ? helper.ru : helper.en}.</strong> {copy.controls}</p>
+                <p className="sla-copy">{helperExplanation}</p>
                 <button className="sla-btn" onClick={beginTrail} style={{ marginTop: 14 }}>{copy.briefing} →</button>
               </div>
             )}
@@ -522,7 +563,14 @@ export default function ShepherdLightAdventurePage() {
             )}
           </div>
 
-          <div className="sla-message">{message || (canGuide ? copy.guide : copy.collect)} <span style={{ color: '#fde68a' }}>• {scriptureRef}</span></div>
+          <div className="sla-message" data-guide-state={guidance.state}>
+            <div role="status">{journey.invulnerable > 0 && journey.hits > 0 ? copy.hazard : advice[guidance.state] || message}</div>
+            {mapVisible && route.length > 1 && <small className="sla-helper-note">{isRu ? 'Иди по пунктиру к кольцу.' : 'Follow the dots to the ring.'}</small>}
+            {mapVisible && guidance.target && route.length === 0 && <small className="sla-helper-note">{isRu ? 'Нет безопасного пунктира. Обойди опасность или держи заряженный щит.' : 'No clear dotted route. Go around danger, or hold a charged shield.'}</small>}
+            {helperActive && <small className="sla-helper-note">{isRu ? 'Защита помощника' : 'Helper protection'} · {Math.ceil(journey.helperTime)}s{level.helper === 'joseph' ? (isRu ? ' · Метки карты' : ' · Map marks') : ''}</small>}
+            {phase === 'play' && <button className="sla-guide-toggle" aria-pressed={showGuide} onClick={() => setShowGuide(value => !value)}>{showGuide ? (isRu ? 'Скрыть путь' : 'Hide guide') : (isRu ? 'Покажи путь' : 'Show guide')}</button>}
+            <span style={{ color: '#fde68a' }}>• {scriptureRef}</span>
+          </div>
           <div className="sla-controls">
             <button className={`sla-control ${lanternWide ? 'active' : ''}`} disabled={phase !== 'play'} aria-pressed={lanternWide}
               onPointerDown={event => { event.currentTarget.setPointerCapture(event.pointerId); setLanternWide(true) }}
@@ -530,7 +578,7 @@ export default function ShepherdLightAdventurePage() {
               onKeyDown={event => { if (event.key === ' ' || event.key === 'Enter') setLanternWide(true) }} onKeyUp={() => setLanternWide(false)}>
               ☀ {copy.hold} · {Math.ceil(journey.energy)}%
             </button>
-            <button className={`sla-control ${helperActive ? 'active' : ''}`} disabled={!helperReady || phase !== 'play'} onClick={useHelper}>{helper.emoji} {copy.useHelper}{!helperReady ? ` · ${Math.ceil(journey.helperCooldown)}s` : ' (H)'}</button>
+            <button className={`sla-control ${helperActive ? 'active' : ''}`} title={helperExplanation} disabled={!helperReady || phase !== 'play'} onClick={useHelper}>{helper.emoji} {copy.useHelper}{!helperReady ? ` · ${Math.ceil(journey.helperCooldown)}s` : ' (H)'}</button>
             <button className="sla-control call" disabled={!canGuide || journey.callCooldown > 0 || phase !== 'play'} onClick={() => setJourney(callLamb)}>♪ {copy.call}{journey.callCooldown > 0 ? ` · ${Math.ceil(journey.callCooldown)}s` : ' (C)'}</button>
           </div>
         </section>
@@ -539,7 +587,7 @@ export default function ShepherdLightAdventurePage() {
   )
 }
 
-function GameWorld({ level, player, lamb, orbs, lanternWide, helperActive, spark, journey, playing }: { level: Level; player: Point; lamb: Point; orbs: Orb[]; lanternWide: boolean; helperActive: boolean; spark: number; journey: Journey; playing: boolean }) {
+function GameWorld({ level, player, lamb, orbs, lanternWide, helperActive, spark, journey, playing, guidance, route, mapVisible }: { level: Level; player: Point; lamb: Point; orbs: Orb[]; lanternWide: boolean; helperActive: boolean; spark: number; journey: Journey; playing: boolean; guidance: Guidance; route: Point[]; mapVisible: boolean }) {
   const lightSize = guideRadius(journey, lanternWide) * 2
   const frame = Math.floor(journey.time * 10) % 8 + 1
   const sprite = (moving: boolean, facing: number) => ({ backgroundPositionX: `${playing && moving ? frame / 8 * 100 : 0}%`, backgroundPositionY: `${facing / 3 * 100}%` })
@@ -558,6 +606,15 @@ function GameWorld({ level, player, lamb, orbs, lanternWide, helperActive, spark
         <div key={hazard.id} className={`sla-hazard ${hazard.kind}`} style={{ left: `${hazard.x}%`, top: `${hazard.y}%`, width: `${hazard.r * 2}%`, height: `${hazard.r * 2}%` }} />
       ))}
       {orbs.filter((orb) => !orb.found).map((orb) => <div key={orb.id} className="sla-orb" style={{ left: `${orb.x}%`, top: `${orb.y}%`, animationDelay: `${orb.id * .15}s` }} />)}
+      {mapVisible && <svg className="sla-guide-map" viewBox="0 0 100 100" aria-hidden="true">
+        {route.length > 1 && <>
+          <polyline points={route.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#173126" strokeWidth="1.7" strokeLinejoin="round" />
+          <polyline points={route.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#fff1ac" strokeWidth=".8" strokeDasharray="1.3 1.3" strokeLinejoin="round" />
+          <circle cx={route[1].x} cy={route[1].y} r="2" fill="#fff1ac" stroke="#173126" strokeWidth=".6" />
+        </>}
+        {guidance.target && <circle cx={guidance.target.x} cy={guidance.target.y} r="5" fill="none" stroke="#fff1ac" strokeWidth="1" />}
+        {(guidance.state === 'wait' || guidance.state === 'home') && <text x={player.x} y={player.y + 6} textAnchor="middle" fontSize="6" fill="#fff1ac" stroke="#173126" strokeWidth=".4" paintOrder="stroke">Ⅱ</text>}
+      </svg>}
       <div className="sla-light" style={{ left: `${player.x}%`, top: `${player.y}%` }} />
       {Array.from({ length: helperActive ? 10 : 5 }).map((_, index) => (
         <span key={index} aria-hidden="true" style={{ position: 'absolute', left: `${player.x + Math.sin((spark + index * 13) / 8) * (8 + index)}%`, top: `${player.y + Math.cos((spark + index * 11) / 9) * (5 + index * .7)}%`, color: '#fde68a', textShadow: '0 0 14px #facc15', fontSize: 11 + (index % 3) * 4 }}>✦</span>

@@ -1,4 +1,4 @@
-"""Reproducible, local object-color edits of owned original scene art.
+"""Reproducible, local object-color and material edits of owned original scene art.
 No provider calls. Never starts from the old after images (floating markers).
 Polygon bounds are shared with gameplay, while hue masks preserve skin/shadows.
 """
@@ -29,7 +29,7 @@ EDITS={
  edit('The purple flowers beside the tree','Фиолетовые цветы у дерева',[[0,782],[53,782],[53,836],[0,836]],30,[185,255],185)],
  'good-samaritan':[
  edit('The Samaritan’s red headband','Красная повязка самарянина',[[258,295],[325,293],[383,301],[446,310],[450,332],[394,328],[322,319],[256,316]],146,None,135),
- edit('The case beside the road','Сундук у дороги',[[58,828],[122,792],[220,824],[211,958],[155,964],[55,920]],145,None,95),
+ edit('The case beside the road','Сундук у дороги',[[57,833],[123,803],[201,827],[211,836],[217,857],[213,881],[215,893],[213,953],[174,964],[89,932],[89,916],[74,913],[71,925],[58,918]],145,None,95),
  edit('The tree at the upper left','Дерево слева вверху',[[28,94],[58,95],[57,62],[99,48],[127,57],[128,50],[166,59],[174,90],[208,101],[232,124],[234,171],[192,176],[194,199],[160,208],[121,188],[78,188],[77,175],[31,169],[27,153],[22,152],[22,132]],5,[30,100],160)],
  'lost-sheep':[
  edit('The shepherd’s brown sash','Коричневая накидка пастуха',[[370,355],[421,352],[417,515],[392,624],[350,686],[308,698],[266,665],[256,603],[282,579],[326,561],[351,470]],147,None,110),
@@ -46,6 +46,9 @@ EDITS={
 
 def main():
  manifest=[]
+ # One object per scene receives a visible material pattern as well as recoloring.
+ # Bands are clipped to that object's existing hue/polygon mask and retain lighting.
+ patterned={'water-to-wine':0,'feeding-5000':1,'calm-storm':0,'zacchaeus':0,'good-samaritan':0,'lost-sheep':0,'daniel-lions':0,'empty-tomb':0}
  for slug,edits in EDITS.items():
   src=ART/f'spot-{slug}-before.png'; im=Image.open(src).convert('RGB'); out=im.copy(); hsv=np.array(im.convert('HSV')); union=np.zeros(hsv.shape[:2],dtype=bool)
   for i,e in enumerate(edits):
@@ -56,6 +59,25 @@ def main():
    modified=hsv.copy(); modified[:,:,0]=e['hue']
    if e['saturation'] is not None: modified[:,:,1]=e['saturation']
    rgb=np.array(Image.fromarray(modified,'HSV').convert('RGB'),dtype=float)
+   if i==patterned[slug]:
+    yy,xx=np.indices(hsv.shape[:2]); x0,y0=np.min(e['polygon'],axis=0); x1,y1=np.max(e['polygon'],axis=0)
+    if slug=='water-to-wine':
+     # Two painted rings follow the round vessel rather than flat screen lines.
+     curve=yy-10*(1-((xx-(x0+x1)/2)/((x1-x0)/2))**2)
+     band=((curve>y0+64)&(curve<y0+77))|((curve>y0+114)&(curve<y0+127))
+    elif slug=='good-samaritan':
+     # Woven stitches on the existing headband; no pattern across the case edges.
+     band=((xx-x0)%25)<8
+    elif slug=='daniel-lions':
+     # Vertical woven marks remain legible on the short belt.
+     band=((xx-x0)%27)<10
+    else:
+     # Sparse woven stripes bend subtly with the original fabric's light/folds.
+     band=((xx+np.sin(yy/40)*4+hsv[:,:,2]/38-x0)%36)<10
+    shade=np.clip(.35+.65*hsv[:,:,2].astype(float)/255,.35,1)
+    cream=np.stack([230*shade,219*shade,177*shade],axis=-1)
+    rgb=np.where(band[:,:,None],rgb*.15+cream*.85,rgb)
+    e['materialPattern']='painted rings' if slug=='water-to-wine' else 'woven bands'
    current=np.array(out,dtype=float); out=Image.fromarray(np.uint8(np.round(current*(1-alpha[:,:,None])+rgb*alpha[:,:,None])))
    union|=alpha>0
    e['id']=i+1

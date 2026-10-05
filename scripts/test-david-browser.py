@@ -1,5 +1,5 @@
 """Trusted input; read-only angle telemetry synchronizes sling timing, no state injection."""
-import json
+import json,re
 import os
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
@@ -30,6 +30,10 @@ with sync_playwright() as p:
    page=ctx.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.on('response',lambda r:http.append(r.url) if r.status>=400 else None)
    page.goto('http://127.0.0.1:3107/games/david-sling-challenge',wait_until='domcontentloaded');page.wait_for_function('(l)=>document.documentElement.dataset.lang===l',arg=lang)
    page.locator('.dsv2-hero-start').tap();page.locator('.dsv2-choice').nth(1).tap();expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-phase','question');mark(lang+' wrong answer cannot skip learning')
+   source=(Path(__file__).resolve().parents[1]/'app/games/david-sling-challenge/page.tsx').read_text()
+   exact=re.search(r"text"+('Ru' if lang=='ru' else 'En')+r": '([^']+)'",source).group(1)
+   expect(page.locator('.dsv2-scripture p')).to_have_text(exact)
+   page.screenshot(path=str(OUT/f'{lang}-exact-scripture.png'));mark(lang+' Scripture displays exact source value without added quotation wrapper')
    for level in range(1,4):
     page.locator('.dsv2-choice').first.tap();page.locator('.dsv2-game-btn.release').wait_for()
     if level==2:page.set_viewport_size({'width':390,'height':844})

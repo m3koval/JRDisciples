@@ -602,7 +602,7 @@ export default function DavidSlingChallengePage() {
             <p className="puzzle-label" style={{ color: '#ffd866' }}>{isRu ? level.nameRu : level.nameEn}</p>
             <h2>{phase === 'question' ? copy.questionTitle : result === 'ready' ? copy.release : copy[result]}</h2>
             <div className="dsv2-scripture">
-              <p>&ldquo;{isRu ? SCRIPTURE.textRu : SCRIPTURE.textEn}&rdquo;</p>
+              <p>{isRu ? SCRIPTURE.textRu : SCRIPTURE.textEn}</p>
               <strong>— {isRu ? SCRIPTURE.refRu : SCRIPTURE.refEn}</strong>
             </div>
             {phase === 'question' ? <>
