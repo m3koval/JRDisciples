@@ -3,6 +3,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 
 import Link from 'next/link'
+import ExpeditionWorld from './ExpeditionWorld'
 import { useEffect, useRef, useState } from 'react'
 import { courseTurn, nextObstacle, answerOrder, courseProgress, turnForecast } from './course'
 import { useLanguage } from '@/context/LanguageContext'
@@ -42,7 +43,7 @@ const SCRIPTURE: Scripture[] = [
   {
     refEn: 'Joshua 1:9',
     refRu: 'Иисуса Навина 1:9',
-    textEn: 'Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the LORD your God is with you wherever you go."',
+    textEn: 'Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the LORD your God is with you wherever you go.”',
     textRu: 'Вот Я повелеваю тебе: будь тверд и мужествен, не страшись и не ужасайся; ибо с тобою Господь Бог твой везде, куда ни пойдешь.',
     question: {
       promptEn: 'What did God tell Joshua to be?',
@@ -57,8 +58,8 @@ const SCRIPTURE: Scripture[] = [
   {
     refEn: 'Numbers 14:9',
     refRu: 'Числа 14:9',
-    textEn: 'Only do not rebel against the LORD. And do not fear the people of the land, for they are bread for us. Their protection is removed from them, and the LORD is with us; do not fear them."',
-    textRu: 'только против Господа не восставайте и не бойтесь народа земли сей, ибо он достанется нам на съедение: защиты у них не стало, а с нами Господь; не бойтесь их.',
+    textEn: 'Only do not rebel against the LORD. And do not fear the people of the land, for they are bread for us. Their protection is removed from them, and the LORD is with us; do not fear them.”',
+    textRu: 'только против Господа не восставайте и не бойтесь народа земли сей; ибо он достанется нам на съедение: защиты у них не стало, а с нами Господь; не бойтесь их.',
     question: {
       promptEn: 'Why did Caleb say not to fear?',
       promptRu: 'Почему Халев сказал не бояться?',
@@ -72,8 +73,8 @@ const SCRIPTURE: Scripture[] = [
   {
     refEn: 'Deuteronomy 31:6',
     refRu: 'Второзаконие 31:6',
-    textEn: 'Be strong and courageous. Do not fear or be in dread of them, for it is the LORD your God who goes with you. He will not leave you or forsake you."',
-    textRu: 'Будьте тверды и мужественны, не бойтесь, и не страшитесь их, ибо Господь Бог твой Сам пойдет с тобою, не отступит от тебя и не оставит тебя.',
+    textEn: 'Be strong and courageous. Do not fear or be in dread of them, for it is the LORD your God who goes with you. He will not leave you or forsake you.”',
+    textRu: 'будьте тверды и мужественны, не бойтесь, [не ужасайтесь] и не страшитесь их, ибо Господь Бог твой Сам пойдет с тобою [и] не отступит от тебя и не оставит тебя.',
     question: {
       promptEn: "What promise helps God's people keep going?",
       promptRu: 'Какое обещание помогает Божьему народу идти дальше?',
@@ -87,38 +88,38 @@ const SCRIPTURE: Scripture[] = [
   {
     refEn: 'Isaiah 41:10',
     refRu: 'Исаия 41:10',
-    textEn: 'Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand."',
-    textRu: 'Не бойся, ибо Я с тобою; не смущайся, ибо Я Бог твой; Я укреплю тебя, и помогу тебе, и поддержу тебя десницею правды Моей.',
+    textEn: 'fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand.',
+    textRu: 'не бойся, ибо Я с тобою; не смущайся, ибо Я Бог твой; Я укреплю тебя, и помогу тебе, и поддержу тебя десницею правды Моей.',
     question: {
       promptEn: 'What three things does God promise to do for His people?',
-      promptRu: 'Что три вещи обещает Бог Своему народу?',
+      promptRu: 'Что Бог обещает сделать для Своего народа?',
       choicesEn: ['Strengthen, help, and uphold them', 'Leave, forget, and ignore them', 'Test, punish, and abandon them'],
       choicesRu: ['Укрепить, помочь и поддержать', 'Оставить, забыть и игнорировать', 'Испытать, наказать и бросить'],
       answer: 0,
-      feedbackEn: "Right. God's hand is under His people — they cannot fall alone.",
-      feedbackRu: 'Верно. Рука Бога держит Его народ — они не упадут одни.',
+      feedbackEn: 'Right. God promises to strengthen, help, and uphold His people.',
+      feedbackRu: 'Верно. Бог обещает укрепить, помочь и поддержать Свой народ.',
     },
   },
   {
     refEn: '2 Chronicles 20:15',
     refRu: '2 Паралипоменон 20:15',
-    textEn: 'Do not be afraid and do not be dismayed at this great horde, for the battle is not yours but God\'s."',
-    textRu: 'Не бойтесь и не страшитесь множества сего великого, ибо не ваша война, а Божья.',
+    textEn: 'Do not be afraid and do not be dismayed at this great horde, for the battle is not yours but God’s.',
+    textRu: 'не бойтесь и не ужасайтесь множества сего великого, ибо не ваша война, а Божия.',
     question: {
-      promptEn: "When God's people face something huge, whose battle is it?",
-      promptRu: 'Когда народ Божий встречает что-то огромное, чья это война?',
+      promptEn: 'Whose battle did God say this was?',
+      promptRu: 'Чьей назвал Бог эту битву?',
       choicesEn: ["God's battle, not ours", 'Our battle alone', 'The strongest person wins'],
       choicesRu: ['Битва Бога, не наша', 'Только наша битва', 'Побеждает сильнейший'],
       answer: 0,
-      feedbackEn: 'Yes. Trusting God means letting Him fight the biggest battles.',
-      feedbackRu: 'Да. Доверять Богу — значит позволить Ему сражаться в самых трудных битвах.',
+      feedbackEn: 'Yes. Judah was told to trust the LORD and obey His direction.',
+      feedbackRu: 'Да. Жителям Иудеи было велено доверять Господу и следовать Его указаниям.',
     },
   },
   {
     refEn: 'Psalm 27:1',
     refRu: 'Псалом 26:1',
-    textEn: 'The LORD is my light and my salvation; whom shall I fear? The LORD is the stronghold of my life; of whom shall I be afraid?"',
-    textRu: 'Господь — просвещение мое и спасение мое: кого мне бояться? Господь — крепость жизни моей: кого мне страшиться?',
+    textEn: 'The LORD is my light and my salvation; whom shall I fear? The LORD is the stronghold of my life; of whom shall I be afraid?',
+    textRu: 'Господь — свет мой и спасение мое: кого мне бояться? Господь крепость жизни моей: кого мне страшиться?',
     question: {
       promptEn: 'What two things does the psalmist call the LORD?',
       promptRu: 'Какими двумя словами псалмопевец называет Господа?',
@@ -132,8 +133,8 @@ const SCRIPTURE: Scripture[] = [
   {
     refEn: 'Proverbs 29:25',
     refRu: 'Притчи 29:25',
-    textEn: 'The fear of man lays a snare, but whoever trusts in the LORD is safe."',
-    textRu: 'Боязнь перед людьми ставит сеть; а надеющийся на Господа будет безопасен.',
+    textEn: 'The fear of man lays a snare, but whoever trusts in the LORD is safe.',
+    textRu: 'Боязнь пред людьми ставит сеть; а надеющийся на Господа будет безопасен.',
     question: {
       promptEn: 'What happens when we fear people instead of trusting God?',
       promptRu: 'Что происходит, когда мы боимся людей вместо того, чтобы доверять Богу?',
@@ -460,53 +461,31 @@ export default function FaithOverGiantsPage() {
         .phase-play > h1, .phase-play > p, .phase-play .guide-card { display: none; }
         .phase-question .promise-arena { display: none; }
         .phase-question .giants-grid { grid-template-columns: minmax(0, 680px); justify-content: center; }
-        .giant-line { transform: none !important; right: 15% !important; }
-        .giant, .giant.boss { width: 126px !important; height: 116px !important; border-radius: 48% !important; background: radial-gradient(circle at 40% 30%,#94a3b8,#334155) !important; }
-        .giant::before { display: none; }
+        .fear-cloud-art { position: absolute; inset: 0; background: url('/images/jr/games/faith-over-giants/fear-cloud.svg') center/contain no-repeat; transform: scale(var(--cloud-scale)); opacity: var(--cloud-opacity); transition: transform .35s ease, opacity .35s ease; pointer-events: none; }
+        .giant-hp-label { position: absolute; left: 50%; top: 84%; transform: translateX(-50%); border: 1px solid #dae8ed; border-radius: 8px; padding: 2px 7px; background: #263f52; color: #fff; white-space: nowrap; font-size: 12px; font-weight: 900; }
         .giant:disabled { cursor: default; opacity: .65; }
         .giant:focus-visible, .pz-btn:focus-visible { outline: 4px solid #fef08a; outline-offset: 4px; }
         .course-actions { position: relative; z-index: 8; }
         .course-actions button { width: 100%; min-height: 56px; margin: 10px 0; }
         .pz-btn:disabled { opacity: .5; }
-        .team, .hills, .promise-light, .promise-arena::after { pointer-events: none; }
-        @media (prefers-reduced-motion: reduce) { .promise-arena, .giant, .team, .action-burst { animation: none !important; transition: none !important; } }
+        @media (prefers-reduced-motion: reduce) { .giant, .fear-cloud-art, .progress-path span, .pressure-meter span { transition: none !important; } .action-burst { display: none; } }
         @media (max-width: 880px) { .giants-grid { display: flex !important; flex-direction: column; } .giants-card { order: -1; } .promise-arena { min-height: 290px !important; } }
         .giants-wrap { max-width: 1140px; margin: 0 auto; padding: 24px 14px 56px; }
         .giants-grid { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(292px,.75fr); gap: 18px; align-items: stretch; }
-        .promise-arena { position: relative; min-height: 570px; overflow: hidden; border-radius: 34px; border: 4px solid rgba(255,216,102,.86); background: linear-gradient(180deg,#80c7e8 0%,#dbeafe 31%,#d8b46f 32%,#73612e 100%); box-shadow: 0 30px 90px rgba(0,0,0,.34); isolation: isolate; touch-action: manipulation; }
-        .promise-arena.is-step { animation: courage-pulse .42s ease-out; }
-        .promise-arena.is-hit { animation: fear-shake .36s ease-out; }
-        .promise-arena.is-power { box-shadow: 0 30px 90px rgba(0,0,0,.34),0 0 42px rgba(255,216,102,.46); }
-        .promise-arena::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 18% 14%,rgba(255,255,255,.78),transparent 12%),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size: auto,52px 52px; pointer-events: none; }
-        .promise-arena::after { content: ''; position: absolute; left: -10%; right: -10%; bottom: 0; height: 28%; background: radial-gradient(ellipse at 24% 100%,#426b25 0 26%,transparent 27%),radial-gradient(ellipse at 64% 100%,#31591e 0 28%,transparent 29%),linear-gradient(180deg,transparent,#244819 54%,#173214); z-index: 0; }
-        .hills { position: absolute; inset: auto 0 28% 0; height: 34%; background: linear-gradient(135deg,transparent 0 20%,rgba(103,86,46,.65) 21% 42%,transparent 43%),linear-gradient(225deg,transparent 0 19%,rgba(76,100,60,.7) 20% 44%,transparent 45%); opacity: .9; z-index: 0; }
-        .team { position: absolute; left: 7%; bottom: 11%; z-index: 4; display: flex; align-items: end; gap: 7px; transition: transform .3s ease; }
-        .promise-arena.is-step .team { transform: translateX(22px); }
-        .helper { position: relative; width: 42px; height: 76px; border-radius: 24px 24px 14px 14px; background: linear-gradient(180deg,#8b5a2b 0 12%,#f8d29a 13% 26%,#fef3c7 27% 33%,#2563eb 34% 72%,#78350f 73%); border: 3px solid rgba(255,255,255,.78); box-shadow: 0 10px 26px rgba(0,0,0,.24); display: grid; place-items: start center; padding-top: 5px; }
-        .helper::before { content: ''; position: absolute; top: 17px; left: 12px; width: 18px; height: 8px; border-radius: 999px; background: rgba(120,53,15,.42); }
-        .helper::after { content: ''; position: absolute; bottom: -9px; left: 6px; right: 6px; height: 12px; border-radius: 999px; background: rgba(15,23,42,.24); filter: blur(3px); }
-        .helper.leader { width: 54px; height: 92px; background: linear-gradient(180deg,#5b3418 0 12%,#f8d29a 13% 24%,#fef3c7 25% 32%,#16a34a 33% 72%,#78350f 73%); }
-        .helper.leader .shield { position: absolute; left: -10px; top: 34px; width: 24px; height: 32px; border-radius: 12px 12px 16px 16px; background: linear-gradient(180deg,#fde68a,#d97706); border: 2px solid #fff7ed; box-shadow: 0 0 14px rgba(253,230,138,.65); }
-        .giant-line { position: absolute; right: 8%; bottom: 11%; z-index: 3; display: flex; align-items: end; gap: 8px; transform: translateX(calc((100 - var(--fear-line)) * .62%)); transition: transform .45s ease; }
-        .giant { position: relative; width: 54px; height: 118px; border-radius: 34px 34px 18px 18px; background: linear-gradient(180deg,#64748b,#1e293b); border: 4px solid #cbd5e1; box-shadow: 0 16px 38px rgba(0,0,0,.32); display: grid; place-items: center; font-family: var(--font-nunito); font-weight: 1000; color: #fff; cursor: pointer; touch-action: manipulation; user-select: none; -webkit-user-select: none; transition: opacity .38s ease-out, transform .38s ease-out; }
-        .giant::before { content: ''; position: absolute; top: 20px; width: 24px; height: 12px; border-radius: 999px; background: rgba(15,23,42,.65); box-shadow: 0 18px 0 rgba(148,163,184,.38); }
-        .giant::after { content: ''; position: absolute; bottom: -10px; left: 7px; right: 7px; height: 14px; border-radius: 999px; background: rgba(15,23,42,.28); filter: blur(4px); }
-        .giant.boss { width: 106px; height: 196px; border-radius: 64px 64px 28px 28px; background: linear-gradient(180deg,#78350f,#1e293b 58%,#020617); border-color: #fed7aa; font-size: 1.05rem; text-align: center; box-shadow: 0 26px 70px rgba(0,0,0,.42),0 0 46px rgba(249,115,22,.28); }
-        .giant-hit { animation: giant-hit-flash .34s ease-out; }
-        .giant-dead { opacity: 0; transform: translateY(14px) scale(0.7); pointer-events: none; }
-        .giant-hp-bar { position: absolute; bottom: 8px; left: 8px; right: 8px; height: 10px; border-radius: 999px; background: rgba(15,23,42,.6); overflow: hidden; }
-        .giant-hp-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg,#ef4444,#fbbf24); transition: width .2s ease; }
-        .pressure-meter { position: absolute; right: 7%; top: 7%; z-index: 5; width: 170px; border-radius: 18px; padding: 10px; background: rgba(15,23,42,.72); border: 1px solid rgba(255,255,255,.32); font-family: var(--font-nunito); font-weight: 1000; }
-        .pressure-meter span { display: block; height: 10px; border-radius: 999px; margin-top: 6px; background: linear-gradient(90deg,#22c55e,#fde047,#ef4444); width: var(--fear-line-width); transition: width 0.75s linear; }
-        .promise-light { position: absolute; left: 50%; top: 18%; width: 180px; height: 180px; transform: translateX(-50%); border-radius: 999px; background: radial-gradient(circle,rgba(255,255,255,.92) 0 12%,rgba(255,216,102,.56) 13% 42%,transparent 70%); filter: blur(.3px); z-index: 1; }
-        .progress-path { position: absolute; left: 8%; right: 8%; bottom: 6%; height: 18px; border-radius: 999px; background: rgba(15,23,42,.72); border: 2px solid rgba(255,255,255,.72); z-index: 5; overflow: hidden; }
+        .promise-arena { position: relative; min-height: 570px; overflow: hidden; border-radius: 28px; border: 3px solid #dfca83; background: #94c7cf; box-shadow: 0 20px 60px #071a2440; isolation: isolate; touch-action: manipulation; }
+        .promise-arena.is-power { border-color: #fff2a8; }
+        .giant-line { position: absolute; inset: 76px 0 24px; z-index: 3; pointer-events: none; }
+        .giant { position: absolute; left: 53%; top: 56%; transform: translate(-50%,-50%); width: clamp(105px,24vw,190px); height: clamp(88px,18vw,145px); padding: 0; border: 0; background: transparent; color: #183144; cursor: pointer; touch-action: manipulation; pointer-events: auto; -webkit-user-select: none; user-select: none; transition: left .45s ease; }
+        .giant-dead { visibility: hidden; pointer-events: none; }
+        .giant-hp-bar { position: absolute; bottom: -10px; left: 25%; right: 25%; height: 5px; border-radius: 999px; background: #294054; overflow: hidden; }
+        .giant-hp-bar-fill { height: 100%; border-radius: 999px; background: #f3cc7a; transition: width .2s ease; }
+        .pressure-meter { position: absolute; right: 10px; top: 82px; z-index: 5; width: 130px; border-radius: 9px; padding: 4px 7px; background: #294557ed; border: 1px solid #d7e6e9; font-family: var(--font-nunito); font-size: 11px; font-weight: 900; pointer-events: none; }
+        .pressure-meter span { display: block; height: 5px; border-radius: 999px; margin-top: 3px; background: linear-gradient(90deg,#b8d47b,#f6cd6c,#e79b7e); width: var(--fear-line-width); transition: width .3s ease; }
+        .progress-path { position: absolute; left: 8%; right: 8%; bottom: 7px; height: 8px; border-radius: 999px; background: #314934; border: 1px solid #f7e1b2; z-index: 5; overflow: hidden; }
         .progress-path span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg,#fef08a,#22c55e); width: var(--progress); box-shadow: 0 0 20px rgba(34,197,94,.7); }
         .action-burst { position: absolute; left: 28%; bottom: 28%; z-index: 6; pointer-events: none; border-radius: 999px; padding: 10px 14px; background: rgba(255,255,255,.9); color: #14532d; font-family: var(--font-nunito); font-weight: 1000; box-shadow: 0 14px 32px rgba(0,0,0,.22); animation: burst-rise .8s ease-out both; }
         .guide-card { display: grid; grid-template-columns: 58px 1fr; gap: 12px; align-items: center; border-radius: 20px; padding: 12px; margin-bottom: 12px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); }
-        .guide-avatar { position: relative; width: 56px; height: 62px; border-radius: 26px 26px 16px 16px; background: linear-gradient(180deg,#6b3f20 0 16%,#f8d29a 17% 34%,#fef3c7 35% 42%,#16a34a 43% 100%); border: 2px solid rgba(255,255,255,.72); }
-        .guide-avatar.caleb { background: linear-gradient(180deg,#5b3418 0 16%,#f8d29a 17% 34%,#fef3c7 35% 42%,#2563eb 43% 100%); }
-        .guide-avatar.rosie { background: linear-gradient(180deg,#4b2e83 0 16%,#f0c7a0 17% 34%,#fef3c7 35% 42%,#7c3aed 43% 100%); }
-        .guide-avatar::after { content: ''; position: absolute; top: 24px; left: 16px; width: 24px; height: 8px; border-radius: 999px; background: rgba(120,53,15,.42); }
+        .guide-symbol { display: grid; place-items: center; width: 52px; height: 52px; border: 1px solid #dac78c; border-radius: 14px; background: #234a48; color: #ffe5a6; font-size: 30px; }
         .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
         .badge-chip { border-radius: 999px; padding: 7px 10px; background: linear-gradient(180deg,#fef3c7,#fbbf24); color: #3b2307; font-family: var(--font-nunito); font-size: .76rem; font-weight: 1000; box-shadow: 0 8px 18px rgba(0,0,0,.18); }
         .giants-card { border-radius: 26px; padding: 18px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); box-shadow: 0 20px 60px rgba(0,0,0,.2); }
@@ -521,16 +500,14 @@ export default function FaithOverGiantsPage() {
         .arena-overlay { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; padding: 18px; background: rgba(5,9,20,.72); }
         .arena-overlay > div { max-width: 480px; width: 100%; border-radius: 28px; padding: 24px; background: rgba(255,255,255,.96); color: #0d1f3c; border: 3px solid #ffd866; text-align: center; overflow-y: auto; max-height: 90dvh; }
         .reward-medal { width: 84px; height: 84px; margin: 0 auto 10px; border-radius: 999px; display: grid; place-items: center; background: radial-gradient(circle,#fff 0 18%,#fef08a 19% 54%,#f59e0b 55%); border: 5px solid #fff7ed; box-shadow: 0 16px 36px rgba(0,0,0,.2),0 0 28px rgba(251,191,36,.65); color: #78350f; font-family: var(--font-nunito); font-weight: 1000; }
-        @keyframes courage-pulse { 0% { filter: saturate(1); } 40% { filter: saturate(1.35) brightness(1.06); } 100% { filter: saturate(1); } }
-        @keyframes fear-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 55% { transform: translateX(5px); } }
+
         @keyframes burst-rise { 0% { opacity: 0; transform: translateY(18px) scale(.92); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-34px) scale(1.08); } }
-        @keyframes giant-hit-flash { 0%,100% { filter: brightness(1); transform: scale(1); } 30% { filter: brightness(3) saturate(0); transform: scale(1.14); } }
-        @media (max-width: 880px) { .giants-grid { grid-template-columns: 1fr; } .promise-arena { min-height: 470px; } .giants-stat { grid-template-columns: repeat(2,1fr); } .giant { width: 54px; height: 108px; font-size: .8rem; } .giant.boss { width: 88px; height: 158px; } .helper { width: 34px; height: 62px; } .helper.leader { width: 44px; height: 78px; } }
+        @media (max-width: 880px) { .giants-grid { grid-template-columns: 1fr; } .promise-arena { min-height: 360px; } .giants-stat { grid-template-columns: repeat(2,1fr); } }
         .journey-map { display: flex; gap: 5px; list-style: none; padding: 0; margin: 12px 0; }
         .journey-map li { flex: 1; text-align: center; border: 1px solid #94a3b8; border-radius: 8px; padding: 6px 0; font-weight: 900; background: #172a3c; }
         .journey-map li[aria-current="step"] { outline: 3px solid #fde68a; background: #365d43; }
         .course-sign { position: absolute; top: 16px; left: 16px; right: 16px; z-index: 6; background: #112a32; padding: 10px 14px; border-radius: 14px; font-weight: 900; }
-        .phase-play .pressure-meter { top: 85px; }
+
         .turn-advice { padding: 10px; border-radius: 12px; background: #102b34; line-height: 1.5; }
         .turn-advice[data-warning="true"] { border: 2px solid #fbbf24; }
         .course-scripture summary { cursor: pointer; min-height: 32px; font-weight: 900; color: #fde68a; }
@@ -559,17 +536,18 @@ export default function FaithOverGiantsPage() {
         @media (max-width: 880px) and (orientation: portrait) {
           .phase-play .giants-grid { grid-template-columns: 1fr; grid-template-rows: minmax(230px,40%) minmax(0,1fr); }
           .phase-play .giants-card { order: 0; padding: 10px; }
-          .phase-play .giant,.phase-play .giant.boss { width: 100px !important; height: 90px !important; }
+          .phase-play .giant { width: 115px; height: 90px; }
           .phase-play .course-sign { top: 10px; left: 10px; right: 10px; padding: 6px 10px; font-size: 14px; }
-          .phase-play .pressure-meter { top: 65px; width: 145px; padding: 6px; font-size: 12px; }
+
         }
         @media (max-height: 500px) and (orientation: landscape) {
           .giants-wrap.phase-play { grid-template-rows: 44px auto minmax(0,1fr); }
           .phase-play .journey-map { display: none; }
           .phase-play .giants-grid { grid-template-columns: minmax(0,1fr) minmax(260px,1fr); }
-          .phase-play .giant,.phase-play .giant.boss { width: 95px !important; height: 85px !important; }
-          .phase-play .pressure-meter { left: 12px; right: auto; top: 76px; width: 125px; padding: 6px; font-size: 12px; }
-          .phase-play .team { transform: scale(.75); transform-origin: bottom left; }
+          .phase-play .giant { width: 105px; height: 78px; }
+          .phase-play .giant-line { inset: 66px 0 20px; }
+          .phase-play .pressure-meter { top: 68px; width: 115px; font-size: 10px; }
+          .phase-play .course-sign { top: 8px; left: 8px; right: 8px; padding: 5px 8px; font-size: 12px; }
         }
       `}</style>
 
@@ -590,15 +568,11 @@ export default function FaithOverGiantsPage() {
         {phase !== 'intro' && <ol className="journey-map" aria-label={isRu ? 'Путь: 10 уровней' : 'Journey: 10 courses'}>{LEVELS.map((item, index) => <li key={item.nameEn} aria-current={index === levelIndex ? 'step' : undefined} aria-label={`${isRu ? item.nameRu : item.nameEn}${index < badges.length ? (isRu ? ', пройден' : ', completed') : ''}`}>{index < badges.length ? '✓' : index + 1}</li>)}</ol>}
         <section className="giants-grid">
           <div className={`promise-arena ${lastAction === 'step' ? 'is-step' : lastAction === 'hit' ? 'is-hit' : lastAction === 'power' ? 'is-power' : ''}`} aria-label={copy.title}>
-            <div className="hills" aria-hidden="true" />
+            <ExpeditionWorld progress={progressPercent} helpers={helpers} isRu={isRu} />
             {phase === 'play' && <div className="course-sign">{isRu ? 'До лагеря' : 'Path to camp'} · {progressPercent}%<br /><small>{isRu ? 'Преграда' : 'Obstacle'} {activeObstacle + 1}/{giantHps.length} · {isRu ? 'Осталось сил страха' : 'Fear remaining'}: {giantHps[activeObstacle]}</small></div>}
-            <div className="promise-light" aria-hidden="true" />
+
             <div className="pressure-meter" aria-hidden="true">{copy.pressure}<span style={{ ['--fear-line-width' as string]: `${clamp(fearLine, 0, 100)}%` }} /></div>
-            <div className="team" aria-hidden="true">
-              <div className="helper leader"><span className="shield" /></div>
-              {Array.from({ length: Math.max(0, Math.min(helpers - 1, 7)) }).map((_, index) => <div key={index} className="helper" />)}
-            </div>
-            <div className="giant-line" style={{ ['--fear-line' as string]: fearLine }}>
+            <div className="giant-line">
               {giantHps.map((hp, index) => {
                 if (index !== activeObstacle) return null
                 const isHitting = hittingIndex === index
@@ -610,23 +584,13 @@ export default function FaithOverGiantsPage() {
                     disabled={phase !== 'play' || resolve < 1}
                     key={index}
                     className={classNames}
+                    style={{ left: `${36 + progressPercent * .45}%`, ['--cloud-scale' as string]: .48 + .52 * hp / giantMaxHp, ['--cloud-opacity' as string]: .5 + .5 * hp / giantMaxHp }}
                     onClick={() => attackGiant(index)}
                     aria-label={isRu ? `Пройти страх ${index + 1}, осталось ${hp}` : `Advance through fear ${index + 1}, ${hp} remaining`}
                   >
-                    {isBoss ? (
-                      <>
-                        {isRu ? 'Страх' : 'Fear'}
-                        <div className="giant-hp-bar">
-                          <div className="giant-hp-bar-fill" style={{ width: `${(hp / BOSS_MAX_HP) * 100}%` }} />
-                        </div>
-                      </>
-                    ) : (
-                      <div style={{ position: 'absolute', top: -20, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 3 }}>
-                        {Array.from({ length: giantMaxHp }).map((_, i) => (
-                          <span key={i} style={{ display: 'block', width: 7, height: 7, borderRadius: '50%', background: i < hp ? '#ef4444' : 'rgba(255,255,255,.2)', flexShrink: 0 }} />
-                        ))}
-                      </div>
-                    )}
+                    <span className="fear-cloud-art" aria-hidden="true" />
+                    <span className="giant-hp-label" aria-hidden="true">{copy.fear} {hp}/{giantMaxHp}</span>
+                    <span className="giant-hp-bar" aria-hidden="true"><span className="giant-hp-bar-fill" style={{ display: 'block', width: `${hp / giantMaxHp * 100}%` }} /></span>
                   </button>
                 )
               })}
@@ -639,7 +603,7 @@ export default function FaithOverGiantsPage() {
 
           <aside className="giants-card">
             <div className="guide-card">
-              <div className={`guide-avatar ${guide.tone}`} aria-hidden="true" />
+              <div className="guide-symbol" aria-hidden="true">{guide.tone === 'rosie' ? '▤' : '✧'}</div>
               <div>
                 <p className="puzzle-label" style={{ color: '#ffd866', margin: 0 }}>{isRu ? guide.roleRu : guide.roleEn}</p>
                 <h3 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, margin: '2px 0 4px', color: '#fff' }}>{isRu ? guide.nameRu : guide.nameEn}</h3>
@@ -652,7 +616,7 @@ export default function FaithOverGiantsPage() {
 
             <details open={phase === 'question'} className="course-scripture" style={{ borderRadius: 20, padding: 14, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.16)' }}>
               <summary>{copy.scriptureTitle} · {isRu ? scripture.refRu : scripture.refEn}</summary>
-              <p style={{ fontFamily: 'var(--font-lora)', lineHeight: 1.58, color: 'rgba(255,255,255,.9)', fontWeight: 700 }}>&ldquo;{isRu ? scripture.textRu : scripture.textEn}&rdquo;</p>
+              <p style={{ fontFamily: 'var(--font-lora)', lineHeight: 1.58, color: 'rgba(255,255,255,.9)', fontWeight: 700 }}>{isRu ? scripture.textRu : scripture.textEn}</p>
               <p style={{ fontFamily: 'var(--font-nunito)', color: '#bfdbfe', fontWeight: 1000, marginTop: 8 }}>— {isRu ? scripture.refRu : scripture.refEn}</p>
             </details>
 
@@ -734,7 +698,7 @@ export default function FaithOverGiantsPage() {
                   <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '2rem', margin: '6px 0 10px' }}>{isRu ? level.nameRu : level.nameEn}</h2>
                   {phase !== 'defeat' && <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#92400e' }}>{copy.badgeEarned}: {isRu ? level.badgeRu : level.badgeEn}</p>}
                   <div className="pull-quote" style={{ margin: '12px 0', textAlign: 'left' }}>
-                    <p className="pq-text">&ldquo;{isRu ? scripture.textRu : scripture.textEn}&rdquo;</p>
+                    <p className="pq-text">{isRu ? scripture.textRu : scripture.textEn}</p>
                     <span className="pq-ref">— {isRu ? scripture.refRu : scripture.refEn}</span>
                   </div>
                   {phase === 'levelComplete' && levelIndex === LEVELS.length - 2 && (

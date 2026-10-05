@@ -3,7 +3,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 
 import Link from 'next/link'
-import { resolveShot } from './mechanics'
+import { resolveShot, releaseError, slingScene, shotCurve, curvePoint } from './mechanics'
 import type { MouseEvent, PointerEvent } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
@@ -55,9 +55,16 @@ export default function DavidSlingChallengePage() {
   const holdRef = useRef(false)
   const angleRef = useRef(28)
   const speedRef = useRef(0.45)
-  const stoneRef = useRef<{ x: number; y: number; vx: number; vy: number; active: boolean }>({ x: 0, y: 0, vx: 0, vy: 0, active: false })
-  const impactRef = useRef(0)
-  const transitionRef = useRef<number | null>(null)
+  const stoneRef = useRef({ error: 0, window: 17, active: false })
+
+  // A pending result advances only with foreground play time, never behind Pause.
+  const transitionRef = useRef<{ remaining: number; finish: () => void } | null>(null)
+  const pausedRef = useRef(false)
+  const pointerRef = useRef<number | null>(null)
+  const resumeRef = useRef<HTMLButtonElement | null>(null)
+  const holdButtonRef = useRef<HTMLButtonElement | null>(null)
+  const pauseButtonRef = useRef<HTMLButtonElement | null>(null)
+  const [paused, setPaused] = useState(false)
   const lockedRef = useRef(false)
   const [checkpointScore, setCheckpointScore] = useState(0)
 
@@ -134,72 +141,71 @@ export default function DavidSlingChallengePage() {
 
     ctx.clearRect(0, 0, w, h)
 
-    const david = { x: w * 0.22, y: h * 0.62 }
-    const target = { x: w * 0.78, y: h * 0.48 }
+    const scene = slingScene(w, h)
+    const david = scene.origin
+    const target = scene.target
     const nowAngle = angleRef.current
     const radians = (nowAngle * Math.PI) / 180
-    const aimLength = w * 0.47
-    const arcEnd = { x: david.x + Math.cos(radians) * aimLength, y: david.y - Math.sin(radians) * h * 0.52 }
     const targetAngle = level.targetAngle - effectiveWind
-    const targetRad = (targetAngle * Math.PI) / 180
-    const zoneEnd = { x: david.x + Math.cos(targetRad) * aimLength, y: david.y - Math.sin(targetRad) * h * 0.52 }
+    const preview = shotCurve(scene, stoneRef.current.active ? stoneRef.current.error : releaseError(nowAngle, targetAngle, 0), effectiveWindow)
+    const goal = shotCurve(scene, 0, effectiveWindow)
 
     ctx.lineCap = 'round'
-    ctx.lineWidth = 16
+    ctx.lineWidth = Math.max(5, scene.width * .014)
     ctx.strokeStyle = 'rgba(34,197,94,.32)'
     ctx.beginPath()
     ctx.moveTo(david.x, david.y)
-    ctx.quadraticCurveTo(w * 0.48, h * 0.12, zoneEnd.x, zoneEnd.y)
+    ctx.quadraticCurveTo(goal.control.x, goal.control.y, goal.end.x, goal.end.y)
     ctx.stroke()
 
-    ctx.lineWidth = 5
-    ctx.setLineDash([11, 12])
+    ctx.lineWidth = Math.max(2, scene.width * .004)
+    ctx.setLineDash([6, 8])
     ctx.strokeStyle = 'rgba(255,255,255,.9)'
     ctx.shadowBlur = 14
     ctx.shadowColor = '#facc15'
     ctx.beginPath()
     ctx.moveTo(david.x, david.y)
-    ctx.quadraticCurveTo(w * 0.47, h * 0.14, arcEnd.x, arcEnd.y)
+    ctx.quadraticCurveTo(preview.control.x, preview.control.y, preview.end.x, preview.end.y)
     ctx.stroke()
     ctx.setLineDash([])
     ctx.shadowBlur = 0
 
     ctx.strokeStyle = '#78350f'
-    ctx.lineWidth = 5
+    ctx.lineWidth = 2
     ctx.beginPath()
-    ctx.arc(david.x, david.y, 34 + speedRef.current * 4, 0, Math.PI * 2)
+    const radius = Math.max(8, scene.width * .033)
+    ctx.arc(david.x, david.y, radius, 0, Math.PI * 2)
     ctx.stroke()
     ctx.fillStyle = '#57534e'
     ctx.beginPath()
-    ctx.arc(david.x + Math.cos(radians) * 38, david.y - Math.sin(radians) * 38, 9, 0, Math.PI * 2)
+    ctx.arc(david.x + Math.cos(radians) * radius, david.y - Math.sin(radians) * radius, 4, 0, Math.PI * 2)
     ctx.fill()
 
     const stone = stoneRef.current
     if (stone.active) {
-      stone.x += stone.vx
-      stone.y += stone.vy
-      stone.vy += 0.32
+      const progress = 1 - (transitionRef.current?.remaining ?? 0) / 950
+      const position = curvePoint(shotCurve(scene, stone.error, stone.window), progress)
       ctx.fillStyle = '#f8fafc'
       ctx.shadowBlur = 20
       ctx.shadowColor = '#fde68a'
       ctx.beginPath()
-      ctx.arc(stone.x, stone.y, 11, 0, Math.PI * 2)
+      ctx.arc(position.x, position.y, 5, 0, Math.PI * 2)
       ctx.fill()
       ctx.shadowBlur = 0
-      if (stone.x > w * 0.9 || stone.y > h * 0.9) stone.active = false
+
     }
 
-    if (impactRef.current > 0) {
-      impactRef.current -= 1
-      ctx.fillStyle = `rgba(250,204,21,${impactRef.current / 26})`
+    if (stone.active && Math.abs(stone.error) <= stone.window && (transitionRef.current?.remaining ?? 950) < 150) {
+      ctx.strokeStyle = '#fde68a'
+      ctx.lineWidth = 3
       ctx.beginPath()
-      ctx.arc(target.x, target.y, 30 + (26 - impactRef.current) * 3, 0, Math.PI * 2)
-      ctx.fill()
+      ctx.arc(target.x, target.y, scene.width * .06, 0, Math.PI * 2)
+      ctx.stroke()
     }
 
     ctx.restore()
     rafRef.current = window.requestAnimationFrame(draw)
-  }, [copy.wind, effectiveWind, effectiveWindow, isRu, level.targetAngle])
+  }, [effectiveWind, effectiveWindow, level.targetAngle])
 
   useEffect(() => {
     try {
@@ -214,7 +220,21 @@ export default function DavidSlingChallengePage() {
 
   useEffect(() => {
     if (phase !== 'play') return
+    let previous = performance.now()
     const timer = window.setInterval(() => {
+      const now = performance.now()
+      const elapsed = Math.min(64, Math.max(0, now - previous))
+      previous = now
+      if (pausedRef.current) return
+      const pending = transitionRef.current
+      if (pending) {
+        pending.remaining -= elapsed
+        if (pending.remaining <= 0) {
+          transitionRef.current = null
+          pending.finish()
+          return
+        }
+      }
       const slow = power === 'focus' ? 0.48 : 1
       angleRef.current = (angleRef.current + speedRef.current * slow) % 360
       setReleaseAngle(Math.round(angleRef.current))
@@ -232,7 +252,7 @@ export default function DavidSlingChallengePage() {
       }
     }
     const onUp = (event: KeyboardEvent) => {
-      if (event.code === 'Space' && holdRef.current) {
+      if (event.code === 'Space' && holdRef.current && pointerRef.current === null) {
         event.preventDefault()
         releaseThrow()
       }
@@ -245,19 +265,49 @@ export default function DavidSlingChallengePage() {
     }
   })
 
+  const pauseGame = useCallback(() => {
+    if (phase !== 'play' || pausedRef.current) return
+    holdRef.current = false
+    pointerRef.current = null
+    pausedRef.current = true
+    setPaused(true)
+  }, [phase])
+
+  function resumeGame() {
+    holdRef.current = false
+    pointerRef.current = null
+    pausedRef.current = false
+    setPaused(false)
+  }
+
   useEffect(() => {
-    const cancelHold = () => { holdRef.current = false }
-    window.addEventListener('blur', cancelHold)
-    document.addEventListener('visibilitychange', cancelHold)
-    return () => {
-      window.removeEventListener('blur', cancelHold)
-      document.removeEventListener('visibilitychange', cancelHold)
-      if (transitionRef.current) clearTimeout(transitionRef.current)
+    const hidden = () => { if (document.hidden) pauseGame() }
+    const escape = (event: KeyboardEvent) => {
+      if (event.code === 'Escape' && !pausedRef.current) pauseGame()
     }
-  }, [])
+    window.addEventListener('blur', pauseGame)
+    window.addEventListener('resize', pauseGame)
+    window.addEventListener('keydown', escape)
+    document.addEventListener('visibilitychange', hidden)
+    return () => {
+      window.removeEventListener('blur', pauseGame)
+      window.removeEventListener('resize', pauseGame)
+      window.removeEventListener('keydown', escape)
+      document.removeEventListener('visibilitychange', hidden)
+    }
+  }, [pauseGame])
+
+  useEffect(() => {
+    if (phase !== 'play') return
+    if (paused) resumeRef.current?.focus()
+    else (holdButtonRef.current || pauseButtonRef.current)?.focus()
+  }, [paused, phase])
 
   function cancelPending() {
-    if (transitionRef.current) clearTimeout(transitionRef.current)
+    transitionRef.current = null
+    pausedRef.current = false
+    setPaused(false)
+    pointerRef.current = null
     lockedRef.current = false
     holdRef.current = false
     stoneRef.current.active = false
@@ -319,7 +369,7 @@ export default function DavidSlingChallengePage() {
 
   function choosePower(next: Power) {
     const cost = next === 'none' ? 0 : 1
-    if (phase !== 'play') return
+    if (phase !== 'play' || pausedRef.current || lockedRef.current) return
     if (wisdomFuel < cost) {
       setMessage(isRu ? 'Сначала ответь на стих, чтобы получить Мудрость.' : 'Answer the verse first to earn Wisdom Fuel.')
       return
@@ -331,7 +381,7 @@ export default function DavidSlingChallengePage() {
   }
 
   function tapRhythm() {
-    if (phase !== 'play') return
+    if (phase !== 'play' || pausedRef.current || lockedRef.current) return
     flash('rhythm')
     speedRef.current = clamp(speedRef.current + 0.62, 0.45, 5.2)
     setSpeedMeter(Math.round((speedRef.current / 5.2) * 100))
@@ -339,7 +389,7 @@ export default function DavidSlingChallengePage() {
   }
 
   function holdSpin() {
-    if (phase !== 'play' || lockedRef.current || holdRef.current) return
+    if (phase !== 'play' || pausedRef.current || lockedRef.current || holdRef.current) return
     flash('hold')
     holdRef.current = true
     speedRef.current = clamp(speedRef.current + 0.18, 0.45, 5.2)
@@ -348,24 +398,18 @@ export default function DavidSlingChallengePage() {
 
   function stopHold() {
     holdRef.current = false
+    pointerRef.current = null
   }
 
   function releaseThrow() {
-    if (phase !== 'play' || throwsLeft <= 0 || stoneRef.current.active || lockedRef.current) return
+    if (phase !== 'play' || pausedRef.current || throwsLeft <= 0 || stoneRef.current.active || lockedRef.current) return
     flash('release')
     holdRef.current = false
     lockedRef.current = true
     const shot = resolveShot(angleRef.current, level.targetAngle, effectiveWind, effectiveWindow, power === 'shield')
-    const launch = (angleRef.current * Math.PI) / 180
-    const canvas = canvasRef.current
-    const rect = canvas?.getBoundingClientRect()
-    const w = rect?.width || 900
-    const h = rect?.height || 520
     stoneRef.current = {
-      x: w * 0.22,
-      y: h * 0.62,
-      vx: Math.cos(launch) * (11 + level.distance * 2),
-      vy: -Math.sin(launch) * (9 + level.distance * 2.5),
+      error: shot.error,
+      window: effectiveWindow,
       active: true,
     }
     setThrowsLeft((value) => Math.max(0, value - shot.stoneCost))
@@ -383,11 +427,11 @@ export default function DavidSlingChallengePage() {
       return next
     })
 
-    transitionRef.current = window.setTimeout(() => {
+    transitionRef.current = { remaining: 950, finish: () => {
       lockedRef.current = false
       stoneRef.current.active = false
       if (shot.advance) {
-        impactRef.current = 26
+
         if (levelIndex < LEVELS.length - 1) {
           setCheckpointScore(score + points)
           setLevelIndex((value) => value + 1)
@@ -405,13 +449,13 @@ export default function DavidSlingChallengePage() {
         }
       } else if (throwsLeft - shot.stoneCost <= 0) setPhase('result')
       else setSpeedMeter(Math.round((speedRef.current / 5.2) * 100))
-    }, 950)
+    } }
   }
 
   const choices = isRu ? SCRIPTURE.choicesRu : SCRIPTURE.choicesEn
   const phaseSteps = [copy.stepBible, copy.stepPower, copy.stepPlay]
   const canUseGameControls = phase === 'play' && !lockedRef.current
-  const canChoosePower = phase === 'play' && wisdomFuel > 0 && !lockedRef.current
+  const canChoosePower = phase === 'play' && !paused && wisdomFuel > 0 && !lockedRef.current
   const isGameOpen = phase !== 'intro'
 
   return (
@@ -488,6 +532,25 @@ export default function DavidSlingChallengePage() {
           .dsv2-play-shell.fullscreen .dsv2-phase-strip { display:none; }
           .dsv2-play-shell.fullscreen { grid-template-rows:auto minmax(0,1fr); }
         }
+        .dsv2-play-shell.fullscreen .dsv2-bg { top: 88px; bottom: 100px; height: calc(100% - 188px); object-fit: contain; }
+        .dsv2-play-shell.fullscreen .dsv2-stage { container-type: size; }
+        @container (height < 340px) {
+          .dsv2-play-shell.fullscreen .dsv2-bg { top: 0; bottom: 0; height: 100%; }
+          .dsv2-play-shell.fullscreen .dsv2-meter { top: 6px; left: 8px; width: 190px; padding: 5px 8px; font-size: 11px; }
+          .dsv2-play-shell.fullscreen .dsv2-meter-track { height: 5px; margin: 3px 0; }
+          .dsv2-play-shell.fullscreen .dsv2-meter small { font-size: 9px; }
+        }
+        .dsv2-session-actions { display: flex; gap: 6px; padding: 0 !important; border: 0 !important; background: none !important; }
+        .dsv2-session-actions button { flex: 1; min-width: 44px; min-height: 44px; }
+        .dsv2-play-shell.fullscreen .dsv2-stats { grid-template-columns: repeat(5,minmax(0,1fr)) minmax(112px,1.6fr); }
+        .dsv2-pause { border: 1px solid #a5c6df; border-radius: 12px; background: #183654; color: white; font-weight: 900; cursor: pointer; }
+        .dsv2-pause-dialog { position: fixed; inset: 0; z-index: 10001; display: grid; place-items: center; padding: 20px; background: #041326d9; }
+        .dsv2-pause-dialog > div { max-width: 420px; padding: 24px; border-radius: 24px; border: 3px solid #ffd866; background: #10294b; text-align: center; }
+        .dsv2-pause-dialog h2 { color: #fff; }
+        .dsv2-pause-dialog p { margin: 14px 0; }
+        .dsv2-pause-dialog button { min-height: 48px; padding: 12px 20px; margin: 6px; }
+        .dsv2-page button:focus-visible { outline: 4px solid #fde68a; outline-offset: 3px; }
+        @media (max-width: 430px) { .dsv2-play-shell.fullscreen .dsv2-stats { grid-template-columns: repeat(5,minmax(0,1fr)); } .dsv2-session-actions { grid-column: 1 / -1; justify-self: end; } }
       `}</style>
       <div className="dsv2-wrap">
         <Link href="/games" style={{ color: '#ffd866', fontFamily: 'var(--font-nunito)', fontWeight: 1000, textDecoration: 'none' }}>← {copy.back}</Link>
@@ -497,21 +560,24 @@ export default function DavidSlingChallengePage() {
           <p className="dsv2-subtitle">{copy.subtitle}</p>
           {!isGameOpen && <button className="dsv2-start dsv2-hero-start" type="button" onClick={(event) => { stopTap(event); begin() }}>▶ {copy.start}</button>}
         </section>
-        <div data-phase={phase} data-level={levelIndex + 1} className={`dsv2-play-shell ${isGameOpen ? `fullscreen phase-${phase}` : ''}`} onContextMenu={(event) => { if (isGameOpen) event.preventDefault() }}>
-        <div className="dsv2-stats">
+        <div data-phase={phase} data-paused={paused} data-holding={holdRef.current} data-pending={lockedRef.current} data-level={levelIndex + 1} className={`dsv2-play-shell ${isGameOpen ? `fullscreen phase-${phase}` : ''}`} onContextMenu={(event) => { if (isGameOpen) event.preventDefault() }}>
+        <div className="dsv2-stats" inert={paused}>
           <div>{copy.level}<br />{Math.min(levelIndex + 1, LEVELS.length)}/{LEVELS.length}</div>
           <div>{copy.score}<br />{score}</div>
           <div>{copy.best}<br />{best}</div>
           <div>{copy.throws}<span className="dsv2-stat-icons">{'🪨'.repeat(Math.max(0, throwsLeft))}</span></div>
           <div>{copy.fuel}<span className="dsv2-stat-icons">{'💛'.repeat(Math.min(5, wisdomFuel)) || '0'}</span></div>
-          <button className="dsv2-exit" type="button" onClick={(event) => { stopTap(event); exitGame() }}>↩ {copy.quit}</button>
+          <div className="dsv2-session-actions">
+            {phase === 'play' && <button ref={pauseButtonRef} className="dsv2-pause" type="button" onClick={pauseGame}>{isRu ? 'Пауза' : 'Pause'}</button>}
+            <button className="dsv2-exit" type="button" onClick={(event) => { stopTap(event); exitGame() }}>↩ {copy.quit}</button>
+          </div>
         </div>
         <div className="dsv2-phase-strip" aria-label={isRu ? 'Этапы игры' : 'Game steps'}>
           {phaseSteps.map((step, index) => (
             <span className={`dsv2-step ${index === 0 && phase === 'question' ? 'active' : index === 1 && phase === 'play' ? 'active' : index === 2 && (phase === 'play' || phase === 'result') ? 'active' : ''}`} key={step}>{index + 1}. {step}</span>
           ))}
         </div>
-        <section className="dsv2-grid">
+        <section className="dsv2-grid" inert={paused}>
           <div className="dsv2-stage">
             <img className="dsv2-bg" src={BG} alt="" aria-hidden="true" />
             <canvas ref={canvasRef} aria-label={copy.title} />
@@ -523,7 +589,13 @@ export default function DavidSlingChallengePage() {
             {phase === 'intro' && <div className="dsv2-intro-overlay"><div className="dsv2-intro-card"><h2>{copy.mission}</h2><div className="dsv2-start-steps"><span>📖 {copy.stepBible}</span><span>💛 {copy.stepPower}</span><span>🪨 {copy.stepPlay}</span></div><button className="dsv2-start" type="button" onClick={(event) => { stopTap(event); begin() }}>▶ {copy.start}</button></div></div>}
             {canUseGameControls && <div className="dsv2-overlay">
               <button className={`dsv2-game-btn ${buttonFlash === 'rhythm' ? 'flash' : ''}`} type="button" onClick={(event) => { stopTap(event); tapRhythm() }}>⚡<br />{copy.rhythm}</button>
-              <button className={`dsv2-game-btn release ${buttonFlash === 'hold' || buttonFlash === 'release' ? 'flash' : ''}`} type="button" onPointerDown={(event) => { stopTap(event); event.currentTarget.setPointerCapture(event.pointerId); holdSpin() }} onPointerUp={(event) => { stopTap(event); if (holdRef.current) releaseThrow() }} onPointerCancel={(event) => { stopTap(event); stopHold() }} onKeyDown={(event) => { if ((event.code === 'Space' || event.code === 'Enter') && !event.repeat) { event.preventDefault(); holdSpin() } }} onKeyUp={(event) => { if (event.code === 'Space' || event.code === 'Enter') { event.preventDefault(); if (holdRef.current) releaseThrow() } }} onClick={stopTap}>🎯<br />{copy.hold}</button>
+              <button ref={holdButtonRef} className={`dsv2-game-btn release ${buttonFlash === 'hold' || buttonFlash === 'release' ? 'flash' : ''}`} type="button"
+                onPointerDown={(event) => { stopTap(event); if (pointerRef.current !== null || holdRef.current || pausedRef.current || event.button !== 0) return; pointerRef.current = event.pointerId; event.currentTarget.setPointerCapture(event.pointerId); holdSpin() }}
+                onPointerUp={(event) => { stopTap(event); if (pointerRef.current !== event.pointerId) return; pointerRef.current = null; if (holdRef.current) releaseThrow() }}
+                onPointerCancel={(event) => { stopTap(event); if (pointerRef.current === event.pointerId) stopHold() }}
+                onLostPointerCapture={(event) => { if (pointerRef.current === event.pointerId) stopHold() }}
+                onKeyDown={(event) => { if ((event.code === 'Space' || event.code === 'Enter') && !event.repeat && pointerRef.current === null) { event.preventDefault(); holdSpin() } }}
+                onKeyUp={(event) => { if ((event.code === 'Space' || event.code === 'Enter') && pointerRef.current === null) { event.preventDefault(); if (holdRef.current) releaseThrow() } }} onClick={stopTap}>🎯<br />{copy.hold}</button>
             </div>}
           </div>
           <aside className="dsv2-card">
@@ -552,6 +624,14 @@ export default function DavidSlingChallengePage() {
             </>}
           </aside>
         </section>
+        {paused && <div className="dsv2-pause-dialog" role="dialog" aria-modal="true" aria-labelledby="sling-pause-title" onKeyDown={(event) => {
+          if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); resumeGame() }
+          if (event.key === 'Tab') {
+            const buttons = event.currentTarget.querySelectorAll<HTMLButtonElement>('button')
+            if (event.shiftKey && document.activeElement === buttons[0]) { event.preventDefault(); buttons[buttons.length - 1].focus() }
+            else if (!event.shiftKey && document.activeElement === buttons[buttons.length - 1]) { event.preventDefault(); buttons[0].focus() }
+          }
+        }}><div><h2 id="sling-pause-title">{isRu ? 'Пауза' : 'Paused'}</h2><p>{isRu ? 'Вращение и бросок ждут. Продолжи, когда будешь готов.' : 'Your sling and throw are waiting. Continue when you are ready.'}</p><button ref={resumeRef} className="dsv2-pause" onClick={resumeGame}>{isRu ? 'Продолжить' : 'Resume'}</button><button className="dsv2-pause" onClick={exitGame}>{copy.quit}</button></div></div>}
         </div>
       </div>
     </main>

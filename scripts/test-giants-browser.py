@@ -18,6 +18,9 @@ LABELS = {
     'ru': ['В путь!', 'Шаг вперёд −1', 'Сплотиться +1', 'Следующий уровень', 'Повторить путь', 'Повторить этот уровень'],
 }
 
+SCRIPTURE = json.loads((Path(__file__).parent/'fixtures/giants-scripture.json').read_text())
+SCRIPTURE_INDEX = [0,1,4,1,2,3,6,5,3,2]
+
 def state(page):
     return json.loads(page.get_by_test_id('giants-game').get_attribute('data-state'))
 
@@ -50,6 +53,8 @@ def gate(page, lang, index):
     before = state(page)
     assert before['levelIndex'] == index
     expect(page.locator('.course-scripture')).to_have_attribute('open', '')
+    quote = next(v['text'] for v in SCRIPTURE if v['language']==lang and v['index']==SCRIPTURE_INDEX[index])
+    expect(page.locator('.course-scripture p').first).to_have_text(quote)
     expect(button(page, LABELS[lang][0])).to_have_count(0)
     choices = page.locator('.answer-grid button')
     wrong = next(choices.nth(i) for i in range(3) if choices.nth(i).inner_text() != ANSWERS[lang][index])
@@ -108,8 +113,17 @@ def run_language(browser, lang, results):
                 while state(page)['fear'] > 0:
                     act(page, button(page, LABELS[lang][2]))
                 expect(button(page, LABELS[lang][2])).to_be_disabled()
-                act(page, button(page, LABELS[lang][1]))
+                before_x = page.locator('[class*="_michael_"]').evaluate('e=>e.style.left')
+                act(page, page.locator('.giant'))
                 assert state(page)['progress'] == 50, 'first step visibly advances progress'
+                assert page.locator('[class*="_michael_"]').evaluate('e=>e.style.left') != before_x
+                assert float(page.locator('.giant').evaluate("e=>e.style.getPropertyValue('--cloud-scale')")) < 1
+                for width,height in [(320,568),(390,844),(768,1024),(1024,768),(667,375)]:
+                    page.set_viewport_size({'width':width,'height':height})
+                    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
+                    for selector in ['.giant','[class*="_sprite_"]','[class*="_camp_"]']:
+                        assert page.locator(selector).evaluate('e=>{const r=e.getBoundingClientRect(),b=document.querySelector(".promise-arena").getBoundingClientRect();return r.width>0&&r.height>0&&r.x>=b.x&&r.y>=b.y&&r.right<=b.right+1&&r.bottom<=b.bottom+1}'),selector
+                    page.screenshot(path=str(OUT / f'{lang}-art-{width}x{height}.png'),full_page=False)
             if index == 1:
                 before = state(page)
                 after = act(page, page.get_by_test_id('power-people'))

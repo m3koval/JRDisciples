@@ -1,8 +1,9 @@
 """Trusted input; read-only angle telemetry synchronizes sling timing, no state injection."""
 import json
+import os
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
-OUT=Path('/mnt/hermes-storage/jd-games-overnight/evidence/pass-04/david');OUT.mkdir(parents=True,exist_ok=True)
+OUT=Path(os.environ.get('DAVID_EVIDENCE','/mnt/hermes-storage/jd-games-overnight/evidence/pass-04/david'));OUT.mkdir(parents=True,exist_ok=True)
 checks=[];errors=[];http=[]
 def mark(s): checks.append(s);print('PASS',s,flush=True)
 def visible_controls(page):
@@ -33,6 +34,9 @@ with sync_playwright() as p:
     page.locator('.dsv2-choice').first.tap();page.locator('.dsv2-game-btn.release').wait_for()
     if level==2:page.set_viewport_size({'width':390,'height':844})
     if level==3:page.set_viewport_size({'width':844,'height':390})
+    if level>1:
+     expect(page.locator('.dsv2-pause-dialog')).to_be_visible()
+     page.get_by_role('button',name='Resume' if lang=='en' else 'Продолжить',exact=True).click()
     page.screenshot(path=str(OUT/f'{lang}-level-{level}.png'));shot(page,touch=(level==1))
     if level<3:
      expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-level',str(level+1));assert page.locator('.dsv2-stat-icons').first.inner_text().count('🪨')==5
