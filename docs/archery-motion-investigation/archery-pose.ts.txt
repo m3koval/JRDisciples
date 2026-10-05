@@ -1,0 +1,38 @@
+import * as THREE from 'three'
+const V=(x=0,y=0,z=0)=>new THREE.Vector3(x,y,z)
+type Rest={bone:THREE.Bone;position:THREE.Vector3;rotation:THREE.Quaternion;scale:THREE.Vector3}
+/** Fixed-length analytic two-bone chains. No skin mutation, bone scaling or
+ * arbitrary Euler guesses. Swing is applied to the inherited rest frame. */
+export class ArcheryPose {
+  private rest:Rest[]=[]
+  private bones=new Map<string,THREE.Bone>()
+  constructor(private root:THREE.Object3D) {
+    root.traverse(o=>{if(o instanceof THREE.Bone){this.bones.set(o.name.replace(/\./g,''),o);this.rest.push({bone:o,position:o.position.clone(),rotation:o.quaternion.clone(),scale:o.scale.clone()})}})
+    for(const side of ['R','L'])for(const name of ['upper_arm','forearm','hand'])if(!this.bones.has(name+side))throw new Error('Missing archery chain '+name+side)
+  }
+  reset(){for(const r of this.rest){r.bone.position.copy(r.position);r.bone.quaternion.copy(r.rotation);r.bone.scale.copy(r.scale)}this.root.updateMatrixWorld(true)}
+  private swing(bone:THREE.Bone,child:THREE.Bone,target:THREE.Vector3){
+    const start=bone.getWorldPosition(V()),from=child.getWorldPosition(V()).sub(start).normalize(),to=target.clone().sub(start).normalize()
+    const world=new THREE.Quaternion().setFromUnitVectors(from,to).multiply(bone.getWorldQuaternion(new THREE.Quaternion()))
+    bone.quaternion.copy(bone.parent!.getWorldQuaternion(new THREE.Quaternion()).invert().multiply(world));this.root.updateMatrixWorld(true)
+  }
+  arm(side:'R'|'L',contact:THREE.Vector3,handWorld:THREE.Quaternion,pole:THREE.Vector3){
+    const upper=this.bones.get('upper_arm'+side)!,fore=this.bones.get('forearm'+side)!,hand=this.bones.get('hand'+side)!
+    const scale=hand.getWorldScale(V()).y
+    // Palm offset is measured in the derivative hand's rest coordinates.
+    const palm=V(0,.045,0),wrist=contact.clone().sub(palm.clone().multiplyScalar(scale).applyQuaternion(handWorld))
+    const s=upper.getWorldPosition(V()),e=fore.getWorldPosition(V()),w=hand.getWorldPosition(V())
+    const a=s.distanceTo(e),b=e.distanceTo(w),direction=wrist.clone().sub(s),requested=direction.length()
+    const distance=THREE.MathUtils.clamp(requested,Math.abs(a-b)+.001,a+b-.001);direction.normalize()
+    const bend=pole.clone().sub(s);bend.addScaledVector(direction,-bend.dot(direction)).normalize()
+    const along=(a*a-b*b+distance*distance)/(2*distance),height=Math.sqrt(Math.max(0,a*a-along*along))
+    const elbow=s.clone().addScaledVector(direction,along).addScaledVector(bend,height)
+    this.swing(upper,fore,elbow);this.swing(fore,hand,s.clone().addScaledVector(direction,distance))
+    const inherited=hand.getWorldQuaternion(new THREE.Quaternion())
+    const finger=V(0,1,0).applyQuaternion(handWorld)
+    const oriented=new THREE.Quaternion().setFromUnitVectors(V(0,1,0).applyQuaternion(inherited),finger).multiply(inherited)
+    hand.quaternion.copy(hand.parent!.getWorldQuaternion(new THREE.Quaternion()).invert().multiply(oriented));this.root.updateMatrixWorld(true)
+    const actual=hand.localToWorld(palm.clone())
+    return {contact:actual.toArray(),error:actual.distanceTo(contact),reach:requested,maxReach:a+b}
+  }
+}

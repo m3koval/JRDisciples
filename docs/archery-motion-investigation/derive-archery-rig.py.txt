@@ -1,0 +1,109 @@
+"""Offline, reproducible archery derivative. Original accepted Michael is never overwritten.
+Rebind measured arm landmarks, smooth sleeve/arm weights instead of x=.135 slabs,
+exclude the old lantern, and keep all original position/normal/UV/texture payloads.
+The original clips are retained for provenance; runtime archery owns the arm chain.
+"""
+from pathlib import Path
+import json,struct,hashlib,numpy as np
+from scipy.spatial.transform import Rotation
+from scipy.sparse import coo_matrix
+from scipy.sparse.csgraph import connected_components
+R=Path(__file__).resolve().parents[1]
+source=R/'public/games/faithful-archer-3d/michael.glb'
+b=source.read_bytes();n=struct.unpack_from('<I',b,12)[0];j=json.loads(b[20:20+n]);blob=bytearray(b[28+n:])
+def arr(idx):
+ a=j['accessors'][idx];bv=j['bufferViews'][a['bufferView']];dt={5126:'<f4',5123:'<u2',5125:'<u4',5121:'u1'}[a['componentType']];width={'VEC3':3,'VEC2':2,'VEC4':4,'SCALAR':1,'MAT4':16}[a['type']]
+ return np.frombuffer(blob,dtype=dt,count=a['count']*width,offset=bv.get('byteOffset',0)+a.get('byteOffset',0)).reshape(-1,width)
+parents={c:i for i,node in enumerate(j['nodes']) for c in node.get('children',[])}
+def world(i):
+ node=j['nodes'][i];m=np.eye(4);m[:3,:3]=Rotation.from_quat(node.get('rotation',[0,0,0,1])).as_matrix()@np.diag(node.get('scale',[1,1,1]));m[:3,3]=node.get('translation',[0,0,0]);return world(parents[i])@m if i in parents else m
+joints=j['skins'][0]['joints'];old=[world(i) for i in joints];new=[m.copy() for m in old]
+# Positions measured against the actual asymmetric mesh, NOT a mirrored stock rig.
+for chain,pts in [([6,7,8],[[-.08,.895,0],[-.145,.738,-.01],[-.195,.607,-.008]]),([10,11,12],[[.14,.895,0],[.198,.738,0],[.235,.607,-.01]])]:
+ for k,ji in enumerate(chain):
+  new[ji][:3,3]=pts[k]
+  if k<2:
+   a=old[ji][:3,1];a/=np.linalg.norm(a);d=np.array(pts[k+1])-pts[k];d/=np.linalg.norm(d);axis=np.cross(a,d);angle=np.arctan2(np.linalg.norm(axis),np.dot(a,d));q=Rotation.from_rotvec(axis/(np.linalg.norm(axis) or 1)*angle).as_matrix();new[ji][:3,:3]=q@old[ji][:3,:3]
+for ji in [6,7,8,10,11,12]:
+ ni=joints[ji];parent=parents[ni];pm=new[joints.index(parent)];local=np.linalg.inv(pm)@new[ji];node=j['nodes'][ni];node['translation']=local[:3,3].tolist();node['rotation']=Rotation.from_matrix(local[:3,:3]).as_quat().tolist();node.pop('scale',None)
+# Preserve inverse bind exactly outside changed arm chains.
+ib=arr(j['skins'][0]['inverseBindMatrices'])
+for ji in [6,7,8,10,11,12]:ib[ji]=np.linalg.inv(new[ji]).T.flatten()
+del ib
+report={'source_sha256':hashlib.sha256(b).hexdigest(),'scope':'archery only; original source untouched','arms':{j['nodes'][joints[i]]['name']:new[i][:3,3].tolist() for i in [6,7,8,10,11,12]},'changes':[]}
+def smooth(a,b,x):
+ t=np.clip((x-a)/(b-a),0,1);return t*t*(3-2*t)
+# Weld across material/UV splits: material names in this generated mesh are not
+# anatomical regions (the brass slot contains fingers; cloth contains forearm).
+allp=[];allf=[];offset=0
+for pr in j['meshes'][0]['primitives']:
+ pp=arr(pr['attributes']['POSITION']).copy();allp.append(pp);allf.append(arr(pr['indices']).reshape(-1,3).astype(np.int64)+offset);offset+=len(pp)
+up,weld=np.unique(np.round(np.concatenate(allp),5),axis=0,return_inverse=True);uf=weld[np.concatenate(allf)]
+arm_islands={}
+for side,ceiling in [('R',.80),('L',.70)]:
+ ok=(up[:,1]>.40)&(up[:,1]<ceiling);f=uf[np.all(ok[uf],axis=1)];rows=np.concatenate([f[:,0],f[:,1],f[:,2]]);cols=np.concatenate([f[:,1],f[:,2],f[:,0]])
+ _,lab=connected_components(coo_matrix((np.ones(len(rows)),(rows,cols)),shape=(len(up),len(up))),directed=False)
+ chosen=np.zeros(len(up),bool)
+ for ci in np.unique(lab[ok]):
+  mask=(lab==ci)&ok;lo=up[mask].min(0);hi=up[mask].max(0)
+  eligible=hi[0]<-.07 and lo[2]>-.09 and hi[2]<.07 if side=='R' else lo[0]>.16 and lo[2]>-.08 and hi[2]<.08
+  if eligible and hi[1]>.60:chosen|=mask
+ arm_islands[side]=chosen[weld]
+offset=0
+for pi,pr in enumerate(j['meshes'][0]['primitives']):
+ at=pr['attributes'];p=arr(at['POSITION']).copy();ids=arr(at['JOINTS_0']);w=arr(at['WEIGHTS_0']);oi=ids.copy();ow=w.copy();x,y,z=p.T
+ # All torso / bag surfaces retain body ownership. No arm weight below the
+ # measured sleeve/hand envelope, and no lantern joint on fingers or garment.
+ base=np.where(y>.84,3,np.where(y>.65,2,1))
+ region=(y>.40)&(y<.96)
+ islands={side:mask[offset:offset+len(p)] for side,mask in arm_islands.items()};offset+=len(p)
+ arm_old=np.isin(ids,[6,7,8,9,10,11,12]);needs=np.any(arm_old,axis=1)
+ for vi in np.flatnonzero(needs):
+  for k in range(4):
+   if arm_old[vi,k]:ids[vi,k]=base[vi]
+ # Smooth anatomical masks: distinct torso/shoulder blend, with narrow inner
+ # forearm boundary. Identical position receives identical weights across UV seams.
+ for side,chain,sign in [('R',[6,7,8],-1),('L',[10,11,12],1)]:
+  boundary=(.045 if sign<0 else .125)+np.clip(.88-y,0,.45)*(.25 if sign<0 else .18)
+  outer=sign*x
+  influence=smooth(boundary-.018,boundary+.025,outer)*(1-smooth(.89,.965,y))*smooth(.69,.76,y)
+  influence[islands[side]]=1
+  mask=region&(influence>0)
+  for vi in np.flatnonzero(mask):
+   a=float(influence[vi]);fore=1-float(smooth(.71,.775,y[vi]));hand=1-float(smooth(.57,.635,y[vi]));mix=np.array([(1-fore),fore*(1-hand),fore*hand])*a
+   ids[vi]=[base[vi],*chain];w[vi]=[1-a,*mix]
+ # Consolidation doesn't change the pose, but records exact normalized payloads.
+ assert np.isfinite(w).all() and np.max(np.abs(w.sum(1)-1))<1e-5
+ changed=np.flatnonzero(np.any(ids!=oi,1)|np.any(w!=ow,1))
+ # Remove only the suspended lantern/handle below the right hand; retain body,
+ # both hands, original skin vertices, texture coordinates and facial identity.
+ indices=arr(pr['indices']);f=indices.reshape(-1,3);cent=p[f].mean(1)
+ cut=(y>.17)&(((x<-.11)&(y<.445)&(z>-.095)&(z<.09))|((x<-.17)&(y<.47)))
+ remove=np.any(cut[f],axis=1)
+ # Degenerate removed triangles; byte offsets / remaining payloads stay unchanged.
+ f[remove]=f[remove,0,None]
+ report['changes'].append({'primitive':pi,'reweighted':int(len(changed)),'vertices':changed.tolist(),'removed_lantern_triangles':int(remove.sum())})
+ del ids,w,indices,f
+# Surface diffusion across welded material seams removes hard envelope steps.
+# Head/legs stay pinned. This is an offline mesh-space solve, never runtime edits.
+N=len(up);dense=np.zeros((N,len(joints)));counts=np.bincount(weld,minlength=N);offset=0
+for pr in j['meshes'][0]['primitives']:
+ at=pr['attributes'];ids=arr(at['JOINTS_0']);w=arr(at['WEIGHTS_0']);v=weld[offset:offset+len(ids)];offset+=len(ids)
+ for k in range(4):np.add.at(dense,(v,ids[:,k]),w[:,k])
+dense/=counts[:,None];seed=dense.copy()
+edges=np.concatenate([uf[:,[0,1]],uf[:,[1,2]],uf[:,[2,0]]]);edges=np.concatenate([edges,edges[:,::-1]])
+A=coo_matrix((np.ones(len(edges)),(edges[:,0],edges[:,1])),shape=(N,N)).tocsr();degree=np.asarray(A.sum(1)).ravel();degree=np.maximum(degree,1)
+movable=(up[:,1]>.43)&(up[:,1]<.98)
+for iteration in range(100):
+ averaged=A@dense/degree[:,None];dense[movable]=.02*seed[movable]+.98*averaged[movable]
+offset=0
+for pr in j['meshes'][0]['primitives']:
+ at=pr['attributes'];ids=arr(at['JOINTS_0']);w=arr(at['WEIGHTS_0']);d=dense[weld[offset:offset+len(ids)]];offset+=len(ids)
+ selected=np.argsort(d,axis=1)[:,-4:];vals=np.take_along_axis(d,selected,axis=1);vals/=vals.sum(1)[:,None];ids[:]=selected;w[:]=vals
+report['surface_diffusion_iterations']=100
+text=json.dumps(j,separators=(',',':')).encode();text+=b' '*(-len(text)%4)
+result=struct.pack('<4sII',b'glTF',2,28+len(text)+len(blob))+struct.pack('<I4s',len(text),b'JSON')+text+struct.pack('<I4s',len(blob),b'BIN\0')+blob
+target=source.with_name('michael-archery.glb');target.write_bytes(result)
+report['derivative_sha256']=hashlib.sha256(result).hexdigest();report['original_preserved']=source.read_bytes()==b
+(R/'docs/archery-rig-derivation.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps({**report,'changes':[{k:v for k,v in c.items() if k!='vertices'} for c in report['changes']]},indent=2))

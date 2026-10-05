@@ -1,0 +1,22 @@
+{
+  "status": "REJECTED_MOTION_CANDIDATE_RESTORED_INTACT_BASELINE",
+  "base": "1166d83e0e5bf2c3a140ad73ee3fe9ca32722e2c",
+  "utc": "2026-10-05T14:06:51.305503+00:00",
+  "archive": "/mnt/hermes-storage/jd-small-games-3d/archived-experiments/archery-motion-20261005",
+  "candidate_sha256": {
+    "app/games/faithful-archer/page.tsx": "0a7a2c3d05c2f5ef130782aee3f601f560e1f680938e4729118aa274d6e49557",
+    "app/games/faithful-archer/range-3d.ts": "0679701994263dba444d53b41801044510bc63badff838e308ac8b4600bd9c7f",
+    "app/games/faithful-archer/archery-pose.ts": "2505c13af9297757a785f314f3848455ef73e4349744eba28e16c7d6257b4d03",
+    "docs/archery-rig-derivation.json": "3615d553f8936816d03ca87126c8615b3c3fe60a43fa15d7022c68315765fbe0",
+    "public/games/faithful-archer-3d/michael-archery.glb": "ce5c819658adbf5a49e6eed66df4c8172cd538afefda7d4fc190ad8a1b0d9b79",
+    "scripts/derive-archery-rig.py": "7ce3c4426e6a2227798a0a78eabde077c7d4c9ec4be84204746283af7560ae95"
+  },
+  "restored_sha256": {
+    "app/games/faithful-archer/page.tsx": "aee202e9360f4a67d2fc493402d3117594badd9a1684f60b84029da7f6760f3f",
+    "app/games/faithful-archer/range-3d.ts": "383c53e671ae61cc097705464de2cbcfdf9ee180230d13caa37eb2b086d4ae6c"
+  },
+  "pose_evidence": "/mnt/hermes-storage/jd-small-games-3d/evidence/archery-motion/study-10",
+  "evidence_type": "sampled renderer fixtures, not continuous gameplay or frame-rate proof",
+  "remaining_budget_cents": 2432,
+  "new_paid_calls": 0
+}
