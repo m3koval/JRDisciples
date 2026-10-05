@@ -47,8 +47,8 @@ export class Range3D {
   private height = 0
   private level = -1
   private frames = 0
-  private bones: { bone: THREE.Bone; rotation: THREE.Quaternion }[] = []
-  private sun = new THREE.DirectionalLight(0xffe4b2, 3.2)
+  private idleMixer: THREE.AnimationMixer | null = null
+  private sun = new THREE.DirectionalLight(0xffefd6, 2.6)
   private wood: THREE.MeshStandardMaterial
   private stone: THREE.MeshStandardMaterial
   private brass: THREE.MeshStandardMaterial
@@ -69,7 +69,7 @@ export class Range3D {
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
     this.scene.background = new THREE.Color('#b5d8cf')
     this.scene.fog = new THREE.Fog('#b5d8cf', 2800, 5200)
-    this.scene.add(new THREE.HemisphereLight(0xdceef3, 0x665735, 2.2))
+    this.scene.add(new THREE.HemisphereLight(0xe6f1ff, 0x77836b, 2.2))
     this.sun.castShadow = true
     this.sun.shadow.mapSize.set(1024, 1024)
     this.sun.shadow.normalBias = 1.5
@@ -118,11 +118,14 @@ export class Range3D {
   }
   private async load() {
     const loader = new GLTFLoader()
-    for (const name of ['michael','rock_moss_a','rock_moss_c','boulder_01','plant_bushDetailed','grove-oak']) {
+    for (const name of ['michael','rock_moss_a','rock_moss_c','boulder_01']) {
       const gltf = await loader.loadAsync(ROOT+name+'.glb')
       gltf.scene.traverse(o => {
         if(o instanceof THREE.Mesh) {
           o.castShadow=true;o.receiveShadow=!(o instanceof THREE.SkinnedMesh); this.geometries.add(o.geometry); this.assetGeometries.add(o.geometry)
+          if(name==='michael') for(const m of Array.isArray(o.material)?o.material:[o.material]) {
+            if(m instanceof THREE.MeshStandardMaterial) m.normalScale.set(.12,.12)
+          }
           for(const m of Array.isArray(o.material)?o.material:[o.material]) {
             this.materials.add(m)
             this.assetMaterials.add(m)
@@ -131,6 +134,11 @@ export class Range3D {
         }
       })
       if(this.disposed) { this.disposeResources(gltf.scene); return }
+      if(name==='michael') {
+        const idle=gltf.animations.find(a=>a.name==='Idle')
+        if(idle) {this.idleMixer=new THREE.AnimationMixer(gltf.scene);this.idleMixer.clipAction(idle).play();this.idleMixer.update(0)}
+        gltf.scene.updateMatrixWorld(true)
+      }
       this.loaded.set(name,gltf.scene)
     }
     const texLoader=new THREE.TextureLoader()
@@ -141,8 +149,9 @@ export class Range3D {
       if(this.disposed) {texture.dispose();return}
     }
     this.fitModel('michael',this.character,128)
-    this.character.rotation.y=Math.PI/2
-    this.character.traverse(o=>{if(o instanceof THREE.Bone)this.bones.push({bone:o,rotation:o.quaternion.clone()})})
+    // Preserve the proven Trail idle pose. The source skin is not approved for
+    // arbitrary arm IK: it also binds pouch/hem vertices to the forearms.
+    this.character.rotation.y=.72
     this.ready=true; this.width=0; this.onReady()
   }
   private fitModel(name:string, parent:THREE.Object3D, height:number) {
@@ -213,10 +222,44 @@ export class Range3D {
   }
   private world(x:number,y:number,z=0) { return v(x-this.width/2,(this.height*.84-y+z*S)/C,z) }
   private tree(parent:THREE.Object3D,x:number,z:number,h:number,seed:number) {
-    const rise=z< -450?Math.min(160,(-z-450)*.18):0
-    const y=Math.sin(x*.007+z*.004)*rise*.45+rise-5
-    const group=new THREE.Group();group.position.set(x,y,z);group.rotation.y=seed*.71;parent.add(group)
-    this.fitModel('grove-oak',group,h)
+    // Adapt the owned Trail opening's tapered forks + folded leaf crown, not the
+    // rejected generated lobe/disc silhouette. Each crown has intentional gaps.
+    const group=new THREE.Group();group.position.set(x,this.ground(x,z),z);parent.add(group)
+    const bark=this.mat('#79634b',1),leaf=this.mat('#ffffff',.92)
+    leaf.side=THREE.DoubleSide
+    const curve=new THREE.CatmullRomCurve3([v(0,0,0),v(-h*.025,h*.3,3),v(h*.025,h*.55,-4),v(0,h*.9,0)])
+    for(let i=0;i<12;i++) {
+      const a=curve.getPoint(i/12),b=curve.getPoint((i+1)/12)
+      const tube=this.mesh(new THREE.CylinderGeometry(h*(.048-i*.0034),h*(.051-i*.0034),a.distanceTo(b)+1,9),bark,group)
+      tube.position.copy(a).add(b).multiplyScalar(.5);tube.quaternion.setFromUnitVectors(v(0,1),b.clone().sub(a).normalize())
+    }
+    const g=new THREE.BufferGeometry()
+    g.setAttribute('position',new THREE.Float32BufferAttribute([0,0,0,-.42,.11,.4,0,.19,.45,.42,.11,.4,0,0,1],3))
+    g.setIndex([0,1,2,0,2,3,1,4,2,2,4,3]);g.computeVertexNormals()
+    const leaves=new THREE.InstancedMesh(this.geo(g),leaf,14*3*32);leaves.castShadow=true;leaves.receiveShadow=true;group.add(leaves)
+    const dummy=new THREE.Object3D();let count=0
+    for(let i=0;i<14;i++) {
+      const angle=seed*.71+i*2.39996,tier=i%4
+      const start=v(0,h*(.42+tier*.08),0),dir=v(Math.cos(angle),0,Math.sin(angle))
+      const elbow=start.clone().addScaledVector(dir,h*.16).add(v(0,h*.13,0)),tip=start.clone().addScaledVector(dir,h*(.29-tier*.02)).add(v(0,h*(.22+tier*.022),0))
+      this.rod(group,start,elbow,h*.018,bark);this.rod(group,elbow,tip,h*.009,bark)
+      for(let fork=0;fork<3;fork++) {
+        const fa=angle+(fork-1)*.9,center=tip.clone().add(v(Math.cos(fa)*h*.065,h*(fork*.025),Math.sin(fa)*h*.065))
+        this.rod(group,elbow.clone().lerp(tip,.7),center,h*.003,bark)
+        for(let j=0;j<32;j++) {
+          const a=j*2.39996+fa,r=Math.sqrt(j/32)*h*.16
+          dummy.position.copy(center).add(v(Math.cos(a)*r,Math.sin(j*4.7+i)*h*.045,Math.sin(a)*r))
+          dummy.rotation.set(Math.sin(j*2.7)*.65,a,Math.cos(j)*.3);dummy.scale.setScalar(h*(.05+.014*(Math.sin(j*7+seed)+1)))
+          dummy.updateMatrix();leaves.setMatrixAt(count,dummy.matrix)
+          leaves.setColorAt(count++,new THREE.Color().setHSL(.25+.025*Math.sin(j+i),.48,.25+.10*(.5+.5*Math.sin(j*3.7)),THREE.SRGBColorSpace))
+        }
+      }
+    }
+    leaves.count=count
+  }
+  private ground(x:number,z:number) {
+    const rise=z< -500?Math.min(105,(-z-500)*.10):0
+    return -3+rise+Math.sin(x*.005+z*.004)*rise*.35
   }
   private buildScenery() {
     // Dispose transient authored scenery on resize/course change, retain reusable assets.
@@ -234,9 +277,8 @@ export class Range3D {
     const colors=new Float32Array(pos.count*3)
     for(let i=0;i<pos.count;i++) {
       const x=pos.getX(i),z=pos.getZ(i)
-      const rise=z< -450?Math.min(160,(-z-450)*.18):0
-      pos.setY(i,Math.sin(x*.007+z*.004)*rise*.45+rise-3)
-      const c=new THREE.Color('#87945e').lerp(new THREE.Color('#537650'),(Math.sin(x*.013)*Math.cos(z*.009)+1)*.28)
+      pos.setY(i,this.ground(x,z))
+      const c=new THREE.Color('#799062').lerp(new THREE.Color('#557955'),(Math.sin(x*.013)*Math.cos(z*.009)+1)*.28)
       colors.set([c.r,c.g,c.b],i*3)
     }
     terrain.setAttribute('color',new THREE.BufferAttribute(colors,3));this.grass.color.set('#ffffff');this.grass.vertexColors=true
@@ -244,16 +286,29 @@ export class Range3D {
     // Continuous textured range strip with soft, irregular edges, not a flat slab.
     const path=new THREE.PlaneGeometry(w*2,250,40,6);path.rotateX(-Math.PI/2)
     const pp=path.attributes.position
-    for(let i=0;i<pp.count;i++){const x=pp.getX(i),z=pp.getZ(i);pp.setY(i,1+Math.sin(x*.014)*.5);pp.setZ(i,z+Math.sin(x*.008)*17)}
+    for(let i=0;i<pp.count;i++){const x=pp.getX(i),z=pp.getZ(i);pp.setY(i,1+Math.sin(x*.014)*.5);pp.setZ(i,z+Math.sin(x*.008)*17);path.attributes.uv.setXY(i,x/360,z/360)}
     path.computeVertexNormals();this.mesh(path,this.soil,this.scenery,0,0,45)
     for(const [x,z,s,name] of [[-w*.55,-240,125,'boulder_01'],[w*.52,-180,105,'rock_moss_a'],[-w*.23,-460,75,'rock_moss_c'],[w*.2,-390,85,'rock_moss_c']] as const) {
       const g=new THREE.Group();g.position.set(x,0,z);this.scenery.add(g);this.fitModel(name,g,s)
     }
     // A deliberately composed grove frames, rather than covers, the firing lane.
-    for(const [x,z,s] of [[-w*.65,-420,300],[-w*.42,-700,300],[w*.1,-1000,290],[w*.64,-850,330],[w*.95,-490,340]])this.tree(this.scenery,x,z,s,Math.floor(x))
-    for(let i=0;i<13;i++) {
-      const x=-w*.65+i*w*.105;const g=new THREE.Group();g.position.set(x,0,-180-(i%3)*25);this.scenery.add(g);this.fitModel('plant_bushDetailed',g,30+(i%3)*10)
+    for(const [x,z,s] of [[-w*.62,-430,280],[-w*.08,-880,245],[w*.46,-1000,270],[w*.75,-500,260]])this.tree(this.scenery,x,z,s,Math.floor(x))
+    // Small, curved meadow blades, grouped along the bank rather than repeated
+    // oversized plastic succulents. Keep the launch area and target lane clear.
+    const blade=new THREE.BufferGeometry()
+    blade.setAttribute('position',new THREE.Float32BufferAttribute([-1,0,0,1,0,0,.8,8,1,-.6,8,1,2,16,3],3));blade.setIndex([0,1,2,0,2,3,3,2,4]);blade.computeVertexNormals()
+    const meadow=this.mat('#577b40',1);meadow.side=THREE.DoubleSide
+    const blades=new THREE.InstancedMesh(this.geo(blade),meadow,360);this.scenery.add(blades);blades.castShadow=true
+    const dummy=new THREE.Object3D()
+    for(let i=0;i<360;i++) {
+      const cluster=Math.floor(i/18),angle=i*2.39996,r=3+(i%18)*1.25
+      const x=-w*.72+cluster*w*.074+Math.cos(angle)*r,z=-230+Math.sin(cluster*2.1)*42+Math.sin(angle)*r
+      dummy.position.set(x,this.ground(x,z),z);dummy.rotation.set(0,angle,Math.sin(i)*.15);dummy.scale.setScalar(.6+.4*(.5+.5*Math.sin(i*4.7)));dummy.updateMatrix();blades.setMatrixAt(i,dummy.matrix)
     }
+    // A pivoting practice bow stand leaves the accepted character skin intact.
+    const stand=this.world(Math.max(56,w*.13)+34,h*.69-58,12)
+    this.rod(this.scenery,v(stand.x,0,8),v(stand.x,stand.y,8),4,this.wood)
+    this.box(this.scenery,stand.x,3,8,38,6,35,this.wood)
     // Timber target gallery behind the collision plane. Pegs and braces give it
     // recognizable construction. Support ropes sit behind, never replace targets.
     const left=w*.52-w/2,right=w*.94-w/2,top=h*.77/C
@@ -264,8 +319,20 @@ export class Range3D {
     }
     this.box(this.scenery,(left+right)/2,top,-38,right-left+42,19,25)
     for(const x of [left,right])for(const y of [top-5,top-28])this.mesh(new THREE.CylinderGeometry(2.5,2.5,22,8),this.brass,this.scenery,x,y,-25).rotation.x=Math.PI/2
-    // Low retaining wall follows the back bank; masonry avoids competing with aim.
-    for(let row=0;row<2;row++)for(let i=0;i<18;i++)this.box(this.scenery,-w*.9+i*w*.11+(row%2)*16,12+row*23,-300, w*.105-3,22,34,this.stone)
+    // Winding approach joins the shooting terrace rather than ending at a slab.
+    const approach=new THREE.PlaneGeometry(100,1000,5,40);approach.rotateX(-Math.PI/2)
+    const ap=approach.attributes.position
+    for(let i=0;i<ap.count;i++) {const z=ap.getZ(i)-570,x=ap.getX(i)-w*.30+Math.sin(z*.0035)*w*.18;ap.setXYZ(i,x,this.ground(x,z)+1.5,z);approach.attributes.uv.setXY(i,x/360,z/360)}
+    approach.computeVertexNormals();this.mesh(approach,this.soil,this.scenery)
+    const masonry=[this.mat('#a4aa98',1),this.mat('#b6b7a3',1),this.mat('#979e8f',1)]
+    for(let row=0;row<3;row++)for(let i=0;i<24;i++) {
+      const x=-w*1.2+i*w*.105+(row%2)*w*.05,z=-320+Math.sin(x*.003)*55
+      if(Math.abs(x+w*.46)<55)continue
+      const stone=this.box(this.scenery,x,10+row*18,z,w*.101,17,37,masonry[(i+row)%3]);stone.rotation.y=Math.sin(i*2.7)*.05
+    }
+    // Broad coping and repeated piers make the retaining edge read as built stone.
+    for(let i=0;i<24;i++){const x=-w*1.2+i*w*.105;if(Math.abs(x+w*.46)<55)continue;this.box(this.scenery,x,58,-320+Math.sin(x*.003)*55,w*.104,8,43,masonry[1])}
+    for(const x of [-w*.46-75,-w*.46+75,w*.45])for(let row=0;row<4;row++)this.box(this.scenery,x,12+row*22,-320+Math.sin(x*.003)*55,32,21,48,masonry[row%3])
     this.sun.position.set(-w*.6,1000,600);this.sun.target.position.set(0,h*.2,0)
     const camera=this.sun.shadow.camera;camera.left=-w;camera.right=w;camera.top=h;camera.bottom=-h;camera.updateProjectionMatrix()
   }
@@ -306,10 +373,10 @@ export class Range3D {
     this.bow.position.copy(this.world(f.bow.x,f.bow.y,12));this.bow.quaternion.copy(this.camera.quaternion);this.bow.rotateZ(-f.angle)
     const pull=Math.min(35,f.draw*.18)
     this.string.geometry.setFromPoints([v(-24,-48),v(-24-pull,0),v(-24,48)])
-    for(const b of this.bones)b.bone.quaternion.copy(b.rotation)
+    this.idleMixer?.setTime(f.time)
+    // Authored idle is deliberately retained rather than deforming an unproven
+    // carry rig into archery. The independently aimed practice bow has a stand.
     this.character.updateMatrixWorld(true)
-    this.poseArm('L',this.bow.localToWorld(v(0,0,0)),v(0,-1,-.5))
-    this.poseArm('R',this.bow.localToWorld(v(-24-pull,0,0)),v(0,-.4,1))
     const matrix=new THREE.Matrix4();this.aim.count=Math.min(f.aim.length,50)
     f.aim.slice(0,50).forEach((p,i)=>{matrix.makeTranslation(...this.world(p.x,p.y,12).toArray());this.aim.setMatrixAt(i,matrix)})
     this.aim.instanceMatrix.needsUpdate=true
@@ -326,34 +393,20 @@ export class Range3D {
     const base=[this.wood,this.stone,this.brass,this.green,this.cream,this.rope,this.soil,this.grass]
     root.traverse(o=>{
       if(!(o instanceof THREE.Mesh))return
+      if(o instanceof THREE.InstancedMesh)o.dispose()
       if(!this.assetGeometries.has(o.geometry)){o.geometry.dispose();this.geometries.delete(o.geometry)}
       for(const m of Array.isArray(o.material)?o.material:[o.material]) {
         if(!base.includes(m)&&!this.assetMaterials.has(m)){m.dispose();this.materials.delete(m)}
       }
     })
   }
-  private poseArm(side:string,target:THREE.Vector3,bend:THREE.Vector3) {
-    const bone=(name:string)=>this.character.getObjectByName(name+'.'+side)||this.character.getObjectByName(name+side)
-    const upper=bone('upper_arm'),lower=bone('forearm'),hand=bone('hand')
-    if(!upper||!lower||!hand)return
-    const start=upper.getWorldPosition(v()),elbow=lower.getWorldPosition(v()),end=hand.getWorldPosition(v())
-    const a=start.distanceTo(elbow),b=elbow.distanceTo(end),dir=target.clone().sub(start),d=Math.max(.1,Math.min(dir.length(),a+b-.01));dir.normalize()
-    const along=(a*a-b*b+d*d)/(2*d),across=Math.sqrt(Math.max(0,a*a-along*along))
-    const perp=bend.clone().addScaledVector(dir,-bend.dot(dir)).normalize()
-    const joint=start.clone().addScaledVector(dir,along).addScaledVector(perp,across)
-    const orient=(bone:THREE.Object3D,from:THREE.Vector3,to:THREE.Vector3)=>{
-      const delta=new THREE.Quaternion().setFromUnitVectors(from.normalize(),to.normalize())
-      const q=bone.getWorldQuaternion(new THREE.Quaternion()).premultiply(delta)
-      bone.quaternion.copy(bone.parent!.getWorldQuaternion(new THREE.Quaternion()).invert().multiply(q));bone.updateWorldMatrix(false,true)
-    }
-    orient(upper,elbow.clone().sub(start),joint.clone().sub(start))
-    const e=lower.getWorldPosition(v());orient(lower,hand.getWorldPosition(v()).sub(e),target.clone().sub(e))
-  }
   private disposeResources(root:THREE.Object3D) {
     root.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();for(const m of Array.isArray(o.material)?o.material:[o.material]){for(const value of Object.values(m))if(value instanceof THREE.Texture)value.dispose();m.dispose()}}})
   }
   dispose() {
     this.disposed=true;this.canvas.removeEventListener('webglcontextlost',this.onLost)
+    this.idleMixer?.stopAllAction();if(this.idleMixer)this.idleMixer.uncacheRoot(this.idleMixer.getRoot());this.idleMixer=null
+    this.scene.traverse(o=>{if(o instanceof THREE.InstancedMesh)o.dispose()})
     this.geometries.forEach(g=>g.dispose());this.materials.forEach(m=>m.dispose());this.textures.forEach(t=>t.dispose())
     this.scene.clear();this.loaded.clear();this.sun.shadow.dispose();this.renderer.dispose()
     // Release detached contexts after React cleanup; StrictMode can reuse a

@@ -2,6 +2,7 @@
 from pathlib import Path
 import json, math, os, base64
 from playwright.sync_api import sync_playwright
+from archer_render_checkpoints import install as sparse_render, begin_capture, end_capture
 OUT=Path(os.environ.get('JD_EVIDENCE','/mnt/hermes-storage/jd-games-overnight/evidence/pass-05/archer'));OUT.mkdir(parents=True,exist_ok=True)
 BASE=os.environ.get('JD_BASE','http://127.0.0.1:3107')
 checks=[];errors=[];requests=[]
@@ -27,8 +28,11 @@ with sync_playwright() as pw:
    page.wait_for_timeout(250)
    cdp=context.new_cdp_session(page)
    def capture(name):
-    payload=cdp.send('Page.captureScreenshot',{'format':'png','captureBeyondViewport':False})
-    (OUT/f'{lang}-{name}.png').write_bytes(base64.b64decode(payload['data']))
+    active=begin_capture(page)
+    try:
+     payload=cdp.send('Page.captureScreenshot',{'format':'png','captureBeyondViewport':False})
+     (OUT/f'{lang}-{name}.png').write_bytes(base64.b64decode(payload['data']))
+    finally:end_capture(page,active)
    def state():return json.loads(canvas.get_attribute('data-state'))
    def touch(kind,pts):cdp.send('Input.dispatchTouchEvent',{'type':kind,'touchPoints':[{'id':i,'x':x,'y':y}for i,x,y in pts]})
    def pause():
@@ -56,7 +60,9 @@ with sync_playwright() as pw:
    # Close the optional controls before direct-drag campaign play.
    page.get_by_role('button',name='Прицел без перетягивания' if lang=='ru' else 'Aim without dragging',exact=True).click()
    page.wait_for_timeout(1000)
-   page.clock.install()
+   page.clock.install();page.clock.pause_at(page.evaluate('new Date(Date.now()+1000).toISOString()'))
+   sparse_render(page)
+   captured_courses=set()
    # Actual ballistic shots to visible targets. Test reads their rendered coordinates,
    # never writes target hits/score/course. Moving target error is handled by retry.
    completed=set(); shots=0; modal_count=0; review_outcomes=set(); blocked_tested=False
@@ -85,11 +91,11 @@ with sync_playwright() as pw:
     box=canvas.bounding_box();sx=box['x']+box['width']*.72;sy=box['y']+box['height']*.4
     if lang=='ru':
      touch('touchStart',[(1,sx,sy)]);touch('touchMove',[(1,sx+dx,sy+dy)]);page.clock.run_for(32)
-     if s['level'] not in completed:capture(f'course-{s["level"]+1}-aim')
+     if s['level'] not in captured_courses:capture(f'course-{s["level"]+1}-aim');captured_courses.add(s['level'])
      touch('touchEnd',[])
     else:
      page.mouse.move(sx,sy);page.mouse.down();page.mouse.move(sx+dx,sy+dy);page.clock.run_for(32)
-     if attempt<2 or s['level'] not in completed:capture(f'course-{s["level"]+1}-aim')
+     if s['level'] not in captured_courses:capture(f'course-{s["level"]+1}-aim');captured_courses.add(s['level'])
      page.mouse.up()
     shots+=1;page.clock.run_for(1200)
     review=state().get('review')

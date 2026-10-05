@@ -124,7 +124,7 @@ for (const snippet of requiredArcherSnippets) {
 // not names of retired Canvas2D/stickman routines. Physics checks remain intact.
 const rangePath = path.join(root, 'app/games/faithful-archer/range-3d.ts');
 const range = fs.existsSync(rangePath) ? fs.readFileSync(rangePath, 'utf8') : '';
-for (const snippet of ['THREE.WebGLRenderer', 'GLTFLoader', 'poseArm', 'makeTarget', 'makeArrow',
+for (const snippet of ['THREE.WebGLRenderer', 'GLTFLoader', 'THREE.AnimationMixer', 'this.idleMixer?.setTime(f.time)', 'makeTarget', 'makeArrow',
   'this.renderer.render(this.scene,this.camera)', 'webglcontextlost', 'this.renderer.dispose()',
   "t.kind==='bell'", "t.kind==='scroll'", "t.kind==='lantern'", "this.fitModel('michael'"])
   if (!range.includes(snippet)) failures.push(`Faithful Archer 3D renderer must include: ${snippet}`);

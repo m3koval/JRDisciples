@@ -824,17 +824,31 @@ export default function FaithfulArcherPage() {
         .aim-controls label { display: grid; gap: 2px; }
         .aim-controls input { width: 100%; min-height: 44px; accent-color: #ffd166; }
         .archer-control[aria-pressed=true] { background: #826528; }
-        @media (max-width: 650px) and (orientation: portrait) {
-          .archer-active .archer-shell { grid-template-columns: 1fr; grid-template-rows: minmax(230px,1fr) auto; }
-          .archer-active .archer-panel { max-height: 37dvh; }
-          .archer-active .archer-stats { grid-template-columns: repeat(4,1fr); margin-bottom: 6px; }
+        @media (orientation: portrait) {
+          .archer-active .archer-shell { grid-template-columns: minmax(0,1fr); grid-template-rows: minmax(0,1fr) auto; }
+          .archer-active .archer-panel { max-height: 37dvh; min-width: 0; overscroll-behavior: contain; }
+          .archer-active .shot-review { max-height: 2.8em; }
+          .archer-active .archer-stats { grid-template-columns: repeat(4,minmax(0,1fr)); margin-bottom: 6px; }
           .archer-active .puzzle-label { margin: 0 0 4px; }
           .archer-active .archer-actions { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 5px; }
-          .archer-active .archer-toggle { font-size: 12px; padding: 6px; }
+          .archer-active .archer-toggle { min-height: 44px; box-sizing: border-box; font-size: 12px; padding: 6px; }
+          .archer-active .archer-toggle input { flex-shrink: 0; }
           .archer-active .mobile-release { margin: 6px 0 0; }
-          .aim-controls { grid-template-columns: 1fr 1fr auto; align-items: end; }
+          .archer-active .aim-controls { grid-template-columns: minmax(0,1fr) minmax(0,1fr) auto; align-items: end; }
+          .archer-active .aim-controls .pz-btn { min-height: 44px; }
           .archer-toolbar { gap: 6px; font-size: 14px; }
-          .archer-toolbar a,.archer-toolbar button { padding: 8px; font-size: 14px; }
+          .archer-toolbar strong { min-width: 0; overflow-wrap: anywhere; }
+          .archer-toolbar a,.archer-toolbar button { padding: 8px; font-size: 14px; flex-shrink: 0; }
+        }
+        @media (min-width: 651px) and (orientation: portrait) {
+          .archer-active .archer-panel { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 10px; align-content: start; }
+          .archer-active .archer-panel > .puzzle-label,
+          .archer-active .archer-panel > .shot-review,
+          .archer-active .archer-panel > .archer-control,
+          .archer-active .archer-panel > .aim-controls,
+          .archer-active .archer-panel > .mobile-release { grid-column: 1 / -1; }
+          .archer-active .archer-stats { margin-bottom: 0; }
+          .archer-active .archer-toggle { font-size: 14px; }
         }
         @media (max-height: 480px) and (orientation: landscape) { .archer-active .archer-shell { grid-template-columns: minmax(0,1fr) 205px; } .archer-toolbar { min-height: 44px; } }
         @media (prefers-reduced-motion: reduce) { .archer-page * { animation: none !important; transition: none !important; } }
