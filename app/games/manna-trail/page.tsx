@@ -1,27 +1,25 @@
 'use client'
-/* eslint-disable react-hooks/set-state-in-effect */
+
 
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import { GRID, MAX_TRAIL, initialTrail, rocksForLevel, freeCell, wordCell, collides, tickDuration, frameDelta, readBest, saveBest, ownsPointer } from './mechanics'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type Cell = { x: number; y: number }
 type Dir = { x: number; y: number }
-type Phase = 'menu' | 'play' | 'levelUp' | 'over'
+type Phase = 'menu' | 'play' | 'levelUp' | 'over' | 'paused' | 'won'
 type Particle = { x: number; y: number; vx: number; vy: number; life: number; color: string }
 type Verse = { words: string[]; ref: string }
 
 // ─── Config ───────────────────────────────────────────────────────────────────
-const GRID = 21
-const BASE_TICK = 165
-const MIN_TICK = 80
-const TICK_DROP_PER_LEVEL = 14
+
 const SLOW_FACTOR = 1.6
 const DOVE_EVERY_MS = 14000
 const DOVE_LIFETIME = 8000
 const SLOW_DURATION = 5000
-const STORAGE_KEY = 'manna-trail-best'
+
 
 const VERSES_EN: Verse[] = [
   { words: ['Give', 'us', 'this', 'day', 'our', 'daily', 'bread'], ref: 'Matthew 6:11' },
@@ -46,12 +44,6 @@ const VERSES_RU: Verse[] = [
   { words: ['Господь', 'Пастырь', 'мой', 'я', 'ни', 'в', 'чем', 'не', 'буду', 'нуждаться'], ref: 'Псалом 22:1' },
 ]
 
-function randCell(blocked: Cell[]): Cell {
-  while (true) {
-    const c = { x: Math.floor(Math.random() * GRID), y: Math.floor(Math.random() * GRID) }
-    if (!blocked.some(b => b.x === c.x && b.y === c.y)) return c
-  }
-}
 
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function MannaTrailPage() {
@@ -66,6 +58,13 @@ export default function MannaTrailPage() {
   const [level, setLevel] = useState(1)
   const [wordsGot, setWordsGot] = useState(0)
   const [slowOn, setSlowOn] = useState(false)
+  const [gentle, setGentle] = useState(true)
+  const gentleRef = useRef(true)
+  const bestRef = useRef(0)
+  const clockRef = useRef(0)
+  const resetTimingRef = useRef(true)
+  const pointerRef = useRef<number | null>(null)
+  const reducedMotionRef = useRef(false)
 
   // Game state lives in refs so the loop never waits on React
   const phaseRef = useRef<Phase>('menu')
@@ -73,8 +72,8 @@ export default function MannaTrailPage() {
   const prevSnakeRef = useRef<Cell[]>([])
   const dirRef = useRef<Dir>({ x: 1, y: 0 })
   const dirQueueRef = useRef<Dir[]>([])
-  const mannaRef = useRef<Cell>({ x: 0, y: 0 })
-  const wordTileRef = useRef<Cell>({ x: 0, y: 0 })
+  const mannaRef = useRef<Cell | null>(null)
+  const wordTileRef = useRef<Cell | null>(null)
   const doveRef = useRef<{ cell: Cell; until: number } | null>(null)
   const nextDoveAtRef = useRef(0)
   const slowUntilRef = useRef(0)
@@ -93,14 +92,29 @@ export default function MannaTrailPage() {
   const verse = VERSES[(level - 1) % VERSES.length]
 
   useEffect(() => {
-    const stored = Number(localStorage.getItem(STORAGE_KEY) || '0')
-    if (Number.isFinite(stored)) setBest(stored)
+    try { bestRef.current = readBest(window.localStorage) } catch { /* blocked storage getter */ }
+    setBest(bestRef.current)
+    reducedMotionRef.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const hide = () => { if (document.hidden && phaseRef.current === 'play') changePhase('paused') }
+    const blur = () => { if (phaseRef.current === 'play') changePhase('paused') }
+    document.addEventListener('visibilitychange', hide)
+    window.addEventListener('blur', blur)
+    return () => { document.removeEventListener('visibilitychange', hide); window.removeEventListener('blur', blur) }
   }, [])
 
-  useEffect(() => { phaseRef.current = phase }, [phase])
+  function changePhase(next: Phase) {
+    phaseRef.current = next
+    dirQueueRef.current = []
+    pointerRef.current = null
+    joyRef.current = null
+    joyVecRef.current = null
+    resetTimingRef.current = true
+    setPhase(next)
+  }
 
   // ── Direction handling ─────────────────────────────────────────────────────
   function pushDir(d: Dir) {
+    if (phaseRef.current !== 'play') return
     const queue = dirQueueRef.current
     const last = queue.length > 0 ? queue[queue.length - 1] : dirRef.current
     // ignore reversals and duplicates
@@ -111,6 +125,11 @@ export default function MannaTrailPage() {
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape' || e.key === 'p' || e.key === 'P') {
+        if (phaseRef.current === 'play') changePhase('paused')
+        else if (phaseRef.current === 'paused') changePhase('play')
+        return
+      }
       if (phaseRef.current !== 'play') return
       const map: Record<string, Dir> = {
         ArrowUp: { x: 0, y: -1 }, ArrowDown: { x: 0, y: 1 },
@@ -132,14 +151,15 @@ export default function MannaTrailPage() {
   const JOY_REACH = 52  // max thumb-to-anchor distance; anchor gets dragged along
 
   function onPointerDown(e: React.PointerEvent) {
-    if ((e.target as HTMLElement).closest('button')) return
+    if (phaseRef.current !== 'play' || pointerRef.current !== null || e.button !== 0 || (e.target as HTMLElement).closest('button')) return
+    pointerRef.current = e.pointerId
     e.currentTarget.setPointerCapture?.(e.pointerId)
     joyRef.current = { ax: e.clientX, ay: e.clientY, cx: e.clientX, cy: e.clientY }
     joyVecRef.current = null
   }
   function onPointerMove(e: React.PointerEvent) {
     const joy = joyRef.current
-    if (!joy || phaseRef.current !== 'play') return
+    if (!joy || !ownsPointer(pointerRef.current, e.pointerId) || phaseRef.current !== 'play') return
     joy.cx = e.clientX
     joy.cy = e.clientY
     let dx = joy.cx - joy.ax
@@ -156,7 +176,9 @@ export default function MannaTrailPage() {
     }
     joyVecRef.current = Math.hypot(dx, dy) > JOY_DEAD ? { x: dx, y: dy } : null
   }
-  function onPointerUp() {
+  function onPointerUp(e: React.PointerEvent) {
+    if (!ownsPointer(pointerRef.current, e.pointerId)) return
+    pointerRef.current = null
     joyRef.current = null
     joyVecRef.current = null
   }
@@ -179,21 +201,38 @@ export default function MannaTrailPage() {
 
   // ── Game setup ─────────────────────────────────────────────────────────────
   function spawnItems() {
-    const blocked = [...snakeRef.current]
-    mannaRef.current = randCell(blocked)
-    wordTileRef.current = randCell([...blocked, mannaRef.current])
+    const rocks = rocksForLevel(levelRef.current)
+    wordTileRef.current = wordCell(levelRef.current, wordsGotRef.current, snakeRef.current, rocks)
+    mannaRef.current = freeCell([...snakeRef.current, ...rocks, ...(wordTileRef.current ? [wordTileRef.current] : [])])
+  }
+
+  function resetTrail() {
+    snakeRef.current = initialTrail()
+    prevSnakeRef.current = initialTrail()
+    dirRef.current = { x: 1, y: 0 }
+    doveRef.current = null
+    slowUntilRef.current = 0
+    nextDoveAtRef.current = clockRef.current + DOVE_EVERY_MS
+    setSlowOn(false)
+    spawnItems()
+  }
+
+  function recover() {
+    resetTrail()
+    changePhase('play')
   }
 
   function startGame() {
-    const cy = Math.floor(GRID / 2)
-    snakeRef.current = [{ x: 7, y: cy }, { x: 6, y: cy }, { x: 5, y: cy }, { x: 4, y: cy }]
+    snakeRef.current = initialTrail()
     prevSnakeRef.current = snakeRef.current.map(c => ({ ...c }))
     dirRef.current = { x: 1, y: 0 }
     dirQueueRef.current = []
     joyRef.current = null
     joyVecRef.current = null
     doveRef.current = null
-    nextDoveAtRef.current = performance.now() + DOVE_EVERY_MS
+    clockRef.current = 0
+    nextDoveAtRef.current = DOVE_EVERY_MS
+    gentleRef.current = gentle
     slowUntilRef.current = 0
     particlesRef.current = []
     levelRef.current = 1
@@ -204,31 +243,31 @@ export default function MannaTrailPage() {
     setScore(0)
     setSlowOn(false)
     spawnItems()
-    setPhase('play')
+    changePhase('play')
   }
 
   function nextLevel() {
+    if (levelRef.current >= VERSES.length) { changePhase('won'); return }
     levelRef.current += 1
     wordsGotRef.current = 0
     dirQueueRef.current = []
     setLevel(levelRef.current)
     setWordsGot(0)
-    spawnItems()
-    setPhase('play')
+    resetTrail()
+    changePhase('play')
   }
 
   function endGame() {
-    flashRef.current = 1
+    flashRef.current = reducedMotionRef.current ? 0 : 0.3
     const finalScore = scoreRef.current
-    setBest(prev => {
-      const next = Math.max(prev, finalScore)
-      localStorage.setItem(STORAGE_KEY, String(next))
-      return next
-    })
-    setPhase('over')
+    bestRef.current = Math.max(bestRef.current, finalScore)
+    setBest(bestRef.current)
+    try { saveBest(window.localStorage, bestRef.current) } catch { /* play works without storage */ }
+    changePhase('over')
   }
 
   function burst(cell: Cell, color: string, cellPx: number, ox: number, oy: number) {
+    if (reducedMotionRef.current) return
     const cx = ox + (cell.x + 0.5) * cellPx
     const cy = oy + (cell.y + 0.5) * cellPx
     for (let i = 0; i < 10; i++) {
@@ -282,27 +321,27 @@ export default function MannaTrailPage() {
       const dir = dirRef.current
       const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y }
 
-      // wall or self collision
-      if (head.x < 0 || head.y < 0 || head.x >= GRID || head.y >= GRID ||
-          snake.some(s => s.x === head.x && s.y === head.y)) {
+      const grows = snake.length < MAX_TRAIL && [mannaRef.current, wordTileRef.current].some(c => c && c.x === head.x && c.y === head.y)
+      if (collides(head, snake, rocksForLevel(levelRef.current), grows)) {
         endGame()
         return
       }
 
       snake.unshift(head)
+      if (!grows) snake.pop()
       const verseNow = VERSES[(levelRef.current - 1) % VERSES.length]
       const manna = mannaRef.current
       const wordTile = wordTileRef.current
       const dove = doveRef.current
       const geo = geometry()
 
-      if (head.x === manna.x && head.y === manna.y) {
+      if (manna && head.x === manna.x && head.y === manna.y) {
         scoreRef.current += 1
         setScore(scoreRef.current)
         burst(manna, '#fef3c7', geo.cell, geo.ox, geo.oy)
-        mannaRef.current = randCell([...snake, wordTile, ...(dove ? [dove.cell] : [])])
+        mannaRef.current = freeCell([...snake, ...rocksForLevel(levelRef.current), ...(wordTile ? [wordTile] : []), ...(dove ? [dove.cell] : [])])
         // grow: do not pop tail
-      } else if (head.x === wordTile.x && head.y === wordTile.y) {
+      } else if (wordTile && head.x === wordTile.x && head.y === wordTile.y) {
         scoreRef.current += 5
         wordsGotRef.current += 1
         setScore(scoreRef.current)
@@ -311,10 +350,14 @@ export default function MannaTrailPage() {
         if (wordsGotRef.current >= verseNow.words.length) {
           scoreRef.current += 20
           setScore(scoreRef.current)
-          setPhase('levelUp')
+          bestRef.current = Math.max(bestRef.current, scoreRef.current)
+          setBest(bestRef.current)
+          try { saveBest(window.localStorage, bestRef.current) } catch { /* optional persistence */ }
+          changePhase('levelUp')
           return
         }
-        wordTileRef.current = randCell([...snake, manna, ...(dove ? [dove.cell] : [])])
+        wordTileRef.current = wordCell(levelRef.current, wordsGotRef.current, snake, [...rocksForLevel(levelRef.current), ...(manna ? [manna] : []), ...(dove ? [dove.cell] : [])])
+        if (!wordTileRef.current) resetTrail()
         // grow: do not pop tail
       } else {
         if (dove && head.x === dove.cell.x && head.y === dove.cell.y) {
@@ -323,7 +366,7 @@ export default function MannaTrailPage() {
           burst(dove.cell, '#bae6fd', geo.cell, geo.ox, geo.oy)
           doveRef.current = null
         }
-        snake.pop()
+
       }
     }
 
@@ -338,6 +381,7 @@ export default function MannaTrailPage() {
     }
 
     function draw(now: number, frac: number) {
+      canvas!.dataset.state = JSON.stringify({ phase: phaseRef.current, snake: snakeRef.current, direction: dirRef.current, word: wordTileRef.current, rocks: rocksForLevel(levelRef.current), level: levelRef.current, words: wordsGotRef.current, score: scoreRef.current })
       const { cell, ox, oy, size } = geometry()
       const w = canvas!.width
       const h = canvas!.height
@@ -362,9 +406,20 @@ export default function MannaTrailPage() {
         ctx!.beginPath(); ctx!.moveTo(ox, oy + i * cell); ctx!.lineTo(ox + size, oy + i * cell); ctx!.stroke()
       }
 
+      // Visible rock islands exactly match the collision map.
+      for (const rock of rocksForLevel(levelRef.current)) {
+        const rx = ox + rock.x * cell, ry = oy + rock.y * cell
+        ctx!.fillStyle = '#a88a62'
+        roundRect(ctx!, rx + cell * .06, ry + cell * .06, cell * .88, cell * .88, cell * .25)
+        ctx!.fill()
+        ctx!.fillStyle = '#ddc497'
+        ctx!.fillRect(rx + cell * .22, ry + cell * .2, cell * .4, cell * .13)
+      }
+
       // manna (pulsing golden flake)
       const manna = mannaRef.current
-      const pulse = 1 + Math.sin(now / 200) * 0.15
+      const pulse = reducedMotionRef.current ? 1 : 1 + Math.sin(now / 200) * 0.15
+      if (manna) {
       ctx!.save()
       ctx!.shadowColor = '#fde68a'
       ctx!.shadowBlur = 14 * dpr
@@ -378,8 +433,10 @@ export default function MannaTrailPage() {
       ctx!.fill()
       ctx!.restore()
 
+      }
       // word tile (golden square + floating word label)
       const wt = wordTileRef.current
+      if (wt) {
       const verseNow = VERSES[(levelRef.current - 1) % VERSES.length]
       const nextWord = verseNow.words[Math.min(wordsGotRef.current, verseNow.words.length - 1)]
       const wx = ox + wt.x * cell
@@ -409,11 +466,12 @@ export default function MannaTrailPage() {
       ctx!.fill()
       ctx!.fillStyle = '#fde68a'
       ctx!.fillText(nextWord, lx, labelY)
+      }
 
       // dove
       const dove = doveRef.current
       if (dove) {
-        const blink = (dove.until - now < 2500) && Math.floor(now / 200) % 2 === 0
+        const blink = false
         if (!blink) {
           ctx!.font = `${cell * 0.85}px serif`
           ctx!.textAlign = 'center'
@@ -531,19 +589,20 @@ export default function MannaTrailPage() {
       c.closePath()
     }
 
-    function frame(now: number) {
+    function frame(wallTime: number) {
       raf = requestAnimationFrame(frame)
-      const dt = Math.min(now - last, 100)
-      last = now
+      const dt = resetTimingRef.current ? 0 : frameDelta(wallTime, last)
+      if (resetTimingRef.current) { acc = 0; resetTimingRef.current = false }
+      last = wallTime
+      if (phaseRef.current === 'play') clockRef.current += dt
+      const now = clockRef.current
 
       if (phaseRef.current === 'play') {
         // dove lifecycle
         if (doveRef.current && now > doveRef.current.until) doveRef.current = null
         if (!doveRef.current && now > nextDoveAtRef.current) {
-          doveRef.current = {
-            cell: randCell([...snakeRef.current, mannaRef.current, wordTileRef.current]),
-            until: now + DOVE_LIFETIME,
-          }
+          const cell = freeCell([...snakeRef.current, ...rocksForLevel(levelRef.current), ...(mannaRef.current ? [mannaRef.current] : []), ...(wordTileRef.current ? [wordTileRef.current] : [])])
+          doveRef.current = cell ? { cell, until: now + DOVE_LIFETIME } : null
           nextDoveAtRef.current = now + DOVE_EVERY_MS + Math.random() * 5000
         }
         if (slowUntilRef.current > 0 && now > slowUntilRef.current) {
@@ -551,7 +610,7 @@ export default function MannaTrailPage() {
           setSlowOn(false)
         }
 
-        let tickMs = Math.max(MIN_TICK, BASE_TICK - (levelRef.current - 1) * TICK_DROP_PER_LEVEL)
+        let tickMs = tickDuration(levelRef.current, gentleRef.current)
         if (now < slowUntilRef.current) tickMs *= SLOW_FACTOR
 
         acc += dt
@@ -598,6 +657,15 @@ export default function MannaTrailPage() {
     how3: '🕊️ Голубь замедляет время на 5 секунд',
     how4: '⌨️ Стрелки / WASD · 📱 Держи палец на экране и веди в нужную сторону — где угодно',
     nextWord: 'Следующее слово',
+    chapters: ['Утро в пустыне', 'Тропа среди камней', 'Дорога к лагерю'],
+    mission: 'Веди караван к золотому слову',
+    gentle: 'Спокойный путь', brisk: 'Бодрый путь',
+    pause: 'Пауза', paused: 'Отдохнём?', continue: 'Продолжить',
+    recover: 'Вернуться на тропу', recovery: 'Собранные слова и очки остались! Начни с коротким караваном.',
+    won: 'Караван дома!', finish: 'В лагерь',
+    lesson: 'Бог заботится о нас каждый день. Мы можем доверять Ему и делиться с другими.',
+    journey: '9 стихов · 3 тропы · слова не теряются при ошибке',
+    directions: ['Вверх', 'Влево', 'Вниз', 'Вправо'],
   } : {
     back: 'All Games',
     eyebrow: 'Classic Arcade',
@@ -621,6 +689,15 @@ export default function MannaTrailPage() {
     how3: '🕊️ The dove slows time for 5 seconds',
     how4: '⌨️ Arrows / WASD · 📱 Hold your thumb anywhere and steer',
     nextWord: 'Next word',
+    chapters: ['Wilderness morning', 'Among the rocks', 'The way to camp'],
+    mission: 'Guide the trail to the golden word',
+    gentle: 'Gentle trail', brisk: 'Brisk trail',
+    pause: 'Pause', paused: 'Take a breath', continue: 'Continue',
+    recover: 'Back to the trail', recovery: 'Your words and points are safe! Try again with a short trail.',
+    won: 'The caravan is home!', finish: 'To camp',
+    lesson: 'God cares for us each day. We can trust Him and share with others.',
+    journey: '9 verses · 3 trails · keep your words after a bump',
+    directions: ['Up', 'Left', 'Down', 'Right'],
   }
 
   // ─── Render ─────────────────────────────────────────────────────────────────
@@ -628,10 +705,10 @@ export default function MannaTrailPage() {
     <main style={{ minHeight: '100vh', background: 'linear-gradient(180deg,#071527,#0c2438 50%,#f7fbff)', color: '#fff' }}>
       <style>{`
         .mt-shell { max-width: 1000px; margin: 0 auto; padding: 40px 16px 64px; }
-        .mt-fullscreen { position: fixed; inset: 0; z-index: 9999; background: #071527; display: flex; flex-direction: column; touch-action: none; user-select: none; -webkit-user-select: none; }
+        .mt-fullscreen { position: fixed; inset: 0; z-index: 9999; background: #071527; display: flex; flex-direction: column; touch-action: none; user-select: none; -webkit-user-select: none; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
         .mt-hud { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 14px; }
         .mt-hud-stat { border-radius: 12px; padding: 6px 12px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); font-family: var(--font-nunito); font-weight: 1000; font-size: .82rem; white-space: nowrap; }
-        .mt-exit { border: 0; border-radius: 999px; padding: 8px 16px; background: rgba(255,255,255,.12); color: #fff; font-family: var(--font-nunito); font-weight: 1000; cursor: pointer; }
+        .mt-exit { min-height: 44px; border: 0; border-radius: 999px; padding: 8px 12px; background: rgba(255,255,255,.12); color: #fff; font-family: var(--font-nunito); font-weight: 1000; cursor: pointer; }
         .mt-verse-bar { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; padding: 4px 12px 8px; }
         .mt-chip { border-radius: 999px; padding: 4px 10px; font-family: var(--font-nunito); font-weight: 1000; font-size: .74rem; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); color: rgba(255,255,255,.45); }
         .mt-chip.got { background: linear-gradient(180deg,#fde68a,#f59e0b); border-color: #fde68a; color: #78350f; }
@@ -639,21 +716,32 @@ export default function MannaTrailPage() {
         .mt-arena { flex: 1; position: relative; min-height: 0; }
         .mt-arena canvas { position: absolute; inset: 0; }
         .mt-overlay { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; padding: 20px; background: rgba(4,12,22,.78); }
-        .mt-card { max-width: 460px; width: 100%; border-radius: 26px; padding: 26px 22px; background: rgba(255,255,255,.97); color: #0d1f3c; border: 3px solid #fbbf24; text-align: center; box-shadow: 0 30px 90px rgba(0,0,0,.5); }
+        .mt-card { max-height: 90dvh; overflow-y: auto; max-width: 460px; width: 100%; border-radius: 26px; padding: 26px 22px; background: rgba(255,255,255,.97); color: #0d1f3c; border: 3px solid #fbbf24; text-align: center; box-shadow: 0 30px 90px rgba(0,0,0,.5); }
         .mt-btn { border: 0; border-radius: 16px; padding: 13px 30px; background: linear-gradient(180deg,#fbbf24,#f97316); color: #3b2307; font-family: var(--font-nunito); font-weight: 1000; font-size: 1.02rem; cursor: pointer; box-shadow: 0 12px 28px rgba(0,0,0,.25); }
         .mt-slow-badge { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 5; border-radius: 999px; padding: 6px 14px; background: rgba(125,211,252,.18); border: 1px solid rgba(125,211,252,.55); color: #bae6fd; font-family: var(--font-nunito); font-weight: 1000; font-size: .82rem; }
         @keyframes mt-pulse { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
+        .mt-objective { text-align: center; padding: 3px 12px 6px; font: 800 .9rem var(--font-nunito); color: #fde68a; }
+        .mt-controls { display: flex; justify-content: center; gap: 10px; padding: 6px 12px 10px; }
+        .mt-controls button { min-width: 56px; min-height: 48px; border: 2px solid #76bdb4; border-radius: 14px; background: #174c54; color: white; font-size: 1.5rem; touch-action: none; }
+        .mt-controls button:active { background: #417a7b; transform: translateY(2px); }
+        @media (max-height: 500px) { .mt-verse-bar { display: none; } .mt-hud { padding: 3px 10px; } .mt-controls { position: absolute; bottom: 12px; right: 12px; width: 125px; flex-wrap: wrap; } }
+        @media (prefers-reduced-motion: reduce) { .mt-chip.next { animation: none; } }
       `}</style>
 
       {phase !== 'menu' ? (
-        <div className="mt-fullscreen" onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp}>
+        <div className="mt-fullscreen" onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp} onLostPointerCapture={onPointerUp}>
           <div className="mt-hud">
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               <span className="mt-hud-stat">⭐ {copy.score}: {score}</span>
               <span className="mt-hud-stat">🏆 {copy.best}: {best}</span>
-              <span className="mt-hud-stat">📖 {copy.level} {level}</span>
+              <span className="mt-hud-stat">📖 {level}/9</span>
             </div>
-            <button className="mt-exit" onClick={() => setPhase('menu')}>✕ {copy.exit}</button>
+            {phase === 'play' && <button className="mt-exit" onClick={() => changePhase('paused')}>Ⅱ {copy.pause}</button>}
+            <button className="mt-exit" onClick={() => changePhase('menu')}>✕ {copy.exit}</button>
+          </div>
+          <div className="mt-objective" aria-live="polite">
+            {copy.chapters[Math.floor((level - 1) / 3)]} · {wordsGot}/{verse.words.length}<br />
+            ⭐ {copy.mission}: <strong>{verse.words[Math.min(wordsGot, verse.words.length - 1)]}</strong>
           </div>
           <div className="mt-verse-bar" aria-label={verse.ref}>
             {verse.words.map((word, i) => (
@@ -665,8 +753,21 @@ export default function MannaTrailPage() {
           </div>
           <div className="mt-arena" ref={wrapRef}>
             {slowOn && <div className="mt-slow-badge">{copy.slow}</div>}
-            <canvas ref={canvasRef} />
+            <canvas ref={canvasRef} role="img" aria-label={`${copy.title}: ${copy.mission}`} />
           </div>
+          {phase === 'play' && <div className="mt-controls" aria-label={copy.howTitle}>
+            {[{ x: 0, y: -1 }, { x: -1, y: 0 }, { x: 0, y: 1 }, { x: 1, y: 0 }].map((dir, i) => (
+              <button key={i} aria-label={copy.directions[i]} onPointerDown={e => { e.preventDefault(); pushDir(dir) }} onClick={e => { if (e.detail === 0) pushDir(dir) }}>{['↑', '←', '↓', '→'][i]}</button>
+            ))}
+          </div>}
+
+          {phase === 'paused' && <div className="mt-overlay" role="dialog" aria-modal="true" aria-label={copy.paused}>
+            <div className="mt-card"><h2>{copy.paused}</h2><p style={{ margin: '16px 0' }}>{copy.mission}: <strong>{verse.words[wordsGot]}</strong></p><button className="mt-btn" onClick={() => changePhase('play')}>{copy.continue}</button></div>
+          </div>}
+
+          {phase === 'won' && <div className="mt-overlay" role="dialog" aria-modal="true" aria-label={copy.won}>
+            <div className="mt-card"><div style={{ fontSize: 48 }}>⛺</div><h2>{copy.won}</h2><p style={{ margin: '16px 0' }}>{copy.lesson}</p><p style={{ marginBottom: 16 }}>{copy.score}: {score}</p><button className="mt-btn" onClick={startGame}>{copy.again}</button><button className="mt-exit" style={{ background: '#334155', margin: 8 }} onClick={() => changePhase('menu')}>{copy.exit}</button></div>
+          </div>}
 
           {phase === 'levelUp' && (
             <div className="mt-overlay">
@@ -679,7 +780,8 @@ export default function MannaTrailPage() {
                   &ldquo;{verse.words.join(' ')}&rdquo;
                 </p>
                 <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#075985', marginBottom: 18 }}>— {verse.ref}</p>
-                <button className="mt-btn" onClick={nextLevel}>{copy.resume} → {copy.level} {level + 1}</button>
+                <p style={{ marginBottom: 16, color: '#475569' }}>{copy.lesson}</p>
+                <button className="mt-btn" onClick={nextLevel}>{level === VERSES.length ? copy.finish : `${copy.resume} → ${copy.level} ${level + 1}`}</button>
               </div>
             </div>
           )}
@@ -689,13 +791,13 @@ export default function MannaTrailPage() {
               <div className="mt-card">
                 <div style={{ fontSize: '2.6rem', marginBottom: 8 }}>🌅</div>
                 <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '1.5rem', marginBottom: 8 }}>{copy.gameOver}</h2>
-                <p style={{ fontFamily: 'var(--font-lora)', fontWeight: 700, lineHeight: 1.6, color: '#475569', marginBottom: 14 }}>{copy.overText}</p>
+                <p style={{ fontFamily: 'var(--font-lora)', fontWeight: 700, lineHeight: 1.6, color: '#475569', marginBottom: 14 }}>{copy.recovery}</p>
                 <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '1.15rem', marginBottom: 18 }}>
                   ⭐ {copy.score}: {score} · 🏆 {copy.best}: {best}
                 </p>
                 <div style={{ display: 'flex', gap: 10, justifyContent: 'center' }}>
-                  <button className="mt-btn" onClick={startGame}>{copy.again}</button>
-                  <button className="mt-exit" style={{ background: '#e2e8f0', color: '#334155' }} onClick={() => setPhase('menu')}>{copy.exit}</button>
+                  <button className="mt-btn" onClick={recover}>{copy.recover}</button>
+                  <button className="mt-exit" style={{ background: '#e2e8f0', color: '#334155' }} onClick={() => changePhase('menu')}>{copy.exit}</button>
                 </div>
               </div>
             </div>
@@ -710,6 +812,12 @@ export default function MannaTrailPage() {
 
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', margin: '20px 0 26px' }}>
             <span className="mt-hud-stat">🏆 {copy.best}: {best}</span>
+            <span className="mt-hud-stat">{copy.journey}</span>
+          </div>
+
+          <div style={{ display: 'flex', gap: 12, marginBottom: 20 }}>
+            <button className="mt-exit" aria-pressed={gentle} style={{ border: gentle ? '2px solid #fbbf24' : '2px solid transparent' }} onClick={() => setGentle(true)}>{copy.gentle}</button>
+            <button className="mt-exit" aria-pressed={!gentle} style={{ border: !gentle ? '2px solid #fbbf24' : '2px solid transparent' }} onClick={() => setGentle(false)}>{copy.brisk}</button>
           </div>
 
           <button className="mt-btn" style={{ fontSize: '1.15rem', padding: '16px 40px' }} onClick={startGame}>

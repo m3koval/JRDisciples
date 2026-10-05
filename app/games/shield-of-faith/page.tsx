@@ -4,6 +4,7 @@
 import { useRef, useEffect, useState, useCallback } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
+import { WAVE_SIZES, stepGuard, waveOutcome, hasExited, safeBest } from './rules'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 const TICK_MS   = 16          // ~62.5 fps fixed timestep
@@ -12,7 +13,7 @@ const BULLET_SPEED = 9
 const FIRE_RATE = 320         // ms between auto-shots
 const BASE_DART_SPEED = 1.4
 const DART_SPAWN_MS   = 2000
-const WAVE_SIZES = [5, 8, 11, 14, 18, 22, 27, 32, 38, 50]
+
 const TOTAL_WAVES = WAVE_SIZES.length
 const JOY_DEAD   = 10
 const JOY_REACH  = 56
@@ -22,39 +23,15 @@ const ARMOR_TYPES = ['belt','breastplate','boots','shield','helmet','sword'] as 
 type ArmorType = typeof ARMOR_TYPES[number]
 
 const ARMOR_DATA: Record<ArmorType, { color: string; icon: string; en: string; ru: string; fxEn: string; fxRu: string }> = {
-  belt:        { color: '#fbbf24', icon: '🎗️', en: 'Belt of Truth',       ru: 'Пояс Истины',       fxEn: 'Enemies revealed',  fxRu: 'Враги видны' },
+  belt:        { color: '#fbbf24', icon: '🎗️', en: 'Belt of Truth',       ru: 'Пояс Истины',       fxEn: '+1 shield charge',  fxRu: '+1 заряд щита' },
   breastplate: { color: '#60a5fa', icon: '🛡️', en: 'Breastplate',         ru: 'Броня Правды',      fxEn: '+2 shield charges', fxRu: '+2 заряда щита' },
   boots:       { color: '#34d399', icon: '👟', en: 'Boots of Peace',      ru: 'Обувь Мира',        fxEn: '+35% speed',        fxRu: '+35% скорость' },
-  shield:      { color: '#f472b6', icon: '🌟', en: 'Shield of Faith',     ru: 'Щит Веры',          fxEn: 'Auto-deflect dart', fxRu: 'Отклоняет дарт' },
+  shield:      { color: '#f472b6', icon: '🌟', en: 'Shield of Faith',     ru: 'Щит Веры',          fxEn: 'Longer shield hold', fxRu: 'Щит держится дольше' },
   helmet:      { color: '#a78bfa', icon: '⛑️', en: 'Helmet of Salvation', ru: 'Шлем Спасения',     fxEn: 'Extra life',        fxRu: 'Доп. жизнь' },
   sword:       { color: '#fb923c', icon: '⚔️', en: 'Sword of the Spirit', ru: 'Меч Духа',          fxEn: 'Piercing shots',    fxRu: 'Пронизывает всё' },
 }
 
-// ─── Scripture ────────────────────────────────────────────────────────────────
-const VERSES_EN = [
-  { ref: 'Ephesians 6:11', text: 'Put on the full armor of God, so that you can take your stand against the devil\'s schemes.' },
-  { ref: 'Ephesians 6:16', text: 'Take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one.' },
-  { ref: '1 John 4:4',     text: 'Greater is He who is in you than he who is in the world.' },
-  { ref: 'Psalm 46:1',     text: 'God is our refuge and strength, an ever-present help in trouble.' },
-  { ref: 'Romans 8:37',    text: 'We are more than conquerors through Him who loved us.' },
-  { ref: 'Isaiah 41:10',   text: 'Do not fear, for I am with you. I am your God — I will strengthen you.' },
-  { ref: '2 Timothy 1:7',  text: 'God has not given us a spirit of fear, but of power, love, and a sound mind.' },
-  { ref: 'Ephesians 6:14', text: 'Stand firm — belt of truth, breastplate of righteousness.' },
-  { ref: 'Ephesians 6:17', text: 'Take the helmet of salvation and the sword of the Spirit, which is the word of God.' },
-  { ref: 'Ephesians 6:13', text: 'When the day of evil comes, you will be able to stand your ground.' },
-]
-const VERSES_RU = [
-  { ref: 'Еф 6:11',   text: 'Облекитесь во всеоружие Божье, чтобы стоять против козней диавольских.' },
-  { ref: 'Еф 6:16',   text: 'Возьмите щит веры, которым угасите все раскалённые стрелы лукавого.' },
-  { ref: '1 Ин 4:4',  text: 'Больше Тот, Кто в вас, нежели тот, кто в мире.' },
-  { ref: 'Пс 45:2',   text: 'Бог нам прибежище и сила, скорый помощник в бедах.' },
-  { ref: 'Рим 8:37',  text: 'Всё преодолеваем силою Возлюбившего нас.' },
-  { ref: 'Ис 41:10',  text: 'Не бойся, ибо Я с тобой; не смущайся, ибо Я Бог твой.' },
-  { ref: '2 Тим 1:7', text: 'Бог дал нам духа не боязни, но силы, любви и целомудрия.' },
-  { ref: 'Еф 6:14',   text: 'Стойте, препоясав истиной и облекшись в броню праведности.' },
-  { ref: 'Еф 6:17',   text: 'Возьмите шлем спасения и меч духовный — Слово Божье.' },
-  { ref: 'Еф 6:13',   text: 'Когда наступит день злой, вы устоите и, всё преодолев, устоите.' },
-]
+import { VERSES_EN, VERSES_RU, PRACTICE } from './scripture'
 
 // ─── Entity types ─────────────────────────────────────────────────────────────
 interface Player { x: number; y: number; vx: number; vy: number; hp: number; maxHp: number; invMs: number; shieldCharges: number; armor: Set<ArmorType>; speed: number; piercing: boolean }
@@ -77,7 +54,7 @@ export default function ShieldOfFaithPage() {
   const lastRef   = useRef(0)
 
   // Game state refs (zero lag)
-  const stateRef     = useRef<'menu'|'playing'|'verse'|'dead'|'victory'>('menu')
+  const stateRef     = useRef<'menu'|'playing'|'paused'|'verse'|'dead'|'victory'>('menu')
   const playerRef    = useRef<Player>({ x: 270, y: 600, vx: 0, vy: 0, hp: 3, maxHp: 3, invMs: 0, shieldCharges: 0, armor: new Set(), speed: PLAYER_R * 0.18, piercing: false })
   const dartsRef     = useRef<Dart[]>([])
   const bulletsRef   = useRef<Bullet[]>([])
@@ -96,14 +73,20 @@ export default function ShieldOfFaithPage() {
 
   // Input refs
   const keysRef  = useRef<Set<string>>(new Set())
+  const pointerIdRef = useRef<number | null>(null)
+  const guardHeldRef = useRef(false)
+  const guardRef = useRef({ active: false, energy: 100 })
+  const guardButtonRef = useRef<HTMLButtonElement>(null)
+
   const joyRef   = useRef<{ active: boolean; ax: number; ay: number; cx: number; cy: number }>({ active: false, ax: 0, ay: 0, cx: 0, cy: 0 })
   const joyVecRef= useRef({ dx: 0, dy: 0 })
 
   // React state for UI overlays only
-  const [uiState, setUiState]  = useState<'menu'|'playing'|'verse'|'dead'|'victory'>('menu')
+  const [uiState, setUiState]  = useState<'menu'|'playing'|'paused'|'verse'|'dead'|'victory'>('menu')
   const [verseIdx, setVerseIdx]= useState(0)
   const [armorToast, setArmorToast] = useState<{ type: ArmorType; ts: number } | null>(null)
   const [bestScore, setBestScore] = useState(0)
+  const [practiceAnswer, setPracticeAnswer] = useState<'correct' | 'retry' | null>(null)
 
   // ─── Canvas size ────────────────────────────────────────────────────────────
   const W = useRef(540)
@@ -112,8 +95,8 @@ export default function ShieldOfFaithPage() {
   // ─── Init / reset ────────────────────────────────────────────────────────────
   const initGame = useCallback(() => {
     const c = canvasRef.current!
-    W.current = c.offsetWidth  || 540
-    H.current = c.offsetHeight || 820
+    W.current = window.innerWidth
+    H.current = window.innerHeight
     c.width  = W.current  * devicePixelRatio
     c.height = H.current  * devicePixelRatio
 
@@ -128,6 +111,13 @@ export default function ShieldOfFaithPage() {
     fireTimerRef.current = 0
     spawnTimerRef.current= 0
     accRef.current       = 0
+    keysRef.current.clear()
+    pointerIdRef.current = null
+    guardHeldRef.current = false
+    guardRef.current = { active: false, energy: 100 }
+    joyRef.current.active = false
+    joyVecRef.current = { dx: 0, dy: 0 }
+    setArmorToast(null)
 
     const cx = W.current / 2, cy = H.current * 0.65
     playerRef.current = { x: cx, y: cy, vx: 0, vy: 0, hp: 3, maxHp: 3, invMs: 0, shieldCharges: 0, armor: new Set(), speed: 3.2, piercing: false }
@@ -193,6 +183,21 @@ export default function ShieldOfFaithPage() {
 
     if (p.invMs > 0) p.invMs -= dt
 
+    guardRef.current = stepGuard(guardRef.current.energy, guardHeldRef.current || keys.has(' '), dt, p.armor.has('shield'))
+    // Holding the shield trades movement speed for a broad defensive radius.
+    if (guardRef.current.active) {
+      p.x -= p.vx * 0.45; p.y -= p.vy * 0.45
+      for (let i = darts.length - 1; i >= 0; i--) {
+        const d = darts[i]
+        if (Math.hypot(d.x - p.x, d.y - p.y) < PLAYER_R + 48 + d.r) {
+          burst(d.x, d.y, '#7dd3fc', 10)
+          darts.splice(i, 1)
+          scoreRef.current += 15
+          dartsKilledRef.current++
+        }
+      }
+    }
+
     // ── Auto-fire ──
     fireTimerRef.current += dt
     const fireRate = p.armor.has('sword') ? FIRE_RATE * 0.7 : FIRE_RATE
@@ -247,13 +252,7 @@ export default function ShieldOfFaithPage() {
               }
             }
             darts.splice(di, 1)
-            // Check wave complete
-            if (darts.length === 0 && dartsLeftRef.current === 0) {
-              stateRef.current = 'verse'
-              if (wv + 1 >= TOTAL_WAVES) stateRef.current = 'victory'
-              setVerseIdx(wv % VERSES_EN.length)
-              setUiState(stateRef.current)
-            }
+
           }
           break
         }
@@ -286,6 +285,22 @@ export default function ShieldOfFaithPage() {
       }
     }
 
+    // Every removal path counts toward completion, including dodged darts.
+    for (let i = darts.length - 1; i >= 0; i--) {
+      if (hasExited(darts[i], W_, H_)) darts.splice(i, 1)
+    }
+    const outcome = waveOutcome(p.hp, dartsLeftRef.current, darts.length, wv)
+    if (outcome !== 'playing') {
+      setPracticeAnswer(null)
+      stateRef.current = outcome
+      setVerseIdx(wv % VERSES_EN.length)
+      setUiState(outcome)
+      guardHeldRef.current = false
+      joyRef.current.active = false
+      joyVecRef.current = { dx: 0, dy: 0 }
+      keysRef.current.clear()
+    }
+
     // ── Powerup collection ──
     for (let i = pups.length - 1; i >= 0; i--) {
       const pu = pups[i]
@@ -295,6 +310,8 @@ export default function ShieldOfFaithPage() {
       if ((pu.x - p.x)**2 + (pu.y - p.y)**2 < (PLAYER_R + 18)**2) {
         // Apply armor effect
         p.armor.add(pu.type)
+        if (pu.type === 'shield') guardRef.current.energy = 100
+        if (pu.type === 'belt') p.shieldCharges += 1
         if (pu.type === 'breastplate') p.shieldCharges += 2
         if (pu.type === 'boots')       p.speed = Math.min(p.speed * 1.35, 6.5)
         if (pu.type === 'helmet')      { p.maxHp++; p.hp = Math.min(p.hp + 1, p.maxHp) }
@@ -335,21 +352,31 @@ export default function ShieldOfFaithPage() {
     ctx.fillStyle = bg
     ctx.fillRect(0, 0, W_, H_)
 
-    // Starfield (static — seeded)
-    ctx.fillStyle = 'rgba(255,255,255,0.55)'
-    for (let i = 0; i < 60; i++) {
-      const sx = ((i * 137.5) % 1) * W_
-      const sy = ((i * 97.3 + i * 0.7) % 1) * H_
-      const sr = 0.5 + (i % 3) * 0.4
-      ctx.beginPath()
-      ctx.arc(sx % W_, sy % H_, sr, 0, Math.PI*2)
-      ctx.fill()
+    // A readable training courtyard. Floor markings are not collision walls.
+    ctx.fillStyle = '#17313b'
+    ctx.fillRect(8, 60, W_ - 16, H_ - 120)
+    ctx.strokeStyle = 'rgba(162,192,183,.12)'
+    ctx.lineWidth = 1
+    for (let y = 64; y < H_ - 60; y += 64) {
+      for (let x = -32 + (Math.floor(y / 64) % 2) * 32; x < W_; x += 64) ctx.strokeRect(x, y, 64, 64)
     }
+    ctx.strokeStyle = 'rgba(238,207,130,.16)'; ctx.lineWidth = 3
+    ctx.beginPath(); ctx.arc(W_ / 2, H_ / 2, Math.min(W_, H_) * .28, 0, Math.PI * 2); ctx.stroke()
 
     const p   = playerRef.current
     const prev= prevPlayerRef.current
     const px  = prev.x + (p.x - prev.x) * alpha
     const py  = prev.y + (p.y - prev.y) * alpha
+    if (guardRef.current.active) {
+      ctx.fillStyle = 'rgba(125,211,252,.16)'
+      ctx.strokeStyle = '#7dd3fc'; ctx.lineWidth = 3
+      ctx.beginPath(); ctx.arc(px, py, PLAYER_R + 48, 0, Math.PI * 2); ctx.fill(); ctx.stroke()
+    }
+    if (guardButtonRef.current) {
+      guardButtonRef.current.style.background = `linear-gradient(to top, #146487 ${guardRef.current.energy}%, #172c3b ${guardRef.current.energy}%)`
+      guardButtonRef.current.setAttribute('aria-pressed', String(guardRef.current.active))
+    }
+    canvas.dataset.state = JSON.stringify({ phase: stateRef.current, x: p.x, y: p.y, hp: p.hp, wave: waveRef.current + 1, remaining: dartsRef.current.length + dartsLeftRef.current, nearestThreat: Math.min(9999, ...dartsRef.current.map(d => Math.hypot(d.x - p.x, d.y - p.y) - d.r)), score: scoreRef.current, guard: guardRef.current, armor: Array.from(p.armor) })
 
     // Powerups
     for (const pu of powerupsRef.current) {
@@ -424,11 +451,12 @@ export default function ShieldOfFaithPage() {
       pgrd.addColorStop(1, '#0369a1')
       ctx.beginPath(); ctx.arc(px, py, PLAYER_R, 0, Math.PI*2)
       ctx.fillStyle = pgrd; ctx.fill()
-      // Armor indicator — small cross
-      ctx.strokeStyle = '#fff'; ctx.lineWidth = 2.5
+      // A shield silhouette, not a second human character canon.
       ctx.shadowBlur = 0
-      ctx.beginPath(); ctx.moveTo(px, py - 8); ctx.lineTo(px, py + 8); ctx.stroke()
-      ctx.beginPath(); ctx.moveTo(px - 8, py); ctx.lineTo(px + 8, py); ctx.stroke()
+      ctx.fillStyle = '#ffe1a1'; ctx.strokeStyle = '#744822'; ctx.lineWidth = 2
+      ctx.beginPath(); ctx.moveTo(px - 11, py - 12); ctx.lineTo(px + 11, py - 12)
+      ctx.lineTo(px + 9, py + 5); ctx.quadraticCurveTo(px + 5, py + 12, px, py + 15)
+      ctx.quadraticCurveTo(px - 5, py + 12, px - 9, py + 5); ctx.closePath(); ctx.fill(); ctx.stroke()
       ctx.restore()
     }
 
@@ -486,7 +514,7 @@ export default function ShieldOfFaithPage() {
     const dt = Math.min(now - lastRef.current, 100)
     lastRef.current = now
     accRef.current += dt
-    while (accRef.current >= TICK_MS) { tick(TICK_MS); accRef.current -= TICK_MS }
+    while (accRef.current >= TICK_MS && stateRef.current === 'playing') { tick(TICK_MS); accRef.current -= TICK_MS }
     draw(now, accRef.current / TICK_MS)
     rafRef.current = requestAnimationFrame(loop)
   }, [tick, draw])
@@ -502,6 +530,7 @@ export default function ShieldOfFaithPage() {
   }, [initGame, loop])
 
   const nextWave = useCallback(() => {
+    if (stateRef.current !== 'verse') return
     const next = waveRef.current + 1
     if (next >= TOTAL_WAVES) { stateRef.current = 'victory'; setUiState('victory'); return }
     waveRef.current      = next
@@ -510,20 +539,58 @@ export default function ShieldOfFaithPage() {
     bulletsRef.current   = []
     spawnTimerRef.current= 0
     stateRef.current     = 'playing'
+    accRef.current = 0
+    guardRef.current = { active: false, energy: 100 }
+    playerRef.current.hp = Math.min(playerRef.current.maxHp, playerRef.current.hp + 1)
+    const nextArmor = ARMOR_TYPES.find(type => !playerRef.current.armor.has(type))
+    powerupsRef.current = nextArmor ? [{ id: uid(), x: W.current / 2, y: H.current / 2, vy: 0, type: nextArmor, pulse: 0 }] : []
     setUiState('playing')
     lastRef.current = performance.now()
     cancelAnimationFrame(rafRef.current)
     rafRef.current = requestAnimationFrame(loop)
   }, [loop])
 
+  const pausePlay = useCallback(() => {
+    if (stateRef.current !== 'playing') return
+    stateRef.current = 'paused'; setUiState('paused')
+    keysRef.current.clear(); guardHeldRef.current = false
+    pointerIdRef.current = null; joyRef.current.active = false
+    joyVecRef.current = { dx: 0, dy: 0 }
+    cancelAnimationFrame(rafRef.current)
+  }, [])
+  const resumePlay = useCallback(() => {
+    if (stateRef.current !== 'paused') return
+    stateRef.current = 'playing'; setUiState('playing')
+    lastRef.current = performance.now(); accRef.current = 0
+    rafRef.current = requestAnimationFrame(loop)
+  }, [loop])
+  useEffect(() => {
+    const hidden = () => { if (document.hidden) pausePlay() }
+    window.addEventListener('blur', pausePlay)
+    document.addEventListener('visibilitychange', hidden)
+    return () => {
+      window.removeEventListener('blur', pausePlay)
+      document.removeEventListener('visibilitychange', hidden)
+      cancelAnimationFrame(rafRef.current)
+    }
+  }, [pausePlay])
+
   // ─── Canvas resize ───────────────────────────────────────────────────────────
   useEffect(() => {
     const c = canvasRef.current
     if (!c) return
     const ro = new ResizeObserver(() => {
-      if (stateRef.current !== 'playing') return
+      if (stateRef.current !== 'playing' && stateRef.current !== 'paused') return
+      if (c.offsetWidth <= 0 || c.offsetHeight <= 0) return
+      const oldW = W.current, oldH = H.current
       W.current = c.offsetWidth
       H.current = c.offsetHeight
+      playerRef.current.x *= W.current / oldW
+      playerRef.current.y *= H.current / oldH
+      prevPlayerRef.current = { x: playerRef.current.x, y: playerRef.current.y }
+      for (const group of [dartsRef.current, bulletsRef.current, powerupsRef.current]) {
+        for (const item of group) { item.x *= W.current / oldW; item.y *= H.current / oldH }
+      }
       c.width  = W.current  * devicePixelRatio
       c.height = H.current  * devicePixelRatio
     })
@@ -533,16 +600,22 @@ export default function ShieldOfFaithPage() {
 
   // ─── Keyboard ────────────────────────────────────────────────────────────────
   useEffect(() => {
-    const onDown = (e: KeyboardEvent) => keysRef.current.add(e.key)
+    const onDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { pausePlay(); return }
+      if (stateRef.current !== 'playing') return
+      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(e.key)) e.preventDefault()
+      keysRef.current.add(e.key)
+    }
     const onUp   = (e: KeyboardEvent) => keysRef.current.delete(e.key)
     window.addEventListener('keydown', onDown)
     window.addEventListener('keyup',   onUp)
     return () => { window.removeEventListener('keydown', onDown); window.removeEventListener('keyup', onUp) }
-  }, [])
+  }, [pausePlay])
 
   // ─── Joystick pointer ────────────────────────────────────────────────────────
   const onPtrDown = useCallback((e: React.PointerEvent) => {
-    if (stateRef.current !== 'playing') return
+    if (stateRef.current !== 'playing' || pointerIdRef.current !== null) return
+    pointerIdRef.current = e.pointerId
     const canvas = canvasRef.current!
     const rect   = canvas.getBoundingClientRect()
     const cx = e.clientX - rect.left
@@ -553,7 +626,7 @@ export default function ShieldOfFaithPage() {
   }, [])
 
   const onPtrMove = useCallback((e: React.PointerEvent) => {
-    if (!joyRef.current.active) return
+    if (!joyRef.current.active || pointerIdRef.current !== e.pointerId) return
     const canvas = canvasRef.current!
     const rect   = canvas.getBoundingClientRect()
     const cx = e.clientX - rect.left
@@ -578,14 +651,17 @@ export default function ShieldOfFaithPage() {
     joyRef.current.cx = cx; joyRef.current.cy = cy
   }, [])
 
-  const onPtrUp = useCallback(() => {
+  const onPtrUp = useCallback((e: React.PointerEvent) => {
+    if (pointerIdRef.current !== e.pointerId) return
+    pointerIdRef.current = null
     joyRef.current.active = false
     joyVecRef.current = { dx: 0, dy: 0 }
   }, [])
 
   // ─── Best score ──────────────────────────────────────────────────────────────
   useEffect(() => {
-    const saved = parseInt(localStorage.getItem('shield-of-faith-best') ?? '0')
+    let saved = 0
+    try { saved = safeBest(localStorage.getItem('shield-of-faith-best')) } catch { /* Private/offline play remains available. */ }
     bestRef.current = saved
     setBestScore(saved)
   }, [])
@@ -593,7 +669,8 @@ export default function ShieldOfFaithPage() {
   useEffect(() => {
     if (uiState === 'dead' || uiState === 'victory') {
       const b = Math.max(scoreRef.current, bestRef.current)
-      localStorage.setItem('shield-of-faith-best', String(b))
+      bestRef.current = b
+      try { localStorage.setItem('shield-of-faith-best', String(b)) } catch { /* Keep the session best if storage is unavailable. */ }
       setBestScore(b)
     }
   }, [uiState])
@@ -603,20 +680,44 @@ export default function ShieldOfFaithPage() {
 
   // ─── JSX ─────────────────────────────────────────────────────────────────────
   return (
-    <main style={{ minHeight: '100dvh', background: 'linear-gradient(180deg,#050a1a,#0a1830)', userSelect: 'none', WebkitUserSelect: 'none' }}>
+    <main style={{ minHeight: '100dvh', background: 'linear-gradient(180deg,#050a1a,#0a1830)', userSelect: 'none', WebkitUserSelect: 'none', fontFamily: 'Arial, sans-serif' }}>
       {/* ── CANVAS (always mounted, fullscreen during play) ── */}
       <canvas
         ref={canvasRef}
+        aria-label={isRu ? 'Арена. Двигайся стрелками. Пробел — щит.' : 'Arena. Arrow keys move. Space holds your shield.'}
         onPointerDown={onPtrDown}
         onPointerMove={onPtrMove}
         onPointerUp={onPtrUp}
+        onPointerCancel={onPtrUp}
+        onLostPointerCapture={onPtrUp}
         onContextMenu={e => e.preventDefault()}
         style={{
-          display: uiState === 'playing' ? 'block' : 'none',
+          display: uiState === 'playing' || uiState === 'paused' ? 'block' : 'none',
           position: 'fixed', inset: 0, width: '100%', height: '100%',
-          touchAction: 'none', cursor: 'none'
+          touchAction: 'none', cursor: 'none', zIndex: 1000
         }}
       />
+
+      {uiState === 'playing' && <>
+        <button onClick={pausePlay} style={{ position: 'fixed', top: 'max(56px, env(safe-area-inset-top))', right: 14, zIndex: 1010, minHeight: 48, padding: '8px 18px', borderRadius: 14, border: '1px solid #93c5fd', background: '#142c3b', color: '#fff', fontWeight: 800 }}>{isRu ? 'Пауза' : 'Pause'}</button>
+        <div aria-hidden="true" style={{ position: 'fixed', bottom: 'max(70px, env(safe-area-inset-bottom))', left: 24, width: 88, height: 88, border: '2px solid #a6c7c855', borderRadius: '50%', background: '#b8e8df12', zIndex: 1002, pointerEvents: 'none', display: 'grid', placeItems: 'center', color: '#bdd8db', fontSize: 28 }}>✥</div>
+        <button ref={guardButtonRef} aria-pressed={false}
+          onPointerDown={e => { e.preventDefault(); e.currentTarget.setPointerCapture(e.pointerId); guardHeldRef.current = true }}
+          onPointerUp={() => { guardHeldRef.current = false }}
+          onPointerCancel={() => { guardHeldRef.current = false }}
+          onLostPointerCapture={() => { guardHeldRef.current = false }}
+          onKeyDown={e => { if (e.key === 'Enter') guardHeldRef.current = true }}
+          onKeyUp={() => { guardHeldRef.current = false }}
+          style={{ position: 'fixed', bottom: 'max(58px, env(safe-area-inset-bottom))', right: 20, width: 104, height: 104, borderRadius: '50%', border: '3px solid #8cddf2', color: '#fff', zIndex: 1010, touchAction: 'none', fontWeight: 900, fontSize: 16 }}>
+          <span style={{ display: 'block', fontSize: 28 }}>🛡</span>{isRu ? 'Держи щит' : 'Hold shield'}
+        </button>
+        <p style={{ position: 'fixed', bottom: 6, left: '24%', right: '24%', margin: 0, textAlign: 'center', color: '#d7e6e8', fontSize: 12, zIndex: 1005, pointerEvents: 'none' }}>{isRu ? 'Отпусти щит, чтобы восстановить его силу' : 'Release your shield to recharge'}</p>
+      </>}
+      {uiState === 'paused' && <div role="dialog" aria-modal="true" aria-label={isRu ? 'Пауза' : 'Paused'} style={{ position: 'fixed', inset: 0, zIndex: 1200, background: '#071923dc', display: 'grid', placeItems: 'center', color: 'white', padding: 24 }}>
+        <div style={{ textAlign: 'center' }}><h2>{isRu ? 'Пауза' : 'Paused'}</h2>
+        <button onClick={resumePlay} style={{ padding: '16px 32px', borderRadius: 16, background: '#ffe1a1', color: '#342a12', border: 0, fontWeight: 900, fontSize: 18 }}>{isRu ? 'Продолжить' : 'Resume'}</button>
+        <Link href="/games" style={{ display: 'block', padding: 24, color: '#fff' }}>{isRu ? 'К играм' : 'All games'}</Link></div>
+      </div>}
 
       {/* ── ARMOR TOAST ── */}
       {armorToast && (
@@ -625,7 +726,7 @@ export default function ShieldOfFaithPage() {
           display: uiState === 'playing' ? 'block' : 'none',
           background: 'rgba(0,0,0,0.82)', borderRadius: 20, padding: '14px 28px',
           border: `2px solid ${ARMOR_DATA[armorToast.type].color}`,
-          textAlign: 'center', pointerEvents: 'none', zIndex: 100,
+          textAlign: 'center', pointerEvents: 'none', zIndex: 1100,
           animation: 'fadeInOut 1.8s ease forwards'
         }}>
           <div style={{ fontSize: '2rem' }}>{ARMOR_DATA[armorToast.type].icon}</div>
@@ -660,9 +761,7 @@ export default function ShieldOfFaithPage() {
               {isRu ? 'Ефесянам 6:16' : 'Ephesians 6:16'}
             </p>
             <p style={{ fontFamily: 'sans-serif', color: 'rgba(255,255,255,.8)', lineHeight: 1.6, marginBottom: 28, fontStyle: 'italic', fontSize: '.95rem' }}>
-              {isRu
-                ? '«Возьмите щит веры, которым сможете угасить все раскалённые стрелы лукавого.»'
-                : '"Take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one."'}
+              {verses[4].text}
             </p>
 
             {/* How to play */}
@@ -673,6 +772,7 @@ export default function ShieldOfFaithPage() {
               {[
                 isRu ? ['🕹️', 'Двигайся джойстиком (тач) или WASD'] : ['🕹️', 'Move with the joystick (touch) or WASD'],
                 isRu ? ['🎯', 'Воин сам целится и стреляет'] : ['🎯', 'Your warrior auto-aims and fires'],
+                isRu ? ['🛡️', 'Держи щит, чтобы гасить стрелы. Отпусти — он восстановится. На клавиатуре: пробел.'] : ['🛡️', 'Hold your shield to extinguish darts. Release to recharge. Keyboard: Space.'],
                 isRu ? ['🔥', 'Раскалённые стрелы летят со всех сторон'] : ['🔥', 'Fiery darts fly in from every direction'],
                 isRu ? ['⚔️', 'Собирай доспехи для силовых усилений'] : ['⚔️', 'Collect armor pieces for power-ups'],
                 isRu ? ['📖', 'Между волнами читай Слово Божье'] : ['📖', 'Between waves, read God\'s Word'],
@@ -702,18 +802,25 @@ export default function ShieldOfFaithPage() {
 
       {/* ── VERSE OVERLAY ── */}
       {uiState === 'verse' && verse && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(5,10,26,0.95)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 200, padding: 20 }}>
-          <div style={{ maxWidth: 440, textAlign: 'center' }}>
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(5,10,26,0.95)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1200, padding: 20 }}>
+          <div style={{ maxWidth: 440, maxHeight: '90dvh', overflowY: 'auto', textAlign: 'center', color: '#fff' }}>
             <div style={{ fontSize: '3rem', marginBottom: 16 }}>📖</div>
             <p style={{ fontFamily: 'sans-serif', color: '#93c5fd', fontWeight: 900, fontSize: '.9rem', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 12 }}>
-              {isRu ? `Волна ${waveRef.current} пройдена!` : `Wave ${waveRef.current} clear!`}
+              {isRu ? `Волна ${waveRef.current + 1} пройдена!` : `Wave ${waveRef.current + 1} clear!`}
             </p>
             <p style={{ fontFamily: 'sans-serif', fontWeight: 700, fontSize: 'clamp(1rem,4vw,1.3rem)', color: '#fff', lineHeight: 1.6, marginBottom: 10, fontStyle: 'italic' }}>
               "{verse.text}"
             </p>
             <p style={{ fontFamily: 'sans-serif', color: '#fde68a', fontWeight: 900, marginBottom: 32 }}>{verse.ref}</p>
+            <p>{isRu ? 'Как применить это сегодня?' : 'How can you live this today?'}</p>
+            {Array.from({length: 2}, (_, i) => {
+              const correct = i === verseIdx % 2
+              return <button key={i} disabled={practiceAnswer === 'correct'} onClick={() => setPracticeAnswer(correct ? 'correct' : 'retry')} style={{ display: 'block', width: '100%', padding: '14px 16px', minHeight: 52, marginBottom: 10, borderRadius: 12, border: '1px solid #6f99a9', background: '#173443', color: '#fff', fontWeight: 700, fontSize: 16 }}>{correct ? PRACTICE[verseIdx][isRu ? 1 : 0] : (isRu ? 'Забыть о Боге и поступать как хочется.' : 'Forget God and do whatever I feel like.')}</button>
+            })}
+            <p role="status">{practiceAnswer === 'retry' ? (isRu ? 'Посмотри на стих ещё раз. Что помогает поступить верно?' : 'Read the verse again. What helps you do what is right?') : practiceAnswer === 'correct' ? (isRu ? 'Верно! В центре тебя ждут доспехи.' : 'Yes! Look for armor in the center.') : ''}</p>
             <button
               onClick={nextWave}
+              disabled={practiceAnswer !== 'correct'}
               style={{ background: 'linear-gradient(180deg,#fbbf24,#f97316)', color: '#3b2307', fontFamily: 'sans-serif', fontWeight: 900, fontSize: '1.1rem', border: 'none', borderRadius: 14, padding: '14px 40px', cursor: 'pointer' }}
             >
               {isRu ? `Волна ${waveRef.current + 2} →` : `Wave ${waveRef.current + 2} →`}
@@ -731,7 +838,7 @@ export default function ShieldOfFaithPage() {
               {isRu ? 'Устоять тяжело...' : 'You fell this time...'}
             </h2>
             <p style={{ fontFamily: 'sans-serif', color: '#93c5fd', lineHeight: 1.6, marginBottom: 8, fontStyle: 'italic' }}>
-              {isRu ? '"Не бойся, ибо Я с тобой." — Ис 41:10' : '"Do not fear, for I am with you." — Isaiah 41:10'}
+              {verses[0].text} — {verses[0].ref}
             </p>
             <p style={{ fontFamily: 'sans-serif', color: '#fde68a', fontWeight: 900, fontSize: '1.3rem', marginBottom: 6 }}>
               {isRu ? `Очки: ${scoreRef.current}` : `Score: ${scoreRef.current}`}
@@ -759,12 +866,10 @@ export default function ShieldOfFaithPage() {
           <div style={{ maxWidth: 460, textAlign: 'center', padding: '20px 0' }}>
             <div style={{ fontSize: '3.5rem', marginBottom: 12 }}>🏆</div>
             <h2 style={{ fontFamily: 'sans-serif', fontWeight: 900, color: '#fde68a', fontSize: 'clamp(1.5rem,6vw,2.2rem)', margin: '0 0 10px' }}>
-              {isRu ? 'Полное вооружение!' : 'Full Armor Equipped!'}
+              {isRu ? 'Ты прошёл все волны!' : 'You stood through every wave!'}
             </h2>
             <p style={{ fontFamily: 'sans-serif', color: '#bae6fd', lineHeight: 1.6, marginBottom: 10, fontStyle: 'italic', fontSize: '.95rem' }}>
-              {isRu
-                ? '"Всё преодолеваем силою Возлюбившего нас." — Рим 8:37'
-                : '"We are more than conquerors through Him who loved us." — Romans 8:37'}
+              {verses[9].text} — {verses[9].ref}
             </p>
             <p style={{ fontFamily: 'sans-serif', color: '#fde68a', fontWeight: 900, fontSize: '1.5rem', margin: '16px 0 4px' }}>
               {isRu ? `Очки: ${scoreRef.current}` : `Score: ${scoreRef.current}`}
@@ -798,6 +903,7 @@ export default function ShieldOfFaithPage() {
       )}
 
       <style>{`
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
         @keyframes fadeInOut {
           0%   { opacity: 0; transform: translate(-50%,-50%) scale(0.8); }
           15%  { opacity: 1; transform: translate(-50%,-50%) scale(1.05); }
