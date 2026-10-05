@@ -1,5 +1,5 @@
 """Actual keyboard nine-verse campaigns and source quotes; read-only telemetry."""
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, expect
 from pathlib import Path
 from collections import deque
 import json,os
@@ -43,6 +43,10 @@ with sync_playwright() as pw:
     assert state()['phase']=='levelUp',state()
     quote=next(f['quote'] for f in fixtures if f['language']==lang and f['index']==level-1)
     assert quote in p.locator('.mt-overlay').inner_text(),quote
+    # Learning rewards are actual modal stops: Tab cannot leave the next action.
+    reward=p.locator('.mt-overlay .mt-btn');expect(reward).to_be_focused()
+    p.keyboard.press('Tab');expect(reward).to_be_focused()
+    p.keyboard.press('Shift+Tab');expect(reward).to_be_focused()
     p.screenshot(path=str(OUT/f'{lang}-verse-{level}.png'));mark(f'{lang} verse {level} actual collection and exact reward quote')
     name=('In camp' if lang=='en' else 'В лагерь') if level==9 else (f'Keep Going → Level {level+1}' if lang=='en' else f'Дальше → Уровень {level+1}')
     if level==9:
@@ -54,7 +58,11 @@ with sync_playwright() as pw:
      assert state()['level']==2
      p.get_by_role('button',name='Ⅱ Pause' if lang=='en' else 'Ⅱ Пауза',exact=True).click();s=state();p.clock.run_for(5000);assert state()['snake']==s['snake'];mark(f'{lang} pause freezes actual snake')
      p.get_by_role('button',name='Continue' if lang=='en' else 'Продолжить',exact=True).click();p.clock.run_for(16)
-   assert state()['phase']=='won';p.screenshot(path=str(OUT/f'{lang}-finale.png'));mark(f'{lang} nine-verse final victory')
+   assert state()['phase']=='won'
+   replay=p.locator('.mt-overlay .mt-btn');expect(replay).to_be_focused()
+   p.keyboard.press('Shift+Tab');expect(p.locator('.mt-overlay button').last).to_be_focused()
+   p.keyboard.press('Tab');expect(replay).to_be_focused()
+   p.screenshot(path=str(OUT/f'{lang}-finale.png'));mark(f'{lang} nine-verse final victory and modal focus containment')
    p.locator('.mt-overlay .mt-btn').click();p.clock.run_for(16);assert state()['level']==1 and state()['words']==0;mark(f'{lang} replay clears progression')
    p.screenshot(path=str(OUT/f'{lang}-portrait.png'));p.set_viewport_size({'width':1024,'height':768});p.clock.run_for(16);p.screenshot(path=str(OUT/f'{lang}-landscape.png'))
    c.close()

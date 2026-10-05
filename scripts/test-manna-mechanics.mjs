@@ -37,7 +37,8 @@ const listeners={}
 const context2d = new Proxy({}, { get(target,key) { if(key==='measureText') return () => ({width:35}); if(key==='createLinearGradient') return () => ({addColorStop(){}}); return target[key] ?? (()=>{}); }, set(target,key,val){target[key]=val; return true} })
 const canvas={width:600,height:600,style:{},dataset:{},focus(){},getContext:()=>context2d}
 const wrap={getBoundingClientRect:()=>({width:600,height:600,left:0,top:0})}
-const jsx=(type,props)=>{ if(props?.ref) props.ref.current = type==='canvas'?canvas:wrap; return {type,props} }
+const dialog={querySelectorAll:()=>[],contains:()=>false}
+const jsx=(type,props)=>{ if(props?.ref) props.ref.current = type==='canvas'?canvas:props.role==='dialog'?dialog:wrap; return {type,props} }
 const react={
  useState(init){const i=hook++; if(!(i in slots)) slots[i]=init; return [slots[i],v=>{slots[i]=typeof v==='function'?v(slots[i]):v}]},
  useRef(init){const i=hook++; if(!(i in slots)) slots[i]={current:init}; return slots[i]},

@@ -91,6 +91,7 @@ export default function MannaTrailPage() {
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const wrapRef = useRef<HTMLDivElement | null>(null)
+  const overlayRef = useRef<HTMLDivElement | null>(null)
   // virtual joystick: hold anywhere and steer; anchor follows the thumb
   const joyRef = useRef<{ ax: number; ay: number; cx: number; cy: number } | null>(null)
   const joyVecRef = useRef<{ x: number; y: number } | null>(null)
@@ -119,7 +120,26 @@ export default function MannaTrailPage() {
   }
 
   useEffect(() => {
-    if (phase === 'play') canvasRef.current?.focus({ preventScroll: true })
+    if (phase === 'play') {
+      canvasRef.current?.focus({ preventScroll: true })
+      return
+    }
+    const dialog = overlayRef.current
+    if (!dialog) return
+    const buttons = () => Array.from(dialog.querySelectorAll<HTMLButtonElement>('button:not(:disabled)'))
+    buttons()[0]?.focus({ preventScroll: true })
+    const trapFocus = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return
+      const targets = buttons()
+      if (!targets.length) return
+      const first = targets[0], last = targets[targets.length - 1]
+      if (!dialog.contains(document.activeElement) || (event.shiftKey ? document.activeElement === first : document.activeElement === last)) {
+        event.preventDefault()
+        ;(event.shiftKey ? last : first).focus({ preventScroll: true })
+      }
+    }
+    document.addEventListener('keydown', trapFocus)
+    return () => document.removeEventListener('keydown', trapFocus)
   }, [phase])
 
   // ── Direction handling ─────────────────────────────────────────────────────
@@ -768,7 +788,32 @@ export default function MannaTrailPage() {
         .mt-controls { display: flex; justify-content: center; gap: 10px; padding: 6px 12px 10px; }
         .mt-controls button { min-width: 56px; min-height: 48px; border: 2px solid #76bdb4; border-radius: 14px; background: #174c54; color: white; font-size: 1.5rem; touch-action: none; }
         .mt-controls button:active { background: #417a7b; transform: translateY(2px); }
-        @media (max-height: 500px) { .mt-verse-bar { display: none; } .mt-hud { padding: 3px 10px; } .mt-controls { position: absolute; bottom: 12px; right: 12px; width: 125px; flex-wrap: wrap; } }
+        /* The board owns a full-height landscape column; controls never cover cells. */
+        @media (orientation: landscape) {
+          .mt-fullscreen { display: grid; grid-template-columns: minmax(0, 1fr) clamp(220px, 34vw, 260px); grid-template-rows: auto auto minmax(0, 1fr) auto; }
+          .mt-arena { grid-column: 1; grid-row: 1 / -1; min-width: 0; }
+          .mt-hud { grid-column: 2; grid-row: 1; flex-wrap: wrap; justify-content: center; padding: 8px; gap: 6px; }
+          .mt-hud > div { justify-content: center; width: 100%; }
+          .mt-hud-stat { padding: 5px 8px; }
+          .mt-objective { grid-column: 2; grid-row: 2; font-size: .85rem; padding: 2px 8px 6px; }
+          .mt-verse-bar { grid-column: 2; grid-row: 3; align-content: start; overflow-y: auto; min-height: 0; padding: 4px 8px; }
+          .mt-controls { grid-column: 2; grid-row: 4; display: grid; grid-template-columns: repeat(3, 52px); grid-template-rows: repeat(3, 48px); gap: 4px; padding: 8px; align-self: end; }
+          .mt-controls button { min-width: 48px; min-height: 48px; }
+          .mt-controls button:nth-child(1) { grid-area: 1 / 2; }
+          .mt-controls button:nth-child(2) { grid-area: 2 / 1; }
+          .mt-controls button:nth-child(3) { grid-area: 3 / 2; }
+          .mt-controls button:nth-child(4) { grid-area: 2 / 3; }
+        }
+        @media (orientation: landscape) and (max-height: 420px) { .mt-verse-bar { display: none; } .mt-hud { padding: 4px 8px; } }
+        @media (orientation: portrait) and (max-width: 400px) {
+          .mt-hud { padding: 6px 8px; gap: 5px; }
+          .mt-hud > div { gap: 4px !important; }
+          .mt-hud-stat { padding: 5px 7px; font-size: .74rem; }
+          .mt-exit { padding: 7px 9px; }
+          .mt-objective { font-size: .82rem; }
+          .mt-verse-bar { gap: 4px; padding: 3px 8px 5px; }
+          .mt-chip { padding: 3px 7px; }
+        }
         @media (prefers-reduced-motion: reduce) { .mt-chip.next { animation: none; } }
       `}</style>
 
@@ -805,16 +850,16 @@ export default function MannaTrailPage() {
             ))}
           </div>}
 
-          {phase === 'paused' && <div className="mt-overlay" role="dialog" aria-modal="true" aria-label={copy.paused}>
+          {phase === 'paused' && <div className="mt-overlay" ref={overlayRef} role="dialog" aria-modal="true" aria-label={copy.paused}>
             <div className="mt-card"><h2>{copy.paused}</h2><p style={{ margin: '16px 0' }}>{copy.mission}: <strong>{verse.words[wordsGot]}</strong></p><button className="mt-btn" onClick={() => changePhase('play')}>{copy.continue}</button></div>
           </div>}
 
-          {phase === 'won' && <div className="mt-overlay" role="dialog" aria-modal="true" aria-label={copy.won}>
+          {phase === 'won' && <div className="mt-overlay" ref={overlayRef} role="dialog" aria-modal="true" aria-label={copy.won}>
             <div className="mt-card"><div style={{ fontSize: 48 }}>⛺</div><h2>{copy.won}</h2><p style={{ margin: '16px 0' }}>{copy.lesson}</p><p style={{ marginBottom: 16 }}>{copy.score}: {score}</p><button className="mt-btn" onClick={startGame}>{copy.again}</button><button className="mt-exit" style={{ background: '#334155', margin: 8 }} onClick={() => changePhase('menu')}>{copy.exit}</button></div>
           </div>}
 
           {phase === 'levelUp' && (
-            <div className="mt-overlay" role="dialog" aria-modal="true" aria-label={copy.verseDone}>
+            <div className="mt-overlay" ref={overlayRef} role="dialog" aria-modal="true" aria-label={copy.verseDone}>
               <div className="mt-card">
                 <div style={{ fontSize: '2.6rem', marginBottom: 8 }}>🍞✨📖</div>
                 <p style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, color: '#b45309', letterSpacing: 1, textTransform: 'uppercase', fontSize: '.8rem' }}>
@@ -831,7 +876,7 @@ export default function MannaTrailPage() {
           )}
 
           {phase === 'over' && (
-            <div className="mt-overlay" role="dialog" aria-modal="true" aria-label={copy.gameOver}>
+            <div className="mt-overlay" ref={overlayRef} role="dialog" aria-modal="true" aria-label={copy.gameOver}>
               <div className="mt-card">
                 <div style={{ fontSize: '2.6rem', marginBottom: 8 }}>🌅</div>
                 <h2 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 1000, fontSize: '1.5rem', marginBottom: 8 }}>{copy.gameOver}</h2>
