@@ -20,6 +20,7 @@ export default function SpotTheDifferencePage() {
   const [failedImage, setFailedImage] = useState(false)
   const [cursor, setCursor] = useState({ x: 384, y: 512, visible: false })
   const down = useRef<{ id: number; x: number; y: number } | null>(null)
+  const pendingTap = useRef<{ x: number; y: number } | null>(null)
   const scene = SCENES[state.scene]
   const remaining = scene.differences.find(d => !state.found.includes(d.id))
   const title = ru ? scene.titleRu : scene.titleEn
@@ -30,7 +31,7 @@ export default function SpotTheDifferencePage() {
     })
     const previous = document.body.style.overflow
     document.body.style.overflow = 'hidden'
-    const interrupt = () => { down.current = null; setPaused(true) }
+    const interrupt = () => { down.current = null; pendingTap.current = null; setPaused(true) }
     const hidden = () => { if (document.hidden) interrupt() }
     window.addEventListener('blur', interrupt)
     document.addEventListener('visibilitychange', hidden)
@@ -61,15 +62,24 @@ export default function SpotTheDifferencePage() {
         const delta = e.shiftKey ? 4 : 24
         if (['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) { e.preventDefault(); setCursor(c => ({ visible: true, x: Math.max(4,Math.min(764,c.x+(e.key==='ArrowLeft'?-delta:e.key==='ArrowRight'?delta:0))), y: Math.max(4,Math.min(1020,c.y+(e.key==='ArrowUp'?-delta:e.key==='ArrowDown'?delta:0))) })) }
       }}
-      onPointerDown={e => { if (down.current || paused || state.phase !== 'play') return; down.current = { id: e.pointerId, x: e.clientX, y: e.clientY }; e.currentTarget.setPointerCapture(e.pointerId) }}
-      onPointerCancel={() => { down.current = null }} onLostPointerCapture={() => { down.current = null }}
+      onPointerDown={e => { if (down.current || paused || state.phase !== 'play') return; pendingTap.current = null; down.current = { id: e.pointerId, x: e.clientX, y: e.clientY }; e.currentTarget.setPointerCapture(e.pointerId) }}
+      onPointerCancel={() => { down.current = null; pendingTap.current = null }} onLostPointerCapture={() => { down.current = null }}
       onPointerUp={e => {
         const start = down.current
         if (!start || start.id !== e.pointerId) return
         down.current = null
         if (Math.hypot(e.clientX-start.x,e.clientY-start.y)>18) return
         const b=e.currentTarget.getBoundingClientRect()
-        tap((e.clientX-b.left)/b.width*768,(e.clientY-b.top)/b.height*1024)
+        pendingTap.current = { x: (e.clientX-b.left)/b.width*768, y: (e.clientY-b.top)/b.height*1024 }
+      }}
+      onClick={e => {
+        // Finish the gesture before replacing the board. Replacing it on pointerup
+        // lets touch's compatibility click hit the newly revealed Next story button.
+        e.preventDefault()
+        e.stopPropagation()
+        const point = pendingTap.current
+        pendingTap.current = null
+        if (point) tap(point.x, point.y)
       }}>
       <img src={`/images/jr/games/spot/spot-${scene.id}-${variant}.png`} alt={title} draggable={false} onError={() => setFailedImage(true)} />
       <svg viewBox="0 0 768 1024" aria-hidden="true">
@@ -83,7 +93,7 @@ export default function SpotTheDifferencePage() {
     <header className={styles.header}>
       <Link href="/games">{ru ? '← Игры' : '← Games'}</Link>
       <div><strong>{ru ? 'Найди отличия' : 'Spot the Difference'}</strong><small>{ru ? 'История' : 'Story'} {state.scene+1} / {SCENES.length}</small></div>
-      <button type="button" onClick={() => { down.current = null; setPaused(true) }}>{ru ? 'Пауза' : 'Pause'}</button>
+      <button type="button" onClick={() => { down.current = null; pendingTap.current = null; setPaused(true) }}>{ru ? 'Пауза' : 'Pause'}</button>
     </header>
     {!ready ? <p>{ru ? 'Загрузка…' : 'Loading…'}</p> : <>
     <section className={styles.stage}>

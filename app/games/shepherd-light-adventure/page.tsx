@@ -4,14 +4,12 @@
 
 import Link from 'next/link'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { createJourney, retryJourney, stepJourney, activateHelper, callLamb, guideRadius, clamp, dist, type Journey, type Point, type Orb, type Hazard } from './mechanics'
 import { useLanguage } from '@/context/LanguageContext'
 
-type Phase = 'intro' | 'briefing' | 'play' | 'reward' | 'complete' | 'paused'
+type Phase = 'intro' | 'briefing' | 'play' | 'reward' | 'complete' | 'paused' | 'failed'
 type Environment = 'meadow' | 'bridge' | 'storm'
 type Helper = 'rosie' | 'joseph' | 'gracie'
-type Point = { x: number; y: number }
-type Orb = Point & { id: number; found: boolean }
-type Hazard = Point & { id: number; r: number; kind: 'fog' | 'splash' | 'gust' }
 type Level = {
   id: string
   helper: Helper
@@ -42,8 +40,8 @@ const LEVELS: Level[] = [
     environment: 'meadow',
     titleEn: 'Trail 1: The Lost Lamb',
     titleRu: 'Тропа 1: Потерянный ягненок',
-    missionEn: 'Gather Shepherd Light, clear the gentle fog, and guide the lamb home.',
-    missionRu: 'Собери Свет Пастыря, очисти мягкий туман и приведи ягненка домой.',
+    missionEn: 'Gather five lights. Use your shield in the fog, then stay close and lead the lamb home.',
+    missionRu: 'Собери пять огоньков. В тумане держи щит, затем будь рядом с ягненком и веди его домой.',
     gospelEn: 'Jesus came to seek and to save the lost. He does not leave His sheep alone.',
     gospelRu: 'Иисус пришел взыскать и спасти погибшее. Он не оставляет Своих овец одних.',
     refEn: 'Luke 19:10',
@@ -65,8 +63,8 @@ const LEVELS: Level[] = [
     environment: 'bridge',
     titleEn: 'Trail 2: The Gift Bridge',
     titleRu: 'Тропа 2: Мост дара',
-    missionEn: 'Find the stepping stones, keep the lamb close, and cross by the gift of light.',
-    missionRu: 'Найди камни перехода, держи ягненка рядом и перейди по дару света.',
+    missionEn: 'Gather six lights by the shallow stream. Call the lamb and bring it to the gate.',
+    missionRu: 'Собери шесть огоньков у мелкого ручья. Позови ягненка и приведи его к воротам.',
     gospelEn: 'God’s rescue is a gift. We receive it by trusting Jesus, not by earning enough stars.',
     gospelRu: 'Божье спасение — дар. Мы принимаем его, доверяя Иисусу, а не зарабатывая звезды.',
     refEn: 'John 3:16',
@@ -113,52 +111,33 @@ const helperMeta = {
   gracie: { emoji: '🌧️', en: 'Gracie Cloak Shield', ru: 'Плащ Грейси' },
 }
 
-function clamp(value: number, min: number, max: number) {
-  return Math.max(min, Math.min(max, value))
-}
-
-function dist(a: Point, b: Point) {
-  return Math.hypot(a.x - b.x, a.y - b.y)
-}
-
-function moveToward(from: Point, to: Point, speed: number) {
-  const dx = to.x - from.x
-  const dy = to.y - from.y
-  const d = Math.hypot(dx, dy)
-  if (d < speed || d === 0) return to
-  return { x: from.x + (dx / d) * speed, y: from.y + (dy / d) * speed }
-}
-
 export default function ShepherdLightAdventurePage() {
   const { language } = useLanguage()
   const isRu = language === 'ru'
   const arenaRef = useRef<HTMLDivElement | null>(null)
   const keys = useRef<Record<string, boolean>>({})
   const pointer = useRef<Point & { active: boolean }>({ x: 18, y: 82, active: false })
-  const levelStartedAt = useRef(0)
+  const movementPointer = useRef<number | null>(null)
+  const [hydrated, setHydrated] = useState(false)
 
   const [phase, setPhase] = useState<Phase>('intro')
   const [levelIndex, setLevelIndex] = useState(0)
-  const [player, setPlayer] = useState<Point>({ x: 18, y: 82 })
-  const [lamb, setLamb] = useState<Point>(LEVELS[0].lambStart)
-  const [orbs, setOrbs] = useState<Orb[]>(LEVELS[0].orbs)
-
+  const [journey, setJourney] = useState(() => createJourney(LEVELS[0]))
   const [lanternWide, setLanternWide] = useState(false)
-  const [helperReady, setHelperReady] = useState(true)
-  const [helperActive, setHelperActive] = useState(false)
-  const [message, setMessage] = useState('')
   const [best, setBest] = useState(0)
-  const [elapsed, setElapsed] = useState(0)
+  const [bankedTime, setBankedTime] = useState(0)
   const [rescued, setRescued] = useState(0)
-  const [spark, setSpark] = useState(0)
+  const player = journey.player, lamb = journey.lamb, orbs = journey.orbs
+  const helperReady = journey.helperCooldown <= 0
+  const helperActive = journey.helperTime > 0
+  const elapsed = Math.floor(bankedTime + journey.time)
+  const spark = Math.floor(journey.time * 20)
   const [calmMode, setCalmMode] = useState(false)
 
   const level = LEVELS[Math.min(levelIndex, LEVELS.length - 1)]
   const helper = helperMeta[level.helper]
   const foundLight = orbs.filter((orb) => orb.found).length
   const canGuide = foundLight >= level.requiredLight
-  const lambNear = dist(player, lamb) < (lanternWide || helperActive ? 21 : 14)
-  const gateNear = dist(lamb, level.gate) < 8 && dist(player, level.gate) < 12
   const progress = Math.round((foundLight / level.requiredLight) * 100)
 
   const copy = isRu ? {
@@ -166,25 +145,25 @@ export default function ShepherdLightAdventurePage() {
     subtitle: 'Это не викторина. Веди Михаила, неси свет Божьего Слова, помогай ягненку и открывай, почему Иисус пришел спасать.',
     start: 'Начать приключение', briefing: 'Открыть тропу', resume: 'Продолжить', pause: 'Пауза', exit: 'Выйти', next: 'Следующая тропа', replay: 'Играть снова',
     mission: 'Миссия', scripture: 'Слово внутри игры', helper: 'Помощник', light: 'Свет', lamb: 'Ягненок', best: 'Лучшее время', time: 'Время', calm: 'Спокойный режим',
-    hold: 'Держать фонарь', useHelper: 'Помощь', call: 'Позови ягненка', notQuiz: 'Игровое обучение: собирай свет, защищай фонарь, веди ягненка к воротам Пастыря.',
+    hold: 'Световой щит', useHelper: 'Помощь', call: 'Позови ягненка', notQuiz: 'Игровое обучение: собирай свет, защищай фонарь, веди ягненка к воротам Пастыря.',
     collect: 'Собери свет, потом держи ягненка рядом с фонарем.', guide: 'Свет собран. Веди ягненка к воротам Пастыря.',
     hazard: 'Фонарь дрогнул — держись света и попробуй снова.', helperUsed: 'Помощник открыл безопасную линию.', reward: 'Карточка Евангелия открыта', complete: 'Тропа завершена',
     finalTitle: 'Иисус ищет, спасает и ведет домой',
     finalText: 'Ты не заработал спасение очками. Игра показывает истину: Бог любит нас, Иисус пришел спасти погибших, и мы доверяем Ему и следуем за Ним.',
     trustedAdult: 'Хочешь больше узнать о следовании за Иисусом? Поговори с родителем, пастором или надежным христианским взрослым.',
-    controls: 'Коснись и веди пальцем. На компьютере — WASD/стрелки. Держи кнопку фонаря, чтобы расширить свет.',
+    controls: 'Коснись и веди пальцем. На компьютере — WASD/стрелки. Держи фонарь (Пробел) в опасности. Отпусти, чтобы зарядить. Позови ягненка (C) и иди рядом.',
   } : {
     back: 'All Games', eyebrow: 'Gospel Adventure', title: 'Shepherd Light Adventure',
     subtitle: 'This is not a quiz. Guide Michael, carry the light of God’s Word, help the lamb, and discover why Jesus came to rescue.',
     start: 'Start Adventure', briefing: 'Open Trail', resume: 'Resume', pause: 'Pause', exit: 'Exit', next: 'Next Trail', replay: 'Play Again',
     mission: 'Mission', scripture: 'Scripture inside the game', helper: 'Helper', light: 'Light', lamb: 'Lamb', best: 'Best Time', time: 'Time', calm: 'Calm Mode',
-    hold: 'Hold Lantern', useHelper: 'Helper', call: 'Call Lamb', notQuiz: 'Game learning: collect light, protect the lantern, and guide the lamb to the Shepherd Gate.',
+    hold: 'Light Shield', useHelper: 'Helper', call: 'Call Lamb', notQuiz: 'Game learning: collect light, protect the lantern, and guide the lamb to the Shepherd Gate.',
     collect: 'Collect light, then keep the lamb close to the lantern.', guide: 'Light gathered. Guide the lamb to the Shepherd Gate.',
     hazard: 'The lantern flickered — stay close to the light and try again.', helperUsed: 'Helper opened a safer line.', reward: 'Gospel Card Unlocked', complete: 'Trail Complete',
     finalTitle: 'Jesus seeks, saves, and leads us home',
     finalText: 'You did not earn rescue by points. The game points to the truth: God loves us, Jesus came to save the lost, and we trust Him and follow Him.',
     trustedAdult: 'Want to know more about following Jesus? Talk with your parent, pastor, or trusted Christian grown-up.',
-    controls: 'Touch and drag anywhere. On desktop use WASD/arrow keys. Hold the lantern button to widen the light.',
+    controls: 'Touch and drag anywhere. On desktop use WASD/arrow keys. Hold lantern (Space) through hazards; release to recharge. Call (C), then walk close to the lamb.',
   }
 
   const levelTitle = isRu ? level.titleRu : level.titleEn
@@ -193,107 +172,90 @@ export default function ShepherdLightAdventurePage() {
   const scripture = isRu ? level.scriptureRu : level.scriptureEn
   const scriptureRef = isRu ? level.refRu : level.refEn
 
-  const resetLevel = useCallback((index: number) => {
-    const next = LEVELS[Math.min(index, LEVELS.length - 1)]
-    setPlayer({ x: 18, y: 82 })
-    pointer.current = { x: 18, y: 82, active: false }
-    setLamb(next.lambStart)
-    setOrbs(next.orbs.map((orb) => ({ ...orb, found: false })))
-
-    setLanternWide(false)
-    setHelperReady(true)
-    setHelperActive(false)
-    setSpark(0)
-    setMessage(isRu ? 'Собери свет и найди ягненка.' : 'Gather light and find the lamb.')
-    levelStartedAt.current = Date.now()
-  }, [isRu])
-
-  useEffect(() => {
-    const stored = Number(localStorage.getItem(STORAGE_KEY) || '0')
-    setBest(Number.isFinite(stored) ? stored : 0)
-  }, [])
-
-  useEffect(() => {
-    const down = (event: KeyboardEvent) => { keys.current[event.key.toLowerCase()] = true }
-    const up = (event: KeyboardEvent) => { keys.current[event.key.toLowerCase()] = false }
-    window.addEventListener('keydown', down)
-    window.addEventListener('keyup', up)
-    return () => { window.removeEventListener('keydown', down); window.removeEventListener('keyup', up) }
-  }, [])
-
-  useEffect(() => {
-    if (phase !== 'play') return
-    const timer = window.setInterval(() => setElapsed(Math.floor((Date.now() - levelStartedAt.current) / 1000)), 1000)
-    return () => window.clearInterval(timer)
-  }, [phase])
-
-  useEffect(() => {
-    if (phase !== 'play') return
-    let frame = 0
-    const tick = () => {
-      const left = keys.current.arrowleft || keys.current.a
-      const right = keys.current.arrowright || keys.current.d
-      const up = keys.current.arrowup || keys.current.w
-      const down = keys.current.arrowdown || keys.current.s
-      setPlayer((current) => {
-        let next = current
-        if (pointer.current.active) {
-          next = moveToward(current, pointer.current, calmMode ? 1.9 : 2.45)
-        } else if (left || right || up || down) {
-          next = { x: current.x + (left ? -2.2 : 0) + (right ? 2.2 : 0), y: current.y + (up ? -2.2 : 0) + (down ? 2.2 : 0) }
-        }
-        return { x: clamp(next.x, 7, 93), y: clamp(next.y, 9, 91) }
-      })
-      setSpark((value) => (value + 1) % 120)
-      frame = window.requestAnimationFrame(tick)
-    }
-    frame = window.requestAnimationFrame(tick)
-    return () => window.cancelAnimationFrame(frame)
-  }, [phase, calmMode])
-
-  useEffect(() => {
-    if (phase !== 'play') return
-    setOrbs((current) => current.map((orb) => {
-      if (orb.found || dist(player, orb) > (lanternWide ? 13 : 8)) return orb
-      setMessage(canGuide ? copy.guide : copy.collect)
-      return { ...orb, found: true }
-    }))
-  }, [player, phase, lanternWide, level.requiredLight, canGuide, copy.collect, copy.guide])
-
-  useEffect(() => {
-    if (phase !== 'play') return
-    const danger = level.hazards.find((hazard) => dist(player, hazard) < hazard.r + (lanternWide ? 3 : 0))
-    if (!danger || helperActive || calmMode) return
-    setMessage(copy.hazard)
-    setPlayer((current) => moveToward(current, { x: 18, y: 82 }, 10))
+  const clearInput = useCallback(() => {
+    keys.current = {}
     pointer.current.active = false
-  }, [player, phase, level.hazards, helperActive, calmMode, lanternWide, copy.hazard])
+    movementPointer.current = null
+    setLanternWide(false)
+  }, [])
+
+  const resetLevel = useCallback((index: number) => {
+    setJourney(createJourney(LEVELS[Math.min(index, LEVELS.length - 1)]))
+    clearInput()
+  }, [clearInput])
 
   useEffect(() => {
-    if (phase !== 'play' || !canGuide) return
-    setLamb((current) => {
-      if (!lambNear) return current
-      const speed = lanternWide || helperActive ? 1.25 : 0.85
-      return moveToward(current, player, speed)
-    })
-  }, [player, phase, canGuide, lambNear, lanternWide, helperActive])
+    setHydrated(true)
+    try {
+      const stored = Number(localStorage.getItem(STORAGE_KEY) || '0')
+      setBest(Number.isFinite(stored) && stored > 0 ? stored : 0)
+    } catch { /* Storage is optional; rescue remains playable. */ }
+  }, [])
 
   useEffect(() => {
-    if (phase !== 'play' || !gateNear || !canGuide) return
-    setRescued((count) => count + 1)
-    setPhase('reward')
-  }, [phase, gateNear, canGuide])
+    const down = (event: KeyboardEvent) => {
+      if (phase !== 'play' || (event.target instanceof HTMLElement && ['INPUT', 'TEXTAREA'].includes(event.target.tagName))) return
+      const key = event.key.toLowerCase()
+      if (['arrowleft','arrowright','arrowup','arrowdown','w','a','s','d',' ','c','h','escape'].includes(key)) event.preventDefault()
+      keys.current[key] = true
+      if (key === ' ') setLanternWide(true)
+      if (key === 'c' && !event.repeat) setJourney(callLamb)
+      if (key === 'h' && !event.repeat) setJourney(activateHelper)
+      if (key === 'escape') setPhase('paused')
+    }
+    const up = (event: KeyboardEvent) => {
+      keys.current[event.key.toLowerCase()] = false
+      if (event.key === ' ') setLanternWide(false)
+    }
+    const interrupt = () => { clearInput(); setPhase(p => p === 'play' ? 'paused' : p) }
+    const visibility = () => { if (document.hidden) interrupt() }
+    window.addEventListener('keydown', down); window.addEventListener('keyup', up)
+    window.addEventListener('blur', interrupt); document.addEventListener('visibilitychange', visibility)
+    return () => {
+      window.removeEventListener('keydown', down); window.removeEventListener('keyup', up)
+      window.removeEventListener('blur', interrupt); document.removeEventListener('visibilitychange', visibility)
+    }
+  }, [phase, clearInput])
+
+  useEffect(() => { if (phase !== 'play') clearInput() }, [phase, clearInput])
+
+  useEffect(() => {
+    if (phase !== 'play') return
+    let frame = 0, previous = performance.now()
+    const tick = (now: number) => {
+      const dt = (now - previous) / 1000; previous = now
+      const k = keys.current
+      setJourney(s => stepJourney(s, level, {
+        target: pointer.current.active ? pointer.current : undefined,
+        dx: Number(!!(k.arrowright || k.d)) - Number(!!(k.arrowleft || k.a)),
+        dy: Number(!!(k.arrowdown || k.s)) - Number(!!(k.arrowup || k.w)),
+        wide: lanternWide, calm: calmMode,
+      }, dt))
+      frame = requestAnimationFrame(tick)
+    }
+    frame = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(frame)
+  }, [phase, level, lanternWide, calmMode])
+
+  useEffect(() => {
+    if (phase !== 'play') return
+    if (journey.result === 'failed') setPhase('failed')
+    if (journey.result === 'won') { setRescued(levelIndex + 1); setPhase('reward') }
+  }, [journey.result, phase, levelIndex])
+
+  const message = journey.invulnerable > 0 && journey.hits > 0 ? copy.hazard : canGuide
+    ? (dist(player, lamb) > guideRadius(journey, lanternWide) ? (isRu ? 'Вернись к ягненку. Позови его рядом с собой.' : 'Go back to the lamb. Call when you are close.') : copy.guide)
+    : copy.collect
 
   function startGame() {
     setLevelIndex(0)
     setRescued(0)
-    setElapsed(0)
+    setBankedTime(0)
     resetLevel(0)
     setPhase('briefing')
   }
 
   function beginTrail() {
-    levelStartedAt.current = Date.now() - elapsed * 1000
     setPhase('play')
   }
 
@@ -303,25 +265,20 @@ export default function ShepherdLightAdventurePage() {
       const total = elapsed
       setBest((prev) => {
         const nextBest = prev === 0 ? total : Math.min(prev, total)
-        localStorage.setItem(STORAGE_KEY, String(nextBest))
+        try { localStorage.setItem(STORAGE_KEY, String(nextBest)) } catch { /* Optional best time. */ }
         return nextBest
       })
       setPhase('complete')
       return
     }
     setLevelIndex(next)
-    setElapsed(0)
+    setBankedTime(time => time + journey.time)
     resetLevel(next)
     setPhase('briefing')
   }
 
   function useHelper() {
-    if (!helperReady || phase !== 'play') return
-    setHelperReady(false)
-    setHelperActive(true)
-    setMessage(copy.helperUsed)
-    window.setTimeout(() => setHelperActive(false), 5200)
-    window.setTimeout(() => setHelperReady(true), calmMode ? 5000 : 9000)
+    if (phase === 'play') setJourney(activateHelper)
   }
 
   function syncPointer(event: React.PointerEvent<HTMLDivElement>) {
@@ -335,17 +292,20 @@ export default function ShepherdLightAdventurePage() {
   }
 
   function pointerDown(event: React.PointerEvent<HTMLDivElement>) {
-    if (phase !== 'play') return
+    if (phase !== 'play' || movementPointer.current !== null || (event.target as HTMLElement).closest('button, .sla-panel')) return
+    movementPointer.current = event.pointerId
     event.currentTarget.setPointerCapture(event.pointerId)
     syncPointer(event)
   }
 
   function pointerMove(event: React.PointerEvent<HTMLDivElement>) {
-    if (phase !== 'play' || event.buttons === 0) return
+    if (phase !== 'play' || movementPointer.current !== event.pointerId) return
     syncPointer(event)
   }
 
   function pointerUp(event: React.PointerEvent<HTMLDivElement>) {
+    if (movementPointer.current !== event.pointerId) return
+    movementPointer.current = null
     pointer.current.active = false
     if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId)
   }
@@ -353,7 +313,7 @@ export default function ShepherdLightAdventurePage() {
   const screen = phase === 'intro' ? 'intro' : 'game'
 
   return (
-    <main className="sla-page">
+    <main className="sla-page" data-hydrated={hydrated} data-phase={phase} data-level={levelIndex + 1} data-hp={journey.hp}>
       <style>{`
         .sla-page { min-height: 100vh; color: #fff; background: linear-gradient(180deg,#061126,#0f2c45 45%,#fef7df); }
         .sla-wrap { max-width: 1120px; margin: 0 auto; padding: 30px 14px 58px; }
@@ -399,6 +359,32 @@ export default function ShepherdLightAdventurePage() {
         .sla-control:disabled { opacity: .52; }
         .sla-message { min-height: 38px; border-radius: 18px; padding: 9px 13px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.16); font-family: var(--font-nunito); font-weight: 900; text-align: center; }
         .sla-scripture { border-radius: 22px; padding: 16px; background: linear-gradient(180deg,rgba(254,243,199,.96),rgba(255,247,237,.92)); color: #3b2307; border: 2px solid #f59e0b; font-family: var(--font-lora); font-weight: 800; line-height: 1.6; }
+        .sla-owned-art { background: url('/images/jr/games/shepherd-light-adventure/hero-shepherd-light.png') center/cover; }
+        .sla-terrain { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .sla-arena.meadow { background: radial-gradient(ellipse at 35% 30%,#99ad68,#526e42); }
+        .sla-arena.bridge { background: radial-gradient(ellipse at 70% 30%,#b4b780,#617c52); }
+        .sla-arena.storm { background: radial-gradient(ellipse at 25% 70%,#708579,#344e53); }
+        .sla-hazard { border: 2px dashed #f7c878; opacity: .8; box-sizing: border-box; }
+        .sla-hazard::after { content: '!'; position:absolute; inset:0; display:grid; place-items:center; color:#51371b; font-weight:1000; font-size:24px; }
+        .sla-player { filter:drop-shadow(0 5px 3px #17312688); }
+        .sla-eye { position:absolute; top:17px; width:4px; height:6px; background:#322419; border-radius:50%; }
+        .sla-eye.one { left:21px; } .sla-eye.two { left:33px; }
+        .sla-lamb-eye { position:absolute; top:15px; right:5px; width:4px; height:5px; background:#362a20; border-radius:50%; }
+        .sla-lamb-leg { position:absolute; top:31px; width:5px; height:9px; background:#685644; border-radius:3px; }
+        .sla-lamb-leg.one { left:13px; } .sla-lamb-leg.two { left:32px; }
+        .sla-btn:disabled { opacity:.45; cursor:default; } .sla-control { touch-action:none; }
+        .sla-panel { z-index:3; } .sla-panel h2 { color:#fff1c0; font-size:2rem; }
+        .sla-page button:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+        .sla-player,.sla-lamb { width:1px; height:1px; z-index:2; }
+        .sla-player::before,.sla-lamb::before { content:''; position:absolute; width:36px; height:13px; left:-18px; top:-4px; border-radius:50%; background:#17312655; filter:blur(2px); }
+        .sla-sprite { display:block; position:absolute; width:116px; height:116px; transform:translate(-50%,-82%); background-size:900% 400%; background-repeat:no-repeat; }
+        .sla-sprite.michael { background-image:url('/images/jr/games/shepherd-light-adventure/michael-trail-sprite.webp'); }
+        .sla-sprite.lamb { width:86px; height:86px; background-image:url('/images/jr/games/shepherd-light-adventure/lamb-trail-sprite.webp'); }
+        .sla-light { border:1px dashed #fff0b877; background:radial-gradient(ellipse,rgba(254,249,195,.26),rgba(250,204,21,.08) 68%,transparent 100%); transition:none; }
+        .sla-hazard.gust { animation:none; }
+        .sla-gate { width:70px; height:64px; border-radius:28px 28px 8px 8px; border:6px solid #c5a36e; border-bottom:0; background:linear-gradient(180deg,#fcebbb88,#fff8cc33); box-shadow:0 0 25px #ffed9988; }
+        @media (prefers-reduced-motion:reduce) { .sla-sprite { background-position-x:0% !important; } }
+        @media (max-height: 550px) { .sla-controls { grid-template-columns:repeat(3,1fr); } .sla-control.call { grid-column:auto; } .sla-control { min-height:44px; } .sla-message { padding:5px; min-height:28px; } .sla-hud { grid-template-columns:repeat(4,1fr) auto; } }
         @keyframes slaFloat { 50% { transform: translateY(-7px); } }
         @keyframes slaSpin { to { rotate: 360deg; } }
         @media (max-width: 820px) { .sla-hero { grid-template-columns: 1fr; } .sla-preview { min-height: 420px; } .sla-hud { grid-template-columns: repeat(2,1fr) auto; } .sla-chip:nth-child(3),.sla-chip:nth-child(4) { display: none; } .sla-controls { grid-template-columns: 1fr 1fr; } .sla-control.call { grid-column: 1 / -1; } }
@@ -424,8 +410,8 @@ export default function ShepherdLightAdventurePage() {
                 </label>
               </div>
             </div>
-            <div className="sla-preview">
-              <GameWorld level={LEVELS[0]} player={{ x: 22, y: 70 }} lamb={{ x: 72, y: 34 }} orbs={LEVELS[0].orbs} lanternWide helperActive spark={spark} />
+            <div className="sla-preview sla-owned-art">
+
             </div>
           </div>
         </section>
@@ -433,14 +419,14 @@ export default function ShepherdLightAdventurePage() {
         <section className="sla-game" aria-label={copy.title}>
           <div className="sla-hud">
             <div className="sla-chip">{copy.light}<br />{foundLight}/{level.requiredLight} · {progress}%</div>
-            <div className="sla-chip">{copy.lamb}<br />{rescued}/{LEVELS.length}</div>
-            <div className="sla-chip">{copy.time}<br />{elapsed}s</div>
+            <div className="sla-chip">{isRu ? "Защита" : "Protection"}<br /><span aria-label={`${journey.hp}/3`}>{"♥".repeat(journey.hp)}{"♡".repeat(3 - journey.hp)}</span> · {Math.ceil(journey.energy)}%</div>
+            <div className="sla-chip">{isRu ? "Тропа" : "Trail"} {levelIndex + 1}/3<br />{elapsed}s · {rescued} 🐑</div>
             <div className="sla-chip">{copy.best}<br />{best ? `${best}s` : '—'}</div>
-            <button className="sla-btn danger" style={{ minHeight: 46, padding: '8px 13px' }} onClick={() => setPhase(phase === 'paused' ? 'play' : 'paused')}>{phase === 'paused' ? copy.resume : copy.pause}</button>
+            <button className="sla-btn danger" style={{ minHeight: 46, padding: '8px 13px' }} disabled={phase !== 'play' && phase !== 'paused'} onClick={() => setPhase(phase === 'paused' ? 'play' : 'paused')}>{phase === 'paused' ? copy.resume : copy.pause}</button>
           </div>
 
-          <div ref={arenaRef} className={`sla-arena ${level.environment}`} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerUp} onLostPointerCapture={() => { pointer.current.active = false }}>
-            <GameWorld level={level} player={player} lamb={lamb} orbs={orbs} lanternWide={lanternWide} helperActive={helperActive} spark={spark} />
+          <div ref={arenaRef} className={`sla-arena ${level.environment}`} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerUp} onPointerCancel={pointerUp} onLostPointerCapture={() => { pointer.current.active = false; movementPointer.current = null }}>
+            <GameWorld level={level} player={player} lamb={lamb} orbs={orbs} lanternWide={lanternWide} helperActive={helperActive} spark={spark} journey={journey} playing={phase === 'play'} />
 
             {phase === 'briefing' && (
               <div className="sla-panel">
@@ -450,6 +436,15 @@ export default function ShepherdLightAdventurePage() {
                 <div className="sla-scripture" style={{ margin: '15px 0' }}><strong>{scriptureRef}</strong><br />“{scripture}”</div>
                 <p className="sla-copy"><strong>{helper.emoji} {isRu ? helper.ru : helper.en}.</strong> {copy.controls}</p>
                 <button className="sla-btn" onClick={beginTrail} style={{ marginTop: 14 }}>{copy.briefing} →</button>
+              </div>
+            )}
+
+            {phase === 'failed' && (
+              <div className="sla-panel" role="dialog" aria-modal="true">
+                <h2>{isRu ? 'Отдохни у фонаря' : 'Rest at the lantern'}</h2>
+                <p className="sla-copy">{isRu ? 'Собранный свет сохранен. Держи световой щит в опасности. Отпускай его на безопасной земле.' : 'Your collected light is safe. Hold the light shield in hazards. Release it on safe ground to recharge.'}</p>
+                <button className="sla-btn" onClick={() => { setJourney(s => retryJourney(s, level)); setPhase('play') }}>{isRu ? 'Попробовать снова' : 'Try Again'}</button>
+                <button className="sla-btn secondary" onClick={() => setPhase('intro')} style={{ marginLeft: 12 }}>{copy.exit}</button>
               </div>
             )}
 
@@ -490,11 +485,14 @@ export default function ShepherdLightAdventurePage() {
 
           <div className="sla-message">{message || (canGuide ? copy.guide : copy.collect)} <span style={{ color: '#fde68a' }}>• {scriptureRef}</span></div>
           <div className="sla-controls">
-            <button className={`sla-control ${lanternWide ? 'active' : ''}`} onPointerDown={() => setLanternWide(true)} onPointerUp={() => setLanternWide(false)} onPointerCancel={() => setLanternWide(false)}>{copy.hold}</button>
-            <button className={`sla-control ${helperActive ? 'active' : ''}`} disabled={!helperReady} onClick={useHelper}>{helper.emoji} {copy.useHelper}</button>
-            <button className="sla-control call" onClick={() => {
-              if (canGuide && dist(player, lamb) < 24) setLamb((current) => moveToward(current, player, 6))
-            }}>{copy.call}</button>
+            <button className={`sla-control ${lanternWide ? 'active' : ''}`} disabled={phase !== 'play'} aria-pressed={lanternWide}
+              onPointerDown={event => { event.currentTarget.setPointerCapture(event.pointerId); setLanternWide(true) }}
+              onPointerUp={() => setLanternWide(false)} onPointerCancel={() => setLanternWide(false)} onLostPointerCapture={() => setLanternWide(false)}
+              onKeyDown={event => { if (event.key === ' ' || event.key === 'Enter') setLanternWide(true) }} onKeyUp={() => setLanternWide(false)}>
+              ☀ {copy.hold} · {Math.ceil(journey.energy)}%
+            </button>
+            <button className={`sla-control ${helperActive ? 'active' : ''}`} disabled={!helperReady || phase !== 'play'} onClick={useHelper}>{helper.emoji} {copy.useHelper}{!helperReady ? ` · ${Math.ceil(journey.helperCooldown)}s` : ' (H)'}</button>
+            <button className="sla-control call" disabled={!canGuide || journey.callCooldown > 0 || phase !== 'play'} onClick={() => setJourney(callLamb)}>♪ {copy.call}{journey.callCooldown > 0 ? ` · ${Math.ceil(journey.callCooldown)}s` : ' (C)'}</button>
           </div>
         </section>
       )}
@@ -502,15 +500,22 @@ export default function ShepherdLightAdventurePage() {
   )
 }
 
-function GameWorld({ level, player, lamb, orbs, lanternWide, helperActive, spark }: { level: Level; player: Point; lamb: Point; orbs: Orb[]; lanternWide: boolean; helperActive: boolean; spark: number }) {
-  const lightSize = lanternWide || helperActive ? 190 : 128
+function GameWorld({ level, player, lamb, orbs, lanternWide, helperActive, spark, journey, playing }: { level: Level; player: Point; lamb: Point; orbs: Orb[]; lanternWide: boolean; helperActive: boolean; spark: number; journey: Journey; playing: boolean }) {
+  const lightSize = guideRadius(journey, lanternWide) * 2
+  const frame = Math.floor(journey.time * 10) % 8 + 1
+  const sprite = (moving: boolean, facing: number) => ({ backgroundPositionX: `${playing && moving ? frame / 8 * 100 : 0}%`, backgroundPositionY: `${facing / 3 * 100}%` })
   return (
-    <div className="sla-world" style={{ ['--light-size' as string]: `${lightSize}px` }}>
-      <div className="sla-hill" />
-      <div className="sla-path" />
-      <div className="sla-gate" style={{ left: `${level.gate.x}%`, top: `${level.gate.y}%` }}>🐑</div>
+    <div className="sla-world" style={{ ['--light-size' as string]: `${lightSize}%` }}>
+      <svg className="sla-terrain" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <defs><pattern id="grass" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M2 5l-.5-1m.5 1l1-1M6 8l1-1" stroke="#9ab96e" strokeWidth=".3" opacity=".5" /></pattern></defs>
+        <rect width="100" height="100" fill="url(#grass)" />
+        {level.environment === 'bridge' && <><path d="M48 0 Q32 30 51 50 T52 100" fill="none" stroke="#377f96" strokeWidth="19"/><path d="M28 51L67 40" stroke="#a58554" strokeWidth="13"/><path d="M28 51L67 40" stroke="#dbc392" strokeWidth="10" strokeDasharray="1 1"/></>}
+        <path d={`M18 82 Q25 22 44 18 T76 24 Q86 58 50 62 T${level.gate.x} ${level.gate.y}`} fill="none" stroke="#bea878" strokeWidth="7" opacity=".4" />
+        {[4, 96].map(x => [16, 42, 68, 90].map(y => <g key={`${x}-${y}`}><ellipse cx={x} cy={y+2} rx="3" ry="2" fill="#17382e" opacity=".5"/><rect x={x-1} y={y-1} width="2" height="5" fill="#5f5032"/><circle cx={x} cy={y-2} r="4" fill="#315c39"/><circle cx={x-1} cy={y-3} r="2.7" fill="#57844a"/></g>))}
+      </svg>
+      <div className="sla-gate" style={{ left: `${level.gate.x}%`, top: `${level.gate.y}%` }}>⌂</div>
       {level.hazards.map((hazard) => (
-        <div key={hazard.id} className={`sla-hazard ${hazard.kind}`} style={{ left: `${hazard.x}%`, top: `${hazard.y}%`, width: `${hazard.r * 2.7}px`, height: `${hazard.r * 2.7}px` }} />
+        <div key={hazard.id} className={`sla-hazard ${hazard.kind}`} style={{ left: `${hazard.x}%`, top: `${hazard.y}%`, width: `${hazard.r * 2}%`, height: `${hazard.r * 2}%` }} />
       ))}
       {orbs.filter((orb) => !orb.found).map((orb) => <div key={orb.id} className="sla-orb" style={{ left: `${orb.x}%`, top: `${orb.y}%`, animationDelay: `${orb.id * .15}s` }} />)}
       <div className="sla-light" style={{ left: `${player.x}%`, top: `${player.y}%` }} />
@@ -518,10 +523,10 @@ function GameWorld({ level, player, lamb, orbs, lanternWide, helperActive, spark
         <span key={index} aria-hidden="true" style={{ position: 'absolute', left: `${player.x + Math.sin((spark + index * 13) / 8) * (8 + index)}%`, top: `${player.y + Math.cos((spark + index * 11) / 9) * (5 + index * .7)}%`, color: '#fde68a', textShadow: '0 0 14px #facc15', fontSize: 11 + (index % 3) * 4 }}>✦</span>
       ))}
       <div className="sla-lamb" style={{ left: `${lamb.x}%`, top: `${lamb.y}%` }}>
-        <div className="sla-lamb-body" /><div className="sla-lamb-head" />
+        <span className="sla-sprite lamb" style={sprite(journey.lambMoving, journey.lambFacing)} />
       </div>
       <div className="sla-player" style={{ left: `${player.x}%`, top: `${player.y}%`, filter: helperActive ? 'drop-shadow(0 0 18px #fef3c7)' : undefined }}>
-        <div className="sla-hair" /><div className="sla-head" /><div className="sla-body" /><div className="sla-lantern" />
+        <span className="sla-sprite michael" style={sprite(journey.moving, journey.facing)} />
       </div>
     </div>
   )

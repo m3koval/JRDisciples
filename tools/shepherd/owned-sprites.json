@@ -1,0 +1,26 @@
+{
+  "kind": "2D sprite derivatives of existing owned 3D models",
+  "renderer": "Godot 4.7.2 Compatibility; tools/shepherd/render_owned_sprites.gd",
+  "license_source": "game/trail-of-truth-block-adventure/THIRD_PARTY_NOTICES.md",
+  "new_asset_spend_usd": 0,
+  "columns": 9,
+  "rows": 4,
+  "frame_px": 192,
+  "motion": "Michael original Idle/Run; lamb original separate leg nodes posed by sine; not new skeletal animation",
+  "assets": {
+    "michael": {
+      "source": "game/trail-of-truth-block-adventure/assets/michael.glb",
+      "source_sha256": "fddb290aae7b65da54640c1f67821a0c93940fccd89f5c3d88848a86ad88756d",
+      "output": "public/images/jr/games/shepherd-light-adventure/michael-trail-sprite.webp",
+      "sha256": "1c3f7432c241a2d20e19b6647147cbbb774ada39379faa7a9168194e4e5a0dde",
+      "bytes": 429018
+    },
+    "lamb": {
+      "source": "game/trail-of-truth-block-adventure/assets/lamb.glb",
+      "source_sha256": "5df8aaf7c2cdcd5cf321c4cadf6e775c6ef4e7e69de96fbbe7bdc850d71617fb",
+      "output": "public/images/jr/games/shepherd-light-adventure/lamb-trail-sprite.webp",
+      "sha256": "b0fd2178c53d640b9468d3efbcae5ed0f83f4d91ba75d1b2fb931dc89afccd1e",
+      "bytes": 121530
+    }
+  }
+}

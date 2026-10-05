@@ -137,7 +137,7 @@ if (!/type\s+Target/.test(archer)) failures.push('Faithful Archer route must def
 if (!/const\s+SCRIPTURE/.test(archer)) failures.push('Faithful Archer route must define SCRIPTURE.');
 
 // Exercise the extracted mechanics, rather than trusting the presence of UI copy.
-for (const script of ['test-archer-physics.mjs', 'test-giants-course.mjs', 'test-david-recovery.mjs', 'test-spot-regression.mjs']) {
+for (const script of ['test-archer-physics.mjs', 'test-giants-course.mjs', 'test-david-recovery.mjs', 'test-spot-regression.mjs', 'test-shepherd-mechanics.mjs']) {
   try { execFileSync(process.execPath, [path.join(root, 'scripts', script)], { cwd: root, stdio: 'pipe', timeout: 30000 }); }
   catch { failures.push(`Gameplay regression failed: ${script}`); }
 }

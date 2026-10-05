@@ -76,6 +76,7 @@ var lamb_stride := 0.0
 var context_kind := ""
 var context_index := -1
 var recoveries := 0
+var shore_checkpoint: Vector3 = SPAWN
 var saves_ok := true
 var paused := true
 var modal_kind := "intro"
@@ -465,9 +466,19 @@ func _physics_process(delta: float) -> void:
         bell_timer = 5.0
     if Input.is_action_just_pressed("interact"):
         _interact()
+    # Earn bank checkpoints on solid ground, never in mid-jump or in the creek.
+    # The repaired bridge remains required: falling cannot unlock the far bank.
+    if player.is_on_floor() and player.position.y >= 0 and player.position.y < 1.0:
+        if bridge_stage == 2 and player.position.x >= 8.0:
+            shore_checkpoint = Vector3(9, .3, 0)
+        elif crossing_found and player.position.x <= 2.0:
+            shore_checkpoint = Vector3(1.2, .3, 0)
     if player.position.y < -0.8 or absf(player.position.x) > 26 or absf(player.position.z) > 21:
-        player.position = Vector3(9, .3, 0) if following and lamb.position.x > 7.3 else SPAWN
+        # Keep an escort on its bank; do not teleport the lamb or award rescue.
+        player.position = Vector3(9, .3, 0) if following and lamb.position.x > 7.3 else shore_checkpoint
         player.velocity = Vector3.ZERO
+        player._clear_input()
+        _clear_world_taps()
         recoveries += 1
         _notice("water")
     if following and not completed:
@@ -668,6 +679,10 @@ func _choose_context() -> void:
                     destination = board.position
     elif not following:
         destination = Vector3(11, 0, -2)
+    elif player.position.distance_to(lamb.position) > 9:
+        # Match the existing 'return to it' objective instead of pointing home
+        # while the lamb is stranded beyond its following radius.
+        destination = lamb.position
     if not trail_found and carrying < 0 and bridge_stage < 2:
         destination = Vector3(-10, 0, 3)
     elif not crossing_found and carrying < 0 and bridge_stage < 2:
@@ -1259,7 +1274,7 @@ func _refresh_ui() -> void:
     if caves.active or context_kind == "caves": action_button.text = caves.action_text()
     if water_chapter.active or context_kind == "water_start": action_button.text = water_chapter.action_text()
     input_hint.text = t("WASD · drag to look · Space · E", "WASD · веди, чтобы осмотреться · Пробел · E") if not DisplayServer.is_touchscreen_available() else t("Left: move · Right: look", "Слева: идти · справа: смотреть")
-    var notices := {"water":t("Back on shore. Log safe!", "Ты на берегу. Бревно цело!"), "carry":t("Walk to the glowing outline by the crossing.", "Иди к светлому контуру у мостика."), "placed":t("One more log!", "Нужно ещё одно бревно!"), "bridge":t("You made a way across. Listen for the lamb!", "Теперь можно перейти. Прислушайся к ягнёнку!"), "seed":t("A seed pouch for the camp garden.", "Семена для сада в лагере."), "garden":t("The camp garden is growing!", "В лагере появился сад!"), "follow":t("It trusts you. Stay close and lead it home.", "Он доверяет тебе. Будь рядом и веди домой.")}
+    var notices := {"water":(t("Back on shore. Log safe!", "Ты на берегу. Бревно цело!") if carrying >= 0 else t("Back on the safe bank. Keep exploring!", "Снова на берегу. Продолжай путь!")), "carry":t("Walk to the glowing outline by the crossing.", "Иди к светлому контуру у мостика."), "placed":t("One more log!", "Нужно ещё одно бревно!"), "bridge":t("You made a way across. Listen for the lamb!", "Теперь можно перейти. Прислушайся к ягнёнку!"), "seed":t("A seed pouch for the camp garden.", "Семена для сада в лагере."), "garden":t("The camp garden is growing!", "В лагере появился сад!"), "follow":t("It trusts you. Stay close and lead it home.", "Он доверяет тебе. Будь рядом и веди домой.")}
     notice.text = notices.get(notice_key, "") if notice_timer > 0 else ""
     var flock_notices := {"flock_step":t("Well done! Follow your next goal.", "Получилось! Смотри на следующую цель."), "flock_wood":t("Board collected. Follow the marker to the fence.", "Доска у тебя. Иди к метке у ограды."), "flock_repair":t("One rail repaired!", "Одна секция готова!"), "flock_call":t("They heard you. Walk slowly and stay close.", "Овечки услышали. Иди медленно и будь рядом."), "flock_count":t("One more sheep counted safely home.", "Ещё одна овечка дома. Посчитали!")}
     if notice_timer > 0 and flock_notices.has(notice_key):

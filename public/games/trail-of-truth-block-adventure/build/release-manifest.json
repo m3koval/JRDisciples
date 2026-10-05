@@ -159,7 +159,7 @@
     "scripts/irrigation_flow.gd": "fb5a6360841b09ee3ec0f0aae7744efe28013ca5ddd8284dd981ee3a5128d249",
     "scripts/irrigation_geometry.gd": "907a70001f3840dc0157c7d9d2285f6b7931ff7f2085b34c4c46be88641b5a24",
     "scripts/irrigation_winch.gd": "2c39ce6701d20ed6de567054bf811a448f9aeea47c7d2da4a097eaf0ac02c411",
-    "scripts/main.gd": "f968a431197b8ef4f20fd6064666f02d55786ef77a7fc9c4e74b97137604dd95",
+    "scripts/main.gd": "a1799e901475fb36b8271bd5e9943f658c4ee55249289ee9fcb22afe96ba3ad5",
     "scripts/opening_landscape.gd": "d1107a10622aedcd2bef4acda44a5d8a9ef6d829dc611ef59378d7d8723ef16b",
     "scripts/opening_river_art.gd": "ffff03b25174676e798f377c6a49cc63160194bea5e445177a601740e6758ae6",
     "scripts/opening_trees.gd": "9fc49dfb9e26238cc7e37f12959f39406a1af9136936afa3b5e70c149a2fdb23",
@@ -171,9 +171,9 @@
   },
   "artifacts": {
     "index.html": {
-      "sha256": "71a497093958d13a1fe83701d286908fda6ae61a36014c5500a9d8cc0cb8a3b9",
+      "sha256": "63f9ad1023216b454436c23bb1e3654ad337bf03250a66a205f0b2cd6f10f34a",
       "bytes": 5510,
-      "gzip_bytes": 2232
+      "gzip_bytes": 2231
     },
     "index.js": {
       "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
@@ -186,9 +186,9 @@
       "gzip_bytes": 10054758
     },
     "index.pck": {
-      "sha256": "ec1af756a005f403510de1f1dd00a22e0e2fe577efb8b1d097ed66d2674c695d",
-      "bytes": 38184600,
-      "gzip_bytes": 37936956
+      "sha256": "aad0cbf73cfe29634f7543bb2633b697690fe4f5211b71e49c94c0b6b419c790",
+      "bytes": 38184888,
+      "gzip_bytes": 37937295
     }
   }
 }

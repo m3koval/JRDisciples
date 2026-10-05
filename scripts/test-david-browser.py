@@ -1,37 +1,52 @@
+"""Trusted input; read-only angle telemetry synchronizes sling timing, no state injection."""
 import json
 from pathlib import Path
-from playwright.sync_api import sync_playwright
-out = Path('/mnt/hermes-storage/jd-games-overnight/evidence/pass-02/david')
-out.mkdir(parents=True, exist_ok=True)
+from playwright.sync_api import sync_playwright, expect
+OUT=Path('/mnt/hermes-storage/jd-games-overnight/evidence/pass-04/david');OUT.mkdir(parents=True,exist_ok=True)
+checks=[];errors=[];http=[]
+def mark(s): checks.append(s);print('PASS',s,flush=True)
+def visible_controls(page):
+ for selector in ['.dsv2-game-btn.release','.dsv2-exit']:
+  e=page.locator(selector);b=e.bounding_box();v=page.viewport_size
+  assert b and b['y']>=0 and b['x']>=0 and b['y']+b['height']<=v['height']+1 and b['x']+b['width']<=v['width']+1,(selector,b,v)
+  assert e.evaluate('(e)=>{const r=e.getBoundingClientRect();return e.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2))}')
+def shot(page,hit=True,touch=False):
+ hold=page.locator('.dsv2-game-btn.release');hold.wait_for();visible_controls(page)
+ box=hold.bounding_box();x=box['x']+box['width']/2;y=box['y']+box['height']/2
+ if touch:
+  client=page.context.new_cdp_session(page);client.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':x,'y':y,'id':1}]})
+ else: hold.focus();page.keyboard.down('Space')
+ page.wait_for_function("(hit)=>{const e=document.querySelector('.dsv2-meter');const a=+e.dataset.angle,t=+e.dataset.target;return hit ? Math.abs(a-t)<3 : a>t+65 && a<t+90}",arg=hit,timeout=20000)
+ if touch:
+  client.send('Input.dispatchTouchEvent',{'type':'touchMove','touchPoints':[{'x':x-95,'y':y-30,'id':1}]});client.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]});client.detach()
+ else: page.keyboard.up('Space')
+ page.wait_for_timeout(1100)
 with sync_playwright() as p:
-    browser = p.chromium.launch(executable_path='/usr/bin/google-chrome', headless=True, args=['--no-sandbox'])
-    page = browser.new_page(viewport={'width': 1024, 'height': 768})
-    errors = []
-    page.on('pageerror', lambda e: errors.append(str(e)))
-    page.goto('http://127.0.0.1:3107/games/david-sling-challenge', wait_until='domcontentloaded', timeout=45000)
-    page.locator('.dsv2-hero-start').click()
-    page.locator('.dsv2-choice').first.click()
-    page.locator('.dsv2-game-btn.release').wait_for()
-    # One immediate release is inside the forgiving first-level window.
-    hold = page.locator('.dsv2-game-btn.release')
-    box = hold.bounding_box()
-    assert box is not None
-    page.mouse.move(box['x']+38, box['y']+38)
-    page.mouse.down()
-    page.wait_for_timeout(100)
-    page.mouse.move(box['x']-50, box['y']-20)
-    page.mouse.up()
-    page.wait_for_timeout(1150)
-    assert '2/3' in page.locator('.dsv2-stats').inner_text(), page.locator('.dsv2-stats').inner_text()
-    assert page.locator('.dsv2-stat-icons').first.inner_text().count('🪨') == 5
-    page.locator('.dsv2-choice').first.click()
-    page.screenshot(path=str(out/'level-two-landscape.png'), full_page=True)
-    # Exit during an active shot: an old completion timer must not reopen play.
-    page.locator('.dsv2-game-btn.release').click()
-    page.locator('.dsv2-exit').click()
-    page.wait_for_timeout(1200)
-    assert page.locator('.dsv2-play-shell.fullscreen').count() == 0
-    assert not errors, errors
-    (out/'browser.json').write_text(json.dumps({'passed': ['pointer capture release outside button', 'level advance', 'five-stone refill', 'exit cancels delayed transition'], 'page_errors': errors}, indent=2))
-    browser.close()
-print('PASS: browser pointer capture, progression/refill, exit timer cancellation; no page errors')
+ browser=p.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox'])
+ try:
+  for lang,view in [('en',{'width':1024,'height':768}),('ru',{'width':768,'height':1024})]:
+   ctx=browser.new_context(viewport=view,has_touch=True,reduced_motion='reduce');ctx.add_init_script(f"localStorage.setItem('language','{lang}')")
+   page=ctx.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.on('response',lambda r:http.append(r.url) if r.status>=400 else None)
+   page.goto('http://127.0.0.1:3107/games/david-sling-challenge',wait_until='domcontentloaded');page.wait_for_function('(l)=>document.documentElement.dataset.lang===l',arg=lang)
+   page.locator('.dsv2-hero-start').tap();page.locator('.dsv2-choice').nth(1).tap();expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-phase','question');mark(lang+' wrong answer cannot skip learning')
+   for level in range(1,4):
+    page.locator('.dsv2-choice').first.tap();page.locator('.dsv2-game-btn.release').wait_for()
+    if level==2:page.set_viewport_size({'width':390,'height':844})
+    if level==3:page.set_viewport_size({'width':844,'height':390})
+    page.screenshot(path=str(OUT/f'{lang}-level-{level}.png'));shot(page,touch=(level==1))
+    if level<3:
+     expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-level',str(level+1));assert page.locator('.dsv2-stat-icons').first.inner_text().count('🪨')==5
+    else:expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-phase','result')
+    mark(f'{lang} level {level}: visible controls and earned hit')
+   page.screenshot(path=str(OUT/f'{lang}-win.png'));page.get_by_role('button',name='Play Again' if lang=='en' else 'Снова',exact=True).click();expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-level','1');mark(lang+' victory/replay')
+   if lang=='en':
+    page.set_viewport_size({'width':1024,'height':768});page.locator('.dsv2-choice').first.click();page.locator('.dsv2-power').nth(2).click()
+    shot(page,hit=False);assert page.locator('.dsv2-stat-icons').first.inner_text().count('🪨')==5;mark('Trust Shield saves exactly one missed stone')
+    for i in range(5):shot(page,hit=False)
+    expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-phase','result');page.screenshot(path=str(OUT/'failure.png'));page.get_by_role('button',name='Retry level · 5 stones',exact=True).click();expect(page.locator('.dsv2-play-shell')).to_have_attribute('data-phase','question');mark('finite stone failure and same-level retry')
+    page.locator('.dsv2-choice').first.click();hold=page.locator('.dsv2-game-btn.release');hold.focus();page.keyboard.down('Space');page.keyboard.up('Space');page.locator('.dsv2-exit').click();page.wait_for_timeout(1200);assert page.locator('.dsv2-play-shell.fullscreen').count()==0;mark('exit cancels pending shot')
+   ctx.close()
+  assert not errors,errors;assert not http,http
+ finally:
+  (OUT/'browser.json').write_text(json.dumps({'checks':checks,'page_errors':errors,'http_failures':http},indent=2));browser.close()
+print('PASS',len(checks),'Sling groups')
