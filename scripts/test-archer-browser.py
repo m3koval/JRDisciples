@@ -59,7 +59,7 @@ with sync_playwright() as pw:
    page.clock.install()
    # Actual ballistic shots to visible targets. Test reads their rendered coordinates,
    # never writes target hits/score/course. Moving target error is handled by retry.
-   completed=set(); shots=0; modal_count=0
+   completed=set(); shots=0; modal_count=0; review_outcomes=set(); blocked_tested=False
    for attempt in range(120):
     keep=page.get_by_role('button',name='Продолжить' if lang=='ru' else 'Keep Practicing',exact=True)
     if keep.count() and keep.is_visible():
@@ -71,11 +71,14 @@ with sync_playwright() as pw:
      old=state();refill.click();page.clock.run_for(50)
      record(lang+' refill retains earned hits',state()['score']==old['score'] and [t['hit'] for t in state()['targets']]==[t['hit']for t in old['targets']])
     s=state()
+    if s.get('review'):review_outcomes.add(s['review']['outcome'])
     for prior in range(s['level']):completed.add(prior)
     pending=[t for t in s['targets'] if not t['hit']]
     if not pending:page.clock.run_for(100);continue
     t=pending[0];bx=s['bow']['x'];by=s['bow']['y']
-    flight=.6 if attempt%3!=2 else .8
+    testing_post=s['level']==1 and not blocked_tested
+    if testing_post:t={'x':s['width']*.46+15,'y':s['height']*.74}
+    flight=.35 if testing_post else .6 if attempt%3!=2 else .8
     vx=(t['x']-bx)/flight;vy=(t['y']-by-360*flight*flight)/flight
     dx=-vx*132/720;dy=-vy*132/720
     assert 13<math.hypot(dx,dy)<190,(s,t,dx,dy)
@@ -89,16 +92,28 @@ with sync_playwright() as pw:
      if attempt<2 or s['level'] not in completed:capture(f'course-{s["level"]+1}-aim')
      page.mouse.up()
     shots+=1;page.clock.run_for(1200)
+    review=state().get('review')
+    if review:
+     assert len(review['points'])<=160
+     review_outcomes.add(review['outcome'])
+    if testing_post:
+     record(lang+' actual obstacle flight produces retained blocked trail',review and review['outcome']=='blocked' and len(review['points'])>2,review)
+     record(lang+' blocked teaching names the real post',page.locator('.shot-review').get_attribute('data-outcome')=='blocked')
+     capture('blocked-review');blocked_tested=True
    record(lang+' actual four-course victory',victory.count()>0 and victory.is_visible(),{'shots':shots,'state':state()})
    record(lang+' Scripture cards encountered',modal_count>=3,modal_count)
+   record(lang+' actual target shot review observed', 'target' in review_outcomes,sorted(review_outcomes))
    capture('victory')
    page.get_by_role('button',name='Играть снова' if lang=='ru' else 'Play again',exact=True).click();page.clock.run_for(100)
    record(lang+' replay resets course targets score',state()['level']==0 and state()['score']==0 and not any(t['hit'] for t in state()['targets']))
+   record(lang+' replay clears measured shot trail',state()['review'] is None)
    # Exhaust real arrows into the ground and recover without resetting progress.
    s=state();box=canvas.bounding_box();sx=box['x']+box['width']*.72;sy=box['y']+box['height']*.45
    for _ in range(s['arrows']):
     page.mouse.move(sx,sy);page.mouse.down();page.mouse.move(sx-35,sy-80);page.mouse.up();page.clock.run_for(80)
    page.clock.run_for(4000)
+   review=state()['review'];record(lang+' last actual ground shot retained with cause',review and review['outcome']=='ground' and len(review['points'])>2,review)
+   before_review=review;page.clock.run_for(8000);record(lang+' measured ground trail persists after arrow cleanup',state()['review']==before_review)
    refill=page.get_by_role('button',name='Взять 12 стрел' if lang=='ru' else 'Collect 12 arrows',exact=True)
    record(lang+' exhaustion offers recovery',refill.is_visible());capture('refill')
    old=state();refill.click();page.clock.run_for(50)
@@ -106,6 +121,7 @@ with sync_playwright() as pw:
    for width,height,label in [(768,1024,'ipad-portrait'),(390,844,'phone-portrait'),(844,390,'phone-landscape')]:
     page.set_viewport_size({'width':width,'height':height});page.clock.run_for(100)
     box=canvas.bounding_box();record(lang+' '+label+' range and pause in viewport',box['x']>=0 and box['y']>=0 and box['x']+box['width']<=width+1 and box['y']+box['height']<=height+1,box)
+    record(lang+' '+label+' resize clears obsolete flight geometry',state()['review'] is None)
     capture(label)
    record(lang+' no runtime or JS asset errors',not errors and not requests)
    context.close()

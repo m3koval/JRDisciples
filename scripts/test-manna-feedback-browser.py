@@ -14,7 +14,7 @@ with sync_playwright() as pw:
    c=b.new_context(viewport={'width':768,'height':1024},has_touch=True,reduced_motion='reduce');c.add_init_script(f"localStorage.setItem('language','{lang}')")
    p=c.new_page();p.on('pageerror',lambda e:errors.append(str(e)));p.on('response',lambda r:failures.append(str(r.status)+' '+r.url) if r.status>=400 else None)
    p.goto('http://127.0.0.1:3107/games/manna-trail');p.wait_for_function('(lang)=>document.documentElement.dataset.lang===lang',arg=lang)
-   p.get_by_role('button',name='▶ Start the Trail' if lang=='en' else '▶ Начать путь',exact=True).click();p.locator('canvas').wait_for();p.wait_for_timeout(60);p.clock.install();p.clock.pause_at(p.evaluate('Date.now()'));p.clock.run_for(32)
+   p.get_by_role('button',name='▶ Start the Trail' if lang=='en' else '▶ Начать путь',exact=True).click();p.locator('canvas').wait_for();p.wait_for_timeout(60);p.clock.install();p.clock.pause_at(p.evaluate('new Date(Date.now()+1000).toISOString()'));p.clock.run_for(32)
    canvas=p.locator('canvas')
    def state():return json.loads(canvas.get_attribute('data-state'))
    def forecast():return json.loads(canvas.get_attribute('data-next-step'))

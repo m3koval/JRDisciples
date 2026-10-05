@@ -1,0 +1,20 @@
+.shell { position:fixed; inset:0; z-index:1000; height:100dvh; display:flex; flex-direction:column; background:#244b3b; color:white; box-sizing:border-box; padding:0 env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px); font-family:var(--font-nunito),sans-serif; }
+.header { display:flex; align-items:center; gap:12px; padding:calc(6px + env(safe-area-inset-top,0px)) 12px 6px; min-height:56px; flex-shrink:0; box-sizing:border-box; font-weight:800; }
+.header a { display:flex; align-items:center; min-height:44px; color:#ffe6a4; text-decoration:none; flex-shrink:0; }
+.header span { flex:1; text-align:center; font-size:15px; }
+.header button { min-height:44px; border:1px solid #98b4a0; border-radius:10px; padding:7px 12px; background:transparent; color:white; cursor:pointer; font:inherit; }
+.header button:focus-visible,.header a:focus-visible,.actions a:focus-visible,.actions button:focus-visible { outline:3px solid #ffe6a4; outline-offset:2px; }
+.fullscreenNote { margin:0; padding:4px 14px; font-size:13px; }
+.frame { position:relative; flex:1; min-height:0; }
+.frame iframe { display:block; width:100%; height:100%; border:0; }
+.cover { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; overflow:auto; background:linear-gradient(140deg,#244b3b,#183a36); padding:20px; box-sizing:border-box; }
+.card { width:min(100%,440px); max-height:100%; text-align:center; color:#fff; }
+.title { font-size:clamp(23px,4vw,32px); font-weight:900; margin:0 0 12px; }
+.message { font-size:17px; line-height:1.45; margin:0 0 18px; }
+.progress { display:grid; gap:10px; font-size:14px; }
+.progress progress { width:100%; height:14px; accent-color:#ffe6a4; }
+.actions { display:grid; gap:12px; }
+.actions button,.actions a { min-height:48px; box-sizing:border-box; border-radius:12px; border:1px solid #adc3b2; display:flex; align-items:center; justify-content:center; padding:10px 14px; font:inherit; font-weight:800; text-decoration:none; background:#f5deb0; color:#183a36; cursor:pointer; }
+.actions a { color:#fff; background:transparent; }
+@media(max-width:600px) { .header { gap:8px; padding-left:10px; padding-right:10px; } .header span { display:none; } .header a { flex:1; } .header button { max-width:55%; font-size:14px; } }
+@media(max-height:430px) { .cover { align-items:flex-start; padding:14px; } .title { font-size:22px; margin-bottom:8px; } .message { font-size:15px; margin-bottom:12px; } .actions { gap:8px; } }

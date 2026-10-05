@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { drawRange } from './range-art'
+import { beginReview, traceReview, finishReview, reviewCopy, type ShotReview, type ShotOutcome } from './shot-review'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { stepFlight, releasePoint, roundOutcome, targetMotion, aimRelease } from './physics'
@@ -30,7 +31,7 @@ type Target = {
   spin: number
 }
 
-type Arrow = { x: number; y: number; vx: number; vy: number; age: number; stuck: boolean; countedMiss?: boolean; glow: boolean; trail: Point[]; stuckTargetId?: number; stuckOffset?: Point }
+type Arrow = { id: number; x: number; y: number; vx: number; vy: number; age: number; stuck: boolean; countedMiss?: boolean; glow: boolean; trail: Point[]; stuckTargetId?: number; stuckOffset?: Point }
 type ObstacleKind = 'post' | 'beam' | 'crate'
 type Obstacle = { id: number; kind: ObstacleKind; x: number; y: number; w: number; h: number; phase: number; hitFlash: number; wobble: number }
 type FloatText = { x: number; y: number; txt: string; life: number; color: string }
@@ -205,6 +206,9 @@ export default function FaithfulArcherPage() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const modelRef = useRef<GameModel>(makeModel())
   const arrowsRef = useRef<Arrow[]>([])
+  const reviewRef = useRef<ShotReview | null>(null)
+  const shotId = useRef(0)
+  const [shotOutcome, setShotOutcome] = useState<ShotOutcome | null>(null)
   const targetsRef = useRef<Target[]>([])
   const obstaclesRef = useRef<Obstacle[]>([])
   const sparksRef = useRef<Spark[]>([])
@@ -321,6 +325,8 @@ export default function FaithfulArcherPage() {
   }
 
   function spawnTargets() {
+    reviewRef.current = null
+    setShotOutcome(null)
     const { width, height } = sizeRef.current
     const model = modelRef.current
     const count = 4
@@ -404,6 +410,8 @@ export default function FaithfulArcherPage() {
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0)
       // Resizing (including modal effect setup) must never reset earned hits.
       if (old.width !== width || old.height !== height) {
+        reviewRef.current = null
+        setShotOutcome(null)
         for (const t of targetsRef.current) {
           t.baseX *= width / old.width; t.x *= width / old.width
           t.baseY *= height / old.height; t.y *= height / old.height
@@ -428,12 +436,20 @@ export default function FaithfulArcherPage() {
       const bowY = a.y - 58
       const launch = launchArrowVelocity({ x: bowX, y: bowY }, { x: tx, y: ty }, calmRef.current)
       if (!launch) return
-      arrowsRef.current.push({ x: bowX, y: bowY, vx: launch.vx, vy: launch.vy, age: 0, stuck: false, glow: launch.power > 1.12, trail: [] })
+      const id = ++shotId.current
+      reviewRef.current = beginReview(id, { x: bowX, y: bowY })
+      setShotOutcome('flying')
+      arrowsRef.current.push({ id, x: bowX, y: bowY, vx: launch.vx, vy: launch.vy, age: 0, stuck: false, glow: launch.power > 1.12, trail: [] })
       setArcherEmotion('release', EMOTION_BEATS.release)
       m.arrowsLeft -= 1
       m.recoil = 7
       floatRef.current.push({ x: bowX, y: bowY - 32, txt: isRu ? 'ровно!' : 'steady!', life: 0.75, color: '#31552d' })
       syncHud()
+    }
+
+    function reviewResult(arrow: Arrow, outcome: Exclude<ShotOutcome, 'flying'>) {
+      const next = finishReview(reviewRef.current, arrow.id, outcome)
+      if (next !== reviewRef.current) { reviewRef.current = next; setShotOutcome(outcome) }
     }
 
     function spawnMissDust(x: number, y: number, width: number, height: number) {
@@ -491,10 +507,12 @@ export default function FaithfulArcherPage() {
         arrow.age += dt
         const prev = { x: arrow.x, y: arrow.y }
         Object.assign(arrow, stepFlight(arrow, dt, calmRef.current ? ARROW_GRAVITY.calm : ARROW_GRAVITY.fast))
+        reviewRef.current = traceReview(reviewRef.current, arrow.id, arrow)
         arrow.trail.unshift({ x: arrow.x, y: arrow.y })
         arrow.trail = arrow.trail.slice(0, 8)
         if (arrow.y > height * 0.83 || arrow.x > width + 120 || arrow.x < -120 || arrow.age > 5) {
           if (!arrow.countedMiss) {
+            reviewResult(arrow, arrow.y > height * 0.83 ? 'ground' : 'outside')
             arrow.countedMiss = true
             m.combo = 0
             setArcherEmotion('surprised', EMOTION_BEATS.surprised)
@@ -507,6 +525,7 @@ export default function FaithfulArcherPage() {
         for (const obstacle of obstaclesRef.current) {
           const obstacleBounds = getObstacleBounds(obstacle, m.time)
           if (arrowHitsObstacle(prev, { x: arrow.x, y: arrow.y }, obstacleBounds)) {
+            reviewResult(arrow, 'blocked')
             arrow.stuck = true
             arrow.countedMiss = true
             obstacle.hitFlash = 1
@@ -526,6 +545,7 @@ export default function FaithfulArcherPage() {
           const centerDistance = Math.hypot(arrow.x - target.x, arrow.y - target.y)
           const pathDistance = distancePointToSegment({ x: target.x, y: target.y }, prev, { x: arrow.x, y: arrow.y })
           if (Math.min(centerDistance, pathDistance) < hitRadius) {
+            reviewResult(arrow, 'target')
             hitTarget(arrow, target, pathDistance)
             break
           }
@@ -621,15 +641,36 @@ export default function FaithfulArcherPage() {
       for (const target of targetsRef.current) drawTarget(ctx!, target, modelRef.current.time)
       for (const obstacle of obstaclesRef.current) drawObstacle(ctx!, obstacle, modelRef.current.time)
       drawArcher(ctx!, archer(), reducedMotion.matches ? 0 : modelRef.current.time, pointerRef.current, modelRef.current.emotion)
+      drawReview(ctx!)
       drawAim(ctx!, archer())
       drawArrows(ctx!)
       if (!reducedMotion.matches) drawEffects(ctx!)
       // Read-only observation, also useful for assistive/debug tooling. No setter exists.
       canvas!.dataset.state = JSON.stringify({ time: modelRef.current.time, level: modelRef.current.levelIndex,
         score: modelRef.current.score, arrows: modelRef.current.arrowsLeft, running: modelRef.current.running,
-        paused: pausedRef.current, aiming: pointerRef.current.down,
+        paused: pausedRef.current, aiming: pointerRef.current.down, review: reviewRef.current, guide: showGuideRef.current,
         bow: { x: archer().x + 34, y: archer().y - 58 }, width, height,
         targets: targetsRef.current.map(t => ({ id: t.id, kind: t.kind, x: t.x, y: t.y, r: t.r, hit: t.hit })) })
+    }
+
+    function drawReview(drawCtx: CanvasRenderingContext2D) {
+      const review = reviewRef.current
+      if (!showGuideRef.current || !review || review.outcome === 'flying' || review.points.length < 2) return
+      drawCtx.save()
+      // The thin dashed line is measured flight, not a second prediction.
+      drawCtx.lineWidth = 2.5; drawCtx.strokeStyle = '#263f59'; drawCtx.setLineDash([6, 7])
+      drawCtx.beginPath()
+      review.points.forEach((point, i) => { if (i) drawCtx.lineTo(point.x, point.y); else drawCtx.moveTo(point.x, point.y) })
+      drawCtx.stroke(); drawCtx.setLineDash([])
+      const end = review.points[review.points.length - 1]
+      drawCtx.fillStyle = '#fff6dc'; drawCtx.lineWidth = 2
+      drawCtx.beginPath(); drawCtx.arc(end.x, end.y, 9, 0, Math.PI * 2); drawCtx.fill(); drawCtx.stroke()
+      if (review.outcome === 'target') {
+        drawCtx.beginPath(); drawCtx.moveTo(end.x - 4, end.y); drawCtx.lineTo(end.x, end.y + 4); drawCtx.lineTo(end.x + 5, end.y - 4); drawCtx.stroke()
+      } else {
+        drawCtx.beginPath(); drawCtx.moveTo(end.x - 3, end.y - 3); drawCtx.lineTo(end.x + 3, end.y + 3); drawCtx.moveTo(end.x + 3, end.y - 3); drawCtx.lineTo(end.x - 3, end.y + 3); drawCtx.stroke()
+      }
+      drawCtx.restore()
     }
 
     function drawAim(drawCtx: CanvasRenderingContext2D, a: { x: number; y: number }) {
@@ -894,6 +935,7 @@ export default function FaithfulArcherPage() {
 
           <aside className="archer-panel">
             <p className="puzzle-label" style={{ color: '#ffd866' }}>{copy.course}: {courseName}</p>
+            {active && <p className="shot-review" role="status" data-outcome={shotOutcome ?? 'ready'} style={{ height: 60, overflow: 'auto', margin: '0 0 8px', font: '800 14px/1.4 var(--font-nunito)', color: '#fff6dc' }}>{shotOutcome ? reviewCopy(shotOutcome, isRu) : (isRu ? 'Пунктир сохранит полёт стрелы. Сравни его с новым прицелом.' : 'The dashed trail keeps your last flight. Compare it with your next aim.')}</p>}
             <div className="archer-stats">
               <div>{copy.score}<br />{hud.score}</div>
               <div>{copy.best}<br />{hud.best}</div>

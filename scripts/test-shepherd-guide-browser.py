@@ -29,7 +29,7 @@ with sync_playwright() as p:
       btn('Pause','Пауза').click();expect(page.locator('.sla-page')).to_have_attribute('data-phase','paused');assert page.locator('.sla-guide-map').count()==0;page.clock.run_for(1000);btn('Resume','Продолжить').last.click();assert page.locator('.sla-guide-map').count()==1;mark(f'{lang} guide hides during pause and resumes')
      # Freeze between input steps: host wall time must not hide brief catch-up cues.
      # The observer reads rendered attributes only; it never mutates game state.
-     page.clock.pause_at(page.evaluate('Date.now()'))
+     page.clock.pause_at(page.evaluate('new Date(Date.now() + 1000).toISOString()'))
      page.evaluate("""() => { window.__guideObserver?.disconnect(); window.__guideStates=[]; const el=document.querySelector('[data-guide-state]'); window.__guideObserver=new MutationObserver(()=>window.__guideStates.push(el.dataset.guideState)); window.__guideObserver.observe(el,{attributes:true,attributeFilter:['data-guide-state']}); }""")
      seen=set();trace=[]
      for step in range(350):

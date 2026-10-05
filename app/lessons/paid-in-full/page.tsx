@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { ExternalSourceLink } from '@/components/ExternalSourceLink'
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { recordGradedAnswer, markLessonComplete, resetLessonMastery } from '@/lib/lesson-mastery'
@@ -86,7 +87,7 @@ function Lesson({ lang }: { lang: Language }) {
       <p className={styles.note}>{t.save}</p>
       {done > 0 && <details className={styles.notebook}><summary>{t.review}</summary>{t.stages.slice(0, done).map((s, i) => <article key={s.title}><h3>{s.title}</h3><p>{s.truth}</p><p>{s.learn}</p>{i === 0 && t.matchCards.map(c => <p key={c.text}>✓ {c.text} — {t.matchLabels[c.category]}: {c.why}</p>)}{i === 1 && t.sortCards.map(c => <p key={c.text}>✓ {c.text} — {t.sortLabels[c.category]}: {c.why}</p>)}{i === 2 && <ol>{t.timeline.map(x => <li key={x}>{x}</li>)}</ol>}{i === 3 && <blockquote>{scripture.memory}<cite>{t.memoryRef} · {t.version}</cite></blockquote>}{i === 4 && t.quiz.map(q => <p key={q.question}><strong>{q.question}</strong><br />{q.options[q.correct]} — {q.explanation}</p>)}</article>)}</details>}
       <details className={styles.guide}><summary>{t.fullReading}</summary><h3>{t.peterRef} · {t.version}</h3><blockquote>{scripture.peter}</blockquote><h3>{t.colRef} · {t.version}</h3><blockquote>{scripture.colossians}</blockquote></details>
-      <details className={styles.guide}><summary>{t.guide}</summary><p>{t.guideIntro}</p><ol>{t.plan.map(p => <li key={p}>{p}</li>)}</ol><h3>{t.discussionTitle}</h3>{t.discussions.map(([q, a]) => <p key={q}><strong>{q}</strong><br />{a}</p>)}<h3>{t.notesTitle}</h3>{t.notes.map(n => <p key={n}>{n}</p>)}<ul>{sources.map(([label, url], i) => <li key={url}><a href={url} target="_blank" rel="noreferrer">{ru ? ['1 Петра 1:17–21 · ESV', '1 Петра 1:17–21 · Синодальный', 'Колоссянам 2:13–14 · ESV', 'Колоссянам 2:13–14 · Синодальный', 'Служба национальных парков · Линкольн', 'Историческое общество геодезистов · Линкольн', 'Королевская семья · Ричард I'][i] : label}</a></li>)}</ul></details>
+      <details className={styles.guide}><summary>{t.guide}</summary><p>{t.guideIntro}</p><ol>{t.plan.map(p => <li key={p}>{p}</li>)}</ol><h3>{t.discussionTitle}</h3>{t.discussions.map(([q, a]) => <p key={q}><strong>{q}</strong><br />{a}</p>)}<h3>{t.notesTitle}</h3>{t.notes.map(n => <p key={n}>{n}</p>)}<ul>{sources.map(([label, url], i) => <li key={url}><ExternalSourceLink href={url}>{ru ? ['1 Петра 1:17–21 · ESV', '1 Петра 1:17–21 · Синодальный', 'Колоссянам 2:13–14 · ESV', 'Колоссянам 2:13–14 · Синодальный', 'Служба национальных парков · Линкольн', 'Историческое общество геодезистов · Линкольн', 'Королевская семья · Ричард I'][i] : label}</ExternalSourceLink></li>)}</ul></details>
     </div>
   </div>
 }
