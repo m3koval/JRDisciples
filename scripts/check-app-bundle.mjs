@@ -98,8 +98,12 @@ for (const base of [out, iosPublic]) {
     failures.push(`Missing Trail of Truth route: ${route}`)
     continue
   }
-  const chunks = walk(join(base, '_next', 'static', 'chunks')).filter((path) => extname(path) === '.js')
-  const engineReferenced = chunks.some((path) => readFileSync(path, 'utf8').includes(`/${gameBuild}/index.html`))
+  // Only scripts loaded by this route count; an unrelated route's chunk must
+  // not mask a missing or stale Trail client reference.
+  const html = readFileSync(route, 'utf8')
+  const chunks = [...html.matchAll(/<script\b[^>]*\bsrc=["'](\/_next\/static\/chunks\/[^"'?#]+\.js)(?:[?#][^"']*)?["']/gi)]
+    .map((match) => join(base, match[1]))
+  const engineReferenced = chunks.some((path) => existsSync(path) && readFileSync(path, 'utf8').includes(`/${gameBuild}/index.html`))
   if (!engineReferenced) failures.push(`Trail of Truth client bundle does not reference the expected engine: ${base}`)
 }
 if (existsSync(join(out, gameRoute)) && existsSync(join(iosPublic, gameRoute)) &&
