@@ -1,0 +1,164 @@
+{
+  "michael": {
+    "run": {
+      "trials": [
+        {
+          "angle": 0,
+          "forearm": 0,
+          "pairs": 2647,
+          "collision_frames": 32
+        },
+        {
+          "angle": 0,
+          "forearm": -12,
+          "pairs": 1728,
+          "collision_frames": 30
+        },
+        {
+          "angle": 0,
+          "forearm": 12,
+          "pairs": 2187,
+          "collision_frames": 25
+        },
+        {
+          "angle": 0,
+          "forearm": -24,
+          "pairs": 1044,
+          "collision_frames": 26
+        },
+        {
+          "angle": 0,
+          "forearm": 24,
+          "pairs": 2223,
+          "collision_frames": 24
+        },
+        {
+          "angle": 0,
+          "forearm": -36,
+          "pairs": 617,
+          "collision_frames": 18
+        },
+        {
+          "angle": 0,
+          "forearm": 36,
+          "pairs": 2248,
+          "collision_frames": 25
+        },
+        {
+          "angle": 4,
+          "forearm": 0,
+          "pairs": 1619,
+          "collision_frames": 29
+        },
+        {
+          "angle": 4,
+          "forearm": -12,
+          "pairs": 651,
+          "collision_frames": 25
+        },
+        {
+          "angle": 4,
+          "forearm": 12,
+          "pairs": 2192,
+          "collision_frames": 25
+        },
+        {
+          "angle": 4,
+          "forearm": -24,
+          "pairs": 311,
+          "collision_frames": 16
+        },
+        {
+          "angle": 4,
+          "forearm": 24,
+          "pairs": 2098,
+          "collision_frames": 23
+        },
+        {
+          "angle": 4,
+          "forearm": -36,
+          "pairs": 312,
+          "collision_frames": 13
+        },
+        {
+          "angle": 4,
+          "forearm": 36,
+          "pairs": 1949,
+          "collision_frames": 28
+        },
+        {
+          "angle": 8,
+          "forearm": 0,
+          "pairs": 744,
+          "collision_frames": 17
+        },
+        {
+          "angle": 8,
+          "forearm": -12,
+          "pairs": 342,
+          "collision_frames": 11
+        },
+        {
+          "angle": 8,
+          "forearm": 12,
+          "pairs": 1695,
+          "collision_frames": 20
+        },
+        {
+          "angle": 8,
+          "forearm": -24,
+          "pairs": 34,
+          "collision_frames": 7
+        },
+        {
+          "angle": 8,
+          "forearm": 24,
+          "pairs": 1983,
+          "collision_frames": 23
+        },
+        {
+          "angle": 8,
+          "forearm": -36,
+          "pairs": 99,
+          "collision_frames": 9
+        },
+        {
+          "angle": 8,
+          "forearm": 36,
+          "pairs": 1966,
+          "collision_frames": 29
+        },
+        {
+          "angle": 12,
+          "forearm": 0,
+          "pairs": 352,
+          "collision_frames": 11
+        },
+        {
+          "angle": 12,
+          "forearm": -12,
+          "pairs": 94,
+          "collision_frames": 5
+        },
+        {
+          "angle": 12,
+          "forearm": 12,
+          "pairs": 925,
+          "collision_frames": 18
+        },
+        {
+          "angle": 12,
+          "forearm": -24,
+          "pairs": 0,
+          "collision_frames": 0
+        }
+      ],
+      "selected_abduction_degrees": 12,
+      "forearm_degrees": -24,
+      "max_ground_correction": 0.04827909544110298,
+      "status": "candidate_pending_independent_reimport_contact_scan",
+      "source": "/home/helper/work/JRDisciples/source/character-library/revision-v2/michael/run.glb",
+      "output": "/home/helper/jd_motion_cleanup/michael-flex/michael/run.glb"
+    }
+  }
+}

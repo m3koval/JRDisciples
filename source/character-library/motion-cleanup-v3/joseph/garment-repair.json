@@ -1,0 +1,137 @@
+{
+  "rig": {
+    "envelope_vertices": 2373,
+    "metrics": {
+      "bytes": 2796708,
+      "sha256": "f3443e340b612ccc79ae5e90509df059ba7eb1b759912a47d809392c20f4b487",
+      "triangles": 23999,
+      "joints": [
+        24
+      ],
+      "joint_names": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ]
+      ],
+      "animations": [],
+      "skin_attributes": true
+    }
+  },
+  "walk": {
+    "envelope_vertices": 2373,
+    "metrics": {
+      "bytes": 2844408,
+      "sha256": "a1af6878372569e0782bc132a8dc80fa5fa57d7537c1ab75a73688398de08223",
+      "triangles": 23999,
+      "joints": [
+        24
+      ],
+      "joint_names": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ]
+      ],
+      "animations": [
+        {
+          "name": "Armature|walking_man|baselayer.001",
+          "channels": 72,
+          "duration": 1.0666666666666667
+        }
+      ],
+      "skin_attributes": true
+    }
+  },
+  "run": {
+    "envelope_vertices": 2373,
+    "metrics": {
+      "bytes": 2832840,
+      "sha256": "d198e7f20ee543ba0ea5d8847f2ed7e76cf82f5b906fd0519c0690f608ee6a07",
+      "triangles": 23999,
+      "joints": [
+        24
+      ],
+      "joint_names": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront"
+        ]
+      ],
+      "animations": [
+        {
+          "name": "Armature|running|baselayer.001",
+          "channels": 72,
+          "duration": 0.6666666666666666
+        }
+      ],
+      "skin_attributes": true
+    }
+  }
+}

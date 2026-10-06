@@ -1,0 +1,280 @@
+{
+  "schema": 1,
+  "runtime_enabled": false,
+  "game_ready": false,
+  "characters": {
+    "michael": {
+      "walk": {
+        "contact_screen_pass": true,
+        "visual_status": "improved_review_candidate"
+      },
+      "run": {
+        "contact_screen_pass": true,
+        "visual_status": "improved_review_candidate"
+      }
+    },
+    "rosie": {
+      "walk": {
+        "contact_screen_pass": true,
+        "visual_status": "improved_review_candidate"
+      },
+      "run": {
+        "contact_screen_pass": true,
+        "visual_status": "improved_review_candidate"
+      }
+    },
+    "joseph": {
+      "walk": {
+        "contact_screen_pass": true,
+        "visual_status": "improved_review_candidate"
+      },
+      "run": {
+        "contact_screen_pass": true,
+        "visual_status": "improved_review_candidate"
+      }
+    },
+    "gracie": {
+      "walk": {
+        "contact_screen_pass": true,
+        "visual_status": "improved_review_candidate"
+      },
+      "run": {
+        "contact_screen_pass": true,
+        "visual_status": "improved_review_candidate"
+      }
+    },
+    "simeon": {
+      "walk": {
+        "contact_screen_pass": true,
+        "visual_status": "improved_review_candidate"
+      },
+      "run": {
+        "contact_screen_pass": true,
+        "visual_status": "held_for_clothing_repair"
+      }
+    },
+    "anna": {
+      "walk": {
+        "contact_screen_pass": true,
+        "visual_status": "improved_review_candidate"
+      },
+      "run": {
+        "contact_screen_pass": true,
+        "visual_status": "held_for_clothing_repair"
+      }
+    },
+    "tobias": {
+      "walk": {
+        "contact_screen_pass": true,
+        "visual_status": "improved_review_candidate"
+      },
+      "run": {
+        "contact_screen_pass": true,
+        "visual_status": "held_for_clothing_repair"
+      }
+    }
+  },
+  "visual_limits": [
+    "Rosie rough side slit/hem remains",
+    "Simeon and Anna running robes/dress deform",
+    "Tobias running shoulder/sleeve balloons",
+    "In-engine planted-foot sliding, blends, loop seams, terrain and prop contacts not certified"
+  ],
+  "files": [
+    {
+      "path": "source/character-library/motion-cleanup-v3/michael/walk.glb",
+      "bytes": 2697260,
+      "sha256": "4641d81a784faff6a0aef4b5d545897b54cd08221a563feb0878f2b25fa5aee5"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/michael/run.glb",
+      "bytes": 2674100,
+      "sha256": "4b59d0cdbdf5516be4c4bf629ab639c4f69f88a07206821e659dcef3ee0a6afa"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/rosie/walk.glb",
+      "bytes": 1958644,
+      "sha256": "02833cca7e3bb5730682c4e245599ddfb1bb4baf8af83b80be733b8278136a62"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/rosie/run.glb",
+      "bytes": 1935484,
+      "sha256": "a671afdf9e8458ef8254471bea8638cfa3d5b5cefd19d7db2ec442e6b79bc4fc"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/rosie/rig.glb",
+      "bytes": 1896576,
+      "sha256": "0114b9317ef4db62e4b89b2fea9950b1d3b7c2ebe225883b035662f61aec4866"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/joseph/walk.glb",
+      "bytes": 2876860,
+      "sha256": "7e459ad37fcdc4b83a736918f27286dc4a3bcf99c847dd472d62f418ac5aabeb"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/joseph/run.glb",
+      "bytes": 2853700,
+      "sha256": "97b18945ba13420fcc35ad7bbe38a39baa3f7b35c192494c850da870a050cb20"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/joseph/rig.glb",
+      "bytes": 2796708,
+      "sha256": "f3443e340b612ccc79ae5e90509df059ba7eb1b759912a47d809392c20f4b487"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/gracie/walk.glb",
+      "bytes": 3278180,
+      "sha256": "90711066b5b356ec0fd2539b6a3cef0fe8847d2134b390e18296a8f184514b32"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/gracie/run.glb",
+      "bytes": 3255028,
+      "sha256": "a119a8df1ea643960e0f24299870d088925a7ef1b324d6d6133ffa0a8377e1ed"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/simeon/walk.glb",
+      "bytes": 2031864,
+      "sha256": "123e5588a31dfa3fd495c0ff8b0ac3dabaab0a756f3de0004654dc376f4ce7fb"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/simeon/run.glb",
+      "bytes": 2008708,
+      "sha256": "139fad24120645bb6817da8bd803917d519176a90082072356c933421b4c5c9a"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/anna/walk.glb",
+      "bytes": 2043660,
+      "sha256": "9d9675260e327a20a4205d758ba02223807395b61fc0bafc320a07c993245ce8"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/anna/run.glb",
+      "bytes": 2020504,
+      "sha256": "ef30f54441ebbb97445f34a3b390a23772945b5c24d1892b0f6011248544822a"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tobias/walk.glb",
+      "bytes": 2082292,
+      "sha256": "4c6e0214223536ec7dbfa774d080aaef4713bbe73caca4dfe563db5607c423ea"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tobias/run.glb",
+      "bytes": 2059128,
+      "sha256": "5754689487706b3e5e6d9c0f78e5d8d9b84b2879e6772518e53da7a4eba067bd"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/full-cycle-screen.json",
+      "bytes": 518287,
+      "sha256": "5063f5c5ce1415ba02c330bba51dbba0433fc01f48741a5db86e494ea73b76e5"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/final-cast-review.jpg",
+      "bytes": 87038,
+      "sha256": "12844ec4eb31b738568e4c3e9bf8de274d599df3557b1f2481e0eb7405786c69"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/final-side-review.jpg",
+      "bytes": 37183,
+      "sha256": "f7e399eaffe126fbfef6a0e1fbb7f8e70c23e59f47018154ecac8e2a5b24a7fe"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/screen_cast.py",
+      "bytes": 3251,
+      "sha256": "0794fa16ba2d5f6c8cbd0d5becc2dcf12d46e8b73130098cb317a18d2cc263c9"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/fix_cast.py",
+      "bytes": 5187,
+      "sha256": "d7dc3158aa955d6270c5513abf2a80ae1fd2089c24d4d2461c5eeacfe22a0e3e"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/michael_flex.py",
+      "bytes": 572,
+      "sha256": "360c154f82e62fac60360ed7fb65d69abfa05da26fed99b372638bbf92572061"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/rosie_animation_only.py",
+      "bytes": 1837,
+      "sha256": "0fda997848c524eaa0fab09239def307ca3d33a2fe3a69520f0fd3b6c412291f"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/repair_rosie.py",
+      "bytes": 2445,
+      "sha256": "e666ab73848ce2a33ddc894ec5e007ff94dfbda103132865a0c48b9976e442fc"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/joseph_envelope.py",
+      "bytes": 2943,
+      "sha256": "82050b723d2d5cf9ed0e157ae5f1a262841c20d98abf02682047e38a465013e1"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/joseph_flex.py",
+      "bytes": 688,
+      "sha256": "296c6648ec9b29dd90d60346816ca42ff90eb742313a339f72d9ec84b6f79f24"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/finalize_and_check.py",
+      "bytes": 2927,
+      "sha256": "f13348036833f19f4e3d0d5a9137281cadfdb7fbd74db11e555f0e46e73992ca"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/verify_selected_final.py",
+      "bytes": 175,
+      "sha256": "f244e48928358269dccd5bd8373a2b99d6b7623897cc0423b4a73c1f88278fcf"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/render_final.py",
+      "bytes": 884,
+      "sha256": "5f49335dd2ff6038797480696beae858b70b0230816e7fef4060597aaec50c8a"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/joseph_skin_repair.py",
+      "bytes": 5143,
+      "sha256": "574e2a1682445e9dd6b100908d9e82180b3319744a2139d21a1531765ff816b9"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/rosie_source_cleanup.py",
+      "bytes": 5543,
+      "sha256": "3f814fcd012ec7ecb808cfef77f861be8dd8bb064b92ad197ae4cfc032e34339"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/rosie_source_refine.py",
+      "bytes": 3127,
+      "sha256": "9fab19bbd0626cb349eb161ffd58321de2843c3d4b1a7b72bc56754495b4610d"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/rosie_regions.py",
+      "bytes": 1445,
+      "sha256": "95cbb6be74d7a2e2993a839b70fe46e9074115d02310a3c94ef2e6b1a5340632"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/tools/joseph_source_cleanup.py",
+      "bytes": 6310,
+      "sha256": "bee1606a1add475200b0d08865123ac6479e03ad79025d157ffd37c80fa4940f"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/cast-motion-changes.json",
+      "bytes": 7552,
+      "sha256": "a748199a8760c6202c17dd2d8229977efe7f01c893992ddd8329d626b25dd9ec"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/michael/run-changes.json",
+      "bytes": 3580,
+      "sha256": "a074ff7cd9e3e7ed6f0f28dba8108771d082d3763f4b0ecc6b646ef867059296"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/joseph/run-changes.json",
+      "bytes": 537,
+      "sha256": "11948477ed8d35776702fb0197ec845b8263256163fc35148e80f0d893e9b1ca"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/joseph/garment-repair.json",
+      "bytes": 2954,
+      "sha256": "4e21e98dbf62ef4d75bb1bcf812d1b2918f2ac0c249b62dda2bb4ba7423ce311"
+    },
+    {
+      "path": "source/character-library/motion-cleanup-v3/rosie/geometry-repair.json",
+      "bytes": 3377,
+      "sha256": "a526e8a15ae1ab2afb48f439e59cffe6bbe41093ead8b5de062fa94d42e2bed5"
+    }
+  ]
+}
