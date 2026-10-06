@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- This standalone CommonJS harness installs a synchronous require.extensions TypeScript transpilation hook before loading the tested modules; ESM imports bypass that hook. */
 const assert=require('node:assert/strict'); const fs=require('node:fs');const ts=require('typescript');const cp=require('node:child_process');
 require.extensions['.ts']=(module,file)=>module._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020,esModuleInterop:true}}).outputText,file);
 const {scoutRoute}=require('../app/games/manna-trail/trail-art.ts');
