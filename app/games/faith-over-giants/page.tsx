@@ -5,6 +5,7 @@
 import Link from 'next/link'
 import ExpeditionWorld from './ExpeditionWorld'
 import { useEffect, useRef, useState } from 'react'
+import TurnChoices from './TurnChoices'
 import { courseTurn, nextObstacle, answerOrder, courseProgress, turnForecast } from './course'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -643,9 +644,9 @@ export default function FaithOverGiantsPage() {
                 {phase === 'play' && <div className="course-actions">
                   <p>{isRu ? 'Решимость' : 'Resolve'}: {resolve}/3 · {isRu ? 'Препятствие' : 'Obstacle'} {Math.max(0, activeObstacle) + 1}/{giantHps.length} · {copy.fear}: {Math.round(fearLine)}%</p>
                   <p className="turn-advice" data-warning={forecast.losesHeart || resolve === 0} role="status">{resolve === 0 ? (isRu ? 'Сначала сплотись: нужна решимость.' : 'Rally first: you need resolve.') : forecast.losesHeart ? (isRu ? 'Следующий шаг отнимет 1 сердце. Сплотись, чтобы снизить страх.' : 'The next advance costs 1 heart. Rally to lower fear.') : (isRu ? 'Можно идти: следующий шаг не отнимет сердце.' : 'Ready: the next advance will not cost a heart.')}<br /><small>{isRu ? `Шаг: +${forecast.pressure} страха. При 100 — минус сердце. Сплочение: −${forecast.rallyRelief} страха, +${forecast.rallyResolve} решимость. Время не торопит.` : `Advance: +${forecast.pressure} fear. At 100, lose a heart. Rally: −${forecast.rallyRelief} fear, +${forecast.rallyResolve} resolve. Take your time.`}</small></p>
-                  <button className="pz-btn" disabled={resolve < 1} onClick={() => attackGiant(activeObstacle)}>{isRu ? 'Шаг вперёд −1' : 'Advance −1'}</button>
+                  <TurnChoices state={{ obstacles: giantHps, resolve, fear: fearLine, health, coins, strength: strengthTurns }} level={levelIndex} helpers={helpers} isRu={isRu} onAdvance={() => attackGiant(activeObstacle)} onRally={courageStep} />
                 </div>}
-                <button className="pz-btn" disabled={phase === 'play' && resolve === 3 && fearLine === 0} style={{ width: '100%', minHeight: 58, fontSize: '1.05rem' }} onClick={phase === 'play' ? courageStep : startGame}>
+                <button className="pz-btn" disabled={phase === 'play' && resolve === 3 && fearLine === 0} style={{ display: phase === 'play' ? 'none' : undefined, width: '100%', minHeight: 58, fontSize: '1.05rem' }} onClick={phase === 'play' ? courageStep : startGame}>
                   {phase === 'play' ? (isRu ? 'Сплотиться +1' : 'Rally +1') : copy.restart}
                 </button>
                 <p style={{ marginTop: 10, minHeight: 38, fontFamily: 'var(--font-nunito)', fontWeight: 900, color: '#dbeafe', lineHeight: 1.45 }}>

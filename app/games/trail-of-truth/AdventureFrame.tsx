@@ -14,8 +14,10 @@ export default function AdventureFrame({ language }: { language: string }) {
   const [attempt, setAttempt] = useState(0)
   const [boot, setBoot] = useState<BootState>('loading')
   const [progress, setProgress] = useState<number | null>(null)
+  const [entered, setEntered] = useState(false)
   const deadline = useRef(0)
   useEffect(() => {
+    if (!entered) return
     deadline.current = Date.now() + 45000
     const timer = window.setInterval(() => {
       try {
@@ -47,7 +49,7 @@ export default function AdventureFrame({ language }: { language: string }) {
       }
     }, 250)
     return () => window.clearInterval(timer)
-  }, [attempt])
+  }, [attempt, entered])
   function retry() {
     setBoot('loading')
     setProgress(null)
@@ -58,6 +60,15 @@ export default function AdventureFrame({ language }: { language: string }) {
     setBoot('loading')
   }
   const recovery = boot === 'failed' || boot === 'slow'
+  if (!entered) return <section className={styles.entry}>
+    <div className={styles.entryCard}>
+      <p className={styles.chapter}>{isRu ? 'ПРИКЛЮЧЕНИЕ · ПОТЕРЯВШИЙСЯ ЯГНЁНОК' : 'ADVENTURE · THE LOST LAMB'}</p>
+      <h1>{isRu ? 'Кто-то ждёт твоей помощи' : 'Someone is waiting for your help'}</h1>
+      <p>{isRu ? 'Исследуй тропу, помогай друзьям и найди потерявшегося ягнёнка. Начни с задания в самой игре.' : 'Explore the trail, help your friends, and find the lost lamb. Begin with the mission inside the game.'}</p>
+      <div className={styles.actions}><button type="button" onClick={() => setEntered(true)}>{isRu ? 'Открыть приключение' : 'Open adventure'} →</button></div>
+      <p className={styles.entryHint}>{isRu ? 'На сенсорном экране используй игровые кнопки. На компьютере — WASD или стрелки. Загрузка не удаляет сохранённый путь.' : 'Use the in-game controls on touch screens; WASD or arrows on a keyboard. Loading does not erase your saved journey.'}</p>
+    </div>
+  </section>
   return <div className={styles.frame} data-boot-state={boot}>
     <iframe ref={iframe} key={attempt}
       src={`/games/trail-of-truth-block-adventure/build/index.html?lang=${language}&attempt=${attempt}`}

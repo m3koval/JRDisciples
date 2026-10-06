@@ -6,3 +6,35 @@
 .active .panel { min-height:0; overflow-y:auto; overscroll-behavior:contain; }
 @media(max-width:720px) { .active .stage { display:flex; flex-direction:column; } .active .scene { flex:0 0 22%; min-height:100px; } .active .sceneCaption { padding:12px 18px; } .active .sceneCaption h1 { font-size:22px; margin:2px 0; } .active .sceneCaption p { display:none; } .active .panel { flex:1; padding:16px; } }
 .game{min-height:100dvh;background:radial-gradient(ellipse at top,#312153,#100d20 70%);color:#fff;font-family:Arial,sans-serif;padding:16px 16px 40px}.shell{max-width:1160px;margin:auto}.toolbar{display:flex;justify-content:space-between;align-items:center;min-height:52px;margin-bottom:14px}.toolbar a{color:#fde68a;text-decoration:none;font-weight:700}.game button{min-height:46px;border:2px solid #8b79ac;border-radius:12px;padding:10px 16px;background:#2c2445;color:#fff;font:inherit;font-weight:700;cursor:pointer;touch-action:manipulation}.game button:hover:not(:disabled){background:#47345e}.game button:focus-visible,.game a:focus-visible{outline:3px solid #fde68a;outline-offset:4px}.game button:disabled{opacity:.42;cursor:default}.game button[aria-pressed=true]{border-color:#fde68a;background:#61501c;box-shadow:inset 0 0 0 1px #fde68a}.stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);border:1px solid #796498;border-radius:24px;overflow:hidden;box-shadow:0 18px 60px #0005}.scene{min-height:560px;background-size:cover;background-position:center;display:flex;align-items:flex-end;position:relative}.sceneCaption{background:linear-gradient(transparent,#100d20ed 30%);width:100%;padding:80px 28px 28px}.sceneCaption p:first-child{font-size:.76rem;font-weight:700;color:#fde68a;letter-spacing:.08em}.sceneCaption h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.15;margin:8px 0}.sceneCaption p{line-height:1.5}.panel{padding:24px;background:#151123f5;min-width:0}.panel h2{font-size:1.5rem;line-height:1.3;margin:0 0 16px}.panel h2:focus{outline:none}.panel p{line-height:1.6;margin:12px 0}.panel .eyebrow{font-size:.78rem;color:#dccaff;margin:0 0 8px;font-weight:700}.inventory{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}.inventory span{border:1px solid #675575;border-radius:8px;padding:6px 8px;font-size:.75rem;color:#c7bfd0}.inventory .earned{color:#dcffc8;border-color:#7dbc64;background:#254025}.game .clueButton{width:100%;text-align:left;background:#35274a;border-color:#a68ac9}.clue{padding:12px 14px;background:#332949;border-left:4px solid #d3b0ff;border-radius:8px;line-height:1.6;margin:12px 0;font-size:.94rem}.verse{margin:18px 0;padding:14px;border-left:3px solid #fde68a;background:#41371e66;color:#fff0bc;line-height:1.65;font-size:1rem}.verse cite{display:block;margin-top:8px;font-style:normal;font-size:.76rem;color:#e8d4a3}.slots{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:12px;min-height:74px;border:2px dashed #a68ac9;border-radius:12px;background:#21192e}.slots span{color:#c8bbd5}.tiles{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.game .tiles button{color:#ffe6a2}.choices{display:flex;flex-wrap:wrap;gap:9px;margin:10px 0}.choices button{flex:1 1 auto;min-width:min(80px,100%);max-width:100%;overflow-wrap:normal;word-break:normal}@media(max-width:420px){.windowCities{flex-direction:column}.windowCities button{width:100%;text-align:left}}.game fieldset{padding:8px 12px;margin:12px 0;border:1px solid #675575;border-radius:12px;min-width:0}.game legend{padding:0 6px;color:#e5d9f5;font-size:.9rem}.game .primary{width:100%;background:#8052c2;border-color:#ba94ee;margin-top:12px;box-shadow:0 4px 0 #3c225c}.game .primary:hover:not(:disabled){background:#9463d7}.game .hint{font-size:.88rem;background:transparent;margin-top:8px;color:#e8d4ff}.statement{font-size:1.1rem;font-weight:700;border:1px solid #675575;border-radius:12px;padding:16px;background:#21192e}.feedback:empty{display:none}.feedback p{border-left:4px solid #ffce74;background:#49341c;padding:10px 14px;border-radius:8px;color:#ffe6bf}.feedback .success{color:#d4ffb9;background:#23351f;border-color:#9ede7a}.panel .small{font-size:.8rem;color:#c8bbd5}.nextGame{display:block;color:#fde68a;text-align:center;padding:18px}.pause{display:flex;flex-direction:column;gap:16px;justify-content:center;min-height:360px}html[lang=ru] .sceneCaption p:first-child{letter-spacing:normal}@media(max-width:760px){.game{padding:10px 10px 30px}.stage{grid-template-columns:1fr;border-radius:18px}.scene{min-height:190px;max-height:240px;background-position:center 42%}.sceneCaption{padding:40px 20px 14px}.sceneCaption h1{font-size:1.8rem}.sceneCaption p{margin:5px 0;font-size:.85rem}.panel{padding:20px 16px}.toolbar{margin-bottom:8px}.panel h2{font-size:1.35rem}}@media(prefers-reduced-motion:reduce){.game *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+/* The authored room remains the setting; the tangible clue owns the foreground. */
+.active .sceneCaption{padding:18px 20px;background:linear-gradient(transparent,#100d20ee 55%)}
+.active .sceneCaption h1{font-size:clamp(20px,3vw,32px)}
+.game button:active:not(:disabled){transform:translateY(2px)}
+/* Compact object-led portrait header, leaving the reading/task area in charge. */
+.game .relic{position:relative;width:100%;padding:0;background:radial-gradient(ellipse,#c39b5938,transparent 70%);border:0;color:#fff0c2}
+.relicViewport{height:clamp(130px,24vh,240px);pointer-events:none}
+.relicLabel{display:block;padding:8px 12px;background:#201a27dd;border-radius:12px}
+@media(max-width:760px){
+  .active .stage{display:flex;flex-direction:column}
+  .active .scene{flex:0 0 auto;min-height:0;max-height:none;background-position:center 42%}
+  .active .sceneCaption{padding:4px 12px;background:#100d2055}
+  .active .sceneCaption h1,.active .sceneCaption p{display:none}
+  .active .sceneCaption .relic{display:grid;grid-template-columns:112px minmax(0,1fr);align-items:center;text-align:left;gap:8px;min-height:104px}
+  .active .relicViewport{height:104px}
+  .active .relicLabel{font-size:14px;line-height:1.4;padding:10px}
+  .active .panel{flex:1;min-height:0;padding:12px 16px 20px;scroll-padding:12px}
+  .active .panel h2{margin-bottom:8px}
+  .active .inventory{margin:8px 0;gap:5px}
+  .active .inventory span{padding:5px 6px}
+  .active .panel p{margin:8px 0}
+  .active .clue{margin:8px 0;padding:10px 12px;font-size:1rem;line-height:1.5}
+  .active .slots{padding:8px;min-height:56px}
+  .active .tiles{gap:6px;margin:10px 0}
+  .active .tiles button,.active .slots button{padding:8px 12px}
+  .active .primary{margin-top:6px}
+}
+@media(max-width:760px) and (max-height:650px){
+  .active .sceneCaption .relic{grid-template-columns:80px minmax(0,1fr);min-height:76px}
+  .active .relicViewport{height:76px}
+}
+@media(prefers-reduced-motion:reduce){.game button:active:not(:disabled){transform:none}}

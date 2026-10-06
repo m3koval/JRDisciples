@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { advance, beginStage, course, COURSE_LENGTH, createRun, GOAL, pause, resume, safeBest, saveBest, STAGES, type Run } from './engine'
 import styles from './runner.module.css'
+import TrailWorld, { type TrailStatus } from '../david-sling-challenge/trail-world'
 
 // Full verse text verified against Bible.com ESV (59) / Synodal (400).
 // Source URLs and exact-text regression: scripts/fixtures/truth-runner-scripture.json.
@@ -53,6 +54,14 @@ export default function TruthRunnerPage() {
   const arena = useRef<HTMLDivElement>(null)
   const dialogButton = useRef<HTMLButtonElement>(null)
   const [pressed, setPressed] = useState(0)
+  const [gentle, setGentle] = useState(false)
+  const gentleRef = useRef(false)
+  const [worldStatus,setWorldStatus] = useState<TrailStatus>('loading')
+  const worldReady = useRef(false)
+  function worldChanged(status:TrailStatus) {
+    worldReady.current=status==='ready';setWorldStatus(status)
+    if(status!=='ready') {keys.current.clear();holds.current.clear();pointer.current=null;setPressed(0)}
+  }
   const active = run.status === 'running'
   const started = run.status !== 'ready'
   const modal = !active
@@ -66,8 +75,8 @@ export default function TruthRunnerPage() {
     if(p && arena.current?.hasPointerCapture(p.id)) arena.current.releasePointerCapture(p.id)
   }
   function stop() { clearInput(); publish(pause(runRef.current)) }
-  function start() { clearInput(); publish(beginStage(runRef.current)) }
-  function continueRun() { clearInput(); publish(resume(runRef.current)) }
+  function start() { if(!worldReady.current)return; clearInput(); publish(beginStage(runRef.current)) }
+  function continueRun() { if(!worldReady.current)return; clearInput(); publish(resume(runRef.current)) }
   function exit() { clearInput(); publish(createRun()) }
 
   useEffect(() => {
@@ -85,7 +94,7 @@ export default function TruthRunnerPage() {
       if((event.target as HTMLElement)?.closest('input,textarea,select,[contenteditable="true"]')) return
       const k=event.key.toLowerCase()
       if(k==='escape' && runRef.current.status==='running') { event.preventDefault(); reset(); return }
-      if(runRef.current.status!=='running' || !['arrowleft','arrowright','a','d'].includes(k)) return
+      if(!worldReady.current || runRef.current.status!=='running' || !['arrowleft','arrowright','a','d'].includes(k)) return
       event.preventDefault(); keys.current.add(k)
     }
     const up = (event:KeyboardEvent) => keys.current.delete(event.key.toLowerCase())
@@ -100,21 +109,21 @@ export default function TruthRunnerPage() {
   }, [])
 
   useEffect(() => {
-    if(!active) return
+    if(!active || worldStatus!=='ready') return
     let frame=0; let last:number | null=null
     const tick=(now:number) => {
-      if(runRef.current.status!=='running') return
+      if(!worldReady.current || runRef.current.status!=='running') return
       const elapsed=last===null ? 0 : (now-last)/1000; last=now
       const keyboard=Number(keys.current.has('arrowright') || keys.current.has('d'))-Number(keys.current.has('arrowleft') || keys.current.has('a'))
       const held=[...holds.current.values()].reduce((a,b)=>a+b,0)
       const input={ axis:Math.max(-1,Math.min(1,keyboard+held)), target:pointer.current?.x }
-      const next=advance(runRef.current,input,elapsed)
+      const next=advance(runRef.current,input,elapsed * (gentleRef.current ? .72 : 1))
       runRef.current=next; setRun(next)
       if(next.status==='running') frame=requestAnimationFrame(tick)
     }
     frame=requestAnimationFrame(tick)
     return () => cancelAnimationFrame(frame)
-  }, [active])
+  }, [active,worldStatus])
 
   useEffect(() => {
     if(!['checkpoint','won','lost'].includes(run.status)) return
@@ -128,13 +137,13 @@ export default function TruthRunnerPage() {
   useEffect(() => { if(modal && started) dialogButton.current?.focus() }, [modal,started,run.status])
 
   function steer(event:React.PointerEvent<HTMLDivElement>) {
-    if(runRef.current.status!=='running' || pointer.current?.id!==event.pointerId) return
+    if(!worldReady.current || runRef.current.status!=='running' || pointer.current?.id!==event.pointerId) return
     const rect=event.currentTarget.getBoundingClientRect()
     pointer.current={id:event.pointerId,x:Math.max(18,Math.min(82,(event.clientX-rect.left)/rect.width*100))}
   }
   function release(event:React.PointerEvent<HTMLDivElement>) { if(pointer.current?.id===event.pointerId) pointer.current=null }
   function hold(event:React.PointerEvent<HTMLButtonElement>, direction:number) {
-    if(runRef.current.status!=='running') return
+    if(!worldReady.current || runRef.current.status!=='running') return
     event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId)
     // Explicit controls take ownership from direct dragging.
     pointer.current=null; holds.current.set(event.pointerId,direction)
@@ -156,17 +165,18 @@ export default function TruthRunnerPage() {
     </div>
     <div className={styles.progress} role="progressbar" aria-label={copy.stage} aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(run.distance/COURSE_LENGTH*100)}><i style={{width:`${run.distance/COURSE_LENGTH*100}%`}} /></div>
     <div className={`${styles.arena} ${styles[`theme${run.stage}`]}`} ref={arena} aria-label={copy.title}
-      onPointerDown={e=>{ if(!active || pointer.current || holds.current.size) return; e.currentTarget.setPointerCapture(e.pointerId); pointer.current={id:e.pointerId,x:run.x}; steer(e) }}
+      onPointerDown={e=>{ if(!worldReady.current || !active || pointer.current || holds.current.size) return; e.currentTarget.setPointerCapture(e.pointerId); pointer.current={id:e.pointerId,x:run.x}; steer(e) }}
       onPointerMove={steer} onPointerUp={release} onPointerCancel={release} onLostPointerCapture={release}>
-      <div className={styles.scenery} aria-hidden="true">{Array.from({length:14},(_,i)=><i key={i} style={{left:i%2 ? '91%' : '4%',top:`${((i*19+run.distance*0.1)%120)-10}%`}} />)}</div>
-      <div className={styles.road} aria-hidden="true" style={{backgroundPosition:`0 ${run.distance*2}px`}} />
+      <TrailWorld onStatusChange={worldChanged} isRu={isRu} frame={{runner:true,x:run.x,distance:run.distance,items:course(run.stage).filter(i=>!run.resolved.includes(i.id)).map(i=>({...i,y:78-(i.at-run.distance)/240*80})).filter(i=>i.y>-12&&i.y<96)}} />
+      <div style={{display:'none'}} className={styles.scenery} aria-hidden="true">{Array.from({length:14},(_,i)=><i key={i} style={{left:i%2 ? '91%' : '4%',top:`${((i*19+run.distance*0.1)%120)-10}%`}} />)}</div>
+      <div className={styles.road} aria-hidden="true" style={{display:"none"}} />
       <div className={styles.objective}>{run.collected>=GOAL ? `${copy.finish} →` : copy.objective}</div>
       {course(run.stage).filter(item=>!run.resolved.includes(item.id)).map(item=> {
         const y=78-(item.at-run.distance)/240*80
-        return y > -10 && y < 94 ? <div key={item.id} aria-hidden="true" className={item.kind==='light' ? styles.light : styles.rock} style={{left:`${item.x}%`,top:`${y}%`}}>{item.kind==='light' ? '✦' : ''}</div> : null
+        return y > -10 && y < 94 ? <div key={item.id} aria-hidden="true" className={item.kind==='light' ? styles.light : styles.rock} style={{left:`${item.x}%`,top:`${y}%`,opacity:0}}>{item.kind==='light' ? '✦' : ''}</div> : null
       })}
       {COURSE_LENGTH-run.distance<240 && <div className={styles.finish} style={{top:`${78-(COURSE_LENGTH-run.distance)/240*80}%`}}>{copy.finish}</div>}
-      <div data-testid="runner" className={`${styles.player} ${run.grace>0 ? styles.protected : ''}`} style={{left:`${run.x}%`}} aria-hidden="true"><span className={styles.lantern}>✦</span><i /></div>
+      <div data-testid="runner" className={`${styles.player} ${run.grace>0 ? styles.protected : ''}`} style={{left:`${run.x}%`,opacity:0}} aria-hidden="true"><span className={styles.lantern}>✦</span><i /></div>
       <div className={styles.feedback} role="status">{active && (run.feedback==='light' ? copy.good : run.feedback==='rock' ? copy.rock : '')}</div>
       {modal && <div className={styles.shade} onPointerDown={e=>e.stopPropagation()}>
         <section className={styles.card} role={started ? 'dialog' : undefined} aria-modal={started ? true : undefined} aria-labelledby="runner-heading">
@@ -179,16 +189,16 @@ export default function TruthRunnerPage() {
           </>}
           {(run.status==='ready' || run.status==='paused') && <p className={styles.instructions}>{copy.controls}</p>}
           {['checkpoint','won','lost'].includes(run.status) && <p>{copy.score}: <b>{run.score}</b> · {copy.best}: <b>{best}</b></p>}
-          <button ref={dialogButton} className={styles.primary} type="button" onClick={()=>{if(run.status==='paused') continueRun(); else if(run.status==='won') {clearInput();publish(beginStage(createRun()))} else start()}}>{nextAction} →</button>
+          <button ref={dialogButton} disabled={worldStatus!=='ready'} className={styles.primary} type="button" onClick={()=>{if(!worldReady.current)return;if(run.status==='paused') continueRun(); else if(run.status==='won') {clearInput();publish(beginStage(createRun()))} else start()}}>{nextAction} →</button>
           <small>{storageOkay ? copy.saved : copy.unsaved}</small>
           {started && <button className={styles.secondary} type="button" onClick={exit}>{copy.exit}</button>}
         </section>
       </div>}
     </div>
     {started && <div className={styles.controls}>
-      <button type="button" disabled={!active} aria-label={copy.left} aria-pressed={pressed<0} onPointerDown={e=>hold(e,-1)} onPointerUp={unhold} onPointerCancel={unhold} onLostPointerCapture={unhold} onClick={e=>{if(e.detail===0 && active) publish({...runRef.current,x:Math.max(18,runRef.current.x-26)})}}>◀</button>
-      <span>{copy.score}: {run.score}<small>{copy.best}: {best}</small></span>
-      <button type="button" disabled={!active} aria-label={copy.right} aria-pressed={pressed>0} onPointerDown={e=>hold(e,1)} onPointerUp={unhold} onPointerCancel={unhold} onLostPointerCapture={unhold} onClick={e=>{if(e.detail===0 && active) publish({...runRef.current,x:Math.min(82,runRef.current.x+26)})}}>▶</button>
+      <button type="button" disabled={!active || worldStatus!=='ready'} aria-label={copy.left} aria-pressed={pressed<0} onPointerDown={e=>hold(e,-1)} onPointerUp={unhold} onPointerCancel={unhold} onLostPointerCapture={unhold} onClick={e=>{if(e.detail===0 && active && worldReady.current) publish({...runRef.current,x:Math.max(18,runRef.current.x-26)})}}>◀</button>
+      <button type="button" aria-pressed={gentle} onClick={()=>{gentleRef.current=!gentleRef.current;setGentle(gentleRef.current)}} style={{fontSize:14,width:'auto',padding:'8px 14px'}}>{isRu ? 'Спокойный темп' : 'Gentle pace'} {gentle?'✓':''}<small style={{display:'block'}}>{copy.score}: {run.score}</small></button>
+      <button type="button" disabled={!active || worldStatus!=='ready'} aria-label={copy.right} aria-pressed={pressed>0} onPointerDown={e=>hold(e,1)} onPointerUp={unhold} onPointerCancel={unhold} onLostPointerCapture={unhold} onClick={e=>{if(e.detail===0 && active && worldReady.current) publish({...runRef.current,x:Math.min(82,runRef.current.x+26)})}}>▶</button>
     </div>}
   </main>
 }

@@ -2,6 +2,7 @@
 
 
 import Link from 'next/link'
+import { drawTraveler, drawSand, scoutRoute, wordLabelLayout } from './trail-art'
 import { useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { GRID, MAX_TRAIL, initialTrail, rocksForLevel, freeCell, wordCell, collisionReason, tickDuration, frameDelta, readBest, saveBest, ownsPointer } from './mechanics'
@@ -63,6 +64,8 @@ export default function MannaTrailPage() {
   const [wordsGot, setWordsGot] = useState(0)
   const [slowOn, setSlowOn] = useState(false)
   const [gentle, setGentle] = useState(true)
+  const [scouting, setScouting] = useState(false)
+  const scoutingRef = useRef(false)
   const [bump, setBump] = useState<CollisionReason>('edge')
 
   const gentleRef = useRef(true)
@@ -432,10 +435,11 @@ export default function MannaTrailPage() {
       sand.addColorStop(1, '#88633e')
       ctx!.fillStyle = sand
       ctx!.fillRect(ox, oy, size, size)
+      drawSand(ctx!, ox, oy, size)
       ctx!.strokeStyle = 'rgba(251,191,36,.55)'
       ctx!.lineWidth = 2 * dpr
       ctx!.strokeRect(ox - dpr, oy - dpr, size + 2 * dpr, size + 2 * dpr)
-      ctx!.strokeStyle = 'rgba(47,31,18,.12)'
+      ctx!.strokeStyle = 'rgba(47,31,18,.075)'
       ctx!.lineWidth = 1
       for (let i = 1; i < GRID; i++) {
         ctx!.beginPath(); ctx!.moveTo(ox + i * cell, oy); ctx!.lineTo(ox + i * cell, oy + size); ctx!.stroke()
@@ -487,21 +491,22 @@ export default function MannaTrailPage() {
       roundRect(ctx!, wx + cell * 0.12, wy + cell * 0.12, cell * 0.76, cell * 0.76, cell * 0.22)
       ctx!.fill()
       ctx!.restore()
-      ctx!.fillStyle = '#78350f'
-      ctx!.font = `900 ${cell * 0.5}px sans-serif`
-      ctx!.textAlign = 'center'
-      ctx!.textBaseline = 'middle'
-      ctx!.fillText('★', wx + cell * 0.5, wy + cell * 0.54)
-      // floating label
-      const labelY = wy - cell * 0.42 < oy ? wy + cell * 1.12 : wy - cell * 0.42
-      ctx!.font = `900 ${Math.max(13 * dpr, cell * 0.52)}px sans-serif`
-      const tw = ctx!.measureText(nextWord).width
-      const lx = Math.min(Math.max(wx + cell * 0.5, ox + tw / 2 + 8 * dpr), ox + size - tw / 2 - 8 * dpr)
-      ctx!.fillStyle = 'rgba(7,21,39,.85)'
-      roundRect(ctx!, lx - tw / 2 - 8 * dpr, labelY - cell * 0.34, tw + 16 * dpr, cell * 0.68, cell * 0.24)
+      // A readable parchment silhouette rather than an illegible tiny glyph.
+      ctx!.fillStyle = '#fff0ba'
+      ctx!.strokeStyle = '#805322'; ctx!.lineWidth = Math.max(dpr,cell*.055)
+      roundRect(ctx!,wx+cell*.16,wy+cell*.09,cell*.68,cell*.82,cell*.09)
+      ctx!.fill();ctx!.stroke()
+      ctx!.beginPath()
+      for(const line of [.34,.5,.66]){ctx!.moveTo(wx+cell*.3,wy+cell*line);ctx!.lineTo(wx+cell*.7,wy+cell*line)}
+      ctx!.stroke()
+      ctx!.font = `900 ${Math.max(15 * dpr, cell * 0.52)}px sans-serif`
+      ctx!.textAlign = 'center'; ctx!.textBaseline = 'middle'
+      const label = wordLabelLayout(cell,dpr,ctx!.measureText(nextWord).width,wx,wy,ox,oy,size)
+      ctx!.fillStyle = '#102b39'
+      roundRect(ctx!,label.x-label.width/2,label.y-label.height/2,label.width,label.height,6*dpr)
       ctx!.fill()
-      ctx!.fillStyle = '#fde68a'
-      ctx!.fillText(nextWord, lx, labelY)
+      ctx!.fillStyle = '#fff0b5'
+      ctx!.fillText(nextWord,label.x,label.y)
       }
 
       // dove
@@ -525,43 +530,15 @@ export default function MannaTrailPage() {
         const was = prev[Math.min(i, prev.length - 1)] ?? cur
         return { x: was.x + (cur.x - was.x) * frac, y: was.y + (cur.y - was.y) * frac }
       }
+      if (scoutingRef.current && phaseRef.current === 'play') {
+        const route = scoutRoute(snake, wordTileRef.current, rocksForLevel(levelRef.current), dirQueueRef.current[0] ?? dirRef.current)
+        ctx!.save(); ctx!.strokeStyle='#fff5ca90'; ctx!.lineWidth=cell*.12; ctx!.setLineDash([cell*.16,cell*.2]); ctx!.beginPath()
+        route.forEach((p,i)=>{const x=ox+(p.x+.5)*cell,y=oy+(p.y+.5)*cell;if(i===0)ctx!.moveTo(x,y);else ctx!.lineTo(x,y)})
+        ctx!.stroke();ctx!.restore()
+      }
       for (let i = n - 1; i >= 0; i--) {
         const s = lerpPos(i)
-        const t = n === 1 ? 0 : i / (n - 1) // 0 head → 1 tail
-        const r = Math.round(251 - t * (251 - 20))
-        const g = Math.round(191 - t * (191 - 184))
-        const b = Math.round(36 + t * (166 - 36))
-        const inset = cell * (0.06 + t * 0.1)
-        ctx!.fillStyle = `rgb(${r},${g},${b})`
-        if (i === 0) {
-          ctx!.save()
-          ctx!.shadowColor = '#fbbf24'
-          ctx!.shadowBlur = 12 * dpr
-        }
-        roundRect(ctx!, ox + s.x * cell + inset, oy + s.y * cell + inset, cell - inset * 2, cell - inset * 2, cell * 0.32)
-        ctx!.fill()
-        if (i === 0) ctx!.restore()
-      }
-      // eyes on head
-      if (n > 0) {
-        const hd = lerpPos(0)
-        const d = dirRef.current
-        const cx = ox + (hd.x + 0.5) * cell
-        const cy = oy + (hd.y + 0.5) * cell
-        const fx = d.x * cell * 0.18
-        const fy = d.y * cell * 0.18
-        const sx = d.y * cell * 0.16
-        const sy = d.x * cell * 0.16
-        for (const sign of [1, -1]) {
-          ctx!.fillStyle = '#fff'
-          ctx!.beginPath()
-          ctx!.arc(cx + fx + sx * sign, cy + fy + sy * sign, cell * 0.1, 0, Math.PI * 2)
-          ctx!.fill()
-          ctx!.fillStyle = '#1e293b'
-          ctx!.beginPath()
-          ctx!.arc(cx + fx * 1.3 + sx * sign, cy + fy * 1.3 + sy * sign, cell * 0.05, 0, Math.PI * 2)
-          ctx!.fill()
-        }
+        drawTraveler(ctx!, ox+(s.x+.5)*cell, oy+(s.y+.5)*cell, cell, i===0, i)
       }
 
       // Gentle-mode steering forecast uses the same queue, joystick and collision
@@ -825,12 +802,13 @@ export default function MannaTrailPage() {
               <span className="mt-hud-stat">🏆 {copy.best}: {best}</span>
               <span className="mt-hud-stat">📖 {level}/9</span>
             </div>
+            {phase === 'play' && <button className="mt-exit" aria-pressed={scouting} onClick={() => { scoutingRef.current=!scoutingRef.current; setScouting(scoutingRef.current) }}>{isRu ? (scouting ? 'Скрыть путь' : 'Разведать путь') : (scouting ? 'Hide route' : 'Scout route')}</button>}
             {phase === 'play' && <button className="mt-exit" onClick={() => changePhase('paused')}>Ⅱ {copy.pause}</button>}
             <button className="mt-exit" onClick={() => changePhase('menu')}>✕ {copy.exit}</button>
           </div>
           <div className="mt-objective" aria-live="polite">
-            {copy.chapters[Math.floor((level - 1) / 3)]} · {wordsGot}/{verse.words.length}<br />
-            ⭐ {copy.mission}: <strong>{verse.words[Math.min(wordsGot, verse.words.length - 1)]}</strong>
+            {scouting && (isRu ? 'Пунктир — возможный путь, поворачивай сам. ' : 'Dots suggest a route; you still steer. ')}{copy.chapters[Math.floor((level - 1) / 3)]} · {wordsGot}/{verse.words.length}<br />
+            📜 {copy.mission}: <strong>{verse.words[Math.min(wordsGot, verse.words.length - 1)]}</strong>
           </div>
           <div className="mt-verse-bar" aria-label={verse.ref}>
             {verse.words.map((word, i) => (

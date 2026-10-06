@@ -7,3 +7,14 @@
 @media(max-width:600px){.inspection{gap:6px}.inspection>button{font-size:12px;padding:6px 9px}.areaControls{gap:4px;flex:1;justify-content:center}.areaName{min-width:0;flex:1;font-size:11px;max-width:116px}.areaName>svg{width:18px;height:24px;flex-shrink:0}.areaControls button{min-width:44px;padding:2px}.switcher{margin-bottom:6px}}
 @media(max-height:540px) and (min-width:601px){.inspection{position:absolute;left:12px;top:40px;max-width:150px;flex-direction:column;gap:6px}.areaControls{flex-wrap:wrap;justify-content:center;max-width:140px}.areaName{order:-1;min-width:130px;justify-content:center}.pictures{margin-left:154px;margin-right:10px}}
 @media(prefers-reduced-motion:reduce){.shell button:active{transform:none}}
+
+.shell{background:radial-gradient(ellipse at 50% 25%,#486c59,#152f2c 80%)}
+.art{box-shadow:0 0 0 3px #dfc18a,0 0 0 7px #69472e,0 14px 22px #071b24aa;border-radius:10px}
+.pictureLabel{background:#f4e3bb;color:#3b3427;border-radius:3px;box-shadow:0 3px 7px #0004;font-size:12px}
+.discoveryTray{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:0 0 10px;min-height:25px;flex-shrink:0}
+.discoveryTray span{padding:4px 12px;border-radius:20px;border:1px dashed #c9bb8b99;font-size:12px;color:#e7dec5}.discoveryTray .discovered{background:#e8d8ae;color:#233e32;border-style:solid}
+.compareNotice{margin:0 0 8px;text-align:center;font-size:12px;color:#ffe3a0;flex-shrink:0}
+.discovery{animation:discoveryReveal .5s ease-out;transform-box:fill-box;transform-origin:center}
+@keyframes discoveryReveal{from{opacity:0;filter:drop-shadow(0 0 18px #fff4b0)}to{opacity:1;filter:drop-shadow(0 0 0 transparent)}}
+@media(max-width:600px){.discoveryTray{gap:4px;margin-bottom:8px}.discoveryTray span{font-size:10px;padding:3px 7px}.inspection{flex-wrap:wrap}.inspection>button{flex:1}.pictureLabel{top:7px;left:7px}}
+@media(prefers-reduced-motion:reduce){.discovery{animation:none}}

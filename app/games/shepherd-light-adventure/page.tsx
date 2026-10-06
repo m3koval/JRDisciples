@@ -3,7 +3,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 
 import Link from 'next/link'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createJourney, retryJourney, stepJourney, activateHelper, callLamb, guideRadius, clamp, dist, type Journey, type Point, type Orb, type Hazard } from './mechanics'
 import { useLanguage } from '@/context/LanguageContext'
 import { getGuidance, guidePath, type Guidance } from './guidance'
@@ -134,7 +134,7 @@ export default function ShepherdLightAdventurePage() {
   const elapsed = Math.floor(bankedTime + journey.time)
   const spark = Math.floor(journey.time * 20)
   const [calmMode, setCalmMode] = useState(false)
-  const [showGuide, setShowGuide] = useState(false)
+  const [showGuide, setShowGuide] = useState(true)
 
   const level = LEVELS[Math.min(levelIndex, LEVELS.length - 1)]
   const helper = helperMeta[level.helper]
@@ -589,6 +589,10 @@ export default function ShepherdLightAdventurePage() {
 
 function GameWorld({ level, player, lamb, orbs, lanternWide, helperActive, spark, journey, playing, guidance, route, mapVisible }: { level: Level; player: Point; lamb: Point; orbs: Orb[]; lanternWide: boolean; helperActive: boolean; spark: number; journey: Journey; playing: boolean; guidance: Guidance; route: Point[]; mapVisible: boolean }) {
   const lightSize = guideRadius(journey, lanternWide) * 2
+  const terrainTrails = useMemo(() => {
+    const points = [{ x: 18, y: 82 }, ...level.orbs, level.lambStart, level.gate]
+    return points.slice(0, -1).map((point, index) => guidePath(point, points[index + 1], level.hazards))
+  }, [level])
   const frame = Math.floor(journey.time * 10) % 8 + 1
   const sprite = (moving: boolean, facing: number) => ({ backgroundPositionX: `${playing && moving ? frame / 8 * 100 : 0}%`, backgroundPositionY: `${facing / 3 * 100}%` })
   return (
@@ -597,11 +601,16 @@ function GameWorld({ level, player, lamb, orbs, lanternWide, helperActive, spark
         <defs><pattern id="grass" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M2 5l-.5-1m.5 1l1-1M6 8l1-1" stroke="#9ab96e" strokeWidth=".3" opacity=".5" /></pattern></defs>
         <rect width="100" height="100" fill="url(#grass)" />
         {level.environment === 'bridge' && <><path d="M48 0 Q32 30 51 50 T52 100" fill="none" stroke="#377f96" strokeWidth="19"/><path d="M28 51L67 40" stroke="#a58554" strokeWidth="13"/><path d="M28 51L67 40" stroke="#dbc392" strokeWidth="10" strokeDasharray="1 1"/></>}
-        <path d={`M18 82 ${level.orbs.map(orb => `L${orb.x} ${orb.y}`).join(' ')} L${level.lambStart.x} ${level.lambStart.y} L${level.gate.x} ${level.gate.y}`} fill="none" stroke="#c6b17e" strokeWidth="7" strokeLinejoin="round" opacity=".4" />
+        {terrainTrails.map((trail, index) => {
+          return trail.length > 1 && <g key={index}>
+            <polyline points={trail.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#536449" strokeWidth="6" strokeLinejoin="round" strokeLinecap="round" opacity=".55" />
+            <polyline points={trail.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#c6b17e" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" opacity=".55" />
+          </g>
+        })}
       </svg>
       {[0, 100].map(x => [12, 39, 68, 94].map((y, index) => <span key={`${x}-${y}`} aria-hidden="true" className={`sla-scenery ${index === 2 ? 'rock' : 'tree'}`} style={{ left: `${x}%`, top: `${y}%` }} />))}
       {[{ x: 12, y: 5 }, { x: 64, y: 98 }, { x: 88, y: 10 }].map(point => <span key={`${point.x}-${point.y}`} aria-hidden="true" className="sla-scenery flowers" style={{ left: `${point.x}%`, top: `${point.y}%` }} />)}
-      <div className="sla-gate" style={{ left: `${level.gate.x}%`, top: `${level.gate.y}%` }}>⌂</div>
+      <div className="sla-gate" style={{ left: `${level.gate.x}%`, top: `${level.gate.y}%`, boxShadow: '0 7px 0 #403a26, 0 14px 18px #172b2966', border: '3px solid #ffe5a4' }}>⌂</div>
       {level.hazards.map((hazard) => (
         <div key={hazard.id} className={`sla-hazard ${hazard.kind}`} style={{ left: `${hazard.x}%`, top: `${hazard.y}%`, width: `${hazard.r * 2}%`, height: `${hazard.r * 2}%` }} />
       ))}
@@ -614,6 +623,10 @@ function GameWorld({ level, player, lamb, orbs, lanternWide, helperActive, spark
         </>}
         {guidance.target && <circle cx={guidance.target.x} cy={guidance.target.y} r="5" fill="none" stroke="#fff1ac" strokeWidth="1" />}
         {(guidance.state === 'wait' || guidance.state === 'home') && <text x={player.x} y={player.y + 6} textAnchor="middle" fontSize="6" fill="#fff1ac" stroke="#173126" strokeWidth=".4" paintOrder="stroke">Ⅱ</text>}
+      </svg>}
+      {playing && guidance.remaining === 0 && <svg className="sla-guide-map" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <line x1={player.x} y1={player.y} x2={lamb.x} y2={lamb.y} stroke={guidance.state === 'return' ? '#ffd09a' : '#fff2b7'} strokeWidth=".65" strokeDasharray={guidance.state === 'return' ? '1 2' : 'none'} opacity=".8" />
+        <circle cx={lamb.x} cy={lamb.y} r="4.5" fill="none" stroke="#fff2b7" strokeWidth=".65" />
       </svg>}
       <div className="sla-light" style={{ left: `${player.x}%`, top: `${player.y}%` }} />
       {Array.from({ length: helperActive ? 10 : 5 }).map((_, index) => (

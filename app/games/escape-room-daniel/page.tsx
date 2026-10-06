@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 import { initialState, reducer, words, questions, scripture, windowGuidance } from './game'
 import styles from './room.module.css'
+import Relic from './Relic'
 
 const rooms = [
   { en: 'The King’s Decree', ru: 'Указ царя', icon: '📜', art: 'decree', keyEn: 'Courage', keyRu: 'Смелость' },
@@ -67,6 +68,7 @@ export default function EscapeRoomDanielPage() {
       <div className={styles.stage}>
         <div className={styles.scene} style={{ backgroundImage: `url(/images/jr/games/escape-room/escape-room-daniel-${state.phase === 'intro' ? 'decree' : state.phase === 'victory' ? 'victory' : room.art}.png)` }}>
           <div className={styles.sceneCaption}>
+            {active && !state.paused && <Relic room={state.room} inspected={state.inspected} solved={right} onInspect={() => dispatch({ type: 'inspect' })} label={state.inspected ? text('Clue opened · tap to put down', 'Подсказка открыта · положить') : text('Pick up the clue scroll', 'Поднять свиток')} />}
             <p>{text('DANIEL 6 · ESCAPE ROOM', 'ДАНИИЛА 6 · КОМНАТА-ЗАГАДКА')}</p>
             <h1>{text('The Lion’s Den', 'Ров со львами')}</h1>
             <p>{text('Discover the clues. Unlock four keys.', 'Найди подсказки. Собери четыре ключа.')}</p>
@@ -101,7 +103,7 @@ export default function EscapeRoomDanielPage() {
             <aside id="daniel-clue" hidden={!state.inspected} className={styles.clue}>{clue}{state.room === 3 && quote}</aside>
 
             {state.room === 0 && <>
-              <p>{text('What did the law forbid? Arrange the words. Tap any placed word to undo it, then check the lock.', 'Что запрещал закон? Расставь слова. Нажми на слово в ответе, чтобы убрать его. Затем проверь замок.')}</p>
+              <p>{text('What did the law forbid? Arrange the words; tap a placed word to undo.', 'Что запрещал закон? Расставь слова. Нажми на слово в ответе, чтобы убрать его.')}</p>
               <div className={styles.slots} aria-label={text('Your word order', 'Твой порядок слов')}>
                 {state.tiles.length === 0 && <span>{text('Tap words below…', 'Нажимай на слова ниже…')}</span>}
                 {state.tiles.map((index, i) => <button key={index} disabled={right} onClick={() => dispatch({ type: 'undo', index: i })} aria-label={text('Remove ', 'Убрать ') + words[lang][index]}>{words[lang][index]}</button>)}

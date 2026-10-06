@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 import { WAVE_SIZES, stepGuard, waveOutcome, hasExited, safeBest, ARRIVAL_MS, moveDefender, recoveryEnergy } from './rules'
 import { drawCourt, drawShield, drawArrival } from './art'
+import { nearestApproach, drawGuardReadability } from './readability'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 const TICK_MS   = 16          // ~62.5 fps fixed timestep
@@ -449,6 +450,7 @@ export default function ShieldOfFaithPage() {
     ctx.fillStyle = '#071e2888'
     ctx.beginPath(); ctx.ellipse(px, py + 25, 24, 8, 0, 0, Math.PI * 2); ctx.fill()
     drawShield(ctx, px, py, 32, guardRef.current.active)
+    drawGuardReadability(ctx, px, py, guardRef.current.energy, guardRef.current.active, nearestApproach(dartsRef.current, px, py), isRu)
     ctx.strokeStyle = p.invMs > 0 ? '#ffffff' : '#7dd3fc'; ctx.lineWidth = 4
     ctx.beginPath(); ctx.arc(px, py, 33, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * (p.invMs > 0 ? p.invMs / 1800 : guardRef.current.energy / 100)); ctx.stroke()
     if (p.shieldCharges > 0) {

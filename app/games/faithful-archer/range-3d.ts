@@ -34,6 +34,8 @@ export class Range3D {
   private string: THREE.Line
   private aim: THREE.InstancedMesh
   private review: THREE.Line
+  private landing: THREE.Mesh
+  private impacts = new Map<number, number>()
   private character = new THREE.Group()
   private loaded = new Map<string, THREE.Object3D>()
   private textures = new Set<THREE.Texture>()
@@ -93,6 +95,8 @@ export class Range3D {
     this.scene.add(this.aim)
     this.review = new THREE.Line(this.geo(new THREE.BufferGeometry()), this.material(new THREE.LineDashedMaterial({ color:'#335a63', dashSize:6, gapSize:6, transparent:true, opacity:0.85 })))
     this.scene.add(this.review)
+    this.landing=this.mesh(new THREE.TorusGeometry(9,1.8,8,40),this.material(new THREE.MeshBasicMaterial({color:'#fff0a6',depthTest:false})),this.scene)
+    this.landing.renderOrder=10;this.landing.visible=false
     this.review.geometry.setAttribute('position',new THREE.Float32BufferAttribute(new Float32Array(160*3),3))
     this.review.geometry.setDrawRange(0,0);this.review.frustumCulled=false
     this.onLost = e => { e.preventDefault(); this.ready = false; fail() }
@@ -344,13 +348,17 @@ export class Range3D {
       this.camera.left=-f.width/2;this.camera.right=f.width/2;this.camera.top=f.height/2;this.camera.bottom=-f.height/2
       const center=v(0,f.height*.34/C,0)
       this.camera.position.copy(center).add(v(0,2000*S,2000*C));this.camera.lookAt(center);this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld()
-      this.buildScenery();this.releaseTree(this.actors);this.actors.clear();this.targets.clear();this.arrows.clear();this.obstacles.clear();this.cords.clear()
+      this.buildScenery();this.releaseTree(this.actors);this.actors.clear();this.targets.clear();this.arrows.clear();this.obstacles.clear();this.cords.clear();this.impacts.clear()
     }
     for(const t of f.targets) {
       const obj=this.targets.get(t.id)||this.makeTarget(t)
       obj.position.copy(this.world(t.x,t.y));obj.quaternion.copy(this.camera.quaternion)
       obj.rotation.z+=Math.sin(t.wobble*12)*t.wobble*.08
-      obj.getObjectByName('success')!.visible=t.hit
+      const success=obj.getObjectByName('success')!
+      success.visible=t.hit
+      if(t.hit&&!this.impacts.has(t.id))this.impacts.set(t.id,f.time)
+      const age=f.time-(this.impacts.get(t.id)??f.time)
+      success.scale.setScalar(t.hit?1+Math.max(0,1-age/.65)*.65:1)
       let cord=this.cords.get(t.id)
       if(!cord){cord=this.mesh(new THREE.CylinderGeometry(.85,.85,1,5),this.rope,this.actors);this.cords.set(t.id,cord)}
       const top=v(t.x-this.width/2,this.height*.77/C,-38),bottom=this.world(t.x,t.y-t.r,-10)
@@ -380,6 +388,15 @@ export class Range3D {
     const matrix=new THREE.Matrix4();this.aim.count=Math.min(f.aim.length,50)
     f.aim.slice(0,50).forEach((p,i)=>{matrix.makeTranslation(...this.world(p.x,p.y,12).toArray());this.aim.setMatrixAt(i,matrix)})
     this.aim.instanceMatrix.needsUpdate=true
+    // The endpoint is the actual preview, not an invented guaranteed hit.
+    this.landing.visible=f.aim.length>1
+    if(f.aim.length>1){
+      const end=f.aim[f.aim.length-1]
+      this.landing.position.copy(this.world(end.x,end.y,16));this.landing.quaternion.copy(this.camera.quaternion)
+      const near=f.targets.some(t=>!t.hit&&Math.hypot(t.x-end.x,t.y-end.y)<t.r)
+      ;(this.landing.material as THREE.MeshBasicMaterial).color.set(near?'#a5efb7':'#fff0a6')
+      this.landing.scale.setScalar(near?1.25:1)
+    }
     const history=this.review.geometry.attributes.position
     f.review.slice(0,160).forEach((p,i)=>{const point=this.world(p.x,p.y,12);history.setXYZ(i,point.x,point.y,point.z)})
     history.needsUpdate=true;this.review.geometry.setDrawRange(0,Math.min(f.review.length,160))

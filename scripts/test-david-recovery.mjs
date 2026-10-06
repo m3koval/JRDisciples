@@ -41,6 +41,7 @@ for (const [width, height] of [[320,300],[390,390],[660,540],[280,260],[768,600]
   }
 }
 assert.match(source,/transitionRef.current = \{ remaining: 950/)
-assert.match(source,/if \(pausedRef.current\) return/)
+assert.match(source,/if \(pausedRef.current \|\| !worldReady.current\) return/)
+assert.match(source,/worldReady.current=status==='ready'/)
 assert.match(source,/pointerRef.current !== event.pointerId/)
 console.log('PASS: 5 scene sizes × 4 timing windows × 7 errors: uncropped art, shared cue/stone curve, target hit/miss agreement; pause/owner wiring')

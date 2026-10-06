@@ -44,7 +44,9 @@ const react={
  useRef(init){const i=hook++; if(!(i in slots)) slots[i]={current:init}; return slots[i]},
  useEffect(fn,deps){const i=hook++; const old=slots[i]; if(!old || deps.some((d,j)=>d!==old.deps[j])) { pending.push(()=>{old?.cleanup?.(); slots[i]={deps,cleanup:fn()} }); }}
 }
-const scope={exports:{},require(name){ if(name==='./mechanics')return m; if(name==='react')return react; if(name==='react/jsx-runtime')return {jsx,jsxs:jsx}; if(name==='next/link')return {default:'a'}; if(name.includes('LanguageContext'))return {useLanguage:()=>({language})}; throw Error(name)},
+const artScope={exports:{},require(name){if(name==='./mechanics')return m;throw Error(name)}}
+vm.createContext(artScope);vm.runInContext(load(fs.readFileSync(new URL('../app/games/manna-trail/trail-art.ts',import.meta.url),'utf8')),artScope)
+const scope={exports:{},require(name){ if(name==='./trail-art')return artScope.exports; if(name==='./mechanics')return m; if(name==='react')return react; if(name==='react/jsx-runtime')return {jsx,jsxs:jsx}; if(name==='next/link')return {default:'a'}; if(name.includes('LanguageContext'))return {useLanguage:()=>({language})}; throw Error(name)},
  performance:{now:()=>now}, requestAnimationFrame:fn=>{raf=fn;return 1}, cancelAnimationFrame(){}, ResizeObserver:class {observe(){} disconnect(){}},
  document:{hidden:false,addEventListener:(k,v)=>listeners[k]=v,removeEventListener(){}},
  window:{devicePixelRatio:1,matchMedia:()=>({matches:true}),addEventListener:(k,v)=>listeners[k]=v,removeEventListener(){},get localStorage(){throw Error('storage blocked')}}, console,

@@ -16,6 +16,8 @@ export default function SpotTheDifferencePage() {
   const [paused, setPaused] = useState(false)
   const [picture, setPicture] = useState<'before' | 'objects'>('objects')
   const [detail, setDetail] = useState(false)
+  const [compare, setCompare] = useState(false)
+  const [discovery, setDiscovery] = useState<number | null>(null)
   const [area, setArea] = useState(4)
   const [hint, setHint] = useState(0)
   const [message, setMessage] = useState<'miss' | 'found' | ''>('')
@@ -32,7 +34,7 @@ export default function SpotTheDifferencePage() {
   const title = ru ? scene.titleRu : scene.titleEn
   const openPause = () => {
     if (document.activeElement instanceof HTMLElement && !pauseDialog.current?.contains(document.activeElement)) resumeFocus.current = document.activeElement
-    down.current = null; pendingTap.current = null; setPaused(true)
+    down.current = null; pendingTap.current = null; setCompare(false); setPaused(true)
   }
   const closePause = () => {
     setPaused(false)
@@ -50,7 +52,7 @@ export default function SpotTheDifferencePage() {
     document.body.style.overflow = 'hidden'
     const interrupt = () => {
       if (document.activeElement instanceof HTMLElement && !pauseDialog.current?.contains(document.activeElement)) resumeFocus.current = document.activeElement
-      down.current = null; pendingTap.current = null; setPaused(true)
+      down.current = null; pendingTap.current = null; setCompare(false); setPaused(true)
     }
     const hidden = () => { if (document.hidden) interrupt() }
     window.addEventListener('blur', interrupt)
@@ -66,12 +68,12 @@ export default function SpotTheDifferencePage() {
     return () => window.cancelAnimationFrame(report)
   }, [state, ready])
   const tap = (x: number, y: number) => {
-    if (paused || state.phase !== 'play' || failedImage) return
+    if (paused || compare || state.phase !== 'play' || failedImage) return
     const id = findAt(state, x, y)
-    if (id !== null) { dispatch({ type: 'find', id }); setMessage('found'); setHint(0) }
+    if (id !== null) { dispatch({ type: 'find', id }); setMessage('found'); setHint(0); setDiscovery(id) }
     else setMessage('miss')
   }
-  const next = () => { dispatch({ type: 'next' }); setHint(0); setMessage(''); setFailedImage(false); setPicture('objects'); setDetail(false); setArea(4); setCursor({ x:384,y:512,visible:false }) }
+  const next = () => { dispatch({ type: 'next' }); setHint(0); setMessage(''); setFailedImage(false); setPicture('objects'); setCompare(false); setDiscovery(null); setDetail(false); setArea(4); setCursor({ x:384,y:512,visible:false }) }
   const inspectArea = (index: number) => {
     down.current = null; pendingTap.current = null
     const nextArea = (index + 9) % 9
@@ -109,9 +111,9 @@ export default function SpotTheDifferencePage() {
         if (point) tap(point.x, point.y)
       }}>
       <div className={styles.imageLayer} style={{ width:`${768/view.width*100}%`, height:`${1024/view.height*100}%`, left:`${-view.x/view.width*100}%`, top:`${-view.y/view.height*100}%` }}>
-      <img src={`/images/jr/games/spot/spot-${scene.id}-${variant}.png`} alt={title} draggable={false} onError={() => setFailedImage(true)} />
+      <img src={`/images/jr/games/spot/spot-${scene.id}-${compare ? 'before' : variant}.png`} alt={title} draggable={false} onError={() => setFailedImage(true)} />
       <svg viewBox="0 0 768 1024" aria-hidden="true">
-        {scene.differences.filter(d => state.found.includes(d.id)).map(d => <g key={d.id} transform={`translate(${d.anchor[0]} ${d.anchor[1]})`}><circle r="33" fill="#133e2bda" stroke="#fff5ae" strokeWidth="5"/><path d="M-15 0 L-3 12 L17 -13" fill="none" stroke="white" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/></g>)}
+        {scene.differences.filter(d => state.found.includes(d.id)).map(d => <g className={d.id === discovery ? styles.discovery : undefined} key={d.id} transform={`translate(${d.anchor[0]} ${d.anchor[1]})`}><circle r="33" fill="#133e2bda" stroke="#fff5ae" strokeWidth="5"/><path d="M-15 0 L-3 12 L17 -13" fill="none" stroke="white" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/></g>)}
         {hint > 1 && remaining && <circle cx={remaining.anchor[0]} cy={remaining.anchor[1]} r="80" fill="none" stroke="#ffe6a4" strokeDasharray="12 10" strokeWidth="5"/>}
         {cursor.visible && <g transform={`translate(${cursor.x} ${cursor.y})`}><circle r="22" fill="none" stroke="white" strokeWidth="4"/><circle r="5" fill="#ffcf62"/></g>}
       </svg>
@@ -143,6 +145,7 @@ export default function SpotTheDifferencePage() {
           <button aria-pressed={picture === 'objects'} onClick={() => setPicture('objects')}>{ru ? 'Картина B' : 'Picture B'}</button>
         </div>
         <div className={styles.inspection}>
+          <button type="button" aria-pressed={compare} onClick={() => { down.current=null; pendingTap.current=null; setCompare(c=>!c) }}>{compare ? (ru ? 'Вернуть отличия' : 'Return to differences') : (ru ? 'Сверить с оригиналом' : 'Compare with original')}</button>
           <button type="button" aria-pressed={detail} onClick={() => { setDetail(d=>!d); inspectArea(detail ? 4 : areaFor(cursor.x,cursor.y)) }}>{detail ? (ru ? 'Вся картина' : 'Whole picture') : (ru ? 'Рассмотреть ближе' : 'Look closer')}</button>
           {detail && <div className={styles.areaControls}>
             <button type="button" aria-label={ru ? 'Предыдущая область' : 'Previous area'} onClick={() => inspectArea(area-1)}>‹</button>
@@ -150,6 +153,8 @@ export default function SpotTheDifferencePage() {
             <button type="button" aria-label={ru ? 'Следующая область' : 'Next area'} onClick={() => inspectArea(area+1)}>›</button>
           </div>}
         </div>
+        <div className={styles.discoveryTray} aria-label={ru ? 'Твои находки' : 'Your discoveries'}>{scene.differences.map((d,i)=><span key={d.id} className={state.found.includes(d.id) ? styles.discovered : ''}>{state.found.includes(d.id) ? `✓ ${ru ? d.nameRu : d.nameEn}` : `${i+1} · ?`}</span>)}</div>
+        {compare && <p className={styles.compareNotice} role="status">{ru ? 'Оригинал на обеих картинах. Верни отличия, чтобы продолжить поиск.' : 'Original on both pictures. Return to differences to keep searching.'}</p>}
         <div className={styles.pictures}>{picturePanel('before')}{picturePanel('objects')}</div>
         {failedImage && <div className={styles.imageError} role="alert">{ru ? 'Не удалось открыть картину. Проверь соединение и обнови страницу — найденное сохранится, если память доступна.' : 'The picture could not load. Check your connection and reload; discoveries are kept when storage is available.'}</div>}
       </> : <div className={styles.chapter}>

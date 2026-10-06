@@ -5,6 +5,7 @@
 import Link from 'next/link'
 import { resolveShot, releaseError, slingScene, shotCurve, curvePoint } from './mechanics'
 import type { MouseEvent, PointerEvent } from 'react'
+import TrailWorld, { type TrailStatus } from './trail-world'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -39,7 +40,7 @@ const SCRIPTURE = {
   answer: 0,
 }
 
-const BG = '/images/jr/games/david-sling-v2/generated/01-playfield.png'
+
 
 function clamp(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value))
@@ -65,6 +66,12 @@ export default function DavidSlingChallengePage() {
   const holdButtonRef = useRef<HTMLButtonElement | null>(null)
   const pauseButtonRef = useRef<HTMLButtonElement | null>(null)
   const [paused, setPaused] = useState(false)
+  const [worldStatus,setWorldStatus] = useState<TrailStatus>('loading')
+  const worldReady = useRef(false)
+  function worldChanged(status:TrailStatus) {
+    worldReady.current=status==='ready';setWorldStatus(status)
+    if(status!=='ready') {holdRef.current=false;pointerRef.current=null}
+  }
   const lockedRef = useRef(false)
   const [checkpointScore, setCheckpointScore] = useState(0)
 
@@ -150,6 +157,17 @@ export default function DavidSlingChallengePage() {
     const preview = shotCurve(scene, stoneRef.current.active ? stoneRef.current.error : releaseError(nowAngle, targetAngle, 0), effectiveWindow)
     const goal = shotCurve(scene, 0, effectiveWindow)
 
+    // A visible timing gate is driven by the exact scoring error, including wind.
+    const timingError = releaseError(nowAngle, level.targetAngle, effectiveWind)
+    const dialX = w * .5, dialY = h - 56, dialR = 30
+    ctx.lineWidth = 9
+    ctx.strokeStyle = '#162e34'
+    ctx.beginPath(); ctx.arc(dialX,dialY,dialR,0,Math.PI*2);ctx.stroke()
+    ctx.strokeStyle = '#9bdfb0'
+    ctx.beginPath();ctx.arc(dialX,dialY,dialR,-Math.PI/2-effectiveWindow*Math.PI/180,-Math.PI/2+effectiveWindow*Math.PI/180);ctx.stroke()
+    const hand = (timingError-90)*Math.PI/180
+    ctx.strokeStyle = Math.abs(timingError)<=effectiveWindow ? '#fff4aa' : '#ffffff'
+    ctx.lineWidth = 3;ctx.beginPath();ctx.moveTo(dialX,dialY);ctx.lineTo(dialX+Math.cos(hand)*dialR,dialY+Math.sin(hand)*dialR);ctx.stroke()
     ctx.lineCap = 'round'
     ctx.lineWidth = Math.max(5, scene.width * .014)
     ctx.strokeStyle = 'rgba(34,197,94,.32)'
@@ -225,7 +243,7 @@ export default function DavidSlingChallengePage() {
       const now = performance.now()
       const elapsed = Math.min(64, Math.max(0, now - previous))
       previous = now
-      if (pausedRef.current) return
+      if (pausedRef.current || !worldReady.current) return
       const pending = transitionRef.current
       if (pending) {
         pending.remaining -= elapsed
@@ -369,7 +387,7 @@ export default function DavidSlingChallengePage() {
 
   function choosePower(next: Power) {
     const cost = next === 'none' ? 0 : 1
-    if (phase !== 'play' || pausedRef.current || lockedRef.current) return
+    if (phase !== 'play' || !worldReady.current || pausedRef.current || lockedRef.current) return
     if (wisdomFuel < cost) {
       setMessage(isRu ? 'Сначала ответь на стих, чтобы получить Мудрость.' : 'Answer the verse first to earn Wisdom Fuel.')
       return
@@ -381,7 +399,7 @@ export default function DavidSlingChallengePage() {
   }
 
   function tapRhythm() {
-    if (phase !== 'play' || pausedRef.current || lockedRef.current) return
+    if (phase !== 'play' || !worldReady.current || pausedRef.current || lockedRef.current) return
     flash('rhythm')
     speedRef.current = clamp(speedRef.current + 0.62, 0.45, 5.2)
     setSpeedMeter(Math.round((speedRef.current / 5.2) * 100))
@@ -389,7 +407,7 @@ export default function DavidSlingChallengePage() {
   }
 
   function holdSpin() {
-    if (phase !== 'play' || pausedRef.current || lockedRef.current || holdRef.current) return
+    if (phase !== 'play' || !worldReady.current || pausedRef.current || lockedRef.current || holdRef.current) return
     flash('hold')
     holdRef.current = true
     speedRef.current = clamp(speedRef.current + 0.18, 0.45, 5.2)
@@ -402,7 +420,7 @@ export default function DavidSlingChallengePage() {
   }
 
   function releaseThrow() {
-    if (phase !== 'play' || pausedRef.current || throwsLeft <= 0 || stoneRef.current.active || lockedRef.current) return
+    if (phase !== 'play' || !worldReady.current || pausedRef.current || throwsLeft <= 0 || stoneRef.current.active || lockedRef.current) return
     flash('release')
     holdRef.current = false
     lockedRef.current = true
@@ -418,7 +436,7 @@ export default function DavidSlingChallengePage() {
     const nextResult = shot.result
 
     setResult(nextResult)
-    setMessage(copy[nextResult])
+    setMessage(copy[nextResult] + (shot.advance ? '' : isRu ? (shot.error > 0 ? ' Отпусти чуть раньше.' : ' Отпусти чуть позже.') : (shot.error > 0 ? ' Release a little earlier.' : ' Release a little later.')))
     setScore((current) => {
       const next = current + points
       const bestNext = Math.max(best, next)
@@ -454,8 +472,8 @@ export default function DavidSlingChallengePage() {
 
   const choices = isRu ? SCRIPTURE.choicesRu : SCRIPTURE.choicesEn
   const phaseSteps = [copy.stepBible, copy.stepPower, copy.stepPlay]
-  const canUseGameControls = phase === 'play' && !lockedRef.current
-  const canChoosePower = phase === 'play' && !paused && wisdomFuel > 0 && !lockedRef.current
+  const canUseGameControls = phase === 'play' && worldStatus === 'ready' && !lockedRef.current
+  const canChoosePower = phase === 'play' && worldStatus === 'ready' && !paused && wisdomFuel > 0 && !lockedRef.current
   const isGameOpen = phase !== 'intro'
 
   return (
@@ -582,7 +600,7 @@ export default function DavidSlingChallengePage() {
         </div>
         <section className="dsv2-grid" inert={paused}>
           <div className="dsv2-stage">
-            <img className="dsv2-bg" src={BG} alt="" aria-hidden="true" />
+            <div className="dsv2-bg"><TrailWorld onStatusChange={worldChanged} isRu={isRu} frame={{runner:false,x:8.2,distance:0,origin:{x:8.2,y:53},target:{x:94,y:49}}}/></div>
             <canvas ref={canvasRef} aria-label={copy.title} />
             <div className="dsv2-meter" data-angle={releaseAngle} data-target={level.targetAngle - effectiveWind}>
               <span>{copy.speed}: {speedMeter}%</span>

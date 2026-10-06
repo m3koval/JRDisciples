@@ -2,6 +2,9 @@
 export function drawShield(ctx: CanvasRenderingContext2D, x: number, y: number, size: number, raised = false) {
   ctx.save(); ctx.translate(x, y); ctx.scale(size / 32, size / 32)
   ctx.fillStyle = raised ? '#edfaff' : '#e8c578'; ctx.strokeStyle = '#493923'; ctx.lineWidth = 2.5
+  const metal = ctx.createLinearGradient(-18, -22, 18, 22)
+  metal.addColorStop(0, raised ? '#ffffff' : '#fff2bf'); metal.addColorStop(.45, raised ? '#bbebf5' : '#deb66b'); metal.addColorStop(1, raised ? '#57879d' : '#927041')
+  ctx.fillStyle = metal
   ctx.beginPath(); ctx.moveTo(-15, -19); ctx.quadraticCurveTo(0, -26, 15, -19)
   ctx.lineTo(13, 5); ctx.quadraticCurveTo(9, 16, 0, 22)
   ctx.quadraticCurveTo(-9, 16, -13, 5); ctx.closePath(); ctx.fill(); ctx.stroke()
@@ -14,6 +17,9 @@ export function drawShield(ctx: CanvasRenderingContext2D, x: number, y: number, 
 
 export function drawCourt(ctx: CanvasRenderingContext2D, width: number, height: number) {
   ctx.fillStyle = '#203c44'; ctx.fillRect(0, 0, width, height)
+  const daylight = ctx.createLinearGradient(0, 0, width, height)
+  daylight.addColorStop(0, '#658078'); daylight.addColorStop(.6, '#314f55'); daylight.addColorStop(1, '#162e3a')
+  ctx.fillStyle = daylight; ctx.fillRect(0, 0, width, height)
   // Broad inlaid paths make the center/reward location legible without fake obstacles.
   ctx.fillStyle = '#34525a'; ctx.fillRect(width / 2 - 42, 0, 84, height)
   ctx.fillRect(0, height / 2 - 42, width, 84)

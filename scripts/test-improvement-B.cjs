@@ -1,0 +1,14 @@
+const assert=require('node:assert/strict'); const fs=require('node:fs');const ts=require('typescript');const cp=require('node:child_process');
+require.extensions['.ts']=(module,file)=>module._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020,esModuleInterop:true}}).outputText,file);
+const {scoutRoute}=require('../app/games/manna-trail/trail-art.ts');
+const m=require('../app/games/manna-trail/mechanics.ts');
+let checks=0;function check(fn){fn();checks++}
+check(()=>{const snake=m.initialTrail(),rocks=m.rocksForLevel(7),target=m.wordCell(7,3,snake,rocks),route=scoutRoute(snake,target,rocks,{x:1,y:0});assert(route.length>1);assert.deepEqual(route.at(-1),target);for(let i=1;i<route.length;i++){assert.equal(Math.abs(route[i].x-route[i-1].x)+Math.abs(route[i].y-route[i-1].y),1);assert(![...snake.slice(1),...rocks].some(c=>m.sameCell(c,route[i])))}assert(route[1].x!==snake[0].x-1)});
+check(()=>assert.deepEqual(scoutRoute([{x:0,y:0}],{x:2,y:2},[{x:1,y:0},{x:0,y:1}],{x:1,y:0}),[]));
+check(()=>assert.deepEqual(scoutRoute([],null,[],{x:1,y:0}),[]));
+check(()=>{const snake=m.initialTrail(),copy=JSON.stringify(snake);scoutRoute(snake,{x:12,y:10},[],{x:1,y:0});assert.equal(JSON.stringify(snake),copy)});
+const d=require('../app/games/escape-room-daniel/game.ts');
+for(const language of ['en','ru'])check(()=>{let s=d.reducer(d.initialState(language),{type:'start'});s=d.reducer(s,{type:'inspect'});assert(s.inspected);s=d.reducer(s,{type:'check'});assert.equal(s.cleared.length,0);for(let i=0;i<d.words[language].length;i++)s=d.reducer(s,{type:'tile',index:i});s=d.reducer(s,{type:'check'});assert.deepEqual(s.cleared,[0]);s=d.reducer(s,{type:'next'});s=d.reducer(s,{type:'city',value:1});s=d.reducer(s,{type:'prayers',value:3});s=d.reducer(s,{type:'check'});s=d.reducer(s,{type:'next'});for(const q of d.questions){s=d.reducer(s,{type:'answer',value:q.answer});s=d.reducer(s,{type:'next'})}s=d.reducer(s,{type:'verse',value:1});s=d.reducer(s,{type:'next'});s=d.reducer(s,{type:'verse',value:2});s=d.reducer(s,{type:'next'});assert.equal(s.phase,'victory');assert.equal(s.cleared.length,4)});
+for(const file of ['app/games/spot-the-difference/object-edits.json','app/games/spot-the-difference/scenes.ts','app/games/spot-the-difference/game.ts','app/games/manna-trail/mechanics.ts','app/games/escape-room-daniel/game.ts'])check(()=>assert.equal(fs.readFileSync(file,'utf8'),cp.execFileSync('git',['show',`5250622:${file}`],{encoding:'utf8'})));
+const spot=fs.readFileSync('app/games/spot-the-difference/page.tsx','utf8');check(()=>assert(spot.includes("paused || compare || state.phase !== 'play' || failedImage")));
+console.log(`PASS ${checks} deterministic checks: route topology/blocked/no-reversal/purity, EN/RU complete Daniel playthrough, exact unchanged masks/content/reducers/economy, compare-mode scoring guard.`);
