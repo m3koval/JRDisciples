@@ -85,6 +85,10 @@ for (const path of walk(out)) {
 }
 
 // The embedded engine must survive both static export and Capacitor sync intact.
+// The game loads behind a tap-to-start gate (AdventureFrame's `entered` state),
+// so the engine path is never present in the server-rendered route HTML -- only
+// in that route's compiled client JS, which sets the iframe src once the user
+// opts in. Check the compiled chunks for the reference instead of the HTML text.
 const gameRoute = 'games/trail-of-truth/index.html'
 const gameBuild = 'games/trail-of-truth-block-adventure/build'
 const requiredGameFiles = ['index.html', 'index.js', 'index.wasm', 'index.pck', 'release-manifest.json']
@@ -92,9 +96,11 @@ for (const base of [out, iosPublic]) {
   const route = join(base, gameRoute)
   if (!existsSync(route) || !statSync(route).size) {
     failures.push(`Missing Trail of Truth route: ${route}`)
-  } else if (!readFileSync(route, 'utf8').includes(`/${gameBuild}/index.html`)) {
-    failures.push(`Trail of Truth route does not embed the expected engine: ${route}`)
+    continue
   }
+  const chunks = walk(join(base, '_next', 'static', 'chunks')).filter((path) => extname(path) === '.js')
+  const engineReferenced = chunks.some((path) => readFileSync(path, 'utf8').includes(`/${gameBuild}/index.html`))
+  if (!engineReferenced) failures.push(`Trail of Truth client bundle does not reference the expected engine: ${base}`)
 }
 if (existsSync(join(out, gameRoute)) && existsSync(join(iosPublic, gameRoute)) &&
     sha256(join(out, gameRoute)) !== sha256(join(iosPublic, gameRoute))) {
