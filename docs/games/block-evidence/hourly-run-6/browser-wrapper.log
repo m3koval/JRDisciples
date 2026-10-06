@@ -1,0 +1,39 @@
+{
+  "pass": true,
+  "failures": [],
+  "artifacts": {
+    "index.html": {
+      "sha256": "7027589f50256f6497e5caed45261bdbeacfaed3221fdea25dee16aa5c456976",
+      "bytes": 5510,
+      "gzip_bytes": 2231
+    },
+    "index.js": {
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+      "bytes": 279815,
+      "gzip_bytes": 68471
+    },
+    "index.wasm": {
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
+      "bytes": 39514754,
+      "gzip_bytes": 10054758
+    },
+    "index.pck": {
+      "sha256": "9947abb4197804a0a77bc66bed8ea2883b88ec7a0fd736739af821bd3ab52684",
+      "bytes": 20997152,
+      "gzip_bytes": 20818934
+    }
+  }
+}
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/jd-next-adventure/tools/trail_of_truth/verify_browser_snapshot.py", line 76, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/tmp/jd-next-adventure/tools/trail_of_truth/verify_browser_snapshot.py", line 70, in main
+    (out/'verification.json').write_text(json.dumps(status, indent=2)+'\n')
+  File "/home/helper/.hermes/hermes-agent/.hermes-runtime/python/generation-1787765478-3809858-44f98b68/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+OSError: [Errno 28] No space left on device

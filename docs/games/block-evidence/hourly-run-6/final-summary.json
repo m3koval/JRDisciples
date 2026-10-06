@@ -1,0 +1,16 @@
+{
+  "run": 6,
+  "authorized_runs_remaining": 0,
+  "status": "frozen_development_handoff_not_release_approval",
+  "native_opening_jobs": 7,
+  "irrigation_checks_across_two_invocations": 6,
+  "initial_irrigation_suite": "failed_site_timeout_preserved",
+  "fresh_browser": "failed_ENOSPC_truncated_results",
+  "reused_browser_run": 5,
+  "reused_browser_checks": 63,
+  "source_files_frozen": 140,
+  "spent_cents": 0,
+  "pending_cents": 0,
+  "unused_cents": 1000,
+  "package_sha256": "9947abb4197804a0a77bc66bed8ea2883b88ec7a0fd736739af821bd3ab52684"
+}

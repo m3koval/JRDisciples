@@ -1,0 +1,21 @@
+{"test": "irrigation_construction_test", "exit_code": 0, "passed": true, "marker": "CONSTRUCTION_FAILURES=0", "log": "/tmp/jd-reference-quality-evidence/irrigation_construction_test.log", "errors": [], "command": ["xvfb-run", "-a", "/home/helper/tools/godot-4.7.2/godot", "--path", "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure", "--rendering-method", "gl_compatibility", "--fixed-fps", "60", "--script", "res://tests/irrigation_construction_test.gd"]}
+{"test": "irrigation_construction_playthrough", "exit_code": 0, "passed": true, "marker": "CONSTRUCTION_HOST_FAILURES=0", "log": "/tmp/jd-reference-quality-evidence/irrigation_construction_playthrough.log", "errors": [], "command": ["xvfb-run", "-a", "/home/helper/tools/godot-4.7.2/godot", "--path", "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure", "--rendering-method", "gl_compatibility", "--fixed-fps", "60", "--script", "res://tests/irrigation_construction_playthrough.gd"]}
+{"test": "irrigation_geometry_playthrough", "exit_code": 0, "passed": true, "marker": "CONSTRUCTION_HOST_FAILURES=0", "log": "/tmp/jd-reference-quality-evidence/irrigation_geometry_playthrough.log", "errors": [], "command": ["xvfb-run", "-a", "/home/helper/tools/godot-4.7.2/godot", "--path", "/tmp/jd-next-adventure/game/trail-of-truth-block-adventure", "--rendering-method", "gl_compatibility", "--fixed-fps", "60", "--script", "res://tests/irrigation_geometry_playthrough.gd"]}
+Traceback (most recent call last):
+  File "/tmp/jd-next-adventure/tools/verify_irrigation_art.py", line 19, in <module>
+    result=subprocess.run(cmd,env=env,stdout=f,stderr=subprocess.STDOUT,timeout=240)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/helper/.hermes/hermes-agent/.hermes-runtime/python/generation-1787765478-3809858-44f98b68/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/helper/.hermes/hermes-agent/.hermes-runtime/python/generation-1787765478-3809858-44f98b68/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/helper/.hermes/hermes-agent/.hermes-runtime/python/generation-1787765478-3809858-44f98b68/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 2141, in _communicate
+    self.wait(timeout=self._remaining_time(endtime))
+  File "/home/helper/.hermes/hermes-agent/.hermes-runtime/python/generation-1787765478-3809858-44f98b68/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/helper/.hermes/hermes-agent/.hermes-runtime/python/generation-1787765478-3809858-44f98b68/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 2045, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['xvfb-run', '-a', '/home/helper/tools/godot-4.7.2/godot', '--path', '/tmp/jd-next-adventure/game/trail-of-truth-block-adventure', '--rendering-method', 'gl_compatibility', '--fixed-fps', '60', '--script', 'res://tests/irrigation_site_playthrough.gd']' timed out after 239.99997768877074 seconds

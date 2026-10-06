@@ -1,0 +1,180 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.
+     at: _create_xic (platform/linuxbsd/x11/display_server_x11.cpp:6347)
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 128 bits)
+
+PASS cave completion enters real chapter
+PASS route around Mira collider
+PASS routed walk to (150.0, 0.0, 7.0)
+PASS routed walk to (156.0, 0.0, -11.0)
+PASS routed walk to (153.0, 0.0, -9.0)
+PASS host input reads plan after teaching
+PASS routed walk to (158.0, 0.0, -5.0)
+PASS host input cannot place without material
+PASS routed walk to (154.0, 0.0, -4.0)
+PASS routed walk to (154.0, 0.0, -4.0)
+PASS routed walk to (154.0, 0.0, -4.0)
+PASS routed walk to (158.0, 0.0, -5.0)
+PASS routed walk to (158.0, 0.0, -5.0)
+PASS routed walk to (158.0, 0.0, -5.0)
+PASS host input gathers and fits three finite parts
+PASS routed walk to (158.0, 0.0, -8.0)
+CAPTURE /tmp/jd-visual-manual-gate-closed-1280.png
+CAPTURE /tmp/jd-visual-manual-gate-closed-720.png
+PASS host action lifts actual inlet board
+CAPTURE /tmp/jd-visual-manual-gate-open-1280.png
+CAPTURE /tmp/jd-visual-manual-gate-open-720.png
+PASS high geometry blocks row in campaign
+PASS cell footprint agrees 0
+PASS cell footprint agrees 1
+PASS cell footprint agrees 2
+PASS cell footprint agrees 3
+PASS cell footprint agrees 4
+PASS source/intake shared edge
+PASS crossing shared edge
+PASS furrow shared edge
+PASS catchment shared edge
+PASS sliding planks braces and lifting handle retained
+PASS manual gate uses board and four fixed groove cheeks
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS opening follows authoritative gate state
+PASS sliding planks braces and lifting handle retained
+PASS manual gate uses board and four fixed groove cheeks
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS opening follows authoritative gate state
+PASS walk to ordinary camera observation
+CAPTURE /tmp/jd-visual-intake-ponding-1280.png
+CAPTURE /tmp/jd-visual-intake-ponding-720.png
+PASS walk to downstream ordinary camera corner
+CAPTURE /tmp/jd-visual-garden-ponding-1280.png
+CAPTURE /tmp/jd-visual-garden-ponding-720.png
+PASS routed walk to (158.0, 0.0, -2.0)
+PASS host grade action allows actual water to reach row and drain
+PASS render height uses model head (float32 transform tolerance)
+PASS pause freezes model
+PASS route around Mira collider
+PASS routed walk to (150.0, 0.0, 7.0)
+PASS real flow earns harvest
+PASS reload retains construction and reward
+PASS cell footprint agrees 0
+PASS cell footprint agrees 1
+PASS cell footprint agrees 2
+PASS cell footprint agrees 3
+PASS cell footprint agrees 4
+PASS source/intake shared edge
+PASS crossing shared edge
+PASS furrow shared edge
+PASS catchment shared edge
+PASS sliding planks braces and lifting handle retained
+PASS manual gate uses board and four fixed groove cheeks
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS opening follows authoritative gate state
+PASS sliding planks braces and lifting handle retained
+PASS manual gate uses board and four fixed groove cheeks
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS opening follows authoritative gate state
+PASS walk to ordinary camera observation
+CAPTURE /tmp/jd-visual-intake-flow-en-1280.png
+CAPTURE /tmp/jd-visual-intake-flow-en-720.png
+PASS walk to downstream ordinary camera corner
+CAPTURE /tmp/jd-visual-garden-flow-en-1280.png
+CAPTURE /tmp/jd-visual-garden-flow-en-720.png
+PASS cell footprint agrees 0
+PASS cell footprint agrees 1
+PASS cell footprint agrees 2
+PASS cell footprint agrees 3
+PASS cell footprint agrees 4
+PASS source/intake shared edge
+PASS crossing shared edge
+PASS furrow shared edge
+PASS catchment shared edge
+PASS sliding planks braces and lifting handle retained
+PASS manual gate uses board and four fixed groove cheeks
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS opening follows authoritative gate state
+PASS sliding planks braces and lifting handle retained
+PASS manual gate uses board and four fixed groove cheeks
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS no cosmetic gate wheel
+PASS opening follows authoritative gate state
+PASS walk to ordinary camera observation
+CAPTURE /tmp/jd-visual-intake-flow-ru-1280.png
+CAPTURE /tmp/jd-visual-intake-flow-ru-720.png
+PASS walk to downstream ordinary camera corner
+CAPTURE /tmp/jd-visual-garden-flow-ru-1280.png
+CAPTURE /tmp/jd-visual-garden-flow-ru-720.png
+PASS old completed save keeps reward and offers new repair
+CONSTRUCTION_HOST_FAILURES=0
