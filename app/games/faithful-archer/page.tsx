@@ -724,7 +724,8 @@ export default function FaithfulArcherPage() {
       ownedPointer.current = null
       if (canvas!.hasPointerCapture(event.pointerId)) canvas!.releasePointerCapture(event.pointerId)
     }
-    const onPointerCancel = () => {
+    const onPointerCancel = (event?: PointerEvent) => {
+      if (event && event.pointerId !== ownedPointer.current) return
       pointerRef.current.down = false
       ownedPointer.current = null
     }

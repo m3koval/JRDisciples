@@ -646,7 +646,7 @@ export default function DavidSlingChallengePage() {
           </aside>
         </section>
         {paused && <div className="dsv2-pause-dialog" role="dialog" aria-modal="true" aria-labelledby="sling-pause-title" onKeyDown={(event) => {
-          if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); resumeGame() }
+          if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); if (!event.repeat) resumeGame() }
           if (event.key === 'Tab') {
             const buttons = event.currentTarget.querySelectorAll<HTMLButtonElement>('button')
             if (event.shiftKey && document.activeElement === buttons[0]) { event.preventDefault(); buttons[buttons.length - 1].focus() }

@@ -7,6 +7,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createJourney, retryJourney, stepJourney, activateHelper, callLamb, guideRadius, clamp, dist, type Journey, type Point, type Orb, type Hazard } from './mechanics'
 import { useLanguage } from '@/context/LanguageContext'
 import { getGuidance, guidePath, type Guidance } from './guidance'
+import { pickupEcho } from './feedback'
+import { updateHeld } from './held-input'
 
 type Phase = 'intro' | 'briefing' | 'play' | 'reward' | 'complete' | 'paused' | 'failed'
 type Environment = 'meadow' | 'bridge' | 'storm'
@@ -119,6 +121,7 @@ export default function ShepherdLightAdventurePage() {
   const keys = useRef<Record<string, boolean>>({})
   const pointer = useRef<Point & { active: boolean }>({ x: 18, y: 82, active: false })
   const movementPointer = useRef<number | null>(null)
+  const shieldOwners = useRef(new Set<string>())
   const [hydrated, setHydrated] = useState(false)
 
   const [phase, setPhase] = useState<Phase>('intro')
@@ -199,6 +202,7 @@ export default function ShepherdLightAdventurePage() {
     keys.current = {}
     pointer.current.active = false
     movementPointer.current = null
+    shieldOwners.current.clear()
     setLanternWide(false)
   }, [])
 
@@ -221,22 +225,22 @@ export default function ShepherdLightAdventurePage() {
       const key = event.key.toLowerCase()
       if (['arrowleft','arrowright','arrowup','arrowdown','w','a','s','d',' ','c','h','escape'].includes(key)) event.preventDefault()
       keys.current[key] = true
-      if (key === ' ') setLanternWide(true)
+      if (key === ' ') setLanternWide(updateHeld(shieldOwners.current, 'key: ', true))
       if (key === 'c' && !event.repeat) setJourney(callLamb)
       if (key === 'h' && !event.repeat) setJourney(activateHelper)
       if (key === 'escape') setPhase('paused')
     }
     const up = (event: KeyboardEvent) => {
       keys.current[event.key.toLowerCase()] = false
-      if (event.key === ' ') setLanternWide(false)
+      if (event.key === ' ' || event.key === 'Enter') setLanternWide(updateHeld(shieldOwners.current, `key:${event.key}`, false))
     }
     const interrupt = () => { clearInput(); setPhase(p => p === 'play' ? 'paused' : p) }
     const visibility = () => { if (document.hidden) interrupt() }
     window.addEventListener('keydown', down); window.addEventListener('keyup', up)
-    window.addEventListener('blur', interrupt); document.addEventListener('visibilitychange', visibility)
+    window.addEventListener('blur', interrupt); window.addEventListener('resize', interrupt); document.addEventListener('visibilitychange', visibility)
     return () => {
       window.removeEventListener('keydown', down); window.removeEventListener('keyup', up)
-      window.removeEventListener('blur', interrupt); document.removeEventListener('visibilitychange', visibility)
+      window.removeEventListener('blur', interrupt); window.removeEventListener('resize', interrupt); document.removeEventListener('visibilitychange', visibility)
     }
   }, [phase, clearInput])
 
@@ -298,6 +302,10 @@ export default function ShepherdLightAdventurePage() {
     setBankedTime(time => time + journey.time)
     resetLevel(next)
     setPhase('briefing')
+  }
+
+  function releaseShield(event: React.PointerEvent<HTMLButtonElement>) {
+    setLanternWide(updateHeld(shieldOwners.current, `pointer:${event.pointerId}`, false))
   }
 
   function useHelper() {
@@ -432,6 +440,8 @@ export default function ShepherdLightAdventurePage() {
         .sla-scenery.rock { width:12%; background-image:url('/images/jr/games/shepherd-light-adventure/scenery-rock.webp'); }
         .sla-scenery.flowers { width:10%; background-image:url('/images/jr/games/shepherd-light-adventure/scenery-flowers.webp'); }
         .sla-orb { width:24px; height:24px; margin:-12px; }
+        .sla-orb.found { width:14px; height:14px; margin:-7px; animation:none; background:#375335; border:1px solid #fff1ac; box-shadow:none; color:#fff1ac; font:900 11px/12px sans-serif; text-align:center; }
+        @media (prefers-reduced-motion:reduce) { .sla-pickup-ring { display:none; } }
         .sla-game { height:100dvh; }
         @media (orientation:landscape) {
           .sla-game { display:grid; grid-template-columns:minmax(0,1fr) clamp(160px,23vw,250px); grid-template-rows:auto 1fr auto; }
@@ -503,7 +513,7 @@ export default function ShepherdLightAdventurePage() {
           </div>
 
           <div className={`sla-arena ${level.environment}`}>
-            <div ref={arenaRef} className="sla-playfield" onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerUp} onPointerCancel={pointerUp} onLostPointerCapture={() => { pointer.current.active = false; movementPointer.current = null }}>
+            <div ref={arenaRef} className="sla-playfield" onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerUp} onPointerCancel={pointerUp} onLostPointerCapture={pointerUp}>
               <GameWorld level={level} player={player} lamb={lamb} orbs={orbs} lanternWide={lanternWide} helperActive={helperActive} spark={spark} journey={journey} playing={phase === 'play'} guidance={guidance} route={route} mapVisible={mapVisible} />
             </div>
 
@@ -573,9 +583,10 @@ export default function ShepherdLightAdventurePage() {
           </div>
           <div className="sla-controls">
             <button className={`sla-control ${lanternWide ? 'active' : ''}`} disabled={phase !== 'play'} aria-pressed={lanternWide}
-              onPointerDown={event => { event.currentTarget.setPointerCapture(event.pointerId); setLanternWide(true) }}
-              onPointerUp={() => setLanternWide(false)} onPointerCancel={() => setLanternWide(false)} onLostPointerCapture={() => setLanternWide(false)}
-              onKeyDown={event => { if (event.key === ' ' || event.key === 'Enter') setLanternWide(true) }} onKeyUp={() => setLanternWide(false)}>
+              onPointerDown={event => { if (phase !== 'play' || event.button !== 0) return; event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId); setLanternWide(updateHeld(shieldOwners.current, `pointer:${event.pointerId}`, true)) }}
+              onPointerUp={releaseShield} onPointerCancel={releaseShield} onLostPointerCapture={releaseShield}
+              onKeyDown={event => { if (event.key === ' ' || event.key === 'Enter') { event.preventDefault(); setLanternWide(updateHeld(shieldOwners.current, `key:${event.key}`, true)) } }}
+              onKeyUp={event => { if (event.key === ' ' || event.key === 'Enter') setLanternWide(updateHeld(shieldOwners.current, `key:${event.key}`, false)) }}>
               ☀ {copy.hold} · {Math.ceil(journey.energy)}%
             </button>
             <button className={`sla-control ${helperActive ? 'active' : ''}`} title={helperExplanation} disabled={!helperReady || phase !== 'play'} onClick={useHelper}>{helper.emoji} {copy.useHelper}{!helperReady ? ` · ${Math.ceil(journey.helperCooldown)}s` : ' (H)'}</button>
@@ -603,8 +614,8 @@ function GameWorld({ level, player, lamb, orbs, lanternWide, helperActive, spark
         {level.environment === 'bridge' && <><path d="M48 0 Q32 30 51 50 T52 100" fill="none" stroke="#377f96" strokeWidth="19"/><path d="M28 51L67 40" stroke="#a58554" strokeWidth="13"/><path d="M28 51L67 40" stroke="#dbc392" strokeWidth="10" strokeDasharray="1 1"/></>}
         {terrainTrails.map((trail, index) => {
           return trail.length > 1 && <g key={index}>
-            <polyline points={trail.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#536449" strokeWidth="6" strokeLinejoin="round" strokeLinecap="round" opacity=".55" />
-            <polyline points={trail.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#c6b17e" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" opacity=".55" />
+            <polyline points={trail.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#536449" strokeWidth="4" strokeLinejoin="round" strokeLinecap="round" opacity=".3" />
+            <polyline points={trail.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#c6b17e" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" opacity=".45" />
           </g>
         })}
       </svg>
@@ -614,7 +625,16 @@ function GameWorld({ level, player, lamb, orbs, lanternWide, helperActive, spark
       {level.hazards.map((hazard) => (
         <div key={hazard.id} className={`sla-hazard ${hazard.kind}`} style={{ left: `${hazard.x}%`, top: `${hazard.y}%`, width: `${hazard.r * 2}%`, height: `${hazard.r * 2}%` }} />
       ))}
-      {orbs.filter((orb) => !orb.found).map((orb) => <div key={orb.id} className="sla-orb" style={{ left: `${orb.x}%`, top: `${orb.y}%`, animationDelay: `${orb.id * .15}s` }} />)}
+      {orbs.map((orb) => <div key={orb.id} aria-hidden="true" className={`sla-orb${orb.found ? ' found' : ''}`} style={{ left: `${orb.x}%`, top: `${orb.y}%`, animationDelay: `${orb.id * .15}s` }}>{orb.found ? '✓' : null}</div>)}
+      <svg className="sla-guide-map" viewBox="0 0 100 100" aria-hidden="true">
+        {orbs.map(orb => {
+          const echo = pickupEcho(orb, journey.time)
+          return echo && <g key={orb.id} opacity={echo.opacity}>
+            <circle className="sla-pickup-ring" cx={orb.x} cy={orb.y} r={echo.radius} fill="none" stroke="#fff1ac" strokeWidth=".8" />
+            <text x={orb.x} y={orb.y - 12} textAnchor="middle" fontSize="4" fontWeight="bold" fill="#fff9d5" stroke="#31462b" strokeWidth=".6" paintOrder="stroke">+1 ✦</text>
+          </g>
+        })}
+      </svg>
       {mapVisible && <svg className="sla-guide-map" viewBox="0 0 100 100" aria-hidden="true">
         {route.length > 1 && <>
           <polyline points={route.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#173126" strokeWidth="1.7" strokeLinejoin="round" />

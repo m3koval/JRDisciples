@@ -159,6 +159,8 @@ export default function MannaTrailPage() {
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape' || e.key === 'p' || e.key === 'P') {
+        e.preventDefault()
+        if (e.repeat) return
         if (phaseRef.current === 'play') changePhase('paused')
         else if (phaseRef.current === 'paused') changePhase('play')
         return

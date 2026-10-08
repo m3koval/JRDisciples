@@ -11,6 +11,12 @@ export default function TrailOfTruthPage() {
   const isRu = language === 'ru'
   const shell = useRef<HTMLDivElement>(null)
   const [fullscreenError, setFullscreenError] = useState(false)
+  const [fullscreen, setFullscreen] = useState(false)
+  useEffect(() => {
+    const changed = () => setFullscreen(document.fullscreenElement === shell.current)
+    document.addEventListener('fullscreenchange', changed)
+    return () => document.removeEventListener('fullscreenchange', changed)
+  }, [])
   useEffect(() => {
     const previous = document.body.style.overflow
     document.body.style.overflow = 'hidden'
@@ -18,6 +24,11 @@ export default function TrailOfTruthPage() {
   }, [])
   async function enterFullscreen() {
     try {
+      if (document.fullscreenElement === shell.current) {
+        await document.exitFullscreen()
+        setFullscreenError(false)
+        return
+      }
       if (!shell.current?.requestFullscreen) { setFullscreenError(true); return }
       await shell.current.requestFullscreen()
       setFullscreenError(false)
@@ -28,7 +39,7 @@ export default function TrailOfTruthPage() {
       <header className={styles.header}>
         <Link href="/games">{isRu ? '← Все игры' : '← All games'}</Link>
         <span>{isRu ? 'Тропа истины · Потерявшийся ягнёнок' : 'Trail of Truth · The Lost Lamb'}</span>
-        <button type="button" onClick={enterFullscreen}>{isRu ? 'На весь экран' : 'Full screen'}</button>
+        <button type="button" aria-pressed={fullscreen} onClick={enterFullscreen}>{fullscreen ? (isRu ? 'Выйти из полного экрана' : 'Exit full screen') : (isRu ? 'На весь экран' : 'Full screen')}</button>
       </header>
       {fullscreenError && <p role="status" className={styles.fullscreenNote}>{isRu ? 'Полный экран недоступен. Можно играть здесь.' : 'Fullscreen is unavailable. You can still play here.'}</p>}
       <AdventureFrame key={language} language={language} />

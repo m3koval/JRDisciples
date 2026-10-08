@@ -42,11 +42,33 @@ export function drawCourt(ctx: CanvasRenderingContext2D, width: number, height: 
 
 export function drawArrival(ctx: CanvasRenderingContext2D, x: number, y: number, angle: number, progress: number) {
   ctx.save(); ctx.translate(x, y); ctx.rotate(angle)
+  // Preview the actual heading, not an invented target.
+  ctx.strokeStyle = '#ffcf7a88'; ctx.lineWidth = 2; ctx.setLineDash([5, 5])
+  ctx.beginPath(); ctx.moveTo(27, 0); ctx.lineTo(74, 0); ctx.stroke(); ctx.setLineDash([])
   ctx.fillStyle = '#382618'; ctx.strokeStyle = '#ffcf7a'; ctx.lineWidth = 2
   ctx.beginPath(); ctx.arc(0, 0, 20, 0, Math.PI * 2); ctx.fill(); ctx.stroke()
   ctx.strokeStyle = '#fff4ce'; ctx.lineWidth = 3
   ctx.beginPath(); ctx.moveTo(-8, 0); ctx.lineTo(7, 0); ctx.moveTo(1, -6); ctx.lineTo(7, 0); ctx.lineTo(1, 6); ctx.stroke()
   ctx.strokeStyle = '#ffad54'; ctx.lineWidth = 4
   ctx.beginPath(); ctx.arc(0, 0, 24, -Math.PI / 2, -Math.PI / 2 + progress * Math.PI * 2); ctx.stroke()
+  ctx.restore()
+}
+
+// Follows the simulation cue clock: pause cannot consume the impact.
+export function drawBlockImpact(ctx: CanvasRenderingContext2D, x: number, y: number, remainingMs: number, isRu: boolean, width = Infinity, height = Infinity) {
+  if (remainingMs <= 0) return
+  const progress = 1 - Math.min(850, remainingMs) / 850
+  ctx.save(); ctx.translate(x, y); ctx.globalAlpha = 1 - progress
+  ctx.strokeStyle = '#d9f8ff'; ctx.lineWidth = 3
+  ctx.beginPath(); ctx.arc(0, 0, 12 + progress * 22, 0, Math.PI * 2); ctx.stroke()
+  ctx.beginPath(); ctx.moveTo(-7, 0); ctx.lineTo(-2, 5); ctx.lineTo(9, -7); ctx.stroke()
+  ctx.font = 'bold 13px sans-serif'; ctx.textAlign = 'center'
+  ctx.lineWidth = 4; ctx.strokeStyle = '#102931'; ctx.fillStyle = '#ecfeff'
+  const text = isRu ? 'Защищено +15' : 'Blocked +15'
+  // Contact may be outside the court when the broad guard catches an entering dart.
+  // Keep the contact ring honest, but keep its label inside the HUD/control safe area.
+  const labelX = Math.max(64, Math.min(width - 64, x)) - x
+  const labelY = Math.max(124, Math.min(height - 112, y - 26)) - y
+  ctx.strokeText(text, labelX, labelY); ctx.fillText(text, labelX, labelY)
   ctx.restore()
 }

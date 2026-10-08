@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useEffect, useReducer, useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { SCENES } from './scenes'
-import { findAt, initialState, reducer, SAVE_KEY } from './game'
+import { findAt, hitsObject, initialState, reducer, SAVE_KEY } from './game'
 import { AREA_LABELS, areaFor, inspectionView, moveCursor, picturePoint } from './inspection'
 import styles from './spot.module.css'
 
@@ -20,7 +20,7 @@ export default function SpotTheDifferencePage() {
   const [discovery, setDiscovery] = useState<number | null>(null)
   const [area, setArea] = useState(4)
   const [hint, setHint] = useState(0)
-  const [message, setMessage] = useState<'miss' | 'found' | ''>('')
+  const [message, setMessage] = useState<'miss' | 'found' | 'already' | ''>('')
   const [saveFailed, setSaveFailed] = useState(false)
   const [failedImage, setFailedImage] = useState(false)
   const [cursor, setCursor] = useState({ x: 384, y: 512, visible: false })
@@ -71,7 +71,7 @@ export default function SpotTheDifferencePage() {
     if (paused || compare || state.phase !== 'play' || failedImage) return
     const id = findAt(state, x, y)
     if (id !== null) { dispatch({ type: 'find', id }); setMessage('found'); setHint(0); setDiscovery(id) }
-    else setMessage('miss')
+    else setMessage(scene.differences.some(d => state.found.includes(d.id) && hitsObject(d, x, y)) ? 'already' : 'miss')
   }
   const next = () => { dispatch({ type: 'next' }); setHint(0); setMessage(''); setFailedImage(false); setPicture('objects'); setCompare(false); setDiscovery(null); setDetail(false); setArea(4); setCursor({ x:384,y:512,visible:false }) }
   const inspectArea = (index: number) => {
@@ -170,7 +170,7 @@ export default function SpotTheDifferencePage() {
       </div>}
     </section>
     {state.phase === 'play' && <footer className={styles.footer}>
-      <p role="status" aria-live="polite">{hint && remaining ? `${ru ? 'Присмотрись: ' : 'Look at: '}${ru ? remaining.nameRu : remaining.nameEn}` : message === 'miss' ? (ru ? 'Здесь одинаково. Сравни цвет и узор предметов.' : 'That spot matches. Compare the objects’ colors and patterns.') : message === 'found' ? (ru ? 'Верно! Найди следующее отличие.' : 'Found it! Look for the next difference.') : (ru ? 'Найди три отличия: цвет или узор.' : 'Find three changes: colors or patterns.')}</p>
+      <p role="status" aria-live="polite">{hint && remaining ? `${ru ? 'Присмотрись: ' : 'Look at: '}${ru ? remaining.nameRu : remaining.nameEn}` : message === 'already' ? (ru ? 'Это отличие уже найдено. Поищи другое.' : 'You already found this difference. Look for another.') : message === 'miss' ? (ru ? 'Здесь одинаково. Сравни цвет и узор предметов.' : 'That spot matches. Compare the objects’ colors and patterns.') : message === 'found' ? (ru ? 'Верно! Найди следующее отличие.' : 'Found it! Look for the next difference.') : (ru ? 'Найди три отличия: цвет или узор.' : 'Find three changes: colors or patterns.')}</p>
       <button onClick={() => { setHint(h => Math.min(h+1,2)); if (hint && remaining && detail) inspectArea(areaFor(remaining.anchor[0], remaining.anchor[1])) }}>{hint ? (ru ? 'Показать область' : 'Show an area') : (ru ? 'Подсказка' : 'Hint')}</button>
     </footer>}
     {saveFailed && <p className={styles.saveNotice} role="status">{ru ? 'Можно играть. Прогресс не сохранится после закрытия.' : 'You can keep playing. Progress will not survive closing this page.'}</p>}

@@ -1,5 +1,5 @@
 export type Point = { x: number; y: number }
-export type Orb = Point & { id: number; found: boolean }
+export type Orb = Point & { id: number; found: boolean; foundAt?: number }
 export type Hazard = Point & { id: number; r: number; kind: 'fog' | 'splash' | 'gust' }
 export type Trail = { orbs: Orb[]; hazards: Hazard[]; lambStart: Point; gate: Point; requiredLight: number }
 export type Journey = {
@@ -53,7 +53,7 @@ export function stepJourney(s: Journey, level: Trail, input: Input, delta: numbe
   }
   player = { x: clamp(player.x, 7, 93), y: clamp(player.y, 9, 91) }
   const next: Journey = { ...s, player, time: s.time + dt, energy: clamp(s.energy + (wide ? -16 : 14) * dt, 0, 100), invulnerable: Math.max(0, s.invulnerable - dt), helperTime: Math.max(0, s.helperTime - dt), helperCooldown: Math.max(0, s.helperCooldown - dt), callTime: Math.max(0, s.callTime - dt), callCooldown: Math.max(0, s.callCooldown - dt) }
-  next.orbs = s.orbs.map(o => o.found || dist(player, o) > (wide ? 7 : 4.5) ? o : { ...o, found: true })
+  next.orbs = s.orbs.map(o => o.found || dist(player, o) > (wide ? 7 : 4.5) ? o : { ...o, found: true, foundAt: next.time })
   const danger = level.hazards.find(h => dist(player, h) < h.r)
   if (danger && !protectedNow && next.invulnerable === 0) {
     next.hp -= 1; next.hits += 1; next.invulnerable = 1.8

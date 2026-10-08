@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict'
+import { updateHeld } from './held-input.ts'
+const owners = new Set()
+assert.equal(updateHeld(owners, 'pointer:1', true), true)
+assert.equal(updateHeld(owners, 'pointer:2', true), true)
+assert.equal(updateHeld(owners, 'pointer:2', false), true)
+assert.equal(updateHeld(owners, 'pointer:2', false), true, 'lost capture after release is idempotent')
+assert.equal(updateHeld(owners, 'key: ', true), true)
+assert.equal(updateHeld(owners, 'pointer:1', false), true)
+assert.equal(updateHeld(owners, 'key: ', false), false)
+updateHeld(owners, 'key:Enter', true)
+updateHeld(owners, 'key:Enter', true)
+assert.equal(owners.size, 1, 'key repeat does not multiply owners')
+owners.clear()
+assert.equal(updateHeld(owners, 'pointer:1', false), false, 'stale release after pause cannot reactivate')
+console.log('PASS 9 held-input assertions: multitouch, mixed keys, cancel, repeats, pause reset')

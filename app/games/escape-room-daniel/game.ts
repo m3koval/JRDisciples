@@ -49,8 +49,11 @@ export function reducer(state: State, action: Action): State {
   if (action.type === 'reset') return initialState(state.language)
   if (action.type === 'language') {
     if (action.language === state.language) return state
-    // Word positions differ between EN/RU. Restart just the active puzzle, retain earned keys.
-    return { ...enterRoom({ ...state, language: action.language }, state.room), phase: state.phase, paused: state.paused }
+    // Only the word lock has language-dependent positions. Other selections,
+    // witness seals and verse steps must survive a translation toggle.
+    if (state.room !== 0 || state.phase !== 'play') return { ...state, language: action.language }
+    const solved = state.feedback === 'right'
+    return { ...state, language: action.language, tiles: solved ? words[action.language].map((_, index) => index) : [], feedback: solved ? 'right' : null }
   }
   if (action.type === 'pause') return { ...state, paused: action.value }
   if (state.paused) return state

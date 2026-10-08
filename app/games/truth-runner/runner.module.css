@@ -29,12 +29,13 @@
 .player i { position:absolute; left:28%; top:-24%; width:44%; height:35%; border:5px solid #654820; border-radius:50% 50% 0 0; z-index:-1; }
 .protected { outline:4px solid white; outline-offset:8px; border-radius:50%; }
 .finish { position:absolute; left:16%; width:68%; border-top:7px double #fff8d8; background:#41694f; padding:6px; text-align:center; color:white; font-weight:900; }
-.feedback { position:absolute; bottom:3%; left:5%; width:90%; min-height:26px; text-align:center; color:#17382b; font-weight:1000; font-size:clamp(14px,2vw,20px); pointer-events:none; }
+.feedback { position:absolute; z-index:5; bottom:3%; left:50%; transform:translateX(-50%); width:max-content; max-width:90%; padding:8px 14px; border-radius:14px; background:#12352ef2; border:1px solid #ffe49a; text-align:center; color:#fff6dd; font-weight:1000; font-size:clamp(14px,2vw,20px); pointer-events:none; }
+.feedback:empty { display:none; }
 .controls { display:flex; align-items:center; justify-content:space-between; flex-shrink:0; width:min(100%,780px); margin:0 auto; gap:12px; }
 .controls button { width:30%; min-height:64px; font-size:30px; background:linear-gradient(#ffe9b4,#ebbd65); color:#263d30; border-color:#fff0c8; box-shadow:0 4px 0 #84652c; }
 .controls button[aria-pressed=true] { transform:translateY(3px); box-shadow:0 1px 0 #84652c; background:#fff4ce; }
 .controls span { text-align:center; font-weight:900; }
-.controls small { display:block; color:#c7d6c1; }
+.controls small { display:block; color:#263d30; }
 .shade { position:absolute; inset:0; z-index:10; display:flex; justify-content:center; align-items:center; padding:12px; background:#102e28aa; overflow:auto; touch-action:pan-y; }
 .card { margin:auto; width:min(100%,540px); max-height:100%; overflow:auto; border:3px solid #f4d18a; border-radius:26px; background:#fff7de; color:#243e31; text-align:center; padding:clamp(16px,3vw,28px); box-shadow:0 18px 60px #001c2755; }
 .badge { display:block; color:#726020; font-weight:900; font-size:14px; }
