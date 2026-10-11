@@ -1,0 +1,42 @@
+.lesson { max-width: 1180px; margin: 0 auto; padding: 24px 20px 64px; color: #233a2c; }
+.nav { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-weight: 800; }
+.nav a { color: #24634e; }
+.progress { width: 100%; height: 10px; accent-color: #427351; margin: 18px 0; }
+.header { margin-bottom: 18px; color: #74531b; }
+.header p { font-weight: 900; letter-spacing: .06em; font-size: .85rem; }
+.stage { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); background: #fffdf7; border: 1px solid #e6dcc5; border-radius: 24px; overflow: hidden; box-shadow: 0 14px 40px #62471512; align-items: start; }
+.visual { background: #f6edd7; }
+.visual img { width: 100%; height: auto; display: block; }
+.visual p { padding: 20px; margin: 0; font-size: 1rem; line-height: 1.6; }
+.panel { padding: 30px; min-width: 0; }
+.panel h1 { font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.15; margin: 0 0 20px; scroll-margin-top: 110px; }
+.panel h2 { font-size: 1.3rem; line-height: 1.4; margin-bottom: 20px; }
+.panel p, .guide p { line-height: 1.7; margin: 0 0 18px; font-size: 1.08rem; }
+.panel .lead { font-size: 1.2rem; }
+.panel .reference { font-size: .88rem; color: #68542d; font-weight: 700; }
+.verse { background: #f3edd9; border-left: 4px solid #927024; border-radius: 10px; padding: 18px; margin: 20px 0; }
+.verse p { margin: 10px 0; }
+.verse cite { font-style: normal; font-size: .85rem; }
+.panel button, .panel .primary { display: block; width: 100%; min-height: 48px; border-radius: 12px; padding: 13px 16px; border: 2px solid #c7d1bd; background: #fff; color: #233a2c; font: inherit; font-weight: 750; line-height: 1.4; cursor: pointer; margin-top: 12px; text-align: left; text-decoration: none; }
+.panel button:hover:not(:disabled) { background: #eef5e9; border-color: #3c7254; }
+.panel .primary { background: #285d43; color: #fff; border-color: #285d43; text-align: center; }
+.panel .primary:hover:not(:disabled) { background: #194a32; color: #fff; }
+.panel button:disabled { opacity: .45; cursor: default; }
+.panel button:focus-visible, .panel a:focus-visible, .lesson summary:focus-visible { outline: 3px solid #bf7a16; outline-offset: 4px; }
+.panel small { display: block; margin-top: 15px; line-height: 1.5; }
+.truth { background: #edf5e7; border: 1px solid #a6bc98; border-radius: 14px; padding: 20px; margin: 20px 0; }
+.truth p { margin: 10px 0 0; }
+.feedback { color: #784817; font-weight: 700; line-height: 1.5; margin: 18px 0; }
+.order { padding: 12px 12px 12px 34px; min-height: 50px; background: #f2eddc; border-radius: 12px; }
+.order li { padding: 7px 0; line-height: 1.5; }
+.lesson summary { cursor: pointer; font-weight: 800; padding: 12px 0; }
+.plan { display: flex; align-items: start; gap: 12px; padding: 14px 0; line-height: 1.5; cursor: pointer; }
+.plan input { margin-top: 5px; accent-color: #285d43; width: 20px; height: 20px; flex-shrink: 0; }
+.panel fieldset { border: 1px solid #c7d1bd; padding: 16px; border-radius: 12px; }
+.panel legend { font-weight: 800; padding: 0 8px; }
+.guide { margin-top: 28px; background: #fffdf7; border: 1px solid #e6dcc5; border-radius: 16px; padding: 10px 24px; }
+.guide h2 { margin: 30px 0 12px; font-size: 1.6rem; }
+.guide h3 { margin: 18px 0 8px; font-size: 1.15rem; }
+.lesson[lang='ru'] h1 { letter-spacing: normal; line-height: 1.2; }
+@media (max-width: 800px) { .stage { grid-template-columns: 1fr; } .visual { display: grid; grid-template-columns: 140px 1fr; align-items: center; } .visual p { font-size: .88rem; padding: 14px; } .panel { padding: 22px; } .lesson { padding: 16px 12px 40px; } }
+@media (max-width: 390px) { .visual { grid-template-columns: 110px 1fr; } .panel { padding: 18px; } }
