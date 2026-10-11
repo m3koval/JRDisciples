@@ -12,7 +12,7 @@ function load(file) {
 const dir = 'app/lessons/remember-the-giver/'
 const { copy, scriptureEn, scriptureRu } = load(`${dir}content.ts`)
 const { teacherGuide } = load(`${dir}teacher-guide.ts`)
-const titles = { en: 'When Everything Is Going Well', ru: 'Когда всё хорошо' }
+const titles = { en: 'BEWARE!', ru: 'БЕРЕГИСЬ!' }
 const endings = { en: 'Jesus Is Better Than Life!', ru: 'Иисус дороже жизни!' }
 assert.equal(scriptureEn.text, 'then take care lest you forget the LORD, who brought you out of the land of Egypt, out of the house of slavery.')
 assert.equal(scriptureRu.text, 'тогда берегись, чтобы [не обольстилось сердце твое и] не забыл ты Господа, Который вывел тебя из земли Египетской, из дома рабства.')

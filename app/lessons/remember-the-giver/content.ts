@@ -12,7 +12,7 @@ export const scriptureRu = {
 }
 export const copy = {
   "en": {
-    "title": "When Everything Is Going Well",
+    "title": "BEWARE!",
     "eyebrow": "HARVEST • JUNIOR DISCIPLES",
     "intro": "Have you ever been so excited about a present that you forgot to say thank you? Michael has. His new toy car helps us think about something bigger: how to stay close to God when life is good.",
     "alt": "Michael and Rosie with bread, fruit, and wheat in an illustrated harvest scene with playful hidden modern objects.",
@@ -166,7 +166,7 @@ export const copy = {
     "adultNote": "The land promise was for Israel; it does not promise every child wealth. God is faithful in hard days too. This particular judgment in Daniel does not mean illness or disability proves personal sin. God’s jealousy is His holy claim to covenant faithfulness, not envy. Do not compare possessions or require public confessions. Children may point, draw, speak, or pass. The harvest art is an imaginative activity scene, not a historical reconstruction. English Scripture: ESV; Russian: Synodal. Daniel’s verse numbers differ between these translations."
   },
   "ru": {
-    "title": "Когда всё хорошо",
+    "title": "БЕРЕГИСЬ!",
     "eyebrow": "ЖАТВА • ЮНЫЕ УЧЕНИКИ",
     "intro": "Бывало у тебя так: подарок настолько понравился, что ты даже забыл сказать спасибо? С Мишуткой так и случилось. Его новая машинка поможет нам подумать, как не забывать Бога, когда всё хорошо.",
     "alt": "Мишутка и Рози среди хлеба, фруктов и колосьев на сказочной картинке о жатве со спрятанными современными предметами.",

@@ -1,6 +1,6 @@
 export const teacherGuide = {
   "en": {
-    "title": "When Everything Is Going Well",
+    "title": "BEWARE!",
     "subtitle": "When everything is going well • Junior Disciples • Ages 6–11 • 35–40 minutes",
     "exampleSource": {
       "label": "Adult source: Jack Whittaker interview, ABC News, April 2007",
@@ -151,7 +151,7 @@ export const teacherGuide = {
     ]
   },
   "ru": {
-    "title": "Когда всё хорошо",
+    "title": "БЕРЕГИСЬ!",
     "subtitle": "Когда всё хорошо • Юные ученики • Для детей 6–11 лет • 35–40 минут",
     "exampleSource": {
       "label": "Источник для взрослых: интервью Джека Уиттакера, ABC News, апрель 2007 года (на английском)",

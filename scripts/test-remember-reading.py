@@ -15,7 +15,7 @@ with sync_playwright() as p:
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(base + '/lessons/remember-the-giver', wait_until='networkidle')
         expect(page.locator('article')).to_have_attribute('lang', lang)
-        title = 'When Everything Is Going Well' if lang == 'en' else 'Когда всё хорошо'
+        title = 'BEWARE!' if lang == 'en' else 'БЕРЕГИСЬ!'
         expect(page.locator('h1')).to_have_text(title)
         assert page.url.rstrip('/').endswith('/lessons/remember-the-giver')
         page.get_by_test_id('start').click()

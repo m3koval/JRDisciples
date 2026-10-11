@@ -52,7 +52,7 @@ export default function RememberTheGiverPage() {
         </details>
       </div>
       <div className={styles.panel}>
-        <h1 ref={heading} tabIndex={-1}>{scene === -1 ? t.title : scene === 6 ? t.done : s.title}</h1>
+        <h1 ref={heading} tabIndex={-1} className={scene === -1 ? styles.mainTitle : undefined}>{scene === -1 ? t.title : scene === 6 ? t.done : s.title}</h1>
         {scene === -1 ? <>
           <p className={styles.lead}>{t.intro}</p>{verseCard}
           <button className={styles.primary} data-testid="start" onClick={() => transition(0)}>{t.start} →</button>

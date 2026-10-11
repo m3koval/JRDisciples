@@ -10,7 +10,7 @@ export interface LessonTopic {
 
 export const lessonTopicsRu: LessonTopic[] = [
   { href: "/lessons/paid-in-full", image: "/images/jr/lessons/paid-in-full/cover.webp", title: "Оплачено полностью", desc: "1 Петра 1:17–21 — Узнай о любящем Отце и справедливом Судье, собери рюкзак сердца, открой спасение Иисуса и собери драгоценные слова.", color: "#17665b", sections: 5, emoji: "✉️" },
-  { href: "/lessons/remember-the-giver", image: "/images/jr/lessons/remember-the-giver/cover.webp", title: "Когда всё хорошо", desc: "Когда всё хорошо, есть три опасности: забыть Бога, отвергнуть Его власть, заменить Его дарами. Помни Его, слушай Его, ставь Его первым. Шесть заданий по Второзаконию 6 и Даниила 4.", color: "#285d43", sections: 6, emoji: "🌾" },
+  { href: "/lessons/remember-the-giver", image: "/images/jr/lessons/remember-the-giver/cover.webp", title: "БЕРЕГИСЬ!", desc: "Когда всё хорошо, есть три опасности: забыть Бога, отвергнуть Его власть, заменить Его дарами. Помни Его, слушай Его, ставь Его первым. Шесть заданий по Второзаконию 6 и Даниила 4.", color: "#285d43", sections: 6, emoji: "🌾" },
   {
     href: "/lessons/living-word",
     image: "/images/jr/topic-case-for-christ-bible.png",
