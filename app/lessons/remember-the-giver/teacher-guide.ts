@@ -1,7 +1,7 @@
 export const teacherGuide = {
   "en": {
-    "title": "Remember the Giver",
-    "subtitle": "Junior Disciples • A teacher-led Bible lesson for ages 6–11 • 35–40 minutes",
+    "title": "When Everything Is Going Well",
+    "subtitle": "When everything is going well • Junior Disciples • Ages 6–11 • 35–40 minutes",
     "pages": [
       {
         "title": "A present—and a person",
@@ -9,7 +9,7 @@ export const teacherGuide = {
         "blocks": [
           {
             "heading": "Ready to lead",
-            "text": "Purpose: Children will connect God's gifts with God himself, recognize forgetting, rejecting, and replacing him, and practice a thankful response grounded in Jesus' grace. Bring a Bible, a toy car or drawing, pencils, blank paper, and three paper cards: Boast, Humbled, Praise. Read the speaking sections aloud; let children point, speak, or draw."
+            "text": "Purpose: When life is good, children will recognize three main dangers: forget God, reject God's authority, and replace God with His gifts. Teach the response: Remember Him. Listen to Him. Put Him first. Jesus is our greatest treasure; He gives forgiveness and eternal life to those who trust Him. The concluding theme is not a Bible quotation. Earthly life and good gifts are valuable, not evil. Gratitude does not earn grace. Bring a Bible, toy car or drawing, pencils, paper, and cards: Boast, Humbled, Praise."
           },
           {
             "heading": "Our route",
@@ -48,19 +48,19 @@ export const teacherGuide = {
         ]
       },
       {
-        "title": "Three ways to turn away",
+        "title": "Three main dangers when life is good",
         "kicker": "3 • Heart, deeds, and words • 6 minutes",
         "blocks": [
           {
-            "heading": "Forget: I stop noticing",
+            "heading": "Forget God → Remember Him",
             "text": "Say: ‘Michael races his car all afternoon. He forgets to thank Grandma. We can also use God's gifts without noticing his goodness. Forgetting here is not a spelling mistake or a memory problem. It is living as though God does not matter.’ Ask: ‘What could help Michael remember?’ Sample answer: ‘Pause and thank the giver.’ Touch your head as a remembering signal."
           },
           {
-            "heading": "Reject: I refuse to listen",
+            "heading": "Reject God's authority → Listen to Him",
             "text": "‘Now imagine Michael knows it is time to stop playing and help, but refuses. Or he breaks Rosie's ramp and says he didn't. He remembers what is right but chooses his own way.’ Bible retelling, Deuteronomy 6:13: Moses called God's people to honor and serve the Lord. Say: ‘God deserves our whole life: hearts that respect him, deeds that help, and words that tell the truth.’ Ask: ‘How could Michael put this right?’ Answer: ‘Tell the truth, say sorry, and help repair the ramp.’"
           },
           {
-            "heading": "Replace: Something else becomes first",
+            "heading": "Replace God with His gifts → Put Him first",
             "text": "Bible retelling, Deuteronomy 6:14–15: Israel must not follow other gods. The Lord is holy and jealous for his people's faithfulness. Say: ‘That is not envy, like wanting someone else's toy. God keeps his covenant—his faithful relationship with his people—and rightly calls them to belong to him alone. Turning from him is serious and brings judgment.’"
           },
           {
@@ -83,7 +83,7 @@ export const teacherGuide = {
           },
           {
             "heading": "Ask: What changed?",
-            "text": "‘Was the king really the highest ruler?’ Answer: ‘No. God was.’ ‘What did he do at the end?’ Answer: ‘He praised God.’ Say: ‘Humility means knowing the truth: we need God. Michael can enjoy making a clever ramp without pretending he needs no help. He can thank God for his abilities and thank Rosie for helping.’"
+            "text": "‘The king had a palace, power, and success. What danger did his pride reveal?’ Answer: ‘He acted as if he did not need God, ignored God's authority, and treasured his own greatness.’ ‘Was he the highest ruler?’ ‘No. God was.’ ‘What changed?’ ‘He praised God.’ Say: ‘Even on our best days, we need God. Remember Him. Listen to Him. Put Him first. Success is not evil, but it must not take God's place.’"
           },
           {
             "heading": "Good news when we fail",
@@ -92,7 +92,7 @@ export const teacherGuide = {
         ]
       },
       {
-        "title": "Practice remembering the Giver",
+        "title": "Spot the danger. Choose your response.",
         "kicker": "5 • Look, choose, and retell • 8 minutes",
         "blocks": [
           {
@@ -105,7 +105,7 @@ export const teacherGuide = {
           },
           {
             "heading": "Choose: Tell the truth",
-            "text": "‘Michael and Rosie build a wonderful garage. Someone praises Michael. He wants to say he did it all. What is a truthful answer?’ Sample: ‘Thank you! Rosie helped me build it.’ Ask: ‘Can he be glad about his work?’ Answer: ‘Yes, while thanking God and giving others credit.’"
+            "text": "Ask children to name the danger and response in each thought: ‘I do not need God’ → Forget God; Remember Him. ‘I know God's way but will ignore it’ → Reject God's authority; Listen to Him. ‘Winning matters more than God’ → Replace God with His gifts; Put Him first. Then practice: thank God for abilities, credit Rosie truthfully, and pause the game to help someone. Gifts are good; they must not rule us."
           },
           {
             "heading": "Choose: Welcome someone",
@@ -118,7 +118,7 @@ export const teacherGuide = {
         ]
       },
       {
-        "title": "Enjoy the gift. Remember the Giver.",
+        "title": "Jesus Is Better Than Life!",
         "kicker": "6 • Respond, pray, and take it home • 3–8 minutes",
         "blocks": [
           {
@@ -127,7 +127,7 @@ export const teacherGuide = {
           },
           {
             "heading": "Do: One small response",
-            "text": "Invite children to draw or quietly name one gift and one response: ‘I thank God for ____. With his help, I will ____.’ Examples: ‘My friend; include someone.’ ‘My ability to build; share the credit.’ Let children pass. Repeat the memory verse from the Moses section together. Say: ‘If we forget or sin, we can turn to Jesus for forgiveness and help. We do not have to hide.’"
+            "text": "Invite children to name or draw a danger and a response: Forget God → Remember Him; Reject God's authority → Listen to Him; Replace God with His gifts → Put Him first. Choose one small action: thank God, tell the truth, or pause play to help. Let children pass. Repeat Deuteronomy 6:12. Say: ‘Jesus gives forgiveness and eternal life. We treasure Him above comfort and success. Life is still God's good gift. We turn to Jesus for help, not to earn His love.’"
           },
           {
             "heading": "Pray together",
@@ -146,8 +146,8 @@ export const teacherGuide = {
     ]
   },
   "ru": {
-    "title": "Помни, Кто даёт",
-    "subtitle": "Юные ученики • Урок Библии с учителем для детей 6–11 лет • 35–40 минут",
+    "title": "Когда всё хорошо",
+    "subtitle": "Когда всё хорошо • Юные ученики • Для детей 6–11 лет • 35–40 минут",
     "pages": [
       {
         "title": "Подарок — и тот, кто его подарил",
@@ -155,7 +155,7 @@ export const teacherGuide = {
         "blocks": [
           {
             "heading": "Учителю перед уроком",
-            "text": "Цель: помочь детям за Божьими дарами видеть Самого Бога, узнавать три опасности — забыть, отвергнуть, заменить Его — и учиться благодарному ответу на благодать Иисуса. Приготовьте Библию, игрушечную машинку или её рисунок, карандаши, чистую бумагу, а также три карточки: «Хвастовство», «Смирение», «Хвала». Читайте детям вслух. Отвечать можно словами, рисунком или указательным жестом."
+            "text": "Цель: когда всё хорошо, узнавать три главные опасности — забыть Бога, отвергнуть Божью власть, заменить Бога Его дарами. Наш ответ: Помни Его. Слушай Его. Ставь Его на первое место. Иисус дороже всего; Он даёт прощение и вечную жизнь тем, кто доверяет Ему. Заключительная мысль — не цитата из Библии. Земная жизнь и добрые дары ценны, а не плохи. Благодарность не зарабатывает благодать. Приготовьте Библию, машинку или рисунок, карандаши, бумагу и карточки: «Хвастовство», «Смирение», «Хвала»."
           },
           {
             "heading": "Наш путь",
@@ -194,19 +194,19 @@ export const teacherGuide = {
         ]
       },
       {
-        "title": "Три опасности для сердца",
+        "title": "Три главные опасности, когда всё хорошо",
         "kicker": "3 • Сердце, дела и слова • 6 минут",
         "blocks": [
           {
-            "heading": "Забыть: я перестаю замечать",
+            "heading": "Забыть Бога → Помни Его",
             "text": "Скажите: «Мишутка весь день играет с машинкой и забывает поблагодарить бабушку. Мы тоже можем пользоваться Божьими дарами и не замечать Его доброты. Забыть здесь — не значит ошибиться в слове или плохо что-то запомнить. Это значит жить так, будто Бог не важен». Спросите: «Что поможет Мишутке вспомнить?» Пример ответа: «Остановиться и поблагодарить дарителя». Прикоснитесь к голове: этот жест напоминает, что нужно помнить."
           },
           {
-            "heading": "Отвергнуть: я не хочу слушать",
+            "heading": "Отвергнуть Божью власть → Слушай Его",
             "text": "«А теперь представьте: Мишутка знает, что пора закончить игру и помочь, но отказывается. Или ломает горку Рози и говорит, что это не он. Он помнит, как правильно, но выбирает по-своему». Пересказ Второзакония 6:13: Моисей призывал народ чтить Господа и служить Ему. Скажите: «Богу принадлежит вся наша жизнь: сердце, которое Его уважает, дела, которыми мы помогаем, и слова, в которых говорим правду». «Как Мишутке исправить поступок?» Ответ: «Сказать правду, попросить прощения и помочь починить горку»."
           },
           {
-            "heading": "Заменить: другое становится главным",
+            "heading": "Заменить Бога Его дарами → Ставь Его на первое место",
             "text": "Пересказ Второзакония 6:14–15: Израиль не должен следовать другим богам. Господь свят и ревнует о верности Своего народа. Скажите: «Это не зависть, когда хочется чужую игрушку. Бог хранит завет — Свои верные отношения с народом — и по праву зовёт людей принадлежать только Ему. Отвернуться от Него — серьёзный грех, который влечёт Божий суд»."
           },
           {
@@ -229,7 +229,7 @@ export const teacherGuide = {
           },
           {
             "heading": "Спросите: что изменилось?",
-            "text": "«Был ли царь самым главным правителем?» Ответ: «Нет, над ним был Бог». «Что царь сделал в конце?» Ответ: «Прославил Бога». Скажите: «Смирение — это признать правду: мы нуждаемся в Боге. Мишутка может радоваться своей красивой горке, не делая вид, будто ему никто не нужен. Он может поблагодарить Бога за способности, а Рози — за помощь»."
+            "text": "«У царя были дворец, власть и успех. Какую опасность показала его гордость?» Ответ: «Он жил, будто Бог не нужен, не признавал Божью власть и любил своё величие». «Был ли он главным правителем?» «Нет, над ним был Бог». «Что изменилось?» «Он прославил Бога». Скажите: «Даже в лучшие дни мы нуждаемся в Боге. Помни Его. Слушай Его. Ставь Его на первое место. Успех не плох, но он не должен занимать Божье место»."
           },
           {
             "heading": "Добрая весть, когда мы согрешили",
@@ -238,7 +238,7 @@ export const teacherGuide = {
         ]
       },
       {
-        "title": "Учимся помнить Того, Кто даёт",
+        "title": "Заметь опасность. Выбери свой ответ.",
         "kicker": "5 • Рассматриваем, выбираем, пересказываем • 8 минут",
         "blocks": [
           {
@@ -251,7 +251,7 @@ export const teacherGuide = {
           },
           {
             "heading": "Выберите: сказать правду",
-            "text": "«Мишутка и Рози построили замечательный гараж. Мишутку хвалят. Ему хочется сказать, что он всё сделал один. Как ответить честно?» Пример: «Спасибо! Рози помогала мне строить». «Может ли он радоваться своей работе?» Ответ: «Да, и при этом благодарить Бога и признавать помощь других»."
+            "text": "Назовите опасность и ответ для каждой мысли: «Бог мне не нужен» → Забыть Бога; Помни Его. «Знаю Божий путь, но не буду слушаться» → Отвергнуть Божью власть; Слушай Его. «Победа важнее Бога» → Заменить Бога Его дарами; Ставь Его на первое место. Затем попробуйте: поблагодарить Бога за умения, честно признать помощь Рози, прервать игру ради помощи другому. Дары хороши, но не должны нами управлять."
           },
           {
             "heading": "Выберите: принять новичка",
@@ -264,7 +264,7 @@ export const teacherGuide = {
         ]
       },
       {
-        "title": "Радуйся дару. Помни, Кто даёт.",
+        "title": "Иисус дороже жизни!",
         "kicker": "6 • Наш ответ, молитва и задание домой • 3–8 минут",
         "blocks": [
           {
@@ -273,7 +273,7 @@ export const teacherGuide = {
           },
           {
             "heading": "Сделайте: один маленький шаг",
-            "text": "Предложите нарисовать или тихо назвать один дар и один ответ: «Я благодарю Бога за ____. С Его помощью я буду ____». Примеры: «За друга; приглашать других в игру». «За умение строить; рассказывать, кто мне помог». Можно не отвечать вслух. Вместе повторите памятный стих из раздела о Моисее. Скажите: «Если мы забыли Бога или согрешили, можно обратиться к Иисусу за прощением и помощью. Нам не нужно прятаться»."
+            "text": "Предложите назвать или нарисовать опасность и ответ: Забыть Бога → Помни Его; Отвергнуть Божью власть → Слушай Его; Заменить Бога Его дарами → Ставь Его на первое место. Выберите шаг: поблагодарить Бога, сказать правду или прервать игру ради помощи. Можно пропустить ответ. Повторите Второзаконие 6:12. Скажите: «Иисус даёт прощение и вечную жизнь. Он дороже удобства и успеха. Жизнь остаётся добрым Божьим даром. Мы обращаемся к Иисусу за помощью, а не зарабатываем Его любовь»."
           },
           {
             "heading": "Помолитесь вместе",

@@ -24,7 +24,7 @@ export interface Lesson {
 
 export const lessonTopics: LessonTopic[] = [
   { href: "/lessons/paid-in-full", image: "/images/jr/lessons/paid-in-full/cover.webp", title: "Paid in Full", desc: "1 Peter 1:17–21 — Meet our loving Father and fair Judge, pack a traveler’s heart, discover Jesus’ rescue, and build the precious promise.", color: "#17665b", sections: 5, emoji: "✉️" },
-  { href: "/lessons/remember-the-giver", image: "/images/jr/lessons/remember-the-giver/cover.webp", title: "Remember the Giver", desc: "Deuteronomy 6 and Daniel 4 — Enjoy God’s gifts, remember the Giver, turn from pride, and practice thankfulness, care, and sharing. Six interactive challenges.", color: "#285d43", sections: 6, emoji: "🌾" },
+  { href: "/lessons/remember-the-giver", image: "/images/jr/lessons/remember-the-giver/cover.webp", title: "When Everything Is Going Well", desc: "When life is good, beware three dangers: forget God, reject His authority, replace Him with His gifts. Remember Him, listen to Him, put Him first. Six challenges in Deuteronomy 6 and Daniel 4.", color: "#285d43", sections: 6, emoji: "🌾" },
   {
     href: "/lessons/living-word",
     image: "/images/jr/topic-case-for-christ-bible.png",
