@@ -2,6 +2,11 @@ export const teacherGuide = {
   "en": {
     "title": "When Everything Is Going Well",
     "subtitle": "When everything is going well • Junior Disciples • Ages 6–11 • 35–40 minutes",
+    "exampleSource": {
+      "label": "Adult source: Jack Whittaker interview, ABC News, April 2007",
+      "url": "https://abcnews.com/2020/powerball-winner-cursed/story?id=3012631",
+      "note": "Optional, after the three dangers: read the short Jack Whittaker example and ask, ‘If you had every game you wanted, what would you still need God's help to do?’ Invite one example, such as sharing or stopping to help. The interview supports his wish to help others and his later regret; it does not establish that he abandoned God. Money is not evil, and obedience does not guarantee wealth. This source includes adult material; do not read it aloud or show it to children. Keep to the brief lesson example."
+    },
     "pages": [
       {
         "title": "A present—and a person",
@@ -148,6 +153,11 @@ export const teacherGuide = {
   "ru": {
     "title": "Когда всё хорошо",
     "subtitle": "Когда всё хорошо • Юные ученики • Для детей 6–11 лет • 35–40 минут",
+    "exampleSource": {
+      "label": "Источник для взрослых: интервью Джека Уиттакера, ABC News, апрель 2007 года (на английском)",
+      "url": "https://abcnews.com/2020/powerball-winner-cursed/story?id=3012631",
+      "note": "По желанию, после трёх опасностей: прочитайте короткий пример о Джеке Уиттакере и спросите: «Если бы у тебя были все игры, какие ты хочешь, в чём тебе всё равно нужна была бы Божья помощь?» Пусть дети приведут один пример: поделиться или прервать игру, чтобы помочь. Интервью подтверждает его желание помогать людям и сожаление о выигрыше, но не доказывает, что он оставил Бога. Деньги сами по себе не зло, а послушание не гарантирует богатства. В источнике есть материал для взрослых: не читайте его вслух и не показывайте детям. Ограничьтесь коротким примером из урока."
+    },
     "pages": [
       {
         "title": "Подарок — и тот, кто его подарил",

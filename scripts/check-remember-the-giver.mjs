@@ -39,6 +39,10 @@ for (const language of ['en', 'ru']) {
   assert.doesNotMatch(JSON.stringify(t.scenes), /remember the giver|overlook the giver|замечать дарителя/i)
   assert.match(t.scenes[5].paragraphs.join(' '), language === 'en' ? /forgiveness and eternal life/ : /прощение и вечную жизнь/)
   assert.equal(t.scenes.length, 6)
+  const example = t.scenes[2].paragraphs.slice(4).join(' ')
+  assert.match(example, language === 'en' ? /Jack Whittaker.*millions.*help people.*torn up the winning ticket/ : /Джек Уиттакер.*миллионы.*помогать.*порвал выигрышный билет/)
+  assert.match(example, language === 'en' ? /every toy and game.*thank you.*God’s help/ : /все игрушки и игры.*спасибо.*Божья помощь/)
+  assert.equal(teacherGuide[language].exampleSource.url, 'https://abcnews.com/2020/powerball-winner-cursed/story?id=3012631')
   assert.equal(teacherGuide[language].pages.length, 6)
   assert.equal(t.kingTiles.length, 3)
   t.scenes.forEach((s, i) => {

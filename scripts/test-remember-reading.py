@@ -13,8 +13,11 @@ with sync_playwright() as p:
         page = context.new_page()
         errors = []
         page.on('pageerror', lambda error: errors.append(str(error)))
-        page.goto(base + '/lessons/remember-the-giver')
+        page.goto(base + '/lessons/remember-the-giver', wait_until='networkidle')
         expect(page.locator('article')).to_have_attribute('lang', lang)
+        title = 'When Everything Is Going Well' if lang == 'en' else 'Когда всё хорошо'
+        expect(page.locator('h1')).to_have_text(title)
+        assert page.url.rstrip('/').endswith('/lessons/remember-the-giver')
         page.get_by_test_id('start').click()
         expect(page.locator('h1')).to_have_text('Michael’s new car' if lang == 'en' else 'Новая машинка Мишутки')
         for scene, answer in enumerate([1, None, 0, None, 2, 1]):
@@ -29,6 +32,11 @@ with sync_playwright() as p:
                 page.screenshot(path=f'/tmp/remember-reading-{lang}.png')
             if scene == 2:
                 expect(page.locator('article h2:visible')).to_have_count(3)
+                example = 'A real man named Jack Whittaker' if lang == 'en' else 'Вот история из жизни. Джек Уиттакер'
+                expect(page.locator('article p').filter(has_text=example)).to_be_visible()
+                question = 'Imagine getting every toy and game' if lang == 'en' else 'Представь, что у тебя появились все игрушки и игры'
+                expect(page.locator('article p').filter(has_text=question)).to_be_visible()
+                page.screenshot(path=f'/tmp/remember-example-{lang}.png', full_page=True)
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
             page.get_by_test_id('play').click()
             if scene in [1, 3]:
@@ -44,8 +52,11 @@ with sync_playwright() as p:
             page.get_by_test_id('next').click()
         expect(page.locator('input[type=radio]')).to_have_count(3)
         page.locator('input[type=radio]').first.check()
+        page.get_by_text('Parent & teacher guide' if lang == 'en' else 'Родителям и учителям', exact=True).click()
+        source = page.locator('a[href="https://abcnews.com/2020/powerball-winner-cursed/story?id=3012631"]')
+        expect(source).to_be_visible()
         assert not errors, errors
-        results.append({'language': lang, 'six_stages': 'PASS', 'dialogue_and_headings': 'PASS', 'wrong_answer_retries': 'PASS', 'errors': errors})
+        results.append({'language': lang, 'title_and_route': 'PASS', 'jack_example_and_adult_source': 'PASS', 'six_stages': 'PASS', 'dialogue_and_headings': 'PASS', 'wrong_answer_retries': 'PASS', 'errors': errors})
         context.close()
     browser.close()
 print(json.dumps(results, ensure_ascii=False, indent=2))

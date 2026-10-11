@@ -95,6 +95,8 @@ export default function RememberTheGiverPage() {
       <p>{language === 'ru' ? 'Скачать лист для печати: LETTER, альбомная ориентация, двусторонняя печать — переворот по ДЛИННОМУ краю (LONG-edge). Сложите пополам.' : 'Download the printable: LETTER, landscape, duplex — flip on the LONG edge. Fold in half.'}</p>
       <p><a href="/print/remember-the-giver/PRINT-EN-FRONT-QR-LONG-EDGE.pdf" download>{language === 'ru' ? 'Лист на английском (PDF)' : 'English printable (PDF)'}</a> · <a href="/print/remember-the-giver/PRINT-RU-FRONT-QR-LONG-EDGE.pdf" download>{language === 'ru' ? 'Лист на русском (PDF)' : 'Russian printable (PDF)'}</a></p>
       <p>{t.adultNote}</p><ExternalSourceLink href={verse.url}>{t.source}: {verse.reference} · {verse.translation} ↗</ExternalSourceLink>
+      <p>{teacherGuide[language].exampleSource.note}</p>
+      <ExternalSourceLink href={teacherGuide[language].exampleSource.url}>{teacherGuide[language].exampleSource.label} ↗</ExternalSourceLink>
       {teacherGuide[language].pages.map((page, i) => <section key={i}><h2>{page.title}</h2><p>{page.kicker}</p>{page.blocks.map((block, j) => <div key={j}><h3>{block.heading}</h3><p>{block.text}</p></div>)}</section>)}
     </details>
   </article>

@@ -86,7 +86,9 @@ export const copy = {
           "Forget God\nWe can get so busy playing and having fun that we stop thinking about God. We act as if we don’t need Him. Remember Him: talk to Him and thank Him for His help.",
           "Reject God’s authority\nThis means knowing what God says but deciding not to listen. If Michael breaks Rosie’s ramp, he might lie to stay out of trouble. Listen to Him: tell the truth, say you’re sorry, and help fix it.",
           "Replace God with His gifts\nA game, a toy, or being popular can start to matter more to us than God. Moses warned Israel not to follow other gods. Put Him first: don’t let something you love pull you away from Him.",
-          "God gives us good things to enjoy. The trouble starts when we want those things more than we want to obey Him."
+          "God gives us good things to enjoy. The trouble starts when we want those things more than we want to obey Him.",
+          "A real man named Jack Whittaker won millions of dollars in a lottery. He wanted to help people who needed food and clothes. But later he said he wished he had torn up the winning ticket. All that money hadn’t made life turn out the way he hoped.",
+          "Imagine getting every toy and game you wanted. Would that teach you to say thank you, listen to your parents, or share with someone? Having more things can’t do that for us. We still need God’s help to love and obey Him."
         ],
         "task": "Mom asks Michael to help take some food to a neighbor. He wants to keep playing. What should he do?",
         "hint": "He can play again later. Someone needs his help now.",
@@ -238,7 +240,9 @@ export const copy = {
           "Забыть Бога\nМожно так увлечься играми и весельем, что перестать думать о Боге. Мы живём, будто Он нам не нужен. Помни Его: разговаривай с Ним и благодари за помощь.",
           "Отвергнуть Божью власть\nЭто значит знать, что Бог говорит, но не хотеть слушаться. Если Мишутка сломает горку Рози, ему захочется соврать, чтобы его не ругали. Слушай Его: скажи правду, попроси прощения и помоги починить.",
           "Заменить Бога Его дарами\nИгра, игрушка или желание понравиться друзьям могут стать важнее Бога. Моисей предупреждал Израиль не идти за другими богами. Ставь Его на первое место: не позволяй любимым вещам увести тебя от Него.",
-          "Бог даёт нам хорошее, чтобы мы радовались. Беда начинается, когда нам хочется получить своё больше, чем послушаться Его."
+          "Бог даёт нам хорошее, чтобы мы радовались. Беда начинается, когда нам хочется получить своё больше, чем послушаться Его.",
+          "Вот история из жизни. Джек Уиттакер выиграл в лотерею миллионы долларов. Он хотел помогать тем, кому не хватало еды и одежды. Но позже он сказал, что лучше бы порвал выигрышный билет. Денег было много, а жизнь сложилась не так, как он надеялся.",
+          "Представь, что у тебя появились все игрушки и игры, какие ты хотел. Разве они научат тебя говорить спасибо, слушаться родителей или делиться? От новых вещей мы этому не научимся. Нам по-прежнему нужна Божья помощь, чтобы любить Его и слушаться."
         ],
         "task": "Мама просит Мишутку помочь отнести еду соседу. А ему хочется играть дальше. Что ему сделать?",
         "hint": "Поиграть можно и потом. А помощь нужна сейчас.",
