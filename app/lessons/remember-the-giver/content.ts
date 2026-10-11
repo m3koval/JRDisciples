@@ -1,114 +1,318 @@
 export const scriptureEn = {
-  text: 'then take care lest you forget the LORD, who brought you out of the land of Egypt, out of the house of slavery.',
-  reference: 'Deuteronomy 6:12', translation: 'ESV', url: 'https://www.bible.com/bible/59/DEU.6.12.ESV',
+  "text": "then take care lest you forget the LORD, who brought you out of the land of Egypt, out of the house of slavery.",
+  "reference": "Deuteronomy 6:12",
+  "translation": "ESV",
+  "url": "https://www.bible.com/bible/59/DEU.6.12.ESV"
 }
 export const scriptureRu = {
-  text: 'тогда берегись, чтобы [не обольстилось сердце твое и] не забыл ты Господа, Который вывел тебя из земли Египетской, из дома рабства.',
-  reference: 'Второзаконие 6:12', translation: 'Синодальный перевод', url: 'https://www.bible.com/bible/400/DEU.6.12.SYNO',
+  "text": "тогда берегись, чтобы [не обольстилось сердце твое и] не забыл ты Господа, Который вывел тебя из земли Египетской, из дома рабства.",
+  "reference": "Второзаконие 6:12",
+  "translation": "Синодальный перевод",
+  "url": "https://www.bible.com/bible/400/DEU.6.12.SYNO"
 }
 export const copy = {
-  en: {
-    title: 'When Everything Is Going Well', eyebrow: 'HARVEST • JUNIOR DISCIPLES',
-    intro: 'When everything is going well, three dangers can sneak into our hearts: forget God, reject His authority, or replace Him with His gifts. God’s gifts are good, but Jesus is our greatest treasure. Remember Him. Listen to Him. Put Him first.',
-    alt: 'Michael and Rosie with bread, fruit, and wheat in an illustrated harvest scene with playful hidden modern objects.',
-    all: 'All lessons', start: 'Begin the lesson', play: 'Try the challenge', next: 'Continue', back: 'Read again', check: 'Check the order', clear: 'Start the order again',
-    progress: 'Challenges completed', success: 'Yes! Remember the Giver.', retry: 'Try again.', hint: 'Need a hint?', guide: 'Parent & teacher guide',
-    source: 'Read the Bible passage', verseLabel: 'Memory verse', retelling: 'Bible retelling, not a quotation',
-    done: 'Jesus Is Better Than Life!', doneText: 'Michael still enjoys his car. Good gifts and life itself matter. But Jesus is worth more than anything we have: He gives forgiveness and eternal life. When life goes well, we can remember God, accept His authority, and treasure Him above His gifts.',
-    planTitle: 'Notice a danger. Choose your response today.', plans: ['Forget God? Remember Him: pause and thank Him for one gift.', 'Reject God’s authority? Listen to Him: tell the truth and ask forgiveness.', 'Replace God with His gifts? Put Him first: pause my game to love and help someone.'],
-    planReply: 'You can say or draw your own response, too. You do not have to share it aloud.',
-    prayer: 'Father, thank You for Your good gifts and for Jesus. Forgive us for forgetting You, refusing Your authority, and putting gifts first. Help us remember You, listen to You, and treasure Jesus above everything in happy days and hard days. Amen.',
-    home: 'At a meal or bedtime, read Deuteronomy 6:12 with a trusted adult. What gift did you notice today? How can you honor the Giver tomorrow?',
-    again: 'Explore again', nextLesson: 'Discover more about grace', session: 'Read or play together, ages 6–11. Your place lasts for this visit; you can begin again anytime.',
-    hunt: 'Find six things that do not belong in this harvest long ago.',
-    scenes: [
-      { title: 'A present—and a person', reference: 'An imagined story about Michael', paragraphs: [
-        'Grandma gives Michael a little red toy car. He races it across the table. He is having so much fun that he hardly looks up. Rosie asks, “You love the present. Have you remembered the person who gave it?”',
-        'Michael stops. “Grandma, thank you! Rosie, would you like a turn?” Enjoying his car was not wrong. He needed to notice the giver, too.',
-        'When everything is going well, a gift can fill our thoughts until we overlook the giver. God gives good things to enjoy. Moses warned God’s people about three dangers in comfortable days: forget God, reject His authority, and replace Him with His gifts.'
-      ], task: 'Which response enjoys the gift and remembers the giver?', hint: 'A thankful heart can enjoy a gift and make room for another person.', truth: 'Gifts are good. We can enjoy them, thank the giver, and share.', options: ['Never play with the car again.', 'Thank Grandma and offer Rosie a turn.', 'Demand another car because one is not enough.'], answer: 1 },
-      { title: 'Remember who rescued you', reference: 'Deuteronomy 6:10–15', paragraphs: [
-        'God promised Abraham, Isaac, and Jacob a land for their descendants. Later, the Israelites became slaves in Egypt. They could not free themselves. God rescued them and led them through the wilderness.',
-        'Before they entered the land, Moses described the gifts ahead: towns they had not built, houses full of good things, wells they had not dug, and vineyards and olive trees they had not planted. They would eat and be full.',
-        'Moses warned them to be careful when life felt easy—not only when it was hard. Full houses and full stomachs could make them forget their Rescuer, refuse His rule, or follow other gods. They still needed Him. “Take care” means pay attention. Read the verse, then build it in order.'
-      ], task: 'Tap the phrases in the order of the memory verse. Then check.', hint: 'Begin with “then take care”. Read the verse above whenever you need help.', truth: 'God rescued His people before they enjoyed the land. Remember the Giver, not only His gifts.', options: [], answer: -1 },
-      { title: 'Three main dangers when life is good', reference: 'Deuteronomy 6:12–15', paragraphs: [
-        'Forget God: I enjoy His gifts but live as if I do not need Him. This is not a memory problem. Like Michael absorbed in his car, I overlook the Giver. My response: Remember Him. Pause and thank Him.',
-        'Reject God’s authority: I know God’s way but decide my way matters more. Michael might lie about breaking Rosie’s ramp. My response: Listen to Him. Tell the truth, ask forgiveness, and help repair it.',
-        'Replace God with His gifts: I make something He gives more important than Him. Israel must not follow other gods. The Lord rightly calls His people to belong to Him alone. My response: Put Him first.',
-        'A toy is not the enemy. But if winning or friends’ approval matters more than God, a good gift has taken the wrong place. Enjoy His gifts; let God—not the gifts—guide your choices.'
-      ], task: 'Michael is playing. Mom asks, “Will you help take this food to our neighbor? God has given us enough to share.” What can Michael do?', hint: 'Enjoying a game is good. Letting it rule your choices is the danger.', truth: 'We can enjoy good gifts without letting them become our king.', options: ['Pause his game and help Mom share the food.', 'Say he did not hear and keep racing.', 'Decide all toys are bad.'], answer: 0 },
-      { title: 'The king who looked up', reference: 'Daniel 4:28–37', paragraphs: [
-        'King Nebuchadnezzar had a palace, power, and a great city. Life looked wonderful! Daniel warned him to turn from sin and show mercy to the poor. A year later, he still boasted about his own power and glory. In his success, he ignored God’s rule and put himself first.',
-        'God humbled him. His kingdom was taken away; he could no longer think clearly or rule. He lived away from people, among animals, and ate grass. This was serious judgment on his pride, not a funny game.',
-        'At the end of that time, the king looked toward heaven. His understanding returned. He praised the living God, whose rule lasts forever. His kingdom was restored. Instead of taking all the credit, he now honored God.',
-        'The king’s pride shows the danger of success: forget God, reject His authority, and treasure power above Him. Humility means knowing the truth: even on our best days, we need God. Enjoy doing well, but remember Him, listen to Him, and put Him first.'
-      ], task: 'Retell the king’s story. Tap the three moments in order, then check.', hint: 'First he boasted. Then God humbled him. At the end he praised God and was restored.', truth: 'God rules even over the strongest king. We can turn from pride and give Him praise.', options: [], answer: -1 },
-      { title: 'Spot the danger. Choose your response.', reference: 'Practice the lesson', paragraphs: [
-        'Michael has a happy day: his garage looks wonderful and his friends cheer. He thinks, “I do not need God.” Which danger is that? Forget God. He can remember Him and thank Him for his abilities and Rosie’s help.',
-        'He knows God wants truthful words, but wants all the credit. Which danger is that? Reject God’s authority. He can listen to Him: “Thank you! Rosie helped me build it.”',
-        'Then winning matters so much that he refuses to help anyone. Which danger is that? Replace God with His gifts. He can put God first, pause the game, and make room for someone else. The game is good; it must not rule him.'
-      ], task: 'Michael thinks, “I do not need God. I will ignore His way. Winning matters most.” Which answer names all three dangers and the response?', hint: 'Match each danger: forget—remember; reject—listen; replace—put God first.', truth: 'Forget God → Remember Him. Reject God’s authority → Listen to Him. Replace God with His gifts → Put Him first.', options: ['The gifts are bad, so stop enjoying every good thing.', 'Success means I no longer need God’s help.', 'Forget God, reject His authority, replace Him with His gifts. Remember Him, listen to Him, put Him first.'], answer: 2 },
-      { title: 'Jesus Is Better Than Life!', reference: 'Gospel summary: 1 Corinthians 15:3–4; Ephesians 2:8–10', paragraphs: [
-        'We have all put ourselves first. We need more than better manners; we need forgiveness. Jesus, God’s Son, lived without sin, died for our sins, and rose again. He gives forgiveness and eternal life to those who trust Him.',
-        'We can turn from sin and trust Jesus. We cannot buy His forgiveness with thank-you words or good behavior. Gratitude grows because of His grace; it does not earn it.',
-        'Life is God’s good gift, and Jesus is our greatest treasure. Turn to Him for forgiveness and help. Remember Him, listen to Him, and put Him first—even when everything is going well.'
-      ], task: 'Can our thank-you words or good deeds buy forgiveness?', hint: 'Jesus saves by grace. Thankfulness is our response, not a price we pay.', truth: 'We turn from sin and trust Jesus. His grace—not our gratitude—saves us.', options: ['Yes, if we say thank you enough times.', 'No. Forgiveness is God’s gift through Jesus.', 'Yes, if we finish every challenge.'], answer: 1 }
+  "en": {
+    "title": "When Everything Is Going Well",
+    "eyebrow": "HARVEST • JUNIOR DISCIPLES",
+    "intro": "Have you ever been so excited about a present that you forgot to say thank you? Michael has. His new toy car helps us think about something bigger: how to stay close to God when life is good.",
+    "alt": "Michael and Rosie with bread, fruit, and wheat in an illustrated harvest scene with playful hidden modern objects.",
+    "all": "All lessons",
+    "start": "Begin the lesson",
+    "play": "Try the challenge",
+    "next": "Continue",
+    "back": "Read again",
+    "check": "Check the order",
+    "clear": "Start the order again",
+    "progress": "Challenges completed",
+    "success": "That’s right!",
+    "retry": "Try again.",
+    "hint": "Need a hint?",
+    "guide": "Parent & teacher guide",
+    "source": "Read the Bible passage",
+    "verseLabel": "Memory verse",
+    "retelling": "Bible retelling, not a quotation",
+    "done": "Jesus Is Better Than Life!",
+    "doneText": "Michael still loves his car. Now he’s thanking Grandma and sharing it with Rosie, too. We can enjoy what God gives us without letting it become more important than Him. Jesus gives us something no toy or achievement can give: forgiveness and eternal life.",
+    "planTitle": "What could you do today?",
+    "plans": [
+      "Forget God? Remember Him: pause and thank Him for one gift.",
+      "Reject God’s authority? Listen to Him: tell the truth and ask forgiveness.",
+      "Replace God with His gifts? Put Him first: pause my game to love and help someone."
     ],
-    verseTiles: ['then take care', 'lest you forget the LORD,', 'who brought you out of the land of Egypt,', 'out of the house of slavery.'],
-    kingTiles: ['The king boasted about himself.', 'God humbled him and took his power away.', 'He praised God; his understanding and kingdom were restored.'],
-    adultNote: 'The land promise was for Israel; it does not promise every child wealth. God is faithful in hard days too. This particular judgment in Daniel does not mean illness or disability proves personal sin. God’s jealousy is His holy claim to covenant faithfulness, not envy. Do not compare possessions or require public confessions. Children may point, draw, speak, or pass. The harvest art is an imaginative activity scene, not a historical reconstruction. English Scripture: ESV; Russian: Synodal. Daniel’s verse numbers differ between these translations.',
-  },
-  ru: {
-    title: 'Когда всё хорошо', eyebrow: 'ЖАТВА • ЮНЫЕ УЧЕНИКИ',
-    intro: 'Когда всё хорошо, есть три опасности: забыть Бога, отвергнуть Его власть или заменить Его дарами. Божьи дары хороши, но Иисус дороже всего. Помни Его. Слушай Его. Ставь Его на первое место.',
-    alt: 'Мишутка и Рози среди хлеба, фруктов и колосьев на сказочной картинке о жатве со спрятанными современными предметами.',
-    all: 'Все уроки', start: 'Начать урок', play: 'Попробовать задание', next: 'Дальше', back: 'Прочитать ещё раз', check: 'Проверить порядок', clear: 'Собрать заново',
-    progress: 'Выполнено заданий', success: 'Верно! Помни, Кто даёт.', retry: 'Попробуй ещё раз.', hint: 'Нужна подсказка?', guide: 'Родителям и учителям',
-    source: 'Прочитать отрывок Библии', verseLabel: 'Памятный стих', retelling: 'Пересказ Библии, не цитата',
-    done: 'Иисус дороже жизни!', doneText: 'Мишутка всё ещё радуется машинке. Хорошие дары и сама жизнь ценны. Но Иисус дороже всего, что у нас есть: Он даёт прощение и вечную жизнь. Когда всё хорошо, будем помнить Бога, слушаться Его и любить Его больше, чем Его дары.',
-    planTitle: 'Заметь опасность. Выбери свой ответ на сегодня.', plans: ['Забыть Бога? Помни Его: остановись и поблагодари за один дар.', 'Отвергнуть Божью власть? Слушай Его: скажи правду и попроси прощения.', 'Заменить Бога Его дарами? Ставь Его на первое место: прерви игру, чтобы помочь другому.'],
-    planReply: 'Можно придумать свой ответ, сказать его или нарисовать. Не обязательно отвечать вслух.',
-    prayer: 'Отец, спасибо за Твои добрые дары и за Иисуса. Прости, что мы забывали Тебя, отвергали Твою власть и ставили дары на первое место. Помоги помнить Тебя, слушать Тебя и любить Иисуса больше всего в радостные и трудные дни. Аминь.',
-    home: 'За ужином или перед сном прочитай Второзаконие 6:12 со взрослым, которому доверяешь. Какой дар ты заметил сегодня? Как завтра почтить Того, Кто даёт?',
-    again: 'Пройти ещё раз', nextLesson: 'Узнать больше о благодати', session: 'Читайте и играйте вместе. Для детей 6–11 лет. Твой шаг сохраняется, пока открыта страница; можно начать заново.',
-    hunt: 'Найди шесть предметов, которым не место на этой картинке жатвы давних времён.',
-    scenes: [
-      { title: 'Подарок — и тот, кто его подарил', reference: 'Выдуманная история о Мишутке', paragraphs: [
-        'Бабушка дарит Мишутке маленькую красную машинку. Он катает её по столу и почти не поднимает глаз. Рози спрашивает: «Тебе нравится подарок. А ты помнишь, кто его подарил?»',
-        'Мишутка останавливается: «Бабушка, спасибо! Рози, хочешь поиграть?» Радоваться машинке не плохо. Но важно замечать и того, кто её подарил.',
-        'Когда всё хорошо, подарок может так занять наши мысли, что мы не замечаем дарителя. Бог даёт хорошее для радости. Моисей предупреждал народ о трёх опасностях в сытые дни: забыть Бога, отвергнуть Его власть и заменить Его дарами.'
-      ], task: 'Как радоваться подарку и помнить того, кто его дал?', hint: 'Благодарное сердце радуется подарку и замечает другого человека.', truth: 'Дары — это хорошо. Можно радоваться, благодарить и делиться.', options: ['Больше никогда не играть с машинкой.', 'Поблагодарить бабушку и дать Рози поиграть.', 'Требовать ещё одну машинку: одной мало.'], answer: 1 },
-      { title: 'Помни, Кто тебя освободил', reference: 'Второзаконие 6:10–15', paragraphs: [
-        'Бог обещал Аврааму, Исааку и Иакову землю для их потомков. Позже израильтяне стали рабами в Египте. Сами освободиться они не могли. Бог вывел их из рабства и вёл через пустыню.',
-        'Перед входом в землю Моисей рассказал о дарах: городах, которых они не строили, домах, полных добра, колодцах, которых не копали, виноградниках и маслинах, которых не сажали. У них будет достаточно еды.',
-        'Моисей предупреждал: берегитесь, когда всё хорошо, а не только в беде! В сытости и уюте легко забыть Освободителя, не слушаться Его и пойти за другими богами. Народ всё ещё нуждался в Нём. «Берегись» значит будь внимателен. «Не обольстилось» — не поддалось обману. Прочитай стих и собери его по порядку.'
-      ], task: 'Нажимай на части памятного стиха по порядку. Потом проверь.', hint: 'Начни со слов «тогда берегись». Можно смотреть на стих выше.', truth: 'Бог освободил Свой народ ещё до того, как дал ему землю. Помни не только дары, но и Того, Кто даёт.', options: [], answer: -1 },
-      { title: 'Три главные опасности, когда всё хорошо', reference: 'Второзаконие 6:12–15', paragraphs: [
-        'Забыть Бога: радоваться дарам и жить, будто Он мне не нужен. Это не плохая память. Как Мишутка за игрой, я не замечаю Того, Кто даёт. Мой ответ: Помни Его. Остановись и поблагодари.',
-        'Отвергнуть Божью власть: знать Божий путь, но считать свой важнее. Мишутка может солгать, что не ломал горку Рози. Мой ответ: Слушай Его. Скажи правду, попроси прощения и помоги починить.',
-        'Заменить Бога Его дарами: сделать Его подарок важнее Него Самого. Израиль не должен идти за другими богами. Господь по праву зовёт народ принадлежать только Ему. Мой ответ: Ставь Его на первое место.',
-        'Игрушка не враг. Но если победа или одобрение друзей важнее Бога, хороший дар занял не своё место. Радуйся дарам; пусть твоим выбором руководит Бог, а не подарки.'
-      ], task: 'Мишутка играет. Мама просит: «Поможешь отнести еду соседу? Бог дал нам достаточно, чтобы поделиться». Что может сделать Мишутка?', hint: 'Радоваться игре хорошо. Опасно, когда она управляет твоим выбором.', truth: 'Можно радоваться дарам, не делая их своим царём.', options: ['Прервать игру и помочь маме поделиться едой.', 'Сделать вид, что не слышал, и играть дальше.', 'Решить, что все игрушки плохие.'], answer: 0 },
-      { title: 'Царь, который посмотрел на небо', reference: 'Даниила 4:25–34', paragraphs: [
-        'У царя Навуходоносора были дворец, власть и великий город. Казалось, всё прекрасно! Даниил призывал его оставить грех и помогать бедным. Но через год царь всё ещё хвастался своей силой и славой. В своём успехе он не признавал Божью власть и ставил себя первым.',
-        'Бог смирил его. Царство было отнято; царь больше не мог ясно мыслить и править. Он жил вдали от людей, среди животных, и ел траву. Это был серьёзный суд за гордость, не смешная игра.',
-        'Когда назначенное время закончилось, царь поднял глаза к небу. Разум вернулся. Царь прославил живого Бога, Который царствует вечно. Царство было возвращено ему. Теперь он чтил Бога, а не приписывал всё себе.',
-        'Гордость царя показывает опасности успеха: забыть Бога, отвергнуть Его власть и полюбить власть больше Него. Смирение — это признать: даже в лучшие дни мы нуждаемся в Боге. Радуйся успеху, но помни Его, слушай Его и ставь Его на первое место.'
-      ], task: 'Перескажи историю царя. Нажми на три события по порядку и проверь.', hint: 'Сначала царь хвастался. Потом Бог смирил его. В конце царь славил Бога и получил царство обратно.', truth: 'Бог правит даже над самым сильным царём. Можно отвернуться от гордости и прославить Его.', options: [], answer: -1 },
-      { title: 'Заметь опасность. Выбери свой ответ.', reference: 'Учимся применять урок', paragraphs: [
-        'У Мишутки радостный день: гараж удался, друзья хвалят. Он думает: «Бог мне не нужен». Какая это опасность? Забыть Бога. Можно вспомнить Его и поблагодарить за умения и помощь Рози.',
-        'Он знает, что Бог учит говорить правду, но хочет всю похвалу себе. Какая это опасность? Отвергнуть Божью власть. Можно послушать Его: «Спасибо! Рози помогала мне строить».',
-        'Потом победа становится так важна, что он никому не хочет помогать. Какая это опасность? Заменить Бога Его дарами. Можно поставить Бога первым, прервать игру и принять другого. Игра хороша, но она не должна им управлять.'
-      ], task: 'Мишутка думает: «Бог мне не нужен. Не буду Его слушать. Победа важнее всего». Какой ответ называет все три опасности и верный путь?', hint: 'Соедини опасность и ответ: забыть — помнить; отвергнуть — слушать; заменить — поставить Бога первым.', truth: 'Забыть Бога → Помни Его. Отвергнуть Божью власть → Слушай Его. Заменить Бога Его дарами → Ставь Его на первое место.', options: ['Дары плохие: больше ничему хорошему не радуйся.', 'Если всё получается, Божья помощь больше не нужна.', 'Забыть Бога, отвергнуть Его власть, заменить Его дарами. Помни Его, слушай Его, ставь Его на первое место.'], answer: 2 },
-      { title: 'Иисус дороже жизни!', reference: 'Кратко о Евангелии: 1 Коринфянам 15:3–4; Ефесянам 2:8–10', paragraphs: [
-        'Все мы ставили себя на первое место. Нам нужно не просто стать вежливее, а получить прощение. Иисус, Божий Сын, жил без греха, умер за наши грехи и воскрес. Он даёт прощение и вечную жизнь тем, кто доверяет Ему.',
-        'Можно отвернуться от греха и довериться Иисусу. Прощение нельзя купить словами благодарности или хорошим поведением. Благодарность вырастает из Его благодати, а не зарабатывает её.',
-        'Жизнь — добрый Божий дар, а Иисус дороже всего. Обратись к Нему за прощением и помощью. Помни Его, слушай Его и ставь Его на первое место — даже когда всё хорошо.'
-      ], task: 'Можно ли купить прощение благодарностью или добрыми делами?', hint: 'Иисус спасает по благодати. Благодарность — наш ответ, не плата.', truth: 'Мы отворачиваемся от греха и доверяем Иисусу. Спасает Его благодать, а не наша благодарность.', options: ['Да, если сказать спасибо много раз.', 'Нет. Прощение — Божий дар через Иисуса.', 'Да, если выполнить все задания.'], answer: 1 }
+    "planReply": "You can say or draw your own response, too. You do not have to share it aloud.",
+    "prayer": "Father, thank You for loving us and for sending Jesus. Forgive us when we forget You or refuse to listen. Help us enjoy what You give us, share with others, and love You most. Amen.",
+    "home": "At dinner or bedtime, read Deuteronomy 6:12 together. What can you thank God for today? Is there something He wants you to do tomorrow?",
+    "again": "Explore again",
+    "nextLesson": "Discover more about grace",
+    "session": "Read or play together, ages 6–11. Your place lasts for this visit; you can begin again anytime.",
+    "hunt": "Find six things that do not belong in this harvest long ago.",
+    "scenes": [
+      {
+        "title": "Michael’s new car",
+        "reference": "A story about Michael",
+        "paragraphs": [
+          "Grandma gives Michael a little red toy car. He starts racing it across the table. He’s so busy playing that he doesn’t look up.",
+          "“Michael, did you say thank you to Grandma?” Rosie asks.\nHe stops the car. “Oh! Thanks, Grandma. I love it!”\nThen he turns to Rosie. “Want a turn?”",
+          "Michael can enjoy his car and still stop to thank Grandma. Sometimes we get so busy enjoying good things that we forget God, too. Moses warned God’s people about that just before they moved into a new home."
+        ],
+        "task": "What could Michael do next?",
+        "hint": "Grandma gave him something he loves. How could he show her he’s thankful?",
+        "truth": "Michael can thank Grandma, share with Rosie, and still have fun with his car.",
+        "options": [
+          "Keep racing without looking up.",
+          "Thank Grandma and let Rosie have a turn.",
+          "Ask Grandma why she didn’t bring two cars."
+        ],
+        "answer": 1
+      },
+      {
+        "title": "When life gets easier",
+        "reference": "Deuteronomy 6:10–15",
+        "paragraphs": [
+          "God’s people had been slaves in Egypt. They couldn’t free themselves, but God brought them out and cared for them in the wilderness.",
+          "Now they were about to enter the land God had promised to Abraham, Isaac, and Jacob. Moses told them about the homes, wells, and fruit trees waiting there. They would have plenty to eat.",
+          "But Moses also warned them: when you have all these good things, don’t forget God. They would still need Him, even when life was easier. They needed to keep listening to Him instead of following other gods.\nRead His warning below. “Take care” means “be careful.”"
+        ],
+        "task": "Tap the phrases in the order of the memory verse. Then check.",
+        "hint": "Begin with “then take care”. Read the verse above whenever you need help.",
+        "truth": "God had rescued His people. A full house and plenty of food didn’t mean they no longer needed Him.",
+        "options": [],
+        "answer": -1
+      },
+      {
+        "title": "Three main dangers when life is good",
+        "reference": "Deuteronomy 6:12–15",
+        "paragraphs": [
+          "Forget God\nWe can get so busy playing and having fun that we stop thinking about God. We act as if we don’t need Him. Remember Him: talk to Him and thank Him for His help.",
+          "Reject God’s authority\nThis means knowing what God says but deciding not to listen. If Michael breaks Rosie’s ramp, he might lie to stay out of trouble. Listen to Him: tell the truth, say you’re sorry, and help fix it.",
+          "Replace God with His gifts\nA game, a toy, or being popular can start to matter more to us than God. Moses warned Israel not to follow other gods. Put Him first: don’t let something you love pull you away from Him.",
+          "God gives us good things to enjoy. The trouble starts when we want those things more than we want to obey Him."
+        ],
+        "task": "Mom asks Michael to help take some food to a neighbor. He wants to keep playing. What should he do?",
+        "hint": "He can play again later. Someone needs his help now.",
+        "truth": "Enjoy your game, but be willing to stop when it’s time to help.",
+        "options": [
+          "Pause the game and help Mom.",
+          "Pretend he didn’t hear her.",
+          "Say, “After one more race,” every time she asks."
+        ],
+        "answer": 0
+      },
+      {
+        "title": "The king who looked up",
+        "reference": "Daniel 4:28–37",
+        "paragraphs": [
+          "King Nebuchadnezzar had a palace and ruled a great city. Daniel had warned him to stop sinning and show mercy to the poor. But a year later, the king was still boasting about his own power and greatness.",
+          "God took away his kingdom. The king could no longer think clearly or rule. He lived away from people and ate grass like an animal. God was humbling him because of his pride.",
+          "Later, the king looked up to heaven, and his understanding returned. He praised God and recognized that God rules forever. He was given his kingdom back, but now he knew he wasn’t the greatest ruler after all.",
+          "It’s easy to think we don’t need anyone when everything is going our way. The king had to learn that he still needed God. When you do something well, enjoy it! Thank God for helping you, and thank the people who helped, too."
+        ],
+        "task": "What happened to the king? Put these three events in order.",
+        "hint": "First he boasted. Then God humbled him. At the end he praised God and was restored.",
+        "truth": "Even a powerful king needs God. Doing well doesn’t make us better than everyone else.",
+        "options": [],
+        "answer": -1
+      },
+      {
+        "title": "What would you do?",
+        "reference": "Practice the lesson",
+        "paragraphs": [
+          "Michael and Rosie build a garage for the car. Their friends love it. Michael feels proud of their work, but he’s starting to think he can do everything on his own. He needs to remember how God has helped him.",
+          "“Did you build all that?” someone asks.\nMichael wants to take all the credit. But he knows he should tell the truth.\n“Rosie helped me,” he says. “She made the ramp!”",
+          "Later, a younger child wants to join the game. Michael really wants to win. Will he leave the child out, or make room? He can enjoy racing and still choose to be kind."
+        ],
+        "task": "Michael is forgetting God, refusing to listen, and making winning more important than God. What would help him change?",
+        "hint": "Think about all three: remember God, listen to what He says, and put Him first.",
+        "truth": "Forget God → Remember Him. Reject God’s authority → Listen to Him. Replace God with His gifts → Put Him first.",
+        "options": [
+          "Stop enjoying toys because gifts are the problem.",
+          "Try harder to win so he won’t need help.",
+          "Remember God, listen to Him, and put Him first. Thank Him, tell the truth, and let someone else join in."
+        ],
+        "answer": 2
+      },
+      {
+        "title": "Jesus Is Better Than Life!",
+        "reference": "Gospel summary: 1 Corinthians 15:3–4; Ephesians 2:8–10",
+        "paragraphs": [
+          "We’ve all ignored God and done things our own way. We need His forgiveness. Jesus, God’s Son, never sinned. He died for our sins and rose again. He gives forgiveness and eternal life to those who trust Him.",
+          "We can tell Jesus we’re sorry and turn to Him. We don’t have to earn His forgiveness by being good enough or saying thank you a certain number of times. He saves us by grace: His undeserved kindness.",
+          "We thank God because He loves us, not to make Him love us. When you’ve done something wrong, ask Him to forgive you and help you change. You still need Him on your happiest days, too."
+        ],
+        "task": "Do we have to earn Jesus’ forgiveness?",
+        "hint": "Jesus saves us because of His grace, not because we’ve done enough good things.",
+        "truth": "Jesus forgives us by grace when we turn to Him and trust Him. We obey Him because He loves us, not to earn His love.",
+        "options": [
+          "Yes, by saying thank you enough times.",
+          "No. Forgiveness is God’s gift through Jesus.",
+          "Yes, by getting every answer right."
+        ],
+        "answer": 1
+      }
     ],
-    verseTiles: ['тогда берегись,', 'чтобы [не обольстилось сердце твое и] не забыл ты Господа,', 'Который вывел тебя из земли Египетской,', 'из дома рабства.'],
-    kingTiles: ['Царь хвастался собой.', 'Бог смирил его и отнял власть.', 'Царь славил Бога; разум и царство были возвращены ему.'],
-    adultNote: 'Обещание земли было дано Израилю. Оно не обещает богатство каждому ребёнку. Бог верен и в трудные дни. Особый суд над царём не означает, что болезнь или инвалидность доказывают личный грех. Божья ревность — святое требование верности завету, не зависть. Не сравнивайте достаток и не требуйте публичных признаний. Можно показывать, рисовать, говорить или пропустить ответ. Иллюстрация жатвы — выдуманная сцена для задания, не историческая реконструкция. Английские цитаты — ESV, русские — Синодальный перевод. Нумерация стихов Даниила в этих переводах отличается.',
+    "verseTiles": [
+      "then take care",
+      "lest you forget the LORD,",
+      "who brought you out of the land of Egypt,",
+      "out of the house of slavery."
+    ],
+    "kingTiles": [
+      "The king boasted about himself.",
+      "God humbled him and took his power away.",
+      "He praised God; his understanding and kingdom were restored."
+    ],
+    "adultNote": "The land promise was for Israel; it does not promise every child wealth. God is faithful in hard days too. This particular judgment in Daniel does not mean illness or disability proves personal sin. God’s jealousy is His holy claim to covenant faithfulness, not envy. Do not compare possessions or require public confessions. Children may point, draw, speak, or pass. The harvest art is an imaginative activity scene, not a historical reconstruction. English Scripture: ESV; Russian: Synodal. Daniel’s verse numbers differ between these translations."
   },
+  "ru": {
+    "title": "Когда всё хорошо",
+    "eyebrow": "ЖАТВА • ЮНЫЕ УЧЕНИКИ",
+    "intro": "Бывало у тебя так: подарок настолько понравился, что ты даже забыл сказать спасибо? С Мишуткой так и случилось. Его новая машинка поможет нам подумать, как не забывать Бога, когда всё хорошо.",
+    "alt": "Мишутка и Рози среди хлеба, фруктов и колосьев на сказочной картинке о жатве со спрятанными современными предметами.",
+    "all": "Все уроки",
+    "start": "Начать урок",
+    "play": "Попробовать задание",
+    "next": "Дальше",
+    "back": "Прочитать ещё раз",
+    "check": "Проверить порядок",
+    "clear": "Собрать заново",
+    "progress": "Выполнено заданий",
+    "success": "Верно!",
+    "retry": "Попробуй ещё раз.",
+    "hint": "Нужна подсказка?",
+    "guide": "Родителям и учителям",
+    "source": "Прочитать отрывок Библии",
+    "verseLabel": "Памятный стих",
+    "retelling": "Пересказ Библии, не цитата",
+    "done": "Иисус дороже жизни!",
+    "doneText": "Мишутке по-прежнему нравится машинка. Теперь он благодарит бабушку и даёт Рози поиграть. Мы тоже можем радоваться тому, что Бог нам даёт, и любить Его больше всех подарков. Иисус даёт нам то, чего не дадут ни игрушки, ни успехи: прощение и вечную жизнь.",
+    "planTitle": "Что ты можешь сделать сегодня?",
+    "plans": [
+      "Забыть Бога? Помни Его: остановись и поблагодари за один дар.",
+      "Отвергнуть Божью власть? Слушай Его: скажи правду и попроси прощения.",
+      "Заменить Бога Его дарами? Ставь Его на первое место: прерви игру, чтобы помочь другому."
+    ],
+    "planReply": "Можно придумать свой ответ, сказать его или нарисовать. Не обязательно отвечать вслух.",
+    "prayer": "Отец, спасибо, что Ты любишь нас и послал Иисуса. Прости нас, когда мы забываем Тебя или не хотим слушаться. Помоги радоваться Твоим дарам, делиться с другими и любить Тебя больше всего. Аминь.",
+    "home": "За ужином или перед сном прочитайте вместе Второзаконие 6:12. За что ты хочешь поблагодарить Бога сегодня? В чём ты можешь послушаться Его завтра?",
+    "again": "Пройти ещё раз",
+    "nextLesson": "Узнать больше о благодати",
+    "session": "Читайте и играйте вместе. Для детей 6–11 лет. Твой шаг сохраняется, пока открыта страница; можно начать заново.",
+    "hunt": "Найди шесть предметов, которым не место на этой картинке жатвы давних времён.",
+    "scenes": [
+      {
+        "title": "Новая машинка Мишутки",
+        "reference": "История про Мишутку",
+        "paragraphs": [
+          "Бабушка дарит Мишутке маленькую красную машинку. Он сразу начинает катать её по столу. Так увлёкся, что даже не поднимает глаз.",
+          "«Мишутка, а ты бабушке спасибо сказал?» — спрашивает Рози.\nОн останавливает машинку: «Ой! Спасибо, бабушка! Она мне очень нравится!»\nПотом поворачивается к Рози: «Хочешь поиграть?»",
+          "Можно радоваться машинке и не забыть поблагодарить бабушку. Бывает, мы так увлекаемся хорошими вещами, что забываем и о Боге. Моисей предупреждал об этом Божий народ перед тем, как они пришли в новую землю."
+        ],
+        "task": "Что Мишутке стоит сделать?",
+        "hint": "Бабушка подарила ему то, чему он рад. Как показать ей, что он благодарен?",
+        "truth": "Мишутка может поблагодарить бабушку, дать Рози поиграть и дальше радоваться машинке.",
+        "options": [
+          "Продолжать гонки и не поднимать глаз.",
+          "Поблагодарить бабушку и дать Рози поиграть.",
+          "Спросить бабушку, почему она не принесла две машинки."
+        ],
+        "answer": 1
+      },
+      {
+        "title": "Когда жить становится легче",
+        "reference": "Второзаконие 6:10–15",
+        "paragraphs": [
+          "Божий народ был в рабстве в Египте. Люди не могли освободиться сами, но Бог вывел их и заботился о них в пустыне.",
+          "Теперь они должны были войти в землю, которую Бог обещал Аврааму, Исааку и Иакову. Моисей рассказал о домах, колодцах и плодовых деревьях, которые их ждали. Еды будет вдоволь.",
+          "Но Моисей предупредил: когда у вас всё это будет, не забудьте Бога. Даже когда жить станет легче, Он всё равно будет им нужен. Им нужно слушаться Его, а не идти за другими богами.\nПрочитай предупреждение ниже. «Берегись» значит «будь осторожен». «Не обольстилось» — «не поддалось обману»."
+        ],
+        "task": "Нажимай на части памятного стиха по порядку. Потом проверь.",
+        "hint": "Начни со слов «тогда берегись». Можно смотреть на стих выше.",
+        "truth": "Бог освободил Свой народ. Даже с полным домом и вкусной едой люди по-прежнему нуждались в Нём.",
+        "options": [],
+        "answer": -1
+      },
+      {
+        "title": "Три главные опасности, когда всё хорошо",
+        "reference": "Второзаконие 6:12–15",
+        "paragraphs": [
+          "Забыть Бога\nМожно так увлечься играми и весельем, что перестать думать о Боге. Мы живём, будто Он нам не нужен. Помни Его: разговаривай с Ним и благодари за помощь.",
+          "Отвергнуть Божью власть\nЭто значит знать, что Бог говорит, но не хотеть слушаться. Если Мишутка сломает горку Рози, ему захочется соврать, чтобы его не ругали. Слушай Его: скажи правду, попроси прощения и помоги починить.",
+          "Заменить Бога Его дарами\nИгра, игрушка или желание понравиться друзьям могут стать важнее Бога. Моисей предупреждал Израиль не идти за другими богами. Ставь Его на первое место: не позволяй любимым вещам увести тебя от Него.",
+          "Бог даёт нам хорошее, чтобы мы радовались. Беда начинается, когда нам хочется получить своё больше, чем послушаться Его."
+        ],
+        "task": "Мама просит Мишутку помочь отнести еду соседу. А ему хочется играть дальше. Что ему сделать?",
+        "hint": "Поиграть можно и потом. А помощь нужна сейчас.",
+        "truth": "Радуйся игре, но будь готов остановиться, когда пора помочь.",
+        "options": [
+          "Прервать игру и помочь маме.",
+          "Сделать вид, что не услышал.",
+          "Каждый раз отвечать: «Ещё один заезд!»"
+        ],
+        "answer": 0
+      },
+      {
+        "title": "Царь, который посмотрел на небо",
+        "reference": "Даниила 4:25–34",
+        "paragraphs": [
+          "У царя Навуходоносора был дворец, и он правил великим городом. Даниил предупреждал его: нужно оставить грех и помогать бедным. Но через год царь всё ещё хвастался своей силой и величием.",
+          "Бог отнял у него царство. Царь больше не мог ясно мыслить и править. Он жил вдали от людей и ел траву, как животное. Так Бог смирил его за гордость.",
+          "Позже царь поднял глаза к небу, и разум вернулся к нему. Он прославил Бога и признал, что Бог царствует вечно. Ему вернули царство, но теперь он знал: не он самый главный.",
+          "Когда у нас всё получается, легко подумать, что нам никто не нужен. Царю пришлось понять: ему по-прежнему нужен Бог. У тебя что-то получилось? Радуйся! Поблагодари Бога и людей, которые тебе помогли."
+        ],
+        "task": "Что случилось с царём? Расставь три события по порядку.",
+        "hint": "Сначала царь хвастался. Потом Бог смирил его. В конце царь славил Бога и получил царство обратно.",
+        "truth": "Даже сильному царю нужен Бог. Наши успехи не делают нас лучше всех остальных.",
+        "options": [],
+        "answer": -1
+      },
+      {
+        "title": "А как поступишь ты?",
+        "reference": "Учимся применять урок",
+        "paragraphs": [
+          "Мишутка и Рози строят гараж для машинки. Друзьям нравится! Мишутка радуется, но уже начинает думать, что всё может сам. Ему стоит вспомнить, как Бог помогает ему.",
+          "«Ты сам всё это построил?» — спрашивает кто-то.\nМишутке хочется, чтобы хвалили только его. Но он знает, что нужно сказать правду.\n«Рози мне помогала, — отвечает он. — Это она сделала горку!»",
+          "Позже в игру просится малыш. Мишутке очень хочется победить. Он прогонит малыша или найдёт ему место? Можно радоваться гонкам и при этом быть добрым."
+        ],
+        "task": "Мишутка забывает Бога, не хочет слушаться и думает о победе больше, чем о Нём. Что поможет ему измениться?",
+        "hint": "Вспомни все три шага: помнить Бога, слушать Его и ставить Его на первое место.",
+        "truth": "Забыть Бога → Помни Его. Отвергнуть Божью власть → Слушай Его. Заменить Бога Его дарами → Ставь Его на первое место.",
+        "options": [
+          "Перестать радоваться игрушкам: во всём виноваты подарки.",
+          "Ещё больше стараться победить, чтобы обойтись без помощи.",
+          "Помнить Бога, слушать Его и ставить Его первым. Поблагодарить, сказать правду и принять другого в игру."
+        ],
+        "answer": 2
+      },
+      {
+        "title": "Иисус дороже жизни!",
+        "reference": "Кратко о Евангелии: 1 Коринфянам 15:3–4; Ефесянам 2:8–10",
+        "paragraphs": [
+          "Все мы не слушались Бога и поступали по-своему. Нам нужно Его прощение. Иисус, Божий Сын, никогда не грешил. Он умер за наши грехи и воскрес. Он даёт прощение и вечную жизнь тем, кто доверяет Ему.",
+          "Мы можем попросить у Иисуса прощения и обратиться к Нему. Не нужно заслуживать прощение хорошим поведением или повторять «спасибо» много раз. Он спасает нас по благодати — по Своей незаслуженной доброте.",
+          "Мы благодарим Бога, потому что Он любит нас, а не чтобы Он нас полюбил. Если поступил плохо, попроси у Него прощения и помощи измениться. Даже в самые радостные дни Он по-прежнему тебе нужен."
+        ],
+        "task": "Нужно ли заслужить прощение Иисуса?",
+        "hint": "Иисус спасает по благодати, а не за то, что мы сделали достаточно добрых дел.",
+        "truth": "Иисус прощает по благодати тех, кто обращается к Нему и доверяет Ему. Мы слушаемся Его в ответ на любовь, а не чтобы её заслужить.",
+        "options": [
+          "Да, нужно много раз сказать спасибо.",
+          "Нет. Прощение — Божий дар через Иисуса.",
+          "Да, нужно правильно ответить на все вопросы."
+        ],
+        "answer": 1
+      }
+    ],
+    "verseTiles": [
+      "тогда берегись,",
+      "чтобы [не обольстилось сердце твое и] не забыл ты Господа,",
+      "Который вывел тебя из земли Египетской,",
+      "из дома рабства."
+    ],
+    "kingTiles": [
+      "Царь хвастался собой.",
+      "Бог смирил его и отнял власть.",
+      "Царь славил Бога; разум и царство были возвращены ему."
+    ],
+    "adultNote": "Обещание земли было дано Израилю. Оно не обещает богатство каждому ребёнку. Бог верен и в трудные дни. Особый суд над царём не означает, что болезнь или инвалидность доказывают личный грех. Божья ревность — святое требование верности завету, не зависть. Не сравнивайте достаток и не требуйте публичных признаний. Можно показывать, рисовать, говорить или пропустить ответ. Иллюстрация жатвы — выдуманная сцена для задания, не историческая реконструкция. Английские цитаты — ESV, русские — Синодальный перевод. Нумерация стихов Даниила в этих переводах отличается."
+  }
 }

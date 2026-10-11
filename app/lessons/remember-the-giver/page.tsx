@@ -65,7 +65,11 @@ export default function RememberTheGiverPage() {
         </> : <>
           <p className={styles.reference}>{s.reference}</p>
           {phase === 'learn' ? <>
-            {s.paragraphs.map((text, i) => <p key={i}>{text}</p>)}
+            <div className={styles.reading}>{s.paragraphs.map((text, i) => <div key={i} className={scene === 2 && i < 3 ? styles.dangerBlock : styles.readingBlock}>
+              {text.split('\n').map((line, j) => scene === 2 && i < 3 && j === 0
+                ? <h2 key={j}>{line}</h2>
+                : <p key={j} className={/^[“«]/.test(line) ? styles.dialogue : undefined}>{line}</p>)}
+            </div>)}</div>
             {scene === 1 && verseCard}
             <button className={styles.primary} data-testid="play" onClick={() => transition(scene, 'do')}>{t.play} →</button>
           </> : phase === 'result' ? <>

@@ -17,11 +17,11 @@ export const teacherGuide = {
           },
           {
             "heading": "Say: Meet Michael",
-            "text": "Here is a made-up story about Michael, our curly brown-haired friend in green. His grandmother gives him a little red toy car. The open gift box sits on the floor. He rolls the car across the table and makes racing sounds. Grandma sits nearby, but Michael hardly looks up. Rosie, wearing purple, sets her closed Bible on the table. She asks, ‘You love the present. Have you remembered the person who gave it?’ Michael stops. ‘Oh! Grandma, thank you! Rosie, would you like a turn?’ He holds out the car."
+            "text": "Tell this made-up story: ‘Grandma gives Michael a little red toy car. He takes it out of the box and races it across the table. Vroom! Grandma is sitting right beside him, but he's too busy playing to look up. Rosie asks, “Michael, did you say thank you to Grandma?” Michael stops and looks at Grandma. “Oh! Thanks, Grandma. I love it!” Then he holds the car out to Rosie. “Want a turn?”’"
           },
           {
             "heading": "Ask and discover",
-            "text": "Hold up the car. Ask: ‘Was enjoying the car wrong?’ Sample answer: ‘No. But he forgot Grandma.’ Say: ‘A gift can make us smile. It can also fill our thoughts so much that we overlook the giver. Today we will hear God's warning to people about to receive wonderful gifts. Can they enjoy the gifts and remember him too?’ Invite each child to name one good thing they enjoyed today. Keep those gifts in mind as we open the Bible."
+            "text": "Hold up the car. Ask: ‘Was it wrong for Michael to enjoy his new car?’ Sample answer: ‘No. He just forgot to thank Grandma.’ Say: ‘Grandma wanted him to enjoy it! But he got so busy playing that he forgot to say thank you. We can forget to thank God, too, especially when everything is going well. In today's Bible passage, God's people are about to have homes and plenty of food. Listen to what Moses tells them.’ Invite each child to name one good thing they enjoyed today, then open the Bible."
           }
         ]
       },
@@ -31,11 +31,11 @@ export const teacherGuide = {
         "blocks": [
           {
             "heading": "Say: A promise kept",
-            "text": "Bible retelling: Long before Michael's story, God made a promise to Abraham. He repeated it to Isaac and Jacob: their descendants would receive a land. Years passed, but God did not forget. The Israelites became slaves in Egypt. They could not free themselves. God rescued them and led them through the wilderness. Now Moses spoke to them before they entered the promised land."
+            "text": "Bible retelling: God promised Abraham a land for his family and the generations after them. He made that same promise to Isaac and Jacob. Many years passed, but God did not forget. The Israelites were slaves in Egypt, and they could not free themselves. God rescued them and led them through the wilderness. Now they were about to enter the land he had promised. Moses had something important to tell them."
           },
           {
             "heading": "Look at the gifts",
-            "text": "Continue the retelling: God would give them large towns they had not built, houses already full of good things, wells they had not dug, and vineyards and olive trees they had not planted. They would have enough to eat. What wonderful gifts! Yet Moses warned them to be especially careful then. Comfortable days could tempt them to forget their Rescuer and follow other gods."
+            "text": "Continue the retelling: God would give them large towns they hadn't built and houses already full of good things. There would be wells they hadn't dug, vineyards and olive trees they hadn't planted, and enough food to eat. They had so much to look forward to. But Moses warned them: when they had all these things, they must not forget the God who rescued them or start following other gods."
           },
           {
             "heading": "Read: Our memory verse",
@@ -43,7 +43,7 @@ export const teacherGuide = {
           },
           {
             "heading": "Ask: Why the warning?",
-            "text": "‘Had Israel rescued itself?’ Answer: ‘No, God rescued them.’ ‘Why remember God when life feels easy?’ Answer: ‘The gifts did not make them stop needing him.’ Say: ‘Like Michael with his car, they could enjoy a gift and overlook the giver. These land promises were for Israel; they do not promise every child a rich house. God is faithful in hard days too. Remembering him means more than knowing his name. It means trusting him as Lord. Let's discover what can pull our hearts away.’"
+            "text": "Ask: ‘Who freed the Israelites from slavery?’ Answer: ‘God did.’ ‘Would they still need God once they had homes and enough food?’ Answer: ‘Yes.’ Say: ‘Michael got so busy with his car that he forgot to thank Grandma. God's people could get busy enjoying their new homes and forget him, too. Remembering God means trusting him and obeying him as Lord, not just knowing his name.’ Teacher: God promised this land to Israel. This passage does not promise every child a wealthy home. God is faithful when life is hard, too."
           }
         ]
       },
@@ -53,19 +53,19 @@ export const teacherGuide = {
         "blocks": [
           {
             "heading": "Forget God → Remember Him",
-            "text": "Say: ‘Michael races his car all afternoon. He forgets to thank Grandma. We can also use God's gifts without noticing his goodness. Forgetting here is not a spelling mistake or a memory problem. It is living as though God does not matter.’ Ask: ‘What could help Michael remember?’ Sample answer: ‘Pause and thank the giver.’ Touch your head as a remembering signal."
+            "text": "Say: ‘Before Rosie spoke to Michael, he was so busy playing that he forgot to thank Grandma. We can enjoy the things God gives us and never thank him or think about him. Moses isn't warning us about having trouble remembering a name or a verse. He's warning us not to live as if God doesn't matter.’ Ask: ‘What did Michael do when Rosie reminded him?’ Sample answer: ‘He stopped and thanked Grandma.’ Ask: ‘What could you thank God for today?’"
           },
           {
             "heading": "Reject God's authority → Listen to Him",
-            "text": "‘Now imagine Michael knows it is time to stop playing and help, but refuses. Or he breaks Rosie's ramp and says he didn't. He remembers what is right but chooses his own way.’ Bible retelling, Deuteronomy 6:13: Moses called God's people to honor and serve the Lord. Say: ‘God deserves our whole life: hearts that respect him, deeds that help, and words that tell the truth.’ Ask: ‘How could Michael put this right?’ Answer: ‘Tell the truth, say sorry, and help repair the ramp.’"
+            "text": "Say: ‘Imagine Michael knows it's time to stop playing and help, but he refuses. Or he breaks the ramp Rosie built for the cars and says he didn't. He knows what's right. He just doesn't want to do it.’ Bible retelling, Deuteronomy 6:13: Moses told God's people to honor and serve the Lord. Say: ‘God has the right to tell us how to live. We can't say we respect him and then refuse to obey him. That includes what we do and what we say.’ Ask: ‘What should Michael do about the broken ramp?’ Sample answer: ‘Tell the truth, say sorry, and help fix it.’"
           },
           {
             "heading": "Replace God with His gifts → Put Him first",
-            "text": "Bible retelling, Deuteronomy 6:14–15: Israel must not follow other gods. The Lord is holy and jealous for his people's faithfulness. Say: ‘That is not envy, like wanting someone else's toy. God keeps his covenant—his faithful relationship with his people—and rightly calls them to belong to him alone. Turning from him is serious and brings judgment.’"
+            "text": "Bible retelling, Deuteronomy 6:14–15: Moses warned Israel not to follow other gods. The Lord is holy and jealous for his people's faithfulness. Say: ‘Jealous here doesn't mean wanting someone else's toy. God had made a covenant with his people, a binding promise. He was faithful to them, and they belonged to him. He rightly required them to worship only him. Worshiping other gods is a serious sin. God judges it.’"
           },
           {
             "heading": "Ask: Is the car the problem?",
-            "text": "‘No! Toys are good things to enjoy. But if Michael decides winning matters more than God's way, winning is taking first place. Who will guide his choices?’ Invite: ‘God, not winning.’ Say: ‘These dangers overlap. We can turn back, ask for help, and remember the Giver. A powerful king needed to learn that too.’"
+            "text": "Ask: ‘Is it wrong to enjoy a toy or want to win a race?’ Sample answer: ‘No.’ Say: ‘But suppose Michael is willing to lie or hurt someone just to win. Then he cares more about winning than obeying God. We can treat even good things as more important than God. That's how we replace God with his gifts. These three dangers often happen together. We need to turn back to God and ask for his help. Listen to what happened to a king who thought he didn't need God.’"
           }
         ]
       },
@@ -83,11 +83,11 @@ export const teacherGuide = {
           },
           {
             "heading": "Ask: What changed?",
-            "text": "‘The king had a palace, power, and success. What danger did his pride reveal?’ Answer: ‘He acted as if he did not need God, ignored God's authority, and treasured his own greatness.’ ‘Was he the highest ruler?’ ‘No. God was.’ ‘What changed?’ ‘He praised God.’ Say: ‘Even on our best days, we need God. Remember Him. Listen to Him. Put Him first. Success is not evil, but it must not take God's place.’"
+            "text": "Ask: ‘The king had a palace and a powerful kingdom. Who did he give the credit to?’ Answer: ‘Himself.’ ‘Was anyone greater than the king?’ Answer: ‘Yes, God.’ ‘What did the king do when his understanding returned?’ Answer: ‘He praised God.’ Say: ‘He had acted as if he didn't need God. He ignored God's authority and cared most about his own greatness. Having success wasn't the sin. His pride was. We still need God when things are going well, and we still need to obey him.’"
           },
           {
             "heading": "Good news when we fail",
-            "text": "Say: ‘We have all put ourselves first. We need more than better manners; we need forgiveness. Jesus, God's Son, lived without sin, died for our sins, and rose again. We can turn from sin and trust him. We cannot buy his forgiveness with thank-you words or good behavior. Gratitude grows because of his grace; it does not earn it.’ This is a gospel summary, not a quotation (1 Corinthians 15:3–4; Ephesians 2:8–10). Teacher: This particular judgment does not mean illness or disability proves someone's personal sin."
+            "text": "Say: ‘We've all put ourselves first and disobeyed God. We need his forgiveness. Just learning to say thank you won't take away our sin. Jesus, God's Son, lived without sin, died for our sins, and rose again. We can turn from sin and trust him. He saves us by grace. That means his salvation is a gift we cannot earn. We thank him because he is kind to us, not to earn his forgiveness.’ This is a gospel summary, not a quotation (1 Corinthians 15:3–4; Ephesians 2:8–10). Teacher: This judgment on the king does not mean that illness or disability proves someone has committed a particular sin."
           }
         ]
       },
@@ -101,15 +101,15 @@ export const teacherGuide = {
           },
           {
             "heading": "Choose: Pause the game",
-            "text": "Say: ‘Michael is racing his car when his agreed playtime ends. He wants one more race. What can he do?’ Let partners suggest a response, then act it out. Sample: ‘I want to keep playing, but I'll stop and help now.’ Ask: ‘Is enjoying the game wrong?’ Answer: ‘No. Letting it rule our choices is the danger.’"
+            "text": "Say: ‘Michael agreed to help tidy up after playing. Now it's time, but he wants one more race. What could he say?’ Let partners suggest a response, then act it out. Sample: ‘Okay, I'll put the car away. What needs tidying?’ Ask: ‘Was it wrong to enjoy the race?’ Answer: ‘No. But wanting to play isn't a reason to break his promise.’"
           },
           {
             "heading": "Choose: Tell the truth",
-            "text": "Ask children to name the danger and response in each thought: ‘I do not need God’ → Forget God; Remember Him. ‘I know God's way but will ignore it’ → Reject God's authority; Listen to Him. ‘Winning matters more than God’ → Replace God with His gifts; Put Him first. Then practice: thank God for abilities, credit Rosie truthfully, and pause the game to help someone. Gifts are good; they must not rule us."
+            "text": "Read each thought and ask which danger it shows: ‘I don't need God’ — forgetting God. ‘I know what God says, but I won't do it’ — rejecting God's authority. ‘I'll do anything to win, even disobey God’ — replacing God with his gifts. Ask what the child could do instead. Then try this scene: Rosie helped Michael build a ramp. Someone says, ‘Michael, did you build that all by yourself?’ What should he say? Sample: ‘Rosie helped me!’ We can thank God for what we can do and be honest about the help we receive."
           },
           {
             "heading": "Choose: Welcome someone",
-            "text": "‘A newcomer asks to join. Michael's friends say to leave the newcomer out if Michael wants to stay in their group. What could he say?’ Sample: ‘Let's make room. You can help with the next ramp.’ Ask: ‘What matters more than their approval?’ Answer: ‘Following God's loving way.’ Never require children to name classmates."
+            "text": "Say: ‘A new child asks to play. Michael's friends say, “If you let him play, we're not playing with you.” What could Michael say?’ Sample: ‘He can play with us. Come on, let's build another ramp.’ Ask: ‘What matters more: pleasing his friends or doing what God says is right?’ Sample answer: ‘Doing what God says is right, even if his friends are upset.’ Keep the example made-up; don't ask children to name classmates."
           },
           {
             "heading": "Do: Put the king's story in order",
@@ -123,11 +123,11 @@ export const teacherGuide = {
         "blocks": [
           {
             "heading": "Say: Michael's next choice",
-            "text": "‘Michael still loves his red car. Now he sees Grandma, Rosie, and the newcomer too. He thanks Grandma, shares the car with Rosie, tells the truth about her help, and makes room for someone else. The car has not changed. His choices are changing. We can enjoy good gifts without asking them to be our king.’ Ask: ‘What is one gift you can enjoy while remembering God?’ Accept simple answers without comparing possessions."
+            "text": "Say: ‘Michael still loves his red car. He can enjoy playing and still thank Grandma, let Rosie have a turn, and invite someone else to join in. When Rosie helps him, he can say so. He doesn't have to get his own way every time to have fun. We can enjoy what God gives us and still obey him.’ Ask: ‘What's something you enjoy? How could you thank God for it or share it with someone?’ Accept simple answers without comparing possessions."
           },
           {
             "heading": "Do: One small response",
-            "text": "Invite children to name or draw a danger and a response: Forget God → Remember Him; Reject God's authority → Listen to Him; Replace God with His gifts → Put Him first. Choose one small action: thank God, tell the truth, or pause play to help. Let children pass. Repeat Deuteronomy 6:12. Say: ‘Jesus gives forgiveness and eternal life. We treasure Him above comfort and success. Life is still God's good gift. We turn to Jesus for help, not to earn His love.’"
+            "text": "Ask children to choose one of the three dangers: forgetting God, refusing to obey him, or treating his gifts as more important than he is. They can name it or draw an example. Ask: ‘What could you do differently today?’ Examples: thank God, tell the truth, or stop playing when it's time to help. Let children pass. Repeat Deuteronomy 6:12. Say: ‘Jesus gives us forgiveness and eternal life. Being comfortable or successful can't give us that. Jesus matters more than anything else we have. Our life is a good gift from God, and we can enjoy it. We ask Jesus to help us obey him. We don't have to earn his love.’"
           },
           {
             "heading": "Pray together",
@@ -135,7 +135,7 @@ export const teacherGuide = {
           },
           {
             "heading": "Take it home",
-            "text": "At a meal or bedtime, show your drawing to a trusted adult. Read Deuteronomy 6:12 together. Ask: ‘What gift did we notice today? How can we honor the Giver tomorrow?’ Thank a person who helped you, too."
+            "text": "At a meal or bedtime, show your drawing to an adult you trust. Read Deuteronomy 6:12 together. Ask each other: ‘What can we thank God for today? Is there something we need his help to do tomorrow?’ Thank someone who helped you, too."
           },
           {
             "heading": "Facilitator key and adaptations",
@@ -163,11 +163,11 @@ export const teacherGuide = {
           },
           {
             "heading": "Расскажите: знакомьтесь, Мишутка",
-            "text": "Вот выдуманная история про нашего друга Мишутку. У него кудрявые каштановые волосы и зелёная одежда. Бабушка подарила ему маленькую красную машинку. Открытая подарочная коробка стоит на полу. Он катает машинку по столу и гудит, как мотор. Бабушка сидит рядом, но Мишутка почти не поднимает глаз. Рози, в фиолетовом, кладёт закрытую Библию на стол и спрашивает: «Тебе нравится подарок. А ты помнишь, кто его подарил?» Мишутка останавливается: «Ой! Бабушка, спасибо! Рози, хочешь поиграть?» Он протягивает ей машинку."
+            "text": "Расскажите выдуманную историю: «Бабушка подарила Мишутке маленькую красную машинку. Он достал её из коробки и катает по столу. Вж-ж-ж! Бабушка сидит рядом, а он так увлёкся, что даже не поднимает глаз. Рози спрашивает: „Мишутка, а ты сказал бабушке спасибо?“ Мишутка останавливается и смотрит на бабушку: „Ой! Спасибо, бабушка! Мне очень нравится!“ Потом протягивает машинку Рози: „Хочешь поиграть?“»"
           },
           {
             "heading": "Спросите и обсудите",
-            "text": "Покажите машинку. «Разве радоваться машинке плохо?» Пример ответа: «Нет. Но он забыл про бабушку». Скажите: «Подарок радует нас. Но иногда он так занимает наши мысли, что мы не замечаем дарителя. Сегодня мы услышим Божье предупреждение людям, которые скоро получат прекрасные дары. Смогут ли они радоваться дарам и помнить Бога?» Пусть каждый назовёт что-нибудь хорошее, чему радовался сегодня. Вспомним об этом, когда откроем Библию."
+            "text": "Покажите машинку. Спросите: «Разве плохо, что Мишутке понравилась машинка?» Пример ответа: «Нет. Он просто забыл сказать бабушке спасибо». Скажите: «Бабушка и хотела его порадовать! Но он так увлёкся игрой, что забыл её поблагодарить. Мы тоже можем забывать благодарить Бога, особенно когда всё хорошо. Сегодня мы прочитаем о людях, у которых скоро будут дома и много еды. Послушаем, что им сказал Моисей». Пусть каждый назовёт что-нибудь хорошее, чему радовался сегодня. Затем откройте Библию."
           }
         ]
       },
@@ -177,11 +177,11 @@ export const teacherGuide = {
         "blocks": [
           {
             "heading": "Расскажите: Бог помнит обещание",
-            "text": "Пересказ Библии: Задолго до истории Мишутки Бог дал обещание Аврааму. Он повторил его Исааку и Иакову: их потомки получат землю. Проходили годы, но Бог не забывал. Израильтяне стали рабами в Египте. Сами освободиться они не могли. Бог вывел их из рабства и вёл через пустыню. Теперь, перед входом в обещанную землю, Моисей говорил с народом."
+            "text": "Пересказ Библии: Бог обещал Аврааму землю для его семьи, для их детей и потомков. Он повторил это обещание Исааку и Иакову. Прошло много лет, но Бог не забыл. Израильтяне были рабами в Египте и сами освободиться не могли. Бог вывел их из рабства и вёл через пустыню. Теперь они собирались войти в землю, которую Он обещал. Моисей хотел сказать им кое-что важное."
           },
           {
             "heading": "Посмотрите на дары",
-            "text": "Продолжите пересказ: Бог даст им большие города, которых они не строили, дома, уже полные добра, колодцы, которых они не копали, виноградники и маслины, которых не сажали. У них будет достаточно еды. Какие прекрасные дары! Но именно тогда Моисей велел им быть особенно внимательными. Когда живётся хорошо, легко забыть своего Освободителя и пойти за другими богами."
+            "text": "Продолжите пересказ: Бог даст им большие города, которые они не строили, и дома, где уже есть всё необходимое. Там будут колодцы, которые они не копали, виноградники и оливковые деревья, которые они не сажали. Еды будет вдоволь. Им было чему радоваться. Но Моисей предупредил: когда всё это у них появится, нельзя забывать Бога, Который их освободил, и поклоняться другим богам."
           },
           {
             "heading": "Прочитайте: памятный стих",
@@ -189,7 +189,7 @@ export const teacherGuide = {
           },
           {
             "heading": "Спросите: зачем предупреждение?",
-            "text": "«Израильтяне сами себя освободили?» Ответ: «Нет, их освободил Бог». «Зачем помнить Бога, когда всё хорошо?» Ответ: «Даже с дарами они всё равно нуждались в Нём». Скажите: «Как Мишутка с машинкой, они могли радоваться подарку и не замечать дарителя. Обещание этой земли было дано Израилю. Оно не означает, что у каждого ребёнка будет богатый дом. Бог верен и в трудные дни. Помнить Его — это не просто знать Его имя, а доверять Ему как Господу. Что может увести от Него наше сердце?»"
+            "text": "Спросите: «Кто освободил израильтян из рабства?» Ответ: «Бог». «А когда у них появятся дома и много еды, Бог им всё ещё будет нужен?» Ответ: «Да». Скажите: «Мишутка так увлёкся машинкой, что забыл поблагодарить бабушку. Божий народ тоже мог забыть Бога, когда обустраивался в новых домах. Помнить Бога — значит доверять Ему и слушаться Его как Господа, а не просто знать Его имя». Учителю: эту землю Бог обещал Израилю. Здесь нет обещания, что у каждого ребёнка будет богатый дом. Бог верен нам и в трудные дни."
           }
         ]
       },
@@ -199,19 +199,19 @@ export const teacherGuide = {
         "blocks": [
           {
             "heading": "Забыть Бога → Помни Его",
-            "text": "Скажите: «Мишутка весь день играет с машинкой и забывает поблагодарить бабушку. Мы тоже можем пользоваться Божьими дарами и не замечать Его доброты. Забыть здесь — не значит ошибиться в слове или плохо что-то запомнить. Это значит жить так, будто Бог не важен». Спросите: «Что поможет Мишутке вспомнить?» Пример ответа: «Остановиться и поблагодарить дарителя». Прикоснитесь к голове: этот жест напоминает, что нужно помнить."
+            "text": "Скажите: «Пока Рози не напомнила, Мишутка играл и не думал поблагодарить бабушку. Мы тоже можем радоваться тому, что Бог нам даёт, но совсем не благодарить Его и не думать о Нём. Моисей говорит не о том, что кто-то забыл имя или не смог выучить стих. Он предупреждает: нельзя жить так, будто Бог нам не нужен». Спросите: «Что сделал Мишутка, когда Рози ему напомнила?» Пример ответа: «Остановился и сказал бабушке спасибо». Спросите: «А за что ты можешь поблагодарить Бога сегодня?»"
           },
           {
             "heading": "Отвергнуть Божью власть → Слушай Его",
-            "text": "«А теперь представьте: Мишутка знает, что пора закончить игру и помочь, но отказывается. Или ломает горку Рози и говорит, что это не он. Он помнит, как правильно, но выбирает по-своему». Пересказ Второзакония 6:13: Моисей призывал народ чтить Господа и служить Ему. Скажите: «Богу принадлежит вся наша жизнь: сердце, которое Его уважает, дела, которыми мы помогаем, и слова, в которых говорим правду». «Как Мишутке исправить поступок?» Ответ: «Сказать правду, попросить прощения и помочь починить горку»."
+            "text": "Скажите: «Представьте: Мишутка знает, что пора закончить игру и помочь, но отказывается. Или сломал горку, которую Рози построила для машинок, и говорит, что это не он. Он знает, как правильно. Просто не хочет так поступать». Пересказ Второзакония 6:13: Моисей велел народу чтить Господа и служить Ему. Скажите: «Бог имеет право говорить нам, как жить. Нельзя говорить, что мы уважаем Его, и при этом отказываться Его слушаться. Это касается и наших дел, и наших слов». Спросите: «Что Мишутке делать со сломанной горкой?» Пример ответа: «Сказать правду, попросить прощения и помочь починить»."
           },
           {
             "heading": "Заменить Бога Его дарами → Ставь Его на первое место",
-            "text": "Пересказ Второзакония 6:14–15: Израиль не должен следовать другим богам. Господь свят и ревнует о верности Своего народа. Скажите: «Это не зависть, когда хочется чужую игрушку. Бог хранит завет — Свои верные отношения с народом — и по праву зовёт людей принадлежать только Ему. Отвернуться от Него — серьёзный грех, который влечёт Божий суд»."
+            "text": "Пересказ Второзакония 6:14–15: Моисей предупредил Израиль: нельзя поклоняться другим богам. Господь свят и требует верности от Своего народа. Скажите: «Библия говорит, что Бог ревнует. Это не зависть, как когда хочется чужую игрушку. Бог заключил со Своим народом завет, то есть дал твёрдое обещание. Он был верен им, а они принадлежали Ему. Он по праву требовал, чтобы они поклонялись только Ему. Поклоняться другим богам — серьёзный грех. Бог судит за него»."
           },
           {
             "heading": "Спросите: виновата машинка?",
-            "text": "«Нет! Игрушкам можно радоваться. Но если Мишутка решит, что победа важнее Божьего пути, победа займёт первое место. Кто должен направлять его выбор?» Предложите ответ: «Бог, а не желание победить». Скажите: «Эти опасности связаны друг с другом. Но можно повернуться к Богу, попросить помощи и вспомнить Того, Кто даёт. Этому пришлось учиться даже могущественному царю»."
+            "text": "Спросите: «Разве плохо радоваться игрушке или хотеть выиграть?» Пример ответа: «Нет». Скажите: «Но допустим, Мишутка готов соврать или обидеть кого-то, лишь бы победить. Значит, для него победить важнее, чем послушаться Бога. Даже хорошее может стать для нас важнее Бога. Так мы заменяем Бога Его дарами. Эти три опасности часто бывают вместе. Нам нужно вернуться к Богу и попросить Его о помощи. Послушайте, что случилось с царём, который думал, что Бог ему не нужен»."
           }
         ]
       },
@@ -229,11 +229,11 @@ export const teacherGuide = {
           },
           {
             "heading": "Спросите: что изменилось?",
-            "text": "«У царя были дворец, власть и успех. Какую опасность показала его гордость?» Ответ: «Он жил, будто Бог не нужен, не признавал Божью власть и любил своё величие». «Был ли он главным правителем?» «Нет, над ним был Бог». «Что изменилось?» «Он прославил Бога». Скажите: «Даже в лучшие дни мы нуждаемся в Боге. Помни Его. Слушай Его. Ставь Его на первое место. Успех не плох, но он не должен занимать Божье место»."
+            "text": "Спросите: «У царя были дворец и могущественное царство. Кого он за это хвалил?» Ответ: «Себя». «А был ли кто-то выше царя?» Ответ: «Да, Бог». «Что сделал царь, когда к нему вернулся разум?» Ответ: «Прославил Бога». Скажите: «Он жил так, будто Бог ему не нужен. Не признавал Божью власть и больше всего дорожил собственным величием. Грех был не в том, что он многого добился, а в его гордости. Когда у нас всё хорошо, нам по-прежнему нужен Бог. И слушаться Его нужно так же, как прежде»."
           },
           {
             "heading": "Добрая весть, когда мы согрешили",
-            "text": "Скажите: «Все мы ставили себя на первое место. Нам нужно не просто стать вежливее, а получить прощение. Иисус, Божий Сын, жил без греха, умер за наши грехи и воскрес. Мы можем отвернуться от греха и довериться Ему. Прощение нельзя купить словами благодарности или хорошим поведением. Благодарность вырастает из Его благодати, а не зарабатывает её». Это краткое изложение Евангелия, не цитата (1 Коринфянам 15:3–4; Ефесянам 2:8–10). Учителю: этот особый суд над царём не означает, что болезнь или инвалидность доказывают личный грех человека."
+            "text": "Скажите: «Все мы думали прежде всего о себе и не слушались Бога. Нам нужно Его прощение. Если мы просто научимся говорить спасибо, наш грех от этого не исчезнет. Иисус, Божий Сын, жил без греха, умер за наши грехи и воскрес. Мы можем оставить грех и довериться Ему. Он спасает нас по благодати. Это значит, что спасение — Его дар, который мы не можем заслужить. Мы благодарим Его за доброту, а не для того, чтобы получить прощение за хорошее поведение». Это краткое изложение Евангелия, не цитата (1 Коринфянам 15:3–4; Ефесянам 2:8–10). Учителю: суд над этим царём не означает, что болезнь или инвалидность доказывают, что человек совершил какой-то конкретный грех."
           }
         ]
       },
@@ -247,15 +247,15 @@ export const teacherGuide = {
           },
           {
             "heading": "Выберите: остановить игру",
-            "text": "Скажите: «Мишутка устраивает гонки. Время игры, о котором договорились, закончилось. Ему хочется ещё один заезд. Что он может сделать?» Пусть дети в парах предложат ответ и разыграют его. Пример: «Мне хочется ещё поиграть, но сейчас я остановлюсь и помогу». «Радоваться игре плохо?» Ответ: «Нет. Опасно, когда игра начинает управлять нашим выбором»."
+            "text": "Скажите: «Мишутка обещал помочь с уборкой после игры. Уже пора, а ему хочется ещё один заезд. Что он может сказать?» Пусть дети в парах предложат ответ и разыграют его. Пример: «Ладно, я уберу машинку. Что нужно прибрать?» Спросите: «Разве плохо, что ему нравились гонки?» Ответ: «Нет. Но желание поиграть — не причина нарушать обещание»."
           },
           {
             "heading": "Выберите: сказать правду",
-            "text": "Назовите опасность и ответ для каждой мысли: «Бог мне не нужен» → Забыть Бога; Помни Его. «Знаю Божий путь, но не буду слушаться» → Отвергнуть Божью власть; Слушай Его. «Победа важнее Бога» → Заменить Бога Его дарами; Ставь Его на первое место. Затем попробуйте: поблагодарить Бога за умения, честно признать помощь Рози, прервать игру ради помощи другому. Дары хороши, но не должны нами управлять."
+            "text": "Прочитайте каждую мысль и спросите, какая это опасность: «Бог мне не нужен» — забыть Бога. «Я знаю, что Бог велит, но не буду так делать» — отвергнуть Божью власть. «Ради победы я на всё готов, даже ослушаться Бога» — заменить Бога Его дарами. Спросите, как можно поступить иначе. Затем разыграйте сценку: Рози помогла Мишутке построить горку. Кто-то спрашивает: «Мишутка, ты это всё сам построил?» Что ему ответить? Пример: «Мне Рози помогала!» Мы можем благодарить Бога за свои умения и честно говорить о тех, кто нам помог."
           },
           {
             "heading": "Выберите: принять новичка",
-            "text": "«Новичок просится в игру. Друзья говорят: если Мишутка хочет остаться в их компании, пусть не принимает новичка. Что он может сказать?» Пример: «Давайте найдём ему место. Ты можешь помочь со следующей горкой». «Что важнее одобрения друзей?» Ответ: «Следовать Божьему пути любви». Не просите детей называть одноклассников."
+            "text": "Скажите: «Новый мальчик просит поиграть с ними. Друзья говорят Мишутке: „Если возьмёшь его в игру, мы с тобой играть не будем“. Что Мишутка может ответить?» Пример: «Пусть играет с нами. Давайте ещё одну горку построим». Спросите: «Что важнее: угодить друзьям или поступить так, как учит Бог?» Пример ответа: «Поступить так, как учит Бог, даже если друзья рассердятся». Обсуждайте выдуманный пример; не просите детей называть одноклассников."
           },
           {
             "heading": "Сделайте: соберите историю царя",
@@ -269,11 +269,11 @@ export const teacherGuide = {
         "blocks": [
           {
             "heading": "Скажите: новый выбор Мишутки",
-            "text": "«Мишутке по-прежнему нравится красная машинка. Но теперь он замечает и бабушку, и Рози, и новичка. Он благодарит бабушку, делится машинкой с Рози, честно говорит о её помощи и даёт другому место в игре. Машинка не изменилась. Меняются его поступки. Мы можем радоваться хорошим дарам, не делая их своим царём». Спросите: «Какому дару ты можешь радоваться, помня Бога?» Принимайте простые ответы, не сравнивая, у кого больше вещей."
+            "text": "Скажите: «Мишутке по-прежнему нравится красная машинка. Он может играть и радоваться, а ещё благодарить бабушку, давать Рози поиграть и звать в игру других. Если Рози ему помогла, он может честно об этом сказать. Чтобы весело играть, не обязательно каждый раз настаивать на своём. Мы можем радоваться тому, что Бог нам даёт, и слушаться Его». Спросите: «Что тебе нравится делать? Как ты можешь поблагодарить за это Бога или порадовать кого-то ещё?» Принимайте простые ответы, не сравнивая, у кого больше вещей."
           },
           {
             "heading": "Сделайте: один маленький шаг",
-            "text": "Предложите назвать или нарисовать опасность и ответ: Забыть Бога → Помни Его; Отвергнуть Божью власть → Слушай Его; Заменить Бога Его дарами → Ставь Его на первое место. Выберите шаг: поблагодарить Бога, сказать правду или прервать игру ради помощи. Можно пропустить ответ. Повторите Второзаконие 6:12. Скажите: «Иисус даёт прощение и вечную жизнь. Он дороже удобства и успеха. Жизнь остаётся добрым Божьим даром. Мы обращаемся к Иисусу за помощью, а не зарабатываем Его любовь»."
+            "text": "Предложите выбрать одну из трёх опасностей: забыть Бога, отказаться Его слушаться или считать Его дары важнее Него Самого. Можно назвать её или нарисовать пример. Спросите: «Что ты можешь сегодня сделать по-другому?» Например: поблагодарить Бога, сказать правду или закончить игру, когда пора помочь. Можно не отвечать. Повторите Второзаконие 6:12. Скажите: «Иисус даёт нам прощение и вечную жизнь. Ни удобная жизнь, ни успех не могут нам этого дать. Иисус дороже всего, что у нас есть. Жизнь — хороший Божий дар, и мы можем ей радоваться. Мы просим Иисуса помочь нам слушаться Его. Его любовь не нужно зарабатывать»."
           },
           {
             "heading": "Помолитесь вместе",
@@ -281,7 +281,7 @@ export const teacherGuide = {
           },
           {
             "heading": "Возьмите домой",
-            "text": "За ужином или перед сном покажи рисунок взрослому, которому доверяешь. Вместе прочитайте Второзаконие 6:12. Спросите друг друга: «Какой дар мы заметили сегодня? Как завтра почтить Того, Кто даёт?» Поблагодари и человека, который тебе помог."
+            "text": "За ужином или перед сном покажи рисунок взрослому, которому доверяешь. Вместе прочитайте Второзаконие 6:12. Спросите друг друга: «За что мы можем поблагодарить Бога сегодня? В чём нам завтра понадобится Его помощь?» Не забудь сказать спасибо и тому, кто тебе помог."
           },
           {
             "heading": "Учителю: ответы и варианты",
