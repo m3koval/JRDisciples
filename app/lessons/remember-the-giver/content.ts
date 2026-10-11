@@ -12,7 +12,7 @@ export const copy = {
     intro: 'When everything is going well, three dangers can sneak into our hearts: forget God, reject His authority, or replace Him with His gifts. God’s gifts are good, but Jesus is our greatest treasure. Remember Him. Listen to Him. Put Him first.',
     alt: 'Michael and Rosie with bread, fruit, and wheat in an illustrated harvest scene with playful hidden modern objects.',
     all: 'All lessons', start: 'Begin the lesson', play: 'Try the challenge', next: 'Continue', back: 'Read again', check: 'Check the order', clear: 'Start the order again',
-    progress: 'Challenges completed', success: 'Yes! Remember the Giver.', retry: 'Try again.', hint: 'Need a hint?', guide: 'Read together: complete teacher guide',
+    progress: 'Challenges completed', success: 'Yes! Remember the Giver.', retry: 'Try again.', hint: 'Need a hint?', guide: 'Parent & teacher guide',
     source: 'Read the Bible passage', verseLabel: 'Memory verse', retelling: 'Bible retelling, not a quotation',
     done: 'Jesus Is Better Than Life!', doneText: 'Michael still enjoys his car. Good gifts and life itself matter. But Jesus is worth more than anything we have: He gives forgiveness and eternal life. When life goes well, we can remember God, accept His authority, and treasure Him above His gifts.',
     planTitle: 'Notice a danger. Choose your response today.', plans: ['Forget God? Remember Him: pause and thank Him for one gift.', 'Reject God’s authority? Listen to Him: tell the truth and ask forgiveness.', 'Replace God with His gifts? Put Him first: pause my game to love and help someone.'],
@@ -52,7 +52,7 @@ export const copy = {
       { title: 'Jesus Is Better Than Life!', reference: 'Gospel summary: 1 Corinthians 15:3–4; Ephesians 2:8–10', paragraphs: [
         'We have all put ourselves first. We need more than better manners; we need forgiveness. Jesus, God’s Son, lived without sin, died for our sins, and rose again. He gives forgiveness and eternal life to those who trust Him.',
         'We can turn from sin and trust Jesus. We cannot buy His forgiveness with thank-you words or good behavior. Gratitude grows because of His grace; it does not earn it.',
-        'Jesus is better than life: that is our lesson theme, not a Bible quotation. It means Jesus is worth more than comfort, success, or anything we own—not that life is worthless. Life is God’s good gift. Turn to Jesus for forgiveness and help; remember Him, listen to Him, and put Him first in response to His love.'
+        'Life is God’s good gift, and Jesus is our greatest treasure. Turn to Him for forgiveness and help. Remember Him, listen to Him, and put Him first—even when everything is going well.'
       ], task: 'Can our thank-you words or good deeds buy forgiveness?', hint: 'Jesus saves by grace. Thankfulness is our response, not a price we pay.', truth: 'We turn from sin and trust Jesus. His grace—not our gratitude—saves us.', options: ['Yes, if we say thank you enough times.', 'No. Forgiveness is God’s gift through Jesus.', 'Yes, if we finish every challenge.'], answer: 1 }
     ],
     verseTiles: ['then take care', 'lest you forget the LORD,', 'who brought you out of the land of Egypt,', 'out of the house of slavery.'],
@@ -64,7 +64,7 @@ export const copy = {
     intro: 'Когда всё хорошо, есть три опасности: забыть Бога, отвергнуть Его власть или заменить Его дарами. Божьи дары хороши, но Иисус дороже всего. Помни Его. Слушай Его. Ставь Его на первое место.',
     alt: 'Мишутка и Рози среди хлеба, фруктов и колосьев на сказочной картинке о жатве со спрятанными современными предметами.',
     all: 'Все уроки', start: 'Начать урок', play: 'Попробовать задание', next: 'Дальше', back: 'Прочитать ещё раз', check: 'Проверить порядок', clear: 'Собрать заново',
-    progress: 'Выполнено заданий', success: 'Верно! Помни, Кто даёт.', retry: 'Попробуй ещё раз.', hint: 'Нужна подсказка?', guide: 'Читаем вместе: полный план для учителя',
+    progress: 'Выполнено заданий', success: 'Верно! Помни, Кто даёт.', retry: 'Попробуй ещё раз.', hint: 'Нужна подсказка?', guide: 'Родителям и учителям',
     source: 'Прочитать отрывок Библии', verseLabel: 'Памятный стих', retelling: 'Пересказ Библии, не цитата',
     done: 'Иисус дороже жизни!', doneText: 'Мишутка всё ещё радуется машинке. Хорошие дары и сама жизнь ценны. Но Иисус дороже всего, что у нас есть: Он даёт прощение и вечную жизнь. Когда всё хорошо, будем помнить Бога, слушаться Его и любить Его больше, чем Его дары.',
     planTitle: 'Заметь опасность. Выбери свой ответ на сегодня.', plans: ['Забыть Бога? Помни Его: остановись и поблагодари за один дар.', 'Отвергнуть Божью власть? Слушай Его: скажи правду и попроси прощения.', 'Заменить Бога Его дарами? Ставь Его на первое место: прерви игру, чтобы помочь другому.'],
@@ -104,7 +104,7 @@ export const copy = {
       { title: 'Иисус дороже жизни!', reference: 'Кратко о Евангелии: 1 Коринфянам 15:3–4; Ефесянам 2:8–10', paragraphs: [
         'Все мы ставили себя на первое место. Нам нужно не просто стать вежливее, а получить прощение. Иисус, Божий Сын, жил без греха, умер за наши грехи и воскрес. Он даёт прощение и вечную жизнь тем, кто доверяет Ему.',
         'Можно отвернуться от греха и довериться Иисусу. Прощение нельзя купить словами благодарности или хорошим поведением. Благодарность вырастает из Его благодати, а не зарабатывает её.',
-        'Иисус дороже жизни — это тема урока, не цитата из Библии. Иисус дороже удобства, успеха и всех вещей. Это не значит, что жизнь ничего не стоит: жизнь — добрый Божий дар. Обратись к Иисусу за прощением и помощью. Помни Его, слушай Его и ставь Его на первое место в ответ на Его любовь.'
+        'Жизнь — добрый Божий дар, а Иисус дороже всего. Обратись к Нему за прощением и помощью. Помни Его, слушай Его и ставь Его на первое место — даже когда всё хорошо.'
       ], task: 'Можно ли купить прощение благодарностью или добрыми делами?', hint: 'Иисус спасает по благодати. Благодарность — наш ответ, не плата.', truth: 'Мы отворачиваемся от греха и доверяем Иисусу. Спасает Его благодать, а не наша благодарность.', options: ['Да, если сказать спасибо много раз.', 'Нет. Прощение — Божий дар через Иисуса.', 'Да, если выполнить все задания.'], answer: 1 }
     ],
     verseTiles: ['тогда берегись,', 'чтобы [не обольстилось сердце твое и] не забыл ты Господа,', 'Который вывел тебя из земли Египетской,', 'из дома рабства.'],

@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+import { HarvestHunt } from './HarvestHunt'
 import Link from 'next/link'
 import { useRef, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
@@ -46,25 +46,24 @@ export default function RememberTheGiverPage() {
     <header className={styles.header}><p>{t.eyebrow}</p>{scene !== -1 && <strong>{t.title}</strong>}</header>
     <section className={styles.stage}>
       <div className={styles.visual}>
-        <a href="/images/jr/lessons/remember-the-giver/cover.webp" target="_blank" rel="noopener noreferrer" aria-label={language === 'ru' ? 'Открыть большую картинку в новой вкладке' : 'Open the full picture in a new tab'}>
-        <Image src="/images/jr/lessons/remember-the-giver/cover.webp" alt={t.alt} width={1024} height={1024} sizes="(max-width: 800px) 100vw, 40vw" priority />
-          <span>{language === 'ru' ? 'Увеличить картинку ↗' : 'Enlarge the picture ↗'}</span>
-        </a>
-        <p>{t.hunt}</p>
+        <details className={styles.huntDetails} open={scene === -1 ? true : undefined}>
+          <summary>{language === 'ru' ? 'Найди шесть предметов' : 'Find six hidden objects'}</summary>
+          <HarvestHunt language={language} alt={t.alt} />
+        </details>
       </div>
       <div className={styles.panel}>
         <h1 ref={heading} tabIndex={-1}>{scene === -1 ? t.title : scene === 6 ? t.done : s.title}</h1>
         {scene === -1 ? <>
           <p className={styles.lead}>{t.intro}</p>{verseCard}
-          <button className={styles.primary} data-testid="start" onClick={() => transition(0)}>{t.start} →</button><small>{t.session}</small>
+          <button className={styles.primary} data-testid="start" onClick={() => transition(0)}>{t.start} →</button>
         </> : scene === 6 ? <>
           <p>{t.doneText}</p>{verseCard}
           <fieldset><legend>{t.planTitle}</legend>{t.plans.map((text, i) => <label className={styles.plan} key={i}><input type="radio" name="response" checked={plan === i} onChange={() => setPlan(i)} />{text}</label>)}</fieldset>
-          <p>{t.planReply}</p><p className={styles.truth}>{t.prayer}</p><p>{t.home}</p>
+          <p className={styles.truth}>{t.prayer}</p><p>{t.home}</p>
           <Link className={styles.primary} href="/lessons/grace-in-the-kingdom">{t.nextLesson} →</Link>
           <button onClick={() => { resetLessonMastery(ID); setGraded([]); setPlan(null); transition(-1) }}>{t.again}</button>
         </> : <>
-          <p className={styles.reference}>{s.reference}{scene >= 1 && scene <= 3 ? ` · ${t.retelling}` : ''}</p>
+          <p className={styles.reference}>{s.reference}</p>
           {phase === 'learn' ? <>
             {s.paragraphs.map((text, i) => <p key={i}>{text}</p>)}
             {scene === 1 && verseCard}
@@ -88,6 +87,7 @@ export default function RememberTheGiverPage() {
       </div>
     </section>
     <details className={styles.guide}><summary>{t.guide}</summary>
+      <p>{teacherGuide[language].subtitle}</p>
       <p>{language === 'ru' ? 'Скачать лист для печати: LETTER, альбомная ориентация, двусторонняя печать — переворот по ДЛИННОМУ краю (LONG-edge). Сложите пополам.' : 'Download the printable: LETTER, landscape, duplex — flip on the LONG edge. Fold in half.'}</p>
       <p><a href="/print/remember-the-giver/PRINT-EN-FRONT-QR-LONG-EDGE.pdf" download>{language === 'ru' ? 'Лист на английском (PDF)' : 'English printable (PDF)'}</a> · <a href="/print/remember-the-giver/PRINT-RU-FRONT-QR-LONG-EDGE.pdf" download>{language === 'ru' ? 'Лист на русском (PDF)' : 'Russian printable (PDF)'}</a></p>
       <p>{t.adultNote}</p><ExternalSourceLink href={verse.url}>{t.source}: {verse.reference} · {verse.translation} ↗</ExternalSourceLink>

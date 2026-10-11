@@ -38,5 +38,15 @@
 .guide h2 { margin: 30px 0 12px; font-size: 1.6rem; }
 .guide h3 { margin: 18px 0 8px; font-size: 1.15rem; }
 .lesson[lang='ru'] h1 { letter-spacing: normal; line-height: 1.2; }
-@media (max-width: 800px) { .stage { grid-template-columns: 1fr; } .visual { display: grid; grid-template-columns: 140px 1fr; align-items: center; } .visual p { font-size: .88rem; padding: 14px; } .panel { padding: 22px; } .lesson { padding: 16px 12px 40px; } }
-@media (max-width: 390px) { .visual { grid-template-columns: 110px 1fr; } .panel { padding: 18px; } }
+.huntDetails > summary { padding: 14px 18px; }
+.huntPicture { position: relative; width: 100%; isolation: isolate; }
+.hotspot { position: absolute; transform: translate(-50%, -50%); min-width: 44px; min-height: 44px; border: 3px solid transparent; border-radius: 50%; background: transparent; cursor: pointer; touch-action: manipulation; padding: 0; }
+.hotspot:focus-visible { outline: 3px dashed #153fbe; outline-offset: 2px; background: #ffffff33; }
+.hotspot.found { border-color: #fff; box-shadow: 0 0 0 3px #19643e; background: #16734218; }
+.hotspot span { position: absolute; right: 0; top: 0; color: #fff; background: #19643e; border-radius: 50%; padding: 1px 5px; font-size: 18px; line-height: 24px; }
+.visual .huntInstruction { font-weight: 750; padding: 8px 18px 14px; }
+.visual .huntStatus { padding: 14px 18px; }
+.huntStatus span { display: block; margin-top: 6px; }
+.huntReset { margin: 0 18px 18px; padding: 10px 16px; min-height: 44px; border: 2px solid #285d43; border-radius: 10px; background: #fff; color: #285d43; cursor: pointer; font: inherit; }
+@media (max-width: 800px) { .stage { grid-template-columns: 1fr; } .visual p { font-size: .95rem; } .panel { padding: 22px; } .lesson { padding: 16px 12px 40px; } }
+@media (max-width: 390px) { .panel { padding: 18px; } }
