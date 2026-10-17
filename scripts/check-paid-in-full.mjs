@@ -45,10 +45,9 @@ for (const [lang, scripture] of [['en', scriptureEn], ['ru', scriptureRu]]) {
 for (const asset of ['cover','father-judge','travelers','redemption']) assert(fs.existsSync(`public/images/jr/lessons/paid-in-full/${asset}.webp`))
 assert(!/unverified|not retained|непроверенн|не сохранены|supplied Russian sermon/.test(source), 'No internal audit notes in public content')
 assert(sources.some(([,url]) => url === 'http://www.surveyhistory.org/lincoln_the_surveyor1.htm'))
-const home = fs.readFileSync('app/page.tsx', 'utf8')
-assert(home.indexOf('<PaidInFullFeature compact') < home.indexOf('href: "/stories"'))
+// Featured placement moves with the current lesson; Paid in Full must remain discoverable.
 for (const file of ['data/lessons.ts','data/lessons-ru.ts']) {
-  const text = fs.readFileSync(file, 'utf8'); assert.equal(text.match(/href: "([^"]+)"/)[1], '/lessons/paid-in-full')
+  const text = fs.readFileSync(file, 'utf8'); assert(text.includes('href: "/lessons/paid-in-full"'), `${file}: retained lesson link`)
 }
 if (process.argv[2] === '--export-browser') fs.writeFileSync(process.argv[3], JSON.stringify(box.exports))
-console.log('Paid in Full PASS: exact ESV/RST source fixtures, complete EN/RU field parity, five discoveries, four activity mechanics + six-question quiz, four FAL images, first homepage/lesson placement.')
+console.log('Paid in Full PASS: exact ESV/RST source fixtures, complete EN/RU field parity, five discoveries, four activity mechanics + six-question quiz, four FAL images, retained lesson discoverability.')

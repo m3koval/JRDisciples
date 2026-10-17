@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import { useTranslation } from "@/lib/useTranslation";
 import AppHome from "@/components/app/AppHome";
-import PaidInFullFeature from "@/components/PaidInFullFeature";
+import AloneWithGodFeature from "@/components/AloneWithGodFeature";
 
 // Static star positions so they're consistent between server and client
 const STARS = [
@@ -125,7 +125,7 @@ function WebHome() {
             {t.home.subtitle}
           </p>
 
-          <PaidInFullFeature compact />
+          <AloneWithGodFeature compact />
           <blockquote style={{
             fontFamily: "var(--font-lora)", fontStyle: "italic",
             color: "rgba(255,255,255,.85)", fontSize: "1rem",
@@ -145,7 +145,7 @@ function WebHome() {
         </div>
       </section>
 
-      <PaidInFullFeature />
+      <AloneWithGodFeature />
       {/* ── Section banner ────────────────────────────────── */}
       <div className="sec-banner sb-1">{t.home.pickActivity}</div>
 

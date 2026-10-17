@@ -23,6 +23,7 @@ export interface Lesson {
 }
 
 export const lessonTopics: LessonTopic[] = [
+  { href: "/lessons/alone-with-god", image: "/images/lessons/alone-with-god/hero.png", title: "Alone with God", desc: "Pause the game and join Michael and Rosie: discover private prayer, learn from Jesus, build a memory verse, and turn to the Father through your day.", color: "#22656b", sections: 7, emoji: "🙏" },
   { href: "/lessons/paid-in-full", image: "/images/jr/lessons/paid-in-full/cover.webp", title: "Paid in Full", desc: "1 Peter 1:17–21 — Meet our loving Father and fair Judge, pack a traveler’s heart, discover Jesus’ rescue, and build the precious promise.", color: "#17665b", sections: 5, emoji: "✉️" },
   { href: "/lessons/remember-the-giver", image: "/images/jr/lessons/remember-the-giver/cover.webp", title: "BEWARE!", desc: "When life is good, beware three dangers: forget God, reject His authority, replace Him with His gifts. Remember Him, listen to Him, put Him first. Six challenges in Deuteronomy 6 and Daniel 4.", color: "#285d43", sections: 6, emoji: "🌾" },
   {
