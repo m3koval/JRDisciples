@@ -95,7 +95,7 @@ export default function AloneWithGodPage() {
       </div>
     </section>
     <section className={styles.downloads}><h2>{t.printable}</h2><p><a href="/printables/alone-with-god/Alone-with-God-EN-LETTER-LONG-EDGE.pdf" download>{t.englishPdf}</a><a href="/printables/alone-with-god/Alone-with-God-RU-LETTER-LONG-EDGE.pdf" download>{t.russianPdf}</a></p><p>{t.printHelp}</p></section>
-    <details className={styles.guide}><summary>{t.guide}</summary>{t.adult.map((text, i) => <p key={i}>{text}</p>)}
+    <details className={styles.guide}><summary>{t.guide}</summary><p><a href={`/printables/alone-with-god/Alone-with-God-${language.toUpperCase()}-TEACHER-ANSWERS.pdf`} download>{language === 'ru' ? 'Скачать план урока и ответы (PDF)' : 'Download teaching guide and answers (PDF)'}</a></p>{t.adult.map((text, i) => <p key={i}>{text}</p>)}
       <h2>{t.source}</h2>{Object.entries(scripture).map(([key, verse]) => <div key={key}><ExternalSourceLink href={verse.url}>{verse.reference} · {verse.translation} ↗</ExternalSourceLink>{key === 'crowds' && <Verse verse={verse} />}</div>)}
     </details>
   </article>
