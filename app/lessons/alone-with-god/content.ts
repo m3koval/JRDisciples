@@ -32,9 +32,9 @@ export const copy = {
       { title: 'Who loved first?', verses: ['love', 'grace'], kind: 'choice', paragraphs: [
         '“One more level!” Michael says.',
         'Rosie sits beside him. “You said you wanted to pray this morning.”',
-        '“I forgot. Will God only love me if I remember every day?”',
+        '“I forgot. Can I still talk to God now?”',
         '“Let’s look in the Bible,” Rosie says. God did not wait for us to become good enough. He loved us first. Jesus died for us while we were still sinners, to bring us back to God.',
-        '“So prayer isn’t how I buy His love?” Michael asks. Right! We come to God because of His love, not to earn it. Michael pauses his game. He can come honestly, even after forgetting.'
+        '“So I can talk to Him now?” Michael asks. Yes! We come to God because of His love, not to earn it. Michael pauses his game. He can come honestly, even after forgetting.'
       ], task: 'Help Michael finish the thought: I can come to God…', options: ['because I have never forgotten to pray.', 'because He loved us first, not because I earned His love.', 'only after I pray longer than everyone else.'], answer: [1], hint: 'Look for who loved first. God’s love is not a prize for a perfect morning.', truth: 'God takes the first step in love. We respond by trusting Jesus and coming to our Father.' },
       { title: 'A conversation, not a show', verses: ['private'], kind: 'select', paragraphs: [
         'Michael turns the sound down. “Should I say a really fancy prayer so everybody hears?”',
@@ -63,7 +63,7 @@ export const copy = {
       { title: 'When doing right feels hard', verses: ['struggle'], kind: 'match', paragraphs: [
         'Later, Michael knocks over Rosie’s model. He wants to hide it. “I need help to tell the truth,” he thinks. This is a moment to pray—and then do what is right.',
         'Paul writes about standing firm with God’s help in a spiritual struggle. He tells believers to pray for others, too. We depend on God instead of facing temptation alone. He gives us strength to obey, even when it is hard.',
-        'Michael can ask forgiveness and help fix the model. When a problem is too big, he can pray and ask a trusted grown-up for help.'
+        'Michael prays, “Father, please help me tell the truth.” Then he says, “Rosie, I knocked it over. I’m sorry. Can I help fix it?” When a problem is too big, he can pray and ask a trusted grown-up for help.'
       ], task: 'Match each moment with a way to pray and respond.', options: [], answer: [], hint: 'Wisdom helps with a choice. Care reaches a friend. Forgiveness and truth belong with a lie.', truth: 'We pray for God’s help, pray for others, and take the next right step.' },
       { title: 'More than a wish list', verses: ['longing', 'delight'], kind: 'choice', paragraphs: [
         '“I ask God for lots of things,” Michael says. “Can I talk to Him when I don’t need a new thing?”',
@@ -102,9 +102,9 @@ export const copy = {
       { title: 'Кто полюбил первым?', verses: ['love', 'grace'], kind: 'choice', paragraphs: [
         '«Ещё один уровень!» — говорит Миша.',
         'Роза садится рядом. «Ты ведь хотел утром помолиться».',
-        '«Забыл… А Бог будет любить меня, только если я каждый день буду помнить?»',
+        '«Я забыл… А можно всё равно сейчас помолиться?»',
         '«Давай откроем Библию», — предлагает Роза. Бог не ждал, пока мы станем достаточно хорошими. Он первым полюбил нас. Иисус умер за нас, когда мы были ещё грешниками, чтобы вернуть нас к Богу.',
-        '«Значит, молитвой я не покупаю Его любовь?» — спрашивает Миша. Верно! Мы приходим к Богу благодаря Его любви, а не чтобы её заслужить. Миша ставит игру на паузу. Он может прийти к Богу честно, даже если раньше забыл о Нём.'
+        '«Значит, можно помолиться прямо сейчас?» — спрашивает Миша. Конечно! Мы приходим к Богу благодаря Его любви, а не чтобы её заслужить. Миша ставит игру на паузу. Он может прийти к Богу честно, даже если раньше забыл о Нём.'
       ], task: 'Помоги Мише закончить мысль: я могу прийти к Богу…', options: ['потому что никогда не забывал молиться.', 'потому что Он первым полюбил нас, а не потому, что я заслужил любовь.', 'только если помолюсь дольше всех.'], answer: [1], hint: 'Кто полюбил первым? Божья любовь — не приз за утро без ошибок.', truth: 'Бог первым проявил любовь. Мы отвечаем Ему: доверяем Иисусу и приходим к Отцу.' },
       { title: 'Разговор, а не выступление', verses: ['private'], kind: 'select', paragraphs: [
         'Миша убавляет звук. «А надо сказать очень красивую молитву, чтобы все услышали?»',
@@ -133,7 +133,7 @@ export const copy = {
       { title: 'Когда трудно поступить правильно', verses: ['struggle'], kind: 'match', paragraphs: [
         'Позже Миша нечаянно ломает Розину постройку. Хочется всё скрыть. «Мне нужна помощь, чтобы сказать правду», — думает он. Самое время помолиться, а потом поступить правильно.',
         'Павел пишет, как с Божьей помощью оставаться верным в духовной борьбе. Он зовёт молиться и за других. Мы просим Бога помочь нам не поддаться греху и поступить правильно, даже когда это трудно.',
-        'Миша может попросить прощения и помочь починить постройку. А если беда слишком большая, можно помолиться и обратиться к надёжному взрослому.'
+        'Миша молится: «Отец, помоги мне сказать правду». Потом говорит: «Роза, это я сломал. Прости. Давай помогу починить?» А если беда слишком большая, можно помолиться и обратиться к надёжному взрослому.'
       ], task: 'Подбери к каждой ситуации молитву и следующий шаг.', options: [], answer: [], hint: 'Для выбора нужна мудрость. Другу нужна забота. Вместо лжи нужны прощение и правда.', truth: 'Мы просим Божьей помощи, молимся за других и поступаем правильно.' },
       { title: 'Не только список желаний', verses: ['longing', 'delight'], kind: 'choice', paragraphs: [
         '«Я много всего прошу у Бога, — говорит Миша. — А можно поговорить с Ним, когда мне не нужна новая вещь?»',
