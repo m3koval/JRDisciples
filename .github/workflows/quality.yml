@@ -50,6 +50,9 @@ jobs:
       - name: Check Paid in Full lesson
         run: npm run check:paid-in-full
 
+      - name: Check personal prayer lesson
+        run: node scripts/check-alone-with-god.mjs
+
       - name: Check offline bundle integrity guard
         run: node scripts/test-app-bundle-integrity.mjs
 

@@ -1,0 +1,5 @@
+# Alone with God / Наедине с Богом
+Content gate: Bible.com ESV/RST all 22 requested source pages fetched and rendered verse paragraphs verified. Psalm 63:1,3 ESV = 62:2,4 RST. Core teaching: God loved us first and sent Christ; personal prayer responds to His love, not performance. Jesus seeks Father before demands/decisions; prayer is dependence amid distractions/temptation, joy not magic. No depiction of God or claim of audible revelation.
+Hero: polished warm rounded 3D human boy Michael (green shirt, short chestnut hair, age 9) quietly praying by open Bible at bedroom window at dawn. Console switched off on far shelf. Peaceful joyful focus. Rich golden sunrise, soft blue-green room, natural child anatomy. No text, no glowing supernatural being. Landscape.
+Coloring: original clean black outlines on white, same boy in plain T-shirt seated on rug at low table beside window with sunrise, open Bible, hands naturally together in prayer. Large empty coloring regions, simple room, no gray shading/solid fills/lettering. Portrait.
+Artifacts: preserve prompts and source results; inspect both and real PDF placement.
