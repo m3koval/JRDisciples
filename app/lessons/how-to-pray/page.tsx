@@ -102,26 +102,31 @@ export default function HowToPrayPage() {
   const isRu = language === 'ru'
 
   // ── Progress ───────────────────────────────────────────────────────────────
-  const [unlocked, setUnlocked] = useState<Set<number>>(() => {
-    try {
-      const u = typeof window !== 'undefined' && localStorage.getItem('how-to-pray_unlocked')
-      if (u) return new Set(JSON.parse(u) as number[])
-    } catch { /* ignore */ }
-    return new Set([1])
-  })
-  const [done, setDone] = useState<Set<string>>(() => {
-    try {
-      const d = typeof window !== 'undefined' && localStorage.getItem('how-to-pray_done')
-      if (d) return new Set(JSON.parse(d) as string[])
-    } catch { /* ignore */ }
-    return new Set()
-  })
+  const [unlocked, setUnlocked] = useState<Set<number>>(new Set([1]))
+  const [done, setDone] = useState<Set<string>>(new Set())
+  const [restored, setRestored] = useState(false)
   const [won, setWon] = useState(false)
 
+  /* eslint-disable react-hooks/set-state-in-effect -- One-time restoration from external storage must follow SSR hydration; guarded writes prevent overwriting the saved lesson. */
   useEffect(() => {
-    localStorage.setItem('how-to-pray_unlocked', JSON.stringify([...unlocked]))
-    localStorage.setItem('how-to-pray_done',     JSON.stringify([...done]))
-  }, [unlocked, done])
+    // Restore after hydration: server and first client render must agree.
+    try {
+      const u: unknown = JSON.parse(localStorage.getItem('how-to-pray_unlocked') || '[1]')
+      const d: unknown = JSON.parse(localStorage.getItem('how-to-pray_done') || '[]')
+      if (Array.isArray(u)) setUnlocked(new Set([1, ...u.filter((n): n is number => Number.isInteger(n) && n >= 1 && n <= 4)]))
+      if (Array.isArray(d)) setDone(new Set(d.filter((id): id is string => ['flip', 'sort', 'worry', 'prayer'].includes(id))))
+    } catch { /* Invalid or unavailable storage: keep the lesson usable. */ }
+    setRestored(true)
+  }, [])
+  /* eslint-enable react-hooks/set-state-in-effect */
+
+  useEffect(() => {
+    if (!restored) return
+    try {
+      localStorage.setItem('how-to-pray_unlocked', JSON.stringify([...unlocked]))
+      localStorage.setItem('how-to-pray_done', JSON.stringify([...done]))
+    } catch { /* Keep progress in memory when storage is unavailable. */ }
+  }, [unlocked, done, restored])
 
   function solve(id: string, sec: number) {
     if (done.has(id)) return
@@ -406,7 +411,7 @@ export default function HowToPrayPage() {
       </div>
 
       {/* ════════════════ SECTION 1 — WHO ARE YOU TALKING TO? ════════ */}
-      <section id="sec-1" style={{ padding: '0 0 8px' }}>
+      <section id="sec-1" style={{ padding: '0 0 8px', background: '#faf7ff' }}>
         <div style={{
           background: `linear-gradient(135deg,${ACCENT},${ACCENT_DARK})`,
           padding: '14px 20px', textAlign: 'center',
@@ -462,7 +467,7 @@ export default function HowToPrayPage() {
               fontSize: '0.72rem', color: ACCENT,
               letterSpacing: 3, textTransform: 'uppercase', marginBottom: 6,
             }}>
-              {isRu ? '🃏 АКТИВНОСТЬ 1 · ПЕРЕВЕРНИ ВСЕ КАРТОЧКИ' : '🃏 ACTIVITY 1 · FLIP ALL CARDS'}
+              {isRu ? '🃏 ЗАДАНИЕ 1 · ОТКРОЙ ВСЕ КАРТОЧКИ' : '🃏 ACTIVITY 1 · REVEAL ALL CARDS'}
             </p>
             <p style={{
               fontFamily: 'var(--font-nunito)', fontWeight: 700,
@@ -486,79 +491,37 @@ export default function HowToPrayPage() {
                   {FLIP_ACTIVE.map(card => {
                     const isFlipped = done.has('flip') || flipped.has(card.id)
                     return (
-                      <div
+                      <button
+                        type="button"
                         key={card.id}
+                        data-testid={`prayer-card-${card.id}`}
+                        aria-expanded={isFlipped}
                         onClick={() => !isFlipped && flipCard(card.id)}
                         style={{
-                          flex: '1 1 180px', maxWidth: 240, minHeight: 200,
-                          perspective: '800px',
+                          flex: '1 1 240px', maxWidth: 360, minHeight: 160,
+                          borderRadius: 18, padding: '24px 20px',
+                          background: '#f5f0ff', color: '#3b2468',
+                          border: `2.5px solid ${isFlipped ? ACCENT : '#c4b5fd'}`,
+                          boxShadow: '0 4px 18px rgba(124,58,237,.12)',
                           cursor: isFlipped ? 'default' : 'pointer',
-                          userSelect: 'none',
+                          textAlign: 'center', display: 'flex', flexDirection: 'column',
+                          alignItems: 'center', justifyContent: 'center', gap: 14,
+                          fontFamily: 'var(--font-nunito)',
                         }}
                       >
-                        <div style={{
-                          position: 'relative', width: '100%', height: '100%', minHeight: 200,
-                          transformStyle: 'preserve-3d',
-                          transition: 'transform 0.55s ease',
-                          transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
-                        }}>
-                          {/* Front */}
-                          <div style={{
-                            position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
-                            backfaceVisibility: 'hidden',
-                            WebkitBackfaceVisibility: 'hidden',
-                            borderRadius: 18, padding: '22px 14px',
-                            background: '#fff',
-                            border: `2.5px solid rgba(124,58,237,.22)`,
-                            boxShadow: '0 4px 18px rgba(124,58,237,.12)',
-                            textAlign: 'center',
-                            display: 'flex', flexDirection: 'column',
-                            alignItems: 'center', justifyContent: 'center',
-                          }}>
-                            <div style={{
-                              fontFamily: 'var(--font-nunito)', fontWeight: 900,
-                              fontSize: '1rem', color: ACCENT_DARK, lineHeight: 1.35, marginBottom: 16,
-                            }}>
-                              {card.front}
-                            </div>
-                            <div style={{
-                              fontFamily: 'var(--font-nunito)', fontSize: '0.65rem',
-                              fontWeight: 900, letterSpacing: 2, color: '#bbb',
-                              textTransform: 'uppercase',
-                            }}>
-                              {isRu ? 'Нажми ▾' : 'Tap ▾'}
-                            </div>
-                          </div>
-                          {/* Back */}
-                          <div style={{
-                            position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
-                            backfaceVisibility: 'hidden',
-                            WebkitBackfaceVisibility: 'hidden',
-                            transform: 'rotateY(180deg)',
-                            borderRadius: 18, padding: '18px 14px',
-                            background: ACCENT_GLOW,
-                            border: `2.5px solid ${ACCENT}`,
-                            boxShadow: '0 4px 18px rgba(124,58,237,.18)',
-                            textAlign: 'center',
-                            display: 'flex', flexDirection: 'column',
-                            alignItems: 'center', justifyContent: 'center',
-                          }}>
-                            <div style={{
-                              fontFamily: 'var(--font-nunito)', fontWeight: 900,
-                              fontSize: '0.78rem', color: ACCENT, marginBottom: 10,
-                            }}>
-                              {card.front}
-                            </div>
-                            <p style={{
-                              fontFamily: 'var(--font-lora)', fontStyle: 'italic',
-                              fontSize: '0.83rem', color: '#3b2468',
-                              lineHeight: 1.6, margin: 0,
-                            }}>
-                              {card.back}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                        <span style={{ fontWeight: 900, fontSize: '1.1rem', color: ACCENT_DARK, lineHeight: 1.4 }}>
+                          {card.front}
+                        </span>
+                        {isFlipped ? (
+                          <span data-testid="prayer-card-answer" style={{ fontSize: '1rem', lineHeight: 1.6, fontWeight: 600 }}>
+                            {card.back}
+                          </span>
+                        ) : (
+                          <span style={{ fontSize: '0.9rem', fontWeight: 800, color: '#5b427d' }}>
+                            {isRu ? 'Нажми, чтобы открыть ▾' : 'Tap to reveal ▾'}
+                          </span>
+                        )}
+                      </button>
                     )
                   })}
                 </div>
@@ -605,7 +568,7 @@ export default function HowToPrayPage() {
       </section>
 
       {/* ════════════════ SECTION 2 — COME HONEST ════════════════════ */}
-      <section id="sec-2" style={{ padding: '0 0 8px', background: 'rgba(255,255,255,.03)' }}>
+      <section id="sec-2" style={{ padding: '0 0 8px', background: '#24113f' }}>
         <div style={{
           background: `linear-gradient(135deg,${ACCENT_DARK},${ACCENT})`,
           padding: '14px 20px', textAlign: 'center',
@@ -823,7 +786,7 @@ export default function HowToPrayPage() {
       </section>
 
       {/* ════════════════ SECTION 3 — GIVE YOUR WORRIES ══════════════ */}
-      <section id="sec-3" style={{ padding: '0 0 8px' }}>
+      <section id="sec-3" style={{ padding: '0 0 8px', background: '#faf7ff' }}>
         <div style={{
           background: `linear-gradient(135deg,${ACCENT},${ACCENT_DARK})`,
           padding: '14px 20px', textAlign: 'center',
@@ -1010,7 +973,7 @@ export default function HowToPrayPage() {
       </section>
 
       {/* ════════════════ SECTION 4 — BUILD A PRAYER ═════════════════ */}
-      <section id="sec-4" style={{ padding: '0 0 8px', background: 'rgba(255,255,255,.03)' }}>
+      <section id="sec-4" style={{ padding: '0 0 8px', background: '#24113f' }}>
         <div style={{
           background: `linear-gradient(135deg,${ACCENT_DARK},${ACCENT})`,
           padding: '14px 20px', textAlign: 'center',
