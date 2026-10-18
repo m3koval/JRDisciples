@@ -63,7 +63,8 @@ export const copy = {
       { title: 'When doing right feels hard', verses: ['struggle'], kind: 'match', paragraphs: [
         'Later, Michael knocks over Rosie’s model. He wants to hide it. “I need help to tell the truth,” he thinks. This is a moment to pray—and then do what is right.',
         'Paul writes about standing firm with God’s help in a spiritual struggle. He tells believers to pray for others, too. We depend on God instead of facing temptation alone. He gives us strength to obey, even when it is hard.',
-        'Michael prays, “Father, please help me tell the truth.” Then he says, “Rosie, I knocked it over. I’m sorry. Can I help fix it?” When a problem is too big, he can pray and ask a trusted grown-up for help.'
+        'Michael prays, “Father, please help me tell the truth.” Then he says, “Rosie, I knocked it over. I’m sorry. Can I help fix it?”',
+        'When a problem is too big, he can pray and ask a trusted grown-up for help.'
       ], task: 'Match each moment with a way to pray and respond.', options: [], answer: [], hint: 'Wisdom helps with a choice. Care reaches a friend. Forgiveness and truth belong with a lie.', truth: 'We pray for God’s help, pray for others, and take the next right step.' },
       { title: 'More than a wish list', verses: ['longing', 'delight'], kind: 'choice', paragraphs: [
         '“I ask God for lots of things,” Michael says. “Can I talk to Him when I don’t need a new thing?”',
@@ -133,7 +134,8 @@ export const copy = {
       { title: 'Когда трудно поступить правильно', verses: ['struggle'], kind: 'match', paragraphs: [
         'Позже Миша нечаянно ломает Розину постройку. Хочется всё скрыть. «Мне нужна помощь, чтобы сказать правду», — думает он. Самое время помолиться, а потом поступить правильно.',
         'Павел пишет, как с Божьей помощью оставаться верным в духовной борьбе. Он зовёт молиться и за других. Мы просим Бога помочь нам не поддаться греху и поступить правильно, даже когда это трудно.',
-        'Миша молится: «Отец, помоги мне сказать правду». Потом говорит: «Роза, это я сломал. Прости. Давай помогу починить?» А если беда слишком большая, можно помолиться и обратиться к надёжному взрослому.'
+        'Миша молится: «Отец, помоги мне сказать правду». Потом говорит: «Роза, это я сломал. Прости. Давай помогу починить?»',
+        'А если беда слишком большая, можно помолиться и обратиться к надёжному взрослому.'
       ], task: 'Подбери к каждой ситуации молитву и следующий шаг.', options: [], answer: [], hint: 'Для выбора нужна мудрость. Другу нужна забота. Вместо лжи нужны прощение и правда.', truth: 'Мы просим Божьей помощи, молимся за других и поступаем правильно.' },
       { title: 'Не только список желаний', verses: ['longing', 'delight'], kind: 'choice', paragraphs: [
         '«Я много всего прошу у Бога, — говорит Миша. — А можно поговорить с Ним, когда мне не нужна новая вещь?»',
