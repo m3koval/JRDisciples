@@ -31,7 +31,7 @@ function Challenge({ scene, language, onSuccess }: { scene: Scene; language: Lan
   }
   return <div data-testid="challenge">
     <h2>{scene.task}</h2>
-    {scene.kind === 'memory' && <><p className={styles.label}>{t.memory}</p><Verse verse={verses.continual} /></>}
+    {scene.kind === 'memory' && <p className={styles.label}>{t.memory} · {verses.continual.reference} · {verses.continual.translation}</p>}
     {scene.kind === 'choice' && <div className={styles.choices}>{scene.options.map((option, i) => <button key={i} data-testid={`option-${i}`} onClick={() => grade(scene.answer.includes(i))}>{option}</button>)}</div>}
     {scene.kind === 'select' && <><div className={styles.choices}>{scene.options.map((option, i) => <button key={i} data-testid={`option-${i}`} aria-pressed={picked.includes(i)} onClick={() => toggle(i)}><span aria-hidden="true">{picked.includes(i) ? '☑' : '□'} </span>{option}</button>)}</div><button className={styles.primary} data-testid="check" disabled={!picked.length} onClick={() => grade(picked.length === scene.answer.length && picked.every(id => scene.answer.includes(id)))}>{t.check}</button></>}
     {ordered && <>

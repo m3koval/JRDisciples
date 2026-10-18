@@ -53,6 +53,9 @@ jobs:
       - name: Check personal prayer lesson
         run: node scripts/check-alone-with-god.mjs
 
+      - name: Check prayer readability and answer hiding
+        run: node scripts/check-prayer-readability.mjs
+
       - name: Check offline bundle integrity guard
         run: node scripts/test-app-bundle-integrity.mjs
 
