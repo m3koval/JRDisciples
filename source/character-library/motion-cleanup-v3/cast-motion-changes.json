@@ -1,0 +1,274 @@
+{
+  "michael": {
+    "walk": {
+      "trials": [
+        {
+          "angle": 0,
+          "forearm": 0,
+          "pairs": 2012,
+          "collision_frames": 43
+        },
+        {
+          "angle": 4,
+          "forearm": 0,
+          "pairs": 562,
+          "collision_frames": 23
+        },
+        {
+          "angle": 8,
+          "forearm": 0,
+          "pairs": 0,
+          "collision_frames": 0
+        }
+      ],
+      "selected_abduction_degrees": 8,
+      "forearm_degrees": 0,
+      "max_ground_correction": 0.028414428234100342,
+      "status": "candidate_pending_independent_reimport_contact_scan",
+      "source": "/home/helper/work/JRDisciples/source/character-library/revision-v2/michael/walk.glb",
+      "output": "/home/helper/jd_motion_cleanup/cast-fixed/michael/walk.glb"
+    },
+    "run": {
+      "trials": [
+        {
+          "angle": 0,
+          "forearm": 0,
+          "pairs": 2647,
+          "collision_frames": 32
+        },
+        {
+          "angle": 4,
+          "forearm": 0,
+          "pairs": 1619,
+          "collision_frames": 29
+        },
+        {
+          "angle": 8,
+          "forearm": 0,
+          "pairs": 744,
+          "collision_frames": 17
+        },
+        {
+          "angle": 12,
+          "forearm": 0,
+          "pairs": 352,
+          "collision_frames": 11
+        },
+        {
+          "angle": 8,
+          "forearm": 6,
+          "pairs": 340,
+          "collision_frames": 12
+        },
+        {
+          "angle": 12,
+          "forearm": 6,
+          "pairs": 270,
+          "collision_frames": 8
+        },
+        {
+          "angle": 12,
+          "forearm": 12,
+          "pairs": 175,
+          "collision_frames": 8
+        },
+        {
+          "angle": 16,
+          "forearm": 8,
+          "pairs": 122,
+          "collision_frames": 5
+        },
+        {
+          "angle": 20,
+          "forearm": 8,
+          "pairs": 20,
+          "collision_frames": 1
+        }
+      ],
+      "selected_abduction_degrees": 20,
+      "forearm_degrees": 8,
+      "max_ground_correction": 0.04827909544110298,
+      "status": "candidate_pending_independent_reimport_contact_scan",
+      "source": "/home/helper/work/JRDisciples/source/character-library/revision-v2/michael/run.glb",
+      "output": "/home/helper/jd_motion_cleanup/cast-fixed/michael/run.glb"
+    }
+  },
+  "gracie": {
+    "walk": {
+      "trials": [
+        {
+          "angle": 0,
+          "forearm": 0,
+          "pairs": 627,
+          "collision_frames": 19
+        },
+        {
+          "angle": 4,
+          "forearm": 0,
+          "pairs": 0,
+          "collision_frames": 0
+        }
+      ],
+      "selected_abduction_degrees": 4,
+      "forearm_degrees": 0,
+      "max_ground_correction": 0.01887207292020321,
+      "status": "candidate_pending_independent_reimport_contact_scan",
+      "source": "/home/helper/work/JRDisciples/source/character-library/revision-v2/gracie/walk.glb",
+      "output": "/home/helper/jd_motion_cleanup/cast-fixed/gracie/walk.glb"
+    },
+    "run": {
+      "trials": [
+        {
+          "angle": 0,
+          "forearm": 0,
+          "pairs": 876,
+          "collision_frames": 14
+        },
+        {
+          "angle": 4,
+          "forearm": 0,
+          "pairs": 306,
+          "collision_frames": 9
+        },
+        {
+          "angle": 8,
+          "forearm": 0,
+          "pairs": 42,
+          "collision_frames": 2
+        },
+        {
+          "angle": 12,
+          "forearm": 0,
+          "pairs": 0,
+          "collision_frames": 0
+        }
+      ],
+      "selected_abduction_degrees": 12,
+      "forearm_degrees": 0,
+      "max_ground_correction": 0.033221181482076645,
+      "status": "candidate_pending_independent_reimport_contact_scan",
+      "source": "/home/helper/work/JRDisciples/source/character-library/revision-v2/gracie/run.glb",
+      "output": "/home/helper/jd_motion_cleanup/cast-fixed/gracie/run.glb"
+    }
+  },
+  "simeon": {
+    "walk": {
+      "trials": [
+        {
+          "angle": 0,
+          "forearm": 0,
+          "pairs": 0,
+          "collision_frames": 0
+        }
+      ],
+      "selected_abduction_degrees": 0,
+      "forearm_degrees": 0,
+      "max_ground_correction": 0.017232080921530724,
+      "status": "candidate_pending_independent_reimport_contact_scan",
+      "source": "/home/helper/work/JRDisciples/source/character-library/revision-v2/simeon/walk.glb",
+      "output": "/home/helper/jd_motion_cleanup/cast-fixed/simeon/walk.glb"
+    },
+    "run": {
+      "trials": [
+        {
+          "angle": 0,
+          "forearm": 0,
+          "pairs": 178,
+          "collision_frames": 4
+        },
+        {
+          "angle": 4,
+          "forearm": 0,
+          "pairs": 0,
+          "collision_frames": 0
+        }
+      ],
+      "selected_abduction_degrees": 4,
+      "forearm_degrees": 0,
+      "max_ground_correction": 0.042775195091962814,
+      "status": "candidate_pending_independent_reimport_contact_scan",
+      "source": "/home/helper/work/JRDisciples/source/character-library/revision-v2/simeon/run.glb",
+      "output": "/home/helper/jd_motion_cleanup/cast-fixed/simeon/run.glb"
+    }
+  },
+  "anna": {
+    "walk": {
+      "trials": [
+        {
+          "angle": 0,
+          "forearm": 0,
+          "pairs": 0,
+          "collision_frames": 0
+        }
+      ],
+      "selected_abduction_degrees": 0,
+      "forearm_degrees": 0,
+      "max_ground_correction": 0.013604247011244297,
+      "status": "candidate_pending_independent_reimport_contact_scan",
+      "source": "/home/helper/work/JRDisciples/source/character-library/revision-v2/anna/walk.glb",
+      "output": "/home/helper/jd_motion_cleanup/cast-fixed/anna/walk.glb"
+    },
+    "run": {
+      "trials": [
+        {
+          "angle": 0,
+          "forearm": 0,
+          "pairs": 427,
+          "collision_frames": 4
+        },
+        {
+          "angle": 4,
+          "forearm": 0,
+          "pairs": 104,
+          "collision_frames": 2
+        },
+        {
+          "angle": 8,
+          "forearm": 0,
+          "pairs": 0,
+          "collision_frames": 0
+        }
+      ],
+      "selected_abduction_degrees": 8,
+      "forearm_degrees": 0,
+      "max_ground_correction": 0.034065864980220795,
+      "status": "candidate_pending_independent_reimport_contact_scan",
+      "source": "/home/helper/work/JRDisciples/source/character-library/revision-v2/anna/run.glb",
+      "output": "/home/helper/jd_motion_cleanup/cast-fixed/anna/run.glb"
+    }
+  },
+  "tobias": {
+    "walk": {
+      "trials": [
+        {
+          "angle": 0,
+          "forearm": 0,
+          "pairs": 0,
+          "collision_frames": 0
+        }
+      ],
+      "selected_abduction_degrees": 0,
+      "forearm_degrees": 0,
+      "max_ground_correction": 0.023249397054314613,
+      "status": "candidate_pending_independent_reimport_contact_scan",
+      "source": "/home/helper/work/JRDisciples/source/character-library/revision-v2/tobias/walk.glb",
+      "output": "/home/helper/jd_motion_cleanup/cast-fixed/tobias/walk.glb"
+    },
+    "run": {
+      "trials": [
+        {
+          "angle": 0,
+          "forearm": 0,
+          "pairs": 0,
+          "collision_frames": 0
+        }
+      ],
+      "selected_abduction_degrees": 0,
+      "forearm_degrees": 0,
+      "max_ground_correction": 0.059151358902454376,
+      "status": "candidate_pending_independent_reimport_contact_scan",
+      "source": "/home/helper/work/JRDisciples/source/character-library/revision-v2/tobias/run.glb",
+      "output": "/home/helper/jd_motion_cleanup/cast-fixed/tobias/run.glb"
+    }
+  }
+}

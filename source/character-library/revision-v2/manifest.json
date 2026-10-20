@@ -1,0 +1,300 @@
+{
+  "schema": 1,
+  "status": "review_candidates",
+  "runtime_enabled": false,
+  "game_ready": false,
+  "characters": [
+    "michael",
+    "rosie",
+    "joseph",
+    "gracie",
+    "simeon",
+    "anna",
+    "tobias"
+  ],
+  "verification": "21 GLBs reimported; 24 bones each; all vertices weighted; walk/run deformation sampled at 9 phases",
+  "scale": "proposed lineup-only; per-character transforms in scale-proposal.json; not baked into runtime",
+  "files": [
+    {
+      "path": "source/character-library/revision-v2/michael/rig.glb",
+      "bytes": 2626976,
+      "sha256": "f96292242252e8e09d8650283b132c5688b98c56d9545642526fe42eb3aee5d8"
+    },
+    {
+      "path": "source/character-library/revision-v2/michael/walk.glb",
+      "bytes": 2657140,
+      "sha256": "655a2079dfbb5e5588f8f260f6faab9901130b2b2688d8d614333510c6801eb3"
+    },
+    {
+      "path": "source/character-library/revision-v2/michael/run.glb",
+      "bytes": 2645572,
+      "sha256": "7eca16c92bf738d9cebb5ccf3a7b3e9e838c516cc959c40dad85a7f94489f444"
+    },
+    {
+      "path": "source/character-library/revision-v2/michael/optimization-qa.json",
+      "bytes": 20725,
+      "sha256": "f43845cd26ebf7ed6771ec4efebb203b78eb66ee2d397ad7b7e3096617b08b8a"
+    },
+    {
+      "path": "source/character-library/revision-v2/michael/reference.png",
+      "bytes": 2058061,
+      "sha256": "ff20d6209c7063d5c664b44334fb0e97a87dda1c862aa51b6e0bda398e0d7b61"
+    },
+    {
+      "path": "source/character-library/revision-v2/rosie/rig.glb",
+      "bytes": 1928288,
+      "sha256": "2336e6fd208f058320df456c31dd5e1691897f78091ef0d69d56b69f6d86698d"
+    },
+    {
+      "path": "source/character-library/revision-v2/rosie/walk.glb",
+      "bytes": 1958324,
+      "sha256": "0245a58a943c259762c3693f225928eb0e7a3fef7d8ba7bc4bf00d7d402d46ff"
+    },
+    {
+      "path": "source/character-library/revision-v2/rosie/run.glb",
+      "bytes": 1946756,
+      "sha256": "16c8f3b297cf6dc6eb162d75a1db4d86751d4c778a4f07fa1fe578ef0553cc63"
+    },
+    {
+      "path": "source/character-library/revision-v2/rosie/optimization-qa.json",
+      "bytes": 6679,
+      "sha256": "205712717af251e93854bd95238f58f179f04a4f562247bb38f5999399740fcd"
+    },
+    {
+      "path": "source/character-library/revision-v2/rosie/reference.png",
+      "bytes": 1935286,
+      "sha256": "8f936f2fd48d904c7921c898a2ca77fbdd25b1964f480c85f471e2e4968dd422"
+    },
+    {
+      "path": "source/character-library/revision-v2/joseph/rig.glb",
+      "bytes": 2800236,
+      "sha256": "e43bddfb20c64c42592b2f0e89a8f4521382a205d4b74453d6bf9eb4e9d6acb0"
+    },
+    {
+      "path": "source/character-library/revision-v2/joseph/walk.glb",
+      "bytes": 2830416,
+      "sha256": "629e3cf1e431d5d72281908f803b0c3b04f0036eb153325f82dfc97e346cecd9"
+    },
+    {
+      "path": "source/character-library/revision-v2/joseph/run.glb",
+      "bytes": 2818840,
+      "sha256": "46a2b23f62501838d435024c68debea5b5dac9989bdf2e9078c3892ffbf98910"
+    },
+    {
+      "path": "source/character-library/revision-v2/joseph/optimization-qa.json",
+      "bytes": 6680,
+      "sha256": "a80e66959b0122681a883421d3d0bc6bafd2823d9232f22849b8db0fd734b562"
+    },
+    {
+      "path": "source/character-library/revision-v2/joseph/reference.png",
+      "bytes": 1251711,
+      "sha256": "d0c3d188e55e7b5adab2d550226dcadd7a05e885f289670c663e5ea9676dc4f9"
+    },
+    {
+      "path": "source/character-library/revision-v2/gracie/rig.glb",
+      "bytes": 3206560,
+      "sha256": "7d998025f2288f4f96be39178bf797c3c2689f8d1c58a18cdecc9f77a51c46f8"
+    },
+    {
+      "path": "source/character-library/revision-v2/gracie/walk.glb",
+      "bytes": 3236600,
+      "sha256": "12bd92a19c54c75b1fe2455b587dc658f84468c4593b462f5254b385e6a41fcf"
+    },
+    {
+      "path": "source/character-library/revision-v2/gracie/run.glb",
+      "bytes": 3225040,
+      "sha256": "1612abd30f5959b723ea4be1d80b1195d0a3a31c2d9f9647c9d0293e2dcf290f"
+    },
+    {
+      "path": "source/character-library/revision-v2/gracie/optimization-qa.json",
+      "bytes": 20719,
+      "sha256": "b328ab5d3b0646fd93802c28cfd6e8b18688b1197254d6a68e3ed8bab3d253fd"
+    },
+    {
+      "path": "source/character-library/revision-v2/gracie/reference.png",
+      "bytes": 1471441,
+      "sha256": "abe81524c8c72b4e9c284c0bbff6fa28fe51e34e769318950a24070c7f1cc46f"
+    },
+    {
+      "path": "source/character-library/revision-v2/simeon/rig.glb",
+      "bytes": 1966988,
+      "sha256": "aab778bf54296dd3c04026bc966d99cf12381ea9a9a2539bd04145a246a7bd0e"
+    },
+    {
+      "path": "source/character-library/revision-v2/simeon/walk.glb",
+      "bytes": 1997028,
+      "sha256": "9f3604237578944ca09cb8f2af5066e3892357b9654b1f68c77140fbc4d5ce9a"
+    },
+    {
+      "path": "source/character-library/revision-v2/simeon/run.glb",
+      "bytes": 1985464,
+      "sha256": "1c16bc21a90ca0f0a41233408b1479551f9352e95a3ba8c755e3820c69ab6da1"
+    },
+    {
+      "path": "source/character-library/revision-v2/simeon/optimization-qa.json",
+      "bytes": 20726,
+      "sha256": "fb7e3fbb1d17c257ab007d7da1165a7fe4fd3d4ae1a54fa1ea43b52bd2586728"
+    },
+    {
+      "path": "source/character-library/revision-v2/simeon/reference.png",
+      "bytes": 2215624,
+      "sha256": "61ea7587e6ad9a18a854719c228b3bbded8cd96dc68f3095c6c1880a305e379c"
+    },
+    {
+      "path": "source/character-library/revision-v2/anna/rig.glb",
+      "bytes": 1977460,
+      "sha256": "98e3e6f4648fa19a66fb15366e10fea7b586b86ea1891a54d2ce3fcef308b6b5"
+    },
+    {
+      "path": "source/character-library/revision-v2/anna/walk.glb",
+      "bytes": 2007504,
+      "sha256": "96d0800d5cc8928333c077b0b5dd001973a27325b1562ca36ae502bead886963"
+    },
+    {
+      "path": "source/character-library/revision-v2/anna/run.glb",
+      "bytes": 1995936,
+      "sha256": "4bc1014ad54ed6cc0e650c8f295aa574966253ed9ef01856db8d1a27cc5b9a9a"
+    },
+    {
+      "path": "source/character-library/revision-v2/anna/optimization-qa.json",
+      "bytes": 20728,
+      "sha256": "943f390709f890ac738c0cd82a1818ef3548276b77f8c7a9ba2fde4b1ed87b80"
+    },
+    {
+      "path": "source/character-library/revision-v2/anna/reference.png",
+      "bytes": 2062563,
+      "sha256": "0d9ff0ecbe8d215a92b7cea45ffcdf7c2627f6ce04ec79e06a9d9c9be689af98"
+    },
+    {
+      "path": "source/character-library/revision-v2/tobias/rig.glb",
+      "bytes": 2017948,
+      "sha256": "5ccc9bb12bcbe604d61699d5ae6d6124a82791540be0f683de195cc9ea27cfab"
+    },
+    {
+      "path": "source/character-library/revision-v2/tobias/walk.glb",
+      "bytes": 2047992,
+      "sha256": "3b4c0870ef853081c66f8bfdf3e8afb544866a7ef5c5d5ae3f43165a08a4a750"
+    },
+    {
+      "path": "source/character-library/revision-v2/tobias/run.glb",
+      "bytes": 2036424,
+      "sha256": "2d2ad8652f2d13e7c5fcad1d551ad475f3d05aa7f11192067fc689aa933df828"
+    },
+    {
+      "path": "source/character-library/revision-v2/tobias/optimization-qa.json",
+      "bytes": 20721,
+      "sha256": "690472d0a001a881724d701bae0a4891b15078fa03c42b63c7b8a73ce70061b0"
+    },
+    {
+      "path": "source/character-library/revision-v2/tobias/reference.png",
+      "bytes": 2131097,
+      "sha256": "9874bcc75d9a23c881aa51791b56488c17dbf5443573ce387ba394da0aa43008"
+    },
+    {
+      "path": "source/character-library/revision-v2/high-resolution/rosie/rig.glb",
+      "bytes": 21047576,
+      "sha256": "3f30d00aea8984399b5bbdc8e3e302510ac782f5aa2629365a22690b82aa3572"
+    },
+    {
+      "path": "source/character-library/revision-v2/high-resolution/rosie/walk.glb",
+      "bytes": 21060344,
+      "sha256": "d99abb709526fccba72561c125bb419c49de0b35ebb6dd746c52ec3cb20b3fe4"
+    },
+    {
+      "path": "source/character-library/revision-v2/high-resolution/rosie/run.glb",
+      "bytes": 21055736,
+      "sha256": "db8479b3d93d3fe421cf33453bbbaebddd14ae5b0761bb10ca2702747e648ada"
+    },
+    {
+      "path": "source/character-library/revision-v2/high-resolution/joseph/rig.glb",
+      "bytes": 22848892,
+      "sha256": "a1af865d8f52307a22e8304919c016ac2a3f7e8a87295b4c677920bec896030c"
+    },
+    {
+      "path": "source/character-library/revision-v2/high-resolution/joseph/walk.glb",
+      "bytes": 22861676,
+      "sha256": "2e19aa7fc03fde6699229fbc343f6075c9353b4c4318691c4723456928074148"
+    },
+    {
+      "path": "source/character-library/revision-v2/high-resolution/joseph/run.glb",
+      "bytes": 22857060,
+      "sha256": "419b9bbe7609b4dab4512cb71339e0edf7cf8aeb779abb8934b9d658412b95e9"
+    },
+    {
+      "path": "source/character-library/revision-v2/seven-character-scale-lineup.png",
+      "bytes": 1392426,
+      "sha256": "be7460954f46701527e733235c2b4402d0517eb3a25ee647043f961335099ec8"
+    },
+    {
+      "path": "source/character-library/revision-v2/scale-proposal.json",
+      "bytes": 1111,
+      "sha256": "3f60ba793a064b27cae1603ab2180dbb2a5d10f8c4e8199c640bf270349df5ec"
+    },
+    {
+      "path": "source/character-library/revision-v2/final-models.jpg",
+      "bytes": 128850,
+      "sha256": "18a4e0148357855055483a6ae1cf61bf5e99bf044fdcd92509d2b5fb51e9b884"
+    },
+    {
+      "path": "source/character-library/revision-v2/motion-screening.jpg",
+      "bytes": 114047,
+      "sha256": "42e34e46670550ce162ca93a943c281cc7916460c9d32728c969f4a7002cf0d6"
+    },
+    {
+      "path": "source/character-library/revision-v2/final-verification.json",
+      "bytes": 5269,
+      "sha256": "81c5ab5646a6d8a8ad005cf3cee6b03a44df92e172a02424b4395a7934c7a955"
+    },
+    {
+      "path": "source/character-library/revision-v2/rosie/hair-comparison.png",
+      "bytes": 1997356,
+      "sha256": "87e834b94f47719036e1f1516c81e3cd62348b912c96820b3fb95e3c644b8d18"
+    },
+    {
+      "path": "source/character-library/revision-v2/rosie/sculpt-report.json",
+      "bytes": 552,
+      "sha256": "5169f16dec07c6380617a3b01293e288c1c5d96b2cdf53887a042950c01f6901"
+    },
+    {
+      "path": "source/character-library/revision-v2/tools/optimize.py",
+      "bytes": 8012,
+      "sha256": "dd4d5d3a41446b5544f2a9f9d6c88ea591ebf1000be27c2124a385fbef108591"
+    },
+    {
+      "path": "source/character-library/revision-v2/tools/verify-final.py",
+      "bytes": 1594,
+      "sha256": "430323f858bbb0a1b1b0412eeca026d1a120d841a511b57123da1001c4430d4a"
+    },
+    {
+      "path": "source/character-library/revision-v2/tools/lineup.py",
+      "bytes": 3091,
+      "sha256": "b6fb36e3abed43d8059ef70d8fc9e4c3d3532b6c7145885f4816efa9161cba27"
+    },
+    {
+      "path": "source/character-library/revision-v2/tools/revise-hair.py",
+      "bytes": 4398,
+      "sha256": "7edfdd974f50678c4c138c81176100956ec349e8a5f9f41fdc32ce378b94b751"
+    },
+    {
+      "path": "source/character-library/revision-v2/revised-motion-sheet.jpg",
+      "bytes": 56968,
+      "sha256": "e9ea4417d458882838e32d9b7a2c7077a6d5e22f836dc0a4a4f5597a7a13d475"
+    },
+    {
+      "path": "source/character-library/revision-v2/rosie/motion-render-qa.json",
+      "bytes": 3413,
+      "sha256": "6c63d77d0ee4dd1e00b56527f15b08199dabcde71c1ab1fbc2336c09f2797e27"
+    },
+    {
+      "path": "source/character-library/revision-v2/joseph/motion-render-qa.json",
+      "bytes": 3412,
+      "sha256": "2bb7193111b2bc133d270d3b53b80e600188e00d158495ad335fad32f07f5673"
+    }
+  ],
+  "known_visual_limits": [
+    "Rosie walk: hand/dress contact and hip-area artifacts require cleanup",
+    "Joseph walk/run: swinging hands crowd/intersect belt pouches; wrist/hand shape needs refinement",
+    "Adult robes/apron require full-cycle tailored movement QA",
+    "No iPad performance or gameplay contact certification"
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "michael": {
+    "rig": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        9.0,
+        9.0
+      ],
+      "max_sample_motion": 0.0,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "walk": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        32.0
+      ],
+      "max_sample_motion": 0.41943772372787075,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "run": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        20.0
+      ],
+      "max_sample_motion": 0.642824653247263,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    }
+  },
+  "rosie": {
+    "rig": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        9.0,
+        9.0
+      ],
+      "max_sample_motion": 0.0,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "walk": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        32.0
+      ],
+      "max_sample_motion": 0.43690977345980286,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "run": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        20.0
+      ],
+      "max_sample_motion": 0.6813423876061825,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    }
+  },
+  "joseph": {
+    "rig": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        9.0,
+        9.0
+      ],
+      "max_sample_motion": 0.0,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "walk": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        32.0
+      ],
+      "max_sample_motion": 0.35799351451455136,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "run": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        20.0
+      ],
+      "max_sample_motion": 0.5684535298405929,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    }
+  },
+  "gracie": {
+    "rig": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        9.0,
+        9.0
+      ],
+      "max_sample_motion": 0.0,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "walk": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        32.0
+      ],
+      "max_sample_motion": 0.3813982452559,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "run": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        20.0
+      ],
+      "max_sample_motion": 0.6284376969756847,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    }
+  },
+  "simeon": {
+    "rig": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        9.0,
+        9.0
+      ],
+      "max_sample_motion": 0.0,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "walk": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        32.0
+      ],
+      "max_sample_motion": 0.6166361612684943,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "run": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        20.0
+      ],
+      "max_sample_motion": 0.892439002916524,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    }
+  },
+  "anna": {
+    "rig": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        9.0,
+        9.0
+      ],
+      "max_sample_motion": 0.0,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "walk": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        32.0
+      ],
+      "max_sample_motion": 0.5524822964437274,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "run": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        20.0
+      ],
+      "max_sample_motion": 0.8295864264567708,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    }
+  },
+  "tobias": {
+    "rig": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        9.0,
+        9.0
+      ],
+      "max_sample_motion": 0.0,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "walk": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        32.0
+      ],
+      "max_sample_motion": 0.6850960382083069,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    },
+    "run": {
+      "bones": 24,
+      "unweighted_vertices": 0,
+      "frame_range": [
+        1.0,
+        20.0
+      ],
+      "max_sample_motion": 0.9689275594237191,
+      "finite": true,
+      "reimported": true,
+      "game_ready": false
+    }
+  }
+}
