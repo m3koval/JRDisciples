@@ -1,0 +1,122 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.
+     at: _create_xic (platform/linuxbsd/x11/display_server_x11.cpp:6347)
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 128 bits)
+
+PASS seven explicit surviving deck members bank 0
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS repair retains same longitudinal decking language
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS one original flush panel collider
+PASS seven explicit surviving deck members bank 1
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS surviving deck top visible above terrain
+PASS damage remains local to bank
+PASS broken ends leave clear central gap
+PASS separate broken end grain
+PASS repair retains same longitudinal decking language
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS repaired surface matches original collision top
+PASS grain-bearing axis follows repaired span
+PASS one original flush panel collider
+PASS left damage replacement/replay
+PASS right damage replacement/replay
+PASS matching repaired visual stage
+PASS unchanged authoritative collision stage
+PASS matching repaired visual stage
+PASS unchanged authoritative collision stage
+PASS left damage replacement/replay
+PASS right damage replacement/replay
+PASS matching repaired visual stage
+PASS unchanged authoritative collision stage
+PASS matching repaired visual stage
+PASS unchanged authoritative collision stage
+PASS left damage replacement/replay
+PASS right damage replacement/replay
+PASS matching repaired visual stage
+PASS unchanged authoritative collision stage
+PASS matching repaired visual stage
+PASS unchanged authoritative collision stage
+PASS left damage replacement/replay
+PASS right damage replacement/replay
+PASS matching repaired visual stage
+PASS unchanged authoritative collision stage
+PASS matching repaired visual stage
+PASS unchanged authoritative collision stage
+BRIDGE_TIMBER_FAILURES=0

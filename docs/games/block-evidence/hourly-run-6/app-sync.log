@@ -1,0 +1,123 @@
+
+> jrdisciples@0.1.0 app:sync
+> npm run build:app && cap sync ios && npm run check:app
+
+
+> jrdisciples@0.1.0 build:app
+> CAPACITOR_BUILD=1 NEXT_PUBLIC_APP_SHELL=1 next build --webpack
+
+▲ Next.js 16.3.5 (webpack)
+✓ Running next.config.ts took 77ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 16.3s
+  Running TypeScript ...
+  Finished TypeScript in 5.6s ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/99) ...
+  Generating static pages using 5 workers (24/99)
+  Generating static pages using 5 workers (49/99)
+  Generating static pages using 5 workers (74/99)
+✓ Generating static pages using 5 workers (99/99) in 3.1s
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /explore
+├ ○ /games
+├ ○ /games/david-sling-challenge
+├ ○ /games/escape-room-daniel
+├ ○ /games/faith-over-giants
+├ ○ /games/faithful-archer
+├ ○ /games/manna-trail
+├ ○ /games/shepherd-light-adventure
+├ ○ /games/shield-of-faith
+├ ○ /games/spot-the-difference
+├ ○ /games/trail-of-truth
+├ ○ /games/truth-runner
+├ ○ /journey
+├ ○ /lessons
+├ ○ /lessons/baptism-prep
+├ ○ /lessons/case-for-christ-bible
+├ ○ /lessons/case-for-christ-cross
+├ ○ /lessons/case-for-christ-gods-son
+├ ○ /lessons/case-for-christ-resurrection
+├ ○ /lessons/coin-in-the-fish
+├ ○ /lessons/every-one-matters
+├ ○ /lessons/gods-cutting
+├ ○ /lessons/grace-in-the-kingdom
+├ ○ /lessons/holy-spirit
+├ ○ /lessons/how-to-pray
+├ ○ /lessons/jesus-builds-his-church
+├ ○ /lessons/jonah-big-fish
+├ ○ /lessons/mustard-seed-faith
+├ ○ /lessons/one-thing-you-lack
+├ ○ /lessons/transfiguration
+├ ○ /lessons/who-is-jesus
+├ ○ /lessons/whose-mark
+├ ○ /memory
+├   /memory/[id]
+│ ├ ● /memory/john-3-16
+│ ├ ● /memory/psalm-23-1
+│ ├ ● /memory/proverbs-3-5-6
+│ └ ● [+5 more paths]
+├ ○ /practice
+├ ○ /progress
+├ ○ /puzzles
+├   /puzzles/[id]
+│ ├ ● /puzzles/books-of-the-bible
+│ ├ ● /puzzles/jesus-is
+│ ├ ● /puzzles/gods-armor
+│ └ ● [+9 more paths]
+├ ○ /quest
+├ ○ /quests
+├ ○ /quests/armor-of-god
+├ ○ /quests/courage-quest
+├ ○ /quests/forest-of-lies
+├ ○ /quests/forgiveness-bridge
+├ ○ /quests/fruit-of-spirit
+├ ○ /quests/good-samaritan
+├ ○ /quests/lost-sheep
+├ ○ /quests/storm-rescue
+├ ○ /quests/wise-builder
+├ ○ /quiz
+├   /quiz/[id]
+│ ├ ● /quiz/quiz-creation
+│ ├ ● /quiz/quiz-noah
+│ ├ ● /quiz/quiz-joseph
+│ └ ● [+3 more paths]
+├ ○ /rebus
+├   /rebus/[id]
+│ ├ ● /rebus/rebus-believe
+│ ├ ● /rebus/rebus-worship
+│ ├ ● /rebus/rebus-servant
+│ └ ● [+9 more paths]
+├ ○ /stories
+└   /stories/[id]
+  ├ ● /stories/creation
+  ├ ● /stories/noah
+  ├ ● /stories/joseph
+  └ ● [+4 more paths]
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+✔ Copying web assets from out to ios/App/App/public in 1.05s
+✔ Creating capacitor.config.json in ios/App/App in 1.51ms
+✔ copy ios in 1.10s
+✔ Updating iOS plugins in 9.25ms
+[info] All Capacitor plugins have a Package.swift file and will be included in Package.swift
+[info] Writing Package.swift
+✔ update ios in 72.35ms
+[info] Sync finished in 1.207s
+
+> jrdisciples@0.1.0 check:app
+> node scripts/check-app-bundle.mjs
+
+App bundle checks passed for 99 offline routes.
+All HTML references resolve locally; no remote links or resources remain in the app export.
+Every exported file is present in the synced iOS bundle.
+Trail of Truth route and engine artifacts verified with exact SHA-256 copies into iOS.

@@ -76,11 +76,23 @@
 - **5/6 runs consumed; exactly one remains.** No new schedule or extension. Final run must freeze/rebuild/export/QA and hand off with the unfinished backlog explicit; do not spend the final window adding unverified scope.
 - Spend unchanged: **$0 actual, $0 pending, $10 unused**. No paid acquisition or generation.
 
+## Run 6 — final frozen handoff; fresh browser blocked by disk exhaustion
+- **6/6 authorized runs consumed; zero remain.** No seventh development pass, new schedule or extension is authorized. No schedule was created or extended.
+- Starting pushed head `d3d482e88baacb5291b082eac11f2cbaaf118c1b`; remote main `36aae66a0a8cc194dfd97663d0de533f8f7ec153` unchanged. No overlapping writer found; pre-existing untracked merge evidence and protected checkout preserved.
+- Genuine final Web export, release stamp/guard and webpack app sync passed (99 offline routes, exact engine-copy hashes). Deterministic rebuilt game artifacts are byte-identical to the prior export; no new runtime art/level changes in this final pass.
+- Seven fresh frozen opening/native jobs passed. Six irrigation checks have fresh passing coverage across initial three passes and a separate three-job follow-up; initial site timeout preserved, not relabeled. Original assertions unchanged; isolated XDG state, Xvfb, fixed 60 Hz, exit/error/marker gates retained. Current bridge landscape/portrait, grove landscape, manual gate landscape and Russian downstream portrait inspected.
+- Fresh full browser invocation FAILED with ENOSPC; `checks.json` and `verification.json` truncated. No final-run full-browser pass claimed. Disk hit zero available bytes with free inodes. Removed only this run's reproducible worktree `.next/cache` (222 MiB reported by du); source, out, iOS bundle and evidence untouched. Broad disk cleanup was not attempted.
+- Revalidated complete **run-5** browser evidence against freshly rebuilt current source/export/hosted-copy/harness: all match, 63 checks pass. `check_run4_evidence.py --native-run 6 --browser-run 5` passes; evidence age no longer implies remaining run authority. This is explicit evidence reuse, not a clean run-6 browser attempt.
+- Bilingual, Scripture, Russian-copy, games, quest links, image assets and lint passed; 0 lint errors/32 existing warnings. Seven evidence-unit tests pass. No Scripture changes.
+- Consolidated handoff: `docs/six-run-game-handoff.md`; final evidence `docs/games/block-evidence/hourly-run-6/`. Source/export current, but visual floor, fresh final browser, full campaign coverage, child enjoyment and physical iPad/Xcode remain open. No merge/live deployment/signing changes.
+- Total sprint spend: **$0 settled, $0 pending, $10 unused**. No paid request or purchase.
+- Entire sprint delivered terrain/shoreline, bridge-timber and opening-tree improvements plus verification/recovery tooling. New levels, connected progression additions and new hands-on challenges were NOT implemented. Full unfinished backlog below retained; this is not a completed whole-game improvement claim.
+
 ## Remaining dependency/backlog (not silently completed)
-0. CLOSED in run 5: full exported opening browser gate. Preserve the single-run evidence. Final run must rebuild first, then use a NEW `hourly-run-6/browser-frozen` directory if rerunning; reserve the full 40-minute browser window early and do not modify source/export/harness while it runs. Final release rebuild/native/browser handoff takes precedence over optional expansion.
+0. Full exported opening browser gate passed in run 5 and exact-hash reuse was revalidated in run 6. Fresh run-6 attempt failed on disk exhaustion; a clean fresh rerun requires recovered host headroom and new authorization, not a seventh scheduled pass.
 1. Run-1 terrain, run-2 timber and run-3 tree presentation implemented. Next opening dependency: replace the conspicuous rounded perimeter/outcrop silhouettes and improve bank transitions without changing physical boundaries or garden.
 2. Whole opening composition STILL fails the reference-quality floor; preserve garden and the improved broken timbers/tree silhouettes. Neither internal review nor tests are owner approval.
 3. Audit canonical next-level transitions and implement bounded connected progression improvements after opening card.
 4. Meaningful hands-on challenge and exploration improvements; retain EN/RU, saves and exact Scripture.
 5. Further scene coverage and normal input-route checks; no child-enjoyment claim from tests.
-6. Final pass: freeze, genuine Web rebuild, export stamp/guard, webpack app sync, native/browser QA and consolidated PR handoff. Claude owns Xcode/device acceptance.
+6. Final packaging/native handoff delivered in run 6; fresh browser attempt blocked by disk exhaustion. Consolidated branch handoff is `six-run-game-handoff.md`. Claude owns Xcode/device acceptance; not an authorized continuation.

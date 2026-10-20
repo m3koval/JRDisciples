@@ -1,0 +1,59 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.
+     at: _create_xic (platform/linuxbsd/x11/display_server_x11.cpp:6347)
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 128 bits)
+
+PASS walkable core terrain matches existing flat collision height
+PASS scenic relief never clips under base plane
+PASS continuous terrain integrated in actual chapter
+PASS terrain shared-vertex budget
+PASS terrain triangle budget
+PASS playable terrain normals face upward
+PASS foliage actually integrated, not unattached module
+PASS foliage adds no route collisions
+PASS foliage uses four batched plant groups
+FOLIAGE_BUDGET { "trees": 5, "crown_leaves": 4193, "grass_clumps": 2038, "ferns": 32, "flower_bouquets": 24, "multimeshes": 4, "materials": 2, "collision_shapes": 0 }
+PASS supported workshop integrated
+PASS five authoritative water surfaces preserved
+PASS animated surface material 0
+PASS animated surface material 1
+PASS animated surface material 2
+PASS animated surface material 3
+PASS animated surface material 4
+PASS chapter scoped shadow range
+PASS prior chapter lighting restored
+PASS unclipped action label en 1280 Talk to Mira
+PASS unclipped action label en 1280 Talk to Oren
+PASS unclipped action label en 1280 Fit repair part
+PASS unclipped action label en 1280 Outlet height
+PASS unclipped action label en 1280 Lift inlet
+PASS unclipped action label en 1280 Furrow gate
+PASS unclipped action label en 1280 Repair plan
+PASS unclipped action label en 1280 Take material
+PASS unclipped action label en 720 Talk to Mira
+PASS unclipped action label en 720 Talk to Oren
+PASS unclipped action label en 720 Fit repair part
+PASS unclipped action label en 720 Outlet height
+PASS unclipped action label en 720 Lift inlet
+PASS unclipped action label en 720 Furrow gate
+PASS unclipped action label en 720 Repair plan
+PASS unclipped action label en 720 Take material
+PASS unclipped action label ru 1280 К Мире
+PASS unclipped action label ru 1280 К Орену
+PASS unclipped action label ru 1280 Поставить деталь
+PASS unclipped action label ru 1280 Высота порога
+PASS unclipped action label ru 1280 Поднять затвор
+PASS unclipped action label ru 1280 Затвор борозды
+PASS unclipped action label ru 1280 План ремонта
+PASS unclipped action label ru 1280 Взять материал
+PASS unclipped action label ru 720 К Мире
+PASS unclipped action label ru 720 К Орену
+PASS unclipped action label ru 720 Поставить деталь
+PASS unclipped action label ru 720 Высота порога
+PASS unclipped action label ru 720 Поднять затвор
+PASS unclipped action label ru 720 Затвор борозды
+PASS unclipped action label ru 720 План ремонта
+PASS unclipped action label ru 720 Взять материал
+GARDEN_ART_FAILURES=0

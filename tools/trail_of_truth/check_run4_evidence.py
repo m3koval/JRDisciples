@@ -53,4 +53,6 @@ budget = json.loads((ROOT/'docs/hourly-model-budget.json').read_text())
 pending = sum(row['reserved_cents'] for row in budget['pending_commitments'])
 unused = budget['cap_cents']-budget['actual_spent_cents']-pending
 assert unused >= 0
-print(json.dumps(dict(run=args.browser_run, native_evidence_run=args.native_run, remaining_runs=6-args.browser_run, frozen_game_files=len(manifest), native_jobs=len(rows), browser_checks=len(result['checks']), spent_cents=budget['actual_spent_cents'], pending_cents=pending, unused_cents=unused), indent=2))
+# Evidence reuse does not imply another authorized development run. The sprint
+# ledger, not the age of browser evidence, owns the finite run count.
+print(json.dumps(dict(browser_evidence_run=args.browser_run, native_evidence_run=args.native_run, frozen_game_files=len(manifest), native_jobs=len(rows), browser_checks=len(result['checks']), spent_cents=budget['actual_spent_cents'], pending_cents=pending, unused_cents=unused), indent=2))
