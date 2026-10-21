@@ -1,0 +1,391 @@
+{
+  "scope": "Last 25 keys, zero-based indices 24–48, insertion order of visual-detail-fixes.json",
+  "reviewed_at_utc": "2026-10-20T21:07:27.600460+00:00",
+  "method": "Read actual repair briefs and original English scene paragraphs. Native visual inspection of six labeled contact sheets, plus individual images/detail crops for disputed actions and card/weight details. No generation, asset/data/code changes, or browser/build claims. Pass means no material blocker, not verbatim depiction of every narrative clause. Explicit skips left unreviewed.",
+  "counts": {
+    "pass": 20,
+    "blocker": 3,
+    "skip": 2
+  },
+  "records": [
+    {
+      "key": "lesson-34-scene-3",
+      "source_index": 24,
+      "status": "pass",
+      "observation": "Four established identities cooperate around a small tabletop bridge. Michael holds a support, Rosie steadies the base, Gracie holds tape, and Joseph pauses with an open hand above a slipped piece. Practical repair is clear; no prayer-only substitution.",
+      "repair_brief": "Indoor model workshop. Joseph blue and Michael green cooperate in repairing a tabletop cardboard bridge with tape and a wider base. One small support slips and Joseph pauses calmly instead of grabbing it. Rosie purple steadies the base and Gracie yellow holds tape. Tiny wooden cart nearby. Practical hands-on repair, not prayer or book study.",
+      "original_scene_title": "Try a different response",
+      "original_scene_paragraphs": [
+        "Joseph asks God for help and apologizes for sending everyone away. He names what he actually needs: someone to hold the supports while he reconnects them. Michael admits that he was careless. Gracie measures a wider base, and you pass over the tape without rushing him.",
+        "When the first repair slips, Joseph feels the same hot frustration. This time he puts the tape down, takes a breath, and asks for another pair of hands. Patience becomes a practiced response, not a pretend feeling."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-34-scene-3.webp",
+      "sha256": "b873a7d8794d852f6ff3d1a5a99d831cc8fd23e9e8b60193a1a9dafce33434e6",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-34-scene-4",
+      "source_index": 25,
+      "status": "pass",
+      "observation": "Small repaired tabletop bridge supports a wooden toy cart; tape and hands establish scale and all four participate. Joseph has the cart hand rather than Michael; this minor staging variation does not negate successful repair or welcomed cooperation.",
+      "repair_brief": "Indoor model workshop. A tiny wooden toy cart successfully crosses a repaired SMALL CARDBOARD bridge on a table. Four explorers smile modestly around their model. Emphasize small scale: hands and tape roll beside bridge. No canyon, no full-size bridge, no real loaded cart.",
+      "original_scene_title": "A stronger next attempt",
+      "original_scene_paragraphs": [
+        "The repaired bridge holds a little wooden cart. Joseph lets Michael roll it across first. He cannot promise that tomorrow will contain no angry thoughts, but he can describe a new direction: ask for help, speak honestly, and practice kindness when frustration returns.",
+        "Explorer, notice what changed besides the bridge. Joseph welcomed people back into the work. The Spirit’s help does not make our choices unnecessary; it enables us to take them differently. Their afternoon ends with thanks, not a chart ranking whose fruit grew fastest."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-34-scene-4.webp",
+      "sha256": "87b44118fb90594491607c94f66158e1761bed9c32645a7f05b245c354ccec8d",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-35-scene-4",
+      "source_index": 26,
+      "status": "pass",
+      "observation": "Joseph points to a central trail map while all four warmly plan together; no withdrawn/consolation composition. Source mismatch noted: the brief assigns the leading request to Joseph, whereas the original text names Michael. The still depicts shared planning and does not unambiguously assign spoken dialogue.",
+      "repair_brief": "Modern clubhouse table. Joseph blue openly points at a trail MAP and asks his three friends about leading part of their next walk. Michael green, Rosie purple and Gracie yellow discuss the route with him warmly. Map and shared route planning are central. No withdrawn boy, folded arms or consolation scene.",
+      "original_scene_title": "Room for honest words",
+      "original_scene_paragraphs": [
+        "The leader handles the harmful message and checks on the friend it targeted. The children return to planning their route. Michael says he would like a turn leading and asks what the others think. His request can now be discussed instead of obeyed under pressure.",
+        "You help mark a safe meeting point on the map. Testing ideas does not mean refusing God’s guidance. It means welcoming truth, correction, and wise counsel rather than treating fear, popularity, or a loud inner feeling as God’s signature."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-35-scene-4.webp",
+      "sha256": "d90bc90c523e118c7705870e1e2ea6ab7ad0d55b4b02ae42dc86e749fa537d2c",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-36-scene-1",
+      "source_index": 27,
+      "status": "pass",
+      "observation": "Michael hesitates above a tablet with a birdhouse picture; Joseph looks hurt and both girls concerned. Small unfinished bird shelter and loose pieces are visible. The paused unkind-message beat is legible without fabricated screen text.",
+      "repair_brief": "Modern craft clubhouse. A half-built SMALL BIRD SHELTER sits on the table. Michael green hesitates with a tablet showing a tiny cartoon birdhouse picture; his finger pauses rather than sending a joke. Joseph blue looks hurt and Rosie purple notices. Gracie yellow watches seriously. No readable screen text. Show the pause before an unkind message, not cheerful construction alone.",
+      "original_scene_title": "The photograph in the chat",
+      "original_scene_paragraphs": [
+        "The explorers are building a bird shelter in the community garden. During their break, a photograph appears in the supervised club chat: Joseph holding a crooked roof panel. Someone has added a mocking caption. Michael begins typing a sharper joke, hoping the group will laugh at his cleverness.",
+        "Gracie lowers the tablet. Joseph is standing close enough to see the screen. Explorer, pause beside Michael before he taps Send. A fast reply can travel farther than the kindness that should guide it."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-36-scene-1.webp",
+      "sha256": "9083e8a37e1445ce9797414bc8981ece83ae0d76865dcd60a1667c1ad69ad0f9",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-36-scene-3",
+      "source_index": 28,
+      "status": "pass",
+      "observation": "Distinct smaller orange-clothed brother is startled beside a tipped cup and water. Gracie calmly extends a cloth; the others protect the bird shelter. No indication that Gracie caused the spill or shames the child.",
+      "repair_brief": "Modern craft clubhouse. Add Gracie's little brother in orange, shorter than the four explorers. A cup of water has tipped near his elbow. He looks startled. Gracie yellow calmly moves the cup away and offers him a cloth, patient but clear. Michael green, Joseph blue and Rosie purple help protect the SMALL bird-shelter project. Gracie did not cause the spill. No injury or angry gestures.",
+      "original_scene_title": "The next interruption",
+      "original_scene_paragraphs": [
+        "Back at the shelter, Gracie’s little brother reaches for the paint and knocks over a water cup. Gracie almost shouts that he ruins everything. Then she notices his frightened face and the cloth within reach. The chat was not the only place where their lesson mattered.",
+        "She moves the paint safely aside, asks him to bring another cloth, and explains that he must ask before touching the tools. She can set a clear boundary without making her brother feel worthless."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-36-scene-3.webp",
+      "sha256": "789b02ed82a39514b943a59b29ce5ef701fd593edcf4e26c569247cd99f6d46f",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-36-scene-4",
+      "source_index": 29,
+      "status": "pass",
+      "observation": "Exactly five children jointly hold a small completed birdhouse, with the younger orange-clothed brother helping at its roof/body and Joseph encouraging him. It is unmistakably a bird shelter, not a chest.",
+      "repair_brief": "Modern craft clubhouse. Four explorers and Gracie's little brother in orange lift a completed SMALL wooden BIRD SHELTER together. The younger boy helps hold a repaired roof panel; Joseph blue encourages him. Clearly a small birdhouse, not a chest or hatch. Warm practical teamwork.",
+      "original_scene_title": "Fruit at the workbench",
+      "original_scene_paragraphs": [
+        "Joseph fits the roof panel again, this time with Michael holding the other side. The leader removes the mocking post and follows up with its sender. Gracie’s brother dries the bench, then joins a task he can manage. Nobody earned a prize for having no difficult feelings.",
+        "You help lift the finished shelter onto its stand. Good fruit appeared in listening, truthful words, protection, and patient boundaries. Asking the Spirit for help led into action at a screen and at a wet workbench."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-36-scene-4.webp",
+      "sha256": "dde3051fbc17c6b1e0d774ef21395eed77f75142d82939f300058d0d6be68613",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-41-scene-1",
+      "source_index": 30,
+      "status": "pass",
+      "observation": "Four explorers sit at a table with Michael's tablet and a prominent unoccupied foreground chair. Concerned attention supports the absence/relationship question. The display is concealed rather than inventing a video inscription.",
+      "repair_brief": "Contemporary church classroom. Michael green watches a recorded church talk on a small tablet while Joseph blue notices an EMPTY CHAIR at their table where a friend should be. Rosie purple and Gracie yellow look toward the empty chair. The video versus real relationship question is visible. No text on device.",
+      "original_scene_title": "A very good recording",
+      "original_scene_paragraphs": [
+        "Rain moves the explorers’ meeting into the church hall. Michael arrives with a helpful Bible video and suggests that everyone could watch at home next week. No chairs to arrange, no muddy shoes to clean, and the speaker never loses his notes.",
+        "Then Rosie notices the empty chair beside Joseph. Their friend Anna has missed two gatherings. The video can teach something true, but its recorded speaker cannot notice Anna’s chair or ask why she has disappeared."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-41-scene-1.webp",
+      "sha256": "e14a3a422a9970c575e8475a5f3ed91879cda1444061fea800431cc7e86bfffb",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-41-scene-3",
+      "source_index": 31,
+      "status": "blocker",
+      "observation": "Modern porch, food bag, picture card and four explorers are correct, but the only adult is the receiving parent inside the doorway. No accompanying trusted leader is present.",
+      "required_fix": "Include a distinct adult accompanying the four children on the visitor side. Both repair brief ('with a friendly adult') and original scene ('With their leader') require adult-supported family contact.",
+      "zoom": "Full individual image inspected; no additional adult in frame.",
+      "repair_brief": "Present-day suburban home front door, modern clothes, porch and ordinary doorbell. Four explorers with a friendly adult deliver a small food bag and a homemade picture card to Anna's family after a parent's surgery. Welcoming adult wears jeans and sweater; no visible injury, no robes, head veils, ancient stone house or biblical-era figures.",
+      "original_scene_title": "An empty chair has a name",
+      "original_scene_paragraphs": [
+        "With their leader, the children ask Anna’s family whether a visit would help. Her father is recovering from surgery, and transport has become difficult. The adults arrange support; the children prepare a card and record the group singing Anna’s favorite song.",
+        "Gracie realizes the recording is useful after all. It carries the love of people who know Anna, rather than replacing that relationship. They ask what she would enjoy instead of deciding that every absent person needs the same thing."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-41-scene-3.webp",
+      "sha256": "31628872c2851d314a46d49836797d5225e8925a958d507d8731108e44b48e7d",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-42-scene-1",
+      "source_index": 32,
+      "status": "skip",
+      "observation": "Excluded by explicit instruction; parent is retrying. No judgment on current asset.",
+      "repair_brief": "Modern church preparation room. Michael green carries a stack of folded white towels; Joseph blue holds EMPTY small communion trays carefully. Rosie purple and Gracie yellow help set them on a table. Towels and empty trays are the key props. No sacrament being performed by children, no writing.",
+      "original_scene_title": "Preparing the room",
+      "original_scene_paragraphs": [
+        "The explorers help prepare the church hall for Sunday. Michael carries folded towels while Gracie sets out empty trays with an adult. Joseph wonders whether the towels and bread belong to the same celebration. Rosie suggests making a question card rather than guessing from the objects.",
+        "You help write two questions: Why water? Why bread and a cup? The children bring their card to the pastor, who invites them to open the Bible before finishing the preparations."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-42-scene-1.webp"
+    },
+    {
+      "key": "lesson-43-scene-1",
+      "source_index": 33,
+      "status": "pass",
+      "observation": "Three separate cards show two instruments, a person elevated on a large pedestal, and a worried child with a crossed-out speaking silhouette. They distinguish preference, misdirected worship and silencing harm without text or graphic danger.",
+      "zoom": "Card crop inspected at native detail.",
+      "repair_brief": "Contemporary classroom table. Joseph blue lays out three clearly separate illustrated discussion cards: first shows two different musical instruments, second a person's portrait on an oversized pedestal, third a small worried face beside a secrecy symbol. The four explorers thoughtfully compare them. No travel postcards, scenery pictures, readable phrases or actual harm.",
+      "original_scene_title": "Not the same problem",
+      "original_scene_paragraphs": [
+        "Joseph brings three invented message cards to the explorers’ discussion table. One prefers quiet hymns to drums. Another says Christians should worship their group leader instead of Jesus. The third tells a child to hide a frightening incident so the church will not look bad.",
+        "Michael starts to label all three Disagreement. Rosie stops him. A preference, a teaching that turns away from Christ, and hiding harm are not the same problem. They need different responses, not one sweeping excuse."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-43-scene-1.webp",
+      "sha256": "0195e4c2227f084deb6aceb5007be69dedfaa2f499ad65474a7c55c8ff111ad3",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-43-scene-3",
+      "source_index": 34,
+      "status": "pass",
+      "observation": "Gracie talks to an attentive adult with Rosie beside her; the boys sit back. Face-down practice card and calm visible setting support safe disclosure, not secrecy or confrontation.",
+      "repair_brief": "Modern classroom. Gracie yellow speaks privately but visibly to a trusted adult teacher at a nearby table while Rosie purple sits supportively beside her. Michael green and Joseph blue give them room. An ordinary pictorial practice card rests face down. Adult listens attentively. Show telling a trustworthy adult, no threatening scene or secrets.",
+      "original_scene_title": "A safe route for telling",
+      "original_scene_paragraphs": [
+        "Gracie moves the third card away from the debate pile. A child who feels threatened needs protection, not a competition about who can defend the church’s reputation. With their trusted leader, the team identifies safe adults outside the person causing harm.",
+        "They practice telling clearly what happened without investigating alone or confronting the frightening person. If one adult dismisses it, the child can tell another. Where immediate danger exists, adults should seek emergency help. Protecting people honors truth rather than betraying it."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-43-scene-3.webp",
+      "sha256": "96008af022b3830f349a6713d141ded9ca76939c355d41b18ac9f33e7502da43",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-43-scene-4",
+      "source_index": 35,
+      "status": "pass",
+      "observation": "Three separate pictorial response cards show instruments, an open book with magnifier, and adult-child conversation. Michael and Joseph discuss while the girls arrange cards; no random travel-card substitution.",
+      "repair_brief": "Modern clubhouse. Three pictorial response cards laid in separate spaces: two instruments together, open Bible with magnifier, adult listening to child. Michael green kindly discusses music with Joseph blue while Rosie purple and Gracie yellow arrange the cards. No wooden counters or random travel postcards, no readable text.",
+      "original_scene_title": "Make room without hiding harm",
+      "original_scene_paragraphs": [
+        "Finally Michael returns to the music card. He asks why someone prefers quieter singing and learns to discuss the preference without mockery. They can seek a thoughtful arrangement without pretending that musical taste is the gospel itself.",
+        "Explorer, help label their three response paths: discuss kindly, examine teaching, seek protection. Disagreement can call for patient listening; deception calls for correction; harm calls for safety and accountability. Loving the church includes refusing to excuse what injures its people."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-43-scene-4.webp",
+      "sha256": "02fb0742310baae87c3cd22ef00e2c41be45d7d5dd1a5587c3e849e642ee3c06",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-44-scene-1",
+      "source_index": 36,
+      "status": "pass",
+      "observation": "Michael steadies a tall visibly leaning stack; Joseph rests a wrist/forearm on a cushion. Practical need for teamwork is clear without injury. Girls handle supplies rather than all standing around finished packing.",
+      "repair_brief": "Modern volunteer packing room. Michael green realizes his TALL STACK of light cardboard boxes is sliding; he carefully steadies it. Joseph blue sits nearby resting a sore wrist on a cushion, with no injury shown. Rosie purple and Gracie yellow notice his wish to help. Show the practical need for teamwork, not calm completed packing.",
+      "original_scene_title": "The tallest tower",
+      "original_scene_paragraphs": [
+        "Michael stacks empty delivery boxes in the church kitchen until they tower above his green shirt. The explorers are preparing welcome packs for families moving into nearby flats. He announces that whoever carries the most boxes should lead. Joseph looks down at his sore wrist.",
+        "Gracie tries lifting a stack, but the top box slides. You catch it before it reaches the floor. Their project needs more than a champion carrier; it needs a better plan."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-44-scene-1.webp",
+      "sha256": "171873adae8309f157c4b04a6a7d344723fcc886cb68b6dc3731e6f0fc68f8b1",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-45-scene-1",
+      "source_index": 37,
+      "status": "pass",
+      "observation": "Exactly five children, including straight-dark-haired Nina in orange, gather at the telescope. Nina gestures to Michael while he adjusts it; Joseph has a notebook and Rosie a book. Extra tabletop game pieces are incidental, not a replacement of the scene action.",
+      "repair_brief": "Modern backyard telescope evening. Exactly FIVE children: four regular explorers plus Nina, a girl with straight dark hair and an orange sweater. Nina asks Michael green a sincere question while waiting her turn at telescope. Joseph blue has notebook, Rosie purple has Bible, Gracie yellow listens. Nina is visibly part of the group.",
+      "original_scene_title": "A question under the stars",
+      "original_scene_paragraphs": [
+        "At the neighborhood astronomy evening, Michael steadies a telescope while Gracie adjusts its little stool. Their friend Nina notices Rosie’s purple Bible beside the star chart and asks why the explorers follow Jesus. Nina says her family does not believe in God.",
+        "Joseph opens his blue notebook, ready with a list of arguments. But Nina is still speaking. Explorer, stay beside the telescope: the first challenge tonight is not finding a planet. It is hearing a person."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-45-scene-1.webp",
+      "sha256": "5bf9493412cfd63194d89f85632e1ae6be86ab3ccd9d0e905d19fc54cb04dc06",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-45-scene-2",
+      "source_index": 38,
+      "status": "pass",
+      "observation": "Nina speaks at the outdoor table and all four attend to her; Michael's hands are down and Rosie's book is closed. Five distinct identities, telescope visible, ordinary lamp illumination.",
+      "repair_brief": "Modern backyard table beside telescope. Exactly five children including Nina, straight dark hair orange sweater. Nina speaks thoughtfully and all four explorers LISTEN without interrupting. Michael green is quiet with hands down; Rosie purple's book rests closed for the moment. Respectful personal conversation. No mystical light or text.",
+      "original_scene_title": "Listen to this friend",
+      "original_scene_paragraphs": [
+        "Rosie asks what Nina herself thinks, without deciding that every nonbelieving family must have the same reasons. Nina says she has questions about suffering. Michael admits that he has questions too. He does not invent a quick explanation for someone else’s pain.",
+        "Their leader helps them read 1 Peter 3:15–16. Christians are called to explain their hope with gentleness and respect. Listening is not surrendering a belief; it helps them answer the question actually being asked."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-45-scene-2.webp",
+      "sha256": "dd2af8f4bd3b64fa235e535dab6b880a9dd035f7419a6dce01d51e264f5ffa9f",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-45-scene-3",
+      "source_index": 39,
+      "status": "pass",
+      "observation": "Rosie reads an open contemporary book to Nina and the other three children around a modern outdoor table. Nina is thoughtful, not coerced; all five remain identifiable and no magical book effect or readable text appears.",
+      "repair_brief": "Modern backyard reading table. Five children including Nina in orange. Rosie purple reads a contemporary Bible while Nina listens thoughtfully, Michael green gives her space and Joseph blue and Gracie yellow listen. Gentle honest conversation without pressure. No magical glow or readable text.",
+      "original_scene_title": "Clear without being cruel",
+      "original_scene_paragraphs": [
+        "Joseph wonders whether kindness means saying that every belief teaches the same thing. Rosie turns to John 14:6. Jesus makes a definite claim about coming to the Father through him. Christians can say what they believe without pretending that important differences disappear.",
+        "Michael explains that his hope rests in Jesus’ death and resurrection, not in being cleverer than Nina. He offers to read a Gospel together another day. She says she would rather think first. He accepts that answer."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-45-scene-3.webp",
+      "sha256": "806c41a31e8c1ebc3b239d8de53d89aa5fca8a3de6e03f0906c463bd2e7bc978",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-45-scene-4",
+      "source_index": 40,
+      "status": "skip",
+      "observation": "Excluded by explicit instruction; parent is retrying. No judgment on current asset.",
+      "repair_brief": "Backyard observatory at night. Nina, girl with straight dark hair in orange sweater, finally looks through telescope for her promised turn. Michael green adjusts the tripod, Joseph blue and Rosie purple consult a normal star chart, Gracie yellow waits happily. Exactly five children. Natural moonlight, no magical glowing maps.",
+      "original_scene_title": "Her turn still matters",
+      "original_scene_paragraphs": [
+        "A bright point finally comes into focus. Joseph steps aside so Nina can look first, just as they had promised before the conversation. Friendship has not become a prize she must win by agreeing. Gracie lends her the star chart and asks which constellation she wants to find next.",
+        "You help hold the red torch steady. The explorers still believe Jesus is Lord. Their words can be truthful, their questions open, and their shared evening genuinely kind."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-45-scene-4.webp"
+    },
+    {
+      "key": "lesson-46-scene-1",
+      "source_index": 41,
+      "status": "blocker",
+      "observation": "Only six children are shown, and all six—including Michael in green—have an open raised hand. Michael's raised palm at chest height makes the intended refusal visually ambiguous rather than clearly keeping his hand down. Only two additional classmates appear, not three.",
+      "required_fix": "Show seven children total: six others voting with raised hands, and Michael distinctly keeping both hands down/by his sleeve. Preserve his uneasy refusal. This is the central honesty-versus-majority action, not a cosmetic count issue.",
+      "zoom": "Individual image inspected to confirm all six identities and hand positions.",
+      "repair_brief": "Modern model-building club. Six children raise hands around a shared tablet showing a picture of a model bridge. Michael green visibly keeps HIS hand down, thoughtfully refusing an unfair copying vote. Include Joseph blue, Rosie purple and Gracie yellow among the group, with three distinctly dressed additional classmates. A small bridge project on table. No words on screen, no cheerful all-agree composition.",
+      "original_scene_title": "Six hands in the air",
+      "original_scene_paragraphs": [
+        "The explorers are building a bridge from paper and string for the community challenge. Joseph finds a photograph of another team’s finished design on a shared tablet. Someone suggests copying it and entering it as their own. Six hands rise when the group votes.",
+        "Michael keeps his hand beside his green sleeve. His stomach tightens: he wants to belong, and the copied bridge might win. You watch Gracie put down the scissors. Does a crowded vote make dishonesty right?"
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-46-scene-1.webp",
+      "sha256": "d5ccb395b5d2bd66849ae280217e94e4774d13bc9f8e0bf33616b038c9c1066a",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-46-scene-4",
+      "source_index": 42,
+      "status": "pass",
+      "observation": "Four explorers perform a real small bridge load test: suspended metal weights load the center, Michael uses a ruler, Joseph records, Rosie holds a support and Gracie a blank card. Strings and weighted tray are physically coherent.",
+      "zoom": "Bridge and hanging-weight crop inspected.",
+      "repair_brief": "Modern model-building table. Four explorers TEST their own small bridge with tiny weights. Michael green uses a ruler, Joseph blue records measurements, Rosie purple holds a replacement support and Gracie yellow prepares a blank entry card. Clear tabletop load test, no giant bridge, no travel map or readable writing.",
+      "original_scene_title": "An honest load test",
+      "original_scene_paragraphs": [
+        "The group agrees to try. Their first support buckles, so you hold the ruler while Gracie measures a replacement. Joseph writes the source on their entry card. They finish without knowing whether the bridge will win.",
+        "Michael has not proved that he is better than his friends. Together they have corrected a wrong plan. The bridge can now carry its test weights, and their explanation can carry the truth without needing a crowd to approve it."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-46-scene-4.webp",
+      "sha256": "c4dacda1d0db1d754c7e0d5f343c0474835769e5053954cb31d736a2e44af13b",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-47-scene-4",
+      "source_index": 43,
+      "status": "pass",
+      "observation": "Finished picture poster lies flat; kitchen timer, controller beneath Michael's lowering hand and shared snacks make the behavior change legible. Poster is a landscape illustration rather than a map or slogan. No magical glow.",
+      "repair_brief": "Modern clubhouse. A finished handmade picture POSTER lies flat on worktable. An ordinary kitchen timer has just rung and Michael green sets down his controller to join Joseph blue, Rosie purple and Gracie yellow for snacks. Real behavior change, warm friendship. Poster uses colorful pictures only; no map, writing or magical glow.",
+      "original_scene_title": "People at the table",
+      "original_scene_paragraphs": [
+        "The poster finally lies flat. Gracie releases her aching fingers, and Michael apologizes without blaming the game. When their timer later rings, he saves his progress and joins the others for snacks. The adventure on the screen will wait.",
+        "Explorer, help them choose tomorrow’s small change. Following Jesus reaches ordinary buttons and coins because loving people requires real attention. Their new plan is not a way to purchase God’s love; it is a way to practice the love they have received."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-47-scene-4.webp",
+      "sha256": "2332b3d2accdd0c21d1c8c00448e6aa3d2738d3e6853602cfe152023d1afde65",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-48-scene-1",
+      "source_index": 44,
+      "status": "pass",
+      "observation": "Joseph turns a large sheet face down with its blank reverse visible; Rosie points to their notebook and the other two watch. No ancient-page prop, false headline or tomb proof image is displayed.",
+      "repair_brief": "Modern evidence exhibit worktable. Joseph blue looks thoughtful as he turns an overconfident decorative poster FACE DOWN, completely hiding its front. Rosie purple points to their source notebook, Michael green and Gracie yellow watch. No ancient page, tomb picture, lettering or false headline visible anywhere. Depict pause before sharing a claim.",
+      "original_scene_title": "A headline for the exhibition",
+      "original_scene_paragraphs": [
+        "Joseph brings a dramatic caption for their exhibition: This ancient page proves every resurrection detail! A pretend chatbot in their practice exercise produced it. Michael wants the biggest lettering. Rosie asks which ancient page the caption actually describes. Nobody has checked.",
+        "You help Gracie turn the caption face down before visitors arrive. They need a real record, not a more exciting sentence. Joseph opens the saved University of Michigan entry for P46, item 3599, and places his notebook beside it."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-48-scene-1.webp",
+      "sha256": "6bc9649342c2178da577323938f15d2944e0cb65eeeef7717681566e596e2c75",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-48-scene-2",
+      "source_index": 45,
+      "status": "blocker",
+      "observation": "The camera shows the FRONT of the laptop with a completely blank gray display, keyboard and trackpad; Rosie points at that empty screen. This is not the requested hidden display/back-of-laptop composition, and no item-record website is being viewed visually.",
+      "required_fix": "Reframe to show the back of the laptop lid while Joseph and Rosie face its unseen screen and Michael records notes. Keep modern research and no physical artifacts; do not solve this by adding fabricated readable website text.",
+      "zoom": "Native-detail laptop crop confirms blank front display, not lid back or a faint website.",
+      "repair_brief": "Modern library table. Joseph blue and Rosie purple check an institution's item-record WEBSITE on a laptop, viewed from behind so screen content is NOT shown. Michael green records a catalog reference in an ordinary notebook and Gracie yellow listens. No physical ancient paper, scroll, manuscript or invented artifact. Modern research, no readable writing.",
+      "original_scene_title": "Read the item, not the excitement",
+      "original_scene_paragraphs": [
+        "The record identifies a papyrus leaf containing part of Ephesians 1. It is a surviving copy of a biblical text, not a page written beside Jesus’ empty tomb. Gracie circles Ephesians on their draft. The caption had silently turned one kind of evidence into another.",
+        "Joseph notices a dating difference too: the collection introduction says about AD 200, while the item describes a broader period. He records that difference instead of selecting whichever date makes the poster sound more impressive."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-48-scene-2.webp",
+      "sha256": "214264d38d2b632af7ffd50644cdace17595e7888a6f0368bf1b3023ff4fe352",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-49-scene-3",
+      "source_index": 46,
+      "status": "pass",
+      "observation": "Michael offers a tissue from the box to subdued Gracie; Rosie sits close with a supportive hand while Joseph listens. No anti-tears symbols, compulsory cheer or grief spectacle.",
+      "repair_brief": "Quiet clubhouse table. Michael green puts away a blank practice card and instead offers a clean tissue box to subdued Gracie yellow. Rosie purple sits beside her with gentle concern and Joseph blue listens. No crossed-out crying faces, no symbols saying tears are forbidden. Compassionate companionship, not forced happiness.",
+      "original_scene_title": "Words that can stay",
+      "original_scene_paragraphs": [
+        "Michael crosses out his first card, which tells Gracie not to cry. He writes that he is sorry, remembers her grandfather’s kindness, and can sit with her. Joseph asks whether she would like help placing a pencil beside a family photograph. She says yes.",
+        "Their leader reads from First Thessalonians 4 about grieving with hope. This does not give the children a secret map of every person’s destiny. It gives believers a promise rooted in Jesus’ resurrection, strong enough to accompany tears rather than silence them."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-49-scene-3.webp",
+      "sha256": "da0089c42d67f88265ca51d874817e2e1b92d3bd35addbd4d58bdec44e20b679",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-49-scene-4",
+      "source_index": 47,
+      "status": "pass",
+      "observation": "Michael handles the empty folding chair, Joseph packs supplies, and Rosie stays close to subdued Gracie. Practical closing-time support is shown without forcing Gracie to smile.",
+      "repair_brief": "Quiet clubhouse closing time. Michael green folds an empty chair, Joseph blue packs craft supplies into a box, Rosie purple stays near subdued Gracie yellow helping gently. Warm practical support during grief, not cheerful map study. No deceased person, frightening imagery or forced smiles.",
+      "original_scene_title": "Tomorrow matters too",
+      "original_scene_paragraphs": [
+        "The explorers finish only half their display that day. Michael packs the supplies without complaining. Rosie asks a trusted adult to check on Gracie, and Joseph remembers to invite her again the following week, without requiring her to talk.",
+        "Explorer, help carry the folded chair. Love can take the shape of listening, a meal, or a quiet visit. Gracie’s grief may return unexpectedly. The team will not measure her faith by how quickly she smiles; they can keep bringing both sorrow and hope to Jesus."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-49-scene-4.webp",
+      "sha256": "a4a91b721d6745883cb0980f638e595c0b304a932272bd08a6eaaead79e8562d",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    },
+    {
+      "key": "lesson-50-scene-3",
+      "source_index": 48,
+      "status": "pass",
+      "observation": "Outdoor damaged garden is being repaired: Michael works a trowel beside seedlings, Joseph records observations, Rosie repairs supports and Gracie collects broken markers/stakes. Scattered damaged pieces establish the problem; no indoor-discussion substitution.",
+      "repair_brief": "Outdoor garden after minor damage. Four explorers sort broken plant supports and gently replant seedlings. Michael green sets aside a blank accusation list and takes up a trowel, Joseph blue records factual damage, Rosie purple helps repair stakes and Gracie yellow gathers fallen markers. Real garden repair, no indoor box discussion. No readable writing.",
+      "original_scene_title": "Hope picks up a trowel",
+      "original_scene_paragraphs": [
+        "Michael lowers the broken label. Because God cares about justice, he can report the harm truthfully; because God promises restoration, he need not make destruction his own answer. He asks the leader how the garden can be protected while the incident is investigated.",
+        "Gracie sorts plants into those needing new soil and those needing support. Joseph stops his suspect list and records only what they actually found. Their repair cannot create God’s new creation, but it can agree with his love for what is good."
+      ],
+      "image": "/home/helper/work/JRDisciples/public/images/jr/why/lesson-50-scene-3.webp",
+      "sha256": "b2fe2f0ef690149b921549ff5065e362f35dae3549c10561dfd7948af2f070f9",
+      "checks": "Reviewed story action, identities, contemporary setting/anachronism, text and physical coherence. No other blocking contradiction observed."
+    }
+  ]
+}

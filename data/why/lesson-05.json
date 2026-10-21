@@ -1,0 +1,177 @@
+{
+  "id": 5,
+  "chapter": 2,
+  "kind": "lesson",
+  "title": {
+    "en": "Why listen to the Bible?",
+    "ru": "Почему стоит слушать Библию?"
+  },
+  "subtitle": {
+    "en": "The instructions nobody opened",
+    "ru": "Инструкция, которую не открыли"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "A roof on the floor",
+        "ru": "Крыша на полу"
+      },
+      "paragraphs": {
+        "en": [
+          "Michael's cardboard shelter looks splendid until its roof slides onto the floor. The explorers are building a reading corner, and everyone has offered advice. Gracie finds the kit instructions beneath a cushion. You help rescue the fallen roof while Joseph checks which advice actually came from its designer.",
+          "As they look over the instructions, Rosie glances at her Bible. ‘We want to listen to the person who designed this shelter,’ she says. ‘But why do we listen to the Bible? What makes it different from all the other advice we hear?’ Their teacher joins them to explore her question."
+        ],
+        "ru": [
+          "Картонный домик Майкла прекрасен — пока крыша не падает на пол. Исследователи строят уголок для чтения, и каждый даёт советы. Грейси находит инструкцию под подушкой. Ты спасаешь крышу, а Джозеф проверяет, какие советы дал изготовитель.",
+          "Пока ребята рассматривают инструкцию, Рози смотрит на свою Библию. «Мы хотим послушать того, кто придумал этот домик, — говорит она. — А почему мы слушаем Библию? Чем она отличается от других советов?» Учитель присоединяется к ребятам, чтобы вместе разобраться в её вопросе."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "More than old paper",
+        "ru": "Не просто старая бумага"
+      },
+      "paragraphs": {
+        "en": [
+          "Their teacher opens Paul's second letter to Timothy. Paul describes Scripture as breathed out by God and useful for teaching and correction. Christians understand this as inspiration: God speaks through human writers, not merely through ancient paper that has survived.",
+          "Joseph asks why that matters for their listening. If God is speaking, his word can correct even their favorite ideas. The passage also points Timothy toward salvation through faith in Jesus. They listen to Scripture to know and follow their Savior, not simply because its pages are old."
+        ],
+        "ru": [
+          "Учитель открывает второе послание Павла к Тимофею. Павел говорит, что Писание богодухновенно и полезно для обучения и исправления. Бог говорит через людей, записавших Его слово; дело не просто в древней сохранившейся бумаге.",
+          "Джозеф спрашивает, почему это важно. Если говорит Бог, Его слово может исправлять даже любимые идеи ребят. Отрывок также указывает Тимофею на спасение через веру в Иисуса. Писание слушают, чтобы узнать Спасителя и следовать за Ним, а не просто из-за древности страниц."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Read around the sentence",
+        "ru": "Прочти соседние строки"
+      },
+      "paragraphs": {
+        "en": [
+          "Gracie wants to choose one sentence and stick it over the new doorway. Rosie suggests reading the surrounding passage first. Timothy had learned the sacred writings, which point toward salvation through faith in Christ Jesus. Scripture is not a box of magical slogans for getting whatever the team wants.",
+          "You help them ask who is writing, to whom, and why. Michael realizes that correction belongs in the passage too, even when he dislikes admitting a mistake."
+        ],
+        "ru": [
+          "Грейси хочет выбрать одно предложение и прикрепить над входом. Рози предлагает сначала прочитать весь отрывок. Тимофей знал священные писания, указывающие на спасение через веру во Христа Иисуса. Библия — не коробка волшебных лозунгов для исполнения желаний.",
+          "Ты помогаешь спросить: кто пишет, кому и зачем? Майкл замечает, что в отрывке говорится и об исправлении, хотя признавать ошибки неприятно."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A corner for listening",
+        "ru": "Уголок для слушания"
+      },
+      "paragraphs": {
+        "en": [
+          "The shelter finally stands after the children follow the kit's instructions. They do not announce that a cardboard roof proves the Bible true. It simply helped them notice that listening matters. Rosie places her purple Bible on a low shelf where everyone can reach it.",
+          "After their first reading, Michael turns to Gracie. ‘I'm sorry I didn't listen when you warned me about the roof.’ She accepts his apology, and they settle into the corner together. Michael is beginning to see that listening means more than hearing the words: sometimes it means admitting a mistake and making things right."
+        ],
+        "ru": [
+          "Домик наконец стоит: дети последовали инструкции. Они не объявляют, будто картонная крыша доказала истинность Библии. Она лишь помогла заметить, как важно слушать. Рози ставит фиолетовую Библию на доступную всем полку.",
+          "После первого чтения Майкл поворачивается к Грейси. «Прости, что я не послушал тебя, когда ты предупредила про крышу». Она принимает его извинение, и они вместе устраиваются в уголке. Майкл начинает понимать: мало просто услышать слова. Иногда нужно признать свою ошибку и исправить её."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "2 Timothy 3:16 (ESV)",
+      "ru": "2 Тимофею 3:16 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness",
+      "ru": "Все Писание богодухновенно и полезно для научения, для обличения, для исправления, для наставления в праведности"
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/2TI.3.16.ESV",
+      "ru": "https://www.bible.com/bible/167/2TI.3.16.RST"
+    }
+  },
+  "activity": {
+    "type": "sequence",
+    "title": {
+      "en": "Read before you use it",
+      "ru": "Прочти, прежде чем применять"
+    },
+    "intro": {
+      "en": "Put the team’s reading steps in order.",
+      "ru": "Расположи шаги чтения."
+    },
+    "items": [
+      {
+        "id": "b",
+        "text": {
+          "en": "Read the surrounding sentences.",
+          "ru": "Прочитать соседние предложения."
+        }
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "Respond with an honest action.",
+          "ru": "Ответить честным поступком."
+        }
+      },
+      {
+        "id": "a",
+        "text": {
+          "en": "Locate the passage and its writer and audience.",
+          "ru": "Найти отрывок, узнать автора и адресатов."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Explain the passage’s meaning in context.",
+          "ru": "Объяснить смысл в контексте."
+        }
+      }
+    ],
+    "hint": {
+      "en": "Meaning comes before choosing your response.",
+      "ru": "Сначала пойми смысл, затем выбирай действие."
+    },
+    "success": {
+      "en": "You listened to the passage instead of borrowing a slogan.",
+      "ru": "Ты услышал отрывок, а не позаимствовал лозунг."
+    },
+    "correctOrder": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ]
+  },
+  "fieldMission": {
+    "en": "Read 2 Timothy 3:14–17 with an adult. Ask what it teaches before applying it.",
+    "ru": "Прочитай 2 Тимофею 3:14–17 со взрослым. Сначала спроси, чему учит отрывок."
+  },
+  "prayer": {
+    "en": "God, teach and correct me through your word.",
+    "ru": "Боже, учи и исправляй меня через Твоё слово."
+  },
+  "adultNote": {
+    "en": "The construction kit is an illustration of listening, not an argument proving inspiration. Distinguish the doctrine of inspiration from manuscript survival.",
+    "ru": "Конструктор иллюстрирует внимание к советам, а не доказывает богодухновенность. Отличайте учение о богодухновенности от сохранности рукописей."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "2 Timothy 3:16 — Bible.com ESV / RST",
+        "ru": "2 Тимофею 3:16 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/2TI.3.16.ESV",
+      "supports": {
+        "en": "2 Timothy 3:16 grounds Scripture's teaching and correction in its divine inspiration; verses 15–17 connect it with salvation and good works.",
+        "ru": "2 Тимофею 3:16 связывает способность Писания учить и исправлять с его богодухновенностью; стихи 15–17 говорят о спасении и добрых делах."
+      },
+      "limits": {
+        "en": "States Scripture’s own claim and purpose. That claim alone is not an independent argument proving inspiration to someone who questions it.",
+        "ru": "Излагает утверждение Писания о себе и своей цели. Само это утверждение не является независимым доказательством богодухновенности для сомневающегося."
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "lesson": 15,
+  "verifiedVerses": {
+    "en": {
+      "url": "https://www.bible.com/bible/59/JHN.20.31.ESV",
+      "text": "but these are written so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in his name.",
+      "referencePageTitle": "John 20:31 (ESV) - but these are written so that you m - Bible App",
+      "ogDescription": "but these are written so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in his name.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:52.102598+00:00"
+    },
+    "ru": {
+      "url": "https://www.bible.com/bible/167/JHN.20.31.RST",
+      "text": "Сие же написано, дабы вы уверовали, что Иисус есть Христос, Сын Божий, и, веруя, имели жизнь во имя Его.",
+      "referencePageTitle": "От Иоанна святое благовествование 20:31 (Синод) - Сие же написано, дабы вы уверовали, - Bible App",
+      "ogDescription": "Сие же написано, дабы вы уверовали, что Иисус есть Христос, Сын Божий, и, веруя, имели жизнь во имя Его.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:52.187977+00:00"
+    }
+  },
+  "notes": "Exact rendered Bible.com verse strings retained, including punctuation and translation-specific numbering. Narrative is original fiction and biblical explanation, not additional Scripture quotation.",
+  "storyEnglishWords": 315
+}

@@ -1,0 +1,184 @@
+{
+  "id": 6,
+  "chapter": 2,
+  "kind": "lesson",
+  "title": {
+    "en": "Has the Bible been changed?",
+    "ru": "Изменили ли Библию?"
+  },
+  "subtitle": {
+    "en": "The copy detectives",
+    "ru": "Исследователи рукописей"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "The missing word",
+        "ru": "Пропавшее слово"
+      },
+      "paragraphs": {
+        "en": [
+          "Joseph copies a picnic list onto a clean page and accidentally leaves out apples. Michael thinks this means every copied message must become hopelessly lost. Gracie still has the first list. You lay both sheets side by side and find the missing word immediately.",
+          "‘Comparing the lists helped us find the mistake,’ Rosie says as she labels their exercise modern practice. ‘But what can we compare when we ask about the Bible?’ Their teacher offers to show them real ancient manuscripts. The picnic lists have given them a useful question, not ancient evidence."
+        ],
+        "ru": [
+          "Джозеф переписывает список для пикника и случайно пропускает яблоки. Майкл решает: значит, любое переписанное сообщение неизбежно теряется. Но у Грейси есть первый список. Ты кладёшь листы рядом, и пропуск сразу находится.",
+          "«Мы сравнили списки и нашли ошибку, — говорит Рози, подписывая упражнение как современную тренировку. — А что можно сравнить, когда речь о Библии?» Учитель предлагает посмотреть настоящие древние рукописи. Списки для пикника помогли задать вопрос, но сами древними свидетельствами не стали."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Open a real record",
+        "ru": "Откроем настоящую запись"
+      },
+      "paragraphs": {
+        "en": [
+          "With their teacher, they open the Israel Museum's Great Isaiah Scroll viewer. This is a photograph of an actual pre-Christian Hebrew copy of Isaiah, not the prophet's own handwriting. The museum describes agreement with later texts alongside spelling differences, corrections, and other variants.",
+          "Joseph nearly copies the English popup as the scroll's exact translation. Their teacher catches the trap: the ordinary popup translates the later Masoretic text, not this photographed scroll directly."
+        ],
+        "ru": [
+          "С учителем они открывают цифровой Свиток Исаии Израильского музея. Это фотография настоящей еврейской копии, созданной до жизни Иисуса, а не почерк пророка. Музей отмечает сходства с поздними текстами, а также различия, исправления и варианты чтения.",
+          "Джозеф чуть не записывает английскую подсказку как точный перевод свитка. Учитель замечает ловушку: обычная подсказка переводит поздний масоретский текст, а не непосредственно изображённый свиток."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Another kind of book",
+        "ru": "Другая древняя книга"
+      },
+      "paragraphs": {
+        "en": [
+          "Next they inspect the official Codex Sinaiticus contents. This fourth-century Greek manuscript preserves the whole New Testament, with other writings and an arrangement unlike their classroom Bible. Its copying date is not the date when Jesus lived or the books were first written.",
+          "‘So copying doesn't mean the whole message is lost?’ Michael asks. Their teacher points back to what they have seen: the Isaiah Scroll preserves a substantial text from before Jesus, and Sinaiticus preserves the whole New Testament. Researchers compare these with other copies to find agreements and differences. Michael begins to see why checking surviving manuscripts is more helpful than pretending no copyist ever made a mistake."
+        ],
+        "ru": [
+          "Затем они изучают официальный список содержания Синайского кодекса. Греческая рукопись четвёртого века сохранила весь Новый Завет, а также другие сочинения; порядок отличается от их Библии. Дата копии — не дата жизни Иисуса или написания книг.",
+          "«Значит, если текст переписывали, он не обязательно весь потерялся?» — спрашивает Майкл. Учитель напоминает об увиденном: свиток сохранил обширный текст Исаии ещё до жизни Иисуса, а Синайский кодекс — весь Новый Завет. Учёные сравнивают их с другими копиями и находят совпадения и различия. Майкл начинает понимать, почему полезнее изучать сохранившиеся рукописи, чем делать вид, будто переписчики никогда не ошибались."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Repair the caption",
+        "ru": "Исправим подпись"
+      },
+      "paragraphs": {
+        "en": [
+          "Michael replaces his exhibition caption about perfectly identical copies. He writes that surviving manuscripts let researchers study transmission, including differences. Rosie reads Isaiah's promise about God's enduring word without turning it into a claim that copyists never made mistakes.",
+          "You add links so visitors can inspect the real records. The picnic still needs apples, and Joseph restores them to the list. Their investigation ends with a correction, which is exactly what careful detectives should welcome."
+        ],
+        "ru": [
+          "Майкл заменяет подпись об идеально одинаковых копиях. Он пишет: сохранившиеся рукописи позволяют изучать передачу текста, включая различия. Рози читает обещание о вечном Божьем слове, не превращая его в утверждение о безошибочных переписчиках.",
+          "Ты добавляешь ссылки на настоящие записи. Для пикника всё ещё нужны яблоки, и Джозеф возвращает их в список. Исследование заканчивается исправлением — именно этому и радуются внимательные исследователи."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Isaiah 40:8 (ESV)",
+      "ru": "Исаия 40:8 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "The grass withers, the flower fades,\nbut the word of our God will stand forever.",
+      "ru": "Трава засыхает, цвет увядает, а слово Бога нашего пребудет вечно."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/ISA.40.8.ESV",
+      "ru": "https://www.bible.com/bible/167/ISA.40.8.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Repair the museum caption",
+      "ru": "Исправь музейную подпись"
+    },
+    "intro": {
+      "en": "Which caption respects the evidence?",
+      "ru": "Какая подпись соответствует свидетельствам?"
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Ancient copies preserve text we can compare, including variants.",
+          "ru": "Древние копии сохраняют текст для сравнения, включая варианты."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Every manuscript has always had identical letters.",
+          "ru": "Во всех рукописях всегда совпадала каждая буква."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "The Isaiah Scroll is Isaiah’s own handwriting.",
+          "ru": "Свиток Исаии написан рукой самого Исаии."
+        }
+      }
+    ],
+    "hint": {
+      "en": "A copy is not an autograph, and the museum discusses differences.",
+      "ru": "Копия — не авторский оригинал; музей сообщает о различиях."
+    },
+    "success": {
+      "en": "Honest comparison is stronger than an exaggerated caption.",
+      "ru": "Честное сравнение лучше преувеличенной подписи."
+    },
+    "correctId": "a",
+    "question": {
+      "en": "Which caption respects the evidence?",
+      "ru": "Какая подпись соответствует свидетельствам?"
+    }
+  },
+  "fieldMission": {
+    "en": "With an adult, compare two short copies of a sentence you wrote, including one deliberate missing word. Explain how comparison helps, then open the real Isaiah viewer. Your exercise is practice, not ancient evidence.",
+    "ru": "Со взрослым сравни две копии своего короткого предложения: в одной специально пропусти слово. Объясни, чем помогает сравнение, затем открой настоящий свиток Исаии на сайте музея. Упражнение — тренировка, не древнее свидетельство."
+  },
+  "prayer": {
+    "en": "God, help me honor your word and speak carefully about evidence.",
+    "ru": "Боже, помоги чтить Твоё слово и точно говорить о свидетельствах."
+  },
+  "adultNote": {
+    "en": "Isaiah: HU 95.57/27. Museum prose dates it about 125 BCE, while its short label says first century BCE; retain the discrepancy. Sinaiticus is fourth century, includes Barnabas and Hermas, and is not a modern Protestant table of contents. Viewer links only; image reuse not cleared.",
+    "ru": "Исаия: HU 95.57/27. Текст музея указывает около 125 г. до н. э., краткая этикетка — I век до н. э.; расхождение сохранено. Синайский кодекс — IV век, включает Варнаву и «Пастыря» Ермы; содержание не совпадает с современной протестантской Библией. Только ссылки; права на изображения не получены."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Israel Museum: Great Isaiah Scroll, 1QIsaa",
+        "ru": "Израильский музей: Большой свиток Исаии, 1QIsaa"
+      },
+      "url": "http://dss.collections.imj.org.il/isaiah",
+      "supports": {
+        "en": "A substantial pre-Christian copy with agreement and variants.",
+        "ru": "Обширная дохристианская копия со сходствами и вариантами."
+      },
+      "limits": {
+        "en": "Not an autograph; ordinary English popup is not a direct scroll translation.",
+        "ru": "Не авторский оригинал; обычная английская подсказка не переводит сам свиток."
+      }
+    },
+    {
+      "title": {
+        "en": "Codex Sinaiticus: official contents",
+        "ru": "Синайский кодекс: официальное содержание"
+      },
+      "url": "https://www.codexsinaiticus.org/en/codex/content.aspx",
+      "supports": {
+        "en": "The surviving manuscript’s contents, including extra works.",
+        "ru": "Содержание сохранившейся рукописи, включая дополнительные сочинения."
+      },
+      "limits": {
+        "en": "Neither first-century composition date nor proof of inspiration.",
+        "ru": "Не дата создания книг в первом веке и не доказательство богодухновенности."
+      }
+    }
+  ]
+}

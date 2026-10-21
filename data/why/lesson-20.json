@@ -1,0 +1,171 @@
+{
+  "id": 20,
+  "chapter": 5,
+  "kind": "lab",
+  "title": {
+    "en": "LAB: Who gets included?",
+    "ru": "ЛАБОРАТОРИЯ: Кого мы пригласим?"
+  },
+  "subtitle": {
+    "en": "The treasure trail with room for everyone",
+    "ru": "Маршрут сокровищ для всех"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "A brilliant bad plan",
+        "ru": "Блестящий неудачный план"
+      },
+      "paragraphs": {
+        "en": [
+          "Michael spreads the exhibition treasure trail across the library table. Visitors will race upstairs, read tiny clues, and shout answers before a timer rings. Gracie studies the stairs on his drawing.",
+          "“My friend uses a wheelchair. How will he reach the first clue?”",
+          "Joseph points out another problem: a new reader may need longer with the words. “They could watch us,” Michael suggests. But as he looks at Gracie, he begins to hear what is missing from his plan: her friend wants to solve the mystery with them, not sit outside the game."
+        ],
+        "ru": [
+          "Майкл раскладывает план поиска сокровищ на библиотечном столе. Гости побегут наверх, прочтут мелкие подсказки и выкрикнут ответы до звонка. Грейси рассматривает нарисованную лестницу.",
+          "— Мой друг передвигается на коляске. Как он доберётся до первой подсказки?",
+          "Джозеф замечает ещё одну трудность: начинающему читателю нужно больше времени. «Они смогут посмотреть», — предлагает Майкл. Но, взглянув на Грейси, он начинает понимать ошибку: её друг хочет разгадывать тайну вместе со всеми, а не оставаться вне игры."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "No special seat for favorites",
+        "ru": "Не только для любимчиков"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie opens James, where believers are warned against favoritism. The passage challenges welcoming a wealthy person with honor while treating a poor person as unimportant. Their trail has a different setting, but the question reaches their table: whose comfort have they treated as more important?",
+          "The team cannot assume every visitor needs the same adjustment. Gracie asks her friend about the plan instead of speaking for him. He wants to solve clues with everyone, not become the subject of a kindness demonstration."
+        ],
+        "ru": [
+          "Рози открывает послание Иакова, где верующих предостерегают от лицеприятия: богатому оказывают честь, а бедного считают неважным. Их выставка устроена иначе, но вопрос касается и команды: чьё удобство они сочли важнее удобства других?",
+          "Нельзя считать, что всем нужны одинаковые изменения. Грейси спрашивает друга о плане, а не отвечает за него. Он хочет вместе разгадывать подсказки, а не стать главным героем показательного доброго дела."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Keep the challenge, change the doorway",
+        "ru": "Сохрани задачу, убери преграду"
+      },
+      "paragraphs": {
+        "en": [
+          "You help move the trail to an accessible room. Joseph prints large clues and prepares spoken versions. The timer becomes optional, and teams can point to answers rather than shout. There are still mysteries to solve; the challenge no longer depends on climbing stairs or reading fastest.",
+          "Michael asks the librarian to test the route with them. A narrow turn blocks access to one station, so they move a table. Planning felt generous, but testing reveals something their generous intentions had missed."
+        ],
+        "ru": [
+          "Ты помогаешь перенести маршрут в доступную комнату. Джозеф печатает крупные подсказки и готовит устные версии. Таймер используют по желанию; ответ можно показать, а не выкрикивать. Загадки остаются, но успех больше не зависит от лестницы и скорости чтения.",
+          "Майкл приглашает библиотекаря проверить маршрут вместе. Узкий поворот мешает добраться до станции, и стол передвигают. План казался заботливым, но проверка обнаружила то, чего добрые намерения не заметили."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A teammate, not a project",
+        "ru": "Товарищ, а не проект"
+      },
+      "paragraphs": {
+        "en": [
+          "When visitors arrive, Gracie's friend finds a clue everyone else missed. Another visitor chooses to listen instead of reading. Nobody announces either choice as a heroic exception. Michael asks each team which role its members would enjoy, and leaves room to change roles later.",
+          "Joseph's notebook has one final question for the exit: what would make this easier to join next time? You welcome the answers. The explorers are pleased with the changes, but they still have something to learn from their guests. Welcoming people means continuing to listen, even after the exhibition opens."
+        ],
+        "ru": [
+          "Когда приходят гости, друг Грейси находит подсказку, которую остальные пропустили. Другой посетитель предпочитает слушать, а не читать. Никто не объявляет эти решения подвигом. Майкл спрашивает, кому какая роль нравится, и разрешает позже поменяться.",
+          "В блокноте Джозефа остаётся последний вопрос: что поможет вам участвовать в следующий раз? Ты с готовностью слушаешь ответы. Ребята рады, что изменили игру, но понимают: гости ещё могут их многому научить. Забота не заканчивается открытием выставки — важно и дальше слушать тех, кого пригласили."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "James 2:1 (ESV)",
+      "ru": "Иакова 2:1 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "My brothers, show no partiality as you hold the faith in our Lord Jesus Christ, the Lord of glory.",
+      "ru": "Братия мои! имейте веру в Иисуса Христа нашего Господа славы, не взирая на лица."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/JAS.2.1.ESV",
+      "ru": "https://www.bible.com/bible/167/JAS.2.1.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Repair the treasure trail",
+      "ru": "Исправь маршрут сокровищ"
+    },
+    "intro": {
+      "en": "Which redesign gives visitors meaningful participation rather than a place on the sidelines?",
+      "ru": "Как изменить маршрут, чтобы гости участвовали, а не оставались зрителями?"
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Ask about needs, offer accessible clues and roles, then test the route together.",
+          "ru": "Узнать потребности, подготовить доступные подсказки и роли, затем вместе проверить маршрут."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Keep every barrier and give excluded visitors a consolation sticker.",
+          "ru": "Оставить все преграды, а исключённым гостям подарить утешительную наклейку."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Choose every role for visitors without asking them.",
+          "ru": "Самим назначить гостям роли, не спрашивая их."
+        }
+      }
+    ],
+    "hint": {
+      "en": "A welcome includes listening, access, and a real choice to contribute.",
+      "ru": "Приглашение включает внимание, доступность и настоящий выбор участия."
+    },
+    "success": {
+      "en": "You kept the shared adventure while changing barriers that shut people out.",
+      "ru": "Ты сохранил общее приключение и убрал преграды, которые мешали участвовать."
+    },
+    "correctId": "a",
+    "question": {
+      "en": "Which redesign gives visitors meaningful participation rather than a place on the sidelines?",
+      "ru": "Как изменить маршрут, чтобы гости участвовали, а не оставались зрителями?"
+    }
+  },
+  "fieldMission": {
+    "en": "Ask someone what would help them join a shared activity. Agree on one change and try it together without making a public show of helping.",
+    "ru": "Спроси человека, что поможет ему участвовать в общем деле. Договоритесь об одном изменении и попробуйте вместе, не выставляя помощь напоказ."
+  },
+  "prayer": {
+    "en": "Jesus, help me welcome my neighbors without favoritism and listen before deciding for them.",
+    "ru": "Иисус, помоги принимать ближних без лицеприятия и слушать, прежде чем решать за них."
+  },
+  "adultNote": {
+    "en": "James 2 directly addresses favoritism, including treatment based on wealth; accessibility is an application, not the passage’s original setting. Ask about individual preferences and access needs without requiring disclosure of diagnoses. Do not portray disabled visitors as props for other children’s spiritual growth.",
+    "ru": "Иакова 2 прямо говорит о лицеприятии, в том числе из-за богатства; доступность — применение принципа, а не исходная ситуация отрывка. Спрашивайте о предпочтениях и нуждах без требования сообщать диагноз. Не превращайте людей с инвалидностью в средство духовного роста других детей."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "James 2:1 — Bible.com ESV / RST",
+        "ru": "Иакова 2:1 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/JAS.2.1.ESV",
+      "supports": {
+        "en": "James 2:1 forbids favoritism among those who believe in Jesus.",
+        "ru": "Иакова 2:1 запрещает лицеприятие среди верующих в Иисуса."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    }
+  ]
+}

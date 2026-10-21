@@ -1,0 +1,191 @@
+{
+  "id": 16,
+  "chapter": 4,
+  "kind": "lab",
+  "title": {
+    "en": "LAB: What does nature show—and not show?",
+    "ru": "ЛАБОРАТОРИЯ: Что природа показывает, а что — нет?"
+  },
+  "subtitle": {
+    "en": "The pond notebook",
+    "ru": "Дневник у пруда"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "The bright green mystery",
+        "ru": "Ярко-зелёная загадка"
+      },
+      "paragraphs": {
+        "en": [
+          "The explorers arrive at a small pond with pencils, a magnifier, and a bag for litter. Gracie spots green patches near the water's edge. Michael proposes a spectacular caption about a mysterious new life form. Joseph asks what they have actually observed before anyone names it.",
+          "You crouch on the path with them, staying away from the slippery bank. The patch is green, spread across part of the surface, and moving slightly with the water. Those observations fit in the notebook."
+        ],
+        "ru": [
+          "Исследователи приходят к пруду с карандашами, лупой и пакетом для мусора. Грейси замечает зелёные пятна у берега. Майкл предлагает эффектную подпись о загадочной новой форме жизни. Джозеф спрашивает, что они действительно увидели.",
+          "Ты приседаешь рядом на дорожке, подальше от скользкого берега. Пятно зелёное, занимает часть поверхности и слегка движется вместе с водой. Эти наблюдения можно записать."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Not knowing is a beginning",
+        "ru": "Не знать — значит начать"
+      },
+      "paragraphs": {
+        "en": [
+          "Their leader suggests checking a local nature guide later. Rosie crosses out a sentence claiming that nobody could ever explain the patch. Not having an answer yet does not show that an answer is impossible, or prove that God filled a gap in their knowledge.",
+          "‘If it's something ordinary, won't it be less amazing?’ Michael asks. Gracie looks back at the green patch. ‘I'd still like to know how it grows. Knowing more might help us notice things we missed.’ They decide to keep their question for the nature guide and keep thanking the Creator for a world they can explore."
+        ],
+        "ru": [
+          "Руководитель предлагает позже открыть местный справочник природы. Рози вычёркивает фразу, будто пятно невозможно объяснить. Если мы пока не знаем ответа, это не значит, что ответа нет, и не доказывает вмешательства Бога именно здесь.",
+          "«А если это что-то обычное, разве станет так же интересно?» — спрашивает Майкл. Грейси снова смотрит на зелёное пятно. «Мне всё равно хочется узнать, как оно растёт. Может, тогда заметим то, чего раньше не видели». Они решают сохранить вопрос для справочника и благодарят Творца за мир, который можно изучать."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Two kinds of sentences",
+        "ru": "Два вида предложений"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie reads the psalm about the heavens declaring God's glory. This is Scripture teaching them to recognize creation's witness, not a laboratory measurement of the pond. Joseph draws two boxes: what we observed, and what we conclude or believe.",
+          "You help put the number of floating leaves in the first box. ‘We counted those ourselves,’ Joseph says. Then he places the statement about God's glory in the second box because they learned it from Scripture. Both belong in their notebook, but the labels will help them explain where each statement came from."
+        ],
+        "ru": [
+          "Рози читает псалом о небесах, возвещающих славу Бога. Писание учит видеть свидетельство творения; это не лабораторное измерение пруда. Джозеф рисует две рамки: что наблюдаем и какие выводы делаем или во что верим.",
+          "Ты помогаешь записать число плавающих листьев в первую рамку. «Их мы сами посчитали», — говорит Джозеф. А слова о Божьей славе он помещает во вторую рамку, потому что об этом ребята прочитали в Писании. В блокноте есть место для обеих записей, а подписи помогут объяснить, откуда они взялись."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Care before leaving",
+        "ru": "Позаботиться перед уходом"
+      },
+      "paragraphs": {
+        "en": [
+          "Before leaving, Michael notices a wrapper beside the path. Their leader checks that it is safe to collect, and the team puts it in the litter bag. No one needs to solve every pond mystery before caring for this small place.",
+          "Joseph's final caption records the green patch without inventing its identity. Beneath it, Gracie writes their question for the nature guide. You leave with a cleaner path, a truthful notebook, and a reason to keep looking carefully rather than pretending the investigation is finished."
+        ],
+        "ru": [
+          "Перед уходом Майкл замечает обёртку у дорожки. Руководитель проверяет, безопасно ли её поднять, и ребята кладут мусор в пакет. Не нужно разгадать все тайны пруда, чтобы позаботиться об этом месте.",
+          "В подписи Джозеф описывает зелёное пятно, не выдумывая названия. Грейси записывает вопрос для справочника. Вы оставляете чистую дорожку и уносите честные записи и желание исследовать дальше, а не притворяться, что всё уже известно."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Psalm 19:1 (ESV)",
+      "ru": "Псалом 18:2 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "The heavens declare the glory of God,\nand the sky above proclaims his handiwork.",
+      "ru": "Небеса проповедуют славу Божию, и о делах рук Его вещает твердь."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/PSA.19.1.ESV",
+      "ru": "https://www.bible.com/bible/167/PSA.18.2.RST"
+    }
+  },
+  "activity": {
+    "type": "sort",
+    "title": {
+      "en": "Notebook or conclusion?",
+      "ru": "Наблюдение или вывод?"
+    },
+    "intro": {
+      "en": "Separate direct observations from explanations and beliefs. Both need honest labels.",
+      "ru": "Отдели наблюдения от объяснений и убеждений. Всё нужно подписывать честно."
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "A green patch covers part of the surface.",
+          "ru": "Зелёное пятно покрывает часть поверхности."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "The patch must be a new species.",
+          "ru": "Пятно обязательно является новым видом."
+        },
+        "group": "claim"
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Scripture teaches that creation declares God’s glory.",
+          "ru": "Писание учит, что творение возвещает славу Бога."
+        },
+        "group": "claim"
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "A wrapper lies beside the path.",
+          "ru": "У дорожки лежит обёртка."
+        },
+        "group": "observation"
+      }
+    ],
+    "hint": {
+      "en": "Could you record it just by looking, or does it interpret what you see?",
+      "ru": "Это можно записать, просто посмотрев, или это толкование увиденного?"
+    },
+    "success": {
+      "en": "You separated observation from interpretation without treating every conclusion as equally well supported.",
+      "ru": "Ты отделил наблюдения от толкований; не все выводы имеют одинаковые основания."
+    },
+    "groups": [
+      {
+        "id": "observation",
+        "label": {
+          "en": "Direct observation",
+          "ru": "Прямое наблюдение"
+        }
+      },
+      {
+        "id": "claim",
+        "label": {
+          "en": "Explanation or belief",
+          "ru": "Объяснение или убеждение"
+        }
+      }
+    ]
+  },
+  "fieldMission": {
+    "en": "With a trusted adult, record one nature observation, one question, and one safe act of care.",
+    "ru": "Со взрослым запиши одно наблюдение о природе, один вопрос и одно безопасное дело заботы."
+  },
+  "prayer": {
+    "en": "Creator God, help me notice your world honestly and care for it gratefully.",
+    "ru": "Боже Творец, помоги честно изучать Твой мир и с благодарностью заботиться о нём."
+  },
+  "adultNote": {
+    "en": "The pond is fictional, not a documented field study. Sorting identifies statement types, not whether every claim is true. Creation theology does not depend on an unexplained biological feature.",
+    "ru": "Пруд вымышлен; это не опубликованное исследование. Сортировка различает виды утверждений, а не объявляет каждое утверждение истинным. Учение о творении не зависит от необъяснённой особенности организма."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Psalm 19:1 — Bible.com ESV / RST",
+        "ru": "Псалом 18:2 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/PSA.19.1.ESV",
+      "supports": {
+        "en": "Psalm 19:1 connects the heavens with God's glory; the lesson distinguishes this teaching from a child's measurements.",
+        "ru": "Псалом 18:2 связывает небеса с Божьей славой; урок отличает это учение от измерений ребёнка."
+      },
+      "limits": {
+        "en": "Does not turn an invented nature notebook into scientific proof of every Christian doctrine.",
+        "ru": "Не превращает вымышленный дневник наблюдений в научное доказательство всех христианских учений."
+      }
+    }
+  ]
+}

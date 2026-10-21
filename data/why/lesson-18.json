@@ -1,0 +1,191 @@
+{
+  "id": 18,
+  "chapter": 5,
+  "kind": "lesson",
+  "title": {
+    "en": "Why did God give me a body?",
+    "ru": "Зачем Бог дал мне тело?"
+  },
+  "subtitle": {
+    "en": "The rest stop that mattered",
+    "ru": "Важная остановка"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "Keep going?",
+        "ru": "Продолжать?"
+      },
+      "paragraphs": {
+        "en": [
+          "At the outdoor activity trail, Gracie's yellow hoodie feels much too warm. She has been hurrying to keep up and now needs a rest. Michael points toward the final checkpoint, then sees her face and stops. You help find their leader instead of pushing the team onward.",
+          "Joseph checks the route card while they settle in the shade with water. ‘We came to do this together,’ he reminds Gracie. She looks toward the unfinished trail. ‘Have I spoiled it for everyone?’ Their leader sits with the team to help her see why stopping to rest was the right thing to do."
+        ],
+        "ru": [
+          "На прогулочном маршруте Грейси становится жарко в жёлтой толстовке. Она спешила за друзьями и теперь устала. Майкл показывает на последний пункт, но замечает её лицо и останавливается. Ты помогаешь позвать руководителя, а не торопишь команду.",
+          "Джозеф смотрит на карту, пока ребята устраиваются в тени с водой. «Мы ведь пошли гулять вместе», — напоминает он Грейси. Она смотрит на оставшийся маршрут. «Я всем испортила прогулку?» Руководитель садится рядом, чтобы объяснить, почему остановиться и отдохнуть было правильным решением."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A gift, not an obstacle",
+        "ru": "Дар, а не помеха"
+      },
+      "paragraphs": {
+        "en": [
+          "Their leader thanks her for speaking up. Bodies are not embarrassing obstacles to a spiritual life. Genesis presents God's creation as good, and Paul teaches believers to honor God with their bodies. Eating, resting, moving, and receiving care belong in that response.",
+          "Rosie explains that honoring God is not a demand to look a certain way or never become ill. Bodies have different abilities and needs. Gracie can thank God for hers while honestly saying that something hurts or feels wrong."
+        ],
+        "ru": [
+          "Руководитель благодарит её за то, что она сказала об усталости. Тело — не постыдная помеха духовной жизни. В Бытии Божье творение названо хорошим, а Павел учит верующих прославлять Бога и телом. Еда, отдых, движение и помощь тоже важны.",
+          "Рози объясняет: почитать Бога не значит иметь определённую внешность или никогда не болеть. У тел разные возможности и потребности. Можно благодарить Бога за тело и честно говорить о боли или неприятных ощущениях."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Ask before helping",
+        "ru": "Спроси перед помощью"
+      },
+      "paragraphs": {
+        "en": [
+          "When they get up, Joseph reaches to adjust Gracie's backpack. ‘Wait, please. I'd like to do it myself,’ she says. ‘Okay,’ he answers, stepping back. He wanted to help, but listening to her is part of helping too. Her body and belongings are not his to manage without asking.",
+          "You practice a simple boundary with the team: ask first, listen to the answer, and stop when someone says no. If touching feels unsafe, a child can move away and tell a trusted adult, even when the other person demands secrecy."
+        ],
+        "ru": [
+          "Когда ребята встают, Джозеф тянется поправить рюкзак Грейси. «Подожди, пожалуйста. Я хочу сама», — говорит она. «Хорошо», — отвечает он и отступает. Он хотел помочь, но для этого важно и выслушать её. Нельзя без спроса распоряжаться чужим телом или вещами.",
+          "Ты тренируешь с командой простое правило: сначала спросить, выслушать ответ и остановиться, если человек говорит нет. Если прикосновение кажется небезопасным, можно отойти и рассказать надёжному взрослому, даже если требуют сохранить тайну."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A changed route",
+        "ru": "Новый маршрут"
+      },
+      "paragraphs": {
+        "en": [
+          "The leader offers a shorter path, and the explorers choose it together. Gracie carries her own backpack; Michael asks before taking the water bottle she offers. Their final checkpoint becomes a picnic bench rather than the distant hilltop, and nobody loses their place on the team.",
+          "Joseph writes a new trail note: speak up, respect boundaries, get help. You reach the meeting point with an adventure worth remembering. Caring for bodies was not a distraction from loving God and neighbors; it was part of it."
+        ],
+        "ru": [
+          "Руководитель предлагает короткую дорогу, и исследователи вместе выбирают её. Грейси несёт свой рюкзак; Майкл спрашивает, прежде чем взять предложенную бутылку. Последним пунктом становится скамейка, а не далёкая вершина. Никто не теряет места в команде.",
+          "Джозеф записывает: говори о нуждах, уважай границы, обращайся за помощью. Вы возвращаетесь с важным опытом. Забота о теле не отвлекла от любви к Богу и ближним — она стала её частью."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "1 Corinthians 6:20 (ESV)",
+      "ru": "1 Коринфянам 6:20 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "for you were bought with a price. So glorify God in your body.",
+      "ru": "Ибо вы куплены дорогою ценою. || Посему прославляйте Бога и в телах ваших и в душах ваших, которые суть Божии."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/1CO.6.20.ESV",
+      "ru": "https://www.bible.com/bible/167/1CO.6.20.RST"
+    }
+  },
+  "activity": {
+    "type": "sort",
+    "title": {
+      "en": "Care and boundaries",
+      "ru": "Забота и границы"
+    },
+    "intro": {
+      "en": "Sort actions that respect bodies from actions that ignore needs or boundaries.",
+      "ru": "Отдели уважение к телу от пренебрежения нуждами и границами."
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Ask before adjusting another person’s backpack.",
+          "ru": "Спросить, прежде чем поправлять чужой рюкзак."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Insist someone keep walking after they ask for help.",
+          "ru": "Заставлять идти дальше после просьбы о помощи."
+        },
+        "group": "claim"
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Tell a trusted adult about an unsafe touch, even if told to keep it secret.",
+          "ru": "Рассказать надёжному взрослому о небезопасном прикосновении, даже если велели молчать."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "Say illness proves a person has failed God.",
+          "ru": "Утверждать, что болезнь доказывает неверность Богу."
+        },
+        "group": "claim"
+      }
+    ],
+    "hint": {
+      "en": "Help listens; pressure overrides someone’s needs or safety.",
+      "ru": "Забота слушает; давление пренебрегает нуждами и безопасностью."
+    },
+    "success": {
+      "en": "You protected care and consent without treating illness as a moral failure.",
+      "ru": "Ты выбрал заботу и уважение к границам, не назвав болезнь нравственной неудачей."
+    },
+    "groups": [
+      {
+        "id": "observation",
+        "label": {
+          "en": "Respect and care",
+          "ru": "Уважение и забота"
+        }
+      },
+      {
+        "id": "claim",
+        "label": {
+          "en": "Ignore or pressure",
+          "ru": "Пренебрежение или давление"
+        }
+      }
+    ]
+  },
+  "fieldMission": {
+    "en": "Name two trusted adults you can ask for help. Practice asking permission before a hug or physical help.",
+    "ru": "Назови двух надёжных взрослых, к которым можно обратиться. Потренируйся спрашивать разрешение перед объятием или физической помощью."
+  },
+  "prayer": {
+    "en": "God, thank you for embodied life. Help me care for my body and respect other people.",
+    "ru": "Боже, спасибо за жизнь в теле. Помоги заботиться о себе и уважать других."
+  },
+  "adultNote": {
+    "en": "Read 1 Corinthians 6:19–20 in its context of belonging to Christ. Do not equate disability, illness, appearance, or fitness with holiness. Children never cause abuse; if a disclosure is dismissed, help them reach another safe adult and appropriate safeguarding support.",
+    "ru": "Прочитайте 1 Коринфянам 6:19–20 в контексте принадлежности Христу. Не связывайте инвалидность, болезнь, внешность или физическую форму со святостью. Ребёнок не виноват в насилии; если ему не поверили, помогите обратиться к другому безопасному взрослому и получить необходимую защиту."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "1 Corinthians 6:20 — Bible.com ESV / RST",
+        "ru": "1 Коринфянам 6:20 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/1CO.6.20.ESV",
+      "supports": {
+        "en": "1 Corinthians 6:20 calls believers to honor God with their bodies because they belong to him.",
+        "ru": "1 Коринфянам 6:20 призывает верующих прославлять Бога телом, потому что они принадлежат Ему."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    }
+  ]
+}

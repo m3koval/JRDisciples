@@ -1,0 +1,1583 @@
+{
+  "generatedAt": "2026-10-20T17:20:21.440910+00:00",
+  "verdict": "bounded content check passed; minor copy fix and pedagogical follow-up remain; not release approval",
+  "scope": "No data/components edits; finalization of previous review, not a newly claimed full 52-lesson source audit.",
+  "counts": {
+    "lessons": 52,
+    "changedFromBaseline": 52,
+    "changedBeyondSources": 19,
+    "changedSourceArrays": 51,
+    "primarySourceCardsRewritten": 50,
+    "proposalMismatchLessons": [
+      33,
+      50
+    ],
+    "manualTheologyFocus": 16,
+    "missingImages": 135
+  },
+  "command": "node scripts/check-why.mjs --content-only",
+  "exitCode": 0,
+  "contentAndLogicPass": true,
+  "releasePass": false,
+  "lessonDataHashesUnchangedDuringAudit": true,
+  "freshSupportingPassageChecks": {
+    "method": "Bible.com ESV page extraction, relevant passage read; semantic correspondence, not additional exact-quote certification",
+    "passages": [
+      "Acts 17:24–25",
+      "Romans 8:18–25,38–39",
+      "Galatians 1:18–19",
+      "Luke 24:1–12"
+    ],
+    "russianSupportingPassages": "EN/RU prose meaning compared; no fresh RST passage fetch"
+  },
+  "limitations": [
+    "Saved primary Scripture fixtures were compared exactly, not all freshly retrieved. Checker does not certify every inline paraphrase, reference label, source interpretation or historical claim.",
+    "No independent museum/library record, manuscript date, canon history, image rights or comprehensive bibliography audit.",
+    "No browser/mobile typography, child reading trial, lint/build, media generation or publication."
+  ],
+  "lessons": [
+    {
+      "lesson": 1,
+      "title": {
+        "en": "How do we know God exists?",
+        "ru": "Откуда мы знаем, что Бог существует?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "activity",
+        "fieldMission",
+        "adultNote",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Dependence argument is identified as philosophical, not proof from dominoes; Acts 17 and Psalm numbering are distinguished.",
+      "issues": [
+        {
+          "severity": "improvement",
+          "field": "scenes[1].paragraphs.ru[1]",
+          "issue": "Abstract phrases such as «несотворённый источник бытия» and «основание существования» need adult scaffolding for younger readers.",
+          "neededFix": "Consider a short concrete explanation/read-aloud check; do not present philosophical premises as a measured fact."
+        }
+      ],
+      "neededFixes": [
+        "Consider a short concrete explanation/read-aloud check; do not present philosophical premises as a measured fact."
+      ],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 2,
+      "title": {
+        "en": "Is believing just guessing?",
+        "ru": "Верить — значит просто угадывать?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 3,
+      "title": {
+        "en": "Can I ask hard questions and still follow Jesus?",
+        "ru": "Можно ли задавать трудные вопросы и следовать за Иисусом?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 4,
+      "title": {
+        "en": "LAB: What would help us know?",
+        "ru": "ЛАБОРАТОРИЯ: Что поможет нам узнать?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 5,
+      "title": {
+        "en": "Why listen to the Bible?",
+        "ru": "Почему стоит слушать Библию?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 6,
+      "title": {
+        "en": "Has the Bible been changed?",
+        "ru": "Изменили ли Библию?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "manual EN/RU changed prose/activity/mission wording review"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "fieldMission"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 7,
+      "title": {
+        "en": "Why so many books and translations?",
+        "ru": "Почему в Библии много книг и переводов?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 8,
+      "title": {
+        "en": "LAB: Can you check the source?",
+        "ru": "ЛАБОРАТОРИЯ: Можешь проверить источник?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 9,
+      "title": {
+        "en": "What is God like?",
+        "ru": "Какой Бог?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 10,
+      "title": {
+        "en": "How can God be Father, Son and Holy Spirit?",
+        "ru": "Как Бог может быть Отцом, Сыном и Святым Духом?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "One God, three distinct persons, each fully God; rejects costumes and divided parts. Only source card changed.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 11,
+      "title": {
+        "en": "Does God know and care about me?",
+        "ru": "Бог знает меня и заботится обо мне?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 12,
+      "title": {
+        "en": "LAB: Can we explain God without shrinking him?",
+        "ru": "ЛАБОРАТОРИЯ: Как говорить о Боге, не упрощая Его?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 13,
+      "title": {
+        "en": "Why is there a world at all?",
+        "ru": "Почему вообще существует мир?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 14,
+      "title": {
+        "en": "Do science and faith have to fight?",
+        "ru": "Должны ли наука и вера спорить?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 15,
+      "title": {
+        "en": "Could God do a miracle?",
+        "ru": "Может ли Бог совершить чудо?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 16,
+      "title": {
+        "en": "LAB: What does nature show—and not show?",
+        "ru": "ЛАБОРАТОРИЯ: Что природа показывает, а что — нет?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 17,
+      "title": {
+        "en": "Why do I matter if I am not the best?",
+        "ru": "Почему я важен, даже если я не лучший?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "activity",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 18,
+      "title": {
+        "en": "Why did God give me a body?",
+        "ru": "Зачем Бог дал мне тело?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 19,
+      "title": {
+        "en": "Can a chatbot be a person or my wisest friend?",
+        "ru": "Может ли чат-бот быть человеком или самым мудрым другом?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 20,
+      "title": {
+        "en": "LAB: Who gets included?",
+        "ru": "ЛАБОРАТОРИЯ: Кого мы пригласим?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 21,
+      "title": {
+        "en": "What is sin—more than breaking a rule?",
+        "ru": "Что такое грех — просто нарушение правил?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 22,
+      "title": {
+        "en": "Why is there suffering if God is good?",
+        "ru": "Почему есть страдание, если Бог добр?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Romans 8 hope accompanies compassion without assigning blame or promising recovery.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 23,
+      "title": {
+        "en": "Why forgive if the wrong was real?",
+        "ru": "Зачем прощать, если зло было настоящим?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 24,
+      "title": {
+        "en": "LAB: What should I do when someone gets hurt?",
+        "ru": "ЛАБОРАТОРИЯ: Что делать, если кого-то обижают?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 25,
+      "title": {
+        "en": "Was Jesus a real person?",
+        "ru": "Был ли Иисус реальным человеком?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Galatians personal contacts add relevant testimony; Pilate inscription remains contextual, not proof of Jesus or resurrection.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 26,
+      "title": {
+        "en": "How can Jesus be God and human?",
+        "ru": "Как Иисус может быть Богом и человеком?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "activity",
+        "adultNote",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "One Christ, fully divine and human; Russian human-nature correction avoids confusing humanity with kindness.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 27,
+      "title": {
+        "en": "Why did Jesus have to die?",
+        "ru": "Почему Иисус должен был умереть?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Voluntary self-giving, Father/Son unity, grace and limited repair illustration retained; only source card changed.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 28,
+      "title": {
+        "en": "LAB: What do Jesus' words and works tell us?",
+        "ru": "ЛАБОРАТОРИЯ: Что говорят об Иисусе Его слова и дела?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 29,
+      "title": {
+        "en": "Did Jesus really rise from the dead?",
+        "ru": "Действительно ли Иисус воскрес из мёртвых?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "activity",
+        "fieldMission",
+        "sources",
+        "adultNote"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Bodily resurrection defended with testimony; Luke empty tomb distinguished from Paul and P46. No imaginary independent witness interviews.",
+      "issues": [
+        {
+          "severity": "improvement",
+          "field": "activity",
+          "issue": "The question promises comparison with “only warm memories”, but distractors test exaggerated evidence claims rather than competing explanations.",
+          "neededFix": "In a later pedagogical pass, align alternatives with the comparison question or rename the question; retain historical limits."
+        }
+      ],
+      "neededFixes": [
+        "In a later pedagogical pass, align alternatives with the comparison question or rename the question; retain historical limits."
+      ],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 30,
+      "title": {
+        "en": "Can being good enough save me?",
+        "ru": "Можно ли заслужить спасение добрыми делами?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Grace precedes good works; Russian birthday-gift phrase improves naturalness.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 31,
+      "title": {
+        "en": "What are repentance, faith and a new life?",
+        "ru": "Что такое покаяние, вера и новая жизнь?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 32,
+      "title": {
+        "en": "LAB: Can you explain the good news?",
+        "ru": "ЛАБОРАТОРИЯ: Как объяснить благую весть?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "activity",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Revised correct choice now explains sin, death/resurrection, faith and gift without pressure.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 33,
+      "title": {
+        "en": "Who is the Holy Spirit?",
+        "ru": "Кто такой Святой Дух?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "activity",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": false,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Actual Russian answer is clearer than proposed draft and preserves personal deity, not impersonal power.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 34,
+      "title": {
+        "en": "How does God help me change?",
+        "ru": "Как Бог помогает мне меняться?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 35,
+      "title": {
+        "en": "How do I know whether an idea is from God?",
+        "ru": "Как понять, от Бога ли эта мысль?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 36,
+      "title": {
+        "en": "LAB: Which response grows good fruit?",
+        "ru": "ЛАБОРАТОРИЯ: Какой ответ приносит добрый плод?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 37,
+      "title": {
+        "en": "Why pray if God already knows?",
+        "ru": "Зачем молиться, если Бог уже всё знает?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 38,
+      "title": {
+        "en": "Why doesn't God always say yes?",
+        "ru": "Почему Бог не всегда отвечает «да»?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 39,
+      "title": {
+        "en": "How do I read the Bible when it feels hard?",
+        "ru": "Как читать Библию, когда трудно понимать?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 40,
+      "title": {
+        "en": "LAB: What can I do with worry?",
+        "ru": "ЛАБОРАТОРИЯ: Что делать с тревогой?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 41,
+      "title": {
+        "en": "Why church when I can watch a video?",
+        "ru": "Зачем церковь, если можно посмотреть видео?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 42,
+      "title": {
+        "en": "Why baptism and the Lord's Supper?",
+        "ru": "Зачем крещение и Вечеря Господня?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Jesus saves; water is not magic or payment. Church differences explicitly retained.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 43,
+      "title": {
+        "en": "Why do Christians disagree—and sometimes hurt people?",
+        "ru": "Почему христиане спорят и иногда причиняют боль?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 44,
+      "title": {
+        "en": "LAB: What does serving look like?",
+        "ru": "ЛАБОРАТОРИЯ: Как выглядит служение?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 45,
+      "title": {
+        "en": "What if my friend believes another religion—or none?",
+        "ru": "А если мой друг другой веры — или совсем не верит?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Conviction about Christ coexists with dignity and non-coercion; only source card changed.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 46,
+      "title": {
+        "en": "What if everyone says wrong is right?",
+        "ru": "А если все называют зло добром?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 47,
+      "title": {
+        "en": "How do I follow Jesus with games, money and my phone?",
+        "ru": "Как следовать за Иисусом в играх, покупках и телефоне?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 48,
+      "title": {
+        "en": "LAB: Can you spot a claim that goes too far?",
+        "ru": "ЛАБОРАТОРИЯ: Где утверждение заходит слишком далеко?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Changed wording reviewed where present; otherwise deterministic/baseline/source-card scope only. No new blocking issue identified within this bounded scope.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 49,
+      "title": {
+        "en": "What happens when someone dies?",
+        "ru": "Что происходит, когда человек умирает?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Hope and grief coexist; no individual eternal destiny or immediate return promised; only source card changed.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 50,
+      "title": {
+        "en": "Will God put everything right?",
+        "ru": "Исправит ли Бог всё?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "scenes",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": false,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Judgment and renewal held together without dates or revenge; Russian grammar/source title improved.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 51,
+      "title": {
+        "en": "How can I keep following Jesus as I grow?",
+        "ru": "Как продолжать следовать за Иисусом, когда я расту?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "sources"
+      ],
+      "changedBeyondSources": false,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Growth rooted in Christ, not earned acceptance or punitive habits; only source card changed.",
+      "issues": [],
+      "neededFixes": [],
+      "historicalSourceAudit": "not independently performed in this pass"
+    },
+    {
+      "lesson": 52,
+      "title": {
+        "en": "LAB: What do you believe—and why?",
+        "ru": "ЛАБОРАТОРИЯ: Во что ты веришь — и почему?"
+      },
+      "reviewed": true,
+      "reviewScope": [
+        "baseline comparison of entire JSON",
+        "exact primary Scripture text and URL vs saved EN/RU fixtures",
+        "deterministic bilingual field/array parity and content/activity checks",
+        "editorial comparison of changed source-card wording; not independent historical-source verification",
+        "manual EN/RU changed prose/activity/mission wording review",
+        "manual EN/RU theological teaching scenes, activity and adult-note inspection (bounded, not fresh full-lesson reread)"
+      ],
+      "freshFullBilingualReread": false,
+      "previousReviewerFullRead": "reported by handoff; not independently certified",
+      "changedFields": [
+        "fieldMission",
+        "sources"
+      ],
+      "changedBeyondSources": true,
+      "matchesProposed": true,
+      "primaryScriptureUnchanged": true,
+      "exactPrimaryScriptureFixtureCheck": "pass EN/RU text and URLs",
+      "bilingualDeterministicCheck": "pass",
+      "editorialFinding": "Testimony distinguished from display illustration; consent respected; missing Russian comma remains.",
+      "issues": [
+        {
+          "severity": "minor",
+          "field": "fieldMission.ru",
+          "issue": "Relative clause lacks closing comma: «который согласен поговорить обсуди».",
+          "neededFix": "Change to «который согласен поговорить, обсуди» in a separately authorized data edit."
+        }
+      ],
+      "neededFixes": [
+        "Change to «который согласен поговорить, обсуди» in a separately authorized data edit."
+      ],
+      "historicalSourceAudit": "not independently performed in this pass"
+    }
+  ]
+}

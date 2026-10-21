@@ -1,0 +1,192 @@
+{
+  "id": 39,
+  "chapter": 10,
+  "kind": "lesson",
+  "title": {
+    "en": "How do I read the Bible when it feels hard?",
+    "ru": "Как читать Библию, когда трудно понимать?"
+  },
+  "subtitle": {
+    "en": "The trail marker and the missing page",
+    "ru": "Указатель и пропущенная страница"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "A sentence without a trail",
+        "ru": "Фраза без тропинки"
+      },
+      "paragraphs": {
+        "en": [
+          "At the woodland reading shelter, Michael finds a trail instruction torn from its booklet: Turn left after the bridge. He starts packing for the left path, but Gracie notices three different bridges on their map. Without the surrounding directions, the sentence is not enough to locate their next step.",
+          "“Sometimes I feel like that when I read the Bible,” Rosie admits. “I know the words, but I don’t understand how they fit together.” Michael looks again at the torn instruction. Explorer, help them find what is missing instead of guessing which way to go."
+        ],
+        "ru": [
+          "В лесной беседке Майкл находит вырванную инструкцию: «После моста поверните налево». Он собирается идти, но Грейси замечает на карте три моста. Без соседних указаний фраза не помогает определить следующий шаг.",
+          "«У меня так иногда бывает с Библией, — признаётся Рози. — Слова понимаю, а как они связаны между собой — нет». Майкл снова смотрит на вырванную инструкцию. Исследователь, помоги им найти недостающие объяснения, а не угадывать, куда идти."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Open the surrounding pages",
+        "ru": "Открой соседние страницы"
+      },
+      "paragraphs": {
+        "en": [
+          "Joseph retrieves the whole trail booklet, and the route becomes clear. Then they open Psalm 119:105 and read nearby verses with their leader. The writer speaks about God’s word guiding life, along with commitment, trouble, and dependence on God. The lamp image belongs to a life of listening and obedience.",
+          "Michael does not take it as a promise that a Bible will glow in the dark. He writes two questions in Joseph’s notebook: What does the passage say? What is the writer communicating?"
+        ],
+        "ru": [
+          "Джозеф находит весь путеводитель, и маршрут становится ясным. Затем с руководителем они открывают Псалом 118:105 и соседние стихи. Автор говорит, что Божье слово направляет жизнь; рядом есть верность, беды и надежда на Бога. Образ светильника связан со слушанием и послушанием.",
+          "Майкл не принимает это за обещание, что книга будет светиться в темноте. В блокноте Джозефа он пишет: «Что сказано в отрывке? Что автор хочет передать?»"
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Ask before pretending",
+        "ru": "Спроси вместо притворства"
+      },
+      "paragraphs": {
+        "en": [
+          "They add two more questions: Who is speaking, and what response fits this meaning? Rosie checks an unfamiliar word with the leader. Gracie notices that a song uses pictures differently from a history account or a letter. Reading carefully means noticing the kind of writing, not making every sentence mean whatever she wants.",
+          "In Luke 24:27, Jesus helps his followers understand Scripture. Needing explanation is not a failure. The children can ask for help while returning to the actual passage together."
+        ],
+        "ru": [
+          "Они добавляют вопросы: «Кто здесь говорит? Как нам поступать, если мы поняли, чему учит этот отрывок?» Рози уточняет незнакомое слово у руководителя. Грейси замечает, что песня использует образы иначе, чем исторический рассказ или письмо. Внимательный читатель учитывает вид текста, а не вкладывает в каждую фразу любое удобное значение.",
+          "В Луки 24:27 Иисус помогает ученикам понимать Писание. Нуждаться в объяснении — не поражение. Дети могут просить помощи и вместе возвращаться к самому отрывку."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A small next step",
+        "ru": "Маленький следующий шаг"
+      },
+      "paragraphs": {
+        "en": [
+          "Before leaving, the explorers choose short passages to read again tomorrow. “I’ll spend five quiet minutes with this psalm,” Michael decides. Rosie says, “I’ll write down a question when I get stuck, so I can ask for help.” Gracie thinks about putting what she reads into practice: she wants to tell the truth when she needs to admit a mistake.",
+          "You place the whole trail booklet in the backpack. Understanding grows through repeated, attentive reading with help. God’s word guides real steps; the goal is knowing and following him, not winning a page-count contest."
+        ],
+        "ru": [
+          "Перед выходом исследователи выбирают короткие отрывки, которые завтра прочитают ещё раз. «Я спокойно почитаю этот псалом пять минут», — решает Майкл. Рози говорит: «А если что-то не пойму, запишу вопрос и попрошу помочь». Грейси думает, как исполнить прочитанное: ей хочется говорить правду, когда нужно признать свою ошибку.",
+          "Ты кладёшь весь путеводитель в рюкзак. Понимание растёт через повторное внимательное чтение с помощью других. Божье слово направляет настоящие шаги; цель — знать Бога и следовать Ему, а не побеждать в подсчёте страниц."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Psalm 119:105 (ESV)",
+      "ru": "Псалтирь 118:105 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "Your word is a lamp to my feet\nand a light to my path.",
+      "ru": "Слово Твое — светильник ноге моей и свет стезе моей."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/PSA.119.105.ESV",
+      "ru": "https://www.bible.com/bible/167/PSA.118.105.RST"
+    }
+  },
+  "activity": {
+    "type": "sequence",
+    "title": {
+      "en": "Follow the passage",
+      "ru": "Следуй за текстом"
+    },
+    "intro": {
+      "en": "Put these steps in the order the investigation needs.",
+      "ru": "Расположи шаги в нужном для исследования порядке."
+    },
+    "items": [
+      {
+        "id": "b",
+        "text": {
+          "en": "Notice who speaks and what kind of writing this is.",
+          "ru": "Заметить, кто говорит и что это за вид текста."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Ask what it means, checking confusing words with a trusted helper.",
+          "ru": "Спросить о смысле и уточнить непонятные слова у надёжного помощника."
+        }
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "Choose a response that fits the passage, then return to read again.",
+          "ru": "Выбрать соответствующий тексту ответ и затем вернуться к чтению."
+        }
+      },
+      {
+        "id": "a",
+        "text": {
+          "en": "Read the short passage and the nearby verses.",
+          "ru": "Прочитать короткий отрывок и соседние стихи."
+        }
+      }
+    ],
+    "correctOrder": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "hint": {
+      "en": "Understand the passage before choosing what you will do with it.",
+      "ru": "Пойми отрывок, прежде чем решать, как применить его."
+    },
+    "success": {
+      "en": "Context, careful questions, help, and a fitting response turn reading into attentive listening.",
+      "ru": "Контекст, внимательные вопросы, помощь и подходящий ответ учат слушать при чтении."
+    }
+  },
+  "fieldMission": {
+    "en": "Read Psalm 119:105 with nearby verses in English, or Psalm 118:105 in Russian. Ask one meaning question and choose a small time to read again.",
+    "ru": "Прочитай Псалом 118:105 с соседними стихами. Задай один вопрос о смысле и выбери немного времени, чтобы прочитать снова."
+  },
+  "prayer": {
+    "en": "God, help me listen carefully to your word, ask honest questions, and take the next faithful step.",
+    "ru": "Боже, помоги внимательно слушать Твоё слово, честно спрашивать и делать следующий верный шаг."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Bible anchor: Psalm 119:105 (ESV)",
+        "ru": "Библейский текст: Псалтирь 118:105 (Синодальный перевод)"
+      },
+      "url": "https://www.bible.com/bible/59/PSA.119.105.ESV",
+      "supports": {
+        "en": "Psalm 119:105 pictures God's word as light for one's path, supporting guided, attentive reading.",
+        "ru": "Псалом 118:105 уподобляет Божье слово свету на пути и побуждает внимательно искать в нём руководство."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    },
+    {
+      "title": {
+        "en": "Russian Synodal anchor",
+        "ru": "Текст Синодального перевода"
+      },
+      "url": "https://www.bible.com/bible/167/PSA.118.105.RST",
+      "supports": {
+        "en": "Exact Russian text for the displayed verse.",
+        "ru": "Точный русский текст приведённого стиха."
+      },
+      "limits": {
+        "en": "Verse numbering can differ between translations, especially in Psalms.",
+        "ru": "Нумерация стихов в переводах может отличаться, особенно в Псалтири."
+      }
+    }
+  ],
+  "adultNote": {
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. English Psalm 119 corresponds to Russian Synodal Psalm 118. Read Luke 24:27 in its wider account. The trail booklet illustrates context; it is not Scripture. Keep the reading habit small and supported, without rewarding speed over understanding.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Псалом 119 английской нумерации соответствует Псалму 118 Синодального перевода. Читайте Луки 24:27 в контексте рассказа. Путеводитель поясняет роль контекста, но не является Писанием. Поддерживайте небольшой навык чтения без соревнования в скорости."
+  }
+}

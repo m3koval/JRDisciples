@@ -1,0 +1,23 @@
+{
+  "lesson": 23,
+  "verifiedVerses": {
+    "en": {
+      "url": "https://www.bible.com/bible/59/EPH.4.32.ESV",
+      "text": "Be kind to one another, tenderhearted, forgiving one another, as God in Christ forgave you.",
+      "referencePageTitle": "Ephesians 4:32 (ESV) - Be kind to one another, tenderheart - Bible App",
+      "ogDescription": "Be kind to one another, tenderhearted, forgiving one another, as God in Christ forgave you.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:52.761593+00:00"
+    },
+    "ru": {
+      "url": "https://www.bible.com/bible/167/EPH.4.32.RST",
+      "text": "но будьте друг ко другу добры, сострадательны, прощайте друг друга, как и Бог во Христе простил вас.",
+      "referencePageTitle": "Послание к Ефесянам 4:32 (Синод) - но будьте друг ко другу добры, сост - Bible App",
+      "ogDescription": "но будьте друг ко другу добры, сострадательны, прощайте друг друга, как и Бог во Христе простил вас.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:53.554529+00:00"
+    }
+  },
+  "notes": "Exact rendered Bible.com verse strings retained, including punctuation and translation-specific numbering. Narrative is original fiction and biblical explanation, not additional Scripture quotation.",
+  "storyEnglishWords": 320
+}

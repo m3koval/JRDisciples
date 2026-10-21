@@ -1,0 +1,310 @@
+{
+  "reviewed_at_utc": "2026-10-21T10:33:39.809417+00:00",
+  "verdict": "BLOCKED",
+  "scope": "Final bounded visual review of eight requested last-repaired WHY assets; not a full release/build/browser approval.",
+  "counts": {
+    "pass": 7,
+    "blocker": 1
+  },
+  "records": [
+    {
+      "key": "lesson-24-scene-1",
+      "status": "pass",
+      "source_file": "data/why/lesson-24.json",
+      "source_sha256": "d27772b583f1be3872e5c5ebe023f8821d7093d29828c50288dae664463d5932",
+      "source_scene": {
+        "title": {
+          "en": "Trouble by the coat hooks",
+          "ru": "Неприятность у вешалки"
+        },
+        "paragraphs": {
+          "en": [
+            "The explorers are leaving the community room when two children block a younger child's way to the coat hooks. One keeps moving his bag whenever he reaches for it. Gracie notices that he is not laughing. Michael starts toward them with clenched fists, ready to teach them a lesson.",
+            "You spot the club leader nearby. Joseph stays where the younger child can see him while Rosie gets the leader's attention. The team does not need to win a fight to help."
+          ],
+          "ru": [
+            "Исследователи выходят из комнаты клуба и видят: двое детей не пускают младшего к вешалке. Один каждый раз отодвигает его сумку. Грейси замечает, что мальчик не смеётся. Майкл сжимает кулаки и собирается проучить обидчиков.",
+            "Ты замечаешь рядом руководителя клуба. Джозеф остаётся в поле зрения младшего, а Рози зовёт взрослого. Чтобы помочь, команде не нужно побеждать в драке."
+          ]
+        }
+      },
+      "image": "public/images/jr/why/lesson-24-scene-1.webp",
+      "image_sha256": "e33cdf0fc2985b4536b8dd32b4ea9f814343244efa5033169605c90ca034ab88",
+      "visual_evidence": "Rosie in purple summons the approaching adult; Joseph in blue supports the smaller orange-clad child. Two older children and the withheld bag are visible beside coat hooks. The protective-help beat replaces the former generic greeting.",
+      "prior_review": {
+        "report": "docs/why/qa/repair-review-a.json",
+        "status": "blocker",
+        "image_sha256": "05b8bb6f016a51dcfaf339092b9c8f785bf9850ab7a0cc6ee84f7bdb961dcc29"
+      },
+      "prior_asset_superseded": true,
+      "inspection": "Individual current WebP via vision_analyze, native visual review at 960x536 display (original 1920x1072)."
+    },
+    {
+      "key": "lesson-24-scene-2",
+      "status": "pass",
+      "source_file": "data/why/lesson-24.json",
+      "source_sha256": "d27772b583f1be3872e5c5ebe023f8821d7093d29828c50288dae664463d5932",
+      "source_scene": {
+        "title": {
+          "en": "Say what you saw",
+          "ru": "Расскажи, что видел"
+        },
+        "paragraphs": {
+          "en": [
+            "The leader separates the children and makes sure everyone is safe. Rosie reports the blocked path and the moved bag, not a guess about what the children were thinking. “Would you like me to stay while you talk?” Joseph asks the younger child. He waits for an answer instead of asking him to tell the whole story in front of everyone.",
+            "Michael admits that revenge would have made the corridor more dangerous. Telling a responsible adult was not betraying a secret friendship rule. It helped stop a real wrong that was still happening."
+          ],
+          "ru": [
+            "Руководитель разводит детей и проверяет, что все в безопасности. Рози рассказывает о перекрытом проходе и сумке, а не о предполагаемых мыслях обидчиков. «Хочешь, я побуду рядом, пока ты поговоришь с руководителем?» — спрашивает Джозеф. Он ждёт ответа, не заставляя мальчика пересказывать всё перед остальными.",
+            "Майкл признаёт: месть сделала бы коридор опаснее. Сообщение ответственному взрослому не нарушает тайного закона дружбы. Оно помогло остановить настоящее зло, которое ещё продолжалось."
+          ]
+        }
+      },
+      "image": "public/images/jr/why/lesson-24-scene-2.webp",
+      "image_sha256": "bd2fb24b13591e68450e3f04cfeceae7cad5988cd72f72188706ce584e74c19a",
+      "visual_evidence": "Brown-haired woman in tan overshirt and cream top remains recognizable as the same leader from 24.1. She stands between the two older children at left and the supported younger child at right; Rosie reports, Joseph stands beside the younger child with the bag. Teacher continuity and safe separation pass. Minor clothing/hair variations do not erase the protective sequence.",
+      "prior_review": {
+        "report": "docs/why/qa/repair-review-a.json",
+        "status": "blocker",
+        "image_sha256": "f8996e21224abbe094bf94daa496762fb0f448785e94aa03c0d1fafea87af7f7"
+      },
+      "prior_asset_superseded": true,
+      "inspection": "Individual current WebP via vision_analyze, native visual review at 960x536 display (original 1920x1072)."
+    },
+    {
+      "key": "lesson-41-scene-3",
+      "status": "pass",
+      "source_file": "data/why/lesson-41.json",
+      "source_sha256": "7947868e6e44e0c4a94acaabb3d0180617a0ecd24b97e20978cde03f4565593e",
+      "source_scene": {
+        "title": {
+          "en": "An empty chair has a name",
+          "ru": "У пустого стула есть имя"
+        },
+        "paragraphs": {
+          "en": [
+            "With their leader, the children ask Anna’s family whether a visit would help. Her father is recovering from surgery, and transport has become difficult. The adults arrange support; the children prepare a card and record the group singing Anna’s favorite song.",
+            "“So a recording can help,” Gracie says as they finish the song. Now she sees the difference: they are sending it because they know and love Anna, not because a video can replace their friendship. Before preparing anything else, they ask what Anna would enjoy."
+          ],
+          "ru": [
+            "С руководителем дети спрашивают семью Анны, будет ли полезен визит. Её папа восстанавливается после операции, и добираться стало трудно. Взрослые организуют помощь, дети делают открытку и записывают любимую песню Анны.",
+            "«Значит, запись тоже может помочь», — говорит Грейси, когда песня заканчивается. Теперь она понимает разницу: они отправляют запись, потому что знают и любят Анну, а не чтобы заменить ею дружбу. Прежде чем готовить что-то ещё, они спрашивают, что порадует подругу."
+          ]
+        }
+      },
+      "image": "public/images/jr/why/lesson-41-scene-3.webp",
+      "image_sha256": "f2426ace1df5fca5e73d31a4f235dbb8be2ba57da0ccb6db784f7ba2b7518a57",
+      "visual_evidence": "Distinct adult woman in teal accompanies all four children on the visitor side of the porch; a separate adult man receives them inside the doorway with a food bag. Adult-supported contemporary family contact and card are clear.",
+      "prior_review": {
+        "report": "docs/why/qa/repair-review-b.json",
+        "status": "blocker",
+        "image_sha256": "31628872c2851d314a46d49836797d5225e8925a958d507d8731108e44b48e7d"
+      },
+      "prior_asset_superseded": true,
+      "inspection": "Individual current WebP via vision_analyze, native visual review at 960x536 display (original 1920x1072)."
+    },
+    {
+      "key": "lesson-46-scene-1",
+      "status": "pass",
+      "source_file": "data/why/lesson-46.json",
+      "source_sha256": "b888d261c7360f96d748904d0accca4dc7ea581e44859b04ba34c8c9ec2ac744",
+      "source_scene": {
+        "title": {
+          "en": "Six hands in the air",
+          "ru": "Шесть поднятых рук"
+        },
+        "paragraphs": {
+          "en": [
+            "The explorers are building a bridge from paper and string for the community challenge. Joseph finds a photograph of another team’s finished design on a shared tablet. Someone suggests copying it and entering it as their own. Six hands rise when the group votes.",
+            "Michael keeps his hand beside his green sleeve. His stomach tightens: he wants to belong, and the copied bridge might win. You watch Gracie put down the scissors. Does a crowded vote make dishonesty right?"
+          ],
+          "ru": [
+            "Исследователи строят мост из бумаги и ниток для общего конкурса. На планшете Джозеф находит фотографию готового моста другой команды. Кто-то предлагает скопировать его и выдать за свой. Во время голосования поднимаются шесть рук.",
+            "Майкл не поднимает руку. Ему тревожно: хочется быть со всеми, а скопированный мост может победить. Ты видишь, как Грейси откладывает ножницы. Разве большинство голосов делает обман честным?"
+          ]
+        }
+      },
+      "image": "public/images/jr/why/lesson-46-scene-1.webp",
+      "image_sha256": "77628600fc0754264ce03ea9fe3ee7bf7c91bf6a32059922a67a5d7ca6923569",
+      "visual_evidence": "Seven distinct children. Six seated others each raise one hand: blue Joseph, purple Rosie, yellow Gracie, red classmate, orange classmate, gray classmate. Michael in green stands at left, uneasy, with both hands visibly lowered beside his body. Tablet and tabletop model establish bridge-work context.",
+      "prior_review": {
+        "report": "docs/why/qa/repair-review-b.json",
+        "status": "blocker",
+        "image_sha256": "d5ccb395b5d2bd66849ae280217e94e4774d13bc9f8e0bf33616b038c9c1066a"
+      },
+      "prior_asset_superseded": true,
+      "inspection": "Individual current WebP via vision_analyze, native visual review at 960x536 display (original 1920x1072)."
+    },
+    {
+      "key": "lesson-48-scene-2",
+      "status": "pass",
+      "source_file": "data/why/lesson-48.json",
+      "source_sha256": "e7442b4987f01b9d73d0a22d5315480ec1a0a6764514d59fdaa1a1952167ad07",
+      "source_scene": {
+        "title": {
+          "en": "Read the item, not the excitement",
+          "ru": "Читаем карточку, а не восторги"
+        },
+        "paragraphs": {
+          "en": [
+            "The record identifies a papyrus leaf containing part of Ephesians 1. It is a surviving copy of a biblical text, not a page written beside Jesus’ empty tomb. Gracie circles Ephesians on their draft. The caption had silently turned one kind of evidence into another.",
+            "Joseph notices a dating difference too: the collection introduction says about AD 200, while the item describes a broader period. He records that difference instead of selecting whichever date makes the poster sound more impressive."
+          ],
+          "ru": [
+            "Карточка описывает папирусный лист с частью первой главы Ефесянам. Это сохранившаяся копия библейского текста, а не страница, написанная у пустой гробницы Иисуса. Грейси обводит слово «Ефесянам». Подпись незаметно превратила один вид свидетельства в другой.",
+            "Джозеф замечает и разницу датировок: введение коллекции говорит примерно о 200 годе нашей эры, а карточка — о более широком периоде. Он записывает различие, не выбирая дату ради эффектного плаката."
+          ]
+        }
+      },
+      "image": "public/images/jr/why/lesson-48-scene-2.webp",
+      "image_sha256": "0da58504f372be25af3b76272b89944f7a636792a5a63c0e717cca592bfa236d",
+      "visual_evidence": "Plain exterior back of laptop lid faces camera; Joseph and Rosie face its unseen screen while Michael writes notes. No visible keyboard or blank front display is substituted for a hidden screen; no physical ancient artifact is presented as evidence. Note-taking assigned to Michael instead of Joseph is a harmless staging variation.",
+      "prior_review": {
+        "report": "docs/why/qa/repair-review-b.json",
+        "status": "blocker",
+        "image_sha256": "214264d38d2b632af7ffd50644cdace17595e7888a6f0368bf1b3023ff4fe352"
+      },
+      "prior_asset_superseded": true,
+      "inspection": "Individual current WebP via vision_analyze, native visual review at 960x536 display (original 1920x1072)."
+    },
+    {
+      "key": "lesson-17-scene-4",
+      "status": "blocker",
+      "source_file": "data/why/lesson-17.json",
+      "source_sha256": "e35415b2b7757195f7f759fe28234269af921cc160452fa8ea3a427e6149d5e1",
+      "source_scene": {
+        "title": {
+          "en": "Room at the worktable",
+          "ru": "Место за рабочим столом"
+        },
+        "paragraphs": {
+          "en": [
+            "‘Would you like to build with us next time?’ Michael asks the younger child. He does not make a better bridge the price of joining them. Then Gracie brings out her ribbon. Michael congratulates her, and the others join in. They can celebrate what she made without deciding that winning makes her worth more than her friends.",
+            "Joseph adds a practice plan to his blue notebook: Michael wants stronger joints on his next model. There is room for growth and disappointment, celebration and belonging. You help clear a place at the worktable before anyone asks who is best."
+          ],
+          "ru": [
+            "«Хочешь в следующий раз строить вместе с нами?» — спрашивает Майкл младшего мальчика. Чтобы прийти, не нужно сначала сделать мост получше. Грейси достаёт свою ленту. Майкл поздравляет её, и друзья присоединяются. Можно радоваться её работе, не считая, что победа делает её ценнее остальных.",
+            "Джозеф записывает план тренировки в синий блокнот: Майкл хочет научиться делать прочные соединения. Здесь есть место развитию и огорчению, радости и дружбе. Ты освобождаешь место за столом, не спрашивая, кто лучше всех."
+          ]
+        }
+      },
+      "image": "public/images/jr/why/lesson-17-scene-4.webp",
+      "image_sha256": "70f37244a40cef519d116db62ea672a9acabaa06bcc03d52a824836ad23c00f6",
+      "visual_evidence": "The welcome and ribbon are now visible, but the invited builder is not continuous with current 17.3: short curly-haired, visibly smaller orange-hooded boy in 17.3 becomes a long straight-haired, older-looking girl in orange in 17.4. Current EN refers to the younger child/he and RU explicitly to the younger boy. This changes the central recipient of the invitation, not merely a background extra. Restore the same younger builder from current 17.3 while retaining the welcome and Gracie’s ribbon.",
+      "prior_review": {
+        "report": "docs/why/qa/repair-review-a.json",
+        "status": "skip",
+        "image_sha256": null
+      },
+      "prior_asset_superseded": false,
+      "inspection": "Individual current WebP via vision_analyze, native visual review at 960x536 display (original 1920x1072)."
+    },
+    {
+      "key": "lesson-42-scene-1",
+      "status": "pass",
+      "source_file": "data/why/lesson-42.json",
+      "source_sha256": "4b0e0b9f3501ad25922d20cc26a59c66e20408ec5126aff002dea4729a648fea",
+      "source_scene": {
+        "title": {
+          "en": "Preparing the room",
+          "ru": "Готовим зал"
+        },
+        "paragraphs": {
+          "en": [
+            "The explorers help prepare the church hall for Sunday. Michael carries folded towels while Gracie sets out empty trays with an adult. Joseph wonders whether the towels and bread belong to the same celebration. Rosie suggests making a question card rather than guessing from the objects.",
+            "“Why do we use water?” Joseph asks as you help write the card. Gracie adds, “And why bread and a cup?” They take their questions to the pastor, who invites them to open the Bible together. The preparations can wait while they find out what these things mean."
+          ],
+          "ru": [
+            "Исследователи помогают готовить церковный зал к воскресенью. Майкл несёт полотенца, а Грейси вместе со взрослым расставляет пустые подносы. Джозеф спрашивает, относятся ли полотенца и хлеб к одному событию. Рози предлагает записать вопросы, а не гадать по предметам.",
+            "«А зачем нужна вода?» — спрашивает Джозеф, пока ты помогаешь записывать вопросы. Грейси добавляет: «И почему хлеб и чаша?» Дети приносят карточку пастору. Он предлагает вместе открыть Библию: приготовления могут подождать, пока они разберутся в смысле этих действий."
+          ]
+        }
+      },
+      "image": "public/images/jr/why/lesson-42-scene-1.webp",
+      "image_sha256": "3be3e11e5c28850ab8476984e46d60f29252a1c3678e75e3cbe77586768d7f4e",
+      "visual_evidence": "Michael carries a clearly visible stack of folded towels, Joseph carries empty metal trays, and the girls prepare a table in the church hall. Required preparation props now read clearly. Adult is not shown, but ordinary setup is not an unsafe child-led ritual; omission is nonblocking.",
+      "prior_review": {
+        "report": "docs/why/qa/repair-review-b.json",
+        "status": "skip",
+        "image_sha256": null
+      },
+      "prior_asset_superseded": false,
+      "inspection": "Individual current WebP via vision_analyze, native visual review at 960x536 display (original 1920x1072)."
+    },
+    {
+      "key": "lesson-45-scene-4",
+      "status": "pass",
+      "source_file": "data/why/lesson-45.json",
+      "source_sha256": "c167c5498ef00ba34d1e037fce40d326514dedca70e24c31fd13b699e54f06e6",
+      "source_scene": {
+        "title": {
+          "en": "Her turn still matters",
+          "ru": "Её очередь остаётся"
+        },
+        "paragraphs": {
+          "en": [
+            "A bright point finally comes into focus. Joseph steps aside so Nina can look first, just as they had promised before the conversation. Friendship has not become a prize she must win by agreeing. Gracie lends her the star chart and asks which constellation she wants to find next.",
+            "You help hold the red torch steady. The explorers still believe Jesus is Lord. Their words can be truthful, their questions open, and their shared evening genuinely kind."
+          ],
+          "ru": [
+            "Наконец в телескопе видна яркая точка. Джозеф уступает Нине первую очередь, как они обещали ещё до разговора. Дружба не стала наградой за согласие. Грейси даёт ей карту звёзд и спрашивает, какое созвездие искать дальше.",
+            "Ты держишь красный фонарик. Исследователи по-прежнему верят, что Иисус — Господь. Они могут говорить правду, честно спрашивать и проводить вечер с настоящей добротой."
+          ]
+        }
+      },
+      "image": "public/images/jr/why/lesson-45-scene-4.webp",
+      "image_sha256": "6080367e12c79645d09a3a474218fded0a0b9ec811b237239841564a9e71017f",
+      "visual_evidence": "Nina in orange actually looks through the telescope; Joseph has stepped away to the table with the chart, and all four explorers remain present. Real telescope turn and shared star chart replace the former magical-map scene. No coercive acceptance or magical glow.",
+      "prior_review": {
+        "report": "docs/why/qa/repair-review-b.json",
+        "status": "skip",
+        "image_sha256": null
+      },
+      "prior_asset_superseded": false,
+      "inspection": "Individual current WebP via vision_analyze, native visual review at 960x536 display (original 1920x1072)."
+    }
+  ],
+  "additional_continuity_reference": {
+    "image": "public/images/jr/why/lesson-17-scene-3.webp",
+    "image_sha256": "f2b7ea4175a81da8c90c1795a0fe1413f7da8db0ea1301329e758f43de5c150f",
+    "source_scene": {
+      "title": {
+        "en": "An unnoticed builder",
+        "ru": "Незамеченный строитель"
+      },
+      "paragraphs": {
+        "en": [
+          "At the end of the table, a younger child is quietly packing away a lopsided bridge. Michael recognizes the careful way the child hides the entry card. His first idea is to cheer him up by pretending the bridge deserved first prize.",
+          "You suggest asking about the bridge instead. ‘Why did you make the entrance so wide?’ Michael asks, ready to listen. The child explains that it is for a toy wheelchair. ‘You made room for it to get through,’ Michael says. He has found something genuinely thoughtful to appreciate without pretending to be a judge or inventing a prize."
+        ],
+        "ru": [
+          "В конце стола младший мальчик убирает неровный мост. Майкл узнаёт знакомое движение: тот тоже прячет карточку участника. Сначала хочется сказать, будто мост заслужил первое место.",
+          "Ты предлагаешь сначала спросить о мосте. «А почему въезд такой широкий?» — интересуется Майкл и внимательно слушает. Мальчик объясняет: это для игрушечной коляски. «Ты сделал так, чтобы она могла проехать», — говорит Майкл. Он нашёл настоящую заботливую деталь, которую можно похвалить, не выдумывая призов и не изображая судью."
+        ]
+      }
+    },
+    "inspection": "Individual current image via vision_analyze; confirms smaller curly-haired orange-hooded builder."
+  },
+  "prior_reports_reviewed": [
+    "docs/why/qa/repair-review-a.md",
+    "docs/why/qa/repair-review-a.json",
+    "docs/why/qa/repair-review-b.md",
+    "docs/why/qa/repair-review-b.json",
+    "docs/why/qa/visual-05-08.md",
+    "docs/why/qa/visual-09-13.md",
+    "docs/why/qa/flow-review-01-18.md"
+  ],
+  "supersession": "The five repair-review blockers at 24.1, 24.2, 41.3, 46.1 and 48.2 are cleared on current assets. Prior explicit skips at 17.4, 42.1 and 45.4 were not approvals. Original missing-builder/ribbon defect at 17.4 is replaced by a newly confirmed central-character continuity defect. Original 42.1 missing-prop and 45.4 missing-Nina/action defects are cleared. Flow-review is textual, not new visual approval. No claims about other historical blockers outside this scope.",
+  "unresolved_material_defects": [
+    {
+      "key": "lesson-17-scene-4",
+      "category": "central_character_continuity",
+      "evidence": "The welcome and ribbon are now visible, but the invited builder is not continuous with current 17.3: short curly-haired, visibly smaller orange-hooded boy in 17.3 becomes a long straight-haired, older-looking girl in orange in 17.4. Current EN refers to the younger child/he and RU explicitly to the younger boy. This changes the central recipient of the invitation, not merely a background extra. Restore the same younger builder from current 17.3 while retaining the welcome and Gracie’s ribbon."
+    }
+  ],
+  "limits": [
+    "Static asset review only; no browser crops, build, Scripture verification or publication performed.",
+    "No generation, app, lesson, prompt or asset changes; only requested final report files written.",
+    "No OCR certification of tiny texture; no gross anatomy, readable-text or child-safety blocker observed in the eight reviewed images."
+  ]
+}

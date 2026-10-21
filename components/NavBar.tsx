@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation, type Translations } from "@/lib/useTranslation";
 
-function navLinks(t: Translations) {
+function navLinks(t: Translations, language: string) {
   return [
     { href: "/",        label: t.nav.home },
     { href: "/stories", label: t.nav.stories },
@@ -17,6 +17,7 @@ function navLinks(t: Translations) {
     { href: "/quests",  label: t.nav.quests },
     { href: "/games",   label: t.nav.games },
     { href: "/lessons", label: t.nav.lessons },
+    { href: "/why", label: language === "ru" ? "ПОЧЕМУ?!" : "WHY?!" },
   ];
 }
 
@@ -166,7 +167,7 @@ export default function NavBar() {
       {/* Mobile/tablet dropdown */}
       {open && (
         <div style={{ background: "#0a1a30", borderTop: "1px solid rgba(255,255,255,.08)", padding: "8px 16px 16px", maxHeight: "calc(100vh - 52px)", overflowY: "auto" }}>
-          {navLinks(t).map((link) => {
+          {navLinks(t, language).map((link) => {
             const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
               <Link

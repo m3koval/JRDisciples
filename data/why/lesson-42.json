@@ -1,0 +1,206 @@
+{
+  "id": 42,
+  "chapter": 11,
+  "kind": "lesson",
+  "title": {
+    "en": "Why baptism and the Lord's Supper?",
+    "ru": "Зачем крещение и Вечеря Господня?"
+  },
+  "subtitle": {
+    "en": "Water, bread, and a question worth asking",
+    "ru": "Вода, хлеб и важный вопрос"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "Preparing the room",
+        "ru": "Готовим зал"
+      },
+      "paragraphs": {
+        "en": [
+          "The explorers help prepare the church hall for Sunday. Michael carries folded towels while Gracie sets out empty trays with an adult. Joseph wonders whether the towels and bread belong to the same celebration. Rosie suggests making a question card rather than guessing from the objects.",
+          "“Why do we use water?” Joseph asks as you help write the card. Gracie adds, “And why bread and a cup?” They take their questions to the pastor, who invites them to open the Bible together. The preparations can wait while they find out what these things mean."
+        ],
+        "ru": [
+          "Исследователи помогают готовить церковный зал к воскресенью. Майкл несёт полотенца, а Грейси вместе со взрослым расставляет пустые подносы. Джозеф спрашивает, относятся ли полотенца и хлеб к одному событию. Рози предлагает записать вопросы, а не гадать по предметам.",
+          "«А зачем нужна вода?» — спрашивает Джозеф, пока ты помогаешь записывать вопросы. Грейси добавляет: «И почему хлеб и чаша?» Дети приносят карточку пастору. Он предлагает вместе открыть Библию: приготовления могут подождать, пока они разберутся в смысле этих действий."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Belonging to Jesus",
+        "ru": "Принадлежать Иисусу"
+      },
+      "paragraphs": {
+        "en": [
+          "They read Matthew 28:19 and Romans 6:3–4. Jesus commands his followers to make disciples and baptize. Baptism points to belonging to Christ and sharing in his death and new life; it is not a prize for winning a Bible contest.",
+          "Joseph sketches water beside the words New life with Jesus. The pastor explains that Jesus saves us; the water is not magic, and baptism does not buy God's love. Joseph leaves space for his church's explanation of its practice. Michael puts the towels down carefully, seeing why getting wet is not the whole meaning."
+        ],
+        "ru": [
+          "Они читают Матфея 28:19 и Римлянам 6:3–4. Иисус велит делать людей учениками и крестить. Крещение указывает на принадлежность Христу, Его смерть и новую жизнь с Ним. Это не приз за победу в библейском конкурсе.",
+          "Джозеф рисует воду и пишет: «Новая жизнь с Иисусом». Пастор объясняет: спасает Иисус; вода не волшебная, и крещением нельзя купить Божью любовь. Джозеф оставляет место для объяснения практики своей церкви. Майкл аккуратно кладёт полотенца: теперь понятно, почему дело не просто в омовении."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Remember and proclaim",
+        "ru": "Помнить и возвещать"
+      },
+      "paragraphs": {
+        "en": [
+          "Next Rosie finds 1 Corinthians 11:23–26. The bread and cup direct the gathered church toward Jesus giving himself for us. At the Lord’s Supper Christians remember him and proclaim his death while awaiting his return. The center is Jesus, not the elegance of the tray.",
+          "Gracie moves a decorative ribbon that was covering the reading card. She wants people to see the passage clearly. The children add Remember Jesus beside the bread drawing, without pretending their paper drawing is the church’s actual celebration."
+        ],
+        "ru": [
+          "Затем Рози находит 1 Коринфянам 11:23–26. Хлеб и чаша обращают церковь к Иисусу, отдавшему Себя за нас. Во время Вечери Господней христиане вспоминают Его и возвещают Его смерть, ожидая возвращения. Главное — Иисус, не красота подноса.",
+          "Грейси убирает ленту, закрывавшую карточку с отрывком. Пусть текст будет хорошо виден. Возле рисунка хлеба дети пишут: «Помнить Иисуса». Рисунок помогает учиться, но не заменяет настоящего церковного участия."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A question, not a race",
+        "ru": "Вопрос, а не соревнование"
+      },
+      "paragraphs": {
+        "en": [
+          "At home Joseph shows his parent the two drawings. “How do people in our church know when they’re ready to take part?” he asks. He has learned that churches differ about some details, and he wants to understand his own church’s practice. The drawings give him a place to begin that conversation.",
+          "Explorer, add your own question beside his. These shared practices matter because Jesus gave them to his people to point toward him and his saving work. Nobody pressures Joseph into a decision that evening; learning their meaning is a worthwhile next step."
+        ],
+        "ru": [
+          "Дома Джозеф показывает родителю два рисунка. «А как в нашей церкви человек узнаёт, что уже готов участвовать?» — спрашивает он. Джозеф понял, что в разных церквях некоторые детали отличаются, и хочет узнать, как принято в его церкви. С рисунками ему легче начать этот разговор.",
+          "Исследователь, добавь свой вопрос. Эти общие действия важны: Иисус дал их Своему народу, чтобы обращать людей к Нему и Его спасению. В тот вечер Джозефа никто не торопит с решением. Понять смысл — уже хороший следующий шаг."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "1 Corinthians 11:26 (ESV)",
+      "ru": "Первое послание к Коринфянам 11:26 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "For as often as you eat this bread and drink the cup, you proclaim the Lord’s death until he comes.",
+      "ru": "Ибо всякий раз, когда вы едите хлеб сей и пьете чашу сию, смерть Господню возвещаете, доколе Он придет."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/1CO.11.26.ESV",
+      "ru": "https://www.bible.com/bible/167/1CO.11.26.RST"
+    }
+  },
+  "activity": {
+    "type": "sort",
+    "title": {
+      "en": "Match the meaning",
+      "ru": "Найди смысл"
+    },
+    "intro": {
+      "en": "Place each card in the category that fits its meaning.",
+      "ru": "Найди для каждой карточки подходящую группу."
+    },
+    "groups": [
+      {
+        "id": "observation",
+        "label": {
+          "en": "Baptism",
+          "ru": "Крещение"
+        }
+      },
+      {
+        "id": "claim",
+        "label": {
+          "en": "The Lord’s Supper",
+          "ru": "Вечеря Господня"
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Water and belonging to Christ.",
+          "ru": "Вода и принадлежность Христу."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Bread and cup proclaiming the Lord’s death.",
+          "ru": "Хлеб и чаша возвещают смерть Господа."
+        },
+        "group": "claim"
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "The command to baptize disciples in Matthew 28.",
+          "ru": "Повеление крестить учеников в Матфея 28."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "Remembering Jesus together while awaiting his return.",
+          "ru": "Совместное воспоминание об Иисусе в ожидании Его возвращения."
+        },
+        "group": "claim"
+      }
+    ],
+    "hint": {
+      "en": "Use the passages and the two drawings, not the decorations.",
+      "ru": "Вспомни отрывки и два рисунка, а не украшения."
+    },
+    "success": {
+      "en": "Both point toward Christ; they are not religious achievement badges.",
+      "ru": "И то и другое обращает ко Христу, а не служит значком за достижения."
+    }
+  },
+  "fieldMission": {
+    "en": "Ask a parent and trusted church leader what baptism and the Lord’s Supper mean in your church. Bring one honest question without pressure to participate.",
+    "ru": "Спроси родителя и надёжного церковного наставника о смысле крещения и Вечери в вашей церкви. Задай честный вопрос без давления участвовать."
+  },
+  "prayer": {
+    "en": "Jesus, thank you for giving yourself for us. Help me understand and honor what you gave your church.",
+    "ru": "Иисус, спасибо, что Ты отдал Себя за нас. Помоги понять и чтить то, что Ты дал церкви."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Bible anchor: 1 Corinthians 11:26 (ESV)",
+        "ru": "Библейский текст: Первое послание к Коринфянам 11:26 (Синодальный перевод)"
+      },
+      "url": "https://www.bible.com/bible/59/1CO.11.26.ESV",
+      "supports": {
+        "en": "1 Corinthians 11:23–26 links the Lord's Supper to remembering Jesus and proclaiming his death until he comes.",
+        "ru": "1 Коринфянам 11:23–26 связывает Вечерю с воспоминанием об Иисусе и возвещением Его смерти до Его возвращения."
+      },
+      "limits": {
+        "en": "This passage addresses the Lord’s Supper. Baptism teaching also draws on Matthew 28:19 and Romans 6:3–4; churches differ in practice and sacramental interpretation.",
+        "ru": "Этот отрывок посвящён Вечере. Учение о крещении также опирается на Матфея 28:19 и Римлянам 6:3–4; практика и понимание таинств в церквах различаются."
+      }
+    },
+    {
+      "title": {
+        "en": "Russian Synodal anchor",
+        "ru": "Текст Синодального перевода"
+      },
+      "url": "https://www.bible.com/bible/167/1CO.11.26.RST",
+      "supports": {
+        "en": "Exact Russian text for the displayed verse.",
+        "ru": "Точный русский текст приведённого стиха."
+      },
+      "limits": {
+        "en": "Verse numbering can differ between translations, especially in Psalms.",
+        "ru": "Нумерация стихов в переводах может отличаться, особенно в Псалтири."
+      }
+    }
+  ],
+  "adultNote": {
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Christian traditions differ on baptism, communion, recipients, and sacramental language. Explain your church’s teaching without caricaturing others. Jesus saves; these practices are not earned salvation. Do not simulate administering them or pressure children to participate.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Христианские традиции различаются в понимании крещения, Причастия, участия и языка таинств. Объясняйте учение своей церкви без насмешек над другими. Спасает Иисус; участие не зарабатывает спасение. Не разыгрывайте совершение таинств и не принуждайте детей."
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "id": 8,
+  "chapter": 2,
+  "kind": "lab",
+  "title": {
+    "en": "LAB: Can you check the source?",
+    "ru": "ЛАБОРАТОРИЯ: Можешь проверить источник?"
+  },
+  "subtitle": {
+    "en": "The wonderful-looking poster",
+    "ru": "Очень убедительный плакат"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "Too good to check?",
+        "ru": "Слишком красиво для проверки?"
+      },
+      "paragraphs": {
+        "en": [
+          "A colorful poster for the team's exhibition arrives from Michael's practice design folder. It claims that God promises a trouble-free day to anyone who smiles. A Bible reference is printed below. Gracie likes the bright colors, but Rosie cannot remember reading that promise.",
+          "You turn the poster over. Michael explains that he invented it for today's source-checking challenge. It is a deliberately false practice claim, not a verse to memorize or share."
+        ],
+        "ru": [
+          "Из папки учебных макетов Майкла появляется яркий плакат для выставки. На нём утверждается: Бог обещает день без неприятностей каждому, кто улыбается. Внизу указан библейский адрес. Грейси нравятся краски, но Рози не помнит такого обещания.",
+          "Ты переворачиваешь плакат. Майкл объясняет: он придумал его для проверки источников. Это намеренно ложное учебное утверждение, а не стих для заучивания или пересылки."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Follow the reference",
+        "ru": "Пойдём по ссылке"
+      },
+      "paragraphs": {
+        "en": [
+          "Joseph opens the actual passage instead of searching for another picture that repeats the claim. The passage does not contain the poster's promise. Their teacher asks them to read the surrounding verses too, because even real words can be used in a misleading way.",
+          "‘I knew the words were made up, but I still hoped we could use the picture,’ Michael admits. You help him separate the two: he can keep working on the design without keeping the false promise. Before they make a replacement, Rosie suggests looking at what the Bible says about checking a claim."
+        ],
+        "ru": [
+          "Джозеф открывает сам отрывок, а не ищет картинку с теми же словами. Такого обещания там нет. Учитель просит прочитать и соседние стихи: даже настоящие слова можно использовать так, что смысл исказится.",
+          "«Я знал, что слова придуманные, но всё равно хотел использовать эту картинку», — признаётся Майкл. Ты помогаешь ему разобраться: красивый рисунок можно сохранить, а ложное обещание — убрать. Прежде чем делать новый плакат, Рози предлагает узнать, что Библия говорит о проверке услышанного."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Hear the other side",
+        "ru": "Выслушаем проверку"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie reads the proverb about the first person's case sounding right until it is examined. That does not mean every speaker is lying. It means the first convincing presentation is not the end of an investigation. Joseph adds a checkpoint for translation and context.",
+          "They also remember Berea: listeners examined Scripture instead of relying only on a speaker's confidence. An impressive title, a thousand reposts, or a friendly computer voice cannot replace opening the actual source."
+        ],
+        "ru": [
+          "Рози читает притчу: первый рассказ кажется верным, пока его не проверят. Это не значит, что все лгут. Просто убедительное начало — ещё не конец исследования. Джозеф добавляет проверку перевода и контекста.",
+          "Ребята вспоминают Верию: слушатели исследовали Писание, а не полагались лишь на уверенность говорящего. Громкий заголовок, тысяча пересылок или дружелюбный компьютерный голос не заменят самого источника."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A smaller, truer poster",
+        "ru": "Скромнее, зато правдивее"
+      },
+      "paragraphs": {
+        "en": [
+          "The team retires the false poster and designs a new invitation to bring questions. Michael labels his own wording as the team's invitation, not God's quotation. Rosie checks the genuine Scripture card separately against the Bible text.",
+          "‘What about the people who saw our first draft?’ Gracie asks. You help the team write a correction without shaming Michael. They turn their work into a detective challenge for visitors: find the source, read it, compare the words, and correct any mistake. This time visitors will be able to check the poster for themselves."
+        ],
+        "ru": [
+          "Команда убирает ложный плакат и делает приглашение задавать вопросы. Майкл подписывает свои слова как приглашение команды, а не цитату Бога. Рози отдельно сверяет настоящую библейскую карточку с текстом.",
+          "«А как же те, кто уже видел первый вариант?» — спрашивает Грейси. Ты помогаешь команде написать исправление, не высмеивая Майкла. Из этой работы получается задание для посетителей: найти источник, прочитать, сравнить слова и исправить ошибку. Теперь посетители смогут сами проверить плакат."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Proverbs 18:17 (ESV)",
+      "ru": "Притчи 18:18 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "The one who states his case first seems right,\nuntil the other comes and examines him.",
+      "ru": "Первый в тяжбе своей прав, но приходит соперник его и исследует его."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/PRO.18.17.ESV",
+      "ru": "https://www.bible.com/bible/167/PRO.18.18.RST"
+    }
+  },
+  "activity": {
+    "type": "sequence",
+    "title": {
+      "en": "Check before sharing",
+      "ru": "Проверь перед пересылкой"
+    },
+    "intro": {
+      "en": "Rebuild the source-checking route.",
+      "ru": "Восстанови путь проверки."
+    },
+    "items": [
+      {
+        "id": "d",
+        "text": {
+          "en": "Correct or withhold the misleading claim.",
+          "ru": "Исправить или не распространять искажённое утверждение."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Open the named passage in the stated translation.",
+          "ru": "Открыть указанный отрывок в названном переводе."
+        }
+      },
+      {
+        "id": "a",
+        "text": {
+          "en": "Identify the exact claim and reference.",
+          "ru": "Уточнить утверждение и ссылку."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Compare the wording and read the context.",
+          "ru": "Сравнить слова и прочитать контекст."
+        }
+      }
+    ],
+    "hint": {
+      "en": "You need the actual source before you can compare it.",
+      "ru": "Для сравнения сначала нужен сам источник."
+    },
+    "success": {
+      "en": "You traced authority instead of trusting a beautiful design.",
+      "ru": "Ты проверил основание, а не доверился красивому оформлению."
+    },
+    "correctOrder": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ]
+  },
+  "fieldMission": {
+    "en": "Check one quotation with an adult before sharing it. If it is wrong, do not pass it on.",
+    "ru": "Проверь одну цитату со взрослым перед пересылкой. Ошибочную не распространяй."
+  },
+  "prayer": {
+    "en": "God, give me patience to check and courage to correct myself.",
+    "ru": "Боже, дай терпение проверять и смелость исправлять себя."
+  },
+  "adultNote": {
+    "en": "The false poster is explicitly fictional and never quoted as Scripture. Proverbs 18:17 ESV corresponds to 18:18 RST; numbering was checked rather than assumed.",
+    "ru": "Ложный плакат прямо назван вымышленным и не цитируется как Писание. Притчи 18:17 ESV соответствуют 18:18 Синодального перевода; нумерация проверена."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Proverbs 18:17 — Bible.com ESV / RST",
+        "ru": "Притчи 18:18 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/PRO.18.17.ESV",
+      "supports": {
+        "en": "Proverbs 18:17 warns that the first account can sound right until it is examined; Russian numbering is 18:18.",
+        "ru": "Притчи 18:18 предупреждает: первый рассказ кажется верным, пока его не проверят; в ESV это 18:17."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    }
+  ]
+}

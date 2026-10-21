@@ -1,0 +1,191 @@
+{
+  "id": 7,
+  "chapter": 2,
+  "kind": "lesson",
+  "title": {
+    "en": "Why so many books and translations?",
+    "ru": "Почему в Библии много книг и переводов?"
+  },
+  "subtitle": {
+    "en": "A library inside a cover",
+    "ru": "Библиотека под обложкой"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "The wrong shelf",
+        "ru": "Не та полка"
+      },
+      "paragraphs": {
+        "en": [
+          "At the library, Michael tries to use a poem as instructions for repairing a bicycle. Gracie points to the repair manual on another shelf. The poem is not useless; it is doing a different job. You help carry their chosen books to a round table.",
+          "At the table, Rosie opens the contents page of her purple Bible. ‘There are different kinds of writing in here too,’ she says. ‘How do we know how to read each one?’ The others lean closer: the Bible is a collection of books, not one long text written in a single afternoon."
+        ],
+        "ru": [
+          "В библиотеке Майкл пытается чинить велосипед по стихотворению. Грейси показывает на руководство по ремонту на другой полке. Стихи не бесполезны — просто у них другая задача. Ты помогаешь отнести книги к круглому столу.",
+          "За столом Рози открывает содержание фиолетовой Библии. «Здесь ведь тоже разные книги, — говорит она. — Как понять, как читать каждую?» Ребята придвигаются ближе: перед ними собрание книг, а не один длинный текст, написанный за один вечер."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Listen for the kind of writing",
+        "ru": "Узнай вид текста"
+      },
+      "paragraphs": {
+        "en": [
+          "Joseph makes shelf cards for narrative, poetry, letters, and wisdom. Rosie explains that recognizing the kind of writing helps readers listen well. A psalm's picture language need not work like a laboratory description; a letter should be read with its readers and situation in mind.",
+          "Their teacher shows how Jesus speaks of the Law, Prophets, and Psalms in Luke 24. The different writings belong to God's unfolding story, rather than competing to replace each other."
+        ],
+        "ru": [
+          "Джозеф делает карточки: повествование, поэзия, послания, мудрость. Рози объясняет: знание жанра помогает понять текст. Образы псалма не нужно читать как лабораторный отчёт, а в письме важно учитывать адресатов и обстоятельства.",
+          "Учитель показывает, как Иисус говорит о Законе, Пророках и Псалмах в Луки 24. Разные книги участвуют в раскрытии Божьей истории, а не вытесняют друг друга."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Two languages at the table",
+        "ru": "Два языка за столом"
+      },
+      "paragraphs": {
+        "en": [
+          "Gracie's grandmother reads Russian, so the team opens an English translation and the Russian Synodal translation. Different languages arrange ideas differently. Translators work to carry the meaning of Hebrew, Aramaic, and Greek texts into another language; they do not discover a different Jesus for each reader.",
+          "As you compare a short passage with an adult, Gracie asks, ‘Could I explain this in my own words for Grandma?’ Their teacher says a retelling can help someone understand, as long as Gracie calls it a retelling. That way her grandmother will know which words come from the translation and which are Gracie's explanation."
+        ],
+        "ru": [
+          "Бабушка Грейси читает по-русски, поэтому ребята открывают английский и русский Синодальный переводы. Языки по-разному строят фразы. Переводчики передают смысл еврейских, арамейских и греческих текстов, а не находят нового Иисуса для каждого читателя.",
+          "Когда вы со взрослым сравниваете короткий отрывок, Грейси спрашивает: «А можно объяснить это бабушке своими словами?» Учитель отвечает: пересказ может помочь, если честно назвать его пересказом. Тогда бабушка поймёт, где слова выбранного перевода, а где объяснение Грейси."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Understanding comes first",
+        "ru": "Сначала понимание"
+      },
+      "paragraphs": {
+        "en": [
+          "In Nehemiah 8, the team finds people reading and explaining so listeners understand. Michael puts the bicycle poem back with the poems, then writes a small shelf guide for their reading corner. His mistake has become a useful reminder.",
+          "Joseph leaves space for unfamiliar words, and Gracie asks her grandmother to read with them. The goal is not to collect the most impressive Bible editions. It is to understand God's word and live in response to it together."
+        ],
+        "ru": [
+          "В Неемии 8 ребята находят чтение с объяснением, чтобы слушатели понимали. Майкл возвращает стихотворение на полку поэзии и делает памятку для уголка чтения. Его ошибка оказалась полезным напоминанием.",
+          "Джозеф оставляет место для непонятных слов, а Грейси приглашает бабушку читать вместе. Цель — не собрать самые внушительные издания, а понимать Божье слово и вместе отвечать на него жизнью."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Nehemiah 8:8 (ESV)",
+      "ru": "Неемия 8:8 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "They read from the book, from the Law of God, clearly, and they gave the sense, so that the people understood the reading.",
+      "ru": "И читали из книги, из закона Божия, внятно, и присоединяли толкование, и народ понимал прочитанное."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/NEH.8.8.ESV",
+      "ru": "https://www.bible.com/bible/167/NEH.8.8.RST"
+    }
+  },
+  "activity": {
+    "type": "sort",
+    "title": {
+      "en": "Books or language work?",
+      "ru": "Вид книги или работа с языком?"
+    },
+    "intro": {
+      "en": "Sort each description by what it tells you.",
+      "ru": "Определи, о чём говорит каждое описание."
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Psalms uses poetry and songs.",
+          "ru": "Псалтирь содержит поэзию и песни."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "A Russian translation carries meaning into Russian.",
+          "ru": "Русский перевод передаёт смысл на русском."
+        },
+        "group": "claim"
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "A letter addresses readers in a situation.",
+          "ru": "Послание обращается к читателям в определённой ситуации."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "A paraphrase uses freer explanatory wording.",
+          "ru": "Пересказ свободнее объясняет содержание."
+        },
+        "group": "claim"
+      }
+    ],
+    "hint": {
+      "en": "Genre describes a text’s form; translation describes language work.",
+      "ru": "Жанр описывает форму текста, перевод — работу с языком."
+    },
+    "success": {
+      "en": "You can now ask both what kind of text it is and how its words reached you.",
+      "ru": "Теперь ты можешь спросить и о жанре, и о том, как текст передан на твоём языке."
+    },
+    "groups": [
+      {
+        "id": "observation",
+        "label": {
+          "en": "Kind of writing",
+          "ru": "Вид текста"
+        }
+      },
+      {
+        "id": "claim",
+        "label": {
+          "en": "Translation or paraphrase",
+          "ru": "Перевод или пересказ"
+        }
+      }
+    ]
+  },
+  "fieldMission": {
+    "en": "Ask an adult to compare one verse in ESV and Russian Synodal, including its context.",
+    "ru": "Попроси взрослого сравнить один стих в ESV и Синодальном переводе вместе с контекстом."
+  },
+  "prayer": {
+    "en": "God, help us understand your word across languages.",
+    "ru": "Боже, помоги нам понимать Твоё слово на разных языках."
+  },
+  "adultNote": {
+    "en": "Genre, canon, translation, and paraphrase are distinct questions. Churches differ on some Old Testament contents; do not imply every historical Bible has an identical table of contents.",
+    "ru": "Жанр, канон, перевод и пересказ — разные вопросы. Состав Ветхого Завета у церквей различается; не утверждайте, что содержание всех исторических Библий одинаково."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Nehemiah 8:8 — Bible.com ESV / RST",
+        "ru": "Неемия 8:8 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/NEH.8.8.ESV",
+      "supports": {
+        "en": "Nehemiah 8:8 describes reading God's law and giving its meaning so listeners understand.",
+        "ru": "Неемия 8:8 рассказывает о чтении Божьего закона и объяснении смысла для слушателей."
+      },
+      "limits": {
+        "en": "Shows the importance of understanding Scripture; does not provide a complete history of canon formation or modern translation.",
+        "ru": "Показывает важность понимания Писания; не даёт полной истории библейского канона и современных переводов."
+      }
+    }
+  ]
+}

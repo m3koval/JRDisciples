@@ -1,0 +1,188 @@
+{
+  "id": 33,
+  "chapter": 9,
+  "kind": "lesson",
+  "title": {
+    "en": "Who is the Holy Spirit?",
+    "ru": "Кто такой Святой Дух?"
+  },
+  "subtitle": {
+    "en": "The helper who is more than a feeling",
+    "ru": "Помощник, Который больше, чем чувство"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "The powerless lantern",
+        "ru": "Фонарь без батареек"
+      },
+      "paragraphs": {
+        "en": [
+          "At the camp workshop, Michael shakes a lantern that will not light. Joseph fetches fresh batteries while Gracie spreads yellow fabric across their exhibition table. Their assignment is to explain the Holy Spirit. Michael suggests placing the lantern beside a sign saying God’s power.",
+          "Rosie pauses over her open Bible.",
+          "“Electricity can light a lamp,” she says, “but can it teach us or love us? Can anyone lie to it?” Her questions make Michael look again at his sign. Before they finish the display, you join them in finding out what Scripture says about the Holy Spirit."
+        ],
+        "ru": [
+          "В лагерной мастерской Майкл трясёт погасший фонарь. Джозеф приносит батарейки, а Грейси накрывает стол жёлтой тканью. Команде поручили рассказать о Святом Духе. Майкл предлагает поставить фонарь возле надписи «Божья сила».",
+          "Рози задумывается над открытой Библией.",
+          "— Электричество зажигает лампу, но разве оно может учить нас или любить? Можно ли ему солгать? — спрашивает она. Майкл снова смотрит на свою надпись. Прежде чем заканчивать выставку, вы вместе выясните, что Писание говорит о Святом Духе."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Follow the actions",
+        "ru": "Ищи действия"
+      },
+      "paragraphs": {
+        "en": [
+          "They read John 14:16–17 with their leader. Jesus promises another Helper who will remain with his people. This is someone believers can know, not a passing burst of excitement. Joseph writes Helper and With us in his blue notebook, leaving the battery drawing off the page.",
+          "Then they examine Acts 5:3–4. Peter describes lying to the Holy Spirit as lying to God. The passage treats the Spirit as divine and personal, not as an object people can operate."
+        ],
+        "ru": [
+          "С руководителем они читают Иоанна 14:16–17. Иисус обещает другого Утешителя, Который останется с Его народом. Верующие знают Его; это не короткая вспышка восторга. Джозеф записывает в синий блокнот: «Помогает», «С нами». Батарейку он не рисует.",
+          "Затем они исследуют Деяния 5:3–4. Пётр называет ложь Святому Духу ложью Богу. Здесь Дух — Бог и Личность, а не предмет, которым можно управлять."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A quiet kind of help",
+        "ru": "Помощь без шума"
+      },
+      "paragraphs": {
+        "en": [
+          "Gracie removes the battery sign. “Yesterday I didn’t feel anything special when we prayed,” she admits. “Does that mean he wasn’t helping me?”",
+          "Rosie points back to Jesus’ promise. They can trust what he says even when they do not feel a rush of excitement. The Holy Spirit helps God’s people know truth and follow Jesus even on ordinary afternoons.",
+          "At that moment Michael discovers he packed the wrong exhibition cards. He almost blames Joseph. Instead, he asks God for help, tells the truth, and starts making replacement cards with the others."
+        ],
+        "ru": [
+          "Грейси убирает надпись о батарейке. «Вчера во время молитвы я ничего особенного не почувствовала, — признаётся она. — Значит, Он мне не помогал?»",
+          "Рози возвращается к обещанию Иисуса. Его словам можно доверять и тогда, когда не чувствуешь сильного волнения. Святой Дух помогает Божьему народу знать истину и следовать за Иисусом даже в обычный день.",
+          "Тут Майкл обнаруживает, что взял не те карточки. Он чуть не обвиняет Джозефа, но просит Бога о помощи, говорит правду и вместе со всеми делает новые."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "The lamp finds its place",
+        "ru": "Фонарь на своём месте"
+      },
+      "paragraphs": {
+        "en": [
+          "The lantern finally shines above the table, lighting their reading without pretending to explain God. Their new cards describe what the Bible says the Spirit does. Gracie adds an invitation to ask questions, and Michael carries the discarded sign to the recycling box.",
+          "You help arrange the final cards. One God is Father, Son, and Holy Spirit; the Spirit is not a smaller god or Jesus wearing a different costume. The explorers leave asking for help to obey, not searching for a stronger spiritual battery."
+        ],
+        "ru": [
+          "Фонарь наконец загорается над столом. Он освещает страницы, но не изображает Бога. Новые карточки рассказывают о действиях Духа в Библии. Грейси приглашает задавать вопросы, а Майкл относит старую надпись в коробку для бумаги.",
+          "Ты помогаешь разложить карточки. Единый Бог — Отец, Сын и Святой Дух. Дух не младший бог и не Иисус в другом костюме. Исследователи просят помощи для послушания, а не ищут духовную батарейку помощнее."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "John 14:16 (ESV)",
+      "ru": "От Иоанна святое благовествование 14:16 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "And I will ask the Father, and he will give you another Helper, to be with you forever",
+      "ru": "И Я умолю Отца, и даст вам другого Утешителя, да пребудет с вами вовек"
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/JHN.14.16.ESV",
+      "ru": "https://www.bible.com/bible/167/JHN.14.16.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Repair the exhibition label",
+      "ru": "Исправь подпись"
+    },
+    "intro": {
+      "en": "Use the discoveries from the story to decide.",
+      "ru": "Вспомни открытия из истории и выбери ответ."
+    },
+    "question": {
+      "en": "Which label fits the passages the team read?",
+      "ru": "Какая подпись соответствует прочитанным отрывкам?"
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "The Spirit is electricity that we control.",
+          "ru": "Дух — электричество, которым мы управляем."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "The Spirit is only the happy feeling after singing.",
+          "ru": "Дух — только радостное чувство после пения."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "The Holy Spirit is God, a personal Helper, not an impersonal force.",
+          "ru": "Святой Дух — Бог и наш Утешитель. Он — Личность, а не безличная сила."
+        }
+      }
+    ],
+    "correctId": "c",
+    "hint": {
+      "en": "Notice who can remain with people and whom someone can lie to.",
+      "ru": "Заметь, Кто пребывает с людьми и Кому можно солгать."
+    },
+    "success": {
+      "en": "Jesus promises a Helper; Acts speaks of lying to the Spirit as lying to God.",
+      "ru": "Иисус обещает Утешителя; Деяния называют ложь Духу ложью Богу."
+    }
+  },
+  "fieldMission": {
+    "en": "Ask God for help with one honest act of obedience today, whether or not you feel excited.",
+    "ru": "Попроси Бога помочь в одном честном поступке сегодня, даже если не чувствуешь восторга."
+  },
+  "prayer": {
+    "en": "Holy Spirit, help me understand truth and follow Jesus in ordinary choices.",
+    "ru": "Святой Дух, помоги понимать истину и следовать за Иисусом в обычных решениях."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Bible anchor: John 14:16 (ESV)",
+        "ru": "Библейский текст: От Иоанна святое благовествование 14:16 (Синодальный перевод)"
+      },
+      "url": "https://www.bible.com/bible/59/JHN.14.16.ESV",
+      "supports": {
+        "en": "John 14:16–17 presents the Spirit as the Helper sent by the Father, not an impersonal supply of power.",
+        "ru": "Иоанна 14:16–17 представляет Духа как Утешителя, посланного Отцом, а не безличный запас силы."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    },
+    {
+      "title": {
+        "en": "Russian Synodal anchor",
+        "ru": "Текст Синодального перевода"
+      },
+      "url": "https://www.bible.com/bible/167/JHN.14.16.RST",
+      "supports": {
+        "en": "Exact Russian text for the displayed verse.",
+        "ru": "Точный русский текст приведённого стиха."
+      },
+      "limits": {
+        "en": "Verse numbering can differ between translations, especially in Psalms.",
+        "ru": "Нумерация стихов в переводах может отличаться, особенно в Псалтири."
+      }
+    }
+  ],
+  "adultNote": {
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read John 14:16–17 and Acts 5:3–4. Person does not mean a physical human body. Avoid force analogies or making emotional intensity a test of God’s presence.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Иоанна 14:16–17 и Деяния 5:3–4. Личность не означает человеческое тело. Не сравнивайте Духа с безличной силой и не измеряйте Божье присутствие силой чувств."
+  }
+}

@@ -1,0 +1,395 @@
+{
+  "scope": "First 24 keys in insertion order from visual-detail-fixes.json; lesson-17-scene-4 explicitly skipped",
+  "method": "Read actual repair brief and original English lesson scene before native vision inspection. Evaluate substantive action, identity, prop and source-integrity requirements; do not reject harmless simplifications. No generated/replaced assets, lesson data or application code.",
+  "counts": {
+    "pass": 21,
+    "skip": 1,
+    "blocker": 2
+  },
+  "records": [
+    {
+      "key": "lesson-03-scene-3",
+      "status": "pass",
+      "repair_brief": "Modern clubhouse listening circle. Michael green lowers his hands and quietly listens while Gracie yellow asks a thoughtful question. Joseph blue takes notes and Rosie purple listens with a book. Completely blank wall posters; no letters, titles or numbers.",
+      "source_file": "data/why/lesson-03.json",
+      "source_scene_title": "Listening is real work",
+      "source_scene_text": [
+        "Michael starts to offer three fast explanations, then notices Gracie's face. He stops and asks what happened. Joseph writes the question exactly as she means it, instead of changing it into an easier one. Their teacher admits that some answers will take more conversation.",
+        "You help choose a quiet time to return to the question. Following Jesus includes learning, praying, and receiving help. It does not require pretending uncertainty never visits a believer."
+      ],
+      "image": "public/images/jr/why/lesson-03-scene-3.webp",
+      "image_sha256": "f0071a97cb0d1fd5d7b83f1c794994b2b0956825f197f365be588cfa543e2fe3",
+      "visual_evidence": "Michael listens with lowered hands; Gracie speaks, Joseph writes, Rosie holds a book; wall panels are blank. Listening beat and identities are clear.",
+      "assessment": "Teacher omitted; not material to the listening beat.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-05-scene-4",
+      "status": "pass",
+      "repair_brief": "Modern indoor clubhouse. Finished SMALL CARDBOARD reading shelter made from a kit, folded cardboard panels and a low reachable shelf with a purple Bible. Michael green apologizes gently to his friends while helping place the final cardboard panel. Clearly a child-sized indoor cardboard project, not an outdoor log hut.",
+      "source_file": "data/why/lesson-05.json",
+      "source_scene_title": "A corner for listening",
+      "source_scene_text": [
+        "The shelter finally stands after the children follow the kit's instructions. They do not announce that a cardboard roof proves the Bible true. It simply helped them notice that listening matters. Rosie places her purple Bible on a low shelf where everyone can reach it.",
+        "Their first reading ends with an apology: Michael had brushed aside Gracie's warning. The corner has become more than a place to hide with books. It is a place to listen and respond."
+      ],
+      "image": "public/images/jr/why/lesson-05-scene-4.webp",
+      "image_sha256": "7a48447302179f289494e17510daf7394476dba73ff99e23d3d422a02730b107",
+      "visual_evidence": "Indoor child-sized folded-cardboard shelter, Michael holding final panel, low shelf with purple book and friends reading inside. Not an outdoor hut.",
+      "assessment": "Apology cannot be inferred from a still; cooperative finishing supports the scene.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-06-scene-2",
+      "status": "pass",
+      "repair_brief": "Contemporary library table. Four explorers view a digital museum collection on a laptop. Rear three-quarter camera angle: see back of laptop, NOT its screen content. Joseph blue records notes, Rosie purple points to the website on screen. No physical scroll, no ancient manuscript, no museum display case, no historical reenactment.",
+      "source_file": "data/why/lesson-06.json",
+      "source_scene_title": "Open a real record",
+      "source_scene_text": [
+        "With their teacher, they open the Israel Museum's Great Isaiah Scroll viewer. This is a photograph of an actual pre-Christian Hebrew copy of Isaiah, not the prophet's own handwriting. The museum describes agreement with later texts alongside spelling differences, corrections, and other variants.",
+        "Joseph nearly copies the English popup as the scroll's exact translation. Their teacher catches the trap: the ordinary popup translates the later Masoretic text, not this photographed scroll directly."
+      ],
+      "image": "public/images/jr/why/lesson-06-scene-2.webp",
+      "image_sha256": "8649b5fc37ee07bf204c4743ae45599afaf9e730c9b81c09b8350ac09c9665ef",
+      "visual_evidence": "Modern laptop viewed from the back, Rosie points and Joseph writes; all four explorers present. No physical ancient artifact or invented manuscript screen.",
+      "assessment": "Actual item identity remains in lesson copy; intentionally hidden screen does not falsely authenticate an artifact.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-06-scene-3",
+      "status": "pass",
+      "repair_brief": "Contemporary library. Four explorers compare a laptop website with their modern notebooks. Camera behind laptop so display is hidden. Joseph blue makes a two-column sketch, Rosie purple helps him check the source. No old-looking book, no ancient paper, no scrolls. Modern books and notebooks only.",
+      "source_file": "data/why/lesson-06.json",
+      "source_scene_title": "Another kind of book",
+      "source_scene_text": [
+        "Next they inspect the official Codex Sinaiticus contents. This fourth-century Greek manuscript preserves the whole New Testament, with other writings and an arrangement unlike their classroom Bible. Its copying date is not the date when Jesus lived or the books were first written.",
+        "Michael asks whether copying means the message must be hopelessly lost. No: the Isaiah Scroll preserves a substantial text from before Jesus, and Sinaiticus preserves the whole New Testament. Researchers can compare these witnesses with other copies to identify agreements and differences. That is a stronger reason for confidence than pretending copyists never made mistakes."
+      ],
+      "image": "public/images/jr/why/lesson-06-scene-3.webp",
+      "image_sha256": "3477983bd490a436d7bf238c4ea796eb9391479afe9c44a7e641fb642725495a",
+      "visual_evidence": "Modern laptop and notebooks, Joseph recording while Rosie checks alongside him; ordinary bound books, no scroll or reenactment.",
+      "assessment": "Two-column structure is not legible at this scale; not a material source-integrity defect.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-08-scene-4",
+      "status": "pass",
+      "repair_brief": "Modern clubhouse display. Michael green takes down a colorful ordinary adventure picture collage with hills and smiling hikers. Rosie purple replaces it with a plain card bearing one simple question-mark symbol. Joseph blue writes in notebook and Gracie yellow helps. No spacecraft, aliens, red crosses, writing or slogans.",
+      "source_file": "data/why/lesson-08.json",
+      "source_scene_title": "A smaller, truer poster",
+      "source_scene_text": [
+        "The team retires the false poster and designs a new invitation to bring questions. Michael labels his own wording as the team's invitation, not God's quotation. Rosie checks the genuine Scripture card separately against the Bible text.",
+        "You help write a correction for anyone who saw the first draft. Nobody needs to shame its designer. Their exhibition now includes a detective challenge: locate, read, compare, and correct. The strongest poster is the one that does not borrow authority it has not earned."
+      ],
+      "image": "public/images/jr/why/lesson-08-scene-4.webp",
+      "image_sha256": "ef2a97bbe0b8d04afb2a12d263227059d7005e1219bac41d0c7d8da497d2b8f1",
+      "visual_evidence": "Michael lifts off ordinary hiking picture; question-mark replacement is held below by Rosie/Gracie; Joseph writes. No false Scripture slogan.",
+      "assessment": "Single question symbol is intentional, not prohibited invented lettering.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-11-scene-1",
+      "status": "pass",
+      "repair_brief": "Quiet modern clubhouse garden corner. Gracie yellow sits subdued holding a folded child's drawing of TWO friends. Michael green has stopped talking and sits nearby listening, Rosie purple offers gentle company, Joseph blue watches attentively. Small birdhouse and seedling pots nearby but NOT the main focus. Sadness is accepted; no forced smiles or crying spectacle.",
+      "source_file": "data/why/lesson-11.json",
+      "source_scene_title": "An empty chair",
+      "source_scene_text": [
+        "The team meets in the school garden, but Gracie barely notices the seedlings. Her friend has moved away, leaving an empty chair beside her in class. Michael suggests that trusting God should make her stop feeling sad. Gracie pulls a folded drawing under Joseph's blue notebook.",
+        "You notice the drawing shows two friends on a bench. Rosie asks if Gracie would like company instead of advice. They sit beside her without making her explain everything immediately."
+      ],
+      "image": "public/images/jr/why/lesson-11-scene-1.webp",
+      "image_sha256": "c0571b12411acdb9a8378dd74c9cf312315ed9f66e11e648cc7f17e662754d4e",
+      "visual_evidence": "Subdued Gracie holds drawing of two friends; companions sit close with concern; seedling pots and birdhouse secondary. No forced smile.",
+      "assessment": "Drawing is unfolded for visibility, a harmless simplification.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-17-scene-1",
+      "status": "pass",
+      "repair_brief": "Modern club contest corner. Michael green looks disappointed and folds his blank entry card inward to hide it. Gracie yellow holds a small award ribbon discreetly behind her back, concerned for him. Joseph blue and Rosie purple notice their friends, not the scores. Background board has star symbols only, no text. Thoughtful, gentle emotions, not triumphant smiles.",
+      "source_file": "data/why/lesson-17.json",
+      "source_scene_title": "At the results board",
+      "source_scene_text": [
+        "Michael reaches the club results board before anyone else. His green sleeve brushes a row of bright stars, but none stands beside his name. He had practiced the model-building challenge all week. Now he folds his entry card so nobody can see it.",
+        "Gracie wins a ribbon and immediately hides it, afraid her happiness will hurt him. You stand with the team in an uncomfortable silence. Joseph notices that everyone is staring at the scores instead of looking at one another."
+      ],
+      "image": "public/images/jr/why/lesson-17-scene-1.webp",
+      "image_sha256": "27d2cdfcae8f13bad30f48f565345e0c82b1d9b51f065781486d4aa1921bd5d4",
+      "visual_evidence": "Michael looks down at folded blank card; Gracie holds ribbon behind her; friends look toward Michael; star-only board.",
+      "assessment": "Emotion and withheld celebration are faithful.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-17-scene-3",
+      "status": "pass",
+      "repair_brief": "Modern model-building table. Add ONE younger boy in orange, distinct from four regular explorers. Michael green kneels to listen to this younger boy explaining his small cardboard bridge model with a tiny toy wheelchair on its wide ramp. Joseph blue notes the idea, Rosie purple and Gracie yellow listen. Clearly a tabletop toy model, warm equal collaboration.",
+      "source_file": "data/why/lesson-17.json",
+      "source_scene_title": "An unnoticed builder",
+      "source_scene_text": [
+        "At the end of the table, a younger child is quietly packing away a lopsided bridge. Michael recognizes the careful way the child hides the entry card. His first idea is to cheer him up by pretending the bridge deserved first prize.",
+        "You suggest something truer: ask about the bridge and listen. Michael learns that its wide entrance was designed for a toy wheelchair. He can appreciate that thoughtful detail without inventing a score or comparing the child with anyone else."
+      ],
+      "image": "public/images/jr/why/lesson-17-scene-3.webp",
+      "image_sha256": "f2b7ea4175a81da8c90c1795a0fe1413f7da8db0ea1301329e758f43de5c150f",
+      "visual_evidence": "Five distinct children including younger orange-clad builder; Michael kneels at table listening; bridge ramp and toy wheelchair visible.",
+      "assessment": "Model is elaborate but remains clearly tabletop; essential thoughtful-access detail retained.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-17-scene-4",
+      "status": "skip",
+      "repair_brief": "Modern model-building club. Michael green warmly introduces a younger boy in orange to Joseph blue, Rosie purple and Gracie yellow. The boy shows his cardboard bridge and toy wheelchair ramp. Gracie openly holds her small award ribbon and smiles; the others celebrate together. Exactly five children, distinct identities.",
+      "source_file": "data/why/lesson-17.json",
+      "source_scene_title": "Room at the worktable",
+      "source_scene_text": [
+        "Michael invites the younger builder to their next workshop. He does not require a better bridge as the price of joining. Gracie brings out her ribbon, and the friends congratulate her without turning her success into a ranking of people.",
+        "Joseph adds a practice plan to his blue notebook: Michael wants stronger joints on his next model. There is room for growth and disappointment, celebration and belonging. You help clear a place at the worktable before anyone asks who is best."
+      ],
+      "image": "public/images/jr/why/lesson-17-scene-4.webp",
+      "image_sha256": null,
+      "visual_evidence": "Explicitly excluded: parent is retrying this asset. No approval or rejection issued.",
+      "assessment": "Not counted as inspected or passed.",
+      "inspection": "not reviewed; parent retry"
+    },
+    {
+      "key": "lesson-18-scene-3",
+      "status": "pass",
+      "repair_brief": "Forest hiking trail. Gracie yellow calmly adjusts HER OWN backpack strap. Joseph blue stands one step away with both open hands visible at his own sides, respecting her space. Michael green and Rosie purple wait nearby and an adult leader listens. Nobody touches Gracie or her backpack. Ordinary respectful conversation.",
+      "source_file": "data/why/lesson-18.json",
+      "source_scene_title": "Ask before helping",
+      "source_scene_text": [
+        "When they rise, Joseph reaches to adjust Gracie's backpack. She asks him to wait and let her do it. He steps back without arguing. Offering help does not mean deciding that another person's body or belongings are yours to manage.",
+        "You practice a simple boundary with the team: ask first, listen to the answer, and stop when someone says no. If touching feels unsafe, a child can move away and tell a trusted adult, even when the other person demands secrecy."
+      ],
+      "image": "public/images/jr/why/lesson-18-scene-3.webp",
+      "image_sha256": "4c36a0bc964e9f8b35c4b89f324eae38b0a237797adcc9dea8746474c63a4551",
+      "visual_evidence": "Gracie holds her own backpack straps; Joseph stands apart with hands lowered/open; adult and other explorers present. No touching her or pack.",
+      "assessment": "Clear boundary-respecting moment, rather than helping without consent.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-19-scene-4",
+      "status": "pass",
+      "repair_brief": "Modern public library. Four explorers ask a friendly librarian about source checking. Two shallow trays hold plain colored cards, one tray marked only with a checkmark icon, the other with a question mark. No written labels anywhere. Librarian points to a reference shelf; Joseph blue notes advice.",
+      "source_file": "data/why/lesson-19.json",
+      "source_scene_title": "A tool in its place",
+      "source_scene_text": [
+        "You help Michael keep one useful heading and discard the false claim. The teacher reviews the finished card. Then the team closes the computer and asks the librarian how visitors with different reading needs might enjoy their display.",
+        "Joseph saves a new rule beside the corrected passage: use tools, check claims, protect privacy, seek wise people. The computer helped with wording. The conversation with the librarian helped them notice a neighbor. They do not have to confuse those gifts to appreciate either one."
+      ],
+      "image": "public/images/jr/why/lesson-19-scene-4.webp",
+      "image_sha256": "2a85af9117176e1dfeffac7aa2a75ee63e50468888365d7f006f808be313c4f2",
+      "visual_evidence": "Librarian points to reference shelves, Joseph notes advice; plain cards in checkmark/question-mark trays, four explorers listening.",
+      "assessment": "Original scene also discusses visitor reading needs; exact dialogue cannot be shown, but consultation beat is preserved.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-20-scene-4",
+      "status": "pass",
+      "repair_brief": "Modern clubhouse puzzle event. Wide enough to clearly show a visitor boy in a normal manual WHEELCHAIR participating at an accessible low table. He points excitedly to a picture clue. Gracie yellow and the other three explorers listen to his idea as equals. Another visitor listens beside them. Wheelchair wheels and open knee clearance visible naturally, not a charity scene. Plain picture clues, no writing.",
+      "source_file": "data/why/lesson-20.json",
+      "source_scene_title": "A teammate, not a project",
+      "source_scene_text": [
+        "When visitors arrive, Gracie's friend finds a clue everyone else missed. Another visitor chooses to listen instead of reading. Nobody announces either choice as a heroic exception. Michael asks each team which role its members would enjoy, and leaves room to change roles later.",
+        "Joseph's notebook has one final question for the exit: what would make this easier to join next time? You welcome the answers. Including neighbors is not a prize the explorers award themselves; it is a practice of listening and making real room."
+      ],
+      "image": "public/images/jr/why/lesson-20-scene-4.webp",
+      "image_sha256": "636ba5117c3d5356c1cdf7834d245c5617a4d43976dcd7ce01f42120fc23b2f7",
+      "visual_evidence": "Distinct manual-wheelchair visitor points to picture clue while four explorers and second visitor listen as teammates. Wheels and practical tabletop reach visible.",
+      "assessment": "Underside/knee clearance is partly occluded by tabletop; no visible blocking apron or contradictory barrier. Not a reason alone to reject the participation scene.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-21-scene-1",
+      "status": "pass",
+      "repair_brief": "Modern clubhouse workshop. Michael green stands uneasy beside a curtain and a narrow shelf. A small cardboard tower he secretly moved has toppled: broken cardboard supports and pieces lie on the floor. Joseph blue, Rosie purple and Gracie yellow notice what happened. No injury, no smiling triumph, no finished intact bridge presentation.",
+      "source_file": "data/why/lesson-21.json",
+      "source_scene_title": "Before the crash",
+      "source_scene_text": [
+        "Michael wants his bridge to be the center of the explorers' exhibition. Joseph's blue notebook contains a better design, and visitors keep gathering around it. While you arrange labels, Michael quietly moves Joseph's model to a narrow shelf behind a curtain. He tells himself that nobody will miss it.",
+        "Then a cardboard tower falls. Gracie hears the crash and finds Michael holding the broken support. His first thought is not how to repair it, but how to escape blame."
+      ],
+      "image": "public/images/jr/why/lesson-21-scene-1.webp",
+      "image_sha256": "a1341ec213a9ddc4dc7efa850442cecececeb4c83a1b0cd42ca0ceafdebd431a",
+      "visual_evidence": "Michael uneasy beside curtain; collapsed small cardboard structure and broken supports on floor; friends concerned.",
+      "assessment": "Holding broken support transfers to Joseph, but the concealment/crash setup remains clear; no intact presentation.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-24-scene-1",
+      "status": "blocker",
+      "repair_brief": "Modern community center by coat hooks. Two older children stand off to one side after blocking a smaller child. Rosie purple now stands BESIDE the smaller child with open space in front of him, not blocking him. Michael green waves to a nearby adult teacher who approaches. Gracie yellow and Joseph blue look concerned. No touching, fighting, frightening gestures or injuries. Clear supportive intervention.",
+      "source_file": "data/why/lesson-24.json",
+      "source_scene_title": "Trouble by the coat hooks",
+      "source_scene_text": [
+        "The explorers are leaving the community room when two children block a younger child's way to the coat hooks. One keeps moving his bag whenever he reaches for it. Gracie notices that he is not laughing. Michael starts toward them with clenched fists, ready to teach them a lesson.",
+        "You spot the club leader nearby. Joseph stays where the younger child can see him while Rosie gets the leader's attention. The team does not need to win a fight to help."
+      ],
+      "image": "public/images/jr/why/lesson-24-scene-1.webp",
+      "image_sha256": "05b8bb6f016a51dcfaf339092b9c8f785bf9850ab7a0cc6ee84f7bdb961dcc29",
+      "visual_evidence": "Only four regular explorers and one adult appear. Michael and adult exchange raised hands like a greeting; no younger harmed child and no two older children. Rosie stands beside Gracie, not a supported additional child.",
+      "assessment": "Material omission: protective intervention is replaced by a generic teacher greeting. Restore the younger child, older children off to side, and unmistakable supportive adult-help action without aggression.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-24-scene-2",
+      "status": "blocker",
+      "repair_brief": "Modern community center beside coat hooks. Calm adult teacher stands between two older children on one side and a smaller child safely beside Rosie purple on the other. Joseph blue explains what he saw while Michael green and Gracie yellow listen. Factual reporting and safe separation. Indoor room, no forest or bridge, no physical force.",
+      "source_file": "data/why/lesson-24.json",
+      "source_scene_title": "Say what you saw",
+      "source_scene_text": [
+        "The leader separates the children and makes sure everyone is safe. Rosie reports the blocked path and the moved bag, not a guess about what the children were thinking. Joseph asks the younger child whether he would like company while speaking to the leader. He does not demand a public retelling.",
+        "Michael admits that revenge would have made the corridor more dangerous. Telling a responsible adult was not betraying a secret friendship rule. It helped stop a real wrong that was still happening."
+      ],
+      "image": "public/images/jr/why/lesson-24-scene-2.webp",
+      "image_sha256": "f8996e21224abbe094bf94daa496762fb0f448785e94aa03c0d1fafea87af7f7",
+      "visual_evidence": "Only four explorers sit with smiling adult at maps/books table. No harmed younger child, no older children and no separation; adult does not stand protectively between groups.",
+      "assessment": "Material omission: safe separation and factual reporting after bullying become cozy discussion. Restore visibly separated groups and adult safeguarding; do not substitute a generic study scene.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-25-scene-2",
+      "status": "pass",
+      "repair_brief": "Contemporary library research table. Four explorers consult an official museum object record on a laptop, seen from the BACK so no invented inscription is visible. Joseph blue writes notes while Rosie purple points at the screen. Michael green and Gracie yellow compare dates in modern notebooks. No stone slab, no physical inscription, no museum visit or historical reenactment.",
+      "source_file": "data/why/lesson-25.json",
+      "source_scene_title": "Read the object record",
+      "source_scene_text": [
+        "The museum dates the inscription to Pilate's time, 26–36 CE. It was found reused in the theater at Caesarea. Its reconstructed text names Pilate and identifies his office as prefect of Judea. Joseph records those details instead of copying an exciting headline from somewhere else.",
+        "The stone does not name Jesus. It provides concrete evidence for a ruler in the setting of the Gospel accounts, not a carved account of Jesus' life. Michael crosses out his first caption claiming that it proves the resurrection."
+      ],
+      "image": "public/images/jr/why/lesson-25-scene-2.webp",
+      "image_sha256": "2214c5bf5b76387f20bcec1d7f75353103d060aecaf7c9d238f87f8352744594",
+      "visual_evidence": "Modern laptop back faces viewer; Joseph writes and Rosie points, other explorers consult notebooks/books. No physical inscription, stone slab or staged ancient encounter.",
+      "assessment": "Printed reference illustrations and ordinary maps are contextual modern materials, not authenticated ancient originals.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-27-scene-1",
+      "status": "pass",
+      "repair_brief": "Modern arts workshop. Michael green unrolls a long painted paper mural showing a river. A CLEAR LONG TEAR splits the river section, with two visibly separated paper edges. Michael looks uneasy and recognizes his mistake. Joseph blue, Rosie purple and Gracie yellow notice the damage gently. Bright child-safe craft scene, no injury.",
+      "source_file": "data/why/lesson-27.json",
+      "source_scene_title": "The tear nobody claimed",
+      "source_scene_text": [
+        "Michael pulled the community mural from its tube. A long tear ran through the painted river. Yesterday he had hurried while packing it, heard a ripping sound, and said nothing. Now everyone was searching for tape, and his silence felt heavier than the tube.",
+        "You join the explorers beside the damaged painting. Gracie offers to cover the hole with a bright sun. Michael shakes his head. Hiding the damage would not make his dishonesty disappear."
+      ],
+      "image": "public/images/jr/why/lesson-27-scene-1.webp",
+      "image_sha256": "5a1a222d184360d67141b48254c7a1cb341dedcfc1ccb3e35a9980587f81203e",
+      "visual_evidence": "Michael unrolls river mural with long obvious jagged tear and separated edges; he looks uneasy and friends notice.",
+      "assessment": "Damage is explicit and child-safe, not merely an undamaged painting.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-27-scene-4",
+      "status": "pass",
+      "repair_brief": "Modern arts workshop. The four explorers actually repair a torn river paper mural together on a table. Show backing paper, a visible repaired seam, glue stick and tape. Michael green apologizes while holding the torn edges aligned. Joseph blue supports the backing, Rosie purple and Gracie yellow help. Practical repair, not a discussion-only scene.",
+      "source_file": "data/why/lesson-27.json",
+      "source_scene_title": "An honest beginning",
+      "source_scene_text": [
+        "Michael tells the group what happened and apologizes without blaming the tube. He helps repair the backing, although the river still has a visible seam. Gracie makes room for him at the worktable instead of keeping a scoreboard of his failure.",
+        "You hold the edge while the glue dries. The team cannot act out everything Jesus accomplished. But they can receive his mercy and practice a small, costly kindness because they have been loved first."
+      ],
+      "image": "public/images/jr/why/lesson-27-scene-4.webp",
+      "image_sha256": "df772638d8090a8b69261a62fc11ceb14c20017b0fc68fd7390f508df5735eb5",
+      "visual_evidence": "All four handle torn river artwork; Michael aligns/holds edge, Joseph handles backing paper, girls steady sheet. Visible seam, glue stick, tape roll and backing.",
+      "assessment": "Repair is in progress with seam/gap remaining, consistent with holding edges while glue dries; not discussion-only.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-28-scene-3",
+      "status": "pass",
+      "repair_brief": "Modern library exhibit table. Four explorers read a modern printed Bible and arrange simple picture cards, including a tiny picture of a person carrying a rolled sleeping mat. The historical illustration exists ONLY as a small drawing on a card. The entire scene is modern children reading. No historical person standing with them, no ancient street, no healing reenactment.",
+      "source_file": "data/why/lesson-28.json",
+      "source_scene_title": "What the account connects",
+      "source_scene_text": [
+        "In Mark’s account, Jesus heals the man so the people may know the Son of Man has authority to forgive sins. The man gets up and carries his bed. Joseph adds Action and Written witness cards, drawing arrows between them.",
+        "Gracie catches a mistake on their poster: the cardboard house cannot prove a healing. It helps them understand the written account. Their reason for considering Jesus’ identity comes from what the account actually says, not from their clever craft."
+      ],
+      "image": "public/images/jr/why/lesson-28-scene-3.webp",
+      "image_sha256": "d2643c1d84cd8d0e8d6c2fff87b9f6b7db4f444309f83eea61e5374037269d67",
+      "visual_evidence": "Modern explorers read bound Bible with historical material confined to small picture cards. Central card shows walking figure carrying rolled bedding on pack; no historical person in room.",
+      "assessment": "Card is a generic traveler-style illustration rather than an exact Mark reenactment; rolled-bedding motif and modern reading framing preserve material intent.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-29-scene-1",
+      "status": "pass",
+      "repair_brief": "Modern reading room. Exactly FOUR explorers, only ONE Joseph. Joseph blue arrives carrying an open cardboard box of ordinary blank white envelopes. Michael green at the table looks surprised, Rosie purple has a book, Gracie yellow watches. No second blue-clothed boy or duplicate character. A modern investigation opening.",
+      "source_file": "data/why/lesson-29.json",
+      "source_scene_title": "Five hundred envelopes?",
+      "source_scene_text": [
+        "Joseph arrives at the reading room carrying a box of empty envelopes. He plans a resurrection display with an envelope for every witness mentioned by Paul. Rosie stops him gently: they do not possess a separate surviving statement from every person Paul names or counts.",
+        "You help clear a space on the table. They keep one large card for Paul’s report and open 1 Corinthians 15:3–8. An honest investigation begins by describing the evidence they actually have."
+      ],
+      "image": "public/images/jr/why/lesson-29-scene-1.webp",
+      "image_sha256": "6d87934f3d6652379679676919d1f71d17accd2573a3b674d39f9313c0bed72c",
+      "visual_evidence": "Exactly four explorers, single Joseph in blue carrying open box of blank white envelopes; Michael reacts and Rosie holds book.",
+      "assessment": "No duplicate Joseph or invented collection of witness statements.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-29-scene-2",
+      "status": "pass",
+      "repair_brief": "Modern reading room. Exactly four explorers compare two ordinary contemporary printed books on a table, Joseph blue records their findings, Rosie purple points to a passage. Michael green and Gracie yellow listen. No robed people, ancient streets, scrolls, time travel or historical encounter. No readable book text.",
+      "source_file": "data/why/lesson-29.json",
+      "source_scene_title": "Listen to the report",
+      "source_scene_text": [
+        "Paul passes on the message that Christ died for sins, was buried, was raised, and appeared to people. His letter comes from the middle of the first century. He names Cephas and James, reports a group appearance, and says Jesus appeared to him too. Reading through verse 9, Gracie notices that Paul had once persecuted the church. This is not just someone wishing a beloved teacher were still alive.",
+        "Next they read Luke 24:1–12: women find the tomb empty, and the disciples initially struggle to believe their report. Michael compares two explanations. Warm memories alone would not explain these claims about an empty tomb and encounters with Jesus alive. Christians believe God really raised Jesus because that brings these accounts together. The team has a reason to consider, not only a list to memorize."
+      ],
+      "image": "public/images/jr/why/lesson-29-scene-2.webp",
+      "image_sha256": "d3095fce64bb9d0d6cf414b61d25074d9e2584f3556d900a635c2199dcb4463b",
+      "visual_evidence": "Exactly four modern explorers with two open printed books; Joseph writes, Rosie points to passage; no robed figures or time travel.",
+      "assessment": "Fine print is texture, not readable fabricated quotation at review scale.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-29-scene-4",
+      "status": "pass",
+      "repair_brief": "Modern exhibit table. Four explorers place a modest picture card beside a contemporary purple Bible. Card uses two small simple icons of an open tomb and speech bubbles, no lettering. Joseph blue checks notebook, Gracie yellow gently places the card. Honest hopeful exhibition conclusion. No dominoes, no magic, no ancient reenactment.",
+      "source_file": "data/why/lesson-29.json",
+      "source_scene_title": "Hope without inflated claims",
+      "source_scene_text": [
+        "Their display now has a clear answer: Christians trust that Jesus rose bodily, not only in his friends' memories. Paul's early letter, his own claimed encounter, and the Gospel account of the empty tomb give reasons for that trust. They still welcome questions about how reliable these accounts are and how other explanations compare. Faith can listen closely instead of inflating the evidence.",
+        "You place the last card beside the open Bible. Gracie writes that death is not the final ruler for those who belong to Christ. The team leaves with a hope to live by, not a stack of imaginary witness interviews."
+      ],
+      "image": "public/images/jr/why/lesson-29-scene-4.webp",
+      "image_sha256": "c1e9290e14163aa201b090ba8fe511f81c41a6847090648a0d199748a2bd1cb1",
+      "visual_evidence": "Gracie places modest card with tomb and speech-bubble icons beside purple Bible; Joseph checks notebook, four explorers present. No magic/domino chain.",
+      "assessment": "Purple Bible beside card is closed while Rosie holds another open book; harmless composition change, not evidence inflation.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-33-scene-1",
+      "status": "pass",
+      "repair_brief": "Camp workshop in daylight. Michael green examines a lantern that is COMPLETELY UNLIT, dark glass and no glow. Joseph blue brings fresh batteries. Gracie yellow spreads yellow cloth over a table while Rosie purple pauses with her open Bible. A blank card sits beside the lamp. No words or signs. The broken/unpowered lantern problem must be obvious.",
+      "source_file": "data/why/lesson-33.json",
+      "source_scene_title": "The powerless lantern",
+      "source_scene_text": [
+        "At the camp workshop, Michael shakes a lantern that will not light. Joseph fetches fresh batteries while Gracie spreads yellow fabric across their exhibition table. Their assignment is to explain the Holy Spirit. Michael suggests placing the lantern beside a sign saying God’s power.",
+        "Rosie pauses with her purple Bible open. Electricity can power a lamp, but can it teach, love, or be lied to? Explorer, help the team investigate before they build a display that teaches the wrong idea."
+      ],
+      "image": "public/images/jr/why/lesson-33-scene-1.webp",
+      "image_sha256": "2a725d9bd2070696a25c4845e1d360d31ba855ba5d7708dc99cfffa2ee3c162b",
+      "visual_evidence": "Lantern dark and visibly unlit in daylight camp workshop; Michael examines it, Joseph holds batteries, Gracie spreads yellow fabric and Rosie pauses with open Bible. Blank card visible.",
+      "assessment": "Warm ambient light is not lantern emission; power-problem beat retained.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    },
+    {
+      "key": "lesson-34-scene-1",
+      "status": "pass",
+      "repair_brief": "Indoor model workshop. A SMALL CARDBOARD bridge roadway has collapsed on a worktable. Joseph blue impatiently gathers its broken cardboard pieces, looking frustrated but not violent. Michael green, Rosie purple and Gracie yellow pause beside him. Miniature model only, no full-size bridge or outdoors ropes.",
+      "source_file": "data/why/lesson-34.json",
+      "source_scene_title": "Another fallen bridge",
+      "source_scene_text": [
+        "Joseph’s model bridge collapses just as the explorers prepare to carry it into the community hall. Michael’s green sleeve catches a loose support, and the cardboard roadway folds. Joseph snatches the pieces away. He had promised himself that becoming a better Christian meant never losing his temper again.",
+        "You kneel beside the scattered supports. Gracie offers to help, but Joseph tells everyone to leave his project alone. Now the broken bridge is not their only problem."
+      ],
+      "image": "public/images/jr/why/lesson-34-scene-1.webp",
+      "image_sha256": "85dbc06bad1fef33a825dc86676a0dd3fa0140a03c9f0035df0b5cfab7181c1b",
+      "visual_evidence": "Collapsed miniature cardboard bridge on worktable, Joseph gathers damaged structure with tense expression while friends pause with concern.",
+      "assessment": "Model scale obvious; frustration nonviolent and not a real outdoor bridge collapse.",
+      "inspection": "vision_analyze contact sheet plus full-image/crop where needed"
+    }
+  ]
+}

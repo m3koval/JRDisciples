@@ -1,0 +1,191 @@
+{
+  "id": 9,
+  "chapter": 3,
+  "kind": "lesson",
+  "title": {
+    "en": "What is God like?",
+    "ru": "Какой Бог?"
+  },
+  "subtitle": {
+    "en": "The portrait with missing pieces",
+    "ru": "Портрет, в котором чего-то не хватает"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "Choose a color",
+        "ru": "Выбери цвет"
+      },
+      "paragraphs": {
+        "en": [
+          "The explorers spread colored paper across the community room to make a display about God. Michael chooses only cheerful yellow. He wants visitors to know that God is loving. Joseph reaches for a dark pencil to write about justice. Soon their display looks like two competing posters.",
+          "Gracie pulls back her yellow hood and looks from one poster to the other. ‘Do we have to choose?’ she asks. ‘Can't God love people and still care when someone does wrong?’ You make room on the table for Rosie's Bible so they can explore the question before finishing the display."
+        ],
+        "ru": [
+          "Исследователи раскладывают цветную бумагу в общем зале: они готовят стенд о Боге. Майкл выбирает только радостный жёлтый цвет. Он хочет рассказать о Божьей любви. Джозеф берёт тёмный карандаш, чтобы написать о справедливости. Скоро получаются два спорящих плаката.",
+          "Грейси откидывает жёлтый капюшон и смотрит с одного плаката на другой. «А обязательно выбирать? — спрашивает она. — Разве Бог не может любить людей и при этом серьёзно относиться к плохим поступкам?» Ты освобождаешь на столе место для Библии Рози, чтобы ребята сначала разобрались в вопросе."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Listen before drawing",
+        "ru": "Сначала послушаем"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie opens her purple Bible to Exodus 34. With their teacher, the children read how God reveals his character to Moses: merciful, gracious, patient, and faithful. The following verse does not pretend guilt is unimportant. God's mercy and justice belong together, not to different sides taking turns.",
+          "Their teacher explains holiness as God's perfect purity and greatness. He is not simply a bigger person with our faults. No paper portrait can contain everything God is."
+        ],
+        "ru": [
+          "Рози открывает фиолетовую Библию на 34-й главе Исхода. С учителем дети читают, как Бог открывает Моисею Свой характер: милость, терпение, верность. Следующий стих не объявляет вину пустяком. Божья милость и справедливость не сменяют друг друга — они неразделимы.",
+          "Учитель объясняет святость: Бог совершенно чист и велик. Он не просто огромный человек с нашими недостатками. Бумажный портрет не вместит всё, что можно узнать о Нём."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Before our calendar",
+        "ru": "Раньше календаря"
+      },
+      "paragraphs": {
+        "en": [
+          "Joseph draws a birthday cake beside God's name, then pauses. Psalm 90 describes God as existing before the mountains and from everlasting to everlasting. God did not begin when someone first thought about him. Joseph replaces the cake with a written explanation instead of inventing a picture of eternity.",
+          "Michael notices the display has become more truthful without becoming less wonderful. God's love is not permission to hurt someone; his justice is not an excuse for their own revenge."
+        ],
+        "ru": [
+          "Джозеф рисует рядом с Божьим именем праздничный торт, но останавливается. Псалом 89 говорит о Боге, Который существовал до гор, от века и до века. Бог существовал всегда, ещё до того, как люди начали думать о Нём. Джозеф заменяет торт объяснением, не пытаясь нарисовать вечность.",
+          "Майкл замечает: стенд стал правдивее, но не потерял красоты. Божья любовь не разрешает обижать других, а Его справедливость не оправдывает нашу месть."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "One honest display",
+        "ru": "Один честный стенд"
+      },
+      "paragraphs": {
+        "en": [
+          "A younger child accidentally tears their best sheet. Michael starts to shout, then remembers what they have just read. ‘The paper is torn,’ he says more quietly. ‘Let's see if we can fix it.’ They do not have to pretend nothing happened in order to be kind. As they help repair the sheet, they begin to put their lesson into practice, though they are still far from God's perfection.",
+          "You help attach the repaired sheet. The team finishes with praise, not a wish list. They thank God for his faithful character, even before asking him for anything they would like to receive."
+        ],
+        "ru": [
+          "Малыш случайно рвёт лучший лист. Майкл начинает кричать, но вспоминает прочитанное. «Бумага порвалась, — говорит он уже тише. — Давай попробуем починить». Чтобы быть добрыми, не нужно делать вид, будто ничего не случилось. Помогая исправить лист, ребята пробуют поступать так, как только что учились, хотя до Божьего совершенства им ещё далеко.",
+          "Ты помогаешь прикрепить починенный лист. В конце команда прославляет Бога, а не перечисляет желания. Дети благодарят Его за верность ещё до того, как просят что-нибудь для себя."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Exodus 34:6 (ESV)",
+      "ru": "Исход 34:6 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "The LORD passed before him and proclaimed, “The LORD, the LORD, a God merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness",
+      "ru": "И прошел Господь пред лицем его и возгласил: Господь, Господь, Бог человеколюбивый и милосердый, долготерпеливый и многомилостивый и истинный"
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/EXO.34.6.ESV",
+      "ru": "https://www.bible.com/bible/167/EXO.34.6.RST"
+    }
+  },
+  "activity": {
+    "type": "sort",
+    "title": {
+      "en": "Repair the portrait",
+      "ru": "Исправь портрет"
+    },
+    "intro": {
+      "en": "Sort descriptions by whether they fit the passages.",
+      "ru": "Раздели описания: согласуются ли они с отрывками?"
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "God is merciful and takes guilt seriously.",
+          "ru": "Бог милостив и серьёзно относится к вине."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "God began when the mountains appeared.",
+          "ru": "Бог появился вместе с горами."
+        },
+        "group": "claim"
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "God is everlasting.",
+          "ru": "Бог вечен."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "Being loving means God calls every action good.",
+          "ru": "Раз Бог любит, Он называет любой поступок хорошим."
+        },
+        "group": "claim"
+      }
+    ],
+    "hint": {
+      "en": "Read mercy and justice together; check the calendar claim against Psalm 90.",
+      "ru": "Не разделяй милость и справедливость; проверь слова о начале Бога по Псалму 89."
+    },
+    "success": {
+      "en": "The same God is loving, holy, just, and eternal.",
+      "ru": "Один и тот же Бог любящий, святой, справедливый и вечный."
+    },
+    "groups": [
+      {
+        "id": "observation",
+        "label": {
+          "en": "Fits the passages",
+          "ru": "Согласуется с текстом"
+        }
+      },
+      {
+        "id": "claim",
+        "label": {
+          "en": "Needs correcting",
+          "ru": "Нужно исправить"
+        }
+      }
+    ]
+  },
+  "fieldMission": {
+    "en": "Name one quality of God in prayer before asking for a gift.",
+    "ru": "В молитве назови одно Божье качество, прежде чем просить о подарке."
+  },
+  "prayer": {
+    "en": "God, I praise your mercy, holiness, justice, and faithfulness.",
+    "ru": "Боже, славлю Твою милость, святость, справедливость и верность."
+  },
+  "adultNote": {
+    "en": "Read Exodus 34:6–7 and Psalm 90:2 (Russian Psalm 89:3). The torn paper is an application, not a complete model of divine justice.",
+    "ru": "Прочитайте Исход 34:6–7 и Псалом 89:3. История с бумагой помогает применить урок, но не объясняет Божью справедливость во всей полноте."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Exodus 34:6 — Bible.com ESV / RST",
+        "ru": "Исход 34:6 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/EXO.34.6.ESV",
+      "supports": {
+        "en": "Exodus 34:6 names God's mercy, patience, love and faithfulness; verse 7 also addresses guilt and justice.",
+        "ru": "Исход 34:6 говорит о милосердии, долготерпении, любви и верности Бога; стих 7 также говорит о вине и справедливости."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    }
+  ]
+}

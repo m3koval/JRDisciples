@@ -1,0 +1,962 @@
+{
+  "scope": "Independent whole-story EN/RU flow review, WHY lessons 19–34. Only small scene-prose polish; no other lesson, code, art, or deployment changes.",
+  "method": "Read every scene in order in English and then Russian for each lesson. Reviewed dialogue attribution, transitions from child problems to Bible discussion, full thoughts, emotional continuity, evidence caveats, and the return to concrete action. Re-read changed paragraphs in context. This is a literary/flow review, not a new source or artwork audit.",
+  "comparison_baseline": "Snapshot of the already edited assigned files at review start (not git HEAD); the older flow-baseline was not needed.",
+  "lessons_reviewed": 16,
+  "scenes_reviewed": 64,
+  "language_scene_readings": 128,
+  "files_modified": 15,
+  "paragraphs_modified": 27,
+  "invariants": {
+    "all_non_scene_objects_unchanged": true,
+    "exact_scripture_blocks_unchanged": true,
+    "activity_ids_solutions_and_all_activity_copy_unchanged": true,
+    "sources_and_adult_notes_unchanged": true,
+    "scene_order_titles_and_count_unchanged": true,
+    "schema_and_paragraph_array_lengths_unchanged": true,
+    "en_ru_paragraph_count_parity": true,
+    "scene_actions_doctrine_and_source_claims_preserved": "Manual comparison of the scoped prose changes; no claim or event added/removed."
+  },
+  "residual_findings": [],
+  "notes": [
+    "Evidence distinctions in lessons 25, 28, and 29 remain: they are needed to avoid claiming that a model, an inscription, or a later copy proves more than it does.",
+    "Brief doctrinal and safety distinctions remain where they serve the child situation. No unnecessary dialogue or sentence-length padding was added.",
+    "Lesson 27 was read fully in both languages and intentionally left unchanged."
+  ],
+  "content_check": {
+    "command": "node scripts/check-why.mjs --content-only",
+    "status": "passed",
+    "exit_code": 0,
+    "lessons_checked": 52,
+    "errors": [],
+    "missingImages": [],
+    "contentAndLogicPass": true,
+    "releasePass": true
+  },
+  "lessons": [
+    {
+      "lesson": 19,
+      "file": "data/why/lesson-19.json",
+      "title": {
+        "en": "Can a chatbot be a person or my wisest friend?",
+        "ru": "Может ли чат-бот быть человеком или самым мудрым другом?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "The tempting chatbot answer leads to an actual Bible check, then to human care and a corrected exhibit.",
+      "edit_summary": "Set off the inline Russian question clearly; replaced an awkward phrase about repeated assurances with a direct sentence.",
+      "edits": [
+        {
+          "scene": 1,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Библиотечный компьютер помогает исследователям подготовить выставку. Дружелюбное сообщение хвалит вопросы Джозефа и предлагает весёлые заголовки. — Может, это будет самый мудрый друг в нашей команде? — спрашивает Майкл.",
+          "after": "Библиотечный компьютер помогает исследователям подготовить выставку. Дружелюбное сообщение хвалит вопросы Джозефа и предлагает весёлые заголовки. «Может, это будет самый мудрый друг в нашей команде?» — спрашивает Майкл."
+        },
+        {
+          "scene": 2,
+          "language": "ru",
+          "paragraph": 3,
+          "before": "Джозеф переводит взгляд с экрана на Библию Рози. Прежде чем брать ответ для выставки, нужно прочитать сам источник. Если программа ещё раз пообещает, что права, это ничего не проверит.",
+          "after": "Джозеф переводит взгляд с экрана на Библию Рози. Прежде чем брать ответ для выставки, нужно прочитать сам источник. Даже если программа снова скажет, что ответ верный, его всё равно нужно проверить."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "scene": 2,
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 20,
+      "file": "data/why/lesson-20.json",
+      "title": {
+        "en": "LAB: Who gets included?",
+        "ru": "ЛАБОРАТОРИЯ: Кого мы пригласим?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "The inaccessible treasure trail leads naturally to James, asking the friend, testing access, and listening to guests.",
+      "edit_summary": "Clarified inline Russian dialogue and the comparison of whose comfort mattered.",
+      "edits": [
+        {
+          "scene": 1,
+          "language": "ru",
+          "paragraph": 3,
+          "before": "Джозеф замечает ещё одну трудность: начинающему читателю нужно больше времени. — Они смогут посмотреть, — предлагает Майкл. Но, взглянув на Грейси, он начинает понимать ошибку: её друг хочет разгадывать тайну вместе со всеми, а не оставаться вне игры.",
+          "after": "Джозеф замечает ещё одну трудность: начинающему читателю нужно больше времени. «Они смогут посмотреть», — предлагает Майкл. Но, взглянув на Грейси, он начинает понимать ошибку: её друг хочет разгадывать тайну вместе со всеми, а не оставаться вне игры."
+        },
+        {
+          "scene": 2,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Рози открывает послание Иакова, где верующих предостерегают от лицеприятия: богатому оказывают честь, а бедного считают неважным. Их выставка устроена иначе, но вопрос касается и команды: чьё удобство они поставили выше остальных?",
+          "after": "Рози открывает послание Иакова, где верующих предостерегают от лицеприятия: богатому оказывают честь, а бедного считают неважным. Их выставка устроена иначе, но вопрос касается и команды: чьё удобство они сочли важнее удобства других?"
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "scene": 2,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 21,
+      "file": "data/why/lesson-21.json",
+      "title": {
+        "en": "What is sin—more than breaking a rule?",
+        "ru": "Что такое грех — просто нарушение правил?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "Jealous concealment, blame, confession, repair, and renewed temptation form a continuous story.",
+      "edit_summary": "Added a small matching EN/RU purpose bridge into Genesis 3; no new event or dialogue.",
+      "edits": [
+        {
+          "scene": 2,
+          "language": "en",
+          "paragraph": 1,
+          "before": "“The shelf was wobbly,” Michael says, pointing at the crooked board. It is true, but Gracie is still waiting to understand why Joseph’s model was behind the curtain in the first place. Rosie opens her purple Bible to Genesis 3 with their teacher. They notice distrust, a forbidden choice, hiding, and blame. Sin reaches deeper than accidentally breaking an exhibition rule.",
+          "after": "“The shelf was wobbly,” Michael says, pointing at the crooked board. It is true, but Gracie is still waiting to understand why Joseph’s model was behind the curtain in the first place. To help them understand what went wrong, Rosie opens her purple Bible to Genesis 3 with their teacher. They notice distrust, a forbidden choice, hiding, and blame. Sin reaches deeper than accidentally breaking an exhibition rule."
+        },
+        {
+          "scene": 2,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "— Полка шаталась, — говорит Майкл и показывает на кривую доску. Это правда, но Грейси всё ещё не понимает, зачем макет Джозефа вообще оказался за занавеской. Рози вместе с учителем открывает третью главу Бытия. Они замечают недоверие, запретный выбор, попытку спрятаться и обвинения. Грех глубже случайного нарушения правил выставки.",
+          "after": "— Полка шаталась, — говорит Майкл и показывает на кривую доску. Это правда, но Грейси всё ещё не понимает, зачем макет Джозефа вообще оказался за занавеской. Чтобы разобраться в случившемся, Рози вместе с учителем открывает третью главу Бытия. Они замечают недоверие, запретный выбор, попытку спрятаться и обвинения. Грех глубже случайного нарушения правил выставки."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 2,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 3,
+          "en": 4,
+          "ru": 4
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 22,
+      "file": "data/why/lesson-22.json",
+      "title": {
+        "en": "Why is there suffering if God is good?",
+        "ru": "Почему есть страдание, если Бог добр?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "Hospital news, permission to read, honest unanswered questions, practical help, and departure stay emotionally connected.",
+      "edit_summary": "Clarified Russian dialogue punctuation and replaced the utilitarian phrase about proving the benefit of prayer.",
+      "edits": [
+        {
+          "scene": 2,
+          "language": "ru",
+          "paragraph": 2,
+          "before": "Ты ставишь поближе салфетки. — Если Бог добрый, почему Он допускает боль? — спрашивает Грейси.",
+          "after": "Ты ставишь поближе салфетки. «Если Бог добрый, почему Он допускает боль?» — спрашивает Грейси."
+        },
+        {
+          "scene": 4,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Вы вместе заканчиваете подписи. Джозеф спрашивает разрешения отправить открытку, а Рози молится, не обещая чуда по заказу. Они просят об исцелении, силах и хорошей заботе. Грейси не обязана улыбаться, чтобы доказать пользу молитвы.",
+          "after": "Вы вместе заканчиваете подписи. Джозеф спрашивает разрешения отправить открытку, а Рози молится, не обещая чуда по заказу. Они просят об исцелении, силах и хорошей заботе. Грейси не обязана улыбаться, чтобы показать, что молитва была для неё важна."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 2,
+          "en": 4,
+          "ru": 4
+        },
+        {
+          "scene": 3,
+          "en": 5,
+          "ru": 5
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 23,
+      "file": "data/why/lesson-23.json",
+      "title": {
+        "en": "Why forgive if the wrong was real?",
+        "ru": "Зачем прощать, если зло было настоящим?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "The torn notebook stays central through mercy, boundaries, trust, apology practice, and repair.",
+      "edit_summary": "Made the Russian sentence about needing time for feelings idiomatic.",
+      "edits": [
+        {
+          "scene": 4,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Джозеф поручает руководителю организовать исправление ущерба. Он не рвёт плакат и не собирает других против обидчика. Он рассказывает Богу о гневе и просит помочь отказаться от мести. Чувствам может понадобиться время; руководитель обещает продолжать слушать.",
+          "after": "Джозеф поручает руководителю организовать исправление ущерба. Он не рвёт плакат и не собирает других против обидчика. Он рассказывает Богу о гневе и просит помочь отказаться от мести. Чтобы справиться с чувствами, ему может понадобиться время; руководитель обещает продолжать слушать."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "scene": 2,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 24,
+      "file": "data/why/lesson-24.json",
+      "title": {
+        "en": "LAB: What should I do when someone gets hurt?",
+        "ru": "ЛАБОРАТОРИЯ: Что делать, если кого-то обижают?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "The corridor incident moves through safe intervention, factual reporting, rehearsal, and respectful follow-up.",
+      "edit_summary": "Clarified the Russian inline question and the sentence about not making the child retell everything.",
+      "edits": [
+        {
+          "scene": 2,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Руководитель разводит детей и проверяет, что все в безопасности. Рози рассказывает о перекрытом проходе и сумке, а не о предполагаемых мыслях обидчиков. — Хочешь, я побуду рядом, пока ты поговоришь с руководителем? — спрашивает Джозеф. Он ждёт ответа, а не просит мальчика пересказывать всё перед остальными.",
+          "after": "Руководитель разводит детей и проверяет, что все в безопасности. Рози рассказывает о перекрытом проходе и сумке, а не о предполагаемых мыслях обидчиков. «Хочешь, я побуду рядом, пока ты поговоришь с руководителем?» — спрашивает Джозеф. Он ждёт ответа, не заставляя мальчика пересказывать всё перед остальными."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 2,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 25,
+      "file": "data/why/lesson-25.json",
+      "title": {
+        "en": "Was Jesus a real person?",
+        "ru": "Был ли Иисус реальным человеком?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "The display caption is checked against the inscription, written sources, and separate historical questions before being corrected.",
+      "edit_summary": "Smoothed the Russian reuse-of-stone wording, direct-speech boundary, and missing preposition in recounting Jesus’ life.",
+      "edits": [
+        {
+          "scene": 2,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Музей датирует надпись временем Пилата, 26–36 годами нашей эры. Её нашли вторично использованной в театре Кесарии. В восстановленном тексте названы Пилат и его должность префекта Иудеи. Джозеф записывает эти сведения, а не яркий чужой заголовок.",
+          "after": "Музей датирует надпись временем Пилата, 26–36 годами нашей эры. Камень с надписью нашли в театре Кесарии, где его использовали повторно. В восстановленном тексте названы Пилат и его должность префекта Иудеи. Джозеф записывает эти сведения, а не яркий чужой заголовок."
+        },
+        {
+          "scene": 2,
+          "language": "ru",
+          "paragraph": 3,
+          "before": "— Но здесь же не назван Иисус, — замечает он. Камень свидетельствует о правителе, упомянутом в Евангелиях, а не рассказывает жизнь Иисуса. Майкл вычёркивает утверждение, будто надпись доказывает воскресение: теперь он хочет написать то, что она действительно подтверждает.",
+          "after": "«Но здесь же не назван Иисус», — замечает он. Камень свидетельствует о правителе, упомянутом в Евангелиях, а не рассказывает о жизни Иисуса. Майкл вычёркивает утверждение, будто надпись доказывает воскресение: теперь он хочет написать то, что она действительно подтверждает."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "scene": 2,
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 26,
+      "file": "data/why/lesson-26.json",
+      "title": {
+        "en": "How can Jesus be God and human?",
+        "ru": "Как Иисус может быть Богом и человеком?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "Two folders provoke a question about one Jesus; hunger and authority lead back to one heading and prayer about weakness.",
+      "edit_summary": "Replaced the awkward hunger-as-costume metaphor in both languages and set off two inline Russian speeches.",
+      "edits": [
+        {
+          "scene": 1,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "После исторической выставки Рози раскладывает на библиотечном столе карточки с отрывками. В одном Иисус голоден, в другом проявляет власть над бурей. — Давайте сделаем две папки: обычный Иисус и могущественный Иисус, — предлагает Майкл.",
+          "after": "После исторической выставки Рози раскладывает на библиотечном столе карточки с отрывками. В одном Иисус голоден, в другом проявляет власть над бурей. «Давайте сделаем две папки: обычный Иисус и могущественный Иисус», — предлагает Майкл."
+        },
+        {
+          "scene": 2,
+          "language": "en",
+          "paragraph": 1,
+          "before": "They read that Jesus became hungry after fasting in Matthew 4. His hunger was not a costume or a trick for an audience. John 1 says the Word became flesh. Christians confess that the Son truly became human, with a real human life, not merely a human appearance.",
+          "after": "They read that Jesus became hungry after fasting in Matthew 4. His hunger was real, not a performance or a trick for an audience. John 1 says the Word became flesh. Christians confess that the Son truly became human, with a real human life, not merely a human appearance."
+        },
+        {
+          "scene": 2,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Они читают в Матфея 4, что после поста Иисус проголодался. Голод не был костюмом или трюком для зрителей. Иоанна 1 говорит: Слово стало плотью. Христиане исповедуют, что Сын действительно стал человеком и жил человеческой жизнью, а не только выглядел человеком.",
+          "after": "Они читают в Матфея 4, что после поста Иисус проголодался. Он действительно испытывал голод, а не притворялся ради зрителей. Иоанна 1 говорит: Слово стало плотью. Христиане исповедуют, что Сын действительно стал человеком и жил человеческой жизнью, а не только выглядел человеком."
+        },
+        {
+          "scene": 4,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Ты кладёшь обе карточки под одним заголовком с именем Иисуса. — Я всё ещё не понимаю до конца, как это соединяется, — признаётся Грейси. Учитель рад, что она спрашивает. Можно продолжать учиться, не разделяя Иисуса на двух людей и не меняя того, что о Нём говорит Писание.",
+          "after": "Ты кладёшь обе карточки под одним заголовком с именем Иисуса. «Я всё ещё не понимаю до конца, как это соединяется», — признаётся Грейси. Учитель рад, что она спрашивает. Можно продолжать учиться, не разделяя Иисуса на двух людей и не меняя того, что о Нём говорит Писание."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 4,
+          "ru": 4
+        },
+        {
+          "scene": 2,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 27,
+      "file": "data/why/lesson-27.json",
+      "title": {
+        "en": "Why did Jesus have to die?",
+        "ru": "Почему Иисус должен был умереть?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_unchanged",
+      "whole_story_finding": "The concealed mural tear leads to the seriousness of sin, Jesus’ willing rescue, confession, and costly kindness.",
+      "edit_summary": "No edit needed; retained natural short sentences and the brief limit on the mural analogy.",
+      "edits": [],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 2,
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 28,
+      "file": "data/why/lesson-28.json",
+      "title": {
+        "en": "LAB: What do Jesus' words and works tell us?",
+        "ru": "ЛАБОРАТОРИЯ: Что говорят об Иисусе Его слова и дела?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "The missing person in the model leads to the written account, Jesus’ authority, a corrected caption, and personal response.",
+      "edit_summary": "Closed the Russian speech before narration resumes, avoiding the impression that Gracie narrates her own next action.",
+      "edits": [
+        {
+          "scene": 3,
+          "language": "ru",
+          "paragraph": 2,
+          "before": "— Наш дом помогает представить рассказ, — говорит Грейси, изучая плакат. — Но сама поделка не доказывает, что исцеление произошло. Она помогает исправить подпись, чтобы посетители отличали письменное свидетельство от иллюстрации. Размышлять о личности Иисуса нужно на основании текста, а не красивой поделки.",
+          "after": "«Наш дом помогает представить рассказ, — говорит Грейси, изучая плакат. — Но сама поделка не доказывает, что исцеление произошло». Она помогает исправить подпись, чтобы посетители отличали письменное свидетельство от иллюстрации. Размышлять о личности Иисуса нужно на основании текста, а не красивой поделки."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 2,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 29,
+      "file": "data/why/lesson-29.json",
+      "title": {
+        "en": "Did Jesus really rise from the dead?",
+        "ru": "Действительно ли Иисус воскрес из мёртвых?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "The empty envelopes motivate a distinction between Paul’s report and separate statements; reading and copy-dating lead to honest hope.",
+      "edit_summary": "Supplied natural Russian names for the epistles and corrected the final-word idiom.",
+      "edits": [
+        {
+          "scene": 3,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "На сайте университетской библиотеки Грейси рассматривает лист P46. Он содержит часть Ефесянам, а не выбранный отрывок Коринфянам. Это позднейшая рукописная копия послания, не оригинал Павла и тем более не снимок пасхального утра.",
+          "after": "На сайте университетской библиотеки Грейси рассматривает лист P46. Он содержит часть Послания к Ефесянам, а не выбранный отрывок из Первого послания к Коринфянам. Это позднейшая рукописная копия послания, не оригинал Павла и тем более не снимок пасхального утра."
+        },
+        {
+          "scene": 4,
+          "language": "ru",
+          "paragraph": 2,
+          "before": "Ты кладёшь последнюю карточку рядом с Библией. Грейси пишет, что для принадлежащих Христу смерть не последнее слово. Убирая ненужные конверты, Джозеф понимает, что хочет передать посетителям: основания верить в воскресение Иисуса и надежду, которую оно даёт, а не преувеличенное представление об их свидетельствах.",
+          "after": "Ты кладёшь последнюю карточку рядом с Библией. Грейси пишет, что для принадлежащих Христу последнее слово не за смертью. Убирая ненужные конверты, Джозеф понимает, что хочет передать посетителям: основания верить в воскресение Иисуса и надежду, которую оно даёт, а не преувеличенное представление об их свидетельствах."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "scene": 2,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 30,
+      "file": "data/why/lesson-30.json",
+      "title": {
+        "en": "Can being good enough save me?",
+        "ru": "Можно ли заслужить спасение добрыми делами?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "The star chart raises the rescue question, then gift/gratitude distinctions transform the ranked list into practical care.",
+      "edit_summary": "Set off Gracie’s inline Russian speech; kept the grace/works connection and soup/cup actions.",
+      "edits": [
+        {
+          "scene": 3,
+          "language": "ru",
+          "paragraph": 2,
+          "before": "Грейси кладёт таблицу рядом с запиской. — Она ещё может напоминать мне, кому нужна помощь, — говорит Грейси. Таблица поможет выработать хорошую привычку, но прощения не купит. Болезнь не сделала Рози менее ценной, а звёздочки Майкла не означают, что он может спасти себя сам.",
+          "after": "Грейси кладёт таблицу рядом с запиской. «Она ещё может напоминать мне, кому нужна помощь», — говорит Грейси. Таблица поможет выработать хорошую привычку, но прощения не купит. Болезнь не сделала Рози менее ценной, а звёздочки Майкла не означают, что он может спасти себя сам."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "scene": 2,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 31,
+      "file": "data/why/lesson-31.json",
+      "title": {
+        "en": "What are repentance, faith and a new life?",
+        "ru": "Что такое покаяние, вера и новая жизнь?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "The dishonest win leads to confession, repentance and faith, consequences, then an honest repeat of the same challenge.",
+      "edit_summary": "Replaced abstract Russian personification of confession/repair with clear complete thoughts about what a person does.",
+      "edits": [
+        {
+          "scene": 2,
+          "language": "ru",
+          "paragraph": 2,
+          "before": "Майкл не может вернуть время. Но может перестать оправдывать короткий путь. Джозеф записывает: признание называет зло без скрытой отговорки, а исправление заботится о ближнем, не только избавляет от стыда.",
+          "after": "Майкл не может вернуть время. Но может перестать оправдывать короткий путь. Джозеф записывает: признаваясь, нужно честно назвать свой поступок, а не искать скрытого оправдания. Исправляя сделанное, важно заботиться о ближнем, а не просто избавляться от стыда."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "scene": 2,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 32,
+      "file": "data/why/lesson-32.json",
+      "title": {
+        "en": "LAB: Can you explain the good news?",
+        "ru": "ЛАБОРАТОРИЯ: Как объяснить благую весть?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "The biscuit/quiz problem leads to a gospel explanation, then a genuinely free conversation with a visitor.",
+      "edit_summary": "Bounded Russian speech correctly, completed the drawing sentence, and made the no-halos comparison unambiguously negative.",
+      "edits": [
+        {
+          "scene": 1,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Исследователи готовят стол для соседского праздника. Джозеф предлагает викторину перед угощением. — А если человек не знает ответов? — спрашивает Грейси. — Или просто хочет угоститься, а не говорить о вере? Майкл убирает викторину с подноса.",
+          "after": "Исследователи готовят стол для соседского праздника. Джозеф предлагает викторину перед угощением. «А если человек не знает ответов? — спрашивает Грейси. — Или просто хочет угоститься, а не говорить о вере?» Майкл убирает викторину с подноса."
+        },
+        {
+          "scene": 2,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Они рисуют мир, созданный Богом, и людей, созданных знать и любить Его. Затем — грех: мы отворачиваемся от Бога и раним других. Проблема глубже нехватки знаний или ободрения.",
+          "after": "Они рисуют мир, созданный Богом, и людей, созданных знать и любить Его. Затем они изображают грех: мы отворачиваемся от Бога и раним других. Проблема глубже нехватки знаний или ободрения."
+        },
+        {
+          "scene": 2,
+          "language": "ru",
+          "paragraph": 2,
+          "before": "Рози рисует просто. Гости не изображены плохими, а исследователи — со светлыми нимбами. Им тоже нужно спасение. Теперь Майкл рассказывает не свысока, а как человек, сам принимающий милость.",
+          "after": "Рози рисует просто. Она не рисует гостей плохими людьми и не добавляет исследователям нимбы. Им тоже нужно спасение. Теперь Майкл рассказывает не свысока, а как человек, сам принимающий милость."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 2,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 33,
+      "file": "data/why/lesson-33.json",
+      "title": {
+        "en": "Who is the Holy Spirit?",
+        "ru": "Кто такой Святой Дух?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "The lantern misconception leads to biblical personal actions, a question about feelings, truth-telling, and a corrected display.",
+      "edit_summary": "Set off Gracie’s Russian speech after the opening action; retained the theological distinction and ordinary-life response.",
+      "edits": [
+        {
+          "scene": 3,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Грейси убирает надпись о батарейке. — Вчера во время молитвы я ничего особенного не почувствовала, — признаётся она. — Значит, Он мне не помогал?",
+          "after": "Грейси убирает надпись о батарейке. «Вчера во время молитвы я ничего особенного не почувствовала, — признаётся она. — Значит, Он мне не помогал?»"
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "scene": 2,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 3,
+          "en": 3,
+          "ru": 3
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    },
+    {
+      "lesson": 34,
+      "file": "data/why/lesson-34.json",
+      "title": {
+        "en": "How does God help me change?",
+        "ru": "Как Бог помогает мне меняться?"
+      },
+      "reviewed_languages": [
+        "en",
+        "ru"
+      ],
+      "scene_sequence_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pass_after_polish",
+      "whole_story_finding": "The broken bridge exposes perfectionism, then Scripture, apology, repeated frustration, and cooperative repair show gradual growth.",
+      "edit_summary": "Made Joseph’s Russian mistaken promise idiomatic and clarified the inline request for help.",
+      "edits": [
+        {
+          "scene": 1,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Модель моста Джозефа рушится перед самым показом в клубе. Зелёный рукав Майкла задевает опору, и картонная дорога складывается. Джозеф выхватывает детали. Он обещал себе: если становится лучшим христианином, то больше никогда не рассердится.",
+          "after": "Модель моста Джозефа рушится перед самым показом в клубе. Зелёный рукав Майкла задевает опору, и картонная дорога складывается. Джозеф выхватывает детали. Он обещал себе больше никогда не сердиться: ему казалось, что именно так он станет лучше как христианин."
+        },
+        {
+          "scene": 3,
+          "language": "ru",
+          "paragraph": 1,
+          "before": "Джозеф просит Бога о помощи и извиняется, что прогнал друзей. — Придержите, пожалуйста, опоры, пока я их соединю, — просит он. Теперь он объясняет друзьям, какая помощь нужна, вместо того чтобы прогонять их. Майкл признаёт свою неосторожность. Грейси измеряет основание пошире, а ты спокойно передаёшь скотч.",
+          "after": "Джозеф просит Бога о помощи и извиняется, что прогнал друзей. «Придержите, пожалуйста, опоры, пока я их соединю», — просит он. Теперь он объясняет друзьям, какая помощь нужна, вместо того чтобы прогонять их. Майкл признаёт свою неосторожность. Грейси измеряет основание пошире, а ты спокойно передаёшь скотч."
+        }
+      ],
+      "residual_findings": [],
+      "paragraph_counts": [
+        {
+          "scene": 1,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 2,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 3,
+          "en": 2,
+          "ru": 2
+        },
+        {
+          "scene": 4,
+          "en": 2,
+          "ru": 2
+        }
+      ]
+    }
+  ]
+}

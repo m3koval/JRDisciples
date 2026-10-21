@@ -1,0 +1,181 @@
+{
+  "id": 21,
+  "chapter": 6,
+  "kind": "lesson",
+  "title": {
+    "en": "What is sin—more than breaking a rule?",
+    "ru": "Что такое грех — просто нарушение правил?"
+  },
+  "subtitle": {
+    "en": "The broken model and the hidden choice",
+    "ru": "Сломанный макет и скрытый выбор"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "Before the crash",
+        "ru": "До падения"
+      },
+      "paragraphs": {
+        "en": [
+          "Michael wants his bridge to be the center of the explorers' exhibition. Joseph's blue notebook contains a better design, and visitors keep gathering around it. While you arrange labels, Michael quietly moves Joseph's model to a narrow shelf behind a curtain. He tells himself that nobody will miss it.",
+          "Then a cardboard tower falls. Gracie hears the crash and finds Michael holding the broken support. His first thought is not how to repair it, but how to escape blame."
+        ],
+        "ru": [
+          "Майкл хочет, чтобы его мост стал главным на выставке исследователей. В синей тетради Джозефа есть проект получше, и посетители собираются вокруг него. Пока ты расставляешь подписи, Майкл прячет макет Джозефа на узкой полке за занавеской. Он убеждает себя, что никто не заметит.",
+          "Картонная башня падает. Грейси слышит грохот и видит сломанную опору в руках Майкла. Он думает не о ремонте, а о том, как избежать обвинений."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "More than a shelf rule",
+        "ru": "Не только правило о полках"
+      },
+      "paragraphs": {
+        "en": [
+          "“The shelf was wobbly,” Michael says, pointing at the crooked board. It is true, but Gracie is still waiting to understand why Joseph’s model was behind the curtain in the first place. To help them understand what went wrong, Rosie opens her purple Bible to Genesis 3 with their teacher. They notice distrust, a forbidden choice, hiding, and blame. Sin reaches deeper than accidentally breaking an exhibition rule.",
+          "The teacher explains that sin turns away from God in hearts and actions. Wanting praise became a reason to treat Joseph badly. A loose shelf did not make that choice for Michael."
+        ],
+        "ru": [
+          "— Полка шаталась, — говорит Майкл и показывает на кривую доску. Это правда, но Грейси всё ещё не понимает, зачем макет Джозефа вообще оказался за занавеской. Чтобы разобраться в случившемся, Рози вместе с учителем открывает третью главу Бытия. Они замечают недоверие, запретный выбор, попытку спрятаться и обвинения. Грех глубже случайного нарушения правил выставки.",
+          "Учитель объясняет: грех — это непослушание Богу в сердце и поступках. Желание похвалы стало оправданием плохого отношения к Джозефу. Шаткая полка не выбирала за Майкла."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A truthful first sentence",
+        "ru": "Первое честное предложение"
+      },
+      "paragraphs": {
+        "en": [
+          "You help Joseph gather the pieces while Michael sits beside the curtain. Romans 3:23 does not let the other explorers divide themselves into perfect children and one hopeless child. Everyone needs God's mercy. Still, everyone's need does not erase Michael's particular responsibility.",
+          "At last Michael sits beside Joseph.",
+          "“I hid your model because everyone was looking at it. I wanted them to notice mine.”",
+          "This time he does not blame the shelf or point to someone else’s mistakes. Joseph is upset, and Michael listens instead of demanding immediate friendliness."
+        ],
+        "ru": [
+          "Ты помогаешь Джозефу собрать обломки, а Майкл сидит у занавески. Римлянам 3:23 не позволяет разделить команду на безупречных детей и одного безнадёжного. Всем нужна Божья милость. Но это не отменяет ответственности Майкла за его поступок.",
+          "Наконец Майкл садится рядом с Джозефом.",
+          "— Я спрятал твой макет, потому что все смотрели на него. Мне хотелось, чтобы заметили мой.",
+          "На этот раз он не обвиняет полку и не вспоминает чужие ошибки. Джозеф расстроен, и Майкл слушает, не требуя немедленной дружбы."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Repair without pretending",
+        "ru": "Исправить, не притворяясь"
+      },
+      "paragraphs": {
+        "en": [
+          "With adult help, they repair the support and move both models to a sturdy table. Michael gives Joseph credit for the design. Repairing cardboard cannot purchase God's forgiveness, and saying sorry does not make every consequence disappear. It is a concrete response to admitting the wrong.",
+          "At the exhibition, Michael still notices the pull of wanting every compliment. This time he asks God for help and introduces a visitor to Joseph. Their investigation has reached a choice inside his own heart."
+        ],
+        "ru": [
+          "Со взрослым дети чинят опору и ставят оба макета на прочный стол. Майкл честно называет Джозефа автором проекта. Ремонтом нельзя купить Божье прощение, а извинение не отменяет всех последствий. Но признание вины ведёт к настоящему исправлению.",
+          "На выставке Майкл снова хочет забрать всю похвалу себе. На этот раз он просит Бога помочь и знакомит посетителя с Джозефом. Исследование привело к выбору в его собственном сердце."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Romans 3:23 (ESV)",
+      "ru": "Римлянам 3:23 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "for all have sinned and fall short of the glory of God",
+      "ru": "потому что все согрешили и лишены славы Божией"
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/ROM.3.23.ESV",
+      "ru": "https://www.bible.com/bible/167/ROM.3.23.RST"
+    }
+  },
+  "activity": {
+    "type": "sequence",
+    "title": {
+      "en": "Trace the hidden choice",
+      "ru": "Проследи скрытый выбор"
+    },
+    "intro": {
+      "en": "Order what happened, without shifting responsibility to the shelf.",
+      "ru": "Расположи события по порядку, не перекладывая вину на полку."
+    },
+    "items": [
+      {
+        "id": "c",
+        "text": {
+          "en": "Joseph’s model is damaged and his work hidden.",
+          "ru": "Макет Джозефа сломан, его работа спрятана."
+        }
+      },
+      {
+        "id": "a",
+        "text": {
+          "en": "Michael wants all the attention.",
+          "ru": "Майкл хочет всё внимание себе."
+        }
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "Michael admits his choice and helps repair the harm.",
+          "ru": "Майкл признаёт свой выбор и помогает исправить вред."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Michael chooses to hide the model.",
+          "ru": "Майкл решает спрятать макет."
+        }
+      }
+    ],
+    "hint": {
+      "en": "Notice desire, then choice, then harm, then responsibility.",
+      "ru": "Заметь желание, выбор, вред и принятие ответственности."
+    },
+    "success": {
+      "en": "An accident with cardboard did not excuse a deliberate unkind choice.",
+      "ru": "Случайная поломка не оправдывает намеренно недобрый выбор."
+    },
+    "correctOrder": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ]
+  },
+  "fieldMission": {
+    "en": "Privately tell God one wrong choice without an excuse. With a trusted adult, consider a safe way to repair its harm.",
+    "ru": "Наедине признай Богу один неправильный выбор без оправданий. С надёжным взрослым подумай, как безопасно исправить вред."
+  },
+  "prayer": {
+    "en": "God, forgive my sin and help me tell the truth and turn toward you.",
+    "ru": "Боже, прости мой грех и помоги говорить правду и обращаться к Тебе."
+  },
+  "adultNote": {
+    "en": "Read Genesis 3 and Romans 3:23 in context. Distinguish deliberate wrongdoing from accidents, disability, unwanted thoughts, and being harmed. Do not require public confession.",
+    "ru": "Прочитайте Бытие 3 и Римлянам 3:23 в контексте. Отличайте намеренный грех от случайности, инвалидности, нежелательных мыслей и пережитого насилия. Не требуйте публичного признания."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Romans 3:23 — Bible.com ESV / RST",
+        "ru": "Римлянам 3:23 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/ROM.3.23.ESV",
+      "supports": {
+        "en": "Romans 3:23 describes sin as falling short of God's glory, not merely losing a game or breaking an arbitrary rule.",
+        "ru": "Римлянам 3:23 описывает грех как утрату Божьей славы, а не просто проигрыш или нарушение произвольного правила."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    }
+  ]
+}

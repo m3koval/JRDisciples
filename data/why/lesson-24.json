@@ -1,0 +1,177 @@
+{
+  "id": 24,
+  "chapter": 6,
+  "kind": "lab",
+  "title": {
+    "en": "LAB: What should I do when someone gets hurt?",
+    "ru": "ЛАБОРАТОРИЯ: Что делать, если кого-то обижают?"
+  },
+  "subtitle": {
+    "en": "A rehearsal for standing beside someone",
+    "ru": "Учимся поддерживать того, кого обижают"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "Trouble by the coat hooks",
+        "ru": "Неприятность у вешалки"
+      },
+      "paragraphs": {
+        "en": [
+          "The explorers are leaving the community room when two children block a younger child's way to the coat hooks. One keeps moving his bag whenever he reaches for it. Gracie notices that he is not laughing. Michael starts toward them with clenched fists, ready to teach them a lesson.",
+          "You spot the club leader nearby. Joseph stays where the younger child can see him while Rosie gets the leader's attention. The team does not need to win a fight to help."
+        ],
+        "ru": [
+          "Исследователи выходят из комнаты клуба и видят: двое детей не пускают младшего к вешалке. Один каждый раз отодвигает его сумку. Грейси замечает, что мальчик не смеётся. Майкл сжимает кулаки и собирается проучить обидчиков.",
+          "Ты замечаешь рядом руководителя клуба. Джозеф остаётся в поле зрения младшего, а Рози зовёт взрослого. Чтобы помочь, команде не нужно побеждать в драке."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Say what you saw",
+        "ru": "Расскажи, что видел"
+      },
+      "paragraphs": {
+        "en": [
+          "The leader separates the children and makes sure everyone is safe. Rosie reports the blocked path and the moved bag, not a guess about what the children were thinking. “Would you like me to stay while you talk?” Joseph asks the younger child. He waits for an answer instead of asking him to tell the whole story in front of everyone.",
+          "Michael admits that revenge would have made the corridor more dangerous. Telling a responsible adult was not betraying a secret friendship rule. It helped stop a real wrong that was still happening."
+        ],
+        "ru": [
+          "Руководитель разводит детей и проверяет, что все в безопасности. Рози рассказывает о перекрытом проходе и сумке, а не о предполагаемых мыслях обидчиков. «Хочешь, я побуду рядом, пока ты поговоришь с руководителем?» — спрашивает Джозеф. Он ждёт ответа, не заставляя мальчика пересказывать всё перед остальными.",
+          "Майкл признаёт: месть сделала бы коридор опаснее. Сообщение ответственному взрослому не нарушает тайного закона дружбы. Оно помогло остановить настоящее зло, которое ещё продолжалось."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Practice without repeating harm",
+        "ru": "Тренировка без повторения обиды"
+      },
+      "paragraphs": {
+        "en": [
+          "Back in the room, their teacher offers a gentle rehearsal using paper cards, not children acting out insults. Galatians 6:2 calls believers to carry one another's burdens. Micah 6:8 brings justice, kindness, and humility together. Care is more than feeling sorry, and justice is more than getting even.",
+          "You arrange cards for noticing danger, getting adult help, reporting facts, and offering support. If one adult does not respond, the plan includes telling another safe adult. Serious immediate danger needs urgent help."
+        ],
+        "ru": [
+          "В комнате учитель предлагает спокойную тренировку с карточками: никто не разыгрывает оскорбления. Галатам 6:2 призывает носить бремена друг друга. Михей 6:8 соединяет справедливость, милосердие и смирение. Забота больше жалости, а справедливость — не сведение счётов.",
+          "Ты раскладываешь карточки: заметить опасность, позвать взрослого, сообщить факты, предложить поддержку. Если взрослый не реагирует, нужно обратиться к другому надёжному взрослому. При непосредственной серьёзной опасности помощь нужна срочно."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Follow through quietly",
+        "ru": "Тихая поддержка после случившегося"
+      },
+      "paragraphs": {
+        "en": [
+          "Before leaving, Gracie asks whether the younger child wants to walk with the group. He chooses to wait for his father, so they respect his answer. The leader will contact the responsible adults and address the children's behavior; the explorers do not investigate or announce punishments themselves.",
+          "Joseph adds a reminder to check in next week without asking for private details. The corridor is quiet again, but helping did not end when the bag was returned. Next week, he can offer company again and let the boy decide what he wants to share. Being a friend does not mean taking charge of another person’s life."
+        ],
+        "ru": [
+          "Перед уходом Грейси спрашивает, хочет ли мальчик пойти с командой. Он выбирает дождаться папы, и дети уважают ответ. Руководитель свяжется с ответственными взрослыми и разберётся с поведением обидчиков. Исследователи сами не ведут расследование и не назначают наказания.",
+          "Джозеф записывает: на следующей неделе спросить, как дела, без расспросов о личном. В коридоре снова тихо, но помощь не закончилась возвращением сумки. На следующей встрече он снова предложит свою компанию, а мальчик сам решит, о чём рассказать. Дружить — не значит решать всё за другого."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Galatians 6:2 (ESV)",
+      "ru": "Галатам 6:2 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "Bear one another’s burdens, and so fulfill the law of Christ.",
+      "ru": "Носи́те бремена друг друга, и таким образом исполните закон Христов."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/GAL.6.2.ESV",
+      "ru": "https://www.bible.com/bible/167/GAL.6.2.RST"
+    }
+  },
+  "activity": {
+    "type": "sequence",
+    "title": {
+      "en": "Build a safe witness plan",
+      "ru": "Составь безопасный план свидетеля"
+    },
+    "intro": {
+      "en": "For this corridor situation, order the team’s response.",
+      "ru": "Расположи действия команды в этой ситуации."
+    },
+    "items": [
+      {
+        "id": "d",
+        "text": {
+          "en": "Offer company and let responsible adults follow through.",
+          "ru": "Предложить поддержку и дать ответственным взрослым разобраться."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Get the nearby club leader instead of starting a fight.",
+          "ru": "Позвать руководителя рядом, а не начинать драку."
+        }
+      },
+      {
+        "id": "a",
+        "text": {
+          "en": "Notice the blocked path and check for immediate danger.",
+          "ru": "Заметить перекрытый проход и оценить непосредственную опасность."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Report the actions you actually saw.",
+          "ru": "Сообщить о поступках, которые ты видел."
+        }
+      }
+    ],
+    "hint": {
+      "en": "Protection comes first; report facts, not invented motives.",
+      "ru": "Сначала защита; сообщай факты, а не выдуманные мотивы."
+    },
+    "success": {
+      "en": "You combined safety, truthful reporting, and continuing kindness without revenge.",
+      "ru": "Ты соединил безопасность, правдивое сообщение и дальнейшую заботу без мести."
+    },
+    "correctOrder": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ]
+  },
+  "fieldMission": {
+    "en": "With a trusted adult, name two safe adults you could tell about bullying. Practice describing actions clearly without acting out the harm.",
+    "ru": "С надёжным взрослым назови двух взрослых, которым можно сообщить о травле. Потренируйся ясно описывать поступки, не разыгрывая обиду."
+  },
+  "prayer": {
+    "en": "God, help me notice hurt, seek wise help, and stand beside others with courage and kindness.",
+    "ru": "Боже, помоги замечать чужую боль, искать мудрую помощь и смело, по-доброму поддерживать других."
+  },
+  "adultNote": {
+    "en": "Do not stage humiliating role-play or assign the harmed child responsibility for stopping bullying. Adults handle safeguarding and accountability. If a report is dismissed, encourage another safe adult; immediate danger may require emergency services.",
+    "ru": "Не устраивайте унизительных сцен и не возлагайте на пострадавшего обязанность остановить травлю. Защита и ответственность — дело взрослых. Если сообщение игнорируют, нужен другой надёжный взрослый; при непосредственной опасности могут понадобиться экстренные службы."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Galatians 6:2 — Bible.com ESV / RST",
+        "ru": "Галатам 6:2 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/GAL.6.2.ESV",
+      "supports": {
+        "en": "Galatians 6:2 calls believers to carry one another's burdens; the lesson applies this to helping a hurt child.",
+        "ru": "Галатам 6:2 призывает носить бремена друг друга; урок применяет это к помощи пострадавшему ребёнку."
+      },
+      "limits": {
+        "en": "A principle of mutual care, not medical training or permission for a child to manage an emergency alone.",
+        "ru": "Принцип взаимной заботы, не медицинская инструкция и не разрешение ребёнку одному справляться с опасной ситуацией."
+      }
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "id": 12,
+  "chapter": 3,
+  "kind": "lab",
+  "title": {
+    "en": "LAB: Can we explain God without shrinking him?",
+    "ru": "ЛАБОРАТОРИЯ: Как говорить о Боге, не упрощая Его?"
+  },
+  "subtitle": {
+    "en": "The explanation repair shop",
+    "ru": "Мастерская точных объяснений"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "A box of almost-right answers",
+        "ru": "Коробка почти верных ответов"
+      },
+      "paragraphs": {
+        "en": [
+          "The explorers turn their reading corner into an explanation repair shop. Joseph brings cards from a practice exercise, each labeled as an idea to test, not a Bible quotation. One says God is loving, so wrong choices do not matter. Another divides God into three separate pieces.",
+          "‘These are wrong. Shouldn't we throw them away?’ Michael asks. Rosie suggests taking a closer look first. ‘Maybe we can explain what went wrong and help someone understand.’ You carry the first card to the table beside the open Bible, ready to work through it together."
+        ],
+        "ru": [
+          "Исследователи превращают уголок чтения в мастерскую объяснений. Джозеф приносит учебные карточки. На каждой написано: это идея для проверки, а не библейская цитата. Одна утверждает: раз Бог любит, плохие поступки неважны. Другая делит Бога на три отдельные части.",
+          "«Здесь же ошибки. Может, выбросим всё?» — спрашивает Майкл. Рози предлагает сначала разобраться. «Мы могли бы объяснить, в чём ошибка, и помочь кому-нибудь понять». Ты несёшь первую карточку к столу с открытой Библией, чтобы проверить её вместе."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Keep the part that is true",
+        "ru": "Сохрани то, что верно"
+      },
+      "paragraphs": {
+        "en": [
+          "Gracie remembers their display about God's character. Love belongs in the answer, but ignoring wrongdoing does not. With their leader, they revisit Exodus 34 and replace the claim with a sentence about God's mercy and justice together. Correcting a sentence need not mean insulting its writer.",
+          "Michael tries the same method on a birthday card for God. They preserve the wish to celebrate him but remove the suggestion that God began on a particular day."
+        ],
+        "ru": [
+          "Грейси вспоминает стенд о Божьем характере. О любви сказано верно, а о безразличии ко злу — нет. С наставником дети возвращаются к Исходу 34 и пишут о милости и справедливости вместе. Исправить предложение — не значит оскорбить автора.",
+          "Майкл так же проверяет открытку ко дню рождения Бога. Они сохраняют желание прославить Его, но убирают мысль, будто Бог появился в определённый день."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Where the picture breaks",
+        "ru": "Где сравнение не работает"
+      },
+      "paragraphs": {
+        "en": [
+          "Joseph holds up a picture of a three-piece puzzle. It helps him count to three, but it cannot explain the Trinity: each puzzle piece is less than the whole. Deuteronomy teaches one God, and Matthew names Father, Son, and Holy Spirit. Their explanation must keep those truths together.",
+          "‘I can see three pieces,’ Joseph says, ‘but each one is only part of the puzzle. That isn't what we mean about God.’ You help him write a note beneath the picture: the Father, Son, and Spirit are not three parts or three gods. The team sets the picture aside because it would make their explanation harder to understand, not easier."
+        ],
+        "ru": [
+          "Джозеф поднимает рисунок пазла из трёх деталей. Он помогает сосчитать до трёх, но не объясняет Троицу: каждая деталь меньше целого. Второзаконие учит о едином Боге, а Матфей называет Отца, Сына и Святого Духа. Нужно сохранить обе истины.",
+          "«Три детали видно, — говорит Джозеф, — но каждая из них только часть пазла. А о Боге мы говорим не это». Ты помогаешь ему сделать подпись: Отец, Сын и Дух — не три части и не три бога. Ребята откладывают рисунок, потому что он скорее запутает слушателя, чем поможет понять."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Room for an unfinished question",
+        "ru": "Место для открытого вопроса"
+      },
+      "paragraphs": {
+        "en": [
+          "A younger visitor asks how one God can be three persons. Rosie explains what they have learned, then admits she cannot picture God's life completely. Joseph leaves a blank line for the visitor's next question rather than covering it with a confident slogan.",
+          "The repair shop closes with fewer flashy pictures and better sentences. Michael discovers that admitting a limit does not erase what they do know. You carry the question box back to the shelf, ready for another conversation."
+        ],
+        "ru": [
+          "Младший посетитель спрашивает, как один Бог может быть в трёх Лицах. Рози рассказывает, чему они научились, и признаётся, что не может полностью представить Божью жизнь. Джозеф оставляет строку для следующего вопроса, а не закрывает её уверенным лозунгом.",
+          "В мастерской стало меньше ярких схем, зато объяснения точнее. Майкл понял: признание границ не отменяет того, что мы уже знаем. Ты возвращаешь коробку вопросов на полку до следующего разговора."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Deuteronomy 6:4 (ESV)",
+      "ru": "Второзаконие 6:4 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "“Hear, O Israel: The LORD our God, the LORD is one.",
+      "ru": "Слушай, Израиль: Господь, Бог наш, Господь един есть"
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/DEU.6.4.ESV",
+      "ru": "https://www.bible.com/bible/167/DEU.6.4.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Repair the puzzle caption",
+      "ru": "Исправь подпись к пазлу"
+    },
+    "intro": {
+      "en": "Which replacement explains the picture’s limit?",
+      "ru": "Какая новая подпись объясняет границу рисунка?"
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Each person is one third of God, like a puzzle piece.",
+          "ru": "Каждое Лицо — треть Бога, словно деталь пазла."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "If a picture fails, nothing about God can be known.",
+          "ru": "Если рисунок не подходит, о Боге вообще ничего нельзя узнать."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "God is one; the three persons are not pieces. This puzzle cannot explain the Trinity.",
+          "ru": "Бог един; три Лица — не части. Этот пазл не объясняет Троицу."
+        }
+      }
+    ],
+    "hint": {
+      "en": "A puzzle piece is only part of a whole. Do not transfer that limit to God.",
+      "ru": "Деталь пазла — лишь часть целого. Не переноси это свойство на Бога."
+    },
+    "success": {
+      "en": "You kept the biblical claim and named the illustration’s limit.",
+      "ru": "Ты сохранил библейскую истину и назвал границу сравнения."
+    },
+    "correctId": "c",
+    "question": {
+      "en": "Which replacement explains the picture’s limit?",
+      "ru": "Какая новая подпись объясняет границу рисунка?"
+    }
+  },
+  "fieldMission": {
+    "en": "Explain one thing you have learned about God and name one question you still have.",
+    "ru": "Расскажи об одной истине о Боге, которую узнал, и назови один оставшийся вопрос."
+  },
+  "prayer": {
+    "en": "God, help me speak truthfully and learn humbly when I do not understand everything.",
+    "ru": "Боже, помоги говорить правду и смиренно учиться, когда я понимаю не всё."
+  },
+  "adultNote": {
+    "en": "This lab practices repairing explanations, not mastering God. Read Deuteronomy 6:4 and Matthew 28:19 together. Preserve unity, personal distinction, and full deity without dividing God into parts.",
+    "ru": "Это упражнение учит исправлять объяснения, а не исчерпывающе понимать Бога. Прочитайте Второзаконие 6:4 и Матфея 28:19. Сохраняйте единство, различие Лиц и полноту Божества, не деля Бога на части."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Deuteronomy 6:4 — Bible.com ESV / RST",
+        "ru": "Второзаконие 6:4 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/DEU.6.4.ESV",
+      "supports": {
+        "en": "Deuteronomy 6:4 confesses the LORD's oneness; it guards against explaining the Trinity as three gods.",
+        "ru": "Второзаконие 6:4 исповедует единство Господа и не позволяет объяснять Троицу как трёх богов."
+      },
+      "limits": {
+        "en": "Affirms one God; does not by itself name Father, Son and Spirit. Read together with Matthew 28:19 from lesson 10.",
+        "ru": "Утверждает единство Бога; сам стих не называет Отца, Сына и Духа. Читайте вместе с Матфея 28:19 из урока 10."
+      }
+    }
+  ]
+}

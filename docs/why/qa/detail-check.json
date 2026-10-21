@@ -1,0 +1,8 @@
+{
+  "singleMain": true,
+  "mobileSceneScroll": true,
+  "dialogEscape": true,
+  "copyLabENRU": true,
+  "wrongRetry": true,
+  "pageErrors": []
+}

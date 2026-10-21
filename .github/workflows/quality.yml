@@ -44,6 +44,9 @@ jobs:
       - name: Check image assets
         run: npm run check:assets
 
+      - name: Check WHY curriculum and artwork
+        run: npm run check:why
+
       - name: Check games
         run: npm run check:games
 

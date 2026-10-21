@@ -1,0 +1,33 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "type": "sort",
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 2,
+      "type": "choose",
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 3,
+      "type": "sequence",
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 4,
+      "type": "choose",
+      "wrongRetry": true,
+      "completionAndReload": true
+    }
+  ],
+  "observatory": true,
+  "layouts": 4,
+  "corruptStorage": true,
+  "blockedStorage": true,
+  "pageErrors": []
+}

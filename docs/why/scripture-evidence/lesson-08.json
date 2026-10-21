@@ -1,0 +1,23 @@
+{
+  "lesson": 8,
+  "verifiedVerses": {
+    "en": {
+      "url": "https://www.bible.com/bible/59/PRO.18.17.ESV",
+      "text": "The one who states his case first seems right,\nuntil the other comes and examines him.",
+      "referencePageTitle": "Proverbs 18:17 (ESV) - The one who states his case first s - Bible App",
+      "ogDescription": "The one who states his case first seems right,\nuntil the other comes and examines him.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:53.233602+00:00"
+    },
+    "ru": {
+      "url": "https://www.bible.com/bible/167/PRO.18.18.RST",
+      "text": "Первый в тяжбе своей прав, но приходит соперник его и исследует его.",
+      "referencePageTitle": "Притчи Соломона 18:18 (Синод) - Первый в тяжбе своей прав, но прихо - Bible App",
+      "ogDescription": "Первый в тяжбе своей прав, но приходит соперник его и исследует его.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:12:17.701869+00:00"
+    }
+  },
+  "notes": "Exact rendered Bible.com verse strings retained, including punctuation and translation-specific numbering. Narrative is original fiction and biblical explanation, not additional Scripture quotation.",
+  "storyEnglishWords": 300
+}

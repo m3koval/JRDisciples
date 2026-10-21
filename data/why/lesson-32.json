@@ -1,0 +1,184 @@
+{
+  "id": 32,
+  "chapter": 8,
+  "kind": "lab",
+  "title": {
+    "en": "LAB: Can you explain the good news?",
+    "ru": "ЛАБОРАТОРИЯ: Как объяснить благую весть?"
+  },
+  "subtitle": {
+    "en": "A story worth sharing, not a pitch to win",
+    "ru": "Весть, которой делятся без давления"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "The invitation booth",
+        "ru": "Стол приглашений"
+      },
+      "paragraphs": {
+        "en": [
+          "The explorers prepare a little welcome table for the neighborhood afternoon. Joseph suggests a quiz before anyone gets a biscuit. “What if someone doesn’t know the answers?” Gracie asks. “Or just wants a biscuit, not a conversation about faith?” Michael quietly removes the quiz from the biscuit tray.",
+          "You join Rosie at the poster board. They still want to explain why Jesus matters. They need a truthful story and a generous invitation, not a reward that pressures a visitor to agree."
+        ],
+        "ru": [
+          "Исследователи готовят стол для соседского праздника. Джозеф предлагает викторину перед угощением. «А если человек не знает ответов? — спрашивает Грейси. — Или просто хочет угоститься, а не говорить о вере?» Майкл убирает викторину с подноса.",
+          "Ты подходишь к Рози у плаката. Команда всё ещё хочет рассказать, почему важен Иисус. Нужны правдивая весть и доброе приглашение, а не награда за согласие."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Start with the real problem",
+        "ru": "Начни с настоящей беды"
+      },
+      "paragraphs": {
+        "en": [
+          "They sketch a world made by God and people made to know and love him. Then they add the broken direction of sin: we turn from God and hurt others. The problem is deeper than not knowing enough facts or needing a little encouragement.",
+          "Rosie keeps the drawings simple. No visitor is drawn as the bad person while the explorers wear halos. They need rescue too. This changes the way Michael practices his explanation: he speaks as someone receiving mercy, not looking down from above."
+        ],
+        "ru": [
+          "Они рисуют мир, созданный Богом, и людей, созданных знать и любить Его. Затем они изображают грех: мы отворачиваемся от Бога и раним других. Проблема глубже нехватки знаний или ободрения.",
+          "Рози рисует просто. Она не рисует гостей плохими людьми и не добавляет исследователям нимбы. Им тоже нужно спасение. Теперь Майкл рассказывает не свысока, а как человек, сам принимающий милость."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Keep Jesus at the center",
+        "ru": "Пусть Иисус будет в центре"
+      },
+      "paragraphs": {
+        "en": [
+          "In 1 Corinthians 15:3–4 they find the center: Christ died for our sins, was buried, and was raised. In Ephesians 2:8–10 they find grace, faith, and the good works that follow. Their poster cannot shrink this into merely trying harder or becoming nicer.",
+          "Joseph adds a source card so a visitor can read the passages rather than trusting the children’s drawing. As they practise, they explain that repentance means turning from sin to God, and faith means trusting Jesus. They want visitors to understand his promise of new life, not expect every difficulty to disappear that afternoon."
+        ],
+        "ru": [
+          "В 1 Коринфянам 15:3–4 они находят главное: Христос умер за наши грехи, был погребён и воскрес. В Ефесянам 2:8–10 — благодать, веру и следующие за ними добрые дела. Нельзя свести весть к призыву сильнее стараться.",
+          "Джозеф добавляет ссылку на отрывки, чтобы гость мог читать сам. Репетируя рассказ, ребята объясняют: покаяться — значит отвернуться от греха и обратиться к Богу, а верить — довериться Иисусу. Они хотят рассказать о новой жизни с Ним, но не обещают, что уже сегодня исчезнут все трудности."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A conversation, not a capture",
+        "ru": "Разговор, а не ловушка"
+      },
+      "paragraphs": {
+        "en": [
+          "When a visitor stops, Gracie asks whether he would like to hear about the poster. He listens, asks one question, and says he needs time. Nobody blocks the path or takes away his biscuit. Rosie thanks him for talking and offers the passage reference if he wants it.",
+          "Afterward, you help tidy the table. Gracie is glad that the visitor felt free to ask his question and take time to think. The team can explain the good news honestly, show love, and invite someone to trust Jesus, but they cannot make that decision for him."
+        ],
+        "ru": [
+          "Когда подходит гость, Грейси спрашивает, хочет ли он услышать о плакате. Он слушает, задаёт вопрос и говорит, что ему нужно время. Никто не загораживает дорогу и не забирает угощение. Рози благодарит за разговор и предлагает ссылку на отрывок.",
+          "После праздника ты помогаешь убрать стол. Грейси рада, что гость смог спокойно задать вопрос и подумать. Ребята могут честно рассказать благую весть, проявить любовь и пригласить довериться Иисусу, но не могут принять это решение за другого."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "1 Corinthians 15:3 (ESV)",
+      "ru": "Первое послание к Коринфянам 15:3 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "For I delivered to you as of first importance what I also received: that Christ died for our sins in accordance with the Scriptures",
+      "ru": "Ибо я первоначально преподал вам, что и сам принял, то есть, что Христос умер за грехи наши, по Писанию"
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/1CO.15.3.ESV",
+      "ru": "https://www.bible.com/bible/167/1CO.15.3.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Keep the good news in the invitation",
+      "ru": "Сохрани благую весть в приглашении"
+    },
+    "intro": {
+      "en": "Use the discoveries from the story to decide.",
+      "ru": "Вспомни открытия из истории и выбери ответ."
+    },
+    "question": {
+      "en": "Which explanation tells the visitor why Jesus matters, without pressure?",
+      "ru": "Как объяснить гостю, почему важен Иисус, без давления?"
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "We need rescue from sin. Jesus died for our sins and rose; we turn to him in faith and receive salvation as a gift. You may ask questions.",
+          "ru": "Нам нужно спасение от греха. Иисус умер за наши грехи и воскрес; мы обращаемся к Нему с верой и принимаем спасение как дар. Можно задавать вопросы."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Collect enough good deeds and you can earn rescue without Jesus.",
+          "ru": "Набери достаточно добрых дел и заслужишь спасение без Иисуса."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Agree with us now and Jesus promises you will never have trouble.",
+          "ru": "Согласись с нами сейчас, и Иисус обещает тебе жизнь без трудностей."
+        }
+      }
+    ],
+    "correctId": "a",
+    "hint": {
+      "en": "Keep Christ’s death and resurrection, grace, and trust at the center. Do not offer a bargain.",
+      "ru": "Помни о смерти и воскресении Христа, благодати и вере. Не предлагай сделку."
+    },
+    "success": {
+      "en": "The good news is what Christ has done for sinners, received by faith—not a score or a promise of easy days. A clear invitation leaves room for questions.",
+      "ru": "Благая весть — о том, что Христос сделал для грешников и что мы принимаем верой. Это не счёт заслуг и не обещание лёгких дней. Ясное приглашение оставляет место для вопросов."
+    }
+  },
+  "fieldMission": {
+    "en": "Practice a short gospel explanation with a willing adult: creation, sin, Christ’s death and resurrection, repentance and faith. Invite a question.",
+    "ru": "Потренируйся с согласным взрослым коротко рассказать о сотворении, грехе, смерти и воскресении Христа, покаянии и вере. Пригласи задать вопрос."
+  },
+  "prayer": {
+    "en": "Jesus, keep your good news clear in my words and your kindness visible in how I listen.",
+    "ru": "Иисус, помоги ясно рассказывать Твою благую весть и внимательно слушать с добротой."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Bible anchor: 1 Corinthians 15:3 (ESV)",
+        "ru": "Библейский текст: Первое послание к Коринфянам 15:3 (Синодальный перевод)"
+      },
+      "url": "https://www.bible.com/bible/59/1CO.15.3.ESV",
+      "supports": {
+        "en": "1 Corinthians 15:3–4 places Christ's death for sins and resurrection at the heart of the gospel.",
+        "ru": "1 Коринфянам 15:3–4 ставит смерть Христа за грехи и Его воскресение в центр благой вести."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    },
+    {
+      "title": {
+        "en": "Russian Synodal anchor",
+        "ru": "Текст Синодального перевода"
+      },
+      "url": "https://www.bible.com/bible/167/1CO.15.3.RST",
+      "supports": {
+        "en": "Exact Russian text for the displayed verse.",
+        "ru": "Точный русский текст приведённого стиха."
+      },
+      "limits": {
+        "en": "Verse numbering can differ between translations, especially in Psalms.",
+        "ru": "Нумерация стихов в переводах может отличаться, особенно в Псалтири."
+      }
+    }
+  ],
+  "adultNote": {
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Do not pressure children to secure a conversion or recite a formula. A willing practice partner is enough; food and friendship must not depend on religious agreement.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Не требуйте от детей добиться чьего-то обращения или повторить формулу. Достаточно добровольного собеседника; еда и дружба не должны зависеть от согласия в вере."
+  }
+}

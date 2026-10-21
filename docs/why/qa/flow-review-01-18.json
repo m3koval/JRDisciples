@@ -1,0 +1,1301 @@
+{
+  "scope": "Local story paragraph edits only, lessons 01–18, EN/RU. No publish, code edits, art generation or writes to other lessons.",
+  "baseline": "/home/helper/jd-why-research/flow-baseline",
+  "review_method": "Read complete four-scene stories in both languages before editing and reread after saving. Targeted dialogue and transition changes preserve coherent existing prose; not every paragraph was rewritten. Scene-action continuity was compared with the baseline narrative, not newly inspected images.",
+  "completed_lessons": 18,
+  "changed_paragraphs": 76,
+  "preservation": "All fields except scenes[*].paragraphs equal baseline, including complete scripture objects, sources, activities, IDs and titles. Four scenes and per-scene paragraph parity retained.",
+  "verification": {
+    "command": "node scripts/check-why.mjs --content-only",
+    "exit_code": 0,
+    "result": {
+      "lessons": 52,
+      "ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52
+      ],
+      "types": {
+        "choose": 22,
+        "sequence": 14,
+        "sort": 16
+      },
+      "errors": [],
+      "missingImages": [],
+      "contentAndLogicPass": true,
+      "releasePass": true
+    },
+    "limits": "No build/browser/visual QA or publication. The 52-lesson checker result is not editorial review beyond 01–18."
+  },
+  "issues": [
+    "File-tool sibling-write warnings followed Python-based reads, which do not register as read_file calls. Each save loaded current JSON directly before changing named paragraphs; non-paragraph baseline comparisons passed.",
+    "First report-generation attempt had a Python string syntax error before any writes or checks executed; corrected and rerun."
+  ],
+  "lessons": [
+    {
+      "lesson": 1,
+      "file": "data/why/lesson-01.json",
+      "title": {
+        "en": "How do we know God exists?",
+        "ru": "Откуда мы знаем, что Бог существует?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Made Gracie’s stars question and Michael’s maker question spoken exchanges; aligned opening tense with the expedition.",
+      "scene_actions_retained": "Telescope, notebook, domino row, three windows, unfinished sky sketch and telescope carried inside.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "d6b3f4afa0ef28150756b2a8094de7d8a2332de288a68629a1ebea386a22744a",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Michael's green sleeve brushed the telescope as a bright point slipped out of view. Joseph found it again and drew its position in his blue notebook. Rosie held her purple Bible, while Gracie pulled her yellow hood against the evening breeze.",
+          "after": "Michael's green sleeve brushes the telescope, and a bright point slips out of view. Joseph finds it again and draws its position in his blue notebook. Rosie holds her purple Bible, while Gracie pulls up her yellow hood against the evening breeze."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You have joined their backyard expedition. Gracie wonders whether seeing beautiful stars is the same thing as seeing God. Nobody laughs. That question deserves more than a quick cheerful answer.",
+          "after": "You join their backyard expedition as Gracie looks up from the telescope. ‘We can see the stars,’ she says, ‘but how do they help us know about God?’ Nobody laughs at her question, and the team decides to explore it together."
+        },
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Зелёный рукав Майкла задел телескоп, и яркая точка исчезла. Джозеф снова нашёл её и отметил положение в синем блокноте. Рози держала фиолетовую Библию, а Грейси натянула жёлтый капюшон: вечер был прохладным.",
+          "after": "Зелёный рукав Майкла задевает телескоп, и яркая точка исчезает из виду. Джозеф снова находит её и отмечает положение в синем блокноте. Рози держит фиолетовую Библию, а Грейси натягивает жёлтый капюшон, спасаясь от прохладного вечернего ветра."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты присоединяешься к экспедиции во дворе. Грейси спрашивает: видеть красивые звёзды — это то же самое, что видеть Бога? Никто не смеётся. Такой вопрос заслуживает вдумчивого ответа.",
+          "after": "Ты присоединяешься к экспедиции во дворе. Грейси отрывается от телескопа и спрашивает: «Звёзды мы видим. А как они помогают нам узнать о Боге?» Никто не смеётся над её вопросом, и ребята решают вместе поискать ответ."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael asks who made God. Their teacher returns to the reason: they did not say everything needs a maker. They asked what explains things that depend on something else. God is not one more dependent thing. This argument gives them a reason to explore belief in a Creator; learning who God is will also mean listening to what he reveals about himself.",
+          "after": "‘Then who made God?’ Michael asks. Their teacher helps him look back at their question: they were asking about things that need something else to exist, not saying that absolutely everything has a maker. Christians believe God does not depend on anything else. That gives the team a reason to explore belief in a Creator; to learn who he is, they will also need to listen to what he reveals about himself."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майкл спрашивает: а кто создал Бога? Учитель возвращается к доводу. Они не говорили, что абсолютно всему нужен создатель. Они спрашивали об основании того, что зависит от другого. Бог — не ещё одна зависимая вещь. Это довод в пользу веры в Творца. А чтобы узнать, какой Он, нужно слушать, что Он открывает о Себе.",
+          "after": "«А кто тогда создал Бога?» — спрашивает Майкл. Учитель напоминает, с чего начался разговор: ребята спрашивали о том, что не может существовать без чего-то другого. Они не говорили, что создатель нужен абсолютно всему. Христиане верят, что Сам Бог ни от чего не зависит. Это помогает ребятам размышлять о Творце, а чтобы узнать, какой Он, им предстоит слушать, что Он открывает о Себе."
+        }
+      ]
+    },
+    {
+      "lesson": 2,
+      "file": "data/why/lesson-02.json",
+      "title": {
+        "en": "Is believing just guessing?",
+        "ru": "Верить — значит просто угадывать?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Connected the wish/reason/action boxes to Michael’s wish, Gracie’s response to the worker, and her request to read John; removed repetitive Russian ending.",
+      "scene_actions_retained": "Closed bridge, worker’s map, pond route, Bible reading and return path.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "8696ce14c6651de2afedb24e72396066936b0ed9514e2cc8ba067c8ad9e907e0",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Joseph draws three empty boxes in his notebook. Today the team needs to tell a wish, a reason, and a trusting action apart. Looking confident will not repair a bridge.",
+          "after": "‘I wish we could still go this way,’ Michael says. Joseph draws three empty boxes in his notebook. ‘Let's keep that wish in the first box. Then we can write down why we choose another path and what we actually do.’ You wait together for their leader to return with news."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Джозеф рисует в блокноте три клетки. Сегодня нужно отличить желание, основание и действие с доверием. Уверенный вид не починит мост.",
+          "after": "«Жаль, что здесь нельзя пройти», — говорит Майкл. Джозеф рисует в блокноте три пустые клетки. «В первой запишем, чего нам хочется. Потом — почему выберем другую дорогу и что сделаем». Вместе вы ждёте, что расскажет руководитель."
+        },
+        {
+          "scene": 2,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Gracie notices the difference. Guessing would mean choosing a route without checking. Trust means relying on someone, and wise trust asks whether that person is trustworthy.",
+          "after": "‘So we aren't just guessing which way to go,’ Gracie says. ‘We have reasons to listen to him.’ Their leader agrees: trusting someone means relying on them, and it matters whether they know what they are talking about. With the route checked, the team sets off toward the pond."
+        },
+        {
+          "scene": 2,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Грейси замечает разницу. Угадывать — значит выбирать путь без проверки. Доверять — значит полагаться на кого-то. Разумное доверие спрашивает: надёжен ли тот, кому мы верим?",
+          "after": "«Значит, мы не просто угадываем дорогу, — говорит Грейси. — Мы знаем, почему ему можно доверять». Руководитель соглашается: когда полагаешься на человека, важно понимать, знает ли он то, о чём говорит. Проверив маршрут, ребята отправляются к пруду."
+        },
+        {
+          "scene": 4,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Back home, Gracie asks which Gospel they could read together next. She wants to know Jesus, not collect enough facts to win an argument. Reasons can support trust; trust reaches toward a person.",
+          "after": "Back home, Gracie remembers what they read at the pond. ‘Could we read more of John's Gospel together? I want to know Jesus better.’ She still has questions, but now she knows where to begin. The team can explore their reasons for believing while learning to trust the person the Gospel tells them about."
+        },
+        {
+          "scene": 4,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Дома Грейси спрашивает, какое Евангелие можно почитать вместе. Она хочет узнать Иисуса, а не собрать факты ради победы в споре. Разумные доводы помогают доверять. Но Грейси хочет не просто знать доводы, а узнать Самого Иисуса.",
+          "after": "Дома Грейси вспоминает чтение у пруда. «Давайте ещё почитаем Евангелие от Иоанна? Я хочу лучше узнать Иисуса». У неё остались вопросы, но теперь понятно, с чего начать. Вместе ребята смогут разобраться в основаниях веры и учиться доверять Тому, о Ком рассказывает Евангелие."
+        }
+      ]
+    },
+    {
+      "lesson": 3,
+      "file": "data/why/lesson-03.json",
+      "title": {
+        "en": "Can I ask hard questions and still follow Jesus?",
+        "ru": "Можно ли задавать трудные вопросы и следовать за Иисусом?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Gave Rosie a reassuring invitation without pressure and Michael an explicit apology and listening question.",
+      "scene_actions_retained": "Folded paper stays in pocket, question unfolds, crooked lid repaired, paper placed in box.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "00228ea43f458b8a296d78319492f61422cfd47c07841b708768dc7ec131eb8f",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You sit beside her without trying to peek. Rosie explains that the box is not a test. Nobody earns a place on the team by having perfectly tidy thoughts.",
+          "after": "You sit beside her without trying to peek. ‘You don't have to show us until you're ready,’ Rosie says. ‘This isn't a test.’ Gracie keeps the paper in her pocket, but she stays beside her friends as they finish the box."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты садишься рядом, не пытаясь подсмотреть. Рози объясняет: коробка — не контрольная. Место в команде не нужно заслуживать безупречными мыслями.",
+          "after": "Ты садишься рядом, не пытаясь подсмотреть. «Можешь показать нам, когда сама захочешь, — говорит Рози. — Это же не контрольная». Грейси пока оставляет листок в кармане, но остаётся с друзьями, которые доделывают коробку."
+        },
+        {
+          "scene": 3,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Michael starts to offer three fast explanations, then notices Gracie's face. He stops and asks what happened. Joseph writes the question exactly as she means it, instead of changing it into an easier one. Their teacher admits that some answers will take more conversation.",
+          "after": "Michael begins offering explanations, then notices Gracie's face and stops. ‘Sorry. Can you tell us what happened first?’ he asks. Joseph listens and writes her question the way she means it, rather than changing it into an easier one. Their teacher says they may need more than one conversation to think it through together."
+        },
+        {
+          "scene": 3,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Майкл начинает выдавать три быстрых объяснения, но замечает лицо Грейси. Он останавливается и спрашивает, что случилось. Джозеф записывает её настоящий вопрос, не заменяя его более удобным. Учитель признаёт: для ответа понадобится ещё не одна беседа.",
+          "after": "Майкл начинает предлагать объяснения, но, заметив лицо Грейси, останавливается. «Прости. Расскажешь сначала, что случилось?» Джозеф слушает и записывает именно её вопрос, не заменяя его более удобным. Учитель говорит, что им, возможно, понадобится ещё не одна беседа, чтобы вместе разобраться."
+        }
+      ]
+    },
+    {
+      "lesson": 4,
+      "file": "data/why/lesson-04.json",
+      "title": {
+        "en": "LAB: What would help us know?",
+        "ru": "ЛАБОРАТОРИЯ: Что поможет нам узнать?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Turned Joseph’s objection into a question and connected source limits through Gracie’s leaf example rather than a clipped list.",
+      "scene_actions_retained": "Scattered labels, leaf, interview, domino diagram, four envelopes and exhibition.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "e3f0504922f8c3f727820aec790479f3ea70b1901795a67d6b4905aebae2f9e2",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Joseph objects. A drawing of a leaf cannot tell visitors what their teacher said yesterday. You join the rescue mission: each question needs the right kind of support, not simply the biggest pile of paper.",
+          "after": "‘But how would a leaf show what our teacher said yesterday?’ Joseph asks. Michael looks again at the scattered labels. You join them at the table to sort out the mix-up: before choosing a piece of evidence, they need to know which question it can help answer."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Джозеф возражает: рисунок листа не расскажет, что вчера сказал учитель. Ты включаешься в спасательную работу: каждому вопросу нужны подходящие основания, а не просто огромная стопка бумаги.",
+          "after": "«Но разве по листу узнаешь, что вчера сказал учитель?» — спрашивает Джозеф. Майкл снова смотрит на перепутанные подписи. Ты присоединяешься к ребятам за столом: прежде чем выбрать материал, нужно понять, на какой вопрос он поможет ответить."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You help write a small limit beside each label. Their leaf does not describe every tree. One interview is not everybody's testimony. Their model is not the universe. A verse should be read in its setting.",
+          "after": "You help them add a note beside each label about what it can show. ‘We only counted this leaf,’ Gracie reminds them, ‘not every leaf on every tree.’ They check the other labels too: an interview records one person's report, their domino model is not the whole universe, and the Bible passage needs its surrounding verses to be understood properly."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты помогаешь указать границы каждого материала. Один лист не описывает все деревья. Одна беседа — не свидетельства всех людей. Модель — не Вселенная. Стих следует читать в контексте.",
+          "after": "Ты помогаешь добавить к подписям пояснения. «Мы ведь считали выступы только на этом листе, а не на всех листьях», — напоминает Грейси. Ребята проверяют и остальные подписи: беседа передаёт рассказ одного человека, ряд костяшек не изображает всю Вселенную, а библейский отрывок нужно читать вместе с соседними стихами."
+        }
+      ]
+    },
+    {
+      "lesson": 5,
+      "file": "data/why/lesson-05.json",
+      "title": {
+        "en": "Why listen to the Bible?",
+        "ru": "Почему стоит слушать Библию?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Linked Rosie’s Bible question to the shelter instructions and made Michael’s apology the concrete response to reading.",
+      "scene_actions_retained": "Fallen roof, found instructions, rebuilt shelter and Bible shelf.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "370f0daad270e2fb3bf3e0e020c2a8e920e55e43402483d4c75e02a2165f4a95",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Rosie notices a bigger question hiding inside their small disaster: why should the team listen to the Bible rather than treat it as one more opinion?",
+          "after": "As they look over the instructions, Rosie glances at her Bible. ‘We want to listen to the person who designed this shelter,’ she says. ‘But why do we listen to the Bible? What makes it different from all the other advice we hear?’ Their teacher joins them to explore her question."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Рози замечает большой вопрос за маленькой неудачей: почему Библию стоит слушать, а не считать ещё одним мнением?",
+          "after": "Пока ребята рассматривают инструкцию, Рози смотрит на свою Библию. «Мы хотим послушать того, кто придумал этот домик, — говорит она. — А почему мы слушаем Библию? Чем она отличается от других советов?» Учитель присоединяется к ребятам, чтобы вместе разобраться в её вопросе."
+        },
+        {
+          "scene": 4,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Their first reading ends with an apology: Michael had brushed aside Gracie's warning. The corner has become more than a place to hide with books. It is a place to listen and respond.",
+          "after": "After their first reading, Michael turns to Gracie. ‘I'm sorry I didn't listen when you warned me about the roof.’ She accepts his apology, and they settle into the corner together. Michael is beginning to see that listening means more than hearing the words: sometimes it means admitting a mistake and making things right."
+        },
+        {
+          "scene": 4,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Первое чтение заканчивается извинением: Майкл признаёт, что отмахнулся от предупреждения Грейси. Уголок стал не просто укрытием с книгами, а местом, где слушают и отвечают делом.",
+          "after": "После первого чтения Майкл поворачивается к Грейси. «Прости, что я не послушал тебя, когда ты предупредила про крышу». Она принимает его извинение, и они вместе устраиваются в уголке. Майкл начинает понимать: мало просто услышать слова. Иногда нужно признать свою ошибку и исправить её."
+        }
+      ]
+    },
+    {
+      "lesson": 6,
+      "file": "data/why/lesson-06.json",
+      "title": {
+        "en": "Has the Bible been changed?",
+        "ru": "Изменили ли Библию?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Used Rosie’s comparison question to bridge picnic lists to manuscripts; made Michael’s conclusion a response to actual records.",
+      "scene_actions_retained": "Missing apples, comparison, scroll viewer, Sinaiticus contents, corrected caption and restored apples.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "78b5bf43e0fcb48474634687a73068ef71d87ccb28252d51eea5db25ce3c5033",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Rosie labels their exercise modern practice. It shows why comparison can help, but their lunch lists are not ancient evidence about the Bible.",
+          "after": "‘Comparing the lists helped us find the mistake,’ Rosie says as she labels their exercise modern practice. ‘But what can we compare when we ask about the Bible?’ Their teacher offers to show them real ancient manuscripts. The picnic lists have given them a useful question, not ancient evidence."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Рози подписывает упражнение: современная тренировка. Оно показывает пользу сравнения, но списки еды не являются древними свидетельствами о Библии.",
+          "after": "«Мы сравнили списки и нашли ошибку, — говорит Рози, подписывая упражнение как современную тренировку. — А что можно сравнить, когда речь о Библии?» Учитель предлагает посмотреть настоящие древние рукописи. Списки для пикника помогли задать вопрос, но сами древними свидетельствами не стали."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael asks whether copying means the message must be hopelessly lost. No: the Isaiah Scroll preserves a substantial text from before Jesus, and Sinaiticus preserves the whole New Testament. Researchers can compare these witnesses with other copies to identify agreements and differences. That is a stronger reason for confidence than pretending copyists never made mistakes.",
+          "after": "‘So copying doesn't mean the whole message is lost?’ Michael asks. Their teacher points back to what they have seen: the Isaiah Scroll preserves a substantial text from before Jesus, and Sinaiticus preserves the whole New Testament. Researchers compare these with other copies to find agreements and differences. Michael begins to see why checking surviving manuscripts is more helpful than pretending no copyist ever made a mistake."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майкл спрашивает: значит ли переписывание, что текст безнадёжно утрачен? Нет: свиток сохраняет обширный текст Исаии ещё до жизни Иисуса, а Синайский кодекс — весь Новый Завет. Учёные сравнивают эти рукописи с другими копиями, находят совпадения и различия. Это надёжнее, чем делать вид, будто переписчики никогда не ошибались.",
+          "after": "«Значит, если текст переписывали, он не обязательно весь потерялся?» — спрашивает Майкл. Учитель напоминает об увиденном: свиток сохранил обширный текст Исаии ещё до жизни Иисуса, а Синайский кодекс — весь Новый Завет. Учёные сравнивают их с другими копиями и находят совпадения и различия. Майкл начинает понимать, почему полезнее изучать сохранившиеся рукописи, чем делать вид, будто переписчики никогда не ошибались."
+        }
+      ]
+    },
+    {
+      "lesson": 7,
+      "file": "data/why/lesson-07.json",
+      "title": {
+        "en": "Why so many books and translations?",
+        "ru": "Почему в Библии много книг и переводов?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Added Rosie’s genre question and Gracie’s request to explain the passage to Grandma; connected retelling labels to that relationship.",
+      "scene_actions_retained": "Library shelves, round table, contents page, genre cards, two translations and shelf guide.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "1e12bc49092983eb810f9b795a307003602549b71be9c3481d8cd08ab6b7aeb2",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Rosie opens her purple Bible's contents page. It holds a collection of books, not one long text written in a single afternoon.",
+          "after": "At the table, Rosie opens the contents page of her purple Bible. ‘There are different kinds of writing in here too,’ she says. ‘How do we know how to read each one?’ The others lean closer: the Bible is a collection of books, not one long text written in a single afternoon."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Рози открывает содержание фиолетовой Библии. Перед ними собрание книг, а не один длинный текст, написанный за один вечер.",
+          "after": "За столом Рози открывает содержание фиолетовой Библии. «Здесь ведь тоже разные книги, — говорит она. — Как понять, как читать каждую?» Ребята придвигаются ближе: перед ними собрание книг, а не один длинный текст, написанный за один вечер."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You compare a short passage with an adult. A paraphrase may explain in freer wording, but it should be labeled honestly rather than passed off as the exact wording of their chosen translation.",
+          "after": "As you compare a short passage with an adult, Gracie asks, ‘Could I explain this in my own words for Grandma?’ Their teacher says a retelling can help someone understand, as long as Gracie calls it a retelling. That way her grandmother will know which words come from the translation and which are Gracie's explanation."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты сравниваешь короткий отрывок со взрослым. Пересказ может свободнее объяснять смысл, но его нужно честно назвать пересказом, а не точными словами выбранного перевода.",
+          "after": "Когда вы со взрослым сравниваете короткий отрывок, Грейси спрашивает: «А можно объяснить это бабушке своими словами?» Учитель отвечает: пересказ может помочь, если честно назвать его пересказом. Тогда бабушка поймёт, где слова выбранного перевода, а где объяснение Грейси."
+        }
+      ]
+    },
+    {
+      "lesson": 8,
+      "file": "data/why/lesson-08.json",
+      "title": {
+        "en": "LAB: Can you check the source?",
+        "ru": "ЛАБОРАТОРИЯ: Можешь проверить источник?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Clarified why Michael likes his deliberately false practice poster; connected Gracie’s concern about earlier readers to the correction.",
+      "scene_actions_retained": "Practice poster, source check, replacement invitation and separate Scripture check.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "429b5b1350fff070c4077d57ec1e83b19aa260eaf3c4ff67a67b6bc945aef201",
+      "edits": [
+        {
+          "scene": 2,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael feels a little disappointed that the best-looking poster fails. You remind him that beautiful lettering tells them about design, not whether the words are true.",
+          "after": "‘I knew the words were made up, but I still hoped we could use the picture,’ Michael admits. You help him separate the two: he can keep working on the design without keeping the false promise. Before they make a replacement, Rosie suggests looking at what the Bible says about checking a claim."
+        },
+        {
+          "scene": 2,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майклу немного жаль самого красивого плаката. Ты напоминаешь: красивые буквы говорят о дизайне, но не доказывают правдивость текста.",
+          "after": "«Я знал, что слова придуманные, но всё равно хотел использовать эту картинку», — признаётся Майкл. Ты помогаешь ему разобраться: красивый рисунок можно сохранить, а ложное обещание — убрать. Прежде чем делать новый плакат, Рози предлагает узнать, что Библия говорит о проверке услышанного."
+        },
+        {
+          "scene": 4,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You help write a correction for anyone who saw the first draft. Nobody needs to shame its designer. Their exhibition now includes a detective challenge: locate, read, compare, and correct. The strongest poster is the one that does not borrow authority it has not earned.",
+          "after": "‘What about the people who saw our first draft?’ Gracie asks. You help the team write a correction without shaming Michael. They turn their work into a detective challenge for visitors: find the source, read it, compare the words, and correct any mistake. This time visitors will be able to check the poster for themselves."
+        },
+        {
+          "scene": 4,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты помогаешь составить исправление для тех, кто видел черновик. Стыдить автора не нужно. Теперь на выставке есть задание исследователя: найти, прочитать, сравнить, исправить. Хороший плакат не приписывает себе чужой авторитет.",
+          "after": "«А как же те, кто уже видел первый вариант?» — спрашивает Грейси. Ты помогаешь команде написать исправление, не высмеивая Майкла. Из этой работы получается задание для посетителей: найти источник, прочитать, сравнить слова и исправить ошибку. Теперь посетители смогут сами проверить плакат."
+        }
+      ]
+    },
+    {
+      "lesson": 9,
+      "file": "data/why/lesson-09.json",
+      "title": {
+        "en": "What is God like?",
+        "ru": "Какой Бог?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Made Gracie’s love-and-justice question conversational and showed Michael applying it while repairing the sheet.",
+      "scene_actions_retained": "Colored display, Bible, birthday-cake correction, torn sheet and repaired display.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "0283c9f26350a27fe620cbf4f7598123ec4ea18c138c57b612ee140066ea9612",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Gracie pulls her yellow hood back and asks whether they must choose between a God who loves and a God who takes wrong seriously. You leave room for a better answer.",
+          "after": "Gracie pulls back her yellow hood and looks from one poster to the other. ‘Do we have to choose?’ she asks. ‘Can't God love people and still care when someone does wrong?’ You make room on the table for Rosie's Bible so they can explore the question before finishing the display."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Грейси откидывает жёлтый капюшон и спрашивает: неужели нужно выбирать между любящим Богом и Богом, Который серьёзно относится ко злу? Ты оставляешь место для ответа.",
+          "after": "Грейси откидывает жёлтый капюшон и смотрит с одного плаката на другой. «А обязательно выбирать? — спрашивает она. — Разве Бог не может любить людей и при этом серьёзно относиться к плохим поступкам?» Ты освобождаешь на столе место для Библии Рози, чтобы ребята сначала разобрались в вопросе."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "A younger child accidentally tears their best sheet. Michael starts to shout, then stops. They can name the damage truthfully and help repair it kindly. Their response does not make them perfectly like God, but it can reflect what they are learning.",
+          "after": "A younger child accidentally tears their best sheet. Michael starts to shout, then remembers what they have just read. ‘The paper is torn,’ he says more quietly. ‘Let's see if we can fix it.’ They do not have to pretend nothing happened in order to be kind. As they help repair the sheet, they begin to put their lesson into practice, though they are still far from God's perfection."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Малыш случайно рвёт лучший лист. Майкл хочет закричать, но останавливается. Можно честно назвать случившееся и доброжелательно помочь всё исправить. Это не делает детей совершенными, как Бог, но помогает поступать согласно тому, что они узнали.",
+          "after": "Малыш случайно рвёт лучший лист. Майкл начинает кричать, но вспоминает прочитанное. «Бумага порвалась, — говорит он уже тише. — Давай попробуем починить». Чтобы быть добрыми, не нужно делать вид, будто ничего не случилось. Помогая исправить лист, ребята пробуют поступать так, как только что учились, хотя до Божьего совершенства им ещё далеко."
+        }
+      ]
+    },
+    {
+      "lesson": 10,
+      "file": "data/why/lesson-10.json",
+      "title": {
+        "en": "How can God be Father, Son and Holy Spirit?",
+        "ru": "Как Бог может быть Отцом, Сыном и Святым Духом?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Turned three-gods/costume ideas into attributed child questions; gave Gracie a specific remaining question after the diagrams fail.",
+      "scene_actions_retained": "Riverside blanket, three cards, baptism account, rejected sketches and prayer.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "9299a73cf8db8be81c889043c873379afd9b9e8bb77d386339b277195b1203e5",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "en",
+          "before": "At a riverside picnic, Joseph opens his blue notebook to a question he has been saving. Christians speak of the Father, the Son, and the Holy Spirit. Does that mean three gods? Michael offers an idea: perhaps God changes costumes for different jobs.",
+          "after": "At a riverside picnic, Joseph opens his blue notebook to a question he has been saving. ‘We talk about the Father, the Son, and the Holy Spirit. Does that mean there are three gods?’ Michael thinks for a moment. ‘Or is it like one person changing costumes for different jobs?’ They turn to Rosie, hoping she will help them work out where their ideas go wrong."
+        },
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "На пикнике у реки Джозеф открывает синий блокнот с давно записанным вопросом. Христиане говорят об Отце, Сыне и Святом Духе. Значит ли это, что богов три? Майкл предполагает: может быть, Бог переодевается для разных дел?",
+          "after": "На пикнике у реки Джозеф открывает синий блокнот с давно записанным вопросом. «Мы говорим об Отце, Сыне и Святом Духе. Получается, богов три?» Майкл задумывается. «А может, это как один человек, который меняет костюмы для разных дел?» Они смотрят на Рози, надеясь вместе разобраться, где ошиблись."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "You help secure the cards before a breeze carries them away. Gracie admits she cannot explain everything about God's life. Their leader says an honest limit is better than an answer that quietly changes what Scripture teaches. Questions can remain open while they keep learning.",
+          "after": "You help hold down the cards before a breeze carries them away. ‘I understand why our pictures didn't work,’ Gracie says, ‘but I still can't imagine how God is three persons.’ Their leader tells her she can keep asking and learning without inventing a picture that changes what Scripture teaches. They leave their careful explanation on the cards."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Ты помогаешь прижать карточки, чтобы ветер их не унёс. Грейси признаётся, что не может объяснить всё о Божьей жизни. Наставник отвечает: лучше честно признать границы понимания, чем незаметно изменить смысл Писания. Можно продолжать учиться и задавать вопросы.",
+          "after": "Ты помогаешь прижать карточки, чтобы ветер их не унёс. «Я поняла, почему наши рисунки не подходят, — говорит Грейси. — Но всё равно не могу представить, как Бог может быть в трёх Лицах». Наставник отвечает, что можно продолжать спрашивать и учиться, не придумывая картинку, которая изменит смысл Писания. Ребята оставляют на карточках своё объяснение."
+        }
+      ]
+    },
+    {
+      "lesson": 11,
+      "file": "data/why/lesson-11.json",
+      "title": {
+        "en": "Does God know and care about me?",
+        "ru": "Бог знает меня и заботится обо мне?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Made Michael apologize for trying to remove sadness; connected Gracie’s request to call her friend with honest prayer.",
+      "scene_actions_retained": "Garden, folded drawing, shared seat, Joseph story cards, call and envelope.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "fe2a81ffe4501bd3ef7a212891a716632b2e99a4f3541db52e476390fc0ef98d",
+      "edits": [
+        {
+          "scene": 2,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael quietly takes back his quick advice. He had wanted to fix the feeling before listening to the person. You help Gracie unfold her drawing again.",
+          "after": "Michael turns to Gracie. ‘I'm sorry I said you should stop feeling sad. I didn't ask how much you miss her.’ He waits while you help Gracie unfold her drawing again. This time he is ready to listen instead of trying to make the sadness disappear with a quick answer."
+        },
+        {
+          "scene": 2,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майкл тихо берёт назад поспешный совет. Он хотел исправить чувство раньше, чем выслушать человека. Ты помогаешь Грейси снова развернуть рисунок.",
+          "after": "Майкл поворачивается к Грейси. «Прости, что я сказал тебе перестать грустить. Я ведь даже не спросил, как сильно ты по ней скучаешь». Он ждёт, пока ты помогаешь Грейси снова развернуть рисунок. Теперь он готов слушать, а не пытаться прогнать её грусть быстрым советом."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Gracie asks her mother to help arrange a call with her friend. Joseph saves a seat for her at the next garden meeting. Rosie suggests telling God both the worry and the hope, without pretending either one is smaller than it is.",
+          "after": "‘Could you help me call her?’ Gracie asks her mother. While they arrange a time, Joseph saves Gracie a seat at the next garden meeting. Rosie reminds her that she can tell God how much she misses her friend and how much she hopes they will stay close. She does not have to hide either feeling."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Грейси просит маму помочь созвониться с подругой. Джозеф оставляет ей место на следующей встрече в саду. Рози предлагает рассказать Богу и о тревоге, и о надежде, не притворяясь, будто всё это неважно.",
+          "after": "«Поможешь мне с ней созвониться?» — просит Грейси маму. Пока они выбирают время, Джозеф оставляет для Грейси место на следующей встрече в саду. Рози напоминает: Богу можно рассказать, как сильно скучаешь по подруге и как надеешься сохранить дружбу. Не нужно прятать ни грусть, ни надежду."
+        }
+      ]
+    },
+    {
+      "lesson": 12,
+      "file": "data/why/lesson-12.json",
+      "title": {
+        "en": "LAB: Can we explain God without shrinking him?",
+        "ru": "ЛАБОРАТОРИЯ: Как говорить о Боге, не упрощая Его?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Made the repair-shop choice a conversation; let Joseph explain why puzzle pieces mislead before setting the picture aside.",
+      "scene_actions_retained": "Practice cards, open Bible, birthday correction, puzzle picture and question box.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "b2e5c93a4a6afb5a76f7f685a598201d1e1b78e2dc627241469579ded147afc1",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael wants to throw the whole box away. Rosie suggests repairing the explanations instead. You take the first card to a table with an open Bible and space for questions.",
+          "after": "‘These are wrong. Shouldn't we throw them away?’ Michael asks. Rosie suggests taking a closer look first. ‘Maybe we can explain what went wrong and help someone understand.’ You carry the first card to the table beside the open Bible, ready to work through it together."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майкл хочет выбросить всю коробку. Рози предлагает исправить объяснения. Ты несёшь первую карточку к столу, где лежит открытая Библия и есть место для вопросов.",
+          "after": "«Здесь же ошибки. Может, выбросим всё?» — спрашивает Майкл. Рози предлагает сначала разобраться. «Мы могли бы объяснить, в чём ошибка, и помочь кому-нибудь понять». Ты несёшь первую карточку к столу с открытой Библией, чтобы проверить её вместе."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You help write a limit beneath the picture. The Father, Son, and Spirit are not three parts or three gods. A familiar object is not automatically a faithful explanation of God.",
+          "after": "‘I can see three pieces,’ Joseph says, ‘but each one is only part of the puzzle. That isn't what we mean about God.’ You help him write a note beneath the picture: the Father, Son, and Spirit are not three parts or three gods. The team sets the picture aside because it would make their explanation harder to understand, not easier."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты помогаешь подписать границу сравнения. Отец, Сын и Дух — не три части и не три бога. Знакомый предмет не обязательно помогает правильно объяснить, Кто такой Бог.",
+          "after": "«Три детали видно, — говорит Джозеф, — но каждая из них только часть пазла. А о Боге мы говорим не это». Ты помогаешь ему сделать подпись: Отец, Сын и Дух — не три части и не три бога. Ребята откладывают рисунок, потому что он скорее запутает слушателя, чем поможет понять."
+        }
+      ]
+    },
+    {
+      "lesson": 13,
+      "file": "data/why/lesson-13.json",
+      "title": {
+        "en": "Why is there a world at all?",
+        "ru": "Почему вообще существует мир?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Connected Gracie’s world-existence question to Scripture and Michael’s stopwatch observation to the notebook’s two headings.",
+      "scene_actions_retained": "Workshop, arrows/page turn, wheel/stopwatch, repaired bicycle and tree.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "07c2392e5f2172842afdf23f0e23b06454f07372da410e779ddb9e9d37d56585",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Gracie asks a different question: why is there a world with materials, people, and sunlight at all? You turn Joseph's page over, because this question needs more than another factory name.",
+          "after": "Gracie looks past the bicycle toward the workshop door. ‘But why is there a world at all, with people and materials and sunlight?’ she asks. You turn Joseph's page over to make room. Naming another factory will not answer this question, so Rosie reaches for her Bible."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Грейси спрашивает иначе: почему вообще есть мир с материалами, людьми и солнечным светом? Ты переворачиваешь страницу Джозефа: для такого вопроса мало назвать ещё один завод.",
+          "after": "Грейси смотрит мимо велосипеда на дверь мастерской. «А почему вообще есть мир — с людьми, материалами и солнечным светом?» — спрашивает она. Ты переворачиваешь страницу Джозефа, чтобы освободить место. Назвать ещё один завод здесь недостаточно, и Рози берётся за Библию."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael watches a wheel spin and asks which question his stopwatch can answer. It can measure the time of a turn. It cannot measure why anything exists rather than nothing.",
+          "after": "Michael watches a wheel spin. ‘My stopwatch can tell us how long one turn takes,’ he says. ‘But it can't tell us why there's a world here in the first place.’ Joseph adds both questions to his notebook. They can investigate how the wheel moves without losing sight of the bigger question that brought them to Scripture."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майкл смотрит на вращающееся колесо: на какой вопрос ответит секундомер? Он измерит время оборота, но не объяснит, почему вообще существует что-то, а не ничто.",
+          "after": "Майкл смотрит на вращающееся колесо. «Секундомер покажет, сколько длится один оборот, — говорит он. — Но не объяснит, почему вообще существует мир». Джозеф записывает оба вопроса. Можно исследовать движение колеса и при этом не забывать большой вопрос, с которым они обратились к Писанию."
+        }
+      ]
+    },
+    {
+      "lesson": 14,
+      "file": "data/why/lesson-14.json",
+      "title": {
+        "en": "Do science and faith have to fight?",
+        "ru": "Должны ли наука и вера спорить?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Dramatized the temptation to omit the empty pot and Joseph’s response to a failed prediction in complete paragraphs.",
+      "scene_actions_retained": "Pots, ruler, watering comparison, space for results and empty-pot photograph.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "9e6cb8a9166bfd4be5c3b116bf0ab94550fa40300b0218995d8c98f09af98e16",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Joseph has drawn a neat growing schedule for the garden windowsill. By Friday, every bean should have a green shoot. Friday arrives, and one pot still looks empty. Michael wants to leave it out of their report because it spoils the pattern. Gracie asks whether an honest investigation can hide an awkward pot.",
+          "after": "Joseph has drawn a neat growing schedule for the garden windowsill: by Friday, every bean should have a green shoot. But when Friday comes, one pot still looks empty. ‘Could we leave that one out of the report?’ Michael asks. Gracie looks at him. ‘Wouldn't that make it sound as if they all grew?’ Michael looks back at the pot he wanted to hide."
+        },
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Джозеф составил аккуратный график для огорода на подоконнике. К пятнице у каждой фасолины должен появиться зелёный росток. Но пятница наступила, а один горшок кажется пустым. Майкл хочет исключить его из отчёта: он портит картину. Грейси спрашивает, можно ли в честном исследовании прятать неудобный горшок.",
+          "after": "Джозеф составил аккуратный график для огорода на подоконнике: к пятнице у каждой фасолины должен появиться зелёный росток. Но в пятницу один горшок всё ещё кажется пустым. «Может, не будем писать о нём в отчёте?» — предлагает Майкл. Грейси смотрит на него. «Тогда получится, будто проросли все?» Майкл снова смотрит на горшок, который хотел спрятать."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "You help label a space for tomorrow's results instead of drawing an imaginary shoot. Gracie waters the assigned pots according to their plan. Joseph discovers that a corrected prediction can be useful: it invites better questions rather than ending the investigation.",
+          "after": "You help leave space for tomorrow's results instead of drawing a shoot that is not there. Gracie waters the assigned pots according to their plan. ‘My schedule was wrong,’ Joseph says, ‘but now we have something else to investigate.’ He keeps the original prediction so they can compare it with what actually grows."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Ты помогаешь оставить место для завтрашних результатов, а не рисуешь несуществующий росток. Грейси поливает горшки по плану. Джозеф замечает: исправленное предположение полезно — оно помогает задавать новые вопросы, а не прекращает исследование.",
+          "after": "Ты помогаешь оставить место для завтрашних результатов, а не рисовать росток, которого нет. Грейси поливает горшки по плану. «Мой прогноз не сбылся, — говорит Джозеф, — зато теперь есть что проверить». Он сохраняет первоначальную запись, чтобы сравнить её с тем, что вырастет на самом деле."
+        }
+      ]
+    },
+    {
+      "lesson": 15,
+      "file": "data/why/lesson-15.json",
+      "title": {
+        "en": "Could God do a miracle?",
+        "ru": "Может ли Бог совершить чудо?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Connected Michael’s overreaction to the cup with Rosie’s correction; returned to the display through his classification.",
+      "scene_actions_retained": "Cup/absorbent material, recovery report, storm reading and three display cards.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "f4439f68579d8fb2ddeeb6ce3945a21262c4ea1ad4400e8d31e92c14d50832f4",
+      "edits": [
+        {
+          "scene": 2,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Outside, someone tells the team about an unusual recovery, but has no details to share. Michael now wants to dismiss every miracle report as a trick. Rosie slows him down: exposing one demonstration does not explain every other event.",
+          "after": "Outside, someone tells the team about an unusual recovery but has no details to share. ‘Maybe all miracle stories are tricks too,’ Michael says. Rosie reminds him of the cup. ‘We found out how that demonstration worked. We haven't found out what happened here.’ Michael pauses before writing down a conclusion."
+        },
+        {
+          "scene": 2,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "На улице кто-то рассказывает о необычном выздоровлении, но подробностей не знает. Теперь Майкл готов назвать любой рассказ о чуде фокусом. Рози останавливает его: объяснение одного опыта не объясняет все остальные события.",
+          "after": "На улице кто-то рассказывает ребятам о необычном выздоровлении, но подробностей не знает. «Может, все рассказы о чудесах — тоже фокусы?» — говорит Майкл. Рози напоминает ему о стакане. «Мы узнали, как устроен тот опыт. А что случилось здесь, ещё не выяснили». Майкл останавливается, прежде чем записать вывод."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "You help Gracie replace the headline with three separate cards: explained demonstration, report needing investigation, and biblical sign pointing to Jesus. The cup belongs on the first card. Michael keeps his unanswered question instead of covering it with a confident guess.",
+          "after": "Back at the display, you help Gracie make three cards: an explained demonstration, a report that needs investigation, and a biblical sign pointing to Jesus. ‘The cup goes here,’ Michael says, placing it beside the first card. He leaves the recovery report with the questions they still need to ask, rather than filling in an answer they do not have."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Ты помогаешь Грейси сделать три карточки: объяснённый опыт, рассказ для проверки и библейское знамение, указывающее на Иисуса. Стакан относится к первой. Майкл оставляет вопрос открытым, а не прячет его за уверенной догадкой.",
+          "after": "Вернувшись к стенду, ты помогаешь Грейси сделать три карточки: объяснённый опыт, рассказ для проверки и библейское знамение, указывающее на Иисуса. «Стакан — сюда», — говорит Майкл и ставит его у первой карточки. Рассказ о выздоровлении он оставляет рядом с вопросами, которые ещё нужно задать, а не дописывает неизвестный ответ."
+        }
+      ]
+    },
+    {
+      "lesson": 16,
+      "file": "data/why/lesson-16.json",
+      "title": {
+        "en": "LAB: What does nature show—and not show?",
+        "ru": "ЛАБОРАТОРИЯ: Что природа показывает, а что — нет?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Gave Michael and Gracie a conversation about ordinary explanations and Joseph a reason for the notebook categories.",
+      "scene_actions_retained": "Pond path, green patch, nature-guide question, leaf count and litter collection.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "f84c84d2b841ddb28962dcab4223a7416c25cb5ee87bacbcf53d1a12e1711074",
+      "edits": [
+        {
+          "scene": 2,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael worries that finding an ordinary explanation will make the pond less wonderful. Gracie disagrees. Learning how living things grow can deepen their attention instead of spoiling their gratitude to the Creator.",
+          "after": "‘If it's something ordinary, won't it be less amazing?’ Michael asks. Gracie looks back at the green patch. ‘I'd still like to know how it grows. Knowing more might help us notice things we missed.’ They decide to keep their question for the nature guide and keep thanking the Creator for a world they can explore."
+        },
+        {
+          "scene": 2,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майкл боится, что обычное объяснение лишит пруд удивительности. Грейси не согласна. Узнавая, как растут живые организмы, можно внимательнее смотреть на мир и сильнее благодарить Творца.",
+          "after": "«А если это что-то обычное, разве станет так же интересно?» — спрашивает Майкл. Грейси снова смотрит на зелёное пятно. «Мне всё равно хочется узнать, как оно растёт. Может, тогда заметим то, чего раньше не видели». Они решают сохранить вопрос для справочника и благодарят Творца за мир, который можно изучать."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You help place a count of floating leaves in the first box. A statement about God's glory belongs in the second, grounded in Scripture. The boxes do not make faith unimportant; they stop the team from pretending different kinds of statements are identical.",
+          "after": "You help put the number of floating leaves in the first box. ‘We counted those ourselves,’ Joseph says. Then he places the statement about God's glory in the second box because they learned it from Scripture. Both belong in their notebook, but the labels will help them explain where each statement came from."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты помещаешь число плавающих листьев в первую рамку. Утверждение о Божьей славе относится ко второй и опирается на Писание. Рамки не уменьшают важность веры, а помогают не смешивать разные виды утверждений.",
+          "after": "Ты помогаешь записать число плавающих листьев в первую рамку. «Их мы сами посчитали», — говорит Джозеф. А слова о Божьей славе он помещает во вторую рамку, потому что об этом ребята прочитали в Писании. В блокноте есть место для обеих записей, а подписи помогут объяснить, откуда они взялись."
+        }
+      ]
+    },
+    {
+      "lesson": 17,
+      "file": "data/why/lesson-17.json",
+      "title": {
+        "en": "Why do I matter if I am not the best?",
+        "ru": "Почему я важен, даже если я не лучший?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Let Michael ask about the wide bridge entrance and appreciate it honestly, then invite the builder without demanding a better model.",
+      "scene_actions_retained": "Results, hidden card/ribbon, toy-wheelchair bridge, invitation and practice plan.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "e35415b2b7757195f7f759fe28234269af921cc160452fa8ea3a427e6149d5e1",
+      "edits": [
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You suggest something truer: ask about the bridge and listen. Michael learns that its wide entrance was designed for a toy wheelchair. He can appreciate that thoughtful detail without inventing a score or comparing the child with anyone else.",
+          "after": "You suggest asking about the bridge instead. ‘Why did you make the entrance so wide?’ Michael asks, ready to listen. The child explains that it is for a toy wheelchair. ‘You made room for it to get through,’ Michael says. He has found something genuinely thoughtful to appreciate without pretending to be a judge or inventing a prize."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты предлагаешь честнее: спросить о мосте и выслушать. Оказывается, широкий въезд сделан для игрушечной коляски. Майкл может оценить эту заботливую деталь, не выдумывая оценок и не сравнивая мальчика с другими.",
+          "after": "Ты предлагаешь сначала спросить о мосте. «А почему въезд такой широкий?» — интересуется Майкл и внимательно слушает. Мальчик объясняет: это для игрушечной коляски. «Ты сделал так, чтобы она могла проехать», — говорит Майкл. Он нашёл настоящую заботливую деталь, которую можно похвалить, не выдумывая призов и не изображая судью."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Michael invites the younger builder to their next workshop. He does not require a better bridge as the price of joining. Gracie brings out her ribbon, and the friends congratulate her without turning her success into a ranking of people.",
+          "after": "‘Would you like to build with us next time?’ Michael asks the younger child. He does not make a better bridge the price of joining them. Then Gracie brings out her ribbon. Michael congratulates her, and the others join in. They can celebrate what she made without deciding that winning makes her worth more than her friends."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Майкл приглашает мальчика на следующую мастерскую. Не нужно сначала построить лучший мост, чтобы прийти. Грейси достаёт ленту, и друзья поздравляют её, не превращая успех в оценку ценности людей.",
+          "after": "«Хочешь в следующий раз строить вместе с нами?» — спрашивает Майкл младшего мальчика. Чтобы прийти, не нужно сначала сделать мост получше. Грейси достаёт свою ленту. Майкл поздравляет её, и друзья присоединяются. Можно радоваться её работе, не считая, что победа делает её ценнее остальных."
+        }
+      ]
+    },
+    {
+      "lesson": 18,
+      "file": "data/why/lesson-18.json",
+      "title": {
+        "en": "Why did God give me a body?",
+        "ru": "Зачем Бог дал мне тело?"
+      },
+      "whole_story_read": [
+        "en",
+        "ru"
+      ],
+      "whole_story_reread": [
+        "en",
+        "ru"
+      ],
+      "scene_count": 4,
+      "paragraph_counts": {
+        "en": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ru": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "review": "Connected Gracie’s worry at the rest stop to the next scene; made the backpack boundary an explicit request and respectful response.",
+      "scene_actions_retained": "Warm hoodie, shaded water break, route card, backpack, shorter path and bench.",
+      "protected_fields_equal_baseline": true,
+      "scripture_object_equal_baseline": true,
+      "sha256": "84e68f5bd0035afc8c3f18b4d829ba005652ee446170947721b27967064ced0f",
+      "edits": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Joseph checks the route card: this is a shared outing, not a contest to ignore discomfort. They settle in the shade with water. Gracie worries that needing help has spoiled everyone's adventure.",
+          "after": "Joseph checks the route card while they settle in the shade with water. ‘We came to do this together,’ he reminds Gracie. She looks toward the unfinished trail. ‘Have I spoiled it for everyone?’ Their leader sits with the team to help her see why stopping to rest was the right thing to do."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Джозеф проверяет карту: это общая прогулка, а не соревнование по терпению. Они садятся в тени с водой. Грейси боится, что просьбой о помощи испортила приключение.",
+          "after": "Джозеф смотрит на карту, пока ребята устраиваются в тени с водой. «Мы ведь пошли гулять вместе», — напоминает он Грейси. Она смотрит на оставшийся маршрут. «Я всем испортила прогулку?» Руководитель садится рядом, чтобы объяснить, почему остановиться и отдохнуть было правильным решением."
+        },
+        {
+          "scene": 3,
+          "paragraph": 1,
+          "language": "en",
+          "before": "When they rise, Joseph reaches to adjust Gracie's backpack. She asks him to wait and let her do it. He steps back without arguing. Offering help does not mean deciding that another person's body or belongings are yours to manage.",
+          "after": "When they get up, Joseph reaches to adjust Gracie's backpack. ‘Wait, please. I'd like to do it myself,’ she says. ‘Okay,’ he answers, stepping back. He wanted to help, but listening to her is part of helping too. Her body and belongings are not his to manage without asking."
+        },
+        {
+          "scene": 3,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Когда ребята встают, Джозеф хочет поправить рюкзак Грейси. Она просит подождать: справится сама. Он отступает без спора. Предлагая помощь, нельзя распоряжаться чужим телом или вещами как своими.",
+          "after": "Когда ребята встают, Джозеф тянется поправить рюкзак Грейси. «Подожди, пожалуйста. Я хочу сама», — говорит она. «Хорошо», — отвечает он и отступает. Он хотел помочь, но для этого важно и выслушать её. Нельзя без спроса распоряжаться чужим телом или вещами."
+        }
+      ]
+    }
+  ]
+}

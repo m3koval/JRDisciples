@@ -1,0 +1,7 @@
+"use client";
+import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
+export default function WhyHomeFeature() {
+  const { language } = useLanguage();
+  return <Link href="/why" style={{ display: "block", position: "relative", overflow: "hidden", maxWidth: 1100, margin: "32px auto", minHeight: 280, borderRadius: 28, textDecoration: "none", background: "#102f35 url(/images/jr/why/chapter-01.webp) center 48% / cover", color: "#fff" }}><div style={{ minHeight: 280, padding: "36px clamp(24px, 5vw, 60px)", background: "linear-gradient(90deg,rgba(7,30,33,.97),rgba(7,30,33,.65) 60%,rgba(7,30,33,.1))" }}><span style={{ color: "#ffe5a3", fontWeight: 900, fontSize: 14 }}>{language === "ru" ? "НОВОЕ ПУТЕШЕСТВИЕ" : "A NEW EXPEDITION"}</span><h2 style={{ color: "#fff", fontFamily: "var(--font-nunito)", fontWeight: 1000, fontSize: "clamp(2.5rem, 7vw, 4.5rem)", lineHeight: 1.15, margin: "10px 0" }}>{language === "ru" ? "ПОЧЕМУ?!" : "WHY?!"}</h2><p style={{ maxWidth: 460, fontSize: 19, lineHeight: 1.5 }}>{language === "ru" ? "Большие вопросы. Библия, подсказки и настоящие открытия. Пойдём вместе?" : "Big questions. Bible adventures, hands-on clues, and real discoveries. Coming with us?"}</p><span style={{ display: "inline-block", marginTop: 18, color: "#ffe5a3", fontWeight: 900 }}>{language === "ru" ? "Открыть карту" : "Open the expedition map"} ↗</span></div></Link>;
+}

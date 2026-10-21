@@ -1,0 +1,23 @@
+{
+  "lesson": 13,
+  "verifiedVerses": {
+    "en": {
+      "url": "https://www.bible.com/bible/59/GEN.1.1.ESV",
+      "text": "In the beginning, God created the heavens and the earth.",
+      "referencePageTitle": "Genesis 1:1 (ESV) - In the beginning, God created the h - Bible App",
+      "ogDescription": "In the beginning, God created the heavens and the earth.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:53.188299+00:00"
+    },
+    "ru": {
+      "url": "https://www.bible.com/bible/167/GEN.1.1.RST",
+      "text": "В начале сотворил Бог небо и землю.",
+      "referencePageTitle": "Бытие 1:1 (Синод) - В начале сотворил Бог небо и землю. - Bible App",
+      "ogDescription": "В начале сотворил Бог небо и землю.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:53.642425+00:00"
+    }
+  },
+  "notes": "Exact rendered Bible.com verse strings retained, including punctuation and translation-specific numbering. Narrative is original fiction and biblical explanation, not additional Scripture quotation.",
+  "storyEnglishWords": 314
+}

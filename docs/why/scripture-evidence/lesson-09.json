@@ -1,0 +1,23 @@
+{
+  "lesson": 9,
+  "verifiedVerses": {
+    "en": {
+      "url": "https://www.bible.com/bible/59/EXO.34.6.ESV",
+      "text": "The LORD passed before him and proclaimed, “The LORD, the LORD, a God merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness",
+      "referencePageTitle": "Exodus 34:6 (ESV) - The LORD passed before him and proc - Bible App",
+      "ogDescription": "The LORD passed before him and proclaimed, “The LORD, the LORD, a God merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:52.351119+00:00"
+    },
+    "ru": {
+      "url": "https://www.bible.com/bible/167/EXO.34.6.RST",
+      "text": "И прошел Господь пред лицем его и возгласил: Господь, Господь, Бог человеколюбивый и милосердый, долготерпеливый и многомилостивый и истинный",
+      "referencePageTitle": "Исход 34:6 (Синод) - И прошел Господь пред лицем его и в - Bible App",
+      "ogDescription": "И прошел Господь пред лицем его и возгласил: Господь, Господь, Бог человеколюбивый и милосердый, долготерпеливый и многомилостивый и истинный",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:52.943423+00:00"
+    }
+  },
+  "notes": "Exact rendered Bible.com verse strings retained, including punctuation and translation-specific numbering. Narrative is original fiction and biblical explanation, not additional Scripture quotation.",
+  "storyEnglishWords": 307
+}

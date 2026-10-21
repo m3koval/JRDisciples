@@ -1,0 +1,208 @@
+{
+  "id": 30,
+  "chapter": 8,
+  "kind": "lesson",
+  "title": {
+    "en": "Can being good enough save me?",
+    "ru": "Можно ли заслужить спасение добрыми делами?"
+  },
+  "subtitle": {
+    "en": "The kindness scoreboard that could not rescue anyone",
+    "ru": "Таблица добрых дел, которая никого не спасает"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "Points on the refrigerator",
+        "ru": "Баллы на холодильнике"
+      },
+      "paragraphs": {
+        "en": [
+          "Gracie brings a homemade kindness chart to the explorers’ kitchen. Washing cups earns a star; sharing crayons earns two. Michael has already filled half a row. Joseph studies the chart.",
+          "“Does God love whoever has the most stars best?” he asks quietly. No one is quite sure what to say.",
+          "You notice Rosie’s empty row. She spent the morning sick at home. If stars measure who deserves rescue, what happens to someone who cannot keep up, or someone who has already done wrong?"
+        ],
+        "ru": [
+          "Грейси приносит на кухню таблицу добрых дел. За вымытые чашки — звёздочка, за карандаши, которыми поделился, — две. У Майкла уже полстроки. Джозеф рассматривает таблицу.",
+          "— Бог больше любит того, у кого больше звёздочек? — тихо спрашивает он. Никто не знает, что ответить.",
+          "Ты замечаешь пустую строку Рози. Утром она болела дома. Если звёзды решают, кто достоин спасения, что делать тому, кто не успевает или уже поступил плохо?"
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Read beyond the ribbon",
+        "ru": "Читаем дальше закладки"
+      },
+      "paragraphs": {
+        "en": [
+          "They open Ephesians 2:8–10. Salvation comes by grace through faith, not from our works, so nobody can boast. But the passage does not end by making goodness pointless: those made new in Christ are created for good works.",
+          "Joseph draws an arrow after Gift, pointing toward Grateful life. Michael had drawn the arrow the other way around. They erase it together. Trusting Jesus is receiving his rescue, not submitting a winning score to force God’s approval."
+        ],
+        "ru": [
+          "Они открывают Ефесянам 2:8–10. Спасение приходит по благодати через веру, не от дел, чтобы никто не хвалился. Но добро не становится бессмысленным: обновлённые во Христе созданы для добрых дел.",
+          "Джозеф рисует стрелку от «Дара» к «Благодарной жизни». У Майкла стрелка шла наоборот. Они вместе стирают её. Доверять Иисусу — принимать Его спасение, а не предъявлять победный счёт ради Божьего одобрения."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Three different envelopes",
+        "ru": "Три разных конверта"
+      },
+      "paragraphs": {
+        "en": [
+          "Their leader lays out three everyday examples: agreed payment for a job, a birthday gift freely given, and a thank-you note written afterward. These examples help distinguish wages, gift, and gratitude; none contains everything about God’s saving grace.",
+          "Gracie places her kindness chart beside the thank-you note. “I can still use it to remember who needs help,” she says. The chart can encourage a useful habit, but it cannot buy forgiveness. Rosie’s illness never made her worth less, and Michael’s stars never meant he could save himself."
+        ],
+        "ru": [
+          "Руководитель предлагает три примера: условленную оплату работы, подарок ко дню рождения и благодарственную записку после него. Они помогают отличить заработок, дар и благодарность, но не объясняют всю Божью благодать.",
+          "Грейси кладёт таблицу рядом с запиской. «Она ещё может напоминать мне, кому нужна помощь», — говорит Грейси. Таблица поможет выработать хорошую привычку, но прощения не купит. Болезнь не сделала Рози менее ценной, а звёздочки Майкла не означают, что он может спасти себя сам."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A different kind of list",
+        "ru": "Совсем другой список"
+      },
+      "paragraphs": {
+        "en": [
+          "The team replaces the scoreboard with a practical list: cups to wash, soup to carry, someone to invite. Names disappear from the ranking column. Michael washes a cup that will never earn a star, and Gracie carries soup to Rosie’s chair.",
+          "You choose a task and join them. There is still plenty of good work to do, but no one needs to count stars to feel important. They can help because they have received God’s love, rather than trying to earn salvation with every washed cup."
+        ],
+        "ru": [
+          "Вместо таблицы рекордов появляется список нужд: вымыть чашки, принести суп, кого-то пригласить. Колонка рейтинга исчезает. Майкл моет чашку без всякой звёздочки, а Грейси несёт суп к стулу Рози.",
+          "Ты выбираешь дело и присоединяешься к ребятам. Полезной работы по-прежнему много, но больше не нужно считать звёздочки, чтобы чувствовать себя важным. Теперь помощь становится ответом на Божью любовь, а не попыткой заслужить спасение каждой вымытой чашкой."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Ephesians 2:8 (ESV)",
+      "ru": "Послание к Ефесянам 2:8 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God",
+      "ru": "Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар"
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/EPH.2.8.ESV",
+      "ru": "https://www.bible.com/bible/167/EPH.2.8.RST"
+    }
+  },
+  "activity": {
+    "type": "sort",
+    "title": {
+      "en": "Gift, or payment?",
+      "ru": "Дар или плата?"
+    },
+    "intro": {
+      "en": "Place each card in the category that fits its meaning.",
+      "ru": "Найди для каждой карточки подходящую группу."
+    },
+    "groups": [
+      {
+        "id": "observation",
+        "label": {
+          "en": "Receiving grace and responding",
+          "ru": "Принять благодать и ответить"
+        }
+      },
+      {
+        "id": "claim",
+        "label": {
+          "en": "Trying to earn rescue",
+          "ru": "Пытаться заработать спасение"
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Trust Jesus rather than my score.",
+          "ru": "Доверять Иисусу, а не своему счёту."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "God must forgive me because I won the kindness contest.",
+          "ru": "Бог обязан простить меня за победу в конкурсе доброты."
+        },
+        "group": "claim"
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Help my neighbor because God has loved me.",
+          "ru": "Помогать ближнему, потому что Бог полюбил меня."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "My chores purchase a place with God.",
+          "ru": "Моя работа покупает место рядом с Богом."
+        },
+        "group": "claim"
+      }
+    ],
+    "hint": {
+      "en": "Look at why the person is doing good, not just whether a chore is useful.",
+      "ru": "Смотри не только на пользу дела, но и на его причину."
+    },
+    "success": {
+      "en": "Good works follow grace; they do not purchase it.",
+      "ru": "Добрые дела следуют за благодатью, а не покупают её."
+    }
+  },
+  "fieldMission": {
+    "en": "Do one helpful thing without announcing a score. Thank Jesus for salvation as a gift, not a wage.",
+    "ru": "Сделай одно полезное дело, не объявляя свой счёт. Поблагодари Иисуса за спасение как дар, а не заработок."
+  },
+  "prayer": {
+    "en": "Jesus, I cannot earn your rescue. Thank you for grace; teach me the good works of a grateful life.",
+    "ru": "Иисус, я не могу заслужить Твоё спасение. Спасибо за благодать; научи добрым делам из благодарности."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Bible anchor: Ephesians 2:8 (ESV)",
+        "ru": "Библейский текст: Послание к Ефесянам 2:8 (Синодальный перевод)"
+      },
+      "url": "https://www.bible.com/bible/59/EPH.2.8.ESV",
+      "supports": {
+        "en": "Ephesians 2:8–10 distinguishes salvation by grace through faith from earning it by works, while giving good works their place in the saved life.",
+        "ru": "Ефесянам 2:8–10 отличает спасение по благодати через веру от заслуг и показывает место добрых дел в новой жизни."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    },
+    {
+      "title": {
+        "en": "Russian Synodal anchor",
+        "ru": "Текст Синодального перевода"
+      },
+      "url": "https://www.bible.com/bible/167/EPH.2.8.RST",
+      "supports": {
+        "en": "Exact Russian text for the displayed verse.",
+        "ru": "Точный русский текст приведённого стиха."
+      },
+      "limits": {
+        "en": "Verse numbering can differ between translations, especially in Psalms.",
+        "ru": "Нумерация стихов в переводах может отличаться, особенно в Псалтири."
+      }
+    }
+  ],
+  "adultNote": {
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read all three verses, Ephesians 2:8–10, and Titus 3:4–7. Do not reduce faith to a meritorious achievement or imply that grace makes obedience irrelevant.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Ефесянам 2:8–10 целиком и Титу 3:4–7. Не превращайте веру в заслугу и не внушайте, будто благодать отменяет послушание."
+  }
+}
