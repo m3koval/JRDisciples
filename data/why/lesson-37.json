@@ -1,0 +1,206 @@
+{
+  "id": 37,
+  "chapter": 10,
+  "kind": "lesson",
+  "title": {
+    "en": "Why pray if God already knows?",
+    "ru": "Зачем молиться, если Бог уже всё знает?"
+  },
+  "subtitle": {
+    "en": "The letter that was not a weather report",
+    "ru": "Письмо, которое не было сводкой погоды"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "Everything already known",
+        "ru": "Всё уже известно"
+      },
+      "paragraphs": {
+        "en": [
+          "Rain taps the windows of the explorers’ cabin. Their planned nature walk is canceled, and Michael sits beside a packed backpack. The leader invites everyone to pray. Michael asks why they should describe the rain to God when God already knows about every cloud and every disappointed child.",
+          "Joseph starts a list of facts God must already know. The list fills half a page. Explorer, sit with them: Michael’s question deserves more than an instruction to pray harder."
+        ],
+        "ru": [
+          "Дождь стучит в окна домика исследователей. Прогулку отменили, и Майкл сидит возле собранного рюкзака. Руководитель предлагает помолиться. Майкл спрашивает: зачем рассказывать Богу о дожде, если Он знает каждую тучу и каждого расстроенного ребёнка?",
+          "Джозеф перечисляет известные Богу факты. Список занимает полстраницы. Исследователь, сядь рядом: на вопрос Майкла нужен ответ, а не просто совет молиться усерднее."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "More than sending facts",
+        "ru": "Не просто передать сведения"
+      },
+      "paragraphs": {
+        "en": [
+          "Gracie takes out a postcard for her grandmother. “Grandma knows I’m at camp, but I still want to tell her about our bird shelter,” she says. “And I want to tell her I miss her.” Michael looks at the card. He is beginning to see that talking with someone you love is about more than giving them new information.",
+          "Rosie opens Matthew 6:7–13. Jesus says the Father knows what people need, then teaches them to pray. God’s knowledge is a reason for trust, not a reason for silence."
+        ],
+        "ru": [
+          "Грейси достаёт открытку для бабушки. «Бабушка знает, что я в лагере. Но мне всё равно хочется рассказать ей про наше укрытие для птиц, — говорит она. — И написать, что я скучаю». Майкл смотрит на открытку. Он начинает понимать: с близким человеком разговаривают не только ради новостей.",
+          "Рози открывает Матфея 6:7–13. Иисус говорит, что Отец знает нужды людей, а затем учит их молиться. Божье знание — причина доверять, а не молчать."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "An honest conversation",
+        "ru": "Честный разговор"
+      },
+      "paragraphs": {
+        "en": [
+          "They trace the prayer Jesus teaches: honor for God, his kingdom and will, daily needs, forgiveness, and help against evil. Prayer turns their attention toward God and teaches dependence. They are not searching for a password that makes him follow their schedule.",
+          "With that in mind, Michael writes a simple request for another chance to explore outdoors. “I’m sorry I complained so rudely,” he then tells the leader. Gracie thanks God for their shelter, and Joseph praises him for his care. They speak about what is really on their minds rather than trying to sound like grown-up preachers."
+        ],
+        "ru": [
+          "Они разбирают молитву, которой учит Иисус: почтение к Богу, Его Царство и волю, ежедневные нужды, прощение и помощь против зла. Молитва обращает внимание к Богу и учит полагаться на Него. Это не пароль, заставляющий Его выполнять наше расписание.",
+          "Майкл думает об этом и записывает простую просьбу: пусть у них будет ещё возможность погулять. Потом он обращается к руководителю: «Простите, что я так грубо жаловался». Грейси благодарит Бога за домик, а Джозеф славит Его за заботу. Они говорят о том, что у них на сердце, и не стараются подражать взрослым проповедникам."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Still raining, still heard",
+        "ru": "Дождь идёт, Бог слышит"
+      },
+      "paragraphs": {
+        "en": [
+          "They read Philippians 4:6–7 and bring their concerns with thanksgiving. Outside, rain still runs down the glass. Inside, the team moves the nature investigation to a covered table, where fallen leaves can be studied with magnifiers. Michael helps make space instead of guarding his disappointment.",
+          "You place Gracie’s postcard beside the outgoing mail. Prayer is not useful because God lacks information. It matters because he welcomes his children to trust him, seek his will, and share real needs in his presence."
+        ],
+        "ru": [
+          "Они читают Филиппийцам 4:6–7 и приносят тревоги с благодарностью. По стеклу всё ещё течёт дождь. Команда переносит исследование к столу под крышей: опавшие листья можно рассматривать через лупы. Майкл помогает освободить место вместо того, чтобы держаться за обиду.",
+          "Ты кладёшь открытку Грейси к почте. Молитва нужна не потому, что Богу не хватает сведений. Он приглашает Своих детей доверять Ему, искать Его волю и открыто говорить о нуждах в Его присутствии."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Philippians 4:6 (ESV)",
+      "ru": "Послание к Филиппийцам 4:6 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God.",
+      "ru": "Не заботьтесь ни о чем, но всегда в молитве и прошении с благодарением открывайте свои желания пред Богом"
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/PHP.4.6.ESV",
+      "ru": "https://www.bible.com/bible/167/PHP.4.6.RST"
+    }
+  },
+  "activity": {
+    "type": "sort",
+    "title": {
+      "en": "What is this prayer doing?",
+      "ru": "О чём эта молитва?"
+    },
+    "intro": {
+      "en": "Place each card in the category that fits its meaning.",
+      "ru": "Найди для каждой карточки подходящую группу."
+    },
+    "groups": [
+      {
+        "id": "observation",
+        "label": {
+          "en": "Praise or thanks",
+          "ru": "Хвала или благодарность"
+        }
+      },
+      {
+        "id": "claim",
+        "label": {
+          "en": "Confession or request",
+          "ru": "Признание греха или просьба"
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "God, you are wise and good.",
+          "ru": "Боже, Ты мудрый и добрый."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Please help me speak kindly when plans change.",
+          "ru": "Помоги говорить по-доброму, когда планы меняются."
+        },
+        "group": "claim"
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Thank you for a dry place and caring friends.",
+          "ru": "Спасибо за сухой домик и заботливых друзей."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "Forgive the cruel words I spoke.",
+          "ru": "Прости мои жестокие слова."
+        },
+        "group": "claim"
+      }
+    ],
+    "hint": {
+      "en": "Notice whether the words honor or thank God, or bring a wrong or a need to him.",
+      "ru": "Заметь: слова славят Бога и благодарят или приносят Ему грех и нужду?"
+    },
+    "success": {
+      "en": "Prayer includes delight, gratitude, honesty, and dependence—not just news for God.",
+      "ru": "В молитве есть радость, благодарность, честность и доверие, а не только новости для Бога."
+    }
+  },
+  "fieldMission": {
+    "en": "Pray in your own words: name something about God you praise, a gift, a wrong to confess, and a need. You may keep it private.",
+    "ru": "Помолись своими словами: прославь Бога, поблагодари за дар, признай грех и назови нужду. Это может остаться личной молитвой."
+  },
+  "prayer": {
+    "en": "Father, you already know me. Thank you for welcoming my words; teach me to trust you and seek your will.",
+    "ru": "Отец, Ты уже знаешь меня. Спасибо, что принимаешь мои слова. Научи доверять Тебе и искать Твою волю."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Bible anchor: Philippians 4:6 (ESV)",
+        "ru": "Библейский текст: Послание к Филиппийцам 4:6 (Синодальный перевод)"
+      },
+      "url": "https://www.bible.com/bible/59/PHP.4.6.ESV",
+      "supports": {
+        "en": "Philippians 4:6–7 invites prayer, requests and thanksgiving, with God's peace guarding believers.",
+        "ru": "Филиппийцам 4:6–7 призывает к молитве, прошению и благодарению и говорит о Божьем мире, хранящем верующих."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    },
+    {
+      "title": {
+        "en": "Russian Synodal anchor",
+        "ru": "Текст Синодального перевода"
+      },
+      "url": "https://www.bible.com/bible/167/PHP.4.6.RST",
+      "supports": {
+        "en": "Exact Russian text for the displayed verse.",
+        "ru": "Точный русский текст приведённого стиха."
+      },
+      "limits": {
+        "en": "Verse numbering can differ between translations, especially in Psalms.",
+        "ru": "Нумерация стихов в переводах может отличаться, особенно в Псалтири."
+      }
+    }
+  ],
+  "adultNote": {
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read Matthew 6:7–13 and Philippians 4:6–7. The postcard illustrates conversation, not the whole nature of prayer. Do not promise immediate calm or treat a prayer pattern as a formula.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Матфея 6:7–13 и Филиппийцам 4:6–7. Открытка поясняет смысл общения, но не всю сущность молитвы. Не обещайте мгновенного спокойствия и не превращайте образец молитвы в формулу."
+  }
+}

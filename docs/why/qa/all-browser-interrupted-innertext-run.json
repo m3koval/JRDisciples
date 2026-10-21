@@ -1,0 +1,1869 @@
+{
+  "started": "2026-10-20T16:53:58.988Z",
+  "base": "http://127.0.0.1:3141",
+  "method": "Fresh browser contexts; all actions through UI. No storage injection. Exact rendered copy checked against lesson fixtures, not external Scripture verification.",
+  "cases": [
+    {
+      "id": 1,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 1,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 2,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   \"Aribbon blocks the park footbridge, spoiling the explorers' shortcut to the pond. Michael thinks it probably looks strong enough. Gracie points to a loose board. You wait with them while their adult leader asks the park worker whether another path is open.\",\n-   \"A ribbon blocks the park footbridge, spoiling the explorers' shortcut to the pond. Michael thinks it probably looks strong enough. Gracie points to a loose board. You wait with them while their adult leader asks the park worker whether another path is open.\",\n    'Joseph draws three empty boxes in his notebook. Today the team needs to tell a wish, a reason, and a trusting action apart. Looking confident will not repair a bridge.'\n  ]\n"
+    },
+    {
+      "id": 2,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'Упруда Рози открывает Иоанна 20. Они читают о Фоме: его не было с учениками, когда явился Иисус. Позже Иисус встретил его, и Фома ответил верой. Иоанн объясняет, зачем записал знамения: чтобы читатели верили в Иисуса.',\n-   'У пруда Рози открывает Иоанна 20. Они читают о Фоме: его не было с учениками, когда явился Иисус. Позже Иисус встретил его, и Фома ответил верой. Иоанн объясняет, зачем записал знамения: чтобы читатели верили в Иисуса.',\n    'Дети — не Фома, а карта парка не доказывает воскресение. Но рассказ помогает увидеть: христианская вера не требует отказываться от свидетельств и разумных оснований.'\n  ]\n"
+    },
+    {
+      "id": 3,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 3,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 4,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 4,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 5,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 5,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 6,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 6,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'Сучителем они открывают цифровой Свиток Исаии Израильского музея. Это фотография настоящей еврейской копии, созданной до жизни Иисуса, а не почерк пророка. Музей отмечает сходства с поздними текстами, а также различия, исправления и варианты чтения.',\n-   'С учителем они открывают цифровой Свиток Исаии Израильского музея. Это фотография настоящей еврейской копии, созданной до жизни Иисуса, а не почерк пророка. Музей отмечает сходства с поздними текстами, а также различия, исправления и варианты чтения.',\n    'Джозеф чуть не записывает английскую подсказку как точный перевод свитка. Учитель замечает ловушку: обычная подсказка переводит поздний масоретский текст, а не непосредственно изображённый свиток.'\n  ]\n"
+    },
+    {
+      "id": 7,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 7,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'Вбиблиотеке Майкл пытается чинить велосипед по стихотворению. Грейси показывает на руководство по ремонту на другой полке. Стихи не бесполезны — просто у них другая задача. Ты помогаешь отнести книги к круглому столу.',\n-   'В библиотеке Майкл пытается чинить велосипед по стихотворению. Грейси показывает на руководство по ремонту на другой полке. Стихи не бесполезны — просто у них другая задача. Ты помогаешь отнести книги к круглому столу.',\n    'Рози открывает содержание фиолетовой Библии. Перед ними собрание книг, а не один длинный текст, написанный за один вечер.'\n  ]\n"
+    },
+    {
+      "id": 8,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   \"Acolorful poster for the team's exhibition arrives from Michael's practice design folder. It claims that God promises a trouble-free day to anyone who smiles. A Bible reference is printed below. Gracie likes the bright colors, but Rosie cannot remember reading that promise.\",\n-   \"A colorful poster for the team's exhibition arrives from Michael's practice design folder. It claims that God promises a trouble-free day to anyone who smiles. A Bible reference is printed below. Gracie likes the bright colors, but Rosie cannot remember reading that promise.\",\n    \"You turn the poster over. Michael explains that he invented it for today's source-checking challenge. It is a deliberately false practice claim, not a verse to memorize or share.\"\n  ]\n"
+    },
+    {
+      "id": 8,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 9,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'Ayounger child accidentally tears their best sheet. Michael starts to shout, then stops. They can name the damage truthfully and help repair it kindly. Their response does not make them perfectly like God, but it can reflect what they are learning.',\n-   'A younger child accidentally tears their best sheet. Michael starts to shout, then stops. They can name the damage truthfully and help repair it kindly. Their response does not make them perfectly like God, but it can reflect what they are learning.',\n    'You help attach the repaired sheet. The team finishes with praise, not a wish list. They thank God for his faithful character, even before asking him for anything they would like to receive.'\n  ]\n"
+    },
+    {
+      "id": 9,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 10,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 10,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 11,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 11,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 12,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   \"Ayounger visitor asks how one God can be three persons. Rosie explains what they have learned, then admits she cannot picture God's life completely. Joseph leaves a blank line for the visitor's next question rather than covering it with a confident slogan.\",\n-   \"A younger visitor asks how one God can be three persons. Rosie explains what they have learned, then admits she cannot picture God's life completely. Joseph leaves a blank line for the visitor's next question rather than covering it with a confident slogan.\",\n    'The repair shop closes with fewer flashy pictures and better sentences. Michael discovers that admitting a limit does not erase what they do know. You carry the question box back to the shelf, ready for another conversation.'\n  ]\n"
+    },
+    {
+      "id": 12,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.click: Timeout 7000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: 'Русский', exact: true })\n"
+    },
+    {
+      "id": 13,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 13,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'Ввелосипедной мастерской Майкл задаёт цепочку вопросов. Кто собрал велосипед? Кто изготовил металл? Откуда взялись материалы? Джозеф заполняет страницу стрелками до самого края. За дверью вечерний свет ложится на деревья и облака.',\n-   'В велосипедной мастерской Майкл задаёт цепочку вопросов. Кто собрал велосипед? Кто изготовил металл? Откуда взялись материалы? Джозеф заполняет страницу стрелками до самого края. За дверью вечерний свет ложится на деревья и облака.',\n    'Грейси спрашивает иначе: почему вообще есть мир с материалами, людьми и солнечным светом? Ты переворачиваешь страницу Джозефа: для такого вопроса мало назвать ещё один завод.'\n  ]\n"
+    },
+    {
+      "id": 14,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 14,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.click: Timeout 7000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: 'Русский', exact: true })\n"
+    },
+    {
+      "id": 15,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 15,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "storyScenes": 4,
+      "sources": true,
+      "error": "locator.click: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /usr/bin/google-chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-K3WjwE --remote-debugging-pipe --no-startup-window\n<launched> pid=2048312\n[pid=2048312][err] [2048312:2048337:1020/125404.096854:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT\n[pid=2048312][err] [2048312:2048312:1020/125408.048952:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125408.049313:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125408.065378:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125408.065807:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125408.953395:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125408.953660:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125416.226914:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125416.227215:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125416.235732:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125416.236028:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.808469:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.808984:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.813405:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.816639:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.818472:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.818957:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.820083:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.820930:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.823439:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.824143:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048337:1020/125430.602438:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT\n[pid=2048312][err] [2048312:2048312:1020/125433.163071:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125433.163662:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125433.173721:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125433.174650:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125439.996342:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125439.996920:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125446.078941:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125446.079491:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125446.080607:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125446.081332:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125446.100876:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125446.103571:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312] <gracefully close start>\nCall log:\n  - waiting for locator('.why-activity').locator('[data-item=\"a\"]')\n    - locator resolved to <button data-item=\"a\" class=\"why-choice\" aria-pressed=\"false\">…</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n      - waiting 100ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - performing click action\n"
+    },
+    {
+      "id": 16,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 16,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 17,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.click: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /usr/bin/google-chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-K3WjwE --remote-debugging-pipe --no-startup-window\n<launched> pid=2048312\n[pid=2048312][err] [2048312:2048337:1020/125404.096854:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT\n[pid=2048312][err] [2048312:2048312:1020/125408.048952:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125408.049313:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125408.065378:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125408.065807:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125408.953395:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125408.953660:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125416.226914:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125416.227215:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125416.235732:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125416.236028:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.808469:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.808984:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.813405:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.816639:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.818472:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.818957:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.820083:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.820930:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.823439:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125421.824143:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048337:1020/125430.602438:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT\n[pid=2048312][err] [2048312:2048312:1020/125433.163071:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125433.163662:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125433.173721:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125433.174650:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125439.996342:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125439.996920:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125446.078941:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125446.079491:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125446.080607:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125446.081332:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125446.100876:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_StartIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312][err] [2048312:2048312:1020/125446.103571:ERROR:content/browser/browser_main_loop.cc:277] <unknown>: impl_get_EndIndex: assertion 'ATK_IS_HYPERLINK (link)' failed\n[pid=2048312] <gracefully close start>\nCall log:\n  - waiting for locator('.why-player-actions .why-primary')\n    - locator resolved to <button class=\"why-button why-primary\">Continue →</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n      - waiting 100ms\n"
+    },
+    {
+      "id": 17,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 18,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 18,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 19,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 19,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 20,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 20,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 21,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 21,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 22,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 22,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 23,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 23,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 24,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 24,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 25,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 25,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 26,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 26,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 27,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 27,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 28,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 28,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 29,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 29,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 30,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 30,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 31,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 31,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 32,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 32,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 33,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 33,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 34,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 34,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 35,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 35,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 36,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 36,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 37,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 37,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 38,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 38,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 39,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 39,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 40,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 40,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 41,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 41,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 42,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 42,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 43,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 43,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 44,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 44,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 45,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 45,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 46,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 46,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 47,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 47,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 48,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 48,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 49,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 49,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 50,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 50,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 51,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 51,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 52,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    },
+    {
+      "id": 52,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "page.goto: Target page, context or browser has been closed"
+    }
+  ],
+  "layouts": [],
+  "pageErrors": [],
+  "art": [
+    {
+      "id": 1,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-02-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-02-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-1.webp&w=750&q=75",
+          "ready": false
+        },
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Fp46.jpg&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-2.webp&w=3840&q=75",
+          "ready": false
+        },
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Fp46.jpg&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-3.webp&w=3840&q=75",
+          "ready": false
+        },
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Fp46.jpg&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-4.webp&w=3840&q=75",
+          "ready": false
+        },
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Fp46.jpg&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-1.webp&w=750&q=75",
+          "ready": false
+        },
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Fp46.jpg&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-07-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-07-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-08-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-07-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-08-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-07-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-08-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-08-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-12-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-12-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-12-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-13-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-13-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-13-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-13-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-14-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-14-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-14-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-14-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-16-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-16-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-16-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-16-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-17-scene-1.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:3141/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-17-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    }
+  ],
+  "contentGate": "RUNNING",
+  "visualGate": "PENDING",
+  "finished": "2026-10-20T16:55:15.936Z"
+}

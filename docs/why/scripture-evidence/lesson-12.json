@@ -1,0 +1,23 @@
+{
+  "lesson": 12,
+  "verifiedVerses": {
+    "en": {
+      "url": "https://www.bible.com/bible/59/DEU.6.4.ESV",
+      "text": "“Hear, O Israel: The LORD our God, the LORD is one.",
+      "referencePageTitle": "Deuteronomy 6:4 (ESV) - “Hear, O Israel: The LORD our God,  - Bible App",
+      "ogDescription": "“Hear, O Israel: The LORD our God, the LORD is one.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:51.163187+00:00"
+    },
+    "ru": {
+      "url": "https://www.bible.com/bible/167/DEU.6.4.RST",
+      "text": "Слушай, Израиль: Господь, Бог наш, Господь един есть",
+      "referencePageTitle": "Второзаконие 6:4 (Синод) - Слушай, Израиль: Господь, Бог наш,  - Bible App",
+      "ogDescription": "Слушай, Израиль: Господь, Бог наш, Господь един есть",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:51.346502+00:00"
+    }
+  },
+  "notes": "Exact rendered Bible.com verse strings retained, including punctuation and translation-specific numbering. Narrative is original fiction and biblical explanation, not additional Scripture quotation.",
+  "storyEnglishWords": 311
+}

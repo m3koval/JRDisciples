@@ -1,0 +1,11 @@
+# All-lesson runner notes
+
+- Scope: only test runner and docs/why/qa artifacts; no lesson JSON or components edited.
+- Port 3141 was initially offline (curl 000, no listener). Started `npm run dev -- --hostname 127.0.0.1 --port 3141`; verified HTTP 200 before browser execution. Server owned by this QA session, process tool ID proc_db453388919a.
+- Initial harness run failed because the application has a wrapper main plus main.why-player; selector corrected. Raw evidence retained as all-browser-initial-harness-failure.json.
+- Second run uncovered Chromium innerText dropping whitespace after CSS first-letter (e.g. `A ribbon` -> `Aribbon`, `У пруда` -> `Упруда`). DOM paragraph text is now compared using textContent, not innerText; this does not alter lesson content. Interrupted run retained as all-browser-interrupted-innertext-run.json. Parent should visually inspect single-letter drop caps if typography is suspect.
+- Language selection uses actual EN / Русский UI. Subsequent navigations explicitly await the persisted main lang, avoiding hydration races that re-clicked the toggle during navigation.
+- Four independent fresh contexts test 52 lessons in both languages. Correct/wrong answers, scene navigation, notebook, reflection and completion/reload are real UI interactions. No passing localStorage injection.
+- Optional .why-lab-next is supported before assessment. Exploratory observatory/copy-lab game mechanics are NOT covered by this new runner (existing focused runner remains relevant).
+- Active full run process: proc_a177a4856e66. At bounded handoff it had 65 passed, 1 failed, 34 pending, 4 running; zero page errors. Do not claim the incomplete run passed. It continues writing incremental evidence and then executes phone/tablet samples. The one EN lesson-05 failure read the previous scene heading immediately after a click (React rerender race); the on-disk runner now waits up to five seconds for exact text, but that fix is NOT in the active process and needs rerun verification. No application engine fix was made or proven necessary.
+- Missing scene art is counted independently of content success. Mobile screenshots/readiness are not art-direction approval. Pending/running entries must never be reported as passes.

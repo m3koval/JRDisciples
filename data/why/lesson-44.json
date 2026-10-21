@@ -1,0 +1,192 @@
+{
+  "id": 44,
+  "chapter": 11,
+  "kind": "lab",
+  "title": {
+    "en": "LAB: What does serving look like?",
+    "ru": "ЛАБОРАТОРИЯ: Как выглядит служение?"
+  },
+  "subtitle": {
+    "en": "The delivery plan with room for every helper",
+    "ru": "План помощи, в котором каждому есть место"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "The tallest tower",
+        "ru": "Самая высокая башня"
+      },
+      "paragraphs": {
+        "en": [
+          "Michael stacks empty delivery boxes in the church kitchen until they tower above his green shirt. The explorers are preparing welcome packs for families moving into nearby flats. He announces that whoever carries the most boxes should lead. Joseph looks down at his sore wrist.",
+          "Gracie tries lifting a stack, but the top box slides. You catch it before it reaches the floor. Their project needs more than a champion carrier; it needs a better plan."
+        ],
+        "ru": [
+          "Майкл складывает пустые коробки в церковной кухне. Башня уже выше его зелёной рубашки. Исследователи готовят подарочные наборы семьям, которые переезжают в соседние дома. Майкл предлагает назначить главным того, кто унесёт больше коробок. Джозеф смотрит на больное запястье.",
+          "Грейси поднимает стопку, но верхняя коробка съезжает. Ты ловишь её у самого пола. Для помощи нужен не чемпион по переноске, а хороший план."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Not spare parts",
+        "ru": "Не запасные детали"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie opens her purple Bible to 1 Corinthians 12:12–27. Paul describes believers as one body with different members. A hand cannot dismiss a foot as unnecessary. Gifts differ, but belonging does not depend on having the most noticeable task.",
+          "“Could I check the addresses instead of carrying boxes?” Joseph asks. “Would that still be helping?” Michael looks at the labels. Even the strongest carrier needs to know which door to go to. He lowers his stack and asks the others what each of them can offer."
+        ],
+        "ru": [
+          "Рози открывает фиолетовую Библию на 1 Коринфянам 12:12–27. Павел описывает верующих как одно тело с разными членами. Рука не может объявить ногу ненужной. Дары различаются, но принадлежность к церкви не зависит от заметности работы.",
+          "«А я могу проверять адреса вместо того, чтобы носить коробки? — спрашивает Джозеф. — Это ведь тоже помощь?» Майкл смотрит на подписи: даже самому сильному нужно знать, к какой двери нести набор. Он опускает коробки и спрашивает остальных, кто чем может помочь."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Ask before packing",
+        "ru": "Сначала спросить"
+      },
+      "paragraphs": {
+        "en": [
+          "Their leader has asked the families what would help, rather than guessing. One family needs kitchen towels; another already has plenty. The team reads Mark 10:45. Jesus served and gave his life to rescue others. Their little project cannot repeat his saving work, but it can follow his generous direction.",
+          "You help make a task board: check requests, pack suitable supplies, check labels, deliver with adults. Joseph chooses seated checking; Gracie counts towels. Nobody assigns him a pretend job just to look inclusive."
+        ],
+        "ru": [
+          "Руководитель заранее спросил семьи, что им нужно. Одной нужны кухонные полотенца, у другой их достаточно. Команда читает Марка 10:45. Иисус служил и отдал Свою жизнь ради спасения людей. Их маленькое дело не повторяет Его подвиг, но помогает следовать Его примеру щедрости.",
+          "Ты помогаешь составить план: проверить просьбы, собрать нужное, сверить подписи, доставить со взрослыми. Джозеф выбирает проверку за столом, Грейси считает полотенца. Ему доверяют настоящее дело, а не работу для вида."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "The quiet correction",
+        "ru": "Незаметное исправление"
+      },
+      "paragraphs": {
+        "en": [
+          "Just before departure, Joseph spots two swapped labels. “These packs would have gone to the wrong families,” Michael says, exchanging them. “Thanks for checking.” Rosie makes sure the walkway is clear, and Gracie asks whether anyone needs a break. The adults leave with fewer packs than Michael first imagined, but each one now matches a family’s needs.",
+          "Explorer, notice what changed: their question is no longer who looks most important. It is whether people receive loving help. Even tidying the kitchen belongs to that answer."
+        ],
+        "ru": [
+          "Перед выходом Джозеф замечает две перепутанные подписи. «Эти наборы попали бы не в те семьи, — говорит Майкл и меняет подписи местами. — Спасибо, что проверил». Рози освобождает проход, а Грейси спрашивает, нужен ли кому-нибудь отдых. Взрослые увозят меньше наборов, чем сначала задумал Майкл, зато теперь в каждом есть то, что нужно семье.",
+          "Исследователь, заметь перемену: теперь команда спрашивает не о том, кто важнее всех, а о том, получат ли люди заботливую помощь. Даже уборка кухни становится частью ответа."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Mark 10:45 (ESV)",
+      "ru": "От Марка святое благовествование 10:45 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "For even the Son of Man came not to be served but to serve, and to give his life as a ransom for many.”",
+      "ru": "Ибо и Сын Человеческий не для того пришел, чтобы Ему служили, но чтобы послужить и отдать душу Свою для искупления многих."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/MRK.10.45.ESV",
+      "ru": "https://www.bible.com/bible/167/MRK.10.45.RST"
+    }
+  },
+  "activity": {
+    "type": "sequence",
+    "title": {
+      "en": "Plan the welcome delivery",
+      "ru": "Спланируй доставку"
+    },
+    "intro": {
+      "en": "Put these steps in the order the investigation needs.",
+      "ru": "Расположи шаги в нужном для исследования порядке."
+    },
+    "items": [
+      {
+        "id": "b",
+        "text": {
+          "en": "Agree on useful, accessible roles and pack the requested supplies.",
+          "ru": "Выбрать посильные полезные роли и собрать нужные вещи."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Check each packed box against its request and address label.",
+          "ru": "Сверить содержимое каждой коробки с просьбой и адресом."
+        }
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "Send the checked packs with the adult delivery team.",
+          "ru": "Передать проверенные наборы взрослым для доставки."
+        }
+      },
+      {
+        "id": "a",
+        "text": {
+          "en": "Ask the families what supplies they need.",
+          "ru": "Узнать у семей, какие вещи нужны."
+        }
+      }
+    ],
+    "correctOrder": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "hint": {
+      "en": "You cannot check a packed box before packing it, or pack thoughtfully without knowing the request.",
+      "ru": "Нельзя проверить собранную коробку до сборки или собрать нужное, не узнав просьбу."
+    },
+    "success": {
+      "en": "Different contributions work together when real needs guide the plan.",
+      "ru": "Разные способности помогают общему делу, когда план учитывает настоящие нужды."
+    }
+  },
+  "fieldMission": {
+    "en": "With a trusted adult, ask about one small real need. Choose a suitable role, help with permission, and thank another helper.",
+    "ru": "С надёжным взрослым узнай об одной небольшой нужде. Выбери посильную роль, помоги с разрешения и поблагодари другого помощника."
+  },
+  "prayer": {
+    "en": "Jesus, thank you for serving and saving us. Teach me to notice needs and value other helpers.",
+    "ru": "Иисус, спасибо за Твоё служение и спасение. Научи замечать нужды и ценить других помощников."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Bible anchor: Mark 10:45 (ESV)",
+        "ru": "Библейский текст: От Марка святое благовествование 10:45 (Синодальный перевод)"
+      },
+      "url": "https://www.bible.com/bible/59/MRK.10.45.ESV",
+      "supports": {
+        "en": "Mark 10:45 grounds Christian service in Jesus' own service and self-giving, not popularity.",
+        "ru": "Марка 10:45 связывает христианское служение с примером и жертвой Иисуса, а не с популярностью."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    },
+    {
+      "title": {
+        "en": "Russian Synodal anchor",
+        "ru": "Текст Синодального перевода"
+      },
+      "url": "https://www.bible.com/bible/167/MRK.10.45.RST",
+      "supports": {
+        "en": "Exact Russian text for the displayed verse.",
+        "ru": "Точный русский текст приведённого стиха."
+      },
+      "limits": {
+        "en": "Verse numbering can differ between translations, especially in Psalms.",
+        "ru": "Нумерация стихов в переводах может отличаться, особенно в Псалтири."
+      }
+    }
+  ],
+  "adultNote": {
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read 1 Corinthians 12:12–27 in its church context. The project illustrates mutual service, not the full meaning of spiritual gifts. Mark 10:45 distinguishes Jesus’ unique saving ransom from our response. Adults handle addresses and deliveries; do not collect children’s personal data.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте 1 Коринфянам 12:12–27 в контексте жизни церкви. Проект показывает взаимную помощь, но не раскрывает всё учение о духовных дарах. Марка 10:45 отличает уникальное искупление Иисуса от нашего ответа. Адресами и доставкой занимаются взрослые; не собирайте личные данные детей."
+  }
+}

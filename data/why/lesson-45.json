@@ -1,0 +1,184 @@
+{
+  "id": 45,
+  "chapter": 12,
+  "kind": "lesson",
+  "title": {
+    "en": "What if my friend believes another religion—or none?",
+    "ru": "А если мой друг другой веры — или совсем не верит?"
+  },
+  "subtitle": {
+    "en": "A shared telescope and an honest conversation",
+    "ru": "Общий телескоп и честный разговор"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "A question under the stars",
+        "ru": "Вопрос под звёздами"
+      },
+      "paragraphs": {
+        "en": [
+          "At the neighborhood astronomy evening, Michael steadies a telescope while Gracie adjusts its little stool. Their friend Nina notices Rosie’s purple Bible beside the star chart and asks why the explorers follow Jesus. Nina says her family does not believe in God.",
+          "Joseph opens his blue notebook, ready with a list of arguments. But Nina is still speaking. Explorer, stay beside the telescope: the first challenge tonight is not finding a planet. It is hearing a person."
+        ],
+        "ru": [
+          "На соседском вечере астрономии Майкл придерживает телескоп, а Грейси поправляет маленький табурет. Их подруга Нина замечает фиолетовую Библию Рози рядом с картой неба и спрашивает, почему они следуют за Иисусом. Нина говорит, что её семья не верит в Бога.",
+          "Джозеф открывает синий блокнот со списком доводов. Но Нина ещё говорит. Исследователь, останься у телескопа: первая задача сегодня — не найти планету, а услышать человека."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Listen to this friend",
+        "ru": "Услышь именно этого друга"
+      },
+      "paragraphs": {
+        "en": [
+          "“What do you think about it, Nina?” Rosie asks, giving her time to answer. Nina says she wonders why people suffer. “I have questions about that too,” Michael admits. He wants to tell her what he believes, but he will not pretend to have a quick explanation for someone else’s pain.",
+          "Their leader helps them read 1 Peter 3:15–16. Christians are called to explain their hope with gentleness and respect. Listening is not surrendering a belief; it helps them answer the question actually being asked."
+        ],
+        "ru": [
+          "«А ты сама что думаешь, Нина?» — спрашивает Рози и даёт ей время ответить. Нина говорит, что не понимает, почему люди страдают. «У меня тоже есть об этом вопросы», — признаётся Майкл. Ему хочется рассказать о своей вере, но он не будет делать вид, будто может сразу объяснить чужую боль.",
+          "С руководителем они читают 1 Петра 3:15–16. Христиане призваны объяснять свою надежду с кротостью и уважением. Слушать — не значит отказываться от веры. Это помогает ответить на настоящий вопрос собеседника."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Clear without being cruel",
+        "ru": "Ясно и без жестокости"
+      },
+      "paragraphs": {
+        "en": [
+          "Joseph wonders whether kindness means saying that every belief teaches the same thing. Rosie turns to John 14:6. Jesus makes a definite claim about coming to the Father through him. Christians can say what they believe without pretending that important differences disappear.",
+          "“My hope is in Jesus because he died for us and rose again,” Michael explains. He is sharing his hope, not trying to show that he is cleverer than Nina. “Would you like to read a Gospel together sometime?” he asks. “I’d rather think about it first,” she replies, and Michael accepts her answer."
+        ],
+        "ru": [
+          "Джозеф спрашивает: быть добрым — значит говорить, что все веры учат одному? Рози открывает Иоанна 14:6. Иисус ясно говорит о пути к Отцу через Него. Христиане могут объяснять свои убеждения, не делая вид, будто важных различий нет.",
+          "«Я надеюсь на Иисуса, потому что Он умер за нас и воскрес», — объясняет Майкл. Он делится надеждой, а не старается показать, что умнее Нины. «Хочешь как-нибудь почитать Евангелие вместе?» — спрашивает он. «Я бы сначала подумала», — отвечает Нина. Майкл принимает её ответ."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Her turn still matters",
+        "ru": "Её очередь остаётся"
+      },
+      "paragraphs": {
+        "en": [
+          "A bright point finally comes into focus. Joseph steps aside so Nina can look first, just as they had promised before the conversation. Friendship has not become a prize she must win by agreeing. Gracie lends her the star chart and asks which constellation she wants to find next.",
+          "You help hold the red torch steady. The explorers still believe Jesus is Lord. Their words can be truthful, their questions open, and their shared evening genuinely kind."
+        ],
+        "ru": [
+          "Наконец в телескопе видна яркая точка. Джозеф уступает Нине первую очередь, как они обещали ещё до разговора. Дружба не стала наградой за согласие. Грейси даёт ей карту звёзд и спрашивает, какое созвездие искать дальше.",
+          "Ты держишь красный фонарик. Исследователи по-прежнему верят, что Иисус — Господь. Они могут говорить правду, честно спрашивать и проводить вечер с настоящей добротой."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "1 Peter 3:15 (ESV)",
+      "ru": "Первое послание Петра 3:15 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect",
+      "ru": "Господа Бога святите в сердцах ваших; будьте всегда готовы всякому, требующему у вас отчета в вашем уповании, дать ответ с кротостью и благоговением."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/1PE.3.15.ESV",
+      "ru": "https://www.bible.com/bible/167/1PE.3.15.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Nina wants to think",
+      "ru": "Нина хочет подумать"
+    },
+    "intro": {
+      "en": "Use the discoveries from the story to decide.",
+      "ru": "Вспомни открытия из истории и выбери ответ."
+    },
+    "question": {
+      "en": "Nina declines the Gospel invitation for now. Which response keeps both conviction and friendship?",
+      "ru": "Нина пока не принимает приглашение читать Евангелие. Как сохранить и верность убеждениям, и дружбу?"
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Tell her every belief means exactly the same thing.",
+          "ru": "Сказать, что все убеждения означают совершенно одно и то же."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Cancel her telescope turn until she agrees to read.",
+          "ru": "Не пускать её к телескопу, пока она не согласится читать."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Respect her answer, keep the promised turn, and remain willing to explain your hope.",
+          "ru": "Уважить её ответ, сохранить обещанную очередь и быть готовым объяснить свою надежду."
+        }
+      }
+    ],
+    "correctId": "c",
+    "hint": {
+      "en": "Neither pressure nor pretending differences do not exist is respectful friendship.",
+      "ru": "Ни давление, ни притворство, будто различий нет, не помогают уважительной дружбе."
+    },
+    "success": {
+      "en": "Gentleness does not erase Christian conviction, and conviction does not cancel a neighbor’s dignity.",
+      "ru": "Кротость не отменяет христианских убеждений, а убеждения не отменяют достоинства ближнего."
+    }
+  },
+  "fieldMission": {
+    "en": "With a willing friend or trusted adult, practice asking what they believe and listening without interrupting. Explain one reason for your hope only if they welcome the conversation.",
+    "ru": "С другом или надёжным взрослым, согласным поговорить, потренируйся спрашивать об убеждениях и слушать без перебивания. Объясни одну причину своей надежды, если собеседник хочет об этом говорить."
+  },
+  "prayer": {
+    "en": "Jesus, help me speak truth gently, listen carefully, and love my neighbors without making friendship a bargain.",
+    "ru": "Иисус, помоги говорить истину кротко, внимательно слушать и любить ближних, не превращая дружбу в сделку."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Bible anchor: 1 Peter 3:15 (ESV)",
+        "ru": "Библейский текст: Первое послание Петра 3:15 (Синодальный перевод)"
+      },
+      "url": "https://www.bible.com/bible/59/1PE.3.15.ESV",
+      "supports": {
+        "en": "1 Peter 3:15–16 joins giving reasons for Christian hope with gentleness, respect and a good conscience.",
+        "ru": "1 Петра 3:15–16 соединяет объяснение христианской надежды с кротостью, уважением и доброй совестью."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    },
+    {
+      "title": {
+        "en": "Russian Synodal anchor",
+        "ru": "Текст Синодального перевода"
+      },
+      "url": "https://www.bible.com/bible/167/1PE.3.15.RST",
+      "supports": {
+        "en": "Exact Russian text for the displayed verse.",
+        "ru": "Точный русский текст приведённого стиха."
+      },
+      "limits": {
+        "en": "Verse numbering can differ between translations, especially in Psalms.",
+        "ru": "Нумерация стихов в переводах может отличаться, особенно в Псалтири."
+      }
+    }
+  ],
+  "adultNote": {
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read John 14:6, 1 Peter 3:15–16, and Luke 10:27 together. Do not stereotype religious or nonreligious families, require children to debate, or treat a friend as a conversion project. The story leaves suffering questions open for careful follow-up.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Вместе прочитайте Иоанна 14:6, 1 Петра 3:15–16 и Луки 10:27. Не навязывайте стереотипы о верующих и неверующих семьях, не заставляйте детей спорить и не превращайте друга в проект обращения. Вопросы о страдании оставлены для внимательного дальнейшего разговора."
+  }
+}

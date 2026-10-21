@@ -1,0 +1,1806 @@
+{
+  "scope": "WHY chapters 1–4, lessons 01–16, four scenes each; read-only visual/content audit except these QA deliverables",
+  "method": "Viewed all four supplied 16-frame contact sheets with native vision, read actual scene text from all 16 JSON files, and opened 17 suspicious/repaired individual frames. Sheet tool displayed at 800x520; individual frames at 960x536. Compared narrative actions to English scene text; exact EN/RU text is retained per record, but this is not a translation-accuracy audit.",
+  "limits": "Not browser/rendered QA, not full-resolution pixel/anatomy certification for every scene, no asset generation or app/data edits. Labels below contact-sheet frames excluded from in-art text audit.",
+  "count": 64,
+  "individual_frames_opened": 17,
+  "counts": {
+    "pass": 42,
+    "cosmetic": 16,
+    "blocker": 6
+  },
+  "records": [
+    {
+      "scene": "01.1",
+      "chapter": 1,
+      "source": "data/why/lesson-01.json",
+      "scene_title": {
+        "en": "A question under the stars",
+        "ru": "Вопрос под звёздами"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Michael's green sleeve brushed the telescope as a bright point slipped out of view. Joseph found it again and drew its position in his blue notebook. Rosie held her purple Bible, while Gracie pulled her yellow hood against the evening breeze.",
+          "You have joined their backyard expedition. Gracie wonders whether seeing beautiful stars is the same thing as seeing God. Nobody laughs. That question deserves more than a quick cheerful answer."
+        ],
+        "ru": [
+          "Зелёный рукав Майкла задел телескоп, и яркая точка исчезла. Джозеф снова нашёл её и отметил положение в синем блокноте. Рози держала фиолетовую Библию, а Грейси натянула жёлтый капюшон: вечер был прохладным.",
+          "Ты присоединяешься к экспедиции во дворе. Грейси спрашивает: видеть красивые звёзды — это то же самое, что видеть Бога? Никто не смеётся. Такой вопрос заслуживает вдумчивого ответа."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-01-scene-1.webp",
+      "image_sha256": "1e45961c439c531c5e8497efb7769717fa431f0d5a7be0ff6475ca4a1556cbe1",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Michael at telescope, Joseph writes, Rosie holds book, Gracie in yellow hood; clear star-viewing setup.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "01.2",
+      "chapter": 1,
+      "source": "data/why/lesson-01.json",
+      "scene_title": {
+        "en": "Follow the movement",
+        "ru": "Проследим движение"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Beside the telescope, Michael starts a row of wooden dominoes. They follow the movement backward: this piece fell because another struck it; his finger started this particular row. Gracie asks whether naming one more domino explains why the whole row is here.",
+          "Their teacher helps them take the question beyond the model. Trees depend on sunlight, and stars depend on matter and physical conditions. None explains its own existence. One reason Christians give for God is this: a world of dependent things needs a source that does not need anything else to exist. Christians call that uncreated source God."
+        ],
+        "ru": [
+          "Рядом с телескопом Майкл запускает ряд деревянных костяшек. Ребята прослеживают движение назад: эту костяшку толкнула соседняя, а ряд запустил палец Майкла. Грейси спрашивает: если назвать ещё одну костяшку, станет ли понятно, откуда взялся весь ряд?",
+          "Учитель помогает выйти за пределы модели. Деревьям нужен солнечный свет, а звёздам — вещество и определённые условия. Они не объясняют сами, почему существуют. Вот один довод христиан: миру, в котором всё от чего-то зависит, нужен источник, который Сам ни от чего не зависит. Ему не нужно получать жизнь от кого-то другого. Христиане называют этот несотворённый источник Богом."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-01-scene-2.webp",
+      "image_sha256": "febd1a99ca3ebc4b45bceea17f21aa9ddd56131cd4b1db9c81fd09a80caa1601",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Michael starts a wooden domino row beside telescope; the specific causal-model action is visible.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "01.3",
+      "chapter": 1,
+      "source": "data/why/lesson-01.json",
+      "scene_title": {
+        "en": "Three different windows",
+        "ru": "Три разных окна"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Rosie opens Psalm 19. Its picture of the heavens declaring God's glory gives their looking a direction: creation points beyond itself to its Maker. Then their teacher shows Acts 17:24–25, where Paul describes God as giving life to all without needing us to keep him alive. The team draws three windows: observation, reasoning, and God's revelation.",
+          "Michael asks who made God. Their teacher returns to the reason: they did not say everything needs a maker. They asked what explains things that depend on something else. God is not one more dependent thing. This argument gives them a reason to explore belief in a Creator; learning who God is will also mean listening to what he reveals about himself."
+        ],
+        "ru": [
+          "Рози открывает Псалом 18. Небеса возвещают Божью славу: творение указывает не только на себя, но и на Творца. Затем учитель показывает Деяния 17:24–25. Павел говорит о Боге, Который даёт всем жизнь, а Сам не нуждается в нашей помощи, чтобы существовать. Ребята рисуют три окна: наблюдение, рассуждение и Божье откровение.",
+          "Майкл спрашивает: а кто создал Бога? Учитель возвращается к доводу. Они не говорили, что абсолютно всему нужен создатель. Они спрашивали об основании того, что зависит от другого. Бог — не ещё одна зависимая вещь. Это довод в пользу веры в Творца. А чтобы узнать, какой Он, нужно слушать, что Он открывает о Себе."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-01-scene-3.webp",
+      "image_sha256": "9e69536268387fe5c2aefc54578c7fef5063e4afe7ea6a987fe97da7ccb1b9f3",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Three window-like cards on table and Rosie reading support the three-source discussion; teacher omitted, not a contradiction.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "01.4",
+      "chapter": 1,
+      "source": "data/why/lesson-01.json",
+      "scene_title": {
+        "en": "Leave room in the notebook",
+        "ru": "Оставим место в блокноте"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Clouds cover the bright point before Gracie finishes her sketch. She leaves an empty patch instead of inventing stars. Beside it, Joseph writes her question for another evening. You help carry the telescope inside rather than treating the missing answer as a defeat.",
+          "The team thanks God for a world worth exploring. Joseph writes their first reason: dependent things point us toward an independent Creator. Gracie adds a question about knowing him personally. Their notebook now holds both a reason to believe and a trail to follow, not just a list of things they cannot know."
+        ],
+        "ru": [
+          "Облака закрывают яркую точку, прежде чем Грейси заканчивает рисунок. Она оставляет пустое место, а не придумывает звёзды. Джозеф записывает её вопрос для следующего вечера. Ты помогаешь унести телескоп: отсутствие полного ответа ещё не поражение.",
+          "Ребята благодарят Бога за мир, который интересно исследовать. Джозеф записывает первый довод: зависимый мир указывает на независимого Творца. Грейси добавляет вопрос: как узнать Его лично? Теперь в блокноте есть и основание верить, и путь дальнейшего поиска, а не только список неизвестного."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-01-scene-4.webp",
+      "image_sha256": "d681cd1fb640b81a4c66d229b7dfc68ae386150dac536bff4b614fc97067ffe7",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Cloudy sky and notebook writing match interrupted observing. Telescope remains set up rather than being carried inside; acceptable earlier beat.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "02.1",
+      "chapter": 1,
+      "source": "data/why/lesson-02.json",
+      "scene_title": {
+        "en": "The closed footbridge",
+        "ru": "Закрытый мостик"
+      },
+      "source_paragraphs": {
+        "en": [
+          "A ribbon blocks the park footbridge, spoiling the explorers' shortcut to the pond. Michael thinks it probably looks strong enough. Gracie points to a loose board. You wait with them while their adult leader asks the park worker whether another path is open.",
+          "Joseph draws three empty boxes in his notebook. Today the team needs to tell a wish, a reason, and a trusting action apart. Looking confident will not repair a bridge."
+        ],
+        "ru": [
+          "Лента перекрыла мостик в парке: короткой дороги к пруду больше нет. Майклу кажется, что мост ещё крепкий. Грейси показывает на расшатанную доску. Ты ждёшь вместе с ребятами, пока взрослый руководитель спрашивает работника парка о другом пути.",
+          "Джозеф рисует в блокноте три клетки. Сегодня нужно отличить желание, основание и действие с доверием. Уверенный вид не починит мост."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-02-scene-1.webp",
+      "image_sha256": "ac93643fba0b363bf4c0f0f462d49c030eb954873bbe5aa8bb137d1b6f408227",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Red closure ribbon and broken/uneven footbridge boards visibly establish the blocked route; adults present behind children.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "02.2",
+      "chapter": 1,
+      "source": "data/why/lesson-02.json",
+      "scene_title": {
+        "en": "A reason to listen",
+        "ru": "Почему стоит послушать"
+      },
+      "source_paragraphs": {
+        "en": [
+          "The worker shows their leader an updated park map and points out the inspected path around the reeds. The group has reasons to listen: this person works here, knows the closure, and offers information they can check. They do not know every board in the park.",
+          "Gracie notices the difference. Guessing would mean choosing a route without checking. Trust means relying on someone, and wise trust asks whether that person is trustworthy."
+        ],
+        "ru": [
+          "Работник показывает руководителю обновлённую карту и указывает проверенную дорожку вдоль камышей. Есть причины его послушать: он работает здесь, знает о ремонте и даёт сведения, которые можно проверить. Но ребята не знают каждую доску в парке.",
+          "Грейси замечает разницу. Угадывать — значит выбирать путь без проверки. Доверять — значит полагаться на кого-то. Разумное доверие спрашивает: надёжен ли тот, кому мы верим?"
+        ]
+      },
+      "image": "public/images/jr/why/lesson-02-scene-2.webp",
+      "image_sha256": "dac6ea2cab6caffea1e53c85ed428a82f747a31b1c309c48693a02eb7b61ff6e",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Uniformed park worker points to map as children watch; trustworthy-route information matches.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "02.3",
+      "chapter": 1,
+      "source": "data/why/lesson-02.json",
+      "scene_title": {
+        "en": "Thomas wanted to know",
+        "ru": "Фома хотел убедиться"
+      },
+      "source_paragraphs": {
+        "en": [
+          "At the pond, Rosie opens John 20. They read about Thomas, who had not been with the other disciples when Jesus appeared. Later Jesus met him, and Thomas responded in faith. John explains why he recorded signs: so readers might believe in Jesus.",
+          "The children are not Thomas, and a park map is not evidence for resurrection. Yet the story challenges the idea that Christian faith means refusing to consider testimony or reasons."
+        ],
+        "ru": [
+          "У пруда Рози открывает Иоанна 20. Они читают о Фоме: его не было с учениками, когда явился Иисус. Позже Иисус встретил его, и Фома ответил верой. Иоанн объясняет, зачем записал знамения: чтобы читатели верили в Иисуса.",
+          "Дети — не Фома, а карта парка не доказывает воскресение. Но рассказ помогает увидеть: христианская вера не требует отказываться от свидетельств и разумных оснований."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-02-scene-3.webp",
+      "image_sha256": "df530681d89a0ae9ebb42eb845b1603b0e857726517834c05ca6c6c33df38c3c",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Rosie reads at outdoor table with map and lantern; pond is not clear, but no Thomas reenactment replaces the modern reading.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "02.4",
+      "chapter": 1,
+      "source": "data/why/lesson-02.json",
+      "scene_title": {
+        "en": "Walking, not just nodding",
+        "ru": "Не только кивать"
+      },
+      "source_paragraphs": {
+        "en": [
+          "They return along the open path with their leader. Michael had agreed that the map was reliable; now he actually follows it. Joseph fills the last box with an action. You help him avoid writing that trust makes every journey easy or removes every question.",
+          "Back home, Gracie asks which Gospel they could read together next. She wants to know Jesus, not collect enough facts to win an argument. Reasons can support trust; trust reaches toward a person."
+        ],
+        "ru": [
+          "Обратно ребята идут с руководителем по открытой дорожке. Майкл согласился, что карте можно доверять, а теперь действительно следует ей. Джозеф заполняет последнюю клетку действием. Ты помогаешь ему не писать, будто доверие устраняет все трудности и вопросы.",
+          "Дома Грейси спрашивает, какое Евангелие можно почитать вместе. Она хочет узнать Иисуса, а не собрать факты ради победы в споре. Разумные доводы помогают доверять. Но Грейси хочет не просто знать доводы, а узнать Самого Иисуса."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-02-scene-4.webp",
+      "image_sha256": "e1c7eb4dde28297a0994d16b5493e833131731cd4919c820e32163fbdebb6168",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Michael follows map on forest trail with adult behind group; walking rather than merely agreeing is clear.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "03.1",
+      "chapter": 1,
+      "source": "data/why/lesson-03.json",
+      "scene_title": {
+        "en": "Something in the pocket",
+        "ru": "Что-то в кармане"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Rain sends the explorers into the church craft room. While Michael builds a cardboard question box, Gracie folds one small paper again and again. Joseph offers a pencil, but she pushes the paper into her yellow pocket. She worries that asking something difficult might disappoint everybody.",
+          "You sit beside her without trying to peek. Rosie explains that the box is not a test. Nobody earns a place on the team by having perfectly tidy thoughts."
+        ],
+        "ru": [
+          "Дождь загоняет исследователей в церковную комнату для занятий. Майкл делает коробку для вопросов, а Грейси снова и снова складывает листок. Джозеф предлагает карандаш, но она прячет бумагу в карман жёлтой толстовки: вдруг трудный вопрос всех разочарует?",
+          "Ты садишься рядом, не пытаясь подсмотреть. Рози объясняет: коробка — не контрольная. Место в команде не нужно заслуживать безупречными мыслями."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-03-scene-1.webp",
+      "image_sha256": "8e747f1137749baf5f5432af188abadbf1196e6431158b47faf889aedc342ef0",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Question-mark box and folded paper activity fit craft session; Gracie's guarded pocket/refusal beat is not evident in cheerful group.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "03.2",
+      "chapter": 1,
+      "source": "data/why/lesson-03.json",
+      "scene_title": {
+        "en": "An honest cry",
+        "ru": "Честная просьба"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Rosie asks their teacher to read Mark 9 with them. A father brings his suffering son to Jesus. His words hold belief and a plea for help together. Jesus does not need the father to disguise his need with a polished speech.",
+          "Gracie unfolds one corner of her paper. Her question concerns a prayer that seemed unanswered. The teacher does not promise that this passage explains every painful experience or guarantees the answer Gracie wants."
+        ],
+        "ru": [
+          "Рози просит учителя прочитать с ними Марка 9. Отец приводит к Иисусу страдающего сына. В его словах одновременно звучат вера и просьба о помощи. Ему не нужно скрывать свою нужду за красивой речью.",
+          "Грейси разворачивает уголок листка. Она спрашивает о молитве, которая словно осталась без ответа. Учитель не обещает, что этот отрывок объяснит любую боль или гарантирует желаемый ответ."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-03-scene-2.webp",
+      "image_sha256": "5b3972b6d85c04120509f3154f6db48e9280ed25d19a39dab709bc9c0db996a0",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Adult teacher and Rosie read with children seated closely; modern discussion, not a fabricated ancient healing scene.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "03.3",
+      "chapter": 1,
+      "source": "data/why/lesson-03.json",
+      "scene_title": {
+        "en": "Listening is real work",
+        "ru": "Слушать — тоже труд"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Michael starts to offer three fast explanations, then notices Gracie's face. He stops and asks what happened. Joseph writes the question exactly as she means it, instead of changing it into an easier one. Their teacher admits that some answers will take more conversation.",
+          "You help choose a quiet time to return to the question. Following Jesus includes learning, praying, and receiving help. It does not require pretending uncertainty never visits a believer."
+        ],
+        "ru": [
+          "Майкл начинает выдавать три быстрых объяснения, но замечает лицо Грейси. Он останавливается и спрашивает, что случилось. Джозеф записывает её настоящий вопрос, не заменяя его более удобным. Учитель признаёт: для ответа понадобится ещё не одна беседа.",
+          "Ты помогаешь выбрать спокойное время для продолжения. Следовать за Иисусом — значит учиться, молиться и принимать помощь. Это не значит притворяться, будто верующие никогда не сомневаются."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-03-scene-3.webp",
+      "image_sha256": "f86ce25b75adddbb7bf76756b9f21cd675191a410cd74f6158389a19a1167484",
+      "inspection": "contact sheet + individual frame",
+      "status": "blocker",
+      "visual_evidence_and_story_comparison": "Large wall poster contains readable generated English: 'Big Questions', 'Can I ask hard questions and still follow Jesus?', 'Listening is real work'. This survives Russian language switching. Michael still holds up three fingers, visually favoring his quick explanations over the listening turn.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "Confirmed large English poster: localization blocker.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "03.4",
+      "chapter": 1,
+      "source": "data/why/lesson-03.json",
+      "scene_title": {
+        "en": "A box that opens",
+        "ru": "Коробка открывается"
+      },
+      "source_paragraphs": {
+        "en": [
+          "The cardboard lid will not close because Michael made its hinges crooked. Everyone laughs kindly, and Gracie helps fix it. Then she places her unfolded question inside. It has not vanished, but now she is not carrying it alone.",
+          "The team makes a new rule for their meetings: listen before replying, never mock a question, and return when you promised. Rosie leaves her Bible open. The question box is a doorway to conversation, not a hiding place for problems."
+        ],
+        "ru": [
+          "Крышка не закрывается: Майкл криво приклеил петли. Все добродушно смеются, и Грейси помогает исправить коробку. Потом кладёт внутрь развёрнутый вопрос. Вопрос не исчез, но теперь она несёт его не одна.",
+          "Ребята договариваются: сначала слушать, не высмеивать вопросы и возвращаться к беседе в обещанное время. Рози оставляет Библию открытой. Коробка становится началом разговора, а не местом, куда прячут трудности."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-03-scene-4.webp",
+      "image_sha256": "cd8a310a8af91680ea158091bb8278186dc8fb3fde45835f777a89aeb85958e3",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Open cardboard box, Michael handling lid and Gracie reaching toward it make the shared repair/question-box resolution legible.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "04.1",
+      "chapter": 1,
+      "source": "data/why/lesson-04.json",
+      "scene_title": {
+        "en": "Four envelopes, one mess",
+        "ru": "Четыре конверта и беспорядок"
+      },
+      "source_paragraphs": {
+        "en": [
+          "The explorers arrange a small exhibition for their families, but a gust from the window scatters their labels. A leaf sketch lands beside a Bible passage; an interview note slides under a domino diagram. Michael wants to put everything into one big proof envelope.",
+          "Joseph objects. A drawing of a leaf cannot tell visitors what their teacher said yesterday. You join the rescue mission: each question needs the right kind of support, not simply the biggest pile of paper."
+        ],
+        "ru": [
+          "Исследователи готовят выставку для семей, но ветер из окна разбрасывает подписи. Рисунок листа падает к библейскому отрывку, запись беседы — под схему костяшек. Майкл предлагает сложить всё в один большой конверт с доказательствами.",
+          "Джозеф возражает: рисунок листа не расскажет, что вчера сказал учитель. Ты включаешься в спасательную работу: каждому вопросу нужны подходящие основания, а не просто огромная стопка бумаги."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-04-scene-1.webp",
+      "image_sha256": "c7821d9e4f8e9bd5950baab18233ff8809581593761a9dcaecf79ac81866dda3",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Scattered cards, drawings and envelopes with surprised gestures support the exhibition-label mess.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "04.2",
+      "chapter": 1,
+      "source": "data/why/lesson-04.json",
+      "scene_title": {
+        "en": "Ask before sorting",
+        "ru": "Сначала спросим"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Gracie picks up the leaf sketch and asks what it records. They counted five points on that leaf; another child could inspect the same leaf. The interview records someone's report, which raises different questions: who spoke, what did they see, and could they be mistaken?",
+          "Their domino diagram contains reasoning from an example. Rosie places the Bible passage in a fourth envelope. Christians receive Scripture as God's word; it is not the same kind of item as their own measurement."
+        ],
+        "ru": [
+          "Грейси поднимает рисунок и спрашивает, что он показывает. На этом листе ребята насчитали пять выступов; другой человек может проверить тот же лист. Запись беседы передаёт сообщение человека: кто говорил, что видел, мог ли ошибиться?",
+          "Схема костяшек содержит рассуждение по примеру. Рози кладёт Библию в четвёртый конверт. Христиане принимают Писание как Божье слово; это не тот же вид материала, что собственное измерение."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-04-scene-2.webp",
+      "image_sha256": "2a13b61335e5648be7c9aa2f2dd97edb37a8bdfbd40aa3dbee8df1f274088267",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Gracie presents paper while Rosie holds Bible and Joseph considers notes; sorting different sources is supported without English labels.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "04.3",
+      "chapter": 1,
+      "source": "data/why/lesson-04.json",
+      "scene_title": {
+        "en": "Eager and careful",
+        "ru": "С интересом и вниманием"
+      },
+      "source_paragraphs": {
+        "en": [
+          "They read about the people in Berea in Acts 17. These listeners welcomed the message and examined the Scriptures. Eagerness and careful checking were not enemies. Michael realizes that shouting louder about his favorite exhibit would not answer a visitor's actual question.",
+          "You help write a small limit beside each label. Their leaf does not describe every tree. One interview is not everybody's testimony. Their model is not the universe. A verse should be read in its setting."
+        ],
+        "ru": [
+          "Ребята читают в Деяниях 17 о жителях Верии. Те охотно слушали весть и исследовали Писание. Интерес и внимательная проверка не мешали друг другу. Майкл понимает: громко хвалить любимый экспонат — ещё не ответить посетителю.",
+          "Ты помогаешь указать границы каждого материала. Один лист не описывает все деревья. Одна беседа — не свидетельства всех людей. Модель — не Вселенная. Стих следует читать в контексте."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-04-scene-3.webp",
+      "image_sha256": "cdfa81425a2276af84a6538e944027359a44608ccaacd111d2f2606c938076db",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Children study open book and notes; contemporary Berean-reading application rather than ancient reenactment.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "04.4",
+      "chapter": 1,
+      "source": "data/why/lesson-04.json",
+      "scene_title": {
+        "en": "A visitor with a question",
+        "ru": "Посетитель с вопросом"
+      },
+      "source_paragraphs": {
+        "en": [
+          "When their families arrive, a visitor asks why Rosie trusts Jesus. She describes what she has learned from the Gospel, rather than pointing triumphantly at the leaf. She also names a question she is still exploring with her teacher.",
+          "The envelopes stay open on the table so visitors can examine them. Joseph offers you the final label: explain gently. The exhibition succeeds not because every visitor agrees, but because the team tells the truth about what each source can show."
+        ],
+        "ru": [
+          "Когда приходят семьи, посетитель спрашивает, почему Рози доверяет Иисусу. Она рассказывает об узнанном из Евангелия, а не победно показывает на лист. Ещё она называет вопрос, который продолжает изучать с учителем.",
+          "Конверты остаются открытыми: посетители могут посмотреть материалы. Джозеф отдаёт тебе последнюю подпись: объясняй мягко. Выставка удалась не потому, что все согласились, а потому, что команда честно показала возможности источников."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-04-scene-4.webp",
+      "image_sha256": "a6ec4adaad54455bc4776be791ab29af343b35632dc2640c0df510039fb5721a",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Visitor faces group at exhibition table, other adults behind; Rosie speaks over open book, fitting gentle explanation.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "05.1",
+      "chapter": 2,
+      "source": "data/why/lesson-05.json",
+      "scene_title": {
+        "en": "A roof on the floor",
+        "ru": "Крыша на полу"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Michael's cardboard shelter looks splendid until its roof slides onto the floor. The explorers are building a reading corner, and everyone has offered advice. Gracie finds the kit instructions beneath a cushion. You help rescue the fallen roof while Joseph checks which advice actually came from its designer.",
+          "Rosie notices a bigger question hiding inside their small disaster: why should the team listen to the Bible rather than treat it as one more opinion?"
+        ],
+        "ru": [
+          "Картонный домик Майкла прекрасен — пока крыша не падает на пол. Исследователи строят уголок для чтения, и каждый даёт советы. Грейси находит инструкцию под подушкой. Ты спасаешь крышу, а Джозеф проверяет, какие советы дал изготовитель.",
+          "Рози замечает большой вопрос за маленькой неудачей: почему Библию стоит слушать, а не считать ещё одним мнением?"
+        ]
+      },
+      "image": "public/images/jr/why/lesson-05-scene-1.webp",
+      "image_sha256": "66a46264258d7780b9b4d2378aef90e2c3c6b1f9f29423a1ea8015226c4c0611",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Gracie handles a broad folded cardboard/book-like panel beside scattered work; fallen roof and kit instructions are visually ambiguous.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "05.2",
+      "chapter": 2,
+      "source": "data/why/lesson-05.json",
+      "scene_title": {
+        "en": "More than old paper",
+        "ru": "Не просто старая бумага"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Their teacher opens Paul's second letter to Timothy. Paul describes Scripture as breathed out by God and useful for teaching and correction. Christians understand this as inspiration: God speaks through human writers, not merely through ancient paper that has survived.",
+          "Joseph asks why that matters for their listening. If God is speaking, his word can correct even their favorite ideas. The passage also points Timothy toward salvation through faith in Jesus. They listen to Scripture to know and follow their Savior, not simply because its pages are old."
+        ],
+        "ru": [
+          "Учитель открывает второе послание Павла к Тимофею. Павел говорит, что Писание богодухновенно и полезно для обучения и исправления. Бог говорит через людей, записавших Его слово; дело не просто в древней сохранившейся бумаге.",
+          "Джозеф спрашивает, почему это важно. Если говорит Бог, Его слово может исправлять даже любимые идеи ребят. Отрывок также указывает Тимофею на спасение через веру в Иисуса. Писание слушают, чтобы узнать Спасителя и следовать за Ним, а не просто из-за древности страниц."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-05-scene-2.webp",
+      "image_sha256": "be2f6afc884ceff2aed78b65794e0ce817f6ed0bc85c7043e3a91da26693a09e",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Adult reads open book with all four listening; illustrates Scripture discussion without depicting inspiration as magic.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "05.3",
+      "chapter": 2,
+      "source": "data/why/lesson-05.json",
+      "scene_title": {
+        "en": "Read around the sentence",
+        "ru": "Прочти соседние строки"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Gracie wants to choose one sentence and stick it over the new doorway. Rosie suggests reading the surrounding passage first. Timothy had learned the sacred writings, which point toward salvation through faith in Christ Jesus. Scripture is not a box of magical slogans for getting whatever the team wants.",
+          "You help them ask who is writing, to whom, and why. Michael realizes that correction belongs in the passage too, even when he dislikes admitting a mistake."
+        ],
+        "ru": [
+          "Грейси хочет выбрать одно предложение и прикрепить над входом. Рози предлагает сначала прочитать весь отрывок. Тимофей знал священные писания, указывающие на спасение через веру во Христа Иисуса. Библия — не коробка волшебных лозунгов для исполнения желаний.",
+          "Ты помогаешь спросить: кто пишет, кому и зачем? Майкл замечает, что в отрывке говорится и об исправлении, хотя признавать ошибки неприятно."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-05-scene-3.webp",
+      "image_sha256": "e32dc4f9bb53a7584cc7542daa441a57111ed370e3793e1956b359f610fc2666",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Rosie reads and gestures while Joseph writes and Gracie listens; fits contextual reading. Doorway slogan is not baked into art.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "05.4",
+      "chapter": 2,
+      "source": "data/why/lesson-05.json",
+      "scene_title": {
+        "en": "A corner for listening",
+        "ru": "Уголок для слушания"
+      },
+      "source_paragraphs": {
+        "en": [
+          "The shelter finally stands after the children follow the kit's instructions. They do not announce that a cardboard roof proves the Bible true. It simply helped them notice that listening matters. Rosie places her purple Bible on a low shelf where everyone can reach it.",
+          "Their first reading ends with an apology: Michael had brushed aside Gracie's warning. The corner has become more than a place to hide with books. It is a place to listen and respond."
+        ],
+        "ru": [
+          "Домик наконец стоит: дети последовали инструкции. Они не объявляют, будто картонная крыша доказала истинность Библии. Она лишь помогла заметить, как важно слушать. Рози ставит фиолетовую Библию на доступную всем полку.",
+          "Первое чтение заканчивается извинением: Майкл признаёт, что отмахнулся от предупреждения Грейси. Уголок стал не просто укрытием с книгами, а местом, где слушают и отвечают делом."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-05-scene-4.webp",
+      "image_sha256": "43c926aea096540cd2f65ca160f8b7aa701cdc54a3259f7b2489abca4d2d27dc",
+      "inspection": "contact sheet + individual frame",
+      "status": "blocker",
+      "visual_evidence_and_story_comparison": "Completed shelter is a substantial outdoor log-and-bough lean-to, not the kit-built cardboard reading corner. No reachable Bible shelf or apology beat. This changes the physical story resolution, not merely its decor.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "06.1",
+      "chapter": 2,
+      "source": "data/why/lesson-06.json",
+      "scene_title": {
+        "en": "The missing word",
+        "ru": "Пропавшее слово"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Joseph copies a picnic list onto a clean page and accidentally leaves out apples. Michael thinks this means every copied message must become hopelessly lost. Gracie still has the first list. You lay both sheets side by side and find the missing word immediately.",
+          "Rosie labels their exercise modern practice. It shows why comparison can help, but their lunch lists are not ancient evidence about the Bible."
+        ],
+        "ru": [
+          "Джозеф переписывает список для пикника и случайно пропускает яблоки. Майкл решает: значит, любое переписанное сообщение неизбежно теряется. Но у Грейси есть первый список. Ты кладёшь листы рядом, и пропуск сразу находится.",
+          "Рози подписывает упражнение: современная тренировка. Оно показывает пользу сравнения, но списки еды не являются древними свидетельствами о Библии."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-06-scene-1.webp",
+      "image_sha256": "e5284726848f4202231017fbddafc0c29ffc8ee3f40bb60c0fb9de2119a27d99",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Two list-like pages and picnic food on table, Joseph writing and others comparing; supports modern copying exercise.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "06.2",
+      "chapter": 2,
+      "source": "data/why/lesson-06.json",
+      "scene_title": {
+        "en": "Open a real record",
+        "ru": "Откроем настоящую запись"
+      },
+      "source_paragraphs": {
+        "en": [
+          "With their teacher, they open the Israel Museum's Great Isaiah Scroll viewer. This is a photograph of an actual pre-Christian Hebrew copy of Isaiah, not the prophet's own handwriting. The museum describes agreement with later texts alongside spelling differences, corrections, and other variants.",
+          "Joseph nearly copies the English popup as the scroll's exact translation. Their teacher catches the trap: the ordinary popup translates the later Masoretic text, not this photographed scroll directly."
+        ],
+        "ru": [
+          "С учителем они открывают цифровой Свиток Исаии Израильского музея. Это фотография настоящей еврейской копии, созданной до жизни Иисуса, а не почерк пророка. Музей отмечает сходства с поздними текстами, а также различия, исправления и варианты чтения.",
+          "Джозеф чуть не записывает английскую подсказку как точный перевод свитка. Учитель замечает ловушку: обычная подсказка переводит поздний масоретский текст, а не непосредственно изображённый свиток."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-06-scene-2.webp",
+      "image_sha256": "9d0187ae77057f49d91dac7ac007088828d58d345623b8b57bd6632fa47d40bf",
+      "inspection": "contact sheet + individual frame",
+      "status": "blocker",
+      "visual_evidence_and_story_comparison": "Museum scene shows children lifting an open case above a physical rolled scroll. No screen or Israel Museum digital viewer appears. Replaces source-specific photographic research with invented direct artifact access; cannot serve as an authentic image of the Great Isaiah Scroll.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "Invented direct ancient-artifact access; evidence-integrity blocker."
+    },
+    {
+      "scene": "06.3",
+      "chapter": 2,
+      "source": "data/why/lesson-06.json",
+      "scene_title": {
+        "en": "Another kind of book",
+        "ru": "Другая древняя книга"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Next they inspect the official Codex Sinaiticus contents. This fourth-century Greek manuscript preserves the whole New Testament, with other writings and an arrangement unlike their classroom Bible. Its copying date is not the date when Jesus lived or the books were first written.",
+          "Michael asks whether copying means the message must be hopelessly lost. No: the Isaiah Scroll preserves a substantial text from before Jesus, and Sinaiticus preserves the whole New Testament. Researchers can compare these witnesses with other copies to identify agreements and differences. That is a stronger reason for confidence than pretending copyists never made mistakes."
+        ],
+        "ru": [
+          "Затем они изучают официальный список содержания Синайского кодекса. Греческая рукопись четвёртого века сохранила весь Новый Завет, а также другие сочинения; порядок отличается от их Библии. Дата копии — не дата жизни Иисуса или написания книг.",
+          "Майкл спрашивает: значит ли переписывание, что текст безнадёжно утрачен? Нет: свиток сохраняет обширный текст Исаии ещё до жизни Иисуса, а Синайский кодекс — весь Новый Завет. Учёные сравнивают эти рукописи с другими копиями, находят совпадения и различия. Это надёжнее, чем делать вид, будто переписчики никогда не ошибались."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-06-scene-3.webp",
+      "image_sha256": "a15fa31c510c3d9abac3382210ef4679a2cd481a2b9a3baabfbee9ae17d228ec",
+      "inspection": "contact sheet + individual frame",
+      "status": "blocker",
+      "visual_evidence_and_story_comparison": "Children touch a giant aged bound book with synthetic columns, rather than inspecting official Codex Sinaiticus contents online. Visually implies direct access to an ancient manuscript and risks presenting invented artifact detail as evidence.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "Invented direct ancient-artifact access; evidence-integrity blocker."
+    },
+    {
+      "scene": "06.4",
+      "chapter": 2,
+      "source": "data/why/lesson-06.json",
+      "scene_title": {
+        "en": "Repair the caption",
+        "ru": "Исправим подпись"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Michael replaces his exhibition caption about perfectly identical copies. He writes that surviving manuscripts let researchers study transmission, including differences. Rosie reads Isaiah's promise about God's enduring word without turning it into a claim that copyists never made mistakes.",
+          "You add links so visitors can inspect the real records. The picnic still needs apples, and Joseph restores them to the list. Their investigation ends with a correction, which is exactly what careful detectives should welcome."
+        ],
+        "ru": [
+          "Майкл заменяет подпись об идеально одинаковых копиях. Он пишет: сохранившиеся рукописи позволяют изучать передачу текста, включая различия. Рози читает обещание о вечном Божьем слове, не превращая его в утверждение о безошибочных переписчиках.",
+          "Ты добавляешь ссылки на настоящие записи. Для пикника всё ещё нужны яблоки, и Джозеф возвращает их в список. Исследование заканчивается исправлением — именно этому и радуются внимательные исследователи."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-06-scene-4.webp",
+      "image_sha256": "6120ca8d561786ce7e86eff17191f95ce760b05a33df5d71fbaa946b4ab56c9a",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Michael holds blank caption card in museum setting while Rosie reads; correction is supported, but links and restored picnic apples are not shown.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "07.1",
+      "chapter": 2,
+      "source": "data/why/lesson-07.json",
+      "scene_title": {
+        "en": "The wrong shelf",
+        "ru": "Не та полка"
+      },
+      "source_paragraphs": {
+        "en": [
+          "At the library, Michael tries to use a poem as instructions for repairing a bicycle. Gracie points to the repair manual on another shelf. The poem is not useless; it is doing a different job. You help carry their chosen books to a round table.",
+          "Rosie opens her purple Bible's contents page. It holds a collection of books, not one long text written in a single afternoon."
+        ],
+        "ru": [
+          "В библиотеке Майкл пытается чинить велосипед по стихотворению. Грейси показывает на руководство по ремонту на другой полке. Стихи не бесполезны — просто у них другая задача. Ты помогаешь отнести книги к круглому столу.",
+          "Рози открывает содержание фиолетовой Библии. Перед ними собрание книг, а не один длинный текст, написанный за один вечер."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-07-scene-1.webp",
+      "image_sha256": "f0226eb5a39912e5008bf799ebd23cf6f3a80baf3819f07b7fb1680a07ae4f4d",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Bicycle in library/workshop, Michael with book and group considering it; supports wrong-genre bicycle instruction setup.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "07.2",
+      "chapter": 2,
+      "source": "data/why/lesson-07.json",
+      "scene_title": {
+        "en": "Listen for the kind of writing",
+        "ru": "Узнай вид текста"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Joseph makes shelf cards for narrative, poetry, letters, and wisdom. Rosie explains that recognizing the kind of writing helps readers listen well. A psalm's picture language need not work like a laboratory description; a letter should be read with its readers and situation in mind.",
+          "Their teacher shows how Jesus speaks of the Law, Prophets, and Psalms in Luke 24. The different writings belong to God's unfolding story, rather than competing to replace each other."
+        ],
+        "ru": [
+          "Джозеф делает карточки: повествование, поэзия, послания, мудрость. Рози объясняет: знание жанра помогает понять текст. Образы псалма не нужно читать как лабораторный отчёт, а в письме важно учитывать адресатов и обстоятельства.",
+          "Учитель показывает, как Иисус говорит о Законе, Пророках и Псалмах в Луки 24. Разные книги участвуют в раскрытии Божьей истории, а не вытесняют друг друга."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-07-scene-2.webp",
+      "image_sha256": "8eb8c07520beec65e80df964d246d4f520fb44549d3f8bc9c1eb33c183be42f2",
+      "inspection": "contact sheet + individual frame",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Joseph creates four icon cards (scroll, harp, envelope, crown); recognizable genre sorting without English lettering. Crown is a loose wisdom cue, not a literal genre label.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "07.3",
+      "chapter": 2,
+      "source": "data/why/lesson-07.json",
+      "scene_title": {
+        "en": "Two languages at the table",
+        "ru": "Два языка за столом"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Gracie's grandmother reads Russian, so the team opens an English translation and the Russian Synodal translation. Different languages arrange ideas differently. Translators work to carry the meaning of Hebrew, Aramaic, and Greek texts into another language; they do not discover a different Jesus for each reader.",
+          "You compare a short passage with an adult. A paraphrase may explain in freer wording, but it should be labeled honestly rather than passed off as the exact wording of their chosen translation."
+        ],
+        "ru": [
+          "Бабушка Грейси читает по-русски, поэтому ребята открывают английский и русский Синодальный переводы. Языки по-разному строят фразы. Переводчики передают смысл еврейских, арамейских и греческих текстов, а не находят нового Иисуса для каждого читателя.",
+          "Ты сравниваешь короткий отрывок со взрослым. Пересказ может свободнее объяснять смысл, но его нужно честно назвать пересказом, а не точными словами выбранного перевода."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-07-scene-3.webp",
+      "image_sha256": "48f7c19e3ba318b3415491be84ccb01925fd2bcb6bab88fc18e9696244118012",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Two open books and group comparison at table support translation comparison; scripts are not readable, avoiding English-only localization.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "07.4",
+      "chapter": 2,
+      "source": "data/why/lesson-07.json",
+      "scene_title": {
+        "en": "Understanding comes first",
+        "ru": "Сначала понимание"
+      },
+      "source_paragraphs": {
+        "en": [
+          "In Nehemiah 8, the team finds people reading and explaining so listeners understand. Michael puts the bicycle poem back with the poems, then writes a small shelf guide for their reading corner. His mistake has become a useful reminder.",
+          "Joseph leaves space for unfamiliar words, and Gracie asks her grandmother to read with them. The goal is not to collect the most impressive Bible editions. It is to understand God's word and live in response to it together."
+        ],
+        "ru": [
+          "В Неемии 8 ребята находят чтение с объяснением, чтобы слушатели понимали. Майкл возвращает стихотворение на полку поэзии и делает памятку для уголка чтения. Его ошибка оказалась полезным напоминанием.",
+          "Джозеф оставляет место для непонятных слов, а Грейси приглашает бабушку читать вместе. Цель — не собрать самые внушительные издания, а понимать Божье слово и вместе отвечать на него жизнью."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-07-scene-4.webp",
+      "image_sha256": "2185a0f20d94dda39ed2ccbed1a6199a8b6c56350f8ea7ec856217ad3c193e66",
+      "inspection": "contact sheet + individual frame",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Repaired individual verified: Michael in green returns bicycle-cover book to shelf; Joseph in blue writes, Rosie in purple reads, Gracie in yellow reads beside gray-haired grandmother. No identity swap or readable English; hands appear coherent.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "08.1",
+      "chapter": 2,
+      "source": "data/why/lesson-08.json",
+      "scene_title": {
+        "en": "Too good to check?",
+        "ru": "Слишком красиво для проверки?"
+      },
+      "source_paragraphs": {
+        "en": [
+          "A colorful poster for the team's exhibition arrives from Michael's practice design folder. It claims that God promises a trouble-free day to anyone who smiles. A Bible reference is printed below. Gracie likes the bright colors, but Rosie cannot remember reading that promise.",
+          "You turn the poster over. Michael explains that he invented it for today's source-checking challenge. It is a deliberately false practice claim, not a verse to memorize or share."
+        ],
+        "ru": [
+          "Из папки учебных макетов Майкла появляется яркий плакат для выставки. На нём утверждается: Бог обещает день без неприятностей каждому, кто улыбается. Внизу указан библейский адрес. Грейси нравятся краски, но Рози не помнит такого обещания.",
+          "Ты переворачиваешь плакат. Майкл объясняет: он придумал его для проверки источников. Это намеренно ложное учебное утверждение, а не стих для заучивания или пересылки."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-08-scene-1.webp",
+      "image_sha256": "673f1f45b7f63a47616a49162e8c01f28518f95fce8305fc3e7e52dee78876ac",
+      "inspection": "contact sheet + individual frame",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Michael displays colorful adventure collage with no readable false promise or Bible reference. Avoids spreading fake Scripture in pixels, but the specific trouble-free-day claim must be carried by lesson text.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "08.2",
+      "chapter": 2,
+      "source": "data/why/lesson-08.json",
+      "scene_title": {
+        "en": "Follow the reference",
+        "ru": "Пойдём по ссылке"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Joseph opens the actual passage instead of searching for another picture that repeats the claim. The passage does not contain the poster's promise. Their teacher asks them to read the surrounding verses too, because even real words can be used in a misleading way.",
+          "Michael feels a little disappointed that the best-looking poster fails. You remind him that beautiful lettering tells them about design, not whether the words are true."
+        ],
+        "ru": [
+          "Джозеф открывает сам отрывок, а не ищет картинку с теми же словами. Такого обещания там нет. Учитель просит прочитать и соседние стихи: даже настоящие слова можно использовать так, что смысл исказится.",
+          "Майклу немного жаль самого красивого плаката. Ты напоминаешь: красивые буквы говорят о дизайне, но не доказывают правдивость текста."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-08-scene-2.webp",
+      "image_sha256": "dddca5cf8abfbfe8be71ff96eb5f4e8d34d9fbb3ea09a4835fd9ed1864ca32f2",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Joseph consults open passage while Rosie reads alongside; reference-checking beat is clear.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "08.3",
+      "chapter": 2,
+      "source": "data/why/lesson-08.json",
+      "scene_title": {
+        "en": "Hear the other side",
+        "ru": "Выслушаем проверку"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Rosie reads the proverb about the first person's case sounding right until it is examined. That does not mean every speaker is lying. It means the first convincing presentation is not the end of an investigation. Joseph adds a checkpoint for translation and context.",
+          "They also remember Berea: listeners examined Scripture instead of relying only on a speaker's confidence. An impressive title, a thousand reposts, or a friendly computer voice cannot replace opening the actual source."
+        ],
+        "ru": [
+          "Рози читает притчу: первый рассказ кажется верным, пока его не проверят. Это не значит, что все лгут. Просто убедительное начало — ещё не конец исследования. Джозеф добавляет проверку перевода и контекста.",
+          "Ребята вспоминают Верию: слушатели исследовали Писание, а не полагались лишь на уверенность говорящего. Громкий заголовок, тысяча пересылок или дружелюбный компьютерный голос не заменят самого источника."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-08-scene-3.webp",
+      "image_sha256": "d0207f8d0c033aa6b1bc3fe6d6c55548138a1debd29a4271780605a2a7f7c643",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Rosie reads to group at table, Joseph engaged with source; no misleading ancient court reenactment.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "08.4",
+      "chapter": 2,
+      "source": "data/why/lesson-08.json",
+      "scene_title": {
+        "en": "A smaller, truer poster",
+        "ru": "Скромнее, зато правдивее"
+      },
+      "source_paragraphs": {
+        "en": [
+          "The team retires the false poster and designs a new invitation to bring questions. Michael labels his own wording as the team's invitation, not God's quotation. Rosie checks the genuine Scripture card separately against the Bible text.",
+          "You help write a correction for anyone who saw the first draft. Nobody needs to shame its designer. Their exhibition now includes a detective challenge: locate, read, compare, and correct. The strongest poster is the one that does not borrow authority it has not earned."
+        ],
+        "ru": [
+          "Команда убирает ложный плакат и делает приглашение задавать вопросы. Майкл подписывает свои слова как приглашение команды, а не цитату Бога. Рози отдельно сверяет настоящую библейскую карточку с текстом.",
+          "Ты помогаешь составить исправление для тех, кто видел черновик. Стыдить автора не нужно. Теперь на выставке есть задание исследователя: найти, прочитать, сравнить, исправить. Хороший плакат не приписывает себе чужой авторитет."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-08-scene-4.webp",
+      "image_sha256": "1797c8d4368b2c14845fe17121091433826ad6ec4beacf6e02540b4b126004f4",
+      "inspection": "contact sheet + individual frame",
+      "status": "blocker",
+      "visual_evidence_and_story_comparison": "Retired poster depicts a flying saucer and large red X, unlike the colorful adventure collage in 08.1 and unlike the false smile/trouble-free-day promise in text. Invents an unrelated alien-hoax claim. New question-mark poster fits invitation, but continuity is broken.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "09.1",
+      "chapter": 3,
+      "source": "data/why/lesson-09.json",
+      "scene_title": {
+        "en": "Choose a color",
+        "ru": "Выбери цвет"
+      },
+      "source_paragraphs": {
+        "en": [
+          "The explorers spread colored paper across the community room to make a display about God. Michael chooses only cheerful yellow. He wants visitors to know that God is loving. Joseph reaches for a dark pencil to write about justice. Soon their display looks like two competing posters.",
+          "Gracie pulls her yellow hood back and asks whether they must choose between a God who loves and a God who takes wrong seriously. You leave room for a better answer."
+        ],
+        "ru": [
+          "Исследователи раскладывают цветную бумагу в общем зале: они готовят стенд о Боге. Майкл выбирает только радостный жёлтый цвет. Он хочет рассказать о Божьей любви. Джозеф берёт тёмный карандаш, чтобы написать о справедливости. Скоро получаются два спорящих плаката.",
+          "Грейси откидывает жёлтый капюшон и спрашивает: неужели нужно выбирать между любящим Богом и Богом, Который серьёзно относится ко злу? Ты оставляешь место для ответа."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-09-scene-1.webp",
+      "image_sha256": "476970a651d6e9fb9d4fa2ee33f5af7d7a186143f9d574f2b9c407d5cd5513e5",
+      "inspection": "contact sheet + individual frame",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Colored paper display with heart, landscapes and people matches collaborative display; no literal portrait of God or readable English.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "09.2",
+      "chapter": 3,
+      "source": "data/why/lesson-09.json",
+      "scene_title": {
+        "en": "Listen before drawing",
+        "ru": "Сначала послушаем"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Rosie opens her purple Bible to Exodus 34. With their teacher, the children read how God reveals his character to Moses: merciful, gracious, patient, and faithful. The following verse does not pretend guilt is unimportant. God's mercy and justice belong together, not to different sides taking turns.",
+          "Their teacher explains holiness as God's perfect purity and greatness. He is not simply a bigger person with our faults. No paper portrait can contain everything God is."
+        ],
+        "ru": [
+          "Рози открывает фиолетовую Библию на 34-й главе Исхода. С учителем дети читают, как Бог открывает Моисею Свой характер: милость, терпение, верность. Следующий стих не объявляет вину пустяком. Божья милость и справедливость не сменяют друг друга — они неразделимы.",
+          "Учитель объясняет святость: Бог совершенно чист и велик. Он не просто огромный человек с нашими недостатками. Бумажный портрет не вместит всё, что можно узнать о Нём."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-09-scene-2.webp",
+      "image_sha256": "e0d63a6925d869f0079cd6b4f457b97f8fad8c2d99bc28ba0eb93d29549cfeb0",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Rosie reads Bible while others attend; no visual humanization of God or invented Moses reenactment.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "09.3",
+      "chapter": 3,
+      "source": "data/why/lesson-09.json",
+      "scene_title": {
+        "en": "Before our calendar",
+        "ru": "Раньше календаря"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Joseph draws a birthday cake beside God's name, then pauses. Psalm 90 describes God as existing before the mountains and from everlasting to everlasting. God did not begin when someone first thought about him. Joseph replaces the cake with a written explanation instead of inventing a picture of eternity.",
+          "Michael notices the display has become more truthful without becoming less wonderful. God's love is not permission to hurt someone; his justice is not an excuse for their own revenge."
+        ],
+        "ru": [
+          "Джозеф рисует рядом с Божьим именем праздничный торт, но останавливается. Псалом 89 говорит о Боге, Который существовал до гор, от века и до века. Бог существовал всегда, ещё до того, как люди начали думать о Нём. Джозеф заменяет торт объяснением, не пытаясь нарисовать вечность.",
+          "Майкл замечает: стенд стал правдивее, но не потерял красоты. Божья любовь не разрешает обижать других, а Его справедливость не оправдывает нашу месть."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-09-scene-3.webp",
+      "image_sha256": "9a1004853559f8d669dbe3b935a277a9aa6961c867874c33ec459c67c57da254",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Joseph revises notebook while Rosie reads; unobtrusive treatment of eternity rather than literal eternal-God diagram.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "09.4",
+      "chapter": 3,
+      "source": "data/why/lesson-09.json",
+      "scene_title": {
+        "en": "One honest display",
+        "ru": "Один честный стенд"
+      },
+      "source_paragraphs": {
+        "en": [
+          "A younger child accidentally tears their best sheet. Michael starts to shout, then stops. They can name the damage truthfully and help repair it kindly. Their response does not make them perfectly like God, but it can reflect what they are learning.",
+          "You help attach the repaired sheet. The team finishes with praise, not a wish list. They thank God for his faithful character, even before asking him for anything they would like to receive."
+        ],
+        "ru": [
+          "Малыш случайно рвёт лучший лист. Майкл хочет закричать, но останавливается. Можно честно назвать случившееся и доброжелательно помочь всё исправить. Это не делает детей совершенными, как Бог, но помогает поступать согласно тому, что они узнали.",
+          "Ты помогаешь прикрепить починенный лист. В конце команда прославляет Бога, а не перечисляет желания. Дети благодарят Его за верность ещё до того, как просят что-нибудь для себя."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-09-scene-4.webp",
+      "image_sha256": "c20621b4baf1598830eb7fad1d2014d1d9582c13da7c148321cea327e17c71f9",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Joseph holds a visibly torn sheet and others react. Damage beat clear, but younger child and repair are absent; choose this as discovery moment, not repaired conclusion.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "10.1",
+      "chapter": 3,
+      "source": "data/why/lesson-10.json",
+      "scene_title": {
+        "en": "A question by the river",
+        "ru": "Вопрос у реки"
+      },
+      "source_paragraphs": {
+        "en": [
+          "At a riverside picnic, Joseph opens his blue notebook to a question he has been saving. Christians speak of the Father, the Son, and the Holy Spirit. Does that mean three gods? Michael offers an idea: perhaps God changes costumes for different jobs.",
+          "Rosie does not laugh at either question. She places three blank cards on the picnic blanket and asks you to help check their ideas against the Bible before drawing any conclusions."
+        ],
+        "ru": [
+          "На пикнике у реки Джозеф открывает синий блокнот с давно записанным вопросом. Христиане говорят об Отце, Сыне и Святом Духе. Значит ли это, что богов три? Майкл предполагает: может быть, Бог переодевается для разных дел?",
+          "Рози не смеётся над вопросами. Она кладёт на покрывало три пустые карточки и просит тебя помочь проверить идеи по Библии, прежде чем делать выводы."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-10-scene-1.webp",
+      "image_sha256": "e65aa0c455c3515923d6034b80abf0aa97c0657399abb780052a96c04732d420",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Riverside picnic, Joseph presenting notebook and Rosie with Bible; conversation setup fits and no costume-based Trinity graphic is endorsed.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "10.2",
+      "chapter": 3,
+      "source": "data/why/lesson-10.json",
+      "scene_title": {
+        "en": "Read the baptism account",
+        "ru": "Прочитаем о крещении"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Their leader reads Matthew's account of Jesus' baptism. Jesus comes up from the water, the Spirit descends like a dove, and a voice from heaven identifies the beloved Son. The children are reading an account, not pretending the river beside their blanket is that ancient place.",
+          "Gracie writes Father, Son, and Holy Spirit on the cards. They are distinct, not one person pretending to be someone else. The scene does not describe Jesus changing into the Father."
+        ],
+        "ru": [
+          "Наставник читает рассказ Матфея о крещении Иисуса. Иисус выходит из воды, Дух спускается как голубь, а голос с небес говорит о возлюбленном Сыне. Дети читают библейский рассказ, а не притворяются, будто их река — то самое древнее место.",
+          "Грейси подписывает карточки: Отец, Сын и Святой Дух. Они различны; это не одно Лицо, изображающее других. Рассказ не говорит, что Иисус превратился в Отца."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-10-scene-2.webp",
+      "image_sha256": "d8a7b068d4eff16c72d1758173cd621448080f4db43b5c0a21277efc38887e78",
+      "inspection": "contact sheet + individual frame",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Individual checked: modern four children read by river; no ancient baptism reenactment, deity figure or dove-as-evidence. Leader/cards omitted but account-reading distinction preserved.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "10.3",
+      "chapter": 3,
+      "source": "data/why/lesson-10.json",
+      "scene_title": {
+        "en": "Keep both truths",
+        "ru": "Сохраним обе истины"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Next Rosie opens Matthew 28:19. Jesus names Father, Son, and Holy Spirit together in his command about baptism. Their leader connects this with Scripture's teaching that there is one God. Christians call this truth the Trinity: one God, three distinct persons, each fully God.",
+          "Michael puts away the costume sketch. Joseph suggests dividing a circle into thirds, but that would suggest each person is only part of God. They choose careful words instead of a misleading diagram."
+        ],
+        "ru": [
+          "Затем Рози открывает Матфея 28:19. В повелении о крещении Иисус вместе называет Отца, Сына и Святого Духа. Наставник напоминает и библейское учение о едином Боге. Христиане называют это Троицей: один Бог, три различных Лица; каждое — в полной мере Бог.",
+          "Майкл убирает рисунок костюмов. Джозеф предлагает разделить круг на три части, но тогда получится, будто каждое Лицо — лишь часть Бога. Вместо неверной схемы они выбирают точные слова."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-10-scene-3.webp",
+      "image_sha256": "184f6ac2bfdbc2b1b4db2f5050ef3182d237be4d4e4847695d71bb4d3b0e80d6",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Rosie reads and Joseph writes at table; no three-thirds or costume diagram that could visually teach rejected doctrine.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "10.4",
+      "chapter": 3,
+      "source": "data/why/lesson-10.json",
+      "scene_title": {
+        "en": "More than a puzzle",
+        "ru": "Не просто загадка"
+      },
+      "source_paragraphs": {
+        "en": [
+          "You help secure the cards before a breeze carries them away. Gracie admits she cannot explain everything about God's life. Their leader says an honest limit is better than an answer that quietly changes what Scripture teaches. Questions can remain open while they keep learning.",
+          "Before packing their picnic, they pray to the Father, thanking him for sending the Son and giving the Spirit. The lesson ends in gratitude and worship, not in winning a difficult word game."
+        ],
+        "ru": [
+          "Ты помогаешь прижать карточки, чтобы ветер их не унёс. Грейси признаётся, что не может объяснить всё о Божьей жизни. Наставник отвечает: лучше честно признать границы понимания, чем незаметно изменить смысл Писания. Можно продолжать учиться и задавать вопросы.",
+          "Перед уходом дети молятся Отцу, благодаря Его за посланного Сына и дар Святого Духа. Урок заканчивается благодарностью и поклонением, а не победой в трудной словесной игре."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-10-scene-4.webp",
+      "image_sha256": "2297735ee257e5cd8c345c845374d7bb38daf8298bd64c2b444e3468614682d5",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Children reach across papers outdoors, fitting securing cards; no clearly clasped prayer pose, acceptable earlier action in scene.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "11.1",
+      "chapter": 3,
+      "source": "data/why/lesson-11.json",
+      "scene_title": {
+        "en": "An empty chair",
+        "ru": "Пустой стул"
+      },
+      "source_paragraphs": {
+        "en": [
+          "The team meets in the school garden, but Gracie barely notices the seedlings. Her friend has moved away, leaving an empty chair beside her in class. Michael suggests that trusting God should make her stop feeling sad. Gracie pulls a folded drawing under Joseph's blue notebook.",
+          "You notice the drawing shows two friends on a bench. Rosie asks if Gracie would like company instead of advice. They sit beside her without making her explain everything immediately."
+        ],
+        "ru": [
+          "Команда встречается в школьном саду, но Грейси почти не замечает ростков. Её подруга переехала, и теперь соседний стул в классе пуст. Майкл говорит, что доверие Богу должно прогнать грусть. Грейси прячет сложенный рисунок под синий блокнот Джозефа.",
+          "Ты замечаешь: на рисунке две подруги сидят на скамейке. Рози спрашивает, не лучше ли просто побыть рядом. Дети садятся с Грейси и не требуют немедленно всё объяснить."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-11-scene-1.webp",
+      "image_sha256": "6994f155407960f0850f6ec04955f2f2f1c3330930328c1e3f97d1b833ddd5e4",
+      "inspection": "contact sheet + individual frame",
+      "status": "blocker",
+      "visual_evidence_and_story_comparison": "Gracie smiles delightedly upward beside birdhouse and seedlings, with cheerful companions. No folded two-friend drawing or subdued posture. Contradicts the central sadness/listening beat and risks visually reinforcing Michael's rejected advice to stop feeling sad.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "11.2",
+      "chapter": 3,
+      "source": "data/why/lesson-11.json",
+      "scene_title": {
+        "en": "Known, not forgotten",
+        "ru": "Бог не забывает"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Rosie reads the beginning of Psalm 139. God knows the psalmist personally: sitting, rising, thoughts, and journeys are not hidden from him. Their teacher explains that God's knowledge is not a promise that every day will feel easy. Gracie's sadness does not mean she has disappeared from his care.",
+          "Michael quietly takes back his quick advice. He had wanted to fix the feeling before listening to the person. You help Gracie unfold her drawing again."
+        ],
+        "ru": [
+          "Рози читает начало Псалма 138. Бог знает автора лично: когда тот садится, встаёт, размышляет и идёт по дороге. Учитель объясняет: Божье знание не означает, что каждый день будет лёгким. Грусть Грейси не значит, будто Бог перестал о ней заботиться.",
+          "Майкл тихо берёт назад поспешный совет. Он хотел исправить чувство раньше, чем выслушать человека. Ты помогаешь Грейси снова развернуть рисунок."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-11-scene-2.webp",
+      "image_sha256": "2838a56c65880585f8489673ea9972ec606b86a04944b0084675e315874fef65",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Gentle evening Bible reading supports care, but broad smiles underplay unresolved grief; no promised miraculous fix is depicted.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "11.3",
+      "chapter": 3,
+      "source": "data/why/lesson-11.json",
+      "scene_title": {
+        "en": "Joseph is not our Joseph",
+        "ru": "Другой Иосиф"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Their teacher recalls the biblical Joseph, carefully distinguishing him from their notebook-carrying friend. Joseph suffered betrayal and imprisonment; later he helped provide food during famine. God's faithful work did not make the cruel actions good or turn the painful years into a short, cheerful adventure.",
+          "They trace three cards: real harm, God's presence through hardship, and later help for others. They cannot use Joseph's ending to promise exactly how Gracie's own difficult story will unfold."
+        ],
+        "ru": [
+          "Учитель вспоминает библейского Иосифа, не путая его с другом ребят, который ведёт блокнот. Иосиф пережил предательство и тюрьму, а позже помогал людям получать пищу во время голода. Божья верность не сделала жестокость добром и не превратила трудные годы в весёлое приключение.",
+          "Дети раскладывают три карточки: настоящая боль, Божье присутствие в трудностях и позднейшая помощь людям. По истории Иосифа нельзя обещать, как именно разрешится трудность самой Грейси."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-11-scene-3.webp",
+      "image_sha256": "e9cd5318332d3bb9af1e3c09067f445831ecdb72fda40f4f4278754e76298e96",
+      "inspection": "contact sheet + individual frame",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Individual checked: teacher holds an illustrated storybook showing ancient figures, while modern Joseph remains blue-clad at table. Biblical Joseph is clearly a book illustration, not a modern-child identity swap or enacted ancient visit; three hardship cards omitted.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "Ancient figures contained within a modern illustrated book, not enacted history."
+    },
+    {
+      "scene": "11.4",
+      "chapter": 3,
+      "source": "data/why/lesson-11.json",
+      "scene_title": {
+        "en": "Care with a next step",
+        "ru": "Забота и следующий шаг"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Gracie asks her mother to help arrange a call with her friend. Joseph saves a seat for her at the next garden meeting. Rosie suggests telling God both the worry and the hope, without pretending either one is smaller than it is.",
+          "You help water the seedlings while Gracie writes her friend's name on an envelope. Nothing magically replaces the missing chair. Yet she leaves knowing she can pray, ask for help, and receive care from people around her."
+        ],
+        "ru": [
+          "Грейси просит маму помочь созвониться с подругой. Джозеф оставляет ей место на следующей встрече в саду. Рози предлагает рассказать Богу и о тревоге, и о надежде, не притворяясь, будто всё это неважно.",
+          "Ты помогаешь поливать ростки, пока Грейси пишет имя подруги на конверте. Пустой стул никуда не исчезает по волшебству. Но теперь она знает: можно молиться, просить помощи и принимать заботу окружающих."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-11-scene-4.webp",
+      "image_sha256": "4130e75147ba1ae7567c2a0894f180b031dc8794ee4fea87720aed839e325c74",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Gracie converses with mother at table; supportive care matches. Phone call, envelope and watering are not identifiable; adult presence carries the main beat.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "12.1",
+      "chapter": 3,
+      "source": "data/why/lesson-12.json",
+      "scene_title": {
+        "en": "A box of almost-right answers",
+        "ru": "Коробка почти верных ответов"
+      },
+      "source_paragraphs": {
+        "en": [
+          "The explorers turn their reading corner into an explanation repair shop. Joseph brings cards from a practice exercise, each labeled as an idea to test, not a Bible quotation. One says God is loving, so wrong choices do not matter. Another divides God into three separate pieces.",
+          "Michael wants to throw the whole box away. Rosie suggests repairing the explanations instead. You take the first card to a table with an open Bible and space for questions."
+        ],
+        "ru": [
+          "Исследователи превращают уголок чтения в мастерскую объяснений. Джозеф приносит учебные карточки. На каждой написано: это идея для проверки, а не библейская цитата. Одна утверждает: раз Бог любит, плохие поступки неважны. Другая делит Бога на три отдельные части.",
+          "Майкл хочет выбросить всю коробку. Рози предлагает исправить объяснения. Ты несёшь первую карточку к столу, где лежит открытая Библия и есть место для вопросов."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-12-scene-1.webp",
+      "image_sha256": "0f4f6702c0cb3f30691d4b129fa43909f2b1fecabc26a7efc987cbf05a084f73",
+      "inspection": "contact sheet + individual frame",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Repaired individual verified: Michael green/brown curls holds card box; Joseph blue/dark curls writes; Rosie purple/brown hair reads; Gracie yellow/black curls points to blank colored cards. No English or swapped roles; coherent hands. Text must explain erroneous claims because cards are intentionally blank.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "12.2",
+      "chapter": 3,
+      "source": "data/why/lesson-12.json",
+      "scene_title": {
+        "en": "Keep the part that is true",
+        "ru": "Сохрани то, что верно"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Gracie remembers their display about God's character. Love belongs in the answer, but ignoring wrongdoing does not. With their leader, they revisit Exodus 34 and replace the claim with a sentence about God's mercy and justice together. Correcting a sentence need not mean insulting its writer.",
+          "Michael tries the same method on a birthday card for God. They preserve the wish to celebrate him but remove the suggestion that God began on a particular day."
+        ],
+        "ru": [
+          "Грейси вспоминает стенд о Божьем характере. О любви сказано верно, а о безразличии ко злу — нет. С наставником дети возвращаются к Исходу 34 и пишут о милости и справедливости вместе. Исправить предложение — не значит оскорбить автора.",
+          "Майкл так же проверяет открытку ко дню рождения Бога. Они сохраняют желание прославить Его, но убирают мысль, будто Бог появился в определённый день."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-12-scene-2.webp",
+      "image_sha256": "179163e4c8d3d90631f7dc92a5f0be9cf72bdca226fb551fed32c4a5ec762860",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Heart prop and display papers support preserving love while revising explanation; birthday-card correction not explicit. Does not depict God with a birthday.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "12.3",
+      "chapter": 3,
+      "source": "data/why/lesson-12.json",
+      "scene_title": {
+        "en": "Where the picture breaks",
+        "ru": "Где сравнение не работает"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Joseph holds up a picture of a three-piece puzzle. It helps him count to three, but it cannot explain the Trinity: each puzzle piece is less than the whole. Deuteronomy teaches one God, and Matthew names Father, Son, and Holy Spirit. Their explanation must keep those truths together.",
+          "You help write a limit beneath the picture. The Father, Son, and Spirit are not three parts or three gods. A familiar object is not automatically a faithful explanation of God."
+        ],
+        "ru": [
+          "Джозеф поднимает рисунок пазла из трёх деталей. Он помогает сосчитать до трёх, но не объясняет Троицу: каждая деталь меньше целого. Второзаконие учит о едином Боге, а Матфей называет Отца, Сына и Святого Духа. Нужно сохранить обе истины.",
+          "Ты помогаешь подписать границу сравнения. Отец, Сын и Дух — не три части и не три бога. Знакомый предмет не обязательно помогает правильно объяснить, Кто такой Бог."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-12-scene-3.webp",
+      "image_sha256": "471b99b0b262f511ed2f2ff8a42d3dcc2d46a7a9770a7ae0effa27d6c7213e1c",
+      "inspection": "contact sheet + individual frame",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Individual checked: Joseph holds exactly three connected puzzle-piece drawing; fits rejected analogy being examined. Must remain paired with explanatory text so smiling presentation is not mistaken for endorsement of partialism.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "12.4",
+      "chapter": 3,
+      "source": "data/why/lesson-12.json",
+      "scene_title": {
+        "en": "Room for an unfinished question",
+        "ru": "Место для открытого вопроса"
+      },
+      "source_paragraphs": {
+        "en": [
+          "A younger visitor asks how one God can be three persons. Rosie explains what they have learned, then admits she cannot picture God's life completely. Joseph leaves a blank line for the visitor's next question rather than covering it with a confident slogan.",
+          "The repair shop closes with fewer flashy pictures and better sentences. Michael discovers that admitting a limit does not erase what they do know. You carry the question box back to the shelf, ready for another conversation."
+        ],
+        "ru": [
+          "Младший посетитель спрашивает, как один Бог может быть в трёх Лицах. Рози рассказывает, чему они научились, и признаётся, что не может полностью представить Божью жизнь. Джозеф оставляет строку для следующего вопроса, а не закрывает её уверенным лозунгом.",
+          "В мастерской стало меньше ярких схем, зато объяснения точнее. Майкл понял: признание границ не отменяет того, что мы уже знаем. Ты возвращаешь коробку вопросов на полку до следующего разговора."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-12-scene-4.webp",
+      "image_sha256": "da9ea9d3616b0881fa179e82872a900f6842ac12ebf8ccba46264855f19d1d46",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Younger visitor seen from behind faces group; Rosie speaks and Joseph has writing space. Open-ended explanation beat supported.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "13.1",
+      "chapter": 4,
+      "source": "data/why/lesson-13.json",
+      "scene_title": {
+        "en": "Who made the wheels?",
+        "ru": "Кто сделал колёса?"
+      },
+      "source_paragraphs": {
+        "en": [
+          "In the bicycle workshop, Michael follows a chain of questions. Who assembled the bicycle? Who made its metal? Where did the materials come from? Joseph fills a page with arrows until his pencil reaches the edge. Outside, evening light catches the trees and clouds beyond the workshop door.",
+          "Gracie asks a different question: why is there a world with materials, people, and sunlight at all? You turn Joseph's page over, because this question needs more than another factory name."
+        ],
+        "ru": [
+          "В велосипедной мастерской Майкл задаёт цепочку вопросов. Кто собрал велосипед? Кто изготовил металл? Откуда взялись материалы? Джозеф заполняет страницу стрелками до самого края. За дверью вечерний свет ложится на деревья и облака.",
+          "Грейси спрашивает иначе: почему вообще есть мир с материалами, людьми и солнечным светом? Ты переворачиваешь страницу Джозефа: для такого вопроса мало назвать ещё один завод."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-13-scene-1.webp",
+      "image_sha256": "c28a008ad5ea827970f4c7b103d35408bee06d264ec92c18578898c196aae3d4",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Bicycle workshop and loose gears with thoughtful Michael and writing Joseph support source-of-materials questions.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "13.2",
+      "chapter": 4,
+      "source": "data/why/lesson-13.json",
+      "scene_title": {
+        "en": "What the opening says",
+        "ru": "О чём говорит начало"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Rosie opens Genesis at its first sentence. Scripture identifies God as Creator of the heavens and the earth. Their teacher explains that Christians do not place God inside the chain as another manufactured object. God does not depend on someone making him; created things depend on him.",
+          "Joseph labels this biblical teaching, not a measurement made with workshop tools. The bicycle questions helped them notice dependence, but the arrows alone did not demonstrate every claim about God."
+        ],
+        "ru": [
+          "Рози открывает первое предложение Бытия. Писание называет Бога Творцом неба и земли. Учитель объясняет: христиане не ставят Бога в цепочку как ещё один изготовленный предмет. Богу не нужен создатель; сотворённое зависит от Него.",
+          "Джозеф подписывает: библейское учение, а не измерение инструментами мастерской. Вопросы о велосипеде помогли заметить зависимость, но сами стрелки не доказали всё, что говорится о Боге."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-13-scene-2.webp",
+      "image_sha256": "122928762816d4a8a3a61675eada63e04cc095823b925d0f4d8ebac6adfdc5fa",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Four lean toward Rosie's open book; creation presented as Scripture study, not fabricated scientific measurement or a pictured deity.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "13.3",
+      "chapter": 4,
+      "source": "data/why/lesson-13.json",
+      "scene_title": {
+        "en": "Not only long ago",
+        "ru": "Не только когда-то давно"
+      },
+      "source_paragraphs": {
+        "en": [
+          "The team reads the teaching in Colossians that all things were created through Christ and hold together in him. Creation is not only a question about a distant beginning. Christians believe the world continues to depend on God now, while scientists investigate how its physical processes work.",
+          "Michael watches a wheel spin and asks which question his stopwatch can answer. It can measure the time of a turn. It cannot measure why anything exists rather than nothing."
+        ],
+        "ru": [
+          "Команда читает в Послании к Колоссянам, что всё сотворено через Христа и существует благодаря Ему. Речь не только о далёком начале. Христиане верят, что мир и сейчас зависит от Бога, а учёные изучают происходящие в нём физические процессы.",
+          "Майкл смотрит на вращающееся колесо: на какой вопрос ответит секундомер? Он измерит время оборота, но не объяснит, почему вообще существует что-то, а не ничто."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-13-scene-3.webp",
+      "image_sha256": "92be1b48d8653184627b54165fb25730d90030b2dfcf9707cef5da46527f2a94",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Bible and notebook discussion fits dependence teaching; spinning wheel/stopwatch comparison not visible.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "13.4",
+      "chapter": 4,
+      "source": "data/why/lesson-13.json",
+      "scene_title": {
+        "en": "Gratitude outside",
+        "ru": "Благодарность под открытым небом"
+      },
+      "source_paragraphs": {
+        "en": [
+          "You carry the repaired bicycle outside. Gracie pauses beneath a tree and thanks God for the world they did not build. She can admire the tree without treating it as a god, and care for the workshop materials without pretending possessions give life its meaning.",
+          "Joseph closes his notebook with two headings still visible: how things work, and why a world exists. The team has not answered every question. They have learned to ask more clearly and to receive creation gratefully."
+        ],
+        "ru": [
+          "Ты выкатываешь починенный велосипед. Грейси останавливается под деревом и благодарит Бога за мир, который создали не они. Можно любоваться деревом, не считая его богом, и беречь материалы, не превращая вещи в смысл жизни.",
+          "Джозеф закрывает блокнот, оставив видимыми два заголовка: как всё работает и почему мир существует. Команда ответила не на каждый вопрос, но научилась спрашивать точнее и с благодарностью принимать сотворённый мир."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-13-scene-4.webp",
+      "image_sha256": "2e4ac6019721c1b72e7614c46decb11efdab8c770e122e2ed5319721058e834d",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Children stand outdoors beside bicycle; grateful pause and completed workshop-to-outdoors transition clear.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "14.1",
+      "chapter": 4,
+      "source": "data/why/lesson-14.json",
+      "scene_title": {
+        "en": "An impatient gardener",
+        "ru": "Нетерпеливый садовник"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Joseph has drawn a neat growing schedule for the garden windowsill. By Friday, every bean should have a green shoot. Friday arrives, and one pot still looks empty. Michael wants to leave it out of their report because it spoils the pattern. Gracie asks whether an honest investigation can hide an awkward pot.",
+          "You move all the pots onto a tray. Rosie brings her purple Bible, while Joseph keeps his ruler ready. Neither book nor ruler needs to be hidden."
+        ],
+        "ru": [
+          "Джозеф составил аккуратный график для огорода на подоконнике. К пятнице у каждой фасолины должен появиться зелёный росток. Но пятница наступила, а один горшок кажется пустым. Майкл хочет исключить его из отчёта: он портит картину. Грейси спрашивает, можно ли в честном исследовании прятать неудобный горшок.",
+          "Ты ставишь все горшки на поднос. Рози приносит фиолетовую Библию, а Джозеф готовит линейку. Ни книгу, ни линейку прятать не нужно."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-14-scene-1.webp",
+      "image_sha256": "ef9f0bd3e9d05a331ce70057be3ab9cda4875efeacf5f547abf0fdab26d2243c",
+      "inspection": "contact sheet + individual frame",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Individual checked: Joseph holds icon-only plant schedule; seedlings and an empty foreground pot are visible. No generated weekday English.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "14.2",
+      "chapter": 4,
+      "source": "data/why/lesson-14.json",
+      "scene_title": {
+        "en": "Write what happened",
+        "ru": "Запиши, что произошло"
+      },
+      "source_paragraphs": {
+        "en": [
+          "They record the visible shoots and measure their heights. The empty pot gets an honest entry: no shoot visible today. Joseph suggests that its seed may have dried out, but labels this a possible explanation rather than something they have already established.",
+          "Their teacher helps plan a fair comparison using the same seed type, soil, and light while changing the water amount. They will repeat observations over time. A single stubborn bean cannot answer every question about plants."
+        ],
+        "ru": [
+          "Они отмечают видимые ростки и измеряют высоту. Для пустого горшка записывают честно: сегодня ростка не видно. Джозеф предполагает, что семя пересохло, но называет это возможным объяснением, а не установленным фактом.",
+          "Учитель помогает придумать сравнение: одинаковые семена, почва и свет, но разное количество воды. Наблюдения будут повторяться. Одна упрямая фасолина не ответит на все вопросы о растениях."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-14-scene-2.webp",
+      "image_sha256": "4ea4b9de42202d1c9deb3d951c245ecb7113fb429a5ca6d8ac4158cad7efab88",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Children measure an outdoor sprout with ruler; observation is clear, but controlled windowsill pots become an outdoor garden, weakening experiment continuity.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "14.3",
+      "chapter": 4,
+      "source": "data/why/lesson-14.json",
+      "scene_title": {
+        "en": "Study can be grateful",
+        "ru": "Изучать с благодарностью"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Rosie reads Psalm 111:2, which connects God's works with delighted study. Learning about roots and water need not compete with thanking their Creator. Their teacher also warns against adding conclusions their experiment cannot test: measuring growth does not measure God's existence or prove that he is absent.",
+          "Michael crosses out a draft claiming their seedlings settle every science-and-faith argument. Some questions require careful discussion of evidence and interpretation. Pretending there are no hard questions would not help them learn."
+        ],
+        "ru": [
+          "Рози читает Псалом 110:2: Божьи дела достойны изучения и радости. Можно узнавать о корнях и воде и благодарить Творца. Учитель предупреждает: нельзя добавлять выводы, которых опыт не проверяет. Измерение роста не измеряет существование Бога и не доказывает Его отсутствие.",
+          "Майкл вычёркивает черновую фразу, будто ростки разрешили все споры науки и веры. Некоторые вопросы требуют внимательного разговора о данных и их толковании. Притворяться, что трудных вопросов нет, — не способ учиться."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-14-scene-3.webp",
+      "image_sha256": "180f5bad98a8623b5fdc0ebbb0c9b878cbadf394a31bdeb53851c37ed5881563",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Rosie reads while Joseph writes and Michael observes; ordinary science-and-Scripture discussion without a supernatural growth claim.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "14.4",
+      "chapter": 4,
+      "source": "data/why/lesson-14.json",
+      "scene_title": {
+        "en": "The missing pot stays",
+        "ru": "Горшок остаётся в отчёте"
+      },
+      "source_paragraphs": {
+        "en": [
+          "You help label a space for tomorrow's results instead of drawing an imaginary shoot. Gracie waters the assigned pots according to their plan. Joseph discovers that a corrected prediction can be useful: it invites better questions rather than ending the investigation.",
+          "The team thanks God for a world worth studying and for patience to report what actually happens. Michael leaves the empty pot in the photograph. Their report is less tidy than he hoped, but much more trustworthy."
+        ],
+        "ru": [
+          "Ты помогаешь оставить место для завтрашних результатов, а не рисуешь несуществующий росток. Грейси поливает горшки по плану. Джозеф замечает: исправленное предположение полезно — оно помогает задавать новые вопросы, а не прекращает исследование.",
+          "Команда благодарит Бога за мир, который интересно изучать, и за терпение честно записывать результаты. Майкл оставляет пустой горшок на фотографии. Отчёт не такой ровный, как хотелось, зато ему можно доверять."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-14-scene-4.webp",
+      "image_sha256": "4ebb8d4cff34e6ea681027619c2f8e3364163a3eee06417448eedd0b39a5db4b",
+      "inspection": "contact sheet + individual frame",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Individual checked: Joseph writes on large mostly blank recording sheet, matching space for tomorrow. No experimental empty pot or Gracie watering appears; background decorative plant is not that evidence. Weak closure, but not a direct false-result depiction.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "15.1",
+      "chapter": 4,
+      "source": "data/why/lesson-15.json",
+      "scene_title": {
+        "en": "A startling disappearance",
+        "ru": "Неожиданное исчезновение"
+      },
+      "source_paragraphs": {
+        "en": [
+          "At the community science afternoon, a volunteer turns a cup upside down, but no water falls out. Michael almost writes MIRACLE on the team's display. Joseph holds his blue notebook beneath the cup, then wisely moves it away. You ask whether the volunteer will explain what happened.",
+          "She shows an absorbent material hidden inside. Gracie laughs with relief. The demonstration was surprising, but surprise alone did not tell them its cause. They erase the headline before visitors arrive."
+        ],
+        "ru": [
+          "На научном празднике волонтёр переворачивает стакан, но вода не выливается. Майкл уже хочет написать на стенде: ЧУДО. Джозеф подставляет синий блокнот, потом разумно отодвигает его. Ты спрашиваешь, объяснит ли волонтёр опыт.",
+          "Она показывает спрятанный впитывающий материал. Грейси облегчённо смеётся. Опыт удивил ребят, но само удивление ничего не объясняло. Они стирают заголовок до прихода гостей."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-15-scene-1.webp",
+      "image_sha256": "38520ced42438ad4623842e99a60846d45e7eb43d02741d78b0511448e7c9aa6",
+      "inspection": "contact sheet + individual frame",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Individual checked: modern volunteer holds inverted transparent cup over tub as children react. Fits explained demonstration; no MIRACLE heading or magical visual effects.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "15.2",
+      "chapter": 4,
+      "source": "data/why/lesson-15.json",
+      "scene_title": {
+        "en": "An unanswered question",
+        "ru": "Вопрос без ответа"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Outside, someone tells the team about an unusual recovery, but has no details to share. Michael now wants to dismiss every miracle report as a trick. Rosie slows him down: exposing one demonstration does not explain every other event.",
+          "They make room for an honest answer: they do not know what happened in this report. Investigating means asking about witnesses, records, and other explanations, not automatically believing a dramatic story or automatically mocking the person telling it."
+        ],
+        "ru": [
+          "На улице кто-то рассказывает о необычном выздоровлении, но подробностей не знает. Теперь Майкл готов назвать любой рассказ о чуде фокусом. Рози останавливает его: объяснение одного опыта не объясняет все остальные события.",
+          "Ребята выбирают честный ответ: что случилось в этом случае, они пока не знают. Нужно спрашивать о свидетелях, записях и других объяснениях, а не сразу верить яркому рассказу или высмеивать рассказчика."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-15-scene-2.webp",
+      "image_sha256": "f2fa4d081696c219c9c08d8a2f9673000c776fd42072cdef304a4281d21145a2",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Adult speaks to seated children outdoors; supports unverified recovery report conversation rather than staging a miraculous recovery.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "15.3",
+      "chapter": 4,
+      "source": "data/why/lesson-15.json",
+      "scene_title": {
+        "en": "Read the sign",
+        "ru": "О чём говорит знамение"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Rosie opens her purple Bible to the account of Jesus calming the storm in Mark. The disciples' question concerns who Jesus is, not how to repeat a weather experiment. Christians believe the Creator can act within his creation; nature's regular patterns are not a cage around God.",
+          "In John, the team reads why signs were recorded: to point readers toward faith in Jesus. The Bible's miracle accounts make particular claims. They are not permission to label every unexplained event divine."
+        ],
+        "ru": [
+          "Рози открывает фиолетовую Библию и рассказ Марка о том, как Иисус усмирил бурю. Ученики спрашивают, Кто Он, а не как повторить опыт с погодой. Христиане верят: Творец может действовать в Своём мире; обычный порядок природы не ограничивает Бога.",
+          "У Иоанна ребята читают, зачем записаны знамения: чтобы привести читателей к вере в Иисуса. Библейские рассказы говорят об определённых событиях. Они не позволяют объявлять чудом всё необъяснённое."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-15-scene-3.webp",
+      "image_sha256": "821a803518530f0cec3f2725585d168d8f67e94f2b7910db2898a13f25f1f6ef",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Modern children read indoors with lightning outside; atmospheric storm reference, not children reenacting Jesus calming sea. No divine weather-control action shown.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "15.4",
+      "chapter": 4,
+      "source": "data/why/lesson-15.json",
+      "scene_title": {
+        "en": "A better display",
+        "ru": "Стенд стал точнее"
+      },
+      "source_paragraphs": {
+        "en": [
+          "You help Gracie replace the headline with three separate cards: explained demonstration, report needing investigation, and biblical sign pointing to Jesus. The cup belongs on the first card. Michael keeps his unanswered question instead of covering it with a confident guess.",
+          "When visitors arrive, Joseph demonstrates the absorbent material and names its ordinary cause. Rosie invites anyone interested to read the storm account together. Their display now welcomes both careful investigation and serious attention to what Scripture says about Jesus."
+        ],
+        "ru": [
+          "Ты помогаешь Грейси сделать три карточки: объяснённый опыт, рассказ для проверки и библейское знамение, указывающее на Иисуса. Стакан относится к первой. Майкл оставляет вопрос открытым, а не прячет его за уверенной догадкой.",
+          "Джозеф показывает гостям впитывающий материал и объясняет обычную причину. Рози приглашает желающих вместе прочитать рассказ о буре. Теперь стенд помогает и внимательно исследовать, и серьёзно слушать, что Писание говорит об Иисусе."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-15-scene-4.webp",
+      "image_sha256": "64af017feb99afd39fd9c6d1b6c787b00ef0b04dccdcceeefa347af12b87ca84",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Three icon cards and open Bible support category display; absorbent-material demonstration and visitors omitted, acceptable planning beat.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "16.1",
+      "chapter": 4,
+      "source": "data/why/lesson-16.json",
+      "scene_title": {
+        "en": "The bright green mystery",
+        "ru": "Ярко-зелёная загадка"
+      },
+      "source_paragraphs": {
+        "en": [
+          "The explorers arrive at a small pond with pencils, a magnifier, and a bag for litter. Gracie spots green patches near the water's edge. Michael proposes a spectacular caption about a mysterious new life form. Joseph asks what they have actually observed before anyone names it.",
+          "You crouch on the path with them, staying away from the slippery bank. The patch is green, spread across part of the surface, and moving slightly with the water. Those observations fit in the notebook."
+        ],
+        "ru": [
+          "Исследователи приходят к пруду с карандашами, лупой и пакетом для мусора. Грейси замечает зелёные пятна у берега. Майкл предлагает эффектную подпись о загадочной новой форме жизни. Джозеф спрашивает, что они действительно увидели.",
+          "Ты приседаешь рядом на дорожке, подальше от скользкого берега. Пятно зелёное, занимает часть поверхности и слегка движется вместе с водой. Эти наблюдения можно записать."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-16-scene-1.webp",
+      "image_sha256": "f28b12fdce13c2ba666c600b0e3ff39fb4d5503046bc7324267fe79eb9097b15",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Children crouch at green pond edge with magnifier/notebook and Gracie carrying bag; observation setup legible without identifying a new organism.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "16.2",
+      "chapter": 4,
+      "source": "data/why/lesson-16.json",
+      "scene_title": {
+        "en": "Not knowing is a beginning",
+        "ru": "Не знать — значит начать"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Their leader suggests checking a local nature guide later. Rosie crosses out a sentence claiming that nobody could ever explain the patch. Not having an answer yet does not show that an answer is impossible, or prove that God filled a gap in their knowledge.",
+          "Michael worries that finding an ordinary explanation will make the pond less wonderful. Gracie disagrees. Learning how living things grow can deepen their attention instead of spoiling their gratitude to the Creator."
+        ],
+        "ru": [
+          "Руководитель предлагает позже открыть местный справочник природы. Рози вычёркивает фразу, будто пятно невозможно объяснить. Если мы пока не знаем ответа, это не значит, что ответа нет, и не доказывает вмешательства Бога именно здесь.",
+          "Майкл боится, что обычное объяснение лишит пруд удивительности. Грейси не согласна. Узнавая, как растут живые организмы, можно внимательнее смотреть на мир и сильнее благодарить Творца."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-16-scene-2.webp",
+      "image_sha256": "09191302200637acb6c4caa2640af07ad75202a613702f23e584b01695428137",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Leader speaks over notes at table; modern inquiry and consultation rather than a pictured God-of-gaps event.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "16.3",
+      "chapter": 4,
+      "source": "data/why/lesson-16.json",
+      "scene_title": {
+        "en": "Two kinds of sentences",
+        "ru": "Два вида предложений"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Rosie reads the psalm about the heavens declaring God's glory. This is Scripture teaching them to recognize creation's witness, not a laboratory measurement of the pond. Joseph draws two boxes: what we observed, and what we conclude or believe.",
+          "You help place a count of floating leaves in the first box. A statement about God's glory belongs in the second, grounded in Scripture. The boxes do not make faith unimportant; they stop the team from pretending different kinds of statements are identical."
+        ],
+        "ru": [
+          "Рози читает псалом о небесах, возвещающих славу Бога. Писание учит видеть свидетельство творения; это не лабораторное измерение пруда. Джозеф рисует две рамки: что наблюдаем и какие выводы делаем или во что верим.",
+          "Ты помещаешь число плавающих листьев в первую рамку. Утверждение о Божьей славе относится ко второй и опирается на Писание. Рамки не уменьшают важность веры, а помогают не смешивать разные виды утверждений."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-16-scene-3.webp",
+      "image_sha256": "39500eed887ee228e57e631204dbb741f6416ae179984a6451454a24b0517253",
+      "inspection": "contact sheet",
+      "status": "cosmetic",
+      "visual_evidence_and_story_comparison": "Rosie reads by campfire, Joseph rests/listens rather than drawing two boxes. Scripture reflection fits, but observational-classification action is absent.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    },
+    {
+      "scene": "16.4",
+      "chapter": 4,
+      "source": "data/why/lesson-16.json",
+      "scene_title": {
+        "en": "Care before leaving",
+        "ru": "Позаботиться перед уходом"
+      },
+      "source_paragraphs": {
+        "en": [
+          "Before leaving, Michael notices a wrapper beside the path. Their leader checks that it is safe to collect, and the team puts it in the litter bag. No one needs to solve every pond mystery before caring for this small place.",
+          "Joseph's final caption records the green patch without inventing its identity. Beneath it, Gracie writes their question for the nature guide. You leave with a cleaner path, a truthful notebook, and a reason to keep looking carefully rather than pretending the investigation is finished."
+        ],
+        "ru": [
+          "Перед уходом Майкл замечает обёртку у дорожки. Руководитель проверяет, безопасно ли её поднять, и ребята кладут мусор в пакет. Не нужно разгадать все тайны пруда, чтобы позаботиться об этом месте.",
+          "В подписи Джозеф описывает зелёное пятно, не выдумывая названия. Грейси записывает вопрос для справочника. Вы оставляете чистую дорожку и уносите честные записи и желание исследовать дальше, а не притворяться, что всё уже известно."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-16-scene-4.webp",
+      "image_sha256": "a07bbe4cf2bb31cc30a8e06691bea17e8d097616cac01b3a94863e5f52649069",
+      "inspection": "contact sheet",
+      "status": "pass",
+      "visual_evidence_and_story_comparison": "Michael bends to collect litter while companions stand on forest path; care-before-leaving action matches and no invented pond-species claim is visible.",
+      "identity_check": "No swapped Michael/green/brown curls, Joseph/blue/dark curls, Rosie/purple/brown hair, Gracie/yellow/black curls observed. Prop absence is not an identity swap.",
+      "readable_english": "No readable English identified at inspected scale; not a native-resolution OCR certification.",
+      "anatomy": "No obvious gross anatomy defect at inspected scale; tiny fingers in sheet-only scenes not certified.",
+      "ancient_reenactment": "No unframed ancient reenactment observed."
+    }
+  ]
+}

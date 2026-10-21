@@ -1,0 +1,181 @@
+{
+  "id": 19,
+  "chapter": 5,
+  "kind": "lesson",
+  "title": {
+    "en": "Can a chatbot be a person or my wisest friend?",
+    "ru": "Может ли чат-бот быть человеком или самым мудрым другом?"
+  },
+  "subtitle": {
+    "en": "The friendly answer with a mistake",
+    "ru": "Дружелюбный ответ с ошибкой"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "A welcoming screen",
+        "ru": "Приветливый экран"
+      },
+      "paragraphs": {
+        "en": [
+          "The library computer offers to help the explorers plan their exhibition. Its friendly message praises Joseph's questions and suggests cheerful headings. “Could it become the wisest friend on our team?” Michael asks.",
+          "The friendly words make it easy to imagine a person on the other side of the screen.",
+          "Their teacher brings a prepared practice sheet instead of asking children to open accounts. One sample answer confidently claims that Genesis says people are made in the image of computers. The sheet is clearly labeled an invented error."
+        ],
+        "ru": [
+          "Библиотечный компьютер помогает исследователям подготовить выставку. Дружелюбное сообщение хвалит вопросы Джозефа и предлагает весёлые заголовки. «Может, это будет самый мудрый друг в нашей команде?» — спрашивает Майкл.",
+          "Сообщения звучат так приветливо, что за ними легко представить настоящего человека.",
+          "Учитель приносит готовый учебный лист, не предлагая детям создавать аккаунты. В одном примере уверенно сказано, будто Бытие учит: люди созданы по образу компьютеров. На листе ясно написано: вымышленная ошибка для проверки."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Open the real passage",
+        "ru": "Открой настоящий текст"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie opens Genesis 1:27 in her purple Bible. The sample answer is wrong: the passage speaks of God's image. Joseph marks the mismatch in his blue notebook. A confident tone did not make the answer accurate, and the attached reference did not guarantee that it matched the text.",
+          "“A chatbot can help us write,” their teacher explains, “but it can also make a mistake sound convincing.”",
+          "Joseph looks from the screen to Rosie’s Bible. Before using the answer, they need to check what the source actually says; asking the program to promise it is right would not settle the question."
+        ],
+        "ru": [
+          "Рози открывает Бытие 1:27 в фиолетовой Библии. В примере ошибка: отрывок говорит об образе Бога. Джозеф отмечает несоответствие в синем блокноте. Уверенный тон не сделал ответ верным, а ссылка не гарантировала совпадения с текстом.",
+          "— Чат-бот может помочь написать текст, но и ошибку он иногда объясняет очень убедительно, — говорит учитель.",
+          "Джозеф переводит взгляд с экрана на Библию Рози. Прежде чем брать ответ для выставки, нужно прочитать сам источник. Даже если программа снова скажет, что ответ верный, его всё равно нужно проверить."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "More than friendly words",
+        "ru": "Не только добрые слова"
+      },
+      "paragraphs": {
+        "en": [
+          "Gracie asks whether a machine saying it cares is the same as a friend caring. The team distinguishes helpful language from a human relationship. Scripture describes human beings as made in God's image; sounding human on a screen does not establish that a program is a human person.",
+          "A trusted adult can know their situation, take responsibility, and help in real life. A chatbot is not their pastor, parent, or safest keeper of secrets. Kind wording is no reason to enter addresses, passwords, or private worries."
+        ],
+        "ru": [
+          "Грейси спрашивает: если машина пишет о заботе, это то же самое, что забота друга? Команда различает полезные слова и человеческие отношения. Писание говорит о людях как об образе Бога; человеческий стиль текста не доказывает, что программа является человеком.",
+          "Надёжный взрослый может знать обстоятельства, отвечать за свои действия и помогать в жизни. Чат-бот не заменяет родителей, пастора и безопасного собеседника для личных тайн. Приветливость — не повод сообщать адреса, пароли или сокровенные тревоги."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A tool in its place",
+        "ru": "Помощник на своём месте"
+      },
+      "paragraphs": {
+        "en": [
+          "You help Michael keep one useful heading and discard the false claim. The teacher reviews the finished card. Then the team closes the computer and asks the librarian how visitors with different reading needs might enjoy their display.",
+          "Beside the corrected passage, Joseph writes down what they learned: check an answer before using it, keep private information private, and ask trustworthy people for help. The computer helped them find a heading, but the librarian helped them understand their visitors. Michael can appreciate the tool without expecting it to take a friend’s place."
+        ],
+        "ru": [
+          "Ты помогаешь Майклу оставить удачный заголовок и убрать ложное утверждение. Учитель проверяет карточку. Затем команда закрывает компьютер и спрашивает библиотекаря, как сделать выставку удобной для посетителей с разными потребностями при чтении.",
+          "Рядом с исправленным ответом Джозеф записывает, чему они научились: проверять сведения, беречь личные данные и обращаться за помощью к надёжным людям. Компьютер помог придумать заголовок, а библиотекарь — лучше понять посетителей. Майкл рад полезному инструменту, но теперь не ждёт, что тот заменит ему друга."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Proverbs 13:20 (ESV)",
+      "ru": "Притчи 13:21 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "Whoever walks with the wise becomes wise,\nbut the companion of fools will suffer harm.",
+      "ru": "Общающийся с мудрыми будет мудр, а кто дружит с глупыми, развратится."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/PRO.13.20.ESV",
+      "ru": "https://www.bible.com/bible/167/PRO.13.21.RST"
+    }
+  },
+  "activity": {
+    "type": "sequence",
+    "title": {
+      "en": "Check the friendly answer",
+      "ru": "Проверь дружелюбный ответ"
+    },
+    "intro": {
+      "en": "Rebuild the safe source-checking route for the prepared practice sheet.",
+      "ru": "Восстанови безопасный путь проверки учебного примера."
+    },
+    "items": [
+      {
+        "id": "c",
+        "text": {
+          "en": "Compare the answer with the actual passage.",
+          "ru": "Сравнить ответ с самим отрывком."
+        }
+      },
+      {
+        "id": "a",
+        "text": {
+          "en": "Identify its exact claim and Bible reference.",
+          "ru": "Уточнить утверждение и библейскую ссылку."
+        }
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "Correct the draft and ask a trusted adult to review it.",
+          "ru": "Исправить черновик и попросить надёжного взрослого проверить."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Open Genesis 1:27 without entering private information.",
+          "ru": "Открыть Бытие 1:27, не вводя личных данных."
+        }
+      }
+    ],
+    "hint": {
+      "en": "Locate the claim first, then open its source before deciding whether it matches.",
+      "ru": "Сначала уточни утверждение, затем открой источник и сравни."
+    },
+    "success": {
+      "en": "You checked real words instead of trusting a friendly tone or a repeated promise.",
+      "ru": "Ты проверил настоящий текст, а не доверился приветливому тону или повторному обещанию."
+    },
+    "correctOrder": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ]
+  },
+  "fieldMission": {
+    "en": "With an adult, name one safe use for a digital tool and one private detail you will not enter. Choose a real trusted person for an important question.",
+    "ru": "Со взрослым назови одно безопасное применение цифрового помощника и один вид личных сведений, которые не будешь вводить. С важным вопросом обратись к надёжному человеку."
+  },
+  "prayer": {
+    "en": "God, help me seek wisdom, protect what is private, and grow in truthful friendships.",
+    "ru": "Боже, помоги искать мудрость, беречь личное и строить честную дружбу."
+  },
+  "adultNote": {
+    "en": "The chatbot error is deliberately authored practice, not a transcript or claim about a tested product. Read Genesis 1:27 and Proverbs 13:20; the Synodal numbering for the latter is 13:21. This child-facing lesson distinguishes generated language from human personhood and accountable care without pretending to settle every philosophical question about possible future systems.",
+    "ru": "Ошибка чат-бота придумана для упражнения; это не запись разговора и не результат проверки продукта. Прочитайте Бытие 1:27 и Притчи 13:20; в Синодальном переводе второй стих имеет номер 13:21. Урок различает созданный программой текст, человеческую личность и ответственную заботу, не претендуя решить все философские вопросы о будущих системах."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Proverbs 13:20 — Bible.com ESV / RST",
+        "ru": "Притчи 13:21 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/PRO.13.20.ESV",
+      "supports": {
+        "en": "Proverbs 13:20 concerns the influence of wise companions; the lesson applies that wisdom to choosing whom to trust.",
+        "ru": "Притчи 13:21 говорит о влиянии мудрых спутников; урок применяет эту мудрость к выбору тех, кому доверять."
+      },
+      "limits": {
+        "en": "A principle about human companionship, not an ancient technical description of AI or a scientific test for personhood.",
+        "ru": "Принцип о человеческом общении, не древнее техническое описание ИИ и не научный тест на личность."
+      }
+    }
+  ]
+}

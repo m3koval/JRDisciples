@@ -1,0 +1,186 @@
+{
+  "id": 27,
+  "chapter": 7,
+  "kind": "lesson",
+  "title": {
+    "en": "Why did Jesus have to die?",
+    "ru": "Почему Иисус должен был умереть?"
+  },
+  "subtitle": {
+    "en": "The torn mural and the gift nobody could earn",
+    "ru": "Порванное панно и незаслуженный дар"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "The tear nobody claimed",
+        "ru": "Разрыв, о котором молчали"
+      },
+      "paragraphs": {
+        "en": [
+          "Michael pulls the community mural from its tube. A long tear runs through the painted river. Yesterday, while packing it in a hurry, he heard the paper rip and said nothing. Now everyone is searching for tape, and keeping quiet feels harder with every moment.",
+          "You join the explorers beside the damaged painting. Gracie offers to cover the hole with a bright sun. Michael shakes his head. Hiding the damage would not make his dishonesty disappear."
+        ],
+        "ru": [
+          "Майкл достаёт общее панно из тубуса. Через нарисованную реку идёт длинный разрыв. Вчера он торопился, услышал, как рвётся бумага, и промолчал. Теперь все ищут скотч, а ему с каждой минутой всё труднее скрывать правду.",
+          "Ты присоединяешься к исследователям. Грейси предлагает закрыть дыру ярким солнцем. Майкл качает головой: спрятать повреждение — не значит перестать обманывать."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A deeper wrong",
+        "ru": "Беда глубже разрыва"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie sets her purple Bible beside the paint jars. They read Isaiah 53:4–6 and Romans 5:6–11 with their leader. Sin is not just a broken object; it is turning from God, and it harms our relationships. God does not pretend that evil is harmless.",
+          "Joseph pauses over his blue notebook.",
+          "“If what we do wrong really matters, how can we be forgiven?” he asks. Their leader turns back to the passages they have read: to understand God’s mercy, they need to look at what Jesus did for sinners."
+        ],
+        "ru": [
+          "Рози кладёт фиолетовую Библию рядом с красками. С руководителем они читают Исаии 53:4–6 и Римлянам 5:6–11. Грех — не просто сломанная вещь. Это непослушание Богу, разрушающее отношения. Бог не делает вид, будто зло безвредно.",
+          "Джозеф задумывается над синим блокнотом.",
+          "— Если зло действительно так серьёзно, как виновному получить прощение? — спрашивает он. Руководитель возвращается к прочитанным отрывкам: понять Божью милость помогает то, что Иисус сделал ради грешников."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Love takes the cost",
+        "ru": "Любовь принимает цену"
+      },
+      "paragraphs": {
+        "en": [
+          "Their leader explains that Jesus willingly gave himself for sinners. The sinless Son was not an unwilling stranger persuaded to care. Father and Son are united in this loving rescue. Jesus bore our sins; his death and resurrection open the way to forgiveness and life.",
+          "Fixing a mural is only a small reminder that repair costs something, not a complete explanation of salvation. Nobody can pay God back with enough paintings, promises, or good deeds."
+        ],
+        "ru": [
+          "Руководитель объясняет: Иисус добровольно отдал Себя за грешников. Безгрешный Сын — не посторонний, которого заставили помочь. Отец и Сын едины в этой любви. Иисус понёс наши грехи; Его смерть и воскресение открывают путь к прощению и жизни.",
+          "Починка панно лишь напоминает, что исправление чего-то стоит. Она не объясняет спасение целиком. Картинами, обещаниями или добрыми делами невозможно расплатиться с Богом."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "An honest beginning",
+        "ru": "Честное начало"
+      },
+      "paragraphs": {
+        "en": [
+          "Michael tells the group what happened and apologizes without blaming the tube. He helps repair the backing, although the river still has a visible seam. Gracie makes room for him at the worktable instead of keeping a scoreboard of his failure.",
+          "You hold the edge while the glue dries. The team cannot act out everything Jesus accomplished. But they can receive his mercy and practice a small, costly kindness because they have been loved first."
+        ],
+        "ru": [
+          "Майкл признаётся и просит прощения, не обвиняя тубус. Он помогает подклеить основу, хотя шов на реке остаётся заметным. Грейси освобождает ему место за столом вместо того, чтобы вести счёт его ошибкам.",
+          "Ты держишь край, пока сохнет клей. Команда не может изобразить всё, что совершил Иисус. Но можно принять Его милость и проявить доброту, требующую усилия: Он первым полюбил нас."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Romans 5:8 (ESV)",
+      "ru": "Послание к Римлянам 5:8 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "but God shows his love for us in that while we were still sinners, Christ died for us.",
+      "ru": "Но Бог Свою любовь к нам доказывает тем, что Христос умер за нас, когда мы были еще грешниками."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/ROM.5.8.ESV",
+      "ru": "https://www.bible.com/bible/167/ROM.5.8.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Why the cross?",
+      "ru": "Зачем крест?"
+    },
+    "intro": {
+      "en": "Use the discoveries from the story to decide.",
+      "ru": "Вспомни открытия из истории и выбери ответ."
+    },
+    "question": {
+      "en": "Which explanation holds together love and the seriousness of sin?",
+      "ru": "Какое объяснение соединяет любовь и серьёзность греха?"
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "God decided wrong never matters.",
+          "ru": "Бог решил, что зло не имеет значения."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Jesus willingly gave himself for sinners; forgiveness is grace.",
+          "ru": "Иисус добровольно отдал Себя за грешников; прощение — благодать."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Enough good deeds make Jesus unnecessary.",
+          "ru": "Если делать много добра, Иисус не нужен."
+        }
+      }
+    ],
+    "correctId": "b",
+    "hint": {
+      "en": "Do not erase the wrong or turn mercy into wages.",
+      "ru": "Не преуменьшай зло и не превращай милость в зарплату."
+    },
+    "success": {
+      "en": "Mercy is not pretending; Jesus gives what sinners cannot earn.",
+      "ru": "Милость не притворяется: Иисус дарит то, чего грешники не могут заслужить."
+    }
+  },
+  "fieldMission": {
+    "en": "Name one wrong honestly before God. With a trusted adult, consider a safe repair or apology, without treating it as payment for salvation.",
+    "ru": "Честно назови перед Богом один грех. С надёжным взрослым подумай об извинении или исправлении, не считая это платой за спасение."
+  },
+  "prayer": {
+    "en": "Jesus, thank you for willingly loving sinners. Help me receive your mercy and tell the truth.",
+    "ru": "Иисус, спасибо, что Ты добровольно проявил любовь к грешникам. Помоги мне принять милость и говорить правду."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Bible anchor: Romans 5:8 (ESV)",
+        "ru": "Библейский текст: Послание к Римлянам 5:8 (Синодальный перевод)"
+      },
+      "url": "https://www.bible.com/bible/59/ROM.5.8.ESV",
+      "supports": {
+        "en": "Romans 5:8 identifies Christ's death for sinners as the demonstration of God's love.",
+        "ru": "Римлянам 5:8 называет смерть Христа за грешников проявлением Божьей любви."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    },
+    {
+      "title": {
+        "en": "Russian Synodal anchor",
+        "ru": "Текст Синодального перевода"
+      },
+      "url": "https://www.bible.com/bible/167/ROM.5.8.RST",
+      "supports": {
+        "en": "Exact Russian text for the displayed verse.",
+        "ru": "Точный русский текст приведённого стиха."
+      },
+      "limits": {
+        "en": "Verse numbering can differ between translations, especially in Psalms.",
+        "ru": "Нумерация стихов в переводах может отличаться, особенно в Псалтири."
+      }
+    }
+  ],
+  "adultNote": {
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read Isaiah 53:4–6 and Romans 5:6–11. Avoid graphic detail, collective blame against Jewish people, or portraying the Father and Son as opponents. The repair illustration is explicitly limited.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Исаии 53:4–6 и Римлянам 5:6–11. Избегайте жестоких подробностей, обвинения еврейского народа и противопоставления Отца Сыну. Пример с ремонтом имеет пределы."
+  }
+}

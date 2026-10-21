@@ -1,0 +1,23 @@
+{
+  "lesson": 14,
+  "verifiedVerses": {
+    "en": {
+      "url": "https://www.bible.com/bible/59/PSA.111.2.ESV",
+      "text": "Great are the works of the LORD,\nstudied by all who delight in them.",
+      "referencePageTitle": "Psalm 111:2 (ESV) - Great are the works of the LORD,\nst - Bible App",
+      "ogDescription": "Great are the works of the LORD,\nstudied by all who delight in them.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:53.017883+00:00"
+    },
+    "ru": {
+      "url": "https://www.bible.com/bible/167/PSA.110.2.RST",
+      "text": "Велики дела Господни, вожделенны для всех, любящих оные.",
+      "referencePageTitle": "Псалтирь 110:2 (Синод) - Велики дела Господни, вожделенны дл - Bible App",
+      "ogDescription": "Велики дела Господни, вожделенны для всех, любящих оные.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:51.669534+00:00"
+    }
+  },
+  "notes": "Exact rendered Bible.com verse strings retained, including punctuation and translation-specific numbering. Narrative is original fiction and biblical explanation, not additional Scripture quotation.",
+  "storyEnglishWords": 316
+}

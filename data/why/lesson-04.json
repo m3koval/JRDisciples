@@ -1,0 +1,169 @@
+{
+  "id": 4,
+  "chapter": 1,
+  "kind": "lab",
+  "title": {
+    "en": "LAB: What would help us know?",
+    "ru": "ЛАБОРАТОРИЯ: Что поможет нам узнать?"
+  },
+  "subtitle": {
+    "en": "The mixed-up evidence table",
+    "ru": "Перепутанные материалы"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "Four envelopes, one mess",
+        "ru": "Четыре конверта и беспорядок"
+      },
+      "paragraphs": {
+        "en": [
+          "The explorers arrange a small exhibition for their families, but a gust from the window scatters their labels. A leaf sketch lands beside a Bible passage; an interview note slides under a domino diagram. Michael wants to put everything into one big proof envelope.",
+          "‘But how would a leaf show what our teacher said yesterday?’ Joseph asks. Michael looks again at the scattered labels. You join them at the table to sort out the mix-up: before choosing a piece of evidence, they need to know which question it can help answer."
+        ],
+        "ru": [
+          "Исследователи готовят выставку для семей, но ветер из окна разбрасывает подписи. Рисунок листа падает к библейскому отрывку, запись беседы — под схему костяшек. Майкл предлагает сложить всё в один большой конверт с доказательствами.",
+          "«Но разве по листу узнаешь, что вчера сказал учитель?» — спрашивает Джозеф. Майкл снова смотрит на перепутанные подписи. Ты присоединяешься к ребятам за столом: прежде чем выбрать материал, нужно понять, на какой вопрос он поможет ответить."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Ask before sorting",
+        "ru": "Сначала спросим"
+      },
+      "paragraphs": {
+        "en": [
+          "Gracie picks up the leaf sketch and asks what it records. They counted five points on that leaf; another child could inspect the same leaf. The interview records someone's report, which raises different questions: who spoke, what did they see, and could they be mistaken?",
+          "Their domino diagram contains reasoning from an example. Rosie places the Bible passage in a fourth envelope. Christians receive Scripture as God's word; it is not the same kind of item as their own measurement."
+        ],
+        "ru": [
+          "Грейси поднимает рисунок и спрашивает, что он показывает. На этом листе ребята насчитали пять выступов; другой человек может проверить тот же лист. Запись беседы передаёт сообщение человека: кто говорил, что видел, мог ли ошибиться?",
+          "Схема костяшек содержит рассуждение по примеру. Рози кладёт Библию в четвёртый конверт. Христиане принимают Писание как Божье слово; это не тот же вид материала, что собственное измерение."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Eager and careful",
+        "ru": "С интересом и вниманием"
+      },
+      "paragraphs": {
+        "en": [
+          "They read about the people in Berea in Acts 17. These listeners welcomed the message and examined the Scriptures. Eagerness and careful checking were not enemies. Michael realizes that shouting louder about his favorite exhibit would not answer a visitor's actual question.",
+          "You help them add a note beside each label about what it can show. ‘We only counted this leaf,’ Gracie reminds them, ‘not every leaf on every tree.’ They check the other labels too: an interview records one person's report, their domino model is not the whole universe, and the Bible passage needs its surrounding verses to be understood properly."
+        ],
+        "ru": [
+          "Ребята читают в Деяниях 17 о жителях Верии. Те охотно слушали весть и исследовали Писание. Интерес и внимательная проверка не мешали друг другу. Майкл понимает: громко хвалить любимый экспонат — ещё не ответить посетителю.",
+          "Ты помогаешь добавить к подписям пояснения. «Мы ведь считали выступы только на этом листе, а не на всех листьях», — напоминает Грейси. Ребята проверяют и остальные подписи: беседа передаёт рассказ одного человека, ряд костяшек не изображает всю Вселенную, а библейский отрывок нужно читать вместе с соседними стихами."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A visitor with a question",
+        "ru": "Посетитель с вопросом"
+      },
+      "paragraphs": {
+        "en": [
+          "When their families arrive, a visitor asks why Rosie trusts Jesus. She describes what she has learned from the Gospel, rather than pointing triumphantly at the leaf. She also names a question she is still exploring with her teacher.",
+          "The envelopes stay open on the table so visitors can examine them. Joseph offers you the final label: explain gently. The exhibition succeeds not because every visitor agrees, but because the team tells the truth about what each source can show."
+        ],
+        "ru": [
+          "Когда приходят семьи, посетитель спрашивает, почему Рози доверяет Иисусу. Она рассказывает об узнанном из Евангелия, а не победно показывает на лист. Ещё она называет вопрос, который продолжает изучать с учителем.",
+          "Конверты остаются открытыми: посетители могут посмотреть материалы. Джозеф отдаёт тебе последнюю подпись: объясняй мягко. Выставка удалась не потому, что все согласились, а потому, что команда честно показала возможности источников."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Acts 17:11 (ESV)",
+      "ru": "Деяния 17:11 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "Now these Jews were more noble than those in Thessalonica; they received the word with all eagerness, examining the Scriptures daily to see if these things were so.",
+      "ru": "Здешние были благомысленнее Фессалоникских: они приняли слово со всем усердием, ежедневно разбирая Писания, точно ли это так."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/ACT.17.11.ESV",
+      "ru": "https://www.bible.com/bible/167/ACT.17.11.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Choose the right envelope",
+      "ru": "Выбери подходящий конверт"
+    },
+    "intro": {
+      "en": "A visitor asks what Christians read about Jesus. Where should the team begin?",
+      "ru": "Посетитель спрашивает, что христиане читают об Иисусе. С чего начать?"
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Count the points on our leaf.",
+          "ru": "Посчитать выступы на нашем листе."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Show the domino model as if it recorded Jesus.",
+          "ru": "Показать костяшки, будто это запись об Иисусе."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Open a Gospel and explain what its passage says.",
+          "ru": "Открыть Евангелие и объяснить содержание отрывка."
+        }
+      }
+    ],
+    "hint": {
+      "en": "Match the source to the question, not to its impressive appearance.",
+      "ru": "Выбирай источник по вопросу, а не по эффектному виду."
+    },
+    "success": {
+      "en": "A Gospel addresses the question; the other exhibits answer different questions.",
+      "ru": "Евангелие отвечает на этот вопрос; другие материалы отвечают на другие вопросы."
+    },
+    "correctId": "c",
+    "question": {
+      "en": "A visitor asks what Christians read about Jesus. Where should the team begin?",
+      "ru": "Посетитель спрашивает, что христиане читают об Иисусе. С чего начать?"
+    }
+  },
+  "fieldMission": {
+    "en": "Explain one belief gently. Name its source and one thing that source does not settle.",
+    "ru": "Мягко объясни одно убеждение. Назови источник и вопрос, который он не решает."
+  },
+  "prayer": {
+    "en": "God, make me eager to learn and careful with the truth.",
+    "ru": "Боже, дай мне желание учиться и бережно обращаться с истиной."
+  },
+  "adultNote": {
+    "en": "Four evidence categories are introduced in the story; the activity tests source selection rather than ranking Scripture against measurements.",
+    "ru": "Рассказ знакомит с четырьмя видами оснований. Задание проверяет выбор источника, а не сравнивает ценность Писания и измерений."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Acts 17:11 — Bible.com ESV / RST",
+        "ru": "Деяния 17:11 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/ACT.17.11.ESV",
+      "supports": {
+        "en": "Acts 17:11 commends examining Scripture to test the message heard.",
+        "ru": "Деяния 17:11 одобряет проверку услышанной проповеди по Писанию."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    }
+  ]
+}

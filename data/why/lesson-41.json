@@ -1,0 +1,184 @@
+{
+  "id": 41,
+  "chapter": 11,
+  "kind": "lesson",
+  "title": {
+    "en": "Why church when I can watch a video?",
+    "ru": "Зачем церковь, если можно посмотреть видео?"
+  },
+  "subtitle": {
+    "en": "The empty chair a screen could not notice",
+    "ru": "Пустой стул, которого экран не заметил"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "A very good recording",
+        "ru": "Очень хорошая запись"
+      },
+      "paragraphs": {
+        "en": [
+          "Rain moves the explorers’ meeting into the church hall. Michael arrives with a helpful Bible video. “Couldn’t we all watch this at home next week?” he asks as they arrange the chairs. “Then there wouldn’t be any muddy shoes to clean up after.” On the screen, the speaker is ready to begin and has all his notes in order.",
+          "Then Rosie notices the empty chair beside Joseph. Their friend Anna has missed two gatherings. The video can teach something true, but its recorded speaker cannot notice Anna’s chair or ask why she has disappeared."
+        ],
+        "ru": [
+          "Из-за дождя исследователи собираются в церковном зале. Майкл приносит полезное библейское видео. «А может, на следующей неделе все посмотрят его дома? — предлагает он, пока они расставляют стулья. — Тогда и грязь с пола убирать не придётся». На экране ведущий уже готов начать, и все записи у него на месте.",
+          "Рози замечает пустой стул рядом с Джозефом. Их подруга Анна пропустила две встречи. Запись может учить истине, но её ведущий не заметит пустой стул и не спросит, куда исчезла Анна."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "People doing things together",
+        "ru": "Люди действуют вместе"
+      },
+      "paragraphs": {
+        "en": [
+          "Joseph opens Acts 2:42–47 and circles the actions in his notebook: learning, praying, sharing meals, and meeting needs. The first believers were not merely customers collecting useful talks. Jesus gathered people who belonged to him and learned to care for one another.",
+          "You help Rosie read Hebrews 10:24–25. Encouragement needs both someone giving and someone receiving it. Michael adds another column beside Watch: Participate. Worship, listening, serving, and being known involve the whole church family."
+        ],
+        "ru": [
+          "Джозеф открывает Деяния 2:42–47 и выписывает действия: учиться, молиться, есть вместе, помогать нуждающимся. Первые верующие не просто собирали полезные выступления. Иисус собрал людей, принадлежащих Ему и учащихся заботиться друг о друге.",
+          "Ты помогаешь Рози прочитать Евреям 10:24–25. Ободрение нужно кому-то передать и от кого-то принять. Майкл рядом со словом «Смотреть» пишет «Участвовать». Поклонение, слушание и служение — общая жизнь церковной семьи."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "An empty chair has a name",
+        "ru": "У пустого стула есть имя"
+      },
+      "paragraphs": {
+        "en": [
+          "With their leader, the children ask Anna’s family whether a visit would help. Her father is recovering from surgery, and transport has become difficult. The adults arrange support; the children prepare a card and record the group singing Anna’s favorite song.",
+          "“So a recording can help,” Gracie says as they finish the song. Now she sees the difference: they are sending it because they know and love Anna, not because a video can replace their friendship. Before preparing anything else, they ask what Anna would enjoy."
+        ],
+        "ru": [
+          "С руководителем дети спрашивают семью Анны, будет ли полезен визит. Её папа восстанавливается после операции, и добираться стало трудно. Взрослые организуют помощь, дети делают открытку и записывают любимую песню Анны.",
+          "«Значит, запись тоже может помочь», — говорит Грейси, когда песня заканчивается. Теперь она понимает разницу: они отправляют запись, потому что знают и любят Анну, а не чтобы заменить ею дружбу. Прежде чем готовить что-то ещё, они спрашивают, что порадует подругу."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "More than an audience",
+        "ru": "Больше, чем зрители"
+      },
+      "paragraphs": {
+        "en": [
+          "The following week Anna joins by video while a trusted adult visits her family. Michael sets a chair near the screen and asks for her ideas about the next project. When she suggests large-print song sheets, he volunteers to help make them.",
+          "Explorer, find a role beside him. Belonging is not a perfect attendance prize. The church gathers around Jesus to worship and grow together, and its care reaches people who cannot currently come through the door."
+        ],
+        "ru": [
+          "На следующей неделе Анна подключается по видеосвязи, а надёжный взрослый навещает её семью. Майкл ставит стул рядом с экраном и спрашивает её идеи для проекта. Анна предлагает крупно напечатать песни; он берётся помочь.",
+          "Исследователь, найди дело рядом с ним. Принадлежность к церкви не награда за посещаемость. Церковь собирается вокруг Иисуса, чтобы поклоняться и расти вместе, а её забота достигает тех, кто сейчас не может прийти."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Acts 2:42 (ESV)",
+      "ru": "Деяния святых апостолов 2:42 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "And they devoted themselves to the apostles’ teaching and the fellowship, to the breaking of bread and the prayers.",
+      "ru": "И они постоянно пребывали в учении Апостолов, в общении и преломлении хлеба и в молитвах."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/ACT.2.42.ESV",
+      "ru": "https://www.bible.com/bible/167/ACT.2.42.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Respond to the empty chair",
+      "ru": "Ответ на пустой стул"
+    },
+    "intro": {
+      "en": "Use the discoveries from the story to decide.",
+      "ru": "Вспомни открытия из истории и выбери ответ."
+    },
+    "question": {
+      "en": "Which plan treats Anna as part of the church family?",
+      "ru": "Какой план помогает Анне участвовать в жизни церковной семьи?"
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Send a link and never ask how she is.",
+          "ru": "Отправить ссылку и больше не спрашивать о ней."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Ask what support she needs and include her ideas.",
+          "ru": "Спросить, какая помощь нужна, и учесть её идеи."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Remove her name because she missed meetings.",
+          "ru": "Вычеркнуть её имя за пропуски."
+        }
+      }
+    ],
+    "correctId": "b",
+    "hint": {
+      "en": "Think about mutual care, not only receiving information.",
+      "ru": "Подумай о взаимной заботе, а не только о получении знаний."
+    },
+    "success": {
+      "en": "Church family learns and worships together while making room for each person to give and receive care.",
+      "ru": "Церковная семья учится и поклоняется вместе, помогая каждому принимать заботу и заботиться о других."
+    }
+  },
+  "fieldMission": {
+    "en": "Ask a trusted church adult for one small way to encourage someone, including someone unable to attend.",
+    "ru": "Спроси надёжного взрослого в церкви, как ободрить одного человека, в том числе того, кто не может прийти."
+  },
+  "prayer": {
+    "en": "Jesus, teach me to love your people, receive their care, and bring my own small gift of service.",
+    "ru": "Иисус, научи любить Твой народ, принимать заботу и самому служить."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Bible anchor: Acts 2:42 (ESV)",
+        "ru": "Библейский текст: Деяния святых апостолов 2:42 (Синодальный перевод)"
+      },
+      "url": "https://www.bible.com/bible/59/ACT.2.42.ESV",
+      "supports": {
+        "en": "Acts 2:42 describes shared teaching, fellowship, breaking bread and prayer—not only consuming information.",
+        "ru": "Деяния 2:42 описывает совместную жизнь в учении, общении, преломлении хлеба и молитве, а не только получение информации."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    },
+    {
+      "title": {
+        "en": "Russian Synodal anchor",
+        "ru": "Текст Синодального перевода"
+      },
+      "url": "https://www.bible.com/bible/167/ACT.2.42.RST",
+      "supports": {
+        "en": "Exact Russian text for the displayed verse.",
+        "ru": "Точный русский текст приведённого стиха."
+      },
+      "limits": {
+        "en": "Verse numbering can differ between translations, especially in Psalms.",
+        "ru": "Нумерация стихов в переводах может отличаться, особенно в Псалтири."
+      }
+    }
+  ],
+  "adultNote": {
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Affirm access needs, illness, and appropriate online participation. Gathering matters, but attendance is not a measure of worth or permission to ignore unsafe church conduct.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Учитывайте ограничения здоровья и доступность, поддерживайте участие онлайн. Общие встречи важны, но посещаемость не измеряет ценность человека и не оправдывает опасное поведение в церкви."
+  }
+}

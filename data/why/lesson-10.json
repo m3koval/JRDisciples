@@ -1,0 +1,169 @@
+{
+  "id": 10,
+  "chapter": 3,
+  "kind": "lesson",
+  "title": {
+    "en": "How can God be Father, Son and Holy Spirit?",
+    "ru": "Как Бог может быть Отцом, Сыном и Святым Духом?"
+  },
+  "subtitle": {
+    "en": "Three cards, one careful answer",
+    "ru": "Три карточки и внимательный ответ"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "A question by the river",
+        "ru": "Вопрос у реки"
+      },
+      "paragraphs": {
+        "en": [
+          "At a riverside picnic, Joseph opens his blue notebook to a question he has been saving. ‘We talk about the Father, the Son, and the Holy Spirit. Does that mean there are three gods?’ Michael thinks for a moment. ‘Or is it like one person changing costumes for different jobs?’ They turn to Rosie, hoping she will help them work out where their ideas go wrong.",
+          "Rosie does not laugh at either question. She places three blank cards on the picnic blanket and asks you to help check their ideas against the Bible before drawing any conclusions."
+        ],
+        "ru": [
+          "На пикнике у реки Джозеф открывает синий блокнот с давно записанным вопросом. «Мы говорим об Отце, Сыне и Святом Духе. Получается, богов три?» Майкл задумывается. «А может, это как один человек, который меняет костюмы для разных дел?» Они смотрят на Рози, надеясь вместе разобраться, где ошиблись.",
+          "Рози не смеётся над вопросами. Она кладёт на покрывало три пустые карточки и просит тебя помочь проверить идеи по Библии, прежде чем делать выводы."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Read the baptism account",
+        "ru": "Прочитаем о крещении"
+      },
+      "paragraphs": {
+        "en": [
+          "Their leader reads Matthew's account of Jesus' baptism. Jesus comes up from the water, the Spirit descends like a dove, and a voice from heaven identifies the beloved Son. The children are reading an account, not pretending the river beside their blanket is that ancient place.",
+          "Gracie writes Father, Son, and Holy Spirit on the cards. They are distinct, not one person pretending to be someone else. The scene does not describe Jesus changing into the Father."
+        ],
+        "ru": [
+          "Наставник читает рассказ Матфея о крещении Иисуса. Иисус выходит из воды, Дух спускается как голубь, а голос с небес говорит о возлюбленном Сыне. Дети читают библейский рассказ, а не притворяются, будто их река — то самое древнее место.",
+          "Грейси подписывает карточки: Отец, Сын и Святой Дух. Они различны; это не одно Лицо, изображающее других. Рассказ не говорит, что Иисус превратился в Отца."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Keep both truths",
+        "ru": "Сохраним обе истины"
+      },
+      "paragraphs": {
+        "en": [
+          "Next Rosie opens Matthew 28:19. Jesus names Father, Son, and Holy Spirit together in his command about baptism. Their leader connects this with Scripture's teaching that there is one God. Christians call this truth the Trinity: one God, three distinct persons, each fully God.",
+          "Michael puts away the costume sketch. Joseph suggests dividing a circle into thirds, but that would suggest each person is only part of God. They choose careful words instead of a misleading diagram."
+        ],
+        "ru": [
+          "Затем Рози открывает Матфея 28:19. В повелении о крещении Иисус вместе называет Отца, Сына и Святого Духа. Наставник напоминает и библейское учение о едином Боге. Христиане называют это Троицей: один Бог, три различных Лица; каждое — в полной мере Бог.",
+          "Майкл убирает рисунок костюмов. Джозеф предлагает разделить круг на три части, но тогда получится, будто каждое Лицо — лишь часть Бога. Вместо неверной схемы они выбирают точные слова."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "More than a puzzle",
+        "ru": "Не просто загадка"
+      },
+      "paragraphs": {
+        "en": [
+          "You help hold down the cards before a breeze carries them away. ‘I understand why our pictures didn't work,’ Gracie says, ‘but I still can't imagine how God is three persons.’ Their leader tells her she can keep asking and learning without inventing a picture that changes what Scripture teaches. They leave their careful explanation on the cards.",
+          "Before packing their picnic, they pray to the Father, thanking him for sending the Son and giving the Spirit. The lesson ends in gratitude and worship, not in winning a difficult word game."
+        ],
+        "ru": [
+          "Ты помогаешь прижать карточки, чтобы ветер их не унёс. «Я поняла, почему наши рисунки не подходят, — говорит Грейси. — Но всё равно не могу представить, как Бог может быть в трёх Лицах». Наставник отвечает, что можно продолжать спрашивать и учиться, не придумывая картинку, которая изменит смысл Писания. Ребята оставляют на карточках своё объяснение.",
+          "Перед уходом дети молятся Отцу, благодаря Его за посланного Сына и дар Святого Духа. Урок заканчивается благодарностью и поклонением, а не победой в трудной словесной игре."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Matthew 28:19 (ESV)",
+      "ru": "Матфея 28:19 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit",
+      "ru": "Итак идите, научите все народы, крестя их во имя Отца и Сына и Святаго Духа"
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/MAT.28.19.ESV",
+      "ru": "https://www.bible.com/bible/167/MAT.28.19.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Which explanation keeps both truths?",
+      "ru": "Какой ответ сохраняет обе истины?"
+    },
+    "intro": {
+      "en": "Choose a caption for the baptism study cards.",
+      "ru": "Выбери подпись к карточкам о крещении."
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "One person changes between three costumes.",
+          "ru": "Одно Лицо меняет три костюма."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "One God; Father, Son, and Holy Spirit are distinct persons, each fully God.",
+          "ru": "Один Бог; Отец, Сын и Святой Дух — различные Лица, каждое в полной мере Бог."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Three separate gods each own part of the world.",
+          "ru": "Три отдельных бога владеют разными частями мира."
+        }
+      }
+    ],
+    "hint": {
+      "en": "Do not lose either one God or the distinction between Father, Son, and Spirit.",
+      "ru": "Сохрани и единство Бога, и различие Отца, Сына и Духа."
+    },
+    "success": {
+      "en": "You avoided both three gods and three disguises.",
+      "ru": "Ты избежал и трёх богов, и трёх масок."
+    },
+    "correctId": "b",
+    "question": {
+      "en": "Choose a caption for the baptism study cards.",
+      "ru": "Выбери подпись к карточкам о крещении."
+    }
+  },
+  "fieldMission": {
+    "en": "Read Matthew 3:16–17 with an adult and name what each person does in the account.",
+    "ru": "Прочитай Матфея 3:16–17 со взрослым и назови, что в рассказе делает каждое Лицо."
+  },
+  "prayer": {
+    "en": "Father, thank you for your Son and for the Holy Spirit. Help me know and worship you.",
+    "ru": "Отец, благодарю Тебя за Сына и Святого Духа. Помоги мне познавать Тебя и поклоняться Тебе."
+  },
+  "adultNote": {
+    "en": "The Trinity is a synthesis of biblical teaching, not a claim that one verse supplies every detail. Avoid water, egg, costume, or divided-object analogies that erase personal distinction or full deity.",
+    "ru": "Учение о Троице объединяет библейское свидетельство; один стих не раскрывает все подробности. Избегайте сравнений с водой, яйцом, костюмами или частями предмета: они искажают различие Лиц или полноту Божества."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Matthew 28:19 — Bible.com ESV / RST",
+        "ru": "Матфея 28:19 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/MAT.28.19.ESV",
+      "supports": {
+        "en": "Matthew 28:19 names Father, Son and Holy Spirit together in the baptismal command.",
+        "ru": "Матфея 28:19 называет Отца, Сына и Святого Духа в повелении о крещении."
+      },
+      "limits": {
+        "en": "One foundation for Trinitarian doctrine, read with Scripture’s witness to one God; not a complete explanation of that doctrine by itself.",
+        "ru": "Одна из основ учения о Троице, вместе с библейским свидетельством о едином Боге; сам по себе стих не излагает учение полностью."
+      }
+    }
+  ]
+}

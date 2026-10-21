@@ -1,0 +1,5740 @@
+{
+  "started": "2026-10-21T11:06:22.387Z",
+  "base": "http://127.0.0.1:41927",
+  "method": "Fresh browser contexts; all actions through UI. No storage injection. Exact rendered copy checked against lesson fixtures, not external Scripture verification.",
+  "cases": [
+    {
+      "id": 1,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 1,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 2,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 2,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 3,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 3,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 4,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 4,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 5,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 5,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 6,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 6,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 7,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 7,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 8,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 8,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 9,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 9,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 10,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 10,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 11,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 11,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 12,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 12,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 13,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 13,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 14,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 14,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 15,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 15,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 16,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 16,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 17,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 17,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 18,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 18,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 19,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 19,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 20,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 20,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 21,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 21,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 22,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 22,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 23,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 23,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 24,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 24,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 25,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 25,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 26,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 26,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 27,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 27,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 28,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 28,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 29,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 29,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 30,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 30,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 31,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 31,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 32,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 32,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 33,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 33,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 34,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 34,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 35,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 35,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 36,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 36,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 37,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 37,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 38,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 38,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 39,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 39,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 40,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 40,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 41,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 41,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 42,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 42,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 43,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 43,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 44,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 44,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 45,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 45,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 46,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 46,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 47,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 47,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 48,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 48,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 49,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 49,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 50,
+      "lang": "en",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 50,
+      "lang": "ru",
+      "type": "sort",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 51,
+      "lang": "en",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 51,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 52,
+      "lang": "en",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    },
+    {
+      "id": 52,
+      "lang": "ru",
+      "type": "choose",
+      "status": "passed",
+      "storyScenes": 4,
+      "sources": true,
+      "wrongRetry": true,
+      "completionAndReload": true
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "name": "phone",
+      "status": "passed",
+      "images": [
+        {
+          "id": 1,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-1.webp&w=640&q=75",
+          "ready": true
+        },
+        {
+          "id": 6,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-1.webp&w=640&q=75",
+          "ready": true
+        },
+        {
+          "id": 29,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-29-scene-1.webp&w=640&q=75",
+          "ready": true
+        },
+        {
+          "id": 52,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-52-scene-1.webp&w=640&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "name": "tablet",
+      "status": "passed",
+      "images": [
+        {
+          "id": 1,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-1.webp&w=640&q=75",
+          "ready": true
+        },
+        {
+          "id": 6,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-1.webp&w=640&q=75",
+          "ready": true
+        },
+        {
+          "id": 29,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-29-scene-1.webp&w=640&q=75",
+          "ready": true
+        },
+        {
+          "id": 52,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-52-scene-1.webp&w=640&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "lang": "ru",
+      "name": "phone",
+      "status": "passed",
+      "images": [
+        {
+          "id": 1,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-1.webp&w=640&q=75",
+          "ready": true
+        },
+        {
+          "id": 6,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-1.webp&w=640&q=75",
+          "ready": true
+        },
+        {
+          "id": 29,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-29-scene-1.webp&w=640&q=75",
+          "ready": true
+        },
+        {
+          "id": 52,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-52-scene-1.webp&w=640&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "lang": "ru",
+      "name": "tablet",
+      "status": "passed",
+      "images": [
+        {
+          "id": 1,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-1.webp&w=640&q=75",
+          "ready": true
+        },
+        {
+          "id": 6,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-1.webp&w=640&q=75",
+          "ready": true
+        },
+        {
+          "id": 29,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-29-scene-1.webp&w=640&q=75",
+          "ready": true
+        },
+        {
+          "id": 52,
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-52-scene-1.webp&w=640&q=75",
+          "ready": true
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "art": [
+    {
+      "id": 1,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-27-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-27-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-27-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-27-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-27-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-27-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-27-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-27-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-01-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-28-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-28-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-28-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-28-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-28-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-02-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-28-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-02-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-28-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-02-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-02-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-28-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-02-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-02-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-02-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-02-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-29-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-29-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-29-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-29-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-29-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-29-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-29-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-29-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-03-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-30-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-30-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-30-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-30-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-30-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-30-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-30-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-30-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-04-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-31-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-31-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-31-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-31-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-31-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-31-scene-3.webp&w=750&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-31-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-31-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-05-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-32-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-32-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-32-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-32-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-32-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-32-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-32-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-32-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-06-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-07-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-33-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-07-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-33-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-33-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-33-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-07-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-07-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-33-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-33-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-07-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-07-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-33-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-33-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-07-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-07-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-34-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-34-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-34-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-34-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-08-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-08-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-34-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-08-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-34-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-34-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-08-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-08-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-08-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-34-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-08-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-08-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-35-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-35-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-35-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-35-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-35-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-35-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-35-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-09-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-35-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-36-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-36-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-36-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-36-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-36-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-36-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-36-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-10-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-36-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-37-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-37-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-37-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-37-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-37-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-37-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-37-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-11-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-37-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-12-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-12-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-38-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-38-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-12-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-38-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-12-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-38-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-12-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-12-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-38-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-12-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-38-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-12-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-38-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-38-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-13-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-13-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-39-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-13-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-13-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-39-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-39-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-39-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-13-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-13-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-39-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-39-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-39-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-13-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-13-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-39-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-14-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-40-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-14-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-14-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-40-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-14-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-40-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-40-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-40-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-14-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-14-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-40-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-40-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-14-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-40-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-14-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-41-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-41-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-41-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-41-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-41-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-41-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-16-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-15-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-16-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-41-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-16-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-41-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-42-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-16-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-42-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-42-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-42-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-16-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-16-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-42-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-16-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-42-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-16-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-42-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-42-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-17-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-17-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-17-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-17-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-43-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-43-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-43-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-43-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-43-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-17-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-43-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-17-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-18-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-43-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-17-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-18-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-43-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-17-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-18-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-44-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-18-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-44-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-44-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-44-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-18-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-18-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-44-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-44-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-18-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-44-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-18-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-44-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-19-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-45-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-19-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-45-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-19-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-45-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-19-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-45-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-45-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-19-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-45-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-19-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-45-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-19-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-19-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-20-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-45-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-20-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-46-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-20-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-46-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-20-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-46-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-46-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-20-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-20-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-46-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-20-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-46-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-46-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-20-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-21-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-46-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-21-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-21-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-21-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-47-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-47-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-47-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-21-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-47-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-21-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-21-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-22-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-21-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-22-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-47-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-22-scene-3.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-47-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-22-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-47-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-47-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-22-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-48-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-22-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-48-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-22-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-23-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-48-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-23-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-22-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-48-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-23-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-23-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-48-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-48-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-48-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-23-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-49-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-23-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-49-scene-2.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-48-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-23-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-49-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-23-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-24-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-49-scene-4.webp&w=3840&q=75",
+          "ready": false
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-24-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-24-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-24-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-49-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-49-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-50-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-50-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-49-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-50-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-49-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-24-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-50-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-24-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-25-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-25-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-24-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-25-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-24-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-25-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-50-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-50-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-51-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-50-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-51-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-50-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-51-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-25-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-26-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-25-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-51-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-26-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-25-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-26-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-25-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-26-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "lang": "en",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-52-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-26-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-51-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "lang": "en",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-52-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-51-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-26-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "lang": "en",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-52-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-26-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "lang": "en",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-52-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-26-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-51-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-51-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "lang": "ru",
+      "scene": 1,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-52-scene-1.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "lang": "ru",
+      "scene": 2,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-52-scene-2.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "lang": "ru",
+      "scene": 3,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-52-scene-3.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "lang": "ru",
+      "scene": 4,
+      "images": [
+        {
+          "src": "http://127.0.0.1:41927/_next/image?url=%2Fimages%2Fjr%2Fwhy%2Flesson-52-scene-4.webp&w=750&q=75",
+          "ready": true
+        }
+      ]
+    }
+  ],
+  "contentGate": "PASS",
+  "visualGate": "READINESS PASS — art-direction review still required",
+  "missingArt": [],
+  "finished": "2026-10-21T11:09:15.549Z"
+}

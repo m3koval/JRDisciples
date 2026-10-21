@@ -1,0 +1,169 @@
+{
+  "id": 15,
+  "chapter": 4,
+  "kind": "lesson",
+  "title": {
+    "en": "Could God do a miracle?",
+    "ru": "Может ли Бог совершить чудо?"
+  },
+  "subtitle": {
+    "en": "The cup that fooled the explorers",
+    "ru": "Стакан, который обманул исследователей"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "A startling disappearance",
+        "ru": "Неожиданное исчезновение"
+      },
+      "paragraphs": {
+        "en": [
+          "At the community science afternoon, a volunteer turns a cup upside down, but no water falls out. Michael almost writes MIRACLE on the team's display. Joseph holds his blue notebook beneath the cup, then wisely moves it away. You ask whether the volunteer will explain what happened.",
+          "She shows an absorbent material hidden inside. Gracie laughs with relief. The demonstration was surprising, but surprise alone did not tell them its cause. They erase the headline before visitors arrive."
+        ],
+        "ru": [
+          "На научном празднике волонтёр переворачивает стакан, но вода не выливается. Майкл уже хочет написать на стенде: ЧУДО. Джозеф подставляет синий блокнот, потом разумно отодвигает его. Ты спрашиваешь, объяснит ли волонтёр опыт.",
+          "Она показывает спрятанный впитывающий материал. Грейси облегчённо смеётся. Опыт удивил ребят, но само удивление ничего не объясняло. Они стирают заголовок до прихода гостей."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "An unanswered question",
+        "ru": "Вопрос без ответа"
+      },
+      "paragraphs": {
+        "en": [
+          "Outside, someone tells the team about an unusual recovery but has no details to share. ‘Maybe all miracle stories are tricks too,’ Michael says. Rosie reminds him of the cup. ‘We found out how that demonstration worked. We haven't found out what happened here.’ Michael pauses before writing down a conclusion.",
+          "They make room for an honest answer: they do not know what happened in this report. Investigating means asking about witnesses, records, and other explanations, not automatically believing a dramatic story or automatically mocking the person telling it."
+        ],
+        "ru": [
+          "На улице кто-то рассказывает ребятам о необычном выздоровлении, но подробностей не знает. «Может, все рассказы о чудесах — тоже фокусы?» — говорит Майкл. Рози напоминает ему о стакане. «Мы узнали, как устроен тот опыт. А что случилось здесь, ещё не выяснили». Майкл останавливается, прежде чем записать вывод.",
+          "Ребята выбирают честный ответ: что случилось в этом случае, они пока не знают. Нужно спрашивать о свидетелях, записях и других объяснениях, а не сразу верить яркому рассказу или высмеивать рассказчика."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Read the sign",
+        "ru": "О чём говорит знамение"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie opens her purple Bible to the account of Jesus calming the storm in Mark. The disciples' question concerns who Jesus is, not how to repeat a weather experiment. Christians believe the Creator can act within his creation; nature's regular patterns are not a cage around God.",
+          "In John, the team reads why signs were recorded: to point readers toward faith in Jesus. The Bible's miracle accounts make particular claims. They are not permission to label every unexplained event divine."
+        ],
+        "ru": [
+          "Рози открывает фиолетовую Библию и рассказ Марка о том, как Иисус усмирил бурю. Ученики спрашивают, Кто Он, а не как повторить опыт с погодой. Христиане верят: Творец может действовать в Своём мире; обычный порядок природы не ограничивает Бога.",
+          "У Иоанна ребята читают, зачем записаны знамения: чтобы привести читателей к вере в Иисуса. Библейские рассказы говорят об определённых событиях. Они не позволяют объявлять чудом всё необъяснённое."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A better display",
+        "ru": "Стенд стал точнее"
+      },
+      "paragraphs": {
+        "en": [
+          "Back at the display, you help Gracie make three cards: an explained demonstration, a report that needs investigation, and a biblical sign pointing to Jesus. ‘The cup goes here,’ Michael says, placing it beside the first card. He leaves the recovery report with the questions they still need to ask, rather than filling in an answer they do not have.",
+          "When visitors arrive, Joseph demonstrates the absorbent material and names its ordinary cause. Rosie invites anyone interested to read the storm account together. Their display now welcomes both careful investigation and serious attention to what Scripture says about Jesus."
+        ],
+        "ru": [
+          "Вернувшись к стенду, ты помогаешь Грейси сделать три карточки: объяснённый опыт, рассказ для проверки и библейское знамение, указывающее на Иисуса. «Стакан — сюда», — говорит Майкл и ставит его у первой карточки. Рассказ о выздоровлении он оставляет рядом с вопросами, которые ещё нужно задать, а не дописывает неизвестный ответ.",
+          "Джозеф показывает гостям впитывающий материал и объясняет обычную причину. Рози приглашает желающих вместе прочитать рассказ о буре. Теперь стенд помогает и внимательно исследовать, и серьёзно слушать, что Писание говорит об Иисусе."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "John 20:31 (ESV)",
+      "ru": "Иоанна 20:31 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "but these are written so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in his name.",
+      "ru": "Сие же написано, дабы вы уверовали, что Иисус есть Христос, Сын Божий, и, веруя, имели жизнь во имя Его."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/JHN.20.31.ESV",
+      "ru": "https://www.bible.com/bible/167/JHN.20.31.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Investigate the recovery report",
+      "ru": "Проверь рассказ о выздоровлении"
+    },
+    "intro": {
+      "en": "You have only a secondhand story. What should the team say next?",
+      "ru": "Пока есть только пересказ. Что команде сказать дальше?"
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Anything surprising must be a miracle.",
+          "ru": "Всё удивительное обязательно является чудом."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "One exposed trick proves miracles cannot happen.",
+          "ru": "Один разоблачённый фокус доказывает невозможность чудес."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "We need more information before explaining this event.",
+          "ru": "Нужны дополнительные сведения, прежде чем объяснять событие."
+        }
+      }
+    ],
+    "hint": {
+      "en": "What does the team actually know about this particular report?",
+      "ru": "Что команда действительно знает об этом случае?"
+    },
+    "success": {
+      "en": "You left uncertainty honest without ruling out God or inventing evidence.",
+      "ru": "Ты честно признал неизвестное, не отвергая Бога и не выдумывая свидетельств."
+    },
+    "correctId": "c",
+    "question": {
+      "en": "You have only a secondhand story. What should the team say next?",
+      "ru": "Пока есть только пересказ. Что команде сказать дальше?"
+    }
+  },
+  "fieldMission": {
+    "en": "With an adult, read Mark 4:35–41. Ask what the account shows about Jesus, not how to demand a miracle.",
+    "ru": "Со взрослым прочитай Марка 4:35–41. Спроси, что рассказ открывает об Иисусе, а не как потребовать чудо."
+  },
+  "prayer": {
+    "en": "Lord Jesus, help me trust you and speak truthfully about what I know.",
+    "ru": "Господь Иисус, помоги доверять Тебе и честно говорить о том, что я знаю."
+  },
+  "adultNote": {
+    "en": "All modern events here are fictional teaching scenarios. Read Mark 4:35–41 alongside John 20:30–31. Neither unexplained recovery nor a classroom trick settles a miracle claim; do not discourage medical care or promise healing.",
+    "ru": "Современные события вымышлены для обучения. Прочитайте Марка 4:35–41 вместе с Иоанна 20:30–31. Необъяснённое выздоровление и учебный фокус сами по себе не решают вопрос о чуде; не отказывайтесь от медицинской помощи и не обещайте исцеления."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "John 20:31 — Bible.com ESV / RST",
+        "ru": "Иоанна 20:31 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/JHN.20.31.ESV",
+      "supports": {
+        "en": "John 20:30–31 explains why the Gospel records signs: to lead readers to faith in Jesus and life in him.",
+        "ru": "Иоанна 20:30–31 объясняет цель рассказов о знамениях: вера в Иисуса и жизнь в Нём."
+      },
+      "limits": {
+        "en": "Gives John’s purpose for recording signs; it does not authenticate every modern miracle claim.",
+        "ru": "Объясняет цель записанных Иоанном знамений; не подтверждает каждое современное сообщение о чуде."
+      }
+    }
+  ]
+}

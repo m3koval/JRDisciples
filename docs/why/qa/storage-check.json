@@ -1,0 +1,34 @@
+{
+  "base": "http://127.0.0.1:41927",
+  "started": "2026-10-21T11:07:06.721Z",
+  "cases": [
+    {
+      "mode": "writes-blocked-stale-en",
+      "status": "passed",
+      "checks": [
+        "RU with failed storage",
+        "EN/RU background and target feedback",
+        "honest optional lab label",
+        "real UI completion",
+        "client navigation",
+        "mobile temporary notice",
+        "reload loses temporary completion"
+      ]
+    },
+    {
+      "mode": "reads-and-writes-blocked",
+      "status": "passed",
+      "checks": [
+        "RU with failed storage",
+        "EN/RU background and target feedback",
+        "honest optional lab label",
+        "real UI completion",
+        "client navigation",
+        "mobile temporary notice",
+        "reload loses temporary completion"
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "finished": "2026-10-21T11:07:19.933Z"
+}

@@ -1,0 +1,206 @@
+{
+  "id": 40,
+  "chapter": 10,
+  "kind": "lab",
+  "title": {
+    "en": "LAB: What can I do with worry?",
+    "ru": "ЛАБОРАТОРИЯ: Что делать с тревогой?"
+  },
+  "subtitle": {
+    "en": "The overnight bag and the worry that would not pack away",
+    "ru": "Дорожная сумка и тревога, которая не уходит"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "One more pocket",
+        "ru": "Ещё один карман"
+      },
+      "paragraphs": {
+        "en": [
+          "Gracie keeps unpacking her yellow overnight bag before the explorers’ first camp evening. What if she cannot sleep? What if everyone laughs when she asks to call home? Michael offers to check the packing list again, but the worry stays even when every box is ticked.",
+          "You sit beside Gracie while Joseph closes his blue notebook. “Which part worries you most?” he asks. Gracie holds her bag for a moment before answering. “I’m scared of the sounds at night. I don’t know what they are, and then my stomach hurts.” Now her friends understand why checking the packing list again has not helped."
+        ],
+        "ru": [
+          "Грейси снова разбирает жёлтую дорожную сумку перед первым вечером в лагере. А если не уснёт? А если засмеются, когда попросит позвонить домой? Майкл проверяет список вещей, но тревога не исчезает.",
+          "Ты садишься рядом с Грейси, а Джозеф закрывает синий блокнот. «Что тебя больше всего тревожит?» — спрашивает он. Грейси немного молчит, сжимая сумку. «Ночью слышны разные звуки. Я не знаю, что это, и у меня начинает болеть живот». Теперь друзья понимают, почему проверка вещей не помогла."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Trust while afraid",
+        "ru": "Доверять, когда страшно"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie opens her purple Bible to Psalm 56:3. The writer brings fear to God; he does not wait until he feels brave enough to pray. They also read how Jesus points worried people toward their heavenly Father’s care in Matthew 6.",
+          "Gracie prays about the unfamiliar room and her aching stomach. Trust means turning toward the One who cares, not pretending that the feeling has vanished. She decides that asking for help can belong inside her trusting response."
+        ],
+        "ru": [
+          "Рози открывает фиолетовую Библию на Псалме 55:4. Автор обращается к Богу в страхе, а не ждёт, пока станет смелым. В Матфея 6 они читают, как Иисус напоминает тревожащимся о заботе Небесного Отца.",
+          "Грейси молится о незнакомой комнате и боли в животе. Доверять — обращаться к Тому, Кто заботится, а не притворяться, будто страх исчез. Просьба о помощи тоже может быть шагом доверия."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Three useful cards",
+        "ru": "Три полезные карточки"
+      },
+      "paragraphs": {
+        "en": [
+          "The team makes three cards: pray, tell, act. Gracie tells their trusted camp leader what happens at bedtime. Together they arrange a call with her parent and check where the leader will be. Michael walks the short indoor route with her in daylight.",
+          "Joseph draws that route instead of writing a promise that nothing unpleasant can happen. Explorer, help him mark the familiar doorway. A small practical plan cannot control tomorrow, but it can make tonight less lonely."
+        ],
+        "ru": [
+          "Команда делает три карточки: молись, расскажи, действуй. Грейси объясняет надёжному руководителю, что бывает перед сном. Они договариваются о звонке родителю и уточняют, где будет взрослый. Майкл днём проходит с ней короткий путь по зданию.",
+          "Джозеф рисует этот путь, а не обещает, что ничего неприятного не случится. Исследователь, отметь знакомую дверь. Небольшой план не управляет будущим, но помогает не оставаться одной сегодня."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "The plan can travel",
+        "ru": "План остаётся с тобой"
+      },
+      "paragraphs": {
+        "en": [
+          "That evening Gracie still feels nervous, but this time she knows whom to tell. She follows the plan and goes to the leader, who listens without scolding. “I’ll sit with you while you wait for the call,” Rosie offers. Gracie does not have to hide her worry or prove her faith by making it disappear.",
+          "Before breakfast, Gracie adds one line: tell again if worry keeps interrupting sleep or everyday life. A parent can help her find professional care when needed. Prayer, caring people, and practical help are companions, not competing teams."
+        ],
+        "ru": [
+          "Вечером Грейси всё ещё волнуется, но теперь знает, кому рассказать. Она следует плану и подходит к руководителю, который слушает без упрёков. «Я посижу с тобой, пока ты ждёшь звонка», — предлагает Рози. Грейси не нужно скрывать тревогу или доказывать свою веру тем, что страх сразу исчезнет.",
+          "Перед завтраком Грейси дописывает: расскажи снова, если тревога постоянно мешает спать или жить. Родитель поможет обратиться к специалисту, если нужно. Молитва, заботливые люди и практическая помощь не соперники."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Psalm 56:3 (ESV)",
+      "ru": "Псалтирь 55:4 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "When I am afraid,\nI put my trust in you.",
+      "ru": "Когда я в страхе, на Тебя я уповаю."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/PSA.56.3.ESV",
+      "ru": "https://www.bible.com/bible/167/PSA.55.4.RST"
+    }
+  },
+  "activity": {
+    "type": "sort",
+    "title": {
+      "en": "Build Gracie’s help plan",
+      "ru": "Собери план помощи Грейси"
+    },
+    "intro": {
+      "en": "Place each card in the category that fits its meaning.",
+      "ru": "Найди для каждой карточки подходящую группу."
+    },
+    "groups": [
+      {
+        "id": "observation",
+        "label": {
+          "en": "Helpful care",
+          "ru": "Полезная забота"
+        }
+      },
+      {
+        "id": "claim",
+        "label": {
+          "en": "Pressure or hiding",
+          "ru": "Давление или скрытность"
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Tell the leader about the bedtime fear.",
+          "ru": "Рассказать руководителю о страхе перед сном."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Hide the worry to look like a strong believer.",
+          "ru": "Скрывать тревогу, чтобы казаться сильным верующим."
+        },
+        "group": "claim"
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Pray and arrange the agreed call home.",
+          "ru": "Помолиться и договориться о звонке домой."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "Say that asking a counselor means prayer failed.",
+          "ru": "Сказать, что помощь психолога означает провал молитвы."
+        },
+        "group": "claim"
+      }
+    ],
+    "hint": {
+      "en": "Does the card bring fear into caring relationships, or make Gracie carry it alone?",
+      "ru": "Помогает ли карточка обратиться за заботой или оставляет Грейси одну?"
+    },
+    "success": {
+      "en": "Trust can include prayer, honest conversation, and appropriate practical care.",
+      "ru": "Доверие включает молитву, честный разговор и подходящую помощь."
+    }
+  },
+  "fieldMission": {
+    "en": "With a trusted adult, make a pray/tell/act plan for one manageable worry. Ask for further help if it keeps affecting daily life.",
+    "ru": "С надёжным взрослым составь план «молись, расскажи, действуй» для одной тревоги. Если она продолжает мешать жить, попроси дальнейшей помощи."
+  },
+  "prayer": {
+    "en": "Father, I bring you my fears. Help me trust you and receive care from safe people.",
+    "ru": "Отец, я приношу Тебе свои страхи. Помоги доверять Тебе и принимать помощь надёжных людей."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Bible anchor: Psalm 56:3 (ESV)",
+        "ru": "Библейский текст: Псалтирь 55:4 (Синодальный перевод)"
+      },
+      "url": "https://www.bible.com/bible/59/PSA.56.3.ESV",
+      "supports": {
+        "en": "Psalm 56:3 expresses trust in God in the presence of fear, not a claim that believers never feel fear.",
+        "ru": "Псалом 55:4 выражает доверие Богу среди страха, а не утверждает, что верующие никогда не боятся."
+      },
+      "limits": {
+        "en": "An expression of trust, not a diagnosis of anxiety or a promise that prayer removes the need for adult or professional help.",
+        "ru": "Выражение доверия, не диагноз тревожности и не обещание, что молитва отменяет помощь взрослых или специалистов."
+      }
+    },
+    {
+      "title": {
+        "en": "Russian Synodal anchor",
+        "ru": "Текст Синодального перевода"
+      },
+      "url": "https://www.bible.com/bible/167/PSA.55.4.RST",
+      "supports": {
+        "en": "Exact Russian text for the displayed verse.",
+        "ru": "Точный русский текст приведённого стиха."
+      },
+      "limits": {
+        "en": "Verse numbering can differ between translations, especially in Psalms.",
+        "ru": "Нумерация стихов в переводах может отличаться, особенно в Псалтири."
+      }
+    }
+  ],
+  "adultNote": {
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Do not equate persistent anxiety with weak faith. Support appropriate medical or mental-health care; children need not disclose private fears to a group.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Не приравнивайте постоянную тревогу к слабой вере. Поддерживайте обращение к врачу или психологу; ребёнок не обязан рассказывать группе личные страхи."
+  }
+}

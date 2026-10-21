@@ -1,0 +1,173 @@
+{
+  "id": 26,
+  "chapter": 7,
+  "kind": "lesson",
+  "title": {
+    "en": "How can Jesus be God and human?",
+    "ru": "Как Иисус может быть Богом и человеком?"
+  },
+  "subtitle": {
+    "en": "Two windows into one life",
+    "ru": "Два взгляда на одну жизнь"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "The cards that will not separate",
+        "ru": "Карточки, которые не разделить"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie lays passage cards across the library table after the history display is finished. One describes Jesus being hungry; another describes his authority over a storm. “Let’s make two folders: ordinary Jesus and powerful Jesus,” Michael suggests.",
+          "Gracie looks at the cards.",
+          "“But aren’t both stories about the same Jesus?”",
+          "You hold the empty folders while their teacher asks the team to read before sorting. The puzzle is not how to invent a new Jesus who fits their boxes, but how to listen to what Scripture says."
+        ],
+        "ru": [
+          "После исторической выставки Рози раскладывает на библиотечном столе карточки с отрывками. В одном Иисус голоден, в другом проявляет власть над бурей. «Давайте сделаем две папки: обычный Иисус и могущественный Иисус», — предлагает Майкл.",
+          "Грейси рассматривает карточки.",
+          "— Но ведь в обоих рассказах один и тот же Иисус?",
+          "Ты держишь пустые папки, а учитель предлагает сначала прочитать. Задача — не придумать Иисуса под свои коробочки, а услышать, что говорит Писание."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Really human",
+        "ru": "По-настоящему человек"
+      },
+      "paragraphs": {
+        "en": [
+          "They read that Jesus became hungry after fasting in Matthew 4. His hunger was real, not a performance or a trick for an audience. John 1 says the Word became flesh. Christians confess that the Son truly became human, with a real human life, not merely a human appearance.",
+          "Joseph remembers days when tiredness makes everything difficult. Jesus' humanity means that human weakness is not something distant and strange to him. Yet being tired or hungry is not itself sin, and Jesus did not need to sin to be human."
+        ],
+        "ru": [
+          "Они читают в Матфея 4, что после поста Иисус проголодался. Он действительно испытывал голод, а не притворялся ради зрителей. Иоанна 1 говорит: Слово стало плотью. Христиане исповедуют, что Сын действительно стал человеком и жил человеческой жизнью, а не только выглядел человеком.",
+          "Джозеф вспоминает дни, когда от усталости всё трудно. Человеческая слабость не чужда Иисусу. Но усталость и голод сами по себе не грех; чтобы быть человеком, Иисусу не нужно было грешить."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Not less than God",
+        "ru": "Не переставший быть Богом"
+      },
+      "paragraphs": {
+        "en": [
+          "Next they read Mark 4, where Jesus commands the wind and sea. The disciples' question about him matters more than the team's excitement about unusual weather. Colossians 2:9 speaks of the fullness of deity dwelling bodily in Christ. Becoming human did not mean that the Son stopped being God.",
+          "Michael takes back the two folders. They are not collecting evidence for two separate characters or a half-God, half-human mixture. The Christian confession is one person, Jesus Christ, truly God and truly human."
+        ],
+        "ru": [
+          "Затем они читают Марка 4: Иисус повелевает ветру и морю. Вопрос учеников о Нём важнее восторга команды перед необычной погодой. Колоссянам 2:9 говорит о полноте Божества, пребывающей во Христе телесно. Став человеком, Сын не перестал быть Богом.",
+          "Майкл убирает две папки. Они изучают не двух персонажей и не смесь наполовину Бога и наполовину человека. Христианское исповедание говорит об одной личности — Иисусе Христе, истинном Боге и истинном человеке."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "One Lord to trust",
+        "ru": "Один Господь, Которому доверяем"
+      },
+      "paragraphs": {
+        "en": [
+          "You place both cards beneath one heading bearing Jesus' name. “I still don’t understand how all of that fits together,” Gracie admits. Their teacher welcomes the question. They can keep learning without dividing Jesus into two people or changing what the passages teach about him.",
+          "As they pack the display, Joseph asks for help carrying a heavy box instead of hiding his tiredness. Rosie suggests bringing their weaknesses to Jesus in prayer. They can trust his divine authority without imagining that he is unable to understand human life."
+        ],
+        "ru": [
+          "Ты кладёшь обе карточки под одним заголовком с именем Иисуса. «Я всё ещё не понимаю до конца, как это соединяется», — признаётся Грейси. Учитель рад, что она спрашивает. Можно продолжать учиться, не разделяя Иисуса на двух людей и не меняя того, что о Нём говорит Писание.",
+          "Убирая выставку, Джозеф просит помочь с тяжёлой коробкой, а не скрывает усталость. Рози предлагает приносить свои слабости Иисусу в молитве. Можно доверять Его божественной власти, не считая Его чуждым человеческой жизни."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Colossians 2:9 (ESV)",
+      "ru": "Колоссянам 2:9 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "For in him the whole fullness of deity dwells bodily",
+      "ru": "ибо в Нем обитает вся полнота Божества телесно"
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/COL.2.9.ESV",
+      "ru": "https://www.bible.com/bible/167/COL.2.9.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Keep both passage cards",
+      "ru": "Сохрани обе карточки"
+    },
+    "intro": {
+      "en": "Which heading lets both passages speak without dividing Jesus?",
+      "ru": "Какой заголовок сохраняет смысл обоих отрывков и не разделяет Иисуса?"
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "One person, Jesus Christ: truly God and truly human.",
+          "ru": "Одна личность, Иисус Христос: истинный Бог и истинный человек."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Jesus only looked human, so he never really felt hunger.",
+          "ru": "Иисус лишь выглядел человеком и не испытывал настоящего голода."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "A human Jesus and a separate divine Jesus take turns.",
+          "ru": "Человек Иисус и отдельный божественный Иисус сменяют друг друга."
+        }
+      }
+    ],
+    "hint": {
+      "en": "Real hunger does not erase deity; divine authority does not erase humanity.",
+      "ru": "Настоящий голод не отменяет Божество; божественная власть не отменяет Его человеческую природу."
+    },
+    "success": {
+      "en": "You kept one person and both truths instead of making two characters or a disguise.",
+      "ru": "Ты сохранил одну личность и обе истины, не придумав двух персонажей или маску."
+    },
+    "correctId": "a",
+    "question": {
+      "en": "Which heading lets both passages speak without dividing Jesus?",
+      "ru": "Какой заголовок сохраняет смысл обоих отрывков и не разделяет Иисуса?"
+    }
+  },
+  "fieldMission": {
+    "en": "Read Matthew 4:1–2 and Mark 4:35–41 with an adult. Name what each shows about Jesus, then bring him one honest need in prayer.",
+    "ru": "Прочитай Матфея 4:1–2 и Марка 4:35–41 со взрослым. Назови, что каждый отрывок показывает об Иисусе, и принеси Ему одну настоящую нужду в молитве."
+  },
+  "prayer": {
+    "en": "Lord Jesus, truly God and truly human, help me trust you and bring you my weakness honestly.",
+    "ru": "Господи Иисусе, истинный Бог и истинный человек, помоги доверять Тебе и честно приносить Тебе свои слабости."
+  },
+  "adultNote": {
+    "en": "Teach the incarnation without dividing Christ into two persons, blending his natures, or treating humanity as a disguise. Hunger alone does not establish every claim about Christ; read the passages together with John 1 and Colossians 2. No object analogy explains the union exhaustively.",
+    "ru": "Объясняйте воплощение, не разделяя Христа на две личности, не смешивая природы и не превращая человеческую природу в маску. Один голод не доказывает всех утверждений о Христе; читайте отрывки вместе с Иоанна 1 и Колоссянам 2. Никакое предметное сравнение полностью не объясняет это соединение."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Colossians 2:9 — Bible.com ESV / RST",
+        "ru": "Колоссянам 2:9 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/COL.2.9.ESV",
+      "supports": {
+        "en": "Colossians 2:9 affirms the fullness of deity dwelling bodily in Christ.",
+        "ru": "Колоссянам 2:9 утверждает, что во Христе телесно обитает полнота Божества."
+      },
+      "limits": {
+        "en": "Affirms Christ’s embodied deity; the full two-natures account draws on the wider biblical witness.",
+        "ru": "Утверждает полноту Божества во Христе телесно; полное учение о двух природах опирается на более широкое свидетельство Писания."
+      }
+    }
+  ]
+}

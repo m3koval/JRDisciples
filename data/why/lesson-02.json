@@ -1,0 +1,169 @@
+{
+  "id": 2,
+  "chapter": 1,
+  "kind": "lesson",
+  "title": {
+    "en": "Is believing just guessing?",
+    "ru": "Верить — значит просто угадывать?"
+  },
+  "subtitle": {
+    "en": "The bridge and the promise",
+    "ru": "Мост и обещание"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "The closed footbridge",
+        "ru": "Закрытый мостик"
+      },
+      "paragraphs": {
+        "en": [
+          "A ribbon blocks the park footbridge, spoiling the explorers' shortcut to the pond. Michael thinks it probably looks strong enough. Gracie points to a loose board. You wait with them while their adult leader asks the park worker whether another path is open.",
+          "‘I wish we could still go this way,’ Michael says. Joseph draws three empty boxes in his notebook. ‘Let's keep that wish in the first box. Then we can write down why we choose another path and what we actually do.’ You wait together for their leader to return with news."
+        ],
+        "ru": [
+          "Лента перекрыла мостик в парке: короткой дороги к пруду больше нет. Майклу кажется, что мост ещё крепкий. Грейси показывает на расшатанную доску. Ты ждёшь вместе с ребятами, пока взрослый руководитель спрашивает работника парка о другом пути.",
+          "«Жаль, что здесь нельзя пройти», — говорит Майкл. Джозеф рисует в блокноте три пустые клетки. «В первой запишем, чего нам хочется. Потом — почему выберем другую дорогу и что сделаем». Вместе вы ждёте, что расскажет руководитель."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "A reason to listen",
+        "ru": "Почему стоит послушать"
+      },
+      "paragraphs": {
+        "en": [
+          "The worker shows their leader an updated park map and points out the inspected path around the reeds. The group has reasons to listen: this person works here, knows the closure, and offers information they can check. They do not know every board in the park.",
+          "‘So we aren't just guessing which way to go,’ Gracie says. ‘We have reasons to listen to him.’ Their leader agrees: trusting someone means relying on them, and it matters whether they know what they are talking about. With the route checked, the team sets off toward the pond."
+        ],
+        "ru": [
+          "Работник показывает руководителю обновлённую карту и указывает проверенную дорожку вдоль камышей. Есть причины его послушать: он работает здесь, знает о ремонте и даёт сведения, которые можно проверить. Но ребята не знают каждую доску в парке.",
+          "«Значит, мы не просто угадываем дорогу, — говорит Грейси. — Мы знаем, почему ему можно доверять». Руководитель соглашается: когда полагаешься на человека, важно понимать, знает ли он то, о чём говорит. Проверив маршрут, ребята отправляются к пруду."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Thomas wanted to know",
+        "ru": "Фома хотел убедиться"
+      },
+      "paragraphs": {
+        "en": [
+          "At the pond, Rosie opens John 20. They read about Thomas, who had not been with the other disciples when Jesus appeared. Later Jesus met him, and Thomas responded in faith. John explains why he recorded signs: so readers might believe in Jesus.",
+          "The children are not Thomas, and a park map is not evidence for resurrection. Yet the story challenges the idea that Christian faith means refusing to consider testimony or reasons."
+        ],
+        "ru": [
+          "У пруда Рози открывает Иоанна 20. Они читают о Фоме: его не было с учениками, когда явился Иисус. Позже Иисус встретил его, и Фома ответил верой. Иоанн объясняет, зачем записал знамения: чтобы читатели верили в Иисуса.",
+          "Дети — не Фома, а карта парка не доказывает воскресение. Но рассказ помогает увидеть: христианская вера не требует отказываться от свидетельств и разумных оснований."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Walking, not just nodding",
+        "ru": "Не только кивать"
+      },
+      "paragraphs": {
+        "en": [
+          "They return along the open path with their leader. Michael had agreed that the map was reliable; now he actually follows it. Joseph fills the last box with an action. You help him avoid writing that trust makes every journey easy or removes every question.",
+          "Back home, Gracie remembers what they read at the pond. ‘Could we read more of John's Gospel together? I want to know Jesus better.’ She still has questions, but now she knows where to begin. The team can explore their reasons for believing while learning to trust the person the Gospel tells them about."
+        ],
+        "ru": [
+          "Обратно ребята идут с руководителем по открытой дорожке. Майкл согласился, что карте можно доверять, а теперь действительно следует ей. Джозеф заполняет последнюю клетку действием. Ты помогаешь ему не писать, будто доверие устраняет все трудности и вопросы.",
+          "Дома Грейси вспоминает чтение у пруда. «Давайте ещё почитаем Евангелие от Иоанна? Я хочу лучше узнать Иисуса». У неё остались вопросы, но теперь понятно, с чего начать. Вместе ребята смогут разобраться в основаниях веры и учиться доверять Тому, о Ком рассказывает Евангелие."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Hebrews 11:1 (ESV)",
+      "ru": "Евреям 11:1 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "Now faith is the assurance of things hoped for, the conviction of things not seen.",
+      "ru": "Вера же есть осуществление ожидаемого и уверенность в невидимом."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/HEB.11.1.ESV",
+      "ru": "https://www.bible.com/bible/167/HEB.11.1.RST"
+    }
+  },
+  "activity": {
+    "type": "choose",
+    "title": {
+      "en": "Which is thoughtful trust?",
+      "ru": "Где разумное доверие?"
+    },
+    "intro": {
+      "en": "Choose the response that uses reasons without pretending to know everything.",
+      "ru": "Выбери ответ с основаниями, но без притворства, будто всё известно."
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "Use the closed bridge because I feel brave.",
+          "ru": "Пойти по закрытому мосту: я же смелый."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Check the worker’s information with our adult and follow the open path.",
+          "ru": "Проверить сведения со взрослым и пойти открытой дорожкой."
+        }
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Refuse every path until I know every board in the park.",
+          "ru": "Не идти никуда, пока не изучу каждую доску в парке."
+        }
+      }
+    ],
+    "hint": {
+      "en": "A strong feeling is not the same as a trustworthy reason.",
+      "ru": "Сильное чувство — не то же самое, что надёжное основание."
+    },
+    "success": {
+      "en": "Thoughtful trust listens, checks, and then relies on someone trustworthy.",
+      "ru": "Разумное доверие слушает, проверяет и полагается на надёжного человека."
+    },
+    "correctId": "b",
+    "question": {
+      "en": "Choose the response that uses reasons without pretending to know everything.",
+      "ru": "Выбери ответ с основаниями, но без притворства, будто всё известно."
+    }
+  },
+  "fieldMission": {
+    "en": "Ask an adult why they trust one Gospel account. Listen before answering.",
+    "ru": "Спроси взрослого, почему он доверяет евангельскому рассказу. Сначала выслушай."
+  },
+  "prayer": {
+    "en": "Jesus, help me learn who you are and trust you with honest questions.",
+    "ru": "Иисус, помоги узнавать Тебя и доверять Тебе с честными вопросами."
+  },
+  "adultNote": {
+    "en": "The park incident is fictional. Read John 20:24–31; Hebrews 11:1 describes faith, not a prohibition on investigation.",
+    "ru": "Эпизод в парке вымышлен. Прочитайте Иоанна 20:24–31; Евреям 11:1 описывает веру, а не запрещает исследование."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Hebrews 11:1 — Bible.com ESV / RST",
+        "ru": "Евреям 11:1 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/HEB.11.1.ESV",
+      "supports": {
+        "en": "Hebrews 11:1 describes faith as assurance and conviction concerning what is hoped for and unseen.",
+        "ru": "Евреям 11:1 описывает веру как уверенность в ожидаемом и невидимом."
+      },
+      "limits": {
+        "en": "Describes faith; does not make every confident feeling true or authorize unsafe trust in anyone claiming authority.",
+        "ru": "Описывает веру; не объявляет истинным любое уверенное чувство и не требует опасного доверия всем, кто заявляет о своём авторитете."
+      }
+    }
+  ]
+}

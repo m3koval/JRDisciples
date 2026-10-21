@@ -1,0 +1,191 @@
+{
+  "id": 13,
+  "chapter": 4,
+  "kind": "lesson",
+  "title": {
+    "en": "Why is there a world at all?",
+    "ru": "Почему вообще существует мир?"
+  },
+  "subtitle": {
+    "en": "Beyond the workshop door",
+    "ru": "За дверью мастерской"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "Who made the wheels?",
+        "ru": "Кто сделал колёса?"
+      },
+      "paragraphs": {
+        "en": [
+          "In the bicycle workshop, Michael follows a chain of questions. Who assembled the bicycle? Who made its metal? Where did the materials come from? Joseph fills a page with arrows until his pencil reaches the edge. Outside, evening light catches the trees and clouds beyond the workshop door.",
+          "Gracie looks past the bicycle toward the workshop door. ‘But why is there a world at all, with people and materials and sunlight?’ she asks. You turn Joseph's page over to make room. Naming another factory will not answer this question, so Rosie reaches for her Bible."
+        ],
+        "ru": [
+          "В велосипедной мастерской Майкл задаёт цепочку вопросов. Кто собрал велосипед? Кто изготовил металл? Откуда взялись материалы? Джозеф заполняет страницу стрелками до самого края. За дверью вечерний свет ложится на деревья и облака.",
+          "Грейси смотрит мимо велосипеда на дверь мастерской. «А почему вообще есть мир — с людьми, материалами и солнечным светом?» — спрашивает она. Ты переворачиваешь страницу Джозефа, чтобы освободить место. Назвать ещё один завод здесь недостаточно, и Рози берётся за Библию."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "What the opening says",
+        "ru": "О чём говорит начало"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie opens Genesis at its first sentence. Scripture identifies God as Creator of the heavens and the earth. Their teacher explains that Christians do not place God inside the chain as another manufactured object. God does not depend on someone making him; created things depend on him.",
+          "Joseph labels this biblical teaching, not a measurement made with workshop tools. The bicycle questions helped them notice dependence, but the arrows alone did not demonstrate every claim about God."
+        ],
+        "ru": [
+          "Рози открывает первое предложение Бытия. Писание называет Бога Творцом неба и земли. Учитель объясняет: христиане не ставят Бога в цепочку как ещё один изготовленный предмет. Богу не нужен создатель; сотворённое зависит от Него.",
+          "Джозеф подписывает: библейское учение, а не измерение инструментами мастерской. Вопросы о велосипеде помогли заметить зависимость, но сами стрелки не доказали всё, что говорится о Боге."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Not only long ago",
+        "ru": "Не только когда-то давно"
+      },
+      "paragraphs": {
+        "en": [
+          "The team reads the teaching in Colossians that all things were created through Christ and hold together in him. Creation is not only a question about a distant beginning. Christians believe the world continues to depend on God now, while scientists investigate how its physical processes work.",
+          "Michael watches a wheel spin. ‘My stopwatch can tell us how long one turn takes,’ he says. ‘But it can't tell us why there's a world here in the first place.’ Joseph adds both questions to his notebook. They can investigate how the wheel moves without losing sight of the bigger question that brought them to Scripture."
+        ],
+        "ru": [
+          "Команда читает в Послании к Колоссянам, что всё сотворено через Христа и существует благодаря Ему. Речь не только о далёком начале. Христиане верят, что мир и сейчас зависит от Бога, а учёные изучают происходящие в нём физические процессы.",
+          "Майкл смотрит на вращающееся колесо. «Секундомер покажет, сколько длится один оборот, — говорит он. — Но не объяснит, почему вообще существует мир». Джозеф записывает оба вопроса. Можно исследовать движение колеса и при этом не забывать большой вопрос, с которым они обратились к Писанию."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Gratitude outside",
+        "ru": "Благодарность под открытым небом"
+      },
+      "paragraphs": {
+        "en": [
+          "You carry the repaired bicycle outside. Gracie pauses beneath a tree and thanks God for the world they did not build. She can admire the tree without treating it as a god, and care for the workshop materials without pretending possessions give life its meaning.",
+          "Joseph closes his notebook with two headings still visible: how things work, and why a world exists. The team has not answered every question. They have learned to ask more clearly and to receive creation gratefully."
+        ],
+        "ru": [
+          "Ты выкатываешь починенный велосипед. Грейси останавливается под деревом и благодарит Бога за мир, который создали не они. Можно любоваться деревом, не считая его богом, и беречь материалы, не превращая вещи в смысл жизни.",
+          "Джозеф закрывает блокнот, оставив видимыми два заголовка: как всё работает и почему мир существует. Команда ответила не на каждый вопрос, но научилась спрашивать точнее и с благодарностью принимать сотворённый мир."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Genesis 1:1 (ESV)",
+      "ru": "Бытие 1:1 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "In the beginning, God created the heavens and the earth.",
+      "ru": "В начале сотворил Бог небо и землю."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/GEN.1.1.ESV",
+      "ru": "https://www.bible.com/bible/167/GEN.1.1.RST"
+    }
+  },
+  "activity": {
+    "type": "sort",
+    "title": {
+      "en": "Two kinds of questions",
+      "ru": "Два вида вопросов"
+    },
+    "intro": {
+      "en": "Match each question to the investigation it needs.",
+      "ru": "Определи, какое исследование нужно для каждого вопроса."
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "How many seconds does one wheel turn take?",
+          "ru": "Сколько секунд длится оборот колеса?"
+        },
+        "group": "observation"
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Why does a world with physical processes exist at all?",
+          "ru": "Почему вообще существует мир с физическими процессами?"
+        },
+        "group": "claim"
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "Which material bends more under the same weight?",
+          "ru": "Какой материал сильнее гнётся под одинаковым грузом?"
+        },
+        "group": "observation"
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "Does creation depend on God now as well as at its beginning?",
+          "ru": "Зависит ли творение от Бога сейчас, а не только в начале?"
+        },
+        "group": "claim"
+      }
+    ],
+    "hint": {
+      "en": "Ask whether a timer or material test could answer the actual question.",
+      "ru": "Спроси, ответит ли секундомер или испытание материала именно на этот вопрос."
+    },
+    "success": {
+      "en": "Different questions need appropriate methods; a stopwatch cannot answer everything.",
+      "ru": "Разным вопросам нужны подходящие методы; секундомер отвечает не на всё."
+    },
+    "groups": [
+      {
+        "id": "observation",
+        "label": {
+          "en": "Measure a physical process",
+          "ru": "Измерить физический процесс"
+        }
+      },
+      {
+        "id": "claim",
+        "label": {
+          "en": "Discuss existence and dependence",
+          "ru": "Обсудить существование и зависимость"
+        }
+      }
+    ]
+  },
+  "fieldMission": {
+    "en": "Thank God for something in creation and care for it without treating it as God.",
+    "ru": "Поблагодари Бога за что-то в творении и позаботься об этом, не считая это Богом."
+  },
+  "prayer": {
+    "en": "Creator God, thank you for the world and for sustaining our lives.",
+    "ru": "Боже-Творец, благодарю Тебя за мир и за то, что Ты поддерживаешь нашу жизнь."
+  },
+  "adultNote": {
+    "en": "Read Genesis 1:1 and Colossians 1:16–17. The workshop is an illustration, not a proof that a short causal chain settles cosmology. Distinguish theological dependence, philosophical arguments, and physical measurement.",
+    "ru": "Прочитайте Бытие 1:1 и Колоссянам 1:16–17. Мастерская — иллюстрация, а не доказательство, будто короткая цепочка причин решает вопросы космологии. Различайте богословское учение о зависимости творения, философские доводы и физические измерения."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Genesis 1:1 — Bible.com ESV / RST",
+        "ru": "Бытие 1:1 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/GEN.1.1.ESV",
+      "supports": {
+        "en": "Genesis 1:1 identifies God as Creator of the heavens and earth.",
+        "ru": "Бытие 1:1 называет Бога Творцом неба и земли."
+      },
+      "limits": {
+        "en": "Names the Creator; this verse alone does not settle all questions about mechanisms, dates or the reasons for creation.",
+        "ru": "Называет Творца; один этот стих не решает все вопросы о механизмах, датах и причинах творения."
+      }
+    }
+  ]
+}

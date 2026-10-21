@@ -1,0 +1,2130 @@
+{
+  "audit": {
+    "scope": "WHY chapters 5–8; lessons 17–32, four scenes each",
+    "method": "Read actual EN and RU scene records (both retained here), compare all 63 available images visually using original chapter sheets plus 16 fresh 2x2 lesson sheets. Full-size close-ups for 18.4,20.4,19.4,30.4,28.3,29.2. No source edits or generated art.",
+    "limits": "Static artwork audit, not browser or build QA. Small generated marks are not OCR-certified. 30.1 intentionally pending per assignment even if another process later writes it. English paragraphs were primary beat-comparison text; Russian paragraphs preserved as source context, not separately linguistic-audited.",
+    "counts": {
+      "blocker": 16,
+      "cosmetic": 14,
+      "pass": 33,
+      "pending": 1
+    },
+    "reviewed": 63,
+    "expected": 64,
+    "contact_sheet": "/tmp/why-visual-05-08/chapter08.jpg",
+    "canon": "Michael green curly brown hair; Joseph blue dark curly hair and notebook; Rosie purple brown hair and Bible; Gracie yellow warm brown skin black curly hair.",
+    "severity": "blocker = core action/identity/evidence/localization failure or unresolved specifically required representation; cosmetic = nonblocking continuity, secondary action omission, or composition concern; pass = representative scene beat works, not every sentence pictured."
+  },
+  "scenes": [
+    {
+      "scene_id": "17.1",
+      "chapter": 5,
+      "lesson": 17,
+      "scene": 1,
+      "source": "data/why/lesson-17.json",
+      "title": {
+        "en": "At the results board",
+        "ru": "У доски результатов"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Michael reaches the club results board before anyone else. His green sleeve brushes a row of bright stars, but none stands beside his name. He had practiced the model-building challenge all week. Now he folds his entry card so nobody can see it.",
+          "Gracie wins a ribbon and immediately hides it, afraid her happiness will hurt him. You stand with the team in an uncomfortable silence. Joseph notices that everyone is staring at the scores instead of looking at one another."
+        ],
+        "ru": [
+          "Майкл первым подходит к результатам конкурса. Зелёный рукав касается ряда ярких звёздочек, но возле его имени звёздочки нет. Он всю неделю тренировался строить модели. Теперь он складывает карточку, чтобы никто её не увидел.",
+          "Грейси получила ленту и тут же спрятала: вдруг её радость обидит друга. Ты стоишь с командой в неловком молчании. Джозеф замечает: все смотрят на оценки, а не друг на друга."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-17-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "action_mismatch"
+      ],
+      "observed": "Michael smiles and presents a scoreboard while friends smile; the required ashamed folding/hiding of his unsuccessful entry and Gracie hiding her ribbon are absent.",
+      "recommendation": "Show disappointment and concealed entry/ribbon, not cheerful presentation.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "6226d8ed7e0d3ee383a1cad5a8b88a7e7f0b196433d05a0d7ee6e68a7de5debf"
+    },
+    {
+      "scene_id": "17.2",
+      "chapter": 5,
+      "lesson": 17,
+      "scene": 2,
+      "source": "data/why/lesson-17.json",
+      "title": {
+        "en": "What the score measures",
+        "ru": "Что измеряет оценка"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Their leader sits beside Michael rather than telling him not to feel disappointed. The score describes how his model met this challenge's requirements. It cannot measure the worth of the person who made it. Improving a skill and earning human dignity are different things.",
+          "Rosie opens Genesis, where human beings are made in God's image. That gift does not begin when a judge notices talent. Gracie's ribbon does not make her more human, and Michael's empty square does not make him less."
+        ],
+        "ru": [
+          "Руководитель садится рядом с Майклом, не запрещая ему огорчаться. Оценка показывает, насколько модель соответствовала условиям конкурса. Она не измеряет ценность создателя модели. Развивать умение и заслуживать человеческое достоинство — не одно и то же.",
+          "Рози открывает Бытие: люди созданы по образу Бога. Этот дар не появляется после похвалы судьи. Лента не делает Грейси более ценным человеком, а пустая клетка не уменьшает ценности Майкла."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-17-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "setting_continuity"
+      ],
+      "observed": "Adult comforts Michael and Rosie reads; a campsite replaces the workshop/results context.",
+      "recommendation": "Keep supportive staging; restore workshop continuity if revising.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "94ec79e388e37d4c5524cb3a1b856ee4bcdd7d0925a12014dd370c63d9a0cad5"
+    },
+    {
+      "scene_id": "17.3",
+      "chapter": 5,
+      "lesson": 17,
+      "scene": 3,
+      "source": "data/why/lesson-17.json",
+      "title": {
+        "en": "An unnoticed builder",
+        "ru": "Незамеченный строитель"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "At the end of the table, a younger child is quietly packing away a lopsided bridge. Michael recognizes the careful way the child hides the entry card. His first idea is to cheer him up by pretending the bridge deserved first prize.",
+          "You suggest something truer: ask about the bridge and listen. Michael learns that its wide entrance was designed for a toy wheelchair. He can appreciate that thoughtful detail without inventing a score or comparing the child with anyone else."
+        ],
+        "ru": [
+          "В конце стола младший мальчик убирает неровный мост. Майкл узнаёт знакомое движение: тот тоже прячет карточку участника. Сначала хочется сказать, будто мост заслужил первое место.",
+          "Ты предлагаешь честнее: спросить о мосте и выслушать. Оказывается, широкий въезд сделан для игрушечной коляски. Майкл может оценить эту заботливую деталь, не выдумывая оценок и не сравнивая мальчика с другими."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-17-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "action_mismatch"
+      ],
+      "observed": "Only the four regular explorers build at the table. No younger overlooked builder or toy-wheelchair bridge detail appears.",
+      "recommendation": "Include the younger child and Michael listening to that child's accessible bridge design.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "571da25f00fff0a01b9d9254cf9c8ffc3517f21d64b313c1f3cb07d73619c305"
+    },
+    {
+      "scene_id": "17.4",
+      "chapter": 5,
+      "lesson": 17,
+      "scene": 4,
+      "source": "data/why/lesson-17.json",
+      "title": {
+        "en": "Room at the worktable",
+        "ru": "Место за рабочим столом"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Michael invites the younger builder to their next workshop. He does not require a better bridge as the price of joining. Gracie brings out her ribbon, and the friends congratulate her without turning her success into a ranking of people.",
+          "Joseph adds a practice plan to his blue notebook: Michael wants stronger joints on his next model. There is room for growth and disappointment, celebration and belonging. You help clear a place at the worktable before anyone asks who is best."
+        ],
+        "ru": [
+          "Майкл приглашает мальчика на следующую мастерскую. Не нужно сначала построить лучший мост, чтобы прийти. Грейси достаёт ленту, и друзья поздравляют её, не превращая успех в оценку ценности людей.",
+          "Джозеф записывает план тренировки в синий блокнот: Майкл хочет научиться делать прочные соединения. Здесь есть место развитию и огорчению, радости и дружбе. Ты освобождаешь место за столом, не спрашивая, кто лучше всех."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-17-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "action_mismatch"
+      ],
+      "observed": "Michael addresses the regular trio at a worktable; Joseph writes, but the invited younger builder and Gracie's ribbon are absent.",
+      "recommendation": "Make the younger builder's welcome and shared celebration visible.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "945020081179480d58fb1f120cfa1c35e4407bc25fe1e12999268520a3d594ec"
+    },
+    {
+      "scene_id": "18.1",
+      "chapter": 5,
+      "lesson": 18,
+      "scene": 1,
+      "source": "data/why/lesson-18.json",
+      "title": {
+        "en": "Keep going?",
+        "ru": "Продолжать?"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "At the outdoor activity trail, Gracie's yellow hoodie feels much too warm. She has been hurrying to keep up and now needs a rest. Michael points toward the final checkpoint, then sees her face and stops. You help find their leader instead of pushing the team onward.",
+          "Joseph checks the route card: this is a shared outing, not a contest to ignore discomfort. They settle in the shade with water. Gracie worries that needing help has spoiled everyone's adventure."
+        ],
+        "ru": [
+          "На прогулочном маршруте Грейси становится жарко в жёлтой толстовке. Она спешила за друзьями и теперь устала. Майкл показывает на последний пункт, но замечает её лицо и останавливается. Ты помогаешь позвать руководителя, а не торопишь команду.",
+          "Джозеф проверяет карту: это общая прогулка, а не соревнование по терпению. Они садятся в тени с водой. Грейси боится, что просьбой о помощи испортила приключение."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-18-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Gracie visibly overheats with hand to forehead on the trail; Joseph checks his notebook and others attend.",
+      "recommendation": "No essential correction; water/rest can remain subsequent action.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "55c58b0f7f0440050e7b1e7fb8edce5538d366d8273b55607377cc4f29be9ae5"
+    },
+    {
+      "scene_id": "18.2",
+      "chapter": 5,
+      "lesson": 18,
+      "scene": 2,
+      "source": "data/why/lesson-18.json",
+      "title": {
+        "en": "A gift, not an obstacle",
+        "ru": "Дар, а не помеха"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Their leader thanks her for speaking up. Bodies are not embarrassing obstacles to a spiritual life. Genesis presents God's creation as good, and Paul teaches believers to honor God with their bodies. Eating, resting, moving, and receiving care belong in that response.",
+          "Rosie explains that honoring God is not a demand to look a certain way or never become ill. Bodies have different abilities and needs. Gracie can thank God for hers while honestly saying that something hurts or feels wrong."
+        ],
+        "ru": [
+          "Руководитель благодарит её за то, что она сказала об усталости. Тело — не постыдная помеха духовной жизни. В Бытии Божье творение названо хорошим, а Павел учит верующих прославлять Бога и телом. Еда, отдых, движение и помощь тоже важны.",
+          "Рози объясняет: почитать Бога не значит иметь определённую внешность или никогда не болеть. У тел разные возможности и потребности. Можно благодарить Бога за тело и честно говорить о боли или неприятных ощущениях."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-18-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "setting_continuity"
+      ],
+      "observed": "Adult listens directly to Gracie with other children present; discussion shifts indoors from the trail.",
+      "recommendation": "Nonblocking continuity change; care/listening beat works.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "f446c22d62d7d2fff51774e476cc970f6897f6606c24782847fa8acf4458649f"
+    },
+    {
+      "scene_id": "18.3",
+      "chapter": 5,
+      "lesson": 18,
+      "scene": 3,
+      "source": "data/why/lesson-18.json",
+      "title": {
+        "en": "Ask before helping",
+        "ru": "Спроси перед помощью"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "When they rise, Joseph reaches to adjust Gracie's backpack. She asks him to wait and let her do it. He steps back without arguing. Offering help does not mean deciding that another person's body or belongings are yours to manage.",
+          "You practice a simple boundary with the team: ask first, listen to the answer, and stop when someone says no. If touching feels unsafe, a child can move away and tell a trusted adult, even when the other person demands secrecy."
+        ],
+        "ru": [
+          "Когда ребята встают, Джозеф хочет поправить рюкзак Грейси. Она просит подождать: справится сама. Он отступает без спора. Предлагая помощь, нельзя распоряжаться чужим телом или вещами как своими.",
+          "Ты тренируешь с командой простое правило: сначала спросить, выслушать ответ и остановиться, если человек говорит нет. Если прикосновение кажется небезопасным, можно отойти и рассказать надёжному взрослому, даже если требуют сохранить тайну."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-18-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "action_mismatch"
+      ],
+      "observed": "Joseph's hand is on or immediately at Gracie's backpack strap while she smiles; no clear request-to-stop or withdrawal is conveyed.",
+      "recommendation": "Show Joseph stepping back with open hands and Gracie managing her own strap, preserving the boundary lesson.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "9a717fbda860d877c69226c3f32bc2afa8163d04fd4b7866ea820ae3efa42543"
+    },
+    {
+      "scene_id": "18.4",
+      "chapter": 5,
+      "lesson": 18,
+      "scene": 4,
+      "source": "data/why/lesson-18.json",
+      "title": {
+        "en": "A changed route",
+        "ru": "Новый маршрут"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "The leader offers a shorter path, and the explorers choose it together. Gracie carries her own backpack; Michael asks before taking the water bottle she offers. Their final checkpoint becomes a picnic bench rather than the distant hilltop, and nobody loses their place on the team.",
+          "Joseph writes a new trail note: speak up, respect boundaries, get help. You reach the meeting point with an adventure worth remembering. Caring for bodies was not a distraction from loving God and neighbors; it was part of it."
+        ],
+        "ru": [
+          "Руководитель предлагает короткую дорогу, и исследователи вместе выбирают её. Грейси несёт свой рюкзак; Майкл спрашивает, прежде чем взять предложенную бутылку. Последним пунктом становится скамейка, а не далёкая вершина. Никто не теряет места в команде.",
+          "Джозеф записывает: говори о нуждах, уважай границы, обращайся за помощью. Вы возвращаетесь с важным опытом. Забота о теле не отвлекла от любви к Богу и ближним — она стала её частью."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-18-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Repair confirmed: Gracie wears her own backpack and offers a bottle to Michael at a picnic table; Joseph writes and leader is present.",
+      "recommendation": "Keep repaired image. A still cannot establish verbal consent, but the voluntary offering is clear.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "464fc1043138d6723db32f29470ef6f6efd2fcf41a6df63e72e77f5082209785"
+    },
+    {
+      "scene_id": "19.1",
+      "chapter": 5,
+      "lesson": 19,
+      "scene": 1,
+      "source": "data/why/lesson-19.json",
+      "title": {
+        "en": "A welcoming screen",
+        "ru": "Приветливый экран"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "The library computer offers to help the explorers plan their exhibition. Its friendly message praises Joseph's questions and suggests cheerful headings. Michael wonders whether such a helpful voice could become their team's wisest friend. You notice how easy it is to imagine someone sitting behind the words.",
+          "Their teacher brings a prepared practice sheet instead of asking children to open accounts. One sample answer confidently claims that Genesis says people are made in the image of computers. The sheet is clearly labeled an invented error."
+        ],
+        "ru": [
+          "Библиотечный компьютер помогает исследователям подготовить выставку. Дружелюбное сообщение хвалит вопросы Джозефа и предлагает весёлые заголовки. Майкл думает: может, такой помощник станет самым мудрым другом команды? Ты замечаешь, как легко представить за словами человека.",
+          "Учитель приносит готовый учебный лист, не предлагая детям создавать аккаунты. В одном примере уверенно сказано, будто Бытие учит: люди созданы по образу компьютеров. На листе ясно написано: вымышленная ошибка для проверки."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-19-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "prop_substitution"
+      ],
+      "observed": "Friendly holographic robot replaces the library computer/chatbot; no teacher or explicitly invented practice-error sheet is visible.",
+      "recommendation": "Prefer ordinary screen and adult-prepared sample; avoid making the chatbot look like an independent person.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "984e003e3ba1f3b7b5e0a168b525b6b711e98054ae1ad6ab10f1da8eb7529107"
+    },
+    {
+      "scene_id": "19.2",
+      "chapter": 5,
+      "lesson": 19,
+      "scene": 2,
+      "source": "data/why/lesson-19.json",
+      "title": {
+        "en": "Open the real passage",
+        "ru": "Открой настоящий текст"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Rosie opens Genesis 1:27 in her purple Bible. The sample answer is wrong: the passage speaks of God's image. Joseph marks the mismatch in his blue notebook. A confident tone did not make the answer accurate, and the attached reference did not guarantee that it matched the text.",
+          "Their teacher explains that chatbots generate language and can produce useful drafts or convincing mistakes. Before using an answer, the team should check an appropriate source rather than ask the same program to promise it is right."
+        ],
+        "ru": [
+          "Рози открывает Бытие 1:27 в фиолетовой Библии. В примере ошибка: отрывок говорит об образе Бога. Джозеф отмечает несоответствие в синем блокноте. Уверенный тон не сделал ответ верным, а ссылка не гарантировала совпадения с текстом.",
+          "Учитель объясняет: чат-боты создают текст и могут выдавать как полезные черновики, так и убедительные ошибки. Прежде чем использовать ответ, нужно проверить подходящий источник, а не просить ту же программу пообещать, что она права."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-19-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "setting_continuity"
+      ],
+      "observed": "Rosie opens Bible while friends attend, but campsite replaces library and Joseph is not marking the mismatch.",
+      "recommendation": "Restore source-checking notebook action if polishing.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "2fd0c8f4319bfec5176de126764e7d3b8086437c593c95e9d5f7382bef81b9a8"
+    },
+    {
+      "scene_id": "19.3",
+      "chapter": 5,
+      "lesson": 19,
+      "scene": 3,
+      "source": "data/why/lesson-19.json",
+      "title": {
+        "en": "More than friendly words",
+        "ru": "Не только добрые слова"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Gracie asks whether a machine saying it cares is the same as a friend caring. The team distinguishes helpful language from a human relationship. Scripture describes human beings as made in God's image; sounding human on a screen does not establish that a program is a human person.",
+          "A trusted adult can know their situation, take responsibility, and help in real life. A chatbot is not their pastor, parent, or safest keeper of secrets. Kind wording is no reason to enter addresses, passwords, or private worries."
+        ],
+        "ru": [
+          "Грейси спрашивает: если машина пишет о заботе, это то же самое, что забота друга? Команда различает полезные слова и человеческие отношения. Писание говорит о людях как об образе Бога; человеческий стиль текста не доказывает, что программа является человеком.",
+          "Надёжный взрослый может знать обстоятельства, отвечать за свои действия и помогать в жизни. Чат-бот не заменяет родителей, пастора и безопасного собеседника для личных тайн. Приветливость — не повод сообщать адреса, пароли или сокровенные тревоги."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-19-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "prop_substitution"
+      ],
+      "observed": "Gracie gestures toward a physical toy robot rather than discussing a chatbot on a screen.",
+      "recommendation": "Ordinary computer would better distinguish generated words from human care.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "34a5756ce13bf4cd068a6a7c68672629f46b5325d97cef429bebe83ec90f1569"
+    },
+    {
+      "scene_id": "19.4",
+      "chapter": 5,
+      "lesson": 19,
+      "scene": 4,
+      "source": "data/why/lesson-19.json",
+      "title": {
+        "en": "A tool in its place",
+        "ru": "Помощник на своём месте"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "You help Michael keep one useful heading and discard the false claim. The teacher reviews the finished card. Then the team closes the computer and asks the librarian how visitors with different reading needs might enjoy their display.",
+          "Joseph saves a new rule beside the corrected passage: use tools, check claims, protect privacy, seek wise people. The computer helped with wording. The conversation with the librarian helped them notice a neighbor. They do not have to confuse those gifts to appreciate either one."
+        ],
+        "ru": [
+          "Ты помогаешь Майклу оставить удачный заголовок и убрать ложное утверждение. Учитель проверяет карточку. Затем команда закрывает компьютер и спрашивает библиотекаря, как сделать выставку удобной для посетителей с разными потребностями при чтении.",
+          "Джозеф записывает рядом с исправлением: используй инструменты, проверяй утверждения, береги личные данные, ищи мудрых людей. Компьютер помог со словами, а разговор с библиотекарем — заметить ближнего. Не нужно смешивать эти виды помощи, чтобы ценить каждый."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-19-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "readable_english"
+      ],
+      "observed": "Large clearly readable KEEP and DISCARD labels are baked into art. Sorting visual works, but librarian conversation is absent.",
+      "recommendation": "Replace English labels with language-neutral icons or localized UI outside image.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "Confirmed KEEP / DISCARD English baked into image; blocks RU-neutral art.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "93e3ff81362472f079c72449492e70d9d236bd9676beba75bb01325ee8d3975c"
+    },
+    {
+      "scene_id": "20.1",
+      "chapter": 5,
+      "lesson": 20,
+      "scene": 1,
+      "source": "data/why/lesson-20.json",
+      "title": {
+        "en": "A brilliant bad plan",
+        "ru": "Блестящий неудачный план"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Michael spreads the exhibition treasure trail across the library table. Visitors will race upstairs, read tiny clues, and shout answers before a timer rings. It looks exciting until Gracie asks how her friend, who uses a wheelchair, will reach the first clue.",
+          "Joseph points out another problem: a new reader may need longer with the words. Michael offers to let those visitors watch. You notice that watching other people belong is not the same as being welcomed into the activity."
+        ],
+        "ru": [
+          "Майкл раскладывает план поиска сокровищ на библиотечном столе. Гости побегут наверх, прочтут мелкие подсказки и выкрикнут ответы до звонка. Всё кажется замечательным, пока Грейси не спрашивает, как её друг на коляске доберётся до первой подсказки.",
+          "Джозеф замечает ещё одну трудность: начинающему читателю нужно больше времени. Майкл предлагает таким гостям посмотреть со стороны. Ты замечаешь: наблюдать за чужим участием — не то же самое, что быть приглашённым к общему делу."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-20-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Michael spreads a treasure-trail plan and Gracie watches; planning/table beat aligns.",
+      "recommendation": "No essential correction; accessibility concern is carried by narration.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "36aa30033e8a6c09b795c48569de784d53fbdd2408e6d6c8990751027eecbca0"
+    },
+    {
+      "scene_id": "20.2",
+      "chapter": 5,
+      "lesson": 20,
+      "scene": 2,
+      "source": "data/why/lesson-20.json",
+      "title": {
+        "en": "No special seat for favorites",
+        "ru": "Не только для любимчиков"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Rosie opens James, where believers are warned against favoritism. The passage challenges welcoming a wealthy person with honor while treating a poor person as unimportant. Their trail has a different setting, but the question reaches their table: whose comfort have they treated as more important?",
+          "The team cannot assume every visitor needs the same adjustment. Gracie asks her friend about the plan instead of speaking for him. He wants to solve clues with everyone, not become the subject of a kindness demonstration."
+        ],
+        "ru": [
+          "Рози открывает послание Иакова, где верующих предостерегают от лицеприятия: богатому оказывают честь, а бедного считают неважным. Их выставка устроена иначе, но вопрос касается и команды: чьё удобство они поставили выше остальных?",
+          "Нельзя считать, что всем нужны одинаковые изменения. Грейси спрашивает друга о плане, а не отвечает за него. Он хочет вместе разгадывать подсказки, а не стать главным героем показательного доброго дела."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-20-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Rosie points into an open Bible as team listens, matching James/favoritism discussion.",
+      "recommendation": "Friend consultation is not pictured but this captures the scene's reading beat.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "da3b81d4bae921064fcca600e34a7448d65f4e17888a89185908dabf72e3fe0a"
+    },
+    {
+      "scene_id": "20.3",
+      "chapter": 5,
+      "lesson": 20,
+      "scene": 3,
+      "source": "data/why/lesson-20.json",
+      "title": {
+        "en": "Keep the challenge, change the doorway",
+        "ru": "Сохрани задачу, убери преграду"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "You help move the trail to an accessible room. Joseph prints large clues and prepares spoken versions. The timer becomes optional, and teams can point to answers rather than shout. There are still mysteries to solve; the challenge no longer depends on climbing stairs or reading fastest.",
+          "Michael asks the librarian to test the route with them. A narrow turn blocks access to one station, so they move a table. Planning felt generous, but testing reveals something their generous intentions had missed."
+        ],
+        "ru": [
+          "Ты помогаешь перенести маршрут в доступную комнату. Джозеф печатает крупные подсказки и готовит устные версии. Таймер используют по желанию; ответ можно показать, а не выкрикивать. Загадки остаются, но успех больше не зависит от лестницы и скорости чтения.",
+          "Майкл приглашает библиотекаря проверить маршрут вместе. Узкий поворот мешает добраться до станции, и стол передвигают. План казался заботливым, но проверка обнаружила то, чего добрые намерения не заметили."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-20-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Michael and Gracie move a table, visibly creating room for the route.",
+      "recommendation": "Useful specific action; librarian/tester absence is not a contradiction.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "1ee2549b562f24276681a19705d04e4b3e74d18e733d1f55c71f08bfc10f65ee"
+    },
+    {
+      "scene_id": "20.4",
+      "chapter": 5,
+      "lesson": 20,
+      "scene": 4,
+      "source": "data/why/lesson-20.json",
+      "title": {
+        "en": "A teammate, not a project",
+        "ru": "Товарищ, а не проект"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "When visitors arrive, Gracie's friend finds a clue everyone else missed. Another visitor chooses to listen instead of reading. Nobody announces either choice as a heroic exception. Michael asks each team which role its members would enjoy, and leaves room to change roles later.",
+          "Joseph's notebook has one final question for the exit: what would make this easier to join next time? You welcome the answers. Including neighbors is not a prize the explorers award themselves; it is a practice of listening and making real room."
+        ],
+        "ru": [
+          "Когда приходят гости, друг Грейси находит подсказку, которую остальные пропустили. Другой посетитель предпочитает слушать, а не читать. Никто не объявляет эти решения подвигом. Майкл спрашивает, кому какая роль нравится, и разрешает позже поменяться.",
+          "В блокноте Джозефа остаётся последний вопрос: что поможет вам участвовать в следующий раз? Ты с готовностью слушаешь ответы. Принимать ближних — не награда за собственную доброту, а привычка слушать и действительно давать место рядом."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-20-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "representation_unverified"
+      ],
+      "observed": "Repair adds two visitors and a boy actively pointing to a clue. However all seating/lower bodies are cropped; no wheelchair is discernible, so the specifically requested wheelchair teammate remains unverified.",
+      "recommendation": "Reframe to show the friend's wheelchair naturally while he participates; do not turn him into a charity display.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "6e0db628b7bd4b7f24ba7280d47fe28e4c190cb58ad8b5b34c7de8c4833b5b7e"
+    },
+    {
+      "scene_id": "21.1",
+      "chapter": 6,
+      "lesson": 21,
+      "scene": 1,
+      "source": "data/why/lesson-21.json",
+      "title": {
+        "en": "Before the crash",
+        "ru": "До падения"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Michael wants his bridge to be the center of the explorers' exhibition. Joseph's blue notebook contains a better design, and visitors keep gathering around it. While you arrange labels, Michael quietly moves Joseph's model to a narrow shelf behind a curtain. He tells himself that nobody will miss it.",
+          "Then a cardboard tower falls. Gracie hears the crash and finds Michael holding the broken support. His first thought is not how to repair it, but how to escape blame."
+        ],
+        "ru": [
+          "Майкл хочет, чтобы его мост стал главным на выставке исследователей. В синей тетради Джозефа есть проект получше, и посетители собираются вокруг него. Пока ты расставляешь подписи, Майкл прячет макет Джозефа на узкой полке за занавеской. Он убеждает себя, что никто не заметит.",
+          "Картонная башня падает. Грейси слышит грохот и видит сломанную опору в руках Майкла. Он думает не о ремонте, а о том, как избежать обвинений."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-21-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "action_mismatch"
+      ],
+      "observed": "Michael proudly presents a fully built bridge to smiling friends; no hiding behind curtain, narrow shelf, fallen tower, or broken support is visible.",
+      "recommendation": "Depict the secret relocation or immediate crash consequence, not successful presentation.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "06042edd1354db28aaa205d789436fb85cc7cdf0de33c4b44617ce325f713111"
+    },
+    {
+      "scene_id": "21.2",
+      "chapter": 6,
+      "lesson": 21,
+      "scene": 2,
+      "source": "data/why/lesson-21.json",
+      "title": {
+        "en": "More than a shelf rule",
+        "ru": "Не только правило о полках"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Michael points to the wobbly shelf. It really is wobbly, but that does not explain why he hid the model. Rosie opens her purple Bible to Genesis 3 with their teacher. They notice distrust, a forbidden choice, hiding, and blame. Sin reaches deeper than accidentally breaking an exhibition rule.",
+          "The teacher explains that sin turns away from God in hearts and actions. Wanting praise became a reason to treat Joseph badly. A loose shelf did not make that choice for Michael."
+        ],
+        "ru": [
+          "Майкл показывает на шаткую полку. Она действительно шатается, но это не объясняет, зачем он спрятал макет. Рози вместе с учителем открывает третью главу Бытия. Они замечают недоверие, запретный выбор, попытку спрятаться и обвинения. Грех глубже случайного нарушения правил выставки.",
+          "Учитель объясняет: грех — это непослушание Богу в сердце и поступках. Желание похвалы стало оправданием плохого отношения к Джозефу. Шаткая полка не выбирала за Майкла."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-21-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Michael points at the shelf, Joseph records, and Rosie holds Bible; blame/shelf beat is clear.",
+      "recommendation": "Adult not pictured; otherwise aligned.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "93e61516cb1d46469012cd2a328b8d425fab5f91fa4fb60144a60571b48fd403"
+    },
+    {
+      "scene_id": "21.3",
+      "chapter": 6,
+      "lesson": 21,
+      "scene": 3,
+      "source": "data/why/lesson-21.json",
+      "title": {
+        "en": "A truthful first sentence",
+        "ru": "Первое честное предложение"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "You help Joseph gather the pieces while Michael sits beside the curtain. Romans 3:23 does not let the other explorers divide themselves into perfect children and one hopeless child. Everyone needs God's mercy. Still, everyone's need does not erase Michael's particular responsibility.",
+          "He tells Joseph that he moved the model because he wanted the attention. He leaves out the usual excuse about what everyone else does. Joseph is upset, and Michael listens instead of demanding immediate friendliness."
+        ],
+        "ru": [
+          "Ты помогаешь Джозефу собрать обломки, а Майкл сидит у занавески. Римлянам 3:23 не позволяет разделить команду на безупречных детей и одного безнадёжного. Всем нужна Божья милость. Но это не отменяет ответственности Майкла за его поступок.",
+          "Он признаётся Джозефу, что спрятал макет ради внимания посетителей. Он не оправдывается тем, что другие тоже так делают. Джозеф расстроен, и Майкл слушает, не требуя немедленной дружбы."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-21-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Joseph gathers pieces on floor while Michael sits withdrawn beside curtain; other friends are present.",
+      "recommendation": "Aligned with consequence and responsibility; exact confession relies on copy.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "dd5ba9c0f23cce345aa410a18c0e998caff415da8abedcfb8a5964b96db3c952"
+    },
+    {
+      "scene_id": "21.4",
+      "chapter": 6,
+      "lesson": 21,
+      "scene": 4,
+      "source": "data/why/lesson-21.json",
+      "title": {
+        "en": "Repair without pretending",
+        "ru": "Исправить, не притворяясь"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "With adult help, they repair the support and move both models to a sturdy table. Michael gives Joseph credit for the design. Repairing cardboard cannot purchase God's forgiveness, and saying sorry does not make every consequence disappear. It is a concrete response to admitting the wrong.",
+          "At the exhibition, Michael still notices the pull of wanting every compliment. This time he asks God for help and introduces a visitor to Joseph. Their investigation has reached a choice inside his own heart."
+        ],
+        "ru": [
+          "Со взрослым дети чинят опору и ставят оба макета на прочный стол. Майкл честно называет Джозефа автором проекта. Ремонтом нельзя купить Божье прощение, а извинение не отменяет всех последствий. Но признание вины ведёт к настоящему исправлению.",
+          "На выставке Майкл снова хочет забрать всю похвалу себе. На этот раз он просит Бога помочь и знакомит посетителя с Джозефом. Исследование привело к выбору в его собственном сердце."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-21-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Adult helps children repair a bridge together on a sturdy table.",
+      "recommendation": "Good concrete repair beat; materials look wood rather than cardboard, a minor stylistic substitution.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "534428ae5ce0fd32b5b834a5b33e2e0215e3c57b07478a170692ae6e799906bc"
+    },
+    {
+      "scene_id": "22.1",
+      "chapter": 6,
+      "lesson": 22,
+      "scene": 1,
+      "source": "data/why/lesson-22.json",
+      "title": {
+        "en": "News at the doorway",
+        "ru": "Новость у двери"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Gracie arrives at the workshop without her usual bouncing steps. Her grandmother is in hospital, and the yellow hoodie she normally throws over a chair stays zipped up. The team had planned a cheerful exhibition rehearsal. Nobody knows whether to keep setting out the models or stop.",
+          "Michael reaches for an explanation: perhaps something bad happened because somebody did something wrong. Rosie gently stops that guess. They do not know the cause, and a frightened friend does not need an invented accusation."
+        ],
+        "ru": [
+          "Грейси входит в мастерскую без обычной бодрой походки. Её бабушка в больнице, и жёлтая толстовка остаётся застёгнутой. Команда собиралась весело репетировать выставку. Теперь никто не знает, продолжать ли расставлять макеты.",
+          "Майкл пытается объяснить: может быть, беда случилась из-за чьего-то плохого поступка. Рози мягко останавливает догадку. Причины они не знают, а испуганной подруге не нужны выдуманные обвинения."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-22-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Gracie stands at doorway with zipped yellow hoodie and worried posture; group notices her.",
+      "recommendation": "Aligned and child-safe.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "8a95529ecd42a963f1c2ebd0c2ac2e9e0d4ba7ce8474184124be830c3a052eff"
+    },
+    {
+      "scene_id": "22.2",
+      "chapter": 6,
+      "lesson": 22,
+      "scene": 2,
+      "source": "data/why/lesson-22.json",
+      "title": {
+        "en": "A passage with tears",
+        "ru": "Отрывок со слезами"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Their teacher sits beside Gracie and asks whether she wants company. Then, with her agreement, they read about Jesus meeting people grieving for Lazarus in John 11. Jesus' tears do not treat sorrow as a failure of faith. Rosie leaves the Bible open instead of rushing to a cheerful ending.",
+          "You place a tissue box within reach. Gracie asks why a good God allows pain. The teacher says that Christians can bring that question to God honestly, without pretending to know every reason."
+        ],
+        "ru": [
+          "Учитель садится рядом и спрашивает, хочет ли Грейси побыть с ними. С её согласия они читают Иоанна 11: Иисус встречает людей, скорбящих о Лазаре. Его слёзы показывают, что печаль не означает отсутствие веры. Рози не торопится перейти к радостному финалу.",
+          "Ты ставишь поближе салфетки. Грейси спрашивает, почему добрый Бог допускает боль. Учитель объясняет: этот вопрос можно честно принести Богу, не притворяясь, будто нам известны все причины."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-22-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Adult sits with Gracie and speaks gently; Rosie holds open Bible.",
+      "recommendation": "No tissue box visible, but emotional-support teaching beat is present.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "49ecdf30661a07cfcbb70759e539599ece4e0bd183bf4e1de90519736dae5cde"
+    },
+    {
+      "scene_id": "22.3",
+      "chapter": 6,
+      "lesson": 22,
+      "scene": 3,
+      "source": "data/why/lesson-22.json",
+      "title": {
+        "en": "Hope is not a timetable",
+        "ru": "Надежда — не расписание"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Joseph writes two headings: what Scripture tells us, and what we do not know. Romans 8 describes creation as damaged and groaning, waiting for God to set it free. The world as it is now is not the world fully healed. Christians also look to Jesus, who entered our suffering and rose from death: God's goodness is not a promise that pain never happens, but a reason to trust his love and coming restoration.",
+          "That does not tell them why this particular illness happened or when Grandma will recover. Michael puts away his guess about blame and asks what would help today. Gracie would like someone to finish her display labels, so she can go home with her mother when she arrives."
+        ],
+        "ru": [
+          "Джозеф пишет два заголовка: что говорит Писание и чего мы не знаем. Римлянам 8 описывает творение, которое страдает и ждёт освобождения от разрушения. Нынешний мир ещё не исцелён. Христиане смотрят и на Иисуса: Он вошёл в наши страдания и воскрес. Божья доброта не означает, что боли никогда не бывает. Она даёт основание доверять Его любви и ждать обновления мира.",
+          "Но это не объясняет причину именно этой болезни и не сообщает, когда бабушка поправится. Майкл оставляет догадку о чьей-то вине и спрашивает, что поможет сегодня. Грейси просит закончить подписи к её экспонатам, чтобы сразу уйти с мамой, когда та приедет."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-22-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Joseph writes in a two-column notebook while team listens; Gracie remains subdued.",
+      "recommendation": "Headings not legible at inspected size; no confirmed English-language blocker.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "7585bb948d2ff6168e94ef42368db9993acb8c081ea48e7f201660ce52c30ad2"
+    },
+    {
+      "scene_id": "22.4",
+      "chapter": 6,
+      "lesson": 22,
+      "scene": 4,
+      "source": "data/why/lesson-22.json",
+      "title": {
+        "en": "Room for a quiet friend",
+        "ru": "Место для тихой подруги"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "You finish the labels together. Joseph asks permission before sending a simple card, and Rosie prays without promising a miracle on demand. They ask for healing, strength, and good care. Gracie does not have to smile to prove the prayer mattered.",
+          "When her mother arrives, the team makes room for her to leave without explaining everything again. The empty chair still makes them sad. They have not solved suffering, but they have learned to stay near, tell the truth, and offer practical love."
+        ],
+        "ru": [
+          "Вы вместе заканчиваете подписи. Джозеф спрашивает разрешения отправить открытку, а Рози молится, не обещая чуда по заказу. Они просят об исцелении, силах и хорошей заботе. Грейси не обязана улыбаться, чтобы доказать пользу молитвы.",
+          "Когда приходит мама, подруга может уйти, не объясняя всё заново. Пустой стул по-прежнему печалит ребят. Они не разгадали страдание, но научились быть рядом, говорить правду и помогать делом."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-22-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "tone"
+      ],
+      "observed": "All four smile around map/display labels; no mother or empty chair is shown.",
+      "recommendation": "Prefer quieter affect and room for grief; smiling itself is not prohibited by the text.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "e489fbca6f9d6c9e722acb0d06136e25bd71323ba42cf2bf9fa84d3cd63bfe5c"
+    },
+    {
+      "scene_id": "23.1",
+      "chapter": 6,
+      "lesson": 23,
+      "scene": 1,
+      "source": "data/why/lesson-23.json",
+      "title": {
+        "en": "The page on the floor",
+        "ru": "Страница на полу"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "An older club member grabs Joseph's blue notebook and laughs at his drawings. A page tears when Joseph reaches for it. Their leader steps in, returns the notebook, and takes the older child aside. Michael wants to tear that child's poster in return. You help collect the loose page instead.",
+          "Joseph wonders whether forgiving means saying the grabbing was harmless. He also worries that someone will make him lend the notebook again before he feels safe."
+        ],
+        "ru": [
+          "Старший участник клуба хватает синюю тетрадь Джозефа и смеётся над рисунками. Когда Джозеф тянется за ней, страница рвётся. Руководитель вмешивается, возвращает тетрадь и отводит обидчика в сторону. Майкл хочет порвать его плакат в ответ. Ты помогаешь поднять страницу.",
+          "Джозеф спрашивает, значит ли прощение, что ничего плохого не произошло. Он боится, что его заставят снова дать тетрадь, хотя рядом с обидчиком ему тревожно."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-23-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Older boy holds Joseph's notebook; Joseph looks upset and reaches toward it; friends concerned.",
+      "recommendation": "Grabbing tension reads safely; torn page and intervening leader not shown.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "bcf0a947639e2d6a8560f793cb70e493f6d53c4c8657de8506fc9086b7d9fa9e"
+    },
+    {
+      "scene_id": "23.2",
+      "chapter": 6,
+      "lesson": 23,
+      "scene": 2,
+      "source": "data/why/lesson-23.json",
+      "title": {
+        "en": "Mercy tells the truth",
+        "ru": "Милость не скрывает правду"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Rosie and the leader read Ephesians 4:32 together. Christian forgiveness grows from God's mercy in Christ, not from pretending wrong is right. Romans 12 rejects taking revenge. Neither passage asks a child to hide harm from the adults responsible for protection.",
+          "The leader keeps a clear rule: nobody grabs another person's belongings. The older child must help repair the damage and follow supervised boundaries. Joseph can reject revenge while still saying what happened and asking for help."
+        ],
+        "ru": [
+          "Рози и руководитель читают Ефесянам 4:32. Христианское прощение рождается из Божьей милости во Христе, а не из притворства, будто зло стало добром. Римлянам 12 отвергает месть. Ни один отрывок не требует скрывать вред от взрослых, отвечающих за защиту.",
+          "Правило остаётся ясным: чужие вещи нельзя отнимать. Старшему ребёнку придётся помочь исправить ущерб и соблюдать границы под присмотром. Джозеф может отказаться от мести и одновременно рассказать правду и попросить защиты."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-23-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Leader reads with Rosie and the group, matching forgiveness teaching and adult presence.",
+      "recommendation": "No essential correction.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "0f6a2df052288d77a3d5a81def4d2fd8c858b161a1e90d0b7e6c5d5ea4b7aade"
+    },
+    {
+      "scene_id": "23.3",
+      "chapter": 6,
+      "lesson": 23,
+      "scene": 3,
+      "source": "data/why/lesson-23.json",
+      "title": {
+        "en": "Different doors",
+        "ru": "Разные шаги"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Gracie makes four cards for the team's discussion: forgiveness, trust, consequences, and reconciliation. They belong together, but they are not the same action. Trust needs evidence of trustworthy behavior. A repaired friendship needs truth and willingness from both people; Joseph cannot produce that alone.",
+          "You practice a truthful apology with Michael. It names the grabbing, admits that it hurt someone, and offers repair without demanding an instant hug. An apology is not a ticket that buys access to another person's notebook."
+        ],
+        "ru": [
+          "Грейси делает четыре карточки: прощение, доверие, последствия и примирение. Они связаны, но означают разные вещи. Для доверия нужны надёжные поступки. Для восстановления дружбы нужны правда и участие обоих; Джозеф не может сделать это один.",
+          "Ты вместе с Майклом пробуешь составить честное извинение. Нужно назвать поступок, признать причинённый вред и предложить исправление, не требуя немедленных объятий. Извинение не даёт права снова брать чужую тетрадь."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-23-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Gracie presents four pictorial cards; group discusses with Joseph's notebook present.",
+      "recommendation": "Language-neutral icons support the four distinctions without generated English.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "73d475733c20c9341129bd911b13c20cca5b3a2c0d89440afe80b99db2f00f97"
+    },
+    {
+      "scene_id": "23.4",
+      "chapter": 6,
+      "lesson": 23,
+      "scene": 4,
+      "source": "data/why/lesson-23.json",
+      "title": {
+        "en": "No revenge in the repair box",
+        "ru": "В коробке для ремонта нет мести"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Joseph lets the leader arrange the repair. He does not tear the poster or organize a campaign against the older child. He tells God about his anger and asks for help to let go of revenge. His feelings may need time, and the leader promises to keep listening.",
+          "For now, the notebook stays with Joseph. You tape the torn page together while Rosie makes room on the table. Mercy has not erased the truth. It has changed what the team chooses to do with it."
+        ],
+        "ru": [
+          "Джозеф поручает руководителю организовать исправление ущерба. Он не рвёт плакат и не собирает других против обидчика. Он рассказывает Богу о гневе и просит помочь отказаться от мести. Чувствам может понадобиться время; руководитель обещает продолжать слушать.",
+          "Пока тетрадь остаётся у Джозефа. Ты склеиваешь страницу, а Рози освобождает место на столе. Милость не стёрла правду. Она изменила то, как команда на эту правду отвечает."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-23-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "action_omission"
+      ],
+      "observed": "Joseph keeps and writes in notebook, Rosie handles a small repair object; no clearly torn page being taped.",
+      "recommendation": "Show taped page if sharpening the repair beat; non-revenge tone is sound.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "c377e419895abddd0e88b0b38764a04c73437bd4e3de27e30981731c210bc55c"
+    },
+    {
+      "scene_id": "24.1",
+      "chapter": 6,
+      "lesson": 24,
+      "scene": 1,
+      "source": "data/why/lesson-24.json",
+      "title": {
+        "en": "Trouble by the coat hooks",
+        "ru": "Неприятность у вешалки"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "The explorers are leaving the community room when two children block a younger child's way to the coat hooks. One keeps moving his bag whenever he reaches for it. Gracie notices that he is not laughing. Michael starts toward them with clenched fists, ready to teach them a lesson.",
+          "You spot the club leader nearby. Joseph stays where the younger child can see him while Rosie gets the leader's attention. The team does not need to win a fight to help."
+        ],
+        "ru": [
+          "Исследователи выходят из комнаты клуба и видят: двое детей не пускают младшего к вешалке. Один каждый раз отодвигает его сумку. Грейси замечает, что мальчик не смеётся. Майкл сжимает кулаки и собирается проучить обидчиков.",
+          "Ты замечаешь рядом руководителя клуба. Джозеф остаётся в поле зрения младшего, а Рози зовёт взрослого. Чтобы помочь, команде не нужно побеждать в драке."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-24-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "action_ambiguity"
+      ],
+      "observed": "Rosie extends both arms in front of a younger child by coat hooks; the two bullying children and adult intervention are not identifiable.",
+      "recommendation": "Clarify who blocks the child and who summons help; current pose can make helpers appear to block the child.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "939cf58187a1c7d4d230e6e8cff0d4b21f5256995b3e5888a2a2b98ba05205c6"
+    },
+    {
+      "scene_id": "24.2",
+      "chapter": 6,
+      "lesson": 24,
+      "scene": 2,
+      "source": "data/why/lesson-24.json",
+      "title": {
+        "en": "Say what you saw",
+        "ru": "Расскажи, что видел"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "The leader separates the children and makes sure everyone is safe. Rosie reports the blocked path and the moved bag, not a guess about what the children were thinking. Joseph asks the younger child whether he would like company while speaking to the leader. He does not demand a public retelling.",
+          "Michael admits that revenge would have made the corridor more dangerous. Telling a responsible adult was not betraying a secret friendship rule. It helped stop a real wrong that was still happening."
+        ],
+        "ru": [
+          "Руководитель разводит детей и проверяет, что все в безопасности. Рози рассказывает о перекрытом проходе и сумке, а не о предполагаемых мыслях обидчиков. Джозеф спрашивает младшего, хочет ли тот говорить с руководителем вместе. Он не требует пересказывать всё перед публикой.",
+          "Майкл признаёт: месть сделала бы коридор опаснее. Сообщение ответственному взрослому не нарушает тайного закона дружбы. Оно помогло остановить настоящее зло, которое ещё продолжалось."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-24-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "action_mismatch"
+      ],
+      "observed": "Leader addresses four explorers on a rope bridge in a forest, not separating children/reporting coat-hook bullying in the community room.",
+      "recommendation": "Replace unrelated trail/bridge action with safe adult-led factual reporting.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "d0edc0fb438fa6a50630ab829e8452d563af0711e26472a83090cf516e9cc1c1"
+    },
+    {
+      "scene_id": "24.3",
+      "chapter": 6,
+      "lesson": 24,
+      "scene": 3,
+      "source": "data/why/lesson-24.json",
+      "title": {
+        "en": "Practice without repeating harm",
+        "ru": "Тренировка без повторения обиды"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Back in the room, their teacher offers a gentle rehearsal using paper cards, not children acting out insults. Galatians 6:2 calls believers to carry one another's burdens. Micah 6:8 brings justice, kindness, and humility together. Care is more than feeling sorry, and justice is more than getting even.",
+          "You arrange cards for noticing danger, getting adult help, reporting facts, and offering support. If one adult does not respond, the plan includes telling another safe adult. Serious immediate danger needs urgent help."
+        ],
+        "ru": [
+          "В комнате учитель предлагает спокойную тренировку с карточками: никто не разыгрывает оскорбления. Галатам 6:2 призывает носить бремена друг друга. Михей 6:8 соединяет справедливость, милосердие и смирение. Забота больше жалости, а справедливость — не сведение счётов.",
+          "Ты раскладываешь карточки: заметить опасность, позвать взрослого, сообщить факты, предложить поддержку. Если взрослый не реагирует, нужно обратиться к другому надёжному взрослому. При непосредственной серьёзной опасности помощь нужна срочно."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-24-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Teacher and children handle paper cards at table, not acting out insults.",
+      "recommendation": "Strong match to gentle rehearsal.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "fe77155db173b9b677e761056b6d7e7906adbd808a067db6a202f7ec31282c6d"
+    },
+    {
+      "scene_id": "24.4",
+      "chapter": 6,
+      "lesson": 24,
+      "scene": 4,
+      "source": "data/why/lesson-24.json",
+      "title": {
+        "en": "Follow through quietly",
+        "ru": "Тихая поддержка после случившегося"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Before leaving, Gracie asks whether the younger child wants to walk with the group. He chooses to wait for his father, so they respect his answer. The leader will contact the responsible adults and address the children's behavior; the explorers do not investigate or announce punishments themselves.",
+          "Joseph adds a reminder to check in next week without asking for private details. The corridor is quiet again, but helping did not end when the bag was returned. Kindness can keep showing up without taking control of someone's story."
+        ],
+        "ru": [
+          "Перед уходом Грейси спрашивает, хочет ли мальчик пойти с командой. Он выбирает дождаться папы, и дети уважают ответ. Руководитель свяжется с ответственными взрослыми и разберётся с поведением обидчиков. Исследователи сами не ведут расследование и не назначают наказания.",
+          "Джозеф записывает: на следующей неделе спросить, как дела, без расспросов о личном. В коридоре снова тихо, но помощь не закончилась возвращением сумки. Можно продолжать заботиться, не распоряжаясь чужой историей."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-24-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "action_omission"
+      ],
+      "observed": "Four friends stand outside and Gracie speaks; younger child waiting for father is absent.",
+      "recommendation": "Include the younger child's respected choice if revising; no forced accompaniment is depicted.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "83887dce0329cde418ad836371b1a63e89ac9c9f8c48a721665e5b6caf6bb9e9"
+    },
+    {
+      "scene_id": "25.1",
+      "chapter": 7,
+      "lesson": 25,
+      "scene": 1,
+      "source": "data/why/lesson-25.json",
+      "title": {
+        "en": "History at the library table",
+        "ru": "История за библиотечным столом"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "At the library, the explorers prepare a small history display. Michael has drawn an imaginary ancient city, but Joseph wants a real source beside the artwork. You help open the Israel Museum's record for an inscription naming Pontius Pilate. Rosie labels Michael's picture as an illustration, not an excavation photograph.",
+          "Gracie asks whether the stone proves everything Christians believe about Jesus. The question changes their task: they must discover what this particular object actually tells them before writing its caption."
+        ],
+        "ru": [
+          "В библиотеке исследователи готовят небольшую историческую выставку. Майкл нарисовал вымышленный древний город, а Джозеф хочет добавить настоящий источник. Ты помогаешь открыть запись Израильского музея о надписи с именем Понтия Пилата. Рози подписывает рисунок Майкла: иллюстрация, не фотография раскопок.",
+          "Грейси спрашивает, доказывает ли камень всё, во что христиане верят об Иисусе. Теперь задача ясна: прежде чем писать подпись, нужно понять, что именно сообщает этот предмет."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-25-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Library display with artifact photographs/cards and Joseph recording matches evidence-work setup.",
+      "recommendation": "No exact object identity can be authenticated from illustration alone.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "58ad17d2bed63c3191fae0793ea9b4dcd4cca0006b23a795fc995078fad9964c"
+    },
+    {
+      "scene_id": "25.2",
+      "chapter": 7,
+      "lesson": 25,
+      "scene": 2,
+      "source": "data/why/lesson-25.json",
+      "title": {
+        "en": "Read the object record",
+        "ru": "Прочти запись о предмете"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "The museum dates the inscription to Pilate's time, 26–36 CE. It was found reused in the theater at Caesarea. Its reconstructed text names Pilate and identifies his office as prefect of Judea. Joseph records those details instead of copying an exciting headline from somewhere else.",
+          "The stone does not name Jesus. It provides concrete evidence for a ruler in the setting of the Gospel accounts, not a carved account of Jesus' life. Michael crosses out his first caption claiming that it proves the resurrection."
+        ],
+        "ru": [
+          "Музей датирует надпись временем Пилата, 26–36 годами нашей эры. Её нашли вторично использованной в театре Кесарии. В восстановленном тексте названы Пилат и его должность префекта Иудеи. Джозеф записывает эти сведения, а не яркий чужой заголовок.",
+          "Камень не называет Иисуса. Он даёт вещественное свидетельство о правителе из исторической обстановки Евангелий, а не высеченное жизнеописание Иисуса. Майкл вычёркивает первую подпись, будто надпись доказывает воскресение."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-25-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "evidence_depiction"
+      ],
+      "observed": "Scene becomes an in-person museum visit with a large multi-line inscribed slab, not reading the specified online object record; depiction is not verified as the Pilate inscription.",
+      "recommendation": "Use the real licensed object-record image in clearly framed research context, or a visibly generic non-evidentiary illustration.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "eac7fb51f6bc5d10fa15ccc7b5b50a086158a0f08590824de8b42487972b8112"
+    },
+    {
+      "scene_id": "25.3",
+      "chapter": 7,
+      "lesson": 25,
+      "scene": 3,
+      "source": "data/why/lesson-25.json",
+      "title": {
+        "en": "Three different dates",
+        "ru": "Три разные даты"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Rosie opens Luke 3, where the account names rulers, including Pilate. John 1 presents Jesus as the Word who became flesh, not a character who only pretended to enter human life. These are Christian written sources to examine, while the stone is a different kind of evidence.",
+          "For evidence about Jesus himself, their teacher opens Galatians 1:18–19. Paul reports visiting Cephas, also called Peter, and meeting James, the Lord's brother. This gives them a concrete reason to take Jesus' earthly life seriously: Paul describes contact with people personally connected to him, not just a distant place name. You keep the date of a letter separate from the date of its surviving copies."
+        ],
+        "ru": [
+          "Рози открывает Луки 3, где названы правители, включая Пилата. Иоанна 1 представляет Иисуса как Слово, ставшее плотью, а не персонажа, лишь притворившегося человеком. Это христианские письменные источники для изучения; камень — свидетельство другого рода.",
+          "Чтобы узнать о самом Иисусе, учитель открывает Галатам 1:18–19. Павел пишет, что посещал Кифу, то есть Петра, и встретил Иакова, брата Господня. Это конкретное основание говорить о земной жизни Иисуса: Павел сообщает о встречах с близкими Ему людьми, а не просто называет далёкое место. Ты отдельно отмечаешь время написания письма и время сохранившихся копий."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-25-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Rosie reads Bible while Joseph records notes at library table.",
+      "recommendation": "Source-reading beat works; three dates remain in copy.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "3bfd5b5efed93a102cd84d3a69177f53792df30e964d2e2d88751b2e536df62c"
+    },
+    {
+      "scene_id": "25.4",
+      "chapter": 7,
+      "lesson": 25,
+      "scene": 4,
+      "source": "data/why/lesson-25.json",
+      "title": {
+        "en": "A precise reason",
+        "ru": "Точное основание"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "The finished display connects the Gospel accounts to a real historical setting without asking one stone to answer every question. Joseph leaves unknown dates blank rather than inventing them. The team can explain that Jesus belongs to human history while keeping questions about his identity and resurrection distinct.",
+          "Gracie reads the new caption aloud and checks the source link. Michael's city drawing stays, clearly labeled. Their visitors receive something better than a triumphant slogan: a reason they can inspect, and an honest statement of its limits."
+        ],
+        "ru": [
+          "Готовая выставка связывает евангельские рассказы с реальной исторической обстановкой, не требуя от одного камня ответа на всё. Джозеф оставляет неизвестные даты пустыми, а не придумывает их. Команда объясняет историчность земной жизни Иисуса, отдельно рассматривая вопросы о Его личности и воскресении.",
+          "Грейси читает новую подпись и проверяет ссылку. Рисунок города остаётся с ясным пояснением. Посетители получают не победный лозунг, а основание, которое можно проверить, и честное описание его границ."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-25-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "setting_continuity"
+      ],
+      "observed": "Children inspect a miniature city with picture cards against ancient-looking ruins rather than finished library display.",
+      "recommendation": "Keep modern model visibly an illustration; avoid suggesting on-site historical evidence.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "545d0b60e49810c2d46fe5d2ea27220837a3f5a04750c8cd4cdaf0ea6a93f33e"
+    },
+    {
+      "scene_id": "26.1",
+      "chapter": 7,
+      "lesson": 26,
+      "scene": 1,
+      "source": "data/why/lesson-26.json",
+      "title": {
+        "en": "The cards that will not separate",
+        "ru": "Карточки, которые не разделить"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Rosie lays passage cards across the library table after the history display is finished. One describes Jesus being hungry; another describes his authority over a storm. Michael proposes two folders: ordinary Jesus and powerful Jesus. Gracie wonders whether that would turn him into two different people.",
+          "You hold the empty folders while their teacher asks the team to read before sorting. The puzzle is not how to invent a new Jesus who fits their boxes, but how to listen to what Scripture says."
+        ],
+        "ru": [
+          "После исторической выставки Рози раскладывает на библиотечном столе карточки с отрывками. В одном Иисус голоден, в другом проявляет власть над бурей. Майкл предлагает две папки: обычный Иисус и могущественный Иисус. Грейси спрашивает, не получатся ли два разных человека.",
+          "Ты держишь пустые папки, а учитель предлагает сначала прочитать. Задача — не придумать Иисуса под свои коробочки, а услышать, что говорит Писание."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-26-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Rosie sorts illustrated passage cards at library table.",
+      "recommendation": "Folders not evident, but comparison beat is recognizable.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "658f39c5dbe852d5690efbae4e7cd77026c22f2774c0fa07eee527361fba0b29"
+    },
+    {
+      "scene_id": "26.2",
+      "chapter": 7,
+      "lesson": 26,
+      "scene": 2,
+      "source": "data/why/lesson-26.json",
+      "title": {
+        "en": "Really human",
+        "ru": "По-настоящему человек"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "They read that Jesus became hungry after fasting in Matthew 4. His hunger was not a costume or a trick for an audience. John 1 says the Word became flesh. Christians confess that the Son truly became human, with a real human life, not merely a human appearance.",
+          "Joseph remembers days when tiredness makes everything difficult. Jesus' humanity means that human weakness is not something distant and strange to him. Yet being tired or hungry is not itself sin, and Jesus did not need to sin to be human."
+        ],
+        "ru": [
+          "Они читают в Матфея 4, что после поста Иисус проголодался. Голод не был костюмом или трюком для зрителей. Иоанна 1 говорит: Слово стало плотью. Христиане исповедуют, что Сын действительно стал человеком и жил человеческой жизнью, а не только выглядел человеком.",
+          "Джозеф вспоминает дни, когда от усталости всё трудно. Человеческая слабость не чужда Иисусу. Но усталость и голод сами по себе не грех; чтобы быть человеком, Иисусу не нужно было грешить."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-26-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Joseph reads open Bible with team listening.",
+      "recommendation": "Reading about real humanity is represented without staging Jesus as a separate character.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "f6ff43e093a3e5612f74dfe7b7482b89fecb904f90182e51d0f9dc63e12946ae"
+    },
+    {
+      "scene_id": "26.3",
+      "chapter": 7,
+      "lesson": 26,
+      "scene": 3,
+      "source": "data/why/lesson-26.json",
+      "title": {
+        "en": "Not less than God",
+        "ru": "Не переставший быть Богом"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Next they read Mark 4, where Jesus commands the wind and sea. The disciples' question about him matters more than the team's excitement about unusual weather. Colossians 2:9 speaks of the fullness of deity dwelling bodily in Christ. Becoming human did not mean that the Son stopped being God.",
+          "Michael takes back the two folders. They are not collecting evidence for two separate characters or a half-God, half-human mixture. The Christian confession is one person, Jesus Christ, truly God and truly human."
+        ],
+        "ru": [
+          "Затем они читают Марка 4: Иисус повелевает ветру и морю. Вопрос учеников о Нём важнее восторга команды перед необычной погодой. Колоссянам 2:9 говорит о полноте Божества, пребывающей во Христе телесно. Став человеком, Сын не перестал быть Богом.",
+          "Майкл убирает две папки. Они изучают не двух персонажей и не смесь наполовину Бога и наполовину человека. Христианское исповедание говорит об одной личности — Иисусе Христе, истинном Боге и истинном человеке."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-26-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "illustration_framing"
+      ],
+      "observed": "Children read indoors while a storm-tossed sailboat appears through a window-like opening behind them.",
+      "recommendation": "Make the storm clearly a framed story illustration rather than literal simultaneous scenery.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "35684dd1fc2a52ff9c6f8a919006f8a74c72593527777611114d0aff9cc6dbd3"
+    },
+    {
+      "scene_id": "26.4",
+      "chapter": 7,
+      "lesson": 26,
+      "scene": 4,
+      "source": "data/why/lesson-26.json",
+      "title": {
+        "en": "One Lord to trust",
+        "ru": "Один Господь, Которому доверяем"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "You place both cards beneath one heading bearing Jesus' name. Gracie admits that she cannot explain everything about how his two natures belong to one person. Their teacher welcomes that honesty. A mystery is not permission to change what the passages actually teach.",
+          "As they pack the display, Joseph asks for help carrying a heavy box instead of hiding his tiredness. Rosie suggests bringing their weaknesses to Jesus in prayer. They can trust his divine authority without imagining that he is unable to understand human life."
+        ],
+        "ru": [
+          "Ты кладёшь обе карточки под одним заголовком с именем Иисуса. Грейси признаётся: она не может полностью объяснить соединение двух природ в одной личности. Учитель одобряет честность. Тайна не даёт права менять смысл прочитанного.",
+          "Убирая выставку, Джозеф просит помочь с тяжёлой коробкой, а не скрывает усталость. Рози предлагает приносить свои слабости Иисусу в молитве. Можно доверять Его божественной власти, не считая Его чуждым человеческой жизни."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-26-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Joseph places two images together on one sheet while Rosie holds Bible.",
+      "recommendation": "Shared heading is not readable, which protects localization; heavy-box secondary beat omitted.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "c78f3c87d1bac62fc4b29f47ee63ee127e64301d35938ab93a7e5197a56458d0"
+    },
+    {
+      "scene_id": "27.1",
+      "chapter": 7,
+      "lesson": 27,
+      "scene": 1,
+      "source": "data/why/lesson-27.json",
+      "title": {
+        "en": "The tear nobody claimed",
+        "ru": "Разрыв, о котором молчали"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Michael pulled the community mural from its tube. A long tear ran through the painted river. Yesterday he had hurried while packing it, heard a ripping sound, and said nothing. Now everyone was searching for tape, and his silence felt heavier than the tube.",
+          "You join the explorers beside the damaged painting. Gracie offers to cover the hole with a bright sun. Michael shakes his head. Hiding the damage would not make his dishonesty disappear."
+        ],
+        "ru": [
+          "Майкл достал общее панно из тубуса. Через нарисованную реку шёл длинный разрыв. Вчера он торопился, услышал треск и промолчал. Теперь все искали скотч, а молчание давило сильнее тяжёлого тубуса.",
+          "Ты присоединяешься к исследователям. Грейси предлагает закрыть дыру ярким солнцем. Майкл качает головой: спрятать повреждение — не значит перестать обманывать."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-27-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "action_mismatch"
+      ],
+      "observed": "Michael rolls out a bright, apparently intact mural; everyone smiles, and the long river tear is not discernible.",
+      "recommendation": "Make the tear and Michael's uneasy recognition clear.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "99182fb52b0f8ca103c34564e721c62f9f8678df10f7fe6fa70336d223516c79"
+    },
+    {
+      "scene_id": "27.2",
+      "chapter": 7,
+      "lesson": 27,
+      "scene": 2,
+      "source": "data/why/lesson-27.json",
+      "title": {
+        "en": "A deeper wrong",
+        "ru": "Беда глубже разрыва"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Rosie sets her purple Bible beside the paint jars. They read Isaiah 53:4–6 and Romans 5:6–11 with their leader. Sin is not just a broken object; it is turning from God, and it harms our relationships. God does not pretend that evil is harmless.",
+          "Joseph writes two questions in his blue notebook: Can wrong really matter? Can wrongdoers really receive mercy? The cross belongs at the meeting of those questions."
+        ],
+        "ru": [
+          "Рози кладёт фиолетовую Библию рядом с красками. С руководителем они читают Исаии 53:4–6 и Римлянам 5:6–11. Грех — не просто сломанная вещь. Это непослушание Богу, разрушающее отношения. Бог не делает вид, будто зло безвредно.",
+          "Джозеф записывает два вопроса: имеет ли зло серьёзное значение? Может ли виновный получить милость? Крест помогает увидеть ответ на оба вопроса."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-27-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Rosie places purple Bible beside paint pots while Joseph writes.",
+      "recommendation": "Good specific prop/action alignment.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "a1c036b211475665d6396c8db451e983b603a31c1867438a2bc0c4ca4c90c3a8"
+    },
+    {
+      "scene_id": "27.3",
+      "chapter": 7,
+      "lesson": 27,
+      "scene": 3,
+      "source": "data/why/lesson-27.json",
+      "title": {
+        "en": "Love takes the cost",
+        "ru": "Любовь принимает цену"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Their leader explains that Jesus willingly gave himself for sinners. The sinless Son was not an unwilling stranger persuaded to care. Father and Son are united in this loving rescue. Jesus bore our sins; his death and resurrection open the way to forgiveness and life.",
+          "Fixing a mural is only a small reminder that repair costs something, not a complete explanation of salvation. Nobody can pay God back with enough paintings, promises, or good deeds."
+        ],
+        "ru": [
+          "Руководитель объясняет: Иисус добровольно отдал Себя за грешников. Безгрешный Сын — не посторонний, которого заставили помочь. Отец и Сын едины в этой любви. Иисус понёс наши грехи; Его смерть и воскресение открывают путь к прощению и жизни.",
+          "Починка панно лишь напоминает, что исправление чего-то стоит. Она не объясняет спасение целиком. Картинами, обещаниями или добрыми делами невозможно расплатиться с Богом."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-27-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "setting_continuity"
+      ],
+      "observed": "Leader explains to four children around campfire rather than at mural workshop.",
+      "recommendation": "Teaching is calm and non-graphic; location drift is nonblocking.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "581e22563c415c011e2b4a116f5b892b4df5c7bb740f365495611828d40600c9"
+    },
+    {
+      "scene_id": "27.4",
+      "chapter": 7,
+      "lesson": 27,
+      "scene": 4,
+      "source": "data/why/lesson-27.json",
+      "title": {
+        "en": "An honest beginning",
+        "ru": "Честное начало"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Michael tells the group what happened and apologizes without blaming the tube. He helps repair the backing, although the river still has a visible seam. Gracie makes room for him at the worktable instead of keeping a scoreboard of his failure.",
+          "You hold the edge while the glue dries. The team cannot act out everything Jesus accomplished. But they can receive his mercy and practice a small, costly kindness because they have been loved first."
+        ],
+        "ru": [
+          "Майкл признаётся и просит прощения, не обвиняя тубус. Он помогает подклеить основу, хотя шов на реке остаётся заметным. Грейси освобождает ему место за столом вместо того, чтобы вести счёт его ошибкам.",
+          "Ты держишь край, пока сохнет клей. Команда не может изобразить всё, что совершил Иисус. Но можно принять Его милость и проявить доброту, требующую усилия: Он первым полюбил нас."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-27-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "action_mismatch"
+      ],
+      "observed": "Michael speaks while everyone sits on floor; no mural backing, seam, glue, or repair work appears.",
+      "recommendation": "Show honest apology within actual mural repair, preserving the concrete costly-kindness application.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "367040f30c15ec20d9ba259caef76b3f0b759f3cf98cefa0413ab83a241f6788"
+    },
+    {
+      "scene_id": "28.1",
+      "chapter": 7,
+      "lesson": 28,
+      "scene": 1,
+      "source": "data/why/lesson-28.json",
+      "title": {
+        "en": "The missing center",
+        "ru": "Чего не хватает в центре"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "At the library workshop, Joseph builds a cardboard house with an opening in its roof. Michael wants a tiny ladder; Gracie wants four carrying handles. Rosie asks what the model is supposed to help them notice. Suddenly everyone realizes they have planned the roof but forgotten the person inside.",
+          "Explorer, help them open Mark 2:1–12 before decorating anything else. The model is their modern illustration, not an excavated house or a photograph of the event."
+        ],
+        "ru": [
+          "В библиотечной мастерской Джозеф строит картонный дом с отверстием в крыше. Майкл хочет добавить лесенку, Грейси — четыре ручки для носилок. Рози спрашивает, что модель поможет заметить. Все понимают: они увлеклись крышей и забыли о человеке внутри.",
+          "Исследователь, помоги открыть Марка 2:1–12 прежде, чем украшать дом. Это современная учебная модель, а не раскопанный дом или фотография события."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-28-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Joseph handles cardboard house with roof opening at library worktable; Bible nearby.",
+      "recommendation": "Clearly a modern craft, not evidence photograph.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "f6323166bff2b96ac2e88be1df5799a850477ce66bb3bf38d596ae4941e07220"
+    },
+    {
+      "scene_id": "28.2",
+      "chapter": 7,
+      "lesson": 28,
+      "scene": 2,
+      "source": "data/why/lesson-28.json",
+      "title": {
+        "en": "More than a surprising cure",
+        "ru": "Больше, чем удивительное исцеление"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "They read about friends bringing a paralyzed man to Jesus through the roof. Jesus first addresses the man’s sins. Some scribes question his authority, because forgiving sins in this way belongs to God. That is the sharp question at the center of the room.",
+          "Rosie places a card marked Claim beside the model. The passage is not merely saying that kindness is nice. It presents Jesus making a remarkable claim about authority."
+        ],
+        "ru": [
+          "Они читают, как друзья спустили расслабленного к Иисусу через крышу. Сначала Иисус говорит о прощении его грехов. Книжники сомневаются в Его власти: так прощать грехи может Бог. Вот главный вопрос этой встречи.",
+          "Рози кладёт рядом карточку «Заявление». Отрывок не просто напоминает, что доброта полезна. Он рассказывает об удивительной власти, на которую указывает Иисус."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-28-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Children inspect illustrated Bible/account in book.",
+      "recommendation": "Claim card omitted, but framing within a book distinguishes illustration from event.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "45d0364c033142e057ca7343adf1fada3a1a18aa163734783cd0d12c1b41c004"
+    },
+    {
+      "scene_id": "28.3",
+      "chapter": 7,
+      "lesson": 28,
+      "scene": 3,
+      "source": "data/why/lesson-28.json",
+      "title": {
+        "en": "What the account connects",
+        "ru": "Что соединяет рассказ"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "In Mark’s account, Jesus heals the man so the people may know the Son of Man has authority to forgive sins. The man gets up and carries his bed. Joseph adds Action and Written witness cards, drawing arrows between them.",
+          "Gracie catches a mistake on their poster: the cardboard house cannot prove a healing. It helps them understand the written account. Their reason for considering Jesus’ identity comes from what the account actually says, not from their clever craft."
+        ],
+        "ru": [
+          "В рассказе Марка Иисус исцеляет человека, чтобы люди узнали о власти Сына Человеческого прощать грехи. Тот встаёт и уносит постель. Джозеф добавляет карточки «Действие» и «Письменное свидетельство» и соединяет их стрелками.",
+          "Грейси замечает ошибку на плакате: картонный дом ничего не доказывает об исцелении. Он помогает понять рассказ. Размышлять о личности Иисуса нужно на основании текста, а не красивой поделки."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-28-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "ancient_reenactment"
+      ],
+      "observed": "Modern explorers kneel beside a Jesus-like figure touching a seated man's face in an ancient street. No risen man carrying bed, modern cards, or written-witness exhibit.",
+      "recommendation": "Return to children examining Mark's account/cards; if historical illustration is used, visibly frame it and depict the actual Mark 2 action.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": true,
+      "sha256": "ab97b7db7f3c408567d31b3da4f609004f8c1332e9db36422c80dc4f9c62318b"
+    },
+    {
+      "scene_id": "28.4",
+      "chapter": 7,
+      "lesson": 28,
+      "scene": 4,
+      "source": "data/why/lesson-28.json",
+      "title": {
+        "en": "The case reaches us",
+        "ru": "Исследование касается нас"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "They read John 20:30–31, where the purpose of the written signs reaches beyond collecting impressive facts. The reader is invited to believe in Jesus and have life in his name. Michael puts down the little ladder and asks what trusting Jesus would change tomorrow.",
+          "You help place the finished model on a low shelf. Beside it they leave space for questions. Their exhibit now points beyond itself: toward the Lord who forgives, and toward a response no cardboard model can make for you."
+        ],
+        "ru": [
+          "Они читают Иоанна 20:30–31: знамения записаны не ради коллекции удивительных фактов. Читатель призван верить в Иисуса и иметь жизнь во имя Его. Майкл откладывает лесенку и спрашивает, что доверие Иисусу изменит завтра.",
+          "Ты помогаешь поставить модель на низкую полку. Рядом оставляют место для вопросов. Теперь выставка указывает не на себя, а на Господа, Который прощает. За тебя модель ответить Ему не может."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-28-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Team reads and reflects at library table.",
+      "recommendation": "Finished model/low shelf absent but the reading-response beat aligns.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "5cefff8865c3f824879e6f1df7d11cc7e75dff6863b9283a791151ed0bacb3d7"
+    },
+    {
+      "scene_id": "29.1",
+      "chapter": 8,
+      "lesson": 29,
+      "scene": 1,
+      "source": "data/why/lesson-29.json",
+      "title": {
+        "en": "Five hundred envelopes?",
+        "ru": "Пятьсот конвертов?"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Joseph arrives at the reading room carrying a box of empty envelopes. He plans a resurrection display with an envelope for every witness mentioned by Paul. Rosie stops him gently: they do not possess a separate surviving statement from every person Paul names or counts.",
+          "You help clear a space on the table. They keep one large card for Paul’s report and open 1 Corinthians 15:3–8. An honest investigation begins by describing the evidence they actually have."
+        ],
+        "ru": [
+          "Джозеф приносит в читальный зал пустые конверты: по одному для каждого свидетеля, упомянутого Павлом. Рози мягко останавливает его. У нас нет отдельного сохранившегося заявления от каждого названного или посчитанного человека.",
+          "Ты освобождаешь место на столе. Команда оставляет большую карточку для сообщения Павла и открывает 1 Коринфянам 15:3–8. Честное исследование начинается с того, какие свидетельства действительно есть."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-29-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "character_identity"
+      ],
+      "observed": "Five children include both seated blue-clad Joseph writing and another blue-clad dark-haired boy carrying box; this reads as duplicated Joseph rather than Joseph arriving.",
+      "recommendation": "Use one Joseph carrying the envelope box and three teammates; show envelopes if possible.",
+      "character_identity": "duplicate Joseph-like blue boy; blocker",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "74b5ea3d3c58e8be85d21a8508fa3adb68830db6a284157835ddfc2dac363eb7"
+    },
+    {
+      "scene_id": "29.2",
+      "chapter": 8,
+      "lesson": 29,
+      "scene": 2,
+      "source": "data/why/lesson-29.json",
+      "title": {
+        "en": "Listen to the report",
+        "ru": "Прислушайся к сообщению"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Paul passes on the message that Christ died for sins, was buried, was raised, and appeared to people. His letter comes from the middle of the first century. He names Cephas and James, reports a group appearance, and says Jesus appeared to him too. Reading through verse 9, Gracie notices that Paul had once persecuted the church. This is not just someone wishing a beloved teacher were still alive.",
+          "Next they read Luke 24:1–12: women find the tomb empty, and the disciples initially struggle to believe their report. Michael compares two explanations. Warm memories alone would not explain these claims about an empty tomb and encounters with Jesus alive. Christians believe God really raised Jesus because that brings these accounts together. The team has a reason to consider, not only a list to memorize."
+        ],
+        "ru": [
+          "Павел передаёт весть: Христос умер за грехи, был погребён, воскрес и являлся людям. Письмо написано в середине первого века. Павел называет Кифу и Иакова, сообщает о явлении группе людей и о встрече с Иисусом, которую пережил сам. Дочитав до девятого стиха, Грейси замечает: прежде Павел преследовал церковь. Это не просто желание ученика вернуть любимого учителя.",
+          "Затем они читают Луки 24:1–12: женщины находят гробницу пустой, а ученики сначала не верят их рассказу. Майкл сравнивает два объяснения. Одни добрые воспоминания не объясняют сообщений о пустой гробнице и встречах с живым Иисусом. Христиане верят, что Бог действительно воскресил Его: это объяснение соединяет прочитанные свидетельства. У команды появился довод для размышления, а не только список для заучивания."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-29-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "ancient_reenactment"
+      ],
+      "observed": "Explorers sit in ancient courtyard hearing a robed man with resurrection picture scroll, not reading Paul's letter and Luke in their reading room.",
+      "recommendation": "Frame evidence as modern examination of written accounts, not an invented direct encounter with Paul/Jesus.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": true,
+      "sha256": "1bf31e108d6276da3fc36f120e8186ef19477b6a10230e6344b3d72378e02c66"
+    },
+    {
+      "scene_id": "29.3",
+      "chapter": 8,
+      "lesson": 29,
+      "scene": 3,
+      "source": "data/why/lesson-29.json",
+      "title": {
+        "en": "A copy is not the event",
+        "ru": "Копия — не само событие"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "On the university library site, Gracie studies a photograph of a P46 leaf. Its record concerns part of Ephesians, not their Corinthians passage. This is a later manuscript witness to copying Paul’s letters, not Paul’s original page and certainly not a photograph of Easter morning.",
+          "Joseph makes three distinct labels: reported event, letter composed, surviving copy made. The library’s dating descriptions have a range; he refuses to pin a pretend exact birthday on the papyrus."
+        ],
+        "ru": [
+          "На сайте университетской библиотеки Грейси рассматривает лист P46. Он содержит часть Ефесянам, а не выбранный отрывок Коринфянам. Это позднейшая рукописная копия послания, не оригинал Павла и тем более не снимок пасхального утра.",
+          "Джозеф разделяет три понятия: событие, создание письма, изготовление сохранившейся копии. В библиотечных описаниях есть диапазоны дат. Он не придумывает папирусу точный «день рождения»."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-29-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Laptop, manuscript photographs, Gracie's pictured leaf and Joseph's notes show modern source research.",
+      "recommendation": "Do not treat generated manuscript texture as an authenticated P46 reproduction; real item/dates rely on linked record.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "74aed71944e419eba9981e5b978a5cb9d7aceacb3507f091af45efc631385a7b"
+    },
+    {
+      "scene_id": "29.4",
+      "chapter": 8,
+      "lesson": 29,
+      "scene": 4,
+      "source": "data/why/lesson-29.json",
+      "title": {
+        "en": "Hope without inflated claims",
+        "ru": "Надежда без преувеличений"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Their display now has a clear answer: Christians trust that Jesus rose bodily, not only in his friends' memories. Paul's early letter, his own claimed encounter, and the Gospel account of the empty tomb give reasons for that trust. They still welcome questions about how reliable these accounts are and how other explanations compare. Faith can listen closely instead of inflating the evidence.",
+          "You place the last card beside the open Bible. Gracie writes that death is not the final ruler for those who belong to Christ. The team leaves with a hope to live by, not a stack of imaginary witness interviews."
+        ],
+        "ru": [
+          "Теперь на выставке есть ясный ответ: христиане верят в телесное воскресение Иисуса, а не только в память друзей о Нём. Раннее письмо Павла, его сообщение о личной встрече и евангельский рассказ о пустой гробнице дают основания для доверия. Команда готова обсуждать надёжность этих рассказов и другие объяснения. Вера может внимательно слушать, не преувеличивая свидетельств.",
+          "Ты кладёшь последнюю карточку рядом с Библией. Грейси пишет, что для принадлежащих Христу смерть не последнее слово. Команда уносит надежду для жизни, а не пачку вымышленных интервью."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-29-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "blocker",
+      "categories": [
+        "action_mismatch"
+      ],
+      "observed": "Team builds a looping domino chain rather than placing the final resurrection-evidence/hope card beside Bible.",
+      "recommendation": "Replace unrelated causation-style activity with honest resurrection display conclusion.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "02c33f7a32e7cd8f0d3c6bee5fe0bd49478a82acd638c891c3f12f312edf17b8"
+    },
+    {
+      "scene_id": "30.1",
+      "chapter": 8,
+      "lesson": 30,
+      "scene": 1,
+      "source": "data/why/lesson-30.json",
+      "title": {
+        "en": "Points on the refrigerator",
+        "ru": "Баллы на холодильнике"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Gracie brings a homemade kindness chart to the explorers’ kitchen. Washing cups earns a star; sharing crayons earns two. Michael has already filled half a row. Then Joseph quietly asks whether God loves the person with the fullest row most. The room grows uncomfortable.",
+          "You notice Rosie’s empty row. She spent the morning sick at home. If stars measure who deserves rescue, what happens to someone who cannot keep up, or someone who has already done wrong?"
+        ],
+        "ru": [
+          "Грейси приносит на кухню таблицу добрых дел. За вымытые чашки — звёздочка, за карандаши, которыми поделился, — две. У Майкла уже полстроки. Джозеф тихо спрашивает: Бог сильнее любит того, у кого больше звёздочек? Всем становится неловко.",
+          "Ты замечаешь пустую строку Рози. Утром она болела дома. Если звёзды решают, кто достоин спасения, что делать тому, кто не успевает или уже поступил плохо?"
+        ]
+      },
+      "image": "public/images/jr/why/lesson-30-scene-1.webp",
+      "inspection": "pending replacement; intentionally not inspected",
+      "status": "pending",
+      "categories": [
+        "pending_asset"
+      ],
+      "observed": "Excluded from inspection as explicitly requested: replacement was generating at task start.",
+      "recommendation": "Inspect the finalized replacement separately; no approval assigned.",
+      "character_identity": "not inspected",
+      "generated_text": "not inspected",
+      "anatomy": "not inspected",
+      "ancient_reenactment": false,
+      "sha256": null
+    },
+    {
+      "scene_id": "30.2",
+      "chapter": 8,
+      "lesson": 30,
+      "scene": 2,
+      "source": "data/why/lesson-30.json",
+      "title": {
+        "en": "Read beyond the ribbon",
+        "ru": "Читаем дальше закладки"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "They open Ephesians 2:8–10. Salvation comes by grace through faith, not from our works, so nobody can boast. But the passage does not end by making goodness pointless: those made new in Christ are created for good works.",
+          "Joseph draws an arrow after Gift, pointing toward Grateful life. Michael had drawn the arrow the other way around. They erase it together. Trusting Jesus is receiving his rescue, not submitting a winning score to force God’s approval."
+        ],
+        "ru": [
+          "Они открывают Ефесянам 2:8–10. Спасение приходит по благодати через веру, не от дел, чтобы никто не хвалился. Но добро не становится бессмысленным: обновлённые во Христе созданы для добрых дел.",
+          "Джозеф рисует стрелку от «Дара» к «Благодарной жизни». У Майкла стрелка шла наоборот. Они вместе стирают её. Доверять Иисусу — принимать Его спасение, а не предъявлять победный счёт ради Божьего одобрения."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-30-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Team studies open Bible and Joseph points to passage.",
+      "recommendation": "Arrow correction omitted, but Ephesians-reading beat is valid.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "04b2abb165099bc8bb89a70624c619e19ec0aa156b6bd004975745b120e93f4c"
+    },
+    {
+      "scene_id": "30.3",
+      "chapter": 8,
+      "lesson": 30,
+      "scene": 3,
+      "source": "data/why/lesson-30.json",
+      "title": {
+        "en": "Three different envelopes",
+        "ru": "Три разных конверта"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Their leader lays out three everyday examples: agreed payment for a job, a birthday gift freely given, and a thank-you note written afterward. These examples help distinguish wages, gift, and gratitude; none contains everything about God’s saving grace.",
+          "Gracie places her kindness chart beside the thank-you note. Helpful habits can remind her to notice people. They cannot buy forgiveness. Rosie’s illness never made her worth less, and Michael’s crowded row never made him a savior."
+        ],
+        "ru": [
+          "Руководитель предлагает три примера: условленную оплату работы, подарок ко дню рождения и благодарственную записку после него. Они помогают отличить заработок, дар и благодарность, но не объясняют всю Божью благодать.",
+          "Грейси кладёт таблицу рядом с запиской. Привычка помогать может учить замечать людей, но не покупает прощение. Болезнь не уменьшила ценность Рози, а заполненная строка не сделала Майкла спасителем."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-30-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Adult lays out three pictorial everyday examples with children watching.",
+      "recommendation": "Cards rather than envelopes still communicate wages/gift/thanks without English labels.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "9184eb4e5d6502f472e77d41f1d87d2ce44b4c10f3b0d7515c0324041f908981"
+    },
+    {
+      "scene_id": "30.4",
+      "chapter": 8,
+      "lesson": 30,
+      "scene": 4,
+      "source": "data/why/lesson-30.json",
+      "title": {
+        "en": "A different kind of list",
+        "ru": "Совсем другой список"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "The team replaces the scoreboard with a practical list: cups to wash, soup to carry, someone to invite. Names disappear from the ranking column. Michael washes a cup that will never earn a star, and Gracie carries soup to Rosie’s chair.",
+          "Explorer, choose a task with them. Goodness has not become smaller; the boasting has. Their work can now be an answer to love already given, rather than an anxious attempt to make Jesus owe them something."
+        ],
+        "ru": [
+          "Вместо таблицы рекордов появляется список нужд: вымыть чашки, принести суп, кого-то пригласить. Колонка рейтинга исчезает. Майкл моет чашку без всякой звёздочки, а Грейси несёт суп к стулу Рози.",
+          "Исследователь, выбери дело вместе с ними. Добра стало не меньше — меньше стало хвастовства. Теперь помощь может отвечать на уже подаренную любовь, а не заставлять Иисуса быть нам должником."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-30-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "action_omission"
+      ],
+      "observed": "Pictorial checklist clearly shows cups, soup and inviting people; actual washing/carrying soup is not performed.",
+      "recommendation": "Good language-neutral list; show enacted service if sharpening application.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "14828f0f92450d91c321284fce851e66aaa25e34203c73690fbde39601efce38"
+    },
+    {
+      "scene_id": "31.1",
+      "chapter": 8,
+      "lesson": 31,
+      "scene": 1,
+      "source": "data/why/lesson-31.json",
+      "title": {
+        "en": "A victory that felt wrong",
+        "ru": "Неприятная победа"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Michael wins the park clue trail by skipping a checkpoint and secretly copying Joseph’s answer. His green sleeve hides the copied slip. Everyone cheers, but the badge feels strangely heavy. When Gracie asks how he solved the hardest clue, his explanation gets tangled.",
+          "You stand with the team at a fork in the path. Michael could invent another excuse. Instead, he asks the leader for a quiet conversation and admits exactly what he did."
+        ],
+        "ru": [
+          "Майкл выигрывает поиск подсказок в парке: пропускает остановку и тайком списывает ответ Джозефа. Под зелёным рукавом спрятана бумажка. Все радуются, но значок кажется тяжёлым. Грейси спрашивает о трудной загадке, и Майкл путается.",
+          "Ты стоишь с командой у развилки. Майкл мог бы придумать новое оправдание. Вместо этого он просит руководителя поговорить наедине и точно рассказывает о своём поступке."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-31-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "action_omission"
+      ],
+      "observed": "Michael holds up a slip triumphantly while friends look skeptical at outdoor table.",
+      "recommendation": "Captures questionable victory but not hidden copying/confession; add concealed slip or quiet leader conversation if revising.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "4b6c07ae14c08c5c8fb2e9cd6b6e554a31636056577704bb0002a52af254cfd1"
+    },
+    {
+      "scene_id": "31.2",
+      "chapter": 8,
+      "lesson": 31,
+      "scene": 2,
+      "source": "data/why/lesson-31.json",
+      "title": {
+        "en": "More than feeling embarrassed",
+        "ru": "Больше, чем стыд"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "Rosie opens Mark 1:15 after the conversation. Repentance means turning from sin toward God, not simply feeling bad because someone noticed. Faith means trusting Jesus, rather than trusting an impressive story about ourselves. The two belong together in responding to him.",
+          "Michael cannot rewind the afternoon. He can stop defending the shortcut. Joseph writes that confession names the wrong without attaching a secret excuse, and repair seeks the neighbor’s good rather than a quick escape from embarrassment."
+        ],
+        "ru": [
+          "После разговора Рози открывает Марка 1:15. Покаяние — поворот от греха к Богу, а не просто стыд из-за разоблачения. Вера — доверие Иисусу, а не красивой истории о себе. Так мы отвечаем Ему.",
+          "Майкл не может вернуть время. Но может перестать оправдывать короткий путь. Джозеф записывает: признание называет зло без скрытой отговорки, а исправление заботится о ближнем, не только избавляет от стыда."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-31-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Rosie opens Bible and team attends.",
+      "recommendation": "Aligned teaching beat.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "c6cb9fe01381ee482fb4239ee2c60652989a6c8b732b4874c3f73b057a578932"
+    },
+    {
+      "scene_id": "31.3",
+      "chapter": 8,
+      "lesson": 31,
+      "scene": 3,
+      "source": "data/why/lesson-31.json",
+      "title": {
+        "en": "New does not mean finished",
+        "ru": "Новый — не значит завершённый"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "They read 1 John 1:9 and hear the promise of forgiveness and cleansing. Second Corinthians 5:17 describes new life in Christ. That does not mean a new believer never struggles again, or must hide every struggle to prove the new life is real.",
+          "Michael returns the badge and asks to redo the route honestly. The leader accepts his apology and still adjusts the results. Forgiveness and fair consequences can stand together; consequences do not mean that honest confession failed."
+        ],
+        "ru": [
+          "Они читают 1 Иоанна 1:9 — обещание прощения и очищения. Во 2 Коринфянам 5:17 говорится о новой жизни во Христе. Это не значит, что верующий больше не борется с грехом или должен скрывать трудности.",
+          "Майкл возвращает значок и просит пройти маршрут честно. Руководитель принимает извинение и исправляет результаты. Прощение и справедливые последствия могут быть вместе. Последствия не означают, что признание оказалось бесполезным."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-31-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "cosmetic",
+      "categories": [
+        "action_omission"
+      ],
+      "observed": "Team reads together outdoors; no leader, returned badge, or adjusted results visible.",
+      "recommendation": "Reading is a legitimate part of scene, but returning badge would make consequence more concrete.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "3ef3b5a67e9d9c0525b83030cd3ab511b567a4d9f13b07fa7572022ab28c3264"
+    },
+    {
+      "scene_id": "31.4",
+      "chapter": 8,
+      "lesson": 31,
+      "scene": 4,
+      "source": "data/why/lesson-31.json",
+      "title": {
+        "en": "The next honest checkpoint",
+        "ru": "Следующая честная остановка"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "On the second walk, Michael reaches the difficult clue and wants to peek again. This time he asks for an allowed hint. Gracie waits while he thinks instead of solving it for him. Progress looks slower than his first victory and much more real.",
+          "Explorer, walk the next stretch with them. A changed direction is practiced one step at a time. Michael’s hope rests in Jesus, while his hands and feet learn the ordinary work of honesty."
+        ],
+        "ru": [
+          "Во второй раз Майкл снова хочет подсмотреть сложный ответ. Но теперь просит разрешённую подсказку. Грейси ждёт, пока он подумает, и не решает за него. Продвижение медленнее прежней победы, зато честнее.",
+          "Исследователь, пройди с ними дальше. Новое направление осваивают шаг за шагом. Надежда Майкла — в Иисусе, а руки и ноги учатся обычной ежедневной честности."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-31-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Michael works on clue on a rock while friends wait nearby.",
+      "recommendation": "Specific second-attempt effort reads; allowed hint is supplied by narration.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "9539a7a171224343cf3b533cdc001dea824e4a5ee4eb7ae0769e24da5ddcc3fe"
+    },
+    {
+      "scene_id": "32.1",
+      "chapter": 8,
+      "lesson": 32,
+      "scene": 1,
+      "source": "data/why/lesson-32.json",
+      "title": {
+        "en": "The invitation booth",
+        "ru": "Стол приглашений"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "The explorers prepare a little welcome table for the neighborhood afternoon. Joseph suggests a quiz before anyone gets a biscuit. Gracie looks worried: what if someone does not know the answers, or does not want a religious conversation? Michael quietly removes the quiz from the biscuit tray.",
+          "You join Rosie at the poster board. They still want to explain why Jesus matters. They need a truthful story and a generous invitation, not a reward that pressures a visitor to agree."
+        ],
+        "ru": [
+          "Исследователи готовят стол для соседского праздника. Джозеф предлагает викторину перед угощением. Грейси волнуется: вдруг человек не знает ответов или не хочет разговаривать о вере? Майкл убирает викторину с подноса.",
+          "Ты подходишь к Рози у плаката. Команда всё ещё хочет рассказать, почему важен Иисус. Нужны правдивая весть и доброе приглашение, а не награда за согласие."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-32-scene-1.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Friends prepare outdoor welcome/snack table with biscuits and decorations.",
+      "recommendation": "No conditional quiz is shown; generous welcome remains clear.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "c96a6058bd4813c5bafb48c8f984c6d20ba8fa133772c01ea5a3636e0bf4e3f8"
+    },
+    {
+      "scene_id": "32.2",
+      "chapter": 8,
+      "lesson": 32,
+      "scene": 2,
+      "source": "data/why/lesson-32.json",
+      "title": {
+        "en": "Start with the real problem",
+        "ru": "Начни с настоящей беды"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "They sketch a world made by God and people made to know and love him. Then they add the broken direction of sin: we turn from God and hurt others. The problem is deeper than not knowing enough facts or needing a little encouragement.",
+          "Rosie keeps the drawings simple. No visitor is drawn as the bad person while the explorers wear halos. They need rescue too. This changes the way Michael practices his explanation: he speaks as someone receiving mercy, not looking down from above."
+        ],
+        "ru": [
+          "Они рисуют мир, созданный Богом, и людей, созданных знать и любить Его. Затем — грех: мы отворачиваемся от Бога и раним других. Проблема глубже нехватки знаний или ободрения.",
+          "Рози рисует просто. Гости не изображены плохими, а исследователи — со светлыми нимбами. Им тоже нужно спасение. Теперь Майкл рассказывает не свысока, а как человек, сам принимающий милость."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-32-scene-2.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Team sketches world and people together without marking outsiders as villains.",
+      "recommendation": "Simple pictorial format supports both languages.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "b6f96c23d752f1419eda87f1d1746524b6a29e41d8176fdd625bf6c8e222d874"
+    },
+    {
+      "scene_id": "32.3",
+      "chapter": 8,
+      "lesson": 32,
+      "scene": 3,
+      "source": "data/why/lesson-32.json",
+      "title": {
+        "en": "Keep Jesus at the center",
+        "ru": "Пусть Иисус будет в центре"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "In 1 Corinthians 15:3–4 they find the center: Christ died for our sins, was buried, and was raised. In Ephesians 2:8–10 they find grace, faith, and the good works that follow. Their poster cannot shrink this into merely trying harder or becoming nicer.",
+          "Joseph adds a source card so a visitor can read the passages rather than trusting the children’s drawing. They practice explaining repentance and trust without promising that following Jesus removes every trouble before bedtime."
+        ],
+        "ru": [
+          "В 1 Коринфянам 15:3–4 они находят главное: Христос умер за наши грехи, был погребён и воскрес. В Ефесянам 2:8–10 — благодать, веру и следующие за ними добрые дела. Нельзя свести весть к призыву сильнее стараться.",
+          "Джозеф добавляет ссылку на отрывки, чтобы гость мог читать сам. Команда учится объяснять покаяние и доверие, не обещая, что следование Иисусу уберёт все трудности уже сегодня."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-32-scene-3.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Open book shows cross and empty-tomb pictures as team studies.",
+      "recommendation": "Gospel center represented in framed illustration, not unframed time travel.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "9e2b6f57fb3ec1c3acefaed04daaed69bae81af5556b1ed739502f34326c6927"
+    },
+    {
+      "scene_id": "32.4",
+      "chapter": 8,
+      "lesson": 32,
+      "scene": 4,
+      "source": "data/why/lesson-32.json",
+      "title": {
+        "en": "A conversation, not a capture",
+        "ru": "Разговор, а не ловушка"
+      },
+      "expected_paragraphs": {
+        "en": [
+          "When a visitor stops, Gracie asks whether he would like to hear about the poster. He listens, asks one question, and says he needs time. Nobody blocks the path or takes away his biscuit. Rosie thanks him for talking and offers the passage reference if he wants it.",
+          "Explorer, you can help tidy the table afterward. Sharing good news is faithful speech joined to genuine love. The team can offer reasons and an invitation; they cannot manufacture another person’s trust."
+        ],
+        "ru": [
+          "Когда подходит гость, Грейси спрашивает, хочет ли он услышать о плакате. Он слушает, задаёт вопрос и говорит, что ему нужно время. Никто не загораживает дорогу и не забирает угощение. Рози благодарит за разговор и предлагает ссылку на отрывок.",
+          "Исследователь, помоги потом убрать стол. Делиться благой вестью — говорить правду с настоящей любовью. Можно предложить объяснение и приглашение, но нельзя изготовить чужую веру."
+        ]
+      },
+      "image": "public/images/jr/why/lesson-32-scene-4.webp",
+      "inspection": "original asset via 2x2 lesson contact sheet; selected full-image close-up",
+      "status": "pass",
+      "categories": [],
+      "observed": "Gracie talks with visitor across welcoming table; others listen without blocking him.",
+      "recommendation": "Conversation and non-coercive posture align; biscuit choice need not be shown in every frame.",
+      "character_identity": "Four principal color/hair identities remain recognizable; no confirmed identity swap.",
+      "generated_text": "No confirmed readable English phrase at reviewed resolution; small book/manuscript marks not certified text-free.",
+      "anatomy": "No gross extra limbs or malformed faces observed at review resolution; tiny hands/occluded bodies not pixel-certified.",
+      "ancient_reenactment": false,
+      "sha256": "9bc623ad144be7a5ec955a257e8ce569863cc305bf9e95a5c8aab37761550adf"
+    }
+  ]
+}

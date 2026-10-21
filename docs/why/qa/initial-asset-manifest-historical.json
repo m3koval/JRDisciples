@@ -1,0 +1,14 @@
+{
+  "chapter-01": {
+    "source": "https://v3b.fal.media/files/b/0aaf26fa/GwubbZ4Oya-JTxQWkudjo_QQKcs7ww.png",
+    "provider": "FAL GPT Image 2",
+    "prompt": "docs/why/prompts/chapter-01.md",
+    "dimensions": [
+      1024,
+      768
+    ],
+    "type": "fictional story illustration",
+    "qa": "PASS: four human explorers; green/blue/purple/yellow identities, warm curiosity, no material text/anatomy errors. Actual aspect 4:3; inspect rendered crop."
+  },
+  "remaining": "Awaiting artwork budget; no placeholder copies created"
+}

@@ -1,0 +1,1257 @@
+{
+  "scope": "Final reconciled QA for all 208 lesson scenes: original full review plus hash-bound repaired scene review. Cosmetic simplifications remain nonblocking; no material blockers remain.",
+  "records": [
+    {
+      "key": "lesson-01-scene-1",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "1e45961c439c531c5e8497efb7769717fa431f0d5a7be0ff6475ca4a1556cbe1"
+    },
+    {
+      "key": "lesson-01-scene-2",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "febd1a99ca3ebc4b45bceea17f21aa9ddd56131cd4b1db9c81fd09a80caa1601"
+    },
+    {
+      "key": "lesson-01-scene-3",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "9e69536268387fe5c2aefc54578c7fef5063e4afe7ea6a987fe97da7ccb1b9f3"
+    },
+    {
+      "key": "lesson-01-scene-4",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "d681cd1fb640b81a4c66d229b7dfc68ae386150dac536bff4b614fc97067ffe7"
+    },
+    {
+      "key": "lesson-02-scene-1",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "ac93643fba0b363bf4c0f0f462d49c030eb954873bbe5aa8bb137d1b6f408227"
+    },
+    {
+      "key": "lesson-02-scene-2",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "dac6ea2cab6caffea1e53c85ed428a82f747a31b1c309c48693a02eb7b61ff6e"
+    },
+    {
+      "key": "lesson-02-scene-3",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "df530681d89a0ae9ebb42eb845b1603b0e857726517834c05ca6c6c33df38c3c"
+    },
+    {
+      "key": "lesson-02-scene-4",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "e1c7eb4dde28297a0994d16b5493e833131731cd4919c820e32163fbdebb6168"
+    },
+    {
+      "key": "lesson-03-scene-1",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "8e747f1137749baf5f5432af188abadbf1196e6431158b47faf889aedc342ef0"
+    },
+    {
+      "key": "lesson-03-scene-2",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "5b3972b6d85c04120509f3154f6db48e9280ed25d19a39dab709bc9c0db996a0"
+    },
+    {
+      "key": "lesson-03-scene-3",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "f0071a97cb0d1fd5d7b83f1c794994b2b0956825f197f365be588cfa543e2fe3"
+    },
+    {
+      "key": "lesson-03-scene-4",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "cd8a310a8af91680ea158091bb8278186dc8fb3fde45835f777a89aeb85958e3"
+    },
+    {
+      "key": "lesson-04-scene-1",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "c7821d9e4f8e9bd5950baab18233ff8809581593761a9dcaecf79ac81866dda3"
+    },
+    {
+      "key": "lesson-04-scene-2",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "2a13b61335e5648be7c9aa2f2dd97edb37a8bdfbd40aa3dbee8df1f274088267"
+    },
+    {
+      "key": "lesson-04-scene-3",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "cdfa81425a2276af84a6538e944027359a44608ccaacd111d2f2606c938076db"
+    },
+    {
+      "key": "lesson-04-scene-4",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "a6ec4adaad54455bc4776be791ab29af343b35632dc2640c0df510039fb5721a"
+    },
+    {
+      "key": "lesson-05-scene-1",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "66a46264258d7780b9b4d2378aef90e2c3c6b1f9f29423a1ea8015226c4c0611"
+    },
+    {
+      "key": "lesson-05-scene-2",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "be2f6afc884ceff2aed78b65794e0ce817f6ed0bc85c7043e3a91da26693a09e"
+    },
+    {
+      "key": "lesson-05-scene-3",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "e32dc4f9bb53a7584cc7542daa441a57111ed370e3793e1956b359f610fc2666"
+    },
+    {
+      "key": "lesson-05-scene-4",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "7a48447302179f289494e17510daf7394476dba73ff99e23d3d422a02730b107"
+    },
+    {
+      "key": "lesson-06-scene-1",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "e5284726848f4202231017fbddafc0c29ffc8ee3f40bb60c0fb9de2119a27d99"
+    },
+    {
+      "key": "lesson-06-scene-2",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "8649b5fc37ee07bf204c4743ae45599afaf9e730c9b81c09b8350ac09c9665ef"
+    },
+    {
+      "key": "lesson-06-scene-3",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "3477983bd490a436d7bf238c4ea796eb9391479afe9c44a7e641fb642725495a"
+    },
+    {
+      "key": "lesson-06-scene-4",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "6120ca8d561786ce7e86eff17191f95ce760b05a33df5d71fbaa946b4ab56c9a"
+    },
+    {
+      "key": "lesson-07-scene-1",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "f0226eb5a39912e5008bf799ebd23cf6f3a80baf3819f07b7fb1680a07ae4f4d"
+    },
+    {
+      "key": "lesson-07-scene-2",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "8eb8c07520beec65e80df964d246d4f520fb44549d3f8bc9c1eb33c183be42f2"
+    },
+    {
+      "key": "lesson-07-scene-3",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "48f7c19e3ba318b3415491be84ccb01925fd2bcb6bab88fc18e9696244118012"
+    },
+    {
+      "key": "lesson-07-scene-4",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "2185a0f20d94dda39ed2ccbed1a6199a8b6c56350f8ea7ec856217ad3c193e66"
+    },
+    {
+      "key": "lesson-08-scene-1",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "673f1f45b7f63a47616a49162e8c01f28518f95fce8305fc3e7e52dee78876ac"
+    },
+    {
+      "key": "lesson-08-scene-2",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "dddca5cf8abfbfe8be71ff96eb5f4e8d34d9fbb3ea09a4835fd9ed1864ca32f2"
+    },
+    {
+      "key": "lesson-08-scene-3",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "d0207f8d0c033aa6b1bc3fe6d6c55548138a1debd29a4271780605a2a7f7c643"
+    },
+    {
+      "key": "lesson-08-scene-4",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "ef2a97bbe0b8d04afb2a12d263227059d7005e1219bac41d0c7d8da497d2b8f1"
+    },
+    {
+      "key": "lesson-09-scene-1",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "476970a651d6e9fb9d4fa2ee33f5af7d7a186143f9d574f2b9c407d5cd5513e5"
+    },
+    {
+      "key": "lesson-09-scene-2",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "e0d63a6925d869f0079cd6b4f457b97f8fad8c2d99bc28ba0eb93d29549cfeb0"
+    },
+    {
+      "key": "lesson-09-scene-3",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "9a1004853559f8d669dbe3b935a277a9aa6961c867874c33ec459c67c57da254"
+    },
+    {
+      "key": "lesson-09-scene-4",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "c20621b4baf1598830eb7fad1d2014d1d9582c13da7c148321cea327e17c71f9"
+    },
+    {
+      "key": "lesson-10-scene-1",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "e65aa0c455c3515923d6034b80abf0aa97c0657399abb780052a96c04732d420"
+    },
+    {
+      "key": "lesson-10-scene-2",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "d8a7b068d4eff16c72d1758173cd621448080f4db43b5c0a21277efc38887e78"
+    },
+    {
+      "key": "lesson-10-scene-3",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "184f6ac2bfdbc2b1b4db2f5050ef3182d237be4d4e4847695d71bb4d3b0e80d6"
+    },
+    {
+      "key": "lesson-10-scene-4",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "2297735ee257e5cd8c345c845374d7bb38daf8298bd64c2b444e3468614682d5"
+    },
+    {
+      "key": "lesson-11-scene-1",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "c0571b12411acdb9a8378dd74c9cf312315ed9f66e11e648cc7f17e662754d4e"
+    },
+    {
+      "key": "lesson-11-scene-2",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "2838a56c65880585f8489673ea9972ec606b86a04944b0084675e315874fef65"
+    },
+    {
+      "key": "lesson-11-scene-3",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "e9cd5318332d3bb9af1e3c09067f445831ecdb72fda40f4f4278754e76298e96"
+    },
+    {
+      "key": "lesson-11-scene-4",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "4130e75147ba1ae7567c2a0894f180b031dc8794ee4fea87720aed839e325c74"
+    },
+    {
+      "key": "lesson-12-scene-1",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "0f4f6702c0cb3f30691d4b129fa43909f2b1fecabc26a7efc987cbf05a084f73"
+    },
+    {
+      "key": "lesson-12-scene-2",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "179163e4c8d3d90631f7dc92a5f0be9cf72bdca226fb551fed32c4a5ec762860"
+    },
+    {
+      "key": "lesson-12-scene-3",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "471b99b0b262f511ed2f2ff8a42d3dcc2d46a7a9770a7ae0effa27d6c7213e1c"
+    },
+    {
+      "key": "lesson-12-scene-4",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "da9ea9d3616b0881fa179e82872a900f6842ac12ebf8ccba46264855f19d1d46"
+    },
+    {
+      "key": "lesson-13-scene-1",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "c28a008ad5ea827970f4c7b103d35408bee06d264ec92c18578898c196aae3d4"
+    },
+    {
+      "key": "lesson-13-scene-2",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "122928762816d4a8a3a61675eada63e04cc095823b925d0f4d8ebac6adfdc5fa"
+    },
+    {
+      "key": "lesson-13-scene-3",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "92be1b48d8653184627b54165fb25730d90030b2dfcf9707cef5da46527f2a94"
+    },
+    {
+      "key": "lesson-13-scene-4",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "2e4ac6019721c1b72e7614c46decb11efdab8c770e122e2ed5319721058e834d"
+    },
+    {
+      "key": "lesson-14-scene-1",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "ef9f0bd3e9d05a331ce70057be3ab9cda4875efeacf5f547abf0fdab26d2243c"
+    },
+    {
+      "key": "lesson-14-scene-2",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "4ea4b9de42202d1c9deb3d951c245ecb7113fb429a5ca6d8ac4158cad7efab88"
+    },
+    {
+      "key": "lesson-14-scene-3",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "180f5bad98a8623b5fdc0ebbb0c9b878cbadf394a31bdeb53851c37ed5881563"
+    },
+    {
+      "key": "lesson-14-scene-4",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "4ebb8d4cff34e6ea681027619c2f8e3364163a3eee06417448eedd0b39a5db4b"
+    },
+    {
+      "key": "lesson-15-scene-1",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "38520ced42438ad4623842e99a60846d45e7eb43d02741d78b0511448e7c9aa6"
+    },
+    {
+      "key": "lesson-15-scene-2",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "f2fa4d081696c219c9c08d8a2f9673000c776fd42072cdef304a4281d21145a2"
+    },
+    {
+      "key": "lesson-15-scene-3",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "821a803518530f0cec3f2725585d168d8f67e94f2b7910db2898a13f25f1f6ef"
+    },
+    {
+      "key": "lesson-15-scene-4",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "64af017feb99afd39fd9c6d1b6c787b00ef0b04dccdcceeefa347af12b87ca84"
+    },
+    {
+      "key": "lesson-16-scene-1",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "f28b12fdce13c2ba666c600b0e3ff39fb4d5503046bc7324267fe79eb9097b15"
+    },
+    {
+      "key": "lesson-16-scene-2",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "09191302200637acb6c4caa2640af07ad75202a613702f23e584b01695428137"
+    },
+    {
+      "key": "lesson-16-scene-3",
+      "status": "cosmetic",
+      "source": "visual-01-04.json",
+      "release_sha256": "39500eed887ee228e57e631204dbb741f6416ae179984a6451454a24b0517253"
+    },
+    {
+      "key": "lesson-16-scene-4",
+      "status": "pass",
+      "source": "visual-01-04.json",
+      "release_sha256": "a07bbe4cf2bb31cc30a8e06691bea17e8d097616cac01b3a94863e5f52649069"
+    },
+    {
+      "key": "lesson-17-scene-1",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "27d2cdfcae8f13bad30f48f565345e0c82b1d9b51f065781486d4aa1921bd5d4"
+    },
+    {
+      "key": "lesson-17-scene-2",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "94ec79e388e37d4c5524cb3a1b856ee4bcdd7d0925a12014dd370c63d9a0cad5"
+    },
+    {
+      "key": "lesson-17-scene-3",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "f2b7ea4175a81da8c90c1795a0fe1413f7da8db0ea1301329e758f43de5c150f"
+    },
+    {
+      "key": "lesson-17-scene-4",
+      "status": "pass",
+      "source": "Parent native visual inspection of final repaired asset against preceding17.3: same younger short curly-haired boy orange hoodie; five canonical children, ramp, ribbon preserved.",
+      "release_sha256": "6941f132ef43417684dcac66ddf4de792a0cd966cd5ab769d038f4e22fe9f094"
+    },
+    {
+      "key": "lesson-18-scene-1",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "55c58b0f7f0440050e7b1e7fb8edce5538d366d8273b55607377cc4f29be9ae5"
+    },
+    {
+      "key": "lesson-18-scene-2",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "f446c22d62d7d2fff51774e476cc970f6897f6606c24782847fa8acf4458649f"
+    },
+    {
+      "key": "lesson-18-scene-3",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "4c36a0bc964e9f8b35c4b89f324eae38b0a237797adcc9dea8746474c63a4551"
+    },
+    {
+      "key": "lesson-18-scene-4",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "464fc1043138d6723db32f29470ef6f6efd2fcf41a6df63e72e77f5082209785"
+    },
+    {
+      "key": "lesson-19-scene-1",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "984e003e3ba1f3b7b5e0a168b525b6b711e98054ae1ad6ab10f1da8eb7529107"
+    },
+    {
+      "key": "lesson-19-scene-2",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "2fd0c8f4319bfec5176de126764e7d3b8086437c593c95e9d5f7382bef81b9a8"
+    },
+    {
+      "key": "lesson-19-scene-3",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "34a5756ce13bf4cd068a6a7c68672629f46b5325d97cef429bebe83ec90f1569"
+    },
+    {
+      "key": "lesson-19-scene-4",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "2a85af9117176e1dfeffac7aa2a75ee63e50468888365d7f006f808be313c4f2"
+    },
+    {
+      "key": "lesson-20-scene-1",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "36aa30033e8a6c09b795c48569de784d53fbdd2408e6d6c8990751027eecbca0"
+    },
+    {
+      "key": "lesson-20-scene-2",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "da3b81d4bae921064fcca600e34a7448d65f4e17888a89185908dabf72e3fe0a"
+    },
+    {
+      "key": "lesson-20-scene-3",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "1ee2549b562f24276681a19705d04e4b3e74d18e733d1f55c71f08bfc10f65ee"
+    },
+    {
+      "key": "lesson-20-scene-4",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "636ba5117c3d5356c1cdf7834d245c5617a4d43976dcd7ce01f42120fc23b2f7"
+    },
+    {
+      "key": "lesson-21-scene-1",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "a1341ec213a9ddc4dc7efa850442cecececeb4c83a1b0cd42ca0ceafdebd431a"
+    },
+    {
+      "key": "lesson-21-scene-2",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "93e61516cb1d46469012cd2a328b8d425fab5f91fa4fb60144a60571b48fd403"
+    },
+    {
+      "key": "lesson-21-scene-3",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "dd5ba9c0f23cce345aa410a18c0e998caff415da8abedcfb8a5964b96db3c952"
+    },
+    {
+      "key": "lesson-21-scene-4",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "534428ae5ce0fd32b5b834a5b33e2e0215e3c57b07478a170692ae6e799906bc"
+    },
+    {
+      "key": "lesson-22-scene-1",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "8a95529ecd42a963f1c2ebd0c2ac2e9e0d4ba7ce8474184124be830c3a052eff"
+    },
+    {
+      "key": "lesson-22-scene-2",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "49ecdf30661a07cfcbb70759e539599ece4e0bd183bf4e1de90519736dae5cde"
+    },
+    {
+      "key": "lesson-22-scene-3",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "7585bb948d2ff6168e94ef42368db9993acb8c081ea48e7f201660ce52c30ad2"
+    },
+    {
+      "key": "lesson-22-scene-4",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "e489fbca6f9d6c9e722acb0d06136e25bd71323ba42cf2bf9fa84d3cd63bfe5c"
+    },
+    {
+      "key": "lesson-23-scene-1",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "bcf0a947639e2d6a8560f793cb70e493f6d53c4c8657de8506fc9086b7d9fa9e"
+    },
+    {
+      "key": "lesson-23-scene-2",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "0f6a2df052288d77a3d5a81def4d2fd8c858b161a1e90d0b7e6c5d5ea4b7aade"
+    },
+    {
+      "key": "lesson-23-scene-3",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "73d475733c20c9341129bd911b13c20cca5b3a2c0d89440afe80b99db2f00f97"
+    },
+    {
+      "key": "lesson-23-scene-4",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "c377e419895abddd0e88b0b38764a04c73437bd4e3de27e30981731c210bc55c"
+    },
+    {
+      "key": "lesson-24-scene-1",
+      "status": "pass",
+      "source": "final-art-release-review.json",
+      "release_sha256": "e33cdf0fc2985b4536b8dd32b4ea9f814343244efa5033169605c90ca034ab88"
+    },
+    {
+      "key": "lesson-24-scene-2",
+      "status": "pass",
+      "source": "final-art-release-review.json",
+      "release_sha256": "bd2fb24b13591e68450e3f04cfeceae7cad5988cd72f72188706ce584e74c19a"
+    },
+    {
+      "key": "lesson-24-scene-3",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "fe77155db173b9b677e761056b6d7e7906adbd808a067db6a202f7ec31282c6d"
+    },
+    {
+      "key": "lesson-24-scene-4",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "83887dce0329cde418ad836371b1a63e89ac9c9f8c48a721665e5b6caf6bb9e9"
+    },
+    {
+      "key": "lesson-25-scene-1",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "58ad17d2bed63c3191fae0793ea9b4dcd4cca0006b23a795fc995078fad9964c"
+    },
+    {
+      "key": "lesson-25-scene-2",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "2214c5bf5b76387f20bcec1d7f75353103d060aecaf7c9d238f87f8352744594"
+    },
+    {
+      "key": "lesson-25-scene-3",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "3bfd5b5efed93a102cd84d3a69177f53792df30e964d2e2d88751b2e536df62c"
+    },
+    {
+      "key": "lesson-25-scene-4",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "545d0b60e49810c2d46fe5d2ea27220837a3f5a04750c8cd4cdaf0ea6a93f33e"
+    },
+    {
+      "key": "lesson-26-scene-1",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "658f39c5dbe852d5690efbae4e7cd77026c22f2774c0fa07eee527361fba0b29"
+    },
+    {
+      "key": "lesson-26-scene-2",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "f6ff43e093a3e5612f74dfe7b7482b89fecb904f90182e51d0f9dc63e12946ae"
+    },
+    {
+      "key": "lesson-26-scene-3",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "35684dd1fc2a52ff9c6f8a919006f8a74c72593527777611114d0aff9cc6dbd3"
+    },
+    {
+      "key": "lesson-26-scene-4",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "c78f3c87d1bac62fc4b29f47ee63ee127e64301d35938ab93a7e5197a56458d0"
+    },
+    {
+      "key": "lesson-27-scene-1",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "5a1a222d184360d67141b48254c7a1cb341dedcfc1ccb3e35a9980587f81203e"
+    },
+    {
+      "key": "lesson-27-scene-2",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "a1c036b211475665d6396c8db451e983b603a31c1867438a2bc0c4ca4c90c3a8"
+    },
+    {
+      "key": "lesson-27-scene-3",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "581e22563c415c011e2b4a116f5b892b4df5c7bb740f365495611828d40600c9"
+    },
+    {
+      "key": "lesson-27-scene-4",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "df772638d8090a8b69261a62fc11ceb14c20017b0fc68fd7390f508df5735eb5"
+    },
+    {
+      "key": "lesson-28-scene-1",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "f6323166bff2b96ac2e88be1df5799a850477ce66bb3bf38d596ae4941e07220"
+    },
+    {
+      "key": "lesson-28-scene-2",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "45d0364c033142e057ca7343adf1fada3a1a18aa163734783cd0d12c1b41c004"
+    },
+    {
+      "key": "lesson-28-scene-3",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "d2643c1d84cd8d0e8d6c2fff87b9f6b7db4f444309f83eea61e5374037269d67"
+    },
+    {
+      "key": "lesson-28-scene-4",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "5cefff8865c3f824879e6f1df7d11cc7e75dff6863b9283a791151ed0bacb3d7"
+    },
+    {
+      "key": "lesson-29-scene-1",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "6d87934f3d6652379679676919d1f71d17accd2573a3b674d39f9313c0bed72c"
+    },
+    {
+      "key": "lesson-29-scene-2",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "d3095fce64bb9d0d6cf414b61d25074d9e2584f3556d900a635c2199dcb4463b"
+    },
+    {
+      "key": "lesson-29-scene-3",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "74aed71944e419eba9981e5b978a5cb9d7aceacb3507f091af45efc631385a7b"
+    },
+    {
+      "key": "lesson-29-scene-4",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "c1e9290e14163aa201b090ba8fe511f81c41a6847090648a0d199748a2bd1cb1"
+    },
+    {
+      "key": "lesson-30-scene-1",
+      "status": "pass",
+      "source": "Parent final-two-scenes.jpg visual inspection: coherent modern kitchen chart / delayed exhibition poster work; canonical four identities; no generated readable text.",
+      "release_sha256": "c6ea3b54552bb6e29f26104bb2adf7b81fbbb7038873c5db05d94ae93b5af5af"
+    },
+    {
+      "key": "lesson-30-scene-2",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "04b2abb165099bc8bb89a70624c619e19ec0aa156b6bd004975745b120e93f4c"
+    },
+    {
+      "key": "lesson-30-scene-3",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "9184eb4e5d6502f472e77d41f1d87d2ce44b4c10f3b0d7515c0324041f908981"
+    },
+    {
+      "key": "lesson-30-scene-4",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "14828f0f92450d91c321284fce851e66aaa25e34203c73690fbde39601efce38"
+    },
+    {
+      "key": "lesson-31-scene-1",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "4b6c07ae14c08c5c8fb2e9cd6b6e554a31636056577704bb0002a52af254cfd1"
+    },
+    {
+      "key": "lesson-31-scene-2",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "c6cb9fe01381ee482fb4239ee2c60652989a6c8b732b4874c3f73b057a578932"
+    },
+    {
+      "key": "lesson-31-scene-3",
+      "status": "cosmetic",
+      "source": "visual-05-08.json",
+      "release_sha256": "3ef3b5a67e9d9c0525b83030cd3ab511b567a4d9f13b07fa7572022ab28c3264"
+    },
+    {
+      "key": "lesson-31-scene-4",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "9539a7a171224343cf3b533cdc001dea824e4a5ee4eb7ae0769e24da5ddcc3fe"
+    },
+    {
+      "key": "lesson-32-scene-1",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "c96a6058bd4813c5bafb48c8f984c6d20ba8fa133772c01ea5a3636e0bf4e3f8"
+    },
+    {
+      "key": "lesson-32-scene-2",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "b6f96c23d752f1419eda87f1d1746524b6a29e41d8176fdd625bf6c8e222d874"
+    },
+    {
+      "key": "lesson-32-scene-3",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "9e2b6f57fb3ec1c3acefaed04daaed69bae81af5556b1ed739502f34326c6927"
+    },
+    {
+      "key": "lesson-32-scene-4",
+      "status": "pass",
+      "source": "visual-05-08.json",
+      "release_sha256": "9bc623ad144be7a5ec955a257e8ce569863cc305bf9e95a5c8aab37761550adf"
+    },
+    {
+      "key": "lesson-33-scene-1",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "2a725d9bd2070696a25c4845e1d360d31ba855ba5d7708dc99cfffa2ee3c162b"
+    },
+    {
+      "key": "lesson-33-scene-2",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "57790bca830dd4a686ab298f627627c6ebf3be253aca90da0bc0f467300b9eae"
+    },
+    {
+      "key": "lesson-33-scene-3",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "c2c97b297e59a2cb3e951e3a42db137fc9b56a5a5d4eb4378e3c30edd61ae919"
+    },
+    {
+      "key": "lesson-33-scene-4",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "ef71cef84d752ede7c43e2887397543ad1591e12f473cccca03fc32d4ba02a7b"
+    },
+    {
+      "key": "lesson-34-scene-1",
+      "status": "pass",
+      "source": "repair-review-a.json",
+      "release_sha256": "85dbc06bad1fef33a825dc86676a0dd3fa0140a03c9f0035df0b5cfab7181c1b"
+    },
+    {
+      "key": "lesson-34-scene-2",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "3649fb9e8b87aa57469468aa7b5f79b78f8283923d7f19dbf51aeb842de35fc4"
+    },
+    {
+      "key": "lesson-34-scene-3",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "b873a7d8794d852f6ff3d1a5a99d831cc8fd23e9e8b60193a1a9dafce33434e6"
+    },
+    {
+      "key": "lesson-34-scene-4",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "87b44118fb90594491607c94f66158e1761bed9c32645a7f05b245c354ccec8d"
+    },
+    {
+      "key": "lesson-35-scene-1",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "44046601589ec10d20500f22424fda39feb5c2e38c0003b0d7e261a31b04bf8c"
+    },
+    {
+      "key": "lesson-35-scene-2",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "1aa487f11e6d1614cafbc9de94404a43ffafa43b685b1734ba4d2999fc8d8f46"
+    },
+    {
+      "key": "lesson-35-scene-3",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "2650f615d40d514b958d0bd5bef319ef15ae28c5406c4a79378c667c7f6d133d"
+    },
+    {
+      "key": "lesson-35-scene-4",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "d90bc90c523e118c7705870e1e2ea6ab7ad0d55b4b02ae42dc86e749fa537d2c"
+    },
+    {
+      "key": "lesson-36-scene-1",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "9083e8a37e1445ce9797414bc8981ece83ae0d76865dcd60a1667c1ad69ad0f9"
+    },
+    {
+      "key": "lesson-36-scene-2",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "4766902077802b2e64ab17acbc128dd5a984900a99c5f6c14660c8dd63fca2fb"
+    },
+    {
+      "key": "lesson-36-scene-3",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "789b02ed82a39514b943a59b29ce5ef701fd593edcf4e26c569247cd99f6d46f"
+    },
+    {
+      "key": "lesson-36-scene-4",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "dde3051fbc17c6b1e0d774ef21395eed77f75142d82939f300058d0d6be68613"
+    },
+    {
+      "key": "lesson-37-scene-1",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "382fd863b6d8166b1074a4b8b5fb7a799218d1474526dfc2418a20492789bdb9"
+    },
+    {
+      "key": "lesson-37-scene-2",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "dc8087ba16115a19dd6e4c6a27bbdf5a55b27ec6b58e84b618214164b6f3baef"
+    },
+    {
+      "key": "lesson-37-scene-3",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "00be14c60379e645e6c3c034626c2316820a3b1400343f11c52d2e7133448462"
+    },
+    {
+      "key": "lesson-37-scene-4",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "c1cee15664e806cbc3e951f6ffffeb683fc15a345318c038e4b9a1edf337dc80"
+    },
+    {
+      "key": "lesson-38-scene-1",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "c682ae9017c2c14286cc3934b3c4b22ef91559ce995048457280529f5a9fd325"
+    },
+    {
+      "key": "lesson-38-scene-2",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "c7b5b6f917e43457cdf9cfd8f66e75fcda8fe9207d1399dd59dd3d1cfb59dedd"
+    },
+    {
+      "key": "lesson-38-scene-3",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "0d2f4c35c74495c801717b20eb9c65464d644c762d4319ff98039fffe6cb4340"
+    },
+    {
+      "key": "lesson-38-scene-4",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "11e709bfbb74e898f6904c3c9726bb8d6eb15a837ef6b2aebf1d5eecd9ecb54f"
+    },
+    {
+      "key": "lesson-39-scene-1",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "0824f223050e07ea90564a43b4dcc4bb161121790a7275933974d66ee09f3cec"
+    },
+    {
+      "key": "lesson-39-scene-2",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "0a79620a55ca8384dc1471a1eeb33a5fe31932d8bde8118de861143e7ca459a7"
+    },
+    {
+      "key": "lesson-39-scene-3",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "ea895f31648a5fa818161dadb29a80bf00c539fb1337076baf46b13c147a295d"
+    },
+    {
+      "key": "lesson-39-scene-4",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "6df5f6dc1b63de68429cf2f7e93c6bddb0994759eb43abe5dbedfeb2130c3a9e"
+    },
+    {
+      "key": "lesson-40-scene-1",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "731dfd40c25a60027bd8202887e75670b59dae47a219cee256a68d280e5a1b0b"
+    },
+    {
+      "key": "lesson-40-scene-2",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "6a5e834625a8e7aed749f4eb150d1e81879a71e1170fb05416f98a51e8307dba"
+    },
+    {
+      "key": "lesson-40-scene-3",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "e3bc492fbcbfa7ab38b57842b7e9bfbfd919fbdac79a58220e985db6c1a574d9"
+    },
+    {
+      "key": "lesson-40-scene-4",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "d4ae5ab9bd2bed2ee7a5d4dc4d7b4aeccd67f6e8a643f10ddf1821d8a1747a1e"
+    },
+    {
+      "key": "lesson-41-scene-1",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "e14a3a422a9970c575e8475a5f3ed91879cda1444061fea800431cc7e86bfffb"
+    },
+    {
+      "key": "lesson-41-scene-2",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "c587dff62b395f8028dc229816c9e9526a4735715d4c4caf02df1f0674e6c383"
+    },
+    {
+      "key": "lesson-41-scene-3",
+      "status": "pass",
+      "source": "final-art-release-review.json",
+      "release_sha256": "f2426ace1df5fca5e73d31a4f235dbb8be2ba57da0ccb6db784f7ba2b7518a57"
+    },
+    {
+      "key": "lesson-41-scene-4",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "9269ca69523a36ad7be27ca455a9a69ffc5a88efe6a3ae5c05932305a3812208"
+    },
+    {
+      "key": "lesson-42-scene-1",
+      "status": "pass",
+      "source": "final-art-release-review.json",
+      "release_sha256": "3be3e11e5c28850ab8476984e46d60f29252a1c3678e75e3cbe77586768d7f4e"
+    },
+    {
+      "key": "lesson-42-scene-2",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "325c9adccbb809f5ab7d97379385a1d8262ad49b746e6066bfe4316d1f98a503"
+    },
+    {
+      "key": "lesson-42-scene-3",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "52d3eeb5a0337588dd33b6db982aec6c03d4949a1cdd08dc57d7022fd7fe861a"
+    },
+    {
+      "key": "lesson-42-scene-4",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "1ab306700ff40c7389280aaa4fbf2455d0925d0d3ea3865b42dbc09f5096bbc9"
+    },
+    {
+      "key": "lesson-43-scene-1",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "0195e4c2227f084deb6aceb5007be69dedfaa2f499ad65474a7c55c8ff111ad3"
+    },
+    {
+      "key": "lesson-43-scene-2",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "47c278e8b124869d52c7258d456ad2634edbe8859944d409a16c339aabf3b4ad"
+    },
+    {
+      "key": "lesson-43-scene-3",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "96008af022b3830f349a6713d141ded9ca76939c355d41b18ac9f33e7502da43"
+    },
+    {
+      "key": "lesson-43-scene-4",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "02fb0742310baae87c3cd22ef00e2c41be45d7d5dd1a5587c3e849e642ee3c06"
+    },
+    {
+      "key": "lesson-44-scene-1",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "171873adae8309f157c4b04a6a7d344723fcc886cb68b6dc3731e6f0fc68f8b1"
+    },
+    {
+      "key": "lesson-44-scene-2",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "52a03249fbbf14612e8562e3a3b8a88c35b1ce3e98200d343d25c1da4c7d81c2"
+    },
+    {
+      "key": "lesson-44-scene-3",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "be020ef99ae38fe771a5af71f2888fdc6e4037a6a685d66f44721dea5c5e7c16"
+    },
+    {
+      "key": "lesson-44-scene-4",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "da018b182be8df71a57666ab0b9391468c13750988557dbdb15cc5c806a4bbf3"
+    },
+    {
+      "key": "lesson-45-scene-1",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "5bf9493412cfd63194d89f85632e1ae6be86ab3ccd9d0e905d19fc54cb04dc06"
+    },
+    {
+      "key": "lesson-45-scene-2",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "dd2af8f4bd3b64fa235e535dab6b880a9dd035f7419a6dce01d51e264f5ffa9f"
+    },
+    {
+      "key": "lesson-45-scene-3",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "806c41a31e8c1ebc3b239d8de53d89aa5fca8a3de6e03f0906c463bd2e7bc978"
+    },
+    {
+      "key": "lesson-45-scene-4",
+      "status": "pass",
+      "source": "final-art-release-review.json",
+      "release_sha256": "6080367e12c79645d09a3a474218fded0a0b9ec811b237239841564a9e71017f"
+    },
+    {
+      "key": "lesson-46-scene-1",
+      "status": "pass",
+      "source": "final-art-release-review.json",
+      "release_sha256": "77628600fc0754264ce03ea9fe3ee7bf7c91bf6a32059922a67a5d7ca6923569"
+    },
+    {
+      "key": "lesson-46-scene-2",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "a5d8b57c05ad537bb8c8eaf0a88af5e38d2ebb98b2c92a1be05b86d9ed8b31fb"
+    },
+    {
+      "key": "lesson-46-scene-3",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "ae4bbd8c12ef46b1393643a1e9d342c27d6ae02b78ad5cb863100c6975a91a12"
+    },
+    {
+      "key": "lesson-46-scene-4",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "c4dacda1d0db1d754c7e0d5f343c0474835769e5053954cb31d736a2e44af13b"
+    },
+    {
+      "key": "lesson-47-scene-1",
+      "status": "pass",
+      "source": "Parent final-two-scenes.jpg visual inspection: coherent modern kitchen chart / delayed exhibition poster work; canonical four identities; no generated readable text.",
+      "release_sha256": "d5049fc34a9cde5d01247df2df1b0e5854a26d822a24769ee7668c231b5a04a9"
+    },
+    {
+      "key": "lesson-47-scene-2",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "0da823fbd5c5b1915bf263ea925368a4b717237607641ecc9861737d205bfce5"
+    },
+    {
+      "key": "lesson-47-scene-3",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "d5ed0858a2e91990f26647ad4768194cf75f6f427dc2311adeefb3dfc6b3e7c0"
+    },
+    {
+      "key": "lesson-47-scene-4",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "2332b3d2accdd0c21d1c8c00448e6aa3d2738d3e6853602cfe152023d1afde65"
+    },
+    {
+      "key": "lesson-48-scene-1",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "6bc9649342c2178da577323938f15d2944e0cb65eeeef7717681566e596e2c75"
+    },
+    {
+      "key": "lesson-48-scene-2",
+      "status": "pass",
+      "source": "final-art-release-review.json",
+      "release_sha256": "0da58504f372be25af3b76272b89944f7a636792a5a63c0e717cca592bfa236d"
+    },
+    {
+      "key": "lesson-48-scene-3",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "aa4315218841ca2d6c72ecc5baf247f9fa0a83f162e6f1263eed6bf6873a176d"
+    },
+    {
+      "key": "lesson-48-scene-4",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "0e65deb6ab6d32f0582ef63b850e208f0ca9e7fed11955f30f794f255f7ead78"
+    },
+    {
+      "key": "lesson-49-scene-1",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "740a6f8b3a0e9d33163d74a49a8c2da4f3fab9e445e6e3dd0484c23e6fb950f8"
+    },
+    {
+      "key": "lesson-49-scene-2",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "e45013c3caf6e521e7fd89a89a1a0ac8fa1d062d6cc09c972c8e8b1709491b68"
+    },
+    {
+      "key": "lesson-49-scene-3",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "da0089c42d67f88265ca51d874817e2e1b92d3bd35addbd4d58bdec44e20b679"
+    },
+    {
+      "key": "lesson-49-scene-4",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "a4a91b721d6745883cb0980f638e595c0b304a932272bd08a6eaaead79e8562d"
+    },
+    {
+      "key": "lesson-50-scene-1",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "0f57431220af120fceb44e7c5cb9ae7fcb38e9643effef2641fb2f08e3329383"
+    },
+    {
+      "key": "lesson-50-scene-2",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "4f56a37c695866d70d2932ec8357f9cb151466b23465ad11256906fcc9a9c2d3"
+    },
+    {
+      "key": "lesson-50-scene-3",
+      "status": "pass",
+      "source": "repair-review-b.json",
+      "release_sha256": "b2fe2f0ef690149b921549ff5065e362f35dae3549c10561dfd7948af2f070f9"
+    },
+    {
+      "key": "lesson-50-scene-4",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "ddc361bb0829d539218d5222f05a9ac025b68125956ef02eb98c8424d40fbe8c"
+    },
+    {
+      "key": "lesson-51-scene-1",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "bc034f2e773d1ce10bd337112b18954d8ef6839c4b4950e497d63e0b7cc76c86"
+    },
+    {
+      "key": "lesson-51-scene-2",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "6e94bb152f811e211598dad14a6de9c94077099c7e898526608559d7642c39eb"
+    },
+    {
+      "key": "lesson-51-scene-3",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "5b9e7e806b2955fc97d71b1daa0593dc72e8ae8732cbfc8bdfed00327706fbc4"
+    },
+    {
+      "key": "lesson-51-scene-4",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "c582c299aeb2d2e80374d621f1ff6a32658a46728aaefded857ac60eed58599a"
+    },
+    {
+      "key": "lesson-52-scene-1",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "5ed0139ab0518407ff5653f1280646edcecd95db85eb1decbb63e11d4b0d92d4"
+    },
+    {
+      "key": "lesson-52-scene-2",
+      "status": "pass",
+      "source": "visual-09-13.json",
+      "release_sha256": "66de3380d79e70fcb0219a16cc3bcdf4c1a9b0d728ba0a7f1e1d81fb1d373b7c"
+    },
+    {
+      "key": "lesson-52-scene-3",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "751cf2541ba8f28005261aed3e279b1372716f18bb2fcf1829faab35e6e8097d"
+    },
+    {
+      "key": "lesson-52-scene-4",
+      "status": "cosmetic",
+      "source": "visual-09-13.json",
+      "release_sha256": "e908cdc6e17f2b758c72efc8b8d1139881b2f82f3cd719c0df6a7193311b18d5"
+    }
+  ],
+  "counts": {
+    "pass": 153,
+    "cosmetic": 55
+  }
+}

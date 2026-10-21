@@ -1,0 +1,23 @@
+{
+  "lesson": 24,
+  "verifiedVerses": {
+    "en": {
+      "url": "https://www.bible.com/bible/59/GAL.6.2.ESV",
+      "text": "Bear one another’s burdens, and so fulfill the law of Christ.",
+      "referencePageTitle": "Galatians 6:2 (ESV) - Bear one another’s burdens, and so  - Bible App",
+      "ogDescription": "Bear one another’s burdens, and so fulfill the law of Christ.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:52.310604+00:00"
+    },
+    "ru": {
+      "url": "https://www.bible.com/bible/167/GAL.6.2.RST",
+      "text": "Носи́те бремена друг друга, и таким образом исполните закон Христов.",
+      "referencePageTitle": "Послание к Галатам 6:2 (Синод) - Носи́те бремена друг друга, и таким - Bible App",
+      "ogDescription": "Носи́те бремена друг друга, и таким образом исполните закон Христов.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:53.047983+00:00"
+    }
+  },
+  "notes": "Exact rendered Bible.com verse strings retained, including punctuation and translation-specific numbering. Narrative is original fiction and biblical explanation, not additional Scripture quotation.",
+  "storyEnglishWords": 334
+}

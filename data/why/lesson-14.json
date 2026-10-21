@@ -1,0 +1,191 @@
+{
+  "id": 14,
+  "chapter": 4,
+  "kind": "lesson",
+  "title": {
+    "en": "Do science and faith have to fight?",
+    "ru": "Должны ли наука и вера спорить?"
+  },
+  "subtitle": {
+    "en": "The seed that missed the schedule",
+    "ru": "Росток не по расписанию"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "An impatient gardener",
+        "ru": "Нетерпеливый садовник"
+      },
+      "paragraphs": {
+        "en": [
+          "Joseph has drawn a neat growing schedule for the garden windowsill: by Friday, every bean should have a green shoot. But when Friday comes, one pot still looks empty. ‘Could we leave that one out of the report?’ Michael asks. Gracie looks at him. ‘Wouldn't that make it sound as if they all grew?’ Michael looks back at the pot he wanted to hide.",
+          "You move all the pots onto a tray. Rosie brings her purple Bible, while Joseph keeps his ruler ready. Neither book nor ruler needs to be hidden."
+        ],
+        "ru": [
+          "Джозеф составил аккуратный график для огорода на подоконнике: к пятнице у каждой фасолины должен появиться зелёный росток. Но в пятницу один горшок всё ещё кажется пустым. «Может, не будем писать о нём в отчёте?» — предлагает Майкл. Грейси смотрит на него. «Тогда получится, будто проросли все?» Майкл снова смотрит на горшок, который хотел спрятать.",
+          "Ты ставишь все горшки на поднос. Рози приносит фиолетовую Библию, а Джозеф готовит линейку. Ни книгу, ни линейку прятать не нужно."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Write what happened",
+        "ru": "Запиши, что произошло"
+      },
+      "paragraphs": {
+        "en": [
+          "They record the visible shoots and measure their heights. The empty pot gets an honest entry: no shoot visible today. Joseph suggests that its seed may have dried out, but labels this a possible explanation rather than something they have already established.",
+          "Their teacher helps plan a fair comparison using the same seed type, soil, and light while changing the water amount. They will repeat observations over time. A single stubborn bean cannot answer every question about plants."
+        ],
+        "ru": [
+          "Они отмечают видимые ростки и измеряют высоту. Для пустого горшка записывают честно: сегодня ростка не видно. Джозеф предполагает, что семя пересохло, но называет это возможным объяснением, а не установленным фактом.",
+          "Учитель помогает придумать сравнение: одинаковые семена, почва и свет, но разное количество воды. Наблюдения будут повторяться. Одна упрямая фасолина не ответит на все вопросы о растениях."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Study can be grateful",
+        "ru": "Изучать с благодарностью"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie reads Psalm 111:2, which connects God's works with delighted study. Learning about roots and water need not compete with thanking their Creator. Their teacher also warns against adding conclusions their experiment cannot test: measuring growth does not measure God's existence or prove that he is absent.",
+          "Michael crosses out a draft claiming their seedlings settle every science-and-faith argument. Some questions require careful discussion of evidence and interpretation. Pretending there are no hard questions would not help them learn."
+        ],
+        "ru": [
+          "Рози читает Псалом 110:2: Божьи дела достойны изучения и радости. Можно узнавать о корнях и воде и благодарить Творца. Учитель предупреждает: нельзя добавлять выводы, которых опыт не проверяет. Измерение роста не измеряет существование Бога и не доказывает Его отсутствие.",
+          "Майкл вычёркивает черновую фразу, будто ростки разрешили все споры науки и веры. Некоторые вопросы требуют внимательного разговора о данных и их толковании. Притворяться, что трудных вопросов нет, — не способ учиться."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "The missing pot stays",
+        "ru": "Горшок остаётся в отчёте"
+      },
+      "paragraphs": {
+        "en": [
+          "You help leave space for tomorrow's results instead of drawing a shoot that is not there. Gracie waters the assigned pots according to their plan. ‘My schedule was wrong,’ Joseph says, ‘but now we have something else to investigate.’ He keeps the original prediction so they can compare it with what actually grows.",
+          "The team thanks God for a world worth studying and for patience to report what actually happens. Michael leaves the empty pot in the photograph. Their report is less tidy than he hoped, but much more trustworthy."
+        ],
+        "ru": [
+          "Ты помогаешь оставить место для завтрашних результатов, а не рисовать росток, которого нет. Грейси поливает горшки по плану. «Мой прогноз не сбылся, — говорит Джозеф, — зато теперь есть что проверить». Он сохраняет первоначальную запись, чтобы сравнить её с тем, что вырастет на самом деле.",
+          "Команда благодарит Бога за мир, который интересно изучать, и за терпение честно записывать результаты. Майкл оставляет пустой горшок на фотографии. Отчёт не такой ровный, как хотелось, зато ему можно доверять."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Psalm 111:2 (ESV)",
+      "ru": "Псалом 110:2 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "Great are the works of the LORD,\nstudied by all who delight in them.",
+      "ru": "Велики дела Господни, вожделенны для всех, любящих оные."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/PSA.111.2.ESV",
+      "ru": "https://www.bible.com/bible/167/PSA.110.2.RST"
+    }
+  },
+  "activity": {
+    "type": "sort",
+    "title": {
+      "en": "Notebook: observed or inferred?",
+      "ru": "Блокнот: наблюдение или вывод?"
+    },
+    "intro": {
+      "en": "Separate what the team saw from explanations and larger conclusions.",
+      "ru": "Отдели увиденное от объяснений и широких выводов."
+    },
+    "items": [
+      {
+        "id": "a",
+        "text": {
+          "en": "No shoot was visible in pot four on Friday.",
+          "ru": "В пятницу в четвёртом горшке ростка не было видно."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "That seed may have received too little water.",
+          "ru": "Возможно, этому семени не хватило воды."
+        },
+        "group": "claim"
+      },
+      {
+        "id": "c",
+        "text": {
+          "en": "The ruler showed a shoot height of three centimeters.",
+          "ru": "Линейка показала высоту ростка три сантиметра."
+        },
+        "group": "observation"
+      },
+      {
+        "id": "d",
+        "text": {
+          "en": "The experiment proves that God does not exist.",
+          "ru": "Опыт доказывает, что Бога нет."
+        },
+        "group": "claim"
+      }
+    ],
+    "hint": {
+      "en": "An inference may be worth testing or may go too far. Neither is a direct observation.",
+      "ru": "Предположение можно проверить, а широкий вывод может быть чрезмерным. Ни то ни другое не является прямым наблюдением."
+    },
+    "success": {
+      "en": "You separated the data from a testable idea and a claim the experiment cannot establish.",
+      "ru": "Ты отделил данные от проверяемой идеи и от вывода, который опыт не подтверждает."
+    },
+    "groups": [
+      {
+        "id": "observation",
+        "label": {
+          "en": "Recorded observation",
+          "ru": "Записанное наблюдение"
+        }
+      },
+      {
+        "id": "claim",
+        "label": {
+          "en": "Explanation or broader claim",
+          "ru": "Объяснение или широкий вывод"
+        }
+      }
+    ]
+  },
+  "fieldMission": {
+    "en": "Observe one plant with an adult. Record what you saw, then label any explanation as an explanation.",
+    "ru": "Понаблюдай за растением со взрослым. Запиши увиденное, а объяснение отдельно назови объяснением."
+  },
+  "prayer": {
+    "en": "God, thank you for your works. Help me study carefully and speak honestly about what I find.",
+    "ru": "Боже, благодарю за Твои дела. Помоги внимательно изучать мир и честно рассказывать о результатах."
+  },
+  "adultNote": {
+    "en": "The garden is fictional, not experimental evidence collected for this course. Read Psalm 111:2 (Russian 110:2). Scientific methods investigate the natural world; philosophical or theological conclusions require their own reasons. Do not use an unexplained result as automatic proof of divine action.",
+    "ru": "Сад вымышленный: это не данные опыта, проведённого для курса. Прочитайте Псалом 110:2. Научные методы исследуют природу; философским и богословским выводам нужны свои основания. Не считайте непонятный результат автоматическим доказательством Божьего вмешательства."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Psalm 111:2 — Bible.com ESV / RST",
+        "ru": "Псалом 110:2 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/PSA.111.2.ESV",
+      "supports": {
+        "en": "Psalm 111:2 praises God's works as worthy of study and delight.",
+        "ru": "Псалом 110:2 говорит о величии Божьих дел, достойных исследования и радости."
+      },
+      "limits": {
+        "en": "A biblical encouragement to attend to God’s works, not an endorsement of every scientific theory or a claim that all interpretive disputes are settled.",
+        "ru": "Библейский призыв изучать Божьи дела, а не одобрение каждой научной теории и не утверждение, что все споры о толковании решены."
+      }
+    }
+  ]
+}

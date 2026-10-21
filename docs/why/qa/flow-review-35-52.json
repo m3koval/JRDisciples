@@ -1,0 +1,1077 @@
+{
+  "scope": "Local EN/RU story-flow edits, lessons 35–52 only; no publication, art generation, code changes, or edits to other lessons by this agent.",
+  "baseline": "/home/helper/jd-why-research/flow-baseline",
+  "lesson_count": 18,
+  "changed_paragraphs": 75,
+  "review": "Read all four scenes in English and Russian before editing and reread saved stories; revised dialogue and connected prose while retaining the existing story actions, props, settings, and outcomes.",
+  "limitations": [
+    "Narrative-action preservation checked against baseline text; existing artwork was not visually re-audited.",
+    "Content-only checker is not a browser, build, or publication approval.",
+    "Repository may contain other agents’ changes outside this scope."
+  ],
+  "checker": {
+    "command": "node scripts/check-why.mjs --content-only",
+    "exit_code": 0,
+    "result": {
+      "lessons": 52,
+      "ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52
+      ],
+      "types": {
+        "choose": 22,
+        "sequence": 14,
+        "sort": 16
+      },
+      "errors": [],
+      "missingImages": [],
+      "contentAndLogicPass": true,
+      "releasePass": true
+    }
+  },
+  "lessons": [
+    {
+      "lesson": 35,
+      "file": "data/why/lesson-35.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Voiced Michael’s fear and Joseph’s checking response; closed with an honest request to lead.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael feels a sudden urge to obey before anything goes wrong. Joseph reaches for his blue notebook instead. Explorer, help them pause: a frightening message can feel powerful without being trustworthy.",
+          "after": "“What if something bad happens if we don’t obey?” Michael asks. Joseph reaches for his blue notebook. “Let’s check before we do anything,” he says. Explorer, pause with them while they work out whether the message deserves their trust."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майклу хочется скорее послушаться, чтобы не случилось беды. Джозеф вместо этого берёт синий блокнот. Исследователь, помоги остановиться: пугающее сообщение может сильно действовать, но это не делает его правдивым.",
+          "after": "«А вдруг случится что-то плохое, если мы не послушаемся?» — спрашивает Майкл. Джозеф берёт синий блокнот. «Давай сначала проверим», — предлагает он. Исследователь, побудь с ними, пока они разбираются, можно ли доверять сообщению."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "The leader handles the harmful message and checks on the friend it targeted. The children return to planning their route. Michael says he would like a turn leading and asks what the others think. His request can now be discussed instead of obeyed under pressure.",
+          "after": "The leader handles the harmful message and checks on the friend it targeted. As the children return to their route, Michael tries again. “I’d like a turn leading a hike. What do you think?” This time he is asking his friends, not telling them that God has decided for them."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Руководитель разбирается с вредным сообщением и заботится о подруге, которую хотели отстранить. Дети возвращаются к маршруту. Майкл говорит, что хотел бы однажды вести группу, и спрашивает мнение остальных. Теперь просьбу можно обсудить, а не выполнять под давлением.",
+          "after": "Руководитель разбирается с обидным сообщением и заботится о подруге, которую хотели отстранить. Дети возвращаются к маршруту, и Майкл решает начать заново. «Мне хочется однажды повести группу. Как вы думаете?» Теперь он спрашивает друзей, а не объявляет, будто Бог уже всё решил за них."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "031bb43de1830929e9c5a9b55dd3e4bc7e633260d067a7a83ba5628a46436db8",
+      "final_sha256": "be711f346ff48a10daded669b78ea6452effcc5437aeaa51ddf5fa7a17277471"
+    },
+    {
+      "lesson": 36,
+      "file": "data/why/lesson-36.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Made the pause before Send a conversation; linked gentle instructions after the spill to the chat decision.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Gracie lowers the tablet. Joseph is standing close enough to see the screen. Explorer, pause beside Michael before he taps Send. A fast reply can travel farther than the kindness that should guide it.",
+          "after": "Gracie lowers the tablet, but Joseph is close enough to see the screen. “Wait, Michael. Joseph can see what we’re writing,” she says. Michael’s finger hovers over Send. Explorer, pause beside him as he decides whether making the others laugh is worth hurting his friend."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Грейси опускает планшет. Джозеф стоит рядом и видит экран. Исследователь, остановись с Майклом до нажатия «Отправить». Быстрый ответ может обогнать доброту, которая должна им руководить.",
+          "after": "Грейси опускает планшет, но Джозеф стоит рядом и видит экран. «Подожди, Майкл. Джозеф ведь видит, что мы пишем», — говорит она. Майкл замирает, не нажав «Отправить». Исследователь, остановись рядом с ним: стоит ли смешить остальных ценой обиды друга?"
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "She moves the paint safely aside, asks him to bring another cloth, and explains that he must ask before touching the tools. She can set a clear boundary without making her brother feel worthless.",
+          "after": "Gracie moves the paint safely aside. “Please bring another cloth so we can wipe this up,” she tells her brother. “Next time, ask before you touch the tools.” Just as in the chat, she needs to say what is wrong without using her words to hurt someone."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Она отодвигает краску, просит брата принести другую тряпку и объясняет: прежде чем брать инструменты, нужно спросить. Можно установить ясное правило, не внушая брату, будто он ни на что не годится.",
+          "after": "Грейси отодвигает краску подальше. «Принеси, пожалуйста, ещё одну тряпку, и мы всё вытрем, — говорит она брату. — А в следующий раз спроси, прежде чем брать инструменты». Как и в чате, ей нужно объяснить, что было не так, но не обидеть человека своими словами."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "258af2e2d9eb6c19a207dbd40be323bcf06260be10859b39391a4290070ba916",
+      "final_sha256": "a42c751b9dbd2c731ed987b4db690011f849e352124e5b81e369c34bfb8786e3"
+    },
+    {
+      "lesson": 37,
+      "file": "data/why/lesson-37.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Let Gracie explain the postcard; connected that discovery to simple prayer and Michael’s apology.",
+      "changes": [
+        {
+          "scene": 2,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Gracie takes out a postcard for her grandmother. Grandma already knows Gracie came to camp, yet Gracie still wants to tell her about the bird shelter and say she misses her. Knowing a fact does not replace sharing a relationship. The postcard helps Michael notice that conversation does more than deliver news.",
+          "after": "Gracie takes out a postcard for her grandmother. “Grandma knows I’m at camp, but I still want to tell her about our bird shelter,” she says. “And I want to tell her I miss her.” Michael looks at the card. He is beginning to see that talking with someone you love is about more than giving them new information."
+        },
+        {
+          "scene": 2,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Грейси достаёт открытку для бабушки. Бабушка знает, что она в лагере, но Грейси всё равно хочет рассказать об укрытии для птиц и сказать, что скучает. Знать факт — не то же самое, что общаться. Открытка помогает Майклу заметить: разговор нужен не только для новостей.",
+          "after": "Грейси достаёт открытку для бабушки. «Бабушка знает, что я в лагере. Но мне всё равно хочется рассказать ей про наше укрытие для птиц, — говорит она. — И написать, что я скучаю». Майкл смотрит на открытку. Он начинает понимать: с близким человеком разговаривают не только ради новостей."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael writes a plain request for another chance to explore outdoors. Then he admits his unkind complaint to the leader. Gracie thanks God for shelter, while Joseph praises God’s care. Each speaks naturally; nobody needs to sound like an adult preacher.",
+          "after": "With that in mind, Michael writes a simple request for another chance to explore outdoors. “I’m sorry I complained so rudely,” he then tells the leader. Gracie thanks God for their shelter, and Joseph praises him for his care. They speak about what is really on their minds rather than trying to sound like grown-up preachers."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майкл просто просит о другой возможности погулять и признаёт, что грубо жаловался руководителю. Грейси благодарит за домик, Джозеф славит Божью заботу. Все говорят естественно: не нужно изображать взрослого проповедника.",
+          "after": "Майкл думает об этом и записывает простую просьбу: пусть у них будет ещё возможность погулять. Потом он обращается к руководителю: «Простите, что я так грубо жаловался». Грейси благодарит Бога за домик, а Джозеф славит Его за заботу. Они говорят о том, что у них на сердце, и не стараются подражать взрослым проповедникам."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "dea156260f3e66a93b71277533bd492058078740407b030923f34173263847f0",
+      "final_sha256": "d858472de24822bdb961e30d2b3ea6d137f593b733959fda22cf20a350f8851b"
+    },
+    {
+      "lesson": 38,
+      "file": "data/why/lesson-38.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Voiced the fear of praying incorrectly; gave an honest compassionate reply without explaining away illness.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael wonders aloud whether they used the wrong words. Rosie moves closer rather than correcting him from across the room. Explorer, bring your questions too; disappointment does not need to be hidden before God.",
+          "after": "“Did we use the wrong words when we prayed?” Michael asks. Rosie moves closer so they can talk, rather than answering from across the room. Explorer, sit with them. They can bring this disappointment to God without first pretending to understand it."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майкл спрашивает, не ошиблись ли они в словах молитвы. Рози подсаживается ближе, а не поправляет его из другого конца комнаты. Исследователь, приноси и свои вопросы: разочарование не нужно скрывать от Бога.",
+          "after": "«Может, мы неправильно молились?» — спрашивает Майкл. Рози подсаживается ближе, чтобы поговорить, а не отвечать через всю комнату. Исследователь, сядь с ними. Они могут рассказать Богу о своём разочаровании, даже если пока совсем не понимают, почему так вышло."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Gracie asks whether they can explain why Lena remains ill. They cannot. What they can know is that unanswered requests do not measure someone’s worth or faith. God’s love remains a reason to ask and depend on him.",
+          "after": "“But why is Lena still ill?” Gracie asks. The leader listens. “We don’t know why she hasn’t recovered,” the leader says. “That doesn’t mean she matters less to God, or that any of you failed to believe enough.” The children still have their question, but they do not have to blame Lena or themselves as they keep asking God for help."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Грейси спрашивает, могут ли они объяснить, почему Лена ещё болеет. Нет. Но неисполненная просьба не измеряет ценность человека или его веру. Божья любовь остаётся причиной просить и полагаться на Него.",
+          "after": "«Но почему Лена всё ещё болеет?» — спрашивает Грейси. Руководитель внимательно слушает. «Мы не знаем, почему она ещё не выздоровела. Но это не значит, что Бог меньше её любит или что кому-то из вас не хватило веры». Вопрос остаётся, но детям не нужно винить Лену или себя. Они могут и дальше просить Бога о помощи."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "a9cf8650d7bf452422bd8f4493a37d8bd9a66036d8b026e9290ba9fa83022f4e",
+      "final_sha256": "a1b409b26f70008ae75c3267fd18d95df3f0ec03c6777c955adc7498896596a6"
+    },
+    {
+      "lesson": 39,
+      "file": "data/why/lesson-39.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Let Rosie name her reading difficulty; voiced closing reading plans and clarified the Russian application question.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Rosie admits that Bible reading sometimes feels like that. She knows the words on a page but cannot see how they belong together. Explorer, help the team slow down instead of guessing faster.",
+          "after": "“Sometimes I feel like that when I read the Bible,” Rosie admits. “I know the words, but I don’t understand how they fit together.” Michael looks again at the torn instruction. Explorer, help them find what is missing instead of guessing which way to go."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Рози признаётся: чтение Библии иногда похоже на это. Слова понятны, но как они связаны между собой? Исследователь, помоги команде замедлиться вместо того, чтобы быстрее угадывать.",
+          "after": "«У меня так иногда бывает с Библией, — признаётся Рози. — Слова понимаю, а как они связаны между собой — нет». Майкл снова смотрит на вырванную инструкцию. Исследователь, помоги им найти недостающие объяснения, а не угадывать, куда идти."
+        },
+        {
+          "scene": 3,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Они добавляют вопросы: «Кто говорит? Как ответить на этот смысл?» Рози уточняет незнакомое слово у руководителя. Грейси замечает, что песня использует образы иначе, чем исторический рассказ или письмо. Внимательный читатель учитывает вид текста, а не вкладывает в каждую фразу любое удобное значение.",
+          "after": "Они добавляют вопросы: «Кто здесь говорит? Как нам поступать, если мы поняли, чему учит этот отрывок?» Рози уточняет незнакомое слово у руководителя. Грейси замечает, что песня использует образы иначе, чем исторический рассказ или письмо. Внимательный читатель учитывает вид текста, а не вкладывает в каждую фразу любое удобное значение."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Before leaving, each explorer chooses a short passage to read again tomorrow. Michael plans five quiet minutes with the same psalm, not an entire book before breakfast. Rosie will write down one question instead of hiding every confusing word. Gracie names one response: tell the truth when a mistake needs admitting.",
+          "after": "Before leaving, the explorers choose short passages to read again tomorrow. “I’ll spend five quiet minutes with this psalm,” Michael decides. Rosie says, “I’ll write down a question when I get stuck, so I can ask for help.” Gracie thinks about putting what she reads into practice: she wants to tell the truth when she needs to admit a mistake."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Перед выходом каждый выбирает короткий отрывок на завтра. Майкл планирует пять спокойных минут с тем же псалмом, а не целую книгу до завтрака. Рози запишет один вопрос, не скрывая непонятные слова. Грейси выбирает ответ: говорить правду, когда нужно признать ошибку.",
+          "after": "Перед выходом исследователи выбирают короткие отрывки, которые завтра прочитают ещё раз. «Я спокойно почитаю этот псалом пять минут», — решает Майкл. Рози говорит: «А если что-то не пойму, запишу вопрос и попрошу помочь». Грейси думает, как исполнить прочитанное: ей хочется говорить правду, когда нужно признать свою ошибку."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "219a1030ea4add2f15239e25752ce6a5764f727fab9ab44bf4df477fb0069fbf",
+      "final_sha256": "2736c4f5f25a1abc1a3215ecab55dce42a60025990ece5a29e490b3724def283"
+    },
+    {
+      "lesson": 40,
+      "file": "data/why/lesson-40.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Made the listening question and worry specific; connected the evening plan to Rosie’s offer of company.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You sit beside her while Joseph closes his blue notebook. Instead of calling her silly, he asks which part feels hardest. Gracie finally explains that unfamiliar nighttime sounds make her stomach hurt.",
+          "after": "You sit beside Gracie while Joseph closes his blue notebook. “Which part worries you most?” he asks. Gracie holds her bag for a moment before answering. “I’m scared of the sounds at night. I don’t know what they are, and then my stomach hurts.” Now her friends understand why checking the packing list again has not helped."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты садишься рядом, а Джозеф закрывает синюю тетрадь. Он не смеётся, а спрашивает, что тревожит больше всего. Грейси признаётся: от незнакомых ночных звуков у неё болит живот.",
+          "after": "Ты садишься рядом с Грейси, а Джозеф закрывает синий блокнот. «Что тебя больше всего тревожит?» — спрашивает он. Грейси немного молчит, сжимая сумку. «Ночью слышны разные звуки. Я не знаю, что это, и у меня начинает болеть живот». Теперь друзья понимают, почему проверка вещей не помогла."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "That evening Gracie still feels nervous. She uses her plan rather than hiding behind her bag, and the leader listens without scolding. Rosie stays nearby while they wait for the agreed call. Nobody measures Gracie’s faith by how quickly her stomach settles.",
+          "after": "That evening Gracie still feels nervous, but this time she knows whom to tell. She follows the plan and goes to the leader, who listens without scolding. “I’ll sit with you while you wait for the call,” Rosie offers. Gracie does not have to hide her worry or prove her faith by making it disappear."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Вечером Грейси всё ещё волнуется. Она пользуется планом, а не прячется за сумкой. Руководитель слушает без упрёков. Рози сидит рядом, пока они ждут звонка. Никто не измеряет веру Грейси скоростью исчезновения боли.",
+          "after": "Вечером Грейси всё ещё волнуется, но теперь знает, кому рассказать. Она следует плану и подходит к руководителю, который слушает без упрёков. «Я посижу с тобой, пока ты ждёшь звонка», — предлагает Рози. Грейси не нужно скрывать тревогу или доказывать свою веру тем, что страх сразу исчезнет."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "91929dd5edb7b5ff1b53c6614d258907c1c3c0ba598ec3411218765979fba11d",
+      "final_sha256": "676e4da56775c7efff83deb696a3ecc4f40d83d7e58116d8a2674c754ca09869"
+    },
+    {
+      "lesson": 41,
+      "file": "data/why/lesson-41.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Voiced the watch-at-home suggestion; distinguished a caring recording from replacing friendship.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Rain moves the explorers’ meeting into the church hall. Michael arrives with a helpful Bible video and suggests that everyone could watch at home next week. No chairs to arrange, no muddy shoes to clean, and the speaker never loses his notes.",
+          "after": "Rain moves the explorers’ meeting into the church hall. Michael arrives with a helpful Bible video. “Couldn’t we all watch this at home next week?” he asks as they arrange the chairs. “Then there wouldn’t be any muddy shoes to clean up after.” On the screen, the speaker is ready to begin and has all his notes in order."
+        },
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Дождь переносит встречу исследователей в церковный зал. Майкл приносит полезное библейское видео: может, на следующей неделе все посмотрят его дома? Не надо расставлять стулья и мыть грязный пол, а ведущий не теряет записи.",
+          "after": "Из-за дождя исследователи собираются в церковном зале. Майкл приносит полезное библейское видео. «А может, на следующей неделе все посмотрят его дома? — предлагает он, пока они расставляют стулья. — Тогда и грязь с пола убирать не придётся». На экране ведущий уже готов начать, и все записи у него на месте."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Gracie realizes the recording is useful after all. It carries the love of people who know Anna, rather than replacing that relationship. They ask what she would enjoy instead of deciding that every absent person needs the same thing.",
+          "after": "“So a recording can help,” Gracie says as they finish the song. Now she sees the difference: they are sending it because they know and love Anna, not because a video can replace their friendship. Before preparing anything else, they ask what Anna would enjoy."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Грейси понимает: запись всё-таки полезна. Через неё заботятся люди, знающие Анну; она не заменяет отношения. Команда спрашивает, что порадует подругу, вместо того чтобы всем отсутствующим предлагать одно и то же.",
+          "after": "«Значит, запись тоже может помочь», — говорит Грейси, когда песня заканчивается. Теперь она понимает разницу: они отправляют запись, потому что знают и любят Анну, а не чтобы заменить ею дружбу. Прежде чем готовить что-то ещё, они спрашивают, что порадует подругу."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "54ecbc34265641d081379415e0cb6620fb69754abab57ed6c1ae9d85fbecb423",
+      "final_sha256": "7947868e6e44e0c4a94acaabb3d0180617a0ecd24b97e20978cde03f4565593e"
+    },
+    {
+      "lesson": 42,
+      "file": "data/why/lesson-42.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Connected objects to spoken questions; made the home conversation about readiness natural and unpressured.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You help write two questions: Why water? Why bread and a cup? The children bring their card to the pastor, who invites them to open the Bible before finishing the preparations.",
+          "after": "“Why do we use water?” Joseph asks as you help write the card. Gracie adds, “And why bread and a cup?” They take their questions to the pastor, who invites them to open the Bible together. The preparations can wait while they find out what these things mean."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты помогаешь написать: зачем вода? Зачем хлеб и чаша? Дети приносят карточку пастору, который предлагает сначала открыть Библию, а потом закончить приготовления.",
+          "after": "«А зачем нужна вода?» — спрашивает Джозеф, пока ты помогаешь записывать вопросы. Грейси добавляет: «И почему хлеб и чаша?» Дети приносят карточку пастору. Он предлагает вместе открыть Библию: приготовления могут подождать, пока они разберутся в смысле этих действий."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "At home Joseph shows his parent the two drawings. He asks how their church understands participation and readiness. Other churches differ about some details, so he wants to listen carefully instead of collecting badges for religious actions.",
+          "after": "At home Joseph shows his parent the two drawings. “How do people in our church know when they’re ready to take part?” he asks. He has learned that churches differ about some details, and he wants to understand his own church’s practice. The drawings give him a place to begin that conversation."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Дома Джозеф показывает родителю два рисунка. Он спрашивает, как их церковь понимает участие и готовность. В разных церквях некоторые детали отличаются; он хочет понять, а не собирать значки за религиозные действия.",
+          "after": "Дома Джозеф показывает родителю два рисунка. «А как в нашей церкви человек узнаёт, что уже готов участвовать?» — спрашивает он. Джозеф понял, что в разных церквях некоторые детали отличаются, и хочет узнать, как принято в его церкви. С рисунками ему легче начать этот разговор."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "e7615837188ba558bf1a3e6ae16360a41fb776659b0dba7692cae1083c9f4e4f",
+      "final_sha256": "4b0e0b9f3501ad25922d20cc26a59c66e20408ec5126aff002dea4729a648fea"
+    },
+    {
+      "lesson": 43,
+      "file": "data/why/lesson-43.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Contrasted preferences and hiding harm through dialogue; returned to music with a respectful question.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael starts to label all three Disagreement. Rosie stops him. A preference, a teaching that turns away from Christ, and hiding harm are not the same problem. They need different responses, not one sweeping excuse.",
+          "after": "Michael reaches for a label. “These are all disagreements, aren’t they?” Rosie stops him. “But choosing a song isn’t the same as telling a child to hide something frightening.” Michael looks again at the cards. Before they decide what to do, they need to understand what each card is asking them to do."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майкл хочет подписать всё словом «Спор». Рози останавливает его. Предпочтение, учение, уводящее от Христа, и сокрытие вреда — разные проблемы. Нельзя отвечать на них одним общим оправданием.",
+          "after": "Майкл берёт карточку для подписи. «Это ведь всё споры?» Рози останавливает его: «Но выбирать песню — не то же самое, что велеть ребёнку скрывать что-то страшное». Майкл снова смотрит на карточки. Прежде чем решать, как поступить, нужно разобраться, что именно предлагает каждая карточка."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Finally Michael returns to the music card. He asks why someone prefers quieter singing and learns to discuss the preference without mockery. They can seek a thoughtful arrangement without pretending that musical taste is the gospel itself.",
+          "after": "After setting the other two cards apart, Michael returns to the one about music. He practices asking, “What do you like about quieter singing?” This question opens a conversation instead of starting a quarrel. They can listen and look for a thoughtful arrangement without treating a favorite kind of music as the gospel itself."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Наконец Майкл возвращается к карточке о музыке. Он спрашивает о причинах предпочтения и учится обсуждать их без насмешек. Можно искать разумное решение, не превращая музыкальный вкус в саму благую весть.",
+          "after": "Отложив две другие карточки, Майкл возвращается к музыке. Он пробует спросить: «А что тебе нравится в тихом пении?» Такой вопрос помогает начать разговор, а не ссору. Можно выслушать друг друга и поискать решение, не превращая любимую музыку в саму благую весть."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "16b05ecadf043f9b69ac22e48ff592944f459d116556fe5af12a562338e984d7",
+      "final_sha256": "6c8fcf44ae12517b4a3502fe1f3b61b14ad9bb055d54b6c4e4a584a1dad58372"
+    },
+    {
+      "lesson": 44,
+      "file": "data/why/lesson-44.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Let Joseph ask whether address checking counts; paid off the concern with specific thanks for spotting swapped labels.",
+      "changes": [
+        {
+          "scene": 2,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Joseph asks whether checking addresses could count as real service. Without accurate labels, the strongest carrier might deliver everything to the wrong door. Michael lowers his stack and asks what each person can actually offer.",
+          "after": "“Could I check the addresses instead of carrying boxes?” Joseph asks. “Would that still be helping?” Michael looks at the labels. Even the strongest carrier needs to know which door to go to. He lowers his stack and asks the others what each of them can offer."
+        },
+        {
+          "scene": 2,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Джозеф спрашивает, будет ли проверка адресов настоящим служением. Без верных подписей самый сильный носильщик всё отнесёт не туда. Майкл опускает коробки и спрашивает, кто чем может помочь.",
+          "after": "«А я могу проверять адреса вместо того, чтобы носить коробки? — спрашивает Джозеф. — Это ведь тоже помощь?» Майкл смотрит на подписи: даже самому сильному нужно знать, к какой двери нести набор. Он опускает коробки и спрашивает остальных, кто чем может помочь."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Just before departure, Joseph spots two swapped labels. Michael thanks him and exchanges them. Rosie checks that the walkway is clear, while Gracie asks whether anyone needs a break. The packs leave with the adult delivery team, fewer than Michael first imagined but matched to actual needs.",
+          "after": "Just before departure, Joseph spots two swapped labels. “These packs would have gone to the wrong families,” Michael says, exchanging them. “Thanks for checking.” Rosie makes sure the walkway is clear, and Gracie asks whether anyone needs a break. The adults leave with fewer packs than Michael first imagined, but each one now matches a family’s needs."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Перед выходом Джозеф замечает две перепутанные подписи. Майкл благодарит его и меняет их местами. Рози освобождает проход, Грейси спрашивает, нужен ли кому-нибудь отдых. Взрослые увозят наборы. Их меньше, чем задумал Майкл, зато они отвечают реальным нуждам.",
+          "after": "Перед выходом Джозеф замечает две перепутанные подписи. «Эти наборы попали бы не в те семьи, — говорит Майкл и меняет подписи местами. — Спасибо, что проверил». Рози освобождает проход, а Грейси спрашивает, нужен ли кому-нибудь отдых. Взрослые увозят меньше наборов, чем сначала задумал Майкл, зато теперь в каждом есть то, что нужно семье."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "b532e2c777cc18244b62aefac32c286fe0a6b38a326abac4d941cc764363df0d",
+      "final_sha256": "4af4289d27b127663dea8cb3a3fdb86daac17d88ff0bdd444b37fd1202e7a101"
+    },
+    {
+      "lesson": 45,
+      "file": "data/why/lesson-45.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Made listening and admitting questions conversational; voiced the invitation and respected Nina’s choice.",
+      "changes": [
+        {
+          "scene": 2,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Rosie asks what Nina herself thinks, without deciding that every nonbelieving family must have the same reasons. Nina says she has questions about suffering. Michael admits that he has questions too. He does not invent a quick explanation for someone else’s pain.",
+          "after": "“What do you think about it, Nina?” Rosie asks, giving her time to answer. Nina says she wonders why people suffer. “I have questions about that too,” Michael admits. He wants to tell her what he believes, but he will not pretend to have a quick explanation for someone else’s pain."
+        },
+        {
+          "scene": 2,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Рози спрашивает, что думает сама Нина: у неверующих семей могут быть разные причины и взгляды. Нина говорит, что её волнует страдание. Майкл признаётся, что у него тоже есть вопросы. Он не придумывает поспешного объяснения чужой боли.",
+          "after": "«А ты сама что думаешь, Нина?» — спрашивает Рози и даёт ей время ответить. Нина говорит, что не понимает, почему люди страдают. «У меня тоже есть об этом вопросы», — признаётся Майкл. Ему хочется рассказать о своей вере, но он не будет делать вид, будто может сразу объяснить чужую боль."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael explains that his hope rests in Jesus’ death and resurrection, not in being cleverer than Nina. He offers to read a Gospel together another day. She says she would rather think first. He accepts that answer.",
+          "after": "“My hope is in Jesus because he died for us and rose again,” Michael explains. He is sharing his hope, not trying to show that he is cleverer than Nina. “Would you like to read a Gospel together sometime?” he asks. “I’d rather think about it first,” she replies, and Michael accepts her answer."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майкл говорит, что его надежда основана на смерти и воскресении Иисуса, а не на превосходстве над Ниной. Он предлагает как-нибудь вместе почитать Евангелие. Она хочет сначала подумать. Майкл принимает её ответ.",
+          "after": "«Я надеюсь на Иисуса, потому что Он умер за нас и воскрес», — объясняет Майкл. Он делится надеждой, а не старается показать, что умнее Нины. «Хочешь как-нибудь почитать Евангелие вместе?» — спрашивает он. «Я бы сначала подумала», — отвечает Нина. Майкл принимает её ответ."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "fe6a4a78f65bf9eec0c2e21a65604151048b836d71065c679b00c176cc115d07",
+      "final_sha256": "c167c5498ef00ba34d1e037fce40d326514dedca70e24c31fd13b699e54f06e6"
+    },
+    {
+      "lesson": 46,
+      "file": "data/why/lesson-46.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Voiced a respectful alternative and boundary; connected the bridge test to honest teamwork.",
+      "changes": [
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael proposes building a different triangular support and crediting the photograph as inspiration. He will help test it, but will not put his name on a falsely claimed design. His voice trembles; courage can sound like that.",
+          "after": "Michael takes a breath. “What if we make a different triangular support and say that the photo gave us the idea?” he suggests. “I’ll help test it, but I can’t put my name on a design we’re pretending is ours.” His voice trembles, yet he has given his friends an honest way to continue together."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майкл предлагает сделать другую треугольную опору и указать фотографию как источник идеи. Он поможет испытать мост, но не подпишется под обманом. Голос дрожит. Смелость иногда звучит именно так.",
+          "after": "Майкл набирает воздуха. «А если сделать другую треугольную опору и написать, что фотография подсказала нам идею? — предлагает он. — Я помогу испытать мост. Но не могу подписаться под чужой работой, которую мы выдаём за свою». Голос у него дрожит, но теперь у друзей есть честный способ продолжить работу вместе."
+        },
+        {
+          "scene": 4,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Michael has not proved that he is better than his friends. Together they have corrected a wrong plan. The bridge can now carry its test weights, and their explanation can carry the truth without needing a crowd to approve it.",
+          "after": "As they watch the bridge hold its test weights, Michael is glad they changed the plan together. He did not need to prove he was better than his friends; he needed to tell the truth and offer another way. Whatever the judges decide, the team can explain honestly how they built their bridge."
+        },
+        {
+          "scene": 4,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Майкл не доказал, что лучше друзей. Вместе они исправили нечестный план. Теперь мост держит испытательный груз, а рассказ о нём остаётся правдивым — независимо от того, одобряет ли это большинство.",
+          "after": "Они смотрят, как мост выдерживает груз, и Майкл радуется, что они вместе изменили план. Ему не нужно было доказывать, что он лучше друзей. Нужно было сказать правду и предложить другой выход. Что бы ни решили судьи, команда сможет честно рассказать, как построила мост."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "968c4a7ae4c4aaeff4c46e00efd709138593a2a8f865bb9e4a8a8157574cfc48",
+      "final_sha256": "b888d261c7360f96d748904d0accca4dc7ea581e44859b04ba34c8c9ec2ac744"
+    },
+    {
+      "lesson": 47,
+      "file": "data/why/lesson-47.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Let Michael notice the wait through a question; connected apology with stopping on time.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You arrive with the tape. Nobody has stolen anything, yet something valuable has disappeared: an afternoon when friends needed one another. Michael checks the clock and puts his controller down, surprised by how quickly his good intention vanished.",
+          "after": "You arrive with the tape just as Michael checks the clock. “Have you been waiting all this time?” he asks Gracie, putting down his controller. He meant to help, but while he kept playing, his friends were left doing the work without him. Now he can see what those extra rounds have cost them."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты приносишь скотч. Никто ничего не украл, но исчезло важное: время, когда друзья были нужны друг другу. Майкл смотрит на часы и откладывает контроллер. Он удивлён: доброе намерение так быстро пропало.",
+          "after": "Ты приносишь скотч как раз тогда, когда Майкл смотрит на часы. «Ты всё это время ждала?» — спрашивает он Грейси и откладывает контроллер. Он собирался помочь, но пока играл, друзьям пришлось работать без него. Теперь он видит, чего им стоили эти лишние раунды."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "The poster finally lies flat. Gracie releases her aching fingers, and Michael apologizes without blaming the game. When their timer later rings, he saves his progress and joins the others for snacks. The adventure on the screen will wait.",
+          "after": "At last the poster lies flat, and Gracie stretches her aching fingers. “I’m sorry I left you waiting,” Michael says. He does not blame the game for the promise he broke. Later, when their agreed timer rings, he saves his progress and joins the others for snacks. This time he stops when he said he would."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Наконец плакат лежит ровно. Грейси разминает уставшие пальцы, а Майкл просит прощения, не обвиняя игру. Позже звенит таймер. Он сохраняет игру и идёт к друзьям перекусить. Приключение на экране подождёт.",
+          "after": "Наконец плакат лежит ровно, и Грейси разминает уставшие пальцы. «Прости, что заставил тебя ждать», — говорит Майкл. Он не винит игру в том, что сам не сдержал обещание. Позже, когда звенит таймер, Майкл сохраняет игру и идёт к друзьям перекусить. На этот раз он останавливается вовремя, как и договорились."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "8ce0d8d65d63508a27a71456156d986f9bdbc3c6c9fd1260817ff29ccaebe4a8",
+      "final_sha256": "1fce31224af05c5419add16e0f4391b04da8c44ab5a8254e928a40a75a5ad33f"
+    },
+    {
+      "lesson": 48,
+      "file": "data/why/lesson-48.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Made the item-identification question interrupt the exciting caption; connected correction to earlier recipients.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Joseph brings a dramatic caption for their exhibition: This ancient page proves every resurrection detail! A pretend chatbot in their practice exercise produced it. Michael wants the biggest lettering. Rosie asks which ancient page the caption actually describes. Nobody has checked.",
+          "after": "Joseph brings a dramatic caption from the pretend chatbot in their exhibition exercise: This ancient page proves every resurrection detail! “Let’s use our biggest letters,” Michael suggests. Rosie looks at the caption. “Which ancient page does it mean?” she asks. Joseph checks his notes and realizes that none of them has looked it up."
+        },
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Джозеф приносит эффектную подпись для выставки: «Эта древняя страница доказывает все подробности воскресения!» В учебном упражнении её придумал условный чат-бот. Майкл хочет написать покрупнее. Рози спрашивает, о какой именно странице речь. Никто не проверил.",
+          "after": "Джозеф приносит эффектную подпись, которую в учебном упражнении придумал условный чат-бот: «Эта древняя страница доказывает все подробности воскресения!» «Давайте напишем самыми большими буквами», — предлагает Майкл. Рози смотрит на подпись. «А о какой странице речь?» Джозеф заглядывает в записи и понимает: никто из них этого не проверил."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Joseph remembers that he already sent the exciting caption to their family group. He sends a correction identifying the wrong claim, the record he checked, and the narrower conclusion. Gracie helps him keep the correction clear rather than hiding it behind a joke.",
+          "after": "“I already sent the first caption to our family group,” Joseph remembers. He writes again, explaining what was wrong, which record he checked, and what the leaf actually shows. Gracie helps him make the correction clear. People who read his first message need to know why he has changed it, not guess from a joke that something was wrong."
+        },
+        {
+          "scene": 4,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Джозеф вспоминает, что уже отправил громкую подпись в семейную группу. Он пишет исправление: в чём ошибся, какую карточку проверил и что теперь можно утверждать. Грейси помогает сказать ясно, не прятать ошибку за шуткой.",
+          "after": "«Я ведь уже отправил первую подпись в семейную группу», — вспоминает Джозеф. Он пишет снова: объясняет ошибку, называет проверенную карточку и рассказывает, что на самом деле подтверждает лист. Грейси помогает сказать всё понятно. Тем, кто прочитал первое сообщение, нужно знать, почему он его исправил, а не догадываться об ошибке по шутке."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "d74be9cc96ac652c1a6c598d482716990912486ec1539fc20bd560ec0d8cf04f",
+      "final_sha256": "e7442b4987f01b9d73d0a22d5315480ec1a0a6764514d59fdaa1a1952167ad07"
+    },
+    {
+      "lesson": 49,
+      "file": "data/why/lesson-49.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Voiced the pencil memory as a complete thought; made the photograph-and-pencil offer a gentle exchange.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You sit with the explorers while Gracie remembers how her grandfather always carried spare pencils. She laughs at one memory and cries at the next. Nobody asks her to choose just one feeling or finish grieving before the afternoon begins.",
+          "after": "You sit with the explorers as Gracie remembers her grandfather. “He always had spare pencils, even when nobody asked for one,” she says. The memory makes her laugh, and then she begins to cry. Her friends stay beside her; she does not have to choose one feeling or stop grieving so they can begin their afternoon."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты сидишь с исследователями. Грейси вспоминает, как дедушка всегда носил запасные карандаши. Одно воспоминание смешит её, другое вызывает слёзы. Никто не требует выбрать только одно чувство или закончить грустить к началу встречи.",
+          "after": "Ты сидишь с исследователями, пока Грейси вспоминает дедушку. «У него всегда были запасные карандаши, даже когда никто не просил», — говорит она. Она смеётся, а потом начинает плакать. Друзья остаются рядом. Ей не нужно выбирать одно чувство или переставать горевать, чтобы они могли начать встречу."
+        },
+        {
+          "scene": 3,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Michael crosses out his first card, which tells Gracie not to cry. He writes that he is sorry, remembers her grandfather’s kindness, and can sit with her. Joseph asks whether she would like help placing a pencil beside a family photograph. She says yes.",
+          "after": "Michael crosses out the advice not to cry on his first card. Instead, he writes that he is sorry, that he remembers her grandfather’s kindness, and that he can sit with her. Joseph looks at the family photograph. “Would you like me to help put a pencil beside it?” he asks. “Yes, please,” Gracie replies."
+        },
+        {
+          "scene": 3,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Майкл зачёркивает карточку с советом не плакать. Он пишет, что ему жаль, что он помнит доброту дедушки и готов побыть рядом. Джозеф предлагает положить карандаш возле семейной фотографии. Грейси соглашается.",
+          "after": "Майкл зачёркивает на своей первой карточке совет не плакать. Вместо этого он пишет, что ему жаль, что он помнит доброту дедушки и готов побыть рядом. Джозеф смотрит на семейную фотографию. «Хочешь, я помогу положить рядом карандаш?» — спрашивает он. «Да, пожалуйста», — отвечает Грейси."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "d0e6e019313082f9f569dc1b5caa3e01f2f5ee8093a70d9bfc13fee330b54c1d",
+      "final_sha256": "44126bc6d95694b8cd6d377a4ea7224140e709d1f8dccb8bce0bd48df6848679"
+    },
+    {
+      "lesson": 50,
+      "file": "data/why/lesson-50.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Connected care for the stem to factual reporting; voiced the request to protect the garden instead of revenge.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You kneel beside Rosie and lift a bent stem. The damage is real. Pretending nothing happened would not protect the garden, but anger alone cannot tell the team who is responsible or how to make things right.",
+          "after": "You kneel beside Rosie and lift a bent stem. “Can we help this one?” she asks. The team cannot pretend that nothing happened, but the damaged plants need care now. Before blaming anyone, they also need to tell the garden leader what they actually found, rather than treating their guesses as facts."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты опускаешься рядом с Рози и поднимаешь погнутый стебель. Вред настоящий. Если сделать вид, что ничего не произошло, сад не станет безопаснее. Но один гнев не скажет, кто виноват и как исправить случившееся.",
+          "after": "Ты опускаешься рядом с Рози и поднимаешь погнутый стебель. «Этому растению ещё можно помочь?» — спрашивает она. Команда не может сделать вид, что ничего не случилось, но растениям помощь нужна уже сейчас. А прежде чем кого-то обвинять, нужно рассказать руководителю, что они увидели, не выдавая догадки за факты."
+        },
+        {
+          "scene": 3,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Michael lowers the broken label. Because God cares about justice, he can report the harm truthfully; because God promises restoration, he need not make destruction his own answer. He asks the leader how the garden can be protected while the incident is investigated.",
+          "after": "Michael lowers the broken label. He can report the harm honestly without answering it with more destruction. “How can we protect the garden while you find out what happened?” he asks the leader. Trusting God to judge rightly and make things new gives Michael a reason to help rather than take revenge."
+        },
+        {
+          "scene": 3,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Майкл опускает сломанную табличку. Бог заботится о справедливости, поэтому можно честно сообщить о вреде. Бог обещает восстановление, поэтому не нужно отвечать разрушением. Майкл спрашивает руководителя, как защитить сад во время разбирательства.",
+          "after": "Майкл опускает сломанную табличку. Он может честно рассказать о вреде, не отвечая новым разрушением. «Как нам защитить сад, пока вы разбираетесь, что случилось?» — спрашивает он руководителя. Майкл доверяет Богу, Который будет судить справедливо и всё обновит. Поэтому он решает помочь, а не мстить."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "09a1431df8e59d12a64bcc1388577bffbeb73f092524d367c1d7f0958ce65696",
+      "final_sha256": "49289ccb000e6adebdc2d1d33d8090b609deeb9bf45ba6d6c29ca8ac0057702e"
+    },
+    {
+      "lesson": 51,
+      "file": "data/why/lesson-51.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Voiced the pressure behind the timetable; made restarting and shared reading practical offers.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "en",
+          "before": "Joseph spreads a new timetable across the explorers’ table. It includes hours of Bible reading, five service projects, and no empty spaces. Michael admires it until he asks where homework and sleep belong. Gracie draws a tiny bed in the margin. Joseph sighs: he wanted a plan that would prove he was serious.",
+          "after": "Joseph spreads a new timetable across the explorers’ table. It has hours of Bible reading, five service projects, and no empty spaces. “When will you do homework and sleep?” Michael asks. Gracie draws a tiny bed in the margin. Joseph sighs. “I wanted to show that I’m serious about following Jesus.” Now he wonders how he could ever keep up with his own plan."
+        },
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Джозеф раскладывает новое расписание: часы чтения Библии, пять дел помощи, ни одного свободного места. Майкл восхищён, пока не спрашивает, где уроки и сон. Грейси рисует на полях кровать. Джозеф вздыхает: он хотел показать, что настроен серьёзно.",
+          "after": "Джозеф раскладывает на столе новое расписание: часы чтения Библии, пять дел помощи и ни одного свободного места. «А когда ты будешь делать уроки и спать?» — спрашивает Майкл. Грейси рисует на полях маленькую кровать. Джозеф вздыхает: «Я хотел показать, что правда хочу следовать за Иисусом». Теперь он и сам не понимает, как успеть всё, что запланировал."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "Gracie adds a restart box for missed days. A forgotten morning will mean returning, not doubling the next day as punishment. Rosie offers to read alongside him once. The plan now includes real people instead of treating growth as a lonely contest.",
+          "after": "“What if you miss a morning?” Gracie asks, adding a restart box. They agree that Joseph can return to the plan without doubling the next day’s reading as a punishment. “I could read with you one day,” Rosie offers. His plan now has room for help from friends instead of leaving him to manage everything alone."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Грейси добавляет место для нового начала после пропусков. Пропущенное утро значит возвращение, а не двойное наказание на завтра. Рози предлагает один раз почитать вместе. Теперь в плане есть живые люди, а не одинокое соревнование.",
+          "after": "«А если однажды утром не получится?» — спрашивает Грейси и добавляет место для нового начала. Они договариваются: Джозеф сможет вернуться к плану, не задавая себе на завтра вдвое больше в наказание. «Давай один раз почитаем вместе», — предлагает Рози. Теперь в плане есть место для помощи друзей, и Джозефу не нужно справляться со всем одному."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "3b13896fb9c5c3a6d75ad2ccdb5c29f44a85e98c465d6a6f90b5e8bbf8010ff5",
+      "final_sha256": "c7381c8118c38076666a077b83a8e8555ae8e5ea8cfa56b7b83b3ffaaa251777"
+    },
+    {
+      "lesson": 52,
+      "file": "data/why/lesson-52.json",
+      "whole_story_read_and_reread": [
+        "en",
+        "ru"
+      ],
+      "scenes_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "summary": "Explained the four spaces in connected prose; gave Joseph a manageable start and honest unanswered-question response.",
+      "changes": [
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "en",
+          "before": "At last the explorers open their exhibition. Michael wears green, Joseph carries his blue notebook, Rosie brings her purple Bible, and Gracie sets yellow question cards beside the door. They leave four spaces on the main table: conviction, support, limit, and response. One space must not swallow the others.",
+          "after": "At last the explorers open their exhibition. Michael wears green, Joseph carries his blue notebook, Rosie brings her purple Bible, and Gracie sets yellow question cards beside the door. They leave four spaces on the main table: conviction, support, limit, and response. They want visitors to see how their belief connects to its reasons and to the way they live, without hiding the questions their display cannot answer."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "en",
+          "before": "You help Joseph choose a single conviction instead of trying to explain everything at once. He selects the Christian belief that Jesus rose from the dead. Rosie opens John 20 rather than reaching for their most dramatic illustration.",
+          "after": "“I can’t explain everything at once,” Joseph says as he looks at the four spaces. You help him choose one conviction to begin with: Christians believe that Jesus rose from the dead. “Let’s start with John’s account,” Rosie suggests, opening John 20. They can use the spaces to show what they believe, why, and how they will respond."
+        },
+        {
+          "scene": 1,
+          "paragraph": 1,
+          "language": "ru",
+          "before": "Наконец исследователи открывают выставку. Майкл в зелёном, у Джозефа синий блокнот, у Рози фиолетовая Библия. Грейси кладёт у входа жёлтые карточки вопросов. На главном столе четыре места: убеждение, основание, граница и ответ. Одно не должно занимать остальные.",
+          "after": "Наконец исследователи открывают выставку. Майкл в зелёном, у Джозефа синий блокнот, у Рози фиолетовая Библия. Грейси кладёт у входа жёлтые карточки вопросов. На главном столе четыре места: убеждение, основание, граница и ответ. Они хотят показать гостям, на чём основана их вера и как она меняет жизнь, не скрывая вопросов, на которые выставка не отвечает."
+        },
+        {
+          "scene": 1,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Ты помогаешь Джозефу выбрать одно убеждение вместо попытки объяснить всё сразу. Он выбирает христианскую веру в воскресение Иисуса. Рози открывает Иоанна 20, а не берётся за самую эффектную картинку.",
+          "after": "«Я не смогу объяснить всё сразу», — говорит Джозеф, глядя на четыре места на столе. Ты помогаешь ему начать с одного убеждения: христиане верят, что Иисус воскрес из мёртвых. «Давайте начнём с рассказа Иоанна», — предлагает Рози и открывает Иоанна 20. Теперь они могут показать, во что верят, на чём это основано и как будут поступать."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "en",
+          "before": "The visitor then asks a question Joseph cannot answer. He writes it down, checks that he understood it, and offers to explore it with a trusted adult. He does not invent an answer to protect the exhibition’s reputation.",
+          "after": "The visitor then asks a question Joseph cannot answer. “I don’t know yet,” Joseph says, writing it down. “Have I understood your question correctly?” After checking, he offers to explore it with a trusted adult. Their display has room for honest limits, and so does their conversation; he does not need to invent an answer to make the exhibition look good."
+        },
+        {
+          "scene": 3,
+          "paragraph": 2,
+          "language": "ru",
+          "before": "Затем гость задаёт вопрос, на который Джозеф не знает ответа. Он записывает его, уточняет смысл и предлагает исследовать со взрослым. Он не выдумывает ответ ради репутации выставки.",
+          "after": "Затем гость задаёт вопрос, на который Джозеф не знает ответа. «Я пока не знаю», — говорит он и записывает вопрос. «Я правильно вас понял?» Уточнив смысл, Джозеф предлагает разобраться вместе с надёжным взрослым. Они честно указали, чего выставка не объясняет, и в разговоре тоже можно признать, что не всё знаешь. Выдумывать ответ ради хорошего впечатления не нужно."
+        }
+      ],
+      "preservation": {
+        "scripture_entire_object": true,
+        "all_non_scene_fields": true,
+        "scene_metadata": true,
+        "four_scenes": true,
+        "paragraph_parity_and_baseline_counts": true
+      },
+      "baseline_sha256": "e3e703cf2d6013ab33c0806ab701d77714c30c7225ceacb1983c39bc2c749d9f",
+      "final_sha256": "7b3ad2ee4b514bed8ad3c4f3d0d763610b07abd3a631a4ed844c1e070ca8cf08"
+    }
+  ]
+}

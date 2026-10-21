@@ -1,0 +1,23 @@
+{
+  "lesson": 2,
+  "verifiedVerses": {
+    "en": {
+      "url": "https://www.bible.com/bible/59/HEB.11.1.ESV",
+      "text": "Now faith is the assurance of things hoped for, the conviction of things not seen.",
+      "referencePageTitle": "Hebrews 11:1 (ESV) - Now faith is the assurance of thing - Bible App",
+      "ogDescription": "Now faith is the assurance of things hoped for, the conviction of things not seen.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:52.141617+00:00"
+    },
+    "ru": {
+      "url": "https://www.bible.com/bible/167/HEB.11.1.RST",
+      "text": "Вера же есть осуществление ожидаемого и уверенность в невидимом.",
+      "referencePageTitle": "Послание к Евреям 11:1 (Синод) - Вера же есть осуществление ожидаемо - Bible App",
+      "ogDescription": "Вера же есть осуществление ожидаемого и уверенность в невидимом.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:52.660781+00:00"
+    }
+  },
+  "notes": "Exact rendered Bible.com verse strings retained, including punctuation and translation-specific numbering. Narrative is original fiction and biblical explanation, not additional Scripture quotation.",
+  "storyEnglishWords": 296
+}

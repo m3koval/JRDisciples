@@ -1,0 +1,971 @@
+{
+  "started": "2026-10-20T16:52:50.738Z",
+  "base": "http://127.0.0.1:3141",
+  "method": "Fresh browser contexts; all actions through UI. No storage injection. Exact rendered copy checked against lesson fixtures, not external Scripture verification.",
+  "cases": [
+    {
+      "id": 1,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 011 / 7Chapter 01DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 1,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 011 / 7Chapter 01DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 2,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 021 / 7Chapter 01DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 2,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 021 / 7Chapter 01DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 3,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 031 / 7Chapter 01DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 3,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 031 / 7Chapter 01DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 4,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 041 / 7Chapter 01Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 4,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 041 / 7Chapter 01Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 5,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 051 / 7Chapter 02DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 5,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 051 / 7Chapter 02DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 6,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 061 / 7Chapter 02DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 6,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 061 / 7Chapter 02DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 7,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 071 / 7Chapter 02DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 7,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 071 / 7Chapter 02DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 8,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 081 / 7Chapter 02Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 8,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 081 / 7Chapter 02Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 9,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 091 / 7Chapter 03DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 9,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 091 / 7Chapter 03DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 10,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 101 / 7Chapter 03DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 10,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 101 / 7Chapter 03DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 11,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 111 / 7Chapter 03DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 11,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 111 / 7Chapter 03DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 12,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 121 / 7Chapter 03Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 12,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 121 / 7Chapter 03Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 13,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 131 / 7Chapter 04DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 13,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 131 / 7Chapter 04DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 14,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 141 / 7Chapter 04DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 14,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 141 / 7Chapter 04DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 15,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 151 / 7Chapter 04DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 15,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 151 / 7Chapter 04DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 16,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 161 / 7Chapter 04Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 16,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 161 / 7Chapter 04Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 17,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 171 / 7Chapter 05DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 17,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 171 / 7Chapter 05DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 18,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 181 / 7Chapter 05DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 18,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 181 / 7Chapter 05DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 19,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 191 / 7Chapter 05DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 19,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 191 / 7Chapter 05DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 20,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 201 / 7Chapter 05Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 20,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 201 / 7Chapter 05Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 21,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 211 / 7Chapter 06DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 21,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 211 / 7Chapter 06DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 22,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 221 / 7Chapter 06DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 22,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 221 / 7Chapter 06DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 23,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 231 / 7Chapter 06DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 23,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 231 / 7Chapter 06DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 24,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 241 / 7Chapter 06Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 24,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 241 / 7Chapter 06Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 25,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 251 / 7Chapter 07DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 25,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 251 / 7Chapter 07DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 26,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 261 / 7Chapter 07DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 26,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 261 / 7Chapter 07DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 27,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 271 / 7Chapter 07DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 27,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 271 / 7Chapter 07DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 28,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 281 / 7Chapter 07Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 28,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 281 / 7Chapter 07Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 29,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 291 / 7Chapter 08DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 29,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 291 / 7Chapter 08DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 30,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 301 / 7Chapter 08DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 30,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 301 / 7Chapter 08DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 31,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 311 / 7Chapter 08DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 31,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 311 / 7Chapter 08DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 32,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 321 / 7Chapter 08Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 32,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 321 / 7Chapter 08Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 33,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 331 / 7Chapter 09DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 33,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 331 / 7Chapter 09DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 34,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 341 / 7Chapter 09DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 34,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 341 / 7Chapter 09DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 35,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 351 / 7Chapter 09DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 35,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 351 / 7Chapter 09DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 36,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 361 / 7Chapter 09Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 36,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 361 / 7Chapter 09Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 37,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 371 / 7Chapter 10DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 37,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 371 / 7Chapter 10DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 38,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 381 / 7Chapter 10DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 38,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 381 / 7Chapter 10DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 39,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 391 / 7Chapter 10DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 39,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 391 / 7Chapter 10DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 40,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 401 / 7Chapter 10Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 40,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 401 / 7Chapter 10Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 41,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 411 / 7Chapter 11DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 41,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 411 / 7Chapter 11DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 42,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 421 / 7Chapter 11DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 42,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 421 / 7Chapter 11DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 43,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 431 / 7Chapter 11DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 43,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 431 / 7Chapter 11DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 44,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 441 / 7Chapter 11Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 44,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 441 / 7Chapter 11Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 45,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 451 / 7Chapter 12DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 45,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 451 / 7Chapter 12DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 46,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 461 / 7Chapter 12DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 46,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 461 / 7Chapter 12DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 47,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 471 / 7Chapter 12DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 47,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 471 / 7Chapter 12DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 48,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 481 / 7Chapter 12Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 48,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 481 / 7Chapter 12Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 49,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 491 / 7Chapter 13DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 49,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 491 / 7Chapter 13DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 50,
+      "lang": "en",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 501 / 7Chapter 13DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 50,
+      "lang": "ru",
+      "type": "sort",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 501 / 7Chapter 13DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 51,
+      "lang": "en",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 511 / 7Chapter 13DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 51,
+      "lang": "ru",
+      "type": "sequence",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 511 / 7Chapter 13DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 52,
+      "lang": "en",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 521 / 7Chapter 13Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "id": 52,
+      "lang": "ru",
+      "type": "choose",
+      "status": "failed",
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 521 / 7Chapter 13Field labAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    }
+  ],
+  "layouts": [
+    {
+      "lang": "en",
+      "name": "phone",
+      "status": "failed",
+      "images": [],
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 011 / 7Chapter 01DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "lang": "en",
+      "name": "tablet",
+      "status": "failed",
+      "images": [],
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 011 / 7Chapter 01DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "lang": "ru",
+      "name": "phone",
+      "status": "failed",
+      "images": [],
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 011 / 7Chapter 01DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    },
+    {
+      "lang": "ru",
+      "name": "tablet",
+      "status": "failed",
+      "images": [],
+      "error": "locator.getAttribute: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main>…</main> aka getByRole('main').first()\n    2) <main lang=\"en\" class=\"why-shell why-player\">…</main> aka getByText('← Expedition mapWHY?! / Discovery 011 / 7Chapter 01DiscoveryAn invitation for')\n\nCall log:\n  - waiting for locator('main')\n"
+    }
+  ],
+  "pageErrors": [],
+  "art": [],
+  "contentGate": "FAIL",
+  "visualGate": "FAIL",
+  "missingArt": [
+    "/images/jr/why/lesson-02-scene-4.webp",
+    "/images/jr/why/lesson-03-scene-1.webp",
+    "/images/jr/why/lesson-03-scene-4.webp",
+    "/images/jr/why/lesson-04-scene-1.webp",
+    "/images/jr/why/lesson-04-scene-2.webp",
+    "/images/jr/why/lesson-04-scene-3.webp",
+    "/images/jr/why/lesson-04-scene-4.webp",
+    "/images/jr/why/lesson-05-scene-1.webp",
+    "/images/jr/why/lesson-05-scene-2.webp",
+    "/images/jr/why/lesson-05-scene-3.webp",
+    "/images/jr/why/lesson-05-scene-4.webp",
+    "/images/jr/why/lesson-06-scene-1.webp",
+    "/images/jr/why/lesson-06-scene-2.webp",
+    "/images/jr/why/lesson-06-scene-3.webp",
+    "/images/jr/why/lesson-06-scene-4.webp",
+    "/images/jr/why/lesson-07-scene-1.webp",
+    "/images/jr/why/lesson-07-scene-2.webp",
+    "/images/jr/why/lesson-07-scene-3.webp",
+    "/images/jr/why/lesson-07-scene-4.webp",
+    "/images/jr/why/lesson-08-scene-1.webp",
+    "/images/jr/why/lesson-08-scene-2.webp",
+    "/images/jr/why/lesson-08-scene-3.webp",
+    "/images/jr/why/lesson-08-scene-4.webp",
+    "/images/jr/why/lesson-09-scene-1.webp",
+    "/images/jr/why/lesson-09-scene-2.webp",
+    "/images/jr/why/lesson-09-scene-3.webp",
+    "/images/jr/why/lesson-09-scene-4.webp",
+    "/images/jr/why/lesson-10-scene-1.webp",
+    "/images/jr/why/lesson-10-scene-2.webp",
+    "/images/jr/why/lesson-10-scene-3.webp",
+    "/images/jr/why/lesson-10-scene-4.webp",
+    "/images/jr/why/lesson-11-scene-1.webp",
+    "/images/jr/why/lesson-11-scene-2.webp",
+    "/images/jr/why/lesson-11-scene-3.webp",
+    "/images/jr/why/lesson-11-scene-4.webp",
+    "/images/jr/why/lesson-12-scene-1.webp",
+    "/images/jr/why/lesson-12-scene-2.webp",
+    "/images/jr/why/lesson-12-scene-3.webp",
+    "/images/jr/why/lesson-12-scene-4.webp",
+    "/images/jr/why/lesson-13-scene-1.webp",
+    "/images/jr/why/lesson-13-scene-2.webp",
+    "/images/jr/why/lesson-13-scene-3.webp",
+    "/images/jr/why/lesson-13-scene-4.webp",
+    "/images/jr/why/lesson-14-scene-1.webp",
+    "/images/jr/why/lesson-14-scene-2.webp",
+    "/images/jr/why/lesson-14-scene-3.webp",
+    "/images/jr/why/lesson-14-scene-4.webp",
+    "/images/jr/why/lesson-15-scene-1.webp",
+    "/images/jr/why/lesson-15-scene-2.webp",
+    "/images/jr/why/lesson-15-scene-3.webp",
+    "/images/jr/why/lesson-15-scene-4.webp",
+    "/images/jr/why/lesson-16-scene-1.webp",
+    "/images/jr/why/lesson-16-scene-2.webp",
+    "/images/jr/why/lesson-16-scene-3.webp",
+    "/images/jr/why/lesson-16-scene-4.webp",
+    "/images/jr/why/lesson-17-scene-1.webp",
+    "/images/jr/why/lesson-17-scene-2.webp",
+    "/images/jr/why/lesson-17-scene-3.webp",
+    "/images/jr/why/lesson-17-scene-4.webp",
+    "/images/jr/why/lesson-18-scene-1.webp",
+    "/images/jr/why/lesson-18-scene-2.webp",
+    "/images/jr/why/lesson-18-scene-3.webp",
+    "/images/jr/why/lesson-18-scene-4.webp",
+    "/images/jr/why/lesson-19-scene-1.webp",
+    "/images/jr/why/lesson-19-scene-2.webp",
+    "/images/jr/why/lesson-19-scene-3.webp",
+    "/images/jr/why/lesson-19-scene-4.webp",
+    "/images/jr/why/lesson-20-scene-1.webp",
+    "/images/jr/why/lesson-20-scene-2.webp",
+    "/images/jr/why/lesson-20-scene-3.webp",
+    "/images/jr/why/lesson-20-scene-4.webp",
+    "/images/jr/why/lesson-21-scene-1.webp",
+    "/images/jr/why/lesson-21-scene-2.webp",
+    "/images/jr/why/lesson-21-scene-3.webp",
+    "/images/jr/why/lesson-21-scene-4.webp",
+    "/images/jr/why/lesson-22-scene-1.webp",
+    "/images/jr/why/lesson-22-scene-2.webp",
+    "/images/jr/why/lesson-22-scene-3.webp",
+    "/images/jr/why/lesson-22-scene-4.webp",
+    "/images/jr/why/lesson-23-scene-1.webp",
+    "/images/jr/why/lesson-23-scene-2.webp",
+    "/images/jr/why/lesson-23-scene-3.webp",
+    "/images/jr/why/lesson-23-scene-4.webp",
+    "/images/jr/why/lesson-24-scene-1.webp",
+    "/images/jr/why/lesson-24-scene-2.webp",
+    "/images/jr/why/lesson-24-scene-3.webp",
+    "/images/jr/why/lesson-24-scene-4.webp",
+    "/images/jr/why/lesson-25-scene-1.webp",
+    "/images/jr/why/lesson-25-scene-2.webp",
+    "/images/jr/why/lesson-25-scene-3.webp",
+    "/images/jr/why/lesson-25-scene-4.webp",
+    "/images/jr/why/lesson-26-scene-1.webp",
+    "/images/jr/why/lesson-26-scene-2.webp",
+    "/images/jr/why/lesson-26-scene-3.webp",
+    "/images/jr/why/lesson-26-scene-4.webp",
+    "/images/jr/why/lesson-27-scene-1.webp",
+    "/images/jr/why/lesson-27-scene-2.webp",
+    "/images/jr/why/lesson-27-scene-3.webp",
+    "/images/jr/why/lesson-27-scene-4.webp",
+    "/images/jr/why/lesson-28-scene-1.webp",
+    "/images/jr/why/lesson-28-scene-2.webp",
+    "/images/jr/why/lesson-28-scene-3.webp",
+    "/images/jr/why/lesson-28-scene-4.webp",
+    "/images/jr/why/lesson-29-scene-1.webp",
+    "/images/jr/why/lesson-29-scene-2.webp",
+    "/images/jr/why/lesson-29-scene-3.webp",
+    "/images/jr/why/lesson-29-scene-4.webp",
+    "/images/jr/why/lesson-30-scene-1.webp",
+    "/images/jr/why/lesson-30-scene-2.webp",
+    "/images/jr/why/lesson-30-scene-3.webp",
+    "/images/jr/why/lesson-30-scene-4.webp",
+    "/images/jr/why/lesson-31-scene-1.webp",
+    "/images/jr/why/lesson-31-scene-2.webp",
+    "/images/jr/why/lesson-31-scene-3.webp",
+    "/images/jr/why/lesson-31-scene-4.webp",
+    "/images/jr/why/lesson-32-scene-1.webp",
+    "/images/jr/why/lesson-32-scene-2.webp",
+    "/images/jr/why/lesson-32-scene-3.webp",
+    "/images/jr/why/lesson-32-scene-4.webp",
+    "/images/jr/why/lesson-33-scene-1.webp",
+    "/images/jr/why/lesson-33-scene-2.webp",
+    "/images/jr/why/lesson-33-scene-3.webp",
+    "/images/jr/why/lesson-33-scene-4.webp",
+    "/images/jr/why/lesson-34-scene-1.webp",
+    "/images/jr/why/lesson-34-scene-2.webp",
+    "/images/jr/why/lesson-34-scene-3.webp",
+    "/images/jr/why/lesson-34-scene-4.webp",
+    "/images/jr/why/lesson-35-scene-1.webp",
+    "/images/jr/why/lesson-35-scene-2.webp",
+    "/images/jr/why/lesson-35-scene-3.webp",
+    "/images/jr/why/lesson-35-scene-4.webp",
+    "/images/jr/why/lesson-36-scene-1.webp",
+    "/images/jr/why/lesson-36-scene-2.webp",
+    "/images/jr/why/lesson-36-scene-3.webp",
+    "/images/jr/why/lesson-36-scene-4.webp",
+    "/images/jr/why/lesson-37-scene-1.webp",
+    "/images/jr/why/lesson-37-scene-2.webp",
+    "/images/jr/why/lesson-37-scene-3.webp",
+    "/images/jr/why/lesson-37-scene-4.webp",
+    "/images/jr/why/lesson-38-scene-1.webp",
+    "/images/jr/why/lesson-38-scene-2.webp",
+    "/images/jr/why/lesson-38-scene-3.webp",
+    "/images/jr/why/lesson-38-scene-4.webp",
+    "/images/jr/why/lesson-39-scene-1.webp",
+    "/images/jr/why/lesson-39-scene-2.webp",
+    "/images/jr/why/lesson-39-scene-3.webp",
+    "/images/jr/why/lesson-39-scene-4.webp",
+    "/images/jr/why/lesson-40-scene-1.webp",
+    "/images/jr/why/lesson-40-scene-2.webp",
+    "/images/jr/why/lesson-40-scene-3.webp",
+    "/images/jr/why/lesson-40-scene-4.webp",
+    "/images/jr/why/lesson-41-scene-1.webp",
+    "/images/jr/why/lesson-41-scene-2.webp",
+    "/images/jr/why/lesson-41-scene-3.webp",
+    "/images/jr/why/lesson-41-scene-4.webp",
+    "/images/jr/why/lesson-42-scene-1.webp",
+    "/images/jr/why/lesson-42-scene-2.webp",
+    "/images/jr/why/lesson-42-scene-3.webp",
+    "/images/jr/why/lesson-42-scene-4.webp",
+    "/images/jr/why/lesson-43-scene-1.webp",
+    "/images/jr/why/lesson-43-scene-2.webp",
+    "/images/jr/why/lesson-43-scene-3.webp",
+    "/images/jr/why/lesson-43-scene-4.webp",
+    "/images/jr/why/lesson-44-scene-1.webp",
+    "/images/jr/why/lesson-44-scene-2.webp",
+    "/images/jr/why/lesson-44-scene-3.webp",
+    "/images/jr/why/lesson-44-scene-4.webp",
+    "/images/jr/why/lesson-45-scene-1.webp",
+    "/images/jr/why/lesson-45-scene-2.webp",
+    "/images/jr/why/lesson-45-scene-3.webp",
+    "/images/jr/why/lesson-45-scene-4.webp",
+    "/images/jr/why/lesson-46-scene-1.webp",
+    "/images/jr/why/lesson-46-scene-2.webp",
+    "/images/jr/why/lesson-46-scene-3.webp",
+    "/images/jr/why/lesson-46-scene-4.webp",
+    "/images/jr/why/lesson-47-scene-1.webp",
+    "/images/jr/why/lesson-47-scene-2.webp",
+    "/images/jr/why/lesson-47-scene-3.webp",
+    "/images/jr/why/lesson-47-scene-4.webp",
+    "/images/jr/why/lesson-48-scene-1.webp",
+    "/images/jr/why/lesson-48-scene-2.webp",
+    "/images/jr/why/lesson-48-scene-3.webp",
+    "/images/jr/why/lesson-48-scene-4.webp",
+    "/images/jr/why/lesson-49-scene-1.webp",
+    "/images/jr/why/lesson-49-scene-2.webp",
+    "/images/jr/why/lesson-49-scene-3.webp",
+    "/images/jr/why/lesson-49-scene-4.webp",
+    "/images/jr/why/lesson-50-scene-1.webp",
+    "/images/jr/why/lesson-50-scene-2.webp",
+    "/images/jr/why/lesson-50-scene-3.webp",
+    "/images/jr/why/lesson-50-scene-4.webp",
+    "/images/jr/why/lesson-51-scene-1.webp",
+    "/images/jr/why/lesson-51-scene-2.webp",
+    "/images/jr/why/lesson-51-scene-3.webp",
+    "/images/jr/why/lesson-51-scene-4.webp",
+    "/images/jr/why/lesson-52-scene-1.webp",
+    "/images/jr/why/lesson-52-scene-2.webp",
+    "/images/jr/why/lesson-52-scene-3.webp",
+    "/images/jr/why/lesson-52-scene-4.webp"
+  ],
+  "finished": "2026-10-20T16:53:46.893Z"
+}

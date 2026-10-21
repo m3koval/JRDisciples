@@ -1,0 +1,23 @@
+{
+  "lesson": 25,
+  "verifiedVerses": {
+    "en": {
+      "url": "https://www.bible.com/bible/59/JHN.1.14.ESV",
+      "text": "And the Word became flesh and dwelt among us, and we have seen his glory, glory as of the only Son from the Father, full of grace and truth.",
+      "referencePageTitle": "John 1:14 (ESV) - And the Word became flesh and dwelt - Bible App",
+      "ogDescription": "And the Word became flesh and dwelt among us, and we have seen his glory, glory as of the only Son from the Father, full of grace and truth.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:52.429555+00:00"
+    },
+    "ru": {
+      "url": "https://www.bible.com/bible/167/JHN.1.14.RST",
+      "text": "И Слово стало плотию, и обитало с нами, полное благодати и истины; и мы видели славу Его, славу, как Единородного от Отца.",
+      "referencePageTitle": "От Иоанна святое благовествование 1:14 (Синод) - И Слово стало плотию, и обитало с н - Bible App",
+      "ogDescription": "И Слово стало плотию, и обитало с нами, полное благодати и истины; и мы видели славу Его, славу, как Единородного от Отца.",
+      "method": "Rendered verse paragraph cross-checked against og:description",
+      "retrieved": "2026-10-20T15:05:52.589632+00:00"
+    }
+  },
+  "notes": "Exact rendered Bible.com verse strings retained, including punctuation and translation-specific numbering. Narrative is original fiction and biblical explanation, not additional Scripture quotation.",
+  "storyEnglishWords": 335
+}

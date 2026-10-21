@@ -16,8 +16,10 @@ const LanguageContext = createContext<LanguageContextType>({
 
 const LANGUAGE_EVENT = "jr-language-change";
 let volatileLanguage: Language = "en";
+let useVolatileLanguage = false;
 
 function getLanguageSnapshot(): Language {
+  if (useVolatileLanguage) return volatileLanguage;
   try {
     const saved = localStorage.getItem("language");
     volatileLanguage = saved === "ru" ? "ru" : "en";
@@ -47,8 +49,10 @@ function writeLanguage(lang: Language) {
   volatileLanguage = lang;
   try {
     localStorage.setItem("language", lang);
+    useVolatileLanguage = false;
   } catch {
-    // The in-memory snapshot still updates through LANGUAGE_EVENT.
+    useVolatileLanguage = true;
+    // Preserve the selected language rather than rereading a stale stored value.
   }
   window.dispatchEvent(new Event(LANGUAGE_EVENT));
 }

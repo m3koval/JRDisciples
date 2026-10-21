@@ -1,0 +1,169 @@
+{
+  "id": 11,
+  "chapter": 3,
+  "kind": "lesson",
+  "title": {
+    "en": "Does God know and care about me?",
+    "ru": "Бог знает меня и заботится обо мне?"
+  },
+  "subtitle": {
+    "en": "The worry under the notebook",
+    "ru": "Тревога под блокнотом"
+  },
+  "scenes": [
+    {
+      "title": {
+        "en": "An empty chair",
+        "ru": "Пустой стул"
+      },
+      "paragraphs": {
+        "en": [
+          "The team meets in the school garden, but Gracie barely notices the seedlings. Her friend has moved away, leaving an empty chair beside her in class. Michael suggests that trusting God should make her stop feeling sad. Gracie pulls a folded drawing under Joseph's blue notebook.",
+          "You notice the drawing shows two friends on a bench. Rosie asks if Gracie would like company instead of advice. They sit beside her without making her explain everything immediately."
+        ],
+        "ru": [
+          "Команда встречается в школьном саду, но Грейси почти не замечает ростков. Её подруга переехала, и теперь соседний стул в классе пуст. Майкл говорит, что доверие Богу должно прогнать грусть. Грейси прячет сложенный рисунок под синий блокнот Джозефа.",
+          "Ты замечаешь: на рисунке две подруги сидят на скамейке. Рози спрашивает, не лучше ли просто побыть рядом. Дети садятся с Грейси и не требуют немедленно всё объяснить."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Known, not forgotten",
+        "ru": "Бог не забывает"
+      },
+      "paragraphs": {
+        "en": [
+          "Rosie reads the beginning of Psalm 139. God knows the psalmist personally: sitting, rising, thoughts, and journeys are not hidden from him. Their teacher explains that God's knowledge is not a promise that every day will feel easy. Gracie's sadness does not mean she has disappeared from his care.",
+          "Michael turns to Gracie. ‘I'm sorry I said you should stop feeling sad. I didn't ask how much you miss her.’ He waits while you help Gracie unfold her drawing again. This time he is ready to listen instead of trying to make the sadness disappear with a quick answer."
+        ],
+        "ru": [
+          "Рози читает начало Псалма 138. Бог знает автора лично: когда тот садится, встаёт, размышляет и идёт по дороге. Учитель объясняет: Божье знание не означает, что каждый день будет лёгким. Грусть Грейси не значит, будто Бог перестал о ней заботиться.",
+          "Майкл поворачивается к Грейси. «Прости, что я сказал тебе перестать грустить. Я ведь даже не спросил, как сильно ты по ней скучаешь». Он ждёт, пока ты помогаешь Грейси снова развернуть рисунок. Теперь он готов слушать, а не пытаться прогнать её грусть быстрым советом."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Joseph is not our Joseph",
+        "ru": "Другой Иосиф"
+      },
+      "paragraphs": {
+        "en": [
+          "Their teacher recalls the biblical Joseph, carefully distinguishing him from their notebook-carrying friend. Joseph suffered betrayal and imprisonment; later he helped provide food during famine. God's faithful work did not make the cruel actions good or turn the painful years into a short, cheerful adventure.",
+          "They trace three cards: real harm, God's presence through hardship, and later help for others. They cannot use Joseph's ending to promise exactly how Gracie's own difficult story will unfold."
+        ],
+        "ru": [
+          "Учитель вспоминает библейского Иосифа, не путая его с другом ребят, который ведёт блокнот. Иосиф пережил предательство и тюрьму, а позже помогал людям получать пищу во время голода. Божья верность не сделала жестокость добром и не превратила трудные годы в весёлое приключение.",
+          "Дети раскладывают три карточки: настоящая боль, Божье присутствие в трудностях и позднейшая помощь людям. По истории Иосифа нельзя обещать, как именно разрешится трудность самой Грейси."
+        ]
+      }
+    },
+    {
+      "title": {
+        "en": "Care with a next step",
+        "ru": "Забота и следующий шаг"
+      },
+      "paragraphs": {
+        "en": [
+          "‘Could you help me call her?’ Gracie asks her mother. While they arrange a time, Joseph saves Gracie a seat at the next garden meeting. Rosie reminds her that she can tell God how much she misses her friend and how much she hopes they will stay close. She does not have to hide either feeling.",
+          "You help water the seedlings while Gracie writes her friend's name on an envelope. Nothing magically replaces the missing chair. Yet she leaves knowing she can pray, ask for help, and receive care from people around her."
+        ],
+        "ru": [
+          "«Поможешь мне с ней созвониться?» — просит Грейси маму. Пока они выбирают время, Джозеф оставляет для Грейси место на следующей встрече в саду. Рози напоминает: Богу можно рассказать, как сильно скучаешь по подруге и как надеешься сохранить дружбу. Не нужно прятать ни грусть, ни надежду.",
+          "Ты помогаешь поливать ростки, пока Грейси пишет имя подруги на конверте. Пустой стул никуда не исчезает по волшебству. Но теперь она знает: можно молиться, просить помощи и принимать заботу окружающих."
+        ]
+      }
+    }
+  ],
+  "scripture": {
+    "reference": {
+      "en": "Psalm 139:1 (ESV)",
+      "ru": "Псалом 138:1 (Синодальный перевод)"
+    },
+    "text": {
+      "en": "O LORD, you have searched me and known me!",
+      "ru": "Господи! Ты испытал меня и знаешь."
+    },
+    "url": {
+      "en": "https://www.bible.com/bible/59/PSA.139.1.ESV",
+      "ru": "https://www.bible.com/bible/167/PSA.138.1.RST"
+    }
+  },
+  "activity": {
+    "type": "sequence",
+    "title": {
+      "en": "Trace Joseph’s story carefully",
+      "ru": "Внимательно проследи историю Иосифа"
+    },
+    "intro": {
+      "en": "Order the story cards without removing the hardship.",
+      "ru": "Расставь карточки, не вычёркивая трудности."
+    },
+    "items": [
+      {
+        "id": "c",
+        "text": {
+          "en": "During famine, Joseph helps provide food.",
+          "ru": "Во время голода Иосиф помогает людям получать пищу."
+        }
+      },
+      {
+        "id": "a",
+        "text": {
+          "en": "Joseph’s brothers betray him.",
+          "ru": "Братья предают Иосифа."
+        }
+      },
+      {
+        "id": "b",
+        "text": {
+          "en": "Joseph endures hardship, including prison; God does not abandon him.",
+          "ru": "Иосиф переживает трудности, в том числе тюрьму; Бог его не оставляет."
+        }
+      }
+    ],
+    "hint": {
+      "en": "Later help does not mean the earlier harm was imaginary or good.",
+      "ru": "Позднейшая помощь не делает прежнюю боль выдумкой или добром."
+    },
+    "success": {
+      "en": "God’s care can be present during suffering, not only after it ends.",
+      "ru": "Божья забота есть и среди страданий, а не только после них."
+    },
+    "correctOrder": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  "fieldMission": {
+    "en": "Tell God one worry and tell a trusted adult what kind of help you need.",
+    "ru": "Расскажи Богу об одной тревоге и скажи надёжному взрослому, какая помощь тебе нужна."
+  },
+  "prayer": {
+    "en": "God, you know me. Help me bring you my worries and receive wise care.",
+    "ru": "Боже, Ты знаешь меня. Помоги доверить Тебе тревоги и принимать мудрую помощь."
+  },
+  "adultNote": {
+    "en": "Read Psalm 139:1–12 (Russian 138), Matthew 6:25–34, and Joseph’s story in Genesis 37, 39–45. Do not predict a specific happy outcome or blame distress on weak faith. Seek appropriate support for ongoing anxiety.",
+    "ru": "Прочитайте Псалом 138:1–12, Матфея 6:25–34 и историю Иосифа в Бытии 37, 39–45. Не обещайте определённого счастливого исхода и не обвиняйте ребёнка в слабой вере. При длительной тревоге обратитесь за подходящей помощью."
+  },
+  "sources": [
+    {
+      "title": {
+        "en": "Psalm 139:1 — Bible.com ESV / RST",
+        "ru": "Псалом 138:1 — Bible.com ESV / RST"
+      },
+      "url": "https://www.bible.com/bible/59/PSA.139.1.ESV",
+      "supports": {
+        "en": "Psalm 139:1 says the Lord knows the psalmist; the surrounding psalm develops God's intimate knowledge and care.",
+        "ru": "Псалом 138:1 говорит, что Господь знает псалмопевца; весь псалом раскрывает Божье знание человека и заботу о нём."
+      },
+      "limits": {
+        "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",
+        "ru": "Читайте отрывок в контексте. Исследователи и их задание — вымышленный пример применения, а не события из этого отрывка."
+      }
+    }
+  ]
+}
