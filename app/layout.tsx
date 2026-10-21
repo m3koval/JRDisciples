@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel_Decorative, Cormorant_Garamond, Lora, Nunito } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import SiteFooter from "@/components/SiteFooter";
@@ -8,31 +8,44 @@ import { LanguageProvider } from "@/context/LanguageContext";
 
 const isAppBuild = process.env.CAPACITOR_BUILD === "1";
 
-const cinzel = Cinzel_Decorative({
-  weight: ["400", "700"],
-  subsets: ["latin"],
+// Bundled upstream fonts keep CI and offline app builds independent of Google CSS responses.
+// Source URLs, hashes, and OFL licenses are retained in ./fonts.
+const cinzel = localFont({
+  src: [
+    { path: "./fonts/cinzel-decorative-400-normal.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/cinzel-decorative-700-normal.ttf", weight: "700", style: "normal" },
+  ],
   variable: "--font-cinzel",
   display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
-  weight: ["600", "700"],
-  subsets: ["latin", "cyrillic"],
+const cormorant = localFont({
+  src: [
+    { path: "./fonts/cormorant-garamond-600-normal.ttf", weight: "600", style: "normal" },
+    { path: "./fonts/cormorant-garamond-700-normal.ttf", weight: "700", style: "normal" },
+  ],
   variable: "--font-cormorant",
   display: "swap",
 });
 
-const lora = Lora({
-  weight: ["400", "600"],
-  style: ["normal", "italic"],
-  subsets: ["latin", "cyrillic"],
+const lora = localFont({
+  src: [
+    { path: "./fonts/lora-400-normal.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/lora-600-normal.ttf", weight: "600", style: "normal" },
+    { path: "./fonts/lora-400-italic.ttf", weight: "400", style: "italic" },
+    { path: "./fonts/lora-600-italic.ttf", weight: "600", style: "italic" },
+  ],
   variable: "--font-lora",
   display: "swap",
 });
 
-const nunito = Nunito({
-  weight: ["400", "700", "800", "900"],
-  subsets: ["latin", "cyrillic"],
+const nunito = localFont({
+  src: [
+    { path: "./fonts/nunito-400-normal.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/nunito-700-normal.ttf", weight: "700", style: "normal" },
+    { path: "./fonts/nunito-800-normal.ttf", weight: "800", style: "normal" },
+    { path: "./fonts/nunito-900-normal.ttf", weight: "900", style: "normal" },
+  ],
   variable: "--font-nunito",
   display: "swap",
 });

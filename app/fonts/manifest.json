@@ -1,0 +1,98 @@
+[
+  {
+    "file": "cinzel-decorative-400-normal.ttf",
+    "family": "Cinzel Decorative",
+    "weight": "400",
+    "style": "normal",
+    "source": "https://fonts.gstatic.com/s/cinzeldecorative/v19/daaCSScvJGqLYhG8nNt8KPPswUAPnh7U.ttf",
+    "sha256": "4c2d5e205f0898d558f7c348a459743d00a3a9bcb89ce584acb153fdd7567614"
+  },
+  {
+    "file": "cinzel-decorative-700-normal.ttf",
+    "family": "Cinzel Decorative",
+    "weight": "700",
+    "style": "normal",
+    "source": "https://fonts.gstatic.com/s/cinzeldecorative/v19/daaHSScvJGqLYhG8nNt8KPPswUAPniZoaelD.ttf",
+    "sha256": "33af29b321940453ee21556c041452d4a84337568505780e0d3c08a6cd1f16fd"
+  },
+  {
+    "file": "cormorant-garamond-600-normal.ttf",
+    "family": "Cormorant Garamond",
+    "weight": "600",
+    "style": "normal",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3umX5slCNuHLi8bLeY9MK7whWMhyjypVO7abI26QOD_iE9GnM.ttf",
+    "sha256": "69e7ae35cba23d962227b86f99217c250e642e4c6f6104b4f3ec465039e4e2d8"
+  },
+  {
+    "file": "cormorant-garamond-700-normal.ttf",
+    "family": "Cormorant Garamond",
+    "weight": "700",
+    "style": "normal",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3umX5slCNuHLi8bLeY9MK7whWMhyjypVO7abI26QOD_hg9GnM.ttf",
+    "sha256": "440daf036a35abd6d2bdfa92b14ab0f150cce690fe6d767ee5cab15a1a10a87f"
+  },
+  {
+    "file": "lora-400-italic.ttf",
+    "family": "Lora",
+    "weight": "400",
+    "style": "italic",
+    "source": "https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFkqg.ttf",
+    "sha256": "26243fda8cd938cc2734f46d20d7464822d89378c7f375e187e39f9ed3f20907"
+  },
+  {
+    "file": "lora-600-italic.ttf",
+    "family": "Lora",
+    "weight": "600",
+    "style": "italic",
+    "source": "https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-BQCkqg.ttf",
+    "sha256": "cd5b4501440e73a403012b14e38b48628ef7a4b9545c79d3cfbd6a7ecd44833e"
+  },
+  {
+    "file": "lora-400-normal.ttf",
+    "family": "Lora",
+    "weight": "400",
+    "style": "normal",
+    "source": "https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787weuyJG.ttf",
+    "sha256": "1d37d1e34c77be80f0119754ad78df9aad30d5b1c78132a4cbdac0fe567f5d4f"
+  },
+  {
+    "file": "lora-600-normal.ttf",
+    "family": "Lora",
+    "weight": "600",
+    "style": "normal",
+    "source": "https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787zAvCJG.ttf",
+    "sha256": "36120862013ba0d8059ee03b3f6155d6420cabbf0743ccf5542f22ef918c20a2"
+  },
+  {
+    "file": "nunito-400-normal.ttf",
+    "family": "Nunito",
+    "weight": "400",
+    "style": "normal",
+    "source": "https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTM.ttf",
+    "sha256": "9ecbdba35fa74f10a1a916c31649b802a12deb9e66c7b1fe4650afcfd4d16971"
+  },
+  {
+    "file": "nunito-700-normal.ttf",
+    "family": "Nunito",
+    "weight": "700",
+    "style": "normal",
+    "source": "https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTM.ttf",
+    "sha256": "1a025dfce6e6e03bbe31ba82277ec5ed96df8b8dd58b3df6267269490b90b1dc"
+  },
+  {
+    "file": "nunito-800-normal.ttf",
+    "family": "Nunito",
+    "weight": "800",
+    "style": "normal",
+    "source": "https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmRTM.ttf",
+    "sha256": "c5776505c7b3df3c3ca763477b795d6bbc6517760bede0462ab77d1fb44954a6"
+  },
+  {
+    "file": "nunito-900-normal.ttf",
+    "family": "Nunito",
+    "weight": "900",
+    "style": "normal",
+    "source": "https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDBImRTM.ttf",
+    "sha256": "9caa6d5464d4438c3092a05d47952099e208862cacd5f655acb64012a1a15e78"
+  }
+]
