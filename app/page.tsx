@@ -5,6 +5,7 @@ import { useState, useRef } from "react";
 import { useTranslation } from "@/lib/useTranslation";
 import AppHome from "@/components/app/AppHome";
 import AloneWithGodFeature from "@/components/AloneWithGodFeature";
+import WhoAmIFeature from "@/components/WhoAmIFeature";
 import WhyHomeFeature from "@/components/why/WhyHomeFeature";
 
 // Static star positions so they're consistent between server and client
@@ -147,6 +148,7 @@ function WebHome() {
       </section>
 
       <WhyHomeFeature />
+      <WhoAmIFeature />
       <AloneWithGodFeature />
       {/* ── Section banner ────────────────────────────────── */}
       <div className="sec-banner sb-1">{t.home.pickActivity}</div>

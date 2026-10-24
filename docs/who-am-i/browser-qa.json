@@ -1,0 +1,32 @@
+[
+  {
+    "lang": "en",
+    "seven_challenges": true,
+    "wrong_answer_retries": true,
+    "full_scripture": true,
+    "mirror": true,
+    "three_pdf_downloads": true,
+    "home_link": true,
+    "viewports": [
+      1024,
+      768,
+      390
+    ],
+    "pageErrors": []
+  },
+  {
+    "lang": "ru",
+    "seven_challenges": true,
+    "wrong_answer_retries": true,
+    "full_scripture": true,
+    "mirror": true,
+    "three_pdf_downloads": true,
+    "home_link": true,
+    "viewports": [
+      1024,
+      768,
+      390
+    ],
+    "pageErrors": []
+  }
+]
