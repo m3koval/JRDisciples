@@ -1,0 +1,134 @@
+{
+  "en": {
+    "title": "Who am I?",
+    "headings": [
+      "The last one picked",
+      "Can I talk to God?",
+      "Room for one more",
+      "Whose am I?"
+    ],
+    "pages": [
+      [
+        "Michael dragged his feet after the game. Everyone else had been picked before him.",
+        "“Maybe nobody wants me,” he told Rosie.",
+        "Rosie sat beside him and listened. Then they went inside to find Anna, their group leader. Anna drew two mirrors on a sheet of paper.",
+        "“This one asks what people think of us,” she said. “But can being popular tell you who you really are?”",
+        "Michael shook his head. Anna opened her Bible beside the other mirror.",
+        "“Let’s listen to what God says. Peter wrote these words to people who belong to Jesus.”",
+        "Michael followed as she read. “What does chosen mean?” he asked. “Can someone picked last belong to Him too?”",
+        "“Yes,” Anna said. “God doesn’t choose His people because they win games or impress everyone. Through Christ, He brings them into His family.”"
+      ],
+      [
+        "Michael pointed to another word. “Does priesthood mean we all become pastors?”",
+        "“No,” Anna said. “Jesus is our King. His people can come to God through Him, pray, and serve others.”",
+        "“Could I pray about feeling left out?” Michael asked.",
+        "“Yes, right now,” Rosie said. “You don’t have to wait for a pastor.”",
+        "“But I still get things wrong,” Michael said. “How could I be holy?”",
+        "“Holy means set apart to belong to God, not already perfect,” Anna explained. “He teaches His people to live His way.”",
+        "Michael bowed his head. “God, please help me notice someone who feels alone.”"
+      ],
+      [
+        "When they went outside, someone laughed when Ben dropped the ball. Michael remembered standing alone. What if they laughed at him too? Then he remembered that God teaches His people to live differently.",
+        "“Come with us, Ben,” he said. Rosie helped Ben pick up the ball, and they walked inside together.",
+        "“Is this your church?” Ben asked.",
+        "“The church is the people who belong to Jesus,” Anna said. “We care for each other, even when we meet somewhere else.”",
+        "At the table, they made room for Ben, who was visiting for the first time.",
+        "“Why were you kind when the others laughed?” he asked.",
+        "“Jesus has shown us mercy,” Rosie said. “He died for our sins and rose again. He forgives us and teaches us to love people too.”",
+        "As Ben listened, Michael understood: God’s people show His goodness and tell others about Him."
+      ],
+      [
+        "Michael pulled up a chair for Ben. Beside the Bible, Anna’s two mirrors were still on the table.",
+        "“I was only asking, ‘Who am I?’” Michael said. “Now I’m wondering, ‘Whose am I?’ Can I earn a place with Jesus by being kind?”",
+        "“No,” Anna answered. “Mercy is His gift. Good behavior and going to church cannot buy it. You can turn to Jesus and trust Him to forgive you.”",
+        "Michael looked around the table. Being picked last still hurt, but it did not have the last word. He wanted to keep listening to Jesus."
+      ]
+    ],
+    "search_instruction": "Find the eight words across, down, or diagonally. Some run backward. As you search, remember what Anna explained to Michael.",
+    "match_instruction": "Help Michael remember the afternoon. Write the letter of the best reply beside each question. Use each letter once.",
+    "questions": [
+      "1. Why could Michael pray right away?",
+      "2. Who was the church, even outside the building?",
+      "3. Why did Rosie tell Ben about Jesus?"
+    ],
+    "options": [
+      "A. His people share the mercy He has shown them.",
+      "B. Through Jesus, His people can come to God.",
+      "C. The people who belong to Jesus were the church."
+    ],
+    "match_answers": [
+      "B",
+      "C",
+      "A"
+    ],
+    "color_instruction": "Color the welcome at the table. Who could you make room for this week? Tell someone what you would say.",
+    "invitation": "What would you like to ask Jesus? You can talk honestly with Him and ask a trusted adult to help you understand."
+  },
+  "ru": {
+    "title": "Кто я?",
+    "headings": [
+      "Меня выбрали последним",
+      "Бог меня услышит?",
+      "Для тебя есть место",
+      "Кому я принадлежу?"
+    ],
+    "pages": [
+      [
+        "После игры Миша сел на скамейку и уставился на свои кроссовки. В команду его взяли последним.",
+        "— Наверное, со мной никто не хочет дружить, — сказал он Розе.",
+        "Роза не стала спорить. Она села рядом и выслушала друга. Потом они вместе пошли к Анне, которая вела их занятия. Анна нарисовала на листе два зеркала.",
+        "— Представь, что первое показывает, каким тебя видят другие. Но разве чужое мнение может рассказать о тебе всё?",
+        "Миша покачал головой. Анна положила рядом со вторым зеркалом открытую Библию.",
+        "— Давайте узнаем, что говорит Бог. Пётр написал эти слова людям, которые принадлежат Иисусу.",
+        "Миша слушал, а потом спросил:",
+        "— Что значит «избранные»? Неужели тот, кого выбирают последним, тоже может принадлежать Богу?",
+        "— Да. Бог собирает Свой народ через Христа, а не выбирает самых популярных. Его любовь не надо выигрывать в соревновании."
+      ],
+      [
+        "— Мы все станем пасторами? — спросил Миша, прочитав слово «священство».",
+        "— Нет, — ответила Анна. — Иисус — наш Царь. Через Него мы можем молиться Богу и служить людям.",
+        "— Значит, я могу сейчас рассказать Богу, как мне обидно?",
+        "— Конечно, — сказала Роза. — Не нужно ждать, пока придёт пастор.",
+        "— Но я ведь иногда поступаю плохо. Как же я могу быть святым?",
+        "— Это значит принадлежать Богу, а не быть безгрешным, — объяснила Анна. — Он учит нас жить по-новому.",
+        "Миша склонил голову и помолился: «Боже, помоги мне заметить того, кому одиноко»."
+      ],
+      [
+        "Когда ребята вышли во двор, Бен уронил мяч. Кто-то засмеялся. Миша вспомнил, как сам стоял в стороне. А вдруг станут смеяться и над ним? Но ведь Бог учит Своих детей жить по-другому.",
+        "— Бен, пойдём с нами, — всё-таки позвал он.",
+        "Роза подняла мяч, и ребята вместе вошли в дом.",
+        "— Здесь ваша церковь? — спросил Бен.",
+        "— Церковь — это люди, которые принадлежат Иисусу, — ответила Анна. — Они заботятся друг о друге, даже когда собираются в другом месте.",
+        "Ребята пригласили Бена к столу. Он пришёл к ним впервые.",
+        "— Почему вы помогли мне, когда остальные смеялись? — спросил он.",
+        "— Потому что Иисус помиловал нас, — сказала Роза. — Он умер за наши грехи и воскрес. Он прощает нас и учит любить других.",
+        "Миша слушал и понимал: Божий народ показывает Божью доброту делами и рассказывает о ней словами."
+      ],
+      [
+        "Миша подвинул Бену стул. На столе рядом с Библией лежал лист с двумя зеркалами.",
+        "— Сначала я спрашивал: «Кто я?» А теперь хочу понять: «Кому я принадлежу?» Если я буду добрым, то заслужу место в семье Иисуса?",
+        "— Нет, — ответила Анна. — Милость нельзя купить хорошим поведением или походами в церковь. Это Божий дар. Ты можешь обратиться к Иисусу, довериться Ему и попросить прощения.",
+        "Миша оглядел друзей. Ему всё ещё было обидно из-за игры. Но теперь он знал, что чужой выбор — не самое главное. Ему хотелось дальше узнавать Иисуса."
+      ]
+    ],
+    "search_instruction": "Найди восемь слов по горизонтали, вертикали и диагонали. Некоторые идут в обратную сторону. Вспомни, что Анна объяснила Мише.",
+    "match_instruction": "Помоги Мише вспомнить этот день. Впиши возле каждого вопроса букву подходящего ответа. Каждую букву используй один раз.",
+    "questions": [
+      "1. Почему Миша мог помолиться сразу?",
+      "2. Кто был церковью даже вне здания?",
+      "3. Почему Роза рассказала Бену об Иисусе?"
+    ],
+    "options": [
+      "А. Его народ рассказывает о Его милости.",
+      "Б. Через Иисуса Его народ может прийти к Богу.",
+      "В. Церковью были люди, принадлежащие Иисусу."
+    ],
+    "match_answers": [
+      "Б",
+      "В",
+      "А"
+    ],
+    "color_instruction": "Раскрась дружную компанию за столом. Кого ты можешь пригласить к себе на этой неделе? Расскажи, что ты скажешь.",
+    "invitation": "О чём тебе хочется спросить Иисуса? Поговори с Ним честно. Свои вопросы можно обсудить со взрослым, которому ты доверяешь."
+  }
+}

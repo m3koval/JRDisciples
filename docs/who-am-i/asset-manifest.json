@@ -1,0 +1,26 @@
+{
+  "coloring": {
+    "url": "https://v3b.fal.media/files/b/0aafb870/w97qWAcz8luwcUoikKWmV_obSkYBCo.png",
+    "path": "/home/helper/outputs/jd-who-am-i/coloring.png",
+    "size": [
+      1024,
+      768
+    ]
+  },
+  "hero": {
+    "url": "https://v3b.fal.media/files/b/0aafb870/syRdDdUmJP8I4b0uvwC3f_ZWibMlfT.png",
+    "path": "/home/helper/outputs/jd-who-am-i/hero.png",
+    "size": [
+      1024,
+      768
+    ]
+  },
+  "review": {
+    "coloring": "PASS: broad B&W outlines, welcoming child, Bible and mirror, no text",
+    "hero": "PASS: human 3D children, warm green/blue/purple/yellow scene, no readable generated text",
+    "actual_dimensions": [
+      1024,
+      768
+    ]
+  }
+}

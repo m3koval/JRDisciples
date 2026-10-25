@@ -9,6 +9,7 @@ export interface LessonTopic {
 }
 
 export const lessonTopicsRu: LessonTopic[] = [
+  { href: "/lessons/who-am-i", image: "/images/lessons/who-am-i/hero.png", title: "Кто я?", desc: "Мишу выбрали последним. Два зеркала, пять имён Божьего народа и милость через Иисуса в 1 Петра 2:9–10. История на 15–20 минут с восемью заданиями.", color: "#205a58", sections: 8, emoji: "🪞" },
   { href: "/lessons/alone-with-god", image: "/images/lessons/alone-with-god/hero.png", title: "Наедине с Богом", desc: "Отложи игру и отправляйся с Мишей и Розой: узнай о личной молитве, учись у Иисуса, собери стих и обращайся к Отцу в течение дня.", color: "#22656b", sections: 7, emoji: "🙏" },
   { href: "/lessons/paid-in-full", image: "/images/jr/lessons/paid-in-full/cover.webp", title: "Оплачено полностью", desc: "1 Петра 1:17–21 — Узнай о любящем Отце и справедливом Судье, собери рюкзак сердца, открой спасение Иисуса и собери драгоценные слова.", color: "#17665b", sections: 5, emoji: "✉️" },
   { href: "/lessons/remember-the-giver", image: "/images/jr/lessons/remember-the-giver/cover.webp", title: "БЕРЕГИСЬ!", desc: "Когда всё хорошо, есть три опасности: забыть Бога, отвергнуть Его власть, заменить Его дарами. Помни Его, слушай Его, ставь Его первым. Шесть заданий по Второзаконию 6 и Даниила 4.", color: "#285d43", sections: 6, emoji: "🌾" },
