@@ -12,7 +12,11 @@ for(const l of lessons){
  check(()=>{
  assert.equal(l.chapter,Math.ceil(l.id/4));assert.equal(l.kind,l.id%4===0?'lab':'lesson');assert.equal(l.scenes.length,4);
  const walk=(o)=>{if(!o||typeof o!=='object')return;if('en'in o||'ru'in o){assert.ok('en'in o&&'ru'in o,`${l.id} bilingual keys`);assert.equal(typeof o.en,typeof o.ru);if(Array.isArray(o.en))assert.equal(o.en.length,o.ru.length);else{assert.ok(o.en.length>0);assert.ok(/[А-Яа-яЁё]/.test(o.ru)||o.ru.startsWith('http'),`${l.id}: Russian missing ${o.ru}`);}}else Object.values(o).forEach(walk);};walk(l);
- const words=l.scenes.flatMap(s=>s.paragraphs.en).join(' ').split(/\s+/).length;assert.ok(words>=220,`${l.id} story too short: ${words}`);
+ // Scenes use structured `beats` (narration/dialogue, see components/why/types.ts)
+ // once migrated, or legacy flat `paragraphs` before that. Support both.
+ const sceneEnText=(s)=>s.beats?s.beats.map(b=>b.text.en):s.paragraphs.en;
+ for(const s of l.scenes)if(s.beats)for(const b of s.beats){assert.ok(['narration','dialogue'].includes(b.kind),`${l.id} unknown beat kind`);if(b.kind==='dialogue')assert.ok(['michael','joseph','rosie','gracie','teacher'].includes(b.speaker),`${l.id} unknown speaker ${b.speaker}`);}
+ const words=l.scenes.flatMap(sceneEnText).join(' ').split(/\s+/).length;assert.ok(words>=220,`${l.id} story too short: ${words}`);
  const a=l.activity;const ids=a.items.map(x=>x.id);assert.equal(new Set(ids).size,ids.length);assert.ok(ids.length>=3);
  const answers=initialAnswers(a);assert.equal(isCorrect(a,answers),false,`${l.id} pre-solved activity`);
  if(a.type==='choose'){assert.ok(ids.includes(a.correctId));answers.choice=a.correctId;}

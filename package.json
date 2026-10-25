@@ -19,6 +19,7 @@
     "check:assets": "node scripts/check-image-assets.mjs",
     "check:games": "node scripts/check-games-section.mjs",
     "check:why": "node scripts/check-why.mjs",
+    "check:why-readability": "node scripts/check-why-readability.mjs",
     "test:why": "node scripts/test-why-all-browser.mjs",
     "test:why-labs": "node scripts/test-why-browser.mjs",
     "check:paid-in-full": "node scripts/check-paid-in-full.mjs",

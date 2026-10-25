@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import type { Lesson, Copy } from "./types";
 import { lessonHref } from "./types";
+import { sceneBeats, speakers } from "./beats";
 import { initialAnswers, readProgress, storageKey, type Progress } from "./progress";
 import { useSaved } from "./store";
 import { ui } from "./copy";
@@ -46,13 +47,18 @@ export default function LessonPlayer({ lesson, next }: { lesson: Lesson; next?: 
       <section className="why-reading" aria-label={section}>
         <nav className="why-stage-nav" aria-label={t.story}>{[t.story, t.bible, t.activity, t.mission].map((label, i) => {
           const target = [0, 4, 5, 6][i];
-          return <button key={i} aria-current={(step < 4 ? 0 : step - 3) === i ? "step" : undefined} disabled={i === 3 && !progress.passed} onClick={() => update({ step: target })}><span aria-hidden="true">{i + 1}</span><span>{label}</span></button>;
+          const disabled = (i === 2 && step < 4) || (i === 3 && !progress.passed);
+          return <button key={i} aria-current={(step < 4 ? 0 : step - 3) === i ? "step" : undefined} disabled={disabled} onClick={() => update({ step: target })}><span aria-hidden="true">{i + 1}</span><span>{label}</span></button>;
         })}</nav>
         <div className="why-reading-body" key={step}>
           <p className="why-kicker">{step < 4 ? `${t.scene} ${step + 1} / 4` : section}</p>
           <h2 ref={heading} tabIndex={-1}>{title}</h2>
-          {step < 4 && <div className="why-story-text">{scene.paragraphs[language].map((paragraph, i) => <p key={i}>{paragraph}</p>)}</div>}
-          {step === 4 && <><div className="why-scripture"><span aria-hidden="true" className="why-quote-mark">“</span><blockquote>{lesson.scripture.text[language]}</blockquote><p>{lesson.scripture.reference[language]}</p></div><a className="why-text-button" href={lesson.scripture.url[language]} target="_blank" rel="noopener noreferrer">{t.read} ↗</a></>}
+          {step < 4 && <div className="why-story-text">{sceneBeats(scene, language).map((beat, i) => beat.kind === "dialogue"
+            ? <p key={i} className="why-line" style={{ ["--line-color" as string]: speakers[beat.speaker].color }}><span className="why-line-speaker">{speakers[beat.speaker].name[language]}</span>{beat.text[language]}</p>
+            : <p key={i}>{beat.text[language]}</p>
+          )}</div>}
+          {step === 4 && <><div className="why-scripture"><span aria-hidden="true" className="why-quote-mark">“</span><blockquote>{lesson.scripture.text[language]}</blockquote><p>{lesson.scripture.reference[language]}</p></div><a className="why-text-button" href={lesson.scripture.url[language]} target="_blank" rel="noopener noreferrer">{t.read} ↗</a>
+          {lesson.comeback && <div className="why-comeback"><p className="why-kicker">{t.comebackLabel}</p><p className="why-comeback-prompt">“{lesson.comeback.prompt[language]}”</p><p className="why-comeback-arrow" aria-hidden="true">{t.comebackArrow}</p><p className="why-comeback-response">{lesson.comeback.response[language]}</p></div>}</>}
           {extraLab && lesson.id === 6 && <CopyLab language={language} />}
           {extraLab && lesson.id === 1 && <Observatory language={language} />}
           {extraLab && <button className="why-button why-primary why-lab-next" onClick={() => setExplored(true)}>{language === "ru" ? "Перейти к заданию →" : "Continue to the activity →"}</button>}
