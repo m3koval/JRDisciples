@@ -1,0 +1,115 @@
+{
+  "languages": {
+    "en": {
+      "story_words": 475,
+      "story_full_extraction": "PASS",
+      "exact_scripture_9_and_10": "PASS",
+      "puzzle_paths": "PASS",
+      "unique_occurrences": "PASS (original engine)",
+      "grid_size": 12,
+      "qr": {
+        "150": "https://www.bible.com/bible/59/1PE.2.9-10.ESV",
+        "300": "https://www.bible.com/bible/59/1PE.2.9-10.ESV"
+      },
+      "imposition_pairs": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "side2_rotation": 180,
+      "pixel_deltas": [
+        0.0,
+        0.0,
+        0.4858635373341256,
+        0.7072275037961312
+      ]
+    },
+    "ru": {
+      "story_words": 461,
+      "story_full_extraction": "PASS",
+      "exact_scripture_9_and_10": "PASS",
+      "puzzle_paths": "PASS",
+      "unique_occurrences": "PASS (original engine)",
+      "grid_size": 12,
+      "qr": {
+        "150": "https://www.bible.com/bible/400/1PE.2.9-10.RST",
+        "300": "https://www.bible.com/bible/400/1PE.2.9-10.RST"
+      },
+      "imposition_pairs": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "side2_rotation": 180,
+      "pixel_deltas": [
+        0.0,
+        0.0,
+        0.4912606456724104,
+        0.6772256882551
+      ]
+    }
+  },
+  "layout": [
+    {
+      "language": "en",
+      "page": 1,
+      "bottom": 461.80499999999995,
+      "story_font_pt": 11
+    },
+    {
+      "language": "en",
+      "page": 2,
+      "bottom": 564.3750000000001,
+      "story_font_pt": 11
+    },
+    {
+      "language": "en",
+      "page": 3,
+      "bottom": 563.0449999999998,
+      "story_font_pt": 11
+    },
+    {
+      "language": "en",
+      "page": 4,
+      "bottom": 543.63,
+      "story_font_pt": 11
+    },
+    {
+      "language": "ru",
+      "page": 1,
+      "bottom": 507.3949999999999,
+      "story_font_pt": 11
+    },
+    {
+      "language": "ru",
+      "page": 2,
+      "bottom": 564.3750000000001,
+      "story_font_pt": 11
+    },
+    {
+      "language": "ru",
+      "page": 3,
+      "bottom": 579.9599999999999,
+      "story_font_pt": 11
+    },
+    {
+      "language": "ru",
+      "page": 4,
+      "bottom": 582.99,
+      "story_font_pt": 11
+    }
+  ],
+  "all_pages_rendered": true,
+  "text_bounds": "PASS",
+  "pdf_count": 5
+}

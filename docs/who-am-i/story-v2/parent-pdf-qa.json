@@ -1,0 +1,107 @@
+[
+  {
+    "file": "/home/helper/outputs/jd-who-am-i-story-v2/delivery/Who-Am-I-BILINGUAL-ANSWER-KEY.pdf",
+    "pages": 2,
+    "bounds": "PASS",
+    "qr": [],
+    "fonts": {
+      "20.0": 37,
+      "11.0": 940,
+      "10.0": 934,
+      "9.0": 91,
+      "8.0": 316
+    }
+  },
+  {
+    "file": "/home/helper/outputs/jd-who-am-i-story-v2/delivery/Who-Am-I-EN-LETTER-LONG-EDGE.pdf",
+    "pages": 2,
+    "bounds": "PASS",
+    "qr": [
+      {
+        "page": 1,
+        "url": "https://www.bible.com/bible/59/1PE.2.9-10.ESV"
+      }
+    ],
+    "fonts": {
+      "8.0": 144,
+      "18.0": 46,
+      "11.0": 2909,
+      "10.5": 875,
+      "24.0": 9,
+      "7.4": 16,
+      "14.0": 19,
+      "8.5": 35,
+      "6.5": 30,
+      "10.0": 69
+    }
+  },
+  {
+    "file": "/home/helper/outputs/jd-who-am-i-story-v2/delivery/Who-Am-I-EN-READING-ORDER.pdf",
+    "pages": 4,
+    "bounds": "PASS",
+    "qr": [
+      {
+        "page": 1,
+        "url": "https://www.bible.com/bible/59/1PE.2.9-10.ESV"
+      }
+    ],
+    "fonts": {
+      "8.0": 144,
+      "24.0": 9,
+      "7.4": 16,
+      "14.0": 19,
+      "11.0": 2909,
+      "8.5": 35,
+      "18.0": 46,
+      "10.5": 875,
+      "6.5": 30,
+      "10.0": 69
+    }
+  },
+  {
+    "file": "/home/helper/outputs/jd-who-am-i-story-v2/delivery/Who-Am-I-RU-LETTER-LONG-EDGE.pdf",
+    "pages": 2,
+    "bounds": "PASS",
+    "qr": [
+      {
+        "page": 1,
+        "url": "https://www.bible.com/bible/400/1PE.2.9-10.RST"
+      }
+    ],
+    "fonts": {
+      "8.0": 128,
+      "18.0": 54,
+      "11.0": 2853,
+      "10.5": 871,
+      "24.0": 6,
+      "7.4": 14,
+      "14.0": 22,
+      "8.5": 51,
+      "6.5": 30,
+      "10.0": 75
+    }
+  },
+  {
+    "file": "/home/helper/outputs/jd-who-am-i-story-v2/delivery/Who-Am-I-RU-READING-ORDER.pdf",
+    "pages": 4,
+    "bounds": "PASS",
+    "qr": [
+      {
+        "page": 1,
+        "url": "https://www.bible.com/bible/400/1PE.2.9-10.RST"
+      }
+    ],
+    "fonts": {
+      "8.0": 128,
+      "24.0": 6,
+      "7.4": 14,
+      "14.0": 22,
+      "11.0": 2853,
+      "8.5": 51,
+      "18.0": 54,
+      "10.5": 871,
+      "6.5": 30,
+      "10.0": 75
+    }
+  }
+]
