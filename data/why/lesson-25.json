@@ -16,68 +16,173 @@
         "en": "History at the library table",
         "ru": "История за библиотечным столом"
       },
-      "paragraphs": {
-        "en": [
-          "At the library, the explorers prepare a small history display. Michael has drawn an imaginary ancient city, but Joseph wants a real source beside the artwork. You help open the Israel Museum's record for an inscription naming Pontius Pilate. Rosie labels Michael's picture as an illustration, not an excavation photograph.",
-          "“Does this stone prove everything we believe about Jesus?” Gracie asks.",
-          "Before anyone writes a caption, they decide to read the museum record carefully. They need to find out what this particular object can actually tell them."
-        ],
-        "ru": [
-          "В библиотеке исследователи готовят небольшую историческую выставку. Майкл нарисовал вымышленный древний город, а Джозеф хочет добавить настоящий источник. Ты помогаешь открыть запись Израильского музея о надписи с именем Понтия Пилата. Рози подписывает рисунок Майкла: иллюстрация, не фотография раскопок.",
-          "— Этот камень доказывает всё, во что мы верим об Иисусе? — спрашивает Грейси.",
-          "Ребята решают не спешить с подписью. Сначала они прочитают музейное описание и разберутся, что именно можно узнать об этом предмете."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the library, the team is building a small history display. Michael has drawn a pretend ancient city — but Joseph wants something real next to the artwork, too.",
+            "ru": "В библиотеке ребята готовят небольшую историческую выставку. Майкл нарисовал вымышленный древний город — но Джозеф хочет поставить рядом что-то настоящее."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help open the Israel Museum's page for a real stone with Pontius Pilate's name carved on it.",
+            "ru": "Ты помогаешь открыть страницу Израильского музея о настоящем камне с именем Понтия Пилата."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Let's call this what it is: Michael's drawing. Not a real photo of something dug up from the ground.",
+            "ru": "Назовём это тем, что это есть: рисунок Майкла. А не настоящее фото находки из земли."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Does this stone prove everything we believe about Jesus?",
+            "ru": "Этот камень доказывает всё, во что мы верим об Иисусе?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Nobody answers right away. First, they read the museum's own words, slowly. Then they'll write a caption.",
+            "ru": "Никто не отвечает сразу. Сначала они медленно читают слова музея. Потом напишут подпись."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Read the object record",
         "ru": "Прочти запись о предмете"
       },
-      "paragraphs": {
-        "en": [
-          "The museum dates the inscription to Pilate's time, 26–36 CE. It was found reused in the theater at Caesarea. Its reconstructed text names Pilate and identifies his office as prefect of Judea. Joseph records those details instead of copying an exciting headline from somewhere else.",
-          "Michael looks again at his first caption.",
-          "“But it doesn’t name Jesus,” he says. The inscription gives them physical evidence for a ruler mentioned in the Gospels; it is not a carved account of Jesus’ life. He crosses out his claim that the stone proves the resurrection, ready to write something the evidence really supports."
-        ],
-        "ru": [
-          "Музей датирует надпись временем Пилата, 26–36 годами нашей эры. Камень с надписью нашли в театре Кесарии, где его использовали повторно. В восстановленном тексте названы Пилат и его должность префекта Иудеи. Джозеф записывает эти сведения, а не яркий чужой заголовок.",
-          "Майкл снова смотрит на свою подпись.",
-          "«Но здесь же не назван Иисус», — замечает он. Камень свидетельствует о правителе, упомянутом в Евангелиях, а не рассказывает о жизни Иисуса. Майкл вычёркивает утверждение, будто надпись доказывает воскресение: теперь он хочет написать то, что она действительно подтверждает."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The museum says this stone was carved during Pilate's years in charge, long ago. It was found reused as part of a theater floor.",
+            "ru": "Музей пишет, что этот камень сделали во времена правления Пилата, много лет назад. Его нашли повторно использованным — частью пола театра."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The carved words name Pilate and his government title. Joseph writes down exactly that, not an exciting headline he saw somewhere else.",
+            "ru": "На камне вырезаны имя Пилата и его должность. Джозеф записывает именно это — а не яркий заголовок, увиденный где-то ещё."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "But it doesn't name Jesus.",
+            "ru": "Но здесь не назван Иисус."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He's right. The stone is real evidence for a ruler the Gospels also name. It isn't a carved account of Jesus's life.",
+            "ru": "Он прав. Камень — настоящее свидетельство о правителе, которого называют и Евангелия. Но это не рассказ о жизни Иисуса, вырезанный в камне."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I'm crossing out my line about the stone proving Jesus rose from the dead. I want to write only what the evidence really shows.",
+            "ru": "Я вычёркиваю строку о том, что камень доказывает воскресение Иисуса. Я хочу написать только то, что подтверждают свидетельства."
+          }
+        }
+      ]
     },
     {
       "title": {
-        "en": "Three different dates",
-        "ru": "Три разные даты"
+        "en": "Two kinds of evidence",
+        "ru": "Два вида свидетельств"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens Luke 3, where the account names rulers, including Pilate. John 1 presents Jesus as the Word who became flesh, not a character who only pretended to enter human life. These are Christian written sources to examine, while the stone is a different kind of evidence.",
-          "For evidence about Jesus himself, their teacher opens Galatians 1:18–19. Paul reports visiting Cephas, also called Peter, and meeting James, the Lord's brother. This gives them a concrete reason to take Jesus' earthly life seriously: Paul describes contact with people personally connected to him, not just a distant place name. You keep the date of a letter separate from the date of its surviving copies."
-        ],
-        "ru": [
-          "Рози открывает Луки 3, где названы правители, включая Пилата. Иоанна 1 представляет Иисуса как Слово, ставшее плотью, а не персонажа, лишь притворившегося человеком. Это христианские письменные источники для изучения; камень — свидетельство другого рода.",
-          "Чтобы узнать о самом Иисусе, учитель открывает Галатам 1:18–19. Павел пишет, что посещал Кифу, то есть Петра, и встретил Иакова, брата Господня. Это конкретное основание говорить о земной жизни Иисуса: Павел сообщает о встречах с близкими Ему людьми, а не просто называет далёкое место. Ты отдельно отмечаешь время написания письма и время сохранившихся копий."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens Luke chapter 3, where real rulers are named, including Pilate.",
+            "ru": "Рози открывает Луки 3, где называются настоящие правители, включая Пилата."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Here's something interesting about Jesus himself. Paul wrote a letter. He said he personally met Peter, and he met James — Jesus's own brother.",
+            "ru": "Вот что интересно об Иисусе. Павел написал письмо. В нём он пишет, что лично встречался с Петром и с Иаковом, братом Иисуса."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Paul wrote that only a few years after Jesus died. That's not centuries later, the way old legends grow.",
+            "ru": "Павел написал это всего через несколько лет после смерти Иисуса. Это не века спустя — а ведь именно так растут легенды."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "So that's a real reason to think Jesus truly lived, not just a made-up story.",
+            "ru": "Значит, есть настоящая причина думать, что Иисус действительно жил, а не просто придуманная история."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You keep two dates apart: when the letter was written, and when its oldest copy was made. Those are two different questions.",
+            "ru": "Ты различаешь две даты: когда письмо написали и когда сделали его самую старую копию. Это два разных вопроса."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A precise reason",
         "ru": "Точное основание"
       },
-      "paragraphs": {
-        "en": [
-          "The finished display connects the Gospel accounts to a real historical setting without asking one stone to answer every question. Joseph leaves unknown dates blank rather than inventing them. The team can explain that Jesus belongs to human history while keeping questions about his identity and resurrection distinct.",
-          "Gracie reads the new caption aloud and checks the source link. Michael's city drawing stays, clearly labeled. Their visitors receive something better than a triumphant slogan: a reason they can inspect, and an honest statement of its limits."
-        ],
-        "ru": [
-          "Готовая выставка связывает евангельские рассказы с реальной исторической обстановкой, не требуя от одного камня ответа на всё. Джозеф оставляет неизвестные даты пустыми, а не придумывает их. Команда объясняет историчность земной жизни Иисуса, отдельно рассматривая вопросы о Его личности и воскресении.",
-          "Грейси читает новую подпись и проверяет ссылку. Рисунок города остаётся с ясным пояснением. Посетители получают не победный лозунг, а основание, которое можно проверить, и честное описание его границ."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The finished display connects the Gospel stories to a real place and time. It doesn't ask one stone to answer everything.",
+            "ru": "Готовая выставка связывает евангельские истории с настоящим местом и временем. Она не требует от одного камня ответа на всё."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph leaves blank spaces where a date is still unknown, instead of making one up.",
+            "ru": "Джозеф оставляет пустые места там, где дата всё ещё неизвестна, вместо того чтобы её придумывать."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "So we can say Jesus really lived in history. We can still ask separate questions about who he was.",
+            "ru": "Значит, можно сказать, что Иисус действительно жил в истории, и отдельно спрашивать, кем Он был."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie reads the new caption out loud and checks the link. Visitors get something better than a bold slogan: a reason they can check for themselves, plus an honest note about what it can't prove alone.",
+            "ru": "Грейси читает новую подпись вслух и проверяет ссылку. Посетители получают не громкий лозунг, а довод, который можно проверить, и честную оговорку о том, чего он один не доказывает."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -92,6 +197,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/JHN.1.14.ESV",
       "ru": "https://www.bible.com/bible/167/JHN.1.14.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Jesus is just a legend, like Hercules or Robin Hood. He never actually existed.",
+      "ru": "Иисус — просто легенда, как Геркулес или Робин Гуд. Его никогда не существовало на самом деле."
+    },
+    "response": {
+      "en": "Even historians who don't believe Jesus was God agree that he was a real, historical person. Paul's own letter says he personally met Peter, and met James, Jesus's own brother, just a few years after Jesus died, not centuries later like old legends grow. Almost every historian who studies this time period agrees that Jesus of Nazareth really lived and really was crucified under Pontius Pilate, even ones who reject every miracle story in the Gospels. So here's a question back: if even the experts most skeptical about miracles still agree a man named Jesus really lived and really died on a cross, what is someone actually arguing with when they call him \"just a legend\" — the history, or something else? I know which way the evidence actually points.",
+      "ru": "Даже историки, которые не верят, что Иисус был Богом, согласны: Он был настоящим, реальным человеком. В своём письме Павел сам пишет, что встречался с Петром и с Иаковом, родным братом Иисуса, — всего через несколько лет после смерти Иисуса, а не через века, как растут легенды. Почти все историки, изучающие эту эпоху, согласны: Иисус из Назарета действительно жил и был казнён при Понтии Пилате — даже те, кто отвергает все рассказы о чудесах в Евангелиях. Вот вопрос в ответ: если даже самые скептичные к чудесам эксперты согласны, что человек по имени Иисус действительно жил и умер на кресте, с чем на самом деле спорит тот, кто называет Его «просто легендой» — с историей или с чем-то другим? Я знаю, куда на самом деле указывают свидетельства."
     }
   },
   "activity": {
@@ -150,8 +265,8 @@
     "ru": "Боже, помоги искать истину и честно говорить об Иисусе и приводимых свидетельствах."
   },
   "adultNote": {
-    "en": "Israel Museum item 395572 dates the inscription 26–36 CE. The catalog description uses procurator, while the reconstructed inscription identifies prefect; retain that distinction. This artifact corroborates Pilate and context, not Jesus directly or the resurrection. Event, composition, and surviving-copy dates are different categories; no precise Gospel dates are assigned here.",
-    "ru": "Израильский музей, запись 395572: дата 26–36 годы н. э. Описание использует слово «прокуратор», а восстановленная надпись указывает «префект»; сохраняйте это различие. Предмет подтверждает Пилата и обстановку, не непосредственно Иисуса или воскресение. Даты события, написания и сохранившейся копии — разные категории; точные даты Евангелий здесь не назначаются."
+    "en": "Israel Museum item 395572 dates the inscription 26–36 CE. The catalog description uses procurator, while the reconstructed inscription identifies prefect; retain that distinction. This artifact corroborates Pilate and context, not Jesus directly or the resurrection. Event, composition, and surviving-copy dates are different categories; no precise Gospel dates are assigned here. The 'comeback' response reflects the near-universal historical consensus (including skeptical scholars such as Bart Ehrman) that Jesus existed, and the kind of early, personal-contact evidence (Galatians 1:18-19) behind Gary Habermas's 'minimal facts' approach — distinct from any claim about the resurrection or Jesus's divinity, which the lesson deliberately keeps separate.",
+    "ru": "Израильский музей, запись 395572: дата 26–36 годы н. э. Описание использует слово «прокуратор», а восстановленная надпись указывает «префект»; сохраняйте это различие. Предмет подтверждает Пилата и обстановку, не непосредственно Иисуса или воскресение. Даты события, написания и сохранившейся копии — разные категории; точные даты Евангелий здесь не назначаются. Ответ в блоке «если кто-то скажет» отражает почти единодушный исторический консенсус (включая скептических учёных, например Барта Эрмана) о существовании Иисуса, а также тип раннего, личного свидетельства (Галатам 1:18-19), на котором строится подход «минимальных фактов» Гэри Хабермаса — отдельно от утверждений о воскресении или Божестве Иисуса, которые урок сознательно оставляет в стороне."
   },
   "sources": [
     {

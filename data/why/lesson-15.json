@@ -16,64 +16,194 @@
         "en": "A startling disappearance",
         "ru": "Неожиданное исчезновение"
       },
-      "paragraphs": {
-        "en": [
-          "At the community science afternoon, a volunteer turns a cup upside down, but no water falls out. Michael almost writes MIRACLE on the team's display. Joseph holds his blue notebook beneath the cup, then wisely moves it away. You ask whether the volunteer will explain what happened.",
-          "She shows an absorbent material hidden inside. Gracie laughs with relief. The demonstration was surprising, but surprise alone did not tell them its cause. They erase the headline before visitors arrive."
-        ],
-        "ru": [
-          "На научном празднике волонтёр переворачивает стакан, но вода не выливается. Майкл уже хочет написать на стенде: ЧУДО. Джозеф подставляет синий блокнот, потом разумно отодвигает его. Ты спрашиваешь, объяснит ли волонтёр опыт.",
-          "Она показывает спрятанный впитывающий материал. Грейси облегчённо смеётся. Опыт удивил ребят, но само удивление ничего не объясняло. Они стирают заголовок до прихода гостей."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the science afternoon, a volunteer turns a cup upside down. No water falls out.",
+            "ru": "На научном празднике волонтёр переворачивает стакан. Вода не выливается."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "It's a MIRACLE! I'm writing that on our display.",
+            "ru": "Это ЧУДО! Я напишу это на нашем стенде."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph holds his notebook under the cup, then wisely moves it away, just in case.",
+            "ru": "Джозеф подставляет блокнот под стакан, потом разумно отодвигает его — на всякий случай."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You ask the volunteer if she'll explain what happened. She shows you something hidden inside: a material that soaks up water like a sponge.",
+            "ru": "Ты спрашиваешь волонтёра, объяснит ли она, что произошло. Она показывает кое-что спрятанное внутри: материал, который впитывает воду, как губка."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Phew! That's a relief.",
+            "ru": "Ух! Какое облегчение."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The trick surprised them. But being surprised didn't actually tell them the cause. They erase the word MIRACLE before any visitors arrive.",
+            "ru": "Фокус их удивил. Но само удивление ничего не объясняло. Они стирают слово ЧУДО, пока не пришли гости."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "An unanswered question",
         "ru": "Вопрос без ответа"
       },
-      "paragraphs": {
-        "en": [
-          "Outside, someone tells the team about an unusual recovery but has no details to share. ‘Maybe all miracle stories are tricks too,’ Michael says. Rosie reminds him of the cup. ‘We found out how that demonstration worked. We haven't found out what happened here.’ Michael pauses before writing down a conclusion.",
-          "They make room for an honest answer: they do not know what happened in this report. Investigating means asking about witnesses, records, and other explanations, not automatically believing a dramatic story or automatically mocking the person telling it."
-        ],
-        "ru": [
-          "На улице кто-то рассказывает ребятам о необычном выздоровлении, но подробностей не знает. «Может, все рассказы о чудесах — тоже фокусы?» — говорит Майкл. Рози напоминает ему о стакане. «Мы узнали, как устроен тот опыт. А что случилось здесь, ещё не выяснили». Майкл останавливается, прежде чем записать вывод.",
-          "Ребята выбирают честный ответ: что случилось в этом случае, они пока не знают. Нужно спрашивать о свидетелях, записях и других объяснениях, а не сразу верить яркому рассказу или высмеивать рассказчика."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Outside, someone tells the team about a strange recovery from being very sick. But they don't have many details.",
+            "ru": "На улице кто-то рассказывает ребятам о странном выздоровлении после тяжёлой болезни. Но подробностей немного."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Maybe every miracle story is just a trick too.",
+            "ru": "Может, все рассказы о чудесах — тоже фокусы?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "We found out exactly how that cup trick worked. We haven't found out anything yet about this story.",
+            "ru": "Мы точно узнали, как устроен тот фокус со стаканом. А про эту историю мы пока вообще ничего не узнали."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael stops before writing down an answer he doesn't actually have.",
+            "ru": "Майкл останавливается, прежде чем записать ответ, которого у него на самом деле нет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They choose an honest answer instead: they don't know yet what happened here. Finding out means asking about witnesses and records. It doesn't mean believing every exciting story. And it doesn't mean laughing at the person telling it, either.",
+            "ru": "Вместо этого они выбирают честный ответ: пока неизвестно, что здесь произошло. Чтобы узнать, нужно спрашивать о свидетелях и записях. Это не значит сразу верить каждому яркому рассказу. И это не значит смеяться над рассказчиком."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Read the sign",
         "ru": "О чём говорит знамение"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens her purple Bible to the account of Jesus calming the storm in Mark. The disciples' question concerns who Jesus is, not how to repeat a weather experiment. Christians believe the Creator can act within his creation; nature's regular patterns are not a cage around God.",
-          "In John, the team reads why signs were recorded: to point readers toward faith in Jesus. The Bible's miracle accounts make particular claims. They are not permission to label every unexplained event divine."
-        ],
-        "ru": [
-          "Рози открывает фиолетовую Библию и рассказ Марка о том, как Иисус усмирил бурю. Ученики спрашивают, Кто Он, а не как повторить опыт с погодой. Христиане верят: Творец может действовать в Своём мире; обычный порядок природы не ограничивает Бога.",
-          "У Иоанна ребята читают, зачем записаны знамения: чтобы привести читателей к вере в Иисуса. Библейские рассказы говорят об определённых событиях. Они не позволяют объявлять чудом всё необъяснённое."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens her Bible to the story of Jesus calming a storm, in the book of Mark.",
+            "ru": "Рози открывает Библию на рассказе о том, как Иисус усмирил бурю, в книге Марка."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "The disciples' question wasn't how to repeat a weather trick. Their question was who Jesus even is.",
+            "ru": "Вопрос учеников был не о том, как повторить фокус с погодой. Их вопрос был: Кто же Иисус такой?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Christians believe God made nature's patterns. God can act within his own world, too. Those patterns aren't a cage that locks God out.",
+            "ru": "Христиане верят: Бог создал порядок природы. Бог может действовать и в Своём мире. Этот порядок — не клетка, которая не пускает Бога внутрь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "In John, the team reads why these signs were written down: to help readers trust in Jesus.",
+            "ru": "У Иоанна ребята читают, зачем записали эти знамения: чтобы помочь читателям довериться Иисусу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The Bible's miracle stories are about specific events. They're not permission to call every mystery a miracle.",
+            "ru": "Библейские рассказы о чудесах говорят о конкретных событиях. Они не дают права называть чудом любую загадку."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A better display",
         "ru": "Стенд стал точнее"
       },
-      "paragraphs": {
-        "en": [
-          "Back at the display, you help Gracie make three cards: an explained demonstration, a report that needs investigation, and a biblical sign pointing to Jesus. ‘The cup goes here,’ Michael says, placing it beside the first card. He leaves the recovery report with the questions they still need to ask, rather than filling in an answer they do not have.",
-          "When visitors arrive, Joseph demonstrates the absorbent material and names its ordinary cause. Rosie invites anyone interested to read the storm account together. Their display now welcomes both careful investigation and serious attention to what Scripture says about Jesus."
-        ],
-        "ru": [
-          "Вернувшись к стенду, ты помогаешь Грейси сделать три карточки: объяснённый опыт, рассказ для проверки и библейское знамение, указывающее на Иисуса. «Стакан — сюда», — говорит Майкл и ставит его у первой карточки. Рассказ о выздоровлении он оставляет рядом с вопросами, которые ещё нужно задать, а не дописывает неизвестный ответ.",
-          "Джозеф показывает гостям впитывающий материал и объясняет обычную причину. Рози приглашает желающих вместе прочитать рассказ о буре. Теперь стенд помогает и внимательно исследовать, и серьёзно слушать, что Писание говорит об Иисусе."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Back at the display, you help Gracie make three cards. One is an explained trick. One is a story that still needs checking. One is a Bible sign pointing to Jesus.",
+            "ru": "Вернувшись к стенду, ты помогаешь Грейси сделать три карточки. Первая — объяснённый фокус. Вторая — рассказ, который ещё нужно проверить. Третья — библейское знамение, указывающее на Иисуса."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "The cup goes right here, next to the first card.",
+            "ru": "Стакан кладём сюда, рядом с первой карточкой."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He leaves the recovery story next to the questions they still need to ask. He doesn't make up an answer he doesn't have.",
+            "ru": "Рассказ о выздоровлении он оставляет рядом с вопросами, которые ещё нужно задать. Он не придумывает ответ, которого у него нет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "When visitors arrive, Joseph shows them the water-soaking material. He explains exactly how the trick works.",
+            "ru": "Когда приходят гости, Джозеф показывает им впитывающий материал. Он объясняет, как именно устроен фокус."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Want to read the storm story with me?",
+            "ru": "Хочешь прочитать со мной рассказ о буре?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their display now welcomes careful checking, and serious attention to what Scripture says about Jesus.",
+            "ru": "Теперь их стенд помогает и внимательно всё проверять, и серьёзно слушать, что Писание говорит об Иисусе."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +218,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/JHN.20.31.ESV",
       "ru": "https://www.bible.com/bible/167/JHN.20.31.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Miracles can't really happen. They break the laws of nature, and no amount of evidence today could ever be enough to prove one.",
+      "ru": "Чудеса не могут происходить на самом деле. Они нарушают законы природы, и никаких доказательств сегодня не хватит, чтобы это подтвердить."
+    },
+    "response": {
+      "en": "That argument decides the answer before it even looks at the evidence. If you assume nothing could ever break the normal pattern, then no witness, no doctor's report, no photo could ever count — you've ruled out the answer before investigating, not after. And if God set up nature's patterns in the first place, God stepping into the story isn't breaking a rule. It's more like an author stepping into their own book. So here's a question back: if someone decides ahead of time that no evidence could ever count, are they really testing the claim, or just protecting the answer they already picked? I'd rather look at the evidence first and see where it leads.",
+      "ru": "В этом рассуждении ответ выбирают раньше, чем смотрят на доказательства. Если заранее решить, что обычный порядок нельзя нарушить, тогда ни один свидетель, ни одна справка врача, ни одна фотография ничего не докажут — ответ исключён ещё до проверки, а не после неё. А если Бог Сам создал порядок природы, то, входя в историю, Он не нарушает правило. Это скорее как автор, который входит в собственную книгу. Вот вопрос в ответ: если кто-то заранее решил, что никакое доказательство не считается, он правда проверяет утверждение — или просто защищает ответ, который выбрал заранее? Я лучше сначала посмотрю на доказательства и увижу, куда они ведут."
     }
   },
   "activity": {
@@ -146,8 +286,8 @@
     "ru": "Господь Иисус, помоги доверять Тебе и честно говорить о том, что я знаю."
   },
   "adultNote": {
-    "en": "All modern events here are fictional teaching scenarios. Read Mark 4:35–41 alongside John 20:30–31. Neither unexplained recovery nor a classroom trick settles a miracle claim; do not discourage medical care or promise healing.",
-    "ru": "Современные события вымышлены для обучения. Прочитайте Марка 4:35–41 вместе с Иоанна 20:30–31. Необъяснённое выздоровление и учебный фокус сами по себе не решают вопрос о чуде; не отказывайтесь от медицинской помощи и не обещайте исцеления."
+    "en": "All modern events here are fictional teaching scenarios. Read Mark 4:35–41 alongside John 20:30–31. Neither unexplained recovery nor a classroom trick settles a miracle claim; do not discourage medical care or promise healing. The 'comeback' response names the circularity David Hume's argument against miracles has long been charged with (per Craig Keener's critique): ruling out testimony in advance because experience is assumed uniform presupposes the conclusion. It does not claim any particular modern report is verified.",
+    "ru": "Современные события вымышлены для обучения. Прочитайте Марка 4:35–41 вместе с Иоанна 20:30–31. Необъяснённое выздоровление и учебный фокус сами по себе не решают вопрос о чуде; не отказывайтесь от медицинской помощи и не обещайте исцеления. Ответ в блоке «если кто-то скажет» указывает на логический круг, в котором часто обвиняют довод Дэвида Юма против чудес (по критике Крейга Кинера): отказ от свидетельств заранее, потому что опыт заранее считают всегда одинаковым, уже предполагает тот самый вывод. Это не утверждение, что какой-то конкретный современный случай подтверждён."
   },
   "sources": [
     {

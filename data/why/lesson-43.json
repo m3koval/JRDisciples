@@ -16,64 +16,194 @@
         "en": "Not the same problem",
         "ru": "Не одна и та же проблема"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph brings three invented message cards to the explorers’ discussion table. One prefers quiet hymns to drums. Another says Christians should worship their group leader instead of Jesus. The third tells a child to hide a frightening incident so the church will not look bad.",
-          "Michael reaches for a label. “These are all disagreements, aren’t they?” Rosie stops him. “But choosing a song isn’t the same as telling a child to hide something frightening.” Michael looks again at the cards. Before they decide what to do, they need to understand what each card is asking them to do."
-        ],
-        "ru": [
-          "Джозеф приносит три вымышленные карточки. На первой человек предпочитает тихие гимны барабанам. На второй предлагают поклоняться руководителю вместо Иисуса. На третьей велят ребёнку скрыть пугающий случай ради доброго имени церкви.",
-          "Майкл берёт карточку для подписи. «Это ведь всё споры?» Рози останавливает его: «Но выбирать песню — не то же самое, что велеть ребёнку скрывать что-то страшное». Майкл снова смотрит на карточки. Прежде чем решать, как поступить, нужно разобраться, что именно предлагает каждая карточка."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph brings three pretend message cards to the table.",
+            "ru": "Джозеф приносит на стол три вымышленные карточки."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "One says a person prefers quiet hymns to drums. Another says Christians should worship their group leader instead of Jesus. The third tells a child to hide a scary thing that happened. It says to hide it so the church won't look bad.",
+            "ru": "На одной — человек предпочитает тихие гимны барабанам. На другой предлагают поклоняться своему лидеру вместо Иисуса. На третьей велят ребёнку скрыть страшный случай. В ней говорят скрыть его, чтобы церковь не выглядела плохо."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "These are all just disagreements, right?",
+            "ru": "Это ведь всё просто споры?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Wait. Choosing a song isn't the same as telling a child to hide something scary.",
+            "ru": "Подожди. Выбрать песню — не то же самое, что велеть ребёнку скрывать что-то страшное."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael looks at the cards again. Before deciding what to do, they need to understand what each card is really asking.",
+            "ru": "Майкл снова смотрит на карточки. Прежде чем решать, что делать, нужно понять, о чём на самом деле просит каждая карточка."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Check before choosing sides",
         "ru": "Проверь, прежде чем выбирать сторону"
       },
-      "paragraphs": {
-        "en": [
-          "You open Acts 17:11 with Rosie. The Bereans examined Scripture instead of accepting a message merely because its speaker sounded impressive. Joseph checks the second card against the Bible’s teaching about Jesus and crosses out the invitation to worship a human leader.",
-          "They also read Paul’s warning about rival groups in 1 Corinthians 1. Christians can misunderstand passages and become proud or selfish. Jesus calls his people toward truth and love; being in a church does not make every choice faithful."
-        ],
-        "ru": [
-          "Ты открываешь с Рози Деяния 17:11. Верийцы проверяли слова по Писанию, а не верили только впечатляющему голосу. Джозеф сверяет вторую карточку с библейским учением об Иисусе и зачёркивает предложение поклоняться человеку.",
-          "Они читают предупреждение Павла о разделениях в 1 Коринфянам 1. Христиане могут неверно понимать текст, гордиться и поступать эгоистично. Иисус зовёт к истине и любви; принадлежность к церкви не делает любой поступок верным."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You open Acts 17:11 with Rosie.",
+            "ru": "Ты открываешь с Рози Деяния 17:11."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "The Bereans checked everything against Scripture. They didn't just believe someone because they sounded impressive.",
+            "ru": "Верийцы всё проверяли по Писанию. Они не верили кому-то просто потому, что он говорил впечатляюще."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph checks the second card against what the Bible teaches about Jesus. He crosses out the idea of worshiping a human leader.",
+            "ru": "Джозеф сверяет вторую карточку с библейским учением об Иисусе. Он вычёркивает идею поклоняться человеку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They also read Paul's warning about rival groups, in 1 Corinthians 1. Even Christians can misread a passage and become proud or selfish.",
+            "ru": "Они читают и предупреждение Павла о разделениях, в 1 Коринфянам 1. Даже христиане могут неверно понять текст, загордиться или поступить эгоистично."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Jesus calls his people toward truth and love. Being part of a church doesn't make every choice faithful.",
+            "ru": "Иисус зовёт Своих людей к истине и любви. Принадлежность к церкви не делает любой поступок верным."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A safe route for telling",
         "ru": "Безопасный путь к помощи"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie moves the third card away from the debate pile. A child who feels threatened needs protection, not a competition about who can defend the church’s reputation. With their trusted leader, the team identifies safe adults outside the person causing harm.",
-          "They practice telling clearly what happened without investigating alone or confronting the frightening person. If one adult dismisses it, the child can tell another. Where immediate danger exists, adults should seek emergency help. Protecting people honors truth rather than betraying it."
-        ],
-        "ru": [
-          "Грейси убирает третью карточку из стопки споров. Ребёнку, которому угрожают, нужна защита, а не соревнование в защите репутации церкви. С надёжным наставником команда называет безопасных взрослых, не зависящих от обидчика.",
-          "Они учатся ясно рассказывать о случившемся, не расследуя всё самостоятельно и не встречаясь с пугающим человеком. Если один взрослый отмахнётся, можно обратиться к другому. При немедленной опасности взрослым следует вызвать экстренную помощь. Защищать людей — значит уважать истину."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie moves the third card away from the others.",
+            "ru": "Грейси убирает третью карточку от остальных."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "A child who feels threatened needs protection. Not a contest over who can defend the church's reputation.",
+            "ru": "Ребёнку, которому угрожают, нужна защита. А не спор о том, кто лучше защитит репутацию церкви."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "With a trusted leader, the team names safe adults. These adults aren't connected to whoever is causing harm.",
+            "ru": "С надёжным наставником команда называет безопасных взрослых. Эти взрослые не связаны с тем, кто причиняет вред."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They practice saying clearly what happened. They don't try to solve it alone. They don't face the person who scared them.",
+            "ru": "Они учатся ясно рассказывать о случившемся. Они не пытаются решить всё сами. Они не встречаются с тем, кто их напугал."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "If one adult brushes it off, the child can tell another. If there's real danger right now, adults should call for help right away.",
+            "ru": "Если один взрослый отмахнётся, можно рассказать другому. Если опасность рядом прямо сейчас, взрослым нужно сразу звонить за помощью."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Protecting people honors the truth. It doesn't betray it.",
+            "ru": "Защищать людей — значит уважать истину. А не предавать её."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Make room without hiding harm",
         "ru": "Уважать, не скрывая вред"
       },
-      "paragraphs": {
-        "en": [
-          "After setting the other two cards apart, Michael returns to the one about music. He practices asking, “What do you like about quieter singing?” This question opens a conversation instead of starting a quarrel. They can listen and look for a thoughtful arrangement without treating a favorite kind of music as the gospel itself.",
-          "Explorer, help label their three response paths: discuss kindly, examine teaching, seek protection. Disagreement can call for patient listening; deception calls for correction; harm calls for safety and accountability. Loving the church includes refusing to excuse what injures its people."
-        ],
-        "ru": [
-          "Отложив две другие карточки, Майкл возвращается к музыке. Он пробует спросить: «А что тебе нравится в тихом пении?» Такой вопрос помогает начать разговор, а не ссору. Можно выслушать друг друга и поискать решение, не превращая любимую музыку в саму благую весть.",
-          "Исследователь, подпиши три пути: обсуждай с добротой, проверяй учение, ищи защиты. Спор требует терпения, ложь — исправления, вред — безопасности и ответственности. Любить церковь означает и не оправдывать то, что ранит людей."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael goes back to the music card.",
+            "ru": "Майкл возвращается к карточке про музыку."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "What do you like about quieter singing?",
+            "ru": "А что тебе нравится в тихом пении?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "That question starts a conversation instead of a fight. They can listen to each other, without treating a favorite kind of music as the whole gospel.",
+            "ru": "Такой вопрос начинает разговор, а не ссору. Можно выслушать друг друга, не превращая любимую музыку в саму благую весть."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, help label their three paths: talk kindly, check the teaching, seek protection.",
+            "ru": "Исследователь, помоги подписать три пути: говорить с добротой, проверять учение, искать защиты."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "A disagreement calls for patient listening. A lie calls for correction. Harm calls for safety.",
+            "ru": "Разногласие требует терпеливого слушания. Ложь требует исправления. Вред требует безопасности."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Loving the church means refusing to excuse anything that hurts its people.",
+            "ru": "Любить церковь — значит не оправдывать то, что ранит её людей."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +218,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/ACT.17.11.ESV",
       "ru": "https://www.bible.com/bible/167/ACT.17.11.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Christians are just hypocrites. They say one thing and do another. Why would I believe any of it?",
+      "ru": "Христиане просто лицемеры — говорят одно, а делают другое. Почему я должен верить во что-то из этого?"
+    },
+    "response": {
+      "en": "That question is borrowing Jesus's own standard to make its point. Saying it's wrong to hurt people, or that leaders should practice what they preach, is itself a very Christian idea. Some of history's biggest fights against injustice, like ending slavery, were led by Christians using Jesus's own words — that's the standard working exactly as it should. And when a Christian acts like a hypocrite, Jesus is harder on that than anyone; just read how he talked to religious leaders who said one thing and did another. So here's a question back: if someone's bad behavior breaks Jesus's own teaching, does that mean the teaching is false, or just that they failed to live up to it? I'd rather trust a standard that names its own failures than one that has no standard at all.",
+      "ru": "Этот вопрос сам пользуется стандартом Иисуса, чтобы что-то доказать. Сказать, что причинять боль людям — плохо, или что лидеры должны жить так, как учат, — это очень христианская мысль. Одни из самых больших побед над несправедливостью в истории, например отмену рабства, совершили христиане, опираясь на собственные слова Иисуса, — этот стандарт работал именно так, как должен. А когда христианин ведёт себя как лицемер, Иисус судит его строже всех; почитай, как Он говорил с религиозными учителями, которые говорили одно, а делали другое. Вот вопрос в ответ: если чьё-то плохое поведение нарушает учение Иисуса, значит ли это, что учение ложно — или просто что человек не смог ему соответствовать? Я лучше буду доверять стандарту, который называет свои же ошибки, чем тому, у которого стандартов вообще нет."
     }
   },
   "activity": {
@@ -178,7 +318,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. These cards are fictional, not allegations. Distinguish secondary disagreement, false teaching, and abuse; the activity focuses specifically on safe reporting. Follow applicable safeguarding and reporting requirements; never demand secrecy, reconciliation, or confrontation from a harmed child.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Карточки вымышлены и никого не обвиняют. Различайте второстепенные разногласия, ложное учение и насилие; задание посвящено безопасному обращению за помощью. Соблюдайте правила защиты детей и сообщения о вреде; не требуйте от пострадавшего ребёнка молчания, примирения или встречи с обидчиком."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. These cards are fictional, not allegations. Distinguish secondary disagreement, false teaching, and abuse; the activity focuses specifically on safe reporting. Follow applicable safeguarding and reporting requirements; never demand secrecy, reconciliation, or confrontation from a harmed child. The 'comeback' response addresses the general hypocrisy objection (in the vein of Tim Keller's 'Reason for God' chapter on Christianity and churches), not the abuse scenario on card three, which the lesson deliberately routes to protection rather than debate.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Карточки вымышлены и никого не обвиняют. Различайте второстепенные разногласия, ложное учение и насилие; задание посвящено безопасному обращению за помощью. Соблюдайте правила защиты детей и сообщения о вреде; не требуйте от пострадавшего ребёнка молчания, примирения или встречи с обидчиком. Ответ в блоке «если кто-то скажет» отвечает на общий упрёк в лицемерии (в духе главы о церкви из книги Тима Келлера «Разум для Бога»), а не на случай насилия с третьей карточки, который урок сознательно направляет к защите, а не к спору."
   }
 }
