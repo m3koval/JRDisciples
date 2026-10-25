@@ -6,7 +6,7 @@ import { useLanguage } from '@/context/LanguageContext'
 export default function AloneWithGodFeature({ compact = false }: { compact?: boolean }) {
   const { language } = useLanguage()
   const ru = language === 'ru'
-  if (compact) return <Link href="/lessons/alone-with-god" style={{ display: 'inline-flex', minHeight: 50, alignItems: 'center', justifyContent: 'center', padding: '13px 22px', margin: '0 0 22px', borderRadius: 15, background: '#f6c969', color: '#163f36', fontFamily: 'var(--font-nunito)', fontWeight: 900, textDecoration: 'none' }}>{ru ? 'Новый урок: Наедине с Богом' : 'New lesson: Alone with God'} →</Link>
+  if (compact) return <Link href="/lessons/who-am-i" style={{ display: 'inline-flex', minHeight: 50, alignItems: 'center', justifyContent: 'center', padding: '13px 22px', margin: '0 0 22px', borderRadius: 15, background: '#f6c969', color: '#163f36', fontFamily: 'var(--font-nunito)', fontWeight: 900, textDecoration: 'none' }}>{ru ? 'Новый урок: Кто я?' : 'New lesson: Who Am I?'} →</Link>
   return <section style={{ padding: '30px 18px', background: '#fffaf0' }} aria-label={ru ? 'Урок недели' : 'Featured lesson'}>
     <Link href="/lessons/alone-with-god" style={{ display: 'flex', alignItems: 'flex-end', position: 'relative', overflow: 'hidden', minHeight: 360, maxWidth: 1100, margin: '0 auto', borderRadius: 28, color: 'white', textDecoration: 'none', background: '#173e3a', boxShadow: '0 15px 45px #173e3a25' }}>
       <Image src="/images/lessons/alone-with-god/hero.png" alt="" fill sizes="(min-width:1100px) 1100px, 100vw" style={{ objectFit: 'cover', objectPosition: '50% 40%' }} />

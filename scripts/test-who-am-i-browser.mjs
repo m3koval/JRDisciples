@@ -12,11 +12,11 @@ const results=[];
 try {
  for(const [device,viewport] of [['phone',{width:390,height:844}],['tablet',{width:820,height:1180}]]) {
   for(const lang of ['en','ru']) {
-   const context=await browser.newContext({viewport,hasTouch:true,baseURL:'http://127.0.0.1:3094'});
+   const context=await browser.newContext({viewport,hasTouch:true,baseURL:process.env.QA_URL || 'http://127.0.0.1:3094'});
    const page=await context.newPage(); const errors=[];
    page.on('pageerror',e=>errors.push(e.message));
    page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
-   await page.goto('http://127.0.0.1:3094/lessons/who-am-i');
+   await page.goto((process.env.QA_URL || 'http://127.0.0.1:3094')+'/lessons/who-am-i');
    await page.getByTestId('start').waitFor();
    if(lang==='ru') {await page.getByRole('button',{name:'EN',exact:true}).click();await page.getByRole('button',{name:'Русский',exact:true}).click();}
    await page.waitForFunction(l=>document.querySelector('article').lang===l,lang);
@@ -30,7 +30,7 @@ try {
     const s=copy[lang].scenes[i];
     assert.equal(await page.locator('article h1').innerText(),s.title);
     await layout();
-    if(i===3) await page.screenshot({path:`${out}/${device}-${lang}-story.png`,fullPage:true});
+    await page.screenshot({path:`${out}/${device}-${lang}-story-${i}.png`,fullPage:true});
     if(i===7) assert.equal(await page.locator('article blockquote').count(),1);
     await page.getByTestId('play').click();
     assert.equal(await page.locator('article blockquote').count(),0);
@@ -64,7 +64,7 @@ try {
      await page.getByTestId('check').click();
     }
     await page.getByTestId('next').waitFor(); await layout();
-    if(i===3) await page.screenshot({path:`${out}/${device}-${lang}-feedback.png`,fullPage:true});
+    await page.screenshot({path:`${out}/${device}-${lang}-feedback.png`,fullPage:true});
     await page.getByTestId('next').focus(); await page.keyboard.press('Enter');
    }
    await page.getByTestId('restart').waitFor();
