@@ -16,64 +16,192 @@
         "en": "Four spaces on the table",
         "ru": "Четыре места на столе"
       },
-      "paragraphs": {
-        "en": [
-          "At last the explorers open their exhibition. Michael wears green, Joseph carries his blue notebook, Rosie brings her purple Bible, and Gracie sets yellow question cards beside the door. They leave four spaces on the main table: conviction, support, limit, and response. They want visitors to see how their belief connects to its reasons and to the way they live, without hiding the questions their display cannot answer.",
-          "“I can’t explain everything at once,” Joseph says as he looks at the four spaces. You help him choose one conviction to begin with: Christians believe that Jesus rose from the dead. “Let’s start with John’s account,” Rosie suggests, opening John 20. They can use the spaces to show what they believe, why, and how they will respond."
-        ],
-        "ru": [
-          "Наконец исследователи открывают выставку. Майкл в зелёном, у Джозефа синий блокнот, у Рози фиолетовая Библия. Грейси кладёт у входа жёлтые карточки вопросов. На главном столе четыре места: убеждение, основание, граница и ответ. Они хотят показать гостям, на чём основана их вера и как она меняет жизнь, не скрывая вопросов, на которые выставка не отвечает.",
-          "«Я не смогу объяснить всё сразу», — говорит Джозеф, глядя на четыре места на столе. Ты помогаешь ему начать с одного убеждения: христиане верят, что Иисус воскрес из мёртвых. «Давайте начнём с рассказа Иоанна», — предлагает Рози и открывает Иоанна 20. Теперь они могут показать, во что верят, на чём это основано и как будут поступать."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At last the team opens their exhibition. Michael wears green. Joseph carries his notebook. Rosie brings her Bible. Gracie sets question cards by the door.",
+            "ru": "Наконец ребята открывают выставку. Майкл в зелёном. У Джозефа блокнот. У Рози Библия. Грейси кладёт у входа карточки вопросов."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They leave four spaces on the main table: belief, support, limit, and response.",
+            "ru": "На главном столе четыре места: убеждение, основание, граница и ответ."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They want visitors to see how their belief connects to its reasons. They want them to see how it connects to the way they live. They won't hide the questions their display can't answer.",
+            "ru": "Они хотят показать гостям, на чём основана их вера. И как эта вера меняет жизнь. Они не скрывают вопросов, на которые выставка не отвечает."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "I can't explain everything at once.",
+            "ru": "Я не смогу объяснить всё сразу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help him choose one belief to start with: Christians believe that Jesus rose from the dead.",
+            "ru": "Ты помогаешь ему начать с одного убеждения: христиане верят, что Иисус воскрес из мёртвых."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Let's start with John's account.",
+            "ru": "Давайте начнём с рассказа Иоанна."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Support that matches the claim",
         "ru": "Основание подходит к утверждению"
       },
-      "paragraphs": {
-        "en": [
-          "They read about the risen Jesus appearing to his disciples and Thomas, and about why John wrote his account. Joseph places the passage under support: this Gospel gives written resurrection testimony and calls readers to faith in Jesus. The children’s drawing helps explain the account but is not another ancient witness.",
-          "Michael adds the limit: our display does not answer every historical question or contain a recording of the event. Naming that limit does not erase the testimony. It keeps their explanation honest enough for another person to examine."
-        ],
-        "ru": [
-          "Они читают о явлении воскресшего Иисуса ученикам и Фоме, а также о цели Евангелия. Джозеф кладёт отрывок на место основания: Евангелие передаёт письменное свидетельство о воскресении и зовёт верить в Иисуса. Детский рисунок поясняет рассказ, но не является ещё одним древним свидетелем.",
-          "Майкл добавляет границу: выставка не отвечает на все исторические вопросы и не содержит записи самого события. Такая граница не отменяет свидетельство. Она делает объяснение честным и открытым для проверки."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read about the risen Jesus appearing to his disciples, and to Thomas. They read why John wrote his account, too.",
+            "ru": "Они читают о явлении воскресшего Иисуса ученикам и Фоме. А также о том, зачем Иоанн написал своё Евангелие."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph places the passage under support. This Gospel gives written testimony about the resurrection. It calls readers to trust Jesus.",
+            "ru": "Джозеф кладёт отрывок на место основания. Евангелие передаёт письменное свидетельство о воскресении. И зовёт верить в Иисуса."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The children's own drawing helps explain the account, but it isn't another ancient witness.",
+            "ru": "Детский рисунок помогает объяснить рассказ, но сам он не является ещё одним древним свидетелем."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Here's the limit, too. Our display doesn't answer every historical question. It doesn't hold a recording of the actual event.",
+            "ru": "А вот и граница. Наша выставка не отвечает на все исторические вопросы. У нас нет записи самого события."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Naming that limit doesn't erase the testimony. It keeps their explanation honest enough for anyone to check.",
+            "ru": "Такая граница не отменяет свидетельство. Она делает объяснение честным и открытым для проверки."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A visitor asks why it matters",
         "ru": "Гость спрашивает о смысле"
       },
-      "paragraphs": {
-        "en": [
-          "A visitor asks what this belief changes on Monday. Gracie places their response card beside the Bible: because Jesus lives, they can trust him, seek forgiveness, and bring hope and practical care to hurting people. She remembers the chair their friends carried when she was grieving.",
-          "The visitor then asks a question Joseph cannot answer. “I don’t know yet,” Joseph says, writing it down. “Have I understood your question correctly?” After checking, he offers to explore it with a trusted adult. Their display has room for honest limits, and so does their conversation; he does not need to invent an answer to make the exhibition look good."
-        ],
-        "ru": [
-          "Гость спрашивает, что эта вера меняет в понедельник. Грейси кладёт карточку ответа рядом с Библией: Иисус жив, поэтому они могут доверять Ему, искать прощения и нести надежду и помощь людям в боли. Она вспоминает стул, который друзья несли в день её скорби.",
-          "Затем гость задаёт вопрос, на который Джозеф не знает ответа. «Я пока не знаю», — говорит он и записывает вопрос. «Я правильно вас понял?» Уточнив смысл, Джозеф предлагает разобраться вместе с надёжным взрослым. Они честно указали, чего выставка не объясняет, и в разговоре тоже можно признать, что не всё знаешь. Выдумывать ответ ради хорошего впечатления не нужно."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A visitor asks what this belief actually changes on a Monday.",
+            "ru": "Гость спрашивает, что эта вера меняет в обычный понедельник."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Because Jesus lives, we can trust him. We can seek forgiveness. We can bring hope and real care to people who are hurting.",
+            "ru": "Иисус жив, и поэтому мы можем доверять Ему. Мы можем искать прощения. Мы можем нести надежду и настоящую помощь тем, кому больно."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She remembers the chair their friends carried for her, on the day she was grieving.",
+            "ru": "Она вспоминает стул, который друзья несли для неё в день её скорби."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Then the visitor asks a question Joseph can't answer.",
+            "ru": "Затем гость задаёт вопрос, на который Джозеф не знает ответа."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "I don't know yet. Did I understand your question right?",
+            "ru": "Я пока не знаю. Я правильно вас понял?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "After checking, he offers to explore it with a trusted adult. His display has room for honest limits. So does he.",
+            "ru": "Уточнив смысл, он предлагает разобраться вместе с надёжным взрослым. На выставке есть место для честных границ. И у него самого — тоже."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "An invitation beyond the finish",
         "ru": "Приглашение после финиша"
       },
-      "paragraphs": {
-        "en": [
-          "Before packing up, each explorer names one conviction, one next action, and one question still open. Michael will correct an exaggerated claim. Rosie will read with a younger friend who wants help. Gracie will keep making room for people who need quiet company.",
-          "Explorer, leave your own question card on the table. This journey ends with an invitation, not a certificate declaring that every mystery is solved. Following Jesus joins truthful belief, thoughtful reasons, and practiced love. Tomorrow offers another chance to listen, learn, and take the next faithful step."
-        ],
-        "ru": [
-          "Перед уборкой каждый называет убеждение, следующий поступок и открытый вопрос. Майкл исправит преувеличенное сообщение. Рози почитает с младшим другом, который попросил помощи. Грейси продолжит находить место для тех, кому нужна тихая компания.",
-          "Исследователь, оставь на столе свою карточку вопроса. Путешествие завершается приглашением, а не дипломом о разгадке всех тайн. Следование Иисусу соединяет истинную веру, продуманные основания и любовь на деле. Завтра снова можно слушать, учиться и делать следующий верный шаг."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Before packing up, each explorer names one belief, one next action, and one question still open.",
+            "ru": "Перед уборкой каждый называет одно убеждение, один следующий поступок и один открытый вопрос."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael will correct a claim that went too far. Rosie will read with a younger friend who asked for help.",
+            "ru": "Майкл исправит сообщение, которое зашло слишком далеко. Рози почитает с младшим другом, который попросил помощи."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie will keep making room for people who just need quiet company.",
+            "ru": "Грейси продолжит находить место для тех, кому нужна тихая компания."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Explorer, leave your own question card on the table. This journey ends with an invitation, not a certificate saying every mystery is solved.",
+            "ru": "Исследователь, оставь свою карточку вопроса на столе. Путешествие завершается приглашением, а не дипломом о разгадке всех тайн."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Following Jesus joins three things: true belief, good reasons, and real love, lived out. Tomorrow brings another chance to listen, learn, and take the next step.",
+            "ru": "Следование Иисусу соединяет три вещи: истинную веру, добрые основания и любовь на деле. Завтра снова можно слушать, учиться и делать следующий шаг."
+          }
+        }
+      ]
     }
   ],
   "scripture": {

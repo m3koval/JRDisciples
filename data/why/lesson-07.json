@@ -16,64 +16,177 @@
         "en": "The wrong shelf",
         "ru": "Не та полка"
       },
-      "paragraphs": {
-        "en": [
-          "At the library, Michael tries to use a poem as instructions for repairing a bicycle. Gracie points to the repair manual on another shelf. The poem is not useless; it is doing a different job. You help carry their chosen books to a round table.",
-          "At the table, Rosie opens the contents page of her purple Bible. ‘There are different kinds of writing in here too,’ she says. ‘How do we know how to read each one?’ The others lean closer: the Bible is a collection of books, not one long text written in a single afternoon."
-        ],
-        "ru": [
-          "В библиотеке Майкл пытается чинить велосипед по стихотворению. Грейси показывает на руководство по ремонту на другой полке. Стихи не бесполезны — просто у них другая задача. Ты помогаешь отнести книги к круглому столу.",
-          "За столом Рози открывает содержание фиолетовой Библии. «Здесь ведь тоже разные книги, — говорит она. — Как понять, как читать каждую?» Ребята придвигаются ближе: перед ними собрание книг, а не один длинный текст, написанный за один вечер."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the library, Michael tries to use a poem as instructions for fixing a bicycle.",
+            "ru": "В библиотеке Майкл пытается чинить велосипед по стихотворению."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie points to the repair manual on another shelf. The poem isn't useless. It's just doing a different job.",
+            "ru": "Грейси показывает на руководство по ремонту на другой полке. Стихи не бесполезны. Просто у них другая задача."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help carry their chosen books to a round table.",
+            "ru": "Ты помогаешь отнести книги к круглому столу."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "There are different kinds of writing in here too. How do we know how to read each one?",
+            "ru": "Здесь ведь тоже разные виды текста. Как понять, как читать каждый из них?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The others lean closer. The Bible is a whole shelf of books, not one long text written in a single afternoon.",
+            "ru": "Ребята придвигаются ближе. Перед ними целая полка книг, а не один длинный текст, написанный за один вечер."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Listen for the kind of writing",
         "ru": "Узнай вид текста"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph makes shelf cards for narrative, poetry, letters, and wisdom. Rosie explains that recognizing the kind of writing helps readers listen well. A psalm's picture language need not work like a laboratory description; a letter should be read with its readers and situation in mind.",
-          "Their teacher shows how Jesus speaks of the Law, Prophets, and Psalms in Luke 24. The different writings belong to God's unfolding story, rather than competing to replace each other."
-        ],
-        "ru": [
-          "Джозеф делает карточки: повествование, поэзия, послания, мудрость. Рози объясняет: знание жанра помогает понять текст. Образы псалма не нужно читать как лабораторный отчёт, а в письме важно учитывать адресатов и обстоятельства.",
-          "Учитель показывает, как Иисус говорит о Законе, Пророках и Псалмах в Луки 24. Разные книги участвуют в раскрытии Божьей истории, а не вытесняют друг друга."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph makes shelf cards for story, poetry, letters, and wisdom sayings.",
+            "ru": "Джозеф делает карточки: повествование, поэзия, послания, мудрость."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Knowing the kind of writing helps us listen well. A song's picture-language doesn't have to work like a science report.",
+            "ru": "Знание вида текста помогает понять его. Образы песни не должны работать как научный отчёт."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "And a letter should be read with its first readers in mind. Think about their situation, too.",
+            "ru": "А письмо нужно читать, помня о первых читателях. И об их обстоятельствах."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "In Luke 24, Jesus talks about the Law, the Prophets, and the Psalms together.",
+            "ru": "В Луки 24 Иисус говорит о Законе, Пророках и Псалмах вместе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "These different kinds of writing all belong to one big story. They don't compete to replace each other.",
+            "ru": "Эти разные книги участвуют в одной большой истории. Они не вытесняют друг друга."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Two languages at the table",
         "ru": "Два языка за столом"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie's grandmother reads Russian, so the team opens an English translation and the Russian Synodal translation. Different languages arrange ideas differently. Translators work to carry the meaning of Hebrew, Aramaic, and Greek texts into another language; they do not discover a different Jesus for each reader.",
-          "As you compare a short passage with an adult, Gracie asks, ‘Could I explain this in my own words for Grandma?’ Their teacher says a retelling can help someone understand, as long as Gracie calls it a retelling. That way her grandmother will know which words come from the translation and which are Gracie's explanation."
-        ],
-        "ru": [
-          "Бабушка Грейси читает по-русски, поэтому ребята открывают английский и русский Синодальный переводы. Языки по-разному строят фразы. Переводчики передают смысл еврейских, арамейских и греческих текстов, а не находят нового Иисуса для каждого читателя.",
-          "Когда вы со взрослым сравниваете короткий отрывок, Грейси спрашивает: «А можно объяснить это бабушке своими словами?» Учитель отвечает: пересказ может помочь, если честно назвать его пересказом. Тогда бабушка поймёт, где слова выбранного перевода, а где объяснение Грейси."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie's grandmother reads Russian, so the team opens an English Bible next to a Russian one.",
+            "ru": "Бабушка Грейси читает по-русски, поэтому ребята открывают английскую Библию рядом с русской."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Different languages arrange ideas differently. Translators take old Hebrew, Aramaic, and Greek words. They carry that same meaning into a new language.",
+            "ru": "Языки по-разному строят фразы. Переводчики берут древние еврейские, арамейские и греческие слова. Они переносят их смысл на новый язык."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They don't invent a different Jesus for each reader. It's the same story. It's just carried into a new language.",
+            "ru": "Они не придумывают нового Иисуса для каждого читателя. Это та же история. Просто на новом языке."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Could I explain this to Grandma in my own words?",
+            "ru": "А можно объяснить это бабушке своими словами?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Yes, as long as you call it a retelling. That way she'll know which words are the translation. And which words are your own.",
+            "ru": "Да, если честно назовёшь это пересказом. Тогда она поймёт, где слова перевода. А где — твои собственные."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Understanding comes first",
         "ru": "Сначала понимание"
       },
-      "paragraphs": {
-        "en": [
-          "In Nehemiah 8, the team finds people reading and explaining so listeners understand. Michael puts the bicycle poem back with the poems, then writes a small shelf guide for their reading corner. His mistake has become a useful reminder.",
-          "Joseph leaves space for unfamiliar words, and Gracie asks her grandmother to read with them. The goal is not to collect the most impressive Bible editions. It is to understand God's word and live in response to it together."
-        ],
-        "ru": [
-          "В Неемии 8 ребята находят чтение с объяснением, чтобы слушатели понимали. Майкл возвращает стихотворение на полку поэзии и делает памятку для уголка чтения. Его ошибка оказалась полезным напоминанием.",
-          "Джозеф оставляет место для непонятных слов, а Грейси приглашает бабушку читать вместе. Цель — не собрать самые внушительные издания, а понимать Божье слово и вместе отвечать на него жизнью."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "In Nehemiah chapter 8, the team finds people reading together. They explain it too, so everyone listening could understand.",
+            "ru": "В Неемии 8 ребята находят пример: люди читают вместе. Они и объясняют смысл, чтобы все слушатели понимали."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael puts the bicycle poem back with the poetry, then writes a small shelf guide for their reading corner.",
+            "ru": "Майкл возвращает стихотворение на полку поэзии и делает памятку для уголка чтения."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "His mistake has turned into a useful reminder for everyone else.",
+            "ru": "Его ошибка оказалась полезным напоминанием для остальных."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph leaves space to write down unfamiliar words, and Gracie invites her grandmother to read with them.",
+            "ru": "Джозеф оставляет место для непонятных слов, а Грейси приглашает бабушку читать вместе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The goal was never to collect the most impressive Bible editions. It's to understand God's word. And live it out together.",
+            "ru": "Цель не в том, чтобы собрать самые внушительные издания. Цель — понимать Божье слово. И вместе жить по нему."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +201,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/NEH.8.8.ESV",
       "ru": "https://www.bible.com/bible/167/NEH.8.8.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "If there are so many different translations, how do we know any of them is right? Shouldn't we just read one 'original' version, like the King James?",
+      "ru": "Если переводов так много, как узнать, какой из них правильный? Может, стоит читать только один «настоящий» перевод?"
+    },
+    "response": {
+      "en": "No verse anywhere in the Bible says only one translation is the correct one — that's not a claim the Bible makes about itself, not even the King James Version. Every trustworthy translation, old or new, works from the same underlying Hebrew and Greek words; it's like the same recipe written out in different languages. Scholars have studied those original-language words carefully for centuries, and the small differences they've found between manuscripts don't change any major teaching about who Jesus is or what he did. So here's a question back: if two translations tell the exact same story about Jesus, just using different English words, is that really a problem with the Bible, or is that just what careful, honest translation of a very old story looks like? I'd rather have many trustworthy copies of the truth than worry that having choices means losing it.",
+      "ru": "Ни в одном стихе Библии не сказано, что правильным можно считать только один перевод — Библия вообще не утверждает этого о себе, даже про Короля Иакова. Любой надёжный перевод, старый или новый, основан на одних и тех же древних еврейских и греческих словах; это как один и тот же рецепт, записанный на разных языках. Учёные веками внимательно изучали эти слова на исходных языках, и небольшие различия между рукописями не меняют ни одного главного учения о том, Кто Иисус и что Он сделал. Вот вопрос в ответ: если два перевода рассказывают одну и ту же историю об Иисусе, просто разными словами, это настоящая проблема Библии — или именно так выглядит честный, бережный перевод очень древней истории? Я лучше буду рад множеству надёжных копий истины, чем буду бояться, что выбор перевода означает её потерю."
     }
   },
   "activity": {
@@ -168,8 +291,8 @@
     "ru": "Боже, помоги нам понимать Твоё слово на разных языках."
   },
   "adultNote": {
-    "en": "Genre, canon, translation, and paraphrase are distinct questions. Churches differ on some Old Testament contents; do not imply every historical Bible has an identical table of contents.",
-    "ru": "Жанр, канон, перевод и пересказ — разные вопросы. Состав Ветхого Завета у церквей различается; не утверждайте, что содержание всех исторических Библий одинаково."
+    "en": "Genre, canon, translation, and paraphrase are distinct questions. Churches differ on some Old Testament contents; do not imply every historical Bible has an identical table of contents. The 'comeback' response reflects Daniel Wallace's response to KJV-only arguments: the Bible nowhere claims exclusivity for one translation, and the KJV's own Greek base (the Textus Receptus) is itself a translated, reconstructed text, not an untranslated original.",
+    "ru": "Жанр, канон, перевод и пересказ — разные вопросы. Состав Ветхого Завета у церквей различается; не утверждайте, что содержание всех исторических Библий одинаково. Ответ в блоке «если кто-то скажет» отражает позицию Дэниела Уоллеса в споре с «только-KJV»: Библия нигде не утверждает исключительность одного перевода, а греческая основа самого Короля Иакова (Textus Receptus) — тоже переведённый, реконструированный текст, а не нетронутый оригинал."
   },
   "sources": [
     {

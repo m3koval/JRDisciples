@@ -16,68 +16,175 @@
         "en": "A welcoming screen",
         "ru": "Приветливый экран"
       },
-      "paragraphs": {
-        "en": [
-          "The library computer offers to help the explorers plan their exhibition. Its friendly message praises Joseph's questions and suggests cheerful headings. “Could it become the wisest friend on our team?” Michael asks.",
-          "The friendly words make it easy to imagine a person on the other side of the screen.",
-          "Their teacher brings a prepared practice sheet instead of asking children to open accounts. One sample answer confidently claims that Genesis says people are made in the image of computers. The sheet is clearly labeled an invented error."
-        ],
-        "ru": [
-          "Библиотечный компьютер помогает исследователям подготовить выставку. Дружелюбное сообщение хвалит вопросы Джозефа и предлагает весёлые заголовки. «Может, это будет самый мудрый друг в нашей команде?» — спрашивает Майкл.",
-          "Сообщения звучат так приветливо, что за ними легко представить настоящего человека.",
-          "Учитель приносит готовый учебный лист, не предлагая детям создавать аккаунты. В одном примере уверенно сказано, будто Бытие учит: люди созданы по образу компьютеров. На листе ясно написано: вымышленная ошибка для проверки."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The library computer offers to help the team plan their exhibition. Its friendly message praises Joseph's questions and suggests cheerful headings.",
+            "ru": "Библиотечный компьютер помогает ребятам готовить выставку. Дружелюбное сообщение хвалит вопросы Джозефа и предлагает весёлые заголовки."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Could it become the wisest friend on our team?",
+            "ru": "Может, это будет самый мудрый друг в нашей команде?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The friendly words make it easy to imagine a real person on the other side of the screen.",
+            "ru": "Сообщения звучат так приветливо, что за ними легко представить настоящего человека."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher brings a practice sheet instead. Nobody has to open an account. One sample answer makes a bold claim: it says Genesis teaches that people are made in the image of computers.",
+            "ru": "Учитель приносит готовый учебный лист. Детям не нужно создавать аккаунты. В одном примере смело сказано, будто Бытие учит: люди созданы по образу компьютеров."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The sheet is clearly labeled: this is an invented error, made on purpose, for practice.",
+            "ru": "На листе ясно написано: это вымышленная ошибка, придуманная для проверки."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Open the real passage",
         "ru": "Открой настоящий текст"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens Genesis 1:27 in her purple Bible. The sample answer is wrong: the passage speaks of God's image. Joseph marks the mismatch in his blue notebook. A confident tone did not make the answer accurate, and the attached reference did not guarantee that it matched the text.",
-          "“A chatbot can help us write,” their teacher explains, “but it can also make a mistake sound convincing.”",
-          "Joseph looks from the screen to Rosie’s Bible. Before using the answer, they need to check what the source actually says; asking the program to promise it is right would not settle the question."
-        ],
-        "ru": [
-          "Рози открывает Бытие 1:27 в фиолетовой Библии. В примере ошибка: отрывок говорит об образе Бога. Джозеф отмечает несоответствие в синем блокноте. Уверенный тон не сделал ответ верным, а ссылка не гарантировала совпадения с текстом.",
-          "— Чат-бот может помочь написать текст, но и ошибку он иногда объясняет очень убедительно, — говорит учитель.",
-          "Джозеф переводит взгляд с экрана на Библию Рози. Прежде чем брать ответ для выставки, нужно прочитать сам источник. Даже если программа снова скажет, что ответ верный, его всё равно нужно проверить."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens Genesis 1:27 in her Bible. The sample answer is wrong: the passage speaks of God's image, not a computer's.",
+            "ru": "Рози открывает Бытие 1:27 в своей Библии. В примере ошибка: отрывок говорит об образе Бога, а не компьютера."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph marks the mismatch in his notebook. A confident tone didn't make the answer accurate.",
+            "ru": "Джозеф отмечает несоответствие в блокноте. Уверенный тон не сделал ответ верным."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "A chatbot can help us write. But it can also make a mistake sound very convincing.",
+            "ru": "Чат-бот может помочь написать текст. Но он может и ошибку объяснить очень убедительно."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph looks from the screen to Rosie's Bible.",
+            "ru": "Джозеф переводит взгляд с экрана на Библию Рози."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Before using an answer, check what the real source actually says. Asking the program to promise it's right wouldn't settle anything.",
+            "ru": "Прежде чем брать ответ, прочитай, что говорит сам источник. Даже если программа снова скажет, что ответ верный, это ничего не решит."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "More than friendly words",
         "ru": "Не только добрые слова"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie asks whether a machine saying it cares is the same as a friend caring. The team distinguishes helpful language from a human relationship. Scripture describes human beings as made in God's image; sounding human on a screen does not establish that a program is a human person.",
-          "A trusted adult can know their situation, take responsibility, and help in real life. A chatbot is not their pastor, parent, or safest keeper of secrets. Kind wording is no reason to enter addresses, passwords, or private worries."
-        ],
-        "ru": [
-          "Грейси спрашивает: если машина пишет о заботе, это то же самое, что забота друга? Команда различает полезные слова и человеческие отношения. Писание говорит о людях как об образе Бога; человеческий стиль текста не доказывает, что программа является человеком.",
-          "Надёжный взрослый может знать обстоятельства, отвечать за свои действия и помогать в жизни. Чат-бот не заменяет родителей, пастора и безопасного собеседника для личных тайн. Приветливость — не повод сообщать адреса, пароли или сокровенные тревоги."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "If a machine says it cares, is that the same as a friend caring?",
+            "ru": "Если машина пишет о заботе, это то же самое, что забота друга?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team talks it through. Helpful words aren't the same thing as a real friendship.",
+            "ru": "Команда это обсуждает. Полезные слова — не то же самое, что настоящая дружба."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Scripture says human beings are made in God's image. Sounding human on a screen doesn't make a program a human person.",
+            "ru": "Писание говорит, что люди созданы по образу Бога. Человеческий тон текста не делает программу человеком."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A trusted adult can actually know you. They can help you in real life, and they answer for what they do. A chatbot can't be your pastor, your parent, or the safest place for your secrets.",
+            "ru": "Надёжный взрослый может по-настоящему знать тебя. Он может помочь тебе в жизни, и он отвечает за свои слова. Чат-бот не заменит пастора, родителя или безопасное место для твоих тайн."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Kind-sounding words are never a reason to type in your address, your passwords, or your private worries.",
+            "ru": "Приветливый тон — не повод сообщать свой адрес, пароли или сокровенные тревоги."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A tool in its place",
         "ru": "Помощник на своём месте"
       },
-      "paragraphs": {
-        "en": [
-          "You help Michael keep one useful heading and discard the false claim. The teacher reviews the finished card. Then the team closes the computer and asks the librarian how visitors with different reading needs might enjoy their display.",
-          "Beside the corrected passage, Joseph writes down what they learned: check an answer before using it, keep private information private, and ask trustworthy people for help. The computer helped them find a heading, but the librarian helped them understand their visitors. Michael can appreciate the tool without expecting it to take a friend’s place."
-        ],
-        "ru": [
-          "Ты помогаешь Майклу оставить удачный заголовок и убрать ложное утверждение. Учитель проверяет карточку. Затем команда закрывает компьютер и спрашивает библиотекаря, как сделать выставку удобной для посетителей с разными потребностями при чтении.",
-          "Рядом с исправленным ответом Джозеф записывает, чему они научились: проверять сведения, беречь личные данные и обращаться за помощью к надёжным людям. Компьютер помог придумать заголовок, а библиотекарь — лучше понять посетителей. Майкл рад полезному инструменту, но теперь не ждёт, что тот заменит ему друга."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help Michael keep one useful heading, and throw out the false claim. The teacher checks the finished card.",
+            "ru": "Ты помогаешь Майклу оставить удачный заголовок и убрать ложное утверждение. Учитель проверяет готовую карточку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Then the team closes the computer. They ask the librarian how to make their display good for every visitor.",
+            "ru": "Затем команда закрывает компьютер. Ребята спрашивают библиотекаря, как сделать выставку удобной для каждого гостя."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph writes down what they learned. Check an answer before you use it. Keep private things private. Ask trustworthy people for help.",
+            "ru": "Джозеф записывает, чему научились. Проверяй ответ, прежде чем его использовать. Береги личное. Обращайся за помощью к надёжным людям."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The computer helped them find a heading. The librarian helped them understand their visitors.",
+            "ru": "Компьютер помог придумать заголовок. А библиотекарь — лучше понять посетителей."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael can enjoy a useful tool without expecting it to take a friend's place.",
+            "ru": "Майкл рад полезному инструменту, но больше не ждёт, что тот заменит ему друга."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -92,6 +199,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/PRO.13.20.ESV",
       "ru": "https://www.bible.com/bible/167/PRO.13.21.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "A chatbot already talks to me nicer than some real people do, and it never gets tired of my questions. Why isn't that basically a friend?",
+      "ru": "Чат-бот уже говорит со мной добрее некоторых настоящих людей, и ему никогда не надоедают мои вопросы. Почему это не настоящая дружба?"
+    },
+    "response": {
+      "en": "A chatbot can be like a mirror that reflects kindness back at you, or a window pointing toward a real friend. That's useful. But it turns into a problem the moment it tries to replace an actual friend. Real friendship needs two people who truly know each other, remember each other's life, and can get hurt and still choose to stay. A chatbot doesn't know you. It's remixing patterns learned from millions of other people's words, not loving you back. So here's a question back: if a \"friend\" never actually sees you, never remembers you tomorrow, and never risks anything to stay close to you, is that friendship, or just a very good mirror? I know which one I'd rather build my life around.",
+      "ru": "Чат-бот может быть как зеркало, которое отражает доброту обратно к тебе, или как окно, указывающее на настоящего друга. Это полезно. Но это становится проблемой, как только он пытается заменить настоящего друга. Настоящей дружбе нужны два человека, которые по-настоящему знают друг друга, помнят жизнь друг друга и могут быть обижены — и всё равно остаться рядом. Чат-бот не знает тебя. Он комбинирует образцы, выученные из слов миллионов других людей, а не любит тебя в ответ. Вот вопрос в ответ: если «друг» никогда по-настоящему тебя не видит, никогда не помнит тебя на следующий день и никогда ничем не рискует, чтобы остаться рядом с тобой, — это дружба или просто очень хорошее зеркало? Я знаю, на чём я лучше построю свою жизнь."
     }
   },
   "activity": {
@@ -158,8 +275,8 @@
     "ru": "Боже, помоги искать мудрость, беречь личное и строить честную дружбу."
   },
   "adultNote": {
-    "en": "The chatbot error is deliberately authored practice, not a transcript or claim about a tested product. Read Genesis 1:27 and Proverbs 13:20; the Synodal numbering for the latter is 13:21. This child-facing lesson distinguishes generated language from human personhood and accountable care without pretending to settle every philosophical question about possible future systems.",
-    "ru": "Ошибка чат-бота придумана для упражнения; это не запись разговора и не результат проверки продукта. Прочитайте Бытие 1:27 и Притчи 13:20; в Синодальном переводе второй стих имеет номер 13:21. Урок различает созданный программой текст, человеческую личность и ответственную заботу, не претендуя решить все философские вопросы о будущих системах."
+    "en": "The chatbot error is deliberately authored practice, not a transcript or claim about a tested product. Read Genesis 1:27 and Proverbs 13:20; the Synodal numbering for the latter is 13:21. This child-facing lesson distinguishes generated language from human personhood and accountable care without pretending to settle every philosophical question about possible future systems. The 'comeback' response draws on the 'icon vs. idol' distinction theologian Jordan Wales (Hillsdale College) applies to AI companionship: a tool can point toward genuine human relationship (icon) or be mistaken for a substitute for it (idol); it does not take a position on every open question in Christian anthropology or AI ethics.",
+    "ru": "Ошибка чат-бота придумана для упражнения; это не запись разговора и не результат проверки продукта. Прочитайте Бытие 1:27 и Притчи 13:20; в Синодальном переводе второй стих имеет номер 13:21. Урок различает созданный программой текст, человеческую личность и ответственную заботу, не претендуя решить все философские вопросы о будущих системах. Ответ в блоке «если кто-то скажет» опирается на различие «икона или идол», которое богослов Джордан Уэйлс (Хиллсдейл-колледж) применяет к общению с ИИ: инструмент может указывать на настоящие человеческие отношения (икона) или ошибочно принят за их замену (идол); это не окончательная позиция по всем вопросам христианской антропологии или этики ИИ."
   },
   "sources": [
     {

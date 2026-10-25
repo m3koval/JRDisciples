@@ -16,64 +16,192 @@
         "en": "Four envelopes, one mess",
         "ru": "Четыре конверта и беспорядок"
       },
-      "paragraphs": {
-        "en": [
-          "The explorers arrange a small exhibition for their families, but a gust from the window scatters their labels. A leaf sketch lands beside a Bible passage; an interview note slides under a domino diagram. Michael wants to put everything into one big proof envelope.",
-          "‘But how would a leaf show what our teacher said yesterday?’ Joseph asks. Michael looks again at the scattered labels. You join them at the table to sort out the mix-up: before choosing a piece of evidence, they need to know which question it can help answer."
-        ],
-        "ru": [
-          "Исследователи готовят выставку для семей, но ветер из окна разбрасывает подписи. Рисунок листа падает к библейскому отрывку, запись беседы — под схему костяшек. Майкл предлагает сложить всё в один большой конверт с доказательствами.",
-          "«Но разве по листу узнаешь, что вчера сказал учитель?» — спрашивает Джозеф. Майкл снова смотрит на перепутанные подписи. Ты присоединяешься к ребятам за столом: прежде чем выбрать материал, нужно понять, на какой вопрос он поможет ответить."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team is setting up a small exhibit for their families. A gust of wind from the window scatters their labels.",
+            "ru": "Ребята готовят небольшую выставку для семей. Порыв ветра из окна разбрасывает их подписи."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A leaf sketch lands beside a Bible verse. An interview note slides under a domino diagram.",
+            "ru": "Рисунок листа падает к библейскому стиху. Запись беседы соскальзывает под схему костяшек."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Let's just put everything into one big proof envelope.",
+            "ru": "Давайте просто сложим всё в один большой конверт с доказательствами."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "But how would a leaf show what our teacher said yesterday?",
+            "ru": "Но разве по листу узнаешь, что вчера сказал учитель?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael looks again at the scattered labels. You join them at the table to sort out the mix-up. First, they need to know one thing. Which question can this evidence actually answer?",
+            "ru": "Майкл снова смотрит на перепутанные подписи. Ты присоединяешься к ребятам за столом, чтобы разобраться. Сначала нужно понять одно. На какой вопрос может ответить этот материал?"
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Ask before sorting",
         "ru": "Сначала спросим"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie picks up the leaf sketch and asks what it records. They counted five points on that leaf; another child could inspect the same leaf. The interview records someone's report, which raises different questions: who spoke, what did they see, and could they be mistaken?",
-          "Their domino diagram contains reasoning from an example. Rosie places the Bible passage in a fourth envelope. Christians receive Scripture as God's word; it is not the same kind of item as their own measurement."
-        ],
-        "ru": [
-          "Грейси поднимает рисунок и спрашивает, что он показывает. На этом листе ребята насчитали пять выступов; другой человек может проверить тот же лист. Запись беседы передаёт сообщение человека: кто говорил, что видел, мог ли ошибиться?",
-          "Схема костяшек содержит рассуждение по примеру. Рози кладёт Библию в четвёртый конверт. Христиане принимают Писание как Божье слово; это не тот же вид материала, что собственное измерение."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie picks up the leaf sketch and asks what it actually shows.",
+            "ru": "Грейси поднимает рисунок листа и спрашивает, что он на самом деле показывает."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They counted five points on that one leaf. Another person could check the very same leaf themselves.",
+            "ru": "Они насчитали пять выступов на этом листе. Другой человек может проверить тот же самый лист."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The interview note is different. It's one person's report. That raises other questions. Who spoke? What did they see? Could they be wrong?",
+            "ru": "Запись беседы — другое дело. Это рассказ одного человека. Тут другие вопросы. Кто говорил? Что видел? Мог ли ошибиться?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their domino diagram shows reasoning from one example.",
+            "ru": "Их схема костяшек показывает рассуждение по одному примеру."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "I'm putting the Bible passage in its own envelope. Christians receive Scripture as God's own word. That's a different kind of thing than our own measurement.",
+            "ru": "Я положу библейский отрывок в отдельный конверт. Христиане принимают Писание как Божье слово. Это другое дело, чем наше собственное измерение."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Eager and careful",
         "ru": "С интересом и вниманием"
       },
-      "paragraphs": {
-        "en": [
-          "They read about the people in Berea in Acts 17. These listeners welcomed the message and examined the Scriptures. Eagerness and careful checking were not enemies. Michael realizes that shouting louder about his favorite exhibit would not answer a visitor's actual question.",
-          "You help them add a note beside each label about what it can show. ‘We only counted this leaf,’ Gracie reminds them, ‘not every leaf on every tree.’ They check the other labels too: an interview records one person's report, their domino model is not the whole universe, and the Bible passage needs its surrounding verses to be understood properly."
-        ],
-        "ru": [
-          "Ребята читают в Деяниях 17 о жителях Верии. Те охотно слушали весть и исследовали Писание. Интерес и внимательная проверка не мешали друг другу. Майкл понимает: громко хвалить любимый экспонат — ещё не ответить посетителю.",
-          "Ты помогаешь добавить к подписям пояснения. «Мы ведь считали выступы только на этом листе, а не на всех листьях», — напоминает Грейси. Ребята проверяют и остальные подписи: беседа передаёт рассказ одного человека, ряд костяшек не изображает всю Вселенную, а библейский отрывок нужно читать вместе с соседними стихами."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read about the people in Berea, in Acts 17. These listeners welcomed the message, and they checked it against Scripture, too.",
+            "ru": "Ребята читают о жителях Верии, в Деяниях 17. Эти слушатели охотно принимали весть — и при этом проверяли её по Писанию."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Being eager and being careful aren't enemies. You can do both at once.",
+            "ru": "Интерес и внимательность — не враги. Можно делать и то, и другое сразу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael realizes something: shouting louder about his favorite exhibit wouldn't actually answer a visitor's real question.",
+            "ru": "Майкл понимает: громче хвалить любимый экспонат — не значит ответить на настоящий вопрос гостя."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help add a note beside each label about what it can show.",
+            "ru": "Ты помогаешь добавить к каждой подписи пояснение, что она показывает."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "We only counted this one leaf. Not every leaf on every tree.",
+            "ru": "Мы посчитали выступы только на этом одном листе. Не на всех листьях на дереве."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They check the other labels too. An interview is one person's report. Their domino model isn't the whole universe. And the Bible passage needs its nearby verses, too.",
+            "ru": "Они проверяют и остальные подписи. Беседа — рассказ одного человека. Их модель костяшек — не вся вселенная. А библейский отрывок нужен вместе с соседними стихами."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A visitor with a question",
         "ru": "Посетитель с вопросом"
       },
-      "paragraphs": {
-        "en": [
-          "When their families arrive, a visitor asks why Rosie trusts Jesus. She describes what she has learned from the Gospel, rather than pointing triumphantly at the leaf. She also names a question she is still exploring with her teacher.",
-          "The envelopes stay open on the table so visitors can examine them. Joseph offers you the final label: explain gently. The exhibition succeeds not because every visitor agrees, but because the team tells the truth about what each source can show."
-        ],
-        "ru": [
-          "Когда приходят семьи, посетитель спрашивает, почему Рози доверяет Иисусу. Она рассказывает об узнанном из Евангелия, а не победно показывает на лист. Ещё она называет вопрос, который продолжает изучать с учителем.",
-          "Конверты остаются открытыми: посетители могут посмотреть материалы. Джозеф отдаёт тебе последнюю подпись: объясняй мягко. Выставка удалась не потому, что все согласились, а потому, что команда честно показала возможности источников."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "When their families arrive, a visitor asks Rosie why she trusts Jesus.",
+            "ru": "Когда приходят семьи, посетитель спрашивает Рози, почему она доверяет Иисусу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She describes what she's learned from the Gospel. She doesn't just point at the leaf like it proves everything.",
+            "ru": "Она рассказывает о том, что узнала из Евангелия. Она не просто показывает на лист, будто он доказывает всё."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She also names a question she's still exploring with her teacher.",
+            "ru": "Она называет и вопрос, который продолжает изучать со своим учителем."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The envelopes stay open on the table, so visitors can look inside them.",
+            "ru": "Конверты остаются открытыми на столе, чтобы гости могли сами всё посмотреть."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Here's the last label for you to write: explain gently.",
+            "ru": "Вот последняя подпись для тебя: объясняй мягко."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The exhibit succeeds for a simple reason. Not because every visitor agrees. But because the team tells the truth about what each source can show.",
+            "ru": "Выставка удалась по простой причине. Не потому, что все гости согласились. А потому, что команда честно показала, что может подтвердить каждый источник."
+          }
+        }
+      ]
     }
   ],
   "scripture": {

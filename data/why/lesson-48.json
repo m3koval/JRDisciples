@@ -16,64 +16,191 @@
         "en": "A headline for the exhibition",
         "ru": "Заголовок для выставки"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph brings a dramatic caption from the pretend chatbot in their exhibition exercise: This ancient page proves every resurrection detail! “Let’s use our biggest letters,” Michael suggests. Rosie looks at the caption. “Which ancient page does it mean?” she asks. Joseph checks his notes and realizes that none of them has looked it up.",
-          "You help Gracie turn the caption face down before visitors arrive. They need a real record, not a more exciting sentence. Joseph opens the saved University of Michigan entry for P46, item 3599, and places his notebook beside it."
-        ],
-        "ru": [
-          "Джозеф приносит эффектную подпись, которую в учебном упражнении придумал условный чат-бот: «Эта древняя страница доказывает все подробности воскресения!» «Давайте напишем самыми большими буквами», — предлагает Майкл. Рози смотрит на подпись. «А о какой странице речь?» Джозеф заглядывает в записи и понимает: никто из них этого не проверил.",
-          "Ты помогаешь Грейси перевернуть подпись до прихода гостей. Нужна настоящая карточка предмета, а не красивое предложение. Джозеф открывает сохранённую запись Мичиганского университета о P46, предмет 3599, и кладёт рядом блокнот."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph brings a dramatic caption from the pretend chatbot in their practice exercise: This ancient page proves every resurrection detail!",
+            "ru": "Джозеф приносит эффектную подпись, которую придумал условный чат-бот в учебном упражнении: «Эта древняя страница доказывает все подробности воскресения!»"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Let's use our biggest letters for that one.",
+            "ru": "Давайте напишем это самыми большими буквами."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Wait. Which ancient page does it even mean?",
+            "ru": "Подождите. А о какой странице вообще речь?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph checks his notes and realizes something. None of them has actually looked it up yet.",
+            "ru": "Джозеф заглядывает в записи и понимает: никто из них этого не проверил."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help Gracie turn the caption face down before any visitors arrive. They need a real record. Not just a more exciting sentence.",
+            "ru": "Ты помогаешь Грейси перевернуть подпись, пока не пришли гости. Нужна настоящая карточка. Не красивое предложение."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph opens the saved museum entry for the actual item, and places his notebook beside it.",
+            "ru": "Джозеф открывает сохранённую карточку настоящего предмета и кладёт рядом блокнот."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Read the item, not the excitement",
         "ru": "Читаем карточку, а не восторги"
       },
-      "paragraphs": {
-        "en": [
-          "The record identifies a papyrus leaf containing part of Ephesians 1. It is a surviving copy of a biblical text, not a page written beside Jesus’ empty tomb. Gracie circles Ephesians on their draft. The caption had silently turned one kind of evidence into another.",
-          "Joseph notices a dating difference too: the collection introduction says about AD 200, while the item describes a broader period. He records that difference instead of selecting whichever date makes the poster sound more impressive."
-        ],
-        "ru": [
-          "Карточка описывает папирусный лист с частью первой главы Ефесянам. Это сохранившаяся копия библейского текста, а не страница, написанная у пустой гробницы Иисуса. Грейси обводит слово «Ефесянам». Подпись незаметно превратила один вид свидетельства в другой.",
-          "Джозеф замечает и разницу датировок: введение коллекции говорит примерно о 200 годе нашей эры, а карточка — о более широком периоде. Он записывает различие, не выбирая дату ради эффектного плаката."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The record describes a papyrus leaf. Part of the letter to the Ephesians is written on it.",
+            "ru": "Карточка описывает папирусный лист. На нём записана часть письма к Ефесянам."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "It's a surviving copy of a Bible passage. It is not a page written beside Jesus's empty tomb.",
+            "ru": "Это сохранившаяся копия библейского текста. Это не страница, написанная у пустой гробницы Иисуса."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie circles the word \"Ephesians\" on their draft. The caption had quietly turned one kind of evidence into a different one.",
+            "ru": "Грейси обводит слово «Ефесянам» в черновике. Подпись незаметно превратила один вид свидетельства в другой."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph notices a dating difference, too. One description says about 200 years after Jesus. Another gives a wider range of years.",
+            "ru": "Джозеф замечает и разницу в датах. В одном описании — около 200 лет после Иисуса. В другом — более широкий промежуток лет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He writes down that difference. He doesn't just pick whichever date sounds better for the poster.",
+            "ru": "Он записывает это различие. Он не выбирает дату просто потому, что она звучит эффектнее для плаката."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Test without throwing everything away",
         "ru": "Проверяем, не отбрасывая всё"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens First Thessalonians 5:21. Testing and holding fast belong together: discovering an exaggeration does not require pretending the genuine object is worthless. Michael writes a smaller, stronger caption: This manuscript leaf preserves part of Ephesians and helps us study how the text was copied.",
-          "They add the institution and item number so another reader can check. Their trust in Jesus does not need an inflated museum label. Truthful reasons respect both the source and the person who asks a question."
-        ],
-        "ru": [
-          "Рози открывает 1 Фессалоникийцам 5:21. Проверка и сохранение доброго идут вместе: обнаружив преувеличение, не нужно считать настоящий предмет бесполезным. Майкл пишет точнее: «Этот рукописный лист сохраняет часть Ефесянам и помогает изучать передачу текста».",
-          "Они добавляют название учреждения и номер предмета, чтобы читатель мог проверить. Доверию Иисусу не нужна преувеличенная музейная подпись. Честное объяснение уважает и источник, и человека, задающего вопрос."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens First Thessalonians 5:21.",
+            "ru": "Рози открывает 1 Фессалоникийцам 5:21."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Testing something and still holding on to what's good go together. Finding an exaggeration doesn't mean the real object is worthless.",
+            "ru": "Проверять и беречь хорошее — это вместе. Найти преувеличение — не значит, что настоящий предмет бесполезен."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Okay, here's a smaller, truer caption: This old page helps us study how the text was copied.",
+            "ru": "Хорошо, вот подпись поменьше и точнее: «Этот старый лист помогает изучать, как переписывали текст»."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They add the museum's name and item number, so another reader could check it too.",
+            "ru": "Они добавляют название музея и номер предмета, чтобы любой читатель мог это проверить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their trust in Jesus doesn't need a bigger label than the evidence supports. A true, careful reason respects the source. It respects the person asking, too.",
+            "ru": "Их доверию Иисусу не нужна подпись больше, чем подтверждают свидетельства. Честный, бережный довод уважает источник. И того, кто спрашивает."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Repair the share",
         "ru": "Исправляем сообщение"
       },
-      "paragraphs": {
-        "en": [
-          "“I already sent the first caption to our family group,” Joseph remembers. He writes again, explaining what was wrong, which record he checked, and what the leaf actually shows. Gracie helps him make the correction clear. People who read his first message need to know why he has changed it, not guess from a joke that something was wrong.",
-          "Explorer, compare their two captions. The revised one promises less and teaches more. Their exhibition now invites investigation instead of borrowing authority from an ancient-looking photograph. A careful correction can become an act of love for everyone who might otherwise repeat the mistake."
-        ],
-        "ru": [
-          "«Я ведь уже отправил первую подпись в семейную группу», — вспоминает Джозеф. Он пишет снова: объясняет ошибку, называет проверенную карточку и рассказывает, что на самом деле подтверждает лист. Грейси помогает сказать всё понятно. Тем, кто прочитал первое сообщение, нужно знать, почему он его исправил, а не догадываться об ошибке по шутке.",
-          "Исследователь, сравни две подписи. Новая обещает меньше, а объясняет больше. Теперь выставка приглашает проверять, а не просто доверять фотографии древнего предмета. Честное исправление — забота о тех, кто мог бы повторить ошибку."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Wait. I already sent the first caption to our family group.",
+            "ru": "Подождите. Я ведь уже отправил первую подпись в семейную группу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He writes again. He explains what was wrong. He names which record he checked. He says what the leaf actually shows.",
+            "ru": "Он пишет снова. Он объясняет ошибку. Он называет проверенную карточку. Он рассказывает, что на самом деле показывает лист."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie helps him say it clearly. People who read the first message need to know why he changed it.",
+            "ru": "Грейси помогает сказать это понятно. Тем, кто прочитал первое сообщение, нужно знать, почему он его исправил."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, compare their two captions. The new one promises less, and teaches more.",
+            "ru": "Исследователь, сравни две подписи. Новая обещает меньше, а объясняет больше."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their exhibit now invites people to look closer. It doesn't just borrow trust from an exciting photo.",
+            "ru": "Теперь выставка приглашает смотреть внимательнее. Она не просто доверяет эффектной фотографии."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A careful correction can be an act of love. It helps everyone who might have repeated the same mistake.",
+            "ru": "Честное исправление может быть проявлением любви. Оно помогает всем, кто мог бы повторить ту же ошибку."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
