@@ -17,22 +17,35 @@
         "ru": "Вопрос под звёздами"
       },
       "beats": [
-        { "kind": "narration", "text": {
-          "en": "Michael's green sleeve brushes the telescope, and a bright point slips out of view. Joseph finds it again and draws its position in his blue notebook.",
-          "ru": "Зелёный рукав Майкла задевает телескоп, и яркая точка исчезает из виду. Джозеф снова находит её и отмечает положение в синем блокноте."
-        } },
-        { "kind": "narration", "text": {
-          "en": "Rosie holds her purple Bible. Gracie pulls up her yellow hood against the evening breeze. You join their backyard expedition.",
-          "ru": "Рози держит фиолетовую Библию. Грейси натягивает жёлтый капюшон, спасаясь от вечернего ветра. Ты присоединяешься к их экспедиции во дворе."
-        } },
-        { "kind": "dialogue", "speaker": "gracie", "text": {
-          "en": "We can see the stars. But how do they help us know about God?",
-          "ru": "Звёзды мы видим. А как они помогают нам узнать о Боге?"
-        } },
-        { "kind": "narration", "text": {
-          "en": "Nobody laughs. The team decides to find out together.",
-          "ru": "Никто не смеётся. Ребята решают вместе поискать ответ."
-        } }
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael's green sleeve brushes the telescope, and a bright point slips out of view. Joseph finds it again and draws its position in his blue notebook.",
+            "ru": "Зелёный рукав Майкла задевает телескоп, и яркая точка исчезает из виду. Джозеф снова находит её и отмечает положение в синем блокноте."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie holds her purple Bible. Gracie pulls up her yellow hood against the evening breeze. You join their backyard expedition.",
+            "ru": "Рози держит фиолетовую Библию. Грейси натягивает жёлтый капюшон, спасаясь от вечернего ветра. Ты присоединяешься к их экспедиции во дворе."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "We can see the stars. But how do they help us know about God?",
+            "ru": "Звёзды мы видим. А как они помогают нам узнать о Боге?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Nobody laughs. The team decides to find out together.",
+            "ru": "Никто не смеётся. Ребята решают вместе поискать ответ."
+          }
+        }
       ]
     },
     {
@@ -41,26 +54,44 @@
         "ru": "Проследим движение"
       },
       "beats": [
-        { "kind": "narration", "text": {
-          "en": "Beside the telescope, Michael lines up a row of wooden dominoes and gives the first one a push.",
-          "ru": "Рядом с телескопом Майкл выстраивает ряд деревянных костяшек домино и толкает первую."
-        } },
-        { "kind": "narration", "text": {
-          "en": "They clatter down, one after another, all the way to the end.",
-          "ru": "Костяшки падают одна за другой, до самого конца ряда."
-        } },
-        { "kind": "dialogue", "speaker": "teacher", "text": {
-          "en": "Every domino needed something else to knock it over. The tree needs sunlight to grow. The star needs gas and fire to shine. Nothing here started itself.",
-          "ru": "Каждую костяшку толкнула соседняя. Дереву нужен солнечный свет, чтобы расти. Звезде нужны газ и огонь, чтобы светить. Здесь ничто не началось само собой."
-        } },
-        { "kind": "dialogue", "speaker": "gracie", "text": {
-          "en": "So what started the very first domino?",
-          "ru": "А что толкнуло самую первую костяшку?"
-        } },
-        { "kind": "dialogue", "speaker": "teacher", "text": {
-          "en": "That's the question. Something has to be first — something nobody had to push. Christians call that first, un-pushed thing God. Everything else in the universe got knocked over by something. God is the only one standing who was never pushed.",
-          "ru": "Вот и вопрос. Что-то должно быть первым — то, что никто не толкал. Христиане называют это первое, не толкнутое никем, Богом. Всё остальное во вселенной кто-то толкнул. Бог — единственный, кто стоит и кого никто никогда не толкал."
-        } }
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Beside the telescope, Michael lines up a row of wooden dominoes and gives the first one a push.",
+            "ru": "Рядом с телескопом Майкл выстраивает ряд деревянных костяшек домино и толкает первую."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They clatter down, one after another, all the way to the end.",
+            "ru": "Костяшки падают одна за другой, до самого конца ряда."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Every domino needed something else to knock it over. The tree needs sunlight to grow. The star needs gas and fire to shine. Nothing here started itself.",
+            "ru": "Каждую костяшку толкнула соседняя. Дереву нужен солнечный свет, чтобы расти. Звезде нужны газ и огонь, чтобы светить. Здесь ничто не началось само собой."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "So what started the very first domino?",
+            "ru": "А что толкнуло самую первую костяшку?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "That's the question. Something has to be first — something nobody had to push. Christians call that first, un-pushed thing God. Everything else in the universe got knocked over by something. God is the only one standing who was never pushed.",
+            "ru": "Вот и вопрос. Что-то должно быть первым — то, что никто не толкал. Христиане называют это первое, не толкнутое никем, Богом. Всё остальное во вселенной кто-то толкнул. Бог — единственный, кто стоит и кого никто никогда не толкал."
+          }
+        }
       ]
     },
     {
@@ -69,30 +100,51 @@
         "ru": "Три разных окна"
       },
       "beats": [
-        { "kind": "narration", "text": {
-          "en": "Rosie opens her Bible to Psalm 19.",
-          "ru": "Рози открывает Библию на Псалме 18."
-        } },
-        { "kind": "dialogue", "speaker": "rosie", "text": {
-          "en": "The heavens declare the glory of God. The sky itself points past the stars — straight to their Maker.",
-          "ru": "Небеса проповедуют славу Божию. Само небо указывает не только на звёзды — но прямо на их Творца."
-        } },
-        { "kind": "narration", "text": {
-          "en": "Their teacher turns to another page, Acts 17. Paul says God gives life to everyone — but nobody gives life to God.",
-          "ru": "Учитель открывает другую страницу, Деяния 17. Павел говорит, что Бог даёт жизнь всем — а Ему Самому жизнь не даёт никто."
-        } },
-        { "kind": "narration", "text": {
-          "en": "The team draws three windows in the notebook: what we see, what we reason out, and what God tells us about himself.",
-          "ru": "Ребята рисуют в блокноте три окна: что мы видим, что мы понимаем через рассуждение, и что Бог говорит о Себе Сам."
-        } },
-        { "kind": "dialogue", "speaker": "michael", "text": {
-          "en": "Then who made God?",
-          "ru": "А кто тогда создал Бога?"
-        } },
-        { "kind": "dialogue", "speaker": "teacher", "text": {
-          "en": "Good question — but think about what we actually said. Everything that needs something else needs a maker outside itself. God doesn't need anything else. He's not one more domino. He's the reason there are dominoes at all.",
-          "ru": "Хороший вопрос — но вспомни, что мы на самом деле сказали. Создатель нужен всему, что нуждается в чём-то другом. Богу не нужно ничего другого. Он не ещё одна костяшка. Он — причина, по которой костяшки вообще существуют."
-        } }
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens her Bible to Psalm 19.",
+            "ru": "Рози открывает Библию на Псалме 18."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "The heavens declare the glory of God. The sky itself points past the stars — straight to their Maker.",
+            "ru": "Небеса проповедуют славу Божию. Само небо указывает не только на звёзды — но прямо на их Творца."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher turns to another page, Acts 17. Paul says God gives life to everyone — but nobody gives life to God.",
+            "ru": "Учитель открывает другую страницу, Деяния 17. Павел говорит, что Бог даёт жизнь всем — а Ему Самому жизнь не даёт никто."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team draws three windows in the notebook: what we see, what we reason out, and what God tells us about himself.",
+            "ru": "Ребята рисуют в блокноте три окна: что мы видим, что мы понимаем через рассуждение, и что Бог говорит о Себе Сам."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Then who made God?",
+            "ru": "А кто тогда создал Бога?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Good question — but think about what we actually said. Everything that needs something else needs a maker outside itself. God doesn't need anything else. He's not one more domino. He's the reason there are dominoes at all.",
+            "ru": "Хороший вопрос — но вспомни, что мы на самом деле сказали. Создатель нужен всему, что нуждается в чём-то другом. Богу не нужно ничего другого. Он не ещё одна костяшка. Он — причина, по которой костяшки вообще существуют."
+          }
+        }
       ]
     },
     {
@@ -101,30 +153,50 @@
         "ru": "Оставим место в блокноте"
       },
       "beats": [
-        { "kind": "narration", "text": {
-          "en": "Clouds slide over the bright point before Gracie finishes her sketch.",
-          "ru": "Облака закрывают яркую точку, прежде чем Грейси заканчивает рисунок."
-        } },
-        { "kind": "narration", "text": {
-          "en": "She leaves an empty patch on the page instead of guessing. Joseph writes her question underneath it, to ask again another night.",
-          "ru": "Она оставляет пустое место на странице, а не придумывает звёзды. Джозеф записывает её вопрос рядом — чтобы спросить снова в другой вечер."
-        } },
-        { "kind": "narration", "text": {
-          "en": "You help carry the telescope inside. An unanswered question is not the same as a lost one.",
-          "ru": "Ты помогаешь занести телескоп в дом. Вопрос без ответа — ещё не потерянный вопрос."
-        } },
-        { "kind": "dialogue", "speaker": "joseph", "text": {
-          "en": "First reason in the notebook: everything that needs something else points to someone who doesn't.",
-          "ru": "Первый довод в блокноте: всё, что нуждается в другом, указывает на Того, Кто не нуждается ни в чём."
-        } },
-        { "kind": "dialogue", "speaker": "gracie", "text": {
-          "en": "Next question: how do we get to know him?",
-          "ru": "Следующий вопрос: как нам узнать Его лично?"
-        } },
-        { "kind": "narration", "text": {
-          "en": "The team thanks God for a world worth exploring, then closes the notebook for the night.",
-          "ru": "Ребята благодарят Бога за мир, который интересно исследовать, и закрывают блокнот на ночь."
-        } }
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Clouds slide over the bright point before Gracie finishes her sketch.",
+            "ru": "Облака закрывают яркую точку, прежде чем Грейси заканчивает рисунок."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She leaves an empty patch on the page instead of guessing. Joseph writes her question underneath it, to ask again another night.",
+            "ru": "Она оставляет пустое место на странице, а не придумывает звёзды. Джозеф записывает её вопрос рядом — чтобы спросить снова в другой вечер."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help carry the telescope inside. An unanswered question is not the same as a lost one.",
+            "ru": "Ты помогаешь занести телескоп в дом. Вопрос без ответа — ещё не потерянный вопрос."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "First reason in the notebook: everything that needs something else points to someone who doesn't.",
+            "ru": "Первый довод в блокноте: всё, что нуждается в другом, указывает на Того, Кто не нуждается ни в чём."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Next question: how do we get to know him?",
+            "ru": "Следующий вопрос: как нам узнать Его лично?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team thanks God for a world worth exploring, then closes the notebook for the night.",
+            "ru": "Ребята благодарят Бога за мир, который интересно исследовать, и закрывают блокнот на ночь."
+          }
+        }
       ]
     }
   ],
@@ -148,8 +220,8 @@
       "ru": "Это не доказательство — вселенная могла существовать всегда, без начала и без причины."
     },
     "response": {
-      "en": "Even if the row of dominoes never had a first one, it's still a row of things being knocked over by something else — and that still needs an explanation from outside the row. Something that doesn't need anything else has to be there. That's what Christians mean by God.",
-      "ru": "Даже если бы у ряда костяшек не было первой, это всё равно ряд вещей, которые толкает что-то другое — а это всё равно нужно объяснить чем-то вне самого ряда. Должно быть что-то, что ни в чём не нуждается. Это и есть то, что христиане называют Богом."
+      "en": "Even if the dominoes went back forever, each one would still be pushed by something else — and an endless row of pushed things still needs someone outside the row who wasn't pushed. So here's a question back: which makes more sense — a world that was pushed into being on purpose, by someone with a reason? Or a world that came from nothing, for no reason, going nowhere? I know which one I'd rather believe.",
+      "ru": "Даже если бы ряд костяшек тянулся бесконечно, каждую всё равно толкнула бы другая — а бесконечный ряд толкнутых костяшек всё равно требует Того, Кто стоит вне ряда и Кого никто не толкал. Вот вопрос в ответ: что разумнее — мир, который кто-то создал с целью и смыслом? Или мир, который возник из ничего, без причины и без смысла? Я знаю, во что мне легче поверить."
     }
   },
   "activity": {

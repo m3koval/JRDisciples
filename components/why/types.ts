@@ -35,6 +35,13 @@ export type Lesson = {
   // invites — "if someone says... you can say...". Optional so lessons
   // keep working before every one has this written. See beats.ts for how
   // it's validated/rendered.
+  // Writing guidance: a flat rebuttal sounds rehearsed; ending on a
+  // genuine question back is usually stronger and fits a kid's own voice
+  // better. Don't just assert the lesson's position — hand the weight
+  // back ("which makes more sense: X, or Y?") so the other person feels
+  // their own view costs something too, then let the kid's honest
+  // preference close it ("I know which one I'd rather believe") rather
+  // than a declared win. See lesson 1 for a worked example.
   comeback?: { prompt: Copy; response: Copy };
   sources: { title: Copy; url: string; supports: Copy; limits: Copy }[]; adultNote: Copy;
 };
