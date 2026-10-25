@@ -16,64 +16,181 @@
         "en": "The missing word",
         "ru": "Пропавшее слово"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph copies a picnic list onto a clean page and accidentally leaves out apples. Michael thinks this means every copied message must become hopelessly lost. Gracie still has the first list. You lay both sheets side by side and find the missing word immediately.",
-          "‘Comparing the lists helped us find the mistake,’ Rosie says as she labels their exercise modern practice. ‘But what can we compare when we ask about the Bible?’ Their teacher offers to show them real ancient manuscripts. The picnic lists have given them a useful question, not ancient evidence."
-        ],
-        "ru": [
-          "Джозеф переписывает список для пикника и случайно пропускает яблоки. Майкл решает: значит, любое переписанное сообщение неизбежно теряется. Но у Грейси есть первый список. Ты кладёшь листы рядом, и пропуск сразу находится.",
-          "«Мы сравнили списки и нашли ошибку, — говорит Рози, подписывая упражнение как современную тренировку. — А что можно сравнить, когда речь о Библии?» Учитель предлагает посмотреть настоящие древние рукописи. Списки для пикника помогли задать вопрос, но сами древними свидетельствами не стали."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph is copying a picnic list onto a clean sheet of paper. He copies fast — and forgets one word: apples.",
+            "ru": "Джозеф переписывает список для пикника на чистый лист. Он торопится — и забывает одно слово: яблоки."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "See? That's what happens when you copy something. The message gets ruined!",
+            "ru": "Вот видишь? Вот что бывает, когда что-то переписываешь. Сообщение портится!"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "But Gracie still has the very first list. You lay both lists side by side. The missing word jumps right out.",
+            "ru": "Но у Грейси есть самый первый список. Ты кладёшь оба листа рядом. Пропавшее слово сразу видно."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Comparing the two lists helped us catch the mistake. But what can we compare when we ask about the Bible?",
+            "ru": "Сравнение двух списков помогло найти ошибку. А что можно сравнить, когда речь о Библии?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher smiles. \"Great question. Let's go look at some real, ancient copies.\"",
+            "ru": "Учитель улыбается. «Отличный вопрос. Давайте посмотрим на настоящие древние копии»."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Open a real record",
         "ru": "Откроем настоящую запись"
       },
-      "paragraphs": {
-        "en": [
-          "With their teacher, they open the Israel Museum's Great Isaiah Scroll viewer. This is a photograph of an actual pre-Christian Hebrew copy of Isaiah, not the prophet's own handwriting. The museum describes agreement with later texts alongside spelling differences, corrections, and other variants.",
-          "Joseph nearly copies the English popup as the scroll's exact translation. Their teacher catches the trap: the ordinary popup translates the later Masoretic text, not this photographed scroll directly."
-        ],
-        "ru": [
-          "С учителем они открывают цифровой Свиток Исаии Израильского музея. Это фотография настоящей еврейской копии, созданной до жизни Иисуса, а не почерк пророка. Музей отмечает сходства с поздними текстами, а также различия, исправления и варианты чтения.",
-          "Джозеф чуть не записывает английскую подсказку как точный перевод свитка. Учитель замечает ловушку: обычная подсказка переводит поздний масоретский текст, а не непосредственно изображённый свиток."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher pulls up a photo of the Great Isaiah Scroll. It's kept safe in a museum in Israel.",
+            "ru": "Учитель открывает фото Большого свитка Исаии. Он хранится в музее в Израиле."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "This isn't Isaiah's own handwriting. It's a copy. A careful scribe made it, over a hundred years before Jesus was born.",
+            "ru": "Это не почерк самого Исаии. Это копия. Её сделал внимательный переписчик больше ста лет до рождения Иисуса."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The museum says this old copy matches later copies very closely. There are just a few small spelling changes and fixes here and there.",
+            "ru": "Музей говорит, что эта древняя копия очень похожа на более поздние копии. Есть лишь небольшие изменения в написании и исправления."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "So the English words under the photo are a word-for-word translation of this exact scroll, right?",
+            "ru": "Значит, английские слова под фото — это точный перевод именно этого свитка?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Careful! That little translation box comes from a newer copy. It's not from this scroll. Good thing you asked before writing it down.",
+            "ru": "Осторожно! Этот маленький перевод взят из более новой копии. Он не из этого свитка. Хорошо, что ты спросил, прежде чем записывать."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Another kind of book",
         "ru": "Другая древняя книга"
       },
-      "paragraphs": {
-        "en": [
-          "Next they inspect the official Codex Sinaiticus contents. This fourth-century Greek manuscript preserves the whole New Testament, with other writings and an arrangement unlike their classroom Bible. Its copying date is not the date when Jesus lived or the books were first written.",
-          "‘So copying doesn't mean the whole message is lost?’ Michael asks. Their teacher points back to what they have seen: the Isaiah Scroll preserves a substantial text from before Jesus, and Sinaiticus preserves the whole New Testament. Researchers compare these with other copies to find agreements and differences. Michael begins to see why checking surviving manuscripts is more helpful than pretending no copyist ever made a mistake."
-        ],
-        "ru": [
-          "Затем они изучают официальный список содержания Синайского кодекса. Греческая рукопись четвёртого века сохранила весь Новый Завет, а также другие сочинения; порядок отличается от их Библии. Дата копии — не дата жизни Иисуса или написания книг.",
-          "«Значит, если текст переписывали, он не обязательно весь потерялся?» — спрашивает Майкл. Учитель напоминает об увиденном: свиток сохранил обширный текст Исаии ещё до жизни Иисуса, а Синайский кодекс — весь Новый Завет. Учёные сравнивают их с другими копиями и находят совпадения и различия. Майкл начинает понимать, почему полезнее изучать сохранившиеся рукописи, чем делать вид, будто переписчики никогда не ошибались."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Next they look at Codex Sinaiticus. It's a Greek copy of the whole New Testament, made about seventeen hundred years ago.",
+            "ru": "Дальше они смотрят на Синайский кодекс. Это греческая копия всего Нового Завета, созданная около тысячи семисот лет назад."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "It even has a couple of extra old writings bound in. Its books aren't in the same order as their own Bible.",
+            "ru": "В нём есть даже пара других старых сочинений. Книги в нём идут не в том порядке, как в их собственной Библии."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Wait — so copying something doesn't mean it all gets lost?",
+            "ru": "Подождите — значит, если что-то переписали, это не значит, что всё потерялось?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Look at what you've already seen today. This scroll kept Isaiah's words safe for over a hundred years before Jesus. This codex kept the whole New Testament safe. Researchers compare thousands of old copies like these to each other. That's how we know what stayed the same.",
+            "ru": "Вспомни, что вы уже увидели сегодня. Этот свиток сохранил слова Исаии больше ста лет до Иисуса. Этот кодекс сохранил весь Новый Завет. Учёные сравнивают тысячи таких древних копий друг с другом. Вот как мы узнаём, что осталось неизменным."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael starts to understand. Checking the real copies tells you far more. It beats just guessing that copyists never made a mistake.",
+            "ru": "Майкл начинает понимать. Изучение настоящих копий говорит намного больше. Это лучше, чем просто предполагать, что переписчики никогда не ошибались."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Repair the caption",
         "ru": "Исправим подпись"
       },
-      "paragraphs": {
-        "en": [
-          "Michael replaces his exhibition caption about perfectly identical copies. He writes that surviving manuscripts let researchers study transmission, including differences. Rosie reads Isaiah's promise about God's enduring word without turning it into a claim that copyists never made mistakes.",
-          "You add links so visitors can inspect the real records. The picnic still needs apples, and Joseph restores them to the list. Their investigation ends with a correction, which is exactly what careful detectives should welcome."
-        ],
-        "ru": [
-          "Майкл заменяет подпись об идеально одинаковых копиях. Он пишет: сохранившиеся рукописи позволяют изучать передачу текста, включая различия. Рози читает обещание о вечном Божьем слове, не превращая его в утверждение о безошибочных переписчиках.",
-          "Ты добавляешь ссылки на настоящие записи. Для пикника всё ещё нужны яблоки, и Джозеф возвращает их в список. Исследование заканчивается исправлением — именно этому и радуются внимательные исследователи."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael erases his sign about \"perfectly identical copies.\" He writes a truer one. Ancient copies let researchers study what changed, and what stayed the same.",
+            "ru": "Майкл стирает подпись про «идеально одинаковые копии». Он пишет более верную. Древние копии позволяют учёным изучать, что изменилось, а что осталось прежним."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "I love how Isaiah promises God's word will stand forever. It doesn't pretend every copyist was a robot who never made a mistake.",
+            "ru": "Мне нравится, что Исаия обещает: слово Божье пребудет вечно. Это не означает, что переписчики были роботами, которые никогда не ошибались."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You add links so museum visitors can study the real evidence for themselves.",
+            "ru": "Ты добавляешь ссылки, чтобы посетители музея сами могли изучить настоящие свидетельства."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "And the picnic list? Joseph adds the missing apples back in.",
+            "ru": "А список для пикника? Джозеф возвращает пропавшие яблоки на место."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "A mistake found and fixed. That's exactly what good detectives do.",
+            "ru": "Ошибка найдена и исправлена. Именно этим и должны заниматься хорошие детективы."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +205,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/ISA.40.8.ESV",
       "ru": "https://www.bible.com/bible/167/ISA.40.8.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "The Bible's been copied by hand for thousands of years — how could anyone know if it still says what it originally said?",
+      "ru": "Библию тысячи лет переписывали от руки — как можно знать, что в ней осталось то же самое, что было написано вначале?"
+    },
+    "response": {
+      "en": "That's a fair question — real scholars have argued about it for years. But here's what the evidence shows: we don't just have one old copy of the New Testament. We have thousands of copies, far more than almost any other book from the ancient world — and some tiny fragments are only a few decades newer than the originals. When experts lay all those copies side by side, the way Joseph and Gracie laid their picnic lists side by side, they find the differences are almost always small — a spelling change, a word out of order — not changes to the story itself. So here's a question back: if thousands of copies, made all over the ancient world by people who never met each other, still tell the very same story about Jesus, doesn't that sound more like careful copying than a message getting wrecked in a giant game of telephone? I know which explanation sounds more trustworthy to me.",
+      "ru": "Это справедливый вопрос — учёные спорят о нём уже много лет. Но вот что показывают свидетельства: у нас не одна-единственная древняя копия Нового Завета. У нас тысячи копий — куда больше, чем почти у любой другой древней книги, а некоторые крошечные фрагменты отделяют от оригиналов всего несколько десятилетий. Когда учёные кладут все эти копии рядом — так же, как Джозеф и Грейси сравнивали свои списки для пикника, — они видят, что различия почти всегда мелкие: изменение в написании, слово не на своём месте, — а не изменение самой истории. Вот вопрос в ответ: если тысячи копий, сделанных по всему древнему миру людьми, которые никогда не встречались друг с другом, рассказывают одну и ту же историю об Иисусе, не похоже ли это больше на бережное копирование, чем на испорченное сообщение в огромной игре в «испорченный телефон»? Я знаю, какое объяснение кажется мне более надёжным."
     }
   },
   "activity": {
@@ -146,8 +273,8 @@
     "ru": "Боже, помоги чтить Твоё слово и точно говорить о свидетельствах."
   },
   "adultNote": {
-    "en": "Isaiah: HU 95.57/27. Museum prose dates it about 125 BCE, while its short label says first century BCE; retain the discrepancy. Sinaiticus is fourth century, includes Barnabas and Hermas, and is not a modern Protestant table of contents. Viewer links only; image reuse not cleared.",
-    "ru": "Исаия: HU 95.57/27. Текст музея указывает около 125 г. до н. э., краткая этикетка — I век до н. э.; расхождение сохранено. Синайский кодекс — IV век, включает Варнаву и «Пастыря» Ермы; содержание не совпадает с современной протестантской Библией. Только ссылки; права на изображения не получены."
+    "en": "Isaiah: HU 95.57/27. Museum prose dates it about 125 BCE, while its short label says first century BCE; retain the discrepancy. Sinaiticus is fourth century, includes Barnabas and Hermas, and is not a modern Protestant table of contents. Viewer links only; image reuse not cleared. The 'comeback' response reflects the manuscript-evidence side of the Ehrman/Wallace-style textual-reliability debate (early, abundant attestation and the kind of variants found) rather than a claim of zero variants or inerrant transmission.",
+    "ru": "Исаия: HU 95.57/27. Текст музея указывает около 125 г. до н. э., краткая этикетка — I век до н. э.; расхождение сохранено. Синайский кодекс — IV век, включает Варнаву и «Пастыря» Ермы; содержание не совпадает с современной протестантской Библией. Только ссылки; права на изображения не получены. Ответ в блоке «если кто-то скажет» отражает аргумент о раннем и обильном рукописном свидетельстве (в духе дискуссии Эрмана и Уоллеса о надёжности текста), а не утверждает отсутствие вариантов или безошибочную передачу текста."
   },
   "sources": [
     {
