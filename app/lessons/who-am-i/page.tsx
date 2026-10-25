@@ -16,12 +16,13 @@ function Challenge({ scene, names, ru, onSuccess }: { scene: Scene; names: strin
   function grade(correct: boolean) { setWrong(!correct); if (correct) onSuccess() }
   return <div data-testid="challenge">
     <h2>{scene.task}</h2>
-    {scene.kind !== 'match' && <div className={styles.choices}>{scene.options.map((option, i) => <button key={i} data-testid={`option-${i}`} aria-pressed={scene.kind === 'select' ? picked.includes(i) : undefined} onClick={() => {
+    {scene.kind !== 'match' && <div className={styles.choices}>{scene.options.map((option, i) => <button key={i} data-testid={`option-${i}`} aria-pressed={scene.kind === 'select' || scene.kind === 'sequence' ? picked.includes(i) : undefined} onClick={() => {
       if (scene.kind === 'choice') grade(scene.answer.includes(i))
       else { setWrong(false); setPicked(picked.includes(i) ? picked.filter(n => n !== i) : [...picked, i]) }
-    }}>{scene.kind === 'select' && <span aria-hidden="true">{picked.includes(i) ? '✓ ' : '○ '}</span>}{option}</button>)}</div>}
+    }}>{(scene.kind === 'select' || scene.kind === 'sequence') && <span aria-hidden="true">{picked.includes(i) ? '✓ ' : '○ '}</span>}{option}</button>)}</div>}
     {scene.kind === 'match' && scene.options.map((prompt, row) => <fieldset key={row}><legend>{prompt}</legend><div className={styles.choices}>{[3, 1, 4, 0, 2].map(id => <button key={id} data-testid={`match-${row}-${id}`} aria-pressed={matches[row] === id} onClick={() => { setWrong(false); setMatches(matches.map((v, i) => i === row ? id : v)) }}>{names[id]}</button>)}</div></fieldset>)}
-    {scene.kind !== 'choice' && <button className={styles.primary} data-testid="check" disabled={scene.kind === 'select' ? !picked.length : matches.includes(-1)} onClick={() => grade(scene.kind === 'select' ? picked.length === scene.answer.length && picked.every(id => scene.answer.includes(id)) : matches.every((id, i) => id === scene.answer[i]))}>{ru ? 'Проверить' : 'Check'}</button>}
+    {scene.kind === 'sequence' && <><ol data-testid="recall-answer">{picked.map(id => <li key={id}>{scene.options[id]}</li>)}</ol><button data-testid="clear" onClick={() => { setPicked([]); setWrong(false) }}>{ru ? 'Очистить' : 'Clear'}</button></>}
+    {scene.kind !== 'choice' && <button className={styles.primary} data-testid="check" disabled={scene.kind === 'select' || scene.kind === 'sequence' ? !picked.length : matches.includes(-1)} onClick={() => grade(scene.kind === 'sequence' ? picked.length === scene.answer.length && picked.every((id, i) => id === scene.answer[i]) : scene.kind === 'select' ? picked.length === scene.answer.length && picked.every(id => scene.answer.includes(id)) : matches.every((id, i) => id === scene.answer[i]))}>{ru ? 'Проверить' : 'Check'}</button>}
     <p role="status" className={styles.feedback}>{wrong ? `${ru ? 'Попробуй ещё раз.' : 'Try again.'} ${scene.hint}` : ''}</p>
     <details><summary>{ru ? 'Нужна подсказка?' : 'Need a hint?'}</summary><p>{scene.hint}</p></details>
   </div>
@@ -52,12 +53,12 @@ export default function WhoAmIPage() {
     <div className={styles.stage}>
       <aside className={styles.visual}>
         <Image src="/images/lessons/who-am-i/hero.png" alt={ru ? 'Дети приветствуют нового друга за столом с открытой Библией и зеркалом.' : 'Children welcome a new friend at a table with an open Bible and a mirror.'} width={1024} height={768} priority sizes="(min-width: 900px) 420px, 100vw" />
-        <div className={styles.mirrors}>
+        {phase !== 'practice' && <div className={styles.mirrors}>
           <h2>{ru ? 'Два зеркала' : 'Two mirrors'}</h2>
           <div className={styles.tabs}><button data-testid="people-mirror" aria-pressed={mirror === 'people'} onClick={() => setMirror('people')}>{ru ? 'Мнение людей' : 'People’s opinions'}</button><button data-testid="word-mirror" aria-pressed={mirror === 'word'} onClick={() => setMirror('word')}>{ru ? 'Божье Слово' : 'God’s Word'}</button></div>
           <div className={styles.mirror} data-testid="mirror"><p>{mirror === 'people' ? (ru ? 'Когда нас оценивают только по…' : 'When people measure us only by…') : (ru ? 'Церковь во Христе — это…' : 'The Church in Christ is…')}</p><ul>{(mirror === 'people' ? t.labels : t.names).map(name => <li key={name}>{name}</li>)}</ul></div>
           <p className={styles.caption}>{ru ? 'Пояснения к уроку, не цитаты. Принадлежность Иисусу — дар милости.' : 'Lesson summaries, not quotations. Belonging to Jesus is a gift of mercy.'}</p>
-        </div>
+        </div>}
       </aside>
       <section className={styles.panel}>
         <h1 ref={heading} tabIndex={-1}>{step === -1 ? t.title : complete ? (ru ? 'Не только кто, но и чей' : 'Not only who, but whose') : scene.title}</h1>
@@ -68,7 +69,7 @@ export default function WhoAmIPage() {
           <p className={styles.caption}>{ru ? 'Личные ответы не отправляются и не сохраняются. После обновления страницы урок начнётся заново.' : 'Personal answers are not sent or saved. Refreshing starts the lesson over.'}</p>
           <div className={styles.actions}><Link href="/lessons/alone-with-god">{ru ? 'Дальше: Наедине с Богом' : 'Next: Alone with God'} →</Link><button data-testid="restart" onClick={() => { setPlan(null); setMirror('people'); move(-1) }}>{ru ? 'Пройти ещё раз' : 'Start again'}</button></div>
         </> : phase === 'learn' ? <>
-          {scene.paragraphs.map(p => <p key={p}>{p}</p>)}{step === 0 && quote}<div className={styles.talk}><h2>{ru ? 'Остановись и подумай' : 'Pause and think'}</h2><p>{scene.talk}</p></div>
+          {scene.paragraphs.map(p => <p key={p}>{p}</p>)}{(step === 0 || scene.kind === 'sequence') && quote}<div className={styles.talk}><h2>{ru ? 'Остановись и подумай' : 'Pause and think'}</h2><p>{scene.talk}</p></div>
           <button className={styles.primary} data-testid="play" onClick={() => move(step, 'practice')}>{ru ? 'Попробовать задание' : 'Try the challenge'} →</button>
         </> : phase === 'practice' ? <><Challenge key={`${language}-${step}`} scene={scene} names={t.names} ru={ru} onSuccess={() => move(step, 'result')} /><button className={styles.back} data-testid="read-again" onClick={() => move(step)}>{ru ? 'Вернуться к истории' : 'Return to the story'}</button></> : <>
           <div className={styles.truth} role="status"><h2>{ru ? 'Да, вот что важно' : 'Yes—here is what matters'}</h2><p>{scene.truth}</p></div><button className={styles.primary} data-testid="next" onClick={() => move(step + 1)}>{ru ? 'Продолжить' : 'Continue'} →</button>
@@ -76,7 +77,7 @@ export default function WhoAmIPage() {
         {step > 0 && !complete && <button className={styles.back} data-testid="previous" onClick={() => move(step - 1)}>{ru ? '← Предыдущая часть' : '← Previous part'}</button>}
       </section>
     </div>
-    <section className={styles.guide} aria-labelledby="printables-title"><h2 id="printables-title">{ru ? 'Книжка к уроку' : 'Your lesson booklet'}</h2><p>{ru ? 'Читай на экране или распечатай, сложи и обсуждай вместе с друзьями.' : 'Read on screen, or print, fold, and explore with friends.'}</p><div className={styles.actions}><a href={`/printables/who-am-i/Who-Am-I-${language.toUpperCase()}-READING-ORDER.pdf`}>{ru ? 'Читать книжку (PDF)' : 'Read the booklet (PDF)'}</a><a href={`/printables/who-am-i/Who-Am-I-${language.toUpperCase()}-LETTER-LONG-EDGE.pdf`} download>{ru ? 'Для печати (PDF)' : 'Print booklet (PDF)'}</a></div><p className={styles.caption}>{ru ? 'Бумага Letter, масштаб 100%, двусторонняя печать с переворотом по длинному краю. Сложи листы пополам. QR-код ведёт к отрывку на Bible.com.' : 'US Letter, 100% scale, double-sided printing: flip on the long edge. Fold the sheets in half. The QR code opens the passage on Bible.com.'}</p></section>
+    <section className={styles.guide} aria-labelledby="printables-title"><h2 id="printables-title">{ru ? 'Книжка к уроку' : 'Your lesson booklet'}</h2><p>{ru ? 'Читай на экране или распечатай, сложи и обсуждай вместе с друзьями.' : 'Read on screen, or print, fold, and explore with friends.'}</p><div className={styles.actions}><a href={`/printables/who-am-i/Who-Am-I-${language.toUpperCase()}-READING-ORDER.pdf`}>{ru ? 'Читать книжку (PDF)' : 'Read the booklet (PDF)'}</a><a href={`/printables/who-am-i/Who-Am-I-${language.toUpperCase()}-LETTER-LONG-EDGE.pdf`} download>{ru ? 'Для печати (PDF)' : 'Print booklet (PDF)'}</a></div><p className={styles.caption}>{ru ? 'Бумага Letter, масштаб 100%, двусторонняя печать с переворотом по длинному краю. Сложи листы пополам. QR-код ведёт к этому уроку на Junior Disciples.' : 'US Letter, 100% scale, double-sided printing: flip on the long edge. Fold the sheets in half. The QR code opens this lesson on Junior Disciples.'}</p></section>
     <details className={styles.guide}><summary>{ru ? 'Для родителей и учителей · текст Библии и пояснения' : 'For parents & teachers · Bible text and notes'}</summary><p><a href="/printables/who-am-i/Who-Am-I-BILINGUAL-ANSWER-KEY.pdf" download>{ru ? 'Ответы для взрослых (PDF)' : 'Answer key for adults (PDF)'}</a></p>{t.adult.map(p => <p key={p}>{p}</p>)}<ExternalSourceLink href={verse.url}>{ru ? 'Прочитать отрывок на Bible.com' : 'Read the passage on Bible.com'} ↗</ExternalSourceLink></details>
   </article>
 }
