@@ -16,64 +16,231 @@
         "en": "One chair stays empty",
         "ru": "Один стул пустует"
       },
-      "paragraphs": {
-        "en": [
-          "The explorers set five chairs around the library table, but their friend Lena cannot come. Her treatment has left her tired again. Gracie folds the expedition map they had planned to show her. They prayed for Lena to feel well this week. Why is her chair still empty?",
-          "“Did we use the wrong words when we prayed?” Michael asks. Rosie moves closer so they can talk, rather than answering from across the room. Explorer, sit with them. They can bring this disappointment to God without first pretending to understand it."
-        ],
-        "ru": [
-          "Исследователи ставят пять стульев вокруг библиотечного стола, но Лена не приходит. После лечения она снова устала. Грейси складывает карту, которую хотели ей показать. Они молились, чтобы на этой неделе Лене стало лучше. Почему её стул пуст?",
-          "«Может, мы неправильно молились?» — спрашивает Майкл. Рози подсаживается ближе, чтобы поговорить, а не отвечать через всю комнату. Исследователь, сядь с ними. Они могут рассказать Богу о своём разочаровании, даже если пока совсем не понимают, почему так вышло."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team sets five chairs around the library table. But their friend Lena can't come.",
+            "ru": "Исследователи ставят пять стульев вокруг библиотечного стола, но Лена не приходит."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Her treatment has left her tired again.",
+            "ru": "После лечения она снова устала."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie folds the expedition map they had planned to show her.",
+            "ru": "Грейси складывает карту, которую хотели ей показать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They prayed for Lena to feel well this week. Why is her chair still empty?",
+            "ru": "Они молились, чтобы на этой неделе Лене стало лучше. Почему её стул пуст?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Did we use the wrong words when we prayed?",
+            "ru": "Может, мы неправильно молились?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie moves closer so they can talk, rather than answering from across the room.",
+            "ru": "Рози подсаживается ближе, чтобы поговорить, а не отвечать через всю комнату."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, sit with them. They can bring this disappointment to God, without first pretending to understand it.",
+            "ru": "Исследователь, сядь с ними. Они могут рассказать Богу о своём разочаровании, даже если пока совсем не понимают, почему так вышло."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Jesus brought his sorrow",
         "ru": "Иисус принёс Свою скорбь"
       },
-      "paragraphs": {
-        "en": [
-          "With their leader, they read Luke 22:39–46. Before the cross, Jesus prayed in deep distress and submitted his request to the Father’s will. His suffering was not evidence that the Father stopped loving him or that Jesus lacked faith. He trusted while facing something truly hard.",
-          "Joseph puts away a card that said every faithful prayer gets exactly the requested outcome. Jesus’ own prayer shows why that rule cannot stand. Trust includes bringing sorrow honestly, not pretending we enjoy pain."
-        ],
-        "ru": [
-          "С руководителем они читают Луки 22:39–46. Перед крестом Иисус молился в глубокой скорби и подчинил просьбу воле Отца. Его страдание не означало, что Отец перестал любить Его или что Ему не хватало веры. Он доверял среди настоящей тяжести.",
-          "Джозеф убирает карточку с правилом: «Верная молитва всегда получает именно просимое». Молитва Иисуса показывает, почему это неверно. Доверие позволяет честно говорить о скорби, а не притворяться, что боль нравится."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "With their leader, they read Luke chapter 22.",
+            "ru": "С руководителем они читают 22 главу Луки."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Before the cross, Jesus prayed in deep distress, and gave his request to the Father's will.",
+            "ru": "Перед крестом Иисус молился в глубокой скорби и подчинил просьбу воле Отца."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "His suffering wasn't evidence the Father stopped loving him, or that Jesus lacked faith.",
+            "ru": "Его страдание не означало, что Отец перестал любить Его или что Ему не хватало веры."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He trusted while facing something truly hard.",
+            "ru": "Он доверял среди настоящей тяжести."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph puts away a card that said every faithful prayer gets exactly the requested outcome.",
+            "ru": "Джозеф убирает карточку с правилом: «Верная молитва всегда получает именно просимое»."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Jesus's own prayer shows why that rule can't stand.",
+            "ru": "Молитва Иисуса показывает, почему это неверно."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Trust includes bringing sorrow honestly. Not pretending we enjoy pain.",
+            "ru": "Доверие позволяет честно говорить о скорби, а не притворяться, что боль нравится."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Grace without a secret explanation",
         "ru": "Благодать без тайной разгадки"
       },
-      "paragraphs": {
-        "en": [
-          "They read 2 Corinthians 12:7–10. Paul repeatedly asked for his thorn to be removed, but received a promise of sufficient grace and strength in weakness. The passage does not identify every detail of Paul’s trouble, so the team does not invent a diagnosis.",
-          "“But why is Lena still ill?” Gracie asks. The leader listens. “We don’t know why she hasn’t recovered,” the leader says. “That doesn’t mean she matters less to God, or that any of you failed to believe enough.” The children still have their question, but they do not have to blame Lena or themselves as they keep asking God for help."
-        ],
-        "ru": [
-          "Они читают 2 Коринфянам 12:7–10. Павел неоднократно просил убрать жало, но получил обещание достаточной благодати и силы в немощи. Отрывок не раскрывает всех подробностей его беды, поэтому команда не придумывает диагноз.",
-          "«Но почему Лена всё ещё болеет?» — спрашивает Грейси. Руководитель внимательно слушает. «Мы не знаем, почему она ещё не выздоровела. Но это не значит, что Бог меньше её любит или что кому-то из вас не хватило веры». Вопрос остаётся, но детям не нужно винить Лену или себя. Они могут и дальше просить Бога о помощи."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read 2 Corinthians chapter 12.",
+            "ru": "Они читают 12 главу 2 Коринфянам."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Paul repeatedly asked for his thorn to be removed. He received a promise of sufficient grace and strength in weakness instead.",
+            "ru": "Павел неоднократно просил убрать жало, но получил обещание достаточной благодати и силы в немощи."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The passage doesn't name every detail of Paul's trouble. So the team doesn't invent a diagnosis.",
+            "ru": "Отрывок не раскрывает всех подробностей его беды, поэтому команда не придумывает диагноз."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "But why is Lena still ill?",
+            "ru": "Но почему Лена всё ещё болеет?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The leader listens.",
+            "ru": "Руководитель внимательно слушает."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "We don't know why she hasn't recovered. That doesn't mean she matters less to God, or that any of you didn't believe enough.",
+            "ru": "Мы не знаем, почему она ещё не выздоровела. Но это не значит, что Бог меньше её любит или что кому-то из вас не хватило веры."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The kids still have their question. But they don't have to blame Lena or themselves, as they keep asking God for help.",
+            "ru": "Вопрос остаётся, но детям не нужно винить Лену или себя. Они могут и дальше просить Бога о помощи."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Love has work to do",
         "ru": "У любви есть дело"
       },
-      "paragraphs": {
-        "en": [
-          "The children ask Lena’s parent what would help. They record a short greeting, prepare a quiet activity she may use when ready, and leave room for her to say no. Michael prays for healing again without promising a date. Rosie includes the doctors and family in her prayer.",
-          "You help fold the map into an envelope. They still wish the chair were occupied. Hope has not erased the question, but love has found its next action: keep asking, stay near, and receive practical help."
-        ],
-        "ru": [
-          "Дети спрашивают у родителя Лены, чем помочь. Они записывают короткий привет, готовят спокойное занятие на потом и позволяют Лене отказаться. Майкл снова просит об исцелении, не обещая срок. Рози молится также о врачах и семье.",
-          "Ты помогаешь сложить карту в конверт. Им всё ещё хочется, чтобы стул не пустовал. Надежда не стёрла вопрос, но любовь нашла следующий шаг: продолжать просить, быть рядом и принимать практическую помощь."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The kids ask Lena's parent what would help.",
+            "ru": "Дети спрашивают у родителя Лены, чем помочь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They record a short greeting, prepare a quiet activity she may use when ready, and leave room for her to say no.",
+            "ru": "Они записывают короткий привет, готовят спокойное занятие на потом и позволяют Лене отказаться."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael prays for healing again, without promising a date.",
+            "ru": "Майкл снова просит об исцелении, не обещая срок."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie includes the doctors and family in her prayer.",
+            "ru": "Рози молится также о врачах и семье."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help fold the map into an envelope.",
+            "ru": "Ты помогаешь сложить карту в конверт."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They still wish the chair were occupied.",
+            "ru": "Им всё ещё хочется, чтобы стул не пустовал."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Hope hasn't erased the question. But love has found its next action. Keep asking. Stay near. Receive practical help.",
+            "ru": "Надежда не стёрла вопрос, но любовь нашла следующий шаг: продолжать просить, быть рядом и принимать практическую помощь."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +255,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/2CO.12.9.ESV",
       "ru": "https://www.bible.com/bible/167/2CO.12.9.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Scientists have actually tested prayer in hospital studies, and it didn't make patients heal faster. If prayer worked the way people hope, that should have shown up in the data.",
+      "ru": "Учёные уже проверяли молитву в больничных исследованиях, и она не ускоряла выздоровление. Если бы молитва работала так, как люди надеются, это было бы заметно в данных."
+    },
+    "response": {
+      "en": "A real study did test something like that: a large 2006 study on heart surgery patients, sometimes called the STEP study. It found that being prayed for by strangers didn't reliably speed up recovery. That's worth taking seriously. But notice what it actually tested: prayer treated like a dose of medicine, where the \"right\" result is a predictable, measurable outcome every time. This lesson's own story already shows that isn't how the Bible frames prayer. Jesus himself prayed urgently in the garden, and didn't get the outcome he asked for. Paul asked three times to have his pain removed, and got a different answer instead: grace to carry it. So here's a question back: if the Bible itself never promised prayer works like a chemical that always produces the same measurable effect, does a study finding no guaranteed effect disprove Christian prayer, or test a version of prayer the Bible never claimed in the first place?",
+      "ru": "Настоящее исследование и проверяло что-то похожее: большое исследование 2006 года о пациентах после операций на сердце, иногда называемое STEP. Оно показало, что молитва незнакомцев не ускоряла выздоровление надёжным образом. Это стоит воспринимать серьёзно. Но заметь, что именно там проверяли: молитву как дозу лекарства, где «правильный» результат — предсказуемый, измеримый исход каждый раз. Собственная история этого урока уже показывает: Библия не описывает молитву так. Сам Иисус настойчиво молился в саду — и не получил того исхода, о котором просил. Павел трижды просил убрать свою боль — и получил другой ответ: благодать, чтобы её нести. Вот вопрос в ответ: если сама Библия никогда не обещала, что молитва работает как химическое вещество, всегда дающее один и тот же измеримый эффект, исследование, не нашедшее гарантированного эффекта, опровергает христианскую молитву — или проверяет версию молитвы, которую Библия никогда и не заявляла?"
     }
   },
   "activity": {
@@ -178,7 +355,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read Luke 22:39–46 and 2 Corinthians 12:7–10 gently. Do not assign a divine purpose to a child’s illness, blame faith, discourage treatment, or demand cheerful acceptance. Persistent distress deserves trusted and professional support.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Бережно прочитайте Луки 22:39–46 и 2 Коринфянам 12:7–10. Не объявляйте Божью причину болезни ребёнка, не обвиняйте неверие, не отговаривайте от лечения и не требуйте радости. При длительном тяжёлом состоянии нужна надёжная и профессиональная помощь."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read Luke 22:39–46 and 2 Corinthians 12:7–10 gently. Do not assign a divine purpose to a child’s illness, blame faith, discourage treatment, or demand cheerful acceptance. Persistent distress deserves trusted and professional support. The 'comeback' response references the real 2006 STEP study (Benson et al., American Heart Journal) on intercessory prayer and cardiac surgery outcomes; it does not dispute the study's finding, only the assumption that it tested the kind of prayer this lesson describes.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Бережно прочитайте Луки 22:39–46 и 2 Коринфянам 12:7–10. Не объявляйте Божью причину болезни ребёнка, не обвиняйте неверие, не отговаривайте от лечения и не требуйте радости. При длительном тяжёлом состоянии нужна надёжная и профессиональная помощь. Ответ в блоке «если кто-то скажет» ссылается на настоящее исследование STEP 2006 года (Бенсон и соавторы, American Heart Journal) о заступнической молитве и исходах кардиохирургии; он не спорит с результатом исследования, а лишь с предположением, что оно проверяло именно тот вид молитвы, который описан в этом уроке."
   }
 }

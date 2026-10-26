@@ -16,64 +16,230 @@
         "en": "The tallest tower",
         "ru": "Самая высокая башня"
       },
-      "paragraphs": {
-        "en": [
-          "Michael stacks empty delivery boxes in the church kitchen until they tower above his green shirt. The explorers are preparing welcome packs for families moving into nearby flats. He announces that whoever carries the most boxes should lead. Joseph looks down at his sore wrist.",
-          "Gracie tries lifting a stack, but the top box slides. You catch it before it reaches the floor. Their project needs more than a champion carrier; it needs a better plan."
-        ],
-        "ru": [
-          "Майкл складывает пустые коробки в церковной кухне. Башня уже выше его зелёной рубашки. Исследователи готовят подарочные наборы семьям, которые переезжают в соседние дома. Майкл предлагает назначить главным того, кто унесёт больше коробок. Джозеф смотрит на больное запястье.",
-          "Грейси поднимает стопку, но верхняя коробка съезжает. Ты ловишь её у самого пола. Для помощи нужен не чемпион по переноске, а хороший план."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael stacks empty delivery boxes in the church kitchen, until they tower above him.",
+            "ru": "Майкл складывает пустые коробки в церковной кухне. Башня уже выше него."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team is preparing welcome packs for families moving into nearby flats.",
+            "ru": "Исследователи готовят подарочные наборы семьям, которые переезжают в соседние дома."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He announces that whoever carries the most boxes should lead.",
+            "ru": "Майкл предлагает назначить главным того, кто унесёт больше коробок."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph looks down at his sore wrist.",
+            "ru": "Джозеф смотрит на больное запястье."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie tries lifting a stack, but the top box slides.",
+            "ru": "Грейси поднимает стопку, но верхняя коробка съезжает."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You catch it before it reaches the floor.",
+            "ru": "Ты ловишь её у самого пола."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their project needs more than a champion carrier. It needs a better plan.",
+            "ru": "Для помощи нужен не чемпион по переноске, а хороший план."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Not spare parts",
         "ru": "Не запасные детали"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens her purple Bible to 1 Corinthians 12:12–27. Paul describes believers as one body with different members. A hand cannot dismiss a foot as unnecessary. Gifts differ, but belonging does not depend on having the most noticeable task.",
-          "“Could I check the addresses instead of carrying boxes?” Joseph asks. “Would that still be helping?” Michael looks at the labels. Even the strongest carrier needs to know which door to go to. He lowers his stack and asks the others what each of them can offer."
-        ],
-        "ru": [
-          "Рози открывает фиолетовую Библию на 1 Коринфянам 12:12–27. Павел описывает верующих как одно тело с разными членами. Рука не может объявить ногу ненужной. Дары различаются, но принадлежность к церкви не зависит от заметности работы.",
-          "«А я могу проверять адреса вместо того, чтобы носить коробки? — спрашивает Джозеф. — Это ведь тоже помощь?» Майкл смотрит на подписи: даже самому сильному нужно знать, к какой двери нести набор. Он опускает коробки и спрашивает остальных, кто чем может помочь."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens her Bible to First Corinthians chapter 12.",
+            "ru": "Рози открывает Библию на 12 главе 1 Коринфянам."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Paul describes believers as one body with different members.",
+            "ru": "Павел описывает верующих как одно тело с разными членами."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A hand can't dismiss a foot as unnecessary.",
+            "ru": "Рука не может объявить ногу ненужной."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gifts differ. But belonging doesn't depend on having the most noticeable task.",
+            "ru": "Дары различаются, но принадлежность к церкви не зависит от заметности работы."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Could I check the addresses instead of carrying boxes? Would that still be helping?",
+            "ru": "А я могу проверять адреса вместо того, чтобы носить коробки? Это ведь тоже помощь?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael looks at the labels. Even the strongest carrier needs to know which door to go to.",
+            "ru": "Майкл смотрит на подписи: даже самому сильному нужно знать, к какой двери нести набор."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He lowers his stack, and asks the others what each of them can offer.",
+            "ru": "Он опускает коробки и спрашивает остальных, кто чем может помочь."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Ask before packing",
         "ru": "Сначала спросить"
       },
-      "paragraphs": {
-        "en": [
-          "Their leader has asked the families what would help, rather than guessing. One family needs kitchen towels; another already has plenty. The team reads Mark 10:45. Jesus served and gave his life to rescue others. Their little project cannot repeat his saving work, but it can follow his generous direction.",
-          "You help make a task board: check requests, pack suitable supplies, check labels, deliver with adults. Joseph chooses seated checking; Gracie counts towels. Nobody assigns him a pretend job just to look inclusive."
-        ],
-        "ru": [
-          "Руководитель заранее спросил семьи, что им нужно. Одной нужны кухонные полотенца, у другой их достаточно. Команда читает Марка 10:45. Иисус служил и отдал Свою жизнь ради спасения людей. Их маленькое дело не повторяет Его подвиг, но помогает следовать Его примеру щедрости.",
-          "Ты помогаешь составить план: проверить просьбы, собрать нужное, сверить подписи, доставить со взрослыми. Джозеф выбирает проверку за столом, Грейси считает полотенца. Ему доверяют настоящее дело, а не работу для вида."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader has asked the families what would help, rather than guessing.",
+            "ru": "Руководитель заранее спросил семьи, что им нужно."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "One family needs kitchen towels. Another already has plenty.",
+            "ru": "Одной нужны кухонные полотенца, у другой их достаточно."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team reads Mark 10:45.",
+            "ru": "Команда читает Марка 10:45."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Jesus served, and gave his life to rescue others.",
+            "ru": "Иисус служил и отдал Свою жизнь ради спасения людей."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their little project can't repeat his saving work. But it can follow his generous direction.",
+            "ru": "Их маленькое дело не повторяет Его подвиг, но помогает следовать Его примеру щедрости."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help make a task board. Check requests. Pack suitable supplies. Check labels. Deliver with adults.",
+            "ru": "Ты помогаешь составить план: проверить просьбы, собрать нужное, сверить подписи, доставить со взрослыми."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph chooses seated checking. Gracie counts towels.",
+            "ru": "Джозеф выбирает проверку за столом, Грейси считает полотенца."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Nobody assigns him a pretend job, just to look inclusive.",
+            "ru": "Ему доверяют настоящее дело, а не работу для вида."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "The quiet correction",
         "ru": "Незаметное исправление"
       },
-      "paragraphs": {
-        "en": [
-          "Just before departure, Joseph spots two swapped labels. “These packs would have gone to the wrong families,” Michael says, exchanging them. “Thanks for checking.” Rosie makes sure the walkway is clear, and Gracie asks whether anyone needs a break. The adults leave with fewer packs than Michael first imagined, but each one now matches a family’s needs.",
-          "Explorer, notice what changed: their question is no longer who looks most important. It is whether people receive loving help. Even tidying the kitchen belongs to that answer."
-        ],
-        "ru": [
-          "Перед выходом Джозеф замечает две перепутанные подписи. «Эти наборы попали бы не в те семьи, — говорит Майкл и меняет подписи местами. — Спасибо, что проверил». Рози освобождает проход, а Грейси спрашивает, нужен ли кому-нибудь отдых. Взрослые увозят меньше наборов, чем сначала задумал Майкл, зато теперь в каждом есть то, что нужно семье.",
-          "Исследователь, заметь перемену: теперь команда спрашивает не о том, кто важнее всех, а о том, получат ли люди заботливую помощь. Даже уборка кухни становится частью ответа."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Just before departure, Joseph spots two swapped labels.",
+            "ru": "Перед выходом Джозеф замечает две перепутанные подписи."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "These packs would have gone to the wrong families. Thanks for checking.",
+            "ru": "Эти наборы попали бы не в те семьи. Спасибо, что проверил."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie makes sure the walkway is clear. Gracie asks whether anyone needs a break.",
+            "ru": "Рози освобождает проход, а Грейси спрашивает, нужен ли кому-нибудь отдых."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The adults leave with fewer packs than Michael first imagined. But each one now matches a family's needs.",
+            "ru": "Взрослые увозят меньше наборов, чем сначала задумал Майкл, зато теперь в каждом есть то, что нужно семье."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, notice what changed. Their question is no longer who looks most important.",
+            "ru": "Исследователь, заметь перемену: теперь команда спрашивает не о том, кто важнее всех."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "It's whether people receive loving help. Even tidying the kitchen belongs to that answer.",
+            "ru": "А о том, получат ли люди заботливую помощь. Даже уборка кухни становится частью ответа."
+          }
+        }
+      ]
     }
   ],
   "scripture": {

@@ -16,64 +16,215 @@
         "en": "Another fallen bridge",
         "ru": "Мост снова упал"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph’s model bridge collapses just as the explorers prepare to carry it into the community hall. Michael’s green sleeve catches a loose support, and the cardboard roadway folds. Joseph snatches the pieces away. He had promised himself that becoming a better Christian meant never losing his temper again.",
-          "You kneel beside the scattered supports. Gracie offers to help, but Joseph tells everyone to leave his project alone. Now the broken bridge is not their only problem."
-        ],
-        "ru": [
-          "Модель моста Джозефа рушится перед самым показом в клубе. Зелёный рукав Майкла задевает опору, и картонная дорога складывается. Джозеф выхватывает детали. Он обещал себе больше никогда не сердиться: ему казалось, что именно так он станет лучше как христианин.",
-          "Ты приседаешь возле рассыпанных опор. Грейси предлагает помочь, но Джозеф велит всем оставить его работу в покое. Теперь сломанный мост — не единственная проблема."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph's model bridge collapses. It happens just as the team prepares to carry it into the community hall.",
+            "ru": "Модель моста Джозефа рушится. Это случается перед самым показом в клубе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael's sleeve catches a loose support, and the cardboard roadway folds.",
+            "ru": "Рукав Майкла задевает опору, и картонная дорога складывается."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph snatches the pieces away.",
+            "ru": "Джозеф выхватывает детали."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He had made himself a promise. Becoming a better Christian meant never losing his temper again.",
+            "ru": "Он обещал себе кое-что. Стать лучше как христианин — значит больше никогда не сердиться."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You kneel beside the scattered supports.",
+            "ru": "Ты приседаешь возле рассыпанных опор."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie offers to help. But Joseph tells everyone to leave his project alone.",
+            "ru": "Грейси предлагает помочь, но Джозеф велит всем оставить его работу в покое."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Now the broken bridge isn't their only problem.",
+            "ru": "Теперь сломанный мост — не единственная проблема."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Where change begins",
         "ru": "Откуда начинается перемена"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie sits beside Joseph and gives him a moment to settle down. Together they read Philippians 2:12–13. God works in his people, shaping both their desire and their action. Joseph is not abandoned to change himself by willpower, and he is not invited to sit still while others suffer his angry words.",
-          "In Galatians 5 they find the Spirit’s fruit, including patience and kindness. These qualities grow from life with God. They are not entrance tickets that purchase his love."
-        ],
-        "ru": [
-          "Рози садится рядом и даёт Джозефу немного успокоиться. Вместе они читают Филиппийцам 2:12–13: Бог действует в Своих людях, изменяя и желания, и поступки. Джозефу не нужно меняться одной силой воли. Но нельзя и сидеть без дела, пока другие терпят его резкость.",
-          "В Галатам 5 они находят плод Духа, в том числе долготерпение и доброту. Эти качества растут в жизни с Богом. Они не билет, которым покупают Его любовь."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie sits beside Joseph, and gives him a moment to settle down.",
+            "ru": "Рози садится рядом и даёт Джозефу немного успокоиться."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Together they read Philippians chapter 2.",
+            "ru": "Вместе они читают 2 главу Филиппийцам."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "God works in his people, shaping both their desire and their action.",
+            "ru": "Бог действует в Своих людях, изменяя и желания, и поступки."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph isn't left alone to change himself by willpower. But he isn't invited to sit still while others suffer his angry words, either.",
+            "ru": "Джозефу не нужно меняться одной силой воли. Но нельзя и сидеть без дела, пока другие терпят его резкость."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "In Galatians 5, they find the Spirit's fruit, including patience and kindness.",
+            "ru": "В Галатам 5 они находят плод Духа, в том числе долготерпение и доброту."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "These qualities grow from life with God. They aren't entrance tickets that purchase his love.",
+            "ru": "Эти качества растут в жизни с Богом. Они не билет, которым покупают Его любовь."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Try a different response",
         "ru": "Попробуй ответить иначе"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph asks God for help and apologizes for sending everyone away. “Could someone hold these supports while I join them?” he asks. This time he tells his friends what would help instead of pushing them away. Michael admits that he was careless. Gracie measures a wider base, and you pass over the tape without rushing him.",
-          "When the first repair slips, Joseph feels the same hot frustration. This time he puts the tape down, takes a breath, and asks for another pair of hands. Patience becomes a practiced response, not a pretend feeling."
-        ],
-        "ru": [
-          "Джозеф просит Бога о помощи и извиняется, что прогнал друзей. «Придержите, пожалуйста, опоры, пока я их соединю», — просит он. Теперь он объясняет друзьям, какая помощь нужна, вместо того чтобы прогонять их. Майкл признаёт свою неосторожность. Грейси измеряет основание пошире, а ты спокойно передаёшь скотч.",
-          "Первая склейка съезжает. Джозеф снова злится, но теперь кладёт скотч, делает вдох и просит помочь. Терпение становится поступком, которому учатся, а не притворным спокойствием."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph asks God for help, and apologizes for sending everyone away.",
+            "ru": "Джозеф просит Бога о помощи и извиняется, что прогнал друзей."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Could someone hold these supports while I join them?",
+            "ru": "Придержите, пожалуйста, опоры, пока я их соединю."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "This time he tells his friends what would help, instead of pushing them away.",
+            "ru": "Теперь он объясняет друзьям, какая помощь нужна, вместо того чтобы прогонять их."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael admits he was careless. Gracie measures a wider base. You pass over the tape without rushing him.",
+            "ru": "Майкл признаёт свою неосторожность. Грейси измеряет основание пошире, а ты спокойно передаёшь скотч."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "When the first repair slips, Joseph feels the same hot frustration.",
+            "ru": "Первая склейка съезжает. Джозеф снова злится."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "This time he puts the tape down. He takes a breath. He asks for another pair of hands.",
+            "ru": "Но теперь он кладёт скотч. Делает вдох. Просит помочь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Patience becomes a practiced response. Not a pretend feeling.",
+            "ru": "Терпение становится поступком, которому учатся, а не притворным спокойствием."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A stronger next attempt",
         "ru": "Следующая попытка"
       },
-      "paragraphs": {
-        "en": [
-          "The repaired bridge holds a little wooden cart. Joseph lets Michael roll it across first. He cannot promise that tomorrow will contain no angry thoughts, but he can describe a new direction: ask for help, speak honestly, and practice kindness when frustration returns.",
-          "You notice that the bridge is not the only thing that has changed. Joseph has welcomed his friends back into the work. With the Spirit’s help, he is learning to respond differently when he is frustrated. As they put the tools away, the friends thank God for helping them grow together."
-        ],
-        "ru": [
-          "Починенный мост выдерживает деревянную тележку. Джозеф предлагает Майклу первым прокатить её. Он не обещает, что завтра не рассердится. Зато знает новое направление: просить помощи, говорить честно и выбирать доброту, когда злость вернётся.",
-          "Ты замечаешь, что изменился не только мост. Джозеф снова пригласил друзей к общему делу. С помощью Святого Духа он учится по-другому отвечать на неудачи. Убирая инструменты, ребята благодарят Бога за то, что Он помогает им расти вместе."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The repaired bridge holds a little wooden cart.",
+            "ru": "Починенный мост выдерживает деревянную тележку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph lets Michael roll it across first.",
+            "ru": "Джозеф предлагает Майклу первым прокатить её."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He can't promise tomorrow will contain no angry thoughts. But he can describe a new direction. Ask for help. Speak honestly. Practice kindness when frustration returns.",
+            "ru": "Он не обещает, что завтра не рассердится. Зато знает новое направление: просить помощи, говорить честно и выбирать доброту, когда злость вернётся."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You notice something else has changed, too.",
+            "ru": "Ты замечаешь, что изменился не только мост."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph has welcomed his friends back into the work. With the Spirit's help, he's learning to respond differently when he's frustrated.",
+            "ru": "Джозеф снова пригласил друзей к общему делу. С помощью Святого Духа он учится по-другому отвечать на неудачи."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "As they put the tools away, the friends thank God for helping them grow together.",
+            "ru": "Убирая инструменты, ребята благодарят Бога за то, что Он помогает им расти вместе."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +239,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/PHP.2.13.ESV",
       "ru": "https://www.bible.com/bible/167/PHP.2.13.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "If God were really changing you, you'd stop messing up the same way over and over. Still losing your temper proves either it's not working, or there's nothing there to begin with.",
+      "ru": "Если бы Бог действительно тебя менял, ты бы прекратил повторять одни и те же ошибки. То, что ты до сих пор злишься, доказывает: либо это не работает, либо там изначально ничего не было."
+    },
+    "response": {
+      "en": "John Newton, who wrote the hymn \"Amazing Grace,\" put it simply, from his own experience: \"I am not what I ought to be, I am not what I wish to be, I am not what I hope to be. But I am not what I once was, and by the grace of God I am what I am.\" He wasn't claiming instant perfection. He was pointing at real, slow change, measured against where he started, not against flawless. Joseph in this story still gets frustrated the second time the tape slips. What's different isn't that the anger vanished. It's what he does next. So here's a question back: if change is a direction over time, not a finish line crossed once, is \"I still mess up sometimes\" proof nothing is happening, or exactly what real growth looks like partway through?",
+      "ru": "Джон Ньютон, написавший гимн «Amazing Grace», сказал об этом просто, из своего опыта: «Я не тот, кем должен быть. Я не тот, кем хочу быть. Я не тот, кем надеюсь стать. Но я уже не тот, кем был, и по Божьей благодати я тот, кто я есть». Он не заявлял о мгновенном совершенстве. Он говорил о настоящей, медленной перемене, измеряемой от точки, откуда начал, а не от идеала. Джозеф в этой истории снова злится, когда склейка съезжает второй раз. Разница не в том, что гнев исчез. Разница в том, что он делает дальше. Вот вопрос в ответ: если перемена — это направление во времени, а не финишная черта, пересечённая раз и навсегда, «я всё ещё иногда ошибаюсь» — это доказательство, что ничего не происходит, или именно то, как выглядит настоящий рост на полпути?"
     }
   },
   "activity": {
@@ -186,7 +347,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read Galatians 5:16–25 and Philippians 2:12–13 together. Growth is Spirit-enabled, not earned acceptance or instant sinlessness; breathing is a practical aid, not the source of spiritual life.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Галатам 5:16–25 и Филиппийцам 2:12–13. Рост возможен с помощью Духа; он не покупает принятие и не означает мгновенную безгрешность. Спокойное дыхание — полезный приём, а не источник духовной жизни."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read Galatians 5:16–25 and Philippians 2:12–13 together. Growth is Spirit-enabled, not earned acceptance or instant sinlessness; breathing is a practical aid, not the source of spiritual life. The 'comeback' response quotes John Newton's widely cited reflection on gradual sanctification, read alongside his own history as a former slave-ship captain who became an abolitionist hymn-writer, itself a real example of slow, costly change rather than instant transformation.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Галатам 5:16–25 и Филиппийцам 2:12–13. Рост возможен с помощью Духа; он не покупает принятие и не означает мгновенную безгрешность. Спокойное дыхание — полезный приём, а не источник духовной жизни. Ответ в блоке «если кто-то скажет» цитирует широко известное размышление Джона Ньютона о постепенном освящении — читаемое вместе с его собственной историей бывшего капитана невольничьего корабля, ставшего автором гимнов и борцом против рабства, — настоящий пример медленной, недешёвой перемены, а не мгновенного превращения."
   }
 }

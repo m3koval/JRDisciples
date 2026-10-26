@@ -16,64 +16,231 @@
         "en": "One more pocket",
         "ru": "Ещё один карман"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie keeps unpacking her yellow overnight bag before the explorers’ first camp evening. What if she cannot sleep? What if everyone laughs when she asks to call home? Michael offers to check the packing list again, but the worry stays even when every box is ticked.",
-          "You sit beside Gracie while Joseph closes his blue notebook. “Which part worries you most?” he asks. Gracie holds her bag for a moment before answering. “I’m scared of the sounds at night. I don’t know what they are, and then my stomach hurts.” Now her friends understand why checking the packing list again has not helped."
-        ],
-        "ru": [
-          "Грейси снова разбирает жёлтую дорожную сумку перед первым вечером в лагере. А если не уснёт? А если засмеются, когда попросит позвонить домой? Майкл проверяет список вещей, но тревога не исчезает.",
-          "Ты садишься рядом с Грейси, а Джозеф закрывает синий блокнот. «Что тебя больше всего тревожит?» — спрашивает он. Грейси немного молчит, сжимая сумку. «Ночью слышны разные звуки. Я не знаю, что это, и у меня начинает болеть живот». Теперь друзья понимают, почему проверка вещей не помогла."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie keeps unpacking her overnight bag, before the team's first camp evening.",
+            "ru": "Грейси снова разбирает дорожную сумку перед первым вечером в лагере."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "What if she can't sleep? What if everyone laughs when she asks to call home?",
+            "ru": "А если не уснёт? А если засмеются, когда попросит позвонить домой?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael offers to check the packing list again. But the worry stays, even when every box is ticked.",
+            "ru": "Майкл проверяет список вещей, но тревога не исчезает."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You sit beside Gracie, while Joseph closes his notebook.",
+            "ru": "Ты садишься рядом с Грейси, а Джозеф закрывает блокнот."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Which part worries you most?",
+            "ru": "Что тебя больше всего тревожит?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie holds her bag for a moment before answering.",
+            "ru": "Грейси немного молчит, сжимая сумку."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "I'm scared of the sounds at night. I don't know what they are. Then my stomach hurts.",
+            "ru": "Ночью слышны разные звуки. Я не знаю, что это, и у меня начинает болеть живот."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Now her friends understand why checking the packing list again hasn't helped.",
+            "ru": "Теперь друзья понимают, почему проверка вещей не помогла."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Trust while afraid",
         "ru": "Доверять, когда страшно"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens her purple Bible to Psalm 56:3. The writer brings fear to God; he does not wait until he feels brave enough to pray. They also read how Jesus points worried people toward their heavenly Father’s care in Matthew 6.",
-          "Gracie prays about the unfamiliar room and her aching stomach. Trust means turning toward the One who cares, not pretending that the feeling has vanished. She decides that asking for help can belong inside her trusting response."
-        ],
-        "ru": [
-          "Рози открывает фиолетовую Библию на Псалме 55:4. Автор обращается к Богу в страхе, а не ждёт, пока станет смелым. В Матфея 6 они читают, как Иисус напоминает тревожащимся о заботе Небесного Отца.",
-          "Грейси молится о незнакомой комнате и боли в животе. Доверять — обращаться к Тому, Кто заботится, а не притворяться, будто страх исчез. Просьба о помощи тоже может быть шагом доверия."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens her Bible to Psalm 56:3.",
+            "ru": "Рози открывает Библию на Псалме 55:4."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The writer brings fear to God. He doesn't wait until he feels brave enough to pray.",
+            "ru": "Автор обращается к Богу в страхе, а не ждёт, пока станет смелым."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They also read how Jesus points worried people toward their heavenly Father's care, in Matthew chapter 6.",
+            "ru": "В Матфея 6 они читают, как Иисус напоминает тревожащимся о заботе Небесного Отца."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie prays about the unfamiliar room, and her aching stomach.",
+            "ru": "Грейси молится о незнакомой комнате и боли в животе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Trust means turning toward the One who cares. Not pretending the feeling has vanished.",
+            "ru": "Доверять — обращаться к Тому, Кто заботится, а не притворяться, будто страх исчез."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She decides asking for help can belong inside her trusting response.",
+            "ru": "Просьба о помощи тоже может быть шагом доверия."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Three useful cards",
         "ru": "Три полезные карточки"
       },
-      "paragraphs": {
-        "en": [
-          "The team makes three cards: pray, tell, act. Gracie tells their trusted camp leader what happens at bedtime. Together they arrange a call with her parent and check where the leader will be. Michael walks the short indoor route with her in daylight.",
-          "Joseph draws that route instead of writing a promise that nothing unpleasant can happen. Explorer, help him mark the familiar doorway. A small practical plan cannot control tomorrow, but it can make tonight less lonely."
-        ],
-        "ru": [
-          "Команда делает три карточки: молись, расскажи, действуй. Грейси объясняет надёжному руководителю, что бывает перед сном. Они договариваются о звонке родителю и уточняют, где будет взрослый. Майкл днём проходит с ней короткий путь по зданию.",
-          "Джозеф рисует этот путь, а не обещает, что ничего неприятного не случится. Исследователь, отметь знакомую дверь. Небольшой план не управляет будущим, но помогает не оставаться одной сегодня."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team makes three cards. Pray. Tell. Act.",
+            "ru": "Команда делает три карточки: молись, расскажи, действуй."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie tells their trusted camp leader what happens at bedtime.",
+            "ru": "Грейси объясняет надёжному руководителю, что бывает перед сном."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Together they arrange a call with her parent, and check where the leader will be.",
+            "ru": "Они договариваются о звонке родителю и уточняют, где будет взрослый."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael walks the short indoor route with her in daylight.",
+            "ru": "Майкл днём проходит с ней короткий путь по зданию."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph draws that route, instead of writing a promise that nothing unpleasant can happen.",
+            "ru": "Джозеф рисует этот путь, а не обещает, что ничего неприятного не случится."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, help him mark the familiar doorway.",
+            "ru": "Исследователь, отметь знакомую дверь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A small practical plan can't control tomorrow. But it can make tonight less lonely.",
+            "ru": "Небольшой план не управляет будущим, но помогает не оставаться одной сегодня."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "The plan can travel",
         "ru": "План остаётся с тобой"
       },
-      "paragraphs": {
-        "en": [
-          "That evening Gracie still feels nervous, but this time she knows whom to tell. She follows the plan and goes to the leader, who listens without scolding. “I’ll sit with you while you wait for the call,” Rosie offers. Gracie does not have to hide her worry or prove her faith by making it disappear.",
-          "Before breakfast, Gracie adds one line: tell again if worry keeps interrupting sleep or everyday life. A parent can help her find professional care when needed. Prayer, caring people, and practical help are companions, not competing teams."
-        ],
-        "ru": [
-          "Вечером Грейси всё ещё волнуется, но теперь знает, кому рассказать. Она следует плану и подходит к руководителю, который слушает без упрёков. «Я посижу с тобой, пока ты ждёшь звонка», — предлагает Рози. Грейси не нужно скрывать тревогу или доказывать свою веру тем, что страх сразу исчезнет.",
-          "Перед завтраком Грейси дописывает: расскажи снова, если тревога постоянно мешает спать или жить. Родитель поможет обратиться к специалисту, если нужно. Молитва, заботливые люди и практическая помощь не соперники."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "That evening Gracie still feels nervous. But this time she knows whom to tell.",
+            "ru": "Вечером Грейси всё ещё волнуется, но теперь знает, кому рассказать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She follows the plan, and goes to the leader, who listens without scolding.",
+            "ru": "Она следует плану и подходит к руководителю, который слушает без упрёков."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "I'll sit with you while you wait for the call.",
+            "ru": "Я посижу с тобой, пока ты ждёшь звонка."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie doesn't have to hide her worry, or prove her faith by making it disappear.",
+            "ru": "Грейси не нужно скрывать тревогу или доказывать свою веру тем, что страх сразу исчезнет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Before breakfast, Gracie adds one line. Tell again, if worry keeps interrupting sleep or everyday life.",
+            "ru": "Перед завтраком Грейси дописывает: расскажи снова, если тревога постоянно мешает спать или жить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A parent can help her find professional care, when needed.",
+            "ru": "Родитель поможет обратиться к специалисту, если нужно."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Prayer, caring people, and practical help are companions. Not competing teams.",
+            "ru": "Молитва, заботливые люди и практическая помощь не соперники."
+          }
+        }
+      ]
     }
   ],
   "scripture": {

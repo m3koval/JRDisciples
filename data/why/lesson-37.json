@@ -16,64 +16,217 @@
         "en": "Everything already known",
         "ru": "Всё уже известно"
       },
-      "paragraphs": {
-        "en": [
-          "Rain taps the windows of the explorers’ cabin. Their planned nature walk is canceled, and Michael sits beside a packed backpack. The leader invites everyone to pray. Michael asks why they should describe the rain to God when God already knows about every cloud and every disappointed child.",
-          "Joseph starts a list of facts God must already know. The list fills half a page. Explorer, sit with them: Michael’s question deserves more than an instruction to pray harder."
-        ],
-        "ru": [
-          "Дождь стучит в окна домика исследователей. Прогулку отменили, и Майкл сидит возле собранного рюкзака. Руководитель предлагает помолиться. Майкл спрашивает: зачем рассказывать Богу о дожде, если Он знает каждую тучу и каждого расстроенного ребёнка?",
-          "Джозеф перечисляет известные Богу факты. Список занимает полстраницы. Исследователь, сядь рядом: на вопрос Майкла нужен ответ, а не просто совет молиться усерднее."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rain taps the windows of the team's cabin.",
+            "ru": "Дождь стучит в окна домика исследователей."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their planned nature walk is canceled. Michael sits beside a packed backpack.",
+            "ru": "Прогулку отменили, и Майкл сидит возле собранного рюкзака."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The leader invites everyone to pray.",
+            "ru": "Руководитель предлагает помолиться."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Why should we describe the rain to God? He already knows about every cloud, and every disappointed kid.",
+            "ru": "Зачем рассказывать Богу о дожде, если Он знает каждую тучу и каждого расстроенного ребёнка?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph starts a list of facts God must already know. The list fills half a page.",
+            "ru": "Джозеф перечисляет известные Богу факты. Список занимает полстраницы."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, sit with them. Michael's question deserves more than an instruction to pray harder.",
+            "ru": "Исследователь, сядь рядом: на вопрос Майкла нужен ответ, а не просто совет молиться усерднее."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "More than sending facts",
         "ru": "Не просто передать сведения"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie takes out a postcard for her grandmother. “Grandma knows I’m at camp, but I still want to tell her about our bird shelter,” she says. “And I want to tell her I miss her.” Michael looks at the card. He is beginning to see that talking with someone you love is about more than giving them new information.",
-          "Rosie opens Matthew 6:7–13. Jesus says the Father knows what people need, then teaches them to pray. God’s knowledge is a reason for trust, not a reason for silence."
-        ],
-        "ru": [
-          "Грейси достаёт открытку для бабушки. «Бабушка знает, что я в лагере. Но мне всё равно хочется рассказать ей про наше укрытие для птиц, — говорит она. — И написать, что я скучаю». Майкл смотрит на открытку. Он начинает понимать: с близким человеком разговаривают не только ради новостей.",
-          "Рози открывает Матфея 6:7–13. Иисус говорит, что Отец знает нужды людей, а затем учит их молиться. Божье знание — причина доверять, а не молчать."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie takes out a postcard for her grandmother.",
+            "ru": "Грейси достаёт открытку для бабушки."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Grandma knows I'm at camp. But I still want to tell her about our bird shelter. And that I miss her.",
+            "ru": "Бабушка знает, что я в лагере. Но мне всё равно хочется рассказать ей про наше укрытие для птиц. И написать, что я скучаю."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael looks at the card. He's starting to see something.",
+            "ru": "Майкл смотрит на открытку. Он начинает кое-что понимать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Talking with someone you love is about more than giving them new information.",
+            "ru": "С близким человеком разговаривают не только ради новостей."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens Matthew chapter 6.",
+            "ru": "Рози открывает 6 главу Матфея."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Jesus says the Father knows what people need. Then he teaches them to pray anyway.",
+            "ru": "Иисус говорит, что Отец знает нужды людей, а затем учит их молиться."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "God's knowledge is a reason for trust. Not a reason for silence.",
+            "ru": "Божье знание — причина доверять, а не молчать."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "An honest conversation",
         "ru": "Честный разговор"
       },
-      "paragraphs": {
-        "en": [
-          "They trace the prayer Jesus teaches: honor for God, his kingdom and will, daily needs, forgiveness, and help against evil. Prayer turns their attention toward God and teaches dependence. They are not searching for a password that makes him follow their schedule.",
-          "With that in mind, Michael writes a simple request for another chance to explore outdoors. “I’m sorry I complained so rudely,” he then tells the leader. Gracie thanks God for their shelter, and Joseph praises him for his care. They speak about what is really on their minds rather than trying to sound like grown-up preachers."
-        ],
-        "ru": [
-          "Они разбирают молитву, которой учит Иисус: почтение к Богу, Его Царство и волю, ежедневные нужды, прощение и помощь против зла. Молитва обращает внимание к Богу и учит полагаться на Него. Это не пароль, заставляющий Его выполнять наше расписание.",
-          "Майкл думает об этом и записывает простую просьбу: пусть у них будет ещё возможность погулять. Потом он обращается к руководителю: «Простите, что я так грубо жаловался». Грейси благодарит Бога за домик, а Джозеф славит Его за заботу. Они говорят о том, что у них на сердце, и не стараются подражать взрослым проповедникам."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They trace the prayer Jesus teaches. Honor for God, his kingdom and will, daily needs, forgiveness, help against evil.",
+            "ru": "Они разбирают молитву, которой учит Иисус: почтение к Богу, Его Царство и волю, ежедневные нужды, прощение и помощь против зла."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Prayer turns their attention toward God, and teaches dependence.",
+            "ru": "Молитва обращает внимание к Богу и учит полагаться на Него."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They aren't searching for a password that makes him follow their schedule.",
+            "ru": "Это не пароль, заставляющий Его выполнять наше расписание."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "With that in mind, Michael writes a simple request for another chance to explore outdoors.",
+            "ru": "Майкл думает об этом и записывает простую просьбу: пусть у них будет ещё возможность погулять."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I'm sorry I complained so rudely.",
+            "ru": "Простите, что я так грубо жаловался."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie thanks God for their shelter. Joseph praises him for his care.",
+            "ru": "Грейси благодарит Бога за домик, а Джозеф славит Его за заботу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They speak about what's really on their minds. Not trying to sound like grown-up preachers.",
+            "ru": "Они говорят о том, что у них на сердце, и не стараются подражать взрослым проповедникам."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Still raining, still heard",
         "ru": "Дождь идёт, Бог слышит"
       },
-      "paragraphs": {
-        "en": [
-          "They read Philippians 4:6–7 and bring their concerns with thanksgiving. Outside, rain still runs down the glass. Inside, the team moves the nature investigation to a covered table, where fallen leaves can be studied with magnifiers. Michael helps make space instead of guarding his disappointment.",
-          "You place Gracie’s postcard beside the outgoing mail. Prayer is not useful because God lacks information. It matters because he welcomes his children to trust him, seek his will, and share real needs in his presence."
-        ],
-        "ru": [
-          "Они читают Филиппийцам 4:6–7 и приносят тревоги с благодарностью. По стеклу всё ещё течёт дождь. Команда переносит исследование к столу под крышей: опавшие листья можно рассматривать через лупы. Майкл помогает освободить место вместо того, чтобы держаться за обиду.",
-          "Ты кладёшь открытку Грейси к почте. Молитва нужна не потому, что Богу не хватает сведений. Он приглашает Своих детей доверять Ему, искать Его волю и открыто говорить о нуждах в Его присутствии."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read Philippians chapter 4, and bring their concerns with thanksgiving.",
+            "ru": "Они читают 4 главу Филиппийцам и приносят тревоги с благодарностью."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Outside, rain still runs down the glass.",
+            "ru": "По стеклу всё ещё течёт дождь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Inside, the team moves the nature study to a covered table, where fallen leaves can be studied with magnifiers.",
+            "ru": "Команда переносит исследование к столу под крышей: опавшие листья можно рассматривать через лупы."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael helps make space, instead of guarding his disappointment.",
+            "ru": "Майкл помогает освободить место вместо того, чтобы держаться за обиду."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You place Gracie's postcard beside the outgoing mail.",
+            "ru": "Ты кладёшь открытку Грейси к почте."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Prayer isn't useful because God lacks information. It matters because he welcomes his children to trust him, seek his will, and share real needs in his presence.",
+            "ru": "Молитва нужна не потому, что Богу не хватает сведений. Он приглашает Своих детей доверять Ему, искать Его волю и открыто говорить о нуждах в Его присутствии."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +241,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/PHP.4.6.ESV",
       "ru": "https://www.bible.com/bible/167/PHP.4.6.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "If God already knows everything I need before I ask, praying doesn't actually do anything. It's just informing someone who's already informed.",
+      "ru": "Если Бог уже знает всё, что мне нужно, ещё до того, как я попрошу, молитва на самом деле ничего не делает. Это просто сообщение тому, кто уже всё знает."
+    },
+    "response": {
+      "en": "C.S. Lewis tackled this exact question in a book called Letters to Malcolm: Chiefly on Prayer. He pointed out that you don't tell a friend about your day because they don't already know, generally, what happened to you. You tell them because being known by someone, and telling them yourself, is a different and real thing from simply being known about. A doctor can read your whole medical file without you ever speaking to them. But that's not the same as actually talking with your own doctor about how you feel. So here's a question back: if the point of prayer were only to transfer facts, this objection would be fair. But if the point is actually being known by someone, and knowing them back, does \"they already know\" cancel the conversation, or is that a different kind of question?",
+      "ru": "К. С. Льюис разбирал именно этот вопрос в книге «Письма к Малькольму: в основном о молитве». Он заметил: ты не рассказываешь другу о своём дне потому, что он вообще не знает, что с тобой случилось. Ты рассказываешь, потому что быть узнанным кем-то лично, рассказав самому, — это другое, настоящее дело, не то же самое, что просто быть известным со стороны. Врач может прочитать всю твою медицинскую карту, даже если ты с ним никогда не говорил. Но это не то же самое, что по-настоящему поговорить со своим врачом о том, как ты себя чувствуешь. Вот вопрос в ответ: если бы смысл молитвы был только в передаче фактов, это возражение было бы справедливым. Но если смысл — в том, чтобы быть лично узнанным кем-то и узнать его в ответ, «он уже знает» отменяет разговор — или это совсем другой вопрос?"
     }
   },
   "activity": {
@@ -200,7 +363,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read Matthew 6:7–13 and Philippians 4:6–7. The postcard illustrates conversation, not the whole nature of prayer. Do not promise immediate calm or treat a prayer pattern as a formula.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Матфея 6:7–13 и Филиппийцам 4:6–7. Открытка поясняет смысл общения, но не всю сущность молитвы. Не обещайте мгновенного спокойствия и не превращайте образец молитвы в формулу."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read Matthew 6:7–13 and Philippians 4:6–7. The postcard illustrates conversation, not the whole nature of prayer. Do not promise immediate calm or treat a prayer pattern as a formula. The 'comeback' response draws on C.S. Lewis's Letters to Malcolm: Chiefly on Prayer, which directly addresses the 'God already knows, so why pray' objection by distinguishing being known-about from being known personally.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Матфея 6:7–13 и Филиппийцам 4:6–7. Открытка поясняет смысл общения, но не всю сущность молитвы. Не обещайте мгновенного спокойствия и не превращайте образец молитвы в формулу. Ответ в блоке «если кто-то скажет» опирается на книгу К. С. Льюиса «Письма к Малькольму: в основном о молитве», где прямо разбирается возражение «Бог уже знает, зачем молиться» через различие между «быть известным со стороны» и «быть лично узнанным»."
   }
 }

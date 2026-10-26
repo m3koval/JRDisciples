@@ -16,64 +16,237 @@
         "en": "The photograph in the chat",
         "ru": "Фотография в чате"
       },
-      "paragraphs": {
-        "en": [
-          "The explorers are building a bird shelter in the community garden. During their break, a photograph appears in the supervised club chat: Joseph holding a crooked roof panel. Someone has added a mocking caption. Michael begins typing a sharper joke, hoping the group will laugh at his cleverness.",
-          "Gracie lowers the tablet, but Joseph is close enough to see the screen. “Wait, Michael. Joseph can see what we’re writing,” she says. Michael’s finger hovers over Send. Explorer, pause beside him as he decides whether making the others laugh is worth hurting his friend."
-        ],
-        "ru": [
-          "Исследователи строят укрытие для птиц в общественном саду. На перерыве в клубном чате под присмотром взрослого появляется фото: Джозеф держит кривую панель крыши. Кто-то добавил насмешливую подпись. Майкл набирает шутку пообиднее, чтобы всех рассмешить.",
-          "Грейси опускает планшет, но Джозеф стоит рядом и видит экран. «Подожди, Майкл. Джозеф ведь видит, что мы пишем», — говорит она. Майкл замирает, не нажав «Отправить». Исследователь, остановись рядом с ним: стоит ли смешить остальных ценой обиды друга?"
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team is building a bird shelter in the community garden.",
+            "ru": "Исследователи строят укрытие для птиц в общественном саду."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "During their break, a photo appears in the supervised club chat. Joseph holding a crooked roof panel.",
+            "ru": "На перерыве в клубном чате под присмотром взрослого появляется фото: Джозеф держит кривую панель крыши."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Someone has added a mocking caption.",
+            "ru": "Кто-то добавил насмешливую подпись."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael begins typing a sharper joke, hoping the group will laugh at his cleverness.",
+            "ru": "Майкл набирает шутку пообиднее, чтобы всех рассмешить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie lowers the tablet. But Joseph is close enough to see the screen.",
+            "ru": "Грейси опускает планшет, но Джозеф стоит рядом и видит экран."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Wait, Michael. Joseph can see what we're writing.",
+            "ru": "Подожди, Майкл. Джозеф ведь видит, что мы пишем."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael's finger hovers over Send.",
+            "ru": "Майкл замирает, не нажав «Отправить»."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, pause beside him. Is making the others laugh worth hurting his friend?",
+            "ru": "Исследователь, остановись рядом с ним: стоит ли смешить остальных ценой обиды друга?"
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Choose what will grow",
         "ru": "Выбери, что будет расти"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie brings out the team’s Bible cards. James 1:19 connects listening, speaking, and anger. Galatians 5:22–23 names the Spirit’s fruit. Kindness is not joining a cruel joke, and peace is not pretending that hurtful words are harmless. They need a truthful response that protects a person rather than humiliating another.",
-          "Michael deletes his joke. He writes that the caption is unkind and asks the group not to share it. Gracie tells their leader, while Rosie checks whether Joseph wants company."
-        ],
-        "ru": [
-          "Рози достаёт библейские карточки. Иакова 1:19 соединяет слушание, речь и гнев. Галатам 5:22–23 называет плод Духа. Доброта не присоединяется к жестокой шутке, а мир не притворяется, будто обидные слова безвредны. Нужен честный ответ, защищающий человека без унижения другого.",
-          "Майкл стирает шутку. Он пишет, что подпись обидная, и просит её не пересылать. Грейси сообщает руководителю, а Рози спрашивает Джозефа, хочет ли он побыть с ней."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie brings out the team's Bible cards.",
+            "ru": "Рози достаёт библейские карточки."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "James 1:19 connects listening, speaking, and anger. Galatians 5 names the Spirit's fruit.",
+            "ru": "Иакова 1:19 соединяет слушание, речь и гнев. Галатам 5 называет плод Духа."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Kindness doesn't join a cruel joke. Peace doesn't pretend hurtful words are harmless.",
+            "ru": "Доброта не присоединяется к жестокой шутке, а мир не притворяется, будто обидные слова безвредны."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They need a truthful response that protects a person, rather than humiliating another.",
+            "ru": "Нужен честный ответ, защищающий человека без унижения другого."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael deletes his joke.",
+            "ru": "Майкл стирает шутку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He writes that the caption is unkind, and asks the group not to share it.",
+            "ru": "Он пишет, что подпись обидная, и просит её не пересылать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie tells their leader. Rosie checks whether Joseph wants company.",
+            "ru": "Грейси сообщает руководителю, а Рози спрашивает Джозефа, хочет ли он побыть с ней."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "The next interruption",
         "ru": "Следующая помеха"
       },
-      "paragraphs": {
-        "en": [
-          "Back at the shelter, Gracie’s little brother reaches for the paint and knocks over a water cup. Gracie almost shouts that he ruins everything. Then she notices his frightened face and the cloth within reach. The chat was not the only place where their lesson mattered.",
-          "Gracie moves the paint safely aside. “Please bring another cloth so we can wipe this up,” she tells her brother. “Next time, ask before you touch the tools.” Just as in the chat, she needs to say what is wrong without using her words to hurt someone."
-        ],
-        "ru": [
-          "У укрытия младший брат Грейси тянется к краске и опрокидывает воду. Грейси чуть не кричит, что он всё портит. Но замечает его испуганное лицо и тряпку рядом. Урок нужен не только в чате.",
-          "Грейси отодвигает краску подальше. «Принеси, пожалуйста, ещё одну тряпку, и мы всё вытрем, — говорит она брату. — А в следующий раз спроси, прежде чем брать инструменты». Как и в чате, ей нужно объяснить, что было не так, но не обидеть человека своими словами."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Back at the shelter, Gracie's little brother reaches for the paint, and knocks over a water cup.",
+            "ru": "У укрытия младший брат Грейси тянется к краске и опрокидывает воду."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie almost shouts that he ruins everything.",
+            "ru": "Грейси чуть не кричит, что он всё портит."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Then she notices his frightened face, and the cloth within reach.",
+            "ru": "Но замечает его испуганное лицо и тряпку рядом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The chat wasn't the only place where their lesson mattered.",
+            "ru": "Урок нужен не только в чате."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie moves the paint safely aside.",
+            "ru": "Грейси отодвигает краску подальше."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Please bring another cloth, so we can wipe this up. Next time, ask before you touch the tools.",
+            "ru": "Принеси, пожалуйста, ещё одну тряпку, и мы всё вытрем. А в следующий раз спроси, прежде чем брать инструменты."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Just as in the chat, she needs to say what's wrong, without using her words to hurt someone.",
+            "ru": "Как и в чате, ей нужно объяснить, что было не так, но не обидеть человека своими словами."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Fruit at the workbench",
         "ru": "Плод у рабочего стола"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph fits the roof panel again, this time with Michael holding the other side. The leader removes the mocking post and follows up with its sender. Gracie’s brother dries the bench, then joins a task he can manage. Nobody earned a prize for having no difficult feelings.",
-          "You help lift the finished shelter onto its stand. Good fruit appeared in listening, truthful words, protection, and patient boundaries. Asking the Spirit for help led into action at a screen and at a wet workbench."
-        ],
-        "ru": [
-          "Джозеф снова устанавливает крышу, а Майкл придерживает другой край. Руководитель удаляет насмешливую запись и разговаривает с её автором. Брат Грейси вытирает скамью и получает посильное дело. Никто не получает награду за отсутствие сложных чувств.",
-          "Ты помогаешь поставить укрытие на подставку. Добрый плод проявился во внимании, честных словах, защите и терпеливых границах. Просьба о помощи Духа привела к действиям и у экрана, и возле мокрого стола."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph fits the roof panel again, this time with Michael holding the other side.",
+            "ru": "Джозеф снова устанавливает крышу, а Майкл придерживает другой край."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The leader removes the mocking post, and follows up with its sender.",
+            "ru": "Руководитель удаляет насмешливую запись и разговаривает с её автором."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie's brother dries the bench, then joins a task he can manage.",
+            "ru": "Брат Грейси вытирает скамью и получает посильное дело."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Nobody earned a prize for having no difficult feelings.",
+            "ru": "Никто не получает награду за отсутствие сложных чувств."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help lift the finished shelter onto its stand.",
+            "ru": "Ты помогаешь поставить укрытие на подставку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Good fruit appeared in listening, truthful words, protection, and patient boundaries.",
+            "ru": "Добрый плод проявился во внимании, честных словах, защите и терпеливых границах."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Asking the Spirit for help led into action, at a screen and at a wet workbench.",
+            "ru": "Просьба о помощи Духа привела к действиям и у экрана, и возле мокрого стола."
+          }
+        }
+      ]
     }
   ],
   "scripture": {

@@ -16,64 +16,237 @@
         "en": "One more round",
         "ru": "Ещё один раунд"
       },
-      "paragraphs": {
-        "en": [
-          "Michael promises to help build the explorers’ exhibition after one game. Three rounds later, Gracie is still holding the other end of a curling poster. Joseph has spent his snack money on a shiny digital costume. Rosie’s message asking for help sits unread.",
-          "You arrive with the tape just as Michael checks the clock. “Have you been waiting all this time?” he asks Gracie, putting down his controller. He meant to help, but while he kept playing, his friends were left doing the work without him. Now he can see what those extra rounds have cost them."
-        ],
-        "ru": [
-          "Майкл обещает помочь с выставкой исследователей после одной игры. Проходит три раунда, а Грейси всё ещё держит край сворачивающегося плаката. Джозеф потратил деньги на перекус на блестящий костюм для игры. Сообщение Рози с просьбой помочь осталось непрочитанным.",
-          "Ты приносишь скотч как раз тогда, когда Майкл смотрит на часы. «Ты всё это время ждала?» — спрашивает он Грейси и откладывает контроллер. Он собирался помочь, но пока играл, друзьям пришлось работать без него. Теперь он видит, чего им стоили эти лишние раунды."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael promises to help build the team's exhibit, after one game.",
+            "ru": "Майкл обещает помочь с выставкой исследователей после одной игры."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Three rounds later, Gracie is still holding the other end of a curling poster.",
+            "ru": "Проходит три раунда, а Грейси всё ещё держит край сворачивающегося плаката."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph has spent his snack money on a shiny digital costume.",
+            "ru": "Джозеф потратил деньги на перекус на блестящий костюм для игры."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie's message asking for help sits unread.",
+            "ru": "Сообщение Рози с просьбой помочь осталось непрочитанным."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You arrive with the tape, just as Michael checks the clock.",
+            "ru": "Ты приносишь скотч как раз тогда, когда Майкл смотрит на часы."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Have you been waiting all this time?",
+            "ru": "Ты всё это время ждала?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He meant to help. But while he kept playing, his friends were left doing the work without him.",
+            "ru": "Он собирался помочь, но пока играл, друзьям пришлось работать без него."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Now he can see what those extra rounds have cost them.",
+            "ru": "Теперь он видит, чего им стоили эти лишние раунды."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A better question",
         "ru": "Вопрос получше"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens First Corinthians 10. Paul teaches believers to seek their neighbor’s good rather than treating permission as the only question. The team changes Can I? into Does this help me love God and people? Enjoyment can be good without becoming the boss.",
-          "Joseph draws three columns in his blue notebook: attention, money, truth. Under attention, Michael records the missed promise. Under money, Joseph records his purchase. Under truth, Gracie writes the false age Joseph considered entering to get past a game’s age limit."
-        ],
-        "ru": [
-          "Рози открывает десятую главу 1 Коринфянам. Павел учит искать пользы ближнего, а не спрашивать только о разрешении. Команда меняет вопрос «Можно?» на «Помогает ли это любить Бога и людей?» Радость от игры может быть доброй, но не должна нами командовать.",
-          "Джозеф рисует в синем блокноте три столбца: внимание, деньги, правда. Майкл записывает забытое обещание, Джозеф — покупку. Грейси отмечает неверный возраст, который Джозеф хотел указать, чтобы обойти возрастное ограничение игры."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens First Corinthians chapter 10.",
+            "ru": "Рози открывает десятую главу 1 Коринфянам."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Paul teaches believers to seek their neighbor's good. Not treat permission as the only question.",
+            "ru": "Павел учит искать пользы ближнего, а не спрашивать только о разрешении."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team changes \"Can I?\" into \"Does this help me love God and people?\"",
+            "ru": "Команда меняет вопрос «Можно?» на «Помогает ли это любить Бога и людей?»"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Enjoyment can be good, without becoming the boss.",
+            "ru": "Радость от игры может быть доброй, но не должна нами командовать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph draws three columns in his notebook. Attention. Money. Truth.",
+            "ru": "Джозеф рисует в блокноте три столбца: внимание, деньги, правда."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Under attention, Michael records the missed promise. Under money, Joseph records his purchase.",
+            "ru": "Майкл записывает забытое обещание, Джозеф — покупку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Under truth, Gracie writes the false age Joseph considered entering, to get past a game's age limit.",
+            "ru": "Грейси отмечает неверный возраст, который Джозеф хотел указать, чтобы обойти возрастное ограничение игры."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Change the actual afternoon",
         "ru": "Меняем сегодняшний день"
       },
-      "paragraphs": {
-        "en": [
-          "They read Jesus’ teaching about treasure in Matthew 6. What we treasure pulls our hearts; money and attention show what we are learning to value. Michael moves the device away from the worktable. Joseph asks a parent before making another purchase and leaves the false age unsubmitted.",
-          "Together they plan a short game after the poster is finished, with an agreed stopping time. Joseph cannot undo every purchase, but he can reserve part of his next allowance for giving instead of spending everything immediately."
-        ],
-        "ru": [
-          "Они читают учение Иисуса о сокровище в Матфея 6. Сокровище притягивает сердце; деньги и внимание показывают, что становится для нас ценным. Майкл убирает устройство со стола. Джозеф решает обсудить следующую покупку с родителем и не отправляет ложный возраст.",
-          "Команда планирует немного поиграть после работы и заранее договаривается, когда остановиться. Джозеф не может отменить каждую покупку, но может отложить часть следующих карманных денег, чтобы поделиться."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read Jesus's teaching about treasure, in Matthew chapter 6.",
+            "ru": "Они читают учение Иисуса о сокровище в 6 главе Матфея."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "What we treasure pulls our hearts. Money and attention show what we're learning to value.",
+            "ru": "Сокровище притягивает сердце; деньги и внимание показывают, что становится для нас ценным."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael moves the device away from the worktable.",
+            "ru": "Майкл убирает устройство со стола."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph asks a parent before making another purchase, and leaves the false age unsubmitted.",
+            "ru": "Джозеф решает обсудить следующую покупку с родителем и не отправляет ложный возраст."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Together they plan a short game after the poster is finished, with an agreed stopping time.",
+            "ru": "Команда планирует немного поиграть после работы и заранее договаривается, когда остановиться."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph can't undo every purchase. But he can set aside part of his next allowance for giving, instead of spending it all right away.",
+            "ru": "Джозеф не может отменить каждую покупку, но может отложить часть следующих карманных денег, чтобы поделиться."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "People at the table",
         "ru": "Люди за столом"
       },
-      "paragraphs": {
-        "en": [
-          "At last the poster lies flat, and Gracie stretches her aching fingers. “I’m sorry I left you waiting,” Michael says. He does not blame the game for the promise he broke. Later, when their agreed timer rings, he saves his progress and joins the others for snacks. This time he stops when he said he would.",
-          "Explorer, help them choose tomorrow’s small change. Following Jesus reaches ordinary buttons and coins because loving people requires real attention. Their new plan is not a way to purchase God’s love; it is a way to practice the love they have received."
-        ],
-        "ru": [
-          "Наконец плакат лежит ровно, и Грейси разминает уставшие пальцы. «Прости, что заставил тебя ждать», — говорит Майкл. Он не винит игру в том, что сам не сдержал обещание. Позже, когда звенит таймер, Майкл сохраняет игру и идёт к друзьям перекусить. На этот раз он останавливается вовремя, как и договорились.",
-          "Исследователь, помоги выбрать маленькую перемену на завтра. Следование Иисусу касается обычных кнопок и монет: любовь требует настоящего внимания. Новый план не покупает Божью любовь, а помогает жить той любовью, которую они получили."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At last the poster lies flat, and Gracie stretches her aching fingers.",
+            "ru": "Наконец плакат лежит ровно, и Грейси разминает уставшие пальцы."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I'm sorry I left you waiting.",
+            "ru": "Прости, что заставил тебя ждать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He doesn't blame the game for the promise he broke.",
+            "ru": "Он не винит игру в том, что сам не сдержал обещание."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Later, when their agreed timer rings, he saves his progress, and joins the others for snacks.",
+            "ru": "Позже, когда звенит таймер, Майкл сохраняет игру и идёт к друзьям перекусить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "This time he stops when he said he would.",
+            "ru": "На этот раз он останавливается вовремя, как и договорились."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, help them choose tomorrow's small change.",
+            "ru": "Исследователь, помоги выбрать маленькую перемену на завтра."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Following Jesus reaches ordinary buttons and coins, because loving people requires real attention.",
+            "ru": "Следование Иисусу касается обычных кнопок и монет: любовь требует настоящего внимания."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their new plan isn't a way to purchase God's love. It's a way to practice the love they've received.",
+            "ru": "Новый план не покупает Божью любовь, а помогает жить той любовью, которую они получили."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +261,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/1CO.10.24.ESV",
       "ru": "https://www.bible.com/bible/167/1CO.10.24.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "It's my own time, my own money, and my own phone. What I do with them is nobody else's business, not even God's.",
+      "ru": "Это моё время, мои деньги и мой телефон. Что я с ними делаю — ничьё дело, даже не Божье."
+    },
+    "response": {
+      "en": "Tristan Harris, a former Google employee who now studies how phones and games are actually designed, has spent years warning about something relevant here. He says apps and games are deliberately built to capture attention beyond what anyone would freely choose, using some of the same tricks slot machines use. That \"one more round\" doesn't just happen by accident. Someone designed it to feel almost impossible to stop. If that's true, \"it's my own free choice\" might be less free than it feels. And even setting that aside, the Bible's point was never that your time and money don't belong to you. It's that love was never only about what's allowed for you alone. Michael's extra rounds stopped being \"his own business\" the moment they cost Gracie a wasted afternoon. So here's a question back: if a choice affects someone else, and the thing asking for your attention was built to make stopping hard, is \"it's my own business\" actually true, or a feeling the design was built to give you?",
+      "ru": "Тристан Харрис, бывший сотрудник Google, который теперь изучает, как на самом деле устроены телефоны и игры, годами предупреждает кое о чём важном здесь. Он говорит: приложения и игры специально строят так, чтобы захватывать внимание больше, чем кто-либо выбрал бы сам, — используя некоторые из тех же приёмов, что игровые автоматы. Это «ещё один раунд» не случайность. Кто-то специально сделал так, чтобы остановиться было почти невозможно. Если это правда, «это мой свободный выбор» может быть не таким свободным, как кажется. И даже если отложить это в сторону, смысл Библии никогда не был в том, что твоё время и деньги не твои. Смысл в том, что любовь никогда не касалась только того, что разрешено тебе одному. Лишние раунды Майкла перестали быть «только его делом» в тот момент, когда они стоили Грейси потраченного впустую дня. Вот вопрос в ответ: если выбор затрагивает кого-то ещё, а то, что просит твоего внимания, специально построено, чтобы остановиться было трудно, — «это моё личное дело» правда, или чувство, которое эта конструкция специально создала?"
     }
   },
   "activity": {
@@ -200,7 +383,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read 1 Corinthians 10:23–24 and Matthew 6:19–24 in context. Avoid treating every game or purchase as sinful; set age-appropriate family limits together.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте 1 Коринфянам 10:23–24 и Матфея 6:19–24 в контексте. Не объявляйте грехом любую игру или покупку; вместе установите подходящие возрасту правила."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read 1 Corinthians 10:23–24 and Matthew 6:19–24 in context. Avoid treating every game or purchase as sinful; set age-appropriate family limits together. The 'comeback' response reflects Tristan Harris's public advocacy (co-founder of the Center for Humane Technology) on persuasive design in apps and games; it supplements, rather than replaces, this lesson's theological point about love and neighbor-good.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте 1 Коринфянам 10:23–24 и Матфея 6:19–24 в контексте. Не объявляйте грехом любую игру или покупку; вместе установите подходящие возрасту правила. Ответ в блоке «если кто-то скажет» отражает публичную позицию Тристана Харриса (соучредителя Center for Humane Technology) о манипулятивном дизайне приложений и игр; он дополняет, а не заменяет богословскую мысль урока о любви и пользе ближнего."
   }
 }
