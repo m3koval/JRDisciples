@@ -16,68 +16,211 @@
         "en": "The powerless lantern",
         "ru": "Фонарь без батареек"
       },
-      "paragraphs": {
-        "en": [
-          "At the camp workshop, Michael shakes a lantern that will not light. Joseph fetches fresh batteries while Gracie spreads yellow fabric across their exhibition table. Their assignment is to explain the Holy Spirit. Michael suggests placing the lantern beside a sign saying God’s power.",
-          "Rosie pauses over her open Bible.",
-          "“Electricity can light a lamp,” she says, “but can it teach us or love us? Can anyone lie to it?” Her questions make Michael look again at his sign. Before they finish the display, you join them in finding out what Scripture says about the Holy Spirit."
-        ],
-        "ru": [
-          "В лагерной мастерской Майкл трясёт погасший фонарь. Джозеф приносит батарейки, а Грейси накрывает стол жёлтой тканью. Команде поручили рассказать о Святом Духе. Майкл предлагает поставить фонарь возле надписи «Божья сила».",
-          "Рози задумывается над открытой Библией.",
-          "— Электричество зажигает лампу, но разве оно может учить нас или любить? Можно ли ему солгать? — спрашивает она. Майкл снова смотрит на свою надпись. Прежде чем заканчивать выставку, вы вместе выясните, что Писание говорит о Святом Духе."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the camp workshop, Michael shakes a lantern that won't light.",
+            "ru": "В лагерной мастерской Майкл трясёт погасший фонарь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph fetches fresh batteries. Gracie spreads yellow fabric across their table.",
+            "ru": "Джозеф приносит батарейки. Грейси накрывает стол жёлтой тканью."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their assignment is to explain the Holy Spirit. Michael suggests a sign beside the lantern: God's power.",
+            "ru": "Команде поручили рассказать о Святом Духе. Майкл предлагает поставить рядом с фонарём надпись «Божья сила»."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie pauses over her open Bible.",
+            "ru": "Рози задумывается над открытой Библией."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Electricity can light a lamp. But can it teach us, or love us? Can anyone lie to it?",
+            "ru": "Электричество зажигает лампу. Но разве оно может учить нас или любить? Можно ли ему солгать?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Her questions make Michael look again at his sign. Before finishing the display, you join them to find out what Scripture says.",
+            "ru": "Майкл снова смотрит на свою надпись. Прежде чем заканчивать выставку, вы вместе выясните, что Писание говорит о Святом Духе."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Follow the actions",
         "ru": "Ищи действия"
       },
-      "paragraphs": {
-        "en": [
-          "They read John 14:16–17 with their leader. Jesus promises another Helper who will remain with his people. This is someone believers can know, not a passing burst of excitement. Joseph writes Helper and With us in his blue notebook, leaving the battery drawing off the page.",
-          "Then they examine Acts 5:3–4. Peter describes lying to the Holy Spirit as lying to God. The passage treats the Spirit as divine and personal, not as an object people can operate."
-        ],
-        "ru": [
-          "С руководителем они читают Иоанна 14:16–17. Иисус обещает другого Утешителя, Который останется с Его народом. Верующие знают Его; это не короткая вспышка восторга. Джозеф записывает в синий блокнот: «Помогает», «С нами». Батарейку он не рисует.",
-          "Затем они исследуют Деяния 5:3–4. Пётр называет ложь Святому Духу ложью Богу. Здесь Дух — Бог и Личность, а не предмет, которым можно управлять."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read John chapter 14 with their leader.",
+            "ru": "С руководителем они читают 14 главу Иоанна."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Jesus promises another Helper, who will stay with his people forever.",
+            "ru": "Иисус обещает другого Утешителя, Который останется с Его народом навсегда."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "This is someone believers can actually know. Not a quick burst of excitement.",
+            "ru": "Верующие знают Его лично; это не короткая вспышка восторга."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "I'm writing \"Helper\" and \"With us\" in my notebook. No battery drawing this time.",
+            "ru": "Я записываю в блокнот: «Помогает», «С нами». Батарейку на этот раз не рисую."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Then they look at Acts chapter 5.",
+            "ru": "Затем они исследуют 5 главу Деяний."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Peter says lying to the Holy Spirit is the same as lying to God. The Spirit is treated as God, and as a person. Not an object you can switch on.",
+            "ru": "Пётр называет ложь Святому Духу ложью Богу. Здесь Дух — Бог и Личность, а не предмет, которым можно управлять."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A quiet kind of help",
         "ru": "Помощь без шума"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie removes the battery sign. “Yesterday I didn’t feel anything special when we prayed,” she admits. “Does that mean he wasn’t helping me?”",
-          "Rosie points back to Jesus’ promise. They can trust what he says even when they do not feel a rush of excitement. The Holy Spirit helps God’s people know truth and follow Jesus even on ordinary afternoons.",
-          "At that moment Michael discovers he packed the wrong exhibition cards. He almost blames Joseph. Instead, he asks God for help, tells the truth, and starts making replacement cards with the others."
-        ],
-        "ru": [
-          "Грейси убирает надпись о батарейке. «Вчера во время молитвы я ничего особенного не почувствовала, — признаётся она. — Значит, Он мне не помогал?»",
-          "Рози возвращается к обещанию Иисуса. Его словам можно доверять и тогда, когда не чувствуешь сильного волнения. Святой Дух помогает Божьему народу знать истину и следовать за Иисусом даже в обычный день.",
-          "Тут Майкл обнаруживает, что взял не те карточки. Он чуть не обвиняет Джозефа, но просит Бога о помощи, говорит правду и вместе со всеми делает новые."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie removes the battery sign.",
+            "ru": "Грейси убирает надпись о батарейке."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Yesterday I didn't feel anything special when we prayed. Does that mean he wasn't helping me?",
+            "ru": "Вчера во время молитвы я ничего особенного не почувствовала. Значит, Он мне не помогал?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie points back to Jesus's promise.",
+            "ru": "Рози возвращается к обещанию Иисуса."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "We can trust what he says, even without a rush of excitement.",
+            "ru": "Его словам можно доверять и тогда, когда не чувствуешь сильного волнения."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The Holy Spirit helps God's people know truth and follow Jesus, even on ordinary afternoons.",
+            "ru": "Святой Дух помогает Божьему народу знать истину и следовать за Иисусом даже в обычный день."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Right then, Michael discovers he packed the wrong exhibit cards. He almost blames Joseph.",
+            "ru": "Тут Майкл обнаруживает, что взял не те карточки. Он чуть не обвиняет Джозефа."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Instead, he asks God for help, tells the truth, and starts making new cards with everyone else.",
+            "ru": "Вместо этого он просит Бога о помощи, говорит правду и вместе со всеми делает новые."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "The lamp finds its place",
         "ru": "Фонарь на своём месте"
       },
-      "paragraphs": {
-        "en": [
-          "The lantern finally shines above the table, lighting their reading without pretending to explain God. Their new cards describe what the Bible says the Spirit does. Gracie adds an invitation to ask questions, and Michael carries the discarded sign to the recycling box.",
-          "You help arrange the final cards. One God is Father, Son, and Holy Spirit; the Spirit is not a smaller god or Jesus wearing a different costume. The explorers leave asking for help to obey, not searching for a stronger spiritual battery."
-        ],
-        "ru": [
-          "Фонарь наконец загорается над столом. Он освещает страницы, но не изображает Бога. Новые карточки рассказывают о действиях Духа в Библии. Грейси приглашает задавать вопросы, а Майкл относит старую надпись в коробку для бумаги.",
-          "Ты помогаешь разложить карточки. Единый Бог — Отец, Сын и Святой Дух. Дух не младший бог и не Иисус в другом костюме. Исследователи просят помощи для послушания, а не ищут духовную батарейку помощнее."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The lantern finally shines over the table. It lights their reading. It doesn't pretend to explain God.",
+            "ru": "Фонарь наконец загорается над столом. Он освещает страницы. Но не изображает Бога."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their new cards describe what the Bible actually says the Spirit does.",
+            "ru": "Новые карточки рассказывают о действиях Духа в Библии."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie adds an invitation to ask questions. Michael carries the old sign to the recycling box.",
+            "ru": "Грейси приглашает задавать вопросы, а Майкл относит старую надпись в коробку для бумаги."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help arrange the final cards.",
+            "ru": "Ты помогаешь разложить карточки."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "One God is Father, Son, and Holy Spirit. The Spirit isn't a smaller god, or Jesus in a different costume.",
+            "ru": "Единый Бог — Отец, Сын и Святой Дух. Дух не младший бог и не Иисус в другом костюме."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team leaves asking for help to obey. Not searching for a stronger spiritual battery.",
+            "ru": "Исследователи просят помощи для послушания, а не ищут духовную батарейку помощнее."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -92,6 +235,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/JHN.14.16.ESV",
       "ru": "https://www.bible.com/bible/167/JHN.14.16.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "The Holy Spirit is just a nice name for a feeling you get, or some kind of spiritual energy. It's not an actual person.",
+      "ru": "Святой Дух — просто красивое название для чувства, которое иногда появляется, или вид духовной энергии. Это не настоящая личность."
+    },
+    "response": {
+      "en": "The Bible treats this differently. In the book of Acts, Peter tells a man that lying to the Holy Spirit is the same as lying to God himself. You can't lie to electricity, or to a feeling, but you can lie to a person. Jesus calls the Spirit \"another Helper,\" using the same kind of word he used for himself, someone who stays with you, teaches you, and can be trusted. A force doesn't do any of that. So here's a question back: if the Bible keeps describing something you can know, trust, and even lie to, does calling it just a feeling actually fit the evidence, or does it quietly turn a person into a tool?",
+      "ru": "Библия говорит об этом иначе. В книге Деяний Пётр говорит человеку, что обмануть Святого Духа — то же самое, что обмануть Самого Бога. Электричеству или чувству нельзя солгать, а личности — можно. Иисус называет Духа «другим Утешителем», используя то же слово, что и о Себе: Тот, Кто остаётся с тобой, учит тебя и Кому можно доверять. Сила на такое не способна. Вот вопрос в ответ: если Библия постоянно описывает Того, Кого можно знать, Кому можно доверять и Кому даже можно солгать, — назвать это просто чувством действительно соответствует свидетельствам, или это тихо превращает личность в инструмент?"
     }
   },
   "activity": {
@@ -182,7 +335,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read John 14:16–17 and Acts 5:3–4. Person does not mean a physical human body. Avoid force analogies or making emotional intensity a test of God’s presence.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Иоанна 14:16–17 и Деяния 5:3–4. Личность не означает человеческое тело. Не сравнивайте Духа с безличной силой и не измеряйте Божье присутствие силой чувств."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read John 14:16–17 and Acts 5:3–4. Person does not mean a physical human body. Avoid force analogies or making emotional intensity a test of God’s presence. The 'comeback' response stays with the lesson's own biblical case (Acts 5:3-4's personal, divine framing of the Spirit) rather than a separate named theologian, since that argument is itself the strongest, most direct answer to this objection.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Иоанна 14:16–17 и Деяния 5:3–4. Личность не означает человеческое тело. Не сравнивайте Духа с безличной силой и не измеряйте Божье присутствие силой чувств. Ответ в блоке «если кто-то скажет» опирается на собственный библейский довод урока (личностное, божественное описание Духа в Деяниях 5:3-4), а не на отдельного богослова, поскольку этот довод сам по себе — самый прямой ответ на это возражение."
   }
 }

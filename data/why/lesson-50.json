@@ -16,64 +16,202 @@
         "en": "Broken labels",
         "ru": "Сломанные таблички"
       },
-      "paragraphs": {
-        "en": [
-          "The explorers arrive at their community garden to find seedlings trampled and carefully painted labels snapped. Michael picks up the broken green marker and wants to wreck the vandals’ own project. Joseph begins listing suspects, although nobody saw who did it. Gracie asks who will help the plants.",
-          "You kneel beside Rosie and lift a bent stem. “Can we help this one?” she asks. The team cannot pretend that nothing happened, but the damaged plants need care now. Before blaming anyone, they also need to tell the garden leader what they actually found, rather than treating their guesses as facts."
-        ],
-        "ru": [
-          "Исследователи приходят в общий сад: рассада вытоптана, расписанные таблички сломаны. Майкл поднимает зелёную табличку и хочет разрушить проект обидчиков. Джозеф перечисляет подозреваемых, хотя никто не видел виновного. Грейси спрашивает, кто поможет растениям.",
-          "Ты опускаешься рядом с Рози и поднимаешь погнутый стебель. «Этому растению ещё можно помочь?» — спрашивает она. Команда не может сделать вид, что ничего не случилось, но растениям помощь нужна уже сейчас. А прежде чем кого-то обвинять, нужно рассказать руководителю, что они увидели, не выдавая догадки за факты."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team arrives at their community garden to find seedlings trampled, and carefully painted labels snapped.",
+            "ru": "Исследователи приходят в общий сад: рассада вытоптана, расписанные таблички сломаны."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael picks up the broken green marker. He wants to wreck the vandals' own project.",
+            "ru": "Майкл поднимает зелёную табличку и хочет разрушить проект обидчиков."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph begins listing suspects, although nobody saw who did it. Gracie asks who will help the plants.",
+            "ru": "Джозеф перечисляет подозреваемых, хотя никто не видел виновного. Грейси спрашивает, кто поможет растениям."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You kneel beside Rosie, and lift a bent stem.",
+            "ru": "Ты опускаешься рядом с Рози и поднимаешь погнутый стебель."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Can we help this one?",
+            "ru": "Этому растению ещё можно помочь?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team can't pretend nothing happened. But the hurt plants need care now.",
+            "ru": "Команда не может сделать вид, что ничего не случилось, но растениям помощь нужна уже сейчас."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Before blaming anyone, they also need to tell the garden leader what they actually found. Not treat their guesses as facts.",
+            "ru": "А прежде чем кого-то обвинять, нужно рассказать руководителю, что они увидели, не выдавая догадки за факты."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Justice larger than revenge",
         "ru": "Справедливость больше мести"
       },
-      "paragraphs": {
-        "en": [
-          "They take photographs for the garden leader instead of posting accusations. Then Rosie reads Revelation 21, where God’s promised future includes the end of death, mourning, and pain. God’s answer is larger than helping one angry team win: he will dwell with his people and make all things new.",
-          "Joseph reads the judgment announcement in Acts 17. God will judge rightly through Jesus, whom he raised. Evil will not be ignored, and the final verdict does not belong to whichever person shouts loudest."
-        ],
-        "ru": [
-          "Они фотографируют повреждения для руководителя сада, а не публикуют обвинения. Затем Рози читает Откровение 21: в обещанном Божьем будущем не будет смерти, плача и боли. Божий ответ больше победы одной сердитой команды: Он будет со Своим народом и обновит всё.",
-          "Джозеф читает о суде в Деяниях 17. Бог будет справедливо судить через Иисуса, Которого воскресил. Зло не будет забыто, а окончательный приговор принадлежит не тому, кто громче кричит."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They take photographs for the garden leader, instead of posting accusations.",
+            "ru": "Они фотографируют повреждения для руководителя сада, а не публикуют обвинения."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Then Rosie reads Revelation chapter 21. God's promised future includes the end of death, mourning, and pain.",
+            "ru": "Затем Рози читает Откровение 21: в обещанном Божьем будущем не будет смерти, плача и боли."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "God's answer is bigger than helping one angry team win. He will dwell with his people, and make all things new.",
+            "ru": "Божий ответ больше победы одной сердитой команды: Он будет со Своим народом и обновит всё."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph reads the judgment announcement in Acts chapter 17.",
+            "ru": "Джозеф читает о суде в Деяниях 17."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "God will judge rightly, through Jesus, whom he raised. Evil won't be ignored. The final word doesn't belong to whoever shouts loudest.",
+            "ru": "Бог будет справедливо судить через Иисуса, Которого воскресил. Зло не будет забыто, а окончательный приговор принадлежит не тому, кто громче кричит."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Hope picks up a trowel",
         "ru": "Надежда берёт лопатку"
       },
-      "paragraphs": {
-        "en": [
-          "Michael lowers the broken label. He can report the harm honestly without answering it with more destruction. “How can we protect the garden while you find out what happened?” he asks the leader. Trusting God to judge rightly and make things new gives Michael a reason to help rather than take revenge.",
-          "Gracie sorts plants into those needing new soil and those needing support. Joseph stops his suspect list and records only what they actually found. Their repair cannot create God’s new creation, but it can agree with his love for what is good."
-        ],
-        "ru": [
-          "Майкл опускает сломанную табличку. Он может честно рассказать о вреде, не отвечая новым разрушением. «Как нам защитить сад, пока вы разбираетесь, что случилось?» — спрашивает он руководителя. Майкл доверяет Богу, Который будет судить справедливо и всё обновит. Поэтому он решает помочь, а не мстить.",
-          "Грейси отделяет растения, которым нужна новая почва, от тех, которым нужна опора. Джозеф перестаёт писать подозрения и записывает только увиденное. Их работа не создаст Божий новый мир, но может выразить Его любовь к добру."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael lowers the broken label. He can report the harm honestly, without answering it with more destruction.",
+            "ru": "Майкл опускает сломанную табличку. Он может честно рассказать о вреде, не отвечая новым разрушением."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "How can we protect the garden while you find out what happened?",
+            "ru": "Как нам защитить сад, пока вы разбираетесь, что случилось?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Trusting God to judge rightly, and make things new, gives Michael a reason to help. Not take revenge.",
+            "ru": "Майкл доверяет Богу, Который будет судить справедливо и всё обновит. Поэтому он решает помочь, а не мстить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie sorts plants into those needing new soil, and those needing support.",
+            "ru": "Грейси отделяет растения, которым нужна новая почва, от тех, которым нужна опора."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph stops his suspect list, and records only what they actually found.",
+            "ru": "Джозеф перестаёт писать подозрения и записывает только увиденное."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their repair can't create God's new creation. But it can agree with his love for what is good.",
+            "ru": "Их работа не создаст Божий новый мир, но может выразить Его любовь к добру."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Not the last chapter",
         "ru": "Не последняя глава"
       },
-      "paragraphs": {
-        "en": [
-          "By evening, fresh labels stand beside the surviving plants. Some spaces remain empty, and nobody calls the damage good. The leader will handle the investigation and consequences. Michael leaves the garden tired, still disappointed, but no longer planning revenge.",
-          "Explorer, carry one small watering can with them. Christian hope is not an excuse to abandon today’s hurt world. God’s future gives a reason to care for it now: cruelty and death will not write the last chapter, and faithful kindness is worth practicing before every tear is gone."
-        ],
-        "ru": [
-          "К вечеру возле уцелевших растений стоят новые таблички. Некоторые места пусты, и никто не называет разрушение добром. Разбирательством и последствиями займётся руководитель. Майкл уходит усталым и огорчённым, но уже не замышляет месть.",
-          "Исследователь, понеси с ними маленькую лейку. Христианская надежда не разрешает бросить раненый мир. Божье будущее даёт причину заботиться уже сейчас: жестокость и смерть не напишут последнюю главу. Верности и доброте стоит учиться ещё до исчезновения всех слёз."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "By evening, fresh labels stand beside the surviving plants.",
+            "ru": "К вечеру возле уцелевших растений стоят новые таблички."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Some spaces stay empty, and nobody calls the damage good.",
+            "ru": "Некоторые места пусты, и никто не называет разрушение добром."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The leader will handle the investigation and consequences.",
+            "ru": "Разбирательством и последствиями займётся руководитель."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael leaves the garden tired, still disappointed. But no longer planning revenge.",
+            "ru": "Майкл уходит усталым и огорчённым, но уже не замышляет месть."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, carry one small watering can with them.",
+            "ru": "Исследователь, понеси с ними маленькую лейку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Christian hope isn't an excuse to abandon today's hurting world. God's future gives a reason to care for it now. Cruelty and death won't write the last chapter.",
+            "ru": "Христианская надежда не разрешает бросить раненый мир. Божье будущее даёт причину заботиться уже сейчас: жестокость и смерть не напишут последнюю главу."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +226,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/REV.21.4.ESV",
       "ru": "https://www.bible.com/bible/167/REV.21.4.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "The world is too broken. Even if God exists, he's not actually going to fix any of this.",
+      "ru": "Мир слишком сломан. Даже если Бог существует, Он на самом деле не исправит всё это."
+    },
+    "response": {
+      "en": "N.T. Wright, a historian who's spent his life studying the earliest Christians, makes a specific claim here. The resurrection of Jesus wasn't just one miracle in the past. It was the first piece of evidence that God's plan to renew the whole world has already begun. Wright's point is that creation isn't junk waiting to be thrown away. It's good, but unfinished, like a garden still being planted. Christians don't expect to fix everything on their own, today. They expect God to finish what he already started, visibly, in Jesus coming back to life. So here's a question back: if the first sign of that renewal already happened in a real, datable event two thousand years ago, is hoping for the rest of it wishful thinking, or is it betting on a pattern that's already shown up once?",
+      "ru": "Н. Т. Райт, историк, посвятивший жизнь изучению первых христиан, делает здесь конкретное утверждение. Воскресение Иисуса не было просто одним чудом в прошлом. Это было первое доказательство того, что Божий план обновить весь мир уже начался. Мысль Райта в том, что творение — не мусор, который выбросят. Оно хорошее, но ещё не закончено, как сад, который ещё досаживают. Христиане не ждут, что сами исправят всё сегодня. Они ждут, что Бог закончит то, что уже начал, — видимо, воскресив Иисуса из мёртвых. Вот вопрос в ответ: если первый знак этого обновления уже произошёл — в настоящем, датируемом событии две тысячи лет назад, — надеяться на остальное — это пустые мечты, или ставка на образец, который уже один раз сработал?"
     }
   },
   "activity": {
@@ -200,7 +348,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read Revelation 21:1–5 and Acts 17:30–31. Keep judgment and restoration together; avoid speculative end-times dates, graphic punishment, or promises that children can make all present harm disappear.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Откровение 21:1–5 и Деяния 17:30–31. Соединяйте суд и обновление; избегайте вычисления дат, пугающих описаний наказания и обещаний, будто дети могут устранить всё зло сейчас."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read Revelation 21:1–5 and Acts 17:30–31. Keep judgment and restoration together; avoid speculative end-times dates, graphic punishment, or promises that children can make all present harm disappear. The 'comeback' response reflects N.T. Wright's argument in Surprised by Hope: the resurrection as the beginning of God's new creation, with present evil acknowledged as real and unresolved rather than explained away.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Откровение 21:1–5 и Деяния 17:30–31. Соединяйте суд и обновление; избегайте вычисления дат, пугающих описаний наказания и обещаний, будто дети могут устранить всё зло сейчас. Ответ в блоке «если кто-то скажет» отражает довод Н. Т. Райта из книги «Surprised by Hope»: воскресение как начало Божьего нового творения, при этом нынешнее зло признаётся настоящим и ещё не устранённым, а не объясняется в сторону."
   }
 }

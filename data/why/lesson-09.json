@@ -16,64 +16,195 @@
         "en": "Choose a color",
         "ru": "Выбери цвет"
       },
-      "paragraphs": {
-        "en": [
-          "The explorers spread colored paper across the community room to make a display about God. Michael chooses only cheerful yellow. He wants visitors to know that God is loving. Joseph reaches for a dark pencil to write about justice. Soon their display looks like two competing posters.",
-          "Gracie pulls back her yellow hood and looks from one poster to the other. ‘Do we have to choose?’ she asks. ‘Can't God love people and still care when someone does wrong?’ You make room on the table for Rosie's Bible so they can explore the question before finishing the display."
-        ],
-        "ru": [
-          "Исследователи раскладывают цветную бумагу в общем зале: они готовят стенд о Боге. Майкл выбирает только радостный жёлтый цвет. Он хочет рассказать о Божьей любви. Джозеф берёт тёмный карандаш, чтобы написать о справедливости. Скоро получаются два спорящих плаката.",
-          "Грейси откидывает жёлтый капюшон и смотрит с одного плаката на другой. «А обязательно выбирать? — спрашивает она. — Разве Бог не может любить людей и при этом серьёзно относиться к плохим поступкам?» Ты освобождаешь на столе место для Библии Рози, чтобы ребята сначала разобрались в вопросе."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team spreads colored paper across the community room to make a display about God.",
+            "ru": "Исследователи раскладывают цветную бумагу в общем зале: они готовят стенд о Боге."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael chooses only cheerful yellow. He wants visitors to know that God is loving.",
+            "ru": "Майкл выбирает только радостный жёлтый цвет. Он хочет рассказать о Божьей любви."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph reaches for a dark pencil to write about justice. Soon their display looks like two competing posters.",
+            "ru": "Джозеф берёт тёмный карандаш, чтобы написать о справедливости. Скоро получаются два спорящих плаката."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie pulls back her yellow hood and looks from one poster to the other.",
+            "ru": "Грейси откидывает жёлтый капюшон и смотрит с одного плаката на другой."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Do we have to choose? Can't God love people, and still care when someone does wrong?",
+            "ru": "А обязательно выбирать? Разве Бог не может любить людей и при этом серьёзно относиться к плохим поступкам?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You make room on the table for Rosie's Bible. Now they can explore the question, before finishing the display.",
+            "ru": "Ты освобождаешь на столе место для Библии Рози. Теперь ребята сначала разберутся в вопросе."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Listen before drawing",
         "ru": "Сначала послушаем"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens her purple Bible to Exodus 34. With their teacher, the children read how God reveals his character to Moses: merciful, gracious, patient, and faithful. The following verse does not pretend guilt is unimportant. God's mercy and justice belong together, not to different sides taking turns.",
-          "Their teacher explains holiness as God's perfect purity and greatness. He is not simply a bigger person with our faults. No paper portrait can contain everything God is."
-        ],
-        "ru": [
-          "Рози открывает фиолетовую Библию на 34-й главе Исхода. С учителем дети читают, как Бог открывает Моисею Свой характер: милость, терпение, верность. Следующий стих не объявляет вину пустяком. Божья милость и справедливость не сменяют друг друга — они неразделимы.",
-          "Учитель объясняет святость: Бог совершенно чист и велик. Он не просто огромный человек с нашими недостатками. Бумажный портрет не вместит всё, что можно узнать о Нём."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens her Bible to Exodus chapter 34.",
+            "ru": "Рози открывает Библию на 34-й главе Исхода."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "With their teacher, the kids read how God reveals his character to Moses. Merciful. Gracious. Patient. Faithful.",
+            "ru": "С учителем дети читают, как Бог открывает Моисею Свой характер. Милость. Терпение. Верность."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The next verse doesn't pretend guilt doesn't matter. God's mercy and justice belong together. Not to different sides, taking turns.",
+            "ru": "Следующий стих не объявляет вину пустяком. Божья милость и справедливость не сменяют друг друга — они неразделимы."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher explains holiness as God's perfect purity and greatness.",
+            "ru": "Учитель объясняет святость: Бог совершенно чист и велик."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He isn't simply a bigger person with our faults. No paper portrait can contain everything God is.",
+            "ru": "Он не просто огромный человек с нашими недостатками. Бумажный портрет не вместит всё, что можно узнать о Нём."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Before our calendar",
         "ru": "Раньше календаря"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph draws a birthday cake beside God's name, then pauses. Psalm 90 describes God as existing before the mountains and from everlasting to everlasting. God did not begin when someone first thought about him. Joseph replaces the cake with a written explanation instead of inventing a picture of eternity.",
-          "Michael notices the display has become more truthful without becoming less wonderful. God's love is not permission to hurt someone; his justice is not an excuse for their own revenge."
-        ],
-        "ru": [
-          "Джозеф рисует рядом с Божьим именем праздничный торт, но останавливается. Псалом 89 говорит о Боге, Который существовал до гор, от века и до века. Бог существовал всегда, ещё до того, как люди начали думать о Нём. Джозеф заменяет торт объяснением, не пытаясь нарисовать вечность.",
-          "Майкл замечает: стенд стал правдивее, но не потерял красоты. Божья любовь не разрешает обижать других, а Его справедливость не оправдывает нашу месть."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph draws a birthday cake beside God's name, then pauses.",
+            "ru": "Джозеф рисует рядом с Божьим именем праздничный торт, но останавливается."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Psalm 90 describes God as existing before the mountains. He is from everlasting to everlasting.",
+            "ru": "Псалом 89 говорит о Боге, Который существовал до гор. Он — от века и до века."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "God didn't begin when someone first thought about him.",
+            "ru": "Бог существовал всегда, ещё до того, как люди начали думать о Нём."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph replaces the cake with a written explanation. He doesn't invent a picture of eternity.",
+            "ru": "Джозеф заменяет торт объяснением. Он не пытается нарисовать вечность."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael notices the display has become more truthful, without becoming less wonderful.",
+            "ru": "Майкл замечает: стенд стал правдивее, но не потерял красоты."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "God's love isn't permission to hurt someone. His justice isn't an excuse for their own revenge.",
+            "ru": "Божья любовь не разрешает обижать других, а Его справедливость не оправдывает нашу месть."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "One honest display",
         "ru": "Один честный стенд"
       },
-      "paragraphs": {
-        "en": [
-          "A younger child accidentally tears their best sheet. Michael starts to shout, then remembers what they have just read. ‘The paper is torn,’ he says more quietly. ‘Let's see if we can fix it.’ They do not have to pretend nothing happened in order to be kind. As they help repair the sheet, they begin to put their lesson into practice, though they are still far from God's perfection.",
-          "You help attach the repaired sheet. The team finishes with praise, not a wish list. They thank God for his faithful character, even before asking him for anything they would like to receive."
-        ],
-        "ru": [
-          "Малыш случайно рвёт лучший лист. Майкл начинает кричать, но вспоминает прочитанное. «Бумага порвалась, — говорит он уже тише. — Давай попробуем починить». Чтобы быть добрыми, не нужно делать вид, будто ничего не случилось. Помогая исправить лист, ребята пробуют поступать так, как только что учились, хотя до Божьего совершенства им ещё далеко.",
-          "Ты помогаешь прикрепить починенный лист. В конце команда прославляет Бога, а не перечисляет желания. Дети благодарят Его за верность ещё до того, как просят что-нибудь для себя."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A younger child accidentally tears their best sheet.",
+            "ru": "Малыш случайно рвёт лучший лист."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael starts to shout, then remembers what they just read.",
+            "ru": "Майкл начинает кричать, но вспоминает прочитанное."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "The paper is torn. Let's see if we can fix it.",
+            "ru": "Бумага порвалась. Давай попробуем починить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They don't have to pretend nothing happened, in order to be kind.",
+            "ru": "Чтобы быть добрыми, не нужно делать вид, будто ничего не случилось."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "As they help repair the sheet, they start putting their lesson into practice. They're still far from God's perfection.",
+            "ru": "Помогая исправить лист, ребята пробуют поступать так, как только что учились, хотя до Божьего совершенства им ещё далеко."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help attach the repaired sheet. The team finishes with praise, not a wish list. They thank God for his faithful character, before asking for anything.",
+            "ru": "Ты помогаешь прикрепить починенный лист. В конце команда прославляет Бога, а не перечисляет желания. Дети благодарят Его за верность ещё до того, как просят что-нибудь для себя."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +219,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/EXO.34.6.ESV",
       "ru": "https://www.bible.com/bible/167/EXO.34.6.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "A God who gets angry can't really be loving. Real love is always calm and never gets mad about anything.",
+      "ru": "Бог, Который гневается, не может быть по-настоящему любящим. Настоящая любовь всегда спокойна и никогда ни на что не сердится."
+    },
+    "response": {
+      "en": "Think about people you actually know who love deeply, a parent, a good friend. The ones who love most fiercely are usually the ones who get angriest when something hurts what they love. That's not a contradiction. It's what real love looks like. The theologian Tim Keller put it this way: loving people are sometimes filled with anger, not instead of their love, but because of it. A God who watched cruelty and unfairness happen and felt nothing wouldn't be more loving. He'd actually be less loving, because he wouldn't truly care. So here's a question back: if someone never got angry about real harm done to people they loved, would that be a sign of deeper love, or a sign of not loving them very much at all?",
+      "ru": "Подумай о людях, которых ты сам знаешь и которые по-настоящему глубоко любят, — о родителе, о хорошем друге. Те, кто любит сильнее всего, обычно сильнее всего и гневаются, когда что-то вредит тому, что они любят. Это не противоречие. Это то, как выглядит настоящая любовь. Богослов Тим Келлер сказал так: любящие люди иногда переполнены гневом не вместо любви, а именно из-за неё. Бог, Который смотрел бы на жестокость и несправедливость и ничего бы не чувствовал, не был бы более любящим. Он был бы менее любящим, потому что на самом деле не заботился бы. Вот вопрос в ответ: если бы кто-то никогда не гневался из-за настоящего вреда тем, кого он любит, было бы это признаком более глубокой любви — или признаком того, что он не очень-то их и любит?"
     }
   },
   "activity": {
@@ -168,8 +309,8 @@
     "ru": "Боже, славлю Твою милость, святость, справедливость и верность."
   },
   "adultNote": {
-    "en": "Read Exodus 34:6–7 and Psalm 90:2 (Russian Psalm 89:3). The torn paper is an application, not a complete model of divine justice.",
-    "ru": "Прочитайте Исход 34:6–7 и Псалом 89:3. История с бумагой помогает применить урок, но не объясняет Божью справедливость во всей полноте."
+    "en": "Read Exodus 34:6–7 and Psalm 90:2 (Russian Psalm 89:3). The torn paper is an application, not a complete model of divine justice. The 'comeback' response reflects Tim Keller's argument (in The Reason for God and elsewhere) that love and wrath are not opposites: loving people feel anger at what harms what they love, precisely because they love it. This addresses the apparent tension the objection raises; it is not a full treatment of divine wrath or hell.",
+    "ru": "Прочитайте Исход 34:6–7 и Псалом 89:3. История с бумагой помогает применить урок, но не объясняет Божью справедливость во всей полноте. Ответ в блоке «если кто-то скажет» отражает довод Тима Келлера (в книге «Разум для Бога» и в других местах): любовь и гнев — не противоположности; любящие люди гневаются на то, что вредит объекту их любви, именно потому, что они его любят. Это снимает видимое противоречие в возражении, но не является полным учением о Божьем гневе или аде."
   },
   "sources": [
     {

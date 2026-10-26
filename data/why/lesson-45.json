@@ -16,64 +16,219 @@
         "en": "A question under the stars",
         "ru": "Вопрос под звёздами"
       },
-      "paragraphs": {
-        "en": [
-          "At the neighborhood astronomy evening, Michael steadies a telescope while Gracie adjusts its little stool. Their friend Nina notices Rosie’s purple Bible beside the star chart and asks why the explorers follow Jesus. Nina says her family does not believe in God.",
-          "Joseph opens his blue notebook, ready with a list of arguments. But Nina is still speaking. Explorer, stay beside the telescope: the first challenge tonight is not finding a planet. It is hearing a person."
-        ],
-        "ru": [
-          "На соседском вечере астрономии Майкл придерживает телескоп, а Грейси поправляет маленький табурет. Их подруга Нина замечает фиолетовую Библию Рози рядом с картой неба и спрашивает, почему они следуют за Иисусом. Нина говорит, что её семья не верит в Бога.",
-          "Джозеф открывает синий блокнот со списком доводов. Но Нина ещё говорит. Исследователь, останься у телескопа: первая задача сегодня — не найти планету, а услышать человека."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the neighborhood astronomy evening, Michael steadies a telescope, while Gracie adjusts its little stool.",
+            "ru": "На соседском вечере астрономии Майкл придерживает телескоп, а Грейси поправляет маленький табурет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their friend Nina notices Rosie's Bible beside the star chart. She asks why the team follows Jesus.",
+            "ru": "Их подруга Нина замечает Библию Рози рядом с картой неба. Она спрашивает, почему они следуют за Иисусом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Nina says her family doesn't believe in God.",
+            "ru": "Нина говорит, что её семья не верит в Бога."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph opens his notebook, ready with a list of arguments. But Nina is still speaking.",
+            "ru": "Джозеф открывает блокнот со списком доводов. Но Нина ещё говорит."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, stay beside the telescope. The first challenge tonight isn't finding a planet. It's hearing a person.",
+            "ru": "Исследователь, останься у телескопа: первая задача сегодня — не найти планету, а услышать человека."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Listen to this friend",
         "ru": "Услышь именно этого друга"
       },
-      "paragraphs": {
-        "en": [
-          "“What do you think about it, Nina?” Rosie asks, giving her time to answer. Nina says she wonders why people suffer. “I have questions about that too,” Michael admits. He wants to tell her what he believes, but he will not pretend to have a quick explanation for someone else’s pain.",
-          "Their leader helps them read 1 Peter 3:15–16. Christians are called to explain their hope with gentleness and respect. Listening is not surrendering a belief; it helps them answer the question actually being asked."
-        ],
-        "ru": [
-          "«А ты сама что думаешь, Нина?» — спрашивает Рози и даёт ей время ответить. Нина говорит, что не понимает, почему люди страдают. «У меня тоже есть об этом вопросы», — признаётся Майкл. Ему хочется рассказать о своей вере, но он не будет делать вид, будто может сразу объяснить чужую боль.",
-          "С руководителем они читают 1 Петра 3:15–16. Христиане призваны объяснять свою надежду с кротостью и уважением. Слушать — не значит отказываться от веры. Это помогает ответить на настоящий вопрос собеседника."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "What do you think about it, Nina?",
+            "ru": "А ты сама что думаешь, Нина?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She gives her time to answer. Nina says she wonders why people suffer.",
+            "ru": "Рози даёт ей время ответить. Нина говорит, что не понимает, почему люди страдают."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I have questions about that too.",
+            "ru": "У меня тоже есть об этом вопросы."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He wants to tell her what he believes. But he won't pretend to have a quick answer for someone else's pain.",
+            "ru": "Ему хочется рассказать о своей вере, но он не будет делать вид, будто может сразу объяснить чужую боль."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader helps them read 1 Peter chapter 3.",
+            "ru": "С руководителем они читают 3 главу 1 Петра."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Christians are called to explain their hope with gentleness and respect.",
+            "ru": "Христиане призваны объяснять свою надежду с кротостью и уважением."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Listening isn't surrendering a belief. It helps them answer the question actually being asked.",
+            "ru": "Слушать — не значит отказываться от веры. Это помогает ответить на настоящий вопрос собеседника."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Clear without being cruel",
         "ru": "Ясно и без жестокости"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph wonders whether kindness means saying that every belief teaches the same thing. Rosie turns to John 14:6. Jesus makes a definite claim about coming to the Father through him. Christians can say what they believe without pretending that important differences disappear.",
-          "“My hope is in Jesus because he died for us and rose again,” Michael explains. He is sharing his hope, not trying to show that he is cleverer than Nina. “Would you like to read a Gospel together sometime?” he asks. “I’d rather think about it first,” she replies, and Michael accepts her answer."
-        ],
-        "ru": [
-          "Джозеф спрашивает: быть добрым — значит говорить, что все веры учат одному? Рози открывает Иоанна 14:6. Иисус ясно говорит о пути к Отцу через Него. Христиане могут объяснять свои убеждения, не делая вид, будто важных различий нет.",
-          "«Я надеюсь на Иисуса, потому что Он умер за нас и воскрес», — объясняет Майкл. Он делится надеждой, а не старается показать, что умнее Нины. «Хочешь как-нибудь почитать Евангелие вместе?» — спрашивает он. «Я бы сначала подумала», — отвечает Нина. Майкл принимает её ответ."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Does being kind mean saying every belief teaches the same thing?",
+            "ru": "А быть добрым — значит говорить, что все веры учат одному?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie turns to John chapter 14.",
+            "ru": "Рози открывает 14 главу Иоанна."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Jesus makes a definite claim about coming to the Father through him.",
+            "ru": "Иисус ясно говорит о пути к Отцу через Него."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Christians can say what they believe. Without pretending the real differences disappear.",
+            "ru": "Христиане могут объяснять свои убеждения, не делая вид, будто важных различий нет."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "My hope is in Jesus, because he died for us and rose again.",
+            "ru": "Я надеюсь на Иисуса, потому что Он умер за нас и воскрес."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He's sharing his hope. Not trying to show he's cleverer than Nina.",
+            "ru": "Он делится надеждой, а не старается показать, что умнее Нины."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Would you like to read a Gospel together sometime?",
+            "ru": "Хочешь как-нибудь почитать Евангелие вместе?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "\"I'd rather think about it first,\" Nina replies. Michael accepts her answer.",
+            "ru": "«Я бы сначала подумала», — отвечает Нина. Майкл принимает её ответ."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Her turn still matters",
         "ru": "Её очередь остаётся"
       },
-      "paragraphs": {
-        "en": [
-          "A bright point finally comes into focus. Joseph steps aside so Nina can look first, just as they had promised before the conversation. Friendship has not become a prize she must win by agreeing. Gracie lends her the star chart and asks which constellation she wants to find next.",
-          "You help hold the red torch steady. The explorers still believe Jesus is Lord. Their words can be truthful, their questions open, and their shared evening genuinely kind."
-        ],
-        "ru": [
-          "Наконец в телескопе видна яркая точка. Джозеф уступает Нине первую очередь, как они обещали ещё до разговора. Дружба не стала наградой за согласие. Грейси даёт ей карту звёзд и спрашивает, какое созвездие искать дальше.",
-          "Ты держишь красный фонарик. Исследователи по-прежнему верят, что Иисус — Господь. Они могут говорить правду, честно спрашивать и проводить вечер с настоящей добротой."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A bright point finally comes into focus.",
+            "ru": "Наконец в телескопе видна яркая точка."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph steps aside, so Nina can look first, just as they'd promised before the conversation.",
+            "ru": "Джозеф уступает Нине первую очередь, как они обещали ещё до разговора."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Friendship hasn't become a prize she must win by agreeing.",
+            "ru": "Дружба не стала наградой за согласие."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie lends her the star chart, and asks which constellation she wants to find next.",
+            "ru": "Грейси даёт ей карту звёзд и спрашивает, какое созвездие искать дальше."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help hold the red torch steady.",
+            "ru": "Ты держишь красный фонарик."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team still believes Jesus is Lord. Their words can be truthful. Their questions can stay open. Their shared evening can still be kind.",
+            "ru": "Исследователи по-прежнему верят, что Иисус — Господь. Они могут говорить правду. Они могут честно спрашивать. Вечер может пройти по-доброму."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +243,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/1PE.3.15.ESV",
       "ru": "https://www.bible.com/bible/167/1PE.3.15.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Isn't it arrogant to think your religion is the only right one, when there are so many good religions that basically teach the same thing?",
+      "ru": "Разве не высокомерно думать, что только твоя религия правильная, когда есть столько хороших религий, которые учат почти одному и тому же?"
+    },
+    "response": {
+      "en": "C.S. Lewis pointed out something people miss here. If someone believes every religion is equally right, they also have to believe the central message of every single one is one enormous mistake, because they actually claim very different, often contradicting things about who God is and how to know him. Lewis's own view was gentler than people expect. Being a Christian doesn't require believing every other religion gets everything wrong. Many contain real, important truths. But that's different from saying they're all saying the exact same thing, when they clearly aren't. So here's a question back: if two people describe something completely differently, is it more respectful to pretend they're secretly agreeing, or to actually listen to what each one is really claiming?",
+      "ru": "К. С. Льюис заметил кое-что, что люди упускают. Если кто-то верит, что все религии одинаково правы, ему придётся верить и в то, что главная весть каждой из них — одна огромная ошибка, ведь они утверждают очень разные, часто противоречащие друг другу вещи о том, Кто есть Бог и как Его узнать. Собственный взгляд Льюиса был мягче, чем ожидают. Быть христианином не значит верить, что любая другая религия ошибается во всём. Многие из них содержат настоящие, важные истины. Но это не то же самое, что сказать, будто все они говорят ровно одно и то же, хотя это явно не так. Вот вопрос в ответ: если два человека описывают что-то совершенно по-разному, уважительнее притвориться, что они тайно согласны, — или по-настоящему выслушать, что каждый из них на самом деле утверждает?"
     }
   },
   "activity": {
@@ -178,7 +343,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read John 14:6, 1 Peter 3:15–16, and Luke 10:27 together. Do not stereotype religious or nonreligious families, require children to debate, or treat a friend as a conversion project. The story leaves suffering questions open for careful follow-up.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Вместе прочитайте Иоанна 14:6, 1 Петра 3:15–16 и Луки 10:27. Не навязывайте стереотипы о верующих и неверующих семьях, не заставляйте детей спорить и не превращайте друга в проект обращения. Вопросы о страдании оставлены для внимательного дальнейшего разговора."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read John 14:6, 1 Peter 3:15–16, and Luke 10:27 together. Do not stereotype religious or nonreligious families, require children to debate, or treat a friend as a conversion project. The story leaves suffering questions open for careful follow-up. The 'comeback' response reflects C.S. Lewis's argument (echoed across his writing, including Mere Christianity's discussion of other faiths): treating all religions as equally true requires treating each one's own central claims as false, which is a stronger and stranger position than it first sounds.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Вместе прочитайте Иоанна 14:6, 1 Петра 3:15–16 и Луки 10:27. Не навязывайте стереотипы о верующих и неверующих семьях, не заставляйте детей спорить и не превращайте друга в проект обращения. Вопросы о страдании оставлены для внимательного дальнейшего разговора. Ответ в блоке «если кто-то скажет» отражает довод К. С. Льюиса (повторяющийся в его текстах, включая обсуждение других вер в «Просто христианстве»): считать все религии одинаково истинными означает считать ложными главные утверждения каждой из них — а это более сильная и странная позиция, чем кажется на первый взгляд."
   }
 }
