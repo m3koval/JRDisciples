@@ -162,6 +162,37 @@
           }
         },
         {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "It's okay to not know an answer yet. It's even okay to have doubts.",
+            "ru": "Пока не знать ответа — это нормально. Даже сомневаться — нормально."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Just test a doubt the same way you'd test a belief. Don't trust it automatically, just because it got there first.",
+            "ru": "Просто проверяй сомнение так же, как проверял бы убеждение. Не верь ему только потому, что оно пришло первым."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "A doubt makes a claim too. It says something is true. So it needs checking, like anything else in my notebook.",
+            "ru": "Сомнение тоже кое-что заявляет. Оно говорит, что что-то правда. Значит, его нужно проверять — как любую другую запись в моём блокноте."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher reminds them of the Bereans, from the book of Acts. They checked exciting news and hard questions by the same rule. Does this match what Scripture actually says?",
+            "ru": "Учитель напоминает им о верийцах из книги Деяний. Они проверяли и громкие новости, и трудные вопросы по одному правилу. Совпадает ли это с тем, что действительно говорит Писание?"
+          }
+        },
+        {
           "kind": "narration",
           "text": {
             "en": "You help choose a quiet time to return to the question.",
@@ -248,8 +279,8 @@
       "ru": "Если бы ты по-настоящему верил в Бога, у тебя не было бы сомнений и трудных вопросов. Вопросы означают, что твоя вера не настоящая."
     },
     "response": {
-      "en": "The writer Frederick Buechner said something kids might actually enjoy: \"Doubts are the ants in the pants of faith. They keep it awake and moving.\" He meant doubts aren't proof that faith is fake. They're often what keeps faith honest and alive, instead of lazy and half-asleep. The father in Mark chapter 9 said \"I believe; help my unbelief\" in the very same breath, and Jesus didn't send him away for it. So here's a question back: if people in the Bible itself brought their real doubts straight to Jesus instead of hiding them, is having a hard question actually a sign faith is broken, or a sign it's still awake?",
-      "ru": "Писатель Фредерик Бюхнер сказал кое-что, что детям может даже понравиться: «Сомнения — это муравьи в штанах веры. Они не дают ей заснуть и заставляют двигаться». Он имел в виду: сомнения не доказывают, что вера ложная. Они часто и есть то, что держит веру честной и живой, а не ленивой и сонной. Отец в 9 главе Марка сказал «верю; помоги моему неверию» в одном и том же вздохе, и Иисус не отослал его за это. Вот вопрос в ответ: если люди в самой Библии приносили свои настоящие сомнения прямо к Иисусу, а не прятали их, — трудный вопрос — это признак того, что вера сломана, или признак того, что она ещё жива?"
+      "en": "The writer Frederick Buechner said something kids might actually enjoy: \"Doubts are the ants in the pants of faith. They keep it awake and moving.\" He meant doubts aren't proof that faith is fake. They're often what keeps faith honest and alive, instead of lazy and half-asleep. A doubt deserves the same careful checking as a belief does, not automatic trust just because it showed up feeling urgent. The father in Mark chapter 9 said \"I believe; help my unbelief\" in the very same breath, and Jesus didn't send him away for it. So here's a question back: if people in the Bible itself brought their real doubts straight to Jesus instead of hiding them, is having a hard question actually a sign faith is broken, or a sign it's still awake?",
+      "ru": "Писатель Фредерик Бюхнер сказал кое-что, что детям может даже понравиться: «Сомнения — это муравьи в штанах веры. Они не дают ей заснуть и заставляют двигаться». Он имел в виду: сомнения не доказывают, что вера ложная. Они часто и есть то, что держит веру честной и живой, а не ленивой и сонной. Сомнение заслуживает такой же внимательной проверки, как и убеждение, а не автоматического доверия просто потому, что оно появилось настойчиво и срочно. Отец в 9 главе Марка сказал «верю; помоги моему неверию» в одном и том же вздохе, и Иисус не отослал его за это. Вот вопрос в ответ: если люди в самой Библии приносили свои настоящие сомнения прямо к Иисусу, а не прятали их, — трудный вопрос — это признак того, что вера сломана, или признак того, что она ещё жива?"
     }
   },
   "activity": {
@@ -316,8 +347,8 @@
     "ru": "Иисус, я приношу Тебе и доверие, и сомнения. Помоги мне."
   },
   "adultNote": {
-    "en": "Do not use this healing account to promise a particular outcome or blame a child’s unanswered prayer on insufficient faith. The 'comeback' response quotes Frederick Buechner's widely cited line on doubt from Wishful Thinking, paired with Mark 9:24 already used in this lesson; it normalizes doubt within faith rather than treating every doubt as automatically resolved.",
-    "ru": "Не обещайте конкретного исхода на основании этого исцеления и не объясняйте неотвеченную молитву ребёнка недостатком веры. Ответ в блоке «если кто-то скажет» цитирует известную фразу Фредерика Бюхнера о сомнении из книги «Wishful Thinking», рядом с уже использованным в уроке Марка 9:24; он показывает сомнение нормальной частью веры, а не утверждает, что любое сомнение сразу же разрешается."
+    "en": "Do not use this healing account to promise a particular outcome or blame a child’s unanswered prayer on insufficient faith. The 'comeback' response quotes Frederick Buechner's widely cited line on doubt from Wishful Thinking, paired with Mark 9:24 already used in this lesson; it normalizes doubt within faith rather than treating every doubt as automatically resolved. The added teacher/Joseph beats teach 'doubt your doubts, believe your beliefs' on two legs at once: logical (a doubt makes a truth-claim too, so it isn't exempt from scrutiny just because it arrived second, echoing Tim Keller's point in The Reason for God that doubt is itself a hidden belief) and biblical (the Berean pattern from Acts 17:11, already used in lessons 4, 8, 35 and 43, applies the same test — does this match Scripture? — to a doubt and to a belief alike, rather than giving doubt a free pass).",
+    "ru": "Не обещайте конкретного исхода на основании этого исцеления и не объясняйте неотвеченную молитву ребёнка недостатком веры. Ответ в блоке «если кто-то скажет» цитирует известную фразу Фредерика Бюхнера о сомнении из книги «Wishful Thinking», рядом с уже использованным в уроке Марка 9:24; он показывает сомнение нормальной частью веры, а не утверждает, что любое сомнение сразу же разрешается. Добавленные реплики учителя и Джозефа учат правилу «сомневайся в сомнениях, верь убеждениям» сразу с двух сторон: логической (сомнение тоже утверждает что-то как истину, и поэтому не освобождено от проверки только потому, что появилось вторым — это перекликается с мыслью Тима Келлера в книге «Разум для Бога», что сомнение само есть скрытое убеждение) и библейской (верийский способ проверки из Деяний 17:11, уже использованный в уроках 4, 8, 35 и 43, применяет одно и то же правило — совпадает ли это с Писанием? — и к сомнению, и к убеждению, не давая сомнению особого пропуска)."
   },
   "sources": [
     {

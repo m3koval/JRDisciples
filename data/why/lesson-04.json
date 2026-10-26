@@ -28,7 +28,7 @@
           "kind": "narration",
           "text": {
             "en": "A leaf sketch lands beside a Bible verse. An interview note slides under a domino diagram.",
-            "ru": "Рисунок листа падает к библейскому стиху. Запись беседы соскальзывает под схему костяшек."
+            "ru": "Рисунок листа падает к библейскому стиху. Запись беседы соскальзывает под схему домино."
           }
         },
         {
@@ -87,7 +87,7 @@
           "kind": "narration",
           "text": {
             "en": "Their domino diagram shows reasoning from one example.",
-            "ru": "Их схема костяшек показывает рассуждение по одному примеру."
+            "ru": "Их схема домино показывает рассуждение по одному примеру."
           }
         },
         {
@@ -147,7 +147,7 @@
           "kind": "narration",
           "text": {
             "en": "They check the other labels too. An interview is one person's report. Their domino model isn't the whole universe. And the Bible passage needs its nearby verses, too.",
-            "ru": "Они проверяют и остальные подписи. Беседа — рассказ одного человека. Их модель костяшек — не вся вселенная. А библейский отрывок нужен вместе с соседними стихами."
+            "ru": "Они проверяют и остальные подписи. Беседа — рассказ одного человека. Их модель домино — не вся вселенная. А библейский отрывок нужен вместе с соседними стихами."
           }
         }
       ]
@@ -240,7 +240,7 @@
         "id": "b",
         "text": {
           "en": "Show the domino model as if it recorded Jesus.",
-          "ru": "Показать костяшки, будто это запись об Иисусе."
+          "ru": "Показать модель домино, будто это запись об Иисусе."
         }
       },
       {

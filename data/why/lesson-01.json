@@ -58,14 +58,14 @@
           "kind": "narration",
           "text": {
             "en": "Beside the telescope, Michael lines up a row of wooden dominoes and gives the first one a push.",
-            "ru": "Рядом с телескопом Майкл выстраивает ряд деревянных костяшек домино и толкает первую."
+            "ru": "Рядом с телескопом Майкл выстраивает ряд деревянных плиток домино и толкает первую."
           }
         },
         {
           "kind": "narration",
           "text": {
             "en": "They clatter down, one after another, all the way to the end.",
-            "ru": "Костяшки падают одна за другой, до самого конца ряда."
+            "ru": "Плитки падают одна за другой, до самого конца ряда."
           }
         },
         {
@@ -73,7 +73,7 @@
           "speaker": "teacher",
           "text": {
             "en": "Every domino needed something else to knock it over. The tree needs sunlight to grow. The star needs gas and fire to shine. Nothing here started itself.",
-            "ru": "Каждую костяшку толкнула соседняя. Дереву нужен солнечный свет, чтобы расти. Звезде нужны газ и огонь, чтобы светить. Здесь ничто не началось само собой."
+            "ru": "Каждую плитку толкнула соседняя. Дереву нужен солнечный свет, чтобы расти. Звезде нужны газ и огонь, чтобы светить. Здесь ничто не началось само собой."
           }
         },
         {
@@ -81,7 +81,7 @@
           "speaker": "gracie",
           "text": {
             "en": "So what started the very first domino?",
-            "ru": "А что толкнуло самую первую костяшку?"
+            "ru": "А что толкнуло самую первую плитку?"
           }
         },
         {
@@ -142,7 +142,7 @@
           "speaker": "teacher",
           "text": {
             "en": "Good question — but think about what we actually said. Everything that needs something else needs a maker outside itself. God doesn't need anything else. He's not one more domino. He's the reason there are dominoes at all.",
-            "ru": "Хороший вопрос — но вспомни, что мы на самом деле сказали. Создатель нужен всему, что нуждается в чём-то другом. Богу не нужно ничего другого. Он не ещё одна костяшка. Он — причина, по которой костяшки вообще существуют."
+            "ru": "Хороший вопрос — но вспомни, что мы на самом деле сказали. Создатель нужен всему, что нуждается в чём-то другом. Богу не нужно ничего другого. Он не ещё одна плитка. Он — причина, по которой домино вообще существует."
           }
         }
       ]
@@ -221,7 +221,7 @@
     },
     "response": {
       "en": "Even if the dominoes went back forever, each one would still be pushed by something else — and an endless row of pushed things still needs someone outside the row who wasn't pushed. So here's a question back: which makes more sense — a world that was pushed into being on purpose, by someone with a reason? Or a world that came from nothing, for no reason, going nowhere? I know which one I'd rather believe.",
-      "ru": "Даже если бы ряд костяшек тянулся бесконечно, каждую всё равно толкнула бы другая — а бесконечный ряд толкнутых костяшек всё равно требует Того, Кто стоит вне ряда и Кого никто не толкал. Вот вопрос в ответ: что разумнее — мир, который кто-то создал с целью и смыслом? Или мир, который возник из ничего, без причины и без смысла? Я знаю, во что мне легче поверить."
+      "ru": "Даже если бы ряд домино тянулся бесконечно, каждую плитку всё равно толкнула бы другая — а бесконечный ряд толкнутых плиток всё равно требует Того, Кто стоит вне ряда и Кого никто не толкал. Вот вопрос в ответ: что разумнее — мир, который кто-то создал с целью и смыслом? Или мир, который возник из ничего, без причины и без смысла? Я знаю, во что мне легче поверить."
     }
   },
   "activity": {
@@ -239,7 +239,7 @@
         "id": "a",
         "text": {
           "en": "Our domino struck the next domino.",
-          "ru": "Наша костяшка толкнула соседнюю."
+          "ru": "Наша плитка толкнула соседнюю."
         },
         "group": "observation"
       },
@@ -303,7 +303,7 @@
   },
   "adultNote": {
     "en": "The finite domino demonstration illustrates causal questions; it is not a proof about all causal series. Psalm numbering differs in Russian. The dependence argument is philosophical reasoning, not a telescope measurement or a deduction from a finite domino row. Its explanatory premise can be discussed; the brief argument does not by itself establish the Trinity or every divine attribute. It concerns dependence, not a proved first moment in time. The 'comeback' response addresses the infinite-regress objection specifically (an endless series still needs an explanation outside itself); it does not claim to prove the universe had a temporal beginning.",
-    "ru": "Конечный ряд костяшек иллюстрирует вопрос о причинах, но не доказывает свойства всех причинных рядов. Нумерация псалмов различается. Довод о зависимости — философское рассуждение, не показание телескопа и не вывод из конечного ряда костяшек. Его исходный принцип можно обсуждать; краткий довод сам по себе не устанавливает учение о Троице или все свойства Бога. Речь о зависимости, а не о доказанном первом моменте времени. Ответ в блоке «если кто-то скажет» отвечает именно на довод о бесконечном ряде, а не утверждает, что доказано начало вселенной во времени."
+    "ru": "Конечный ряд плиток домино иллюстрирует вопрос о причинах, но не доказывает свойства всех причинных рядов. Нумерация псалмов различается. Довод о зависимости — философское рассуждение, не показание телескопа и не вывод из конечного ряда плиток домино. Его исходный принцип можно обсуждать; краткий довод сам по себе не устанавливает учение о Троице или все свойства Бога. Речь о зависимости, а не о доказанном первом моменте времени. Ответ в блоке «если кто-то скажет» отвечает именно на довод о бесконечном ряде, а не утверждает, что доказано начало вселенной во времени."
   },
   "sources": [
     {
