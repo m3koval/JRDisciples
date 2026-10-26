@@ -16,64 +16,203 @@
         "en": "An empty chair",
         "ru": "Пустой стул"
       },
-      "paragraphs": {
-        "en": [
-          "The team meets in the school garden, but Gracie barely notices the seedlings. Her friend has moved away, leaving an empty chair beside her in class. Michael suggests that trusting God should make her stop feeling sad. Gracie pulls a folded drawing under Joseph's blue notebook.",
-          "You notice the drawing shows two friends on a bench. Rosie asks if Gracie would like company instead of advice. They sit beside her without making her explain everything immediately."
-        ],
-        "ru": [
-          "Команда встречается в школьном саду, но Грейси почти не замечает ростков. Её подруга переехала, и теперь соседний стул в классе пуст. Майкл говорит, что доверие Богу должно прогнать грусть. Грейси прячет сложенный рисунок под синий блокнот Джозефа.",
-          "Ты замечаешь: на рисунке две подруги сидят на скамейке. Рози спрашивает, не лучше ли просто побыть рядом. Дети садятся с Грейси и не требуют немедленно всё объяснить."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team meets in the school garden. But Gracie barely notices the seedlings.",
+            "ru": "Команда встречается в школьном саду, но Грейси почти не замечает ростков."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Her friend has moved away, leaving an empty chair beside her in class.",
+            "ru": "Её подруга переехала, и теперь соседний стул в классе пуст."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael suggests that trusting God should make her stop feeling sad.",
+            "ru": "Майкл говорит, что доверие Богу должно прогнать грусть."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie pulls a folded drawing under Joseph's notebook.",
+            "ru": "Грейси прячет сложенный рисунок под блокнот Джозефа."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You notice the drawing shows two friends on a bench.",
+            "ru": "Ты замечаешь: на рисунке две подруги сидят на скамейке."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Would you like company instead of advice?",
+            "ru": "Может, тебе лучше просто побыть рядом, а не слушать советы?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They sit beside her, without making her explain everything right away.",
+            "ru": "Дети садятся с Грейси и не требуют немедленно всё объяснить."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Known, not forgotten",
         "ru": "Бог не забывает"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie reads the beginning of Psalm 139. God knows the psalmist personally: sitting, rising, thoughts, and journeys are not hidden from him. Their teacher explains that God's knowledge is not a promise that every day will feel easy. Gracie's sadness does not mean she has disappeared from his care.",
-          "Michael turns to Gracie. ‘I'm sorry I said you should stop feeling sad. I didn't ask how much you miss her.’ He waits while you help Gracie unfold her drawing again. This time he is ready to listen instead of trying to make the sadness disappear with a quick answer."
-        ],
-        "ru": [
-          "Рози читает начало Псалма 138. Бог знает автора лично: когда тот садится, встаёт, размышляет и идёт по дороге. Учитель объясняет: Божье знание не означает, что каждый день будет лёгким. Грусть Грейси не значит, будто Бог перестал о ней заботиться.",
-          "Майкл поворачивается к Грейси. «Прости, что я сказал тебе перестать грустить. Я ведь даже не спросил, как сильно ты по ней скучаешь». Он ждёт, пока ты помогаешь Грейси снова развернуть рисунок. Теперь он готов слушать, а не пытаться прогнать её грусть быстрым советом."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie reads the beginning of Psalm 139.",
+            "ru": "Рози читает начало Псалма 138."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "God knows the psalmist personally. Sitting, rising, thoughts, and journeys are not hidden from him.",
+            "ru": "Бог знает автора лично: когда тот садится, встаёт, размышляет и идёт по дороге."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher explains that God's knowledge isn't a promise every day will feel easy.",
+            "ru": "Учитель объясняет: Божье знание не означает, что каждый день будет лёгким."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie's sadness doesn't mean she's disappeared from his care.",
+            "ru": "Грусть Грейси не значит, будто Бог перестал о ней заботиться."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I'm sorry I said you should stop feeling sad. I didn't ask how much you miss her.",
+            "ru": "Прости, что я сказал тебе перестать грустить. Я ведь даже не спросил, как сильно ты по ней скучаешь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He waits while you help Gracie unfold her drawing again. This time he's ready to listen. Not trying to erase the sadness with a quick answer.",
+            "ru": "Он ждёт, пока ты помогаешь Грейси снова развернуть рисунок. Теперь он готов слушать. А не пытаться прогнать её грусть быстрым советом."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Joseph is not our Joseph",
         "ru": "Другой Иосиф"
       },
-      "paragraphs": {
-        "en": [
-          "Their teacher recalls the biblical Joseph, carefully distinguishing him from their notebook-carrying friend. Joseph suffered betrayal and imprisonment; later he helped provide food during famine. God's faithful work did not make the cruel actions good or turn the painful years into a short, cheerful adventure.",
-          "They trace three cards: real harm, God's presence through hardship, and later help for others. They cannot use Joseph's ending to promise exactly how Gracie's own difficult story will unfold."
-        ],
-        "ru": [
-          "Учитель вспоминает библейского Иосифа, не путая его с другом ребят, который ведёт блокнот. Иосиф пережил предательство и тюрьму, а позже помогал людям получать пищу во время голода. Божья верность не сделала жестокость добром и не превратила трудные годы в весёлое приключение.",
-          "Дети раскладывают три карточки: настоящая боль, Божье присутствие в трудностях и позднейшая помощь людям. По истории Иосифа нельзя обещать, как именно разрешится трудность самой Грейси."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher recalls the biblical Joseph, carefully telling him apart from their notebook-carrying friend.",
+            "ru": "Учитель вспоминает библейского Иосифа, не путая его с другом ребят, который ведёт блокнот."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph suffered betrayal and prison. Later, he helped provide food during a famine.",
+            "ru": "Иосиф пережил предательство и тюрьму, а позже помогал людям получать пищу во время голода."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "God's faithful work didn't make the cruel actions good. It didn't turn the painful years into a short, cheerful adventure.",
+            "ru": "Божья верность не сделала жестокость добром и не превратила трудные годы в весёлое приключение."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They trace three cards: real harm, God's presence through hardship, and later help for others.",
+            "ru": "Дети раскладывают три карточки: настоящая боль, Божье присутствие в трудностях и позднейшая помощь людям."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They can't use Joseph's ending to promise exactly how Gracie's own difficult story will unfold.",
+            "ru": "По истории Иосифа нельзя обещать, как именно разрешится трудность самой Грейси."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Care with a next step",
         "ru": "Забота и следующий шаг"
       },
-      "paragraphs": {
-        "en": [
-          "‘Could you help me call her?’ Gracie asks her mother. While they arrange a time, Joseph saves Gracie a seat at the next garden meeting. Rosie reminds her that she can tell God how much she misses her friend and how much she hopes they will stay close. She does not have to hide either feeling.",
-          "You help water the seedlings while Gracie writes her friend's name on an envelope. Nothing magically replaces the missing chair. Yet she leaves knowing she can pray, ask for help, and receive care from people around her."
-        ],
-        "ru": [
-          "«Поможешь мне с ней созвониться?» — просит Грейси маму. Пока они выбирают время, Джозеф оставляет для Грейси место на следующей встрече в саду. Рози напоминает: Богу можно рассказать, как сильно скучаешь по подруге и как надеешься сохранить дружбу. Не нужно прятать ни грусть, ни надежду.",
-          "Ты помогаешь поливать ростки, пока Грейси пишет имя подруги на конверте. Пустой стул никуда не исчезает по волшебству. Но теперь она знает: можно молиться, просить помощи и принимать заботу окружающих."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Could you help me call her?",
+            "ru": "Поможешь мне с ней созвониться?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "While they arrange a time, Joseph saves Gracie a seat at the next garden meeting.",
+            "ru": "Пока они выбирают время, Джозеф оставляет для Грейси место на следующей встрече в саду."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie reminds her she can tell God how much she misses her friend, and how much she hopes they'll stay close.",
+            "ru": "Рози напоминает: Богу можно рассказать, как сильно скучаешь по подруге и как надеешься сохранить дружбу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She doesn't have to hide either feeling.",
+            "ru": "Не нужно прятать ни грусть, ни надежду."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help water the seedlings, while Gracie writes her friend's name on an envelope.",
+            "ru": "Ты помогаешь поливать ростки, пока Грейси пишет имя подруги на конверте."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Nothing magically replaces the missing chair. But she leaves knowing something. She can pray. She can ask for help. She can receive care from people around her.",
+            "ru": "Пустой стул никуда не исчезает по волшебству. Но теперь она знает кое-что. Можно молиться. Можно просить помощи. Можно принимать заботу окружающих."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +227,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/PSA.139.1.ESV",
       "ru": "https://www.bible.com/bible/167/PSA.138.1.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "If God really knew and cared about me, he wouldn't let people I love move away or leave. Feeling this lonely proves he's either not paying attention, or doesn't actually care.",
+      "ru": "Если бы Бог действительно знал меня и заботился обо мне, Он не позволил бы тем, кого я люблю, уезжать. Это одиночество доказывает, что Он либо не замечает, либо не заботится."
+    },
+    "response": {
+      "en": "C.S. Lewis noticed something about longing itself. He said if you find in yourself a desire that nothing in this world can fully satisfy, the most likely explanation isn't that the desire is a mistake. It's that you were made for something this world alone was never going to fully give you. The ache you feel when a friend moves away isn't proof God stopped paying attention. It might be proof you were built for a connection deep enough that even your best friendships here are only a taste of it. God caring about you was never a promise that nothing would hurt. It was a promise that he's with you in the hurt, and that the ache itself is pointing somewhere real. So here's a question back: if loneliness were just a broken wire with no meaning at all, why would it feel so much like missing a home you've never actually seen?",
+      "ru": "К. С. Льюис заметил кое-что о самой тоске. Он сказал: если ты находишь в себе желание, которое ничто в этом мире не может до конца утолить, самое вероятное объяснение — не то, что это желание ошибочно. А то, что ты создан для чего-то, что один этот мир никогда не мог дать до конца. Боль, которую ты чувствуешь, когда друг уезжает, — не доказательство, что Бог перестал замечать. Может быть, это доказательство, что ты создан для такой глубокой связи, что даже лучшая дружба здесь — лишь её отблеск. Забота Бога о тебе никогда не была обещанием, что ничего не будет болеть. Это было обещание, что Он рядом в этой боли, и что сама тоска указывает на что-то настоящее. Вот вопрос в ответ: если одиночество — просто сломанный провод без всякого смысла, почему оно так похоже на тоску по дому, которого ты никогда не видел?"
     }
   },
   "activity": {
@@ -146,8 +295,8 @@
     "ru": "Боже, Ты знаешь меня. Помоги доверить Тебе тревоги и принимать мудрую помощь."
   },
   "adultNote": {
-    "en": "Read Psalm 139:1–12 (Russian 138), Matthew 6:25–34, and Joseph’s story in Genesis 37, 39–45. Do not predict a specific happy outcome or blame distress on weak faith. Seek appropriate support for ongoing anxiety.",
-    "ru": "Прочитайте Псалом 138:1–12, Матфея 6:25–34 и историю Иосифа в Бытии 37, 39–45. Не обещайте определённого счастливого исхода и не обвиняйте ребёнка в слабой вере. При длительной тревоге обратитесь за подходящей помощью."
+    "en": "Read Psalm 139:1–12 (Russian 138), Matthew 6:25–34, and Joseph’s story in Genesis 37, 39–45. Do not predict a specific happy outcome or blame distress on weak faith. Seek appropriate support for ongoing anxiety. The 'comeback' response reflects C.S. Lewis's 'argument from desire' (used in Mere Christianity and elsewhere): an unsatisfied longing is evidence of what we were made for, not proof of divine neglect. It reframes the ache of loss; it is not offered as a resolution to grief itself.",
+    "ru": "Прочитайте Псалом 138:1–12, Матфея 6:25–34 и историю Иосифа в Бытии 37, 39–45. Не обещайте определённого счастливого исхода и не обвиняйте ребёнка в слабой вере. При длительной тревоге обратитесь за подходящей помощью. Ответ в блоке «если кто-то скажет» отражает «довод от желания» К. С. Льюиса (используемый в «Просто христианстве» и других текстах): неутолённая тоска — свидетельство того, для чего мы созданы, а не доказательство Божьего невнимания. Он переосмысляет боль утраты, но не предлагается как разрешение самого горя."
   },
   "sources": [
     {

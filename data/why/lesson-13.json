@@ -16,64 +16,195 @@
         "en": "Who made the wheels?",
         "ru": "Кто сделал колёса?"
       },
-      "paragraphs": {
-        "en": [
-          "In the bicycle workshop, Michael follows a chain of questions. Who assembled the bicycle? Who made its metal? Where did the materials come from? Joseph fills a page with arrows until his pencil reaches the edge. Outside, evening light catches the trees and clouds beyond the workshop door.",
-          "Gracie looks past the bicycle toward the workshop door. ‘But why is there a world at all, with people and materials and sunlight?’ she asks. You turn Joseph's page over to make room. Naming another factory will not answer this question, so Rosie reaches for her Bible."
-        ],
-        "ru": [
-          "В велосипедной мастерской Майкл задаёт цепочку вопросов. Кто собрал велосипед? Кто изготовил металл? Откуда взялись материалы? Джозеф заполняет страницу стрелками до самого края. За дверью вечерний свет ложится на деревья и облака.",
-          "Грейси смотрит мимо велосипеда на дверь мастерской. «А почему вообще есть мир — с людьми, материалами и солнечным светом?» — спрашивает она. Ты переворачиваешь страницу Джозефа, чтобы освободить место. Назвать ещё один завод здесь недостаточно, и Рози берётся за Библию."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "In the bicycle workshop, Michael follows a chain of questions.",
+            "ru": "В велосипедной мастерской Майкл задаёт цепочку вопросов."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Who assembled the bicycle? Who made its metal? Where did the materials come from?",
+            "ru": "Кто собрал велосипед? Кто изготовил металл? Откуда взялись материалы?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph fills a page with arrows, until his pencil reaches the edge.",
+            "ru": "Джозеф заполняет страницу стрелками до самого края."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Outside, evening light catches the trees and clouds beyond the workshop door.",
+            "ru": "За дверью вечерний свет ложится на деревья и облака."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "But why is there a world at all, with people and materials and sunlight?",
+            "ru": "А почему вообще есть мир — с людьми, материалами и солнечным светом?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You turn Joseph's page over to make room. Naming another factory won't answer this question. So Rosie reaches for her Bible.",
+            "ru": "Ты переворачиваешь страницу Джозефа, чтобы освободить место. Назвать ещё один завод здесь недостаточно, и Рози берётся за Библию."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "What the opening says",
         "ru": "О чём говорит начало"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens Genesis at its first sentence. Scripture identifies God as Creator of the heavens and the earth. Their teacher explains that Christians do not place God inside the chain as another manufactured object. God does not depend on someone making him; created things depend on him.",
-          "Joseph labels this biblical teaching, not a measurement made with workshop tools. The bicycle questions helped them notice dependence, but the arrows alone did not demonstrate every claim about God."
-        ],
-        "ru": [
-          "Рози открывает первое предложение Бытия. Писание называет Бога Творцом неба и земли. Учитель объясняет: христиане не ставят Бога в цепочку как ещё один изготовленный предмет. Богу не нужен создатель; сотворённое зависит от Него.",
-          "Джозеф подписывает: библейское учение, а не измерение инструментами мастерской. Вопросы о велосипеде помогли заметить зависимость, но сами стрелки не доказали всё, что говорится о Боге."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens Genesis at its first sentence.",
+            "ru": "Рози открывает первое предложение Бытия."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Scripture names God as Creator of the heavens and the earth.",
+            "ru": "Писание называет Бога Творцом неба и земли."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher explains that Christians don't place God inside the chain, as another manufactured object.",
+            "ru": "Учитель объясняет: христиане не ставят Бога в цепочку как ещё один изготовленный предмет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "God doesn't depend on someone making him. Created things depend on him.",
+            "ru": "Богу не нужен создатель; сотворённое зависит от Него."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph labels this biblical teaching. Not a measurement made with workshop tools.",
+            "ru": "Джозеф подписывает: библейское учение, а не измерение инструментами мастерской."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The bicycle questions helped them notice dependence. But the arrows alone didn't prove every claim about God.",
+            "ru": "Вопросы о велосипеде помогли заметить зависимость, но сами стрелки не доказали всё, что говорится о Боге."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Not only long ago",
         "ru": "Не только когда-то давно"
       },
-      "paragraphs": {
-        "en": [
-          "The team reads the teaching in Colossians that all things were created through Christ and hold together in him. Creation is not only a question about a distant beginning. Christians believe the world continues to depend on God now, while scientists investigate how its physical processes work.",
-          "Michael watches a wheel spin. ‘My stopwatch can tell us how long one turn takes,’ he says. ‘But it can't tell us why there's a world here in the first place.’ Joseph adds both questions to his notebook. They can investigate how the wheel moves without losing sight of the bigger question that brought them to Scripture."
-        ],
-        "ru": [
-          "Команда читает в Послании к Колоссянам, что всё сотворено через Христа и существует благодаря Ему. Речь не только о далёком начале. Христиане верят, что мир и сейчас зависит от Бога, а учёные изучают происходящие в нём физические процессы.",
-          "Майкл смотрит на вращающееся колесо. «Секундомер покажет, сколько длится один оборот, — говорит он. — Но не объяснит, почему вообще существует мир». Джозеф записывает оба вопроса. Можно исследовать движение колеса и при этом не забывать большой вопрос, с которым они обратились к Писанию."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team reads the teaching in Colossians, that all things were created through Christ, and hold together in him.",
+            "ru": "Команда читает в Послании к Колоссянам, что всё сотворено через Христа и существует благодаря Ему."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Creation isn't only a question about a distant beginning.",
+            "ru": "Речь не только о далёком начале."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Christians believe the world keeps depending on God right now. Scientists study how its physical processes work.",
+            "ru": "Христиане верят, что мир и сейчас зависит от Бога. Учёные изучают происходящие в нём физические процессы."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael watches a wheel spin.",
+            "ru": "Майкл смотрит на вращающееся колесо."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "My stopwatch can tell us how long one turn takes. But it can't tell us why there's a world here in the first place.",
+            "ru": "Секундомер покажет, сколько длится один оборот. Но не объяснит, почему вообще существует мир."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph adds both questions to his notebook. They can study how the wheel moves. They don't lose sight of the bigger question that brought them to Scripture.",
+            "ru": "Джозеф записывает оба вопроса. Можно исследовать движение колеса. И не забывать большой вопрос, с которым они обратились к Писанию."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Gratitude outside",
         "ru": "Благодарность под открытым небом"
       },
-      "paragraphs": {
-        "en": [
-          "You carry the repaired bicycle outside. Gracie pauses beneath a tree and thanks God for the world they did not build. She can admire the tree without treating it as a god, and care for the workshop materials without pretending possessions give life its meaning.",
-          "Joseph closes his notebook with two headings still visible: how things work, and why a world exists. The team has not answered every question. They have learned to ask more clearly and to receive creation gratefully."
-        ],
-        "ru": [
-          "Ты выкатываешь починенный велосипед. Грейси останавливается под деревом и благодарит Бога за мир, который создали не они. Можно любоваться деревом, не считая его богом, и беречь материалы, не превращая вещи в смысл жизни.",
-          "Джозеф закрывает блокнот, оставив видимыми два заголовка: как всё работает и почему мир существует. Команда ответила не на каждый вопрос, но научилась спрашивать точнее и с благодарностью принимать сотворённый мир."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You carry the repaired bicycle outside.",
+            "ru": "Ты выкатываешь починенный велосипед."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie pauses beneath a tree, and thanks God for the world they didn't build.",
+            "ru": "Грейси останавливается под деревом и благодарит Бога за мир, который создали не они."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She can admire the tree without treating it as a god. She can care for the workshop materials, too. Without pretending things are what life is for.",
+            "ru": "Можно любоваться деревом, не считая его богом. Можно беречь материалы мастерской. Не превращая вещи в смысл жизни."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph closes his notebook, with two headings still visible: how things work, and why a world exists.",
+            "ru": "Джозеф закрывает блокнот, оставив видимыми два заголовка: как всё работает и почему мир существует."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team hasn't answered every question. But they've learned to ask more clearly, and to receive creation gratefully.",
+            "ru": "Команда ответила не на каждый вопрос, но научилась спрашивать точнее и с благодарностью принимать сотворённый мир."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +219,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/GEN.1.1.ESV",
       "ru": "https://www.bible.com/bible/167/GEN.1.1.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Scientists are already explaining how the universe could have come from nothing, using quantum physics. We don't need God to explain why anything exists.",
+      "ru": "Учёные уже объясняют с помощью квантовой физики, как Вселенная могла возникнуть из ничего. Бог для объяснения существования не нужен."
+    },
+    "response": {
+      "en": "A philosopher of physics named David Albert pointed out something that got lost in the excitement over theories like this. The \"nothing\" these theories actually start with is a quantum vacuum, empty space that still has real physical laws, real fields, and real energy humming inside it. That's not nothing. That's already something, with rules. The actual question, why is there anything at all, including those laws and that field, instead of absolutely nothing, is still sitting there unanswered. So here's a question back: if \"nothing\" in these theories secretly means \"something, just very simple,\" has the deepest question actually been answered, or just moved one step further back and relabeled?",
+      "ru": "Философ физики Дэвид Альберт заметил кое-что, что потерялось в восторге от таких теорий. «Ничто», с которого эти теории на самом деле начинаются, — это квантовый вакуум: пустое пространство, в котором всё равно есть настоящие физические законы, настоящие поля и настоящая энергия. Это не ничто. Это уже что-то, да ещё и с правилами. Настоящий вопрос — почему вообще есть хоть что-то, включая эти законы и это поле, а не абсолютное ничто, — так и остаётся без ответа. Вот вопрос в ответ: если «ничто» в этих теориях на самом деле означает «нечто, просто очень простое», самый глубокий вопрос действительно получил ответ — или просто отодвинулся на шаг назад и получил новое имя?"
     }
   },
   "activity": {
@@ -168,8 +309,8 @@
     "ru": "Боже-Творец, благодарю Тебя за мир и за то, что Ты поддерживаешь нашу жизнь."
   },
   "adultNote": {
-    "en": "Read Genesis 1:1 and Colossians 1:16–17. The workshop is an illustration, not a proof that a short causal chain settles cosmology. Distinguish theological dependence, philosophical arguments, and physical measurement.",
-    "ru": "Прочитайте Бытие 1:1 и Колоссянам 1:16–17. Мастерская — иллюстрация, а не доказательство, будто короткая цепочка причин решает вопросы космологии. Различайте богословское учение о зависимости творения, философские доводы и физические измерения."
+    "en": "Read Genesis 1:1 and Colossians 1:16–17. The workshop is an illustration, not a proof that a short causal chain settles cosmology. Distinguish theological dependence, philosophical arguments, and physical measurement. The 'comeback' response reflects philosopher David Albert's widely discussed critique of Lawrence Krauss's A Universe from Nothing: physical 'nothing' in these models is a structured quantum vacuum, not an absence of all being, so the deepest question of existence is deferred rather than answered. This is a specific critique of one popular-science argument, not a complete cosmological argument on its own.",
+    "ru": "Прочитайте Бытие 1:1 и Колоссянам 1:16–17. Мастерская — иллюстрация, а не доказательство, будто короткая цепочка причин решает вопросы космологии. Различайте богословское учение о зависимости творения, философские доводы и физические измерения. Ответ в блоке «если кто-то скажет» отражает широко известную критику философа Дэвида Альберта в адрес книги Лоуренса Краусса «Вселенная из ничего»: физическое «ничто» в этих моделях — это структурированный квантовый вакуум, а не отсутствие всякого бытия, поэтому самый глубокий вопрос о существовании не решён, а лишь отложен. Это критика одного популярного научного довода, а не самостоятельный полный космологический аргумент."
   },
   "sources": [
     {

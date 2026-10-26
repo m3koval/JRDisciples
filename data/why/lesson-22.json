@@ -16,74 +16,211 @@
         "en": "News at the doorway",
         "ru": "Новость у двери"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie arrives at the workshop without her usual bouncing steps. Her grandmother is in hospital, and the yellow hoodie she normally throws over a chair stays zipped up. The team had planned a cheerful exhibition rehearsal. Nobody knows whether to keep setting out the models or stop.",
-          "Michael reaches for an explanation: perhaps something bad happened because somebody did something wrong. Rosie gently stops that guess. They do not know the cause, and a frightened friend does not need an invented accusation."
-        ],
-        "ru": [
-          "Грейси входит в мастерскую без обычной бодрой походки. Её бабушка в больнице, и жёлтая толстовка остаётся застёгнутой. Команда собиралась весело репетировать выставку. Теперь никто не знает, продолжать ли расставлять макеты.",
-          "Майкл пытается объяснить: может быть, беда случилась из-за чьего-то плохого поступка. Рози мягко останавливает догадку. Причины они не знают, а испуганной подруге не нужны выдуманные обвинения."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie arrives at the workshop without her usual bouncing steps.",
+            "ru": "Грейси входит в мастерскую без обычной бодрой походки."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Her grandmother is in the hospital. Her yellow hoodie, usually thrown over a chair, stays zipped up.",
+            "ru": "Её бабушка в больнице, и жёлтая толстовка остаётся застёгнутой."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team had planned a cheerful rehearsal. Nobody knows whether to keep setting out the models, or stop.",
+            "ru": "Команда собиралась весело репетировать выставку. Теперь никто не знает, продолжать ли расставлять макеты."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael reaches for an explanation. Maybe something bad happened because somebody did something wrong.",
+            "ru": "Майкл пытается объяснить: может быть, беда случилась из-за чьего-то плохого поступка."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie gently stops that guess. They don't know the cause. A frightened friend doesn't need an invented accusation.",
+            "ru": "Рози мягко останавливает догадку. Причины они не знают, а испуганной подруге не нужны выдуманные обвинения."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A passage with tears",
         "ru": "Отрывок со слезами"
       },
-      "paragraphs": {
-        "en": [
-          "Their teacher sits beside Gracie and asks whether she wants company. Then, with her agreement, they read about Jesus meeting people grieving for Lazarus in John 11. Jesus' tears do not treat sorrow as a failure of faith. Rosie leaves the Bible open instead of rushing to a cheerful ending.",
-          "You place a tissue box within reach. “If God is good, why does he let people hurt?” Gracie asks.",
-          "Her teacher does not hurry past the question.",
-          "“We can ask God that honestly. We don’t have to pretend we know why every painful thing happens.”"
-        ],
-        "ru": [
-          "Учитель садится рядом и спрашивает, хочет ли Грейси побыть с ними. С её согласия они читают Иоанна 11: Иисус встречает людей, скорбящих о Лазаре. Его слёзы показывают, что печаль не означает отсутствие веры. Рози не торопится перейти к радостному финалу.",
-          "Ты ставишь поближе салфетки. «Если Бог добрый, почему Он допускает боль?» — спрашивает Грейси.",
-          "Учитель не торопится сменить тему.",
-          "— Об этом можно честно спросить Бога. Нам не нужно делать вид, будто мы знаем причину каждой беды."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher sits beside Gracie, and asks whether she wants company.",
+            "ru": "Учитель садится рядом с Грейси и спрашивает, хочет ли она побыть с ними."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "With her agreement, they read about Jesus meeting people grieving for Lazarus, in John chapter 11.",
+            "ru": "С её согласия они читают 11 главу Иоанна: Иисус встречает людей, скорбящих о Лазаре."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Jesus's tears don't treat sorrow as a failure of faith. Rosie leaves the Bible open, instead of rushing to a cheerful ending.",
+            "ru": "Его слёзы показывают, что печаль не означает отсутствие веры. Рози не торопится перейти к радостному финалу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You place a tissue box within reach.",
+            "ru": "Ты ставишь поближе салфетки."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "If God is good, why does he let people hurt?",
+            "ru": "Если Бог добрый, почему Он допускает боль?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Her teacher doesn't hurry past the question.",
+            "ru": "Учитель не торопится сменить тему."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "We can ask God that honestly. We don't have to pretend we know why every painful thing happens.",
+            "ru": "Об этом можно честно спросить Бога. Нам не нужно делать вид, будто мы знаем причину каждой беды."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Hope is not a timetable",
         "ru": "Надежда — не расписание"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph writes two headings: what Scripture tells us, and what we do not know. Romans 8 describes creation as damaged and groaning, waiting for God to set it free. The world as it is now is not the world fully healed. Christians also look to Jesus, who entered our suffering and rose from death: God's goodness is not a promise that pain never happens, but a reason to trust his love and coming restoration.",
-          "That does not tell them why this particular illness happened or when Grandma will recover. Michael stops trying to find someone to blame.",
-          "“What can we do for you today?” he asks.",
-          "“Could you finish my display labels?” Gracie says. “Then I can leave as soon as Mum gets here.”",
-          "It is something the team can do, even while the bigger question remains."
-        ],
-        "ru": [
-          "Джозеф пишет два заголовка: что говорит Писание и чего мы не знаем. Римлянам 8 описывает творение, которое страдает и ждёт освобождения от разрушения. Нынешний мир ещё не исцелён. Христиане смотрят и на Иисуса: Он вошёл в наши страдания и воскрес. Божья доброта не означает, что боли никогда не бывает. Она даёт основание доверять Его любви и ждать обновления мира.",
-          "Но это не объясняет причину именно этой болезни и не сообщает, когда бабушка поправится. Майкл перестаёт искать виноватого.",
-          "— Чем мы можем помочь тебе сегодня? — спрашивает он.",
-          "— Закончите, пожалуйста, подписи к моим экспонатам, — отвечает Грейси. — Тогда я смогу сразу уйти с мамой.",
-          "Это ребятам по силам, даже если на большой вопрос они пока не нашли полного ответа."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph writes two headings: what Scripture tells us, and what we don't know.",
+            "ru": "Джозеф пишет два заголовка: что говорит Писание и чего мы не знаем."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Romans chapter 8 describes creation as damaged and groaning, waiting for God to set it free.",
+            "ru": "Римлянам 8 описывает творение, которое страдает и ждёт освобождения от разрушения."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The world as it is now isn't the world fully healed. Christians also look to Jesus. He entered our suffering. He rose from death.",
+            "ru": "Нынешний мир ещё не исцелён. Христиане смотрят и на Иисуса. Он вошёл в наши страдания. Он воскрес."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "God's goodness isn't a promise that pain never happens. It's a reason to trust his love. And to trust that he's making things new.",
+            "ru": "Божья доброта не означает, что боли никогда не бывает. Она даёт основание доверять Его любви. И ждать, что Он всё обновит."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "That doesn't tell them why this particular illness happened, or when Grandma will recover. Michael stops trying to find someone to blame.",
+            "ru": "Но это не объясняет причину именно этой болезни и не сообщает, когда бабушка поправится. Майкл перестаёт искать виноватого."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "What can we do for you today?",
+            "ru": "Чем мы можем помочь тебе сегодня?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Could you finish my display labels? Then I can leave as soon as Mum gets here.",
+            "ru": "Закончите, пожалуйста, подписи к моим экспонатам. Тогда я смогу сразу уйти с мамой."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "It's something the team can do, even while the bigger question remains.",
+            "ru": "Это ребятам по силам, даже если на большой вопрос они пока не нашли полного ответа."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Room for a quiet friend",
         "ru": "Место для тихой подруги"
       },
-      "paragraphs": {
-        "en": [
-          "You finish the labels together. Joseph asks permission before sending a simple card, and Rosie prays without promising a miracle on demand. They ask for healing, strength, and good care. Gracie does not have to smile to prove the prayer mattered.",
-          "When her mother arrives, the team makes room for her to leave without explaining everything again. The empty chair still makes them sad. They have not solved suffering, but they have learned to stay near, tell the truth, and offer practical love."
-        ],
-        "ru": [
-          "Вы вместе заканчиваете подписи. Джозеф спрашивает разрешения отправить открытку, а Рози молится, не обещая чуда по заказу. Они просят об исцелении, силах и хорошей заботе. Грейси не обязана улыбаться, чтобы показать, что молитва была для неё важна.",
-          "Когда приходит мама, подруга может уйти, не объясняя всё заново. Пустой стул по-прежнему печалит ребят. Они не разгадали страдание, но научились быть рядом, говорить правду и помогать делом."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You finish the labels together.",
+            "ru": "Вы вместе заканчиваете подписи."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph asks permission before sending a simple card. Rosie prays, without promising a miracle on demand.",
+            "ru": "Джозеф спрашивает разрешения отправить открытку, а Рози молится, не обещая чуда по заказу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They ask for healing, strength, and good care. Gracie doesn't have to smile to prove the prayer mattered.",
+            "ru": "Они просят об исцелении, силах и хорошей заботе. Грейси не обязана улыбаться, чтобы показать, что молитва была для неё важна."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "When her mother arrives, the team makes room for her to leave, without explaining everything again.",
+            "ru": "Когда приходит мама, подруга может уйти, не объясняя всё заново."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The empty chair still makes them sad. They haven't solved suffering. But they've learned to stay near, tell the truth, and offer practical love.",
+            "ru": "Пустой стул по-прежнему печалит ребят. Они не разгадали страдание, но научились быть рядом, говорить правду и помогать делом."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -98,6 +235,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/JHN.11.35.ESV",
       "ru": "https://www.bible.com/bible/167/JHN.11.35.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "If God is both all-powerful and all-good, he could stop every bad thing from happening. Since bad things keep happening, either he isn't powerful enough, or he doesn't care enough.",
+      "ru": "Если Бог всемогущ и добр, Он мог бы остановить всё плохое. Раз плохое продолжает происходить, значит, Он либо недостаточно силён, либо недостаточно заботится."
+    },
+    "response": {
+      "en": "The philosopher Alvin Plantinga pointed out a gap in that argument. It assumes a world full of real freedom, where people can genuinely choose kindness over cruelty, is something God could create with no risk of anyone ever choosing cruelty. But freedom that can't go wrong isn't actually freedom. It's a puppet show. Even the philosopher most famous for raising this exact challenge, J.L. Mackie, later admitted Plantinga had answered it. That doesn't explain why any particular bad thing happened, or make real pain feel smaller. It just shows that \"an all-powerful, all-good God\" and \"a world with real evil in it\" aren't a straight logical contradiction. So here's a question back: if you took away people's power to really choose, including the power to choose wrong, would you still call what's left freedom, or just following orders?",
+      "ru": "Философ Алвин Плантинга нашёл в этом рассуждении пробел. Оно предполагает, что мир с настоящей свободой, где люди могут по-настоящему выбирать доброту, а не жестокость, Бог мог создать без всякого риска, что кто-то когда-нибудь выберет жестокость. Но свобода, которая не может пойти не так, — это не настоящая свобода. Это кукольный спектакль. Даже философ, самый известный именно этим вызовом, Дж. Л. Макки, позже признал, что Плантинга на него ответил. Это не объясняет, почему случилось именно это плохое событие, и не делает настоящую боль меньше. Это только показывает, что «всемогущий, всеблагой Бог» и «мир с настоящим злом» — не прямое логическое противоречие. Вот вопрос в ответ: если забрать у людей силу по-настоящему выбирать, включая силу выбрать неправильно, осталось бы это свободой — или просто выполнением приказов?"
     }
   },
   "activity": {
@@ -156,8 +303,8 @@
     "ru": "Боже, услышь наши вопросы и слёзы. Помоги страдающим и научи нас заботиться."
   },
   "adultNote": {
-    "en": "Do not infer a particular sin behind illness or require cheerful emotions. John 11 includes resurrection, but is not a guarantee of immediate healing for every illness. Persistent distress deserves caring adult and professional support.",
-    "ru": "Не связывайте болезнь с предполагаемым грехом и не требуйте бодрости. В Иоанна 11 есть воскрешение, но это не обещание немедленного исцеления любой болезни. При длительном тяжёлом переживании нужна помощь заботливых взрослых и специалистов."
+    "en": "Do not infer a particular sin behind illness or require cheerful emotions. John 11 includes resurrection, but is not a guarantee of immediate healing for every illness. Persistent distress deserves caring adult and professional support. The 'comeback' response names Alvin Plantinga's free will defense against the logical problem of evil, including J.L. Mackie's own concession that it succeeds; it answers the 'strict contradiction' version of the objection, not the deeper felt experience of grief this lesson is actually about, which it deliberately does not try to resolve with an argument.",
+    "ru": "Не связывайте болезнь с предполагаемым грехом и не требуйте бодрости. В Иоанна 11 есть воскрешение, но это не обещание немедленного исцеления любой болезни. При длительном тяжёлом переживании нужна помощь заботливых взрослых и специалистов. Ответ в блоке «если кто-то скажет» называет защиту свободной воли Алвина Плантинги против логической версии проблемы зла, включая признание самого Дж. Л. Макки, что она удалась; это отвечает на версию возражения о «строгом противоречии», а не на глубокое переживание горя, о котором этот урок на самом деле говорит и которое он намеренно не пытается разрешить доводом."
   },
   "sources": [
     {

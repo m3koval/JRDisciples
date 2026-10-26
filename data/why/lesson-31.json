@@ -16,66 +16,201 @@
         "en": "A victory that felt wrong",
         "ru": "Неприятная победа"
       },
-      "paragraphs": {
-        "en": [
-          "Michael wins the park clue trail by skipping a checkpoint and secretly copying Joseph’s answer. His green sleeve hides the copied slip. Everyone cheers, but the badge feels strangely heavy. When Gracie asks how he solved the hardest clue, his explanation gets tangled.",
-          "You stand with the team at a fork in the path. Michael could invent another excuse. Instead, he asks the leader for a quiet conversation.",
-          "“I skipped a checkpoint and copied Joseph’s answer,” he admits. Saying it plainly is harder than making another excuse, but he wants to stop hiding."
-        ],
-        "ru": [
-          "Майкл выигрывает поиск подсказок в парке: пропускает остановку и тайком списывает ответ Джозефа. Под зелёным рукавом спрятана бумажка. Все радуются, но значок кажется тяжёлым. Грейси спрашивает о трудной загадке, и Майкл путается.",
-          "Ты стоишь с командой у развилки. Майкл мог бы придумать новое оправдание. Вместо этого он просит руководителя поговорить наедине.",
-          "— Я пропустил остановку и списал ответ Джозефа, — признаётся Майкл. Сказать прямо труднее, чем придумать отговорку, но он больше не хочет скрываться."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael wins the park clue trail by skipping a checkpoint, and secretly copying Joseph's answer.",
+            "ru": "Майкл выигрывает поиск подсказок в парке: пропускает остановку и тайком списывает ответ Джозефа."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "His green sleeve hides the copied slip. Everyone cheers. But the badge feels strangely heavy.",
+            "ru": "Под зелёным рукавом спрятана бумажка. Все радуются, но значок кажется тяжёлым."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "When Gracie asks how he solved the hardest clue, his explanation gets tangled.",
+            "ru": "Грейси спрашивает о трудной загадке, и Майкл путается."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You stand with the team at a fork in the path.",
+            "ru": "Ты стоишь с командой у развилки."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael could invent another excuse. Instead, he asks the leader for a quiet conversation.",
+            "ru": "Майкл мог бы придумать новое оправдание. Вместо этого он просит руководителя поговорить наедине."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I skipped a checkpoint and copied Joseph's answer.",
+            "ru": "Я пропустил остановку и списал ответ Джозефа."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Saying it plainly is harder than making another excuse. But he wants to stop hiding.",
+            "ru": "Сказать прямо труднее, чем придумать отговорку, но он больше не хочет скрываться."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "More than feeling embarrassed",
         "ru": "Больше, чем стыд"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens Mark 1:15 after the conversation. Repentance means turning from sin toward God, not simply feeling bad because someone noticed. Faith means trusting Jesus, rather than trusting an impressive story about ourselves. The two belong together in responding to him.",
-          "Michael cannot rewind the afternoon. He can stop defending the shortcut. Joseph writes that confession names the wrong without attaching a secret excuse, and repair seeks the neighbor’s good rather than a quick escape from embarrassment."
-        ],
-        "ru": [
-          "После разговора Рози открывает Марка 1:15. Покаяние — поворот от греха к Богу, а не просто стыд из-за разоблачения. Вера — доверие Иисусу, а не красивой истории о себе. Так мы отвечаем Ему.",
-          "Майкл не может вернуть время. Но может перестать оправдывать короткий путь. Джозеф записывает: признаваясь, нужно честно назвать свой поступок, а не искать скрытого оправдания. Исправляя сделанное, важно заботиться о ближнем, а не просто избавляться от стыда."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens Mark 1:15 after the conversation.",
+            "ru": "После разговора Рози открывает Марка 1:15."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Repentance means turning from sin toward God. Not simply feeling bad because someone noticed.",
+            "ru": "Покаяние — поворот от греха к Богу, а не просто стыд из-за разоблачения."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Faith means trusting Jesus, rather than trusting an impressive story about ourselves. The two belong together.",
+            "ru": "Вера — доверие Иисусу, а не красивой истории о себе. Так мы отвечаем Ему."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael can't rewind the afternoon. But he can stop defending the shortcut.",
+            "ru": "Майкл не может вернуть время. Но может перестать оправдывать короткий путь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph writes that confession names the wrong. It doesn't attach a secret excuse. Repair seeks the neighbor's good. Not a quick escape from feeling bad.",
+            "ru": "Джозеф записывает: признаваясь, нужно честно назвать свой поступок. Без скрытого оправдания. Исправляя сделанное, важно заботиться о ближнем. А не просто избавляться от стыда."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "New does not mean finished",
         "ru": "Новый — не значит завершённый"
       },
-      "paragraphs": {
-        "en": [
-          "They read 1 John 1:9 and hear the promise of forgiveness and cleansing. Second Corinthians 5:17 describes new life in Christ. That does not mean a new believer never struggles again, or must hide every struggle to prove the new life is real.",
-          "Michael returns the badge and asks to redo the route honestly. The leader accepts his apology and still adjusts the results. Forgiveness and fair consequences can stand together; consequences do not mean that honest confession failed."
-        ],
-        "ru": [
-          "Они читают 1 Иоанна 1:9 — обещание прощения и очищения. Во 2 Коринфянам 5:17 говорится о новой жизни во Христе. Это не значит, что верующий больше не борется с грехом или должен скрывать трудности.",
-          "Майкл возвращает значок и просит пройти маршрут честно. Руководитель принимает извинение и исправляет результаты. Прощение и справедливые последствия могут быть вместе. Последствия не означают, что признание оказалось бесполезным."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read 1 John 1:9, and hear the promise of forgiveness and cleansing.",
+            "ru": "Они читают 1 Иоанна 1:9 — обещание прощения и очищения."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Second Corinthians 5:17 describes new life in Christ.",
+            "ru": "Во 2 Коринфянам 5:17 говорится о новой жизни во Христе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "That doesn't mean a new believer never struggles again. Or must hide every struggle to prove the new life is real.",
+            "ru": "Это не значит, что верующий больше не борется с грехом или должен скрывать трудности."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael returns the badge, and asks to redo the route honestly.",
+            "ru": "Майкл возвращает значок и просит пройти маршрут честно."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The leader accepts his apology, and still adjusts the results.",
+            "ru": "Руководитель принимает извинение и исправляет результаты."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Forgiveness and fair consequences can stand together. Consequences don't mean the honest confession failed.",
+            "ru": "Прощение и справедливые последствия могут быть вместе. Последствия не означают, что признание оказалось бесполезным."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "The next honest checkpoint",
         "ru": "Следующая честная остановка"
       },
-      "paragraphs": {
-        "en": [
-          "On the second walk, Michael reaches the difficult clue and wants to peek again. This time he asks for an allowed hint. Gracie waits while he thinks instead of solving it for him. Progress looks slower than his first victory and much more real.",
-          "As you walk the next stretch with them, Michael no longer needs to pretend that the first race was fair. He is learning to make an honest choice when the temptation returns. His hope is in Jesus, and that trust is beginning to change how he walks the trail."
-        ],
-        "ru": [
-          "Во второй раз Майкл снова хочет подсмотреть сложный ответ. Но теперь просит разрешённую подсказку. Грейси ждёт, пока он подумает, и не решает за него. Продвижение медленнее прежней победы, зато честнее.",
-          "Ты идёшь с ними дальше. Майклу больше не нужно делать вид, что первая победа была честной. Он учится выбирать правду, даже когда снова хочется схитрить. Его надежда — в Иисусе, и это доверие постепенно меняет его поступки."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "On the second walk, Michael reaches the difficult clue, and wants to peek again.",
+            "ru": "Во второй раз Майкл снова хочет подсмотреть сложный ответ."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "This time he asks for an allowed hint.",
+            "ru": "Но теперь просит разрешённую подсказку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie waits while he thinks, instead of solving it for him.",
+            "ru": "Грейси ждёт, пока он подумает, и не решает за него."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Progress looks slower than his first victory. And much more real.",
+            "ru": "Продвижение медленнее прежней победы, зато честнее."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "As you walk the next stretch with them, Michael no longer needs to pretend the first race was fair.",
+            "ru": "Ты идёшь с ними дальше. Майклу больше не нужно делать вид, что первая победа была честной."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He's learning to make an honest choice when the temptation returns. His hope is in Jesus. That trust is starting to change how he walks the trail.",
+            "ru": "Он учится выбирать правду, даже когда снова хочется схитрить. Его надежда — в Иисусе. Это доверие постепенно меняет его поступки."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -90,6 +225,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/1JN.1.9.ESV",
       "ru": "https://www.bible.com/bible/167/1JN.1.9.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Saying sorry to God and starting over whenever you mess up sounds like a free pass to do whatever you want, then just say sorry and reset. That's basically no real consequences.",
+      "ru": "Говорить Богу «прости» и начинать заново каждый раз, когда ошибся, звучит как бесплатный пропуск делать что угодно, а потом просто извиниться и обновить счёт. Это как бы отсутствие настоящих последствий."
+    },
+    "response": {
+      "en": "The theologian Dietrich Bonhoeffer actually warned against exactly that version of forgiveness, and called it \"cheap grace,\" forgiveness treated like a coupon, used without any real change expected. He said real grace costs something. It costs a person their old way of living, because following Jesus actually changes what you do next, not just how you feel about what you already did. Michael in this story didn't just feel sorry. He gave back the badge, redid the route honestly, and let the results change. That's what real repentance looks like. It's costly, not just comfortable. So here's a question back: if someone says \"sorry\" the same way every single time, and nothing about how they act ever changes, is that confession, or just a magic word they say to feel better?",
+      "ru": "Богослов Дитрих Бонхёффер предупреждал именно об этой версии прощения и назвал её «дешёвой благодатью» — прощением, использованным как купон, без всякого ожидания настоящей перемены. Он говорил, что настоящая благодать чего-то стоит. Она стоит человеку его старого образа жизни, потому что следование за Иисусом по-настоящему меняет то, что ты делаешь дальше, а не только то, что ты чувствуешь по поводу того, что уже сделал. Майкл в этой истории не просто расстроился. Он вернул значок, честно прошёл маршрут снова и принял изменённый результат. Вот как выглядит настоящее покаяние: оно дорого стоит, а не просто удобно. Вот вопрос в ответ: если кто-то говорит «прости» одинаково каждый раз, и в его поступках ничего никогда не меняется, — это признание или просто волшебное слово, которое говорят, чтобы стало легче?"
     }
   },
   "activity": {
@@ -188,7 +333,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. The order is this story’s practical sequence, not a formula earning forgiveness. Avoid forced disclosure; support accountability without shaming.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Порядок описывает шаги этой истории, а не формулу получения прощения за заслуги. Не принуждайте к признаниям; помогайте отвечать за поступки без унижения."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. The order is this story’s practical sequence, not a formula earning forgiveness. Avoid forced disclosure; support accountability without shaming. The 'comeback' response uses Dietrich Bonhoeffer's 'cheap grace' versus 'costly grace' distinction from The Cost of Discipleship; it answers the 'free pass' objection without suggesting forgiveness must be earned.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Порядок описывает шаги этой истории, а не формулу получения прощения за заслуги. Не принуждайте к признаниям; помогайте отвечать за поступки без унижения. Ответ в блоке «если кто-то скажет» использует различие Дитриха Бонхёффера между «дешёвой» и «дорогой» благодатью из книги «Хождение вслед»; он отвечает на возражение о «бесплатном пропуске», не утверждая, что прощение нужно заслужить."
   }
 }
