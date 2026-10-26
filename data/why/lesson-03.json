@@ -16,64 +16,216 @@
         "en": "Something in the pocket",
         "ru": "Что-то в кармане"
       },
-      "paragraphs": {
-        "en": [
-          "Rain sends the explorers into the church craft room. While Michael builds a cardboard question box, Gracie folds one small paper again and again. Joseph offers a pencil, but she pushes the paper into her yellow pocket. She worries that asking something difficult might disappoint everybody.",
-          "You sit beside her without trying to peek. ‘You don't have to show us until you're ready,’ Rosie says. ‘This isn't a test.’ Gracie keeps the paper in her pocket, but she stays beside her friends as they finish the box."
-        ],
-        "ru": [
-          "Дождь загоняет исследователей в церковную комнату для занятий. Майкл делает коробку для вопросов, а Грейси снова и снова складывает листок. Джозеф предлагает карандаш, но она прячет бумагу в карман жёлтой толстовки: вдруг трудный вопрос всех разочарует?",
-          "Ты садишься рядом, не пытаясь подсмотреть. «Можешь показать нам, когда сама захочешь, — говорит Рози. — Это же не контрольная». Грейси пока оставляет листок в кармане, но остаётся с друзьями, которые доделывают коробку."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rain sends the team into the church craft room.",
+            "ru": "Дождь загоняет исследователей в церковную комнату для занятий."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael builds a cardboard question box. Gracie folds one small paper again and again.",
+            "ru": "Майкл делает коробку для вопросов. Грейси снова и снова складывает листок."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph offers a pencil. But she pushes the paper into her pocket.",
+            "ru": "Джозеф предлагает карандаш, но она прячет бумагу в карман."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She worries that asking something difficult might disappoint everybody.",
+            "ru": "Вдруг трудный вопрос всех разочарует?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You sit beside her, without trying to peek.",
+            "ru": "Ты садишься рядом, не пытаясь подсмотреть."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "You don't have to show us until you're ready. This isn't a test.",
+            "ru": "Можешь показать нам, когда сама захочешь. Это же не контрольная."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie keeps the paper in her pocket. But she stays beside her friends, as they finish the box.",
+            "ru": "Грейси пока оставляет листок в кармане, но остаётся с друзьями, которые доделывают коробку."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "An honest cry",
         "ru": "Честная просьба"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie asks their teacher to read Mark 9 with them. A father brings his suffering son to Jesus. His words hold belief and a plea for help together. Jesus does not need the father to disguise his need with a polished speech.",
-          "Gracie unfolds one corner of her paper. Her question concerns a prayer that seemed unanswered. The teacher does not promise that this passage explains every painful experience or guarantees the answer Gracie wants."
-        ],
-        "ru": [
-          "Рози просит учителя прочитать с ними Марка 9. Отец приводит к Иисусу страдающего сына. В его словах одновременно звучат вера и просьба о помощи. Ему не нужно скрывать свою нужду за красивой речью.",
-          "Грейси разворачивает уголок листка. Она спрашивает о молитве, которая словно осталась без ответа. Учитель не обещает, что этот отрывок объяснит любую боль или гарантирует желаемый ответ."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie asks their teacher to read Mark chapter 9 with them.",
+            "ru": "Рози просит учителя прочитать с ними 9 главу Марка."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A father brings his suffering son to Jesus.",
+            "ru": "Отец приводит к Иисусу страдающего сына."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "His words hold belief and a plea for help together.",
+            "ru": "В его словах одновременно звучат вера и просьба о помощи."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Jesus doesn't need the father to hide his need behind a polished speech.",
+            "ru": "Ему не нужно скрывать свою нужду за красивой речью."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie unfolds one corner of her paper.",
+            "ru": "Грейси разворачивает уголок листка."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Her question is about a prayer that seemed unanswered.",
+            "ru": "Она спрашивает о молитве, которая словно осталась без ответа."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The teacher doesn't promise this passage explains every painful experience. It doesn't guarantee the answer Gracie wants.",
+            "ru": "Учитель не обещает, что этот отрывок объяснит любую боль. Он не гарантирует желаемый ответ."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Listening is real work",
         "ru": "Слушать — тоже труд"
       },
-      "paragraphs": {
-        "en": [
-          "Michael begins offering explanations, then notices Gracie's face and stops. ‘Sorry. Can you tell us what happened first?’ he asks. Joseph listens and writes her question the way she means it, rather than changing it into an easier one. Their teacher says they may need more than one conversation to think it through together.",
-          "You help choose a quiet time to return to the question. Following Jesus includes learning, praying, and receiving help. It does not require pretending uncertainty never visits a believer."
-        ],
-        "ru": [
-          "Майкл начинает предлагать объяснения, но, заметив лицо Грейси, останавливается. «Прости. Расскажешь сначала, что случилось?» Джозеф слушает и записывает именно её вопрос, не заменяя его более удобным. Учитель говорит, что им, возможно, понадобится ещё не одна беседа, чтобы вместе разобраться.",
-          "Ты помогаешь выбрать спокойное время для продолжения. Следовать за Иисусом — значит учиться, молиться и принимать помощь. Это не значит притворяться, будто верующие никогда не сомневаются."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael begins offering explanations, then notices Gracie's face, and stops.",
+            "ru": "Майкл начинает предлагать объяснения, но, заметив лицо Грейси, останавливается."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Sorry. Can you tell us what happened first?",
+            "ru": "Прости. Расскажешь сначала, что случилось?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph listens, and writes her question the way she means it. Not changing it into an easier one.",
+            "ru": "Джозеф слушает и записывает именно её вопрос, не заменяя его более удобным."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher says something true. They may need more than one talk, to think it through together.",
+            "ru": "Учитель говорит правду. Им, возможно, понадобится ещё не одна беседа, чтобы вместе разобраться."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help choose a quiet time to return to the question.",
+            "ru": "Ты помогаешь выбрать спокойное время для продолжения."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Following Jesus includes learning, praying, and receiving help. It doesn't require pretending uncertainty never visits a believer.",
+            "ru": "Следовать за Иисусом — значит учиться, молиться и принимать помощь. Это не значит притворяться, будто верующие никогда не сомневаются."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A box that opens",
         "ru": "Коробка открывается"
       },
-      "paragraphs": {
-        "en": [
-          "The cardboard lid will not close because Michael made its hinges crooked. Everyone laughs kindly, and Gracie helps fix it. Then she places her unfolded question inside. It has not vanished, but now she is not carrying it alone.",
-          "The team makes a new rule for their meetings: listen before replying, never mock a question, and return when you promised. Rosie leaves her Bible open. The question box is a doorway to conversation, not a hiding place for problems."
-        ],
-        "ru": [
-          "Крышка не закрывается: Майкл криво приклеил петли. Все добродушно смеются, и Грейси помогает исправить коробку. Потом кладёт внутрь развёрнутый вопрос. Вопрос не исчез, но теперь она несёт его не одна.",
-          "Ребята договариваются: сначала слушать, не высмеивать вопросы и возвращаться к беседе в обещанное время. Рози оставляет Библию открытой. Коробка становится началом разговора, а не местом, куда прячут трудности."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The cardboard lid won't close, because Michael made its hinges crooked.",
+            "ru": "Крышка не закрывается: Майкл криво приклеил петли."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Everyone laughs kindly, and Gracie helps fix it.",
+            "ru": "Все добродушно смеются, и Грейси помогает исправить коробку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Then she places her unfolded question inside.",
+            "ru": "Потом кладёт внутрь развёрнутый вопрос."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "It hasn't vanished. But now she isn't carrying it alone.",
+            "ru": "Вопрос не исчез, но теперь она несёт его не одна."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team makes a new rule for their meetings. Listen before replying. Never mock a question. Return when you promised.",
+            "ru": "Ребята договариваются: сначала слушать, не высмеивать вопросы и возвращаться к беседе в обещанное время."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie leaves her Bible open. The question box is a doorway to conversation, not a hiding place for problems.",
+            "ru": "Рози оставляет Библию открытой. Коробка становится началом разговора, а не местом, куда прячут трудности."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +240,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/MRK.9.24.ESV",
       "ru": "https://www.bible.com/bible/167/MRK.9.24.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "If you really believed in God, you wouldn't have doubts or hard questions. Having questions means your faith isn't real.",
+      "ru": "Если бы ты по-настоящему верил в Бога, у тебя не было бы сомнений и трудных вопросов. Вопросы означают, что твоя вера не настоящая."
+    },
+    "response": {
+      "en": "The writer Frederick Buechner said something kids might actually enjoy: \"Doubts are the ants in the pants of faith. They keep it awake and moving.\" He meant doubts aren't proof that faith is fake. They're often what keeps faith honest and alive, instead of lazy and half-asleep. The father in Mark chapter 9 said \"I believe; help my unbelief\" in the very same breath, and Jesus didn't send him away for it. So here's a question back: if people in the Bible itself brought their real doubts straight to Jesus instead of hiding them, is having a hard question actually a sign faith is broken, or a sign it's still awake?",
+      "ru": "Писатель Фредерик Бюхнер сказал кое-что, что детям может даже понравиться: «Сомнения — это муравьи в штанах веры. Они не дают ей заснуть и заставляют двигаться». Он имел в виду: сомнения не доказывают, что вера ложная. Они часто и есть то, что держит веру честной и живой, а не ленивой и сонной. Отец в 9 главе Марка сказал «верю; помоги моему неверию» в одном и том же вздохе, и Иисус не отослал его за это. Вот вопрос в ответ: если люди в самой Библии приносили свои настоящие сомнения прямо к Иисусу, а не прятали их, — трудный вопрос — это признак того, что вера сломана, или признак того, что она ещё жива?"
     }
   },
   "activity": {
@@ -154,8 +316,8 @@
     "ru": "Иисус, я приношу Тебе и доверие, и сомнения. Помоги мне."
   },
   "adultNote": {
-    "en": "Do not use this healing account to promise a particular outcome or blame a child’s unanswered prayer on insufficient faith.",
-    "ru": "Не обещайте конкретного исхода на основании этого исцеления и не объясняйте неотвеченную молитву ребёнка недостатком веры."
+    "en": "Do not use this healing account to promise a particular outcome or blame a child’s unanswered prayer on insufficient faith. The 'comeback' response quotes Frederick Buechner's widely cited line on doubt from Wishful Thinking, paired with Mark 9:24 already used in this lesson; it normalizes doubt within faith rather than treating every doubt as automatically resolved.",
+    "ru": "Не обещайте конкретного исхода на основании этого исцеления и не объясняйте неотвеченную молитву ребёнка недостатком веры. Ответ в блоке «если кто-то скажет» цитирует известную фразу Фредерика Бюхнера о сомнении из книги «Wishful Thinking», рядом с уже использованным в уроке Марка 9:24; он показывает сомнение нормальной частью веры, а не утверждает, что любое сомнение сразу же разрешается."
   },
   "sources": [
     {

@@ -16,64 +16,231 @@
         "en": "At the results board",
         "ru": "У доски результатов"
       },
-      "paragraphs": {
-        "en": [
-          "Michael reaches the club results board before anyone else. His green sleeve brushes a row of bright stars, but none stands beside his name. He had practiced the model-building challenge all week. Now he folds his entry card so nobody can see it.",
-          "Gracie wins a ribbon and immediately hides it, afraid her happiness will hurt him. You stand with the team in an uncomfortable silence. Joseph notices that everyone is staring at the scores instead of looking at one another."
-        ],
-        "ru": [
-          "Майкл первым подходит к результатам конкурса. Зелёный рукав касается ряда ярких звёздочек, но возле его имени звёздочки нет. Он всю неделю тренировался строить модели. Теперь он складывает карточку, чтобы никто её не увидел.",
-          "Грейси получила ленту и тут же спрятала: вдруг её радость обидит друга. Ты стоишь с командой в неловком молчании. Джозеф замечает: все смотрят на оценки, а не друг на друга."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael reaches the club results board before anyone else.",
+            "ru": "Майкл первым подходит к результатам конкурса."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "His green sleeve brushes a row of bright stars. But none stands beside his name.",
+            "ru": "Зелёный рукав касается ряда ярких звёздочек, но возле его имени звёздочки нет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He had practiced the model-building challenge all week. Now he folds his entry card so nobody can see it.",
+            "ru": "Он всю неделю тренировался строить модели. Теперь он складывает карточку, чтобы никто её не увидел."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie wins a ribbon, and immediately hides it. She's afraid her happiness will hurt him.",
+            "ru": "Грейси получила ленту и тут же спрятала: вдруг её радость обидит друга."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You stand with the team in an uncomfortable silence.",
+            "ru": "Ты стоишь с командой в неловком молчании."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph notices that everyone is staring at the scores, instead of looking at one another.",
+            "ru": "Джозеф замечает: все смотрят на оценки, а не друг на друга."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "What the score measures",
         "ru": "Что измеряет оценка"
       },
-      "paragraphs": {
-        "en": [
-          "Their leader sits beside Michael rather than telling him not to feel disappointed. The score describes how his model met this challenge's requirements. It cannot measure the worth of the person who made it. Improving a skill and earning human dignity are different things.",
-          "Rosie opens Genesis, where human beings are made in God's image. That gift does not begin when a judge notices talent. Gracie's ribbon does not make her more human, and Michael's empty square does not make him less."
-        ],
-        "ru": [
-          "Руководитель садится рядом с Майклом, не запрещая ему огорчаться. Оценка показывает, насколько модель соответствовала условиям конкурса. Она не измеряет ценность создателя модели. Развивать умение и заслуживать человеческое достоинство — не одно и то же.",
-          "Рози открывает Бытие: люди созданы по образу Бога. Этот дар не появляется после похвалы судьи. Лента не делает Грейси более ценным человеком, а пустая клетка не уменьшает ценности Майкла."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader sits beside Michael, rather than telling him not to feel disappointed.",
+            "ru": "Руководитель садится рядом с Майклом, не запрещая ему огорчаться."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The score describes how his model met this challenge's rules. It can't measure the worth of the person who made it.",
+            "ru": "Оценка показывает, насколько модель соответствовала условиям конкурса. Она не измеряет ценность создателя модели."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Improving a skill and earning human dignity are different things.",
+            "ru": "Развивать умение и заслуживать человеческое достоинство — не одно и то же."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens Genesis, where human beings are made in God's image.",
+            "ru": "Рози открывает Бытие: люди созданы по образу Бога."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "That gift doesn't begin when a judge notices talent.",
+            "ru": "Этот дар не появляется после похвалы судьи."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie's ribbon doesn't make her more human. Michael's empty square doesn't make him less.",
+            "ru": "Лента не делает Грейси более ценным человеком, а пустая клетка не уменьшает ценности Майкла."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "An unnoticed builder",
         "ru": "Незамеченный строитель"
       },
-      "paragraphs": {
-        "en": [
-          "At the end of the table, a younger child is quietly packing away a lopsided bridge. Michael recognizes the careful way the child hides the entry card. His first idea is to cheer him up by pretending the bridge deserved first prize.",
-          "You suggest asking about the bridge instead. ‘Why did you make the entrance so wide?’ Michael asks, ready to listen. The child explains that it is for a toy wheelchair. ‘You made room for it to get through,’ Michael says. He has found something genuinely thoughtful to appreciate without pretending to be a judge or inventing a prize."
-        ],
-        "ru": [
-          "В конце стола младший мальчик убирает неровный мост. Майкл узнаёт знакомое движение: тот тоже прячет карточку участника. Сначала хочется сказать, будто мост заслужил первое место.",
-          "Ты предлагаешь сначала спросить о мосте. «А почему въезд такой широкий?» — интересуется Майкл и внимательно слушает. Мальчик объясняет: это для игрушечной коляски. «Ты сделал так, чтобы она могла проехать», — говорит Майкл. Он нашёл настоящую заботливую деталь, которую можно похвалить, не выдумывая призов и не изображая судью."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the end of the table, a younger child is quietly packing away a lopsided bridge.",
+            "ru": "В конце стола младший мальчик убирает неровный мост."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael recognizes the careful way the child hides the entry card.",
+            "ru": "Майкл узнаёт знакомое движение: тот тоже прячет карточку участника."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "His first idea is to cheer him up, by pretending the bridge deserved first prize.",
+            "ru": "Сначала хочется сказать, будто мост заслужил первое место."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You suggest asking about the bridge instead.",
+            "ru": "Ты предлагаешь сначала спросить о мосте."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Why did you make the entrance so wide?",
+            "ru": "А почему въезд такой широкий?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The child explains it's for a toy wheelchair.",
+            "ru": "Мальчик объясняет: это для игрушечной коляски."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "You made room for it to get through.",
+            "ru": "Ты сделал так, чтобы она могла проехать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He's found something genuinely thoughtful to appreciate. Without pretending to be a judge, or inventing a prize.",
+            "ru": "Он нашёл настоящую заботливую деталь, которую можно похвалить, не выдумывая призов и не изображая судью."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Room at the worktable",
         "ru": "Место за рабочим столом"
       },
-      "paragraphs": {
-        "en": [
-          "‘Would you like to build with us next time?’ Michael asks the younger child. He does not make a better bridge the price of joining them. Then Gracie brings out her ribbon. Michael congratulates her, and the others join in. They can celebrate what she made without deciding that winning makes her worth more than her friends.",
-          "Joseph adds a practice plan to his blue notebook: Michael wants stronger joints on his next model. There is room for growth and disappointment, celebration and belonging. You help clear a place at the worktable before anyone asks who is best."
-        ],
-        "ru": [
-          "«Хочешь в следующий раз строить вместе с нами?» — спрашивает Майкл младшего мальчика. Чтобы прийти, не нужно сначала сделать мост получше. Грейси достаёт свою ленту. Майкл поздравляет её, и друзья присоединяются. Можно радоваться её работе, не считая, что победа делает её ценнее остальных.",
-          "Джозеф записывает план тренировки в синий блокнот: Майкл хочет научиться делать прочные соединения. Здесь есть место развитию и огорчению, радости и дружбе. Ты освобождаешь место за столом, не спрашивая, кто лучше всех."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Would you like to build with us next time?",
+            "ru": "Хочешь в следующий раз строить вместе с нами?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He doesn't make a better bridge the price of joining them.",
+            "ru": "Чтобы прийти, не нужно сначала сделать мост получше."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Then Gracie brings out her ribbon.",
+            "ru": "Грейси достаёт свою ленту."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael congratulates her, and the others join in.",
+            "ru": "Майкл поздравляет её, и друзья присоединяются."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They can celebrate what she made, without deciding that winning makes her worth more than her friends.",
+            "ru": "Можно радоваться её работе, не считая, что победа делает её ценнее остальных."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph adds a practice plan to his notebook. Michael wants stronger joints on his next model.",
+            "ru": "Джозеф записывает план тренировки в блокнот: Майкл хочет научиться делать прочные соединения."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "There's room for growth and disappointment, celebration and belonging.",
+            "ru": "Здесь есть место развитию и огорчению, радости и дружбе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help clear a place at the worktable, before anyone asks who is best.",
+            "ru": "Ты освобождаешь место за столом, не спрашивая, кто лучше всех."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +255,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/GEN.1.27.ESV",
       "ru": "https://www.bible.com/bible/167/GEN.1.27.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "In real life, your worth really does depend on how useful or talented you are. That's just how things work. \"Equal value no matter your ability\" is a nice idea, not reality.",
+      "ru": "В реальной жизни твоя ценность действительно зависит от того, насколько ты полезен или талантлив. Так всё и устроено. «Равная ценность независимо от способностей» — красивая идея, а не реальность."
+    },
+    "response": {
+      "en": "The historian Tom Holland, in his book Dominion, traces where that idea actually came from. In most of the ancient world, usefulness really was how worth got measured. Weak or disabled babies were sometimes abandoned, and a person's value really did track their strength or usefulness to society. Holland argues the idea that every person has worth just by existing, no matter their ability, came specifically from the Christian teaching that people are made in God's image. It slowly reshaped the whole world, including places that don't call themselves Christian anymore. So here's a question back: if \"worth equals usefulness\" used to be the normal view, and it took a specific idea to change it, is \"equal worth\" a comforting myth, or an idea most people today have accepted so completely they've forgotten where it came from?",
+      "ru": "Историк Том Холланд, в своей книге «Dominion», прослеживает, откуда на самом деле взялась эта идея. В большинстве древнего мира полезность и была мерой ценности человека. Слабых или больных младенцев иногда оставляли умирать, и ценность человека действительно зависела от его силы или полезности обществу. Холланд утверждает: идея, что каждый человек ценен просто потому, что существует, независимо от способностей, пришла именно из христианского учения о том, что люди созданы по образу Бога. Она постепенно изменила весь мир, включая места, которые себя больше христианскими не называют. Вот вопрос в ответ: если «ценность равна полезности» когда-то было обычным взглядом, и понадобилась особая идея, чтобы это изменить, — «равная ценность» — утешительный миф, или идея, которую большинство людей сегодня приняло настолько полно, что забыло, откуда она взялась?"
     }
   },
   "activity": {
@@ -146,8 +323,8 @@
     "ru": "Боже, спасибо, что создал людей по Своему образу. Помоги видеть человека, а не только оценки."
   },
   "adultNote": {
-    "en": "Genesis 1:27 grounds equal human dignity, not identical talents or guaranteed success. Welcome disappointment without minimizing it; praise specific effort without making love conditional on achievement.",
-    "ru": "Бытие 1:27 говорит о равном достоинстве людей, а не об одинаковых способностях или гарантированном успехе. Признайте огорчение ребёнка; хвалите конкретные усилия, не ставя любовь в зависимость от достижений."
+    "en": "Genesis 1:27 grounds equal human dignity, not identical talents or guaranteed success. Welcome disappointment without minimizing it; praise specific effort without making love conditional on achievement. The 'comeback' response reflects historian Tom Holland's argument in Dominion: Western assumptions of universal human dignity have specifically Christian historical roots, contrasted with widespread ancient practices of valuing people by usefulness. This is a historical argument, not a claim that non-Christians cannot hold or defend the same conviction today.",
+    "ru": "Бытие 1:27 говорит о равном достоинстве людей, а не об одинаковых способностях или гарантированном успехе. Признайте огорчение ребёнка; хвалите конкретные усилия, не ставя любовь в зависимость от достижений. Ответ в блоке «если кто-то скажет» отражает довод историка Тома Холланда в книге «Dominion»: западное представление об универсальном человеческом достоинстве имеет именно христианские исторические корни, в отличие от распространённой в древности практики ценить людей по полезности. Это исторический довод, а не утверждение, что нехристиане не могут сегодня придерживаться того же убеждения или защищать его."
   },
   "sources": [
     {

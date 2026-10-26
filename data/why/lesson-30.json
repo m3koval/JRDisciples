@@ -16,66 +16,209 @@
         "en": "Points on the refrigerator",
         "ru": "Баллы на холодильнике"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie brings a homemade kindness chart to the explorers’ kitchen. Washing cups earns a star; sharing crayons earns two. Michael has already filled half a row. Joseph studies the chart.",
-          "“Does God love whoever has the most stars best?” he asks quietly. No one is quite sure what to say.",
-          "You notice Rosie’s empty row. She spent the morning sick at home. If stars measure who deserves rescue, what happens to someone who cannot keep up, or someone who has already done wrong?"
-        ],
-        "ru": [
-          "Грейси приносит на кухню таблицу добрых дел. За вымытые чашки — звёздочка, за карандаши, которыми поделился, — две. У Майкла уже полстроки. Джозеф рассматривает таблицу.",
-          "— Бог больше любит того, у кого больше звёздочек? — тихо спрашивает он. Никто не знает, что ответить.",
-          "Ты замечаешь пустую строку Рози. Утром она болела дома. Если звёзды решают, кто достоин спасения, что делать тому, кто не успевает или уже поступил плохо?"
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie brings a homemade kindness chart to the team's kitchen.",
+            "ru": "Грейси приносит на кухню таблицу добрых дел."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Washing cups earns a star. Sharing crayons earns two.",
+            "ru": "За вымытые чашки — звёздочка, за карандаши, которыми поделился, — две."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael has already filled half a row. Joseph studies the chart.",
+            "ru": "У Майкла уже полстроки. Джозеф рассматривает таблицу."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Does God love whoever has the most stars best?",
+            "ru": "Бог больше любит того, у кого больше звёздочек?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "No one is quite sure what to say.",
+            "ru": "Никто не знает, что ответить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You notice Rosie's empty row. She spent the morning sick at home.",
+            "ru": "Ты замечаешь пустую строку Рози. Утром она болела дома."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "If stars measure who deserves rescue, what happens to someone who can't keep up? Or someone who's already done wrong?",
+            "ru": "Если звёзды решают, кто достоин спасения, что делать тому, кто не успевает или уже поступил плохо?"
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Read beyond the ribbon",
         "ru": "Читаем дальше закладки"
       },
-      "paragraphs": {
-        "en": [
-          "They open Ephesians 2:8–10. Salvation comes by grace through faith, not from our works, so nobody can boast. But the passage does not end by making goodness pointless: those made new in Christ are created for good works.",
-          "Joseph draws an arrow after Gift, pointing toward Grateful life. Michael had drawn the arrow the other way around. They erase it together. Trusting Jesus is receiving his rescue, not submitting a winning score to force God’s approval."
-        ],
-        "ru": [
-          "Они открывают Ефесянам 2:8–10. Спасение приходит по благодати через веру, не от дел, чтобы никто не хвалился. Но добро не становится бессмысленным: обновлённые во Христе созданы для добрых дел.",
-          "Джозеф рисует стрелку от «Дара» к «Благодарной жизни». У Майкла стрелка шла наоборот. Они вместе стирают её. Доверять Иисусу — принимать Его спасение, а не предъявлять победный счёт ради Божьего одобрения."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They open Ephesians chapter 2.",
+            "ru": "Они открывают 2 главу Ефесянам."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Salvation comes by grace through faith, not from our works. So nobody can boast.",
+            "ru": "Спасение приходит по благодати через веру, не от дел, чтобы никто не хвалился."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "But the passage doesn't end by making goodness pointless. Those made new in Christ are created for good works.",
+            "ru": "Но добро не становится бессмысленным: обновлённые во Христе созданы для добрых дел."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph draws an arrow after \"Gift,\" pointing toward \"Grateful life.\"",
+            "ru": "Джозеф рисует стрелку от «Дара» к «Благодарной жизни»."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael had drawn the arrow the other way around. They erase it together.",
+            "ru": "У Майкла стрелка шла наоборот. Они вместе стирают её."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Trusting Jesus means receiving his rescue. Not submitting a winning score to force God's approval.",
+            "ru": "Доверять Иисусу — принимать Его спасение, а не предъявлять победный счёт ради Божьего одобрения."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Three different envelopes",
         "ru": "Три разных конверта"
       },
-      "paragraphs": {
-        "en": [
-          "Their leader lays out three everyday examples: agreed payment for a job, a birthday gift freely given, and a thank-you note written afterward. These examples help distinguish wages, gift, and gratitude; none contains everything about God’s saving grace.",
-          "Gracie places her kindness chart beside the thank-you note. “I can still use it to remember who needs help,” she says. The chart can encourage a useful habit, but it cannot buy forgiveness. Rosie’s illness never made her worth less, and Michael’s stars never meant he could save himself."
-        ],
-        "ru": [
-          "Руководитель предлагает три примера: условленную оплату работы, подарок ко дню рождения и благодарственную записку после него. Они помогают отличить заработок, дар и благодарность, но не объясняют всю Божью благодать.",
-          "Грейси кладёт таблицу рядом с запиской. «Она ещё может напоминать мне, кому нужна помощь», — говорит Грейси. Таблица поможет выработать хорошую привычку, но прощения не купит. Болезнь не сделала Рози менее ценной, а звёздочки Майкла не означают, что он может спасти себя сам."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader lays out three everyday examples. Agreed payment for a job. A birthday gift freely given. A thank-you note written afterward.",
+            "ru": "Руководитель предлагает три примера: условленную оплату работы, подарок ко дню рождения и благодарственную записку после него."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "These examples help tell apart wages, gift, and gratitude. None contains everything about God's saving grace.",
+            "ru": "Они помогают отличить заработок, дар и благодарность, но не объясняют всю Божью благодать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie places her kindness chart beside the thank-you note.",
+            "ru": "Грейси кладёт таблицу рядом с запиской."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "I can still use it to remember who needs help.",
+            "ru": "Она ещё может напоминать мне, кому нужна помощь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The chart can encourage a useful habit. But it can't buy forgiveness.",
+            "ru": "Таблица поможет выработать хорошую привычку, но прощения не купит."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie's illness never made her worth less. Michael's stars never meant he could save himself.",
+            "ru": "Болезнь не сделала Рози менее ценной, а звёздочки Майкла не означают, что он может спасти себя сам."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A different kind of list",
         "ru": "Совсем другой список"
       },
-      "paragraphs": {
-        "en": [
-          "The team replaces the scoreboard with a practical list: cups to wash, soup to carry, someone to invite. Names disappear from the ranking column. Michael washes a cup that will never earn a star, and Gracie carries soup to Rosie’s chair.",
-          "You choose a task and join them. There is still plenty of good work to do, but no one needs to count stars to feel important. They can help because they have received God’s love, rather than trying to earn salvation with every washed cup."
-        ],
-        "ru": [
-          "Вместо таблицы рекордов появляется список нужд: вымыть чашки, принести суп, кого-то пригласить. Колонка рейтинга исчезает. Майкл моет чашку без всякой звёздочки, а Грейси несёт суп к стулу Рози.",
-          "Ты выбираешь дело и присоединяешься к ребятам. Полезной работы по-прежнему много, но больше не нужно считать звёздочки, чтобы чувствовать себя важным. Теперь помощь становится ответом на Божью любовь, а не попыткой заслужить спасение каждой вымытой чашкой."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team replaces the scoreboard with a practical list. Cups to wash. Soup to carry. Someone to invite.",
+            "ru": "Вместо таблицы рекордов появляется список нужд: вымыть чашки, принести суп, кого-то пригласить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Names disappear from the ranking column.",
+            "ru": "Колонка рейтинга исчезает."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael washes a cup that will never earn a star. Gracie carries soup to Rosie's chair.",
+            "ru": "Майкл моет чашку без всякой звёздочки, а Грейси несёт суп к стулу Рози."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You choose a task and join them.",
+            "ru": "Ты выбираешь дело и присоединяешься к ребятам."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "There's still plenty of good work to do. But nobody needs to count stars to feel important.",
+            "ru": "Полезной работы по-прежнему много, но больше не нужно считать звёздочки, чтобы чувствовать себя важным."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They can help because they've received God's love. Not to earn salvation with every washed cup.",
+            "ru": "Теперь помощь становится ответом на Божью любовь, а не попыткой заслужить спасение каждой вымытой чашкой."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -90,6 +233,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/EPH.2.8.ESV",
       "ru": "https://www.bible.com/bible/167/EPH.2.8.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "If God is fair, he should just let genuinely good, decent people into heaven. Why would a good person need Jesus at all?",
+      "ru": "Если Бог справедлив, Он должен просто пускать на небеса по-настоящему хороших, достойных людей. Зачем хорошему человеку вообще нужен Иисус?"
+    },
+    "response": {
+      "en": "C.S. Lewis pointed out a problem with \"I'm a good person\" that most people skip past. He said everyone already has a sense of a moral law inside them, and everyone, if they're honest, constantly fails to live up to even their own standard, not some impossibly high one. Try it for a single day. Never a careless word. Never a selfish thought. Never resentment. Most people can't make it to lunch. If \"good enough\" meant perfectly keeping the standard you already believe in, nobody actually clears that bar, including the person making this argument. So here's a question back: if even your own conscience keeps a stricter scorecard than you'd like to admit, is \"I'm good enough\" really an honest assessment, or a score nobody's actually checked carefully?",
+      "ru": "К. С. Льюис заметил проблему в утверждении «я хороший человек», которую большинство пропускает. Он сказал: у каждого уже есть внутреннее чувство нравственного закона, и каждый, если честно, постоянно не дотягивает даже до собственного стандарта, не говоря уже о недостижимо высоком. Попробуй один-единственный день. Ни одного неосторожного слова. Ни одной эгоистичной мысли. Ни капли обиды. Большинство не дотягивает даже до обеда. Если «достаточно хороший» значит «идеально соблюдающий тот стандарт, в который сам веришь», этой планки на самом деле не достигает никто, включая того, кто приводит этот довод. Вот вопрос в ответ: если даже твоя собственная совесть ведёт более строгий счёт, чем хотелось бы признать, «я достаточно хороший» — это честная оценка, или счёт, который на самом деле никто внимательно не проверял?"
     }
   },
   "activity": {
@@ -202,7 +355,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read all three verses, Ephesians 2:8–10, and Titus 3:4–7. Do not reduce faith to a meritorious achievement or imply that grace makes obedience irrelevant.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Ефесянам 2:8–10 целиком и Титу 3:4–7. Не превращайте веру в заслугу и не внушайте, будто благодать отменяет послушание."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read all three verses, Ephesians 2:8–10, and Titus 3:4–7. Do not reduce faith to a meritorious achievement or imply that grace makes obedience irrelevant. The 'comeback' response reflects C.S. Lewis's 'Law of Human Nature' argument from Mere Christianity (also used in lesson 21), applied here to self-assessed goodness rather than cultural relativism.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Ефесянам 2:8–10 целиком и Титу 3:4–7. Не превращайте веру в заслугу и не внушайте, будто благодать отменяет послушание. Ответ в блоке «если кто-то скажет» отражает довод К. С. Льюиса о «законе человеческой природы» из книги «Просто христианство» (уже использованный в уроке 21), здесь применённый к самооценке собственной доброты, а не к культурному релятивизму."
   }
 }

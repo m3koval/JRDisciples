@@ -16,64 +16,204 @@
         "en": "The closed footbridge",
         "ru": "Закрытый мостик"
       },
-      "paragraphs": {
-        "en": [
-          "A ribbon blocks the park footbridge, spoiling the explorers' shortcut to the pond. Michael thinks it probably looks strong enough. Gracie points to a loose board. You wait with them while their adult leader asks the park worker whether another path is open.",
-          "‘I wish we could still go this way,’ Michael says. Joseph draws three empty boxes in his notebook. ‘Let's keep that wish in the first box. Then we can write down why we choose another path and what we actually do.’ You wait together for their leader to return with news."
-        ],
-        "ru": [
-          "Лента перекрыла мостик в парке: короткой дороги к пруду больше нет. Майклу кажется, что мост ещё крепкий. Грейси показывает на расшатанную доску. Ты ждёшь вместе с ребятами, пока взрослый руководитель спрашивает работника парка о другом пути.",
-          "«Жаль, что здесь нельзя пройти», — говорит Майкл. Джозеф рисует в блокноте три пустые клетки. «В первой запишем, чего нам хочется. Потом — почему выберем другую дорогу и что сделаем». Вместе вы ждёте, что расскажет руководитель."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A ribbon blocks the park footbridge, spoiling the team's shortcut to the pond.",
+            "ru": "Лента перекрыла мостик в парке: короткой дороги к пруду больше нет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael thinks it probably looks strong enough. Gracie points to a loose board.",
+            "ru": "Майклу кажется, что мост ещё крепкий. Грейси показывает на расшатанную доску."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You wait with them, while their leader asks the park worker whether another path is open.",
+            "ru": "Ты ждёшь вместе с ребятами, пока руководитель спрашивает работника парка о другом пути."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I wish we could still go this way.",
+            "ru": "Жаль, что здесь нельзя пройти."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph draws three empty boxes in his notebook.",
+            "ru": "Джозеф рисует в блокноте три пустые клетки."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Let's keep that wish in the first box. Then we write down why we choose another path, and what we actually do.",
+            "ru": "В первой запишем, чего нам хочется. Потом — почему выберем другую дорогу и что сделаем."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A reason to listen",
         "ru": "Почему стоит послушать"
       },
-      "paragraphs": {
-        "en": [
-          "The worker shows their leader an updated park map and points out the inspected path around the reeds. The group has reasons to listen: this person works here, knows the closure, and offers information they can check. They do not know every board in the park.",
-          "‘So we aren't just guessing which way to go,’ Gracie says. ‘We have reasons to listen to him.’ Their leader agrees: trusting someone means relying on them, and it matters whether they know what they are talking about. With the route checked, the team sets off toward the pond."
-        ],
-        "ru": [
-          "Работник показывает руководителю обновлённую карту и указывает проверенную дорожку вдоль камышей. Есть причины его послушать: он работает здесь, знает о ремонте и даёт сведения, которые можно проверить. Но ребята не знают каждую доску в парке.",
-          "«Значит, мы не просто угадываем дорогу, — говорит Грейси. — Мы знаем, почему ему можно доверять». Руководитель соглашается: когда полагаешься на человека, важно понимать, знает ли он то, о чём говорит. Проверив маршрут, ребята отправляются к пруду."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The worker shows their leader an updated map, and points out the checked path around the reeds.",
+            "ru": "Работник показывает руководителю обновлённую карту и указывает проверенную дорожку вдоль камышей."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The group has reasons to listen. This person works here, knows about the closure, and offers information they can check.",
+            "ru": "Есть причины его послушать: он работает здесь, знает о ремонте и даёт сведения, которые можно проверить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They don't know every board in the park.",
+            "ru": "Но ребята не знают каждую доску в парке."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "So we aren't just guessing which way to go. We have reasons to listen to him.",
+            "ru": "Значит, мы не просто угадываем дорогу. Мы знаем, почему ему можно доверять."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader agrees. Trusting someone means relying on them. And it matters whether they know what they're talking about.",
+            "ru": "Руководитель соглашается: когда полагаешься на человека, важно понимать, знает ли он то, о чём говорит."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "With the route checked, the team sets off toward the pond.",
+            "ru": "Проверив маршрут, ребята отправляются к пруду."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Thomas wanted to know",
         "ru": "Фома хотел убедиться"
       },
-      "paragraphs": {
-        "en": [
-          "At the pond, Rosie opens John 20. They read about Thomas, who had not been with the other disciples when Jesus appeared. Later Jesus met him, and Thomas responded in faith. John explains why he recorded signs: so readers might believe in Jesus.",
-          "The children are not Thomas, and a park map is not evidence for resurrection. Yet the story challenges the idea that Christian faith means refusing to consider testimony or reasons."
-        ],
-        "ru": [
-          "У пруда Рози открывает Иоанна 20. Они читают о Фоме: его не было с учениками, когда явился Иисус. Позже Иисус встретил его, и Фома ответил верой. Иоанн объясняет, зачем записал знамения: чтобы читатели верили в Иисуса.",
-          "Дети — не Фома, а карта парка не доказывает воскресение. Но рассказ помогает увидеть: христианская вера не требует отказываться от свидетельств и разумных оснований."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the pond, Rosie opens John chapter 20.",
+            "ru": "У пруда Рози открывает 20 главу Иоанна."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read about Thomas, who hadn't been with the other disciples when Jesus appeared.",
+            "ru": "Они читают о Фоме: его не было с учениками, когда явился Иисус."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Later Jesus met him, and Thomas answered in faith.",
+            "ru": "Позже Иисус встретил его, и Фома ответил верой."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "John explains why he recorded signs. So readers might believe in Jesus.",
+            "ru": "Иоанн объясняет, зачем записал знамения: чтобы читатели верили в Иисуса."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The kids aren't Thomas, and a park map isn't evidence for the resurrection.",
+            "ru": "Дети — не Фома, а карта парка не доказывает воскресение."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Yet the story challenges an idea. That Christian faith means refusing to consider testimony or reasons.",
+            "ru": "Но рассказ помогает увидеть: христианская вера не требует отказываться от свидетельств и разумных оснований."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Walking, not just nodding",
         "ru": "Не только кивать"
       },
-      "paragraphs": {
-        "en": [
-          "They return along the open path with their leader. Michael had agreed that the map was reliable; now he actually follows it. Joseph fills the last box with an action. You help him avoid writing that trust makes every journey easy or removes every question.",
-          "Back home, Gracie remembers what they read at the pond. ‘Could we read more of John's Gospel together? I want to know Jesus better.’ She still has questions, but now she knows where to begin. The team can explore their reasons for believing while learning to trust the person the Gospel tells them about."
-        ],
-        "ru": [
-          "Обратно ребята идут с руководителем по открытой дорожке. Майкл согласился, что карте можно доверять, а теперь действительно следует ей. Джозеф заполняет последнюю клетку действием. Ты помогаешь ему не писать, будто доверие устраняет все трудности и вопросы.",
-          "Дома Грейси вспоминает чтение у пруда. «Давайте ещё почитаем Евангелие от Иоанна? Я хочу лучше узнать Иисуса». У неё остались вопросы, но теперь понятно, с чего начать. Вместе ребята смогут разобраться в основаниях веры и учиться доверять Тому, о Ком рассказывает Евангелие."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They return along the open path with their leader.",
+            "ru": "Обратно ребята идут с руководителем по открытой дорожке."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael had agreed the map was reliable. Now he actually follows it.",
+            "ru": "Майкл согласился, что карте можно доверять, а теперь действительно следует ей."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph fills the last box with an action. You help him avoid writing that trust makes every journey easy.",
+            "ru": "Джозеф заполняет последнюю клетку действием. Ты помогаешь ему не писать, будто доверие устраняет все трудности."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Could we read more of John's Gospel together? I want to know Jesus better.",
+            "ru": "Давайте ещё почитаем Евангелие от Иоанна? Я хочу лучше узнать Иисуса."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She still has questions. But now she knows where to begin.",
+            "ru": "У неё остались вопросы, но теперь понятно, с чего начать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team can explore their reasons for believing. While learning to trust the person the Gospel tells them about.",
+            "ru": "Вместе ребята смогут разобраться в основаниях веры и учиться доверять Тому, о Ком рассказывает Евангелие."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +228,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/HEB.11.1.ESV",
       "ru": "https://www.bible.com/bible/167/HEB.11.1.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Faith just means believing something without any evidence. That's the opposite of being reasonable. You should only believe what you can prove.",
+      "ru": "Вера — это просто верить во что-то без доказательств. Это противоположность разумности. Нужно верить только тому, что можешь доказать."
+    },
+    "response": {
+      "en": "John Lennox, the Oxford mathematician, pushes back hard on that definition. He says faith isn't a leap in the dark. It's a commitment based on evidence, the same kind of trust you already use when you trust a pilot you've never met, or a doctor's diagnosis you can't personally check. Nobody waits for total proof before trusting the people who hold up daily life. They look at good reasons, and then rely on them. The Bible's own word for faith, in passages like Hebrews 11:1, means confident trust grounded in reasons. Not a guess with your eyes closed. So here's a question back: if you already trust plenty of things in daily life without total proof, just solid reasons, is demanding \"proof with zero trust\" a fair standard for faith, or a stricter rule you don't actually apply anywhere else?",
+      "ru": "Джон Леннокс, математик из Оксфорда, решительно не согласен с таким определением. Он говорит: вера — это не прыжок в темноту. Это доверие, основанное на доказательствах, — то же самое доверие, которым ты уже пользуешься, когда доверяешь пилоту самолёта, которого никогда не видел, или диагнозу врача, который сам не можешь проверить. Никто не ждёт полного доказательства, прежде чем доверять людям, на которых держится обычная жизнь. Люди смотрят на хорошие причины — и полагаются на них. Само библейское слово «вера», в таких местах, как Евреям 11:1, означает уверенное доверие, основанное на причинах. А не угадывание с закрытыми глазами. Вот вопрос в ответ: если ты уже доверяешь многому в жизни без полного доказательства, просто по веским причинам, честно ли требовать от веры «доказательства без всякого доверия» — или это более строгое правило, которое ты сам нигде больше не применяешь?"
     }
   },
   "activity": {
@@ -146,8 +296,8 @@
     "ru": "Иисус, помоги узнавать Тебя и доверять Тебе с честными вопросами."
   },
   "adultNote": {
-    "en": "The park incident is fictional. Read John 20:24–31; Hebrews 11:1 describes faith, not a prohibition on investigation.",
-    "ru": "Эпизод в парке вымышлен. Прочитайте Иоанна 20:24–31; Евреям 11:1 описывает веру, а не запрещает исследование."
+    "en": "The park incident is fictional. Read John 20:24–31; Hebrews 11:1 describes faith, not a prohibition on investigation. The 'comeback' response reflects John Lennox's recurring argument (in debates and writing) that faith is evidence-based trust, not a leap in the dark; it answers the popular 'faith equals blind belief' definition without claiming every religious claim is equally well evidenced.",
+    "ru": "Эпизод в парке вымышлен. Прочитайте Иоанна 20:24–31; Евреям 11:1 описывает веру, а не запрещает исследование. Ответ в блоке «если кто-то скажет» отражает повторяющийся довод Джона Леннокса (в дебатах и текстах): вера — это доверие, основанное на доказательствах, а не прыжок в темноту; он отвечает на распространённое определение «вера равно слепая убеждённость», не утверждая, что все религиозные заявления одинаково хорошо обоснованы."
   },
   "sources": [
     {

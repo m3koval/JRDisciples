@@ -16,64 +16,239 @@
         "en": "Keep going?",
         "ru": "Продолжать?"
       },
-      "paragraphs": {
-        "en": [
-          "At the outdoor activity trail, Gracie's yellow hoodie feels much too warm. She has been hurrying to keep up and now needs a rest. Michael points toward the final checkpoint, then sees her face and stops. You help find their leader instead of pushing the team onward.",
-          "Joseph checks the route card while they settle in the shade with water. ‘We came to do this together,’ he reminds Gracie. She looks toward the unfinished trail. ‘Have I spoiled it for everyone?’ Their leader sits with the team to help her see why stopping to rest was the right thing to do."
-        ],
-        "ru": [
-          "На прогулочном маршруте Грейси становится жарко в жёлтой толстовке. Она спешила за друзьями и теперь устала. Майкл показывает на последний пункт, но замечает её лицо и останавливается. Ты помогаешь позвать руководителя, а не торопишь команду.",
-          "Джозеф смотрит на карту, пока ребята устраиваются в тени с водой. «Мы ведь пошли гулять вместе», — напоминает он Грейси. Она смотрит на оставшийся маршрут. «Я всем испортила прогулку?» Руководитель садится рядом, чтобы объяснить, почему остановиться и отдохнуть было правильным решением."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the outdoor trail, Gracie's hoodie feels much too warm.",
+            "ru": "На прогулочном маршруте Грейси становится жарко в толстовке."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She's been hurrying to keep up, and now needs a rest.",
+            "ru": "Она спешила за друзьями и теперь устала."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael points toward the final checkpoint. Then he sees her face, and stops.",
+            "ru": "Майкл показывает на последний пункт, но замечает её лицо и останавливается."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help find their leader, instead of pushing the team onward.",
+            "ru": "Ты помогаешь позвать руководителя, а не торопишь команду."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph checks the route card, while they settle in the shade with water.",
+            "ru": "Джозеф смотрит на карту, пока ребята устраиваются в тени с водой."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "We came to do this together.",
+            "ru": "Мы ведь пошли гулять вместе."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Have I spoiled it for everyone?",
+            "ru": "Я всем испортила прогулку?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader sits with the team, to help her see why stopping to rest was the right thing to do.",
+            "ru": "Руководитель садится рядом, чтобы объяснить, почему остановиться и отдохнуть было правильным решением."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A gift, not an obstacle",
         "ru": "Дар, а не помеха"
       },
-      "paragraphs": {
-        "en": [
-          "Their leader thanks her for speaking up. Bodies are not embarrassing obstacles to a spiritual life. Genesis presents God's creation as good, and Paul teaches believers to honor God with their bodies. Eating, resting, moving, and receiving care belong in that response.",
-          "Rosie explains that honoring God is not a demand to look a certain way or never become ill. Bodies have different abilities and needs. Gracie can thank God for hers while honestly saying that something hurts or feels wrong."
-        ],
-        "ru": [
-          "Руководитель благодарит её за то, что она сказала об усталости. Тело — не постыдная помеха духовной жизни. В Бытии Божье творение названо хорошим, а Павел учит верующих прославлять Бога и телом. Еда, отдых, движение и помощь тоже важны.",
-          "Рози объясняет: почитать Бога не значит иметь определённую внешность или никогда не болеть. У тел разные возможности и потребности. Можно благодарить Бога за тело и честно говорить о боли или неприятных ощущениях."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader thanks her for speaking up.",
+            "ru": "Руководитель благодарит её за то, что она сказала об усталости."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Bodies aren't embarrassing obstacles to a spiritual life.",
+            "ru": "Тело — не постыдная помеха духовной жизни."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Genesis presents God's creation as good. Paul teaches believers to honor God with their bodies.",
+            "ru": "В Бытии Божье творение названо хорошим, а Павел учит верующих прославлять Бога телом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Eating, resting, moving, and receiving care belong in that response.",
+            "ru": "Еда, отдых, движение и помощь тоже важны."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie explains that honoring God isn't a demand to look a certain way, or never become ill.",
+            "ru": "Рози объясняет: почитать Бога не значит иметь определённую внешность или никогда не болеть."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Bodies have different abilities and needs.",
+            "ru": "У тел разные возможности и потребности."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie can thank God for hers, while honestly saying something hurts or feels wrong.",
+            "ru": "Можно благодарить Бога за тело и честно говорить о боли или неприятных ощущениях."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Ask before helping",
         "ru": "Спроси перед помощью"
       },
-      "paragraphs": {
-        "en": [
-          "When they get up, Joseph reaches to adjust Gracie's backpack. ‘Wait, please. I'd like to do it myself,’ she says. ‘Okay,’ he answers, stepping back. He wanted to help, but listening to her is part of helping too. Her body and belongings are not his to manage without asking.",
-          "You practice a simple boundary with the team: ask first, listen to the answer, and stop when someone says no. If touching feels unsafe, a child can move away and tell a trusted adult, even when the other person demands secrecy."
-        ],
-        "ru": [
-          "Когда ребята встают, Джозеф тянется поправить рюкзак Грейси. «Подожди, пожалуйста. Я хочу сама», — говорит она. «Хорошо», — отвечает он и отступает. Он хотел помочь, но для этого важно и выслушать её. Нельзя без спроса распоряжаться чужим телом или вещами.",
-          "Ты тренируешь с командой простое правило: сначала спросить, выслушать ответ и остановиться, если человек говорит нет. Если прикосновение кажется небезопасным, можно отойти и рассказать надёжному взрослому, даже если требуют сохранить тайну."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "When they get up, Joseph reaches to adjust Gracie's backpack.",
+            "ru": "Когда ребята встают, Джозеф тянется поправить рюкзак Грейси."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Wait, please. I'd like to do it myself.",
+            "ru": "Подожди, пожалуйста. Я хочу сама."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Okay.",
+            "ru": "Хорошо."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He steps back. He wanted to help. But listening to her is part of helping, too.",
+            "ru": "Он отступает. Он хотел помочь, но для этого важно и выслушать её."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Her body and belongings aren't his to manage without asking.",
+            "ru": "Нельзя без спроса распоряжаться чужим телом или вещами."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You practice a simple boundary with the team. Ask first. Listen to the answer. Stop when someone says no.",
+            "ru": "Ты тренируешь с командой простое правило: сначала спросить, выслушать ответ и остановиться, если человек говорит нет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "If touching feels unsafe, a child can move away, and tell a trusted adult. Even if the other person demands secrecy.",
+            "ru": "Если прикосновение кажется небезопасным, можно отойти и рассказать надёжному взрослому, даже если требуют сохранить тайну."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A changed route",
         "ru": "Новый маршрут"
       },
-      "paragraphs": {
-        "en": [
-          "The leader offers a shorter path, and the explorers choose it together. Gracie carries her own backpack; Michael asks before taking the water bottle she offers. Their final checkpoint becomes a picnic bench rather than the distant hilltop, and nobody loses their place on the team.",
-          "Joseph writes a new trail note: speak up, respect boundaries, get help. You reach the meeting point with an adventure worth remembering. Caring for bodies was not a distraction from loving God and neighbors; it was part of it."
-        ],
-        "ru": [
-          "Руководитель предлагает короткую дорогу, и исследователи вместе выбирают её. Грейси несёт свой рюкзак; Майкл спрашивает, прежде чем взять предложенную бутылку. Последним пунктом становится скамейка, а не далёкая вершина. Никто не теряет места в команде.",
-          "Джозеф записывает: говори о нуждах, уважай границы, обращайся за помощью. Вы возвращаетесь с важным опытом. Забота о теле не отвлекла от любви к Богу и ближним — она стала её частью."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The leader offers a shorter path, and the team chooses it together.",
+            "ru": "Руководитель предлагает короткую дорогу, и исследователи вместе выбирают её."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie carries her own backpack. Michael asks before taking the water bottle she offers.",
+            "ru": "Грейси несёт свой рюкзак; Майкл спрашивает, прежде чем взять предложенную бутылку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their final checkpoint becomes a picnic bench, rather than the distant hilltop.",
+            "ru": "Последним пунктом становится скамейка, а не далёкая вершина."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Nobody loses their place on the team.",
+            "ru": "Никто не теряет места в команде."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph writes a new trail note. Speak up. Respect boundaries. Get help.",
+            "ru": "Джозеф записывает: говори о нуждах, уважай границы, обращайся за помощью."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You reach the meeting point with an adventure worth remembering.",
+            "ru": "Вы возвращаетесь с важным опытом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Caring for bodies wasn't a distraction from loving God and neighbors. It was part of it.",
+            "ru": "Забота о теле не отвлекла от любви к Богу и ближним — она стала её частью."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +263,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/1CO.6.20.ESV",
       "ru": "https://www.bible.com/bible/167/1CO.6.20.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "The body is just a shell. What really matters is the soul or mind inside it. Bodies are temporary and not spiritually important.",
+      "ru": "Тело — просто оболочка. По-настоящему важна душа или разум внутри. Тело временно и не имеет духовного значения."
+    },
+    "response": {
+      "en": "N.T. Wright, the historian from an earlier lesson, has spent a lot of his career pushing back on exactly that idea. He points out that Christians don't actually believe in escaping bodies. They believe in resurrection, meaning God intends to give people new, healed bodies forever, not leave them as souls floating somewhere else. If bodies were just a throwaway shell, that promise wouldn't make any sense. The Bible doesn't call the body a prison for the soul. Genesis calls the whole created, physical world \"very good,\" on purpose. So here's a question back: if God's own plan includes bringing bodies back, not leaving them behind forever, does treating your body as unimportant actually match the story the Bible tells, or a different, older story the Bible was written against?",
+      "ru": "Н. Т. Райт, историк из предыдущего урока, посвятил немалую часть своей работы именно опровержению этой идеи. Он отмечает: христиане на самом деле не верят в избавление от тела. Они верят в воскресение — то есть Бог намерен дать людям новые, исцелённые тела навсегда, а не оставить их душами, парящими где-то отдельно. Если бы тело было просто одноразовой оболочкой, это обещание не имело бы смысла. Библия не называет тело тюрьмой для души. Бытие нарочно называет весь сотворённый, материальный мир «хорошим, весьма хорошим». Вот вопрос в ответ: если Божий собственный план включает возвращение тел, а не отказ от них навсегда, относиться к своему телу как к неважному — это соответствует истории, которую рассказывает Библия, или другой, более древней истории, против которой Библия и была написана?"
     }
   },
   "activity": {
@@ -168,8 +353,8 @@
     "ru": "Боже, спасибо за жизнь в теле. Помоги заботиться о себе и уважать других."
   },
   "adultNote": {
-    "en": "Read 1 Corinthians 6:19–20 in its context of belonging to Christ. Do not equate disability, illness, appearance, or fitness with holiness. Children never cause abuse; if a disclosure is dismissed, help them reach another safe adult and appropriate safeguarding support.",
-    "ru": "Прочитайте 1 Коринфянам 6:19–20 в контексте принадлежности Христу. Не связывайте инвалидность, болезнь, внешность или физическую форму со святостью. Ребёнок не виноват в насилии; если ему не поверили, помогите обратиться к другому безопасному взрослому и получить необходимую защиту."
+    "en": "Read 1 Corinthians 6:19–20 in its context of belonging to Christ. Do not equate disability, illness, appearance, or fitness with holiness. Children never cause abuse; if a disclosure is dismissed, help them reach another safe adult and appropriate safeguarding support. The 'comeback' response reflects N.T. Wright's recurring argument (notably in Surprised by Hope, used earlier in lesson 50) that bodily resurrection, not escape from the body, is the Christian hope.",
+    "ru": "Прочитайте 1 Коринфянам 6:19–20 в контексте принадлежности Христу. Не связывайте инвалидность, болезнь, внешность или физическую форму со святостью. Ребёнок не виноват в насилии; если ему не поверили, помогите обратиться к другому безопасному взрослому и получить необходимую защиту. Ответ в блоке «если кто-то скажет» отражает повторяющийся довод Н. Т. Райта (особенно в книге «Surprised by Hope», уже использованной в уроке 50): христианская надежда — это телесное воскресение, а не избавление от тела."
   },
   "sources": [
     {
