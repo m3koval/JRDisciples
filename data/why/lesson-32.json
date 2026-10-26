@@ -16,64 +16,194 @@
         "en": "The invitation booth",
         "ru": "Стол приглашений"
       },
-      "paragraphs": {
-        "en": [
-          "The explorers prepare a little welcome table for the neighborhood afternoon. Joseph suggests a quiz before anyone gets a biscuit. “What if someone doesn’t know the answers?” Gracie asks. “Or just wants a biscuit, not a conversation about faith?” Michael quietly removes the quiz from the biscuit tray.",
-          "You join Rosie at the poster board. They still want to explain why Jesus matters. They need a truthful story and a generous invitation, not a reward that pressures a visitor to agree."
-        ],
-        "ru": [
-          "Исследователи готовят стол для соседского праздника. Джозеф предлагает викторину перед угощением. «А если человек не знает ответов? — спрашивает Грейси. — Или просто хочет угоститься, а не говорить о вере?» Майкл убирает викторину с подноса.",
-          "Ты подходишь к Рози у плаката. Команда всё ещё хочет рассказать, почему важен Иисус. Нужны правдивая весть и доброе приглашение, а не награда за согласие."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team prepares a little welcome table for the neighborhood afternoon.",
+            "ru": "Ребята готовят стол для соседского праздника."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph suggests a quiz before anyone gets a biscuit.",
+            "ru": "Джозеф предлагает викторину перед угощением."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "What if someone doesn't know the answers? Or just wants a biscuit, not a conversation about faith?",
+            "ru": "А если человек не знает ответов? Или просто хочет угоститься, а не говорить о вере?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael quietly removes the quiz from the biscuit tray.",
+            "ru": "Майкл убирает викторину с подноса."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You join Rosie at the poster board.",
+            "ru": "Ты подходишь к Рози у плаката."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They still want to explain why Jesus matters. They need a truthful story and a generous invitation. Not a reward that pressures a visitor to agree.",
+            "ru": "Команда всё ещё хочет рассказать, почему важен Иисус. Нужны правдивая весть и доброе приглашение, а не награда за согласие."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Start with the real problem",
         "ru": "Начни с настоящей беды"
       },
-      "paragraphs": {
-        "en": [
-          "They sketch a world made by God and people made to know and love him. Then they add the broken direction of sin: we turn from God and hurt others. The problem is deeper than not knowing enough facts or needing a little encouragement.",
-          "Rosie keeps the drawings simple. No visitor is drawn as the bad person while the explorers wear halos. They need rescue too. This changes the way Michael practices his explanation: he speaks as someone receiving mercy, not looking down from above."
-        ],
-        "ru": [
-          "Они рисуют мир, созданный Богом, и людей, созданных знать и любить Его. Затем они изображают грех: мы отворачиваемся от Бога и раним других. Проблема глубже нехватки знаний или ободрения.",
-          "Рози рисует просто. Она не рисует гостей плохими людьми и не добавляет исследователям нимбы. Им тоже нужно спасение. Теперь Майкл рассказывает не свысока, а как человек, сам принимающий милость."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They sketch a world made by God, and people made to know and love him.",
+            "ru": "Они рисуют мир, созданный Богом, и людей, созданных знать и любить Его."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Then they add the broken direction of sin. We turn from God, and hurt others.",
+            "ru": "Затем они изображают грех: мы отворачиваемся от Бога и раним других."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The problem is deeper than not knowing enough facts, or needing a little encouragement.",
+            "ru": "Проблема глубже нехватки знаний или ободрения."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie keeps the drawings simple. No visitor is drawn as the bad person, while the team wears halos.",
+            "ru": "Рози рисует просто. Она не рисует гостей плохими людьми и не добавляет исследователям нимбы."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They need rescue too. This changes how Michael practices his explanation. He speaks as someone receiving mercy. Not looking down from above.",
+            "ru": "Им тоже нужно спасение. Теперь Майкл рассказывает не свысока, а как человек, сам принимающий милость."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Keep Jesus at the center",
         "ru": "Пусть Иисус будет в центре"
       },
-      "paragraphs": {
-        "en": [
-          "In 1 Corinthians 15:3–4 they find the center: Christ died for our sins, was buried, and was raised. In Ephesians 2:8–10 they find grace, faith, and the good works that follow. Their poster cannot shrink this into merely trying harder or becoming nicer.",
-          "Joseph adds a source card so a visitor can read the passages rather than trusting the children’s drawing. As they practise, they explain that repentance means turning from sin to God, and faith means trusting Jesus. They want visitors to understand his promise of new life, not expect every difficulty to disappear that afternoon."
-        ],
-        "ru": [
-          "В 1 Коринфянам 15:3–4 они находят главное: Христос умер за наши грехи, был погребён и воскрес. В Ефесянам 2:8–10 — благодать, веру и следующие за ними добрые дела. Нельзя свести весть к призыву сильнее стараться.",
-          "Джозеф добавляет ссылку на отрывки, чтобы гость мог читать сам. Репетируя рассказ, ребята объясняют: покаяться — значит отвернуться от греха и обратиться к Богу, а верить — довериться Иисусу. Они хотят рассказать о новой жизни с Ним, но не обещают, что уже сегодня исчезнут все трудности."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "In 1 Corinthians chapter 15, they find the center. Christ died for our sins, was buried, and was raised.",
+            "ru": "В 1 Коринфянам 15 они находят главное: Христос умер за наши грехи, был погребён и воскрес."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "In Ephesians chapter 2, they find grace, faith, and the good works that follow.",
+            "ru": "В Ефесянам 2 — благодать, веру и следующие за ними добрые дела."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their poster can't shrink this down to just trying harder, or becoming nicer.",
+            "ru": "Нельзя свести весть к призыву сильнее стараться."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph adds a source card, so a visitor can read the passages. Not just trust the kids' drawing.",
+            "ru": "Джозеф добавляет ссылку на отрывки, чтобы гость мог читать сам, а не просто доверять рисунку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "As they practice, they explain two words. Repentance means turning from sin to God. Faith means trusting Jesus.",
+            "ru": "Репетируя рассказ, ребята объясняют два слова: покаяться — значит отвернуться от греха и обратиться к Богу, а верить — довериться Иисусу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They want visitors to understand his promise of new life. Not expect every difficulty to vanish that afternoon.",
+            "ru": "Они хотят рассказать о новой жизни с Ним, но не обещают, что уже сегодня исчезнут все трудности."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A conversation, not a capture",
         "ru": "Разговор, а не ловушка"
       },
-      "paragraphs": {
-        "en": [
-          "When a visitor stops, Gracie asks whether he would like to hear about the poster. He listens, asks one question, and says he needs time. Nobody blocks the path or takes away his biscuit. Rosie thanks him for talking and offers the passage reference if he wants it.",
-          "Afterward, you help tidy the table. Gracie is glad that the visitor felt free to ask his question and take time to think. The team can explain the good news honestly, show love, and invite someone to trust Jesus, but they cannot make that decision for him."
-        ],
-        "ru": [
-          "Когда подходит гость, Грейси спрашивает, хочет ли он услышать о плакате. Он слушает, задаёт вопрос и говорит, что ему нужно время. Никто не загораживает дорогу и не забирает угощение. Рози благодарит за разговор и предлагает ссылку на отрывок.",
-          "После праздника ты помогаешь убрать стол. Грейси рада, что гость смог спокойно задать вопрос и подумать. Ребята могут честно рассказать благую весть, проявить любовь и пригласить довериться Иисусу, но не могут принять это решение за другого."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "When a visitor stops, Gracie asks whether he'd like to hear about the poster.",
+            "ru": "Когда подходит гость, Грейси спрашивает, хочет ли он услышать о плакате."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He listens, asks one question, and says he needs time.",
+            "ru": "Он слушает, задаёт вопрос и говорит, что ему нужно время."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Nobody blocks the path, or takes away his biscuit.",
+            "ru": "Никто не загораживает дорогу и не забирает угощение."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie thanks him for talking, and offers the passage reference if he wants it.",
+            "ru": "Рози благодарит за разговор и предлагает ссылку на отрывок."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Afterward, you help tidy the table. Gracie is glad the visitor felt free to ask his question, and take time to think.",
+            "ru": "После праздника ты помогаешь убрать стол. Грейси рада, что гость смог спокойно задать вопрос и подумать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team can explain the good news honestly, and show love. They can invite someone to trust Jesus. But they can't make that decision for him.",
+            "ru": "Ребята могут честно рассказать благую весть, проявить любовь и пригласить довериться Иисусу, но не могут принять это решение за другого."
+          }
+        }
+      ]
     }
   ],
   "scripture": {

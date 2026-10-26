@@ -16,64 +16,198 @@
         "en": "A sentence without a trail",
         "ru": "Фраза без тропинки"
       },
-      "paragraphs": {
-        "en": [
-          "At the woodland reading shelter, Michael finds a trail instruction torn from its booklet: Turn left after the bridge. He starts packing for the left path, but Gracie notices three different bridges on their map. Without the surrounding directions, the sentence is not enough to locate their next step.",
-          "“Sometimes I feel like that when I read the Bible,” Rosie admits. “I know the words, but I don’t understand how they fit together.” Michael looks again at the torn instruction. Explorer, help them find what is missing instead of guessing which way to go."
-        ],
-        "ru": [
-          "В лесной беседке Майкл находит вырванную инструкцию: «После моста поверните налево». Он собирается идти, но Грейси замечает на карте три моста. Без соседних указаний фраза не помогает определить следующий шаг.",
-          "«У меня так иногда бывает с Библией, — признаётся Рози. — Слова понимаю, а как они связаны между собой — нет». Майкл снова смотрит на вырванную инструкцию. Исследователь, помоги им найти недостающие объяснения, а не угадывать, куда идти."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the woodland reading shelter, Michael finds a trail instruction torn from its booklet. It says: Turn left after the bridge.",
+            "ru": "В лесной беседке Майкл находит вырванную инструкцию. В ней написано: «После моста поверните налево»."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He starts packing for the left path. But Gracie notices something on their map. There are three different bridges.",
+            "ru": "Он собирается идти налево. Но Грейси замечает кое-что на карте. Там целых три моста."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Without the pages around it, the sentence isn't enough to find their next step.",
+            "ru": "Без соседних страниц этой фразы не хватает, чтобы понять следующий шаг."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Sometimes I feel like that when I read the Bible. I know the words. But I don't understand how they fit together.",
+            "ru": "У меня так иногда бывает с Библией. Слова я понимаю. А как они связаны между собой — нет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael looks again at the torn instruction. Explorer, help them find what's missing. Don't just guess which way to go.",
+            "ru": "Майкл снова смотрит на вырванную инструкцию. Исследователь, помоги им найти недостающее. Не угадывай, куда идти."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Open the surrounding pages",
         "ru": "Открой соседние страницы"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph retrieves the whole trail booklet, and the route becomes clear. Then they open Psalm 119:105 and read nearby verses with their leader. The writer speaks about God’s word guiding life, along with commitment, trouble, and dependence on God. The lamp image belongs to a life of listening and obedience.",
-          "Michael does not take it as a promise that a Bible will glow in the dark. He writes two questions in Joseph’s notebook: What does the passage say? What is the writer communicating?"
-        ],
-        "ru": [
-          "Джозеф находит весь путеводитель, и маршрут становится ясным. Затем с руководителем они открывают Псалом 118:105 и соседние стихи. Автор говорит, что Божье слово направляет жизнь; рядом есть верность, беды и надежда на Бога. Образ светильника связан со слушанием и послушанием.",
-          "Майкл не принимает это за обещание, что книга будет светиться в темноте. В блокноте Джозефа он пишет: «Что сказано в отрывке? Что автор хочет передать?»"
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph finds the whole trail booklet, and the route becomes clear.",
+            "ru": "Джозеф находит весь путеводитель, и маршрут становится ясным."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Then they open Psalm 119:105, and read the nearby verses with their leader.",
+            "ru": "Затем они открывают Псалом 118:105 и читают соседние стихи с руководителем."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The writer talks about God's word guiding life. Nearby verses add commitment, trouble, and trust in God.",
+            "ru": "Автор говорит, что Божье слово направляет жизнь. Рядом есть верность, беды и надежда на Бога."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The lamp picture belongs to a whole life of listening and obeying. Not just one shiny sentence by itself.",
+            "ru": "Образ светильника связан с целой жизнью послушания. А не с одной яркой фразой сама по себе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael doesn't take it as a promise that a Bible will glow in the dark.",
+            "ru": "Майкл не принимает это за обещание, что книга будет светиться в темноте."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I'm writing two questions down. What does the passage say? What is the writer trying to tell us?",
+            "ru": "Я записываю два вопроса. Что сказано в отрывке? Что автор хочет нам передать?"
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Ask before pretending",
         "ru": "Спроси вместо притворства"
       },
-      "paragraphs": {
-        "en": [
-          "They add two more questions: Who is speaking, and what response fits this meaning? Rosie checks an unfamiliar word with the leader. Gracie notices that a song uses pictures differently from a history account or a letter. Reading carefully means noticing the kind of writing, not making every sentence mean whatever she wants.",
-          "In Luke 24:27, Jesus helps his followers understand Scripture. Needing explanation is not a failure. The children can ask for help while returning to the actual passage together."
-        ],
-        "ru": [
-          "Они добавляют вопросы: «Кто здесь говорит? Как нам поступать, если мы поняли, чему учит этот отрывок?» Рози уточняет незнакомое слово у руководителя. Грейси замечает, что песня использует образы иначе, чем исторический рассказ или письмо. Внимательный читатель учитывает вид текста, а не вкладывает в каждую фразу любое удобное значение.",
-          "В Луки 24:27 Иисус помогает ученикам понимать Писание. Нуждаться в объяснении — не поражение. Дети могут просить помощи и вместе возвращаться к самому отрывку."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They add two more questions. Who's speaking? And what response actually fits this meaning?",
+            "ru": "Они добавляют ещё два вопроса. Кто здесь говорит? И какой ответ подходит этому смыслу?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie checks an unfamiliar word with the leader.",
+            "ru": "Рози уточняет незнакомое слово у руководителя."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "A song uses pictures differently than a history account, or a letter does.",
+            "ru": "Песня использует образы иначе, чем исторический рассказ или письмо."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Reading carefully means noticing what kind of writing it is. Not making every sentence mean whatever you want it to.",
+            "ru": "Внимательный читатель замечает вид текста. А не вкладывает в каждую фразу любое удобное значение."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "In Luke chapter 24, Jesus helps his followers understand Scripture.",
+            "ru": "В 24 главе Луки Иисус помогает ученикам понимать Писание."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Needing explanation isn't a failure. The kids can ask for help, and still come back to the actual passage together.",
+            "ru": "Нуждаться в объяснении — не поражение. Дети могут просить помощи и всё равно возвращаться к самому отрывку."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A small next step",
         "ru": "Маленький следующий шаг"
       },
-      "paragraphs": {
-        "en": [
-          "Before leaving, the explorers choose short passages to read again tomorrow. “I’ll spend five quiet minutes with this psalm,” Michael decides. Rosie says, “I’ll write down a question when I get stuck, so I can ask for help.” Gracie thinks about putting what she reads into practice: she wants to tell the truth when she needs to admit a mistake.",
-          "You place the whole trail booklet in the backpack. Understanding grows through repeated, attentive reading with help. God’s word guides real steps; the goal is knowing and following him, not winning a page-count contest."
-        ],
-        "ru": [
-          "Перед выходом исследователи выбирают короткие отрывки, которые завтра прочитают ещё раз. «Я спокойно почитаю этот псалом пять минут», — решает Майкл. Рози говорит: «А если что-то не пойму, запишу вопрос и попрошу помочь». Грейси думает, как исполнить прочитанное: ей хочется говорить правду, когда нужно признать свою ошибку.",
-          "Ты кладёшь весь путеводитель в рюкзак. Понимание растёт через повторное внимательное чтение с помощью других. Божье слово направляет настоящие шаги; цель — знать Бога и следовать Ему, а не побеждать в подсчёте страниц."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Before leaving, the team picks short passages to read again tomorrow.",
+            "ru": "Перед выходом команда выбирает короткие отрывки, которые прочитают завтра снова."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I'll spend five quiet minutes with this psalm.",
+            "ru": "Я спокойно почитаю этот псалом пять минут."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "And if I get stuck, I'll write down a question. Then I can ask for help.",
+            "ru": "А если что-то не пойму, запишу вопрос. Потом попрошу помочь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie thinks about putting what she reads into practice. She wants to tell the truth, even when she has to admit a mistake.",
+            "ru": "Грейси думает, как исполнить прочитанное. Ей хочется говорить правду, даже когда нужно признать свою ошибку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You place the whole trail booklet in the backpack.",
+            "ru": "Ты кладёшь весь путеводитель в рюкзак."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Understanding grows through reading again and again, carefully, with help. God's word guides real steps. The goal is knowing him. Not winning a page-count contest.",
+            "ru": "Понимание растёт через повторное внимательное чтение с помощью других. Божье слово направляет настоящие шаги. Цель — знать Бога. А не побеждать в подсчёте страниц."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +222,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/PSA.119.105.ESV",
       "ru": "https://www.bible.com/bible/167/PSA.118.105.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "If the Bible is really from God, it should just make sense on its own. Needing this much explaining makes it seem unreliable.",
+      "ru": "Если Библия действительно от Бога, она должна быть понятна сама по себе. Если нужно столько объяснять, значит, ей нельзя доверять."
+    },
+    "response": {
+      "en": "Needing help doesn't make something less true. Even wise, well-written things often take real study. Jesus's own followers had read these Scriptures their whole lives, and they still needed Jesus himself to walk them through it, on the road to Emmaus. The main message, God made a world worth loving, people turned away from him, and God came to rescue them in Jesus, is clear enough for anyone willing to read carefully and ask questions. The harder parts take more digging, the same way a good book gets richer the longer you study it, not because it's broken. So here's a question back: if something is this rich, is needing help a sign it's confused, or a sign there's more here worth understanding than a single quick read could ever hold?",
+      "ru": "Нужда в помощи не делает что-то менее истинным. Даже мудрые, хорошо написанные вещи часто требуют настоящего изучения. Собственные ученики Иисуса читали эти Писания всю жизнь, и всё равно им понадобился Сам Иисус, чтобы объяснить их на дороге в Эммаус. Главная весть — Бог создал мир, достойный любви, люди отвернулись от Него, и Бог пришёл спасти их в Иисусе — понятна каждому, кто готов внимательно читать и задавать вопросы. Более трудные места требуют больше усилий, так же как хорошая книга становится богаче, чем дольше её изучаешь, а не потому что она испорчена. Вот вопрос в ответ: если что-то настолько насыщенно, нужда в помощи — это признак путаницы, или признак того, что здесь есть больше, чем может дать один быстрый взгляд?"
     }
   },
   "activity": {
@@ -186,7 +330,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. English Psalm 119 corresponds to Russian Synodal Psalm 118. Read Luke 24:27 in its wider account. The trail booklet illustrates context; it is not Scripture. Keep the reading habit small and supported, without rewarding speed over understanding.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Псалом 119 английской нумерации соответствует Псалму 118 Синодального перевода. Читайте Луки 24:27 в контексте рассказа. Путеводитель поясняет роль контекста, но не является Писанием. Поддерживайте небольшой навык чтения без соревнования в скорости."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. English Psalm 119 corresponds to Russian Synodal Psalm 118. Read Luke 24:27 in its wider account. The trail booklet illustrates context; it is not Scripture. Keep the reading habit small and supported, without rewarding speed over understanding. The 'comeback' response leans on Luke 24:27 (already used in this lesson) and the traditional distinction, associated with the Reformers, between Scripture's clarity on its central message and the real effort its harder passages still require; it is not a claim that every verse is equally easy.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Псалом 119 английской нумерации соответствует Псалму 118 Синодального перевода. Читайте Луки 24:27 в контексте рассказа. Путеводитель поясняет роль контекста, но не является Писанием. Поддерживайте небольшой навык чтения без соревнования в скорости. Ответ в блоке «если кто-то скажет» опирается на Луки 24:27 (уже использованный в уроке) и традиционное различие, восходящее к реформаторам, между ясностью главной вести Писания и реальным трудом, который всё же требуют его более сложные места; это не утверждение, что каждый стих одинаково прост."
   }
 }

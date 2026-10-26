@@ -16,66 +16,202 @@
         "en": "A brilliant bad plan",
         "ru": "Блестящий неудачный план"
       },
-      "paragraphs": {
-        "en": [
-          "Michael spreads the exhibition treasure trail across the library table. Visitors will race upstairs, read tiny clues, and shout answers before a timer rings. Gracie studies the stairs on his drawing.",
-          "“My friend uses a wheelchair. How will he reach the first clue?”",
-          "Joseph points out another problem: a new reader may need longer with the words. “They could watch us,” Michael suggests. But as he looks at Gracie, he begins to hear what is missing from his plan: her friend wants to solve the mystery with them, not sit outside the game."
-        ],
-        "ru": [
-          "Майкл раскладывает план поиска сокровищ на библиотечном столе. Гости побегут наверх, прочтут мелкие подсказки и выкрикнут ответы до звонка. Грейси рассматривает нарисованную лестницу.",
-          "— Мой друг передвигается на коляске. Как он доберётся до первой подсказки?",
-          "Джозеф замечает ещё одну трудность: начинающему читателю нужно больше времени. «Они смогут посмотреть», — предлагает Майкл. Но, взглянув на Грейси, он начинает понимать ошибку: её друг хочет разгадывать тайну вместе со всеми, а не оставаться вне игры."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael spreads the exhibit's treasure trail across the library table.",
+            "ru": "Майкл раскладывает план поиска сокровищ на библиотечном столе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Visitors will race upstairs. They'll read tiny clues, and shout answers before a timer rings.",
+            "ru": "Гости побегут наверх. Прочтут мелкие подсказки и выкрикнут ответы до звонка."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie studies the stairs on his drawing.",
+            "ru": "Грейси рассматривает нарисованную лестницу."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "My friend uses a wheelchair. How will he reach the first clue?",
+            "ru": "Мой друг передвигается на коляске. Как он доберётся до первой подсказки?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph points out another problem. A new reader may need longer with the words.",
+            "ru": "Джозеф замечает ещё одну трудность: начинающему читателю нужно больше времени."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "They could just watch us.",
+            "ru": "Они смогут посмотреть."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "But looking at Gracie, he starts to hear what's missing. Her friend wants to solve the mystery with them. Not sit outside the game.",
+            "ru": "Но, взглянув на Грейси, он начинает понимать ошибку: её друг хочет разгадывать тайну вместе со всеми, а не оставаться вне игры."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "No special seat for favorites",
         "ru": "Не только для любимчиков"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens James, where believers are warned against favoritism. The passage challenges welcoming a wealthy person with honor while treating a poor person as unimportant. Their trail has a different setting, but the question reaches their table: whose comfort have they treated as more important?",
-          "The team cannot assume every visitor needs the same adjustment. Gracie asks her friend about the plan instead of speaking for him. He wants to solve clues with everyone, not become the subject of a kindness demonstration."
-        ],
-        "ru": [
-          "Рози открывает послание Иакова, где верующих предостерегают от лицеприятия: богатому оказывают честь, а бедного считают неважным. Их выставка устроена иначе, но вопрос касается и команды: чьё удобство они сочли важнее удобства других?",
-          "Нельзя считать, что всем нужны одинаковые изменения. Грейси спрашивает друга о плане, а не отвечает за него. Он хочет вместе разгадывать подсказки, а не стать главным героем показательного доброго дела."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens James, where believers are warned against favoritism.",
+            "ru": "Рози открывает послание Иакова, где верующих предостерегают от лицеприятия."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The passage challenges something. Welcoming a wealthy person with honor. Treating a poor person as if he doesn't matter.",
+            "ru": "Отрывок бросает вызов одной привычке. Оказывать честь богатому. Считать бедного неважным."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their trail has a different setting. But the question reaches their table too: whose comfort have they treated as more important?",
+            "ru": "Их выставка устроена иначе. Но вопрос касается и команды: чьё удобство они сочли важнее удобства других?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team can't assume every visitor needs the same adjustment.",
+            "ru": "Нельзя считать, что всем нужны одинаковые изменения."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie asks her friend about the plan, instead of speaking for him.",
+            "ru": "Грейси спрашивает друга о плане, а не отвечает за него."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He wants to solve clues with everyone. Not become the subject of a kindness demonstration.",
+            "ru": "Он хочет вместе разгадывать подсказки, а не стать главным героем показательного доброго дела."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Keep the challenge, change the doorway",
         "ru": "Сохрани задачу, убери преграду"
       },
-      "paragraphs": {
-        "en": [
-          "You help move the trail to an accessible room. Joseph prints large clues and prepares spoken versions. The timer becomes optional, and teams can point to answers rather than shout. There are still mysteries to solve; the challenge no longer depends on climbing stairs or reading fastest.",
-          "Michael asks the librarian to test the route with them. A narrow turn blocks access to one station, so they move a table. Planning felt generous, but testing reveals something their generous intentions had missed."
-        ],
-        "ru": [
-          "Ты помогаешь перенести маршрут в доступную комнату. Джозеф печатает крупные подсказки и готовит устные версии. Таймер используют по желанию; ответ можно показать, а не выкрикивать. Загадки остаются, но успех больше не зависит от лестницы и скорости чтения.",
-          "Майкл приглашает библиотекаря проверить маршрут вместе. Узкий поворот мешает добраться до станции, и стол передвигают. План казался заботливым, но проверка обнаружила то, чего добрые намерения не заметили."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help move the trail to an accessible room. Joseph prints large clues, and prepares spoken versions.",
+            "ru": "Ты помогаешь перенести маршрут в доступную комнату. Джозеф печатает крупные подсказки и готовит устные версии."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The timer becomes optional. Teams can point to answers, instead of shouting them.",
+            "ru": "Таймер используют по желанию. Ответ можно показать, а не выкрикивать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "There are still real mysteries to solve. The challenge no longer depends on climbing stairs, or reading the fastest.",
+            "ru": "Загадки остаются. Но успех больше не зависит от лестницы и скорости чтения."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael asks the librarian to test the route with them.",
+            "ru": "Майкл приглашает библиотекаря проверить маршрут вместе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A narrow turn blocks one station, so they move a table. Planning felt generous. But testing revealed what good intentions had missed.",
+            "ru": "Узкий поворот мешает добраться до станции, и стол передвигают. План казался заботливым. Но проверка обнаружила то, чего добрые намерения не заметили."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A teammate, not a project",
         "ru": "Товарищ, а не проект"
       },
-      "paragraphs": {
-        "en": [
-          "When visitors arrive, Gracie's friend finds a clue everyone else missed. Another visitor chooses to listen instead of reading. Nobody announces either choice as a heroic exception. Michael asks each team which role its members would enjoy, and leaves room to change roles later.",
-          "Joseph's notebook has one final question for the exit: what would make this easier to join next time? You welcome the answers. The explorers are pleased with the changes, but they still have something to learn from their guests. Welcoming people means continuing to listen, even after the exhibition opens."
-        ],
-        "ru": [
-          "Когда приходят гости, друг Грейси находит подсказку, которую остальные пропустили. Другой посетитель предпочитает слушать, а не читать. Никто не объявляет эти решения подвигом. Майкл спрашивает, кому какая роль нравится, и разрешает позже поменяться.",
-          "В блокноте Джозефа остаётся последний вопрос: что поможет вам участвовать в следующий раз? Ты с готовностью слушаешь ответы. Ребята рады, что изменили игру, но понимают: гости ещё могут их многому научить. Забота не заканчивается открытием выставки — важно и дальше слушать тех, кого пригласили."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "When visitors arrive, Gracie's friend finds a clue everyone else missed.",
+            "ru": "Когда приходят гости, друг Грейси находит подсказку, которую остальные пропустили."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Another visitor chooses to listen, instead of reading. Nobody announces either choice as a heroic exception.",
+            "ru": "Другой посетитель предпочитает слушать, а не читать. Никто не объявляет эти решения подвигом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael asks each team which role its members would enjoy, and leaves room to change roles later.",
+            "ru": "Майкл спрашивает, кому какая роль нравится, и разрешает позже поменяться."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph's notebook has one final question for the exit. What would make this easier to join next time?",
+            "ru": "В блокноте Джозефа остаётся последний вопрос: что поможет вам участвовать в следующий раз?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You welcome the answers. The team is pleased with the changes. But they still have something to learn from their guests.",
+            "ru": "Ты с готовностью слушаешь ответы. Ребята рады, что изменили игру. Но понимают: гости ещё могут их многому научить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Welcoming people means keeping on listening, even after the exhibit opens.",
+            "ru": "Забота не заканчивается открытием выставки — важно и дальше слушать тех, кого пригласили."
+          }
+        }
+      ]
     }
   ],
   "scripture": {

@@ -16,64 +16,205 @@
         "en": "The bright green mystery",
         "ru": "Ярко-зелёная загадка"
       },
-      "paragraphs": {
-        "en": [
-          "The explorers arrive at a small pond with pencils, a magnifier, and a bag for litter. Gracie spots green patches near the water's edge. Michael proposes a spectacular caption about a mysterious new life form. Joseph asks what they have actually observed before anyone names it.",
-          "You crouch on the path with them, staying away from the slippery bank. The patch is green, spread across part of the surface, and moving slightly with the water. Those observations fit in the notebook."
-        ],
-        "ru": [
-          "Исследователи приходят к пруду с карандашами, лупой и пакетом для мусора. Грейси замечает зелёные пятна у берега. Майкл предлагает эффектную подпись о загадочной новой форме жизни. Джозеф спрашивает, что они действительно увидели.",
-          "Ты приседаешь рядом на дорожке, подальше от скользкого берега. Пятно зелёное, занимает часть поверхности и слегка движется вместе с водой. Эти наблюдения можно записать."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team arrives at a small pond with pencils, a magnifier, and a bag for litter.",
+            "ru": "Ребята приходят к пруду с карандашами, лупой и пакетом для мусора."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie spots green patches near the water's edge.",
+            "ru": "Грейси замечает зелёные пятна у берега."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "What if we write a spectacular caption about a mysterious new life form?",
+            "ru": "А давайте напишем эффектную подпись о загадочной новой форме жизни?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Before we name anything, what have we actually observed?",
+            "ru": "Прежде чем что-то называть, что мы вообще увидели?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You crouch on the path with them, staying away from the slippery bank.",
+            "ru": "Ты приседаешь рядом на дорожке, подальше от скользкого берега."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The patch is green. It covers part of the surface. It moves slightly with the water. Those observations fit in the notebook.",
+            "ru": "Пятно зелёное. Оно занимает часть поверхности. Оно слегка движется вместе с водой. Эти наблюдения можно записать."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Not knowing is a beginning",
         "ru": "Не знать — значит начать"
       },
-      "paragraphs": {
-        "en": [
-          "Their leader suggests checking a local nature guide later. Rosie crosses out a sentence claiming that nobody could ever explain the patch. Not having an answer yet does not show that an answer is impossible, or prove that God filled a gap in their knowledge.",
-          "‘If it's something ordinary, won't it be less amazing?’ Michael asks. Gracie looks back at the green patch. ‘I'd still like to know how it grows. Knowing more might help us notice things we missed.’ They decide to keep their question for the nature guide and keep thanking the Creator for a world they can explore."
-        ],
-        "ru": [
-          "Руководитель предлагает позже открыть местный справочник природы. Рози вычёркивает фразу, будто пятно невозможно объяснить. Если мы пока не знаем ответа, это не значит, что ответа нет, и не доказывает вмешательства Бога именно здесь.",
-          "«А если это что-то обычное, разве станет так же интересно?» — спрашивает Майкл. Грейси снова смотрит на зелёное пятно. «Мне всё равно хочется узнать, как оно растёт. Может, тогда заметим то, чего раньше не видели». Они решают сохранить вопрос для справочника и благодарят Творца за мир, который можно изучать."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader suggests checking a local nature guide later.",
+            "ru": "Руководитель предлагает позже открыть местный справочник природы."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie crosses out a sentence claiming nobody could ever explain the patch.",
+            "ru": "Рози вычёркивает фразу, будто пятно невозможно объяснить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Not having an answer yet doesn't show an answer is impossible. It doesn't prove God filled a gap, either.",
+            "ru": "Если мы пока не знаем ответа, это не значит, что ответа нет. И это не доказывает вмешательства Бога именно здесь."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "If it's something ordinary, won't it be less amazing?",
+            "ru": "А если это что-то обычное, разве станет так же интересно?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "I'd still like to know how it grows. Knowing more might help us notice things we missed.",
+            "ru": "Мне всё равно хочется узнать, как оно растёт. Может, тогда заметим то, чего раньше не видели."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They keep their question for the nature guide, and keep thanking the Creator for a world they can explore.",
+            "ru": "Они сохраняют вопрос для справочника и благодарят Творца за мир, который можно изучать."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Two kinds of sentences",
         "ru": "Два вида предложений"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie reads the psalm about the heavens declaring God's glory. This is Scripture teaching them to recognize creation's witness, not a laboratory measurement of the pond. Joseph draws two boxes: what we observed, and what we conclude or believe.",
-          "You help put the number of floating leaves in the first box. ‘We counted those ourselves,’ Joseph says. Then he places the statement about God's glory in the second box because they learned it from Scripture. Both belong in their notebook, but the labels will help them explain where each statement came from."
-        ],
-        "ru": [
-          "Рози читает псалом о небесах, возвещающих славу Бога. Писание учит видеть свидетельство творения; это не лабораторное измерение пруда. Джозеф рисует две рамки: что наблюдаем и какие выводы делаем или во что верим.",
-          "Ты помогаешь записать число плавающих листьев в первую рамку. «Их мы сами посчитали», — говорит Джозеф. А слова о Божьей славе он помещает во вторую рамку, потому что об этом ребята прочитали в Писании. В блокноте есть место для обеих записей, а подписи помогут объяснить, откуда они взялись."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie reads the psalm about the heavens declaring God's glory.",
+            "ru": "Рози читает псалом о небесах, возвещающих славу Бога."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "This is Scripture. It teaches them to recognize creation's witness. It's not a laboratory measurement of the pond.",
+            "ru": "Это Писание. Оно учит видеть свидетельство творения. Это не лабораторное измерение пруда."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph draws two boxes. What we observed. And what we conclude or believe.",
+            "ru": "Джозеф рисует две рамки. Что наблюдаем. И какие выводы делаем или во что верим."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help put the number of floating leaves in the first box.",
+            "ru": "Ты помогаешь записать число плавающих листьев в первую рамку."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "We counted those ourselves.",
+            "ru": "Их мы сами посчитали."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Then he places the statement about God's glory in the second box. They learned it from Scripture, not from counting.",
+            "ru": "А слова о Божьей славе он помещает во вторую рамку, потому что об этом ребята прочитали в Писании, а не посчитали сами."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Care before leaving",
         "ru": "Позаботиться перед уходом"
       },
-      "paragraphs": {
-        "en": [
-          "Before leaving, Michael notices a wrapper beside the path. Their leader checks that it is safe to collect, and the team puts it in the litter bag. No one needs to solve every pond mystery before caring for this small place.",
-          "Joseph's final caption records the green patch without inventing its identity. Beneath it, Gracie writes their question for the nature guide. You leave with a cleaner path, a truthful notebook, and a reason to keep looking carefully rather than pretending the investigation is finished."
-        ],
-        "ru": [
-          "Перед уходом Майкл замечает обёртку у дорожки. Руководитель проверяет, безопасно ли её поднять, и ребята кладут мусор в пакет. Не нужно разгадать все тайны пруда, чтобы позаботиться об этом месте.",
-          "В подписи Джозеф описывает зелёное пятно, не выдумывая названия. Грейси записывает вопрос для справочника. Вы оставляете чистую дорожку и уносите честные записи и желание исследовать дальше, а не притворяться, что всё уже известно."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Before leaving, Michael notices a wrapper beside the path.",
+            "ru": "Перед уходом Майкл замечает обёртку у дорожки."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader checks that it's safe to collect, and the team puts it in the litter bag.",
+            "ru": "Руководитель проверяет, безопасно ли её поднять, и ребята кладут мусор в пакет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Nobody needs to solve every pond mystery before caring for this small place.",
+            "ru": "Не нужно разгадать все тайны пруда, чтобы позаботиться об этом месте."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph's final caption records the green patch, without inventing its name.",
+            "ru": "В подписи Джозеф описывает зелёное пятно, не выдумывая названия."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Beneath it, Gracie writes their question for the nature guide.",
+            "ru": "Грейси записывает вопрос для справочника."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You leave with a cleaner path, and a truthful notebook. And a reason to keep looking carefully. Instead of pretending you already know everything.",
+            "ru": "Вы оставляете чистую дорожку и уносите честные записи. И желание исследовать дальше. А не притворяться, что всё уже известно."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
