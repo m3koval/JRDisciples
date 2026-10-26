@@ -16,68 +16,203 @@
         "en": "Before the crash",
         "ru": "До падения"
       },
-      "paragraphs": {
-        "en": [
-          "Michael wants his bridge to be the center of the explorers' exhibition. Joseph's blue notebook contains a better design, and visitors keep gathering around it. While you arrange labels, Michael quietly moves Joseph's model to a narrow shelf behind a curtain. He tells himself that nobody will miss it.",
-          "Then a cardboard tower falls. Gracie hears the crash and finds Michael holding the broken support. His first thought is not how to repair it, but how to escape blame."
-        ],
-        "ru": [
-          "Майкл хочет, чтобы его мост стал главным на выставке исследователей. В синей тетради Джозефа есть проект получше, и посетители собираются вокруг него. Пока ты расставляешь подписи, Майкл прячет макет Джозефа на узкой полке за занавеской. Он убеждает себя, что никто не заметит.",
-          "Картонная башня падает. Грейси слышит грохот и видит сломанную опору в руках Майкла. Он думает не о ремонте, а о том, как избежать обвинений."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael wants his bridge to be the center of the team's display.",
+            "ru": "Майкл хочет, чтобы его мост стал главным на выставке."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph's notebook has a better design, and visitors keep gathering around it.",
+            "ru": "В тетради Джозефа есть проект получше, и посетители собираются вокруг него."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "While you arrange labels, Michael quietly moves Joseph's model. He hides it on a narrow shelf behind a curtain. He tells himself nobody will miss it.",
+            "ru": "Пока ты расставляешь подписи, Майкл тихо убирает макет Джозефа. Он прячет его на узкой полке за занавеской. Он убеждает себя, что никто не заметит."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Then a cardboard tower falls. Gracie hears the crash and finds Michael holding the broken support.",
+            "ru": "Потом падает картонная башня. Грейси слышит грохот и видит сломанную опору в руках Майкла."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "His first thought isn't how to fix it. It's how to escape blame.",
+            "ru": "Он думает не о ремонте, а о том, как избежать обвинений."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "More than a shelf rule",
         "ru": "Не только правило о полках"
       },
-      "paragraphs": {
-        "en": [
-          "“The shelf was wobbly,” Michael says, pointing at the crooked board. It is true, but Gracie is still waiting to understand why Joseph’s model was behind the curtain in the first place. To help them understand what went wrong, Rosie opens her purple Bible to Genesis 3 with their teacher. They notice distrust, a forbidden choice, hiding, and blame. Sin reaches deeper than accidentally breaking an exhibition rule.",
-          "The teacher explains that sin turns away from God in hearts and actions. Wanting praise became a reason to treat Joseph badly. A loose shelf did not make that choice for Michael."
-        ],
-        "ru": [
-          "— Полка шаталась, — говорит Майкл и показывает на кривую доску. Это правда, но Грейси всё ещё не понимает, зачем макет Джозефа вообще оказался за занавеской. Чтобы разобраться в случившемся, Рози вместе с учителем открывает третью главу Бытия. Они замечают недоверие, запретный выбор, попытку спрятаться и обвинения. Грех глубже случайного нарушения правил выставки.",
-          "Учитель объясняет: грех — это непослушание Богу в сердце и поступках. Желание похвалы стало оправданием плохого отношения к Джозефу. Шаткая полка не выбирала за Майкла."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "The shelf was wobbly.",
+            "ru": "Полка шаталась."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "That's true. But Gracie still wants to know something. Why was Joseph's model behind the curtain in the first place?",
+            "ru": "Это правда. Но Грейси всё ещё хочет понять одно. Зачем макет Джозефа оказался за занавеской?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "To understand what went wrong, Rosie opens her Bible to Genesis 3, with their teacher.",
+            "ru": "Чтобы разобраться, Рози открывает третью главу Бытия вместе с учителем."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They notice distrust. A forbidden choice. Hiding. Blame. Sin reaches deeper than accidentally breaking an exhibition rule.",
+            "ru": "Они замечают недоверие. Запретный выбор. Попытку спрятаться. Обвинения. Грех глубже случайного нарушения правил выставки."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Sin turns away from God, in your heart and in what you do.",
+            "ru": "Грех — это отворачивание от Бога, и в сердце, и в поступках."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Wanting praise became a reason to treat Joseph badly. A loose shelf didn't make that choice for Michael.",
+            "ru": "Желание похвалы стало оправданием плохого отношения к Джозефу. Шаткая полка не выбирала за Майкла."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A truthful first sentence",
         "ru": "Первое честное предложение"
       },
-      "paragraphs": {
-        "en": [
-          "You help Joseph gather the pieces while Michael sits beside the curtain. Romans 3:23 does not let the other explorers divide themselves into perfect children and one hopeless child. Everyone needs God's mercy. Still, everyone's need does not erase Michael's particular responsibility.",
-          "At last Michael sits beside Joseph.",
-          "“I hid your model because everyone was looking at it. I wanted them to notice mine.”",
-          "This time he does not blame the shelf or point to someone else’s mistakes. Joseph is upset, and Michael listens instead of demanding immediate friendliness."
-        ],
-        "ru": [
-          "Ты помогаешь Джозефу собрать обломки, а Майкл сидит у занавески. Римлянам 3:23 не позволяет разделить команду на безупречных детей и одного безнадёжного. Всем нужна Божья милость. Но это не отменяет ответственности Майкла за его поступок.",
-          "Наконец Майкл садится рядом с Джозефом.",
-          "— Я спрятал твой макет, потому что все смотрели на него. Мне хотелось, чтобы заметили мой.",
-          "На этот раз он не обвиняет полку и не вспоминает чужие ошибки. Джозеф расстроен, и Майкл слушает, не требуя немедленной дружбы."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help Joseph gather the pieces, while Michael sits beside the curtain.",
+            "ru": "Ты помогаешь Джозефу собрать обломки, а Майкл сидит у занавески."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Romans 3:23 won't let the other kids split into two groups. Perfect children, and one hopeless one. Everyone needs God's mercy.",
+            "ru": "Римлянам 3:23 не позволяет разделить команду на две группы. Безупречных детей и одного безнадёжного. Всем нужна Божья милость."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Still, everyone needing mercy doesn't erase what Michael himself chose to do.",
+            "ru": "Но это не отменяет того, что сделал сам Майкл."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At last Michael sits beside Joseph.",
+            "ru": "Наконец Майкл садится рядом с Джозефом."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I hid your model because everyone was looking at it. I wanted them to notice mine.",
+            "ru": "Я спрятал твой макет, потому что все смотрели на него. Мне хотелось, чтобы заметили мой."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "This time he doesn't blame the shelf, or point to someone else's mistakes.",
+            "ru": "На этот раз он не обвиняет полку и не вспоминает чужие ошибки."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph is upset. Michael listens, instead of demanding instant friendliness.",
+            "ru": "Джозеф расстроен. Майкл слушает, не требуя немедленной дружбы."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Repair without pretending",
         "ru": "Исправить, не притворяясь"
       },
-      "paragraphs": {
-        "en": [
-          "With adult help, they repair the support and move both models to a sturdy table. Michael gives Joseph credit for the design. Repairing cardboard cannot purchase God's forgiveness, and saying sorry does not make every consequence disappear. It is a concrete response to admitting the wrong.",
-          "At the exhibition, Michael still notices the pull of wanting every compliment. This time he asks God for help and introduces a visitor to Joseph. Their investigation has reached a choice inside his own heart."
-        ],
-        "ru": [
-          "Со взрослым дети чинят опору и ставят оба макета на прочный стол. Майкл честно называет Джозефа автором проекта. Ремонтом нельзя купить Божье прощение, а извинение не отменяет всех последствий. Но признание вины ведёт к настоящему исправлению.",
-          "На выставке Майкл снова хочет забрать всю похвалу себе. На этот раз он просит Бога помочь и знакомит посетителя с Джозефом. Исследование привело к выбору в его собственном сердце."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "With adult help, they repair the support and move both models to a sturdy table.",
+            "ru": "Со взрослым они чинят опору и ставят оба макета на прочный стол."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael gives Joseph credit for the design.",
+            "ru": "Майкл честно называет Джозефа автором проекта."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Fixing cardboard can't buy God's forgiveness. Saying sorry doesn't make every consequence disappear. But admitting the wrong is a real step. A step toward repair.",
+            "ru": "Ремонтом нельзя купить Божье прощение. Извинение не отменяет всех последствий. Но признание вины — настоящий шаг. Шаг к исправлению."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the display, Michael still feels the pull of wanting every compliment.",
+            "ru": "На выставке Майкл всё ещё хочет забрать всю похвалу себе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "This time, he asks God for help, and introduces a visitor to Joseph.",
+            "ru": "На этот раз он просит Бога помочь и знакомит посетителя с Джозефом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their investigation has reached a choice inside his own heart.",
+            "ru": "Исследование привело к выбору в его собственном сердце."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -92,6 +227,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/ROM.3.23.ESV",
       "ru": "https://www.bible.com/bible/167/ROM.3.23.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Sin is just an old word for stuff your culture doesn't like. It's not actually real. It's just whatever people happen to believe.",
+      "ru": "Грех — это просто старое слово для того, что не нравится твоей культуре. Это не по-настоящему реально. Это просто то, во что люди случайно верят."
+    },
+    "response": {
+      "en": "Here's something worth noticing. When people argue, they almost never just say \"I don't like what you did.\" They say \"that's not fair,\" or \"you promised,\" or \"I had it first,\" as if they already expect the other person to agree a real rule got broken. That happens in pretty much every culture in history, even ones that never once talked to each other. If right and wrong were only personal taste, arguing about fairness wouldn't make sense. You'd just have two different favorite flavors. So here's a question back: if everyone keeps appealing to a real standard, even while claiming there isn't one, which is more likely, that there's no right and wrong at all, or that there actually is one, and we're all born already knowing a little bit of it?",
+      "ru": "Вот что стоит заметить. Когда люди спорят, они почти никогда просто говорят «мне не нравится, что ты сделал». Они говорят «это нечестно», или «ты обещал», или «я взял первым», как будто уже ожидают, что собеседник согласится: настоящее правило нарушено. Так происходит почти в каждой культуре в истории, даже в тех, что никогда друг с другом не общались. Если правильное и неправильное — лишь личный вкус, спорить о честности было бы бессмысленно. Это было бы как два разных любимых вкуса мороженого. Вот вопрос в ответ: если все продолжают ссылаться на настоящий стандарт, даже утверждая, что его нет, что вероятнее — что правильного и неправильного вообще не существует, или что оно есть, и мы все рождаемся, уже немного зная его?"
     }
   },
   "activity": {
@@ -158,8 +303,8 @@
     "ru": "Боже, прости мой грех и помоги говорить правду и обращаться к Тебе."
   },
   "adultNote": {
-    "en": "Read Genesis 3 and Romans 3:23 in context. Distinguish deliberate wrongdoing from accidents, disability, unwanted thoughts, and being harmed. Do not require public confession.",
-    "ru": "Прочитайте Бытие 3 и Римлянам 3:23 в контексте. Отличайте намеренный грех от случайности, инвалидности, нежелательных мыслей и пережитого насилия. Не требуйте публичного признания."
+    "en": "Read Genesis 3 and Romans 3:23 in context. Distinguish deliberate wrongdoing from accidents, disability, unwanted thoughts, and being harmed. Do not require public confession. The 'comeback' response follows C.S. Lewis's 'Law of Human Nature' argument in Mere Christianity (Book 1): moral disagreement itself appeals to a shared standard, which is easier to explain if a real moral law exists than if morality is purely cultural preference. This is a philosophical argument for objective morality, not itself a complete doctrine of sin.",
+    "ru": "Прочитайте Бытие 3 и Римлянам 3:23 в контексте. Отличайте намеренный грех от случайности, инвалидности, нежелательных мыслей и пережитого насилия. Не требуйте публичного признания. Ответ в блоке «если кто-то скажет» следует доводу К. С. Льюиса о «законе человеческой природы» из книги «Просто христианство» (часть 1): сам нравственный спор апеллирует к общему стандарту, что легче объяснить существованием настоящего морального закона, чем чисто культурным вкусом. Это философский довод в пользу объективной морали, а не полное учение о грехе."
   },
   "sources": [
     {

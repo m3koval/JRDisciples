@@ -16,64 +16,191 @@
         "en": "Too good to check?",
         "ru": "Слишком красиво для проверки?"
       },
-      "paragraphs": {
-        "en": [
-          "A colorful poster for the team's exhibition arrives from Michael's practice design folder. It claims that God promises a trouble-free day to anyone who smiles. A Bible reference is printed below. Gracie likes the bright colors, but Rosie cannot remember reading that promise.",
-          "You turn the poster over. Michael explains that he invented it for today's source-checking challenge. It is a deliberately false practice claim, not a verse to memorize or share."
-        ],
-        "ru": [
-          "Из папки учебных макетов Майкла появляется яркий плакат для выставки. На нём утверждается: Бог обещает день без неприятностей каждому, кто улыбается. Внизу указан библейский адрес. Грейси нравятся краски, но Рози не помнит такого обещания.",
-          "Ты переворачиваешь плакат. Майкл объясняет: он придумал его для проверки источников. Это намеренно ложное учебное утверждение, а не стих для заучивания или пересылки."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A colorful poster for the team's exhibit comes from Michael's practice design folder.",
+            "ru": "Из папки учебных макетов Майкла появляется яркий плакат для выставки."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "It claims God promises a trouble-free day to anyone who smiles. Below it, there's a Bible reference.",
+            "ru": "На нём утверждается: Бог обещает день без неприятностей каждому, кто улыбается. Внизу указан библейский адрес."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie likes the bright colors. But Rosie can't remember reading that promise anywhere.",
+            "ru": "Грейси нравятся краски. Но Рози не помнит такого обещания."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You turn the poster over.",
+            "ru": "Ты переворачиваешь плакат."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I made this up for today's source-checking challenge. It's a made-up example for practice, not a real verse to share.",
+            "ru": "Я придумал это для сегодняшней проверки источников. Это выдуманный пример для тренировки, не настоящий стих для пересылки."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Follow the reference",
         "ru": "Пойдём по ссылке"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph opens the actual passage instead of searching for another picture that repeats the claim. The passage does not contain the poster's promise. Their teacher asks them to read the surrounding verses too, because even real words can be used in a misleading way.",
-          "‘I knew the words were made up, but I still hoped we could use the picture,’ Michael admits. You help him separate the two: he can keep working on the design without keeping the false promise. Before they make a replacement, Rosie suggests looking at what the Bible says about checking a claim."
-        ],
-        "ru": [
-          "Джозеф открывает сам отрывок, а не ищет картинку с теми же словами. Такого обещания там нет. Учитель просит прочитать и соседние стихи: даже настоящие слова можно использовать так, что смысл исказится.",
-          "«Я знал, что слова придуманные, но всё равно хотел использовать эту картинку», — признаётся Майкл. Ты помогаешь ему разобраться: красивый рисунок можно сохранить, а ложное обещание — убрать. Прежде чем делать новый плакат, Рози предлагает узнать, что Библия говорит о проверке услышанного."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph opens the actual passage. He doesn't search for another picture that just repeats the claim.",
+            "ru": "Джозеф открывает сам отрывок. Он не ищет картинку с теми же словами."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The passage doesn't contain the poster's promise at all.",
+            "ru": "Такого обещания там нет."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Read the verses around it too. Even real words can be used in a misleading way.",
+            "ru": "Прочитайте и соседние стихи. Даже настоящие слова можно использовать так, что смысл исказится."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I knew the words were made up. But I still hoped we could keep the picture.",
+            "ru": "Я знал, что слова придуманные. Но всё равно хотел использовать картинку."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help him separate the two. He can keep working on the design, without keeping the false promise.",
+            "ru": "Ты помогаешь ему разобраться: рисунок можно сохранить, а ложное обещание — убрать."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Before we make a new poster, let's see what the Bible itself says about checking a claim.",
+            "ru": "Прежде чем делать новый плакат, давайте узнаем, что Библия говорит о проверке услышанного."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Hear the other side",
         "ru": "Выслушаем проверку"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie reads the proverb about the first person's case sounding right until it is examined. That does not mean every speaker is lying. It means the first convincing presentation is not the end of an investigation. Joseph adds a checkpoint for translation and context.",
-          "They also remember Berea: listeners examined Scripture instead of relying only on a speaker's confidence. An impressive title, a thousand reposts, or a friendly computer voice cannot replace opening the actual source."
-        ],
-        "ru": [
-          "Рози читает притчу: первый рассказ кажется верным, пока его не проверят. Это не значит, что все лгут. Просто убедительное начало — ещё не конец исследования. Джозеф добавляет проверку перевода и контекста.",
-          "Ребята вспоминают Верию: слушатели исследовали Писание, а не полагались лишь на уверенность говорящего. Громкий заголовок, тысяча пересылок или дружелюбный компьютерный голос не заменят самого источника."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie reads the proverb. The first person's story sounds right, until someone examines it.",
+            "ru": "Рози читает притчу. Первый рассказ кажется верным, пока его не проверят."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "That doesn't mean every speaker is lying. It just means the first convincing version isn't the end of checking it out.",
+            "ru": "Это не значит, что все лгут. Просто убедительное начало — ещё не конец проверки."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph adds a checkpoint for translation and context.",
+            "ru": "Джозеф добавляет проверку перевода и контекста."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They also remember Berea. Those listeners examined Scripture. They didn't rely only on a speaker's confidence.",
+            "ru": "Ребята вспоминают Верию. Те слушатели исследовали Писание. Они не полагались лишь на уверенность говорящего."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A catchy title can't replace that. Neither can a thousand reposts, or a friendly computer voice. Nothing replaces opening the actual source.",
+            "ru": "Громкий заголовок этого не заменит. Тысяча пересылок — тоже. И дружелюбный компьютерный голос — тоже. Ничто не заменит сам источник."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A smaller, truer poster",
         "ru": "Скромнее, зато правдивее"
       },
-      "paragraphs": {
-        "en": [
-          "The team retires the false poster and designs a new invitation to bring questions. Michael labels his own wording as the team's invitation, not God's quotation. Rosie checks the genuine Scripture card separately against the Bible text.",
-          "‘What about the people who saw our first draft?’ Gracie asks. You help the team write a correction without shaming Michael. They turn their work into a detective challenge for visitors: find the source, read it, compare the words, and correct any mistake. This time visitors will be able to check the poster for themselves."
-        ],
-        "ru": [
-          "Команда убирает ложный плакат и делает приглашение задавать вопросы. Майкл подписывает свои слова как приглашение команды, а не цитату Бога. Рози отдельно сверяет настоящую библейскую карточку с текстом.",
-          "«А как же те, кто уже видел первый вариант?» — спрашивает Грейси. Ты помогаешь команде написать исправление, не высмеивая Майкла. Из этой работы получается задание для посетителей: найти источник, прочитать, сравнить слова и исправить ошибку. Теперь посетители смогут сами проверить плакат."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team retires the false poster and designs a new invitation to bring questions.",
+            "ru": "Команда убирает ложный плакат и делает приглашение задавать вопросы."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael labels his own wording as the team's invitation, not God's quotation.",
+            "ru": "Майкл подписывает свои слова как приглашение команды, а не цитату Бога."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie checks the real Scripture card separately, against the Bible text.",
+            "ru": "Рози отдельно сверяет настоящую библейскую карточку с текстом."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "What about the people who already saw our first draft?",
+            "ru": "А как же те, кто уже видел первый вариант?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help the team write a correction, without shaming Michael.",
+            "ru": "Ты помогаешь команде написать исправление, не высмеивая Майкла."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their work becomes a detective challenge for visitors. Find the source. Read it. Compare the words. Fix any mistake. This time, visitors can check the poster for themselves.",
+            "ru": "Из этой работы получается задание для посетителей. Найти источник. Прочитать. Сравнить слова. Исправить ошибку. Теперь посетители смогут сами проверить плакат."
+          }
+        }
+      ]
     }
   ],
   "scripture": {

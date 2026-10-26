@@ -16,68 +16,207 @@
         "en": "The cards that will not separate",
         "ru": "Карточки, которые не разделить"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie lays passage cards across the library table after the history display is finished. One describes Jesus being hungry; another describes his authority over a storm. “Let’s make two folders: ordinary Jesus and powerful Jesus,” Michael suggests.",
-          "Gracie looks at the cards.",
-          "“But aren’t both stories about the same Jesus?”",
-          "You hold the empty folders while their teacher asks the team to read before sorting. The puzzle is not how to invent a new Jesus who fits their boxes, but how to listen to what Scripture says."
-        ],
-        "ru": [
-          "После исторической выставки Рози раскладывает на библиотечном столе карточки с отрывками. В одном Иисус голоден, в другом проявляет власть над бурей. «Давайте сделаем две папки: обычный Иисус и могущественный Иисус», — предлагает Майкл.",
-          "Грейси рассматривает карточки.",
-          "— Но ведь в обоих рассказах один и тот же Иисус?",
-          "Ты держишь пустые папки, а учитель предлагает сначала прочитать. Задача — не придумать Иисуса под свои коробочки, а услышать, что говорит Писание."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "After the history display is done, Rosie lays passage cards across the table.",
+            "ru": "После исторической выставки Рози раскладывает на столе карточки с отрывками."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "One card describes Jesus being hungry. Another describes his power over a storm.",
+            "ru": "На одной карточке Иисус голоден. На другой — Он проявляет власть над бурей."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Let's make two folders. One for ordinary Jesus. One for powerful Jesus.",
+            "ru": "Давайте сделаем две папки. Одну — для обычного Иисуса. Другую — для могущественного Иисуса."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "But aren't both stories about the same Jesus?",
+            "ru": "Но ведь в обоих рассказах один и тот же Иисус?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You hold the empty folders. Their teacher asks them to read first, before sorting anything.",
+            "ru": "Ты держишь пустые папки. Учитель просит сначала прочитать, а потом уже раскладывать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The real puzzle isn't how to invent a Jesus who fits their folders. It's how to listen to what Scripture actually says.",
+            "ru": "Настоящая загадка не в том, как придумать Иисуса под свои папки. А в том, как услышать, что говорит само Писание."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Really human",
         "ru": "По-настоящему человек"
       },
-      "paragraphs": {
-        "en": [
-          "They read that Jesus became hungry after fasting in Matthew 4. His hunger was real, not a performance or a trick for an audience. John 1 says the Word became flesh. Christians confess that the Son truly became human, with a real human life, not merely a human appearance.",
-          "Joseph remembers days when tiredness makes everything difficult. Jesus' humanity means that human weakness is not something distant and strange to him. Yet being tired or hungry is not itself sin, and Jesus did not need to sin to be human."
-        ],
-        "ru": [
-          "Они читают в Матфея 4, что после поста Иисус проголодался. Он действительно испытывал голод, а не притворялся ради зрителей. Иоанна 1 говорит: Слово стало плотью. Христиане исповедуют, что Сын действительно стал человеком и жил человеческой жизнью, а не только выглядел человеком.",
-          "Джозеф вспоминает дни, когда от усталости всё трудно. Человеческая слабость не чужда Иисусу. Но усталость и голод сами по себе не грех; чтобы быть человеком, Иисусу не нужно было грешить."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read Matthew chapter 4. Jesus gets hungry after fasting.",
+            "ru": "Они читают 4 главу Матфея. После поста Иисус проголодался."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "His hunger was real. It wasn't a performance for an audience.",
+            "ru": "Его голод был настоящим. Это не было представлением для зрителей."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "John chapter 1 says the Word became flesh. Christians believe the Son truly became human. He had a real human life. Not just a human disguise.",
+            "ru": "1 глава Иоанна говорит: Слово стало плотью. Христиане верят, что Сын действительно стал человеком. У Него была настоящая человеческая жизнь. А не просто человеческий вид."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "I know what that tiredness feels like, when everything gets hard.",
+            "ru": "Я знаю, какая это усталость, когда всё становится трудным."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Jesus's humanity means human weakness isn't distant or strange to him.",
+            "ru": "Человеческая слабость Иисуса не чужда и не странна для Него."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "But being tired or hungry isn't sin. Jesus didn't need to sin to be truly human.",
+            "ru": "Но усталость и голод — не грех. Иисусу не нужно было грешить, чтобы быть настоящим человеком."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Not less than God",
         "ru": "Не переставший быть Богом"
       },
-      "paragraphs": {
-        "en": [
-          "Next they read Mark 4, where Jesus commands the wind and sea. The disciples' question about him matters more than the team's excitement about unusual weather. Colossians 2:9 speaks of the fullness of deity dwelling bodily in Christ. Becoming human did not mean that the Son stopped being God.",
-          "Michael takes back the two folders. They are not collecting evidence for two separate characters or a half-God, half-human mixture. The Christian confession is one person, Jesus Christ, truly God and truly human."
-        ],
-        "ru": [
-          "Затем они читают Марка 4: Иисус повелевает ветру и морю. Вопрос учеников о Нём важнее восторга команды перед необычной погодой. Колоссянам 2:9 говорит о полноте Божества, пребывающей во Христе телесно. Став человеком, Сын не перестал быть Богом.",
-          "Майкл убирает две папки. Они изучают не двух персонажей и не смесь наполовину Бога и наполовину человека. Христианское исповедание говорит об одной личности — Иисусе Христе, истинном Боге и истинном человеке."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Next they read Mark chapter 4, where Jesus commands the wind and the sea.",
+            "ru": "Затем они читают 4 главу Марка, где Иисус повелевает ветру и морю."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "The disciples' real question matters more than how strange the weather was.",
+            "ru": "Настоящий вопрос учеников важнее того, какой странной была погода."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Colossians 2:9 says the full fullness of God lives in Christ, bodily. Becoming human didn't mean the Son stopped being God.",
+            "ru": "Колоссянам 2:9 говорит, что вся полнота Бога обитает во Христе телесно. Став человеком, Сын не перестал быть Богом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael takes back both folders.",
+            "ru": "Майкл забирает обе папки обратно."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "We're not collecting clues about two different people. Or some half-God, half-human mix.",
+            "ru": "Мы не собираем подсказки о двух разных людях. И не о смеси наполовину Бога, наполовину человека."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The Christian belief is one person, Jesus Christ: truly God, and truly human.",
+            "ru": "Христианская вера говорит об одной личности — Иисусе Христе: истинном Боге и истинном человеке."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "One Lord to trust",
         "ru": "Один Господь, Которому доверяем"
       },
-      "paragraphs": {
-        "en": [
-          "You place both cards beneath one heading bearing Jesus' name. “I still don’t understand how all of that fits together,” Gracie admits. Their teacher welcomes the question. They can keep learning without dividing Jesus into two people or changing what the passages teach about him.",
-          "As they pack the display, Joseph asks for help carrying a heavy box instead of hiding his tiredness. Rosie suggests bringing their weaknesses to Jesus in prayer. They can trust his divine authority without imagining that he is unable to understand human life."
-        ],
-        "ru": [
-          "Ты кладёшь обе карточки под одним заголовком с именем Иисуса. «Я всё ещё не понимаю до конца, как это соединяется», — признаётся Грейси. Учитель рад, что она спрашивает. Можно продолжать учиться, не разделяя Иисуса на двух людей и не меняя того, что о Нём говорит Писание.",
-          "Убирая выставку, Джозеф просит помочь с тяжёлой коробкой, а не скрывает усталость. Рози предлагает приносить свои слабости Иисусу в молитве. Можно доверять Его божественной власти, не считая Его чуждым человеческой жизни."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You place both cards under one heading, with Jesus's name on it.",
+            "ru": "Ты кладёшь обе карточки под одним заголовком с именем Иисуса."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "I still don't fully understand how all that fits together.",
+            "ru": "Я всё ещё не до конца понимаю, как это соединяется."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher welcomes the question. You can keep learning, without splitting Jesus into two people, and without changing what the passages actually teach.",
+            "ru": "Учитель рад такому вопросу. Можно продолжать учиться, не разделяя Иисуса на двух людей и не меняя того, что на самом деле говорят отрывки."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "As they pack up, Joseph asks for help carrying a heavy box, instead of hiding how tired he is.",
+            "ru": "Убирая выставку, Джозеф просит помочь с тяжёлой коробкой, вместо того чтобы скрывать усталость."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Bring your weak moments to Jesus in prayer, too.",
+            "ru": "Приноси свои слабые моменты Иисусу в молитве, тоже."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They can trust his power as God, without imagining he can't understand human life.",
+            "ru": "Они могут доверять Его силе как Бога, не считая, что Он не может понять человеческую жизнь."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -92,6 +231,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/COL.2.9.ESV",
       "ru": "https://www.bible.com/bible/167/COL.2.9.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Something can't be fully God and fully human at the same time. That's a contradiction, like calling one shape a full circle and a full square.",
+      "ru": "Что-то не может быть полностью Богом и полностью человеком одновременно. Это противоречие — как назвать одну фигуру и полным кругом, и полным квадратом."
+    },
+    "response": {
+      "en": "That would be a contradiction if \"God\" and \"human\" worked like a circle and a square, where having one shape rules out the other. But Christians aren't saying Jesus is half of each, or switching back and forth between them. They're saying one person has two complete, real natures that were never meant to cancel each other out, the way you have both a body and a mind, fully you, without being two different people. Nobody explains it perfectly with one tidy picture, including that one. But \"I can't picture exactly how\" is different from \"it must be false.\" So here's a question back: if the Gospels show someone who got hungry and tired like any real human, and also commanded a storm like nothing merely human ever could, which takes the actual evidence seriously, squeezing him into only one category, or believing both accounts?",
+      "ru": "Это было бы противоречием, если бы «Бог» и «человек» были как круг и квадрат, где одна форма исключает другую. Но христиане не говорят, что Иисус — наполовину то, наполовину это, или что Он переключается между ними. Они говорят, что одна личность обладает двумя полными, настоящими природами, которые не должны отменять друг друга — так же, как у тебя есть и тело, и разум, и весь ты — это ты, а не два разных человека. Никто не объясняет это идеально одной простой картинкой, включая эту. Но «я не могу представить точно, как» — это не то же самое, что «значит, это неправда». Вот вопрос в ответ: если Евангелия показывают Того, Кто проголодался и устал, как любой настоящий человек, и Кто повелел буре, как никто обычный не мог бы, что серьёзнее относится к самим свидетельствам — вмещать Его только в одну категорию или верить обоим рассказам?"
     }
   },
   "activity": {
@@ -150,8 +299,8 @@
     "ru": "Господи Иисусе, истинный Бог и истинный человек, помоги доверять Тебе и честно приносить Тебе свои слабости."
   },
   "adultNote": {
-    "en": "Teach the incarnation without dividing Christ into two persons, blending his natures, or treating humanity as a disguise. Hunger alone does not establish every claim about Christ; read the passages together with John 1 and Colossians 2. No object analogy explains the union exhaustively.",
-    "ru": "Объясняйте воплощение, не разделяя Христа на две личности, не смешивая природы и не превращая человеческую природу в маску. Один голод не доказывает всех утверждений о Христе; читайте отрывки вместе с Иоанна 1 и Колоссянам 2. Никакое предметное сравнение полностью не объясняет это соединение."
+    "en": "Teach the incarnation without dividing Christ into two persons, blending his natures, or treating humanity as a disguise. Hunger alone does not establish every claim about Christ; read the passages together with John 1 and Colossians 2. No object analogy explains the union exhaustively. The 'comeback' response follows the Chalcedonian formula (two complete natures, one person, 'without confusion, without change, without division, without separation') and the common child-facing move of comparing it to a single person having both a body and a mind; like any analogy for the hypostatic union, it is illustrative, not exhaustive, and theologians caution against pressing it too far (it should not suggest two separable 'parts').",
+    "ru": "Объясняйте воплощение, не разделяя Христа на две личности, не смешивая природы и не превращая человеческую природу в маску. Один голод не доказывает всех утверждений о Христе; читайте отрывки вместе с Иоанна 1 и Колоссянам 2. Никакое предметное сравнение полностью не объясняет это соединение. Ответ в блоке «если кто-то скажет» следует Халкидонской формуле (две полные природы, одна личность, «неслитно, непреложно, неразделимо, неразлучно») и распространённому для детей сравнению с человеком, у которого есть и тело, и разум; как и любая аналогия для ипостасного соединения, она иллюстративна, а не исчерпывающа, и богословы предупреждают не доводить её до предположения о двух разделимых «частях»."
   },
   "sources": [
     {

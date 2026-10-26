@@ -16,64 +16,190 @@
         "en": "A roof on the floor",
         "ru": "Крыша на полу"
       },
-      "paragraphs": {
-        "en": [
-          "Michael's cardboard shelter looks splendid until its roof slides onto the floor. The explorers are building a reading corner, and everyone has offered advice. Gracie finds the kit instructions beneath a cushion. You help rescue the fallen roof while Joseph checks which advice actually came from its designer.",
-          "As they look over the instructions, Rosie glances at her Bible. ‘We want to listen to the person who designed this shelter,’ she says. ‘But why do we listen to the Bible? What makes it different from all the other advice we hear?’ Their teacher joins them to explore her question."
-        ],
-        "ru": [
-          "Картонный домик Майкла прекрасен — пока крыша не падает на пол. Исследователи строят уголок для чтения, и каждый даёт советы. Грейси находит инструкцию под подушкой. Ты спасаешь крышу, а Джозеф проверяет, какие советы дал изготовитель.",
-          "Пока ребята рассматривают инструкцию, Рози смотрит на свою Библию. «Мы хотим послушать того, кто придумал этот домик, — говорит она. — А почему мы слушаем Библию? Чем она отличается от других советов?» Учитель присоединяется к ребятам, чтобы вместе разобраться в её вопросе."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael's cardboard shelter looks splendid. Then its roof slides onto the floor.",
+            "ru": "Картонный домик Майкла прекрасен. Потом крыша падает на пол."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team is building a reading corner, and everyone has offered advice. Gracie finds the kit instructions beneath a cushion.",
+            "ru": "Ребята строят уголок для чтения, и каждый даёт советы. Грейси находит инструкцию под подушкой."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help rescue the fallen roof. Joseph checks which advice actually came from its designer.",
+            "ru": "Ты спасаешь упавшую крышу. Джозеф проверяет, какие советы дал настоящий изготовитель."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "We want to listen to the person who designed this shelter. But why do we listen to the Bible? What makes it different from all the other advice we hear?",
+            "ru": "Мы хотим послушать того, кто придумал этот домик. А почему мы слушаем Библию? Чем она отличается от других советов?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher joins them to explore her question.",
+            "ru": "Учитель присоединяется к ним, чтобы вместе разобраться в её вопросе."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "More than old paper",
         "ru": "Не просто старая бумага"
       },
-      "paragraphs": {
-        "en": [
-          "Their teacher opens Paul's second letter to Timothy. Paul describes Scripture as breathed out by God and useful for teaching and correction. Christians understand this as inspiration: God speaks through human writers, not merely through ancient paper that has survived.",
-          "Joseph asks why that matters for their listening. If God is speaking, his word can correct even their favorite ideas. The passage also points Timothy toward salvation through faith in Jesus. They listen to Scripture to know and follow their Savior, not simply because its pages are old."
-        ],
-        "ru": [
-          "Учитель открывает второе послание Павла к Тимофею. Павел говорит, что Писание богодухновенно и полезно для обучения и исправления. Бог говорит через людей, записавших Его слово; дело не просто в древней сохранившейся бумаге.",
-          "Джозеф спрашивает, почему это важно. Если говорит Бог, Его слово может исправлять даже любимые идеи ребят. Отрывок также указывает Тимофею на спасение через веру в Иисуса. Писание слушают, чтобы узнать Спасителя и следовать за Ним, а не просто из-за древности страниц."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher opens Paul's second letter to Timothy.",
+            "ru": "Учитель открывает второе послание Павла к Тимофею."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Paul describes Scripture as breathed out by God. He says it's useful for teaching and correction.",
+            "ru": "Павел говорит, что Писание богодухновенно. И полезно для обучения и исправления."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Christians call this inspiration. God speaks through human writers. It's not just old paper that happened to survive.",
+            "ru": "Христиане называют это богодухновенностью. Бог говорит через людей. Это не просто древняя бумага, которая случайно сохранилась."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Why does that matter for how we listen?",
+            "ru": "А почему это важно для того, как мы слушаем?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "If God is speaking, his word can correct even their favorite ideas.",
+            "ru": "Если говорит Бог, Его слово может исправлять даже любимые идеи ребят."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The passage also points Timothy toward trusting Jesus. They listen to Scripture to know their Savior. Not just because its pages are old.",
+            "ru": "Отрывок также указывает Тимофею на веру в Иисуса. Писание слушают, чтобы узнать Спасителя. А не просто из-за древности страниц."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Read around the sentence",
         "ru": "Прочти соседние строки"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie wants to choose one sentence and stick it over the new doorway. Rosie suggests reading the surrounding passage first. Timothy had learned the sacred writings, which point toward salvation through faith in Christ Jesus. Scripture is not a box of magical slogans for getting whatever the team wants.",
-          "You help them ask who is writing, to whom, and why. Michael realizes that correction belongs in the passage too, even when he dislikes admitting a mistake."
-        ],
-        "ru": [
-          "Грейси хочет выбрать одно предложение и прикрепить над входом. Рози предлагает сначала прочитать весь отрывок. Тимофей знал священные писания, указывающие на спасение через веру во Христа Иисуса. Библия — не коробка волшебных лозунгов для исполнения желаний.",
-          "Ты помогаешь спросить: кто пишет, кому и зачем? Майкл замечает, что в отрывке говорится и об исправлении, хотя признавать ошибки неприятно."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie wants to pick one sentence and stick it over the new doorway.",
+            "ru": "Грейси хочет выбрать одно предложение и прикрепить над входом."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Let's read the whole passage around it first.",
+            "ru": "Давайте сначала прочитаем весь отрывок вокруг него."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Timothy had learned the sacred writings. They point toward trusting Jesus. The Bible isn't a box of magic slogans. It doesn't just hand you whatever you want.",
+            "ru": "Тимофей знал священные писания. Они указывают на веру в Иисуса. Библия — не коробка волшебных лозунгов. Она не исполняет любые желания."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help them ask who is writing, to whom, and why.",
+            "ru": "Ты помогаешь спросить: кто пишет, кому и зачем?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael notices something. Correction belongs in the passage too. Even when he dislikes admitting a mistake.",
+            "ru": "Майкл замечает кое-что. В отрывке говорится и об исправлении. Даже если признавать ошибки неприятно."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A corner for listening",
         "ru": "Уголок для слушания"
       },
-      "paragraphs": {
-        "en": [
-          "The shelter finally stands after the children follow the kit's instructions. They do not announce that a cardboard roof proves the Bible true. It simply helped them notice that listening matters. Rosie places her purple Bible on a low shelf where everyone can reach it.",
-          "After their first reading, Michael turns to Gracie. ‘I'm sorry I didn't listen when you warned me about the roof.’ She accepts his apology, and they settle into the corner together. Michael is beginning to see that listening means more than hearing the words: sometimes it means admitting a mistake and making things right."
-        ],
-        "ru": [
-          "Домик наконец стоит: дети последовали инструкции. Они не объявляют, будто картонная крыша доказала истинность Библии. Она лишь помогла заметить, как важно слушать. Рози ставит фиолетовую Библию на доступную всем полку.",
-          "После первого чтения Майкл поворачивается к Грейси. «Прости, что я не послушал тебя, когда ты предупредила про крышу». Она принимает его извинение, и они вместе устраиваются в уголке. Майкл начинает понимать: мало просто услышать слова. Иногда нужно признать свою ошибку и исправить её."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The shelter finally stands, after the children follow the kit's real instructions.",
+            "ru": "Домик наконец стоит — после того как дети последовали настоящей инструкции."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They don't claim that a cardboard roof proves the Bible true. It just helped them notice how much listening matters.",
+            "ru": "Они не объявляют, будто картонная крыша доказала истинность Библии. Она лишь помогла заметить, как важно слушать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie places her Bible on a low shelf, where everyone can reach it.",
+            "ru": "Рози ставит свою Библию на доступную всем полку."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I'm sorry I didn't listen when you warned me about the roof.",
+            "ru": "Прости, что я не послушал тебя, когда ты предупредила про крышу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie accepts his apology. They settle into the corner together.",
+            "ru": "Грейси принимает его извинение. Они вместе устраиваются в уголке."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael is starting to see something. Listening means more than just hearing words. Sometimes it means admitting a mistake, and making things right.",
+            "ru": "Майкл начинает понимать кое-что. Мало просто услышать слова. Иногда нужно признать свою ошибку и исправить её."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +214,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/2TI.3.16.ESV",
       "ru": "https://www.bible.com/bible/167/2TI.3.16.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "The Bible says it's God's word, but that's circular. Of course a book would claim to be trustworthy. That doesn't actually prove anything.",
+      "ru": "Библия сама говорит, что она Божье слово, но это замкнутый круг. Конечно, любая книга может заявить, что ей можно доверять. Это ничего не доказывает."
+    },
+    "response": {
+      "en": "That's a fair catch, and good Bible teachers actually agree with half of it. A book calling itself true doesn't prove it's true, any more than a stranger's own claim to be trustworthy proves they are. But Christians don't rest their trust on that one claim alone. It also comes from how carefully it was copied over the centuries, good historical reasons to think Jesus really lived and really rose from the dead, and watching its teaching prove wise and true to life, generation after generation. So here's a question back: if someone only had the Bible's own claim about itself, would that be weak evidence on its own? Probably. But is that actually the only reason anyone trusts it? I don't think so, and that's worth checking for yourself before deciding either way.",
+      "ru": "Это справедливое замечание, и хорошие учители Библии наполовину согласны с ним. То, что книга называет себя истинной, не доказывает, что она истинна — так же, как заявление незнакомца о собственной надёжности само его не доказывает. Но христиане не основывают доверие только на этом одном утверждении. Оно опирается и на то, как бережно Библию переписывали веками, и на хорошие исторические основания верить, что Иисус действительно жил и действительно воскрес, и на то, как её учение раз за разом оказывается мудрым и верным жизни. Вот вопрос в ответ: если бы у кого-то было только собственное заявление Библии о себе, было бы это слабым доказательством само по себе? Пожалуй. Но правда ли это единственная причина, по которой ей доверяют? Я так не думаю — и это стоит проверить самому, прежде чем решать."
     }
   },
   "activity": {
@@ -154,8 +290,8 @@
     "ru": "Боже, учи и исправляй меня через Твоё слово."
   },
   "adultNote": {
-    "en": "The construction kit is an illustration of listening, not an argument proving inspiration. Distinguish the doctrine of inspiration from manuscript survival.",
-    "ru": "Конструктор иллюстрирует внимание к советам, а не доказывает богодухновенность. Отличайте учение о богодухновенности от сохранности рукописей."
+    "en": "The construction kit is an illustration of listening, not an argument proving inspiration. Distinguish the doctrine of inspiration from manuscript survival. The 'comeback' response is deliberately modest: it concedes the circularity objection has a real point, then points to the kinds of independent evidence this curriculum develops elsewhere (lessons 6, 25, and 29 on manuscripts, Jesus's historicity, and the resurrection) rather than overclaiming that the Bible's self-testimony alone settles the question.",
+    "ru": "Конструктор иллюстрирует внимание к советам, а не доказывает богодухновенность. Отличайте учение о богодухновенности от сохранности рукописей. Ответ в блоке «если кто-то скажет» намеренно сдержан: он признаёт, что в замечании о замкнутом круге есть доля правды, и указывает на независимые свидетельства, которые курс разбирает в других уроках (6, 25 и 29 — о рукописях, историчности Иисуса и воскресении), а не утверждает, что одно лишь самосвидетельство Библии решает вопрос."
   },
   "sources": [
     {

@@ -16,66 +16,190 @@
         "en": "Five hundred envelopes?",
         "ru": "Пятьсот конвертов?"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph arrives at the reading room carrying a box of empty envelopes. He plans a resurrection display with an envelope for every witness mentioned by Paul. Rosie looks into the box.",
-          "“What would we put in each envelope?” she asks. They have Paul’s report, but not a separate surviving statement from every person he mentions. Joseph realizes that his display needs to make that difference clear.",
-          "You help clear a space on the table. They keep one large card for Paul’s report and open 1 Corinthians 15:3–8. An honest investigation begins by describing the evidence they actually have."
-        ],
-        "ru": [
-          "Джозеф приносит в читальный зал пустые конверты: по одному для каждого свидетеля, упомянутого Павлом. Рози заглядывает в коробку.",
-          "— А что мы положим в каждый конверт? — спрашивает она. У них есть сообщение Павла, но не отдельное сохранившееся свидетельство каждого упомянутого человека. Джозеф понимает: на выставке эту разницу нужно объяснить.",
-          "Ты освобождаешь место на столе. Команда оставляет большую карточку для сообщения Павла и открывает 1 Коринфянам 15:3–8. Честное исследование начинается с того, какие свидетельства действительно есть."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph arrives at the reading room with a box of empty envelopes. He wants one envelope for every witness Paul mentions.",
+            "ru": "Джозеф приходит в читальный зал с коробкой пустых конвертов. Он хочет сделать конверт для каждого свидетеля, которого называет Павел."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "What would we put in each envelope?",
+            "ru": "А что мы положим в каждый конверт?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They have Paul's own report. But they don't have a surviving statement from every person he names. Not a separate one for each.",
+            "ru": "У них есть само сообщение Павла. Но у них нет сохранившегося свидетельства каждого названного человека. Не отдельного — для каждого из них."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph realizes his display needs to make that difference clear.",
+            "ru": "Джозеф понимает: на выставке эту разницу нужно показать ясно."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help clear a space on the table. They keep one big card for Paul's report, and open 1 Corinthians chapter 15.",
+            "ru": "Ты освобождаешь место на столе. Они оставляют одну большую карточку для сообщения Павла и открывают 1 Коринфянам 15."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "An honest investigation starts with the evidence they actually have.",
+            "ru": "Честное исследование начинается с тех свидетельств, которые у них действительно есть."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Listen to the report",
         "ru": "Прислушайся к сообщению"
       },
-      "paragraphs": {
-        "en": [
-          "Paul passes on the message that Christ died for sins, was buried, was raised, and appeared to people. His letter comes from the middle of the first century. He names Cephas and James, reports a group appearance, and says Jesus appeared to him too. Reading through verse 9, Gracie notices that Paul had once persecuted the church. This is not just someone wishing a beloved teacher were still alive.",
-          "Next they read Luke 24:1–12: women find the tomb empty, and the disciples initially struggle to believe their report. Michael compares two explanations. Warm memories alone would not explain these claims about an empty tomb and encounters with Jesus alive. Christians believe God really raised Jesus because that brings these accounts together. The team has a reason to consider, not only a list to memorize."
-        ],
-        "ru": [
-          "Павел передаёт весть: Христос умер за грехи, был погребён, воскрес и являлся людям. Письмо написано в середине первого века. Павел называет Кифу и Иакова, сообщает о явлении группе людей и о встрече с Иисусом, которую пережил сам. Дочитав до девятого стиха, Грейси замечает: прежде Павел преследовал церковь. Это не просто желание ученика вернуть любимого учителя.",
-          "Затем они читают Луки 24:1–12: женщины находят гробницу пустой, а ученики сначала не верят их рассказу. Майкл сравнивает два объяснения. Одни добрые воспоминания не объясняют сообщений о пустой гробнице и встречах с живым Иисусом. Христиане верят, что Бог действительно воскресил Его: это объяснение соединяет прочитанные свидетельства. У команды появился довод для размышления, а не только список для заучивания."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Paul passes on a message: Christ died for sins, was buried, was raised, and appeared to people.",
+            "ru": "Павел передаёт весть: Христос умер за грехи, был погребён, воскрес и являлся людям."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "His letter comes from the middle of the first century. He names Peter and James. He reports a group seeing Jesus. He says Jesus appeared to him too.",
+            "ru": "Его письмо написано в середине первого века. Он называет Петра и Иакова. Он сообщает о явлении целой группе. Он говорит, что Иисус явился и ему самому."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Wait — Paul used to attack the church. This isn't just someone wishing their favorite teacher were still alive.",
+            "ru": "Подождите — Павел раньше преследовал церковь. Это не просто желание, чтобы любимый учитель был жив."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Next they read Luke chapter 24. Women find the tomb empty. The disciples don't believe them at first.",
+            "ru": "Затем они читают 24 главу Луки. Женщины находят гробницу пустой. Ученики сначала им не верят."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Warm memories alone wouldn't explain an empty tomb and people meeting Jesus alive.",
+            "ru": "Одни тёплые воспоминания не объяснили бы пустую гробницу и встречи с живым Иисусом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Christians believe God really raised Jesus. That one answer brings all these reports together. The team has a reason to think about, not just a list to memorize.",
+            "ru": "Христиане верят, что Бог действительно воскресил Иисуса. Этот один ответ соединяет все эти сообщения вместе. У команды появился довод для размышления, а не просто список для заучивания."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A copy is not the event",
         "ru": "Копия — не само событие"
       },
-      "paragraphs": {
-        "en": [
-          "On the university library site, Gracie studies a photograph of a P46 leaf. Its record concerns part of Ephesians, not their Corinthians passage. This is a later manuscript witness to copying Paul’s letters, not Paul’s original page and certainly not a photograph of Easter morning.",
-          "Joseph makes three distinct labels: reported event, letter composed, surviving copy made. The library gives a range of possible dates for the copy, so Joseph writes down that range. Choosing one exact year would make his label look tidy, but it would claim more than the record tells him."
-        ],
-        "ru": [
-          "На сайте университетской библиотеки Грейси рассматривает лист P46. Он содержит часть Послания к Ефесянам, а не выбранный отрывок из Первого послания к Коринфянам. Это позднейшая рукописная копия послания, не оригинал Павла и тем более не снимок пасхального утра.",
-          "Джозеф разделяет три понятия: событие, создание письма, изготовление сохранившейся копии. Библиотека указывает примерный промежуток времени, когда могла появиться копия, и Джозеф записывает его. Один точный год выглядел бы аккуратнее, но в описании нет основания его выбирать."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "On the university library's website, Gracie studies a photo of an old papyrus leaf.",
+            "ru": "На сайте университетской библиотеки Грейси рассматривает фото старого папирусного листа."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "It's part of a different letter. It's not the one they're reading. This is a later copy. Someone made it by copying Paul's letters. It's not Paul's own page. And it's definitely not a photo of Easter morning.",
+            "ru": "Это часть другого письма. Не того отрывка, который они читают. Это более поздняя копия. Её сделал тот, кто переписывал письма Павла. Это не страница самого Павла. И тем более не снимок пасхального утра."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph writes three separate labels: the event itself, when the letter was written, and when the copy was made.",
+            "ru": "Джозеф пишет три отдельные подписи: само событие, время написания письма и время изготовления копии."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The library gives a range of years for the copy. Joseph writes down that whole range. Picking one exact year would look tidier. But it would claim more than the record says.",
+            "ru": "Библиотека указывает диапазон возможных лет для копии. Джозеф записывает весь этот диапазон. Один точный год выглядел бы аккуратнее. Но это утверждало бы больше, чем говорит сама запись."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Hope without inflated claims",
         "ru": "Надежда без преувеличений"
       },
-      "paragraphs": {
-        "en": [
-          "Their display now has a clear answer: Christians trust that Jesus rose bodily, not only in his friends' memories. Paul's early letter, his own claimed encounter, and the Gospel account of the empty tomb give reasons for that trust. They still welcome questions about how reliable these accounts are and how other explanations compare. Faith can listen closely instead of inflating the evidence.",
-          "You place the last card beside the open Bible. Gracie writes that death is not the final ruler for those who belong to Christ. As they put the unused envelopes away, Joseph knows what he wants visitors to take home: reasons to consider Jesus’ resurrection and the hope it brings, rather than a misleading impression of their evidence."
-        ],
-        "ru": [
-          "Теперь на выставке есть ясный ответ: христиане верят в телесное воскресение Иисуса, а не только в память друзей о Нём. Раннее письмо Павла, его сообщение о личной встрече и евангельский рассказ о пустой гробнице дают основания для доверия. Команда готова обсуждать надёжность этих рассказов и другие объяснения. Вера может внимательно слушать, не преувеличивая свидетельств.",
-          "Ты кладёшь последнюю карточку рядом с Библией. Грейси пишет, что для принадлежащих Христу последнее слово не за смертью. Убирая ненужные конверты, Джозеф понимает, что хочет передать посетителям: основания верить в воскресение Иисуса и надежду, которую оно даёт, а не преувеличенное представление об их свидетельствах."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their display now has a clear answer. Christians trust that Jesus rose bodily, not just in his friends' memories.",
+            "ru": "Теперь на выставке есть ясный ответ. Христиане верят, что Иисус воскрес телесно — не только в памяти Его друзей."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Paul's early letter gives one reason for that trust. His own claimed meeting with Jesus gives another. So does the Gospel account of the empty tomb.",
+            "ru": "Раннее письмо Павла даёт одно основание для этого доверия. Его собственная встреча с Иисусом — другое. А ещё одно даёт евангельский рассказ о пустой гробнице."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They still welcome questions. How reliable are these accounts? How do other explanations compare? Faith can listen closely, instead of stretching the evidence.",
+            "ru": "Команда готова обсуждать вопросы. Насколько надёжны эти рассказы? Как сравнить другие объяснения? Вера может внимательно слушать, а не раздувать свидетельства."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You place the last card beside the open Bible.",
+            "ru": "Ты кладёшь последнюю карточку рядом с открытой Библией."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Death doesn't get the final word for anyone who belongs to Jesus.",
+            "ru": "Смерть не имеет последнего слова для тех, кто принадлежит Иисусу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "As they put the extra envelopes away, Joseph knows what he wants visitors to take home. Real reasons to think about the resurrection. Not a picture that claims too much.",
+            "ru": "Убирая лишние конверты, Джозеф понимает, что хочет передать посетителям. Настоящие причины задуматься о воскресении. А не картину, которая утверждает слишком много."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -90,6 +214,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/1CO.15.4.ESV",
       "ru": "https://www.bible.com/bible/167/1CO.15.4.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Maybe the disciples just imagined it. Grief can make people see things, or maybe somebody stole the body. Why does 'he actually rose' have to be the answer?",
+      "ru": "Может, ученики просто вообразили это. От горя людям иногда кажется то, чего нет, или, может, кто-то украл тело. Почему ответом обязательно должно быть «Он действительно воскрес»?"
+    },
+    "response": {
+      "en": "Scholars have tried those other explanations for a long time, and each one has to explain several things at once: a violent public death, separate groups of people reporting they saw Jesus alive afterward, not just one grieving person alone, and Paul, who had been attacking the church, suddenly changing his whole life. Even most historians who don't personally believe in the resurrection agree these events really happened. They just disagree about why. So here's a question back: if 'he really rose' is the one explanation that fits every piece without needing a separate excuse for each one, which is more reasonable, one simple answer, or a different complicated guess for every single fact? I know which one fits the evidence better to me.",
+      "ru": "Учёные давно пробовали другие объяснения, и каждому из них нужно объяснить сразу несколько фактов: жестокую публичную смерть, отдельные группы людей, которые сообщали, что видели живого Иисуса потом, а не одного скорбящего человека наедине, и Павла, который раньше преследовал церковь, вдруг изменившего всю свою жизнь. Даже большинство историков, которые сами не верят в воскресение, согласны, что эти события действительно произошли. Они просто расходятся в объяснении, почему. Вот вопрос в ответ: если «Он действительно воскрес» — это единственное объяснение, которое подходит сразу ко всем фактам без отдельной оговорки для каждого, что разумнее — одно простое объяснение или разная сложная догадка для каждого отдельного факта? Я знаю, какое из них лучше подходит к свидетельствам для меня."
     }
   },
   "activity": {
@@ -225,7 +359,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. USCCB dates the letter about 56 CE; use mid-first century. P46 collection introduction says about 200 CE, while item 3599 gives late second–fourth century (150–399 catalog bounds). This leaf contains part of Ephesians 1, not 1 Corinthians 15. Do not inflate reported witnesses into independent surviving documents. The argument compares explanatory fit, not a laboratory proof or a claim that all alternatives have been disproved. The empty tomb is reported in Luke, not explicitly in 1 Corinthians 15:3–9. Paul’s former persecution and claimed appearance are in verses 8–9. His change is relevant testimony, not by itself proof that his interpretation was true. The sources’ credibility remains part of the historical argument.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. USCCB относит письмо примерно к 56 году; используйте «середина первого века». Введение коллекции P46 говорит примерно о 200 годе, карточка 3599 — о конце II–IV веках (границы каталога 150–399). На листе часть Ефесянам 1, не 1 Коринфянам 15. Не превращайте упомянутых свидетелей в отдельные сохранившиеся документы. Довод сравнивает объяснения, а не предлагает лабораторное доказательство и не объявляет все альтернативы опровергнутыми. Пустая гробница описана у Луки, а не прямо в 1 Коринфянам 15:3–9. О прежнем гонительстве и явлении Павлу говорится в стихах 8–9. Его перемена важна для оценки свидетельства, но сама не доказывает истинность его толкования. Надёжность источников остаётся частью исторического исследования."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. USCCB dates the letter about 56 CE; use mid-first century. P46 collection introduction says about 200 CE, while item 3599 gives late second–fourth century (150–399 catalog bounds). This leaf contains part of Ephesians 1, not 1 Corinthians 15. Do not inflate reported witnesses into independent surviving documents. The argument compares explanatory fit, not a laboratory proof or a claim that all alternatives have been disproved. The empty tomb is reported in Luke, not explicitly in 1 Corinthians 15:3–9. Paul’s former persecution and claimed appearance are in verses 8–9. His change is relevant testimony, not by itself proof that his interpretation was true. The sources’ credibility remains part of the historical argument. The 'comeback' response reflects Gary Habermas's 'minimal facts' framing: a short list of events most scholars in the field grant, which naturalistic alternatives (hallucination, theft, grief) have each struggled to explain in full; it does not claim universal scholarly agreement that the resurrection itself occurred, only about the underlying facts.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. USCCB относит письмо примерно к 56 году; используйте «середина первого века». Введение коллекции P46 говорит примерно о 200 годе, карточка 3599 — о конце II–IV веках (границы каталога 150–399). На листе часть Ефесянам 1, не 1 Коринфянам 15. Не превращайте упомянутых свидетелей в отдельные сохранившиеся документы. Довод сравнивает объяснения, а не предлагает лабораторное доказательство и не объявляет все альтернативы опровергнутыми. Пустая гробница описана у Луки, а не прямо в 1 Коринфянам 15:3–9. О прежнем гонительстве и явлении Павлу говорится в стихах 8–9. Его перемена важна для оценки свидетельства, но сама не доказывает истинность его толкования. Надёжность источников остаётся частью исторического исследования. Ответ в блоке «если кто-то скажет» отражает подход «минимальных фактов» Гэри Хабермаса: короткий список событий, которые признаёт большинство исследователей темы, и которые натуралистические альтернативы (галлюцинация, кража тела, горе) по отдельности плохо объясняют целиком; это не утверждение, что большинство учёных признают само воскресение, а только эти исходные факты."
   }
 }
