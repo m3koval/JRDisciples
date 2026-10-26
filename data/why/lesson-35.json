@@ -16,64 +16,224 @@
         "en": "An urgent instruction",
         "ru": "Срочное указание"
       },
-      "paragraphs": {
-        "en": [
-          "At the explorers’ map table, Gracie shows the others a message on the club tablet. It says a certain friend must give up her expedition badge because God has chosen someone better. The sender demands secrecy and says questioning the message proves a lack of faith.",
-          "“What if something bad happens if we don’t obey?” Michael asks. Joseph reaches for his blue notebook. “Let’s check before we do anything,” he says. Explorer, pause with them while they work out whether the message deserves their trust."
-        ],
-        "ru": [
-          "У стола с картами Грейси показывает сообщение на клубном планшете. Кто-то требует, чтобы подруга отдала свой значок исследователя: будто Бог выбрал другого, получше. Отправитель велит хранить тайну и уверяет, что сомнения означают неверие.",
-          "«А вдруг случится что-то плохое, если мы не послушаемся?» — спрашивает Майкл. Джозеф берёт синий блокнот. «Давай сначала проверим», — предлагает он. Исследователь, побудь с ними, пока они разбираются, можно ли доверять сообщению."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the team's map table, Gracie shows the others a message. It's on the club tablet.",
+            "ru": "У стола с картами Грейси показывает остальным сообщение. Оно на клубном планшете."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "It says a certain friend must give up her expedition badge. God has supposedly chosen someone better.",
+            "ru": "Кто-то требует, чтобы подруга отдала свой значок исследователя. Будто Бог выбрал другого, получше."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The sender demands secrecy. He says questioning the message proves a lack of faith.",
+            "ru": "Отправитель велит хранить тайну. Он уверяет, что сомнения означают неверие."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "What if something bad happens if we don't obey?",
+            "ru": "А вдруг случится что-то плохое, если мы не послушаемся?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph reaches for his notebook.",
+            "ru": "Джозеф берёт блокнот."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Let's check before we do anything.",
+            "ru": "Давай сначала проверим."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, pause with them, while they work out whether the message deserves their trust.",
+            "ru": "Исследователь, побудь с ними, пока они разбираются, можно ли доверять сообщению."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A test, not a shortcut",
         "ru": "Проверка вместо поспешности"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens 1 John 4:1. The instruction is to test spiritual claims, not believe every voice that mentions God. They read the surrounding passage with their leader and see that truth about Jesus matters. God does not ask them to switch off careful listening.",
-          "They also read how Scripture teaches and corrects in 2 Timothy 3:16–17. Joseph writes three checks: What does the message claim? Does it agree with Scripture? What do trustworthy, wise adults notice?"
-        ],
-        "ru": [
-          "Рози открывает 1 Иоанна 4:1. Здесь велено проверять духовные утверждения, а не верить каждому, кто упоминает Бога. С руководителем они читают соседние стихи: важно, что говорится об Иисусе. Бог не требует отключать внимательность.",
-          "Они также читают во 2 Тимофею 3:16–17, как Писание учит и исправляет. Джозеф записывает три вопроса: что утверждает сообщение? Согласуется ли это с Писанием? Что заметят надёжные мудрые взрослые?"
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens 1 John 4:1.",
+            "ru": "Рози открывает 1 Иоанна 4:1."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The instruction is to test spiritual claims. Not believe every voice that mentions God.",
+            "ru": "Здесь велено проверять духовные утверждения, а не верить каждому, кто упоминает Бога."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read the surrounding passage with their leader. Truth about Jesus matters.",
+            "ru": "С руководителем они читают соседние стихи. Важно, что говорится об Иисусе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "God doesn't ask them to switch off careful listening.",
+            "ru": "Бог не требует отключать внимательность."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They also read how Scripture teaches and corrects, in 2 Timothy 3:16–17.",
+            "ru": "Они также читают во 2 Тимофею 3:16–17, как Писание учит и исправляет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph writes three checks. What does the message claim? Does it agree with Scripture? What do trustworthy, wise adults notice?",
+            "ru": "Джозеф записывает три вопроса: что утверждает сообщение? Согласуется ли это с Писанием? Что заметят надёжные мудрые взрослые?"
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Bring it into the light",
         "ru": "Не скрывай сообщение"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie takes the tablet to the club leader rather than forwarding the message. Together they examine the whole conversation. The sender has been trying to control who joins the next expedition. Claiming divine authority does not turn that demand into God’s instruction.",
-          "Michael remembers wanting the front seat himself. A strong desire can be his own desire, even when he can imagine a religious reason for it. He crosses out a draft telling Joseph that God wants Michael to lead every hike."
-        ],
-        "ru": [
-          "Грейси несёт планшет руководителю, не пересылая сообщение дальше. Вместе они читают весь разговор. Отправитель пытается управлять составом следующей экспедиции. Ссылка на Божью власть не превращает такое требование в Божье повеление.",
-          "Майкл вспоминает, как сам хотел занять лучшее место. Сильное желание может быть просто его желанием, даже если придумать религиозное объяснение. Он стирает черновик, где собирался объявить Джозефу, будто Бог велит Майклу всегда вести поход."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie takes the tablet to the club leader, rather than forwarding the message.",
+            "ru": "Грейси несёт планшет руководителю, не пересылая сообщение дальше."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Together they examine the whole conversation.",
+            "ru": "Вместе они читают весь разговор."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The sender has been trying to control who joins the next expedition.",
+            "ru": "Отправитель пытается управлять составом следующей экспедиции."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Claiming divine authority doesn't turn that demand into God's instruction.",
+            "ru": "Ссылка на Божью власть не превращает такое требование в Божье повеление."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael remembers wanting the front seat himself.",
+            "ru": "Майкл вспоминает, как сам хотел занять лучшее место."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A strong desire can be his own desire. Even when he can imagine a religious reason for it.",
+            "ru": "Сильное желание может быть просто его желанием, даже если придумать религиозное объяснение."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He crosses out a draft. In it, he was going to tell Joseph that God wants Michael to lead every hike.",
+            "ru": "Он стирает черновик. В нём он собирался объявить Джозефу, будто Бог велит Майклу всегда вести поход."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Room for honest words",
         "ru": "Место честным словам"
       },
-      "paragraphs": {
-        "en": [
-          "The leader handles the harmful message and checks on the friend it targeted. As the children return to their route, Michael tries again. “I’d like a turn leading a hike. What do you think?” This time he is asking his friends, not telling them that God has decided for them.",
-          "You help mark a safe meeting point on the map. Testing ideas does not mean refusing God’s guidance. It means welcoming truth, correction, and wise counsel rather than treating fear, popularity, or a loud inner feeling as God’s signature."
-        ],
-        "ru": [
-          "Руководитель разбирается с обидным сообщением и заботится о подруге, которую хотели отстранить. Дети возвращаются к маршруту, и Майкл решает начать заново. «Мне хочется однажды повести группу. Как вы думаете?» Теперь он спрашивает друзей, а не объявляет, будто Бог уже всё решил за них.",
-          "Ты отмечаешь безопасное место встречи на карте. Проверять мысли — не значит отвергать Божье руководство. Это значит принимать истину, исправление и мудрый совет, а не считать страх, популярность или сильное чувство Божьей подписью."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The leader handles the harmful message, and checks on the friend it targeted.",
+            "ru": "Руководитель разбирается с обидным сообщением и заботится о подруге, которую хотели отстранить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "As the children return to their route, Michael tries again.",
+            "ru": "Дети возвращаются к маршруту, и Майкл решает начать заново."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "I'd like a turn leading a hike. What do you think?",
+            "ru": "Мне хочется однажды повести группу. Как вы думаете?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "This time he's asking his friends, not telling them God has decided for them.",
+            "ru": "Теперь он спрашивает друзей, а не объявляет, будто Бог уже всё решил за них."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help mark a safe meeting point on the map.",
+            "ru": "Ты отмечаешь безопасное место встречи на карте."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Testing ideas doesn't mean refusing God's guidance.",
+            "ru": "Проверять мысли — не значит отвергать Божье руководство."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "It means welcoming truth, correction, and wise advice. Not treating fear, popularity, or a loud inner feeling as God's signature.",
+            "ru": "Это значит принимать истину, исправление и мудрый совет, а не считать страх, популярность или сильное чувство Божьей подписью."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +248,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/1JN.4.1.ESV",
       "ru": "https://www.bible.com/bible/167/1JN.4.1.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "People say \"God told me\" to justify anything they want. Since everyone's experience feels equally real to them, there's no actual way to tell a true message from a made-up one.",
+      "ru": "Люди говорят «мне сказал Бог», чтобы оправдать что угодно. Поскольку каждому его переживание кажется одинаково настоящим, нет никакого способа отличить истинное сообщение от выдуманного."
+    },
+    "response": {
+      "en": "Christians actually have a method for this. It's the same method the Bereans used long ago (you can check lessons 4 and 8). Compare the claim to Scripture. Bring it to people wise enough to ask hard questions. Don't just trust a feeling because it's strong or urgent. That's exactly what this test spots: real divine messages don't demand secrecy, forbid questions, or conveniently benefit whoever sent them. A method that catches those warning signs isn't perfect. But it's not the same as having no way to check at all. So here's a question back: if a claim can't survive being checked against Scripture and talked over with someone wise, is \"I can't know anything for sure\" really the honest conclusion, or is \"this particular claim fails the test\" the one actually being avoided?",
+      "ru": "У христиан на самом деле есть метод для этого. Тот же метод, что использовали верийцы много лет назад (можешь проверить уроки 4 и 8). Сравнить утверждение с Писанием. Принести его людям, достаточно мудрым, чтобы задать трудные вопросы. Не доверять чувству только потому, что оно сильное или настойчивое. Именно это и ловит такая проверка: настоящие Божьи сообщения не требуют тайны, не запрещают вопросы и не оказываются удобно выгодны тому, кто их отправил. Метод, замечающий эти тревожные признаки, не идеален. Но это совсем не то же самое, что отсутствие всякого способа проверки. Вот вопрос в ответ: если утверждение не выдерживает проверки Писанием и разговора с мудрым человеком, честный вывод — «я ничего не могу знать точно», — или на самом деле избегают другого вывода: «именно это утверждение проверку не прошло»?"
     }
   },
   "activity": {
@@ -200,7 +370,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read 1 John 4:1 in context through verse 6, 2 Timothy 3:16–17, and Proverbs 11:14. Christian traditions differ about impressions; no impression authorizes coercion or harm. If a leader is the unsafe person, approach another safe adult.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте 1 Иоанна 4:1–6, 2 Тимофею 3:16–17 и Притчи 11:14. Христиане по-разному понимают внутренние побуждения; никакое побуждение не оправдывает принуждение и вред. Если опасность исходит от руководителя, обратитесь к другому надёжному взрослому."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read 1 John 4:1 in context through verse 6, 2 Timothy 3:16–17, and Proverbs 11:14. Christian traditions differ about impressions; no impression authorizes coercion or harm. If a leader is the unsafe person, approach another safe adult. The 'comeback' response deliberately reuses the Berean testing pattern (Acts 17:11) this curriculum already teaches in lessons 4 and 8, rather than introducing a new, unrelated argument.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте 1 Иоанна 4:1–6, 2 Тимофею 3:16–17 и Притчи 11:14. Христиане по-разному понимают внутренние побуждения; никакое побуждение не оправдывает принуждение и вред. Если опасность исходит от руководителя, обратитесь к другому надёжному взрослому. Ответ в блоке «если кто-то скажет» намеренно повторяет верийский способ проверки (Деяния 17:11), который курс уже разбирает в уроках 4 и 8, а не вводит новый, посторонний довод."
   }
 }

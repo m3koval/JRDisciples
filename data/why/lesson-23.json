@@ -16,66 +16,229 @@
         "en": "The page on the floor",
         "ru": "Страница на полу"
       },
-      "paragraphs": {
-        "en": [
-          "An older club member grabs Joseph's blue notebook and laughs at his drawings. A page tears when Joseph reaches for it. Their leader steps in, returns the notebook, and takes the older child aside. Michael wants to tear that child's poster in return. You help collect the loose page instead.",
-          "Joseph holds the torn notebook close.",
-          "“If I forgive him, does that mean I have to say it was all right?” he asks. He is also afraid that someone will tell him to lend it again before he feels safe."
-        ],
-        "ru": [
-          "Старший участник клуба хватает синюю тетрадь Джозефа и смеётся над рисунками. Когда Джозеф тянется за ней, страница рвётся. Руководитель вмешивается, возвращает тетрадь и отводит обидчика в сторону. Майкл хочет порвать его плакат в ответ. Ты помогаешь поднять страницу.",
-          "Джозеф прижимает к себе порванную тетрадь.",
-          "— Если я его прощу, придётся сказать, что ничего плохого не случилось? — спрашивает он. Ему тревожно: вдруг теперь его заставят снова дать тетрадь, хотя доверять обидчику он ещё не готов."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "An older club member grabs Joseph's notebook, and laughs at his drawings.",
+            "ru": "Старший участник клуба хватает тетрадь Джозефа и смеётся над рисунками."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A page tears when Joseph reaches for it.",
+            "ru": "Когда Джозеф тянется за ней, страница рвётся."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader steps in, returns the notebook, and takes the older child aside.",
+            "ru": "Руководитель вмешивается, возвращает тетрадь и отводит обидчика в сторону."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael wants to tear that child's poster in return. You help collect the loose page instead.",
+            "ru": "Майкл хочет порвать его плакат в ответ. Ты помогаешь поднять страницу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph holds the torn notebook close.",
+            "ru": "Джозеф прижимает к себе порванную тетрадь."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "If I forgive him, does that mean I have to say it was all right?",
+            "ru": "Если я его прощу, придётся сказать, что ничего плохого не случилось?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He's also afraid of something else. Someone might tell him to lend it again, before he feels safe.",
+            "ru": "Ему тревожно и о другом. Вдруг теперь его заставят снова дать тетрадь, хотя доверять обидчику он ещё не готов."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Mercy tells the truth",
         "ru": "Милость не скрывает правду"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie and the leader read Ephesians 4:32 together. Christian forgiveness grows from God's mercy in Christ, not from pretending wrong is right. Romans 12 rejects taking revenge. Neither passage asks a child to hide harm from the adults responsible for protection.",
-          "The leader keeps a clear rule: nobody grabs another person's belongings. The older child must help repair the damage and follow supervised boundaries. Joseph can reject revenge while still saying what happened and asking for help."
-        ],
-        "ru": [
-          "Рози и руководитель читают Ефесянам 4:32. Христианское прощение рождается из Божьей милости во Христе, а не из притворства, будто зло стало добром. Римлянам 12 отвергает месть. Ни один отрывок не требует скрывать вред от взрослых, отвечающих за защиту.",
-          "Правило остаётся ясным: чужие вещи нельзя отнимать. Старшему ребёнку придётся помочь исправить ущерб и соблюдать границы под присмотром. Джозеф может отказаться от мести и одновременно рассказать правду и попросить защиты."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie and the leader read Ephesians 4:32 together.",
+            "ru": "Рози и руководитель читают Ефесянам 4:32."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Christian forgiveness grows from God's mercy in Christ. Not from pretending wrong is right.",
+            "ru": "Христианское прощение рождается из Божьей милости во Христе, а не из притворства, будто зло стало добром."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Romans 12 rejects taking revenge.",
+            "ru": "Римлянам 12 отвергает месть."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Neither passage asks a child to hide harm. Adults still need to know, so they can protect.",
+            "ru": "Ни один отрывок не требует скрывать вред. Взрослым всё равно нужно знать, чтобы защищать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The leader keeps a clear rule. Nobody grabs another person's belongings.",
+            "ru": "Правило остаётся ясным: чужие вещи нельзя отнимать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The older child must help repair the damage, and follow supervised boundaries.",
+            "ru": "Старшему ребёнку придётся помочь исправить ущерб и соблюдать границы под присмотром."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph can reject revenge, while still saying what happened, and asking for help.",
+            "ru": "Джозеф может отказаться от мести и одновременно рассказать правду и попросить защиты."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Different doors",
         "ru": "Разные шаги"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie makes four cards for the team's discussion: forgiveness, trust, consequences, and reconciliation. Joseph looks from one card to the next. He can decide not to take revenge today, but learning to trust will take trustworthy actions over time. Repairing a friendship also needs honesty and willingness from both people; he cannot do that part alone.",
-          "You practice a truthful apology with Michael. It names the grabbing, admits that it hurt someone, and offers repair without demanding an instant hug. An apology is not a ticket that buys access to another person's notebook."
-        ],
-        "ru": [
-          "Грейси делает четыре карточки: прощение, доверие, последствия и примирение. Джозеф переводит взгляд с одной карточки на другую. От мести он может отказаться уже сегодня, но для доверия понадобятся надёжные поступки и время. А чтобы восстановить дружбу, нужны честность и желание обоих: один Джозеф этого сделать не сможет.",
-          "Ты вместе с Майклом пробуешь составить честное извинение. Нужно назвать поступок, признать причинённый вред и предложить исправление, не требуя немедленных объятий. Извинение не даёт права снова брать чужую тетрадь."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie makes four cards for the team to discuss. Forgiveness. Trust. Consequences. Making up.",
+            "ru": "Грейси делает четыре карточки для разговора. Прощение. Доверие. Последствия. Примирение."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph looks from one card to the next.",
+            "ru": "Джозеф переводит взгляд с одной карточки на другую."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He can decide not to take revenge today. But learning to trust will take trustworthy actions, over time.",
+            "ru": "От мести он может отказаться уже сегодня, но для доверия понадобятся надёжные поступки и время."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Repairing a friendship also needs honesty and willingness from both people. He can't do that part alone.",
+            "ru": "А чтобы восстановить дружбу, нужны честность и желание обоих: один Джозеф этого сделать не сможет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You practice a truthful apology with Michael.",
+            "ru": "Ты вместе с Майклом пробуешь составить честное извинение."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "It names the grabbing. It admits it hurt someone. It offers repair. It doesn't demand an instant hug.",
+            "ru": "Нужно назвать поступок. Признать причинённый вред. Предложить исправление. Не требовать немедленных объятий."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "An apology isn't a ticket that buys access to another person's notebook.",
+            "ru": "Извинение не даёт права снова брать чужую тетрадь."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "No revenge in the repair box",
         "ru": "В коробке для ремонта нет мести"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph lets the leader arrange the repair. He does not tear the poster or organize a campaign against the older child. He tells God about his anger and asks for help to let go of revenge. His feelings may need time, and the leader promises to keep listening.",
-          "For now, the notebook stays with Joseph. You tape the torn page together while Rosie makes room on the table. Mercy has not erased the truth. It has changed what the team chooses to do with it."
-        ],
-        "ru": [
-          "Джозеф поручает руководителю организовать исправление ущерба. Он не рвёт плакат и не собирает других против обидчика. Он рассказывает Богу о гневе и просит помочь отказаться от мести. Чтобы справиться с чувствами, ему может понадобиться время; руководитель обещает продолжать слушать.",
-          "Пока тетрадь остаётся у Джозефа. Ты склеиваешь страницу, а Рози освобождает место на столе. Милость не стёрла правду. Она изменила то, как команда на эту правду отвечает."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph lets the leader arrange the repair.",
+            "ru": "Джозеф поручает руководителю организовать исправление ущерба."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He doesn't tear the poster, or organize a campaign against the older child.",
+            "ru": "Он не рвёт плакат и не собирает других против обидчика."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He tells God about his anger, and asks for help to let go of revenge.",
+            "ru": "Он рассказывает Богу о гневе и просит помочь отказаться от мести."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "His feelings may need time. The leader promises to keep listening.",
+            "ru": "Чтобы справиться с чувствами, ему может понадобиться время; руководитель обещает продолжать слушать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "For now, the notebook stays with Joseph.",
+            "ru": "Пока тетрадь остаётся у Джозефа."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You tape the torn page together, while Rosie makes room on the table.",
+            "ru": "Ты склеиваешь страницу, а Рози освобождает место на столе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Mercy hasn't erased the truth. It's changed what the team chooses to do with it.",
+            "ru": "Милость не стёрла правду. Она изменила то, как команда на эту правду отвечает."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -90,6 +253,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/EPH.4.32.ESV",
       "ru": "https://www.bible.com/bible/167/EPH.4.32.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Forgiving someone basically means pretending what they did doesn't matter, or letting them get away with it completely.",
+      "ru": "Простить кого-то — это, по сути, сделать вид, что его поступок не важен, или позволить ему остаться без последствий."
+    },
+    "response": {
+      "en": "C.S. Lewis drew a sharp line between those two things. He said forgiving and excusing are almost opposites. Excusing says \"what you did wasn't really wrong.\" Forgiving says \"what you did really was wrong, and I'm choosing not to make you pay for it the way you deserve.\" Lewis pointed out that forgiveness is actually harder than excusing, not softer, because it looks straight at the real harm, instead of looking away from it. Joseph in this story doesn't pretend the torn notebook was fine. He names exactly what happened, and still chooses not to take revenge. So here's a question back: if forgiving someone required believing they'd done nothing wrong, would that actually be forgiveness at all, or just a different kind of pretending?",
+      "ru": "К. С. Льюис провёл чёткую границу между этими двумя вещами. Он сказал, что прощение и оправдание — почти противоположности. Оправдание говорит: «то, что ты сделал, было не так уж плохо». Прощение говорит: «то, что ты сделал, было по-настоящему плохо, и я выбираю не заставлять тебя платить за это так, как ты заслуживаешь». Льюис заметил, что прощение на самом деле труднее оправдания, а не легче, потому что оно смотрит прямо на настоящий вред, а не отводит взгляд. Джозеф в этой истории не делает вид, что порванная тетрадь — это нормально. Он точно называет, что произошло, и всё равно решает не мстить. Вот вопрос в ответ: если бы прощение требовало верить, что человек ничего плохого не сделал, было бы это прощением — или просто другим видом притворства?"
     }
   },
   "activity": {
@@ -170,8 +343,8 @@
     "ru": "Иисус, помоги принять Твою милость, отказаться от мести и сохранять честные, мудрые границы."
   },
   "adultNote": {
-    "en": "Never use forgiveness language to pressure a child into contact with an unsafe person. Protection, reporting, and accountability remain necessary. Do not grade emotional readiness or require reconciliation.",
-    "ru": "Нельзя призывом к прощению принуждать ребёнка к общению с опасным человеком. Защита, сообщение о вреде и ответственность остаются необходимыми. Не оценивайте чувства и не требуйте примирения."
+    "en": "Never use forgiveness language to pressure a child into contact with an unsafe person. Protection, reporting, and accountability remain necessary. Do not grade emotional readiness or require reconciliation. The 'comeback' response uses C.S. Lewis's forgiving-versus-excusing distinction (from his writing on forgiveness, including Mere Christianity); it supports, rather than overrides, this lesson's insistence that forgiveness coexists with truthful reporting and supervised boundaries.",
+    "ru": "Нельзя призывом к прощению принуждать ребёнка к общению с опасным человеком. Защита, сообщение о вреде и ответственность остаются необходимыми. Не оценивайте чувства и не требуйте примирения. Ответ в блоке «если кто-то скажет» использует различие К. С. Льюиса между прощением и оправданием (из его текстов о прощении, включая «Просто христианство»); он поддерживает, а не отменяет настойчивое требование урока: прощение совместимо с правдивым сообщением и границами под присмотром."
   },
   "sources": [
     {

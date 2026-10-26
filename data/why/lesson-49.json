@@ -16,64 +16,224 @@
         "en": "The empty chair",
         "ru": "Пустой стул"
       },
-      "paragraphs": {
-        "en": [
-          "At the exhibition workshop, Gracie sets out an extra chair, then slowly folds it again. Her grandfather has died and will not be coming. Michael starts to suggest a cheerful game, but Rosie gently makes room beside her instead. Joseph puts down his blue notebook.",
-          "You sit with the explorers as Gracie remembers her grandfather. “He always had spare pencils, even when nobody asked for one,” she says. The memory makes her laugh, and then she begins to cry. Her friends stay beside her; she does not have to choose one feeling or stop grieving so they can begin their afternoon."
-        ],
-        "ru": [
-          "На подготовке выставки Грейси ставит лишний стул, потом медленно складывает его. Её дедушка умер и не придёт. Майкл хочет предложить весёлую игру, но Рози просто освобождает место рядом. Джозеф откладывает синий блокнот.",
-          "Ты сидишь с исследователями, пока Грейси вспоминает дедушку. «У него всегда были запасные карандаши, даже когда никто не просил», — говорит она. Она смеётся, а потом начинает плакать. Друзья остаются рядом. Ей не нужно выбирать одно чувство или переставать горевать, чтобы они могли начать встречу."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the exhibit workshop, Gracie sets out an extra chair, then slowly folds it again.",
+            "ru": "На подготовке выставки Грейси ставит лишний стул, потом медленно складывает его."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Her grandfather has died, and won't be coming.",
+            "ru": "Её дедушка умер и не придёт."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael starts to suggest a cheerful game. But Rosie gently makes room beside her instead.",
+            "ru": "Майкл хочет предложить весёлую игру, но Рози просто освобождает место рядом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph puts down his notebook.",
+            "ru": "Джозеф откладывает блокнот."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You sit with the team as Gracie remembers her grandfather.",
+            "ru": "Ты сидишь с исследователями, пока Грейси вспоминает дедушку."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "He always had spare pencils, even when nobody asked for one.",
+            "ru": "У него всегда были запасные карандаши, даже когда никто не просил."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The memory makes her laugh. Then she begins to cry. Her friends stay beside her. She doesn't have to choose one feeling to let their afternoon begin.",
+            "ru": "Она смеётся, а потом начинает плакать. Друзья остаются рядом. Ей не нужно выбирать одно чувство или переставать горевать, чтобы они могли начать встречу."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Jesus at a grave",
         "ru": "Иисус у гробницы"
       },
-      "paragraphs": {
-        "en": [
-          "With Gracie’s permission, Rosie opens John 11. Lazarus has died, and his sisters are grieving. Jesus meets their sorrow, weeps, and speaks of resurrection and life. He then calls Lazarus out of the tomb. His authority over death is joined to real compassion for mourners.",
-          "Gracie traces the verse reference on their card. Christians hope because Jesus died and rose, not because sadness is forbidden. Death ends a person’s earthly life; Christian hope looks toward being with Christ and the resurrection he promises."
-        ],
-        "ru": [
-          "С разрешения Грейси Рози открывает Иоанна 11. Лазарь умер, его сёстры скорбят. Иисус встречает их горе, плачет и говорит о воскресении и жизни. Затем Он вызывает Лазаря из гробницы. Власть над смертью соединяется с настоящим состраданием.",
-          "Грейси проводит пальцем по ссылке на стих. Христиане надеются потому, что Иисус умер и воскрес, а не потому, что грустить запрещено. Смерть завершает земную жизнь человека; христианская надежда обращена к жизни со Христом и обещанному воскресению."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "With Gracie's permission, Rosie opens John chapter 11.",
+            "ru": "С разрешения Грейси Рози открывает Иоанна 11."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Lazarus has died, and his sisters are grieving.",
+            "ru": "Лазарь умер, его сёстры скорбят."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Jesus meets their sorrow, weeps, and speaks of resurrection and life. Then he calls Lazarus out of the tomb.",
+            "ru": "Иисус встречает их горе, плачет и говорит о воскресении и жизни. Затем Он вызывает Лазаря из гробницы."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "His authority over death is joined to real compassion for those who mourn.",
+            "ru": "Власть над смертью соединяется с настоящим состраданием."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie traces the verse reference on their card.",
+            "ru": "Грейси проводит пальцем по ссылке на стих."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Christians hope because Jesus died and rose. Not because sadness is forbidden.",
+            "ru": "Христиане надеются потому, что Иисус умер и воскрес, а не потому, что грустить запрещено."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Death ends a person's earthly life. Christian hope looks toward being with Christ, and the resurrection he promises.",
+            "ru": "Смерть завершает земную жизнь человека; христианская надежда обращена к жизни со Христом и обещанному воскресению."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Words that can stay",
         "ru": "Слова, с которыми можно остаться"
       },
-      "paragraphs": {
-        "en": [
-          "Michael crosses out the advice not to cry on his first card. Instead, he writes that he is sorry, that he remembers her grandfather’s kindness, and that he can sit with her. Joseph looks at the family photograph. “Would you like me to help put a pencil beside it?” he asks. “Yes, please,” Gracie replies.",
-          "Their leader reads from First Thessalonians 4 about grieving with hope. This does not give the children a secret map of every person’s destiny. It gives believers a promise rooted in Jesus’ resurrection, strong enough to accompany tears rather than silence them."
-        ],
-        "ru": [
-          "Майкл зачёркивает на своей первой карточке совет не плакать. Вместо этого он пишет, что ему жаль, что он помнит доброту дедушки и готов побыть рядом. Джозеф смотрит на семейную фотографию. «Хочешь, я помогу положить рядом карандаш?» — спрашивает он. «Да, пожалуйста», — отвечает Грейси.",
-          "Руководитель читает из 1 Фессалоникийцам 4 о скорби с надеждой. Это не тайная карта судьбы каждого человека. Это обещание верующим, основанное на воскресении Иисуса: надежда может быть рядом со слезами, а не заставлять их исчезнуть."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael crosses out the advice not to cry on his first card.",
+            "ru": "Майкл зачёркивает на своей первой карточке совет не плакать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Instead, he writes three things. He's sorry. He remembers her grandfather's kindness. He can sit with her.",
+            "ru": "Вместо этого он пишет три вещи. Ему жаль. Он помнит доброту дедушки. Он готов побыть рядом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph looks at the family photograph.",
+            "ru": "Джозеф смотрит на семейную фотографию."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Would you like me to help put a pencil beside it?",
+            "ru": "Хочешь, я помогу положить рядом карандаш?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Yes, please.",
+            "ru": "Да, пожалуйста."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader reads from First Thessalonians 4, about grieving with hope.",
+            "ru": "Руководитель читает из 1 Фессалоникийцам 4 о скорби с надеждой."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "This doesn't give the kids a secret map of every person's destiny. It gives believers a promise. That promise is rooted in Jesus's resurrection. It's strong enough to sit beside tears, instead of silencing them.",
+            "ru": "Это не тайная карта судьбы каждого человека. Это обещание верующим. Оно основано на воскресении Иисуса. Оно может быть рядом со слезами, а не заставлять их исчезнуть."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Tomorrow matters too",
         "ru": "Завтра тоже важно"
       },
-      "paragraphs": {
-        "en": [
-          "The explorers finish only half their display that day. Michael packs the supplies without complaining. Rosie asks a trusted adult to check on Gracie, and Joseph remembers to invite her again the following week, without requiring her to talk.",
-          "Explorer, help carry the folded chair. Love can take the shape of listening, a meal, or a quiet visit. Gracie’s grief may return unexpectedly. The team will not measure her faith by how quickly she smiles; they can keep bringing both sorrow and hope to Jesus."
-        ],
-        "ru": [
-          "В тот день исследователи заканчивают только половину стенда. Майкл без жалоб убирает материалы. Рози просит надёжного взрослого позаботиться о Грейси. Джозеф не забывает пригласить её на следующую неделю, не требуя разговаривать.",
-          "Исследователь, помоги отнести сложенный стул. Любовь бывает вниманием, обедом или тихим визитом. Горе Грейси может возвращаться неожиданно. Команда не измеряет её веру скоростью улыбки. Они могут вместе приносить Иисусу и печаль, и надежду."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team finishes only half their display that day.",
+            "ru": "В тот день исследователи заканчивают только половину стенда."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael packs the supplies without complaining.",
+            "ru": "Майкл без жалоб убирает материалы."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie asks a trusted adult to check on Gracie. Joseph remembers to invite her again the following week, without requiring her to talk.",
+            "ru": "Рози просит надёжного взрослого позаботиться о Грейси. Джозеф не забывает пригласить её на следующую неделю, не требуя разговаривать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, help carry the folded chair.",
+            "ru": "Исследователь, помоги отнести сложенный стул."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Love can take the shape of listening, a meal, or a quiet visit.",
+            "ru": "Любовь бывает вниманием, обедом или тихим визитом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie's grief may return unexpectedly. The team won't measure her faith by how quickly she smiles. They can keep bringing both sorrow and hope to Jesus.",
+            "ru": "Горе Грейси может возвращаться неожиданно. Команда не измеряет её веру скоростью улыбки. Они могут вместе приносить Иисусу и печаль, и надежду."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +248,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/JHN.11.25.ESV",
       "ru": "https://www.bible.com/bible/167/JHN.11.25.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Believing you'll see loved ones again after death is just wishful thinking. People believe it because losing someone hurts too much to accept, not because it's actually true.",
+      "ru": "Верить, что ты снова увидишь близких после смерти, — это просто самообман. Люди верят в это, потому что потеря слишком болезненна, а не потому, что это правда."
+    },
+    "response": {
+      "en": "It's fair to notice that wanting something doesn't make it true. Wishing doesn't create evidence. But Christian hope about death isn't built only on wanting it to be true. It's built on a specific historical claim, that Jesus really died and really rose, which this course looks at honestly in other lessons (ask about lesson 29). If that claim is true, hope after death isn't wishful thinking. It's a reasonable conclusion from real evidence. If it's false, Christians should want to know that too. So here's a question back: does calling hope \"wishful thinking\" actually examine whether Jesus rose, or does it skip that question and guess at people's motives instead?",
+      "ru": "Справедливо заметить: желание чего-то не делает это правдой. Мечты не создают доказательств. Но христианская надежда о смерти строится не только на желании, чтобы это было правдой. Она строится на конкретном историческом утверждении: что Иисус действительно умер и действительно воскрес, и этот курс честно разбирает это в других уроках (спроси про урок 29). Если это утверждение правда, надежда после смерти — не самообман. Это разумный вывод из настоящих свидетельств. Если оно ложно, христианам тоже стоило бы это узнать. Вот вопрос в ответ: называя надежду «самообманом», человек действительно проверяет, воскрес ли Иисус, — или пропускает этот вопрос и просто угадывает чужие мотивы?"
     }
   },
   "activity": {
@@ -178,7 +348,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Use clear language about death rather than sleep euphemisms that may frighten children at bedtime. Do not speculate about an individual’s eternal state or turn Lazarus’s raising into a promise of immediate return for every loved one. Offer trusted pastoral and grief support.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Говорите о смерти ясно; сравнение со сном может напугать ребёнка перед сном. Не гадайте о вечной участи отдельного человека и не обещайте немедленного возвращения умерших на основании истории Лазаря. Предлагайте поддержку близких и душепопечителя."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Use clear language about death rather than sleep euphemisms that may frighten children at bedtime. Do not speculate about an individual’s eternal state or turn Lazarus’s raising into a promise of immediate return for every loved one. Offer trusted pastoral and grief support. The 'comeback' response is deliberately modest, like lesson 5: it grants the psychological point that wanting something isn't evidence, then redirects to the historical resurrection claim this curriculum argues for elsewhere, rather than resting hope on comfort alone.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Говорите о смерти ясно; сравнение со сном может напугать ребёнка перед сном. Не гадайте о вечной участи отдельного человека и не обещайте немедленного возвращения умерших на основании истории Лазаря. Предлагайте поддержку близких и душепопечителя. Ответ в блоке «если кто-то скажет» намеренно сдержан, как в уроке 5: он признаёт психологическую правоту (желание — не доказательство), а затем отсылает к историческому утверждению о воскресении, которое курс обосновывает в других местах, а не строит надежду только на утешении."
   }
 }

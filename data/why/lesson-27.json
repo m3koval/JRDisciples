@@ -16,66 +16,194 @@
         "en": "The tear nobody claimed",
         "ru": "Разрыв, о котором молчали"
       },
-      "paragraphs": {
-        "en": [
-          "Michael pulls the community mural from its tube. A long tear runs through the painted river. Yesterday, while packing it in a hurry, he heard the paper rip and said nothing. Now everyone is searching for tape, and keeping quiet feels harder with every moment.",
-          "You join the explorers beside the damaged painting. Gracie offers to cover the hole with a bright sun. Michael shakes his head. Hiding the damage would not make his dishonesty disappear."
-        ],
-        "ru": [
-          "Майкл достаёт общее панно из тубуса. Через нарисованную реку идёт длинный разрыв. Вчера он торопился, услышал, как рвётся бумага, и промолчал. Теперь все ищут скотч, а ему с каждой минутой всё труднее скрывать правду.",
-          "Ты присоединяешься к исследователям. Грейси предлагает закрыть дыру ярким солнцем. Майкл качает головой: спрятать повреждение — не значит перестать обманывать."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael pulls the community mural from its tube. A long tear runs through the painted river.",
+            "ru": "Майкл достаёт общее панно из тубуса. Через нарисованную реку идёт длинный разрыв."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Yesterday he was packing in a hurry. He heard the paper rip. He said nothing.",
+            "ru": "Вчера он торопился. Он услышал, как рвётся бумага. Он промолчал."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Now everyone is searching for tape. Keeping quiet feels harder with every moment.",
+            "ru": "Теперь все ищут скотч, а ему с каждой минутой всё труднее скрывать правду."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You join the team beside the damaged painting.",
+            "ru": "Ты присоединяешься к исследователям."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie offers to cover the hole with a bright sun. Michael shakes his head.",
+            "ru": "Грейси предлагает закрыть дыру ярким солнцем. Майкл качает головой."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Hiding the damage wouldn't make his dishonesty disappear.",
+            "ru": "Спрятать повреждение — не значит перестать обманывать."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A deeper wrong",
         "ru": "Беда глубже разрыва"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie sets her purple Bible beside the paint jars. They read Isaiah 53:4–6 and Romans 5:6–11 with their leader. Sin is not just a broken object; it is turning from God, and it harms our relationships. God does not pretend that evil is harmless.",
-          "Joseph pauses over his blue notebook.",
-          "“If what we do wrong really matters, how can we be forgiven?” he asks. Their leader turns back to the passages they have read: to understand God’s mercy, they need to look at what Jesus did for sinners."
-        ],
-        "ru": [
-          "Рози кладёт фиолетовую Библию рядом с красками. С руководителем они читают Исаии 53:4–6 и Римлянам 5:6–11. Грех — не просто сломанная вещь. Это непослушание Богу, разрушающее отношения. Бог не делает вид, будто зло безвредно.",
-          "Джозеф задумывается над синим блокнотом.",
-          "— Если зло действительно так серьёзно, как виновному получить прощение? — спрашивает он. Руководитель возвращается к прочитанным отрывкам: понять Божью милость помогает то, что Иисус сделал ради грешников."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie sets her Bible beside the paint jars.",
+            "ru": "Рози кладёт Библию рядом с красками."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read Isaiah 53 and Romans 5 with their leader.",
+            "ru": "С руководителем они читают Исаии 53 и Римлянам 5."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Sin isn't just a broken object. It's turning from God. And it harms our relationships.",
+            "ru": "Грех — не просто сломанная вещь. Это непослушание Богу. И это разрушает отношения."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "God doesn't pretend evil is harmless.",
+            "ru": "Бог не делает вид, будто зло безвредно."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph pauses over his notebook.",
+            "ru": "Джозеф задумывается над блокнотом."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "If what we do wrong really matters, how can we be forgiven?",
+            "ru": "Если зло действительно так серьёзно, как виновному получить прощение?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader turns back to the passages. To understand God's mercy, they need to look at what Jesus did for sinners.",
+            "ru": "Руководитель возвращается к прочитанным отрывкам: понять Божью милость помогает то, что Иисус сделал ради грешников."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Love takes the cost",
         "ru": "Любовь принимает цену"
       },
-      "paragraphs": {
-        "en": [
-          "Their leader explains that Jesus willingly gave himself for sinners. The sinless Son was not an unwilling stranger persuaded to care. Father and Son are united in this loving rescue. Jesus bore our sins; his death and resurrection open the way to forgiveness and life.",
-          "Fixing a mural is only a small reminder that repair costs something, not a complete explanation of salvation. Nobody can pay God back with enough paintings, promises, or good deeds."
-        ],
-        "ru": [
-          "Руководитель объясняет: Иисус добровольно отдал Себя за грешников. Безгрешный Сын — не посторонний, которого заставили помочь. Отец и Сын едины в этой любви. Иисус понёс наши грехи; Его смерть и воскресение открывают путь к прощению и жизни.",
-          "Починка панно лишь напоминает, что исправление чего-то стоит. Она не объясняет спасение целиком. Картинами, обещаниями или добрыми делами невозможно расплатиться с Богом."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their leader explains that Jesus willingly gave himself for sinners.",
+            "ru": "Руководитель объясняет: Иисус добровольно отдал Себя за грешников."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The sinless Son wasn't an unwilling stranger. Nobody persuaded him to care. Father and Son are united in this loving rescue.",
+            "ru": "Безгрешный Сын — не посторонний. Никто не заставлял Его помочь. Отец и Сын едины в этой любви."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Jesus bore our sins. His death and resurrection open the way to forgiveness and life.",
+            "ru": "Иисус понёс наши грехи; Его смерть и воскресение открывают путь к прощению и жизни."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Fixing a mural is only a small reminder. Repair costs something. It's not a complete explanation of salvation.",
+            "ru": "Починка панно лишь напоминает кое-что. Исправление чего-то стоит. Она не объясняет спасение целиком."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Nobody can pay God back with enough paintings, promises, or good deeds.",
+            "ru": "Картинами, обещаниями или добрыми делами невозможно расплатиться с Богом."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "An honest beginning",
         "ru": "Честное начало"
       },
-      "paragraphs": {
-        "en": [
-          "Michael tells the group what happened and apologizes without blaming the tube. He helps repair the backing, although the river still has a visible seam. Gracie makes room for him at the worktable instead of keeping a scoreboard of his failure.",
-          "You hold the edge while the glue dries. The team cannot act out everything Jesus accomplished. But they can receive his mercy and practice a small, costly kindness because they have been loved first."
-        ],
-        "ru": [
-          "Майкл признаётся и просит прощения, не обвиняя тубус. Он помогает подклеить основу, хотя шов на реке остаётся заметным. Грейси освобождает ему место за столом вместо того, чтобы вести счёт его ошибкам.",
-          "Ты держишь край, пока сохнет клей. Команда не может изобразить всё, что совершил Иисус. Но можно принять Его милость и проявить доброту, требующую усилия: Он первым полюбил нас."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael tells the group what happened, and apologizes without blaming the tube.",
+            "ru": "Майкл признаётся и просит прощения, не обвиняя тубус."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He helps repair the backing, although the river still has a visible seam.",
+            "ru": "Он помогает подклеить основу, хотя шов на реке остаётся заметным."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie makes room for him at the worktable. She doesn't keep score of his failure.",
+            "ru": "Грейси освобождает ему место за столом. Она не ведёт счёт его ошибкам."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You hold the edge while the glue dries.",
+            "ru": "Ты держишь край, пока сохнет клей."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team can't act out everything Jesus accomplished. But they can receive his mercy. They can practice a small, costly kindness. Because they were loved first.",
+            "ru": "Команда не может изобразить всё, что совершил Иисус. Но можно принять Его милость. Можно проявить доброту, требующую усилия. Потому что Он первым полюбил нас."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -90,6 +218,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/ROM.5.8.ESV",
       "ru": "https://www.bible.com/bible/167/ROM.5.8.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Why did God need someone to die at all? Couldn't he just decide to forgive people without any of that?",
+      "ru": "Почему Богу вообще понадобилась чья-то смерть? Разве Он не мог просто решить простить людей без этого?"
+    },
+    "response": {
+      "en": "Think about forgiveness you've actually done yourself. If a friend breaks something of yours and you really forgive them, you don't make them pay for it. But someone still pays. You do. You absorb the cost yourself, so they don't have to. Tim Keller points out that real forgiveness is never free. It just moves the cost from the wrongdoer onto the one who forgives. The cross is God doing that, on a scale big enough to cover everything. Not a third party getting punished so a distant judge can let everyone else off. God himself, in Jesus, absorbing the real cost of what we did. So here's a question back: if forgiveness never actually erases a cost, it only moves it, and this story says God chose to carry that cost himself instead of making us carry it, is that less loving than if he'd just waved it away for free?",
+      "ru": "Подумай о прощении, которое ты сам когда-то кому-то дарил. Если друг случайно ломает твою вещь, а ты по-настоящему прощаешь его, ты не заставляешь его платить за это. Но кто-то всё равно платит. Платишь ты сам. Ты принимаешь цену на себя, чтобы ему не пришлось. Тим Келлер замечает: настоящее прощение никогда не бывает бесплатным. Оно просто переносит цену с того, кто виноват, на того, кто прощает. Крест — это Бог, делающий то же самое, в масштабе, достаточном, чтобы покрыть всё. Не наказание третьей стороны, чтобы далёкий судья мог всех отпустить. Сам Бог, в Иисусе, принимает на Себя настоящую цену того, что мы сделали. Вот вопрос в ответ: если прощение никогда на самом деле не стирает цену, а только переносит её, а эта история говорит, что Бог выбрал понести эту цену Сам, вместо того чтобы заставить нас её нести, — разве это менее любяще, чем если бы Он просто махнул рукой и объявил всех прощёнными бесплатно?"
     }
   },
   "activity": {
@@ -180,7 +318,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read Isaiah 53:4–6 and Romans 5:6–11. Avoid graphic detail, collective blame against Jewish people, or portraying the Father and Son as opponents. The repair illustration is explicitly limited.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Исаии 53:4–6 и Римлянам 5:6–11. Избегайте жестоких подробностей, обвинения еврейского народа и противопоставления Отца Сыну. Пример с ремонтом имеет пределы."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Read Isaiah 53:4–6 and Romans 5:6–11. Avoid graphic detail, collective blame against Jewish people, or portraying the Father and Son as opponents. The repair illustration is explicitly limited. The 'comeback' response reflects Tim Keller's 'forgiveness always costs someone' framing (used in The Reason for God and his preaching); it supports a Father-and-Son-united reading of the atonement, which this lesson's adult note already insists on, rather than a model that pits them against each other.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Прочитайте Исаии 53:4–6 и Римлянам 5:6–11. Избегайте жестоких подробностей, обвинения еврейского народа и противопоставления Отца Сыну. Пример с ремонтом имеет пределы. Ответ в блоке «если кто-то скажет» отражает подход Тима Келлера «прощение всегда кому-то стоит» (из книги «Разум для Бога» и его проповедей); он поддерживает понимание искупления как единства Отца и Сына, на котором уже настаивает примечание к уроку, а не модель, противопоставляющую Их друг другу."
   }
 }

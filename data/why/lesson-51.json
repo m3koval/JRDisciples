@@ -16,64 +16,239 @@
         "en": "The impossible timetable",
         "ru": "Невозможное расписание"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph spreads a new timetable across the explorers’ table. It has hours of Bible reading, five service projects, and no empty spaces. “When will you do homework and sleep?” Michael asks. Gracie draws a tiny bed in the margin. Joseph sighs. “I wanted to show that I’m serious about following Jesus.” Now he wonders how he could ever keep up with his own plan.",
-          "You help Rosie retrieve their first question cards. One asks whether honest questions belong with faith. Joseph still has questions, and now he worries that growing means never needing help again."
-        ],
-        "ru": [
-          "Джозеф раскладывает на столе новое расписание: часы чтения Библии, пять дел помощи и ни одного свободного места. «А когда ты будешь делать уроки и спать?» — спрашивает Майкл. Грейси рисует на полях маленькую кровать. Джозеф вздыхает: «Я хотел показать, что правда хочу следовать за Иисусом». Теперь он и сам не понимает, как успеть всё, что запланировал.",
-          "Ты помогаешь Рози найти первые карточки вопросов. Одна спрашивает, можно ли верить и честно спрашивать. У Джозефа всё ещё есть вопросы. Теперь он боится, что взрослеть — значит больше никогда не нуждаться в помощи."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph spreads a new timetable across the team's table.",
+            "ru": "Джозеф раскладывает на столе новое расписание."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "It has hours of Bible reading, five service projects, and no empty spaces.",
+            "ru": "В нём часы чтения Библии, пять дел помощи и ни одного свободного места."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "When will you do homework and sleep?",
+            "ru": "А когда ты будешь делать уроки и спать?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie draws a tiny bed in the margin.",
+            "ru": "Грейси рисует на полях маленькую кровать."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "I wanted to show that I'm serious about following Jesus.",
+            "ru": "Я хотел показать, что правда хочу следовать за Иисусом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Now he wonders how he could ever keep up with his own plan.",
+            "ru": "Теперь он и сам не понимает, как успеть всё, что запланировал."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help Rosie find their first question cards. One asks whether honest questions belong with faith.",
+            "ru": "Ты помогаешь Рози найти первые карточки вопросов. Одна спрашивает, можно ли верить и честно спрашивать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph still has questions. Now he worries that growing means never needing help again.",
+            "ru": "У Джозефа всё ещё есть вопросы. Теперь он боится, что взрослеть — значит больше никогда не нуждаться в помощи."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Continue with the same Lord",
         "ru": "Продолжай с Тем же Господом"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie opens Colossians 2:6–7. The Christian life continues in the Christ believers received, rooted in him rather than in an impressive timetable. Growth means learning to trust and obey Jesus more deeply, not graduating from needing his grace. Joseph crosses out the word prove.",
-          "They turn to Hebrews 12:1–3. Following Jesus is a long race that calls for endurance and attention to him. Michael notices that looking toward Jesus differs from constantly staring sideways at who seems faster or more knowledgeable."
-        ],
-        "ru": [
-          "Рози открывает Колоссянам 2:6–7. Верующие продолжают жить во Христе, Которого приняли, укореняясь в Нём, а не в красивом расписании. Расти — учиться глубже доверять Иисусу и слушаться, а не становиться независимым от благодати. Джозеф зачёркивает слово «доказать».",
-          "Они обращаются к Евреям 12:1–3. Следование Иисусу — долгий путь, требующий терпения и внимания к Нему. Майкл замечает разницу между взглядом на Иисуса и постоянным сравнением себя с более быстрыми или знающими."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie opens Colossians 2:6–7.",
+            "ru": "Рози открывает Колоссянам 2:6–7."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The Christian life continues in the Christ believers already received. It's rooted in him, not in an impressive timetable.",
+            "ru": "Верующие продолжают жить во Христе, Которого приняли, укореняясь в Нём, а не в красивом расписании."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Growth means learning to trust and obey Jesus more deeply. Not graduating from needing his grace.",
+            "ru": "Расти — учиться глубже доверять Иисусу и слушаться, а не становиться независимым от благодати."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph crosses out the word \"prove.\"",
+            "ru": "Джозеф зачёркивает слово «доказать»."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They turn to Hebrews chapter 12.",
+            "ru": "Они обращаются к Евреям 12."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Following Jesus is a long race, that calls for endurance and attention to him.",
+            "ru": "Следование Иисусу — долгий путь, требующий терпения и внимания к Нему."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael notices something. Looking toward Jesus is different from constantly staring sideways at who seems faster.",
+            "ru": "Майкл замечает разницу между взглядом на Иисуса и постоянным сравнением себя с более быстрыми или знающими."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Build a plan that fits",
         "ru": "План, по которому можно жить"
       },
-      "paragraphs": {
-        "en": [
-          "With their leader, Joseph chooses one short passage after breakfast on three school days. He will ask what it means, pray about one response, and write down questions for a trusted adult. Sunday church and one ordinary act of help already fit his family’s week.",
-          "“What if you miss a morning?” Gracie asks, adding a restart box. They agree that Joseph can return to the plan without doubling the next day’s reading as a punishment. “I could read with you one day,” Rosie offers. His plan now has room for help from friends instead of leaving him to manage everything alone."
-        ],
-        "ru": [
-          "С руководителем Джозеф выбирает короткий отрывок после завтрака в три учебных дня. Он будет спрашивать о смысле, молиться об одном ответном шаге и записывать вопросы взрослому. Воскресная церковь и одно обычное доброе дело уже подходят семейной неделе.",
-          "«А если однажды утром не получится?» — спрашивает Грейси и добавляет место для нового начала. Они договариваются: Джозеф сможет вернуться к плану, не задавая себе на завтра вдвое больше в наказание. «Давай один раз почитаем вместе», — предлагает Рози. Теперь в плане есть место для помощи друзей, и Джозефу не нужно справляться со всем одному."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "With their leader, Joseph chooses one short passage after breakfast, on three school days.",
+            "ru": "С руководителем Джозеф выбирает короткий отрывок после завтрака в три учебных дня."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He'll ask what it means, pray about one response, and write down questions for a trusted adult.",
+            "ru": "Он будет спрашивать о смысле, молиться об одном ответном шаге и записывать вопросы взрослому."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Sunday church, and one ordinary act of help, already fit his family's week.",
+            "ru": "Воскресная церковь и одно обычное доброе дело уже подходят семейной неделе."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "What if you miss a morning?",
+            "ru": "А если однажды утром не получится?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She adds a restart box.",
+            "ru": "Она добавляет место для нового начала."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They agree Joseph can return to the plan. Without doubling the next day's reading, as a punishment.",
+            "ru": "Они договариваются: Джозеф сможет вернуться к плану, не задавая себе на завтра вдвое больше в наказание."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "I could read with you one day.",
+            "ru": "Давай один раз почитаем вместе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "His plan now has room for help from friends. Instead of leaving him to manage everything alone.",
+            "ru": "Теперь в плане есть место для помощи друзей, и Джозефу не нужно справляться со всем одному."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "A question carried forward",
         "ru": "Вопрос идёт с нами"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph rewrites his old question: How can I bring a hard question to Jesus and keep learning? He names someone he can ask and leaves space for an answer that may take time. Michael folds the enormous timetable into scrap paper for tomorrow’s clues.",
-          "Explorer, choose one manageable next step with them. Scripture helps us hear God’s teaching; prayer brings our lives to him; church gives shared worship and care. These habits support a living relationship. The goal is following Jesus, not collecting perfect streaks on a chart."
-        ],
-        "ru": [
-          "Джозеф переписывает старый вопрос: «Как принести Иисусу трудный вопрос и продолжать учиться?» Он выбирает собеседника и оставляет место для ответа, который может прийти не сразу. Майкл складывает огромное расписание: бумага пригодится для завтрашних подсказок.",
-          "Исследователь, выбери с ними один посильный шаг. Писание помогает слышать Божье учение, молитва — приносить Ему жизнь, церковь — вместе поклоняться и заботиться. Эти привычки поддерживают живые отношения. Цель — следовать Иисусу, а не собирать безупречные отметки."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph rewrites his old question. How can I bring a hard question to Jesus, and keep learning?",
+            "ru": "Джозеф переписывает старый вопрос: «Как принести Иисусу трудный вопрос и продолжать учиться?»"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He names someone he can ask. He leaves space for an answer that may take time.",
+            "ru": "Он выбирает собеседника и оставляет место для ответа, который может прийти не сразу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael folds the enormous timetable into scrap paper, for tomorrow's clues.",
+            "ru": "Майкл складывает огромное расписание: бумага пригодится для завтрашних подсказок."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, choose one manageable next step with them.",
+            "ru": "Исследователь, выбери с ними один посильный шаг."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Scripture helps us hear God's teaching. Prayer brings our lives to him. Church gives shared worship and care.",
+            "ru": "Писание помогает слышать Божье учение, молитва — приносить Ему жизнь, церковь — вместе поклоняться и заботиться."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "These habits support a living relationship. The goal is following Jesus. Not collecting perfect streaks on a chart.",
+            "ru": "Эти привычки поддерживают живые отношения. Цель — следовать Иисусу, а не собирать безупречные отметки."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +263,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/COL.2.6.ESV",
       "ru": "https://www.bible.com/bible/167/COL.2.6.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Following Jesus your whole life sounds exhausting. It's an endless list of habits you can never stop doing. What's the point of a \"relationship\" that's really just a chore list?",
+      "ru": "Следовать за Иисусом всю жизнь звучит утомительно. Это бесконечный список привычек, которые никогда нельзя прекратить. Какой смысл в «отношениях», которые на самом деле просто список обязанностей?"
+    },
+    "response": {
+      "en": "Jesus actually described this using a plant, not a job. In John chapter 15, he said he's the vine, and his followers are branches. A branch doesn't grind through a daily checklist to produce fruit. It just stays attached, and the fruit grows out of that connection, almost on its own. The habits in this lesson, reading, praying, church, aren't the relationship. They're more like how a branch stays attached to the vine. They're not a performance review. So here's a question back: if a plant needed to attend a seminar to remember how to grow, something would already be wrong with the plant. So if following Jesus feels like nothing but checklists, and never like staying connected to someone, is the problem the goal itself, or how it's currently being approached?",
+      "ru": "Иисус описал это не как работу, а как растение. В 15 главе Иоанна Он сказал, что Он — виноградная лоза, а Его ученики — ветви. Ветка не выполняет ежедневный список дел, чтобы принести плод. Она просто остаётся прикреплённой, и плод вырастает из этой связи почти сам собой. Привычки из этого урока — чтение, молитва, церковь — не сама дружба с Иисусом. Они больше похожи на то, как ветка держится за лозу. Это не отчёт об успеваемости. Вот вопрос в ответ: если бы растению нужно было ходить на семинары, чтобы вспомнить, как расти, с этим растением было бы уже что-то не так. Так что если следование за Иисусом ощущается только как списки дел, а никогда — как связь с кем-то живым, проблема в самой цели, или в том, как к ней сейчас подходят?"
     }
   },
   "activity": {
@@ -186,7 +371,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Keep habits developmentally realistic and accessible. Colossians 2:6–7 grounds growth in Christ, not earned acceptance. The activity orders a planning process, not mandatory steps that every Christian must perform identically.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Пусть привычки подходят возрасту и возможностям. Колоссянам 2:6–7 связывает рост со Христом, а не с заслуженным принятием. Задание упорядочивает планирование, а не задаёт обязательную для всех формулу."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Keep habits developmentally realistic and accessible. Colossians 2:6–7 grounds growth in Christ, not earned acceptance. The activity orders a planning process, not mandatory steps that every Christian must perform identically. The 'comeback' response draws on Jesus's own vine-and-branches image in John 15, which this lesson had not yet cited, to reframe spiritual habits as remaining connected rather than a performance checklist.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Пусть привычки подходят возрасту и возможностям. Колоссянам 2:6–7 связывает рост со Христом, а не с заслуженным принятием. Задание упорядочивает планирование, а не задаёт обязательную для всех формулу. Ответ в блоке «если кто-то скажет» использует собственный образ Иисуса — лозы и ветвей — из 15 главы Иоанна, ещё не упомянутой в уроке, чтобы показать духовные привычки как пребывание в связи, а не отчёт об успеваемости."
   }
 }
