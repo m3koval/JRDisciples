@@ -16,64 +16,182 @@
         "en": "The missing center",
         "ru": "Чего не хватает в центре"
       },
-      "paragraphs": {
-        "en": [
-          "At the library workshop, Joseph builds a cardboard house with an opening in its roof. Michael wants a tiny ladder; Gracie wants four carrying handles. Rosie asks what the model is supposed to help them notice. Suddenly everyone realizes they have planned the roof but forgotten the person inside.",
-          "Before anyone adds another decoration, you help them open Mark 2:1–12. Their cardboard house can help them follow the story, but it is a model they are making today, not something discovered at the place where Jesus lived."
-        ],
-        "ru": [
-          "В библиотечной мастерской Джозеф строит картонный дом с отверстием в крыше. Майкл хочет добавить лесенку, Грейси — четыре ручки для носилок. Рози спрашивает, что модель поможет заметить. Все понимают: они увлеклись крышей и забыли о человеке внутри.",
-          "Прежде чем украшать дом дальше, ты помогаешь открыть Марка 2:1–12. Картонный макет поможет представить рассказ, но ребята делают его сегодня: это не находка с места, где жил Иисус."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "At the library workshop, Joseph builds a cardboard house. It has an opening in its roof.",
+            "ru": "В библиотечной мастерской Джозеф строит картонный дом. В крыше у него отверстие."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael wants a tiny ladder. Gracie wants four carrying handles.",
+            "ru": "Майкл хочет добавить лесенку. Грейси — четыре ручки для носилок."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "What is this model actually supposed to help us notice?",
+            "ru": "Что эта модель поможет нам заметить?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Suddenly everyone realizes something. They've planned the roof, and forgotten the person inside.",
+            "ru": "Все вдруг понимают: они увлеклись крышей и забыли о человеке внутри."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Before anyone adds another decoration, you help them open Mark chapter 2.",
+            "ru": "Прежде чем украшать дом дальше, ты помогаешь открыть 2 главу Марка."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their cardboard house can help them follow the story. But it's a model they're making today. Not something dug up from where Jesus lived.",
+            "ru": "Картонный макет поможет представить рассказ. Но ребята делают его сегодня. Это не находка с места, где жил Иисус."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "More than a surprising cure",
         "ru": "Больше, чем удивительное исцеление"
       },
-      "paragraphs": {
-        "en": [
-          "They read about friends bringing a paralyzed man to Jesus through the roof. Jesus first addresses the man’s sins. Some scribes question his authority, because forgiving sins in this way belongs to God. Now Rosie understands why the people in the room were listening so closely: who has the right to forgive sins?",
-          "Rosie places a card marked Claim beside the model. The passage is not merely saying that kindness is nice. It presents Jesus making a remarkable claim about authority."
-        ],
-        "ru": [
-          "Они читают, как друзья спустили расслабленного к Иисусу через крышу. Сначала Иисус говорит о прощении его грехов. Книжники сомневаются в Его власти: так прощать грехи может Бог. Теперь Рози понимает, почему все так внимательно слушали Иисуса: кто имеет власть прощать грехи?",
-          "Рози кладёт рядом карточку «Заявление». Отрывок не просто напоминает, что доброта полезна. Он рассказывает об удивительной власти, на которую указывает Иисус."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read about friends bringing a paralyzed man to Jesus through the roof.",
+            "ru": "Они читают, как друзья спустили расслабленного к Иисусу через крышу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Jesus first addresses the man's sins. Some scribes question his authority. Forgiving sins that way belongs to God.",
+            "ru": "Сначала Иисус говорит о прощении его грехов. Книжники сомневаются в Его власти. Так прощать грехи может Бог."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Now Rosie understands why the people in the room were listening so closely. Who actually has the right to forgive sins?",
+            "ru": "Теперь Рози понимает, почему все так внимательно слушали Иисуса: кто имеет власть прощать грехи?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie places a card marked Claim beside the model.",
+            "ru": "Рози кладёт рядом карточку «Заявление»."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "This passage isn't just saying kindness is nice. Jesus is making a remarkable claim about authority.",
+            "ru": "Этот отрывок не просто напоминает, что доброта полезна. Иисус заявляет об удивительной власти."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "What the account connects",
         "ru": "Что соединяет рассказ"
       },
-      "paragraphs": {
-        "en": [
-          "In Mark’s account, Jesus heals the man so the people may know the Son of Man has authority to forgive sins. The man gets up and carries his bed. Joseph adds Action and Written witness cards, drawing arrows between them.",
-          "“Our house shows what happened in the story,” Gracie says, studying their poster. “But making a model doesn’t prove the healing happened.” She helps correct the caption so visitors can tell the written account from the illustration. Their reason for considering Jesus’ identity comes from what the account actually says, not from their clever craft."
-        ],
-        "ru": [
-          "В рассказе Марка Иисус исцеляет человека, чтобы люди узнали о власти Сына Человеческого прощать грехи. Тот встаёт и уносит постель. Джозеф добавляет карточки «Действие» и «Письменное свидетельство» и соединяет их стрелками.",
-          "«Наш дом помогает представить рассказ, — говорит Грейси, изучая плакат. — Но сама поделка не доказывает, что исцеление произошло». Она помогает исправить подпись, чтобы посетители отличали письменное свидетельство от иллюстрации. Размышлять о личности Иисуса нужно на основании текста, а не красивой поделки."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "In Mark's account, Jesus heals the man. He wants people to know the Son of Man has authority to forgive sins.",
+            "ru": "В рассказе Марка Иисус исцеляет человека. Он хочет, чтобы люди узнали о власти Сына Человеческого прощать грехи."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The man gets up and carries his bed. Joseph adds two cards: Action, and Written Witness. He draws arrows between them.",
+            "ru": "Тот встаёт и уносит постель. Джозеф добавляет две карточки: «Действие» и «Письменное свидетельство». Он соединяет их стрелками."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Our house shows what happened in the story. But making a model doesn't prove the healing happened.",
+            "ru": "Наш дом помогает представить рассказ. Но сама поделка не доказывает, что исцеление произошло."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "She helps fix the caption. Now visitors can tell the written account apart from the drawing.",
+            "ru": "Она помогает исправить подпись. Теперь посетители отличают письменное свидетельство от рисунка."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their reason for thinking about who Jesus is comes from what the account actually says. It doesn't come from their clever craft.",
+            "ru": "Размышлять о личности Иисуса нужно на основании текста. А не красивой поделки."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "The case reaches us",
         "ru": "Исследование касается нас"
       },
-      "paragraphs": {
-        "en": [
-          "They read John 20:30–31, where the purpose of the written signs reaches beyond collecting impressive facts. The reader is invited to believe in Jesus and have life in his name. Michael puts down the little ladder and asks what trusting Jesus would change tomorrow.",
-          "You help place the finished model on a low shelf. Beside it they leave space for questions. Their exhibit now points beyond itself: toward the Lord who forgives, and toward a response no cardboard model can make for you."
-        ],
-        "ru": [
-          "Они читают Иоанна 20:30–31: знамения записаны не ради коллекции удивительных фактов. Читатель призван верить в Иисуса и иметь жизнь во имя Его. Майкл откладывает лесенку и спрашивает, что доверие Иисусу изменит завтра.",
-          "Ты помогаешь поставить модель на низкую полку. Рядом оставляют место для вопросов. Теперь выставка указывает не на себя, а на Господа, Который прощает. За тебя модель ответить Ему не может."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They read John chapter 20. The purpose of the written signs reaches beyond collecting impressive facts.",
+            "ru": "Они читают 20 главу Иоанна. Знамения записаны не ради коллекции удивительных фактов."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The reader is invited to believe in Jesus, and have life in his name.",
+            "ru": "Читатель призван верить в Иисуса и иметь жизнь во имя Его."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael puts down the little ladder, and asks what trusting Jesus would actually change tomorrow.",
+            "ru": "Майкл откладывает лесенку и спрашивает, что доверие Иисусу изменит завтра."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help place the finished model on a low shelf. Beside it, they leave space for questions.",
+            "ru": "Ты помогаешь поставить модель на низкую полку. Рядом оставляют место для вопросов."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their exhibit now points beyond itself. Toward the Lord who forgives. And toward a response no cardboard model can make for you.",
+            "ru": "Теперь выставка указывает не на себя, а на Господа, Который прощает. За тебя модель ответить Ему не может."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -161,8 +279,8 @@
       },
       "url": "https://www.bible.com/bible/59/JHN.20.31.ESV",
       "supports": {
-        "en": "Matthew 5:44 calls Jesus' followers to love enemies and pray for persecutors.",
-        "ru": "Матфея 5:44 призывает последователей Иисуса любить врагов и молиться за гонителей."
+        "en": "John 20:31 states the Gospel's purpose: that readers may believe Jesus is the Christ, the Son of God, and have life in his name.",
+        "ru": "Иоанна 20:31 называет цель Евангелия: чтобы читатели уверовали, что Иисус есть Христос, Сын Божий, и имели жизнь во имя Его."
       },
       "limits": {
         "en": "Read the passage in context. The explorers and their activity are fictional applications, not events described by this passage.",

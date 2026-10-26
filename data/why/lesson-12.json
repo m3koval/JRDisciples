@@ -16,64 +16,196 @@
         "en": "A box of almost-right answers",
         "ru": "Коробка почти верных ответов"
       },
-      "paragraphs": {
-        "en": [
-          "The explorers turn their reading corner into an explanation repair shop. Joseph brings cards from a practice exercise, each labeled as an idea to test, not a Bible quotation. One says God is loving, so wrong choices do not matter. Another divides God into three separate pieces.",
-          "‘These are wrong. Shouldn't we throw them away?’ Michael asks. Rosie suggests taking a closer look first. ‘Maybe we can explain what went wrong and help someone understand.’ You carry the first card to the table beside the open Bible, ready to work through it together."
-        ],
-        "ru": [
-          "Исследователи превращают уголок чтения в мастерскую объяснений. Джозеф приносит учебные карточки. На каждой написано: это идея для проверки, а не библейская цитата. Одна утверждает: раз Бог любит, плохие поступки неважны. Другая делит Бога на три отдельные части.",
-          "«Здесь же ошибки. Может, выбросим всё?» — спрашивает Майкл. Рози предлагает сначала разобраться. «Мы могли бы объяснить, в чём ошибка, и помочь кому-нибудь понять». Ты несёшь первую карточку к столу с открытой Библией, чтобы проверить её вместе."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team turns their reading corner into an explanation repair shop.",
+            "ru": "Ребята превращают уголок чтения в мастерскую объяснений."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph brings cards from a practice exercise, each one marked as an idea to test, not a Bible quote.",
+            "ru": "Джозеф приносит учебные карточки. На каждой написано: это идея для проверки, не библейская цитата."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "One card says God is loving, so wrong choices don't matter. Another splits God into three separate pieces.",
+            "ru": "Одна утверждает: раз Бог любит, плохие поступки неважны. Другая делит Бога на три отдельные части."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "These are just wrong. Shouldn't we throw them away?",
+            "ru": "Здесь же ошибки. Может, выбросим всё?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Let's take a closer look first. Maybe we can explain what went wrong, and help someone understand.",
+            "ru": "Давайте сначала разберёмся. Мы могли бы объяснить, в чём ошибка, и помочь кому-нибудь понять."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You carry the first card to the table, beside the open Bible, ready to work through it together.",
+            "ru": "Ты несёшь первую карточку к столу с открытой Библией, чтобы проверить её вместе."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Keep the part that is true",
         "ru": "Сохрани то, что верно"
       },
-      "paragraphs": {
-        "en": [
-          "Gracie remembers their display about God's character. Love belongs in the answer, but ignoring wrongdoing does not. With their leader, they revisit Exodus 34 and replace the claim with a sentence about God's mercy and justice together. Correcting a sentence need not mean insulting its writer.",
-          "Michael tries the same method on a birthday card for God. They preserve the wish to celebrate him but remove the suggestion that God began on a particular day."
-        ],
-        "ru": [
-          "Грейси вспоминает стенд о Божьем характере. О любви сказано верно, а о безразличии ко злу — нет. С наставником дети возвращаются к Исходу 34 и пишут о милости и справедливости вместе. Исправить предложение — не значит оскорбить автора.",
-          "Майкл так же проверяет открытку ко дню рождения Бога. Они сохраняют желание прославить Его, но убирают мысль, будто Бог появился в определённый день."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie remembers their display about God's character. Love belongs in the answer. Ignoring wrongdoing doesn't.",
+            "ru": "Грейси вспоминает стенд о Божьем характере. О любви сказано верно. А о безразличии ко злу — нет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "With their leader, they revisit Exodus chapter 34. They replace the claim with a sentence about God's mercy and justice together.",
+            "ru": "С наставником дети возвращаются к 34 главе Исхода. Они пишут новое предложение о милости и справедливости вместе."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Correcting a sentence doesn't have to mean insulting whoever wrote it.",
+            "ru": "Исправить предложение — не значит оскорбить автора."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael tries the same method on a birthday card for God.",
+            "ru": "Майкл так же проверяет открытку ко дню рождения Бога."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They keep the wish to celebrate him. They remove the idea that God began on a certain day.",
+            "ru": "Они сохраняют желание прославить Его. Но убирают мысль, будто Бог появился в определённый день."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Where the picture breaks",
         "ru": "Где сравнение не работает"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph holds up a picture of a three-piece puzzle. It helps him count to three, but it cannot explain the Trinity: each puzzle piece is less than the whole. Deuteronomy teaches one God, and Matthew names Father, Son, and Holy Spirit. Their explanation must keep those truths together.",
-          "‘I can see three pieces,’ Joseph says, ‘but each one is only part of the puzzle. That isn't what we mean about God.’ You help him write a note beneath the picture: the Father, Son, and Spirit are not three parts or three gods. The team sets the picture aside because it would make their explanation harder to understand, not easier."
-        ],
-        "ru": [
-          "Джозеф поднимает рисунок пазла из трёх деталей. Он помогает сосчитать до трёх, но не объясняет Троицу: каждая деталь меньше целого. Второзаконие учит о едином Боге, а Матфей называет Отца, Сына и Святого Духа. Нужно сохранить обе истины.",
-          "«Три детали видно, — говорит Джозеф, — но каждая из них только часть пазла. А о Боге мы говорим не это». Ты помогаешь ему сделать подпись: Отец, Сын и Дух — не три части и не три бога. Ребята откладывают рисунок, потому что он скорее запутает слушателя, чем поможет понять."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph holds up a picture of a three-piece puzzle.",
+            "ru": "Джозеф поднимает рисунок пазла из трёх деталей."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "It helps him count to three. But it can't explain the Trinity. Each puzzle piece is less than the whole.",
+            "ru": "Он помогает сосчитать до трёх. Но он не объясняет Троицу. Каждая деталь меньше целого."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Deuteronomy teaches one God. Matthew names Father, Son, and Holy Spirit. A good explanation keeps both truths together.",
+            "ru": "Второзаконие учит о едином Боге. Матфей называет Отца, Сына и Святого Духа. Хорошее объяснение сохраняет обе истины."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "I can see three pieces. But each one is only part of the puzzle. That isn't what we mean about God.",
+            "ru": "Три детали видно. Но каждая из них только часть пазла. А о Боге мы говорим не это."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help him write a note beneath the picture: the Father, Son, and Spirit are not three parts, or three gods.",
+            "ru": "Ты помогаешь ему сделать подпись: Отец, Сын и Дух — не три части и не три бога."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team sets the picture aside. It would make their explanation harder to understand, not easier.",
+            "ru": "Ребята откладывают рисунок. Он скорее запутает слушателя, чем поможет понять."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Room for an unfinished question",
         "ru": "Место для открытого вопроса"
       },
-      "paragraphs": {
-        "en": [
-          "A younger visitor asks how one God can be three persons. Rosie explains what they have learned, then admits she cannot picture God's life completely. Joseph leaves a blank line for the visitor's next question rather than covering it with a confident slogan.",
-          "The repair shop closes with fewer flashy pictures and better sentences. Michael discovers that admitting a limit does not erase what they do know. You carry the question box back to the shelf, ready for another conversation."
-        ],
-        "ru": [
-          "Младший посетитель спрашивает, как один Бог может быть в трёх Лицах. Рози рассказывает, чему они научились, и признаётся, что не может полностью представить Божью жизнь. Джозеф оставляет строку для следующего вопроса, а не закрывает её уверенным лозунгом.",
-          "В мастерской стало меньше ярких схем, зато объяснения точнее. Майкл понял: признание границ не отменяет того, что мы уже знаем. Ты возвращаешь коробку вопросов на полку до следующего разговора."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "A younger visitor asks how one God can be three persons.",
+            "ru": "Младший посетитель спрашивает, как один Бог может быть в трёх Лицах."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie explains what they've learned. Then she admits she can't picture God's life completely.",
+            "ru": "Рози рассказывает, чему они научились. Потом признаётся, что не может полностью представить Божью жизнь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph leaves a blank line for the visitor's next question, instead of covering it with a confident slogan.",
+            "ru": "Джозеф оставляет строку для следующего вопроса, а не закрывает её уверенным лозунгом."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The repair shop closes with fewer flashy pictures, and better sentences.",
+            "ru": "В мастерской стало меньше ярких схем, зато объяснения точнее."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael discovers something. Admitting a limit doesn't erase what they already know.",
+            "ru": "Майкл понимает кое-что. Признание границ не отменяет того, что они уже знают."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You carry the question box back to the shelf, ready for another conversation.",
+            "ru": "Ты возвращаешь коробку вопросов на полку до следующего разговора."
+          }
+        }
+      ]
     }
   ],
   "scripture": {

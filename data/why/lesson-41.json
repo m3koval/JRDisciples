@@ -16,64 +16,182 @@
         "en": "A very good recording",
         "ru": "Очень хорошая запись"
       },
-      "paragraphs": {
-        "en": [
-          "Rain moves the explorers’ meeting into the church hall. Michael arrives with a helpful Bible video. “Couldn’t we all watch this at home next week?” he asks as they arrange the chairs. “Then there wouldn’t be any muddy shoes to clean up after.” On the screen, the speaker is ready to begin and has all his notes in order.",
-          "Then Rosie notices the empty chair beside Joseph. Their friend Anna has missed two gatherings. The video can teach something true, but its recorded speaker cannot notice Anna’s chair or ask why she has disappeared."
-        ],
-        "ru": [
-          "Из-за дождя исследователи собираются в церковном зале. Майкл приносит полезное библейское видео. «А может, на следующей неделе все посмотрят его дома? — предлагает он, пока они расставляют стулья. — Тогда и грязь с пола убирать не придётся». На экране ведущий уже готов начать, и все записи у него на месте.",
-          "Рози замечает пустой стул рядом с Джозефом. Их подруга Анна пропустила две встречи. Запись может учить истине, но её ведущий не заметит пустой стул и не спросит, куда исчезла Анна."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rain moves the team's meeting into the church hall. Michael arrives with a helpful Bible video.",
+            "ru": "Из-за дождя ребята собираются в церковном зале. Майкл приносит полезное библейское видео."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Couldn't we all just watch this at home next week? Then nobody would have to clean up muddy shoes.",
+            "ru": "А может, на следующей неделе все посмотрят его дома? Тогда и грязь убирать не придётся."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "On the screen, the speaker is ready to begin, with all his notes in order.",
+            "ru": "На экране ведущий уже готов начать, и все записи у него на месте."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Then Rosie notices the empty chair beside Joseph. Their friend Anna has missed two gatherings.",
+            "ru": "Рози замечает пустой стул рядом с Джозефом. Их подруга Анна пропустила две встречи."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The video can teach something true. But its recorded speaker can't notice Anna's chair. It can't ask why she's disappeared.",
+            "ru": "Запись может учить истине. Но её ведущий не заметит пустой стул. Он не спросит, куда исчезла Анна."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "People doing things together",
         "ru": "Люди действуют вместе"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph opens Acts 2:42–47 and circles the actions in his notebook: learning, praying, sharing meals, and meeting needs. The first believers were not merely customers collecting useful talks. Jesus gathered people who belonged to him and learned to care for one another.",
-          "You help Rosie read Hebrews 10:24–25. Encouragement needs both someone giving and someone receiving it. Michael adds another column beside Watch: Participate. Worship, listening, serving, and being known involve the whole church family."
-        ],
-        "ru": [
-          "Джозеф открывает Деяния 2:42–47 и выписывает действия: учиться, молиться, есть вместе, помогать нуждающимся. Первые верующие не просто собирали полезные выступления. Иисус собрал людей, принадлежащих Ему и учащихся заботиться друг о друге.",
-          "Ты помогаешь Рози прочитать Евреям 10:24–25. Ободрение нужно кому-то передать и от кого-то принять. Майкл рядом со словом «Смотреть» пишет «Участвовать». Поклонение, слушание и служение — общая жизнь церковной семьи."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph opens Acts chapter 2 and circles the actions in his notebook: learning, praying, sharing meals, meeting needs.",
+            "ru": "Джозеф открывает 2 главу Деяний и выписывает действия: учиться, молиться, есть вместе, помогать нуждающимся."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The first believers weren't just customers collecting useful talks.",
+            "ru": "Первые верующие не просто собирали полезные выступления."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "rosie",
+          "text": {
+            "en": "Jesus gathered real people. People who belong to him, and learn to care for each other.",
+            "ru": "Иисус собрал настоящих людей. Людей, которые принадлежат Ему и учатся заботиться друг о друге."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help Rosie read Hebrews chapter 10. Encouragement needs two people. Someone to give it. And someone to receive it.",
+            "ru": "Ты помогаешь Рози прочитать 10 главу Евреям. Ободрению нужны двое. Кто-то, кто его передаст. И кто-то, кто его примет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael adds another word beside \"Watch\": Participate. That means worship. It means listening and serving, too. All of it involves the whole church family.",
+            "ru": "Майкл рядом со словом «Смотреть» пишет «Участвовать». Это значит поклонение. Это значит слушание и служение. Всё это — общая жизнь церковной семьи."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "An empty chair has a name",
         "ru": "У пустого стула есть имя"
       },
-      "paragraphs": {
-        "en": [
-          "With their leader, the children ask Anna’s family whether a visit would help. Her father is recovering from surgery, and transport has become difficult. The adults arrange support; the children prepare a card and record the group singing Anna’s favorite song.",
-          "“So a recording can help,” Gracie says as they finish the song. Now she sees the difference: they are sending it because they know and love Anna, not because a video can replace their friendship. Before preparing anything else, they ask what Anna would enjoy."
-        ],
-        "ru": [
-          "С руководителем дети спрашивают семью Анны, будет ли полезен визит. Её папа восстанавливается после операции, и добираться стало трудно. Взрослые организуют помощь, дети делают открытку и записывают любимую песню Анны.",
-          "«Значит, запись тоже может помочь», — говорит Грейси, когда песня заканчивается. Теперь она понимает разницу: они отправляют запись, потому что знают и любят Анну, а не чтобы заменить ею дружбу. Прежде чем готовить что-то ещё, они спрашивают, что порадует подругу."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "With their leader, the kids ask Anna's family whether a visit would help.",
+            "ru": "С руководителем дети спрашивают семью Анны, будет ли полезен визит."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Her father is recovering from surgery, and getting around has become hard.",
+            "ru": "Её папа восстанавливается после операции, и добираться стало трудно."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The adults arrange support. The kids make a card, and record the group singing Anna's favorite song.",
+            "ru": "Взрослые организуют помощь. Дети делают открытку и записывают любимую песню Анны."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "So a recording can help, after all.",
+            "ru": "Значит, запись тоже может помочь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Now she sees the real difference. They're sending it because they know and love Anna. Not because a video replaces their friendship.",
+            "ru": "Теперь она понимает разницу. Они отправляют запись, потому что знают и любят Анну. А не чтобы заменить ею дружбу."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Before preparing anything else, they ask what Anna would actually enjoy.",
+            "ru": "Прежде чем готовить что-то ещё, они спрашивают, что порадует подругу."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "More than an audience",
         "ru": "Больше, чем зрители"
       },
-      "paragraphs": {
-        "en": [
-          "The following week Anna joins by video while a trusted adult visits her family. Michael sets a chair near the screen and asks for her ideas about the next project. When she suggests large-print song sheets, he volunteers to help make them.",
-          "Explorer, find a role beside him. Belonging is not a perfect attendance prize. The church gathers around Jesus to worship and grow together, and its care reaches people who cannot currently come through the door."
-        ],
-        "ru": [
-          "На следующей неделе Анна подключается по видеосвязи, а надёжный взрослый навещает её семью. Майкл ставит стул рядом с экраном и спрашивает её идеи для проекта. Анна предлагает крупно напечатать песни; он берётся помочь.",
-          "Исследователь, найди дело рядом с ним. Принадлежность к церкви не награда за посещаемость. Церковь собирается вокруг Иисуса, чтобы поклоняться и расти вместе, а её забота достигает тех, кто сейчас не может прийти."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The next week, Anna joins by video. A trusted adult visits her family in person.",
+            "ru": "На следующей неделе Анна подключается по видеосвязи. Надёжный взрослый навещает её семью."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael sets a chair near the screen, and asks for her ideas about the next project.",
+            "ru": "Майкл ставит стул рядом с экраном и спрашивает её идеи для проекта."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "When she suggests large-print song sheets, he volunteers to help make them.",
+            "ru": "Когда Анна предлагает крупно напечатать песни, он берётся помочь."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Explorer, find a role beside him.",
+            "ru": "Исследователь, найди дело рядом с ним."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Belonging isn't a prize for perfect attendance. The church gathers around Jesus. They worship and grow together. And its care still reaches people who can't walk through the door.",
+            "ru": "Принадлежность к церкви — не награда за посещаемость. Церковь собирается вокруг Иисуса. Они поклоняются и растут вместе. И её забота достигает тех, кто сейчас не может прийти."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +206,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/ACT.2.42.ESV",
       "ru": "https://www.bible.com/bible/167/ACT.2.42.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "A video can teach me everything church teaches, and I don't even have to leave my house. What's actually missing?",
+      "ru": "Видео научит меня всему тому же, чему учит церковь, и даже из дома выходить не нужно. Чего тут не хватает?"
+    },
+    "response": {
+      "en": "A theologian named Dietrich Bonhoeffer wrote about this from a prison cell, cut off from other Christians. He said something easy to miss when you have it every day: just being physically present with other believers is itself a gift, not a bonus feature. He grounded that in a very Christian idea. God didn't send us a video of himself. God put on an actual human body and lived among actual people. A church screen can hand you true words. It can't notice you're not there, pray with you in the moment, or show up at your door when you're struggling. So here's a question back: if the whole point of knowing God is to be truly known and truly cared for, not just correctly informed, is a video actually offering the same thing church offers, or a thinner thing wearing the same name?",
+      "ru": "Богослов Дитрих Бонхёффер писал об этом из тюремной камеры, отрезанный от других христиан. Он сказал кое-что, легко забываемое, когда это есть каждый день: просто быть рядом с другими верующими — уже само по себе дар, а не дополнительная функция. Он связал это с очень христианской идеей. Бог не послал нам видео о Себе. Бог облёкся в настоящее человеческое тело и жил среди настоящих людей. Церковный экран может дать тебе верные слова. Но он не заметит, что тебя нет, не помолится с тобой в эту самую минуту и не придёт к твоей двери, когда тебе трудно. Вот вопрос в ответ: если смысл знания Бога — быть по-настоящему узнанным и по-настоящему любимым, а не просто правильно проинформированным, даёт ли видео то же самое, что даёт церковь, — или что-то более тонкое под тем же названием?"
     }
   },
   "activity": {
@@ -178,7 +306,7 @@
     }
   ],
   "adultNote": {
-    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Affirm access needs, illness, and appropriate online participation. Gathering matters, but attendance is not a measure of worth or permission to ignore unsafe church conduct.",
-    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Учитывайте ограничения здоровья и доступность, поддерживайте участие онлайн. Общие встречи важны, но посещаемость не измеряет ценность человека и не оправдывает опасное поведение в церкви."
+    "en": "The modern explorer story is original fiction; biblical accounts are retold, not quoted dialogue. Affirm access needs, illness, and appropriate online participation. Gathering matters, but attendance is not a measure of worth or permission to ignore unsafe church conduct. The 'comeback' response draws on Dietrich Bonhoeffer's Life Together, which opens by calling the physical presence of other Christians a gift grounded in the incarnation, easily taken for granted by those who have it daily; it does not suggest online participation is worthless, which this lesson itself affirms for Anna.",
+    "ru": "Современная история исследователей вымышлена; библейские события пересказаны без выдуманных цитат. Учитывайте ограничения здоровья и доступность, поддерживайте участие онлайн. Общие встречи важны, но посещаемость не измеряет ценность человека и не оправдывает опасное поведение в церкви. Ответ в блоке «если кто-то скажет» опирается на книгу Дитриха Бонхёффера «Жизнь вместе», которая начинается с того, что физическое присутствие других христиан — дар, укоренённый в воплощении, который легко не заметить, если он есть каждый день; это не означает, что участие онлайн бесполезно — сам урок утверждает противоположное для Анны."
   }
 }

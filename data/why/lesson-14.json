@@ -16,64 +16,191 @@
         "en": "An impatient gardener",
         "ru": "Нетерпеливый садовник"
       },
-      "paragraphs": {
-        "en": [
-          "Joseph has drawn a neat growing schedule for the garden windowsill: by Friday, every bean should have a green shoot. But when Friday comes, one pot still looks empty. ‘Could we leave that one out of the report?’ Michael asks. Gracie looks at him. ‘Wouldn't that make it sound as if they all grew?’ Michael looks back at the pot he wanted to hide.",
-          "You move all the pots onto a tray. Rosie brings her purple Bible, while Joseph keeps his ruler ready. Neither book nor ruler needs to be hidden."
-        ],
-        "ru": [
-          "Джозеф составил аккуратный график для огорода на подоконнике: к пятнице у каждой фасолины должен появиться зелёный росток. Но в пятницу один горшок всё ещё кажется пустым. «Может, не будем писать о нём в отчёте?» — предлагает Майкл. Грейси смотрит на него. «Тогда получится, будто проросли все?» Майкл снова смотрит на горшок, который хотел спрятать.",
-          "Ты ставишь все горшки на поднос. Рози приносит фиолетовую Библию, а Джозеф готовит линейку. Ни книгу, ни линейку прятать не нужно."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Joseph has drawn a neat growing schedule for the garden windowsill. By Friday, every bean should have a green shoot.",
+            "ru": "Джозеф составил аккуратный график для огорода на подоконнике. К пятнице у каждой фасолины должен появиться зелёный росток."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "But when Friday comes, one pot still looks empty.",
+            "ru": "Но в пятницу один горшок всё ещё кажется пустым."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "michael",
+          "text": {
+            "en": "Could we just leave that one out of the report?",
+            "ru": "Может, не будем писать о нём в отчёте?"
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "gracie",
+          "text": {
+            "en": "Wouldn't that make it sound like they all grew?",
+            "ru": "Тогда получится, будто проросли все?"
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael looks back at the pot he wanted to hide.",
+            "ru": "Майкл снова смотрит на горшок, который хотел спрятать."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You move all the pots onto a tray. Rosie brings her Bible. Joseph keeps his ruler ready. Neither book nor ruler needs hiding.",
+            "ru": "Ты ставишь все горшки на поднос. Рози приносит Библию. Джозеф готовит линейку. Ни книгу, ни линейку прятать не нужно."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Write what happened",
         "ru": "Запиши, что произошло"
       },
-      "paragraphs": {
-        "en": [
-          "They record the visible shoots and measure their heights. The empty pot gets an honest entry: no shoot visible today. Joseph suggests that its seed may have dried out, but labels this a possible explanation rather than something they have already established.",
-          "Their teacher helps plan a fair comparison using the same seed type, soil, and light while changing the water amount. They will repeat observations over time. A single stubborn bean cannot answer every question about plants."
-        ],
-        "ru": [
-          "Они отмечают видимые ростки и измеряют высоту. Для пустого горшка записывают честно: сегодня ростка не видно. Джозеф предполагает, что семя пересохло, но называет это возможным объяснением, а не установленным фактом.",
-          "Учитель помогает придумать сравнение: одинаковые семена, почва и свет, но разное количество воды. Наблюдения будут повторяться. Одна упрямая фасолина не ответит на все вопросы о растениях."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They record the visible shoots and measure their heights.",
+            "ru": "Они отмечают видимые ростки и измеряют высоту."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The empty pot gets an honest entry: no shoot visible today.",
+            "ru": "Для пустого горшка записывают честно: сегодня ростка не видно."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "Maybe its seed dried out. That's just a guess, not something we've actually checked.",
+            "ru": "Может быть, семя пересохло. Но это лишь догадка, не проверенный факт."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Their teacher helps plan a fair comparison. Same seed type, same soil, same light. They'll only change how much water each gets.",
+            "ru": "Учитель помогает придумать честное сравнение. Одинаковые семена, почва и свет. Будет отличаться только количество воды."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "They'll keep watching over time. One stubborn bean can't answer every question about plants.",
+            "ru": "Наблюдения будут повторяться. Одна упрямая фасолина не ответит на все вопросы о растениях."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "Study can be grateful",
         "ru": "Изучать с благодарностью"
       },
-      "paragraphs": {
-        "en": [
-          "Rosie reads Psalm 111:2, which connects God's works with delighted study. Learning about roots and water need not compete with thanking their Creator. Their teacher also warns against adding conclusions their experiment cannot test: measuring growth does not measure God's existence or prove that he is absent.",
-          "Michael crosses out a draft claiming their seedlings settle every science-and-faith argument. Some questions require careful discussion of evidence and interpretation. Pretending there are no hard questions would not help them learn."
-        ],
-        "ru": [
-          "Рози читает Псалом 110:2: Божьи дела достойны изучения и радости. Можно узнавать о корнях и воде и благодарить Творца. Учитель предупреждает: нельзя добавлять выводы, которых опыт не проверяет. Измерение роста не измеряет существование Бога и не доказывает Его отсутствие.",
-          "Майкл вычёркивает черновую фразу, будто ростки разрешили все споры науки и веры. Некоторые вопросы требуют внимательного разговора о данных и их толковании. Притворяться, что трудных вопросов нет, — не способ учиться."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Rosie reads Psalm 111:2. It connects God's works with delighted study.",
+            "ru": "Рози читает Псалом 110:2. Он связывает Божьи дела с радостным изучением."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Learning about roots and water doesn't have to compete with thanking the Creator.",
+            "ru": "Можно узнавать о корнях и воде и при этом благодарить Творца."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "teacher",
+          "text": {
+            "en": "Just don't add a conclusion our experiment can't actually test. Measuring growth doesn't measure whether God exists, either way.",
+            "ru": "Только не добавляйте вывод, которого опыт не проверяет. Измерение роста не измеряет, существует ли Бог."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael crosses out a draft claiming their seedlings settle every science-and-faith argument.",
+            "ru": "Майкл вычёркивает черновую фразу, будто ростки разрешили все споры науки и веры."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Some real questions need careful discussion of evidence. Pretending there are no hard questions wouldn't help them learn anything.",
+            "ru": "Некоторые вопросы требуют внимательного разговора о данных. Притворяться, что трудных вопросов нет, не поможет учиться."
+          }
+        }
+      ]
     },
     {
       "title": {
         "en": "The missing pot stays",
         "ru": "Горшок остаётся в отчёте"
       },
-      "paragraphs": {
-        "en": [
-          "You help leave space for tomorrow's results instead of drawing a shoot that is not there. Gracie waters the assigned pots according to their plan. ‘My schedule was wrong,’ Joseph says, ‘but now we have something else to investigate.’ He keeps the original prediction so they can compare it with what actually grows.",
-          "The team thanks God for a world worth studying and for patience to report what actually happens. Michael leaves the empty pot in the photograph. Their report is less tidy than he hoped, but much more trustworthy."
-        ],
-        "ru": [
-          "Ты помогаешь оставить место для завтрашних результатов, а не рисовать росток, которого нет. Грейси поливает горшки по плану. «Мой прогноз не сбылся, — говорит Джозеф, — зато теперь есть что проверить». Он сохраняет первоначальную запись, чтобы сравнить её с тем, что вырастет на самом деле.",
-          "Команда благодарит Бога за мир, который интересно изучать, и за терпение честно записывать результаты. Майкл оставляет пустой горшок на фотографии. Отчёт не такой ровный, как хотелось, зато ему можно доверять."
-        ]
-      }
+      "beats": [
+        {
+          "kind": "narration",
+          "text": {
+            "en": "You help leave space for tomorrow's results, instead of drawing a shoot that isn't there.",
+            "ru": "Ты помогаешь оставить место для завтрашних результатов, а не рисовать росток, которого нет."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Gracie waters the pots according to their plan.",
+            "ru": "Грейси поливает горшки по плану."
+          }
+        },
+        {
+          "kind": "dialogue",
+          "speaker": "joseph",
+          "text": {
+            "en": "My schedule was wrong. But now we have something new to investigate.",
+            "ru": "Мой прогноз не сбылся. Зато теперь есть что проверить."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "He keeps the original prediction, so they can compare it with what actually grows.",
+            "ru": "Он сохраняет первоначальную запись, чтобы сравнить её с тем, что вырастет на самом деле."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "The team thanks God for a world worth studying, and for patience to report what actually happens.",
+            "ru": "Команда благодарит Бога за мир, который интересно изучать, и за терпение честно записывать результаты."
+          }
+        },
+        {
+          "kind": "narration",
+          "text": {
+            "en": "Michael leaves the empty pot in the photograph. Their report is less tidy than he hoped. But much more trustworthy.",
+            "ru": "Майкл оставляет пустой горшок на фотографии. Отчёт не такой ровный, как хотелось. Зато ему можно доверять."
+          }
+        }
+      ]
     }
   ],
   "scripture": {
@@ -88,6 +215,16 @@
     "url": {
       "en": "https://www.bible.com/bible/59/PSA.111.2.ESV",
       "ru": "https://www.bible.com/bible/167/PSA.110.2.RST"
+    }
+  },
+  "comeback": {
+    "prompt": {
+      "en": "Science and the Bible can't both be right. You have to pick one.",
+      "ru": "Наука и Библия не могут быть правы обе сразу. Нужно выбрать что-то одно."
+    },
+    "response": {
+      "en": "Plenty of real scientists don't see it that way. Francis Collins, who used to lead one of the world's biggest genetics research organizations, says he's never found a case where good science and his Christian faith actually contradicted each other. John Lennox, a mathematician at Oxford, puts it like this: science is great at explaining how things work, but it was never built to answer why anything exists at all, or whether there's a purpose behind it. Those are different kinds of questions, not competing answers to the same one. So here's a question back: if two serious scientists, who've spent their whole careers in a real lab, still find faith and science fit together, is the real conflict between science and the Bible, or between two different questions getting mixed up?",
+      "ru": "Многие настоящие учёные так не думают. Фрэнсис Коллинз, который раньше руководил одной из крупнейших в мире организаций генетических исследований, говорит, что никогда не находил случая, где хорошая наука и его христианская вера на самом деле противоречили бы друг другу. Джон Леннокс, математик из Оксфорда, говорит так: наука отлично объясняет, как всё работает, но она никогда не создавалась, чтобы отвечать, почему что-то существует вообще и есть ли в этом цель. Это разные виды вопросов, а не два ответа на один и тот же вопрос. Вот вопрос в ответ: если два серьёзных учёных, проведших всю жизнь в настоящей лаборатории, всё равно находят, что вера и наука совместимы, настоящий спор идёт между наукой и Библией — или между двумя разными вопросами, которые перепутали между собой?"
     }
   },
   "activity": {
@@ -168,8 +305,8 @@
     "ru": "Боже, благодарю за Твои дела. Помоги внимательно изучать мир и честно рассказывать о результатах."
   },
   "adultNote": {
-    "en": "The garden is fictional, not experimental evidence collected for this course. Read Psalm 111:2 (Russian 110:2). Scientific methods investigate the natural world; philosophical or theological conclusions require their own reasons. Do not use an unexplained result as automatic proof of divine action.",
-    "ru": "Сад вымышленный: это не данные опыта, проведённого для курса. Прочитайте Псалом 110:2. Научные методы исследуют природу; философским и богословским выводам нужны свои основания. Не считайте непонятный результат автоматическим доказательством Божьего вмешательства."
+    "en": "The garden is fictional, not experimental evidence collected for this course. Read Psalm 111:2 (Russian 110:2). Scientific methods investigate the natural world; philosophical or theological conclusions require their own reasons. Do not use an unexplained result as automatic proof of divine action. The 'comeback' response reflects John Lennox's 'different questions, not competing answers' framing and Francis Collins's own account of finding no contradiction between his scientific career and his Christian faith; it does not claim every scientist agrees, only that the conflict is not as automatic as the objection assumes.",
+    "ru": "Сад вымышленный: это не данные опыта, проведённого для курса. Прочитайте Псалом 110:2. Научные методы исследуют природу; философским и богословским выводам нужны свои основания. Не считайте непонятный результат автоматическим доказательством Божьего вмешательства. Ответ в блоке «если кто-то скажет» отражает подход Джона Леннокса «разные вопросы, а не конкурирующие ответы» и собственный опыт Фрэнсиса Коллинза, не находившего противоречия между научной карьерой и христианской верой; это не утверждение, что все учёные согласны, а лишь что конфликт не так неизбежен, как предполагает возражение."
   },
   "sources": [
     {
