@@ -7,6 +7,7 @@ import AppHome from "@/components/app/AppHome";
 import AloneWithGodFeature from "@/components/AloneWithGodFeature";
 import WhoAmIFeature from "@/components/WhoAmIFeature";
 import WhyHomeFeature from "@/components/why/WhyHomeFeature";
+import WhyJesusCameFeature from "@/components/WhyJesusCameFeature";
 
 // Static star positions so they're consistent between server and client
 const STARS = [
@@ -43,6 +44,7 @@ function WebHome() {
 
   return (
     <>
+      <WhyJesusCameFeature />
       {/* ── Hero ──────────────────────────────────────────── */}
       <section
         style={{ background: "var(--deep)", position: "relative", overflow: "hidden" }}
