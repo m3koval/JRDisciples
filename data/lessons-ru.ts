@@ -9,6 +9,7 @@ export interface LessonTopic {
 }
 
 export const lessonTopicsRu: LessonTopic[] = [
+  { href: "/lessons/why-did-jesus-come", image: "/images/lessons/why-did-jesus-come/cover.webp", title: "Зачем приходил Иисус?", desc: "Собери скворечник с Мишей и Рози и открой три благословения из Первого послания Иоанна. Пять заданий: отличия на рисунках, поиск слов, кроссворд, спрятанные предметы и тайное послание.", color: "#21645b", sections: 5, emoji: "🕊️" },
   { href: "/lessons/who-am-i", image: "/images/lessons/who-am-i/hero.png", title: "Кто я?", desc: "Мишу выбрали последним, и ему обидно. Узнай вместе с ним и Розой, что значит принадлежать Иисусу и отвечать добротой на Его милость. 1 Петра 2:9–10; 20–30 минут и восемь заданий.", color: "#205a58", sections: 8, emoji: "🪞" },
   { href: "/lessons/alone-with-god", image: "/images/lessons/alone-with-god/hero.png", title: "Наедине с Богом", desc: "Отложи игру и отправляйся с Мишей и Розой: узнай о личной молитве, учись у Иисуса, собери стих и обращайся к Отцу в течение дня.", color: "#22656b", sections: 7, emoji: "🙏" },
   { href: "/lessons/paid-in-full", image: "/images/jr/lessons/paid-in-full/cover.webp", title: "Оплачено полностью", desc: "1 Петра 1:17–21 — Узнай о любящем Отце и справедливом Судье, собери рюкзак сердца, открой спасение Иисуса и собери драгоценные слова.", color: "#17665b", sections: 5, emoji: "✉️" },

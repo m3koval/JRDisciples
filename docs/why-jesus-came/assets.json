@@ -1,0 +1,26 @@
+[
+  {
+    "file": "public/images/lessons/why-did-jesus-come/cover.webp",
+    "source": "/home/helper/outputs/jd-why-jesus-came-v4/assets/cover.png",
+    "source_sha256": "3f3b14d65779b70a777d1502f00637e75ff42a1b73d96c501b064e9bfeaffc29",
+    "sha256": "a956085cb7317e8b17f852220821031034d071c1e7960a2a256a7f03ecf79129"
+  },
+  {
+    "file": "public/images/lessons/why-did-jesus-come/difference-a.webp",
+    "source": "/home/helper/outputs/jd-why-jesus-came-v4/assets/difference-a.png",
+    "source_sha256": "8753e5d647b269390e9c10fabd57a56e3be1336a61e62661b4bd439006b70d73",
+    "sha256": "a956085cb7317e8b17f852220821031034d071c1e7960a2a256a7f03ecf79129"
+  },
+  {
+    "file": "public/images/lessons/why-did-jesus-come/difference-b.webp",
+    "source": "/home/helper/outputs/jd-why-jesus-came-v4/assets/difference-b.png",
+    "source_sha256": "c02f3f59ca2427bd5b3e87fdbc7c1150176af5a79bf9afca9e7934632b79e338",
+    "sha256": "00fc570baf06e6983c66167375cc6c6579d5c97d3877a20dd3f151a2f72a8680"
+  },
+  {
+    "file": "public/images/lessons/why-did-jesus-come/coloring.webp",
+    "source": "/home/helper/outputs/jd-why-jesus-came-v4/assets/coloring.png",
+    "source_sha256": "91c9114e33a18122d13e056e922715d9ac1ec76ec9a154271fab36a14e623f32",
+    "sha256": "0dd353814e085bb75985734d4d503ad49ba70f874bc570de3d4f038bfce13f1c"
+  }
+]

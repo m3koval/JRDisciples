@@ -53,6 +53,9 @@ jobs:
       - name: Check Paid in Full lesson
         run: npm run check:paid-in-full
 
+      - name: Check Why Did Jesus Come story and puzzles
+        run: node scripts/check-why-jesus-came.mjs
+
       - name: Check personal prayer lesson
         run: node scripts/check-alone-with-god.mjs
 

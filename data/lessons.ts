@@ -23,6 +23,7 @@ export interface Lesson {
 }
 
 export const lessonTopics: LessonTopic[] = [
+  { href: "/lessons/why-did-jesus-come", image: "/images/lessons/why-did-jesus-come/cover.webp", title: "Why Did Jesus Come?", desc: "Build a birdhouse with Michael and Rosie, discover three blessings in 1 John, and explore five real puzzles: picture differences, word search, crossword, hidden objects, and a secret message.", color: "#21645b", sections: 5, emoji: "🕊️" },
   { href: "/lessons/who-am-i", image: "/images/lessons/who-am-i/hero.png", title: "Who am I?", desc: "Being picked last hurt. Join Michael and Rosie to discover belonging, mercy, and a reason to be kind through 1 Peter 2:9–10. A 20–30 minute story with eight challenges.", color: "#205a58", sections: 8, emoji: "🪞" },
   { href: "/lessons/alone-with-god", image: "/images/lessons/alone-with-god/hero.png", title: "Alone with God", desc: "Pause the game and join Michael and Rosie: discover private prayer, learn from Jesus, build a memory verse, and turn to the Father through your day.", color: "#22656b", sections: 7, emoji: "🙏" },
   { href: "/lessons/paid-in-full", image: "/images/jr/lessons/paid-in-full/cover.webp", title: "Paid in Full", desc: "1 Peter 1:17–21 — Meet our loving Father and fair Judge, pack a traveler’s heart, discover Jesus’ rescue, and build the precious promise.", color: "#17665b", sections: 5, emoji: "✉️" },
