@@ -1,0 +1,603 @@
+{
+  "word_searches": {
+    "en": {
+      "grid": [
+        "JBZKCKHAJMIQFLA",
+        "BSPUFOLFCXIIZRC",
+        "APPXFHOGRACEJNF",
+        "OPNIDORAVKLNTTI",
+        "YYEARODMEHYHKSM",
+        "OSVENIMTTREMRIY",
+        "HIUOMUTUEYBXKRZ",
+        "DKHSTUWMRBOYOHM",
+        "VKJMEWEBNIJPBCW",
+        "SJDMUJIHAISSEME",
+        "QLMLNKOULCXTSKG",
+        "FZFOHRJEXPPHHDQ",
+        "MNAUTHORITYUCRD",
+        "SEVRSVTIHFJDKQF",
+        "NRDYKDXOAHTIAFI"
+      ],
+      "words": [
+        "JESUS",
+        "CHRIST",
+        "DAVID",
+        "LORD",
+        "MESSIAH",
+        "SPIRIT",
+        "HONOR",
+        "AUTHORITY",
+        "ETERNAL",
+        "GRACE",
+        "FAITH",
+        "OBEY"
+      ],
+      "entries": [
+        {
+          "word": "AUTHORITY",
+          "start": [
+            12,
+            2
+          ],
+          "end": [
+            12,
+            10
+          ],
+          "direction": [
+            0,
+            1
+          ]
+        },
+        {
+          "word": "MESSIAH",
+          "start": [
+            9,
+            13
+          ],
+          "end": [
+            9,
+            7
+          ],
+          "direction": [
+            0,
+            -1
+          ]
+        },
+        {
+          "word": "ETERNAL",
+          "start": [
+            4,
+            8
+          ],
+          "end": [
+            10,
+            8
+          ],
+          "direction": [
+            1,
+            0
+          ]
+        },
+        {
+          "word": "CHRIST",
+          "start": [
+            8,
+            13
+          ],
+          "end": [
+            3,
+            13
+          ],
+          "direction": [
+            -1,
+            0
+          ]
+        },
+        {
+          "word": "SPIRIT",
+          "start": [
+            1,
+            1
+          ],
+          "end": [
+            6,
+            6
+          ],
+          "direction": [
+            1,
+            1
+          ]
+        },
+        {
+          "word": "JESUS",
+          "start": [
+            9,
+            5
+          ],
+          "end": [
+            5,
+            1
+          ],
+          "direction": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "word": "DAVID",
+          "start": [
+            3,
+            4
+          ],
+          "end": [
+            7,
+            0
+          ],
+          "direction": [
+            1,
+            -1
+          ]
+        },
+        {
+          "word": "HONOR",
+          "start": [
+            7,
+            2
+          ],
+          "end": [
+            3,
+            6
+          ],
+          "direction": [
+            -1,
+            1
+          ]
+        },
+        {
+          "word": "GRACE",
+          "start": [
+            2,
+            7
+          ],
+          "end": [
+            2,
+            11
+          ],
+          "direction": [
+            0,
+            1
+          ]
+        },
+        {
+          "word": "FAITH",
+          "start": [
+            14,
+            13
+          ],
+          "end": [
+            14,
+            9
+          ],
+          "direction": [
+            0,
+            -1
+          ]
+        },
+        {
+          "word": "LORD",
+          "start": [
+            1,
+            6
+          ],
+          "end": [
+            4,
+            6
+          ],
+          "direction": [
+            1,
+            0
+          ]
+        },
+        {
+          "word": "OBEY",
+          "start": [
+            7,
+            10
+          ],
+          "end": [
+            4,
+            10
+          ],
+          "direction": [
+            -1,
+            0
+          ]
+        }
+      ],
+      "coordinate_basis": "zero-based row,column",
+      "seed": 481
+    },
+    "ru": {
+      "grid": [
+        "ЛБФШВСРДЩХФАХСВ",
+        "СРЮЭЗЩЗВЯУНЦРХЕ",
+        "ПРВШЯАФУНДЗФИПР",
+        "ВПОСЛУШАНИЕЗСЛА",
+        "ЛРСГТИЧЗЬШТКТЖС",
+        "АЬДАВИДОДЖШФОУВ",
+        "АОТЬТСЕЧОЦСШСЕЖ",
+        "НККСНМЯКПХЖИЧСА",
+        "МЕОЧАНЩЧСАИНДОТ",
+        "АЛРМЧЛЮБОЛЫГЧЗВ",
+        "ФЧСЯЕЗВОГЙОЧЙРЗ",
+        "ТЦГТКСЬТАДОГАЛБ",
+        "КЮПЩАИССШГОПБЭП",
+        "УЮЛОФАЦИГЧАЖМБЗ",
+        "ЙМЙЩЯЧГПЯЕЩХЯЦБ"
+      ],
+      "words": [
+        "ИИСУС",
+        "ХРИСТОС",
+        "ДАВИД",
+        "ГОСПОДЬ",
+        "МЕССИЯ",
+        "ДУХ",
+        "ЧЕСТЬ",
+        "ВЛАСТЬ",
+        "ВЕЧНЫЙ",
+        "БЛАГОДАТЬ",
+        "ВЕРА",
+        "ПОСЛУШАНИЕ"
+      ],
+      "entries": [
+        {
+          "word": "ПОСЛУШАНИЕ",
+          "start": [
+            3,
+            1
+          ],
+          "end": [
+            3,
+            10
+          ],
+          "direction": [
+            0,
+            1
+          ]
+        },
+        {
+          "word": "БЛАГОДАТЬ",
+          "start": [
+            11,
+            14
+          ],
+          "end": [
+            11,
+            6
+          ],
+          "direction": [
+            0,
+            -1
+          ]
+        },
+        {
+          "word": "ХРИСТОС",
+          "start": [
+            0,
+            12
+          ],
+          "end": [
+            6,
+            12
+          ],
+          "direction": [
+            1,
+            0
+          ]
+        },
+        {
+          "word": "ГОСПОДЬ",
+          "start": [
+            10,
+            8
+          ],
+          "end": [
+            4,
+            8
+          ],
+          "direction": [
+            -1,
+            0
+          ]
+        },
+        {
+          "word": "МЕССИЯ",
+          "start": [
+            9,
+            3
+          ],
+          "end": [
+            14,
+            8
+          ],
+          "direction": [
+            1,
+            1
+          ]
+        },
+        {
+          "word": "ВЛАСТЬ",
+          "start": [
+            10,
+            6
+          ],
+          "end": [
+            5,
+            1
+          ],
+          "direction": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "word": "ВЕЧНЫЙ",
+          "start": [
+            5,
+            14
+          ],
+          "end": [
+            10,
+            9
+          ],
+          "direction": [
+            1,
+            -1
+          ]
+        },
+        {
+          "word": "ИИСУС",
+          "start": [
+            8,
+            10
+          ],
+          "end": [
+            4,
+            14
+          ],
+          "direction": [
+            -1,
+            1
+          ]
+        },
+        {
+          "word": "ДАВИД",
+          "start": [
+            5,
+            2
+          ],
+          "end": [
+            5,
+            6
+          ],
+          "direction": [
+            0,
+            1
+          ]
+        },
+        {
+          "word": "ЧЕСТЬ",
+          "start": [
+            6,
+            7
+          ],
+          "end": [
+            6,
+            3
+          ],
+          "direction": [
+            0,
+            -1
+          ]
+        },
+        {
+          "word": "ВЕРА",
+          "start": [
+            0,
+            14
+          ],
+          "end": [
+            3,
+            14
+          ],
+          "direction": [
+            1,
+            0
+          ]
+        },
+        {
+          "word": "ДУХ",
+          "start": [
+            2,
+            9
+          ],
+          "end": [
+            0,
+            9
+          ],
+          "direction": [
+            -1,
+            0
+          ]
+        }
+      ],
+      "coordinate_basis": "zero-based row,column",
+      "seed": 973
+    }
+  },
+  "messages": {
+    "en": {
+      "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "answer": "JESUS IS LORD",
+      "groups": [
+        {
+          "numbers": [
+            4,
+            9,
+            12,
+            5,
+            10
+          ],
+          "letters": [
+            "I",
+            "E",
+            "J",
+            "L",
+            "D"
+          ]
+        },
+        {
+          "numbers": [
+            21,
+            19,
+            15,
+            18
+          ],
+          "letters": [
+            "S",
+            "U",
+            "R",
+            "O"
+          ]
+        }
+      ],
+      "sequence": [
+        [
+          10,
+          5,
+          19,
+          21,
+          19
+        ],
+        [
+          9,
+          19
+        ],
+        [
+          12,
+          15,
+          18,
+          4
+        ]
+      ]
+    },
+    "ru": {
+      "alphabet": "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
+      "answer": "ИИСУС ЕСТЬ ГОСПОДЬ",
+      "groups": [
+        {
+          "numbers": [
+            16,
+            6,
+            5,
+            4,
+            10
+          ],
+          "letters": [
+            "Е",
+            "О",
+            "И",
+            "Д",
+            "Г"
+          ]
+        },
+        {
+          "numbers": [
+            30,
+            17,
+            21,
+            20,
+            19
+          ],
+          "letters": [
+            "П",
+            "Ь",
+            "С",
+            "У",
+            "Т"
+          ]
+        }
+      ],
+      "sequence": [
+        [
+          10,
+          10,
+          19,
+          21,
+          19
+        ],
+        [
+          6,
+          19,
+          20,
+          30
+        ],
+        [
+          4,
+          16,
+          19,
+          17,
+          16,
+          5,
+          30
+        ]
+      ]
+    }
+  },
+  "odd_objects": [
+    {
+      "box": [
+        191,
+        590,
+        850,
+        767
+      ],
+      "en": "1. A crocodile lounges on the floor.",
+      "ru": "1. Крокодил лежит на полу."
+    },
+    {
+      "box": [
+        266,
+        4,
+        565,
+        183
+      ],
+      "en": "2. A rocket with an astronaut flies overhead.",
+      "ru": "2. Над детьми летит ракета с космонавтом."
+    },
+    {
+      "box": [
+        813,
+        9,
+        971,
+        200
+      ],
+      "en": "3. A firework shoots a starburst by the window.",
+      "ru": "3. У окна летит фейерверк со звёздочкой."
+    },
+    {
+      "box": [
+        2,
+        20,
+        247,
+        221
+      ],
+      "en": "4. An octopus floats by the bookshelf.",
+      "ru": "4. Осьминог парит у книжной полки."
+    }
+  ],
+  "drawing": {
+    "en": "Example: flowers drawn on the shared sheet. Any recognizable flowers are acceptable; there is no single required shape.",
+    "ru": "Пример: цветы на общем листе. Подходят любые узнаваемые цветы; единственного правильного рисунка нет."
+  }
+}

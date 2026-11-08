@@ -1,0 +1,16 @@
+[
+  {
+    "source": "/home/helper/outputs/jd-davids-lord-v6/assets/complete-scene.png",
+    "source_sha256": "79ff5e1593541ad18816929701836fabe2124d27b91c7d977823f76f4e5e2967",
+    "web": "images/lessons/davids-lord/complete-scene.webp",
+    "web_sha256": "3a673398cea4bcce7049317fb6751e87f57cb12cd33ce012286373030f096881",
+    "lossless_pixels": true
+  },
+  {
+    "source": "/home/helper/outputs/jd-davids-lord-v6/assets/odd-scene.png",
+    "source_sha256": "fddec951bd00e558ad064a546bc4b9dc84690c40a9e69a528b483a7b1ac60ce0",
+    "web": "images/lessons/davids-lord/odd-scene.webp",
+    "web_sha256": "35412970c238ee6901e4edddd6bd105653c04fd7717a087d265c9d2832e16d09",
+    "lossless_pixels": true
+  }
+]

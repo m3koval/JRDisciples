@@ -56,6 +56,9 @@ jobs:
       - name: Check Why Did Jesus Come story and puzzles
         run: node scripts/check-why-jesus-came.mjs
 
+      - name: Check David’s Lord v6 source and puzzles
+        run: node scripts/check-davids-lord.mjs
+
       - name: Check personal prayer lesson
         run: node scripts/check-alone-with-god.mjs
 
