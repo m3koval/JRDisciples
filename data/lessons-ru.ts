@@ -9,6 +9,7 @@ export interface LessonTopic {
 }
 
 export const lessonTopicsRu: LessonTopic[] = [
+  { href: "/lessons/davids-lord", image: "/images/lessons/davids-lord/odd-scene.webp", title: "Сын Давида и Господь Давида", desc: "Матфея 22:41–46 — Вместе с Мишей и Рози нарисуй цветы, найди 12 слов, раскрась сцену и обведи четыре необычных предмета, затем расшифруй сообщение.", color: "#17645b", sections: 4, emoji: "👑" },
   { href: "/lessons/why-did-jesus-come", image: "/images/lessons/why-did-jesus-come/cover.webp", title: "Зачем приходил Иисус?", desc: "Собери скворечник с Мишей и Рози и открой три благословения из Первого послания Иоанна. Пять заданий: отличия на рисунках, поиск слов, кроссворд, спрятанные предметы и тайное послание.", color: "#21645b", sections: 5, emoji: "🕊️" },
   { href: "/lessons/who-am-i", image: "/images/lessons/who-am-i/hero.png", title: "Кто я?", desc: "Мишу выбрали последним, и ему обидно. Узнай вместе с ним и Розой, что значит принадлежать Иисусу и отвечать добротой на Его милость. 1 Петра 2:9–10; 20–30 минут и восемь заданий.", color: "#205a58", sections: 8, emoji: "🪞" },
   { href: "/lessons/alone-with-god", image: "/images/lessons/alone-with-god/hero.png", title: "Наедине с Богом", desc: "Отложи игру и отправляйся с Мишей и Розой: узнай о личной молитве, учись у Иисуса, собери стих и обращайся к Отцу в течение дня.", color: "#22656b", sections: 7, emoji: "🙏" },

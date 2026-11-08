@@ -1,0 +1,14 @@
+{
+  "app/lessons/davids-lord/teacher.json": "30c09ac3451d546b0f307a3b76262509849e774b21c3b8b8042dc61af81c4ff5",
+  "app/lessons/davids-lord/puzzles.json": "3e57f39926cbc78c72cf068a29486821d933bf133aebd393ccc42e23b5949fc6",
+  "app/lessons/davids-lord/luke.json": "5887511020a0223c558fc82b1ac20541fb872d4df67dede7f57dec3827a17017",
+  "app/lessons/davids-lord/scripture.json": "c7a28af93ea3e128ac5a966f95904cc48d4528820995c0b4259d3c1176731ce7",
+  "app/lessons/davids-lord/booklet.json": "ea99128244125a9aeb156a22789f2307a2f27c0936182bbcea98af5121f6c5e6",
+  "public/printables/davids-lord/Davids-Lord-EN-A4-LONG-EDGE.pdf": "c8ecc151c027a6febc398954aa8ca98795e5860165c294c1d8ca81ff1e4ee2eb",
+  "public/printables/davids-lord/Davids-Lord-EN-LETTER-LONG-EDGE.pdf": "d29c521d9ce123fa4778e0dc6aecd9039943e117c6f214600b0d266a77beb3ae",
+  "public/printables/davids-lord/Davids-Lord-EN-READING-ORDER.pdf": "880b3988e1241e9efdfda9ac6a29922c977d9cc2fe1ca8d4f72bc0043077655f",
+  "public/printables/davids-lord/Davids-Lord-RU-LETTER-LONG-EDGE.pdf": "c0cd3c81e0cd707675830be3c4661d0385facb548eabcb6fd42df1e7887a05ae",
+  "public/printables/davids-lord/Davids-Lord-RU-A4-LONG-EDGE.pdf": "f3dc69b67ea7f6267ad13f61ad1474d13f992ca402134df7a4a8ae5bb1874e7c",
+  "public/printables/davids-lord/Davids-Lord-RU-READING-ORDER.pdf": "eda16a8b7fadaf910379fed355efa57de2b9b18227b2f7e1148508980474c1cc",
+  "public/printables/davids-lord/Davids-Lord-BILINGUAL-TEACHER-KEY.pdf": "ab464b7472eeab08d741bd4c062d14f14f630175399666ae6c642e881cc90fe0"
+}
