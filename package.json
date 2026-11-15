@@ -22,6 +22,8 @@
     "check:why-readability": "node scripts/check-why-readability.mjs",
     "test:why": "node scripts/test-why-all-browser.mjs",
     "test:why-labs": "node scripts/test-why-browser.mjs",
+    "check:words-and-deeds": "node scripts/check-words-and-deeds.mjs",
+    "test:words-and-deeds": "node scripts/test-words-and-deeds-browser.mjs",
     "check:paid-in-full": "node scripts/check-paid-in-full.mjs",
     "build:capacitor": "npm run build:app"
   },

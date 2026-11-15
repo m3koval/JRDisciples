@@ -9,6 +9,7 @@ export interface LessonTopic {
 }
 
 export const lessonTopicsRu: LessonTopic[] = [
+  { href: "/lessons/words-and-deeds", image: "/images/lessons/words-and-deeds/cover.webp", title: "Не только говорить — делать", desc: "Матфея 23:1–12 — Посчитай предметы, найди ответы в Библии и шесть спрятанных вещей. Узнай, как Майкл учился честно приходить к Иисусу и помогать из любви к Богу.", color: "#176459", sections: 5, emoji: "🤲" },
   { href: "/lessons/davids-lord", image: "/images/lessons/davids-lord/odd-scene.webp", title: "Сын Давида и Господь Давида", desc: "Матфея 22:41–46 — Вместе с Мишей и Рози нарисуй цветы, найди 12 слов, раскрась сцену и обведи четыре необычных предмета, затем расшифруй сообщение.", color: "#17645b", sections: 4, emoji: "👑" },
   { href: "/lessons/why-did-jesus-come", image: "/images/lessons/why-did-jesus-come/cover.webp", title: "Зачем приходил Иисус?", desc: "Собери скворечник с Мишей и Рози и открой три благословения из Первого послания Иоанна. Пять заданий: отличия на рисунках, поиск слов, кроссворд, спрятанные предметы и тайное послание.", color: "#21645b", sections: 5, emoji: "🕊️" },
   { href: "/lessons/who-am-i", image: "/images/lessons/who-am-i/hero.png", title: "Кто я?", desc: "Мишу выбрали последним, и ему обидно. Узнай вместе с ним и Розой, что значит принадлежать Иисусу и отвечать добротой на Его милость. 1 Петра 2:9–10; 20–30 минут и восемь заданий.", color: "#205a58", sections: 8, emoji: "🪞" },

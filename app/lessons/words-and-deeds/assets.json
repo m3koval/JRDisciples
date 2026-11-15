@@ -1,0 +1,54 @@
+[
+  {
+    "file": "public/images/lessons/words-and-deeds/cover.webp",
+    "source": "jd-words-and-deeds-v17/assets/cover.png",
+    "sourceSha256": "e679d19278a0454e8901e6fbc8e212ab0ed8d2cbbd45c336bb951ff3be698588",
+    "sha256": "1be90f6bc45e4fdd3e5e41e662fe8c56f2737e5d2cdd54e04d345fe47c1d80ea"
+  },
+  {
+    "file": "public/images/lessons/words-and-deeds/coloring.webp",
+    "source": "jd-words-and-deeds-v17/assets/coloring.png",
+    "sourceSha256": "ebf08c337fa703bcf9e0d324946d636de9f407d9b1e4de07f4e72cdaa5be0ab3",
+    "sha256": "7f5ed0b430e767cb693f30c286dd02f524cddffe5215c4b3626aa01dd2ca318b"
+  },
+  {
+    "file": "public/printables/words-and-deeds/Words-and-Deeds-EN-A4-LONG-EDGE.pdf",
+    "source": "jd-words-and-deeds-v17/Words-and-Deeds-EN-A4-LONG-EDGE.pdf",
+    "sha256": "ad9418d0538ed615ba20605507d1aa370d04c362fdda6dd81996b9a514676dc5"
+  },
+  {
+    "file": "public/printables/words-and-deeds/Words-and-Deeds-EN-LETTER-LONG-EDGE.pdf",
+    "source": "jd-words-and-deeds-v17/Words-and-Deeds-EN-LETTER-LONG-EDGE.pdf",
+    "sha256": "9699655616febb2969978ecba22beb72470aae124cf937fde33c09970d151b58"
+  },
+  {
+    "file": "public/printables/words-and-deeds/Words-and-Deeds-EN-READING.pdf",
+    "source": "jd-words-and-deeds-v17/Words-and-Deeds-EN-READING.pdf",
+    "sha256": "9b95c9d93b063d514bfbdd293267e6f0d444d447fd48e5d14fd84196da8b54ad"
+  },
+  {
+    "file": "public/printables/words-and-deeds/Words-and-Deeds-EN-TEACHER.pdf",
+    "source": "jd-words-and-deeds-v17/Words-and-Deeds-EN-TEACHER.pdf",
+    "sha256": "a0391cbaa94675a349c5d994edf486591a04d0b4de11b63605d0929df2ae8afd"
+  },
+  {
+    "file": "public/printables/words-and-deeds/Words-and-Deeds-RU-A4-LONG-EDGE.pdf",
+    "source": "jd-words-and-deeds-v17/Words-and-Deeds-RU-A4-LONG-EDGE.pdf",
+    "sha256": "68d9a34e21c4e5d18ddeb65be61d31669cad842f098d6f41147c323731723ee1"
+  },
+  {
+    "file": "public/printables/words-and-deeds/Words-and-Deeds-RU-LETTER-LONG-EDGE.pdf",
+    "source": "jd-words-and-deeds-v17/Words-and-Deeds-RU-LETTER-LONG-EDGE.pdf",
+    "sha256": "cab44ae3d59186b1735fa1fcefd1586f1ee72ff17a2856679ccf99652b0d5bb2"
+  },
+  {
+    "file": "public/printables/words-and-deeds/Words-and-Deeds-RU-READING.pdf",
+    "source": "jd-words-and-deeds-v17/Words-and-Deeds-RU-READING.pdf",
+    "sha256": "5e01834bdb7c342cb67459b0d67192f96250cf94fc00efbd1d369ed0551cfcf7"
+  },
+  {
+    "file": "public/printables/words-and-deeds/Words-and-Deeds-RU-TEACHER.pdf",
+    "source": "jd-words-and-deeds-v17/Words-and-Deeds-RU-TEACHER.pdf",
+    "sha256": "bef12677fe0f031b9cb4d902135b319618b7616e31638bbd5d906f3e4b58bf13"
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "en": {
+    "version": "ESV", "book": "Matthew", "url": "https://www.bible.com/bible/59/MAT.23.ESV",
+    "verses": [
+      "Then Jesus said to the crowds and to his disciples,",
+      "“The scribes and the Pharisees sit on Moses’ seat,",
+      "so do and observe whatever they tell you, but not the works they do. For they preach, but do not practice.",
+      "They tie up heavy burdens, hard to bear, and lay them on people’s shoulders, but they themselves are not willing to move them with their finger.",
+      "They do all their deeds to be seen by others. For they make their phylacteries broad and their fringes long,",
+      "and they love the place of honor at feasts and the best seats in the synagogues",
+      "and greetings in the marketplaces and being called rabbi by others.",
+      "But you are not to be called rabbi, for you have one teacher, and you are all brothers.",
+      "And call no man your father on earth, for you have one Father, who is in heaven.",
+      "Neither be called instructors, for you have one instructor, the Christ.",
+      "The greatest among you shall be your servant.",
+      "Whoever exalts himself will be humbled, and whoever humbles himself will be exalted."
+    ],
+    "gospel": "even as the Son of Man came not to be served but to serve, and to give his life as a ransom for many.”",
+    "gospelUrl": "https://www.bible.com/bible/59/MAT.20.28.ESV"
+  },
+  "ru": {
+    "version": "Синодальный перевод · RST", "book": "Матфея", "url": "https://www.bible.com/bible/167/MAT.23.RST",
+    "verses": [
+      "Тогда Иисус начал говорить народу и ученикам Своим",
+      "и сказал: на Моисеевом седалище сели книжники и фарисеи;",
+      "итак всё, что они велят вам соблюдать, соблюдайте и делайте; по делам же их не поступайте, ибо они говорят, и не делают:",
+      "связывают бремена тяжелые и неудобоносимые и возлагают на плечи людям, а сами не хотят и перстом двинуть их;",
+      "все же дела свои делают с тем, чтобы видели их люди: расширяют хранилища свои и увеличивают воскрилия одежд своих;",
+      "также любят предвозлежания на пиршествах и председания в синагогах",
+      "и приветствия в народных собраниях, и чтобы люди звали их: учитель! учитель!",
+      "А вы не называйтесь учителями, ибо один у вас Учитель — Христос, все же вы — братья;",
+      "и отцом себе не называйте никого на земле, ибо один у вас Отец, Который на небесах;",
+      "и не называйтесь наставниками, ибо один у вас Наставник — Христос.",
+      "Больший из вас да будет вам слуга:",
+      "ибо, кто возвышает себя, тот унижен будет, а кто унижает себя, тот возвысится."
+    ],
+    "gospel": "так как Сын Человеческий не для того пришел, чтобы Ему служили, но чтобы послужить и отдать душу Свою для искупления многих.",
+    "gospelUrl": "https://www.bible.com/bible/167/MAT.20.28.RST"
+  }
+}
