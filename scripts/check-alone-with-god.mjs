@@ -24,7 +24,7 @@ for(const [lang,verses] of [['en',scriptureEn],['ru',scriptureRu]]){
 }
 const home=fs.readFileSync('app/page.tsx','utf8');const at=home.indexOf('<AloneWithGodFeature compact')
 assert(at>=0&&at<home.indexOf('href: "/stories"'))
-// David’s Lord leads; preserve the three adjacent earlier features.
-for(const file of ['data/lessons.ts','data/lessons-ru.ts'])assert.deepEqual([...fs.readFileSync(file,'utf8').matchAll(/href: "([^"]+)"/g)].slice(0,4).map(m=>m[1]),['/lessons/davids-lord','/lessons/why-did-jesus-come','/lessons/who-am-i','/lessons/alone-with-god'])
+// Words and Deeds leads; preserve the four adjacent earlier features.
+for(const file of ['data/lessons.ts','data/lessons-ru.ts'])assert.deepEqual([...fs.readFileSync(file,'utf8').matchAll(/href: "([^"]+)"/g)].slice(0,5).map(m=>m[1]),['/lessons/words-and-deeds','/lessons/davids-lord','/lessons/why-did-jesus-come','/lessons/who-am-i','/lessons/alone-with-god'])
 assert(fs.readFileSync('components/AloneWithGodFeature.tsx','utf8').includes('/images/lessons/alone-with-god/hero.png'))
 console.log('Alone with God PASS: 22 exact Scripture entries, EN/RU structural parity, 7 scenes / 5 activity types, six print PDFs, retained home placement and listing directly after Who Am I.')

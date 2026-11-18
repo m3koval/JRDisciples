@@ -25,6 +25,9 @@ export default function SiteFooter() {
       <p style={{ color: "var(--flame2)", fontSize: "0.75rem", marginTop: 4, fontFamily: "var(--font-nunito)" }}>
         {t.verse}
       </p>
+      <p style={{ fontSize: "0.75rem", marginTop: 8, fontFamily: "var(--font-nunito)" }}>
+        Built by <a href="https://ampitsolutions.com" className="underline underline-offset-4">AMP IT LLC</a>
+      </p>
     </footer>
   );
 }
