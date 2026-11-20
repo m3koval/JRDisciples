@@ -2,6 +2,7 @@
 
 /* ── Design tokens ─────────────────────────────────────────── */
 :root {
+  --site-nav-height: 63px;
   --fire:   #ff6b1a;
   --flame2: #ffb347;
   --wind:   #7ec8e3;

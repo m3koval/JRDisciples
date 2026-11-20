@@ -753,7 +753,7 @@ export default function WhoIsJesusLesson() {
 
       {/* ── Progress Bar ─────────────────────────────────────────── */}
       <div style={{
-        position: 'sticky', top: 52, zIndex: 99,
+        position: 'sticky', top: 'var(--site-nav-height)', zIndex: 99,
         background: `linear-gradient(90deg,#1a0a10,#3a1020)`,
         padding: '10px 18px', display: 'flex', alignItems: 'center', gap: 12,
         borderBottom: `2px solid rgba(200,80,80,.2)`,

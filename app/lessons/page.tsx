@@ -1,8 +1,7 @@
 'use client'
 
 import Link from "next/link";
-import { lessonTopics } from "@/data/lessons";
-import { lessonTopicsRu } from "@/data/lessons-ru";
+import { getLessonCatalog } from "@/data/lesson-catalog";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/lib/useTranslation";
 import { JrFullImageTile } from "@/components/JrFullImageTile";
@@ -12,13 +11,13 @@ import { lessonMasteryId } from "@/lib/lesson-mastery-registry";
 export default function LessonsPage() {
   const { language } = useLanguage();
   const t = useTranslation();
-  const currentTopics = language === 'ru' ? lessonTopicsRu : lessonTopics;
+  const currentTopics = getLessonCatalog(language);
   return (
     <>
       {/* Hero Section */}
       <section style={{ background: "linear-gradient(135deg,#0d3a6a,#1a5a9a)", padding: "48px 18px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
-          <div style={{ marginBottom: 20, width: "100%", maxWidth: 800 }}>
+          <div style={{ margin: "0 auto 20px", width: "100%", maxWidth: 800 }}>
             <img src="/images/jr/lessons-hero.png" alt="Bible Lessons" style={{ width: "100%", height: "auto", borderRadius: 16, filter: "drop-shadow(0 8px 24px rgba(0,0,0,.25))" }} />
           </div>
           <h1 style={{ fontFamily: "var(--font-cinzel)", fontSize: "clamp(1.8rem,5vw,2.8rem)", color: "#fff", marginBottom: 8, textShadow: "0 2px 8px rgba(0,0,0,.3)" }}>

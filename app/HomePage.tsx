@@ -1,9 +1,10 @@
 'use client'
 
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "@/lib/useTranslation";
 import AppHome from "@/components/app/AppHome";
+import LatestLessonFeature from "@/components/LatestLessonFeature";
 import AloneWithGodFeature from "@/components/AloneWithGodFeature";
 import WhoAmIFeature from "@/components/WhoAmIFeature";
 import WhyHomeFeature from "@/components/why/WhyHomeFeature";
@@ -41,10 +42,16 @@ function WebHome() {
   const t = useTranslation();
   const [videoEnded, setVideoEnded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    // A failed request can fire before React hydrates its onError handler.
+    if (videoRef.current?.error) {
+      const frame = requestAnimationFrame(() => setVideoEnded(true));
+      return () => cancelAnimationFrame(frame);
+    }
+  }, []);
 
   return (
     <>
-      <WhyJesusCameFeature />
       {/* ── Hero ──────────────────────────────────────────── */}
       <section
         style={{ background: "var(--deep)", position: "relative", overflow: "hidden" }}
@@ -73,9 +80,12 @@ function WebHome() {
             autoPlay
             muted
             playsInline
+            poster="/images/jr/home-hero.png"
+            onError={() => setVideoEnded(true)}
             onEnded={() => setVideoEnded(true)}
             style={{
               width: "min(100%, 1280px)",
+              aspectRatio: "16 / 9",
               height: "auto",
               display: "block",
               margin: "24px auto 0",
@@ -129,7 +139,7 @@ function WebHome() {
             {t.home.subtitle}
           </p>
 
-          <AloneWithGodFeature compact />
+          <LatestLessonFeature />
           <blockquote style={{
             fontFamily: "var(--font-lora)", fontStyle: "italic",
             color: "rgba(255,255,255,.85)", fontSize: "1rem",
@@ -149,6 +159,7 @@ function WebHome() {
         </div>
       </section>
 
+      <WhyJesusCameFeature />
       <WhyHomeFeature />
       <WhoAmIFeature />
       <AloneWithGodFeature />

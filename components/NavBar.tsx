@@ -30,7 +30,7 @@ export default function NavBar() {
 
   return (
     <nav style={{ background: "var(--deep)", position: "sticky", top: 0, zIndex: 100, borderBottom: "3px solid var(--flame2)" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 18px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60, gap: 16 }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 18px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "calc(var(--site-nav-height) - 3px)", gap: 16 }}>
         {/* Logo */}
         <Link href="/" aria-label={language === "ru" ? "Главная — JR Disciples" : "JR Disciples home"} style={{
           fontFamily: "var(--font-cinzel)", fontWeight: 700,

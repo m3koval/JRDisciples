@@ -26,6 +26,7 @@ export function JrFullImageTile({
 }: JrFullImageTileProps) {
   return (
     <Link
+      data-full-image-tile
       href={href}
       className="block no-underline hover:no-underline"
       style={{
@@ -58,7 +59,7 @@ export function JrFullImageTile({
         style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(180deg,rgba(7,18,36,.08),rgba(7,18,36,.28) 35%,rgba(7,18,36,.9))",
+          background: "linear-gradient(180deg,rgba(7,18,36,.78),rgba(7,18,36,.72) 35%,rgba(7,18,36,.9))",
         }}
       />
       <div
@@ -66,10 +67,11 @@ export function JrFullImageTile({
           position: "relative",
           zIndex: 1,
           minHeight,
+          height: "100%",
           padding: 20,
           display: "flex",
           flexDirection: "column",
-          justifyContent: "flex-end",
+          justifyContent: "flex-start",
         }}
       >
         <p className="puzzle-label" style={{ color: "#ffd866", marginBottom: 8, textShadow: "0 4px 18px rgba(0,0,0,.45)" }}>
@@ -106,6 +108,7 @@ export function JrFullImageTile({
         {children}
         <span
           style={{
+            marginTop: "auto",
             alignSelf: "flex-start",
             borderRadius: 999,
             padding: "10px 18px",
