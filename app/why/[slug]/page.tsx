@@ -1,3 +1,4 @@
+import { metadataForPath } from "@/lib/seo-pages";
 import { notFound } from "next/navigation";
 import { getWhyLessons } from "@/data/why";
 import LessonPlayer from "@/components/why/LessonPlayer";
@@ -5,8 +6,7 @@ export const dynamicParams = false;
 export function generateStaticParams() { return getWhyLessons().map(l => ({ slug: String(l.id).padStart(2, "0") })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const lesson = getWhyLessons().find(l => String(l.id).padStart(2, "0") === slug);
-  return { title: lesson ? `${lesson.title.en} · WHY?!` : "WHY?!" };
+  return metadataForPath(`/why/${slug}`);
 }
 export default async function WhyLesson({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

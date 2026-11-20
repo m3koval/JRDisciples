@@ -1,3 +1,4 @@
+import { metadataForPath } from "@/lib/seo-pages";
 import { stories } from "@/data/stories";
 import { storiesRu } from "@/data/stories-ru";
 import StoryClient from "./StoryClient";
@@ -10,6 +11,10 @@ export async function generateStaticParams() {
 }
 
 export const dynamicParams = false;
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  return metadataForPath(`/stories/${(await params).id}`);
+}
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

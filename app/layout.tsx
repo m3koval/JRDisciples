@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { SITE_URL, pageMetadata } from "@/lib/seo";
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
@@ -51,8 +52,12 @@ const nunito = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "JR Disciples — Bible Learning for Kids",
-  description: "Fun Bible stories, quizzes, puzzles, and verse memory for kids ages 6–10.",
+  metadataBase: new URL(SITE_URL),
+  title: "Junior Disciples — Bible Learning for Kids",
+  description: "Bible stories, interactive lessons, games, and Scripture memory for kids in English and Russian.",
+  // Deliberately no root canonical: each indexable page supplies its own.
+  openGraph: pageMetadata("/", "Bible Learning for Kids", "Explore Bible stories, lessons, games, and Scripture together.").openGraph,
+  twitter: pageMetadata("/", "Bible Learning for Kids", "Explore Bible stories, lessons, games, and Scripture together.").twitter,
 };
 
 export const viewport: Viewport = {

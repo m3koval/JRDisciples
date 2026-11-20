@@ -22,7 +22,8 @@ for(const [lang,verses] of [['en',scriptureEn],['ru',scriptureRu]]){
  assert.equal(new Set(copy[lang].scenes.map(s=>s.kind)).size,5)
  for(const suffix of ['LETTER-LONG-EDGE','READING-ORDER','TEACHER-ANSWERS'])assert(fs.statSync(`public/printables/alone-with-god/Alone-with-God-${lang.toUpperCase()}-${suffix}.pdf`).size>1000)
 }
-const home=fs.readFileSync('app/page.tsx','utf8');const at=home.indexOf('<AloneWithGodFeature compact')
+assert.match(fs.readFileSync('app/page.tsx','utf8'), /import HomePage from "\.\/HomePage"/)
+const home=fs.readFileSync('app/HomePage.tsx','utf8');const at=home.indexOf('<AloneWithGodFeature compact')
 assert(at>=0&&at<home.indexOf('href: "/stories"'))
 // Words and Deeds leads; preserve the four adjacent earlier features.
 for(const file of ['data/lessons.ts','data/lessons-ru.ts'])assert.deepEqual([...fs.readFileSync(file,'utf8').matchAll(/href: "([^"]+)"/g)].slice(0,5).map(m=>m[1]),['/lessons/words-and-deeds','/lessons/davids-lord','/lessons/why-did-jesus-come','/lessons/who-am-i','/lessons/alone-with-god'])

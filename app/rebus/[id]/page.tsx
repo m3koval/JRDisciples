@@ -1,3 +1,4 @@
+import { metadataForPath } from "@/lib/seo-pages";
 import { rebusPuzzles } from "@/data/rebus";
 import { rebusRu } from "@/data/rebus-ru";
 import RebusClient from "./RebusClient";
@@ -8,6 +9,10 @@ export async function generateStaticParams() {
 }
 
 export const dynamicParams = false;
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  return metadataForPath(`/rebus/${(await params).id}`);
+}
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
