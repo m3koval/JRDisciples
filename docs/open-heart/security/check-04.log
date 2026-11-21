@@ -1,0 +1,5 @@
+
+> jrdisciples@0.1.0 check:scripture
+> node scripts/check-lesson-scripture-localization.mjs
+
+Lesson Scripture/localization checks passed for 4 Case for Christ lessons and 7 fully guarded sermon lessons.

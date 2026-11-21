@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/helper/work/JRDisciples-open-heart-security/scripts/check-seo.py", line 77, in <module>
+    assert set(paths) == expected, {'missing': sorted(expected-set(paths)), 'extra': sorted(set(paths)-expected)}
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'missing': ['/lessons/open-heart'], 'extra': []}

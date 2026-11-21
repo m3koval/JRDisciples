@@ -1,0 +1,97 @@
+[
+  {
+    "command": "npm ci",
+    "exit": 0,
+    "log": "check-00.log"
+  },
+  {
+    "command": "npm run lint -- --max-warnings=32",
+    "exit": 0,
+    "log": "check-01.log"
+  },
+  {
+    "command": "npm run test:quests",
+    "exit": 0,
+    "log": "check-02.log"
+  },
+  {
+    "command": "npm run check:bilingual",
+    "exit": 0,
+    "log": "check-03.log"
+  },
+  {
+    "command": "npm run check:scripture",
+    "exit": 0,
+    "log": "check-04.log"
+  },
+  {
+    "command": "npm run check:case-russian",
+    "exit": 0,
+    "log": "check-05.log"
+  },
+  {
+    "command": "npm run check:assets",
+    "exit": 0,
+    "log": "check-06.log"
+  },
+  {
+    "command": "npm run check:why",
+    "exit": 0,
+    "log": "check-07.log"
+  },
+  {
+    "command": "npm run check:games",
+    "exit": 0,
+    "log": "check-08.log"
+  },
+  {
+    "command": "npm run check:paid-in-full",
+    "exit": 0,
+    "log": "check-09.log"
+  },
+  {
+    "command": "node scripts/check-why-jesus-came.mjs",
+    "exit": 0,
+    "log": "check-10.log"
+  },
+  {
+    "command": "node scripts/check-davids-lord.mjs",
+    "exit": 0,
+    "log": "check-11.log"
+  },
+  {
+    "command": "node scripts/check-alone-with-god.mjs",
+    "exit": 1,
+    "log": "check-12.log"
+  },
+  {
+    "command": "node scripts/check-prayer-readability.mjs",
+    "exit": 0,
+    "log": "check-13.log"
+  },
+  {
+    "command": "node scripts/test-app-bundle-integrity.mjs",
+    "exit": 0,
+    "log": "check-14.log"
+  },
+  {
+    "command": "node scripts/check-layout-latest.mjs",
+    "exit": 0,
+    "log": "check-15.log"
+  },
+  {
+    "command": "python scripts/check-open-heart.py",
+    "exit": 0,
+    "log": "check-16.log"
+  },
+  {
+    "command": "npm run build",
+    "exit": 0,
+    "log": "check-17.log"
+  },
+  {
+    "command": "python3 scripts/check-seo.py",
+    "exit": 1,
+    "log": "check-18.log"
+  }
+]

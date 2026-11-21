@@ -1,0 +1,5 @@
+
+> jrdisciples@0.1.0 check:paid-in-full
+> node scripts/check-paid-in-full.mjs
+
+Paid in Full PASS: exact ESV/RST source fixtures, complete EN/RU field parity, five discoveries, four activity mechanics + six-question quiz, four FAL images, retained lesson discoverability.

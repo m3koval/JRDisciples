@@ -1,0 +1,5 @@
+
+> jrdisciples@0.1.0 check:games
+> node scripts/check-games-section.mjs
+
+Games section checks passed, including Faith Over Giants.

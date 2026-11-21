@@ -1,0 +1,5 @@
+
+> jrdisciples@0.1.0 check:bilingual
+> node scripts/check-bilingual-content-parity.mjs
+
+Bilingual content parity checks passed for 28 lessons, 7 stories, and core activity data.

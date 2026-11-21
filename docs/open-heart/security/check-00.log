@@ -1,0 +1,13 @@
+npm warn deprecated uuid@7.0.3: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+
+added 461 packages, and audited 462 packages in 21s
+
+156 packages are looking for funding
+  run `npm fund` for details
+
+13 vulnerabilities (12 moderate, 1 high)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.

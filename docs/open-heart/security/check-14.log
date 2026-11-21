@@ -1,0 +1,16 @@
+PASS exact tap-to-start fixture accepted
+PASS same-size stale JavaScript rejected
+PASS restored exact bundle accepted
+PASS out missing client rejected despite unrelated valid chunk
+PASS out client restored
+PASS out wrong-engine client rejected despite unrelated valid chunk
+PASS out client restored
+PASS ios/App/App/public missing client rejected despite unrelated valid chunk
+PASS ios/App/App/public client restored
+PASS ios/App/App/public wrong-engine client rejected despite unrelated valid chunk
+PASS ios/App/App/public client restored
+PASS identically corrupt client chunks rejected
+PASS public all engine artifacts reject missing and same-size corruption
+PASS out all engine artifacts reject missing and same-size corruption
+PASS ios/App/App/public all engine artifacts reject missing and same-size corruption
+PASS fully restored exact bundle accepted

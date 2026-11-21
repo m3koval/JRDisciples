@@ -1,0 +1,126 @@
+
+> jrdisciples@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.4.6 (webpack)
+✓ Running next.config.ts took 50ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 27.3s
+  Running TypeScript ...
+  Finished TypeScript in 21.1s ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/177) ...
+  Generating static pages using 5 workers (44/177) 
+  Generating static pages using 5 workers (88/177) 
+  Generating static pages using 5 workers (132/177) 
+✓ Generating static pages using 5 workers (177/177) in 2.8s
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /explore
+├ ○ /games
+├ ○ /games/david-sling-challenge
+├ ○ /games/escape-room-daniel
+├ ○ /games/faith-over-giants
+├ ○ /games/faithful-archer
+├ ○ /games/manna-trail
+├ ○ /games/shepherd-light-adventure
+├ ○ /games/shield-of-faith
+├   /games/shield-of-faith/models/[file]
+│ ├ ● /games/shield-of-faith/models/bridge.glb
+│ ├ ● /games/shield-of-faith/models/house_cottage.glb
+│ ├ ● /games/shield-of-faith/models/house_hall.glb
+│ └ ● [+10 more paths]
+├ ○ /games/spot-the-difference
+├ ○ /games/trail-of-truth
+├ ○ /games/truth-runner
+├ ○ /journey
+├ ○ /lessons
+├ ○ /lessons/alone-with-god
+├ ○ /lessons/baptism-prep
+├ ○ /lessons/case-for-christ-bible
+├ ○ /lessons/case-for-christ-cross
+├ ○ /lessons/case-for-christ-gods-son
+├ ○ /lessons/case-for-christ-resurrection
+├ ○ /lessons/coin-in-the-fish
+├ ○ /lessons/davids-lord
+├ ○ /lessons/every-one-matters
+├ ○ /lessons/gods-cutting
+├ ○ /lessons/grace-in-the-kingdom
+├ ○ /lessons/holy-spirit
+├ ○ /lessons/how-to-pray
+├ ○ /lessons/jesus-builds-his-church
+├ ○ /lessons/jonah-big-fish
+├ ○ /lessons/living-word
+├ ○ /lessons/mustard-seed-faith
+├ ○ /lessons/one-thing-you-lack
+├ ○ /lessons/open-heart
+├ ○ /lessons/paid-in-full
+├ ○ /lessons/remember-the-giver
+├ ○ /lessons/second-mile
+├ ○ /lessons/transfiguration
+├ ○ /lessons/who-am-i
+├ ○ /lessons/who-is-jesus
+├ ○ /lessons/whose-mark
+├ ○ /lessons/why-did-jesus-come
+├ ○ /lessons/words-and-deeds
+├ ○ /memory
+├   /memory/[id]
+│ ├ ● /memory/john-3-16
+│ ├ ● /memory/psalm-23-1
+│ ├ ● /memory/proverbs-3-5-6
+│ └ ● [+5 more paths]
+├ ○ /practice
+├ ○ /progress
+├ ○ /puzzles
+├   /puzzles/[id]
+│ ├ ● /puzzles/books-of-the-bible
+│ ├ ● /puzzles/jesus-is
+│ ├ ● /puzzles/gods-armor
+│ └ ● [+9 more paths]
+├ ○ /quest
+├ ○ /quests
+├ ○ /quests/armor-of-god
+├ ○ /quests/courage-quest
+├ ○ /quests/forest-of-lies
+├ ○ /quests/forgiveness-bridge
+├ ○ /quests/fruit-of-spirit
+├ ○ /quests/good-samaritan
+├ ○ /quests/lost-sheep
+├ ○ /quests/storm-rescue
+├ ○ /quests/wise-builder
+├ ○ /quiz
+├   /quiz/[id]
+│ ├ ● /quiz/quiz-creation
+│ ├ ● /quiz/quiz-noah
+│ ├ ● /quiz/quiz-joseph
+│ └ ● [+3 more paths]
+├ ○ /rebus
+├   /rebus/[id]
+│ ├ ● /rebus/rebus-believe
+│ ├ ● /rebus/rebus-worship
+│ ├ ● /rebus/rebus-servant
+│ └ ● [+9 more paths]
+├ ○ /robots.txt
+├ ○ /sitemap.xml
+├ ○ /stories
+├   /stories/[id]
+│ ├ ● /stories/creation
+│ ├ ● /stories/noah
+│ ├ ● /stories/joseph
+│ └ ● [+4 more paths]
+├ ○ /why
+└   /why/[slug]
+  ├ ● /why/01
+  ├ ● /why/02
+  ├ ● /why/03
+  └ ● [+49 more paths]
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+

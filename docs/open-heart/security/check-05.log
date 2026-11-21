@@ -1,0 +1,5 @@
+
+> jrdisciples@0.1.0 check:case-russian
+> node scripts/check-case-for-christ-russian-copy.mjs
+
+Case for Christ Russian copy guard passed for 4 lessons.

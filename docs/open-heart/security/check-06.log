@@ -1,0 +1,5 @@
+
+> jrdisciples@0.1.0 check:assets
+> node scripts/check-image-assets.mjs
+
+Junior Disciples image asset check passed for 148 unique referenced assets.

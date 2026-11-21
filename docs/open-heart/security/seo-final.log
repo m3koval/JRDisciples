@@ -1,0 +1,956 @@
+{
+  "base": "production build",
+  "count": 156,
+  "sections": {
+    "explore": 1,
+    "games": 11,
+    "home": 1,
+    "journey": 1,
+    "lessons": 29,
+    "memory": 9,
+    "puzzles": 13,
+    "quests": 10,
+    "quiz": 7,
+    "rebus": 13,
+    "stories": 8,
+    "why": 53
+  },
+  "pages": [
+    {
+      "path": "/",
+      "title": "Bible Learning for Kids | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/explore",
+      "title": "Explore Bible Activities | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/explore",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/games",
+      "title": "Bible Games for Kids | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/games",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/games/david-sling-challenge",
+      "title": "David Sling Challenge | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/games/david-sling-challenge",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/games/escape-room-daniel",
+      "title": "Escape Room Daniel | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/games/escape-room-daniel",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/games/faith-over-giants",
+      "title": "Faith Over Giants | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/games/faith-over-giants",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/games/faithful-archer",
+      "title": "Faithful Archer | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/games/faithful-archer",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/games/manna-trail",
+      "title": "Manna Trail | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/games/manna-trail",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/games/shepherd-light-adventure",
+      "title": "Shepherd Light Adventure | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/games/shepherd-light-adventure",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/games/shield-of-faith",
+      "title": "Shield Of Faith | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/games/shield-of-faith",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/games/spot-the-difference",
+      "title": "Spot The Difference | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/games/spot-the-difference",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/games/trail-of-truth",
+      "title": "Trail Of Truth | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/games/trail-of-truth",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/games/truth-runner",
+      "title": "Truth Runner | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/games/truth-runner",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/journey",
+      "title": "The Disciple Journey | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/journey",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/lessons",
+      "title": "Bible Lessons for Kids | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/lessons/alone-with-god",
+      "title": "Alone with God | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/alone-with-god",
+      "image": "https://www.juniordisciples.com/images/lessons/alone-with-god/hero.png"
+    },
+    {
+      "path": "/lessons/baptism-prep",
+      "title": "Why Get Baptized? | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/baptism-prep",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/baptism-prep/topic-baptism-prep.png"
+    },
+    {
+      "path": "/lessons/case-for-christ-bible",
+      "title": "Can We Trust the Bible? | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/case-for-christ-bible",
+      "image": "https://www.juniordisciples.com/images/jr/topic-case-for-christ-bible.png"
+    },
+    {
+      "path": "/lessons/case-for-christ-cross",
+      "title": "Why Did Jesus Have to Die? | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/case-for-christ-cross",
+      "image": "https://www.juniordisciples.com/images/jr/topic-case-for-christ-cross.png"
+    },
+    {
+      "path": "/lessons/case-for-christ-gods-son",
+      "title": "Is Jesus Really God\u2019s Son? | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/case-for-christ-gods-son",
+      "image": "https://www.juniordisciples.com/images/jr/topic-case-for-christ-gods-son.png"
+    },
+    {
+      "path": "/lessons/case-for-christ-resurrection",
+      "title": "Did Jesus Really Rise from the Dead? | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/case-for-christ-resurrection",
+      "image": "https://www.juniordisciples.com/images/jr/topic-case-for-christ-resurrection.png"
+    },
+    {
+      "path": "/lessons/coin-in-the-fish",
+      "title": "The Coin in the Fish's Mouth | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/coin-in-the-fish",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/coin-in-the-fish/topic-coin-in-the-fish.png"
+    },
+    {
+      "path": "/lessons/davids-lord",
+      "title": "David\u2019s Son, David\u2019s Lord | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/davids-lord",
+      "image": "https://www.juniordisciples.com/images/lessons/davids-lord/odd-scene.webp"
+    },
+    {
+      "path": "/lessons/every-one-matters",
+      "title": "Every One Matters | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/every-one-matters",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/every-one-matters/topic-every-one-matters-fal.png"
+    },
+    {
+      "path": "/lessons/gods-cutting",
+      "title": "Shaped by God | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/gods-cutting",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/gods-cutting/topic-gods-cutting-fal.png"
+    },
+    {
+      "path": "/lessons/grace-in-the-kingdom",
+      "title": "Grace in the Kingdom of Heaven | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/grace-in-the-kingdom",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/grace-in-the-kingdom/topic-grace-in-the-kingdom.png"
+    },
+    {
+      "path": "/lessons/holy-spirit",
+      "title": "The Holy Spirit | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/holy-spirit",
+      "image": "https://www.juniordisciples.com/images/jr/topic-holy-spirit.png"
+    },
+    {
+      "path": "/lessons/how-to-pray",
+      "title": "How to Talk to God | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/how-to-pray",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/how-to-pray/topic-how-to-pray.png"
+    },
+    {
+      "path": "/lessons/jesus-builds-his-church",
+      "title": "The Church \u2014 How Jesus Built It | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/jesus-builds-his-church",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/jesus-builds-his-church/topic-jesus-builds-his-church.png"
+    },
+    {
+      "path": "/lessons/jonah-big-fish",
+      "title": "Jonah & the Big Fish | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/jonah-big-fish",
+      "image": "https://www.juniordisciples.com/images/jr/story-jonah.png"
+    },
+    {
+      "path": "/lessons/living-word",
+      "title": "Know God's Word. Let It Change Your Life. | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/living-word",
+      "image": "https://www.juniordisciples.com/images/jr/topic-case-for-christ-bible.png"
+    },
+    {
+      "path": "/lessons/mustard-seed-faith",
+      "title": "Mustard Seed Faith | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/mustard-seed-faith",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/mustard-seed-faith/topic-mustard-seed-faith.png"
+    },
+    {
+      "path": "/lessons/one-thing-you-lack",
+      "title": "One Thing You Lack | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/one-thing-you-lack",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/one-thing-you-lack/topic-one-thing-you-lack-fal.png"
+    },
+    {
+      "path": "/lessons/open-heart",
+      "title": "Religion that shuts God out \u00b7 \u0420\u0435\u043b\u0438\u0433\u0438\u044f, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u0437\u0430\u043a\u0440\u044b\u0432\u0430\u0435\u0442 \u0411\u043e\u0433\u0430 | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/open-heart",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/lessons/paid-in-full",
+      "title": "Paid in Full | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/paid-in-full",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/paid-in-full/cover.webp"
+    },
+    {
+      "path": "/lessons/remember-the-giver",
+      "title": "BEWARE! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/remember-the-giver",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/remember-the-giver/cover.webp"
+    },
+    {
+      "path": "/lessons/second-mile",
+      "title": "The Second Mile | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/second-mile",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/second-mile/00-cover.webp"
+    },
+    {
+      "path": "/lessons/transfiguration",
+      "title": "The Transfiguration | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/transfiguration",
+      "image": "https://www.juniordisciples.com/images/jr/topic-transfiguration.png"
+    },
+    {
+      "path": "/lessons/who-am-i",
+      "title": "Who am I? | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/who-am-i",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/lessons/who-is-jesus",
+      "title": "Who Is Jesus? | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/who-is-jesus",
+      "image": "https://www.juniordisciples.com/images/jr/topic-who-is-jesus.png"
+    },
+    {
+      "path": "/lessons/whose-mark",
+      "title": "Whose Mark? | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/whose-mark",
+      "image": "https://www.juniordisciples.com/images/jr/lessons/whose-mark/00-hero-whose-mark.png"
+    },
+    {
+      "path": "/lessons/why-did-jesus-come",
+      "title": "Why Did Jesus Come? | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/why-did-jesus-come",
+      "image": "https://www.juniordisciples.com/images/lessons/why-did-jesus-come/cover.webp"
+    },
+    {
+      "path": "/lessons/words-and-deeds",
+      "title": "More than words \u00b7 \u041d\u0435 \u0442\u043e\u043b\u044c\u043a\u043e \u0433\u043e\u0432\u043e\u0440\u0438\u0442\u044c \u2014 \u0434\u0435\u043b\u0430\u0442\u044c | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/lessons/words-and-deeds",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/memory",
+      "title": "Bible Verse Memory for Kids | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/memory",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/memory/ephesians-2-8-9",
+      "title": "Ephesians 2:8-9 \u2014 Verse Memory | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/memory/ephesians-2-8-9",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/memory/james-1-22",
+      "title": "James 1:22 \u2014 Verse Memory | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/memory/james-1-22",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/memory/john-3-16",
+      "title": "John 3:16 \u2014 Verse Memory | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/memory/john-3-16",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/memory/philippians-4-13",
+      "title": "Philippians 4:13 \u2014 Verse Memory | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/memory/philippians-4-13",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/memory/proverbs-3-5-6",
+      "title": "Proverbs 3:5-6 \u2014 Verse Memory | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/memory/proverbs-3-5-6",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/memory/psalm-23-1",
+      "title": "Psalm 23:1 \u2014 Verse Memory | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/memory/psalm-23-1",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/memory/romans-3-23",
+      "title": "Romans 3:23 \u2014 Verse Memory | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/memory/romans-3-23",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/memory/romans-6-23",
+      "title": "Romans 6:23 \u2014 Verse Memory | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/memory/romans-6-23",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles",
+      "title": "Bible Word Search Puzzles | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles/bible-heroes",
+      "title": "Bible Heroes \u2014 Word Search | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles/bible-heroes",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles/books-of-the-bible",
+      "title": "Books of the Bible \u2014 Word Search | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles/books-of-the-bible",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles/christmas-story",
+      "title": "The Christmas Story \u2014 Word Search | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles/christmas-story",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles/creation-week",
+      "title": "Creation Week \u2014 Word Search | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles/creation-week",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles/easter",
+      "title": "Easter \u2014 Word Search | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles/easter",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles/fruits-of-the-spirit",
+      "title": "Fruits of the Spirit \u2014 Word Search | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles/fruits-of-the-spirit",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles/gods-armor",
+      "title": "God's Armor \u2014 Word Search | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles/gods-armor",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles/jesus-is",
+      "title": "Jesus Is... \u2014 Word Search | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles/jesus-is",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles/lords-prayer",
+      "title": "The Lord's Prayer \u2014 Word Search | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles/lords-prayer",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles/miracles-of-jesus",
+      "title": "Miracles of Jesus \u2014 Word Search | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles/miracles-of-jesus",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles/parables",
+      "title": "Parables of Jesus \u2014 Word Search | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles/parables",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/puzzles/the-disciples",
+      "title": "The Disciples \u2014 Word Search | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/puzzles/the-disciples",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quests",
+      "title": "Interactive Bible Quests | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quests",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quests/armor-of-god",
+      "title": "Armor Of God | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quests/armor-of-god",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quests/courage-quest",
+      "title": "Courage Quest | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quests/courage-quest",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quests/forest-of-lies",
+      "title": "Forest Of Lies | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quests/forest-of-lies",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quests/forgiveness-bridge",
+      "title": "Forgiveness Bridge | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quests/forgiveness-bridge",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quests/fruit-of-spirit",
+      "title": "Fruit Of Spirit | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quests/fruit-of-spirit",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quests/good-samaritan",
+      "title": "Good Samaritan | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quests/good-samaritan",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quests/lost-sheep",
+      "title": "Lost Sheep | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quests/lost-sheep",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quests/storm-rescue",
+      "title": "Storm Rescue | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quests/storm-rescue",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quests/wise-builder",
+      "title": "Wise Builder | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quests/wise-builder",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quiz",
+      "title": "Bible Quizzes for Kids | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quiz",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quiz/quiz-birth-of-jesus",
+      "title": "The Birth of Jesus Quiz | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quiz/quiz-birth-of-jesus",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quiz/quiz-creation",
+      "title": "God Makes Everything Quiz | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quiz/quiz-creation",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quiz/quiz-david-goliath",
+      "title": "David and Goliath Quiz | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quiz/quiz-david-goliath",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quiz/quiz-jonah",
+      "title": "Jonah and the Big Fish Quiz | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quiz/quiz-jonah",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quiz/quiz-joseph",
+      "title": "Joseph and His Brothers Quiz | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quiz/quiz-joseph",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/quiz/quiz-noah",
+      "title": "Noah and the Great Flood Quiz | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/quiz/quiz-noah",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus",
+      "title": "Bible Picture Puzzles | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus/rebus-believe",
+      "title": "Puzzle 1: What we do with Jesus | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus/rebus-believe",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus/rebus-covenant",
+      "title": "Puzzle 5: God's solemn promise | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus/rebus-covenant",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus/rebus-eternal",
+      "title": "Puzzle 11: Living forever with God | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus/rebus-eternal",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus/rebus-forgive",
+      "title": "Puzzle 12: What God does with our sins | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus/rebus-forgive",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus/rebus-grace",
+      "title": "Puzzle 7: God's free gift | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus/rebus-grace",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus/rebus-holy",
+      "title": "Puzzle 8: Set apart for God | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus/rebus-holy",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus/rebus-kingdom",
+      "title": "Puzzle 6: Where God rules forever | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus/rebus-kingdom",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus/rebus-offering",
+      "title": "Puzzle 4: Giving to God | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus/rebus-offering",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus/rebus-promise",
+      "title": "Puzzle 10: God never breaks this | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus/rebus-promise",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus/rebus-repent",
+      "title": "Puzzle 9: Turning back to God | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus/rebus-repent",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus/rebus-servant",
+      "title": "Puzzle 3: How Jesus calls us to live | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus/rebus-servant",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/rebus/rebus-worship",
+      "title": "Puzzle 2: Praising God | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/rebus/rebus-worship",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/stories",
+      "title": "Bible Stories for Kids | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/stories",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/stories/birth-of-jesus",
+      "title": "The Birth of Jesus | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/stories/birth-of-jesus",
+      "image": "https://www.juniordisciples.com/images/jr/story-birth-of-jesus.png"
+    },
+    {
+      "path": "/stories/creation",
+      "title": "God Makes Everything | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/stories/creation",
+      "image": "https://www.juniordisciples.com/images/jr/story-creation.png"
+    },
+    {
+      "path": "/stories/david-goliath",
+      "title": "David and Goliath | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/stories/david-goliath",
+      "image": "https://www.juniordisciples.com/images/jr/story-david.png"
+    },
+    {
+      "path": "/stories/jesus-baptism",
+      "title": "Jesus Is Baptized | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/stories/jesus-baptism",
+      "image": "https://www.juniordisciples.com/images/jr/stories/jesus-baptism/story-jesus-baptism.png"
+    },
+    {
+      "path": "/stories/jonah",
+      "title": "Jonah and the Big Fish | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/stories/jonah",
+      "image": "https://www.juniordisciples.com/images/jr/story-jonah.png"
+    },
+    {
+      "path": "/stories/joseph",
+      "title": "Joseph and His Brothers | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/stories/joseph",
+      "image": "https://www.juniordisciples.com/images/jr/story-joseph.png"
+    },
+    {
+      "path": "/stories/noah",
+      "title": "Noah and the Great Flood | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/stories/noah",
+      "image": "https://www.juniordisciples.com/images/jr/story-noah.png"
+    },
+    {
+      "path": "/why",
+      "title": "WHY?! \u2014 Explore Christian Faith | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/01",
+      "title": "How do we know God exists? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/01",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/02",
+      "title": "Is believing just guessing? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/02",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/03",
+      "title": "Can I ask hard questions and still follow Jesus? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/03",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/04",
+      "title": "LAB: What would help us know? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/04",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/05",
+      "title": "Why listen to the Bible? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/05",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/06",
+      "title": "Has the Bible been changed? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/06",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/07",
+      "title": "Why so many books and translations? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/07",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/08",
+      "title": "LAB: Can you check the source? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/08",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/09",
+      "title": "What is God like? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/09",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/10",
+      "title": "How can God be Father, Son and Holy Spirit? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/10",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/11",
+      "title": "Does God know and care about me? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/11",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/12",
+      "title": "LAB: Can we explain God without shrinking him? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/12",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/13",
+      "title": "Why is there a world at all? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/13",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/14",
+      "title": "Do science and faith have to fight? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/14",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/15",
+      "title": "Could God do a miracle? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/15",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/16",
+      "title": "LAB: What does nature show\u2014and not show? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/16",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/17",
+      "title": "Why do I matter if I am not the best? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/17",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/18",
+      "title": "Why did God give me a body? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/18",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/19",
+      "title": "Can a chatbot be a person or my wisest friend? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/19",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/20",
+      "title": "LAB: Who gets included? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/20",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/21",
+      "title": "What is sin\u2014more than breaking a rule? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/21",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/22",
+      "title": "Why is there suffering if God is good? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/22",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/23",
+      "title": "Why forgive if the wrong was real? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/23",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/24",
+      "title": "LAB: What should I do when someone gets hurt? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/24",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/25",
+      "title": "Was Jesus a real person? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/25",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/26",
+      "title": "How can Jesus be God and human? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/26",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/27",
+      "title": "Why did Jesus have to die? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/27",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/28",
+      "title": "LAB: What do Jesus' words and works tell us? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/28",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/29",
+      "title": "Did Jesus really rise from the dead? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/29",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/30",
+      "title": "Can being good enough save me? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/30",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/31",
+      "title": "What are repentance, faith and a new life? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/31",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/32",
+      "title": "LAB: Can you explain the good news? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/32",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/33",
+      "title": "Who is the Holy Spirit? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/33",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/34",
+      "title": "How does God help me change? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/34",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/35",
+      "title": "How do I know whether an idea is from God? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/35",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/36",
+      "title": "LAB: Which response grows good fruit? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/36",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/37",
+      "title": "Why pray if God already knows? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/37",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/38",
+      "title": "Why doesn't God always say yes? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/38",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/39",
+      "title": "How do I read the Bible when it feels hard? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/39",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/40",
+      "title": "LAB: What can I do with worry? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/40",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/41",
+      "title": "Why church when I can watch a video? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/41",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/42",
+      "title": "Why baptism and the Lord's Supper? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/42",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/43",
+      "title": "Why do Christians disagree\u2014and sometimes hurt people? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/43",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/44",
+      "title": "LAB: What does serving look like? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/44",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/45",
+      "title": "What if my friend believes another religion\u2014or none? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/45",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/46",
+      "title": "What if everyone says wrong is right? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/46",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/47",
+      "title": "How do I follow Jesus with games, money and my phone? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/47",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/48",
+      "title": "LAB: Can you spot a claim that goes too far? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/48",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/49",
+      "title": "What happens when someone dies? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/49",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/50",
+      "title": "Will God put everything right? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/50",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/51",
+      "title": "How can I keep following Jesus as I grow? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/51",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    },
+    {
+      "path": "/why/52",
+      "title": "LAB: What do you believe\u2014and why? \u2014 WHY?! | Junior Disciples",
+      "canonical": "https://www.juniordisciples.com/why/52",
+      "image": "https://www.juniordisciples.com/images/jr/quests/quest-hub-map.png"
+    }
+  ]
+}

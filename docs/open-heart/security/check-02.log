@@ -1,0 +1,5 @@
+
+> jrdisciples@0.1.0 test:quests
+> node scripts/check-quest-next-links.mjs
+
+Quest next-link checks passed for 9 quest pages.
