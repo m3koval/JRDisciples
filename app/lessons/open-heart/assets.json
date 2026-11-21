@@ -1,0 +1,25 @@
+{
+  "qr": "https://www.juniordisciples.com/lessons/open-heart",
+  "art": {
+    "cover.webp": {
+      "reusedFrom": "words-and-deeds/cover.webp",
+      "sha256": "1be90f6bc45e4fdd3e5e41e662fe8c56f2737e5d2cdd54e04d345fe47c1d80ea",
+      "scene": "Cover: Michael watches Joseph carrying books and Rosie arranging supplies before Gracie joins. Coloring: later repair scene, boys carry a box while Rosie handles papers; Gracie is off-frame."
+    },
+    "coloring.webp": {
+      "reusedFrom": "words-and-deeds/coloring.webp",
+      "sha256": "7f5ed0b430e767cb693f30c286dd02f524cddffe5215c4b3626aa01dd2ca318b",
+      "scene": "Cover: Michael watches Joseph carrying books and Rosie arranging supplies before Gracie joins. Coloring: later repair scene, boys carry a box while Rosie handles papers; Gracie is off-frame."
+    }
+  },
+  "pdfs": {
+    "Open-Heart-EN-TEACHER.pdf": "0a6717308fdfd2d923d7b581f1854f4b3434fee7f6c9d131ffaef0db798051ff",
+    "Open-Heart-EN-READING.pdf": "86e1bdf0f4b3689e373860725b574ff121075c3545d1215b1592328be6ecc707",
+    "Open-Heart-EN-A4-LONG-EDGE.pdf": "97d1979564335b2c8a136b1ef025e06f6a678d740818bb1bcf8e17be2a874eea",
+    "Open-Heart-RU-LETTER-LONG-EDGE.pdf": "3deebf81ff7def649f448b1a67b1a57b8718a7359a9f00566ae021edaaa87afb",
+    "Open-Heart-EN-LETTER-LONG-EDGE.pdf": "3634f89536bb4955aa5e4b4083396090b69664cb641e62ffff9cff5948e671b0",
+    "Open-Heart-RU-TEACHER.pdf": "fda71aa64fce20ec64708d603ae52a1a17676eae1ff77143c9f85b09d54f9eaf",
+    "Open-Heart-RU-A4-LONG-EDGE.pdf": "b1a4d1874ef88db43029398da701d77e104a4c288f9b678d392e0a1db98e201b",
+    "Open-Heart-RU-READING.pdf": "c1ea4bc2517c4fba5f8ea9c5aebfb25b9191a2fb60617c46f565a32aa7fba76c"
+  }
+}

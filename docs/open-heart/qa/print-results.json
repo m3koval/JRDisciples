@@ -1,0 +1,30 @@
+{
+  "EN": {
+    "reading_pages": 4,
+    "QR": "https://www.juniordisciples.com/lessons/open-heart",
+    "imposition": "[4|1], rotate180([2|3]); A4 and Letter; back text direction verified",
+    "bounds": "PASS",
+    "word_unique_occurrences": {
+      "JUSTICE": 1,
+      "MERCY": 1,
+      "FAITHFULNESS": 1,
+      "JESUS": 1,
+      "HEART": 1,
+      "TRUTH": 1
+    }
+  },
+  "RU": {
+    "reading_pages": 4,
+    "QR": "https://www.juniordisciples.com/lessons/open-heart",
+    "imposition": "[4|1], rotate180([2|3]); A4 and Letter; back text direction verified",
+    "bounds": "PASS",
+    "word_unique_occurrences": {
+      "\u0421\u0423\u0414": 1,
+      "\u041c\u0418\u041b\u041e\u0421\u0422\u042c": 1,
+      "\u0412\u0415\u0420\u0423": 1,
+      "\u0418\u0418\u0421\u0423\u0421": 1,
+      "\u0421\u0415\u0420\u0414\u0426\u0415": 1,
+      "\u041f\u0420\u0410\u0412\u0414\u0410": 1
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "base": "http://127.0.0.1:3217",
+  "results": [
+    {
+      "device": "phone",
+      "language": "en",
+      "interactions": "PASS",
+      "reload": "PASS",
+      "privacy": "PASS",
+      "overflow": "PASS",
+      "pdfs": 4,
+      "consoleErrors": []
+    },
+    {
+      "device": "phone",
+      "language": "ru",
+      "interactions": "PASS",
+      "reload": "PASS",
+      "privacy": "PASS",
+      "overflow": "PASS",
+      "pdfs": 4,
+      "consoleErrors": []
+    },
+    {
+      "device": "ipad",
+      "language": "en",
+      "interactions": "PASS",
+      "reload": "PASS",
+      "privacy": "PASS",
+      "overflow": "PASS",
+      "pdfs": 4,
+      "consoleErrors": []
+    },
+    {
+      "device": "ipad",
+      "language": "ru",
+      "interactions": "PASS",
+      "reload": "PASS",
+      "privacy": "PASS",
+      "overflow": "PASS",
+      "pdfs": 4,
+      "consoleErrors": []
+    },
+    {
+      "device": "desktop",
+      "language": "en",
+      "interactions": "PASS",
+      "reload": "PASS",
+      "privacy": "PASS",
+      "overflow": "PASS",
+      "pdfs": 4,
+      "consoleErrors": []
+    },
+    {
+      "device": "desktop",
+      "language": "ru",
+      "interactions": "PASS",
+      "reload": "PASS",
+      "privacy": "PASS",
+      "overflow": "PASS",
+      "pdfs": 4,
+      "consoleErrors": []
+    },
+    {
+      "storage": "malformed",
+      "result": "PASS"
+    },
+    {
+      "storage": "blocked",
+      "result": "PASS"
+    },
+    {
+      "storage": "stale-write-fails",
+      "result": "PASS"
+    }
+  ]
+}

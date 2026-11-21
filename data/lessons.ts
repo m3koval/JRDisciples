@@ -23,6 +23,7 @@ export interface Lesson {
 }
 
 export const lessonTopics: LessonTopic[] = [
+  { href: "/lessons/open-heart", image: "/images/lessons/open-heart/cover.webp", title: "Religion that shuts God out", desc: "Matthew 23:13–26 — Welcome Gracie, find what matters, uncover hidden objects and follow Michael from pride to repentance, faith and loving repair.", color: "#175b52", sections: 5, emoji: "🚪" },
   { href: "/lessons/words-and-deeds", image: "/images/lessons/words-and-deeds/cover.webp", title: "More than words", desc: "Matthew 23:1–12 — Count, discover Scripture, find six hidden objects, and follow Michael from seeking praise to honest prayer and loving service.", color: "#176459", sections: 5, emoji: "🤲" },
   { href: "/lessons/davids-lord", image: "/images/lessons/davids-lord/odd-scene.webp", title: "David’s Son, David’s Lord", desc: "Matthew 22:41–46 — Join Michael and Rosie: draw flowers, find 12 Bible words, color and circle four surprising objects, then connect and decode a message.", color: "#17645b", sections: 4, emoji: "👑" },
   { href: "/lessons/why-did-jesus-come", image: "/images/lessons/why-did-jesus-come/cover.webp", title: "Why Did Jesus Come?", desc: "Build a birdhouse with Michael and Rosie, discover three blessings in 1 John, and explore five real puzzles: picture differences, word search, crossword, hidden objects, and a secret message.", color: "#21645b", sections: 5, emoji: "🕊️" },

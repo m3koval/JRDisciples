@@ -1,0 +1,3 @@
+# Local visual evidence is reproducible with the test/build scripts.
+qa/*.png
+qa/catalog/*.png
