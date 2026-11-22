@@ -1,0 +1,18 @@
+{
+  "base": "http://127.0.0.1:3228",
+  "results": [
+    {
+      "l": "en",
+      "touchDragThenKeyboardThenTouch": true,
+      "keyboardPictureHit": true,
+      "languageIsolation": true
+    },
+    {
+      "l": "ru",
+      "touchDragThenKeyboardThenTouch": true,
+      "keyboardPictureHit": true,
+      "languageIsolation": true
+    }
+  ],
+  "passed": true
+}

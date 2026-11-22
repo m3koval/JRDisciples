@@ -44,6 +44,7 @@ export const staticPublicPaths = [
   "/lessons/living-word",
   "/lessons/mustard-seed-faith",
   "/lessons/one-thing-you-lack",
+  "/lessons/clean-inside-outside",
   "/lessons/open-heart",
   "/lessons/paid-in-full",
   "/lessons/remember-the-giver",

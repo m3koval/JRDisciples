@@ -9,7 +9,7 @@ export interface LessonTopic {
 }
 
 export const lessonTopicsRu: LessonTopic[] = [
-  { href: "/lessons/open-heart", image: "/images/lessons/open-heart/cover.webp", title: "Религия, которая закрывает Бога", desc: "Матфея 23:13–26 — Пригласи Грейси, найди главное и спрятанные предметы. Узнай, как Майкл пришёл от гордости к покаянию, вере и заботе о других.", color: "#175b52", sections: 5, emoji: "🚪" },
+  { href: "/lessons/clean-inside-outside", image: "/images/lessons/clean-inside-outside/stand.png", title: "Блестящий стаканчик и огромный верблюд", desc: "Матфея 23:13–36 — Вместе с Беном и Мией узнай, что важнее, найди слова и лишние предметы и учись отвечать Иисусу честностью и делом.", color: "#175546", sections: 5, emoji: "🍋" },
   { href: "/lessons/words-and-deeds", image: "/images/lessons/words-and-deeds/cover.webp", title: "Не только говорить — делать", desc: "Матфея 23:1–12 — Посчитай предметы, найди ответы в Библии и шесть спрятанных вещей. Узнай, как Майкл учился честно приходить к Иисусу и помогать из любви к Богу.", color: "#176459", sections: 5, emoji: "🤲" },
   { href: "/lessons/davids-lord", image: "/images/lessons/davids-lord/odd-scene.webp", title: "Сын Давида и Господь Давида", desc: "Матфея 22:41–46 — Вместе с Мишей и Рози нарисуй цветы, найди 12 слов, раскрась сцену и обведи четыре необычных предмета, затем расшифруй сообщение.", color: "#17645b", sections: 4, emoji: "👑" },
   { href: "/lessons/why-did-jesus-come", image: "/images/lessons/why-did-jesus-come/cover.webp", title: "Зачем приходил Иисус?", desc: "Собери скворечник с Мишей и Рози и открой три благословения из Первого послания Иоанна. Пять заданий: отличия на рисунках, поиск слов, кроссворд, спрятанные предметы и тайное послание.", color: "#21645b", sections: 5, emoji: "🕊️" },
@@ -17,6 +17,7 @@ export const lessonTopicsRu: LessonTopic[] = [
   { href: "/lessons/alone-with-god", image: "/images/lessons/alone-with-god/hero.png", title: "Наедине с Богом", desc: "Отложи игру и отправляйся с Мишей и Розой: узнай о личной молитве, учись у Иисуса, собери стих и обращайся к Отцу в течение дня.", color: "#22656b", sections: 7, emoji: "🙏" },
   { href: "/lessons/paid-in-full", image: "/images/jr/lessons/paid-in-full/cover.webp", title: "Оплачено полностью", desc: "1 Петра 1:17–21 — Узнай о любящем Отце и справедливом Судье, собери рюкзак сердца, открой спасение Иисуса и собери драгоценные слова.", color: "#17665b", sections: 5, emoji: "✉️" },
   { href: "/lessons/remember-the-giver", image: "/images/jr/lessons/remember-the-giver/cover.webp", title: "БЕРЕГИСЬ!", desc: "Когда всё хорошо, есть три опасности: забыть Бога, отвергнуть Его власть, заменить Его дарами. Помни Его, слушай Его, ставь Его первым. Шесть заданий по Второзаконию 6 и Даниила 4.", color: "#285d43", sections: 6, emoji: "🌾" },
+  { href: "/lessons/open-heart", image: "/images/lessons/open-heart/cover.webp", title: "Религия, которая закрывает Бога", desc: "Матфея 23:13–26 — Пригласи Грейси, найди главное и спрятанные предметы. Узнай, как Майкл пришёл от гордости к покаянию, вере и заботе о других.", color: "#175b52", sections: 5, emoji: "🚪" },
   {
     href: "/lessons/living-word",
     image: "/images/jr/topic-case-for-christ-bible.png",

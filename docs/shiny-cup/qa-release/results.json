@@ -1,0 +1,182 @@
+{
+  "base": "http://127.0.0.1:3228",
+  "results": [
+    {
+      "device": "desktop",
+      "l": "en",
+      "passed": true,
+      "images": [
+        {
+          "src": "/images/lessons/clean-inside-outside/stand.png",
+          "width": 1024,
+          "height": 768
+        }
+      ]
+    },
+    {
+      "device": "desktop",
+      "l": "ru",
+      "passed": true,
+      "images": [
+        {
+          "src": "/images/lessons/clean-inside-outside/stand.png",
+          "width": 1024,
+          "height": 768
+        }
+      ]
+    },
+    {
+      "device": "ipad",
+      "l": "en",
+      "passed": true,
+      "images": [
+        {
+          "src": "/images/lessons/clean-inside-outside/stand.png",
+          "width": 1024,
+          "height": 768
+        }
+      ]
+    },
+    {
+      "device": "ipad",
+      "l": "ru",
+      "passed": true,
+      "images": [
+        {
+          "src": "/images/lessons/clean-inside-outside/stand.png",
+          "width": 1024,
+          "height": 768
+        }
+      ]
+    },
+    {
+      "device": "ipad-landscape",
+      "l": "en",
+      "passed": true,
+      "images": [
+        {
+          "src": "/images/lessons/clean-inside-outside/stand.png",
+          "width": 1024,
+          "height": 768
+        }
+      ]
+    },
+    {
+      "device": "ipad-landscape",
+      "l": "ru",
+      "passed": true,
+      "images": [
+        {
+          "src": "/images/lessons/clean-inside-outside/stand.png",
+          "width": 1024,
+          "height": 768
+        }
+      ]
+    },
+    {
+      "device": "phone",
+      "l": "en",
+      "passed": true,
+      "images": [
+        {
+          "src": "/images/lessons/clean-inside-outside/stand.png",
+          "width": 1024,
+          "height": 768
+        }
+      ]
+    },
+    {
+      "device": "phone",
+      "l": "ru",
+      "passed": true,
+      "images": [
+        {
+          "src": "/images/lessons/clean-inside-outside/stand.png",
+          "width": 1024,
+          "height": 768
+        }
+      ]
+    },
+    {
+      "device": "phone-landscape",
+      "l": "en",
+      "passed": true,
+      "images": [
+        {
+          "src": "/images/lessons/clean-inside-outside/stand.png",
+          "width": 1024,
+          "height": 768
+        }
+      ]
+    },
+    {
+      "device": "phone-landscape",
+      "l": "ru",
+      "passed": true,
+      "images": [
+        {
+          "src": "/images/lessons/clean-inside-outside/stand.png",
+          "width": 1024,
+          "height": 768
+        }
+      ]
+    },
+    {
+      "storage": "malformed",
+      "passed": true
+    },
+    {
+      "storage": "blocked",
+      "passed": true
+    },
+    {
+      "storage": "stale-write-fails",
+      "passed": true
+    },
+    {
+      "storage": "semantic",
+      "passed": true
+    },
+    {
+      "pdf": "public/printables/clean-inside-outside/Shiny-Cup-EN-A4-LONG-EDGE.pdf",
+      "sha256": "13be71916db39383dcf4e5cb52e688cf364d09efadb0a5a90fd00fd679adb26c",
+      "passed": true
+    },
+    {
+      "pdf": "public/printables/clean-inside-outside/Shiny-Cup-RU-A4-LONG-EDGE.pdf",
+      "sha256": "5cdf7f1c54e1c9f7f34ce960fa0da06582762c492f6cac984cd5f6bed23852dc",
+      "passed": true
+    },
+    {
+      "pdf": "public/printables/clean-inside-outside/Shiny-Cup-EN-LETTER-LONG-EDGE.pdf",
+      "sha256": "8396fb1841131cdafdc2fdb65ada027916a5c4ef15952adb4e0fc3283cced28f",
+      "passed": true
+    },
+    {
+      "pdf": "public/printables/clean-inside-outside/Shiny-Cup-EN-READING.pdf",
+      "sha256": "02e8272f91bfd141b09f5399e81860018c0a7785b6852d3426985d5df780fd89",
+      "passed": true
+    },
+    {
+      "pdf": "public/printables/clean-inside-outside/Shiny-Cup-RU-LETTER-LONG-EDGE.pdf",
+      "sha256": "cf41e58a93b1dc98fe8614317a2522d7d7088e3bb774b3ff4c67dccbf94ce3ab",
+      "passed": true
+    },
+    {
+      "pdf": "public/printables/clean-inside-outside/Shiny-Cup-RU-READING.pdf",
+      "sha256": "22e7c3c2f62cf4450f059ce509e5a4a64580376f107cc922e76cc587bf856829",
+      "passed": true
+    },
+    {
+      "pdf": "public/printables/clean-inside-outside/Shiny-Cup-RU-TEACHER.pdf",
+      "sha256": "0842f41a06168ea5922d5208a811e6d55e65ccf0984f23501f7e534b0aff787d",
+      "passed": true
+    },
+    {
+      "pdf": "public/printables/clean-inside-outside/Shiny-Cup-EN-TEACHER.pdf",
+      "sha256": "988d5d6382e0cd718535ac87c9a286890fd4c3ebc710ae4c855c69b401db7dae",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

@@ -25,7 +25,7 @@ for(const [lang,verses] of [['en',scriptureEn],['ru',scriptureRu]]){
 assert.match(fs.readFileSync('app/page.tsx','utf8'), /import HomePage from "\.\/HomePage"/)
 const home=fs.readFileSync('app/HomePage.tsx','utf8');const at=home.indexOf('<AloneWithGodFeature />')
 assert(at>=0&&at<home.indexOf('href: "/stories"'))
-// Open Heart leads; preserve all five adjacent earlier features.
-for(const file of ['data/lessons.ts','data/lessons-ru.ts'])assert.deepEqual([...fs.readFileSync(file,'utf8').matchAll(/href: "([^"]+)"/g)].slice(0,6).map(m=>m[1]),['/lessons/open-heart','/lessons/words-and-deeds','/lessons/davids-lord','/lessons/why-did-jesus-come','/lessons/who-am-i','/lessons/alone-with-god'])
+// Approved Shiny Cup leads; preserve all five adjacent earlier features.
+for(const file of ['data/lessons.ts','data/lessons-ru.ts'])assert.deepEqual([...fs.readFileSync(file,'utf8').matchAll(/href: "([^"]+)"/g)].slice(0,6).map(m=>m[1]),['/lessons/clean-inside-outside','/lessons/words-and-deeds','/lessons/davids-lord','/lessons/why-did-jesus-come','/lessons/who-am-i','/lessons/alone-with-god'])
 assert(fs.readFileSync('components/AloneWithGodFeature.tsx','utf8').includes('/images/lessons/alone-with-god/hero.png'))
 console.log('Alone with God PASS: 22 exact Scripture entries, EN/RU structural parity, 7 scenes / 5 activity types, six print PDFs, retained home placement and listing directly after Who Am I.')

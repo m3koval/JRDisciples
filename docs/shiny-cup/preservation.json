@@ -1,0 +1,19 @@
+{
+  "source": "Approved jd-shiny-cup-flow-v3; authorized revision baseline",
+  "files": {
+    "app/lessons/clean-inside-outside/puzzles.json": "cb989a74029d4b67394049547d45dad9b70e941b56f2a0417f5403d219632ea2",
+    "app/lessons/clean-inside-outside/scripture.json": "2594e9721083fec35edf33d38de89d61d1e216b9a7429f84fefd008b1f3a5cf6",
+    "app/lessons/clean-inside-outside/booklet.json": "c38b6e770a29081bccecf5434ecebd43bd642ab563e6a266306aa7d330c3d0cf",
+    "public/printables/clean-inside-outside/Shiny-Cup-EN-A4-LONG-EDGE.pdf": "13be71916db39383dcf4e5cb52e688cf364d09efadb0a5a90fd00fd679adb26c",
+    "public/printables/clean-inside-outside/Shiny-Cup-RU-A4-LONG-EDGE.pdf": "5cdf7f1c54e1c9f7f34ce960fa0da06582762c492f6cac984cd5f6bed23852dc",
+    "public/printables/clean-inside-outside/Shiny-Cup-EN-LETTER-LONG-EDGE.pdf": "8396fb1841131cdafdc2fdb65ada027916a5c4ef15952adb4e0fc3283cced28f",
+    "public/printables/clean-inside-outside/Shiny-Cup-EN-READING.pdf": "02e8272f91bfd141b09f5399e81860018c0a7785b6852d3426985d5df780fd89",
+    "public/printables/clean-inside-outside/Shiny-Cup-RU-LETTER-LONG-EDGE.pdf": "cf41e58a93b1dc98fe8614317a2522d7d7088e3bb774b3ff4c67dccbf94ce3ab",
+    "public/printables/clean-inside-outside/Shiny-Cup-RU-READING.pdf": "22e7c3c2f62cf4450f059ce509e5a4a64580376f107cc922e76cc587bf856829",
+    "public/printables/clean-inside-outside/Shiny-Cup-RU-TEACHER.pdf": "0842f41a06168ea5922d5208a811e6d55e65ccf0984f23501f7e534b0aff787d",
+    "public/printables/clean-inside-outside/Shiny-Cup-EN-TEACHER.pdf": "988d5d6382e0cd718535ac87c9a286890fd4c3ebc710ae4c855c69b401db7dae",
+    "public/images/lessons/clean-inside-outside/stand.png": "67948295c06464108e1b650ff789ff3dbcc5ad2ab86da516344e2bfd50575470",
+    "public/images/lessons/clean-inside-outside/picture-puzzle.png": "66198938213ed6bf54955a13dd6cc279ee3a709587b58e57d5eb02e692da6ad7",
+    "public/images/lessons/clean-inside-outside/imagination.png": "6d652666de89406c0752f027d27d758334bd5647594058ce9dcbf78b8fca4145"
+  }
+}

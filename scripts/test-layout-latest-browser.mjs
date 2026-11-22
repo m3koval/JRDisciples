@@ -23,12 +23,12 @@ try {
   assert.ok(home.feature.top>=home.hero.bottom-1);
   await page.screenshot({path:`${out}/${name}-home.png`});
   const latest=page.locator('[data-latest-lesson]');
-  assert.equal(await latest.getAttribute('href'),'/lessons/open-heart');
-  assert.match(await latest.innerText(),lang==='ru'?/Новый урок: Религия, которая закрывает Бога/:/New lesson: Religion that shuts God out/);
+  assert.equal(await latest.getAttribute('href'),'/lessons/clean-inside-outside');
+  assert.match(await latest.innerText(),lang==='ru'?/Новый урок: Блестящий стаканчик и огромный верблюд/:/New lesson: The Shiny Cup and the Giant Camel/);
   await latest.scrollIntoViewIfNeeded();await page.screenshot({path:`${out}/${name}-latest.png`});
-  await latest.click();await page.waitForURL('**/lessons/open-heart');
+  await latest.click();await page.waitForURL('**/lessons/clean-inside-outside');
   await page.waitForFunction(l=>document.querySelector('.oh')?.lang===l,lang);
-  assert.match(await page.locator('h1').innerText(),lang==='ru'?/Религия, которая закрывает Бога/:/Religion that shuts God out/);
+  assert.match(await page.locator('h1').innerText(),lang==='ru'?/Блестящий стаканчик и огромный верблюд/:/The Shiny Cup and the Giant Camel/);
   report.push({name,home,latestDestination:page.url(),latestHeading:await page.locator('h1').innerText()});
   // Preserve the named older feature's real destination as well.
   await go('/');await page.locator('a[href="/lessons/who-am-i"]').click();await page.waitForURL('**/lessons/who-am-i');
@@ -45,8 +45,8 @@ try {
    const spreads=[...rows.values()].map(row=>Math.max(...row.map(g=>g.ctaBottom))-Math.min(...row.map(g=>g.ctaBottom)));
    assert.ok(spreads.every(n=>n<1),`${route} ${name} ${spreads}`);
    if(route==='/lessons') {
-    assert.equal(geometry.length,28);
-    assert.deepEqual(geometry.slice(0,3).map(g=>g.href),['/lessons/open-heart','/lessons/words-and-deeds','/lessons/davids-lord']);
+    assert.equal(geometry.length,29);
+    assert.deepEqual(geometry.slice(0,3).map(g=>g.href),['/lessons/clean-inside-outside','/lessons/words-and-deeds','/lessons/davids-lord']);
     const center=await page.evaluate(()=>{const i=document.querySelector('img[src="/images/jr/lessons-hero.png"]').getBoundingClientRect(),h=document.querySelector('h1').getBoundingClientRect();return (i.left+i.width/2)-(h.left+h.width/2);});assert.ok(Math.abs(center)<1);
     await page.screenshot({path:`${out}/${name}-directory-header.png`});
     const previous=report.find(r=>r.route==='/lessons'&&r.name===`${mobile?'mobile':'desktop'}-en`);if(lang==='ru')assert.deepEqual(geometry.map(g=>g.href),previous.geometry.map(g=>g.href));

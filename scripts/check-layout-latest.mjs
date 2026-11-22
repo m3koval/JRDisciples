@@ -21,8 +21,8 @@ for (const lang of ['en','ru']) {
   assert.equal(new Set(catalog.map(x=>x.href)).size, catalog.length);
   assert.deepEqual(catalog.map(x=>x.href), lessonTopics.map(x=>x.href));
   // Published releases are prepended, not chosen by file/SEO modification dates.
-  assert.equal(getLatestPublishedLesson(lang).href, '/lessons/open-heart');
-  assert.deepEqual(catalog.slice(0,3).map(x=>x.href), ['/lessons/open-heart','/lessons/words-and-deeds','/lessons/davids-lord']);
+  assert.equal(getLatestPublishedLesson(lang).href, '/lessons/clean-inside-outside');
+  assert.deepEqual(catalog.slice(0,3).map(x=>x.href), ['/lessons/clean-inside-outside','/lessons/words-and-deeds','/lessons/davids-lord']);
   assert.equal(getLatestPublishedLesson(lang), catalog[0]);
   assert.ok(fs.existsSync(path.join(root,'public',catalog[0].image)));
   assert.ok(fs.existsSync(path.join(root,'app',catalog[0].href,'page.tsx')));
