@@ -1,0 +1,79 @@
+[
+  {
+    "name": "S01",
+    "source": "/home/helper/outputs/jd-timmy-matthew23-illustrations/story/S01.png",
+    "width": 507,
+    "height": 379,
+    "sha256": "cc7743ac2c35d675f400e25633f2cd63c9478cf334b2d1954b1cf965b28b5907"
+  },
+  {
+    "name": "S02",
+    "source": "/home/helper/outputs/jd-timmy-matthew23-illustrations/story/S02.png",
+    "width": 507,
+    "height": 379,
+    "sha256": "3b4da789ebf86bcae09b38919e976777f3d66a8d1dc353244d07f2db82b337f5"
+  },
+  {
+    "name": "S03",
+    "source": "/home/helper/outputs/jd-timmy-matthew23-illustrations/story/S03.png",
+    "width": 507,
+    "height": 379,
+    "sha256": "90f72d547d8f1ef3c1a7b38fe29a758380970e0d0bafd356fa40e3ed949b32c3"
+  },
+  {
+    "name": "S04",
+    "source": "/home/helper/outputs/jd-timmy-matthew23-illustrations/story/S04.png",
+    "width": 507,
+    "height": 379,
+    "sha256": "c5a4095fd50fb312332e45f6baf6f73689950c454243ff3ffb1a45ba0d676cfc"
+  },
+  {
+    "name": "S05",
+    "source": "/home/helper/outputs/jd-timmy-matthew23-illustrations/story/S05.png",
+    "width": 507,
+    "height": 379,
+    "sha256": "30c42a967a2b57ce5d295c2045a60fa1d4ea13779367f8e1f5349f58fca8211c"
+  },
+  {
+    "name": "S06",
+    "source": "/home/helper/outputs/jd-timmy-matthew23-illustrations/story/S06.png",
+    "width": 1024,
+    "height": 768,
+    "sha256": "222880547d49ec62dd40d32d18b9b45c213e3225afbcd9fb38d51157ff3591f1"
+  },
+  {
+    "name": "S07",
+    "source": "/home/helper/outputs/jd-timmy-matthew23-illustrations/story/S07.png",
+    "width": 507,
+    "height": 379,
+    "sha256": "3418c7a8c02b2e6adff563dc3101e5090efccf1233b9d844e5ecb077f58f3441"
+  },
+  {
+    "name": "S08",
+    "source": "/home/helper/outputs/jd-timmy-matthew23-illustrations/story/S08.png",
+    "width": 507,
+    "height": 379,
+    "sha256": "b6614d7d3fdc4fd82511197d6fe028af18095e9bb826a4c2ed3d095ca1a167c6"
+  },
+  {
+    "name": "camel",
+    "source": "/home/helper/outputs/jd-matthew23-radical-pilot/01-gnat-and-camel.png",
+    "width": 1024,
+    "height": 1024,
+    "sha256": "feacd79737f6ebdfceafca57181b04ba64ce5eb961b389cf25d0c166e2c293fd"
+  },
+  {
+    "name": "cup",
+    "source": "https://v3b.fal.media/files/b/0ab38572/6YQblMCqyYPXsIPXuUVcA_aJ7UaX0L.png",
+    "width": 1024,
+    "height": 1024,
+    "sha256": "b1c016debf600888b148527b59607eff8470d37580852190a1a24424f0b5b4c1"
+  },
+  {
+    "name": "tomb",
+    "source": "https://v3b.fal.media/files/b/0ab38572/WXKu93hh883tRtAqL0d0n_72W8hr56.png",
+    "width": 1024,
+    "height": 1024,
+    "sha256": "e3e32166e66e743f8b50e66880e3ade9e517229367933c30be27dad9fd551389"
+  }
+]

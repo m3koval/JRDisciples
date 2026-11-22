@@ -1,3 +1,4 @@
+import './check-timmy.mjs';
 import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';import ts from 'typescript';
 const root='app/lessons/clean-inside-outside/';const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));const manifest=read('docs/shiny-cup/preservation.json');
 for(const [p,hash] of Object.entries(manifest.files)){assert.equal(crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex'),hash,p);if(p.endsWith('.pdf'))assert.equal(fs.readFileSync(p).subarray(0,5).toString(),'%PDF-');}

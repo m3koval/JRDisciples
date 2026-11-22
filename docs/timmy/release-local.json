@@ -1,0 +1,244 @@
+{
+  "baseline": "3308951",
+  "sourceHashes": {
+    "app/lessons/clean-inside-outside/journey.json": "eaf18532181dc748042ac00209e0240ebb9e339ec1e71edf3e0820850f7da4ce",
+    "app/lessons/clean-inside-outside/page.tsx": "7df4bd8bc60ab689a9a291bce57bc163ba6842e7b1d390a5730b2d1d801689c8",
+    "app/lessons/clean-inside-outside/progress.ts": "3ced657c73dd66be84383e161e23a643cb2adc2aaa40dafc02afdc610fef4f68",
+    "app/lessons/clean-inside-outside/scripture.json": "2594e9721083fec35edf33d38de89d61d1e216b9a7429f84fefd008b1f3a5cf6",
+    "app/lessons/clean-inside-outside/timmy.css": "feeaa932227b26607597bc8a084b74712e2b5b21d6fe325af4d79cfbb1fe9c6d"
+  },
+  "verification": {
+    "main": {
+      "base": "http://127.0.0.1:3237",
+      "results": [
+        {
+          "device": "phone",
+          "l": "en",
+          "story": 8,
+          "discoveries": 7,
+          "scenarios": 4,
+          "priorities": 6,
+          "wrongRight": true,
+          "sequenceExplicitCheck": true,
+          "recallHidden": true,
+          "reload": true,
+          "reset": true,
+          "private": true,
+          "errors": []
+        },
+        {
+          "device": "phone",
+          "l": "ru",
+          "story": 8,
+          "discoveries": 7,
+          "scenarios": 4,
+          "priorities": 6,
+          "wrongRight": true,
+          "sequenceExplicitCheck": true,
+          "recallHidden": true,
+          "reload": true,
+          "reset": true,
+          "private": true,
+          "errors": []
+        },
+        {
+          "device": "phone-landscape",
+          "l": "en",
+          "story": 8,
+          "discoveries": 7,
+          "scenarios": 4,
+          "priorities": 6,
+          "wrongRight": true,
+          "sequenceExplicitCheck": true,
+          "recallHidden": true,
+          "reload": true,
+          "reset": true,
+          "private": true,
+          "errors": []
+        },
+        {
+          "device": "phone-landscape",
+          "l": "ru",
+          "story": 8,
+          "discoveries": 7,
+          "scenarios": 4,
+          "priorities": 6,
+          "wrongRight": true,
+          "sequenceExplicitCheck": true,
+          "recallHidden": true,
+          "reload": true,
+          "reset": true,
+          "private": true,
+          "errors": []
+        },
+        {
+          "device": "ipad",
+          "l": "en",
+          "story": 8,
+          "discoveries": 7,
+          "scenarios": 4,
+          "priorities": 6,
+          "wrongRight": true,
+          "sequenceExplicitCheck": true,
+          "recallHidden": true,
+          "reload": true,
+          "reset": true,
+          "private": true,
+          "errors": []
+        },
+        {
+          "device": "ipad",
+          "l": "ru",
+          "story": 8,
+          "discoveries": 7,
+          "scenarios": 4,
+          "priorities": 6,
+          "wrongRight": true,
+          "sequenceExplicitCheck": true,
+          "recallHidden": true,
+          "reload": true,
+          "reset": true,
+          "private": true,
+          "errors": []
+        },
+        {
+          "device": "ipad-landscape",
+          "l": "en",
+          "story": 8,
+          "discoveries": 7,
+          "scenarios": 4,
+          "priorities": 6,
+          "wrongRight": true,
+          "sequenceExplicitCheck": true,
+          "recallHidden": true,
+          "reload": true,
+          "reset": true,
+          "private": true,
+          "errors": []
+        },
+        {
+          "device": "ipad-landscape",
+          "l": "ru",
+          "story": 8,
+          "discoveries": 7,
+          "scenarios": 4,
+          "priorities": 6,
+          "wrongRight": true,
+          "sequenceExplicitCheck": true,
+          "recallHidden": true,
+          "reload": true,
+          "reset": true,
+          "private": true,
+          "errors": []
+        },
+        {
+          "device": "desktop",
+          "l": "en",
+          "story": 8,
+          "discoveries": 7,
+          "scenarios": 4,
+          "priorities": 6,
+          "wrongRight": true,
+          "sequenceExplicitCheck": true,
+          "recallHidden": true,
+          "reload": true,
+          "reset": true,
+          "private": true,
+          "errors": []
+        },
+        {
+          "device": "desktop",
+          "l": "ru",
+          "story": 8,
+          "discoveries": 7,
+          "scenarios": 4,
+          "priorities": 6,
+          "wrongRight": true,
+          "sequenceExplicitCheck": true,
+          "recallHidden": true,
+          "reload": true,
+          "reset": true,
+          "private": true,
+          "errors": []
+        },
+        {
+          "mode": "malformed",
+          "pass": true
+        },
+        {
+          "mode": "blocked",
+          "pass": true
+        },
+        {
+          "mode": "stale-write-fails",
+          "pass": true
+        },
+        {
+          "mode": "semantic",
+          "pass": true
+        },
+        {
+          "pdfs": 8,
+          "assetHashes": 11,
+          "canonical": true,
+          "sitemap": true,
+          "catalogs": true
+        }
+      ]
+    },
+    "companion": {
+      "base": "http://127.0.0.1:3237",
+      "results": [
+        {
+          "l": "en",
+          "device": "phone",
+          "words": 12,
+          "objects": 4,
+          "fullScripture": 23,
+          "contrast": 8.662398573729632,
+          "touchKeyboard": true
+        },
+        {
+          "l": "en",
+          "device": "ipad-landscape",
+          "words": 12,
+          "objects": 4,
+          "fullScripture": 23,
+          "contrast": 8.662398573729632,
+          "touchKeyboard": true
+        },
+        {
+          "l": "ru",
+          "device": "phone",
+          "words": 12,
+          "objects": 4,
+          "fullScripture": 24,
+          "contrast": 8.662398573729632,
+          "touchKeyboard": true
+        },
+        {
+          "l": "ru",
+          "device": "ipad-landscape",
+          "words": 12,
+          "objects": 4,
+          "fullScripture": 24,
+          "contrast": 8.662398573729632,
+          "touchKeyboard": true
+        }
+      ]
+    },
+    "catalogLayout": "PASS 36 recorded cases; qa-release-layout/report.json",
+    "lint": "PASS: 0 errors, 31 pre-existing warnings, max-warnings=32",
+    "build": "PASS production static build",
+    "npmAuditProduction": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "hostedWorkflowLocalCommands": "All passed; quality-gates.json"
+  },
+  "publication": "Awaiting push and live verification; production evidence will be recorded separately."
+}
