@@ -240,5 +240,5 @@
     },
     "hostedWorkflowLocalCommands": "All passed; quality-gates.json"
   },
-  "publication": "Awaiting push and live verification; production evidence will be recorded separately."
+  "publication": "Runtime release 96b904443311c4881a929da24838096f46919c3c is published and production-verified. See publication.md for hosted CI, deployment and live evidence."
 }
