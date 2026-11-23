@@ -1,9 +1,9 @@
 {
   "en": {
-    "title": "Timmy and the Hidden Wrong",
-    "intro": "Can Bible verses and a helper’s job hide a heart that refuses to listen? Walk with Timmy, then discover Jesus’ serious warning in Matthew 23:13–36.",
+    "title": "Timmy’s Gold Stars",
+    "intro": "Timmy knew lots of Bible verses. But when a new girl came to learn about God, he would not let her in.",
     "steps": ["Meet Timmy", "Look with Jesus", "Choose a real repair", "Small and weighty", "Remember and respond"],
-    "storyLabel": "A modern illustrated story · read together",
+    "storyLabel": "Read the story",
     "scene": "Scene", "panel": "Discovery", "nextScene": "Next scene", "nextPanel": "Next discovery", "previous": "Previous", "look": "What do you notice?", "reveal": "Look beneath the appearance", "hide": "Look at the outside again", "outside": "A polished surface can impress people. What is it hiding?", "inside": "God sees what is inside. Looking religious cannot cover greed or disobedience. We need His forgiveness and a changed heart, not a better disguise.",
     "metaphor": "An artist’s picture of Jesus’ comparison, not a historical event. Green vapor is an artistic cue for a foul smell; Jesus did not describe green vapor. The coins picture greed, not a claim that money itself is evil.",
     "camelCaption": "Jesus’ deliberately impossible comparison: the same man strains out a tiny gnat while swallowing an enormous camel. The picture shows a contradiction, not something that really happened.",
@@ -53,10 +53,10 @@
     "adultExtra":"Read with younger children. The apple is a modern analogy, not Jesus’ metaphor or a claim that a child is rotten fruit. Grandma discovers the spoiled apple with Timmy; she does not knowingly feed it to him. These woes address deliberate, harmful religious hypocrisy. Do not use them for ethnic contempt or to frighten an honestly struggling child. In 23:23, ESV’s ‘faithfulness’ and RST’s ‘веру’ are preserved as printed. Our explanation connects trust in God with faithful obedience; it does not replace faith with mere reliability. The Timmy story illustrates only part of the passage; the seven discoveries cover its major units."
   },
   "ru": {
-    "title":"Тимми: что скрывалось за звёздочками?",
-    "intro":"Можно ли спрятать непослушание за знанием стихов и важным поручением? Пройди путь вместе с Тимми и услышь серьёзное предупреждение Иисуса в Матфея 23:13–36.",
+    "title":"Золотые звёздочки Тимми",
+    "intro":"Тимми знал много библейских стихов. Но когда новая девочка пришла узнать о Боге, он не пустил её в класс.",
     "steps":["История Тимми","Посмотри с Иисусом","Как исправить вред","Малое и главное","Вспомни и ответь"],
-    "storyLabel":"Современная история в картинках · читаем вместе",
+    "storyLabel":"Прочитай историю",
     "scene":"Сцена", "panel":"Открытие", "nextScene":"Следующая сцена", "nextPanel":"Следующее открытие", "previous":"Назад", "look":"Что ты замечаешь?", "reveal":"Посмотреть за красивый вид", "hide":"Снова посмотреть снаружи", "outside":"Блестящая поверхность может понравиться людям. Но что за ней скрыто?", "inside":"Бог видит, что внутри. Религиозный вид не может скрыть жадность и непослушание. Нам нужны Его прощение и перемена сердца, а не новая маска.",
     "metaphor":"Художник изобразил сравнение Иисуса, а не настоящее событие. Зелёный пар обозначает неприятный запах; Иисус не говорил о зелёном паре. Монеты напоминают о жадности, но сами деньги не названы злом.",
     "camelCaption":"Нарочно невозможное сравнение Иисуса: один и тот же человек отцеживает крошечную мошку и глотает огромного верблюда. Картинка показывает нелепое противоречие, а не настоящее событие.",

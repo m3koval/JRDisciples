@@ -25,7 +25,7 @@ export default function Lesson(){
  const scene=j.story[w.scene],panel=j.bible[w.panel];
  return <main className="oh shiny timmy" lang={l}>
   <div className="oh-top"><Link href="/lessons">← {t.home}</Link><div>{(['en','ru'] as const).map(x=><button data-lang={x} key={x} aria-pressed={l===x} onClick={()=>{setLanguage(x);setConfirm(false);}}>{x==='en'?'English':'Русский'}</button>)}</div></div>
-  <header className="oh-hero"><div><p>{j.storyLabel}</p><h1>{j.title}</h1><p>{j.intro}</p></div><img src={`${art}camel.png`} width={1024} height={1024} alt={j.artAlt.camel}/></header>
+  <header className="oh-hero"><div><p className="tm-label">{j.storyLabel}</p><h1>{j.title}</h1><p className="tm-intro">{j.intro}</p><p className="tm-reference">{l==='en'?'Matthew':'Матфея'} 23:13–36</p></div><img src={`${art}camel.png`} width={1024} height={1024} alt={j.artAlt.camel}/></header>
   <nav className="oh-trail" aria-label={j.storyLabel}>{j.steps.map((x,i)=><button data-step={i} key={x} aria-current={w.step===i?'step':undefined} onClick={()=>go(i)}>{complete[i]?'✓ ':`${i+1}. `}{x}</button>)}</nav>
   <p data-progress aria-live="polite">{complete.filter(Boolean).length} / {j.steps.length} · {t.complete}</p>{state.temporary&&<p role="status">{t.temporary}</p>}
   <article><h2 ref={heading} tabIndex={-1}>{j.steps[w.step]}</h2><div key={`${l}-${w.step}`}>

@@ -24,11 +24,11 @@ try {
   await page.screenshot({path:`${out}/${name}-home.png`});
   const latest=page.locator('[data-latest-lesson]');
   assert.equal(await latest.getAttribute('href'),'/lessons/clean-inside-outside');
-  assert.match(await latest.innerText(),lang==='ru'?/Новый урок: Тимми: что скрывалось за звёздочками\?/:/New lesson: Timmy and the Hidden Wrong/);
+  assert.match(await latest.innerText(),lang==='ru'?/Новый урок: Золотые звёздочки Тимми/:/New lesson: Timmy’s Gold Stars/);
   await latest.scrollIntoViewIfNeeded();await page.screenshot({path:`${out}/${name}-latest.png`});
   await latest.click();await page.waitForURL('**/lessons/clean-inside-outside');
   await page.waitForFunction(l=>document.querySelector('.oh')?.lang===l,lang);
-  assert.match(await page.locator('h1').innerText(),lang==='ru'?/Тимми: что скрывалось за звёздочками\?/:/Timmy and the Hidden Wrong/);
+  assert.match(await page.locator('h1').innerText(),lang==='ru'?/Золотые звёздочки Тимми/:/Timmy’s Gold Stars/);
   report.push({name,home,latestDestination:page.url(),latestHeading:await page.locator('h1').innerText()});
   // Preserve the named older feature's real destination as well.
   await go('/');await page.locator('a[href="/lessons/who-am-i"]').click();await page.waitForURL('**/lessons/who-am-i');
